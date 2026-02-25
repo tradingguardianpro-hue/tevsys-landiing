@@ -1,4 +1,4 @@
-export default [
-	{ text: "Inicio", link: "/" },
-	{ text: "Contacto", link: "/company/contact" },
+export const nav = [
+  { title: 'Inicio', slug: '/' },
+  { title: 'Contacto', slug: '/company/contact' },
 ];
