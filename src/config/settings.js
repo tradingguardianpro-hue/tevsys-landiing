@@ -3,6 +3,6 @@ export default {
   description: "El airbag que certifica disciplina algorítmica en MT5. Límites que se cumplen. Cierre de altísima precisión documentado. Evidencia verificable para traders, prop firms y auditorías.",
   url: "https://www.tevsys.io",
   name: "tevsys",
-  enableThemeSwitcher: false,
-  showPlug: false,
+  enableThemeSwitcher: falso,
+  showPlug: falso,
 };
