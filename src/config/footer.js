@@ -1,6 +1,3 @@
-El tema Odyssey espera `footerLists` y `footerSocials`, no `links`. Usa este formato:
-
-```javascript
 export const footerSocials = [];
 
 export const footerLists = [
