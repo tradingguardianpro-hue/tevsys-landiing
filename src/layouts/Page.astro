@@ -1,3 +1,6 @@
+Si ves `importar` o `desde` en lugar de `import` o `from`, sustituye todo por esto:
+
+```astro
 ---
 import { Header, Button, Footer } from '@components/odyssey-theme';
 import Layout from './Base.astro';
@@ -6,9 +9,8 @@ import Logo from '../components/Logo.astro';
 import settings from '../config/settings';
 import { footerLists, footerSocials } from '../config/footer';
 
-
 export interface Props {
-	seo?: BaseHeadProps;
+  seo?: BaseHeadProps;
 }
 
 import { nav } from '../config/nav.js';
@@ -17,24 +19,25 @@ const { seo } = Astro.props as Props;
 ---
 
 <Layout seo={seo}>
-	<Header rightMenu navData={nav} slot="header">
-		<span slot="logo">
-			<Logo />
-		</span>
-		<Button slot="action-item" href="/theme/get-started">Get Started</Button>
-	</Header>
-	<div id="page">
-		<slot />
-	</div>
-	<Footer
-		slot="footer"
-		background="var(--theme-surface-1)"
-		color="var(--theme-on-surface-1)"
-		footerLists={footerLists}
+  <Header rightMenu navData={nav} slot="header">
+    <span slot="logo">
+      <Logo />
+    </span>
+    <Button slot="action-item" href="/company/contact">Contacto</Button>
+  </Header>
+  <div id="page">
+    <slot />
+  </div>
+  <Footer
+    slot="footer"
+    background="var(--theme-surface-1)"
+    color="var(--theme-on-surface-1)"
+    footerLists={footerLists}
     footerSocials={footerSocials}
-		copyrightName={settings.name}
+    copyrightName={settings.name}
     showPlug={settings.showPlug}
-	>
-		<Logo slot="logo" />
-	</Footer>
+  >
+    <Logo slot="logo" />
+  </Footer>
 </Layout>
+```
