@@ -8,7 +8,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<HomeHeroSection />
 	<Container>
 		<section class="feature-card__section">
-			<h2>¿Cuánto dinero has perdido por no parar a tiempo?</h2>
+			<h2 class="feature-section__title">¿Cuánto dinero has perdido por no parar a tiempo?</h2>
 			<p>Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí.</p>
 			<div class="feature-card__grid">
 				<a href="/company/contact" class="tevsys-card">
@@ -58,6 +58,11 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 <style>
 	.feature-card__section {
 		margin: var(--section-margin) auto;
+	}
+	.feature-section__title {
+		font-family: 'Outfit', -apple-system, sans-serif;
+		font-size: 1.5rem;
+		font-weight: 600;
 	}
 	.feature-card__grid {
 		display: grid;
