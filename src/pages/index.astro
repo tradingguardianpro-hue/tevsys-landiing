@@ -13,10 +13,11 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 			<div class="feature-card__grid">
 				<a href="/company/contact" class="tevsys-card">
 					<div class="tevsys-card__image">
-						<img src="/assets/images/home/screenshots/landing-1.png" alt="Precisión milimétrica" />
+						<img src="/assets/images/home/screenshots/landing-1.png" alt="0,06% error promedio" />
 					</div>
 					<div class="tevsys-card__content">
-						<h3>Precisión milimétrica</h3>
+						<h3>0,06% error promedio</h3>
+						<p class="feature-card__hook">El mercado no perdona. Nosotros tampoco.</p>
 						<p>Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. 50 operativas documentadas, 0,06% error medio.</p>
 					</div>
 				</a>
@@ -32,11 +33,22 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 				</a>
 				<a href="/company/contact" class="tevsys-card">
 					<div class="tevsys-card__image">
+						<img src="/assets/images/home/screenshots/landing-1.png" alt="SML Smart Money Lock" />
+					</div>
+					<div class="tevsys-card__content">
+						<h3>SML — Smart Money Lock</h3>
+						<p class="feature-card__hook">El 75% de tus ganancias, protegidas. El resto, a por todas.</p>
+						<p>Si terminas el día en positivo, acumulas un bonus que amplía tu límite de pérdida del día siguiente. El sistema lo calcula aunque cierres MT5. Disciplina recompensada. Cuando lo activas, el 75% de tus ganancias ya están protegidas. El resto, a por todas.</p>
+					</div>
+				</a>
+				<a href="/company/contact" class="tevsys-card">
+					<div class="tevsys-card__image">
 						<img src="/assets/images/home/screenshots/about.png" alt="Evidencia verificable" />
 					</div>
 					<div class="tevsys-card__content">
 						<h3>Evidencia verificable</h3>
-						<p>Panel, logs y reporte oficial MT5 por cierre. Para el trader, el inversor o el auditor. No hay "creemos que cumple"; hay evidencia medible.</p>
+						<p class="feature-card__hook">No confíes. Comprueba.</p>
+						<p>Panel, logs y reporte oficial MT5 por cada cierre. Para el trader, el inversor o el auditor. No hay "creemos que cumple"; hay evidencia medible.</p>
 					</div>
 				</a>
 			</div>
@@ -66,7 +78,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	}
 	.feature-card__grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		gap: var(--theme-grid-gap);
 	}
 	.tevsys-card {
