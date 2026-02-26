@@ -7,14 +7,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
 <Container>
   <section class="hero-section__section">
-    <a href="/" class="hero-brand__oval">
-      <span class="hero-brand__symbol" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 1L13.5 9L22 10L14.5 11L12 19L9.5 11L2 10L10.5 9L12 1Z"/>
-        </svg>
-      </span>
-      <span class="hero-brand__text">tevsys</span>
-    </a>
     <div class="hero-section__text">
       <h1>Tu capital merece más que buenas intenciones</h1>
       <div class="hero-tagline">
@@ -28,7 +20,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             <Icon name="ic:baseline-chevron-right"/>
           </Fragment>
         </Button>
-        <Button href="/company/contact" unelevated>Contactar</Button>
+        <Button href="/company/contact" unelevated>Descargar demo</Button>
       </div>
       {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
     </div>
@@ -50,50 +42,11 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
     display: grid;
     grid-template-columns: 1fr 1.15fr;
-    grid-template-rows: auto 1fr;
     align-items: center;
     gap: 2rem;
   }
-  .hero-brand__oval {
-    grid-column: 1;
-    grid-row: 1;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.75rem;
-    margin: 0;
-    width: fit-content;
-    max-width: 95%;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 3rem;
-    background: rgba(255, 255, 255, 0.04);
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.2s;
-  }
-  .hero-brand__oval:hover {
-    opacity: 0.9;
-  }
-  .hero-brand__symbol {
-    display: flex;
-    align-items: center;
-    width: 1.5rem;
-    height: 1.5rem;
-    flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.95);
-  }
-  .hero-brand__symbol svg {
-    width: 100%;
-    height: 100%;
-  }
-  .hero-brand__text {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.95);
-  }
   .hero-section__text {
     grid-column: 1;
-    grid-row: 2;
     justify-self: center;
     max-width: 25rem;
   }
@@ -142,16 +95,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   @media (max-width: 768px) {
     .hero-section__section {
       grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
-    }
-    .hero-brand__oval {
-      grid-column: 1;
-      grid-row: 1;
-      max-width: 100%;
-      align-self: center;
-    }
-    .hero-section__text {
-      grid-column: 1;
     }
     .hero-section__image img {
       min-width: unset;

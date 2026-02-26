@@ -10,14 +10,15 @@ export interface Props {
 }
 
 import { nav } from '../config/nav.js';
+import BrandOval from '../components/BrandOval.astro';
 
 const { seo } = Astro.props as Props;
 ---
 
 <Layout seo={seo}>
   <Header rightMenu navData={nav} slot="header">
-    <span slot="logo"></span>
-    <Button slot="action-item" href="/company/contact">Contacto</Button>
+    <BrandOval slot="logo" />
+    <Button slot="action-item" href="/company/contact">Descargar demo</Button>
   </Header>
   <div id="page">
     <slot />
