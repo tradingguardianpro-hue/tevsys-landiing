@@ -59,7 +59,7 @@ const { navData, rightMenu } = Astro.props;
       {navData && <nav>
         <ul>
           {navData.map(navItem => (
-            (<li><a href={navItem.slug} >{navItem.title}</a></li>)
+            (<li><a href={navItem.slug} class={navItem.highlight ? 'nav-link--highlight' : ''}>{navItem.title}</a></li>)
           ))}
         </ul>
       </nav>}
@@ -124,6 +124,10 @@ const { navData, rightMenu } = Astro.props;
     color: inherit;
     opacity: 0.72;
     transition: opacity linear 150ms;
+  }
+  nav ul li a.nav-link--highlight {
+    opacity: 1;
+    font-weight: 500;
   }
   nav ul li a:hover {
     opacity: 1;

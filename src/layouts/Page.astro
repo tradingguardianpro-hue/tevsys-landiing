@@ -1,5 +1,5 @@
 ---
-import { Header, Button, Footer } from '@components/odyssey-theme';
+import { Header, Footer } from '@components/odyssey-theme';
 import Layout from './Base.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import settings from '../config/settings';
@@ -18,7 +18,6 @@ const { seo } = Astro.props as Props;
 <Layout seo={seo}>
   <Header rightMenu navData={nav} slot="header">
     <BrandOval slot="logo" />
-    <Button slot="action-item" href="/company/contact">Descargar demo</Button>
   </Header>
   <div id="page">
     <slot />

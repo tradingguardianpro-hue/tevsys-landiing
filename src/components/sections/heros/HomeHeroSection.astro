@@ -1,6 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
-import { Container, Button } from '@components/odyssey-theme';
+import { Container } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 ---
@@ -8,19 +7,14 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 <Container>
   <section class="hero-section__section">
     <div class="hero-section__text">
-      <h1>Tu capital merece más que buenas intenciones</h1>
+      <h1 class="hero-title">Tu capital merece más que buenas intenciones</h1>
       <div class="hero-tagline">
         <span class="hero-tagline__dot"></span>
         <span class="hero-tagline__text">Where precision meets the edge</span>
       </div>
-      <div class="hero-btns__container">
-        <Button href="/company/contact" customIcon>
-          Descargar demo
-          <Fragment slot="icon">
-            <Icon name="ic:baseline-chevron-right"/>
-          </Fragment>
-        </Button>
-      </div>
+      <a href="/company/contact" class="hero-download-btn">
+        Descargar demo →
+      </a>
       {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
     </div>
     <div class="hero-section__image">
@@ -49,6 +43,26 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     justify-self: center;
     max-width: 25rem;
   }
+  .hero-title {
+    font-family: 'Outfit', -apple-system, sans-serif;
+  }
+  .hero-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .hero-download-btn:hover {
+    opacity: 0.9;
+  }
   .hero-tagline {
     display: inline-flex;
     align-items: center;
@@ -69,11 +83,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-tagline__text {
     font-size: 1.05rem;
     opacity: 0.95;
-  }
-  .hero-btns__container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
   }
   .hero-section__image {
     grid-column: 2;
