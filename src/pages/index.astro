@@ -1,6 +1,5 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
-
+import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 ---
@@ -10,19 +9,50 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<Container>
 		<section class="feature-card__section">
 			<h2>¿Cuánto dinero has perdido por no parar a tiempo?</h2>
-			<p>
-				Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí.
-			</p>
+			<p>Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí.</p>
 			<div class="feature-card__grid">
-				<FeatureCard href="/company/contact" title="Precisión milimétrica" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="HyperClose" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="Evidencia verificable" imgSrc="/assets/images/home/screenshots/about">
-				</FeatureCard>
+				<a href="/company/contact" class="tevsys-card">
+					<div class="tevsys-card__image">
+						<img src="/assets/images/home/screenshots/landing-1.png" alt="Precisión milimétrica" />
+					</div>
+					<div class="tevsys-card__content">
+						<h3>Precisión milimétrica</h3>
+						<p>Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. 46 operativas documentadas, 0,06% error medio.</p>
+					</div>
+				</a>
+				<a href="/company/contact" class="tevsys-card">
+					<div class="tevsys-card__image">
+						<img src="/assets/images/home/screenshots/landing-2.png" alt="HyperClose" />
+					</div>
+					<div class="tevsys-card__content">
+						<h3>HyperClose</h3>
+						<p class="feature-card__hook">Nadie te enseña a parar. Aprendes cuando ya es tarde.</p>
+						<p>Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.</p>
+					</div>
+				</a>
+				<a href="/company/contact" class="tevsys-card">
+					<div class="tevsys-card__image">
+						<img src="/assets/images/home/screenshots/about.png" alt="Evidencia verificable" />
+					</div>
+					<div class="tevsys-card__content">
+						<h3>Evidencia verificable</h3>
+						<p>Panel, logs y reporte oficial MT5 por cierre. Para el trader, el inversor o el auditor. No hay "creemos que cumple"; hay evidencia medible.</p>
+					</div>
+				</a>
 			</div>
 		</section>
 	</Container>
+	<section class="founder-section">
+		<Container>
+			<div class="founder-message">
+				<p class="founder-claim">tevsys no es el sueño de un inversor. Es la respuesta de un trader.</p>
+				<blockquote>
+					"Nadie me enseñó a gestionar el riesgo ni la disciplina. Tuve que inventar algo que me obligara a cumplir mis límites. tevsys es eso: lo que me faltaba entonces, ahora para todos."
+				</blockquote>
+				<p class="founder-signature">— Gabi, fundador de tevsys</p>
+			</div>
+		</Container>
+	</section>
 </Layout>
 
 <style>
@@ -34,9 +64,68 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		grid-template-columns: repeat(3, 1fr);
 		gap: var(--theme-grid-gap);
 	}
+	.tevsys-card {
+		display: flex;
+		flex-direction: column;
+		background-color: var(--theme-surface-1);
+		color: var(--theme-on-surface-1);
+		border-radius: var(--theme-shape-radius);
+		text-decoration: none;
+		overflow: hidden;
+	}
+	.tevsys-card__image {
+		aspect-ratio: 16/10;
+		overflow: hidden;
+	}
+	.tevsys-card__image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.tevsys-card__content {
+		padding: 1.25rem;
+	}
+	.tevsys-card__content h3 {
+		margin: 0 0 0.5rem 0;
+	}
+	.tevsys-card__content p {
+		margin: 0 0 0.75rem 0;
+		line-height: 1.5;
+	}
+	.tevsys-card__content p:last-child {
+		margin-bottom: 0;
+	}
+	.feature-card__hook {
+		font-style: italic;
+		opacity: 0.9;
+	}
 	@media (max-width: 768px) {
 		.feature-card__grid {
 			grid-template-columns: 1fr;
 		}
+	}
+	.founder-section {
+		margin: var(--section-margin) auto;
+		text-align: center;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.founder-claim {
+		font-size: 1.5rem;
+		font-weight: 500;
+		margin-bottom: 2rem;
+		color: var(--theme-primary);
+	}
+	.founder-message blockquote {
+		font-size: 1.25rem;
+		line-height: 1.6;
+		font-style: italic;
+		margin: 2rem 0;
+		opacity: 0.9;
+	}
+	.founder-signature {
+		font-size: 1rem;
+		opacity: 0.7;
 	}
 </style>
