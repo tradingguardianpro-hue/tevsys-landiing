@@ -2,7 +2,6 @@
 import { Header, Button, Footer } from '@components/odyssey-theme';
 import Layout from './Base.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
-import Logo from '../components/Logo.astro';
 import settings from '../config/settings';
 import { footerLists, footerSocials } from '../config/footer';
 
@@ -17,9 +16,7 @@ const { seo } = Astro.props as Props;
 
 <Layout seo={seo}>
   <Header rightMenu navData={nav} slot="header">
-    <span slot="logo">
-      <Logo />
-    </span>
+    <span slot="logo"></span>
     <Button slot="action-item" href="/company/contact">Contacto</Button>
   </Header>
   <div id="page">
