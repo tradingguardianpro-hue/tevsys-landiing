@@ -7,9 +7,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
 <Container>
   <section class="hero-section__section">
-    <div class="hero-brand__oval">
-      <span class="hero-brand__text">tevsys</span>
-    </div>
+    <a href="/" class="hero-brand__oval">
+      <img src="/logo-tevsys.png" alt="tevsys" class="hero-brand__logo" />
+    </a>
     <div class="hero-section__text">
       <h1>Tu capital merece más que buenas intenciones</h1>
       <div class="hero-tagline">
@@ -52,18 +52,29 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-brand__oval {
     grid-column: 1;
     grid-row: 1;
-    padding: 1rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.75rem;
     margin: 0;
-    width: 100%;
+    width: fit-content;
     max-width: 95%;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 3rem;
     background: rgba(255, 255, 255, 0.04);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
   }
-  .hero-brand__text {
-    font-size: 1.5rem;
-    font-weight: 600;
-    opacity: 0.95;
+  .hero-brand__oval:hover {
+    opacity: 0.9;
+  }
+  .hero-brand__logo {
+    height: 1.85rem;
+    width: auto;
+    filter: brightness(0) invert(1);
+    flex-shrink: 0;
+    display: block;
   }
   .hero-section__text {
     grid-column: 1;
@@ -82,8 +93,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     background: rgba(255, 255, 255, 0.03);
   }
   .hero-tagline__dot {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     background: #f5b041;
     border-radius: 50%;
     flex-shrink: 0;
