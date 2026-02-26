@@ -45,9 +45,9 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<section class="founder-section">
 		<Container>
 			<div class="founder-message">
-				<p class="founder-claim">tevsys no es el sueño de un inversor. Es la respuesta de un trader.</p>
+				<p class="founder-claim"><span class="founder-tevsys">tevsys</span> no es el sueño de un inversor. Es la respuesta de un trader.</p>
 				<blockquote>
-					"Nadie me enseñó a gestionar el riesgo ni la disciplina. Tuve que inventar algo que me obligara a cumplir mis límites. tevsys es eso: lo que me faltaba entonces, ahora para todos."
+					"Nadie me enseñó a gestionar el riesgo ni la disciplina. Tuve que inventar algo que me obligara a cumplir mis límites. <span class="founder-tevsys">tevsys</span> es eso: lo que me faltaba entonces, ahora para todos."
 				</blockquote>
 				<p class="founder-signature">— Gabi, fundador de tevsys</p>
 			</div>
@@ -116,6 +116,10 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		font-weight: 500;
 		margin-bottom: 2rem;
 		color: var(--theme-primary);
+	}
+	.founder-tevsys {
+		color: #f5b041;
+		font-weight: 700;
 	}
 	.founder-message blockquote {
 		font-size: 1.25rem;

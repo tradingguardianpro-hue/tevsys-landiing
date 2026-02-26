@@ -13,7 +13,7 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   <Container>
     <div class="footer-grid__container">
       <div class="footer-brand__container">
-        <div class="footer-logo__wrapper">
+        <div class="footer-brand__slot">
           <slot name="logo" />
         </div>
         <ul class="footer-socials__list">
@@ -72,18 +72,17 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
   }
-  .footer-logo__wrapper {
-    display: inline-flex;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 2rem;
+  .footer-brand__slot {
     margin-bottom: 0.5rem;
   }
-  .footer-logo__wrapper :global(img) {
-    height: 1.75rem;
-    width: auto;
-    display: block;
+  .footer-brand__slot :global(.footer-brand__name) {
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .footer-brand__slot :global(.footer-brand__name:hover) {
+    opacity: 0.9;
   }
   .footer-socials__list {
     margin: 1rem 0;
