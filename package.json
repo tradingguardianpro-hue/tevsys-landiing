@@ -11,7 +11,8 @@
 		"start": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"format": "npx prettier -w ."
+		"format": "npx prettier -w .",
+		"image:border": "node scripts/add-border-to-image.js"
 	},
 	"devDependencies": {
 		"@astrojs/lit": "^4.0.1",
@@ -24,6 +25,7 @@
 		"astro-icon": "^1.1.0",
 		"date-fns": "^2.28.0",
 		"lit": "^3.1.2",
-		"prettier-plugin-astro": "^0.0.12"
+		"prettier-plugin-astro": "^0.0.12",
+		"sharp": "^0.33.5"
 	}
 }
