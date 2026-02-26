@@ -18,13 +18,16 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
     </div>
     <div class="hero-section__image">
-      <picture>
-        <img
-          src="/hero-tevsys.png"
-          alt="tevsys"
-          id="home-hero-image"
-        />
-      </picture>
+      <div class="hero-image__wrapper">
+        <picture>
+          <img
+            src="/hero-tevsys.png"
+            alt="tevsys"
+            id="home-hero-image"
+          />
+        </picture>
+        <span class="hero-image__brand">Trading Edge Verification System</span>
+      </div>
     </div>
   </section>
 </Container>
@@ -91,6 +94,22 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     align-items: center;
     justify-content: flex-end;
   }
+  .hero-image__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .hero-image__brand {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.02em;
+  }
+  .hero-image__wrapper img,
   .hero-section__image img {
     width: 100%;
     min-width: 400px;
@@ -104,6 +123,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-section__section {
       grid-template-columns: 1fr;
     }
+    .hero-image__wrapper img,
     .hero-section__image img {
       min-width: unset;
     }
