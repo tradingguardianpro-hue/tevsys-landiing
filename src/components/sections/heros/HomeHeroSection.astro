@@ -26,8 +26,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             id="home-hero-image"
           />
         </picture>
-        <span class="hero-image__brand">Trading Edge Verification System</span>
       </div>
+      <span class="hero-image__brand">Trading Edge Verification System</span>
     </div>
   </section>
 </Container>
@@ -77,8 +77,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     background: rgba(255, 255, 255, 0.03);
   }
   .hero-tagline__dot {
-    width: 18px;
-    height: 18px;
+    width: 32px;
+    height: 32px;
     background: #f5b041;
     border-radius: 50%;
     flex-shrink: 0;
@@ -91,19 +91,18 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     grid-column: 2;
     grid-row: 1 / -1;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
   }
   .hero-image__wrapper {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-end;
   }
   .hero-image__brand {
-    position: absolute;
-    bottom: 0.75rem;
-    left: 0.75rem;
+    margin-top: 0.75rem;
+    align-self: flex-start;
     font-size: 0.75rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.45);
