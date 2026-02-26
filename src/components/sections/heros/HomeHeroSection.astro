@@ -8,7 +8,12 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 <Container>
   <section class="hero-section__section">
     <a href="/" class="hero-brand__oval">
-      <img src="/logo-tevsys.png" alt="tevsys" class="hero-brand__logo" />
+      <span class="hero-brand__symbol" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L13.5 9L22 10L14.5 11L12 19L9.5 11L2 10L10.5 9L12 1Z"/>
+        </svg>
+      </span>
+      <span class="hero-brand__text">tevsys</span>
     </a>
     <div class="hero-section__text">
       <h1>Tu capital merece más que buenas intenciones</h1>
@@ -69,12 +74,22 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-brand__oval:hover {
     opacity: 0.9;
   }
-  .hero-brand__logo {
-    height: 1.85rem;
-    width: auto;
-    filter: brightness(0) invert(1);
+  .hero-brand__symbol {
+    display: flex;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
     flex-shrink: 0;
-    display: block;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .hero-brand__symbol svg {
+    width: 100%;
+    height: 100%;
+  }
+  .hero-brand__text {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
   }
   .hero-section__text {
     grid-column: 1;
@@ -85,22 +100,22 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-tagline {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 1rem;
+    gap: 0.85rem;
+    padding: 0.6rem 1.2rem;
     margin: 1rem 0;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 2rem;
     background: rgba(255, 255, 255, 0.03);
   }
   .hero-tagline__dot {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     background: #f5b041;
     border-radius: 50%;
     flex-shrink: 0;
   }
   .hero-tagline__text {
-    font-size: 1rem;
+    font-size: 1.05rem;
     opacity: 0.95;
   }
   .hero-btns__container {
