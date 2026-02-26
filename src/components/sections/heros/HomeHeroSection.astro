@@ -9,9 +9,10 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   <section class="hero-section__section">
     <div class="hero-section__text">
       <h1>Tu capital merece más que buenas intenciones</h1>
-      <p>
-        Where precision meets the edge.
-      </p>
+      <div class="hero-tagline">
+        <span class="hero-tagline__dot"></span>
+        <span class="hero-tagline__text">Where precision meets the edge</span>
+      </div>
       <div class="hero-btns__container">
         <Button href="/company/contact" customIcon>
           Probar demo
@@ -47,6 +48,27 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-section__text {
     justify-self: center;
     max-width: 25rem;
+  }
+  .hero-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .hero-tagline__dot {
+    width: 8px;
+    height: 8px;
+    background: #f5b041;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .hero-tagline__text {
+    font-size: 1rem;
+    opacity: 0.95;
   }
   .hero-btns__container {
     display: flex;
