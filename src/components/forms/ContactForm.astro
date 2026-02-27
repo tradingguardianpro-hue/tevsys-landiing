@@ -10,13 +10,7 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
   <FormInput type="email" label="Email" name="Email" placeholder="tu@email.com" required />
 
   <input id="planInput" type="hidden" name="Plan" value={normalizedPlan} />
-  {normalizedPlan ? (
-    <p class="selected-plan-badge">Plan seleccionado: <strong>{normalizedPlan.toUpperCase()}</strong></p>
-  ) : (
-    <p class="selected-plan-badge selected-plan-badge--warning">
-      No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".
-    </p>
-  )}
+  <p id="selectedPlanBadge" class="selected-plan-badge" hidden></p>
 
   <div class="form-field__container">
     <label for="capitalSelect">Capital aproximado</label>
@@ -59,6 +53,7 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
 
     const planInput = document.getElementById('planInput');
     const capitalSelect = document.getElementById('capitalSelect');
+    const badgeNode = document.getElementById('selectedPlanBadge');
     const messageNode = document.getElementById('planValidationMessage');
 
     const limits = {
@@ -80,6 +75,27 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
       if (capital <= 50000) return 'Advanced';
       if (capital <= 200000) return 'Pro';
       return 'Elite';
+    };
+
+    const setPlanFromUrl = () => {
+      if (!planInput) return '';
+      const urlPlan = (new URLSearchParams(window.location.search).get('plan') || '').toLowerCase();
+      if (urlPlan && limits[urlPlan] !== undefined) {
+        planInput.value = urlPlan;
+      }
+      return (planInput.value || '').toLowerCase();
+    };
+
+    const renderPlanBadge = (plan) => {
+      if (!badgeNode) return;
+      badgeNode.hidden = false;
+      if (plan) {
+        badgeNode.classList.remove('selected-plan-badge--warning');
+        badgeNode.innerHTML = `Plan seleccionado: <strong>${plan.toUpperCase()}</strong>`;
+      } else {
+        badgeNode.classList.add('selected-plan-badge--warning');
+        badgeNode.textContent = 'No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".';
+      }
     };
 
     const validatePlanAgainstCapital = () => {
@@ -119,6 +135,8 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
       }
     });
 
+    const initializedPlan = setPlanFromUrl();
+    renderPlanBadge(initializedPlan);
     capitalSelect && capitalSelect.addEventListener('change', validatePlanAgainstCapital);
   })();
 </script>
