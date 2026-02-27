@@ -1,4 +1,4 @@
-﻿# Cards & planes — Fase siguiente (actualizado)
+# Cards & planes — Fase siguiente (actualizado)
 
 Este documento reemplaza el enfoque inicial de placeholders y recoge el estado actual + siguiente iteración.
 
@@ -68,3 +68,55 @@ Elegir una opción:
 - No sobrecargar con demasiadas formas iridiscentes.
 - Mantener consistencia de grosor y tono en iconos.
 - Dar protagonismo al mensaje, no solo al adorno visual.
+
+---
+
+## 6) Plataforma de pago (pendiente post-web)
+
+> Esta decisión se toma cuando se cierre la web visual y copy final.
+
+### Opciones evaluadas
+
+1. **Lemon Squeezy** (recomendada para MVP)
+   - Pros: rápida de implementar, checkout sólido, suscripciones, gestión fiscal simplificada.
+   - Encaje: salida rápida con planes Essential / Advanced / Pro.
+
+2. **Paddle**
+   - Pros: enfoque muy robusto para SaaS y compliance fiscal global.
+   - Encaje: buena opción si se prioriza estructura enterprise desde inicio.
+
+3. **Stripe (directo)**
+   - Pros: máximo control técnico y de producto.
+   - Contras: más carga operativa/fiscal y desarrollo adicional.
+   - Encaje: fase posterior si se busca control total.
+
+4. **Gumroad** (descartado por ahora)
+   - Motivo: menos adecuado para licenciamiento SaaS con reglas de plan y automatizaciones.
+
+### Criterios de decisión
+- Tiempo de implementación.
+- Fiabilidad del checkout y suscripciones.
+- Gestión fiscal (IVA/países) y compliance.
+- Facilidad para webhooks e integración con licencias TGP.
+- Coste total (comisiones + operación).
+
+### Flujo objetivo (alto nivel)
+1. Cliente elige plan en web.
+2. Pago en checkout de pasarela.
+3. Webhook confirma evento (alta/renovación/cancelación/impago).
+4. Backend TGP activa o ajusta licencia y límites.
+5. Estado de plan visible para soporte/comercial.
+
+### Nota operativa sobre métodos de pago
+- Sí: estas plataformas suelen traer sus propios métodos (por ejemplo, tarjeta y otros según país).
+- El detalle exacto de métodos disponibles depende de:
+  - plataforma elegida,
+  - país del negocio,
+  - configuración fiscal/comercial de la cuenta.
+
+### Checklist cuando toque activar pagos
+- [ ] Elegir pasarela final.
+- [ ] Definir catálogo de planes y precios finales.
+- [ ] Mapear eventos webhook -> estado de licencia.
+- [ ] Probar altas, renovaciones, impagos y cancelaciones.
+- [ ] Definir página de éxito/error y soporte post-pago.
