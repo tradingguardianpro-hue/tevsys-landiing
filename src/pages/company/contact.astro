@@ -31,7 +31,13 @@ const tips = isDemoFlow
 		];
 const contactVisualImage = isDemoFlow
 	? '/logo-tevsys.png'
-	: '/assets/images/plans/form-shields.png';
+	: selectedPlan === 'essential'
+		? '/assets/images/plans/essential-card.png'
+		: selectedPlan === 'advanced'
+			? '/assets/images/plans/advanced-card.png'
+			: selectedPlan === 'pro'
+				? '/assets/images/plans/pro-card.png'
+				: '/logo-tevsys.png';
 const contactVisualAlt = isDemoFlow
 	? 'Demo de tevsys'
 	: displayPlan
