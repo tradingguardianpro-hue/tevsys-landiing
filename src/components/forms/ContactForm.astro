@@ -79,6 +79,10 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
 
     const setPlanFromUrl = () => {
       if (!planInput) return '';
+      const urlFlow = (new URLSearchParams(window.location.search).get('flow') || '').toLowerCase();
+      if (urlFlow === 'demo') {
+        planInput.dataset.allowNoPlan = 'true';
+      }
       const urlPlan = (new URLSearchParams(window.location.search).get('plan') || '').toLowerCase();
       if (urlPlan && limits[urlPlan] !== undefined) {
         planInput.value = urlPlan;

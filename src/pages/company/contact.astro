@@ -7,81 +7,114 @@ const seo = {
 	title: 'Contact | Astro Odyssey Theme',
 	description: 'Contact Page',
 };
-const selectedPlan = (Astro.url.searchParams.get('plan') || '').toLowerCase();
-const flow = (Astro.url.searchParams.get('flow') || '').toLowerCase();
-const displayPlan = selectedPlan
-	? `${selectedPlan.charAt(0).toUpperCase()}${selectedPlan.slice(1)}`
-	: null;
-const isDemoFlow = flow === 'demo';
-const introText = isDemoFlow
-	? 'Déjanos tus datos y te ayudamos a empezar rápido. La demo está pensada para validar encaje real con tu operativa, sin ruido ni complicaciones.'
-	: displayPlan
-		? 'Completa el formulario y validamos si este plan encaja con tu capital y experiencia. Si hace falta, te recomendamos la mejor alternativa para empezar con seguridad.'
-		: 'Completa el formulario y te indicamos el siguiente paso según tu perfil y el estado actual de cada plan.';
-const tips = isDemoFlow
-	? [
-			'Demo orientada a validación real de tu operativa.',
-			'Respuesta rápida con los siguientes pasos para activación.',
-			'Proceso simple: solo pedimos datos clave.',
-		]
-	: [
-			'Essential: acceso demo/beta disponible.',
-			'Advanced y Pro: en desarrollo (lista de espera).',
-			'Solo datos clave para responderte rápido y con plan recomendado.',
-		];
-const contactVisualImage = isDemoFlow
-	? '/logo-tevsys.png'
-	: selectedPlan === 'essential'
-		? '/assets/images/plans/essential-v3-bronze.png'
-		: selectedPlan === 'advanced'
-			? '/assets/images/plans/advanced-v3-silver.png'
-			: selectedPlan === 'pro'
-				? '/assets/images/plans/pro-v2-gold.png'
-				: '/logo-tevsys.png';
-const contactVisualLabel = isDemoFlow
-	? ''
-	: selectedPlan === 'essential'
-		? 'ESSENTIAL PROTECTION'
-		: selectedPlan === 'advanced'
-			? 'ADVANCED PROTECTION'
-			: selectedPlan === 'pro'
-				? 'PRO PROTECTION'
-				: '';
-const contactVisualAlt = isDemoFlow
-	? 'Demo de tevsys'
-	: displayPlan
-		? `Visual del plan ${displayPlan}`
-		: 'Visual de tevsys';
+const introText =
+	'Completa el formulario y te indicamos el siguiente paso según tu perfil y el estado actual de cada plan.';
+const tips = [
+	'Essential: acceso demo/beta disponible.',
+	'Advanced y Pro: en desarrollo (lista de espera).',
+	'Solo datos clave para responderte rápido y con plan recomendado.',
+];
 ---
 
 <Layout seo={seo}>
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<h1>
-					{
-						isDemoFlow
-							? 'Solicita tu demo de tevsys'
-							: displayPlan
-								? `Has seleccionado ${displayPlan}`
-								: 'Contacta con tevsys'
-					}
-				</h1>
-				<p>{introText}</p>
+				<h1 id="contactHeroTitle">Contacta con tevsys</h1>
+				<p id="contactHeroIntro">{introText}</p>
 				<ul class="contact-hero__tips">
-					{tips.map((tip) => <li>{tip}</li>)}
+					{tips.map((tip, idx) => <li id={`contactTip-${idx + 1}`}>{tip}</li>)}
 				</ul>
 				<div class="contact-hero__visual">
-					<img src={contactVisualImage} alt={contactVisualAlt} loading="lazy" />
-					{contactVisualLabel && <p class="contact-hero__visual-label">{contactVisualLabel}</p>}
+					<img id="contactHeroImage" src="/logo-tevsys.png" alt="Visual de tevsys" loading="lazy" />
+					<p id="contactHeroVisualLabel" class="contact-hero__visual-label" hidden></p>
 				</div>
 			</div>
 			<div class="col-2__container">
-				<ContactForm selectedPlan={selectedPlan} allowNoPlan={isDemoFlow} />
+				<ContactForm selectedPlan="" allowNoPlan={false} />
 			</div>
 		</section>
 	</Container>
 </Layout>
+
+<script is:inline>
+	(() => {
+		const params = new URLSearchParams(window.location.search);
+		const plan = (params.get('plan') || '').toLowerCase();
+		const flow = (params.get('flow') || '').toLowerCase();
+
+		const titleNode = document.getElementById('contactHeroTitle');
+		const introNode = document.getElementById('contactHeroIntro');
+		const imageNode = document.getElementById('contactHeroImage');
+		const labelNode = document.getElementById('contactHeroVisualLabel');
+		const tip1 = document.getElementById('contactTip-1');
+		const tip2 = document.getElementById('contactTip-2');
+		const tip3 = document.getElementById('contactTip-3');
+
+		const setTips = (a, b, c) => {
+			if (tip1) tip1.textContent = a;
+			if (tip2) tip2.textContent = b;
+			if (tip3) tip3.textContent = c;
+		};
+
+		if (flow === 'demo') {
+			if (titleNode) titleNode.textContent = 'Solicita tu demo de tevsys';
+			if (introNode) {
+				introNode.textContent =
+					'Déjanos tus datos y te ayudamos a empezar rápido. La demo está pensada para validar encaje real con tu operativa, sin ruido ni complicaciones.';
+			}
+			setTips(
+				'Demo orientada a validación real de tu operativa.',
+				'Respuesta rápida con los siguientes pasos para activación.',
+				'Proceso simple: solo pedimos datos clave.'
+			);
+			if (imageNode) {
+				imageNode.src = '/logo-tevsys.png';
+				imageNode.alt = 'Demo de tevsys';
+			}
+			if (labelNode) {
+				labelNode.hidden = true;
+				labelNode.textContent = '';
+			}
+			return;
+		}
+
+		const planMap = {
+			essential: {
+				name: 'Essential',
+				image: '/assets/images/plans/essential-v3-bronze.png',
+				label: 'ESSENTIAL PROTECTION',
+			},
+			advanced: {
+				name: 'Advanced',
+				image: '/assets/images/plans/advanced-v3-silver.png',
+				label: 'ADVANCED PROTECTION',
+			},
+			pro: {
+				name: 'Pro',
+				image: '/assets/images/plans/pro-v2-gold.png',
+				label: 'PRO PROTECTION',
+			},
+		};
+
+		const selected = planMap[plan];
+		if (!selected) return;
+
+		if (titleNode) titleNode.textContent = `Has seleccionado ${selected.name}`;
+		if (introNode) {
+			introNode.textContent =
+				'Completa el formulario y validamos si este plan encaja con tu capital y experiencia. Si hace falta, te recomendamos la mejor alternativa para empezar con seguridad.';
+		}
+		if (imageNode) {
+			imageNode.src = selected.image;
+			imageNode.alt = `Visual del plan ${selected.name}`;
+		}
+		if (labelNode) {
+			labelNode.hidden = false;
+			labelNode.textContent = selected.label;
+		}
+	})();
+</script>
 
 <style>
 	.contact-hero__section {
