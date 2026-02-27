@@ -9,16 +9,14 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
   <FormInput type="text" label="Nombre" name="Name" placeholder="Tu nombre" required />
   <FormInput type="email" label="Email" name="Email" placeholder="tu@email.com" required />
 
-  <div class="form-field__container">
-    <label for="planSelect">Plan</label>
-    <select id="planSelect" name="Plan" required>
-      <option value="" selected={normalizedPlan === ''}>Selecciona un plan</option>
-      <option value="essential" selected={normalizedPlan === 'essential'}>Essential</option>
-      <option value="advanced" selected={normalizedPlan === 'advanced'}>Advanced</option>
-      <option value="pro" selected={normalizedPlan === 'pro'}>Pro</option>
-      <option value="elite" selected={normalizedPlan === 'elite'}>Elite (consultar)</option>
-    </select>
-  </div>
+  <input id="planInput" type="hidden" name="Plan" value={normalizedPlan} />
+  {normalizedPlan ? (
+    <p class="selected-plan-badge">Plan seleccionado: <strong>{normalizedPlan.toUpperCase()}</strong></p>
+  ) : (
+    <p class="selected-plan-badge selected-plan-badge--warning">
+      No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".
+    </p>
+  )}
 
   <div class="form-field__container">
     <label for="capitalSelect">Capital aproximado</label>
@@ -59,7 +57,7 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
     const form = document.getElementById('tevsysContactForm');
     if (!form) return;
 
-    const planSelect = document.getElementById('planSelect');
+    const planInput = document.getElementById('planInput');
     const capitalSelect = document.getElementById('capitalSelect');
     const messageNode = document.getElementById('planValidationMessage');
 
@@ -85,13 +83,19 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
     };
 
     const validatePlanAgainstCapital = () => {
-      const plan = (planSelect && planSelect.value || '').toLowerCase();
+      const plan = (planInput && planInput.value || '').toLowerCase();
       const capital = Number(capitalSelect && capitalSelect.value || 0);
 
-      if (!plan || !capital) {
+      if (!plan) {
+        messageNode.hidden = false;
+        messageNode.textContent = 'Selecciona un plan desde la home para continuar.';
+        return false;
+      }
+
+      if (!capital) {
         messageNode.hidden = true;
         messageNode.textContent = '';
-        return true;
+        return false;
       }
 
       const maxLimit = limits[plan];
@@ -115,7 +119,6 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
       }
     });
 
-    planSelect && planSelect.addEventListener('change', validatePlanAgainstCapital);
     capitalSelect && capitalSelect.addEventListener('change', validatePlanAgainstCapital);
   })();
 </script>
@@ -150,5 +153,17 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
     border: 1px solid rgba(245, 176, 65, 0.65);
     color: var(--theme-on-bg);
     font-size: 0.95rem;
+  }
+  .selected-plan-badge {
+    margin: 0;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.95rem;
+  }
+  .selected-plan-badge--warning {
+    background: rgba(245, 176, 65, 0.12);
+    border-color: rgba(245, 176, 65, 0.6);
   }
 </style>
