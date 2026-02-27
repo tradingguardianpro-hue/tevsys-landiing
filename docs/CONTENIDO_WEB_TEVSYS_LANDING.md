@@ -13,7 +13,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Hero
 - **H1:** `Tu capital merece más que buenas intenciones`
-- **Línea aclaratoria:** `Plataforma de verificación de disciplina para operar en mercados financieros.`
+- **Línea aclaratoria (2 líneas):** `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo grande (`32px`)
 - **Botón:** `Descargar demo →` (amarillo)
@@ -23,9 +23,10 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Marco de copy del hero (AIDA)
 - **Atención:** `Tu capital merece más que buenas intenciones`
-- **Interés:** `Plataforma de verificación de disciplina para operar en mercados financieros.`
+- **Interés:** `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`
 - **Deseo:** `Where precision meets the edge`
 - **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTA `Descargar demo →`
+- **Criterio:** mantener mensaje completo (sin recortes) y optimizar presentación con salto de línea para legibilidad.
 
 ---
 
@@ -35,7 +36,7 @@ Documento de contenido/copy actual para revisión de equipo.
 `¿Cuánto dinero has perdido por no parar a tiempo?`
 
 ### Subtítulo
-`Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí.`
+`Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
 
 ### Cards (4)
 
@@ -81,9 +82,10 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Estado visual actual (formulario por plan):**
 - El bloque visual izquierdo cambia por plan con imagen sin barra superior y branding sutil:
-  - Essential: `/assets/images/plans/essential-v3-bronze.png`
-  - Advanced: `/assets/images/plans/advanced-v3-silver.png`
-  - Pro: `/assets/images/plans/pro-v2-gold.png`
+  - Essential: `/assets/images/plans/essential-form-v4.png`
+  - Advanced: `/assets/images/plans/advanced-form-v4.png`
+  - Pro: `/assets/images/plans/pro-form-v4.png`
+- Nota técnica: nombres `*-form-v4` usados para evitar caché obsoleta en CDN/navegador.
 
 **Título contacto actual:** `Completa tu acceso a tevsys`
 

@@ -129,9 +129,9 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Título principal simplificado: **`Completa tu acceso a tevsys`**.
 - Se eliminó redundancia de copy en el encabezado (no repite "Has seleccionado X").
 - El bloque visual izquierdo ahora cambia por `?plan=` y usa imágenes de formulario sin barra superior:
-  - `/assets/images/plans/essential-v3-bronze.png`
-  - `/assets/images/plans/advanced-v3-silver.png`
-  - `/assets/images/plans/pro-v2-gold.png`
+  - `/assets/images/plans/essential-form-v4.png`
+  - `/assets/images/plans/advanced-form-v4.png`
+  - `/assets/images/plans/pro-form-v4.png`
 - `flow=demo` conserva comportamiento específico de demo.
 
 ### `src/components/forms/ContactForm.astro`
@@ -145,9 +145,10 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### `src/components/sections/heros/HomeHeroSection.astro`
 - Se adopta el marco AIDA como guía de copy del hero:
   - **Atención:** `Tu capital merece más que buenas intenciones`
-  - **Interés:** `Plataforma de verificación de disciplina para operar en mercados financieros.`
+  - **Interés:** `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`
   - **Deseo:** `Where precision meets the edge`
   - **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTA `Descargar demo →`
+- El texto de interés se mantiene completo (sin recortes) y se presenta en 2 líneas para legibilidad.
 
 ---
 
@@ -159,3 +160,25 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Criterio de validación temporal:
   1. Validar primero en `tevsys-landiing.vercel.app`.
   2. Confirmar después en `tevsys.io` cuando termine sincronización DNS/CDN/SSL.
+- Para evitar caché de imágenes en formulario por plan, se aplicó **cache-bust por renombrado** a archivos `*-form-v4.png`.
+
+---
+
+## 13) Microajustes de copy/UX (decisiones de producto)
+
+### Mensaje principal (criterio)
+- Se prioriza **claridad de propuesta de valor** frente a brevedad extrema en copy del hero.
+- Racional: el producto es novedoso; conviene explicitar categoría + capacidad diferencial desde el primer pantallazo.
+
+### Frases ajustadas
+- Subtítulo de sección valor:
+  - de `Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí.`
+  - a `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
+- Objetivo del ajuste: reflejar explícitamente el bloqueo operativo, no solo el cierre.
+
+### Cards de planes (UX visual)
+- Se corrige desalineación de CTAs entre Essential/Advanced/Pro usando layout flex:
+  - `plan-card` a altura completa.
+  - `plan-card__content` en columna con `flex: 1`.
+  - `plan-card__cta` con `margin-top: auto`.
+- Resultado: botones en la misma línea horizontal aunque el texto de cada card tenga distinta longitud.

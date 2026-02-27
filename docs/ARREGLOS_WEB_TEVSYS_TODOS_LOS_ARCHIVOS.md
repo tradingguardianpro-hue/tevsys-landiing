@@ -51,9 +51,10 @@ Resumen técnico completo para revisión interna / DeepSeq.
 - Título actual: `Completa tu acceso a tevsys`.
 - El badge de plan se mantiene en el formulario (lado derecho).
 - El visual izquierdo cambia por plan y usa rutas:
-  - `/assets/images/plans/essential-v3-bronze.png`
-  - `/assets/images/plans/advanced-v3-silver.png`
-  - `/assets/images/plans/pro-v2-gold.png`
+  - `/assets/images/plans/essential-form-v4.png`
+  - `/assets/images/plans/advanced-form-v4.png`
+  - `/assets/images/plans/pro-form-v4.png`
+- Cache-bust aplicado por renombrado de assets (`*-form-v4`) para evitar desalineación por caché.
 
 ### D) Founder
 - Se mantiene bloque de fundador sin cambios estructurales.
@@ -70,9 +71,10 @@ Resumen técnico completo para revisión interna / DeepSeq.
 - Tagline dot: `32px`
 - Copy en modo AIDA:
   - Atención: `Tu capital merece más que buenas intenciones`
-  - Interés: `Plataforma de verificación de disciplina para operar en mercados financieros.`
+  - Interés: `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`
   - Deseo: `Where precision meets the edge`
   - Acción: `Disponible en MT5 · Próximamente: más plataformas` + `Descargar demo →`
+- Presentación optimizada: el texto de interés se divide en 2 líneas para legibilidad sin perder contenido.
 
 ### Cards
 - Fondo `var(--theme-surface-1)`
@@ -82,6 +84,11 @@ Resumen técnico completo para revisión interna / DeepSeq.
 ### Plan cards
 - Grid 3 columnas desktop, 1 en móvil
 - CTA amarillo reutiliza lenguaje visual del hero
+- CTAs alineados horizontalmente entre cards con `flex` + `margin-top: auto`.
+
+### Copy de sección valor
+- Subtítulo actualizado para incluir bloqueo (diferencial operativo):
+  - `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
 
 ---
 
