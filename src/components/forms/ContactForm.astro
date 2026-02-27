@@ -1,26 +1,154 @@
 ---
-import { Button, FormInput, FormSelect, FormTextarea } from '@components/odyssey-theme';
+import { Button, FormInput } from '@components/odyssey-theme';
 
-const selectOptions = [
-  "Google Search",
-  "Social Media",
-  "Email",
-]
-
+const { selectedPlan = '' } = Astro.props;
+const normalizedPlan = (selectedPlan || '').toLowerCase();
 ---
 
-<form name="Contact Form" method="POST" action="/contact-thank-you">
-  <FormInput type="text" label="Name" name="Name" placeholder="John Doe" />
-  <FormInput type="email" label="Email" name="Email" placeholder="hello@example.com" />
-  <FormSelect label="How Did You Hear About Us?" options={selectOptions} />
-  <FormTextarea label="Message" name="Message" placeholder="Your message here..." />
-  <Button>Submit</Button>
+<form id="tevsysContactForm" name="Contact Form" method="POST" action="/contact-thank-you">
+  <FormInput type="text" label="Nombre" name="Name" placeholder="Tu nombre" required />
+  <FormInput type="email" label="Email" name="Email" placeholder="tu@email.com" required />
+
+  <div class="form-field__container">
+    <label for="planSelect">Plan</label>
+    <select id="planSelect" name="Plan" required>
+      <option value="" selected={normalizedPlan === ''}>Selecciona un plan</option>
+      <option value="essential" selected={normalizedPlan === 'essential'}>Essential</option>
+      <option value="advanced" selected={normalizedPlan === 'advanced'}>Advanced</option>
+      <option value="pro" selected={normalizedPlan === 'pro'}>Pro</option>
+      <option value="elite" selected={normalizedPlan === 'elite'}>Elite (consultar)</option>
+    </select>
+  </div>
+
+  <div class="form-field__container">
+    <label for="capitalSelect">Capital aproximado</label>
+    <select id="capitalSelect" name="ApproxCapital" required>
+      <option value="">Selecciona capital</option>
+      <option value="5000">Hasta 5.000 €</option>
+      <option value="10000">Hasta 10.000 €</option>
+      <option value="25000">Hasta 25.000 €</option>
+      <option value="50000">Hasta 50.000 €</option>
+      <option value="100000">Hasta 100.000 €</option>
+      <option value="200000">Hasta 200.000 €</option>
+      <option value="250000">Más de 200.000 €</option>
+    </select>
+  </div>
+
+  <div class="form-field__container">
+    <label for="experienceSelect">Experiencia</label>
+    <select id="experienceSelect" name="Experience" required>
+      <option value="">Selecciona una opción</option>
+      <option value="principiante">Principiante</option>
+      <option value="intermedio">Intermedio</option>
+      <option value="avanzado">Avanzado</option>
+      <option value="pro">Profesional / Prop Trader</option>
+    </select>
+  </div>
+
+  <div class="form-field__container">
+    <label for="contactChannel">Canal de contacto (opcional)</label>
+    <input id="contactChannel" type="text" name="ContactChannel" placeholder="Telegram, WhatsApp o teléfono" />
+  </div>
+
+  <p id="planValidationMessage" class="plan-validation-message" hidden></p>
+  <Button type="submit">Enviar solicitud</Button>
 </form>
+
+<script is:inline>
+  (() => {
+    const form = document.getElementById('tevsysContactForm');
+    if (!form) return;
+
+    const planSelect = document.getElementById('planSelect');
+    const capitalSelect = document.getElementById('capitalSelect');
+    const messageNode = document.getElementById('planValidationMessage');
+
+    const limits = {
+      essential: 10000,
+      advanced: 50000,
+      pro: 200000,
+      elite: Number.POSITIVE_INFINITY,
+    };
+
+    const planNames = {
+      essential: 'Essential',
+      advanced: 'Advanced',
+      pro: 'Pro',
+      elite: 'Elite',
+    };
+
+    const recommendationByCapital = (capital) => {
+      if (capital <= 10000) return 'Essential';
+      if (capital <= 50000) return 'Advanced';
+      if (capital <= 200000) return 'Pro';
+      return 'Elite';
+    };
+
+    const validatePlanAgainstCapital = () => {
+      const plan = (planSelect && planSelect.value || '').toLowerCase();
+      const capital = Number(capitalSelect && capitalSelect.value || 0);
+
+      if (!plan || !capital) {
+        messageNode.hidden = true;
+        messageNode.textContent = '';
+        return true;
+      }
+
+      const maxLimit = limits[plan];
+      const isValid = capital <= maxLimit;
+      if (isValid) {
+        messageNode.hidden = true;
+        messageNode.textContent = '';
+        return true;
+      }
+
+      const maxText = maxLimit.toLocaleString('es-ES');
+      const recommendedPlan = recommendationByCapital(capital);
+      messageNode.hidden = false;
+      messageNode.textContent = `Para ${planNames[plan]}, el capital máximo es ${maxText} €. Te recomendamos ${recommendedPlan}.`;
+      return false;
+    };
+
+    form.addEventListener('submit', (event) => {
+      if (!validatePlanAgainstCapital()) {
+        event.preventDefault();
+      }
+    });
+
+    planSelect && planSelect.addEventListener('change', validatePlanAgainstCapital);
+    capitalSelect && capitalSelect.addEventListener('change', validatePlanAgainstCapital);
+  })();
+</script>
 
 <style>
   form {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+  .form-field__container select,
+  .form-field__container input[type='text'] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid var(--form-field-border-color, #ccc);
+    color: var(--form-field-input-color, #000000);
+    border-radius: var(--form-field-border-radius, 0.25rem);
+    outline-style: none;
+    font-size: 1rem;
+    font-family: inherit;
+    -webkit-appearance: none;
+  }
+  .form-field__container select:focus,
+  .form-field__container input:focus {
+    border: 2px solid var(--form-field-border-focus-color, #000);
+  }
+  .plan-validation-message {
+    margin: 0;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: rgba(245, 176, 65, 0.15);
+    border: 1px solid rgba(245, 176, 65, 0.65);
+    color: var(--theme-on-bg);
+    font-size: 0.95rem;
   }
 </style>

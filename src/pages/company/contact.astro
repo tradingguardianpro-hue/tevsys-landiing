@@ -7,30 +7,29 @@ const seo = {
 	title: 'Contact | Astro Odyssey Theme',
 	description: 'Contact Page',
 };
+const selectedPlan = (Astro.url.searchParams.get('plan') || '').toLowerCase();
+const displayPlan = selectedPlan
+	? `${selectedPlan.charAt(0).toUpperCase()}${selectedPlan.slice(1)}`
+	: null;
 ---
 
 <Layout seo={seo}>
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<h1>Contact Us</h1>
+				<h1>{displayPlan ? `Has seleccionado ${displayPlan}` : 'Contacta con tevsys'}</h1>
 				<p>
-					This is a contact form using Odyssey's form components to create a
-					contact form component. The contact form is setup to use Netlify's
-					form detection; however, it can easily be translated to other popular
-					form services such as Formspree, Getform, Formspark, etc.
+					Completa el formulario para validar si este plan encaja con tu capital y operativa.
+					Te responderemos con el siguiente paso para activar la cuenta correctamente.
 				</p>
-				<div>
-					<p>
-						<em><a href="tel:8008675309">(800) 867-5309</a></em> • <em
-							><a href="mailto:hello@odysseytheme.com">hello@ourcompany.com</a
-							></em
-						>
-					</p>
-				</div>
+				<ul class="contact-hero__tips">
+					<li>Plan y capital aproximado se validan automáticamente.</li>
+					<li>Si no encaja, te sugerimos el plan correcto.</li>
+					<li>Sin ruido: solo datos clave para darte una respuesta rápida.</li>
+				</ul>
 			</div>
 			<div class="col-2__container">
-				<ContactForm />
+				<ContactForm selectedPlan={selectedPlan} />
 			</div>
 		</section>
 	</Container>
@@ -56,6 +55,13 @@ const seo = {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+	}
+	.contact-hero__tips {
+		padding-left: 1rem;
+		margin-top: 0.5rem;
+	}
+	.contact-hero__tips li {
+		margin-bottom: 0.35rem;
 	}
 	@media (max-width: 768px) {
 		.contact-hero__section {
