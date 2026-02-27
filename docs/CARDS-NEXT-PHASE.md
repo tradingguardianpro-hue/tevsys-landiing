@@ -36,6 +36,11 @@ Con CTAs funcionales:
 - `/company/contact?plan=advanced`
 - `/company/contact?plan=pro`
 
+### Estado funcional de lanzamiento
+- **Essential:** disponible en demo/beta (foco actual de estabilización).
+- **Advanced:** en desarrollo (captación por acceso anticipado).
+- **Pro:** en desarrollo (captación por acceso anticipado).
+
 ---
 
 ## 3) Decisiones pendientes de equipo
@@ -47,6 +52,10 @@ Elegir una opción:
 
 ### B. Formularios
 - Leer automáticamente el query param `plan` y precargar el plan seleccionado en contacto.
+- Flujo demo separado del flujo plan:
+  - Botón `Descargar demo` -> `/company/contact?flow=demo`
+  - `flow=demo` permite enviar sin plan preseleccionado
+  - `flow=plan` mantiene validación plan/capital
 
 ### C. Manual
 - Crear `/manual` y enlazar en footer.

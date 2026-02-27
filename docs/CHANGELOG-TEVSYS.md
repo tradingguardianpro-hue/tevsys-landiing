@@ -1,4 +1,4 @@
-﻿# Changelog tevsys — Estado actual (actualizado)
+# Changelog tevsys — Estado actual (actualizado)
 
 Registro completo de cambios aplicados en la landing de tevsys (base Odyssey Theme + Astro).
 
@@ -106,3 +106,15 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
    - pasar a visual más abstracto para evitar repetición con hero.
 2. Leer `plan` en el formulario de contacto automáticamente (preselección de plan).
 3. Añadir página `manual` y link en footer.
+
+---
+
+## 9) Ajuste de conversión (demo vs plan) — aplicado
+
+- `Descargar demo` ahora apunta a `/company/contact?flow=demo`.
+- El formulario de contacto diferencia dos modos:
+  - **Con plan** (`?plan=...`): valida capital máximo por plan.
+  - **Demo** (`?flow=demo`): permite envío sin plan preseleccionado.
+- Estado de planes en web:
+  - **Essential:** demo/beta disponible.
+  - **Advanced/Pro:** en desarrollo (acceso anticipado).

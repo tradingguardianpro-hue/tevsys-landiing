@@ -8,28 +8,37 @@ const seo = {
 	description: 'Contact Page',
 };
 const selectedPlan = (Astro.url.searchParams.get('plan') || '').toLowerCase();
+const flow = (Astro.url.searchParams.get('flow') || '').toLowerCase();
 const displayPlan = selectedPlan
 	? `${selectedPlan.charAt(0).toUpperCase()}${selectedPlan.slice(1)}`
 	: null;
+const isDemoFlow = flow === 'demo';
 ---
 
 <Layout seo={seo}>
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<h1>{displayPlan ? `Has seleccionado ${displayPlan}` : 'Contacta con tevsys'}</h1>
+				<h1>
+					{
+						isDemoFlow
+							? 'Solicita tu demo de tevsys'
+							: displayPlan
+								? `Has seleccionado ${displayPlan}`
+								: 'Contacta con tevsys'
+					}
+				</h1>
 				<p>
-					Completa el formulario para validar si este plan encaja con tu capital y operativa.
-					Te responderemos con el siguiente paso para activar la cuenta correctamente.
+					Completa el formulario y te indicamos el siguiente paso según tu perfil y el estado actual de cada plan.
 				</p>
 				<ul class="contact-hero__tips">
-					<li>Plan y capital aproximado se validan automáticamente.</li>
-					<li>Si no encaja, te sugerimos el plan correcto.</li>
-					<li>Sin ruido: solo datos clave para darte una respuesta rápida.</li>
+					<li>Essential: acceso demo/beta disponible.</li>
+					<li>Advanced y Pro: en desarrollo (lista de espera).</li>
+					<li>Solo datos clave para responderte rápido y con plan recomendado.</li>
 				</ul>
 			</div>
 			<div class="col-2__container">
-				<ContactForm selectedPlan={selectedPlan} />
+				<ContactForm selectedPlan={selectedPlan} allowNoPlan={isDemoFlow} />
 			</div>
 		</section>
 	</Container>

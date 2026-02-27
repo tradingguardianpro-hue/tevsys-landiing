@@ -1,7 +1,7 @@
 ---
 import { Button, FormInput } from '@components/odyssey-theme';
 
-const { selectedPlan = '' } = Astro.props;
+const { selectedPlan = '', allowNoPlan = false } = Astro.props;
 const normalizedPlan = (selectedPlan || '').toLowerCase();
 ---
 
@@ -9,7 +9,7 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
   <FormInput type="text" label="Nombre" name="Name" placeholder="Tu nombre" required />
   <FormInput type="email" label="Email" name="Email" placeholder="tu@email.com" required />
 
-  <input id="planInput" type="hidden" name="Plan" value={normalizedPlan} />
+  <input id="planInput" type="hidden" name="Plan" value={normalizedPlan} data-allow-no-plan={allowNoPlan ? 'true' : 'false'} />
   <p id="selectedPlanBadge" class="selected-plan-badge" hidden></p>
 
   <div class="form-field__container">
@@ -88,10 +88,14 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
 
     const renderPlanBadge = (plan) => {
       if (!badgeNode) return;
+      const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
       badgeNode.hidden = false;
       if (plan) {
         badgeNode.classList.remove('selected-plan-badge--warning');
         badgeNode.innerHTML = `Plan seleccionado: <strong>${plan.toUpperCase()}</strong>`;
+      } else if (canSubmitWithoutPlan) {
+        badgeNode.classList.remove('selected-plan-badge--warning');
+        badgeNode.textContent = 'Modo demo: sin plan preseleccionado.';
       } else {
         badgeNode.classList.add('selected-plan-badge--warning');
         badgeNode.textContent = 'No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".';
@@ -102,10 +106,17 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
       const plan = (planInput && planInput.value || '').toLowerCase();
       const capital = Number(capitalSelect && capitalSelect.value || 0);
 
-      if (!plan) {
+      const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
+      if (!plan && !canSubmitWithoutPlan) {
         messageNode.hidden = false;
         messageNode.textContent = 'Selecciona un plan desde la home para continuar.';
         return false;
+      }
+
+      if (!plan && canSubmitWithoutPlan) {
+        messageNode.hidden = true;
+        messageNode.textContent = '';
+        return true;
       }
 
       if (!capital) {
