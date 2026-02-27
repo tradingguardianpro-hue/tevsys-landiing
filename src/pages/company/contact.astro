@@ -20,14 +20,13 @@ const tips = [
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<h1 id="contactHeroTitle">Contacta con tevsys</h1>
+				<h1 id="contactHeroTitle">Completa tu acceso a tevsys</h1>
 				<p id="contactHeroIntro">{introText}</p>
 				<ul class="contact-hero__tips">
 					{tips.map((tip, idx) => <li id={`contactTip-${idx + 1}`}>{tip}</li>)}
 				</ul>
 				<div class="contact-hero__visual">
 					<img id="contactHeroImage" src="/logo-tevsys.png" alt="Visual de tevsys" loading="lazy" />
-					<p id="contactHeroVisualLabel" class="contact-hero__visual-label" hidden></p>
 				</div>
 			</div>
 			<div class="col-2__container">
@@ -46,7 +45,6 @@ const tips = [
 		const titleNode = document.getElementById('contactHeroTitle');
 		const introNode = document.getElementById('contactHeroIntro');
 		const imageNode = document.getElementById('contactHeroImage');
-		const labelNode = document.getElementById('contactHeroVisualLabel');
 		const tip1 = document.getElementById('contactTip-1');
 		const tip2 = document.getElementById('contactTip-2');
 		const tip3 = document.getElementById('contactTip-3');
@@ -72,10 +70,6 @@ const tips = [
 				imageNode.src = '/logo-tevsys.png';
 				imageNode.alt = 'Demo de tevsys';
 			}
-			if (labelNode) {
-				labelNode.hidden = true;
-				labelNode.textContent = '';
-			}
 			return;
 		}
 
@@ -100,18 +94,9 @@ const tips = [
 		const selected = planMap[plan];
 		if (!selected) return;
 
-		if (titleNode) titleNode.textContent = `Has seleccionado ${selected.name}`;
-		if (introNode) {
-			introNode.textContent =
-				'Completa el formulario y validamos si este plan encaja con tu capital y experiencia. Si hace falta, te recomendamos la mejor alternativa para empezar con seguridad.';
-		}
 		if (imageNode) {
 			imageNode.src = selected.image;
 			imageNode.alt = `Visual del plan ${selected.name}`;
-		}
-		if (labelNode) {
-			labelNode.hidden = false;
-			labelNode.textContent = selected.label;
 		}
 	})();
 </script>
@@ -146,7 +131,7 @@ const tips = [
 	}
 	.contact-hero__visual {
 		margin-top: 1rem;
-		width: min(260px, 72%);
+		width: min(360px, 88%);
 		border-radius: 0.85rem;
 		overflow: hidden;
 		background: #06080d;
@@ -157,21 +142,14 @@ const tips = [
 		width: 100%;
 		height: auto;
 		object-fit: contain;
-	}
-	.contact-hero__visual-label {
-		margin: 0;
-		padding: 0.6rem 0.7rem 0.75rem;
-		text-align: center;
-		font-size: 0.9rem;
-		letter-spacing: 0.05em;
-		color: rgba(255, 255, 255, 0.9);
+		object-position: center;
 	}
 	@media (max-width: 768px) {
 		.contact-hero__section {
 			grid-template-columns: 1fr;
 		}
 		.contact-hero__visual {
-			width: min(200px, 65%);
+			width: min(300px, 90%);
 		}
 	}
 </style>
