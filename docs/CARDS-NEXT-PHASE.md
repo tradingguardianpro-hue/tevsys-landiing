@@ -46,12 +46,12 @@ Con CTAs funcionales:
 ## 3) Decisiones pendientes de equipo
 
 ### A. Estilo visual de planes
-Elegir una opción:
-1. Mantener mano robótica en planes
-2. Pasar a visual más abstracto para evitar repetición con hero
+Estado actual elegido:
+1. Cards de planes (home) con visual de plan + barra superior `tevsys`.
+2. Formulario por plan con visual minimal (escudo + branding sutil), sin redundancia de copy en encabezado.
 
 ### B. Formularios
-- Leer automáticamente el query param `plan` y precargar el plan seleccionado en contacto.
+- `plan` por query param ya se lee en cliente y actualiza visual de contacto.
 - Flujo demo separado del flujo plan:
   - Botón `Descargar demo` -> `/company/contact?flow=demo`
   - `flow=demo` permite enviar sin plan preseleccionado
@@ -64,9 +64,9 @@ Elegir una opción:
 
 ## 4) Checklist operativo para siguiente iteración
 
-- [ ] Subir imágenes finales de planes a `public/assets/images/plans/`
-- [ ] Reemplazar placeholders de planes en `src/pages/index.astro`
-- [ ] Implementar preselección de plan en formulario
+- [x] Subir imágenes finales de planes a `public/assets/images/plans/`
+- [x] Reemplazar placeholders de planes en `src/pages/index.astro`
+- [x] Implementar preselección de plan en formulario
 - [ ] QA visual final desktop + móvil
 - [ ] QA de enlaces y copy
 

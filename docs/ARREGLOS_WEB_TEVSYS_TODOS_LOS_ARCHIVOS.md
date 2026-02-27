@@ -1,4 +1,4 @@
-﻿# Arreglos web tevsys — Todos los archivos (actualizado)
+# Arreglos web tevsys — Todos los archivos (actualizado)
 
 Resumen técnico completo para revisión interna / DeepSeq.
 
@@ -13,8 +13,11 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `src/components/core/Header.astro` | Estilos del CTA en nav (botón blanco redondeado). |
 | `src/components/head/BaseHead.astro` | Fuente Outfit cargada globalmente. |
 | `src/components/sections/heros/HomeHeroSection.astro` | Hero refinado: brand debajo imagen, punto 32px, botón amarillo, grid 1fr/1.5fr. |
-| `src/pages/index.astro` | 4 cards de valor (2x2), textos finales, imágenes nuevas, sección template de planes con CTA por plan. |
+| `src/pages/index.astro` | 4 cards de valor (2x2), textos finales, imágenes nuevas, sección de planes con CTA por plan e imágenes finales. |
+| `src/pages/company/contact.astro` | Contacto por plan con título simplificado + visual dinámico por `?plan=` (sin redundancia en encabezado). |
+| `src/components/forms/ContactForm.astro` | Badge de plan seleccionado + validación plan/capital + compatibilidad con `flow=demo`. |
 | `public/assets/images/home/cards/*` | Imágenes personalizadas de cards 1-4. |
+| `public/assets/images/plans/*` | Imágenes finales de cards de planes + visuales de formulario por plan. |
 | `docs/*.md` | Documentación actualizada con estado real. |
 
 ---
@@ -39,9 +42,20 @@ Resumen técnico completo para revisión interna / DeepSeq.
   - `/company/contact?plan=essential`
   - `/company/contact?plan=advanced`
   - `/company/contact?plan=pro`
-- Imágenes de plan en placeholder (hero) hasta que se suban las versiones finales.
+- Imágenes finales de cards:
+  - `/assets/images/plans/essential-card.png`
+  - `/assets/images/plans/advanced-card.png`
+  - `/assets/images/plans/pro-card.png`
 
-### C) Founder
+### C) Contacto por plan
+- Título actual: `Completa tu acceso a tevsys`.
+- El badge de plan se mantiene en el formulario (lado derecho).
+- El visual izquierdo cambia por plan y usa rutas:
+  - `/assets/images/plans/essential-v3-bronze.png`
+  - `/assets/images/plans/advanced-v3-silver.png`
+  - `/assets/images/plans/pro-v2-gold.png`
+
+### D) Founder
 - Se mantiene bloque de fundador sin cambios estructurales.
 
 ---
@@ -68,10 +82,8 @@ Resumen técnico completo para revisión interna / DeepSeq.
 
 ## Pendientes abiertos
 
-1. Reemplazar imágenes de planes con versiones finales retocadas.
-2. Decidir estética final de planes (mano robótica vs visual más abstracto).
-3. Implementar lectura automática de `?plan=` en formulario de contacto.
-4. Crear página de manual y añadir enlace en footer.
+1. Decidir ajustes finos de encuadre/contraste para visuales de formulario por plan.
+2. Crear página de manual y añadir enlace en footer.
 
 ---
 

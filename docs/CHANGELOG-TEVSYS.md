@@ -65,8 +65,10 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
   - `/company/contact?plan=essential`
   - `/company/contact?plan=advanced`
   - `/company/contact?plan=pro`
-- Estado actual: imágenes de plan en placeholder con `hero-tevsys.png`.
-- Pendiente: sustituir por imágenes finales retocadas de planes.
+- Cards de planes actualizadas con imágenes finales:
+  - `/assets/images/plans/essential-card.png`
+  - `/assets/images/plans/advanced-card.png`
+  - `/assets/images/plans/pro-card.png`
 
 ---
 
@@ -104,7 +106,7 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 1. En sección de planes, decidir estilo visual final:
    - mantener mano robótica en 3 planes, o
    - pasar a visual más abstracto para evitar repetición con hero.
-2. Leer `plan` en el formulario de contacto automáticamente (preselección de plan).
+2. (Resuelto) `plan` en URL se lee en cliente para evitar inconsistencias de render estático.
 3. Añadir página `manual` y link en footer.
 
 ---
@@ -118,3 +120,20 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Estado de planes en web:
   - **Essential:** demo/beta disponible.
   - **Advanced/Pro:** en desarrollo (acceso anticipado).
+
+---
+
+## 10) Contacto por plan — aplicado
+
+### `src/pages/company/contact.astro`
+- Título principal simplificado: **`Completa tu acceso a tevsys`**.
+- Se eliminó redundancia de copy en el encabezado (no repite "Has seleccionado X").
+- El bloque visual izquierdo ahora cambia por `?plan=` y usa imágenes de formulario sin barra superior:
+  - `/assets/images/plans/essential-v3-bronze.png`
+  - `/assets/images/plans/advanced-v3-silver.png`
+  - `/assets/images/plans/pro-v2-gold.png`
+- `flow=demo` conserva comportamiento específico de demo.
+
+### `src/components/forms/ContactForm.astro`
+- Mantiene badge funcional de plan seleccionado en el formulario.
+- Mantiene validación plan/capital por límites definidos.

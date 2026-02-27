@@ -1,4 +1,4 @@
-﻿# Contenido web tevsys landing (actualizado)
+# Contenido web tevsys landing (actualizado)
 
 Documento de contenido/copy actual para revisión de equipo.
 
@@ -66,7 +66,18 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Flujo actual:** cada botón abre contacto con plan en URL (`?plan=...`).
 
-**Nota:** imágenes de planes ahora son placeholder para probar estructura. Pendiente reemplazo por versiones finales retocadas.
+**Estado visual actual (cards de planes):**
+- Essential: `/assets/images/plans/essential-card.png`
+- Advanced: `/assets/images/plans/advanced-card.png`
+- Pro: `/assets/images/plans/pro-card.png`
+
+**Estado visual actual (formulario por plan):**
+- El bloque visual izquierdo cambia por plan con imagen sin barra superior y branding sutil:
+  - Essential: `/assets/images/plans/essential-v3-bronze.png`
+  - Advanced: `/assets/images/plans/advanced-v3-silver.png`
+  - Pro: `/assets/images/plans/pro-v2-gold.png`
+
+**Título contacto actual:** `Completa tu acceso a tevsys`
 
 ---
 
