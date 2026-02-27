@@ -13,6 +13,36 @@ const displayPlan = selectedPlan
 	? `${selectedPlan.charAt(0).toUpperCase()}${selectedPlan.slice(1)}`
 	: null;
 const isDemoFlow = flow === 'demo';
+const introText = isDemoFlow
+	? 'Déjanos tus datos y te ayudamos a empezar rápido. La demo está pensada para validar encaje real con tu operativa, sin ruido ni complicaciones.'
+	: displayPlan
+		? 'Completa el formulario y validamos si este plan encaja con tu capital y experiencia. Si hace falta, te recomendamos la mejor alternativa para empezar con seguridad.'
+		: 'Completa el formulario y te indicamos el siguiente paso según tu perfil y el estado actual de cada plan.';
+const tips = isDemoFlow
+	? [
+			'Demo orientada a validación real de tu operativa.',
+			'Respuesta rápida con los siguientes pasos para activación.',
+			'Proceso simple: solo pedimos datos clave.',
+		]
+	: [
+			'Essential: acceso demo/beta disponible.',
+			'Advanced y Pro: en desarrollo (lista de espera).',
+			'Solo datos clave para responderte rápido y con plan recomendado.',
+		];
+const contactVisualImage = isDemoFlow
+	? '/logo-tevsys.png'
+	: selectedPlan === 'essential'
+		? '/assets/images/plans/essential-v2.png'
+		: selectedPlan === 'advanced'
+			? '/assets/images/plans/advanced-v2-silver.png'
+			: selectedPlan === 'pro'
+				? '/assets/images/plans/pro.png'
+				: '/logo-tevsys.png';
+const contactVisualAlt = isDemoFlow
+	? 'Demo de tevsys'
+	: displayPlan
+		? `Visual del plan ${displayPlan}`
+		: 'Visual de tevsys';
 ---
 
 <Layout seo={seo}>
@@ -28,14 +58,13 @@ const isDemoFlow = flow === 'demo';
 								: 'Contacta con tevsys'
 					}
 				</h1>
-				<p>
-					Completa el formulario y te indicamos el siguiente paso según tu perfil y el estado actual de cada plan.
-				</p>
+				<p>{introText}</p>
 				<ul class="contact-hero__tips">
-					<li>Essential: acceso demo/beta disponible.</li>
-					<li>Advanced y Pro: en desarrollo (lista de espera).</li>
-					<li>Solo datos clave para responderte rápido y con plan recomendado.</li>
+					{tips.map((tip) => <li>{tip}</li>)}
 				</ul>
+				<div class="contact-hero__visual">
+					<img src={contactVisualImage} alt={contactVisualAlt} loading="lazy" />
+				</div>
 			</div>
 			<div class="col-2__container">
 				<ContactForm selectedPlan={selectedPlan} allowNoPlan={isDemoFlow} />
@@ -72,9 +101,26 @@ const isDemoFlow = flow === 'demo';
 	.contact-hero__tips li {
 		margin-bottom: 0.35rem;
 	}
+	.contact-hero__visual {
+		margin-top: 1rem;
+		width: min(180px, 55%);
+		border-radius: 0.85rem;
+		overflow: hidden;
+		background: #06080d;
+		border: 1px solid rgba(245, 176, 65, 0.3);
+	}
+	.contact-hero__visual img {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
 	@media (max-width: 768px) {
 		.contact-hero__section {
 			grid-template-columns: 1fr;
+		}
+		.contact-hero__visual {
+			width: min(200px, 65%);
 		}
 	}
 </style>
