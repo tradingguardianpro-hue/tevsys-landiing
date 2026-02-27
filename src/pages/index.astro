@@ -9,7 +9,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<Container>
 		<section class="feature-card__section">
 			<h2 class="feature-section__title">¿Cuánto dinero has perdido por no parar a tiempo?</h2>
-			<p>Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí.</p>
+			<p>Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.</p>
 			<div class="feature-card__grid">
 				<a href="/company/contact" class="tevsys-card">
 					<div class="tevsys-card__image">
@@ -178,6 +178,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	.plan-card {
 		display: flex;
 		flex-direction: column;
+		height: 100%;
 		background-color: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
@@ -194,6 +195,9 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	}
 	.plan-card__content {
 		padding: 1rem 1.1rem 1.2rem;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
 	}
 	.plan-card__content h3 {
 		margin: 0 0 0.45rem;
@@ -206,6 +210,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		margin-top: auto;
 		padding: 0.48rem 0.95rem;
 		border-radius: 1.5rem;
 		background: #f5b041;
