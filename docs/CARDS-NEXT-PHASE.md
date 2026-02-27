@@ -69,6 +69,7 @@ Estado actual elegido:
 - [x] Implementar preselección de plan en formulario
 - [ ] QA visual final desktop + móvil
 - [ ] QA de enlaces y copy
+- [ ] QA de consistencia entre `tevsys-landiing.vercel.app` y `tevsys.io` (post-propagación)
 
 ---
 

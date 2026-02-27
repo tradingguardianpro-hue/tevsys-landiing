@@ -68,6 +68,11 @@ Resumen técnico completo para revisión interna / DeepSeq.
   - `background: #f5b041`
   - `hover: #f7c050`
 - Tagline dot: `32px`
+- Copy en modo AIDA:
+  - Atención: `Tu capital merece más que buenas intenciones`
+  - Interés: `Plataforma de verificación de disciplina para operar en mercados financieros.`
+  - Deseo: `Where precision meets the edge`
+  - Acción: `Disponible en MT5 · Próximamente: más plataformas` + `Descargar demo →`
 
 ### Cards
 - Fondo `var(--theme-surface-1)`
@@ -90,3 +95,8 @@ Resumen técnico completo para revisión interna / DeepSeq.
 ## Nota de proceso
 
 Se trabajó con iteración visual continua (prueba-error controlado) para mantener coherencia de marca: negro + gris lineal + acento amarillo + iridiscente moderado.
+
+### Nota de validación de entornos
+- Referencia principal de despliegue: `tevsys-landiing.vercel.app`.
+- `tevsys.io` puede mostrar retraso temporal frente al deploy por DNS/CDN/SSL.
+- Protocolo: validar primero en Vercel y confirmar después en dominio oficial.

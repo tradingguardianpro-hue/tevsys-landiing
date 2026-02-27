@@ -13,11 +13,19 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Hero
 - **H1:** `Tu capital merece más que buenas intenciones`
+- **Línea aclaratoria:** `Plataforma de verificación de disciplina para operar en mercados financieros.`
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo grande (`32px`)
 - **Botón:** `Descargar demo →` (amarillo)
+- **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
 - **Imagen:** mano robótica + candado (`hero-tevsys.png`)
 - **Texto bajo imagen:** `Trading Edge Verification System`
+
+### Marco de copy del hero (AIDA)
+- **Atención:** `Tu capital merece más que buenas intenciones`
+- **Interés:** `Plataforma de verificación de disciplina para operar en mercados financieros.`
+- **Deseo:** `Where precision meets the edge`
+- **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTA `Descargar demo →`
 
 ---
 
@@ -92,3 +100,4 @@ Documento de contenido/copy actual para revisión de equipo.
 - Home funcional y coherente visualmente.
 - Cards 1-4 con imagen personalizada integradas.
 - Planes montados en modo plantilla para test/iteración.
+- Nota operativa: validar cambios primero en `tevsys-landiing.vercel.app`; `tevsys.io` puede reflejar con retraso por sincronización de dominio/CDN.

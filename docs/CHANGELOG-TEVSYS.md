@@ -137,3 +137,25 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### `src/components/forms/ContactForm.astro`
 - Mantiene badge funcional de plan seleccionado en el formulario.
 - Mantiene validación plan/capital por límites definidos.
+
+---
+
+## 11) Hero framework AIDA — aplicado
+
+### `src/components/sections/heros/HomeHeroSection.astro`
+- Se adopta el marco AIDA como guía de copy del hero:
+  - **Atención:** `Tu capital merece más que buenas intenciones`
+  - **Interés:** `Plataforma de verificación de disciplina para operar en mercados financieros.`
+  - **Deseo:** `Where precision meets the edge`
+  - **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTA `Descargar demo →`
+
+---
+
+## 12) Incidencia operativa de dominio (seguimiento)
+
+- Se detectan ventanas de desalineación temporal entre:
+  - `tevsys-landiing.vercel.app` (deploy actualizado)
+  - `tevsys.io` (actualización más lenta/intermitente)
+- Criterio de validación temporal:
+  1. Validar primero en `tevsys-landiing.vercel.app`.
+  2. Confirmar después en `tevsys.io` cuando termine sincronización DNS/CDN/SSL.
