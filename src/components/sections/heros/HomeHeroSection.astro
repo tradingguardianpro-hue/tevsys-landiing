@@ -7,14 +7,15 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 <Container>
   <section class="hero-section__section">
     <div class="hero-section__text">
-      <h1 class="hero-title">Tu capital merece más que buenas intenciones</h1>
+      <h1 class="hero-title">Plataforma de verificación de disciplina para operar en mercados financieros</h1>
       <div class="hero-tagline">
         <span class="hero-tagline__dot"></span>
-        <span class="hero-tagline__text">Where precision meets the edge</span>
+        <span class="hero-tagline__text">Tus reglas. Ejecutadas. Sin excepciones. Sin excusas.</span>
       </div>
       <a href="/company/contact?flow=demo" class="hero-download-btn">
         Descargar demo →
       </a>
+      <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
       {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
     </div>
     <div class="hero-section__image">
@@ -65,6 +66,11 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   }
   .hero-download-btn:hover {
     background: #f7c050;
+  }
+  .hero-platform-note {
+    margin: 0.65rem 0 0;
+    font-size: 0.84rem;
+    opacity: 0.78;
   }
   .hero-tagline {
     display: inline-flex;
