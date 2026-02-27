@@ -1,47 +1,70 @@
-# Cards — Fase siguiente (para DeepSeq)
+﻿# Cards & planes — Fase siguiente (actualizado)
 
-## Contexto
-
-Las cards de la home actualmente usan imágenes placeholder (landing-1, landing-2, about). El cliente quiere subir imágenes editadas por él, incluyendo la estrella de tevsys en cada imagen.
-
-**Decisión:** La estrella NO va en el H1 del hero. Va integrada en las imágenes de las cards (editadas por el cliente).
+Este documento reemplaza el enfoque inicial de placeholders y recoge el estado actual + siguiente iteración.
 
 ---
 
-## Estructura actual de las cards
+## 1) Estado actual (ya implementado)
 
-```html
-<a href="/company/contact" class="tevsys-card">
-  <div class="tevsys-card__image">
-    <img src="/assets/images/home/screenshots/landing-1.png" alt="Precisión milimétrica" />
-  </div>
-  <div class="tevsys-card__content">
-    <h3>Precisión milimétrica</h3>
-    <p>...</p>
-  </div>
-</a>
-```
+### Cards de valor (home)
+- Ya hay 4 cards activas:
+  1. `0,06% error promedio`
+  2. `HyperClose`
+  3. `SML — Smart Money Lock`
+  4. `Evidencia verificable`
 
-**Card 1:** Precisión milimétrica — `landing-1.png`  
-**Card 2:** HyperClose — `landing-2.png`  
-**Card 3:** Evidencia verificable — `about.png`
+### Imágenes ya conectadas
+- `/assets/images/home/cards/card-1-input.png`
+- `/assets/images/home/cards/card-2-hyperclose.png`
+- `/assets/images/home/cards/card-3-sml.png`
+- `/assets/images/home/cards/card-4-evidencia.png`
 
----
-
-## Rutas de imágenes
-
-- Actuales: `public/assets/images/home/screenshots/`
-- Sugerida para imágenes nuevas: `public/assets/images/home/cards/`
-  - `precision-milimetrica.png`
-  - `hyperclose.png`
-  - `evidencia-verificable.png`
-
-O el cliente puede indicar nombres/rutas.
+### Diseño
+- Sistema visual coherente: negro + icono gris + acento amarillo + iridiscente moderado.
 
 ---
 
-## Cambios a aplicar
+## 2) Nueva fase activa: Planes
 
-1. Crear carpeta para imágenes de cards (si no existe).
-2. Actualizar `src/pages/index.astro` para apuntar a las nuevas rutas una vez el cliente tenga las imágenes.
-3. Las imágenes deben incluir la estrella ya editada (no es un overlay en código).
+Ya existe una sección template en home:
+- `Essential`
+- `Advanced`
+- `Pro`
+
+Con CTAs funcionales:
+- `/company/contact?plan=essential`
+- `/company/contact?plan=advanced`
+- `/company/contact?plan=pro`
+
+---
+
+## 3) Decisiones pendientes de equipo
+
+### A. Estilo visual de planes
+Elegir una opción:
+1. Mantener mano robótica en planes
+2. Pasar a visual más abstracto para evitar repetición con hero
+
+### B. Formularios
+- Leer automáticamente el query param `plan` y precargar el plan seleccionado en contacto.
+
+### C. Manual
+- Crear `/manual` y enlazar en footer.
+
+---
+
+## 4) Checklist operativo para siguiente iteración
+
+- [ ] Subir imágenes finales de planes a `public/assets/images/plans/`
+- [ ] Reemplazar placeholders de planes en `src/pages/index.astro`
+- [ ] Implementar preselección de plan en formulario
+- [ ] QA visual final desktop + móvil
+- [ ] QA de enlaces y copy
+
+---
+
+## 5) Criterio de calidad visual acordado
+
+- No sobrecargar con demasiadas formas iridiscentes.
+- Mantener consistencia de grosor y tono en iconos.
+- Dar protagonismo al mensaje, no solo al adorno visual.

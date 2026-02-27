@@ -1,56 +1,83 @@
-# Contenido web tevsys landing
+﻿# Contenido web tevsys landing (actualizado)
 
-Estructura y copy actual de la landing tevsys.
+Documento de contenido/copy actual para revisión de equipo.
 
 ---
 
 ## Header
-- **Logo:** "tevsys" en óvalo (sin estrella)
-- **Nav:** Inicio | Acceso | Contacto
-- **CTA destacado:** Acceso (botón blanco)
+- **Logo:** `tevsys` en óvalo (sin estrella)
+- **Navegación:** Inicio | Acceso | Contacto
+- **CTA destacado en nav:** Acceso
 
 ---
 
 ## Hero
-- **H1:** "Tu capital merece más que buenas intenciones"
-- **Tagline:** "Where precision meets the edge" (con punto amarillo 32px)
-- **Botón:** "Descargar demo →"
-- **Imagen:** Robot con mano dorada y candado (`hero-tevsys.png`)
-- **Brand debajo imagen:** "Trading Edge Verification System" (pequeño, gris claro, alineado a la izquierda)
+- **H1:** `Tu capital merece más que buenas intenciones`
+- **Tagline:** `Where precision meets the edge`
+- **Punto de tagline:** amarillo grande (`32px`)
+- **Botón:** `Descargar demo →` (amarillo)
+- **Imagen:** mano robótica + candado (`hero-tevsys.png`)
+- **Texto bajo imagen:** `Trading Edge Verification System`
 
 ---
 
-## Sección intermedia
-- **Título:** "¿Cuánto dinero has perdido por no parar a tiempo?"
-- **Subtítulo:** "Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí."
+## Sección principal de valor
+
+### Título
+`¿Cuánto dinero has perdido por no parar a tiempo?`
+
+### Subtítulo
+`Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí.`
+
+### Cards (4)
+
+#### 1) 0,06% error promedio
+- Hook: `El mercado no perdona. Nosotros tampoco.`
+- Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **50 operativas documentadas**, 0,06% error medio.
+
+#### 2) HyperClose
+- Hook: `Nadie te enseña a parar. Aprendes cuando ya es tarde.`
+- Texto: Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.
+
+#### 3) SML — Smart Money Lock
+- Hook: `No es obligatorio. Es una recompensa.`
+- Texto 1: Tú eliges si activarlo. Y si lo haces, decides qué porcentaje de tus ganancias de ayer quieres blindar para hoy (entre el 5% y el 25%).
+- Texto 2: Puedes operar con tus límites de siempre. Pero si un día decides activarlo y cierras en verde, el 75% de tus ganancias queda blindado. El resto, a por todas.
+- Cierre: Tú decides cuándo quieres jugar con ventaja.
+
+#### 4) Evidencia verificable
+- Hook: `No confíes. Comprueba.`
+- Texto: Panel, logs y reporte oficial MT5 por cada cierre. Para el trader, el inversor o el auditor. No hay "creemos que cumple"; hay evidencia medible.
 
 ---
 
-## Cards (3)
+## Nueva sección (template) — Planes
 
-### Card 1 — Precisión milimétrica
-- **Título:** Precisión milimétrica
-- **Texto:** Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. 46 operativas documentadas, 0,06% error medio.
+### Título
+`Elige tu cuenta`
 
-### Card 2 — HyperClose
-- **Título:** HyperClose
-- **Hook (itálica):** "Nadie te enseña a parar. Aprendes cuando ya es tarde."
-- **Texto:** Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.
+### Subtítulo
+`Selecciona el plan que mejor encaja contigo. Luego ajustamos contigo los detalles.`
 
-### Card 3 — Evidencia verificable
-- **Título:** Evidencia verificable
-- **Texto:** Panel, logs y reporte oficial MT5 por cierre. Para el trader, el inversor o el auditor. No hay "creemos que cumple"; hay evidencia medible.
+### Planes
+- Essential → botón `Elegir Essential`
+- Advanced → botón `Elegir Advanced`
+- Pro → botón `Elegir Pro`
 
----
+**Flujo actual:** cada botón abre contacto con plan en URL (`?plan=...`).
 
-## Founder
-- **Claim:** "tevsys no es el sueño de un inversor. Es la respuesta de un trader."
-- **Cita:** "Nadie me enseñó a gestionar el riesgo ni la disciplina. Tuve que inventar algo que me obligara a cumplir mis límites. tevsys es eso: lo que me faltaba entonces, ahora para todos."
-- **Firma:** — Gabi, fundador de tevsys
+**Nota:** imágenes de planes ahora son placeholder para probar estructura. Pendiente reemplazo por versiones finales retocadas.
 
 ---
 
-## Configuración
-- **Title:** tevsys | Where precision meets the edge
-- **Descripción:** El airbag que certifica disciplina algorítmica en MT5. Límites que se cumplen. Cierre preciso. Evidencia verificable para traders, prop firms y auditorías.
-- **URL:** https://www.tevsys.io
+## Bloque fundador
+- Claim: `tevsys no es el sueño de un inversor. Es la respuesta de un trader.`
+- Cita de Gabi (se mantiene)
+- Firma: `— Gabi, fundador de tevsys`
+
+---
+
+## Estado actual
+- Home funcional y coherente visualmente.
+- Cards 1-4 con imagen personalizada integradas.
+- Planes montados en modo plantilla para test/iteración.

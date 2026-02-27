@@ -1,129 +1,108 @@
-# Changelog tevsys — Cambios realizados (para DeepSeq)
+﻿# Changelog tevsys — Estado actual (actualizado)
 
-Documentación completa de todos los cambios aplicados al proyecto tevsys landing. Base: Odyssey Theme + Astro.
-
----
-
-## 1. Logo / Brand (BrandOval)
-
-**Archivo:** `src/components/BrandOval.astro`
-
-**Cambios:**
-- Se eliminó la estrella del logo. Solo queda el texto "tevsys" dentro de un óvalo.
-- El óvalo mantiene: borde blanco 50% opacidad, fondo blanco 4% opacidad, border-radius 2.5rem.
-- Tipografía: 1.55rem, font-weight 600, lowercase, color blanco 95% opacidad.
-
-**Uso:** Se usa en el Header como logo principal (`Page.astro` → Header con slot logo → BrandOval).
+Registro completo de cambios aplicados en la landing de tevsys (base Odyssey Theme + Astro).
 
 ---
 
-## 2. Header y Navegación
+## 1) Brand, Header y navegación
 
-**Archivos:**
-- `src/config/nav.js` — Datos de navegación
-- `src/components/core/Header.astro` — Estilos del botón destacado
+### `src/components/BrandOval.astro`
+- Eliminada la estrella del logo.
+- Se mantiene solo `tevsys` en óvalo.
 
-**Cambios en nav.js:**
-- Se eliminó el enlace "Descargar demo" del header.
-- Navegación actual: **Inicio** | **Acceso** | **Contacto**.
-- **Acceso** es el CTA principal: `asButton: true` (fondo blanco, texto negro, destacado).
-- Ruta de Acceso: `/company/contact`.
+### `src/config/nav.js`
+- Menú principal: `Inicio` | `Acceso` | `Contacto`.
+- `Acceso` se dejó como CTA destacado (`asButton: true`).
 
-**Estilos del botón CTA (Header.astro):**
-- `.nav-link--button`: padding 0.4rem 1rem, background #fff, color #111, border-radius 2rem, opacity 1, font-weight 500.
-- Hover: opacity 0.92.
+### `src/components/core/Header.astro`
+- Estilos del CTA de navegación (`.nav-link--button`) en blanco, redondeado.
 
 ---
 
-## 3. Hero Section (HomeHeroSection)
+## 2) Hero (home)
 
-**Archivo:** `src/components/sections/heros/HomeHeroSection.astro`
-
-### 3.1 Estructura
-- Grid 2 columnas: texto a la izquierda, imagen a la derecha.
-- Columnas: 1fr | 1.15fr. Gap 2rem.
-- Responsive: una columna en ≤768px.
-
-### 3.2 Contenido
-- **H1:** "Tu capital merece más que buenas intenciones"
-- **Fuente H1:** Outfit (cargada en BaseHead.astro)
-- **Tagline:** Pill con punto amarillo + texto "Where precision meets the edge"
-- **Botón:** "Descargar demo →" — pequeño, ovalado (padding 0.45rem 1rem, font-size 0.9rem, border-radius 2rem)
-- **Imagen:** `/hero-tevsys.png` (robot con mano dorada y candado)
-
-### 3.3 Tagline (pill)
-- Borde blanco 50% opacidad, fondo blanco 3% opacidad, border-radius 2rem.
-- **Punto amarillo:** 32×32px, `#f5b041`, border-radius 50%, flex-shrink 0.
-- Gap entre punto y texto: 0.85rem.
-- Texto: 1.05rem, opacity 0.95.
-
-### 3.4 "Trading Edge Verification System"
-- **Posición:** Debajo de la imagen, alineado a la izquierda (NO superpuesto sobre la imagen).
-- Estructura: `hero-section__image` es flex column; el texto va después de `hero-image__wrapper`.
-- Estilos: `margin-top: 0.75rem`, `align-self: flex-start`, font-size 0.75rem, font-weight 400, color rgba(255,255,255,0.45), letter-spacing 0.02em.
-
-### 3.5 Botón Descargar demo (hero)
-- Tamaño reducido, estilo oval.
-- Enlace a `/company/contact`.
+### `src/components/sections/heros/HomeHeroSection.astro`
+- H1 con fuente Outfit: **"Tu capital merece más que buenas intenciones"**.
+- Tagline con punto amarillo ampliado a `32px`.
+- Texto `Trading Edge Verification System` movido debajo de la imagen, alineado a la izquierda.
+- Botón `Descargar demo →` en amarillo (`#f5b041`) con hover `#f7c050`.
+- Grid del hero ajustado para dar más protagonismo a la imagen: `1fr 1.5fr`.
 
 ---
 
-## 4. Fuentes y assets globales
+## 3) Home: cards de valor (4 cards)
 
-**BaseHead.astro:** Outfit cargada desde Google Fonts (wght 300–700).
+### `src/pages/index.astro`
+Se pasó de 3 a 4 cards en layout `2x2`, con copy actualizado.
 
-**Imágenes usadas:**
-- Hero: `/hero-tevsys.png`
-- Logo (si se usara Logo.astro): `/logo-tevsys.png` — en Header se usa BrandOval, no Logo.
+#### Card 1 — `0,06% error promedio`
+- Hook: `El mercado no perdona. Nosotros tampoco.`
+- Texto actualizado a **50 operativas documentadas**.
+- Imagen: `/assets/images/home/cards/card-1-input.png`
 
----
+#### Card 2 — `HyperClose`
+- Hook mantenido: `Nadie te enseña a parar. Aprendes cuando ya es tarde.`
+- Imagen: `/assets/images/home/cards/card-2-hyperclose.png`
 
-## 5. Sección de cards (feature cards) — Estado actual
+#### Card 3 — `SML — Smart Money Lock`
+- Hook final: `No es obligatorio. Es una recompensa.`
+- Incluye frase de configuración opcional: porcentaje entre `5%` y `25%`.
+- Imagen: `/assets/images/home/cards/card-3-sml.png`
 
-**Archivo:** `src/pages/index.astro`
-
-**Estructura:**
-- Título: "¿Cuánto dinero has perdido por no parar a tiempo?"
-- Subtítulo: "Sin excusas. Las buenas intenciones no cierran operaciones. Nosotros sí."
-- Grid de 3 cards (`tevsys-card`), cada una con:
-  - `tevsys-card__image` — imagen superior, aspect-ratio 16/10, object-fit cover
-  - `tevsys-card__content` — título H3 + párrafos
-
-**Imágenes actuales (placeholders):**
-1. **Precisión milimétrica:** `/assets/images/home/screenshots/landing-1.png`
-2. **HyperClose:** `/assets/images/home/screenshots/landing-2.png`
-3. **Evidencia verificable:** `/assets/images/home/screenshots/about.png`
-
-**Próxima fase (pendiente):**
-- Sustituir esas imágenes por imágenes editadas por el cliente.
-- Incluir la estrella de tevsys dentro de las imágenes personalizadas (no en el H1 del hero).
-- Rutas sugeridas para las nuevas imágenes: `public/assets/images/home/cards/` o similar.
+#### Card 4 — `Evidencia verificable`
+- Hook: `No confíes. Comprueba.`
+- Imagen: `/assets/images/home/cards/card-4-evidencia.png`
 
 ---
 
-## 6. Configuración general
+## 4) Nueva sección template: Planes
 
-**settings.js:**
-- `enableThemeSwitcher: false`
-- `showPlug: false`
-- Tema por defecto: dark (`data-theme="dark"` en Base.astro)
+### `src/pages/index.astro`
+Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 
----
-
-## Resumen de archivos modificados
-
-| Archivo | Cambio principal |
-|---------|------------------|
-| `src/components/BrandOval.astro` | Solo "tevsys", sin estrella |
-| `src/config/nav.js` | Sin "Descargar demo", Acceso como CTA |
-| `src/components/core/Header.astro` | Estilos `.nav-link--button` |
-| `src/components/sections/heros/HomeHeroSection.astro` | Hero completo: H1 Outfit, tagline con punto 32px, brand debajo imagen, botón pequeño |
-| `src/components/head/BaseHead.astro` | Fuente Outfit |
-| `src/pages/index.astro` | Cards con estructura tevsys-card |
+- 3 planes: `Essential`, `Advanced`, `Pro`.
+- Cada plan tiene CTA directo a contacto con query param:
+  - `/company/contact?plan=essential`
+  - `/company/contact?plan=advanced`
+  - `/company/contact?plan=pro`
+- Estado actual: imágenes de plan en placeholder con `hero-tevsys.png`.
+- Pendiente: sustituir por imágenes finales retocadas de planes.
 
 ---
 
-## Próximos pasos
+## 5) Fundador y footer
 
-1. **Cards:** Permitir subir imágenes personalizadas (con estrella) para las 3 cards.
-2. Definir rutas y nombres de archivos para las nuevas imágenes de cards.
+- Se mantiene bloque fundador tal cual (claim + cita + firma).
+- Se mantiene footer existente.
+
+---
+
+## 6) Configuración/estilo global relevante
+
+- `BaseHead.astro`: Outfit cargada desde Google Fonts.
+- `settings.js`: `enableThemeSwitcher: false`, `showPlug: false`.
+- Tema por defecto dark (`data-theme="dark"`).
+
+---
+
+## 7) Archivos principales tocados
+
+- `src/components/BrandOval.astro`
+- `src/config/nav.js`
+- `src/components/core/Header.astro`
+- `src/components/sections/heros/HomeHeroSection.astro`
+- `src/pages/index.astro`
+- `docs/CHANGELOG-TEVSYS.md`
+- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`
+- `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`
+- `docs/CARDS-NEXT-PHASE.md`
+
+---
+
+## 8) Pendiente de decisión (equipo)
+
+1. En sección de planes, decidir estilo visual final:
+   - mantener mano robótica en 3 planes, o
+   - pasar a visual más abstracto para evitar repetición con hero.
+2. Leer `plan` en el formulario de contacto automáticamente (preselección de plan).
+3. Añadir página `manual` y link en footer.
