@@ -30,11 +30,31 @@ const seo = {
 		<section class="feature-proof">
 			<h2>Qué puedes comprobar</h2>
 			<ul>
-				<li>Panel con cálculo visible para validar cada cierre.</li>
-				<li>Logs auditables por evento.</li>
-				<li>50 operativas documentadas con error promedio del 0,06%.</li>
-				<li>Validación en 5 brokers distintos.</li>
+				<li><a class="evidence-link" href="#precision-panel">Panel con cálculo visible para validar cada cierre.</a></li>
+				<li><a class="evidence-link" href="#precision-logs">Logs auditables por evento.</a></li>
+				<li><a class="evidence-link" href="#precision-stats">Operativas documentadas con error promedio en condiciones normales de ~0,06%.</a></li>
+				<li><a class="evidence-link" href="#precision-environments">Validación en 5 entornos de ejecución.</a></li>
 			</ul>
+		</section>
+
+		<section id="precision-panel" class="feature-proof-detail">
+			<h3>Panel con cálculo visible</h3>
+			<p>Mostramos en pantalla el límite, el ajuste aplicado y el resultado de cierre para que puedas comparar configuración vs ejecución real.</p>
+		</section>
+
+		<section id="precision-logs" class="feature-proof-detail">
+			<h3>Logs auditables</h3>
+			<p>Cada evento relevante queda registrado. Puedes revisarlo en MT5 desde <strong>Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs</strong> y seleccionar la fecha.</p>
+		</section>
+
+		<section id="precision-stats" class="feature-proof-detail">
+			<h3>Resumen estadístico</h3>
+			<p>La documentación consolidada muestra precisión media cercana al 0,06% en condiciones normales, junto con casos reales por tipo de cuenta y escenario.</p>
+		</section>
+
+		<section id="precision-environments" class="feature-proof-detail">
+			<h3>Entornos validados</h3>
+			<p>La evidencia incluye validaciones en distintos entornos y condiciones operativas para evitar resultados sesgados por un solo contexto de ejecución.</p>
 		</section>
 
 		<section class="feature-cta">
@@ -101,6 +121,35 @@ const seo = {
 	}
 	.feature-proof li {
 		margin-bottom: 0.45rem;
+		line-height: 1.5;
+	}
+	.evidence-link {
+		color: #ffffff;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s ease;
+		cursor: pointer;
+	}
+	.evidence-link:hover {
+		color: #f5b041;
+	}
+	.evidence-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	.feature-proof-detail {
+		margin: 1rem 0 0;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+	}
+	.feature-proof-detail h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.05rem;
+	}
+	.feature-proof-detail p {
+		margin: 0;
 		line-height: 1.5;
 	}
 	.feature-cta {
