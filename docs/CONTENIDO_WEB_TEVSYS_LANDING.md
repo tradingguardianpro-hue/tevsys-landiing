@@ -38,6 +38,9 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Subtítulo
 `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
 
+### Línea de apoyo (mecanismo)
+`Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`
+
 ### Cards (4)
 
 #### 1) 0,06% error promedio
@@ -46,17 +49,19 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 2) HyperClose
 - Hook: `Nadie te enseña a parar. Aprendes cuando ya es tarde.`
-- Texto: Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.
+- Texto actual: `Si estás bloqueado o en un día OFF, cualquier intento de operar se cierra al instante.`
+- Texto previo inmediato (referencia): `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos. Y no podrás reintentarlo hasta la siguiente rotación automática (diaria o semanal).`
+- Texto técnico anterior (referencia): `Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.`
 
 #### 3) SML — Smart Money Lock
 - Hook: `No es obligatorio. Es una recompensa.`
 - Texto 1: Tú eliges si activarlo. Y si lo haces, decides qué porcentaje de tus ganancias de ayer quieres blindar para hoy (entre el 5% y el 25%).
 - Texto 2: Puedes operar con tus límites de siempre. Pero si un día decides activarlo y cierras en verde, el 75% de tus ganancias queda blindado. El resto, a por todas.
-- Cierre: Tú decides cuándo quieres jugar con ventaja.
+- Cierre actual: `Además, puedes definir límites por día y semana e incluir días OFF completos cuando no quieras operar.`
 
 #### 4) Evidencia verificable
 - Hook: `No confíes. Comprueba.`
-- Texto: Panel, logs y reporte oficial MT5 por cada cierre. Para el trader, el inversor o el auditor. No hay "creemos que cumple"; hay evidencia medible.
+- Texto: `Panel, logs y reporte oficial MT5 por cada cierre. Para trader, inversor o auditor. No hay "creemos que cumple": hay evidencia medible. Cada cierre, cada bloqueo y cada rotación queda registrado.`
 
 ---
 
@@ -103,3 +108,10 @@ Documento de contenido/copy actual para revisión de equipo.
 - Cards 1-4 con imagen personalizada integradas.
 - Planes montados en modo plantilla para test/iteración.
 - Nota operativa: validar cambios primero en `tevsys-landiing.vercel.app`; `tevsys.io` puede reflejar con retraso por sincronización de dominio/CDN.
+
+---
+
+## Pendientes para la próxima sesión
+
+1. Revisar copy de `HyperClose` para recuperar con claridad el concepto clave: intento de operar estando bloqueado + cierre en milisegundos.
+2. Reescribir los dos primeros párrafos de `SML` para mejorar comprensión sin alargar ni sobrecargar la card.

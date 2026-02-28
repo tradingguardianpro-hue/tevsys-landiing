@@ -81,6 +81,26 @@ Estado actual elegido:
 
 ---
 
+## 5.1) Notas de copy (sesión actual)
+
+### Estado aplicado
+- Línea de mecanismo en home (bajo "Sin excusas..."):
+  - `Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`
+- `HyperClose` en versión corta actual:
+  - `Si estás bloqueado o en un día OFF, cualquier intento de operar se cierra al instante.`
+- `SML` cierre con flexibilidad:
+  - `Además, puedes definir límites por día y semana e incluir días OFF completos cuando no quieras operar.`
+
+### Referencia HyperClose (textos anteriores)
+1. `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos. Y no podrás reintentarlo hasta la siguiente rotación automática (diaria o semanal).`
+2. `Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.`
+
+### Pendiente para mañana
+- Recuperar mejor en `HyperClose` la base funcional (intento de operar estando bloqueado + cierre en milisegundos) sin convertir la card en manual.
+- Matizar los dos primeros párrafos de `SML` para mejorar comprensión del mecanismo.
+
+---
+
 ## 6) Plataforma de pago (pendiente post-web)
 
 > Esta decisión se toma cuando se cierre la web visual y copy final.

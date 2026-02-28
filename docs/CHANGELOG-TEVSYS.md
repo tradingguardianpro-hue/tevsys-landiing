@@ -182,3 +182,32 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
   - `plan-card__content` en columna con `flex: 1`.
   - `plan-card__cta` con `margin-top: auto`.
 - Resultado: botones en la misma línea horizontal aunque el texto de cada card tenga distinta longitud.
+
+---
+
+## 14) Ajustes de copy (sesión actual) + pendientes de mañana
+
+### Home (`src/pages/index.astro`)
+- Se añadió línea de mecanismo bajo el subtítulo de valor con versión final sobria:
+  - `Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`
+- `HyperClose` fue simplificada para evitar saturación:
+  - **Texto actual:** `Si estás bloqueado o en un día OFF, cualquier intento de operar se cierra al instante.`
+- `SML` incorpora mención de flexibilidad y días OFF:
+  - `Además, puedes definir límites por día y semana e incluir días OFF completos cuando no quieras operar.`
+- `Evidencia verificable` se ajustó de cadencia y claridad:
+  - `Panel, logs y reporte oficial MT5 por cada cierre. Para trader, inversor o auditor. No hay "creemos que cumple": hay evidencia medible. Cada cierre, cada bloqueo y cada rotación queda registrado.`
+
+### Contacto (`src/pages/company/contact.astro`)
+- Primera bullet orientada a días OFF:
+  - `También puedes marcar días OFF (por ejemplo, lunes o viernes) para proteger tu operativa cuando decides no estar en mercado.`
+- Se dejó la lista de tips en 3 elementos (más ligera).
+
+### Trazabilidad HyperClose (texto previo)
+- **Versión previa inmediata (antes de la simplificación actual):**
+  - `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos. Y no podrás reintentarlo hasta la siguiente rotación automática (diaria o semanal).`
+- **Versión anterior técnica (iteración previa):**
+  - `Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.`
+
+### Pendientes acordados para mañana (NO aplicados aún)
+1. **HyperClose:** recuperar mejor el núcleo funcional (intento de operar estando bloqueado + cierre en milisegundos) sin sobrecargar la card.
+2. **SML:** matizar y reescribir mejor los dos primeros párrafos para que expliquen con más claridad la lógica de uso/beneficio.

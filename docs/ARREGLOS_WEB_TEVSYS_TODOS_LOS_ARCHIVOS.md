@@ -99,6 +99,37 @@ Resumen técnico completo para revisión interna / DeepSeq.
 
 ---
 
+## Actualización de sesión (copy + documentación)
+
+### Cambios aplicados hoy
+
+- `src/pages/index.astro`
+  - Línea bajo subtítulo de valor (versión sobria):
+    - `Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`
+  - `HyperClose` simplificado:
+    - `Si estás bloqueado o en un día OFF, cualquier intento de operar se cierra al instante.`
+  - `SML` con cierre orientado a flexibilidad:
+    - `Además, puedes definir límites por día y semana e incluir días OFF completos cuando no quieras operar.`
+  - `Evidencia verificable` con redacción más limpia y cierre de trazabilidad:
+    - `... Cada cierre, cada bloqueo y cada rotación queda registrado.`
+
+- `src/pages/company/contact.astro`
+  - Primera bullet con mención a días OFF:
+    - `También puedes marcar días OFF (por ejemplo, lunes o viernes) para proteger tu operativa cuando decides no estar en mercado.`
+  - Tips mantenidos en 3 ítems para reducir carga.
+
+### Registro de textos previos de HyperClose (referencia)
+
+1. `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos. Y no podrás reintentarlo hasta la siguiente rotación automática (diaria o semanal).`
+2. `Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.`
+
+### Pendientes pactados para mañana
+
+1. **HyperClose:** recuperar mejor la idea central (operar bloqueado => cierre en milisegundos) manteniendo brevedad.
+2. **SML:** matizar y reescribir los dos primeros párrafos para explicar mejor la lógica del mecanismo.
+
+---
+
 ## Nota de proceso
 
 Se trabajó con iteración visual continua (prueba-error controlado) para mantener coherencia de marca: negro + gris lineal + acento amarillo + iridiscente moderado.

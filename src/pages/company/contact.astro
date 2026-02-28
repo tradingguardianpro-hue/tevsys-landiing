@@ -41,6 +41,7 @@ const tips = [
 		const params = new URLSearchParams(window.location.search);
 		const plan = (params.get('plan') || '').toLowerCase();
 		const flow = (params.get('flow') || '').toLowerCase();
+		const origin = (params.get('origin') || '').toLowerCase();
 
 		const titleNode = document.getElementById('contactHeroTitle');
 		const introNode = document.getElementById('contactHeroIntro');
@@ -71,6 +72,51 @@ const tips = [
 				imageNode.alt = 'Demo de tevsys';
 			}
 			return;
+		}
+
+		const originMap = {
+			precision: {
+				intro:
+					'Si vienes por la precisión de cierre, te explicamos cómo se calcula y cómo se valida con operativas reales, sin promesas vacías.',
+				tips: [
+					'Te mostramos el enfoque de precisión con contexto real de ejecución.',
+					'Resolveremos dudas clave para tu tipo de operativa.',
+					'Proceso simple: solo pedimos datos clave para responderte rápido.',
+				],
+			},
+			hyperclose: {
+				intro:
+					'Si vienes por HyperClose, te mostramos cómo funciona el cierre en milisegundos cuando se intenta operar estando bloqueado.',
+				tips: [
+					'Verás cómo funciona HyperClose en un escenario real de uso.',
+					'Te explicamos qué se registra en cada intento y por qué importa.',
+					'Te guiamos con pasos claros para validar encaje con tu operativa.',
+				],
+			},
+			sml: {
+				intro:
+					'Si vienes por SML, te explicamos cuándo activarlo, qué margen puede darte y cómo encaja con tu disciplina diaria.',
+				tips: [
+					'Entenderás el uso práctico de SML sin tecnicismos innecesarios.',
+					'Te ayudamos a decidir si te conviene según tu perfil.',
+					'Respuesta rápida con los siguientes pasos recomendados.',
+				],
+			},
+			evidence: {
+				intro:
+					'Si vienes por evidencia verificable, te mostramos qué se registra en cada cierre, bloqueo y rotación para que puedas comprobarlo.',
+				tips: [
+					'Panel, logs y reporte oficial para validar lo que pasa en real.',
+					'Todo queda con trazabilidad para revisión propia o auditoría.',
+					'Proceso claro: vemos encaje y te indicamos el siguiente paso.',
+				],
+			},
+		};
+
+		const selectedOrigin = originMap[origin];
+		if (selectedOrigin && !plan) {
+			if (introNode) introNode.textContent = selectedOrigin.intro;
+			setTips(selectedOrigin.tips[0], selectedOrigin.tips[1], selectedOrigin.tips[2]);
 		}
 
 		const planMap = {
