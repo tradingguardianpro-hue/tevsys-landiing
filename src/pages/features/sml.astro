@@ -21,9 +21,15 @@ const seo = {
 
 		<section class="feature-demo">
 			<h2>Demo rápida (20-30s)</h2>
+			<div class="demo-video">
+				<video controls preload="none">
+					<source src="/videos/features/sml-demo.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
 			<div class="demo-placeholder">
-				<p>Aquí irá el vídeo de SML mostrando configuración, activación y resultado en sesión real.</p>
-				<p class="demo-note">Formato recomendado: activar SML, operar y visualizar el efecto en control diario.</p>
+				<p>Ruta actual de prueba: <code>/videos/features/sml-demo.mp4</code>.</p>
+				<p class="demo-note">Puedes subir un MP4 de OBS de prueba para validar el bloque antes de publicar la versión definitiva.</p>
 			</div>
 		</section>
 
@@ -103,6 +109,18 @@ const seo = {
 		border: 1px solid rgba(245, 176, 65, 0.28);
 		border-radius: var(--theme-shape-radius);
 		padding: 1rem 1.1rem;
+	}
+	.demo-video {
+		background: #06080d;
+		border: 1px solid rgba(245, 176, 65, 0.3);
+		border-radius: var(--theme-shape-radius);
+		overflow: hidden;
+		margin-bottom: 0.75rem;
+	}
+	.demo-video video {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 	.demo-placeholder p {
 		margin: 0 0 0.45rem;

@@ -140,3 +140,17 @@ Lo más costoso no es el código, es tener el contenido (videos/capturas) bien p
   - Resumen rápido (usuario general)
   - Detalle técnico (usuario avanzado)
 
+---
+
+## Backlog de mejora (no perder esta idea)
+
+### Mini evidencias por bloque técnico
+- En cada micro-página, además del vídeo principal de demo, se podrá añadir por bloque técnico:
+  - mini clip (5-10s) o GIF corto
+  - captura relevante
+  - enlace a evidencia extendida
+- Objetivo:
+  - facilitar lectura rápida para perfil no técnico
+  - mantener profundidad para perfil técnico sin saturar la página principal
+- Estado: **Pendiente para fase posterior** (activar cuando estén listos los assets y no frene el avance actual).
+
