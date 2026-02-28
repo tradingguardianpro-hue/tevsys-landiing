@@ -41,6 +41,7 @@ const tips = [
 		const params = new URLSearchParams(window.location.search);
 		const plan = (params.get('plan') || '').toLowerCase();
 		const flow = (params.get('flow') || '').toLowerCase();
+		const feature = (params.get('feature') || '').toLowerCase();
 		const origin = (params.get('origin') || '').toLowerCase();
 
 		const titleNode = document.getElementById('contactHeroTitle');
@@ -56,25 +57,7 @@ const tips = [
 			if (tip3) tip3.textContent = c;
 		};
 
-		if (flow === 'demo') {
-			if (titleNode) titleNode.textContent = 'Solicita tu demo de tevsys';
-			if (introNode) {
-				introNode.textContent =
-					'Déjanos tus datos y te ayudamos a empezar rápido. La demo está pensada para validar encaje real con tu operativa, sin ruido ni complicaciones.';
-			}
-			setTips(
-				'Demo orientada a validación real de tu operativa.',
-				'Respuesta rápida con los siguientes pasos para activación.',
-				'También puedes marcar días OFF para proteger tu operativa cuando decides no estar en mercado.'
-			);
-			if (imageNode) {
-				imageNode.src = '/logo-tevsys.png';
-				imageNode.alt = 'Demo de tevsys';
-			}
-			return;
-		}
-
-		const originMap = {
+		const sourceMap = {
 			precision: {
 				intro:
 					'Si vienes por la precisión de cierre, te explicamos cómo se calcula y cómo se valida con operativas reales, sin promesas vacías.',
@@ -113,10 +96,34 @@ const tips = [
 			},
 		};
 
-		const selectedOrigin = originMap[origin];
-		if (selectedOrigin && !plan) {
-			if (introNode) introNode.textContent = selectedOrigin.intro;
-			setTips(selectedOrigin.tips[0], selectedOrigin.tips[1], selectedOrigin.tips[2]);
+		if (flow === 'demo') {
+			if (titleNode) titleNode.textContent = 'Solicita tu demo de tevsys';
+			const selectedSource = sourceMap[feature] || sourceMap[origin];
+			if (selectedSource) {
+				if (introNode) introNode.textContent = selectedSource.intro;
+				setTips(selectedSource.tips[0], selectedSource.tips[1], selectedSource.tips[2]);
+			} else {
+				if (introNode) {
+					introNode.textContent =
+						'Déjanos tus datos y te ayudamos a empezar rápido. La demo está pensada para validar encaje real con tu operativa, sin ruido ni complicaciones.';
+				}
+				setTips(
+					'Demo orientada a validación real de tu operativa.',
+					'Respuesta rápida con los siguientes pasos para activación.',
+					'También puedes marcar días OFF para proteger tu operativa cuando decides no estar en mercado.'
+				);
+			}
+			if (imageNode) {
+				imageNode.src = '/logo-tevsys.png';
+				imageNode.alt = 'Demo de tevsys';
+			}
+			return;
+		}
+
+		const selectedSource = sourceMap[feature] || sourceMap[origin];
+		if (selectedSource && !plan) {
+			if (introNode) introNode.textContent = selectedSource.intro;
+			setTips(selectedSource.tips[0], selectedSource.tips[1], selectedSource.tips[2]);
 		}
 
 		const planMap = {

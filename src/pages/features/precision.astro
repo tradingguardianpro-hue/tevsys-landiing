@@ -1,0 +1,129 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+	title: 'Precisión de cierre | tevsys',
+	description: 'Descubre cómo tevsys mantiene una precisión de cierre validada en operativas reales.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="feature-hero">
+			<p class="feature-kicker">Feature de verificación</p>
+			<h1>Precisión de cierre: donde configuras, cerramos</h1>
+			<p class="feature-hook">El mercado no perdona. Nosotros tampoco.</p>
+			<p class="feature-lead">
+				Ajustamos en tiempo real para compensar slippage, spread y comisiones. No vendemos humo: mostramos cálculo, evidencia y trazabilidad.
+			</p>
+		</section>
+
+		<section class="feature-demo">
+			<h2>Demo rápida (20-30s)</h2>
+			<div class="demo-placeholder">
+				<p>Aquí irá el vídeo corto de precisión (panel + ejecución real).</p>
+				<p class="demo-note">Recomendado: clip vertical u horizontal breve, foco en antes/después del cierre.</p>
+			</div>
+		</section>
+
+		<section class="feature-proof">
+			<h2>Qué puedes comprobar</h2>
+			<ul>
+				<li>Panel con cálculo visible para validar cada cierre.</li>
+				<li>Logs auditables por evento.</li>
+				<li>50 operativas documentadas con error promedio del 0,06%.</li>
+				<li>Validación en 5 brokers distintos.</li>
+			</ul>
+		</section>
+
+		<section class="feature-cta">
+			<h2>¿Quieres probarlo en tu operativa?</h2>
+			<p>Te guiamos para validar encaje real con tu estilo de trading, sin fricción ni promesas vacías.</p>
+			<a href="/company/contact?feature=precision&flow=demo" class="feature-cta__button">Probar precisión en demo</a>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.feature-hero,
+	.feature-demo,
+	.feature-proof,
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.feature-hero h1 {
+		margin: 0 0 0.65rem;
+		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+	}
+	.feature-hook {
+		font-style: italic;
+		opacity: 0.92;
+		margin: 0 0 0.7rem;
+	}
+	.feature-lead {
+		max-width: 70ch;
+		line-height: 1.55;
+	}
+	.feature-demo h2,
+	.feature-proof h2,
+	.feature-cta h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.35rem;
+	}
+	.demo-placeholder {
+		background: var(--theme-surface-1);
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+	}
+	.demo-placeholder p {
+		margin: 0 0 0.45rem;
+		line-height: 1.5;
+	}
+	.demo-placeholder p:last-child {
+		margin-bottom: 0;
+	}
+	.demo-note {
+		opacity: 0.8;
+		font-size: 0.95rem;
+	}
+	.feature-proof ul {
+		margin: 0;
+		padding-left: 1.1rem;
+	}
+	.feature-proof li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+	}
+	.feature-cta {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+	}
+	.feature-cta p {
+		margin: 0 0 0.9rem;
+		line-height: 1.5;
+	}
+	.feature-cta__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem 0.95rem;
+		border-radius: 1.4rem;
+		background: #f5b041;
+		color: #1a1510;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.feature-cta__button:hover {
+		background: #f7c050;
+	}
+</style>
