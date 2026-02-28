@@ -130,6 +130,45 @@ Resumen técnico completo para revisión interna / DeepSeq.
 
 ---
 
+## Actualización técnica reciente (micro-páginas + flujo sin fricción)
+
+### Archivos nuevos
+- `src/pages/features/precision.astro`
+- `src/pages/features/hyperclose.astro`
+- `src/pages/features/sml.astro`
+- `src/pages/features/evidencia.astro`
+
+### Archivos actualizados
+- `src/pages/index.astro`
+  - Las cards de valor ya no apuntan a contacto directo (salvo iteraciones antiguas); ahora apuntan a sus micro-páginas.
+  - Card 1 reforzada con validación en 5 brokers.
+  - Card HyperClose actualizada con núcleo completo (milisegundos + trazabilidad + días OFF).
+- `src/pages/company/contact.astro`
+  - Añadido soporte del parámetro `feature` además de `origin` y `plan`.
+  - Flujo `flow=demo` ahora puede heredar contexto por `feature`.
+
+### UX aplicada
+- Sección "Qué puedes comprobar" con enlaces subrayados.
+- Interacción visible:
+  - color base blanco
+  - hover amarillo
+  - cursor mano
+  - foco accesible para teclado (`:focus-visible`)
+- Cada enlace lleva a detalle por ancla dentro de la misma micro-página.
+
+### Nombres de commit (para trazabilidad)
+1. `feat: crear micro-página de precisión y conectar card 1 con CTA contextual a demo`
+2. `feat: hacer clicables las evidencias de precisión con hover amarillo y secciones ancla`
+3. `copy: actualizar card HyperClose con cierre en milisegundos y trazabilidad completa`
+4. `feat: extender micro-paginas de features (hyperclose sml evidencia) con enlaces de prueba y CTA a demo`
+
+### Siguiente bloque recomendado
+- Reemplazar "Demo rápida" placeholder por embed real (lazy-load) y mantener doble capa:
+  - lectura rápida (comercial)
+  - lectura técnica (acordeón o bloque expandible)
+
+---
+
 ## Nota de proceso
 
 Se trabajó con iteración visual continua (prueba-error controlado) para mantener coherencia de marca: negro + gris lineal + acento amarillo + iridiscente moderado.

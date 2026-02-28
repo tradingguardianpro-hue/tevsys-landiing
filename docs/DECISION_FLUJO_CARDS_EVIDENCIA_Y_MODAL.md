@@ -113,3 +113,30 @@ Lo más costoso no es el código, es tener el contenido (videos/capturas) bien p
 3. ¿Qué evidencias deben ser públicas y cuáles requieren formulario?
 4. ¿Texto exacto del CTA tras cada evidencia?
 
+---
+
+## Estado tras implementación (actualización)
+
+### Decisión tomada
+- Se ejecuta estrategia de micro-páginas por feature (base de Opción B) en lugar de formulario directo desde card.
+
+### Implementación realizada
+- Cards de home enlazan a:
+  - `/features/precision`
+  - `/features/hyperclose`
+  - `/features/sml`
+  - `/features/evidencia`
+- Cada micro-página incluye:
+  - estructura de explicación + prueba + CTA a demo
+  - enlaces de evidencia clicables (blanco/amarillo)
+  - anclas internas para detalle
+- Contacto recibe contexto por `feature` usando:
+  - `/company/contact?feature=<feature>&flow=demo`
+
+### Consulta propuesta a DeepSeek (breve)
+- ¿Mantener claims actuales tal cual o hacerlos más prudentes hasta publicar la evidencia visual completa?
+- ¿Qué assets mínimos recomienda para que el embed de vídeo convierta (duración, formato y orden de contenido)?
+- ¿Cómo estructurar la doble capa ideal en cada micro-página?
+  - Resumen rápido (usuario general)
+  - Detalle técnico (usuario avanzado)
+

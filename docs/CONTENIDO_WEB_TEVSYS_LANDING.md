@@ -45,11 +45,11 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 1) 0,06% error promedio
 - Hook: `El mercado no perdona. Nosotros tampoco.`
-- Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **50 operativas documentadas**, 0,06% error medio.
+- Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **50 operativas documentadas**, 0,06% error medio. **Validado en 5 brokers distintos.**
 
 #### 2) HyperClose
 - Hook: `Nadie te enseña a parar. Aprendes cuando ya es tarde.`
-- Texto actual: `Si estás bloqueado o en un día OFF, cualquier intento de operar se cierra al instante.`
+- Texto actual: `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos, antes del siguiente tick. Cada intento queda registrado con trazabilidad completa, también en días OFF.`
 - Texto previo inmediato (referencia): `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos. Y no podrás reintentarlo hasta la siguiente rotación automática (diaria o semanal).`
 - Texto técnico anterior (referencia): `Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.`
 
@@ -108,6 +108,30 @@ Documento de contenido/copy actual para revisión de equipo.
 - Cards 1-4 con imagen personalizada integradas.
 - Planes montados en modo plantilla para test/iteración.
 - Nota operativa: validar cambios primero en `tevsys-landiing.vercel.app`; `tevsys.io` puede reflejar con retraso por sincronización de dominio/CDN.
+
+---
+
+## Micro-páginas de features (estado actual)
+
+- URLs activas:
+  - `/features/precision`
+  - `/features/hyperclose`
+  - `/features/sml`
+  - `/features/evidencia`
+- Las 4 cards de valor enlazan ahora a su micro-página correspondiente.
+- Estructura actual por micro-página:
+  - Hero + hook
+  - Bloque "Demo rápida" (placeholder)
+  - "Qué puedes comprobar" con enlaces clicables
+  - Secciones de detalle por anclas
+  - CTA final a contacto con `?feature=...&flow=demo`
+- Patrón visual aplicado:
+  - Links subrayados, color blanco y hover amarillo.
+
+### Pendiente inmediato
+- Implementar embed de vídeo con carga diferida y enfoque de doble capa:
+  - resumen rápido para usuario general
+  - detalle técnico para validación profunda
 
 ---
 

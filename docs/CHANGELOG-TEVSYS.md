@@ -211,3 +211,48 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### Pendientes acordados para mañana (NO aplicados aún)
 1. **HyperClose:** recuperar mejor el núcleo funcional (intento de operar estando bloqueado + cierre en milisegundos) sin sobrecargar la card.
 2. **SML:** matizar y reescribir mejor los dos primeros párrafos para que expliquen con más claridad la lógica de uso/beneficio.
+
+---
+
+## 15) Micro-páginas de features (fase implementada)
+
+### Decisión ejecutada
+- Se confirma cambio de flujo: de `card -> contacto` a `card -> micro-página de feature -> CTA a demo`.
+- Objetivo: reducir fricción y mostrar prueba antes de pedir datos.
+
+### Cambios aplicados
+- `src/pages/index.astro`
+  - Card 1 -> `/features/precision`
+  - Card 2 -> `/features/hyperclose`
+  - Card 3 -> `/features/sml`
+  - Card 4 -> `/features/evidencia`
+- Nuevas páginas:
+  - `src/pages/features/precision.astro`
+  - `src/pages/features/hyperclose.astro`
+  - `src/pages/features/sml.astro`
+  - `src/pages/features/evidencia.astro`
+- Todas las micro-páginas incluyen:
+  - Hero + hook contextual
+  - Bloque "Demo rápida (20-30s)" (placeholder inicial)
+  - Sección "Qué puedes comprobar" con enlaces clicables
+  - Hover en enlaces (blanco -> amarillo) + cursor mano
+  - Secciones de detalle por anclas internas
+  - CTA final a contacto con `?feature=...&flow=demo`
+- `src/pages/company/contact.astro`
+  - Soporte de `feature` además de `origin`, manteniendo compatibilidad con `flow=demo` y `plan=...`.
+
+### Ajustes de copy aplicados
+- Card 1 (precisión): se añadió `Validado en 5 brokers distintos.`
+- Card 2 (HyperClose): texto actualizado a
+  - `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos, antes del siguiente tick. Cada intento queda registrado con trazabilidad completa, también en días OFF.`
+
+### Commits recientes asociados
+1. `feat: crear micro-página de precisión y conectar card 1 con CTA contextual a demo`
+2. `feat: hacer clicables las evidencias de precisión con hover amarillo y secciones ancla`
+3. `copy: actualizar card HyperClose con cierre en milisegundos y trazabilidad completa`
+4. `feat: extender micro-paginas de features (hyperclose sml evidencia) con enlaces de prueba y CTA a demo`
+
+### Próximo paso recomendado
+- Sustituir placeholders de "Demo rápida" por embed lazy (premium) y aplicar doble capa:
+  - Resumen rápido (usuario no técnico)
+  - Detalle técnico (usuario avanzado)
