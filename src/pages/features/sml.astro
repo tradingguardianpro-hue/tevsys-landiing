@@ -1,0 +1,178 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+	title: 'SML | tevsys',
+	description: 'Conoce Smart Money Lock (SML): una capa opcional para proteger parte de las ganancias y mejorar tu disciplina diaria.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="feature-hero">
+			<p class="feature-kicker">Feature de disciplina</p>
+			<h1>SML: protección opcional con ventaja operativa</h1>
+			<p class="feature-hook">No es obligatorio. Es una recompensa.</p>
+			<p class="feature-lead">
+				Tú decides si activarlo y cuánto porcentaje aplicar (5% a 25%). SML añade una capa de protección para ayudarte a sostener lo ganado.
+			</p>
+		</section>
+
+		<section class="feature-demo">
+			<h2>Demo rápida (20-30s)</h2>
+			<div class="demo-placeholder">
+				<p>Aquí irá el vídeo de SML mostrando configuración, activación y resultado en sesión real.</p>
+				<p class="demo-note">Formato recomendado: activar SML, operar y visualizar el efecto en control diario.</p>
+			</div>
+		</section>
+
+		<section class="feature-proof">
+			<h2>Qué puedes comprobar</h2>
+			<ul>
+				<li><a class="evidence-link" href="#sml-config">Configuración flexible entre 5% y 25%.</a></li>
+				<li><a class="evidence-link" href="#sml-usage">Uso opcional según tu estrategia del día.</a></li>
+				<li><a class="evidence-link" href="#sml-benefit">Cómo te ayuda a proteger parte de lo ganado.</a></li>
+				<li><a class="evidence-link" href="#sml-combo">Convivencia con límites diarios/semanales y días OFF.</a></li>
+			</ul>
+		</section>
+
+		<section id="sml-config" class="feature-proof-detail">
+			<h3>Configuración por porcentaje</h3>
+			<p>El porcentaje lo eliges tú, dentro de un rango claro (5%-25%), para ajustarlo a tu perfil de riesgo y ritmo operativo.</p>
+		</section>
+
+		<section id="sml-usage" class="feature-proof-detail">
+			<h3>Activación opcional</h3>
+			<p>No es una imposición: puedes usarlo cuando te convenga y mantener operativa normal cuando no quieras activarlo.</p>
+		</section>
+
+		<section id="sml-benefit" class="feature-proof-detail">
+			<h3>Beneficio práctico</h3>
+			<p>SML te ayuda a que una parte de lo conseguido no quede expuesta al mismo nivel de impulso de la siguiente sesión.</p>
+		</section>
+
+		<section id="sml-combo" class="feature-proof-detail">
+			<h3>Encaje con el sistema completo</h3>
+			<p>Convive con límites diarios/semanales y con días OFF para construir disciplina consistente sin añadir fricción innecesaria.</p>
+		</section>
+
+		<section class="feature-cta">
+			<h2>¿Quieres probar SML en demo?</h2>
+			<p>Te enseñamos cuándo usarlo, cómo configurarlo y qué resultado esperar según tu operativa.</p>
+			<a href="/company/contact?feature=sml&flow=demo" class="feature-cta__button">Probar SML en demo</a>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.feature-hero,
+	.feature-demo,
+	.feature-proof,
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.feature-hero h1 {
+		margin: 0 0 0.65rem;
+		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+	}
+	.feature-hook {
+		font-style: italic;
+		opacity: 0.92;
+		margin: 0 0 0.7rem;
+	}
+	.feature-lead {
+		max-width: 70ch;
+		line-height: 1.55;
+	}
+	.feature-demo h2,
+	.feature-proof h2,
+	.feature-cta h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.35rem;
+	}
+	.demo-placeholder {
+		background: var(--theme-surface-1);
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+	}
+	.demo-placeholder p {
+		margin: 0 0 0.45rem;
+		line-height: 1.5;
+	}
+	.demo-placeholder p:last-child {
+		margin-bottom: 0;
+	}
+	.demo-note {
+		opacity: 0.8;
+		font-size: 0.95rem;
+	}
+	.feature-proof ul {
+		margin: 0;
+		padding-left: 1.1rem;
+	}
+	.feature-proof li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+	}
+	.evidence-link {
+		color: #ffffff;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s ease;
+		cursor: pointer;
+	}
+	.evidence-link:hover {
+		color: #f5b041;
+	}
+	.evidence-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	.feature-proof-detail {
+		margin: 1rem 0 0;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+	}
+	.feature-proof-detail h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.05rem;
+	}
+	.feature-proof-detail p {
+		margin: 0;
+		line-height: 1.5;
+	}
+	.feature-cta {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+	}
+	.feature-cta p {
+		margin: 0 0 0.9rem;
+		line-height: 1.5;
+	}
+	.feature-cta__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem 0.95rem;
+		border-radius: 1.4rem;
+		background: #f5b041;
+		color: #1a1510;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.feature-cta__button:hover {
+		background: #f7c050;
+	}
+</style>
