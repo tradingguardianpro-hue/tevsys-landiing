@@ -190,3 +190,39 @@ Seguimiento interno activo en:
 - Mejor lectura en móvil sin perder mensaje de valor.
 - Más consistencia visual entre desktop y móvil.
 - Mayor sensación de producto cuidado (credibilidad percibida al alza).
+
+---
+
+## Actualización de tramo (cierre de sesión)
+
+### `features/precision` (copy operativo actual)
+
+- Hook de apertura:
+  - `48 operativas documentadas. 0,06% de error medio en condiciones normales.`
+
+- Bloque `Resumen estadístico` (lectura rápida):
+  - `48 operativas documentadas`
+  - `0,06% de error medio en condiciones normales`
+  - `5 brokers validados (real y demo)`
+  - `2 casos extremos documentados aparte (0,29% y 0,39%)`
+
+- Enlaces de capa técnica:
+  - `Ver resumen técnico (PDF)`
+  - `Ver dossier completo (PRÓXIMAMENTE)`
+
+- Nota de transparencia/IP:
+  - Se publican resultados verificables y trazabilidad.
+  - No se publica fórmula propietaria de ajuste.
+
+### Evidencias visuales (criterio de publicación)
+
+- Evidencia pública mínima por caso:
+  1. captura de panel,
+  2. captura de transacciones del `ReportHistory`,
+  3. captura de resumen del bloque (beneficio + balance final).
+
+- Política de privacidad:
+  - publicar solo versión `redacted` (sin nombre completo ni cuenta completa).
+
+- Caso piloto validado en sesión:
+  - Operativa `4.33` (`27/01/2026`) con trazabilidad completa en `ReportHistory-511090223`.

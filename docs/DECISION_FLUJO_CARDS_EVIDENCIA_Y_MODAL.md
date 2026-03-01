@@ -154,3 +154,28 @@ Lo más costoso no es el código, es tener el contenido (videos/capturas) bien p
   - mantener profundidad para perfil técnico sin saturar la página principal
 - Estado: **Pendiente para fase posterior** (activar cuando estén listos los assets y no frene el avance actual).
 
+---
+
+## Capa empresas (actualización estratégica)
+
+### Problema detectado
+- Si se publica toda la evidencia "raw" en abierto:
+  - se pierde control de información sensible,
+  - se debilita la protección de IP,
+  - se eleva riesgo de exposición innecesaria de datos personales/cuenta.
+
+### Criterio acordado
+- **Web pública:** evidencia suficiente + redacted + lectura clara.
+- **Interés real de empresa:** paquete ampliado bajo demanda.
+- **Due diligence avanzada:** evidencia completa bajo NDA.
+
+### Implicación para UX
+- La web no debe parecer un repositorio caótico de reportes.
+- Debe mostrar:
+  - confianza inicial (prueba visible),
+  - orden de lectura (panel -> transacciones -> resumen),
+  - CTA claro para revisión ampliada.
+
+### Estado
+- Se mantiene este tema como frente separado para próxima fase (sección `Empresas` del header y flujo dedicado).
+

@@ -272,3 +272,36 @@ Nota de producto: en fase actual, SML se comunica para Advanced/Pro (lista de es
 1. Publicar primero capturas mínimas (rápido, sin depender de edición de vídeo).
 2. Publicar después los vídeos finales por prioridad: HyperClose -> Precision -> SML -> Evidencia.
 3. Al subir un asset final, actualizar estado en sección 7.
+
+---
+
+## 10) Evidencia pública redacted (arranque práctico)
+
+### Objetivo de este bloque
+- Publicar evidencia real ya, sin esperar a tener todo el dossier perfecto.
+- Mantener calidad visual premium y protección de datos.
+
+### Caso piloto validado en sesión
+- **Operativa 4.33 (27/01/2026)**:
+  - Panel: validado.
+  - `ReportHistory-511090223.html`: validado.
+  - Total bloque: `302.70`.
+  - Balance final: `95 633.94`.
+
+### Patrón mínimo por operativa (web)
+1. Captura panel (estado + límite alcanzado).
+2. Captura bloque `Transacciones` (inicio/fin evento).
+3. Captura línea de resumen (beneficio + balance final).
+
+### Set inicial seleccionado para publicar
+1. **4.33** (perfecta FTMO)
+2. **4.38** (caso extremo)
+3. **4.41** (normal dentro de rango)
+4. **4.44** (perfecta Infinox)
+
+### Regla de privacidad obligatoria
+- Subir solo versiones `redacted`.
+- Ocultar:
+  - nombre completo,
+  - cuenta completa (dejar últimos dígitos),
+  - cualquier identificador personal.

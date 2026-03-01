@@ -302,3 +302,40 @@ Mejorar legibilidad y consistencia visual en móvil sin romper desktop ni reescr
 1. `fix(hero-mobile): aumentar protagonismo y centrado de imagen en pantallas moviles`
 2. `copy(mobile): simplificar hook de precision y compactar texto SML en home`
 3. `fix(precision-mobile): mejorar legibilidad del hook 50 operativas 0,06 en pantallas moviles`
+
+---
+
+## Actualización técnica de tramo (evidencia + gobernanza de documentación)
+
+### 1) `src/pages/features/precision.astro`
+
+Cambios aplicados al bloque de `Resumen estadístico`:
+- Hook ajustado de `50` a `48` operativas.
+- Sustitución de párrafo genérico por bloque KPI de lectura rápida.
+- Se añadieron dos enlaces de capa técnica:
+  - resumen técnico (`PDF`)
+  - dossier completo (`PRÓXIMAMENTE`)
+- Se añadió nota explícita de protección de IP (sin fórmula propietaria).
+- Se añadieron estilos auxiliares:
+  - `.proof-kpis`
+  - `.proof-links-row`
+  - `.proof-note`
+
+### 2) Validación de evidencia 4.33 (proceso)
+
+- Se verificó que `ReportHistory-511090223.html` local contiene:
+  - bloque de transacciones del evento,
+  - total de bloque `302.70`,
+  - balance final `95 633.94`.
+- Se estableció patrón visual para capturas públicas:
+  - resaltar inicio/fin de evento,
+  - resaltar total y balance final,
+  - pie corto de validación.
+
+### 3) Política de publicación de pruebas
+
+- Público: evidencia redacted y comprensible.
+- Bajo demanda: más detalle técnico.
+- NDA: evidencia completa por alcance.
+
+Nota: la documentación operativa de custodia (`MASTER/MIRROR/SNAPSHOT`) y la ruta de tratamiento de empresas se mantiene en entorno interno del proyecto para no mezclar material web con procedimientos sensibles.

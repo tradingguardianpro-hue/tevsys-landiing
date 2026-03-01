@@ -428,3 +428,49 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Sensación más premium al navegar por pruebas.
 - Menos pérdida de contexto al bajar por anclas.
 - Estructura lista para conectar capturas/videos reales sin rediseño.
+
+---
+
+## 21) Cierre de sesión: recuperación documental + ajuste de evidencia en `precision`
+
+### 21.1 Recuperación y custodia del documento crítico de precisión (interno)
+- Se detectó vaciado accidental del documento de operativas.
+- Se reconstruyó una versión operativa con soporte de:
+  - copia local de MetaQuotes,
+  - historial interno de trabajo.
+- Se activó protocolo "bajo llave" en entorno interno para evitar repetición:
+  - `MASTER + MIRROR + SNAPSHOT` por cada actualización.
+- Se creó política interna de tratamiento de evidencias para empresas (público / bajo demanda / NDA).
+
+### 21.2 Ajuste aplicado en micro-página `precision`
+- Archivo: `src/pages/features/precision.astro`
+- Cambios:
+  - Hook de apertura actualizado a `48 operativas documentadas`.
+  - Bloque `Resumen estadístico` pasado a formato de lectura rápida con 4 KPIs:
+    - 48 operativas
+    - 0,06% (condiciones normales)
+    - 5 brokers validados
+    - 2 casos extremos documentados aparte
+  - Se añadieron enlaces técnicos:
+    - `Ver resumen técnico (PDF)`
+    - `Ver dossier completo (PRÓXIMAMENTE)`
+  - Nota explícita de IP:
+    - resultados verificables sí,
+    - fórmula propietaria no publicada.
+
+### 21.3 Evidencia visual validada para operativa 4.33
+- Se validó uso de `ReportHistory-511090223.html` local sin necesidad de login activo FTMO.
+- Se confirmó correspondencia operativa:
+  - rango evento `10:20:56 -> 11:00:39`,
+  - total bloque `302.70`,
+  - balance final `95 633.94`.
+- Se define patrón visual público:
+  - captura panel,
+  - captura transacciones,
+  - captura resumen del bloque,
+  - versión redacted para privacidad.
+
+### 21.4 Pendiente inmediato para próxima sesión
+1. Integrar primera evidencia real (4.33) en `precision` como piloto visual.
+2. Repetir patrón en 3 casos más (4.38, 4.41, 4.44).
+3. Cerrar PDF técnico corto (1-2 páginas) y enlace desde micro-página.
