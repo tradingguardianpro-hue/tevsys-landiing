@@ -157,3 +157,18 @@ Documento de contenido/copy actual para revisión de equipo.
 
 1. Grabar y publicar versiones finales de video (40s) para `precision`, `hyperclose`, `sml`, `evidencia`.
 2. Revisar consistencia visual global tras incorporar videos finales (alineación, pesos tipográficos y ritmo de lectura).
+
+---
+
+## Anexo rapido - Roadmap de evidencia por micropagina
+
+Se mantiene el mismo bloque en `precision`, `hyperclose`, `sml` y `evidencia`:
+
+- Titulo: `Mapa de evidencia (plan de publicacion)`
+- Columnas: `Bloque`, `Formato previsto`, `Estado`, `Asset esperado`
+- Estados visuales via `data-status`:
+  - `pending` (Pendiente)
+  - `final` (Pendiente final)
+  - `pilot` (Piloto cargado)
+
+Objetivo: seguimiento rapido de produccion (video/capturas/texto) sin sobrecargar las micro-paginas.

@@ -220,3 +220,48 @@ Se trabajó con iteración visual continua (prueba-error controlado) para manten
 - Sustituir videos provisionales por versiones finales (40s) siguiendo:
   - `docs/GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md`
 - Mantener coherencia overlay -> CTA final en cada micro-página.
+
+---
+
+## Actualizacion operativa - Mapa de evidencia (micropaginas)
+
+**Fecha:** 31/01/2026  
+**Objetivo:** roadmap rapido, mantenible y consistente en las 4 micropaginas de features.
+
+### Archivos implicados
+
+- `src/pages/features/precision.astro`
+- `src/pages/features/hyperclose.astro`
+- `src/pages/features/sml.astro`
+- `src/pages/features/evidencia.astro`
+
+### Implementacion aplicada
+
+1. Seccion `Mapa de evidencia (plan de publicacion)` en las 4 micropaginas.
+2. Tabla uniforme con columnas: Bloque / Formato previsto / Estado / Asset esperado.
+3. Badges de estado para lectura rapida.
+4. Refactor de mantenimiento: estados controlados por `data-status`.
+
+### Estados activos
+
+- `data-status="pending"` -> Pendiente
+- `data-status="final"` -> Pendiente final
+- `data-status="pilot"` -> Piloto cargado
+
+### Regla de mantenimiento (equipo futuro)
+
+Cuando cambie el avance de una evidencia:
+
+1. Actualizar texto visible del estado.
+2. Cambiar valor de `data-status`.
+3. Mantener nombre de asset esperado alineado con archivo real.
+4. Preservar misma estructura de tabla en las 4 paginas.
+
+### Nota de alcance
+
+- Bloque pensado como roadmap operativo interno de avance rapido.
+- Impacto UX: sin cambio funcional para usuario final; mejora de lectura del estado.
+
+### Siguiente fase prioritaria
+
+Auditoria movil completa de `index`, `contact` y `features/*` para resolver incoherencias visuales frente a desktop.
