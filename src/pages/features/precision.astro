@@ -12,10 +12,14 @@ const seo = {
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de verificación</p>
-			<h1>Precisión de cierre: donde configuras, cerramos</h1>
-			<p class="feature-hook">El mercado no perdona. Nosotros tampoco.</p>
+			<h1>Precisión de cierre: donde configuras, cerramos.</h1>
+			<p class="feature-intro">El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.</p>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>50 operativas documentadas. <span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales. Hecho.</p>
 			<p class="feature-lead">
 				Ajustamos en tiempo real para compensar slippage, spread y comisiones. No vendemos humo: mostramos cálculo, evidencia y trazabilidad.
+			</p>
+			<p class="feature-extreme-note">
+				También hay casos extremos documentados (alta volatilidad geopolítica y cuenta pequeña con lotaje alto): se mantiene la protección, con desviaciones puntuales mayores (hasta ~0,39%).
 			</p>
 		</section>
 
@@ -89,14 +93,39 @@ const seo = {
 		margin: 0 0 0.65rem;
 		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
 	}
+	.feature-intro {
+		margin: 0 0 0.55rem;
+		line-height: 1.5;
+	}
 	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
 		font-style: italic;
-		opacity: 0.92;
+		font-weight: 600;
+		opacity: 0.9;
 		margin: 0 0 0.7rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-hook__accent {
+		color: #f5b041;
+		font-weight: 700;
 	}
 	.feature-lead {
 		max-width: 70ch;
 		line-height: 1.55;
+	}
+	.feature-extreme-note {
+		max-width: 72ch;
+		line-height: 1.5;
+		opacity: 0.86;
+		margin: 0.35rem 0 0;
 	}
 	.feature-demo h2,
 	.feature-proof h2,
