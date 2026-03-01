@@ -62,6 +62,19 @@ const seo = {
 			<p>El objetivo no es solo cerrar: es dejar evidencia entendible y revisable para usuario, equipo y auditoría externa.</p>
 		</section>
 
+		<section class="feature-validation">
+			<h2>Cómo validarlo hoy (sin video final)</h2>
+			<ul>
+				<li><strong>Panel:</strong> contrasta en pantalla estado, evento y contexto operativo.</li>
+				<li><strong>Logs MT5:</strong> verifica fecha/hora/evento en <code>MQL5/Logs</code>.</li>
+				<li><strong>Reporte oficial:</strong> valida consistencia externa con el reporte de plataforma.</li>
+				<li><strong>Trazabilidad:</strong> revisa que cierre, bloqueo y rotación dejen huella verificable.</li>
+			</ul>
+			<p class="feature-validation__note">
+				Este bloque permite validar criterio técnico desde ya. El material visual final (capturas/video) se publicará después sin cambiar el estándar de comprobación.
+			</p>
+		</section>
+
 		<section class="feature-cta">
 			<h2>¿Quieres verlo en tu caso?</h2>
 			<p>Te enseñamos la trazabilidad aplicada a tu operativa para que decidas con evidencia, no con promesas.</p>
@@ -185,6 +198,30 @@ const seo = {
 	.feature-proof-detail p {
 		margin: 0;
 		line-height: 1.5;
+	}
+	.feature-validation {
+		margin: var(--section-margin) auto;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+	}
+	.feature-validation h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.2rem;
+	}
+	.feature-validation ul {
+		margin: 0;
+		padding-left: 1.1rem;
+	}
+	.feature-validation li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+	}
+	.feature-validation__note {
+		margin: 0.8rem 0 0;
+		opacity: 0.85;
+		line-height: 1.45;
+		font-size: 0.95rem;
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);

@@ -150,6 +150,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - Mantener doble capa de evidencia:
   - resumen rápido (usuario general)
   - detalle técnico por anclas/soportes (usuario avanzado)
+- `Evidencia`: bloque textual activo `Cómo validarlo hoy (sin video final)` para no depender de assets visuales entre semana.
 
 ---
 
@@ -160,18 +161,13 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ---
 
-## Anexo rapido - Roadmap de evidencia por micropagina
+## Anexo interno de seguimiento
 
-Se mantiene el mismo bloque en `precision`, `hyperclose`, `sml` y `evidencia`:
+El roadmap de publicación de evidencias ya **no se muestra en la web pública**.
 
-- Titulo: `Mapa de evidencia (plan de publicacion)`
-- Columnas: `Bloque`, `Formato previsto`, `Estado`, `Asset esperado`
-- Estados visuales via `data-status`:
-  - `pending` (Pendiente)
-  - `final` (Pendiente final)
-  - `pilot` (Piloto cargado)
-
-Objetivo: seguimiento rapido de produccion (video/capturas/texto) sin sobrecargar las micro-paginas.
+Seguimiento interno activo en:
+- `docs/CARDS-NEXT-PHASE.md` (secciones 7, 8 y 9)
+- `docs/CHANGELOG-TEVSYS.md` (decisiones y trazabilidad de cambios)
 
 ---
 

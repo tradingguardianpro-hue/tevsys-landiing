@@ -243,6 +243,7 @@ Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o deci
 
 | Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
 |---|---|---|---|
+| Criterio de validación inmediato | Texto operativo en página | Texto + soporte visual final | `n/a` |
 | Panel operativo | Captura | Captura comparada con log/reporte | `evidencia-panel-01.png` |
 | Logs auditables | Captura | Captura + explicación dónde validarlo | `evidencia-logs-01.png` |
 | Reporte oficial | Captura/fragmento | Captura + correspondencia con evento real | `evidencia-report-01.png` |
