@@ -12,8 +12,8 @@ const seo = {
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de protección</p>
-			<h1>HyperClose: la última barrera</h1>
-			<p class="feature-hook">Nadie te enseña a parar. Aprendes cuando ya es tarde.</p>
+			<h1>HyperClose: cuando tu disciplina falla, HyperClose no.</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Cierre en milisegundos. Bloqueo hasta la siguiente rotación.</p>
 			<p class="feature-lead">
 				Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos antes del siguiente tick. Cada intento queda registrado.
 			</p>
@@ -90,9 +90,19 @@ const seo = {
 		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
 	}
 	.feature-hook {
-		font-style: italic;
-		opacity: 0.92;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		opacity: 0.95;
 		margin: 0 0 0.7rem;
+		font-weight: 500;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
 	}
 	.feature-lead {
 		max-width: 70ch;
