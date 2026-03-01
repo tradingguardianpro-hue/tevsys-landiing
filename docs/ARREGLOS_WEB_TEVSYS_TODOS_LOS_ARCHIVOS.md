@@ -265,3 +265,40 @@ Cuando cambie el avance de una evidencia:
 ### Siguiente fase prioritaria
 
 Auditoria movil completa de `index`, `contact` y `features/*` para resolver incoherencias visuales frente a desktop.
+
+---
+
+## Cierre de mini auditoria movil (iteracion actual)
+
+### Objetivo de la iteracion
+
+Mejorar legibilidad y consistencia visual en móvil sin romper desktop ni reescribir arquitectura.
+
+### Cambios aplicados por archivo
+
+- `src/components/sections/heros/HomeHeroSection.astro`
+  - Ajuste responsive para dar más protagonismo a la imagen principal en móvil.
+  - Centrado del bloque visual y del texto `Trading Edge Verification System`.
+  - Menor fricción visual en el primer pantallazo móvil.
+
+- `src/pages/features/precision.astro`
+  - Hook actualizado: se elimina `Hecho.`.
+  - Ajuste CSS móvil del hook para lectura más natural y menos cortes forzados.
+
+- `src/pages/index.astro` (card SML)
+  - Copy compactado en 3 bloques cortos:
+    1) activación + rango 5%-25% (mínimo 75% protegido),
+    2) beneficio operativo (conservar lo ganado),
+    3) convivencia con límites y días OFF.
+
+### Impacto funcional/UX
+
+- No se cambia flujo de navegación.
+- Mejora de claridad en móvil (lectura más rápida, menos ruido visual).
+- Reforzada percepción de producto serio y coherente entre dispositivos.
+
+### Commits de referencia de este tramo móvil
+
+1. `fix(hero-mobile): aumentar protagonismo y centrado de imagen en pantallas moviles`
+2. `copy(mobile): simplificar hook de precision y compactar texto SML en home`
+3. `fix(precision-mobile): mejorar legibilidad del hook 50 operativas 0,06 en pantallas moviles`

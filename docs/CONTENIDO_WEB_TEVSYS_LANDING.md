@@ -55,9 +55,9 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 3) SML — Smart Money Lock
 - Hook: `No es obligatorio. Es una recompensa.`
-- Texto 1: Tú eliges si activarlo. Y si lo haces, decides qué porcentaje de tus ganancias de ayer quieres blindar para hoy (entre el 5% y el 25%).
-- Texto 2: Puedes operar con tus límites de siempre. Pero si un día decides activarlo y cierras en verde, el 75% de tus ganancias queda blindado. El resto, a por todas.
-- Cierre actual: `Además, puedes definir límites por día y semana e incluir días OFF completos cuando no quieras operar.`
+- Texto 1: `Lo activas cuando tú quieras. Amplía el margen entre un 5% y un 25% (mínimo 75% protegido).`
+- Texto 2: `Mantienes tu operativa diaria, pero con una capa extra para conservar mejor lo ganado.`
+- Cierre actual: `Además, convive con tus límites diarios/semanales y con días OFF.`
 
 #### 4) Evidencia verificable
 - Hook: `No confíes. Comprueba.`
@@ -135,7 +135,7 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook: `• Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
 - `Precisión`:
   - Título: `Precisión de cierre: donde configuras, cerramos.`
-  - Hook: `• 50 operativas documentadas. 0,06% de error medio en condiciones normales. Hecho.`
+  - Hook: `• 50 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: incluye escenarios extremos documentados con desviación puntual hasta `~0,39%`.
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -172,3 +172,24 @@ Se mantiene el mismo bloque en `precision`, `hyperclose`, `sml` y `evidencia`:
   - `pilot` (Piloto cargado)
 
 Objetivo: seguimiento rapido de produccion (video/capturas/texto) sin sobrecargar las micro-paginas.
+
+---
+
+## Mini auditoria movil - resultado de la iteracion
+
+### Mejoras aplicadas
+
+- Hero home (`HomeHeroSection`):
+  - Se incrementa protagonismo visual de la imagen robótica en móvil.
+  - Se centra mejor el bloque visual y el subtítulo de marca bajo imagen.
+- Micro-página de precisión:
+  - Se elimina `Hecho.` del hook para evitar ruido.
+  - Se mejora legibilidad del hook en móvil para evitar cortes estéticos incómodos.
+- Home card SML:
+  - Se compacta copy en 3 bloques cortos para escaneo más rápido en pantallas pequeñas.
+
+### Resultado observado
+
+- Mejor lectura en móvil sin perder mensaje de valor.
+- Más consistencia visual entre desktop y móvil.
+- Mayor sensación de producto cuidado (credibilidad percibida al alza).

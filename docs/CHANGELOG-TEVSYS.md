@@ -311,3 +311,58 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 7. `copy: aplicar version final de SML en micro-pagina con hook de control 5-25 y enfoque en conservacion`
 8. `copy: corregir mensaje SML a ampliacion de margen (5-25) y minimo 75 protegido`
 9. `style: mejorar legibilidad del hook SML con mas margen y aire visual`
+
+---
+
+## 17) Iteración móvil (consistencia + credibilidad)
+
+### Objetivo
+- Reducir fricción visual en móvil y mejorar percepción de calidad sin tocar la propuesta de valor.
+
+### Cambios aplicados
+
+#### `src/components/sections/heros/HomeHeroSection.astro`
+- Ajuste responsive para que la imagen robótica gane presencia en móvil.
+- Recentrado del bloque visual y del texto de marca bajo imagen.
+- Resultado: hero móvil más equilibrado y menos sensación de “imagen pequeña”.
+
+#### `src/pages/features/precision.astro`
+- Hook copy:
+  - de `... condiciones normales. Hecho.`
+  - a `... condiciones normales.`
+- Ajuste CSS en móvil para evitar cortes estéticos del hook (`50 operativas ... 0,06% ...`).
+
+#### `src/pages/index.astro` (card SML)
+- Compactación de copy en 3 bloques cortos:
+  - Activación + rango `5%-25%` (`mínimo 75% protegido`).
+  - Beneficio operativo (conservación de ganancias).
+  - Convivencia con límites diarios/semanales y días OFF.
+
+### Validación observada
+- Capturas móviles confirman mejora de lectura y jerarquía visual.
+- No se detectan regresiones funcionales en flujo.
+
+### Commits asociados
+1. `fix(hero-mobile): aumentar protagonismo y centrado de imagen en pantallas moviles`
+2. `copy(mobile): simplificar hook de precision y compactar texto SML en home`
+3. `fix(precision-mobile): mejorar legibilidad del hook 50 operativas 0,06 en pantallas moviles`
+
+---
+
+## 18) Limpieza de front público (micro-páginas)
+
+### Decisión
+- Se retira de la UI pública la sección `Mapa de evidencia (plan de publicación)` en:
+  - `precision`
+  - `hyperclose`
+  - `sml`
+  - `evidencia`
+
+### Motivo
+- Equipo pequeño (2-3 personas): más eficiente separar
+  - **web pública limpia para conversión**, y
+  - **seguimiento interno en documentación**.
+
+### Implementación
+- Eliminado bloque visual de roadmap y estilos asociados en las 4 micro-páginas.
+- Tracker interno consolidado en `docs/CARDS-NEXT-PHASE.md` (sección Dream Team).

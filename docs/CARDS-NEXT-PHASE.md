@@ -150,3 +150,25 @@ Estado actual elegido:
 - [ ] Mapear eventos webhook -> estado de licencia.
 - [ ] Probar altas, renovaciones, impagos y cancelaciones.
 - [ ] Definir página de éxito/error y soporte post-pago.
+
+---
+
+## 7) Tracker interno micro-páginas (Dream Team)
+
+> Este tracker sustituye el roadmap visual dentro de las micro-páginas públicas.
+> La web queda limpia para usuario final y el seguimiento lo llevamos aquí.
+
+### Estado actual por micro-página
+
+| Micro-página | Copy final | Ajuste móvil | Video final | Evidencias (capturas/logs) |
+|---|---|---|---|---|
+| `precision` | ✅ | ✅ (hook optimizado) | ⏳ | ⏳ |
+| `hyperclose` | ✅ | ✅ | ⏳ (piloto ya probado) | ⏳ |
+| `sml` | ✅ (compactado en home) | ✅ | ⏳ | ⏳ |
+| `evidencia` | ✅ | ✅ | ⏳ | ⏳ |
+
+### Regla simple de trabajo (solo 2-3 personas)
+
+1. No duplicar seguimiento en muchos sitios.
+2. Actualizar este bloque al cerrar cada tarea real.
+3. Si algo se publica en web, registrar también en `CHANGELOG-TEVSYS.md`.
