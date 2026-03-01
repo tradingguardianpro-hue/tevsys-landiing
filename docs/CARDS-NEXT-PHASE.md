@@ -195,6 +195,11 @@ Nota de uso: si no hay instrucción explícita nueva, esta regla se aplica por d
 ### Tarea 2 (después)
 - [ ] QA móvil rápido en 360/390/768 para home + features + contacto.
 - **Done cuando:** no haya incoherencias visuales críticas de lectura/CTA.
+  - Checklist mínimo por micro-página:
+    - [ ] Click en `Qué puedes comprobar` baja con scroll suave.
+    - [ ] Bloque destino se resalta en amarillo (`:target`).
+    - [ ] Título de bloque con punto amarillo visible.
+    - [ ] Link de prueba con estilo correcto (captura sin badge, PDF/VIDEO con badge).
 
 ### Tarea 3 (siguiente)
 - [ ] Preparar publicación de evidencias sin video final (capturas/logs con nombres cerrados).
@@ -249,6 +254,8 @@ Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o deci
 | Activación opcional | Captura | Captura + micro explicación | `sml-activation-01.png` |
 | Convivencia con límites y OFF | Captura panel/estado | Clip breve de flujo real | `sml-offdays-01.png` / `sml-demo.mp4` |
 | Demo principal | Placeholder actual | Vídeo final 40s | `sml-demo.mp4` |
+
+Nota de producto: en fase actual, SML se comunica para Advanced/Pro (lista de espera). En Essential demo no está activo todavía.
 
 ### 9.4 Evidencia (`/features/evidencia`)
 
