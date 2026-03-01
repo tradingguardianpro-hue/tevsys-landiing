@@ -389,3 +389,42 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Misma calidad percibida en las 4 micro-páginas.
 - Menos redundancia de texto.
 - Preparado para enchufar capturas reales sin cambiar estructura.
+
+---
+
+## 20) Navegación premium por anclas + instrucciones por bloque
+
+### Objetivo
+- Mejorar orientación visual cuando el usuario navega desde `Qué puedes comprobar`.
+- Reducir confusión y evitar saltos bruscos de contexto.
+
+### Cambios UX aplicados
+
+1. **Patrón por bloque técnico (4 rectángulos):**
+   - Línea `Cómo validarlo`
+   - Link amarillo `Ver captura ...` (placeholder preparado para asset real)
+
+2. **Orientación visual en destino de ancla:**
+   - Punto amarillo junto al título del bloque (`h3::before`)
+   - Resalte del bloque destino con `:target` (borde/fondo/acento)
+   - `scroll-margin-top` para que el ancla no quede pegada arriba
+
+3. **Scroll suave global:**
+   - `src/styles/reset.css` -> `html { scroll-behavior: smooth; }`
+   - Manteniendo respeto a accesibilidad vía `prefers-reduced-motion`
+
+4. **Ajuste de claridad en trazabilidad (`evidencia`):**
+   - Instrucción reescrita para usuario medio:
+   - verificar el mismo evento en panel + logs MT5 + informe exportado (HTML/PDF), coincidiendo hora, tipo de acción y resultado.
+
+### Archivos implicados
+- `src/pages/features/precision.astro`
+- `src/pages/features/hyperclose.astro`
+- `src/pages/features/sml.astro`
+- `src/pages/features/evidencia.astro`
+- `src/styles/reset.css`
+
+### Resultado
+- Sensación más premium al navegar por pruebas.
+- Menos pérdida de contexto al bajar por anclas.
+- Estructura lista para conectar capturas/videos reales sin rediseño.

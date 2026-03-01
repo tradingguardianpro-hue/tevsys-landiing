@@ -46,28 +46,44 @@ const seo = {
 			<h3>Panel visible para verificación</h3>
 			<p>El panel muestra el estado del sistema y ayuda a contrastar qué pasó, cuándo pasó y bajo qué condiciones operativas.</p>
 			<p><strong>Cómo validarlo:</strong> Abre el panel y contrasta evento, hora y estado con tu operativa real.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura del panel</a></p>
+			<p>
+				<a class="proof-capture-link" href="#">
+					Ver captura del panel <span class="proof-link-meta">CAPTURA</span>
+				</a>
+			</p>
 		</section>
 
 		<section id="evidence-logs" class="feature-proof-detail">
 			<h3>Logs auditables</h3>
 			<p>Puedes revisar eventos por fecha en MT5 desde Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs para validar cada acción.</p>
 			<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura de logs</a></p>
+			<p>
+				<a class="proof-capture-link" href="#">
+					Ver captura de logs <span class="proof-link-meta">CAPTURA</span>
+				</a>
+			</p>
 		</section>
 
 		<section id="evidence-report" class="feature-proof-detail">
 			<h3>Reporte oficial de la plataforma</h3>
 			<p>Además del registro interno, se contrasta con reporte oficial para reforzar consistencia y evitar interpretación subjetiva.</p>
 			<p><strong>Cómo validarlo:</strong> Caja de herramientas &gt; Historial &gt; Informe &gt; Overview &gt; Guardar como PDF.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura del reporte</a></p>
+			<p>
+				<a class="proof-capture-link" href="#">
+					Ver captura del reporte <span class="proof-link-meta">PDF</span>
+				</a>
+			</p>
 		</section>
 
 		<section id="evidence-trace" class="feature-proof-detail">
 			<h3>Trazabilidad completa</h3>
 			<p>El objetivo no es solo cerrar: es dejar evidencia entendible y revisable para usuario, equipo y auditoría externa.</p>
 			<p><strong>Cómo validarlo:</strong> Verifica el mismo evento en tres sitios: panel, logs de MT5 e informe exportado (HTML/PDF). Si coinciden hora, tipo de acción (cierre/bloqueo/rotación) y resultado, la trazabilidad está confirmada.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura de trazabilidad</a></p>
+			<p>
+				<a class="proof-capture-link" href="#">
+					Ver captura de trazabilidad <span class="proof-link-meta">CAPTURA</span>
+				</a>
+			</p>
 		</section>
 
 		<section class="feature-cta">
@@ -218,6 +234,9 @@ const seo = {
 		text-decoration: underline;
 		text-underline-offset: 2px;
 		transition: color 0.2s ease;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
 	}
 	.proof-capture-link:hover {
 		color: #f7c050;
@@ -226,6 +245,18 @@ const seo = {
 		outline: 2px solid #f5b041;
 		outline-offset: 3px;
 		border-radius: 0.2rem;
+	}
+	.proof-link-meta {
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		padding: 0.08rem 0.38rem;
+		border-radius: 999px;
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.12);
+		color: #f7c050;
+		line-height: 1.2;
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);
