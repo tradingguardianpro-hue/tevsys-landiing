@@ -172,3 +172,19 @@ Estado actual elegido:
 1. No duplicar seguimiento en muchos sitios.
 2. Actualizar este bloque al cerrar cada tarea real.
 3. Si algo se publica en web, registrar también en `CHANGELOG-TEVSYS.md`.
+
+---
+
+## 8) Mini roadmap inmediato (sin complicarnos)
+
+### Tarea 1 (ahora)
+- [ ] Cierre final de copy en las 4 micro-páginas (sin tocar más salvo bug).
+- **Done cuando:** precisión/hyperclose/sml/evidencia queden congeladas en texto final.
+
+### Tarea 2 (después)
+- [ ] QA móvil rápido en 360/390/768 para home + features + contacto.
+- **Done cuando:** no haya incoherencias visuales críticas de lectura/CTA.
+
+### Tarea 3 (siguiente)
+- [ ] Preparar publicación de evidencias sin video final (capturas/logs con nombres cerrados).
+- **Done cuando:** cada micro-página tenga lista su evidencia mínima publicable.
