@@ -12,11 +12,10 @@ const seo = {
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de transparencia</p>
-			<h1>Evidencia verificable: no confíes, comprueba</h1>
-			<p class="feature-hook">La disciplina también se demuestra.</p>
-			<p class="feature-lead">
-				Cada cierre, cada bloqueo y cada rotación deja huella: para ti, para tu auditor y para tu historial operativo.
-			</p>
+			<h1>Evidencia verificable: aquí no hay "creemos".</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Lo que no se puede demostrar, no cuenta.</p>
+			<p class="feature-lead">tevsys registra fecha, hora y contexto operativo de cada cierre, bloqueo y rotación en panel, logs y reporte oficial.</p>
+			<p class="feature-trace-note">Trazabilidad completa para ti, para tu auditor, para tu historial.</p>
 		</section>
 
 		<section class="feature-demo">
@@ -90,13 +89,30 @@ const seo = {
 		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
 	}
 	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
 		font-style: italic;
-		opacity: 0.92;
+		font-weight: 600;
+		opacity: 0.9;
 		margin: 0 0 0.7rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
 	}
 	.feature-lead {
 		max-width: 70ch;
 		line-height: 1.55;
+	}
+	.feature-trace-note {
+		max-width: 72ch;
+		line-height: 1.5;
+		opacity: 0.86;
+		margin: 0.35rem 0 0;
 	}
 	.feature-demo h2,
 	.feature-proof h2,
