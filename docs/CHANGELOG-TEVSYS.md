@@ -256,3 +256,58 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Sustituir placeholders de "Demo rápida" por embed lazy (premium) y aplicar doble capa:
   - Resumen rápido (usuario no técnico)
   - Detalle técnico (usuario avanzado)
+
+---
+
+## 16) Afinado de copy y jerarquía visual por micro-página (iteración actual)
+
+### `src/pages/features/hyperclose.astro`
+- Título refinado para mayor legibilidad y menos redundancia visual:
+  - `HyperClose: cuando tu disciplina falla, HyperClose no.`
+- Jerarquía de título ajustada en 2 líneas con acento dorado solo en `no.`
+- Subtítulo técnico con punto amarillo y estilo consistente de hook:
+  - `Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
+
+### `src/pages/features/precision.astro`
+- Estructura de lectura alineada con HyperClose:
+  1. Título
+  2. Hook con punto amarillo
+  3. Frase explicativa
+  4. Texto técnico
+  5. Transparencia de escenarios extremos
+- Hook principal:
+  - `50 operativas documentadas. 0,06% de error medio en condiciones normales. Hecho.`
+- Transparencia extrema (sin ocultar riesgo de mercado):
+  - Se documenta continuidad de protección con desviaciones puntuales mayores, hasta `~0,39%`.
+- Acentos dorados aplicados a `0,06%` y `~0,39%`.
+
+### `src/pages/features/sml.astro`
+- Copy final de producto con enfoque correcto de funcionamiento:
+  - SML no “elige cuánto proteger”, sino cuánto ampliar margen (5%–25%).
+  - Se explicita mínimo `75%` protegido.
+- Jerarquía visual igual al patrón de micro-páginas:
+  - título fuerte
+  - hook con punto amarillo
+  - explicación corta
+  - línea de transparencia
+
+### `src/pages/features/evidencia.astro`
+- Copy final híbrido aplicado:
+  - `Evidencia verificable: aquí no hay "creemos".`
+  - `• Lo que no se puede demostrar, no cuenta.`
+  - Registro en panel, logs y reporte oficial + cierre de trazabilidad para usuario/auditor/historial.
+
+### Decisión de diseño global
+- Se mantiene acento amarillo en título solo en HyperClose (diferenciador de identidad).
+- En el resto de micro-páginas, el amarillo se usa en hooks y datos clave para no saturar.
+
+### Commits asociados a esta iteración
+1. `style: mejorar jerarquia visual del titulo de HyperClose sin cambiar el mensaje`
+2. `style: mejorar legibilidad del titulo HyperClose con acento solo en no`
+3. `copy: alinear subtitulos de micro-paginas al estilo de cards y añadir transparencia de casos extremos en precision`
+4. `copy: ajustar transparencia de casos extremos en precision y resaltar ~0,39 en amarillo`
+5. `style: alinear jerarquia de precision con hyperclose (titulo -> hook con punto -> detalle)`
+6. `copy: aplicar version final de evidencia verificable con hook demostrable y trazabilidad clara`
+7. `copy: aplicar version final de SML en micro-pagina con hook de control 5-25 y enfoque en conservacion`
+8. `copy: corregir mensaje SML a ampliacion de margen (5-25) y minimo 75 protegido`
+9. `style: mejorar legibilidad del hook SML con mas margen y aire visual`

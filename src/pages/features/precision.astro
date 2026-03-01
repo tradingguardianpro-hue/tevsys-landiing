@@ -67,6 +67,43 @@ const seo = {
 			<p>La evidencia incluye validaciones en distintos entornos y condiciones operativas para evitar resultados sesgados por un solo contexto de ejecución.</p>
 		</section>
 
+		<section class="evidence-map">
+			<h2>Mapa de evidencia (plan de publicación)</h2>
+			<div class="evidence-map__table" role="table" aria-label="Estado de evidencias de precisión">
+				<div class="evidence-map__row evidence-map__row--head" role="row">
+					<div role="columnheader">Bloque</div>
+					<div role="columnheader">Formato previsto</div>
+					<div role="columnheader">Estado</div>
+					<div role="columnheader">Asset esperado</div>
+				</div>
+				<div class="evidence-map__row" role="row">
+					<div role="cell">Demo rápida</div>
+					<div role="cell">Video (40s)</div>
+					<div role="cell">Pendiente final</div>
+					<div role="cell"><code>precision-demo.mp4</code></div>
+				</div>
+				<div class="evidence-map__row" role="row">
+					<div role="cell">Panel con cálculo visible</div>
+					<div role="cell">Captura + mini clip</div>
+					<div role="cell">Pendiente</div>
+					<div role="cell"><code>precision-panel-01.png</code></div>
+				</div>
+				<div class="evidence-map__row" role="row">
+					<div role="cell">Logs auditables</div>
+					<div role="cell">Captura</div>
+					<div role="cell">Pendiente</div>
+					<div role="cell"><code>precision-logs-01.png</code></div>
+				</div>
+				<div class="evidence-map__row" role="row">
+					<div role="cell">Resumen estadístico</div>
+					<div role="cell">Texto + captura</div>
+					<div role="cell">Pendiente</div>
+					<div role="cell"><code>precision-stats-01.png</code></div>
+				</div>
+			</div>
+			<a href="#" class="evidence-map__doc-link" aria-disabled="true">Ver documentación completa de operativas (pendiente de enlace final)</a>
+		</section>
+
 		<section class="feature-cta">
 			<h2>¿Quieres probarlo en tu operativa?</h2>
 			<p>Te guiamos para validar encaje real con tu estilo de trading, sin fricción ni promesas vacías.</p>
@@ -198,6 +235,52 @@ const seo = {
 	.feature-proof-detail p {
 		margin: 0;
 		line-height: 1.5;
+	}
+	.evidence-map {
+		margin: var(--section-margin) auto;
+	}
+	.evidence-map h2 {
+		margin: 0 0 0.75rem;
+		font-size: 1.25rem;
+	}
+	.evidence-map__table {
+		background: var(--theme-surface-1);
+		border: 1px solid rgba(245, 176, 65, 0.2);
+		border-radius: var(--theme-shape-radius);
+		overflow: hidden;
+	}
+	.evidence-map__row {
+		display: grid;
+		grid-template-columns: 1.25fr 1fr 0.8fr 1fr;
+		gap: 0.75rem;
+		padding: 0.75rem 0.85rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+	.evidence-map__row:first-child {
+		border-top: 0;
+	}
+	.evidence-map__row--head {
+		font-weight: 600;
+		background: rgba(255, 255, 255, 0.03);
+	}
+	.evidence-map__row code {
+		font-size: 0.82rem;
+		opacity: 0.9;
+	}
+	.evidence-map__doc-link {
+		margin-top: 0.75rem;
+		display: inline-flex;
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		opacity: 0.9;
+		pointer-events: none;
+	}
+	@media (max-width: 768px) {
+		.evidence-map__row {
+			grid-template-columns: 1fr;
+			gap: 0.35rem;
+		}
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);

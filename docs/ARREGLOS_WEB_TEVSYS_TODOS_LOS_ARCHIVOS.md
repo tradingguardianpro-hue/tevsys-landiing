@@ -123,10 +123,10 @@ Resumen técnico completo para revisión interna / DeepSeq.
 1. `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos. Y no podrás reintentarlo hasta la siguiente rotación automática (diaria o semanal).`
 2. `Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.`
 
-### Pendientes pactados para mañana
+### Pendientes pactados para mañana (estado)
 
-1. **HyperClose:** recuperar mejor la idea central (operar bloqueado => cierre en milisegundos) manteniendo brevedad.
-2. **SML:** matizar y reescribir los dos primeros párrafos para explicar mejor la lógica del mecanismo.
+1. **HyperClose:** ✅ Resuelto. Copy final de card y micro-página alineado en cierre milisegundos + trazabilidad.
+2. **SML:** ✅ Resuelto. Copy corregido a funcionamiento real (ampliación de margen 5-25, mínimo 75% protegido).
 
 ---
 
@@ -177,3 +177,46 @@ Se trabajó con iteración visual continua (prueba-error controlado) para manten
 - Referencia principal de despliegue: `tevsys-landiing.vercel.app`.
 - `tevsys.io` puede mostrar retraso temporal frente al deploy por DNS/CDN/SSL.
 - Protocolo: validar primero en Vercel y confirmar después en dominio oficial.
+
+---
+
+## Actualización reciente (copy final por micro-página + piloto video)
+
+### Estado de avance
+- Pipeline de video validado end-to-end en `HyperClose` (archivo en `public/videos/features/hyperclose-demo.mp4`).
+- Estructura y jerarquía unificadas en micro-páginas:
+  - título grande
+  - hook con punto amarillo (estilo card)
+  - explicación
+  - detalle técnico / transparencia
+
+### Ajustes principales aplicados
+- `HyperClose`:
+  - Título refinado: `HyperClose: cuando tu disciplina falla, HyperClose no.`
+  - Acento amarillo en `no.` y subtítulo técnico con punto amarillo.
+- `Precisión`:
+  - Hook de apertura con `0,06%` destacado.
+  - Transparencia de escenarios extremos con `~0,39%` destacado.
+  - Reordenado a patrón: título -> hook -> detalle.
+- `SML`:
+  - Mensaje corregido al funcionamiento real: ampliar margen, no “elegir cuánto proteger”.
+  - Hook final: 5%-25% y mínimo 75% protegido.
+- `Evidencia`:
+  - Copy final: `aquí no hay "creemos"` + `Lo que no se puede demostrar, no cuenta.`
+  - Referencia explícita a panel, logs y reporte oficial.
+
+### Commits de esta ronda (referencia)
+1. `style: mejorar jerarquia visual del titulo de HyperClose sin cambiar el mensaje`
+2. `style: mejorar legibilidad del titulo HyperClose con acento solo en no`
+3. `copy: alinear subtitulos de micro-paginas al estilo de cards y añadir transparencia de casos extremos en precision`
+4. `copy: ajustar transparencia de casos extremos en precision y resaltar ~0,39 en amarillo`
+5. `style: alinear jerarquia de precision con hyperclose (titulo -> hook con punto -> detalle)`
+6. `copy: aplicar version final de evidencia verificable con hook demostrable y trazabilidad clara`
+7. `copy: aplicar version final de SML en micro-pagina con hook de control 5-25 y enfoque en conservacion`
+8. `copy: corregir mensaje SML a ampliacion de margen (5-25) y minimo 75 protegido`
+9. `style: mejorar legibilidad del hook SML con mas margen y aire visual`
+
+### Siguiente bloque operativo
+- Sustituir videos provisionales por versiones finales (40s) siguiendo:
+  - `docs/GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md`
+- Mantener coherencia overlay -> CTA final en cada micro-página.

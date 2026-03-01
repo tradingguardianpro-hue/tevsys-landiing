@@ -48,7 +48,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **50 operativas documentadas**, 0,06% error medio. **Validado en 5 brokers distintos.**
 
 #### 2) HyperClose
-- Hook: `Nadie te enseña a parar. Aprendes cuando ya es tarde.`
+- Hook: `El cierre que no negocia.`
 - Texto actual: `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos, antes del siguiente tick. Cada intento queda registrado con trazabilidad completa, también en días OFF.`
 - Texto previo inmediato (referencia): `Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos. Y no podrás reintentarlo hasta la siguiente rotación automática (diaria o semanal).`
 - Texto técnico anterior (referencia): `Protección reactiva instantánea: cierre en milisegundos si el usuario bloqueado intenta abrir una operación. No es un "cierre rápido"; es cierre antes del siguiente tick.`
@@ -121,21 +121,39 @@ Documento de contenido/copy actual para revisión de equipo.
 - Las 4 cards de valor enlazan ahora a su micro-página correspondiente.
 - Estructura actual por micro-página:
   - Hero + hook
-  - Bloque "Demo rápida" (placeholder)
+  - Bloque "Demo rápida" con embed de video MP4
   - "Qué puedes comprobar" con enlaces clicables
   - Secciones de detalle por anclas
   - CTA final a contacto con `?feature=...&flow=demo`
 - Patrón visual aplicado:
   - Links subrayados, color blanco y hover amarillo.
+  - Jerarquía consistente: título -> hook con punto amarillo -> explicación técnica.
+
+### Copy de apertura por micro-página (actual)
+- `HyperClose`:
+  - Título: `HyperClose: cuando tu disciplina falla, HyperClose no.`
+  - Hook: `• Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
+- `Precisión`:
+  - Título: `Precisión de cierre: donde configuras, cerramos.`
+  - Hook: `• 50 operativas documentadas. 0,06% de error medio en condiciones normales. Hecho.`
+  - Transparencia: incluye escenarios extremos documentados con desviación puntual hasta `~0,39%`.
+- `SML`:
+  - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
+  - Hook: `• Actívalo cuando quieras. Decide cuánto ampliar el margen: del 5% al 25% (mínimo 75% protegido).`
+- `Evidencia`:
+  - Título: `Evidencia verificable: aquí no hay "creemos".`
+  - Hook: `• Lo que no se puede demostrar, no cuenta.`
+  - Soporte: panel, logs y reporte oficial.
 
 ### Pendiente inmediato
-- Implementar embed de vídeo con carga diferida y enfoque de doble capa:
-  - resumen rápido para usuario general
-  - detalle técnico para validación profunda
+- Reemplazar videos provisionales por versiones finales (40s) según guía de producción.
+- Mantener doble capa de evidencia:
+  - resumen rápido (usuario general)
+  - detalle técnico por anclas/soportes (usuario avanzado)
 
 ---
 
 ## Pendientes para la próxima sesión
 
-1. Revisar copy de `HyperClose` para recuperar con claridad el concepto clave: intento de operar estando bloqueado + cierre en milisegundos.
-2. Reescribir los dos primeros párrafos de `SML` para mejorar comprensión sin alargar ni sobrecargar la card.
+1. Grabar y publicar versiones finales de video (40s) para `precision`, `hyperclose`, `sml`, `evidencia`.
+2. Revisar consistencia visual global tras incorporar videos finales (alineación, pesos tipográficos y ritmo de lectura).
