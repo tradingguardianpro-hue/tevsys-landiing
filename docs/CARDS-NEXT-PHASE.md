@@ -175,6 +175,15 @@ Estado actual elegido:
 4. Patrón fijo en las 4 micro-páginas: ancla arriba (`Qué puedes comprobar`) + instrucción + `Ver captura` en cada rectángulo.
 5. Patrón visual de navegación: punto amarillo en título de bloque + highlight del destino al hacer click en ancla.
 
+### Regla fija de badges en enlaces de prueba (obligatoria)
+
+- Si el enlace dice `Ver captura...` -> **sin badge** (evitar redundancia).
+- Si el enlace abre demo/clip -> badge `VIDEO`.
+- Si el enlace abre informe/exportación -> badge `PDF`.
+- Si el asset aún no está publicado -> badge `PRÓXIMAMENTE`.
+
+Nota de uso: si no hay instrucción explícita nueva, esta regla se aplica por defecto en cualquier micro-página futura.
+
 ---
 
 ## 8) Mini roadmap inmediato (sin complicarnos)
