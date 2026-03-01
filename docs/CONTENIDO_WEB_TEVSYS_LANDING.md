@@ -150,7 +150,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - Mantener doble capa de evidencia:
   - resumen rápido (usuario general)
   - detalle técnico por anclas/soportes (usuario avanzado)
-- `Evidencia`: bloque textual activo `Cómo validarlo hoy (sin video final)` para no depender de assets visuales entre semana.
+- Bloque textual activo en las 4 micro-páginas: `Cómo validarlo hoy (sin video final)` para no depender de assets visuales entre semana.
 
 ---
 

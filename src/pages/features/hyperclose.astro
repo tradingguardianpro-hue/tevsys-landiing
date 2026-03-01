@@ -66,6 +66,19 @@ const seo = {
 			<p>Se puede demostrar en secuencia simple: intento de operar, cierre automático, bloqueo activo y registro del evento.</p>
 		</section>
 
+		<section class="feature-validation">
+			<h2>Cómo validarlo hoy (sin video final)</h2>
+			<ul>
+				<li><strong>Intento bloqueado:</strong> valida que el sistema detecta y cierra de inmediato.</li>
+				<li><strong>Logs MT5:</strong> comprueba fecha/hora/evento en <code>MQL5/Logs</code>.</li>
+				<li><strong>Días OFF:</strong> confirma que la protección sigue activa en jornadas marcadas como OFF.</li>
+				<li><strong>Flujo completo:</strong> verifica secuencia intento - cierre - bloqueo - trazabilidad.</li>
+			</ul>
+			<p class="feature-validation__note">
+				Puedes validar criterio operativo desde hoy. Los clips/capturas finales se publicarán después para reforzar evidencia visual.
+			</p>
+		</section>
+
 		<section class="feature-cta">
 			<h2>¿Quieres validarlo en tu operativa?</h2>
 			<p>Te mostramos HyperClose en contexto real y resolvemos si encaja con tu estilo y nivel de riesgo.</p>
@@ -189,6 +202,30 @@ const seo = {
 	.feature-proof-detail p {
 		margin: 0;
 		line-height: 1.5;
+	}
+	.feature-validation {
+		margin: var(--section-margin) auto;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+	}
+	.feature-validation h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.2rem;
+	}
+	.feature-validation ul {
+		margin: 0;
+		padding-left: 1.1rem;
+	}
+	.feature-validation li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+	}
+	.feature-validation__note {
+		margin: 0.8rem 0 0;
+		opacity: 0.85;
+		line-height: 1.45;
+		font-size: 0.95rem;
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);

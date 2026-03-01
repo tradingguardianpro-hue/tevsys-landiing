@@ -67,6 +67,19 @@ const seo = {
 			<p>La evidencia incluye validaciones en distintos entornos y condiciones operativas para evitar resultados sesgados por un solo contexto de ejecución.</p>
 		</section>
 
+		<section class="feature-validation">
+			<h2>Cómo validarlo hoy (sin video final)</h2>
+			<ul>
+				<li><strong>Panel:</strong> contrasta límite, ajuste y resultado del cierre en pantalla.</li>
+				<li><strong>Logs MT5:</strong> valida evento, hora y contexto en <code>MQL5/Logs</code>.</li>
+				<li><strong>Resumen estadístico:</strong> revisa el bloque de operativas documentadas y su error medio.</li>
+				<li><strong>Entornos:</strong> verifica que la validación no depende de un único broker/contexto.</li>
+			</ul>
+			<p class="feature-validation__note">
+				Este bloque deja el criterio técnico activo desde ya. Capturas y video final se publicarán después sin cambiar la lógica de comprobación.
+			</p>
+		</section>
+
 		<section class="feature-cta">
 			<h2>¿Quieres probarlo en tu operativa?</h2>
 			<p>Te guiamos para validar encaje real con tu estilo de trading, sin fricción ni promesas vacías.</p>
@@ -198,6 +211,30 @@ const seo = {
 	.feature-proof-detail p {
 		margin: 0;
 		line-height: 1.5;
+	}
+	.feature-validation {
+		margin: var(--section-margin) auto;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+	}
+	.feature-validation h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.2rem;
+	}
+	.feature-validation ul {
+		margin: 0;
+		padding-left: 1.1rem;
+	}
+	.feature-validation li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+	}
+	.feature-validation__note {
+		margin: 0.8rem 0 0;
+		opacity: 0.85;
+		line-height: 1.45;
+		font-size: 0.95rem;
 	}
 	@media (max-width: 768px) {
 		.feature-hook {

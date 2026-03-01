@@ -45,34 +45,29 @@ const seo = {
 		<section id="evidence-panel" class="feature-proof-detail">
 			<h3>Panel visible para verificación</h3>
 			<p>El panel muestra el estado del sistema y ayuda a contrastar qué pasó, cuándo pasó y bajo qué condiciones operativas.</p>
+			<p><strong>Cómo validarlo:</strong> Abre el panel y contrasta evento, hora y estado con tu operativa real.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura del panel</a></p>
 		</section>
 
 		<section id="evidence-logs" class="feature-proof-detail">
 			<h3>Logs auditables</h3>
 			<p>Puedes revisar eventos por fecha en MT5 desde Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs para validar cada acción.</p>
+			<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura de logs</a></p>
 		</section>
 
 		<section id="evidence-report" class="feature-proof-detail">
 			<h3>Reporte oficial de la plataforma</h3>
 			<p>Además del registro interno, se contrasta con reporte oficial para reforzar consistencia y evitar interpretación subjetiva.</p>
+			<p><strong>Cómo validarlo:</strong> Caja de herramientas &gt; Historial &gt; Informe &gt; Overview &gt; Guardar como PDF.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura del reporte</a></p>
 		</section>
 
 		<section id="evidence-trace" class="feature-proof-detail">
 			<h3>Trazabilidad completa</h3>
 			<p>El objetivo no es solo cerrar: es dejar evidencia entendible y revisable para usuario, equipo y auditoría externa.</p>
-		</section>
-
-		<section class="feature-validation">
-			<h2>Cómo validarlo hoy (sin video final)</h2>
-			<ul>
-				<li><strong>Panel:</strong> contrasta en pantalla estado, evento y contexto operativo.</li>
-				<li><strong>Logs MT5:</strong> verifica fecha/hora/evento en <code>MQL5/Logs</code>.</li>
-				<li><strong>Reporte oficial:</strong> valida consistencia externa con el reporte de plataforma.</li>
-				<li><strong>Trazabilidad:</strong> revisa que cierre, bloqueo y rotación dejen huella verificable.</li>
-			</ul>
-			<p class="feature-validation__note">
-				Este bloque permite validar criterio técnico desde ya. El material visual final (capturas/video) se publicará después sin cambiar el estándar de comprobación.
-			</p>
+			<p><strong>Cómo validarlo:</strong> Cruza panel, logs y reporte para confirmar que cierre, bloqueo y rotación coinciden en tiempo y resultado.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura de trazabilidad</a></p>
 		</section>
 
 		<section class="feature-cta">
@@ -199,29 +194,19 @@ const seo = {
 		margin: 0;
 		line-height: 1.5;
 	}
-	.feature-validation {
-		margin: var(--section-margin) auto;
-		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
-		padding: 1rem 1.1rem;
+	.proof-capture-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s ease;
 	}
-	.feature-validation h2 {
-		margin: 0 0 0.65rem;
-		font-size: 1.2rem;
+	.proof-capture-link:hover {
+		color: #f7c050;
 	}
-	.feature-validation ul {
-		margin: 0;
-		padding-left: 1.1rem;
-	}
-	.feature-validation li {
-		margin-bottom: 0.45rem;
-		line-height: 1.5;
-	}
-	.feature-validation__note {
-		margin: 0.8rem 0 0;
-		opacity: 0.85;
-		line-height: 1.45;
-		font-size: 0.95rem;
+	.proof-capture-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);

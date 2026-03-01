@@ -162,10 +162,10 @@ Estado actual elegido:
 
 | Micro-página | Copy final | Ajuste móvil | Video final | Evidencias (capturas/logs) |
 |---|---|---|---|---|
-| `precision` | ✅ | ✅ (hook optimizado) | ⏳ | ⏳ |
-| `hyperclose` | ✅ | ✅ | ⏳ (piloto ya probado) | ⏳ |
-| `sml` | ✅ (compactado en home) | ✅ | ⏳ | ⏳ |
-| `evidencia` | ✅ | ✅ | ⏳ | ⏳ |
+| `precision` | ✅ | ✅ (hook optimizado) | ⏳ | 🟡 (criterio textual activo) |
+| `hyperclose` | ✅ | ✅ | ⏳ (piloto ya probado) | 🟡 (criterio textual activo) |
+| `sml` | ✅ (compactado en home) | ✅ | ⏳ | 🟡 (criterio textual activo) |
+| `evidencia` | ✅ | ✅ | ⏳ | 🟡 (criterio textual activo) |
 
 ### Regla simple de trabajo (solo 2-3 personas)
 
