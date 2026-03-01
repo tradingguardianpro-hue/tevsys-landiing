@@ -62,7 +62,28 @@ const seo = {
 			<h3>Logs auditables</h3>
 			<p>Cada evento relevante queda registrado. Puedes revisarlo en MT5 desde <strong>Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs</strong> y seleccionar la fecha.</p>
 			<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura de logs</a></p>
+			<p><a class="proof-capture-link" href="#precision-logs-guide">Ver guía visual de logs</a></p>
+		</section>
+
+		<section id="precision-logs-guide" class="proof-gallery">
+			<h3>Guía visual de logs (3 pasos)</h3>
+			<div class="proof-gallery__grid">
+				<article class="proof-gallery__item">
+					<p class="proof-gallery__step">Paso 1</p>
+					<p class="proof-gallery__title">Abrir carpeta de datos</p>
+					<div class="proof-gallery__placeholder">Captura pendiente</div>
+				</article>
+				<article class="proof-gallery__item">
+					<p class="proof-gallery__step">Paso 2</p>
+					<p class="proof-gallery__title">Entrar en MQL5 / Logs</p>
+					<div class="proof-gallery__placeholder">Captura pendiente</div>
+				</article>
+				<article class="proof-gallery__item">
+					<p class="proof-gallery__step">Paso 3</p>
+					<p class="proof-gallery__title">Seleccionar fecha y validar evento</p>
+					<div class="proof-gallery__placeholder">Captura pendiente</div>
+				</article>
+			</div>
 		</section>
 
 		<section id="precision-stats" class="feature-proof-detail">
@@ -256,6 +277,52 @@ const seo = {
 		color: #f7c050;
 		line-height: 1.2;
 	}
+	.proof-gallery {
+		margin: 1rem 0 0;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+		scroll-margin-top: 5.5rem;
+	}
+	.proof-gallery h3 {
+		margin: 0 0 0.7rem;
+		font-size: 1.02rem;
+	}
+	.proof-gallery__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+	.proof-gallery__item {
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 0.6rem;
+		padding: 0.7rem;
+	}
+	.proof-gallery__step {
+		margin: 0 0 0.2rem;
+		font-size: 0.78rem;
+		opacity: 0.8;
+	}
+	.proof-gallery__title {
+		margin: 0 0 0.5rem;
+		font-size: 0.9rem;
+		font-weight: 600;
+		line-height: 1.35;
+	}
+	.proof-gallery__placeholder {
+		min-height: 96px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0.45rem;
+		border: 1px dashed rgba(245, 176, 65, 0.45);
+		background: rgba(245, 176, 65, 0.07);
+		color: rgba(245, 176, 65, 0.95);
+		font-size: 0.82rem;
+		text-align: center;
+		padding: 0.45rem;
+	}
 	@media (max-width: 768px) {
 		.feature-hook {
 			display: block;
@@ -268,6 +335,9 @@ const seo = {
 		}
 		.feature-hook__accent {
 			white-space: nowrap;
+		}
+		.proof-gallery__grid {
+			grid-template-columns: 1fr;
 		}
 	}
 	.feature-cta {
