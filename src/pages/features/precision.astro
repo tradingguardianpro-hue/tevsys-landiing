@@ -13,7 +13,7 @@ const seo = {
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de verificación</p>
 			<h1>Precisión de cierre: donde configuras, cerramos.</h1>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>50 operativas documentadas. <span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.</p>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>48 operativas documentadas. <span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.</p>
 			<p class="feature-intro">El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.</p>
 			<p class="feature-lead">
 				Ajustamos en tiempo real para compensar slippage, spread y comisiones. No vendemos humo: mostramos cálculo, evidencia y trazabilidad.
@@ -89,9 +89,23 @@ const seo = {
 
 		<section id="precision-stats" class="feature-proof-detail">
 			<h3>Resumen estadístico</h3>
-			<p>La documentación consolidada muestra precisión media cercana al 0,06% en condiciones normales, junto con casos reales por tipo de cuenta y escenario.</p>
-			<p><strong>Cómo validarlo:</strong> Revisa la tabla consolidada y contrasta el promedio con los casos individuales.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura del resumen estadístico</a></p>
+			<p>Lectura rápida para validar el claim sin perderte en un informe largo:</p>
+			<ul class="proof-kpis">
+				<li><strong>48 operativas</strong> documentadas</li>
+				<li><strong>0,06%</strong> de error medio en condiciones normales</li>
+				<li><strong>5 brokers</strong> validados (real y demo)</li>
+				<li><strong>2 casos extremos</strong> documentados aparte (0,29% y 0,39%)</li>
+			</ul>
+			<p><strong>Cómo validarlo:</strong> Contrasta estos cuatro datos con el resumen técnico y el dossier completo.</p>
+			<p class="proof-links-row">
+				<a class="proof-capture-link" href="#">
+					Ver resumen técnico <span class="proof-link-meta">PDF</span>
+				</a>
+				<a class="proof-capture-link" href="#">
+					Ver dossier completo <span class="proof-link-meta">PRÓXIMAMENTE</span>
+				</a>
+			</p>
+			<p class="proof-note">No publicamos la fórmula propietaria de ajuste (volatilidad, slippage, spread y comisiones); sí publicamos resultados verificables y trazabilidad.</p>
 		</section>
 
 		<section id="precision-environments" class="feature-proof-detail">
@@ -246,6 +260,25 @@ const seo = {
 	.feature-proof-detail p {
 		margin: 0;
 		line-height: 1.5;
+	}
+	.proof-kpis {
+		margin: 0.55rem 0 0.7rem;
+		padding-left: 1.05rem;
+	}
+	.proof-kpis li {
+		margin: 0 0 0.35rem;
+		line-height: 1.45;
+	}
+	.proof-links-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-top: 0.45rem;
+	}
+	.proof-note {
+		margin-top: 0.55rem !important;
+		font-size: 0.93rem;
+		opacity: 0.85;
 	}
 	.feature-proof-detail:target {
 		border-color: rgba(245, 176, 65, 0.55);
