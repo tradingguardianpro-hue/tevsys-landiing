@@ -138,10 +138,37 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   @media (max-width: 768px) {
     .hero-section__section {
       grid-template-columns: 1fr;
+      min-height: auto;
+      gap: 1.25rem;
+    }
+    .hero-section__text {
+      justify-self: stretch;
+      max-width: 100%;
+    }
+    .hero-section__image {
+      grid-column: 1;
+      grid-row: auto;
+      align-items: center;
+    }
+    .hero-image__wrapper {
+      width: 100%;
+      justify-content: center;
     }
     .hero-image__wrapper img,
     .hero-section__image img {
       min-width: unset;
+      width: min(96vw, 540px);
+      max-height: none;
+    }
+    .hero-image__brand {
+      align-self: center;
+      text-align: center;
+    }
+  }
+  @media (max-width: 420px) {
+    .hero-image__wrapper img,
+    .hero-section__image img {
+      width: 100%;
     }
   }
 </style>
