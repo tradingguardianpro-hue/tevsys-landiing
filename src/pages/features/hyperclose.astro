@@ -189,14 +189,33 @@ const seo = {
 		background: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
 		padding: 1rem 1.1rem;
+		scroll-margin-top: 5.5rem;
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+		border: 1px solid transparent;
 	}
 	.feature-proof-detail h3 {
 		margin: 0 0 0.45rem;
 		font-size: 1.05rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+	}
+	.feature-proof-detail h3::before {
+		content: '';
+		width: 0.42rem;
+		height: 0.42rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
 	}
 	.feature-proof-detail p {
 		margin: 0;
 		line-height: 1.5;
+	}
+	.feature-proof-detail:target {
+		border-color: rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 	}
 	.proof-capture-link {
 		color: #f5b041;
