@@ -178,8 +178,8 @@ Estado actual elegido:
 ## 8) Mini roadmap inmediato (sin complicarnos)
 
 ### Tarea 1 (ahora)
-- [x] Cierre final de copy en las 4 micro-páginas (sin tocar más salvo bug).
-- **Done cuando:** precisión/hyperclose/sml/evidencia queden congeladas en texto final.
+- [x] Congelar copy base v1 en las 4 micro-páginas (sin tocar más salvo bug).
+- **Done cuando:** precisión/hyperclose/sml/evidencia queden estables en texto base.
 
 ### Tarea 2 (después)
 - [ ] QA móvil rápido en 360/390/768 para home + features + contacto.
@@ -205,3 +205,51 @@ Estado actual elegido:
   - Hook: `Lo que no se puede demostrar, no cuenta.`
 
 Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o decisión explícita de producto.
+
+---
+
+## 9) Estructura final de evidencias (sin vídeo definitivo todavía)
+
+> Objetivo: tener claro qué prueba va en cada micro-página aunque hoy no podamos producir todos los vídeos.
+> Regla: primero publicamos evidencia mínima útil (captura/log), luego sustituimos o ampliamos con vídeo final.
+
+### 9.1 Precision (`/features/precision`)
+
+| Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
+|---|---|---|---|
+| Cálculo visible en panel | Captura | Mini clip 20-30s | `precision-panel-01.png` / `precision-panel-clip-01.mp4` |
+| Logs auditables | Captura | Captura + breve explicación | `precision-logs-01.png` |
+| Resumen estadístico (0,06%) | Imagen del resumen/tabla | Imagen + validación cruzada | `precision-stats-01.png` |
+| Demo principal | Placeholder actual | Vídeo final 40s | `precision-demo.mp4` |
+
+### 9.2 HyperClose (`/features/hyperclose`)
+
+| Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
+|---|---|---|---|
+| Intento bloqueado + cierre | Captura secuencial (2 imágenes) | Vídeo 20-40s | `hyperclose-close-01.png` / `hyperclose-demo.mp4` |
+| Trazabilidad del intento | Captura logs | Captura logs + overlay explicativo | `hyperclose-logs-01.png` |
+| Flujo completo de protección | Texto + captura | Vídeo final narrado | `hyperclose-flow-01.png` |
+
+### 9.3 SML (`/features/sml`)
+
+| Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
+|---|---|---|---|
+| Configuración 5%-25% | Captura de configuración | Mini clip configuración | `sml-config-01.png` / `sml-config-clip-01.mp4` |
+| Activación opcional | Captura | Captura + micro explicación | `sml-activation-01.png` |
+| Convivencia con límites y OFF | Captura panel/estado | Clip breve de flujo real | `sml-offdays-01.png` / `sml-demo.mp4` |
+| Demo principal | Placeholder actual | Vídeo final 40s | `sml-demo.mp4` |
+
+### 9.4 Evidencia (`/features/evidencia`)
+
+| Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
+|---|---|---|---|
+| Panel operativo | Captura | Captura comparada con log/reporte | `evidencia-panel-01.png` |
+| Logs auditables | Captura | Captura + explicación dónde validarlo | `evidencia-logs-01.png` |
+| Reporte oficial | Captura/fragmento | Captura + correspondencia con evento real | `evidencia-report-01.png` |
+| Demo principal | Placeholder actual | Vídeo final 40s | `evidencia-demo.mp4` |
+
+### 9.5 Orden de publicación recomendado (realista)
+
+1. Publicar primero capturas mínimas (rápido, sin depender de edición de vídeo).
+2. Publicar después los vídeos finales por prioridad: HyperClose -> Precision -> SML -> Evidencia.
+3. Al subir un asset final, actualizar estado en sección 7.
