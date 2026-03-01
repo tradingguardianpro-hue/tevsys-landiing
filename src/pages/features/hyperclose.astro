@@ -78,25 +78,25 @@ const seo = {
 				<div class="evidence-map__row" role="row">
 					<div role="cell">Demo rápida</div>
 					<div role="cell">Video (40s)</div>
-					<div role="cell"><span class="evidence-status evidence-status--pilot">Piloto cargado</span></div>
+					<div role="cell"><span class="evidence-status" data-status="pilot">Piloto cargado</span></div>
 					<div role="cell"><code>hyperclose-demo.mp4</code></div>
 				</div>
 				<div class="evidence-map__row" role="row">
 					<div role="cell">Cierre en milisegundos</div>
 					<div role="cell">Mini clip + captura</div>
-					<div role="cell"><span class="evidence-status evidence-status--final">Pendiente final</span></div>
+					<div role="cell"><span class="evidence-status" data-status="final">Pendiente final</span></div>
 					<div role="cell"><code>hyperclose-close-01.png</code></div>
 				</div>
 				<div class="evidence-map__row" role="row">
 					<div role="cell">Registro por intento</div>
 					<div role="cell">Captura logs</div>
-					<div role="cell"><span class="evidence-status evidence-status--pending">Pendiente</span></div>
+					<div role="cell"><span class="evidence-status" data-status="pending">Pendiente</span></div>
 					<div role="cell"><code>hyperclose-logs-01.png</code></div>
 				</div>
 				<div class="evidence-map__row" role="row">
 					<div role="cell">Flujo real completo</div>
 					<div role="cell">Texto + secuencia</div>
-					<div role="cell"><span class="evidence-status evidence-status--pending">Pendiente</span></div>
+					<div role="cell"><span class="evidence-status" data-status="pending">Pendiente</span></div>
 					<div role="cell"><code>hyperclose-flow-01.png</code></div>
 				</div>
 			</div>
@@ -267,15 +267,15 @@ const seo = {
 		font-weight: 600;
 		letter-spacing: 0.01em;
 	}
-	.evidence-status--pending {
+	.evidence-status[data-status='pending'] {
 		background: rgba(255, 255, 255, 0.08);
 		color: rgba(255, 255, 255, 0.9);
 	}
-	.evidence-status--final {
+	.evidence-status[data-status='final'] {
 		background: rgba(245, 176, 65, 0.18);
 		color: #f5b041;
 	}
-	.evidence-status--pilot {
+	.evidence-status[data-status='pilot'] {
 		background: rgba(82, 196, 26, 0.18);
 		color: #9be06f;
 	}
