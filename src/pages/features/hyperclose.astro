@@ -22,7 +22,7 @@ const seo = {
 			</p>
 		</section>
 
-		<section class="feature-demo">
+		<section id="hyperclose-demo" class="feature-demo">
 			<h2>Demo rápida (20-30s)</h2>
 			<div class="demo-video">
 				<video controls preload="none">
@@ -50,7 +50,11 @@ const seo = {
 			<h3>Cierre inmediato</h3>
 			<p>El sistema detecta el intento y ejecuta cierre automático de protección en milisegundos para evitar que la operativa continúe fuera de reglas.</p>
 			<p><strong>Cómo validarlo:</strong> Intenta abrir operación en estado bloqueado y verifica cierre inmediato.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura del cierre</a></p>
+			<p>
+				<a class="proof-capture-link" href="#hyperclose-demo">
+					Ir a demo del cierre <span class="proof-link-meta">VIDEO</span>
+				</a>
+			</p>
 		</section>
 
 		<section id="hyperclose-logs" class="feature-proof-detail">
@@ -230,6 +234,18 @@ const seo = {
 		outline: 2px solid #f5b041;
 		outline-offset: 3px;
 		border-radius: 0.2rem;
+	}
+	.proof-link-meta {
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		padding: 0.08rem 0.38rem;
+		border-radius: 999px;
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.12);
+		color: #f7c050;
+		line-height: 1.2;
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);
