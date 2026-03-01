@@ -366,3 +366,26 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### Implementación
 - Eliminado bloque visual de roadmap y estilos asociados en las 4 micro-páginas.
 - Tracker interno consolidado en `docs/CARDS-NEXT-PHASE.md` (sección Dream Team).
+
+---
+
+## 19) Patrón unificado de validación en micro-páginas (sin assets finales)
+
+### Decisión UX
+- Mantener en todas las micro-páginas el mismo patrón:
+  1. `Qué puedes comprobar` (links de ancla interna),
+  2. Rectángulos técnicos,
+  3. Dentro de cada rectángulo: `Cómo validarlo` + link `Ver captura`.
+
+### Implementación
+- Se elimina el bloque redundante `Cómo validarlo hoy (sin video final)` donde existía.
+- Se estandariza instrucción y enlace de captura dentro de cada bloque técnico en:
+  - `precision`
+  - `hyperclose`
+  - `sml`
+  - `evidencia`
+
+### Resultado
+- Misma calidad percibida en las 4 micro-páginas.
+- Menos redundancia de texto.
+- Preparado para enchufar capturas reales sin cambiar estructura.

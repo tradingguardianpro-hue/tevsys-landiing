@@ -49,34 +49,29 @@ const seo = {
 		<section id="hyperclose-close" class="feature-proof-detail">
 			<h3>Cierre inmediato</h3>
 			<p>El sistema detecta el intento y ejecuta cierre automático de protección en milisegundos para evitar que la operativa continúe fuera de reglas.</p>
+			<p><strong>Cómo validarlo:</strong> Intenta abrir operación en estado bloqueado y verifica cierre inmediato.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura del cierre</a></p>
 		</section>
 
 		<section id="hyperclose-logs" class="feature-proof-detail">
 			<h3>Trazabilidad por intento</h3>
 			<p>Cada intento queda documentado para revisión posterior, con evidencia útil para control interno o auditoría operativa.</p>
+			<p><strong>Cómo validarlo:</strong> Revisa el evento correspondiente en <code>MQL5/Logs</code> con fecha y hora.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura de logs</a></p>
 		</section>
 
 		<section id="hyperclose-off" class="feature-proof-detail">
 			<h3>Compatibilidad con días OFF</h3>
 			<p>La protección no depende del estado emocional del día: también actúa cuando la jornada está marcada como OFF.</p>
+			<p><strong>Cómo validarlo:</strong> Mantén el día en OFF e intenta operar para comprobar que el bloqueo sigue activo.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura en día OFF</a></p>
 		</section>
 
 		<section id="hyperclose-flow" class="feature-proof-detail">
 			<h3>Flujo real de protección</h3>
 			<p>Se puede demostrar en secuencia simple: intento de operar, cierre automático, bloqueo activo y registro del evento.</p>
-		</section>
-
-		<section class="feature-validation">
-			<h2>Cómo validarlo hoy (sin video final)</h2>
-			<ul>
-				<li><strong>Intento bloqueado:</strong> valida que el sistema detecta y cierra de inmediato.</li>
-				<li><strong>Logs MT5:</strong> comprueba fecha/hora/evento en <code>MQL5/Logs</code>.</li>
-				<li><strong>Días OFF:</strong> confirma que la protección sigue activa en jornadas marcadas como OFF.</li>
-				<li><strong>Flujo completo:</strong> verifica secuencia intento - cierre - bloqueo - trazabilidad.</li>
-			</ul>
-			<p class="feature-validation__note">
-				Puedes validar criterio operativo desde hoy. Los clips/capturas finales se publicarán después para reforzar evidencia visual.
-			</p>
+			<p><strong>Cómo validarlo:</strong> Cruza panel, cierre y log del mismo intento para confirmar el flujo completo.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura de trazabilidad</a></p>
 		</section>
 
 		<section class="feature-cta">
@@ -203,29 +198,19 @@ const seo = {
 		margin: 0;
 		line-height: 1.5;
 	}
-	.feature-validation {
-		margin: var(--section-margin) auto;
-		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
-		padding: 1rem 1.1rem;
+	.proof-capture-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s ease;
 	}
-	.feature-validation h2 {
-		margin: 0 0 0.65rem;
-		font-size: 1.2rem;
+	.proof-capture-link:hover {
+		color: #f7c050;
 	}
-	.feature-validation ul {
-		margin: 0;
-		padding-left: 1.1rem;
-	}
-	.feature-validation li {
-		margin-bottom: 0.45rem;
-		line-height: 1.5;
-	}
-	.feature-validation__note {
-		margin: 0.8rem 0 0;
-		opacity: 0.85;
-		line-height: 1.45;
-		font-size: 0.95rem;
+	.proof-capture-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);

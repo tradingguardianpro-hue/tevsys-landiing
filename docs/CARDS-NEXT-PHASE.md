@@ -172,6 +172,7 @@ Estado actual elegido:
 1. No duplicar seguimiento en muchos sitios.
 2. Actualizar este bloque al cerrar cada tarea real.
 3. Si algo se publica en web, registrar también en `CHANGELOG-TEVSYS.md`.
+4. Patrón fijo en las 4 micro-páginas: ancla arriba (`Qué puedes comprobar`) + instrucción + `Ver captura` en cada rectángulo.
 
 ---
 

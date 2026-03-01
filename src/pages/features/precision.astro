@@ -50,34 +50,29 @@ const seo = {
 		<section id="precision-panel" class="feature-proof-detail">
 			<h3>Panel con cálculo visible</h3>
 			<p>Mostramos en pantalla el límite, el ajuste aplicado y el resultado de cierre para que puedas comparar configuración vs ejecución real.</p>
+			<p><strong>Cómo validarlo:</strong> Contrasta límite, ajuste y resultado en el panel durante una ejecución real.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura del panel</a></p>
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail">
 			<h3>Logs auditables</h3>
 			<p>Cada evento relevante queda registrado. Puedes revisarlo en MT5 desde <strong>Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs</strong> y seleccionar la fecha.</p>
+			<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura de logs</a></p>
 		</section>
 
 		<section id="precision-stats" class="feature-proof-detail">
 			<h3>Resumen estadístico</h3>
 			<p>La documentación consolidada muestra precisión media cercana al 0,06% en condiciones normales, junto con casos reales por tipo de cuenta y escenario.</p>
+			<p><strong>Cómo validarlo:</strong> Revisa la tabla consolidada y contrasta el promedio con los casos individuales.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura del resumen estadístico</a></p>
 		</section>
 
 		<section id="precision-environments" class="feature-proof-detail">
 			<h3>Entornos validados</h3>
 			<p>La evidencia incluye validaciones en distintos entornos y condiciones operativas para evitar resultados sesgados por un solo contexto de ejecución.</p>
-		</section>
-
-		<section class="feature-validation">
-			<h2>Cómo validarlo hoy (sin video final)</h2>
-			<ul>
-				<li><strong>Panel:</strong> contrasta límite, ajuste y resultado del cierre en pantalla.</li>
-				<li><strong>Logs MT5:</strong> valida evento, hora y contexto en <code>MQL5/Logs</code>.</li>
-				<li><strong>Resumen estadístico:</strong> revisa el bloque de operativas documentadas y su error medio.</li>
-				<li><strong>Entornos:</strong> verifica que la validación no depende de un único broker/contexto.</li>
-			</ul>
-			<p class="feature-validation__note">
-				Este bloque deja el criterio técnico activo desde ya. Capturas y video final se publicarán después sin cambiar la lógica de comprobación.
-			</p>
+			<p><strong>Cómo validarlo:</strong> Comprueba que la evidencia incluye más de un entorno/broker y resultados consistentes.</p>
+			<p><a class="proof-capture-link" href="#">Ver captura de entornos validados</a></p>
 		</section>
 
 		<section class="feature-cta">
@@ -212,29 +207,19 @@ const seo = {
 		margin: 0;
 		line-height: 1.5;
 	}
-	.feature-validation {
-		margin: var(--section-margin) auto;
-		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
-		padding: 1rem 1.1rem;
+	.proof-capture-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s ease;
 	}
-	.feature-validation h2 {
-		margin: 0 0 0.65rem;
-		font-size: 1.2rem;
+	.proof-capture-link:hover {
+		color: #f7c050;
 	}
-	.feature-validation ul {
-		margin: 0;
-		padding-left: 1.1rem;
-	}
-	.feature-validation li {
-		margin-bottom: 0.45rem;
-		line-height: 1.5;
-	}
-	.feature-validation__note {
-		margin: 0.8rem 0 0;
-		opacity: 0.85;
-		line-height: 1.45;
-		font-size: 0.95rem;
+	.proof-capture-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
 	}
 	@media (max-width: 768px) {
 		.feature-hook {
