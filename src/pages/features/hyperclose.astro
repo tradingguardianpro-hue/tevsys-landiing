@@ -12,7 +12,10 @@ const seo = {
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de protección</p>
-			<h1>HyperClose: cuando tu disciplina falla, HyperClose no.</h1>
+			<h1>
+				HyperClose: cuando tu disciplina falla,<br />
+				<span class="feature-title__accent">HyperClose</span> no.
+			</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Cierre en milisegundos. Bloqueo hasta la siguiente rotación.</p>
 			<p class="feature-lead">
 				Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos antes del siguiente tick. Cada intento queda registrado.
@@ -88,6 +91,12 @@ const seo = {
 	.feature-hero h1 {
 		margin: 0 0 0.65rem;
 		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+		line-height: 1.08;
+		max-width: 18ch;
+	}
+	.feature-title__accent {
+		color: #f5b041;
+		font-weight: 700;
 	}
 	.feature-hook {
 		display: inline-flex;

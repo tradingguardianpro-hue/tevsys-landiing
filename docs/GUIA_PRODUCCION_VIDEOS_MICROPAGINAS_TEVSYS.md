@@ -57,6 +57,15 @@ Regla:
 - Letra clara, sin saturar.
 - Mantener estilo consistente en todos los videos.
 
+### Coherencia crítica overlay <-> CTA web
+
+Si el cierre del video usa un mensaje tipo `Probar X en demo`, el botón real de la micro-página debe usar el mismo texto o una variante mínima equivalente.
+
+Objetivo:
+- evitar fricción cognitiva
+- reforzar confianza
+- mantener continuidad entre promesa visual y acción real
+
 ---
 
 ## Guión por micro-página
