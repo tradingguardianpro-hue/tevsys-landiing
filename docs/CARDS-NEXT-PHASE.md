@@ -178,7 +178,7 @@ Estado actual elegido:
 ## 8) Mini roadmap inmediato (sin complicarnos)
 
 ### Tarea 1 (ahora)
-- [ ] Cierre final de copy en las 4 micro-páginas (sin tocar más salvo bug).
+- [x] Cierre final de copy en las 4 micro-páginas (sin tocar más salvo bug).
 - **Done cuando:** precisión/hyperclose/sml/evidencia queden congeladas en texto final.
 
 ### Tarea 2 (después)
@@ -188,3 +188,20 @@ Estado actual elegido:
 ### Tarea 3 (siguiente)
 - [ ] Preparar publicación de evidencias sin video final (capturas/logs con nombres cerrados).
 - **Done cuando:** cada micro-página tenga lista su evidencia mínima publicable.
+
+### Copy freeze v1 (activo)
+
+- `precision`
+  - Título: `Precisión de cierre: donde configuras, cerramos.`
+  - Hook: `50 operativas documentadas. 0,06% de error medio en condiciones normales.`
+- `hyperclose`
+  - Título: `HyperClose: cuando tu disciplina falla, HyperClose no.`
+  - Hook: `Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
+- `sml`
+  - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
+  - Hook: `Actívalo cuando quieras. Decide cuánto ampliar el margen: del 5% al 25% (mínimo 75% protegido).`
+- `evidencia`
+  - Título: `Evidencia verificable: aquí no hay "creemos".`
+  - Hook: `Lo que no se puede demostrar, no cuenta.`
+
+Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o decisión explícita de producto.
