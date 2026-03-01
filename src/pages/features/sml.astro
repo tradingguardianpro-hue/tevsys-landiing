@@ -12,11 +12,11 @@ const seo = {
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de disciplina</p>
-			<h1>SML: protección opcional con ventaja operativa</h1>
-			<p class="feature-hook">No es obligatorio. Es una recompensa.</p>
-			<p class="feature-lead">
-				Tú decides si activarlo y cuánto porcentaje aplicar (5% a 25%). SML añade una capa de protección para ayudarte a sostener lo ganado.
-			</p>
+			<h1>SML: protege parte de lo ganado sin frenar tu operativa.</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Actívalo cuando quieras. Decide cuánto proteger: del <span class="feature-hook__accent">5%</span> al <span class="feature-hook__accent">25%</span>.</p>
+			<p class="feature-intro">La diferencia no es operar más: es conservar mejor.</p>
+			<p class="feature-lead">SML convive con tus límites diarios y semanales. Se activa bajo tu criterio y se ejecuta automáticamente, sin fricción.</p>
+			<p class="feature-extreme-note">También puedes combinarlo con días OFF cuando necesites proteger sesiones de alta presión.</p>
 		</section>
 
 		<section class="feature-demo">
@@ -29,7 +29,7 @@ const seo = {
 			</div>
 			<div class="demo-placeholder">
 				<p>Ruta actual de prueba: <code>/videos/features/sml-demo.mp4</code>.</p>
-				<p class="demo-note">Puedes subir un MP4 de OBS de prueba para validar el bloque antes de publicar la versión definitiva.</p>
+				<p class="demo-note">Puedes subir un MP4 de OBS de prueba para validar el bloque antes de publicar la versión definitiva (configuración + activación + protección).</p>
 			</div>
 		</section>
 
@@ -90,13 +90,38 @@ const seo = {
 		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
 	}
 	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
 		font-style: italic;
-		opacity: 0.92;
+		font-weight: 600;
+		opacity: 0.9;
 		margin: 0 0 0.7rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-hook__accent {
+		color: #f5b041;
+		font-weight: 700;
+	}
+	.feature-intro {
+		margin: 0 0 0.55rem;
+		line-height: 1.5;
 	}
 	.feature-lead {
 		max-width: 70ch;
 		line-height: 1.55;
+	}
+	.feature-extreme-note {
+		max-width: 72ch;
+		line-height: 1.5;
+		opacity: 0.86;
+		margin: 0.35rem 0 0;
 	}
 	.feature-demo h2,
 	.feature-proof h2,
