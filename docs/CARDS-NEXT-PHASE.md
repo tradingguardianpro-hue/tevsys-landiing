@@ -233,7 +233,7 @@ Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o deci
 
 | Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
 |---|---|---|---|
-| Cálculo visible en panel | Captura | Mini clip 20-30s | `precision-panel-01.png` / `precision-panel-clip-01.mp4` |
+| Cálculo visible en panel | Demo interna (ancla a video) | Vídeo 20-40s | `precision-demo.mp4` |
 | Logs auditables | Captura | Captura + breve explicación | `precision-logs-01.png` |
 | Resumen estadístico (0,06%) | Imagen del resumen/tabla | Imagen + validación cruzada | `precision-stats-01.png` |
 | Demo principal | Placeholder actual | Vídeo final 40s | `precision-demo.mp4` |

@@ -23,7 +23,7 @@ const seo = {
 			</p>
 		</section>
 
-		<section class="feature-demo">
+		<section id="precision-demo" class="feature-demo">
 			<h2>Demo rápida (20-30s)</h2>
 			<div class="demo-video">
 				<video controls preload="none">
@@ -51,7 +51,11 @@ const seo = {
 			<h3>Panel con cálculo visible</h3>
 			<p>Mostramos en pantalla el límite, el ajuste aplicado y el resultado de cierre para que puedas comparar configuración vs ejecución real.</p>
 			<p><strong>Cómo validarlo:</strong> Contrasta límite, ajuste y resultado en el panel durante una ejecución real.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura del panel</a></p>
+			<p>
+				<a class="proof-capture-link" href="#precision-demo">
+					Ir a demo del cierre <span class="proof-link-meta">VIDEO</span>
+				</a>
+			</p>
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail">
@@ -239,6 +243,18 @@ const seo = {
 		outline: 2px solid #f5b041;
 		outline-offset: 3px;
 		border-radius: 0.2rem;
+	}
+	.proof-link-meta {
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		padding: 0.08rem 0.38rem;
+		border-radius: 999px;
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.12);
+		color: #f7c050;
+		line-height: 1.2;
 	}
 	@media (max-width: 768px) {
 		.feature-hook {
