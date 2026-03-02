@@ -179,3 +179,32 @@ Lo más costoso no es el código, es tener el contenido (videos/capturas) bien p
 ### Estado
 - Se mantiene este tema como frente separado para próxima fase (sección `Empresas` del header y flujo dedicado).
 
+---
+
+## Ajuste de decisión UX - `precision` (bloque resumen estadístico)
+
+### Problema detectado
+- El bloque mezclaba demasiadas capas a la vez:
+  1. KPI de validación rápida,
+  2. CTA documental múltiple,
+  3. notas técnicas/contextuales.
+- Resultado percibido: ruido visual y pérdida de foco de conversión.
+
+### Decisión tomada
+- Mantener en abierto solo:
+  - KPI + `Ver resumen técnico (PDF)`.
+- Retirar `Ver dossier completo` del bloque público de resumen.
+- Reforzar flujo por capas:
+  - público = evidencia clara + legible,
+  - cualificado/empresa = material ampliado.
+
+### Ajuste semántico de panel (copy)
+- Se normaliza mensaje para evitar ambigüedad:
+  - `Nota: en este panel, "Bloqueado hasta" equivale a "Protección activa hasta".`
+- Motivo: mantener claridad sin rehacer capturas ni alterar trazabilidad.
+
+### Resultado esperado
+- Menos saturación.
+- Mejor escaneo en móvil/desktop.
+- Mayor probabilidad de que el usuario llegue al CTA con contexto claro.
+

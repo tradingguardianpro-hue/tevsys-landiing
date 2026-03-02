@@ -474,3 +474,35 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 1. Integrar primera evidencia real (4.33) en `precision` como piloto visual.
 2. Repetir patrón en 3 casos más (4.38, 4.41, 4.44).
 3. Cerrar PDF técnico corto (1-2 páginas) y enlace desde micro-página.
+
+---
+
+## 22) Publicación operativa 49 en web + depuración UX de `precision`
+
+### 22.1 Assets reales cargados y visibles
+- Se activa evidencia visual de operativa 49 en:
+  - `public/images/evidence/precision-49-01-desbloqueado.png`
+  - `public/images/evidence/precision-49-02-protegido.png`
+  - `public/images/evidence/precision-49-03-flotante-intermedio-positivo.png`
+  - `public/images/evidence/precision-49-04-flotante-intermedio-negativo.png`
+  - `public/images/evidence/precision-49-05-stop-final.png`
+  - `public/images/evidence/precision-49-06-html-transacciones-redacted.png`
+  - `public/images/evidence/precision-49-07-mt5-resumen-redacted.png`
+- Incidencia resuelta: los archivos estaban con doble extensión (`.png.png`), lo que impedía carga en la web.
+
+### 22.2 Mejora de usabilidad en la galería de evidencia
+- En `src/pages/features/precision.astro`:
+  - cada miniatura abre imagen completa en pestaña nueva (`target="_blank"`),
+  - se añade guía explícita: `Haz clic en cada captura para verla en tamaño completo`.
+- Resultado: la evidencia deja de ser solo visual y pasa a ser legible/auditable por detalle.
+
+### 22.3 Limpieza de `Resumen estadístico` para reducir saturación
+- Se simplifica el bloque para foco comercial + validación rápida:
+  - se mantiene KPI + `Ver resumen técnico (PDF)`,
+  - se retira `Ver dossier completo` del bloque público,
+  - se compacta texto de IP: resultados y trazabilidad públicas; fórmula propietaria no pública.
+
+### 22.4 Nota semántica de panel (bloqueado/protección)
+- Se incorpora nota visible fuera del acordeón:
+  - `Nota: en este panel, "Bloqueado hasta" equivale a "Protección activa hasta".`
+- Objetivo: eliminar ambigüedad sin rehacer capturas ni re-documentar operativas.

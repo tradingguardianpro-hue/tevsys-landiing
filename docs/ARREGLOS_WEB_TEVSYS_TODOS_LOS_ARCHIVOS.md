@@ -339,3 +339,42 @@ Cambios aplicados al bloque de `Resumen estadístico`:
 - NDA: evidencia completa por alcance.
 
 Nota: la documentación operativa de custodia (`MASTER/MIRROR/SNAPSHOT`) y la ruta de tratamiento de empresas se mantiene en entorno interno del proyecto para no mezclar material web con procedimientos sensibles.
+
+---
+
+## Actualización técnica - Operativa 49 en `precision` (zoom + limpieza de bloque)
+
+### Archivo principal tocado
+- `src/pages/features/precision.astro`
+
+### Cambios aplicados
+1. **Galería de evidencia funcional (7 capturas reales)**
+   - Se conectan las 7 imágenes redacted en `public/images/evidence/`.
+   - Se valida nomenclatura exacta y carga correcta en frontend.
+
+2. **Zoom por clic en cada captura**
+   - Cada imagen se envuelve en enlace para abrir tamaño completo.
+   - Se añade clase de interacción visual (`cursor: zoom-in`) y foco accesible.
+
+3. **Indicador de uso**
+   - Texto añadido sobre galería:
+   - `Haz clic en cada captura para verla en tamaño completo.`
+
+4. **Refactor UX de `Resumen estadístico`**
+   - Se mantiene solo 1 CTA técnico en abierto: `Ver resumen técnico (PDF)`.
+   - Se retira CTA `Ver dossier completo` de este bloque para evitar sobrecarga.
+   - Se compacta texto de IP a versión corta y clara.
+
+5. **Nota semántica visible (estado panel)**
+   - Nota final fuera de acordeón:
+   - `Nota: en este panel, "Bloqueado hasta" equivale a "Protección activa hasta".`
+
+### Incidencia corregida durante implementación
+- **Error de carga de imágenes por doble extensión**:
+  - Detectado en carpeta pública como `*.png.png`.
+  - Corregido a `*.png` para resolver 404/rotura visual.
+
+### Resultado
+- Evidencia visual usable (no solo decorativa).
+- Mejor lectura del bloque estadístico (menos ruido, más foco).
+- Menor confusión semántica en mensaje de estado del panel.

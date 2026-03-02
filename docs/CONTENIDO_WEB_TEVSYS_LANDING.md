@@ -226,3 +226,36 @@ Seguimiento interno activo en:
 
 - Caso piloto validado en sesión:
   - Operativa `4.33` (`27/01/2026`) con trazabilidad completa en `ReportHistory-511090223`.
+
+---
+
+## Actualización de copy - `features/precision` (estado vigente)
+
+### Resumen estadístico (versión simplificada)
+
+**Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
+
+- KPIs visibles:
+  - `48 operativas documentadas`
+  - `0,06% de error medio en condiciones normales`
+  - `5 brokers validados (real y demo)`
+  - `2 casos extremos documentados aparte (0,29% y 0,39%)`
+
+- CTA público activo:
+  - `Ver resumen técnico (PDF)`
+
+- Mensaje IP (versión corta):
+  - `Publicamos resultados verificables y trazabilidad. La fórmula propietaria no es pública.`
+
+### Galería de evidencia operativa 49
+
+- Texto guía visible:
+  - `Haz clic en cada captura para verla en tamaño completo.`
+
+- Nota semántica visible:
+  - `Nota: en este panel, "Bloqueado hasta" equivale a "Protección activa hasta".`
+
+### Criterio de publicación (recordatorio)
+
+- `Dossier completo` no se presenta en abierto en este bloque.
+- Queda reservado a flujo cualificado (interés real/empresa) según estrategia de capas de evidencia.
