@@ -16,7 +16,7 @@ const seo = {
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>48 operativas documentadas. <span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.</p>
 			<p class="feature-intro">El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.</p>
 			<p class="feature-lead">
-				Ajustamos en tiempo real para compensar slippage, spread y comisiones. No vendemos humo: mostramos cálculo, evidencia y trazabilidad.
+				Ajustamos en tiempo real para compensar volatilidad, spread, slippage y comisiones. No vendemos humo: mostramos cálculo, evidencia y trazabilidad.
 			</p>
 			<p class="feature-extreme-note">
 				También tenemos casos documentados en escenarios extremos (alta volatilidad geopolítica y cuenta pequeña con lotaje alto): se mantiene la protección, con desviaciones puntuales mayores (hasta <span class="feature-hook__accent">~0,39%</span>).
@@ -40,16 +40,17 @@ const seo = {
 		<section class="feature-proof">
 			<h2>Qué puedes comprobar</h2>
 			<ul>
-				<li><a class="evidence-link" href="#precision-panel">Panel con cálculo visible para validar cada cierre.</a></li>
-				<li><a class="evidence-link" href="#precision-logs">Logs auditables por evento.</a></li>
-				<li><a class="evidence-link" href="#precision-stats">Operativas documentadas con error promedio en condiciones normales de ~0,06%.</a></li>
-				<li><a class="evidence-link" href="#precision-environments">Validación en 5 entornos de ejecución.</a></li>
+				<li><a class="evidence-link" href="#precision-panel">Aquí se decide el cierre (cálculo visible en tiempo real).</a></li>
+				<li><a class="evidence-link" href="#precision-logs">Sin humo: todo queda registrado (logs auditables).</a></li>
+				<li><a class="evidence-link" href="#precision-stats">Lo que dicen los resultados (evidencia visual + resumen técnico).</a></li>
+				<li><a class="evidence-link" href="#precision-environments">No depende de un solo entorno (validación multientorno).</a></li>
 			</ul>
 		</section>
 
 		<section id="precision-panel" class="feature-proof-detail">
-			<h3>Panel con cálculo visible</h3>
-			<p>Mostramos en pantalla el límite, el ajuste aplicado y el resultado de cierre para que puedas comparar configuración vs ejecución real.</p>
+			<h3>Aquí se decide el cierre</h3>
+			<p class="feature-proof-subtitle">Cálculo visible en tiempo real</p>
+			<p>Muestra límite, ajuste y resultado final para validar que la ejecución respeta la lógica configurada.</p>
 			<p><strong>Cómo validarlo:</strong> Contrasta límite, ajuste y resultado en el panel durante una ejecución real.</p>
 			<p>
 				<a class="proof-capture-link" href="#precision-demo">
@@ -59,8 +60,9 @@ const seo = {
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail">
-			<h3>Logs auditables</h3>
-			<p>Cada evento relevante queda registrado. Puedes revisarlo en MT5 desde <strong>Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs</strong> y seleccionar la fecha.</p>
+			<h3>Sin humo: todo queda registrado</h3>
+			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
+			<p>Cada evento relevante queda registrado para revisión técnica posterior, con fecha y contexto de ejecución.</p>
 			<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
 			<details id="precision-logs-guide" class="proof-accordion">
 				<summary class="proof-capture-link">Ver guía visual de logs</summary>
@@ -88,21 +90,9 @@ const seo = {
 		</section>
 
 		<section id="precision-stats" class="feature-proof-detail">
-			<h3>Resumen estadístico</h3>
-			<p>Lectura rápida para validar el claim sin perderte en un informe largo:</p>
-			<ul class="proof-kpis">
-				<li><strong>48 operativas</strong> documentadas</li>
-				<li><strong>0,06%</strong> de error medio en condiciones normales</li>
-				<li><strong>5 brokers</strong> validados (real y demo)</li>
-				<li><strong>2 casos extremos</strong> documentados aparte (0,29% y 0,39%)</li>
-			</ul>
-			<p><strong>Cómo validarlo:</strong> Contrasta estos cuatro datos con el resumen técnico y el dossier completo.</p>
-			<p class="proof-links-row">
-				<a class="proof-capture-link" href="#">
-					Ver resumen técnico <span class="proof-link-meta">PDF</span>
-				</a>
-			</p>
-			<p class="proof-note">Publicamos resultados verificables y trazabilidad. La fórmula propietaria no es pública.</p>
+			<h3>Lo que dicen los resultados</h3>
+			<p class="feature-proof-subtitle">Resumen técnico de precisión</p>
+			<p>Evidencia visual primero, y lectura técnica después para quien quiera profundizar sin perder contexto.</p>
 			<details id="precision-49-evidence" class="proof-accordion">
 				<summary class="proof-capture-link">Ver evidencia operativa 49 (capturas en orden)</summary>
 				<div class="proof-gallery">
@@ -162,12 +152,27 @@ const seo = {
 				</div>
 			</details>
 			<p class="proof-context-note">Nota: en este panel, "Bloqueado hasta" equivale a "Protección activa hasta".</p>
+			<p>Lectura rápida para validar el claim sin perderte en un informe largo:</p>
+			<ul class="proof-kpis">
+				<li><strong>48 operativas</strong> documentadas</li>
+				<li><strong>0,06%</strong> de error medio en condiciones normales</li>
+				<li><strong>5 entornos</strong> de ejecución validados (brokers y prop firm)</li>
+				<li><strong>2 casos extremos</strong> documentados aparte (0,29% y 0,39%)</li>
+			</ul>
+			<p><strong>Cómo validarlo:</strong> Contrasta estos datos con el resumen técnico breve.</p>
+			<p class="proof-links-row">
+				<a class="proof-capture-link" href="#">
+					Ver resumen técnico <span class="proof-link-meta">PDF</span>
+				</a>
+			</p>
+			<p class="proof-note">Publicamos resultados verificables y trazabilidad. La fórmula propietaria no es pública.</p>
 		</section>
 
 		<section id="precision-environments" class="feature-proof-detail">
-			<h3>Entornos validados</h3>
-			<p>La evidencia incluye validaciones en distintos entornos y condiciones operativas para evitar resultados sesgados por un solo contexto de ejecución.</p>
-			<p><strong>Cómo validarlo:</strong> Comprueba que la evidencia incluye más de un entorno/broker y resultados consistentes.</p>
+			<h3>No depende de un solo entorno</h3>
+			<p class="feature-proof-subtitle">Validación en múltiples entornos de ejecución</p>
+			<p>La evidencia se valida en distintos entornos para evitar conclusiones sesgadas por un único contexto operativo.</p>
+			<p><strong>Cómo validarlo:</strong> Comprueba consistencia entre entornos de broker y prop firm.</p>
 			<p><a class="proof-capture-link" href="#">Ver captura de entornos validados</a></p>
 		</section>
 
@@ -316,6 +321,13 @@ const seo = {
 	.feature-proof-detail p {
 		margin: 0;
 		line-height: 1.5;
+	}
+	.feature-proof-subtitle {
+		margin: -0.15rem 0 0.5rem !important;
+		font-size: 0.88rem;
+		opacity: 0.82;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
 	}
 	.proof-kpis {
 		margin: 0.55rem 0 0.7rem;
