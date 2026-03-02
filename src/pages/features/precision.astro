@@ -106,6 +106,49 @@ const seo = {
 				</a>
 			</p>
 			<p class="proof-note">No publicamos la fórmula propietaria de ajuste (volatilidad, slippage, spread y comisiones); sí publicamos resultados verificables y trazabilidad.</p>
+			<details id="precision-49-evidence" class="proof-accordion">
+				<summary class="proof-capture-link">Ver evidencia operativa 49 (capturas en orden)</summary>
+				<div class="proof-gallery">
+					<h3>Operativa 49 — secuencia visual (redacted)</h3>
+					<div class="proof-gallery__grid">
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Paso 1</p>
+							<p class="proof-gallery__title">EA configurado (desbloqueado)</p>
+							<img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="Operativa 49: EA configurado y desbloqueado antes de activar protección." loading="lazy" />
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Paso 2</p>
+							<p class="proof-gallery__title">Protección activa (bloqueado)</p>
+							<img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="Operativa 49: EA en modo protegido con bloqueo activo." loading="lazy" />
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Paso 3</p>
+							<p class="proof-gallery__title">Flotante intermedio (positivo)</p>
+							<img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="Operativa 49: flotante intermedio en positivo durante ejecución protegida." loading="lazy" />
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Paso 4</p>
+							<p class="proof-gallery__title">Flotante intermedio (negativo)</p>
+							<img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="Operativa 49: flotante intermedio en negativo durante ejecución protegida." loading="lazy" />
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Paso 5</p>
+							<p class="proof-gallery__title">STOP y cierre en límite</p>
+							<img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="Operativa 49: STOP por límite alcanzado y cierre automático." loading="lazy" />
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Validación A</p>
+							<p class="proof-gallery__title">HTML de transacciones</p>
+							<img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="Operativa 49: transacciones en ReportHistory con total y balance final." loading="lazy" />
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Validación B</p>
+							<p class="proof-gallery__title">Resumen oficial MT5</p>
+							<img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="Operativa 49: resumen oficial MT5 redacted con métricas de cierre." loading="lazy" />
+						</article>
+					</div>
+				</div>
+			</details>
 		</section>
 
 		<section id="precision-environments" class="feature-proof-detail">
@@ -366,6 +409,14 @@ const seo = {
 		font-size: 0.82rem;
 		text-align: center;
 		padding: 0.45rem;
+	}
+	.proof-gallery__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0.45rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #0a0d13;
 	}
 	@media (max-width: 768px) {
 		.feature-hook {
