@@ -114,37 +114,51 @@ const seo = {
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 1</p>
 							<p class="proof-gallery__title">EA configurado (desbloqueado)</p>
-							<img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="Operativa 49: EA configurado y desbloqueado antes de activar protección." loading="lazy" />
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-01-desbloqueado.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 1 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="Operativa 49: EA configurado y desbloqueado antes de activar protección." loading="lazy" />
+							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 2</p>
 							<p class="proof-gallery__title">Protección activa (bloqueado)</p>
-							<img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="Operativa 49: EA en modo protegido con bloqueo activo." loading="lazy" />
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-02-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 2 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="Operativa 49: EA en modo protegido con bloqueo activo." loading="lazy" />
+							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 3</p>
 							<p class="proof-gallery__title">Flotante intermedio (positivo)</p>
-							<img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="Operativa 49: flotante intermedio en positivo durante ejecución protegida." loading="lazy" />
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 3 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="Operativa 49: flotante intermedio en positivo durante ejecución protegida." loading="lazy" />
+							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 4</p>
 							<p class="proof-gallery__title">Flotante intermedio (negativo)</p>
-							<img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="Operativa 49: flotante intermedio en negativo durante ejecución protegida." loading="lazy" />
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 4 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="Operativa 49: flotante intermedio en negativo durante ejecución protegida." loading="lazy" />
+							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 5</p>
 							<p class="proof-gallery__title">STOP y cierre en límite</p>
-							<img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="Operativa 49: STOP por límite alcanzado y cierre automático." loading="lazy" />
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-05-stop-final.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 5 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="Operativa 49: STOP por límite alcanzado y cierre automático." loading="lazy" />
+							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Validación A</p>
 							<p class="proof-gallery__title">HTML de transacciones</p>
-							<img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="Operativa 49: transacciones en ReportHistory con total y balance final." loading="lazy" />
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-06-html-transacciones-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir validación A en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="Operativa 49: transacciones en ReportHistory con total y balance final." loading="lazy" />
+							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Validación B</p>
 							<p class="proof-gallery__title">Resumen oficial MT5</p>
-							<img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="Operativa 49: resumen oficial MT5 redacted con métricas de cierre." loading="lazy" />
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-07-mt5-resumen-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir validación B en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="Operativa 49: resumen oficial MT5 redacted con métricas de cierre." loading="lazy" />
+							</a>
 						</article>
 					</div>
 				</div>
@@ -417,6 +431,16 @@ const seo = {
 		border-radius: 0.45rem;
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		background: #0a0d13;
+	}
+	.proof-gallery__zoom {
+		display: block;
+		border-radius: 0.45rem;
+		overflow: hidden;
+		cursor: zoom-in;
+	}
+	.proof-gallery__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
 	}
 	@media (max-width: 768px) {
 		.feature-hook {
