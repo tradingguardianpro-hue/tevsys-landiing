@@ -16,7 +16,7 @@ const seo = {
 				HyperClose: cuando tu disciplina falla,<br />
 				HyperClose <span class="feature-title__accent">no.</span>
 			</h1>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Cierre en milisegundos. Bloqueo hasta la siguiente rotación.</p>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Cierre en milisegundos. Bloqueo hasta la siguiente rotación (diaria o semanal).</p>
 			<p class="feature-lead">
 				Si estás bloqueado y aun así intentas operar, HyperClose cierra en milisegundos antes del siguiente tick. Cada intento queda registrado.
 			</p>
@@ -39,16 +39,16 @@ const seo = {
 		<section class="feature-proof">
 			<h2>Qué puedes comprobar</h2>
 			<ul>
-				<li><a class="evidence-link" href="#hyperclose-close">Cierre en milisegundos cuando el usuario está bloqueado.</a></li>
-				<li><a class="evidence-link" href="#hyperclose-logs">Registro de cada intento con trazabilidad completa.</a></li>
-				<li><a class="evidence-link" href="#hyperclose-off">Comportamiento también aplicable en días OFF.</a></li>
-				<li><a class="evidence-link" href="#hyperclose-flow">Flujo de protección en escenario real de uso.</a></li>
+				<li><a class="evidence-link" href="#hyperclose-close">Cierre inmediato en milisegundos.</a></li>
+				<li><a class="evidence-link" href="#hyperclose-semaphore">Semáforo de responsabilidad (3 niveles).</a></li>
+				<li><a class="evidence-link" href="#hyperclose-off">Compatibilidad con día OFF.</a></li>
 			</ul>
 		</section>
 
 		<section id="hyperclose-close" class="feature-proof-detail">
 			<h3>Cierre inmediato</h3>
-			<p>El sistema detecta el intento y ejecuta cierre automático de protección en milisegundos para evitar que la operativa continúe fuera de reglas.</p>
+			<p class="feature-proof-subtitle">Ejecución en milisegundos</p>
+			<p>Si intentas operar estando bloqueado, el sistema cierra la operación de forma automática e inmediata.</p>
 			<p><strong>Cómo validarlo:</strong> Intenta abrir operación en estado bloqueado y verifica cierre inmediato.</p>
 			<p>
 				<a class="proof-capture-link" href="#hyperclose-demo">
@@ -57,25 +57,20 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="hyperclose-logs" class="feature-proof-detail">
-			<h3>Trazabilidad por intento</h3>
-			<p>Cada intento queda documentado para revisión posterior, con evidencia útil para control interno o auditoría operativa.</p>
-			<p><strong>Cómo validarlo:</strong> Revisa el evento correspondiente en <code>MQL5/Logs</code> con fecha y hora.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura de logs</a></p>
+		<section id="hyperclose-semaphore" class="feature-proof-detail">
+			<h3>Semáforo de responsabilidad</h3>
+			<p class="feature-proof-subtitle">Tres niveles de aviso por reiteración</p>
+			<p>El sistema escala mensajes educativos y de responsabilidad según la repetición del intento.</p>
+			<p><strong>Cómo validarlo:</strong> Intenta operar varias veces estando bloqueado y observa la secuencia de avisos.</p>
+			<p><a class="proof-capture-link" href="#">Ver secuencia de popups</a></p>
 		</section>
 
 		<section id="hyperclose-off" class="feature-proof-detail">
-			<h3>Compatibilidad con días OFF</h3>
-			<p>La protección no depende del estado emocional del día: también actúa cuando la jornada está marcada como OFF.</p>
+			<h3>Compatibilidad con día OFF</h3>
+			<p class="feature-proof-subtitle">Protección activa también en jornada OFF</p>
+			<p>Aunque el día esté marcado como OFF, los intentos fuera de regla se detectan y se cierran.</p>
 			<p><strong>Cómo validarlo:</strong> Mantén el día en OFF e intenta operar para comprobar que el bloqueo sigue activo.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura en día OFF</a></p>
-		</section>
-
-		<section id="hyperclose-flow" class="feature-proof-detail">
-			<h3>Flujo real de protección</h3>
-			<p>Se puede demostrar en secuencia simple: intento de operar, cierre automático, bloqueo activo y registro del evento.</p>
-			<p><strong>Cómo validarlo:</strong> Cruza panel, cierre y log del mismo intento para confirmar el flujo completo.</p>
-			<p><a class="proof-capture-link" href="#">Ver captura de trazabilidad</a></p>
+			<p><a class="proof-capture-link" href="#">Ver evidencia en día OFF</a></p>
 		</section>
 
 		<section class="feature-cta">
@@ -215,6 +210,13 @@ const seo = {
 	.feature-proof-detail p {
 		margin: 0;
 		line-height: 1.5;
+	}
+	.feature-proof-subtitle {
+		margin: -0.1rem 0 0.5rem !important;
+		font-size: 0.94rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
 	}
 	.feature-proof-detail:target {
 		border-color: rgba(245, 176, 65, 0.55);
