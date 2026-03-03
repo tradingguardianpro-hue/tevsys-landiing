@@ -506,3 +506,25 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Se incorpora nota visible fuera del acordeón:
   - `Nota: en este panel, "Bloqueado hasta" equivale a "Protección activa hasta".`
 - Objetivo: eliminar ambigüedad sin rehacer capturas ni re-documentar operativas.
+
+---
+
+## 23) Guía de logs en vídeo + estilo unificado (31/01/2026)
+
+### 23.1 Integración de `precision-logs-guide.mp4`
+- Archivo: `public/videos/features/precision-logs-guide.mp4`
+- Ubicación: sección «Sin humo: todo queda registrado» en `precision.astro`
+- Contenido: guía paso a paso para localizar logs MT5 (overlays: hora servidor, archivo YYYYMMDD, buscar Trades)
+- Sin audio: instructivo con texto en pantalla suficiente
+
+### 23.2 Enlace con badge VIDEO (coherencia visual)
+- Texto: `Ir a guía de logs` + badge `VIDEO`
+- Mismo patrón que «Ir a demo del cierre» en la sección superior
+- Archivo: `src/pages/features/precision.astro`
+
+### 23.3 Estructura unificada Precisión / HyperClose
+- Ambas micropáginas comparten: título → hook con punto → bloques proof → enlaces amarillos con badge VIDEO
+- HyperClose: 3 bloques (Cierre inmediato, Semáforo, Día OFF) alineados con el patrón de Precisión
+
+### 23.4 Pendiente
+- `precision-demo.mp4`: demo de cierre real (con audio)

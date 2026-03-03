@@ -216,9 +216,21 @@ Se trabajó con iteración visual continua (prueba-error controlado) para manten
 8. `copy: corregir mensaje SML a ampliacion de margen (5-25) y minimo 75 protegido`
 9. `style: mejorar legibilidad del hook SML con mas margen y aire visual`
 
+### Actualización 31/01/2026 — Guía de logs en vídeo + estilo unificado
+
+**Precisión:**
+- Integrado `precision-logs-guide.mp4` en sección «Sin humo: todo queda registrado».
+- Enlace con badge: `Ir a guía de logs VIDEO` (mismo patrón que «Ir a demo del cierre»).
+- Vídeo sin audio (instructivo, overlays de texto suficientes).
+
+**Estructura unificada Precisión / HyperClose:**
+- Ambas usan: título → hook con punto → detalle → bloques proof con enlace amarillo + badge VIDEO donde aplica.
+- HyperClose: 3 bloques (Cierre inmediato, Semáforo, Día OFF) con mismo patrón de enlaces.
+
 ### Siguiente bloque operativo
 - Sustituir videos provisionales por versiones finales (40s) siguiendo:
   - `docs/GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md`
+- `precision-demo.mp4` (demo cierre real) pendiente de grabar.
 - Mantener coherencia overlay -> CTA final en cada micro-página.
 
 ---

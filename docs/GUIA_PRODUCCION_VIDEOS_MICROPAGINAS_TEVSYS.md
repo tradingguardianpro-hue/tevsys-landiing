@@ -187,8 +187,9 @@ Guardar videos finales en:
 `public/videos/features/`
 
 Nombres exactos:
-- `precision-demo.mp4`
-- `hyperclose-demo.mp4`
+- `precision-demo.mp4` (demo principal de cierre — con audio)
+- `precision-logs-guide.mp4` (guía paso a paso de logs — sin audio, overlays de texto)
+- `hyperclose-demo.mp4` ✅ cargado
 - `sml-demo.mp4`
 - `evidencia-demo.mp4`
 
@@ -211,5 +212,7 @@ Nombres exactos:
 ## Estado actual y nota operativa
 
 - Se validó con éxito el pipeline técnico de video embed en `HyperClose` (piloto).
+- **Precisión — guía de logs:** `precision-logs-guide.mp4` ✅ cargado. Guía paso a paso (overlays: hora servidor, archivo YYYYMMDD, buscar Trades). Sin audio: es instructivo y el texto basta.
+- **Precisión — demo principal:** `precision-demo.mp4` pendiente (mostrar cierre real, con audio).
 - El contenido final se grabará con mercado abierto.
 - Esta guía queda como estándar para ejecutar sin improvisar.

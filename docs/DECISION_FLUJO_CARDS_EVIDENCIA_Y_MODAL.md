@@ -152,7 +152,8 @@ Lo más costoso no es el código, es tener el contenido (videos/capturas) bien p
 - Objetivo:
   - facilitar lectura rápida para perfil no técnico
   - mantener profundidad para perfil técnico sin saturar la página principal
-- Estado: **Pendiente para fase posterior** (activar cuando estén listos los assets y no frene el avance actual).
+- **Implementado en Precisión (31/01/2026):** `precision-logs-guide.mp4` — guía de logs en vídeo (acordeón, sin audio).
+- Estado: activo en precision; pendiente ampliar a otros bloques cuando estén listos los assets.
 
 ---
 

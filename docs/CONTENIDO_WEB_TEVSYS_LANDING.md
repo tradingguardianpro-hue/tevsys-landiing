@@ -255,6 +255,11 @@ Seguimiento interno activo en:
 - Nota semántica visible:
   - `Nota: en este panel, "Bloqueado hasta" equivale a "Protección activa hasta".`
 
+### Guía de logs (actualización 31/01/2026)
+- Vídeo integrado: `precision-logs-guide.mp4`
+- Enlace: `Ir a guía de logs` + badge VIDEO
+- Sin audio (texto en overlays)
+
 ### Criterio de publicación (recordatorio)
 
 - `Dossier completo` no se presenta en abierto en este bloque.
