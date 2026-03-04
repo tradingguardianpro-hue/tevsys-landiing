@@ -58,10 +58,41 @@ const seo = {
 			<h3>Semáforo de responsabilidad</h3>
 			<p class="feature-proof-subtitle">Tres niveles de aviso por reiteración</p>
 			<p>El sistema escala mensajes educativos y de responsabilidad según la repetición del intento.</p>
-			<p><strong>Cómo validarlo:</strong> Intenta operar varias veces estando bloqueado y observa la secuencia de avisos.</p>
 			<p>
 				<a class="proof-capture-link" href="#hyperclose-demo">Ir a demo del cierre <span class="proof-link-meta">VIDEO</span></a> — El mismo vídeo muestra los 3 niveles del semáforo.
 			</p>
+			<details class="proof-accordion">
+				<summary class="proof-capture-link">Ver capturas de los 3 modales</summary>
+				<div class="proof-gallery">
+					<p class="proof-gallery__hint">Haz clic en cada captura para verla en tamaño completo.</p>
+					<div class="proof-gallery__grid">
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Nivel 1</p>
+							<p class="proof-gallery__title">Sistema Bloqueado</p>
+							<p class="proof-gallery__desc">Límites alcanzados. Protegido hasta rotación.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-modal-01-sistema-bloqueado.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir modal nivel 1 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/hyperclose-modal-01-sistema-bloqueado.png" alt="HyperClose modal nivel 1: Sistema Bloqueado." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Nivel 2</p>
+							<p class="proof-gallery__title">Advertencia</p>
+							<p class="proof-gallery__desc">Reiteración detectada. Los costes son a tu cargo.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-modal-02-advertencia.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir modal nivel 2 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/hyperclose-modal-02-advertencia.png" alt="HyperClose modal nivel 2: Advertencia." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Nivel 3</p>
+							<p class="proof-gallery__title">Advertencia Final</p>
+							<p class="proof-gallery__desc">Último aviso. Exención de responsabilidad TEVsys.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-modal-03-advertencia-final.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir modal nivel 3 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/hyperclose-modal-03-advertencia-final.png" alt="HyperClose modal nivel 3: Advertencia Final." loading="lazy" />
+							</a>
+						</article>
+					</div>
+				</div>
+			</details>
 		</section>
 
 		<section id="hyperclose-off" class="feature-proof-detail">
@@ -293,6 +324,78 @@ const seo = {
 		background: rgba(245, 176, 65, 0.12);
 		color: #f7c050;
 		line-height: 1.2;
+	}
+	.proof-accordion {
+		margin: 0.45rem 0 0;
+	}
+	.proof-accordion summary {
+		list-style: none;
+	}
+	.proof-accordion summary::-webkit-details-marker {
+		display: none;
+	}
+	.proof-gallery {
+		margin: 0.75rem 0 0;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+	}
+	.proof-gallery__hint {
+		margin: 0 0 0.75rem;
+		font-size: 0.88rem;
+		opacity: 0.82;
+	}
+	.proof-gallery__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+	.proof-gallery__item {
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 0.6rem;
+		padding: 0.7rem;
+	}
+	.proof-gallery__step {
+		margin: 0 0 0.2rem;
+		font-size: 0.78rem;
+		opacity: 0.8;
+	}
+	.proof-gallery__title {
+		margin: 0 0 0.25rem;
+		font-size: 0.9rem;
+		font-weight: 600;
+		line-height: 1.35;
+	}
+	.proof-gallery__desc {
+		margin: 0 0 0.5rem;
+		font-size: 0.82rem;
+		opacity: 0.88;
+		line-height: 1.4;
+	}
+	.proof-gallery__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0.45rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #0a0d13;
+	}
+	.proof-gallery__zoom {
+		display: block;
+		border-radius: 0.45rem;
+		overflow: hidden;
+		cursor: zoom-in;
+	}
+	.proof-gallery__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+	}
+	@media (max-width: 768px) {
+		.proof-gallery__grid {
+			grid-template-columns: 1fr;
+		}
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);
