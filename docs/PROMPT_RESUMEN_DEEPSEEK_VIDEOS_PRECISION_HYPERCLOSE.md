@@ -1,74 +1,128 @@
-# Prompt para DeepSeek — Resumen sesión web tevsys (Precisión + HyperClose)
+# Prompt para DeepSeek / Psique — Estado web tevsys (Mar 2026)
 
-Usa este texto para dar contexto a DeepSeek sobre lo hecho en esta sesión.
-
----
-
-## Contexto
-
-Proyecto: **tevsys-landiing** (Astro + Odyssey Theme). Micropáginas de features en `/features/precision`, `/features/hyperclose`, etc.
-
-## Lo que hemos hecho
-
-### Precisión (`/features/precision`)
-
-1. **Guía de logs en vídeo**
-   - Archivo: `public/videos/features/precision-logs-guide.mp4`
-   - Integrado en la sección «Sin humo: todo queda registrado» dentro de un acordeón (`<details>`)
-   - Contenido: guía paso a paso para localizar logs MT5 (ruta Archivo → Abrir carpeta de datos → MQL5 → Logs)
-   - Overlays en el vídeo: hora servidor UTC, buscar archivo YYYYMMDD, buscar "Trades", conversión hora España
-   - **Sin audio:** es instructivo, el texto en pantalla basta
-
-2. **Enlace unificado con badge VIDEO**
-   - Texto: `Ir a guía de logs` + badge `VIDEO` (clase `proof-link-meta`)
-   - Mismo patrón que «Ir a demo del cierre» en el bloque superior
-   - Coherencia visual entre todos los bloques de prueba
-
-3. **Estructura actual**
-   - Hero (título, hook 49 operativas 0,06%, intro)
-   - Demo rápida (placeholder para `precision-demo.mp4` — pendiente grabar)
-   - Qué puedes comprobar (3 enlaces de evidencia)
-   - Bloque «Aquí se decide el cierre» → enlace `Ir a demo del cierre VIDEO`
-   - Bloque «Sin humo: todo queda registrado» → acordeón `Ir a guía de logs VIDEO` → vídeo
-   - Bloque «Lo que dicen los resultados» → galería operativa 49 + resumen estadístico
-   - CTA a demo
-
-4. **Pendiente**
-   - `precision-demo.mp4`: demo mostrando un cierre real (con audio)
-
-### HyperClose (`/features/hyperclose`)
-
-1. **Estructura alineada con Precisión**
-   - Misma jerarquía: título grande → hook con punto amarillo → explicación → bloques proof
-   - Hero: «HyperClose: cuando tu disciplina falla, HyperClose no.»
-   - Hook: «Cierre en milisegundos. Bloqueo hasta la siguiente rotación (diaria o semanal).»
-
-2. **Tres bloques de verificación**
-   - Cierre inmediato → `Ir a demo del cierre VIDEO` (enlace a `#hyperclose-demo`)
-   - Semáforo de responsabilidad → `Ver secuencia de popups` (placeholder)
-   - Compatibilidad con día OFF → `Ver evidencia en día OFF` (placeholder)
-
-3. **Vídeo**
-   - `hyperclose-demo.mp4` ya cargado en `public/videos/features/`
-   - Sección demo rápida con reproductor HTML5
-
-### Reglas de estilo (Precisión y HyperClose)
-
-- Enlaces a vídeos/demos: clase `proof-capture-link`, texto + `<span class="proof-link-meta">VIDEO</span>`
-- Acordeones para contenido desplegable: `<details>` + `<summary class="proof-capture-link">`
-- Evitar redundancia: si el enlace dice «vídeo», no hace falta duplicar; si no, usar badge VIDEO
-
-### Documentación actualizada
-
-- `docs/GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md`: añadido `precision-logs-guide.mp4`, nota sobre guía sin audio
-- `docs/CARDS-NEXT-PHASE.md`: logs auditables ahora es vídeo, no 3 capturas
-- `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`: sección nueva de guía de logs + estilo unificado
-- `docs/CHANGELOG-TEVSYS.md`: entrada 23
-- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`: nota de guía de logs
-- `docs/DECISION_FLUJO_CARDS_EVIDENCIA_Y_MODAL.md`: mini evidencias por bloque — implementado en precisión
+**Objetivo:** Dar contexto completo a DeepSeek o cualquier IA sobre dónde estamos con la web tevsys. Leer este documento + GUIA_PRODUCCION_VIDEOS antes de trabajar en vídeos o micropáginas.
 
 ---
 
-## Resumen para DeepSeek
+## 1. Proyecto
 
-«Hemos integrado en tevsys-landiing una guía de logs en vídeo (`precision-logs-guide.mp4`) en la micropágina de Precisión, con enlace unificado "Ir a guía de logs VIDEO" y acordeón. La estructura de Precisión y HyperClose está alineada: hero, demo, bloques proof con enlaces amarillos + badge VIDEO. HyperClose tiene ya hyperclose-demo.mp4 cargado. Pendiente: precision-demo.mp4 (demo de cierre real con audio). Toda la documentación en docs/ está actualizada.»
+- **Repositorio:** tevsys-landiing (Astro + Odyssey Theme)
+- **Deploy:** tevsys-landiing.vercel.app / tevsys.io
+- **Carpeta videos:** `public/videos/features/`
+- **Carpeta imágenes evidencia:** `public/images/evidence/`
+
+---
+
+## 2. Dónde hemos llegado (con pelos y señales)
+
+### 2.1 Precisión (`/features/precision`) — CERRADA
+
+**Vídeos publicados:**
+- `precision-demo.mp4` — 1 min 7 s, CON audio. Demo principal de cierre.
+- `precision-demo-volatilidad.mp4` — ~1 min 8 s, SIN audio. Cierre en alta volatilidad (límite -1,50%, cierre +1,83% en ganancias).
+- `precision-logs-guide.mp4` — Guía para localizar logs MT5. SIN audio.
+
+**Estructura de la página:**
+1. Hero con hook "50 operativas documentadas. 0,06% de error medio"
+2. Demo rápida: embed del vídeo principal. **Embed compacto que se expande al dar play** (420px → ancho completo)
+3. "Qué puedes comprobar" — 3 enlaces. **El primero "Aquí se decide el cierre" enlaza a la demo y hace autoplay**
+4. Bloque "Aquí se decide el cierre":
+   - Enlace "Ir a demo del cierre VIDEO" → scroll + autoplay
+   - Acordeón "Ir a demo en alta volatilidad VIDEO" → precision-demo-volatilidad.mp4
+5. Bloque "Sin humo" → acordeón "Ir a guía de logs VIDEO" → precision-logs-guide.mp4
+6. Bloque "Lo que dicen los resultados" → galería operativa 49 + 50 operativas en KPIs
+
+**UX aplicada:** scroll-margin-top 5.5rem, resaltado amarillo en :target, autoplay al hacer clic en enlaces que apuntan a #precision-demo.
+
+**Limpieza:** Placeholders internos (rutas de archivo) eliminados de la UI pública.
+
+---
+
+### 2.2 HyperClose (`/features/hyperclose`) — CERRADA (falta Día OFF)
+
+**Vídeos publicados:**
+- `hyperclose-demo.mp4` — 1 min 35 s, SIN audio. Contenido:
+  - Dos operaciones, límite ±2%, cierre automático -2,01%
+  - Intento 1 → cierre + modal nivel 1 (Sistema Bloqueado)
+  - Intento 2 → cierre + modal nivel 2 (Advertencia)
+  - Intento 3 → cierre + modal nivel 3 (Advertencia Final)
+  - 7 intentos ráfaga mostrando cierre instantáneo
+  - Broker y datos tapados con barra gris #2d2d2d
+
+**Imágenes publicadas:**
+- `hyperclose-modal-01-sistema-bloqueado.png`
+- `hyperclose-modal-02-advertencia.png`
+- `hyperclose-modal-03-advertencia-final.png`
+
+**Estructura de la página:**
+1. Hero: "HyperClose: cuando tu disciplina falla, HyperClose no."
+2. Demo rápida: embed compacto que se expande al play. **Nota bajo embed:** "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
+3. "Qué puedes comprobar" — 3 enlaces. El primero apunta a la demo.
+4. Bloque "Cierre inmediato" → enlace a demo
+5. Bloque "Semáforo de responsabilidad" → enlace a demo + acordeón "Ver capturas de los 3 modales" con las 3 imágenes
+6. Bloque "Compatibilidad con día OFF" → **pendiente vídeo**
+
+**Pendiente:** Grabar vídeo Día OFF (desbloquear EA, miércoles OFF, intentar operar → cierre).
+
+---
+
+### 2.3 SML y Evidencia — PENDIENTES
+
+- SML: copy final, estructura lista. Falta vídeo sml-demo.mp4
+- Evidencia: copy final, estructura lista. Falta vídeo evidencia-demo.mp4
+
+---
+
+## 3. Patrones técnicos aplicados
+
+### Embed de vídeo
+- Clase `demo-video demo-video--compact` con id para el container
+- Vídeo con id único para autoplay vía JS
+- `preload="metadata"` para que play() funcione al instante
+- Compact: max-width 420px, al dar play se añade clase `demo-video--playing` (max-width: none)
+
+### Acordeones
+- `<details class="proof-accordion">` + `<summary class="proof-capture-link">`
+- Dentro: `proof-gallery`, `proof-gallery__grid`, `proof-gallery__item`
+- Para vídeos: `proof-gallery-video` con video dentro
+- Para imágenes: `proof-gallery__zoom` (link) + `proof-gallery__image` (img)
+
+### Enlaces a vídeos
+- `href="#id-demo"` para scroll + autoplay
+- Badge: `<span class="proof-link-meta">VIDEO</span>`
+- Script escucha hashchange y DOMContentLoaded; si hash = #xxx-demo, llama video.play()
+
+### Overlays en vídeos
+- Máximo 4-6 palabras. Sin punto final.
+- Estilo: texto blanco, Segoe UI 12, efecto máquina de escribir (opcional)
+- Tapar broker: barra sólida #2d2d2d (gris MT5)
+
+---
+
+## 4. Documentos de referencia
+
+| Documento | Contenido |
+|-----------|-----------|
+| `GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md` | Specs reales de vídeos publicados, overlays, rutas, estado |
+| `CHANGELOG-TEVSYS.md` | Historial completo de cambios (entrada 24 = Mar 2026) |
+| `CONTENIDO_WEB_TEVSYS_LANDING.md` | Copy actual de toda la web |
+| `CARDS-NEXT-PHASE.md` | Tracker estado micro-páginas |
+
+---
+
+## 5. Resumen para pegar a DeepSeek
+
+```
+Estado web tevsys (Mar 2026): Precisión CERRADA (precision-demo 1:07 + audio, precision-demo-volatilidad, 50 operativas, embed compacto + autoplay). HyperClose CERRADA salvo Día OFF (hyperclose-demo 1:35 sin audio, 3 capturas modales, misma UX que Precisión). Pendiente: vídeo Día OFF, SML demo, Evidencia demo. Ruta videos: public/videos/features/. Documentación actualizada en docs/.
+```
+
+---
+
+## 6. Qué hacer si vas a grabar/editar un vídeo nuevo
+
+1. Leer `GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md` — sección del vídeo correspondiente.
+2. Tapar broker y datos con barra #2d2d2d.
+3. Overlays: máx 4-6 palabras, sin punto.
+4. Exportar con nombre exacto (ej: hyperclose-demo-dia-off.mp4).
+5. Copiar en `public/videos/features/`.
+6. Decir al equipo para que integre en la web (acordeón, enlace, etc.).

@@ -235,6 +235,28 @@ Se trabajó con iteración visual continua (prueba-error controlado) para manten
 
 ---
 
+## Actualización Mar 2026 — Precisión y HyperClose cerrados
+
+### Precisión
+- `precision-demo.mp4` (1 min 7 s) + `precision-demo-volatilidad.mp4` integrados.
+- Embed compacto que se expande al dar play. Autoplay al hacer clic en enlaces.
+- Enlace "Aquí se decide el cierre" → demo. Acordeón demo alta volatilidad.
+- 50 operativas (hook, KPIs, index). Placeholders internos eliminados.
+
+### HyperClose
+- `hyperclose-demo.mp4` (1 min 35 s): cierre, 3 niveles semáforo, 7 intentos.
+- Misma estructura que Precisión: embed compacto, autoplay, links.
+- Nota bajo embed: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
+- Acordeón "Ver capturas de los 3 modales" con `hyperclose-modal-01/02/03-*.png`.
+- Pendiente: vídeo Día OFF.
+
+### Assets añadidos
+- `public/videos/features/precision-demo.mp4`, `precision-demo-volatilidad.mp4`
+- `public/videos/features/hyperclose-demo.mp4`
+- `public/images/evidence/hyperclose-modal-01-sistema-bloqueado.png`, `-02-advertencia.png`, `-03-advertencia-final.png`
+
+---
+
 ## Actualizacion operativa - Mapa de evidencia (micropaginas)
 
 **Fecha:** 31/01/2026  

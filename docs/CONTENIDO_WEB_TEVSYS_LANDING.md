@@ -146,19 +146,28 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook: `• Lo que no se puede demostrar, no cuenta.`
   - Soporte: panel, logs y reporte oficial.
 
+### Estado actual Precisión (Mar 2026)
+- **Demo rápida:** `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto que se expande al dar play.
+- **Aquí se decide el cierre:** enlace a demo + autoplay. Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4` (límite -1,50%, cierre +1,83% en alta volatilidad).
+- **50 operativas** documentadas (hook y KPIs).
+- Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
+
+### Estado actual HyperClose (Mar 2026)
+- **Demo rápida:** `hyperclose-demo.mp4` (1 min 35 s, sin audio). Cierre, 3 niveles semáforo, 7 intentos. Nota: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
+- **Cierre inmediato y Semáforo:** ambos enlazan a la demo. Acordeón "Ver capturas de los 3 modales" con imágenes de cada nivel.
+- **Pendiente:** vídeo Día OFF.
+
 ### Pendiente inmediato
-- Reemplazar videos provisionales por versiones finales (40s) según guía de producción.
-- Mantener doble capa de evidencia:
-  - resumen rápido (usuario general)
-  - detalle técnico por anclas/soportes (usuario avanzado)
-- Instrucciones de validación activas en las 4 micro-páginas dentro de cada rectángulo técnico (`Cómo validarlo` + `Ver captura`) para no depender de assets visuales entre semana.
+- Vídeo Día OFF para HyperClose.
+- Mantener doble capa de evidencia en Precision/HyperClose (resumen + detalle técnico).
+- SML y Evidencia: videos finales según guía de producción.
 
 ---
 
 ## Pendientes para la próxima sesión
 
-1. Grabar y publicar versiones finales de video (40s) para `precision`, `hyperclose`, `sml`, `evidencia`.
-2. Revisar consistencia visual global tras incorporar videos finales (alineación, pesos tipográficos y ritmo de lectura).
+1. Grabar y publicar vídeo Día OFF para HyperClose.
+2. Versiones finales de video para `sml` y `evidencia`.
 
 ---
 
@@ -198,10 +207,10 @@ Seguimiento interno activo en:
 ### `features/precision` (copy operativo actual)
 
 - Hook de apertura:
-  - `48 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - `50 operativas documentadas. 0,06% de error medio en condiciones normales.`
 
 - Bloque `Resumen estadístico` (lectura rápida):
-  - `48 operativas documentadas`
+  - `50 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -236,7 +245,7 @@ Seguimiento interno activo en:
 **Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
 
 - KPIs visibles:
-  - `48 operativas documentadas`
+  - `50 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -259,6 +268,11 @@ Seguimiento interno activo en:
 - Vídeo integrado: `precision-logs-guide.mp4`
 - Enlace: `Ir a guía de logs` + badge VIDEO
 - Sin audio (texto en overlays)
+
+### Actualización Mar 2026 — Demo y alta volatilidad
+- Demo principal: `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto, autoplay al enlazar.
+- Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4`. Texto: Límite -1,50%. Cierre en ganancias (+1,83%) con alta volatilidad geopolítica.
+- **50 operativas** documentadas en hook, KPIs y card home.
 
 ### Criterio de publicación (recordatorio)
 

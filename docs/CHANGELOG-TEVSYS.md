@@ -528,3 +528,64 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 
 ### 23.4 Pendiente
 - `precision-demo.mp4`: demo de cierre real (con audio)
+
+---
+
+## 24) Precisión y HyperClose — vídeos finales, acordeones y UX unificada (Mar 2026)
+
+### 24.1 Precisión — cierre de micropágina
+
+**Demo principal:**
+- `precision-demo.mp4` integrado (1 min 7 s, con audio).
+- Embed compacto que se expande al dar play (misma UX que HyperClose).
+- Primer enlace "Aquí se decide el cierre" apunta a la demo; autoplay al hacer clic.
+- Scroll-margin y resaltado amarillo en `:target`.
+
+**Acordeón demo en alta volatilidad:**
+- Archivo: `precision-demo-volatilidad.mp4`.
+- En bloque «Aquí se decide el cierre»: acordeón "Ir a demo en alta volatilidad VIDEO".
+- Texto: Límite -1,50%. Cierre en ganancias (+1,83%) con alta volatilidad geopolítica.
+
+**Actualización operativas:**
+- 49 → 50 operativas documentadas (hook, KPIs, card home).
+
+**Limpieza:**
+- Eliminados placeholders internos (ruta de vídeo) de la UI pública.
+
+### 24.2 HyperClose — vídeo y capturas de modales
+
+**Vídeo demo:**
+- `hyperclose-demo.mp4` (1 min 35 s, sin audio).
+- Contenido: límite alcanzado, cierre automático, 3 intentos con semáforos, 7 intentos finales.
+- Nota bajo embed: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
+- Broker y datos personales tapados (barra gris #2d2d2d).
+
+**Estructura visual (igual que Precisión):**
+- Embed compacto que se expande al dar play.
+- Primer enlace y Semáforo apuntan a la misma demo.
+- Autoplay al hacer clic en enlaces.
+- scroll-margin y resaltado amarillo en `:target`.
+
+**Acordeón 3 modales:**
+- "Ver capturas de los 3 modales" en bloque Semáforo.
+- Imágenes: `hyperclose-modal-01-sistema-bloqueado.png`, `-02-advertencia.png`, `-03-advertencia-final.png`.
+- Cada captura con título, descripción corta y zoom a tamaño completo.
+
+### 24.3 Pendiente
+- Día OFF: vídeo cuando esté grabado; acordeón en bloque correspondiente.
+
+### 24.5 Documentación para DeepSeek / Psique
+- `PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md` — Prompt completo con estado actual (Mar 2026) para dar contexto a IA.
+- `GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md` — Actualizada con specs reales de vídeos publicados.
+
+### 24.6 Commits asociados
+- `feat(precision): enlazar "Aquí se decide el cierre" a demo rápida`
+- `feat(precision): autoplay vídeo demo + scroll y resaltado`
+- `feat(precision): embed compacto que se expande al dar play`
+- `feat(precision): acordeón demo en alta volatilidad`
+- `feat: actualizar 49 a 50 operativas documentadas`
+- `fix: quitar placeholders internos de precision y hyperclose`
+- `feat(hyperclose): nuevo vídeo 1:35 + estructura visual igual que Precisión`
+- `feat(hyperclose): nota "Vídeo editado para acortar esperas"`
+- `fix(hyperclose): sustituir vídeo con broker tapado`
+- `feat(hyperclose): acordeón con capturas de los 3 modales`

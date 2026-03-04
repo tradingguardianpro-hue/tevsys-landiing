@@ -158,14 +158,16 @@ Estado actual elegido:
 > Este tracker sustituye el roadmap visual dentro de las micro-páginas públicas.
 > La web queda limpia para usuario final y el seguimiento lo llevamos aquí.
 
-### Estado actual por micro-página
+### Estado actual por micro-página (Mar 2026)
 
 | Micro-página | Copy final | Ajuste móvil | Video final | Evidencias (capturas/logs) |
 |---|---|---|---|---|
-| `precision` | ✅ | ✅ (hook optimizado) | ⏳ | 🟡 (criterio textual activo) |
-| `hyperclose` | ✅ | ✅ | ⏳ (piloto ya probado) | 🟡 (criterio textual activo) |
+| `precision` | ✅ | ✅ | ✅ (demo + volatilidad) | ✅ (operativa 49 + galería) |
+| `hyperclose` | ✅ | ✅ | ✅ (1:35, cierre + semáforos) | ✅ (3 capturas modales) |
 | `sml` | ✅ (compactado en home) | ✅ | ⏳ | 🟡 (criterio textual activo) |
 | `evidencia` | ✅ | ✅ | ⏳ | 🟡 (criterio textual activo) |
+
+**Pendiente HyperClose:** vídeo Día OFF.
 
 ### Regla simple de trabajo (solo 2-3 personas)
 
@@ -233,18 +235,19 @@ Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o deci
 
 | Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
 |---|---|---|---|
-| Cálculo visible en panel | Demo interna (ancla a video) | Vídeo 20-40s | `precision-demo.mp4` |
+| Cálculo visible en panel | Demo interna (ancla a video) | Vídeo 20-40s | `precision-demo.mp4` ✅ |
+| Demo alta volatilidad | Acordeón con vídeo | Vídeo con overlays | `precision-demo-volatilidad.mp4` ✅ |
 | Logs auditables | Guía visual en vídeo | Vídeo con overlays (sin audio) | `precision-logs-guide.mp4` ✅ |
-| Resumen estadístico (0,06%) | Imagen del resumen/tabla | Imagen + validación cruzada | `precision-stats-01.png` |
-| Demo principal | Placeholder actual | Vídeo final 40s | `precision-demo.mp4` |
+| Resumen estadístico (0,06%) | Galería operativa 49 | 50 operativas documentadas | ✅ |
+| Demo principal | Placeholder actual | Vídeo final 1 min 7 s | `precision-demo.mp4` ✅ |
 
 ### 9.2 HyperClose (`/features/hyperclose`)
 
 | Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
 |---|---|---|---|
-| Intento bloqueado + cierre | Captura secuencial (2 imágenes) | Vídeo 20-40s | `hyperclose-close-01.png` / `hyperclose-demo.mp4` |
-| Trazabilidad del intento | Captura logs | Captura logs + overlay explicativo | `hyperclose-logs-01.png` |
-| Flujo completo de protección | Texto + captura | Vídeo final narrado | `hyperclose-flow-01.png` |
+| Intento bloqueado + cierre | Vídeo demo | Vídeo 1:35 cierre + semáforos | `hyperclose-demo.mp4` ✅ |
+| Semáforo 3 niveles | Capturas modales | Acordeón con 3 imágenes | `hyperclose-modal-01/02/03-*.png` ✅ |
+| Día OFF | Pendiente | Vídeo cuando esté | `hyperclose-demo-dia-off.mp4` ⏳ |
 
 ### 9.3 SML (`/features/sml`)
 

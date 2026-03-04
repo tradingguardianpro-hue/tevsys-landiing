@@ -1,5 +1,7 @@
 # Guía de producción de videos para micro-páginas TEVsys
 
+**Para contexto completo del proyecto:** ver `PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md`.
+
 ## Objetivo
 
 Tener una guía simple, accionable y repetible para crear, editar y publicar los videos demo de las 4 micro-páginas:
@@ -24,11 +26,11 @@ Esta guía está pensada para producir videos con calidad profesional sin fricci
 
 ---
 
-## Estructura estándar de cada video (40 segundos)
+## Estructura estándar (referencia: 40s)
 
-Duración objetivo: **40s**  
+Duración objetivo: **40s** (puede alargarse si el contenido lo requiere; Precision 1:07 y HyperClose 1:35 son válidos).  
 Formato: **1080p, MP4, 30fps**  
-Audio: música instrumental rítmica, limpia, suave, de fondo.
+Audio: según tipo — demo principal con audio; guías/instructivos sin audio.
 
 ### Bloques recomendados
 
@@ -72,10 +74,28 @@ Objetivo:
 
 ## 1) HyperClose (`hyperclose-demo.mp4`)
 
+### Estado Mar 2026: ✅ PUBLICADO
+
+**Specs reales del vídeo publicado:**
+- Duración: **1 min 35 s**
+- Audio: **sin audio** (overlays explican todo)
+- Broker y datos personales: **tapados con barra gris #2d2d2d**
+- Nota en web bajo embed: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
+
+**Overlays reales usados:**
+1. Dos operaciones abiertas (4 lotes). Límite ±2%. Esperando a que se alcance.
+2. Configurado -2% | Cerrado -2,01%
+3. Primer intento estando bloqueado. Semáforo nivel 1 – Sistema Bloqueado.
+4. Segundo intento. Semáforo nivel 2 – Advertencia.
+5. Tercer intento. Semáforo nivel 3 – Exención de responsabilidad.
+6. 7 intentos. 7 cierres. Cero dudas. Así funciona la disciplina de verdad. — tevsys 🏆
+
+**Flujo:** Límite alcanzado → cierre automático → 3 intentos con modales (cadencia 30 s recortada en edición) → ráfaga de 7 intentos mostrando cierre instantáneo.
+
 ### Mensaje principal
 Si estás bloqueado y aun así intentas operar, HyperClose actúa en milisegundos y deja trazabilidad.
 
-### Guión 40s
+### Guión referencia 40s (para futuros vídeos cortos)
 - **0-4s:** Panel en estado bloqueado  
   Overlay: `HyperClose: la última barrera`
 - **4-10s:** Intento de abrir operación bloqueado  
@@ -95,10 +115,19 @@ Si estás bloqueado y aun así intentas operar, HyperClose actúa en milisegundo
 
 ## 2) Precisión (`precision-demo.mp4`)
 
+### Estado Mar 2026: ✅ PUBLICADO
+
+**Specs reales del vídeo publicado:**
+- Duración: **1 min 7 s**
+- Audio: **con audio** (narración/explicación)
+- Broker y datos: tapados (barra sólida)
+
+**También:** `precision-demo-volatilidad.mp4` — demo en alta volatilidad, límite -1,50%, cierre +1,83% en ganancias. Sin audio, overlays de texto.
+
 ### Mensaje principal
 TEVsys cierra donde configuras, compensando slippage/spread/comisiones con evidencia visible.
 
-### Guión 40s
+### Guión referencia 40s
 - **0-4s:** Panel/MT5 + límite configurado  
   Overlay: `Precisión de cierre`
 - **4-10s:** Se muestra el contexto de operación  
@@ -187,11 +216,13 @@ Guardar videos finales en:
 `public/videos/features/`
 
 Nombres exactos:
-- `precision-demo.mp4` (demo principal de cierre — con audio)
-- `precision-logs-guide.mp4` (guía paso a paso de logs — sin audio, overlays de texto)
-- `hyperclose-demo.mp4` ✅ cargado
-- `sml-demo.mp4`
-- `evidencia-demo.mp4`
+- `precision-demo.mp4` (demo principal 1:07 — con audio) ✅
+- `precision-demo-volatilidad.mp4` (demo alta volatilidad — sin audio) ✅
+- `precision-logs-guide.mp4` (guía logs — sin audio, overlays) ✅
+- `hyperclose-demo.mp4` (demo 1:35 — sin audio) ✅
+- `hyperclose-demo-dia-off.mp4` (pendiente)
+- `sml-demo.mp4` (pendiente)
+- `evidencia-demo.mp4` (pendiente)
 
 ---
 
@@ -209,10 +240,16 @@ Nombres exactos:
 
 ---
 
-## Estado actual y nota operativa
+## Estado actual (Mar 2026)
 
-- Se validó con éxito el pipeline técnico de video embed en `HyperClose` (piloto).
-- **Precisión — guía de logs:** `precision-logs-guide.mp4` ✅ cargado. Guía paso a paso (overlays: hora servidor, archivo YYYYMMDD, buscar Trades). Sin audio: es instructivo y el texto basta.
-- **Precisión — demo principal:** `precision-demo.mp4` pendiente (mostrar cierre real, con audio).
-- El contenido final se grabará con mercado abierto.
-- Esta guía queda como estándar para ejecutar sin improvisar.
+| Vídeo | Estado | Duración | Audio |
+|-------|--------|----------|-------|
+| `precision-demo.mp4` | ✅ | 1:07 | Sí |
+| `precision-demo-volatilidad.mp4` | ✅ | ~1:08 | No |
+| `precision-logs-guide.mp4` | ✅ | — | No |
+| `hyperclose-demo.mp4` | ✅ | 1:35 | No |
+| `hyperclose-demo-dia-off.mp4` | ⏳ | — | — |
+| `sml-demo.mp4` | ⏳ | — | — |
+| `evidencia-demo.mp4` | ⏳ | — | — |
+
+**Nota operativa:** Precisión y HyperClose cerrados. Pendiente: Día OFF, SML, Evidencia. Tapar siempre broker y datos personales con barra #2d2d2d. Overlays: máx 4-6 palabras, sin punto final.

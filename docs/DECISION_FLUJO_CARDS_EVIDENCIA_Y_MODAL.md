@@ -152,8 +152,9 @@ Lo más costoso no es el código, es tener el contenido (videos/capturas) bien p
 - Objetivo:
   - facilitar lectura rápida para perfil no técnico
   - mantener profundidad para perfil técnico sin saturar la página principal
-- **Implementado en Precisión (31/01/2026):** `precision-logs-guide.mp4` — guía de logs en vídeo (acordeón, sin audio).
-- Estado: activo en precision; pendiente ampliar a otros bloques cuando estén listos los assets.
+- **Implementado en Precisión (31/01 + Mar 2026):** `precision-logs-guide.mp4`, `precision-demo.mp4`, `precision-demo-volatilidad.mp4` (acordeones, embed compacto, autoplay).
+- **Implementado en HyperClose (Mar 2026):** `hyperclose-demo.mp4`, acordeón 3 capturas de modales.
+- Estado: Precision y HyperClose cerrados; pendiente SML, Evidencia, vídeo Día OFF.
 
 ---
 
