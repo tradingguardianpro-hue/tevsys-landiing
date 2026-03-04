@@ -26,7 +26,7 @@ const seo = {
 		<section id="precision-demo" class="feature-demo">
 			<h2>Demo rápida (1 min 7 s)</h2>
 			<div class="demo-video">
-				<video controls preload="none">
+				<video id="precision-demo-video" controls preload="metadata">
 					<source src="/videos/features/precision-demo.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
@@ -164,6 +164,18 @@ const seo = {
 	</Container>
 </Layout>
 
+<script>
+	function playDemoIfTarget() {
+		if (window.location.hash !== '#precision-demo') return;
+		const video = document.getElementById('precision-demo-video');
+		if (video) {
+			video.play().catch(() => { /* fallback silencioso si el navegador bloquea autoplay */ });
+		}
+	}
+	document.addEventListener('DOMContentLoaded', playDemoIfTarget);
+	window.addEventListener('hashchange', playDemoIfTarget);
+</script>
+
 <style>
 	.feature-hero,
 	.feature-demo,
@@ -215,6 +227,18 @@ const seo = {
 		line-height: 1.5;
 		opacity: 0.86;
 		margin: 0.35rem 0 0;
+	}
+	#precision-demo {
+		scroll-margin-top: 5.5rem;
+		border-radius: var(--theme-shape-radius);
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+	}
+	#precision-demo:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		padding: 1rem;
+		border-radius: var(--theme-shape-radius);
 	}
 	.feature-demo h2,
 	.feature-proof h2,
