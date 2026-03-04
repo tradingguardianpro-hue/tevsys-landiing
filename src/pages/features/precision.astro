@@ -25,7 +25,7 @@ const seo = {
 
 		<section id="precision-demo" class="feature-demo">
 			<h2>Demo rápida (1 min 7 s)</h2>
-			<div class="demo-video">
+			<div class="demo-video demo-video--compact">
 				<video id="precision-demo-video" controls preload="metadata">
 					<source src="/videos/features/precision-demo.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
@@ -258,6 +258,11 @@ const seo = {
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
 		margin-bottom: 0.75rem;
+	}
+	.demo-video--compact {
+		max-width: 420px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.demo-video video {
 		display: block;
