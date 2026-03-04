@@ -23,23 +23,22 @@ const seo = {
 		</section>
 
 		<section id="hyperclose-demo" class="feature-demo">
-			<h2>Demo rápida (20-30s)</h2>
-			<div class="demo-video">
-				<video controls preload="none">
+			<h2>Demo rápida (1 min 35 s)</h2>
+			<div class="demo-video demo-video--compact" id="hyperclose-demo-container">
+				<video id="hyperclose-demo-video" controls preload="metadata">
 					<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
 			<div class="demo-placeholder">
-				<p>Ruta actual de prueba: <code>/videos/features/hyperclose-demo.mp4</code>.</p>
-				<p class="demo-note">Puedes cargar un MP4 provisional para validar render y reemplazarlo después por la versión final.</p>
+				<p>Ruta: <code>/videos/features/hyperclose-demo.mp4</code></p>
 			</div>
 		</section>
 
 		<section class="feature-proof">
 			<h2>Qué puedes comprobar</h2>
 			<ul>
-				<li><a class="evidence-link" href="#hyperclose-close">Cierre inmediato en milisegundos.</a></li>
+				<li><a class="evidence-link" href="#hyperclose-demo">Cierre inmediato en milisegundos.</a></li>
 				<li><a class="evidence-link" href="#hyperclose-semaphore">Semáforo de responsabilidad (3 niveles).</a></li>
 				<li><a class="evidence-link" href="#hyperclose-off">Compatibilidad con día OFF.</a></li>
 			</ul>
@@ -62,7 +61,9 @@ const seo = {
 			<p class="feature-proof-subtitle">Tres niveles de aviso por reiteración</p>
 			<p>El sistema escala mensajes educativos y de responsabilidad según la repetición del intento.</p>
 			<p><strong>Cómo validarlo:</strong> Intenta operar varias veces estando bloqueado y observa la secuencia de avisos.</p>
-			<p><a class="proof-capture-link" href="#">Ver secuencia de popups</a></p>
+			<p>
+				<a class="proof-capture-link" href="#hyperclose-demo">Ir a demo del cierre <span class="proof-link-meta">VIDEO</span></a> — El mismo vídeo muestra los 3 niveles del semáforo.
+			</p>
 		</section>
 
 		<section id="hyperclose-off" class="feature-proof-detail">
@@ -80,6 +81,26 @@ const seo = {
 		</section>
 	</Container>
 </Layout>
+
+<script>
+	function playDemoIfTarget() {
+		if (window.location.hash !== '#hyperclose-demo') return;
+		const video = document.getElementById('hyperclose-demo-video');
+		if (video) video.play().catch(() => {});
+	}
+	function initDemoExpand() {
+		const video = document.getElementById('hyperclose-demo-video');
+		const container = document.getElementById('hyperclose-demo-container');
+		if (!video || !container) return;
+		video.addEventListener('play', () => container.classList.add('demo-video--playing'));
+		video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+	}
+	document.addEventListener('DOMContentLoaded', () => {
+		playDemoIfTarget();
+		initDemoExpand();
+	});
+	window.addEventListener('hashchange', playDemoIfTarget);
+</script>
 
 <style>
 	.feature-hero,
@@ -125,11 +146,32 @@ const seo = {
 		max-width: 70ch;
 		line-height: 1.55;
 	}
+	#hyperclose-demo {
+		scroll-margin-top: 5.5rem;
+		border-radius: var(--theme-shape-radius);
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+	}
+	#hyperclose-demo:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		padding: 1rem;
+		border-radius: var(--theme-shape-radius);
+	}
 	.feature-demo h2,
 	.feature-proof h2,
 	.feature-cta h2 {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
+	}
+	.demo-video--compact {
+		max-width: 420px;
+		margin-left: auto;
+		margin-right: auto;
+		transition: max-width 0.35s ease;
+	}
+	.demo-video--compact.demo-video--playing {
+		max-width: none;
 	}
 	.demo-placeholder {
 		background: var(--theme-surface-1);
