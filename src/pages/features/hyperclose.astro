@@ -98,9 +98,52 @@ const seo = {
 		<section id="hyperclose-off" class="feature-proof-detail">
 			<h3>Compatibilidad con día OFF</h3>
 			<p class="feature-proof-subtitle">Protección activa también en jornada OFF</p>
-			<p>Aunque el día esté marcado como OFF, los intentos fuera de regla se detectan y se cierran.</p>
-			<p><strong>Cómo validarlo:</strong> Mantén el día en OFF e intenta operar para comprobar que el bloqueo sigue activo.</p>
-			<p><a class="proof-capture-link" href="#">Ver evidencia en día OFF</a></p>
+			<p>Aunque el día esté marcado como OFF, los intentos fuera de regla se detectan y se cierran. Misma velocidad que HyperClose: cierre en milisegundos.</p>
+			<p><strong>Cómo validarlo:</strong> Configura un día como OFF, bloquea límites e intenta operar ese día. Comprueba cierre inmediato y los modales progresivos.</p>
+			<p>
+				<a class="proof-capture-link" href="#hyperclose-off-demo">
+					Ir a demo día OFF <span class="proof-link-meta">VIDEO</span>
+				</a>
+			</p>
+			<div id="hyperclose-off-demo" class="demo-video demo-video--compact hyperclose-off-demo" tabindex="-1">
+				<video id="hyperclose-off-demo-video" controls preload="metadata">
+					<source src="/videos/features/hyperclose-dias-off-demo.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
+			<p class="demo-edit-note">Flujo: día OFF preconfigurado → intento de operar → cierre inmediato → modales según nivel.</p>
+			<details class="proof-accordion">
+				<summary class="proof-capture-link">Ver capturas de los 3 modales día OFF</summary>
+				<div class="proof-gallery">
+					<p class="proof-gallery__hint">Modales específicos cuando intentas operar en un día configurado como OFF. Haz clic en cada captura para verla en tamaño completo.</p>
+					<div class="proof-gallery__grid">
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Nivel 1</p>
+							<p class="proof-gallery__title">Educativo</p>
+							<p class="proof-gallery__desc">Día configurado OFF. TGP protege tu decisión. Cierra automáticamente.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-modal-01.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir modal nivel 1 día OFF en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-modal-01.png" alt="Modal nivel 1 día OFF: educativo." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Nivel 2</p>
+							<p class="proof-gallery__title">Advertencia</p>
+							<p class="proof-gallery__desc">Segundo intento. Comisiones y spreads a tu cargo.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-modal-02.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir modal nivel 2 día OFF en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-modal-02.png" alt="Modal nivel 2 día OFF: advertencia." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Nivel 3</p>
+							<p class="proof-gallery__title">Cláusula final</p>
+							<p class="proof-gallery__desc">Tercer intento. Exención de responsabilidad. Último aviso del día.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-modal-03.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir modal nivel 3 día OFF en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-modal-03.png" alt="Modal nivel 3 día OFF: cláusula final." loading="lazy" />
+							</a>
+						</article>
+					</div>
+				</div>
+			</details>
 		</section>
 
 		<section class="feature-cta">
@@ -113,16 +156,28 @@ const seo = {
 
 <script>
 	function playDemoIfTarget() {
-		if (window.location.hash !== '#hyperclose-demo') return;
-		const video = document.getElementById('hyperclose-demo-video');
-		if (video) video.play().catch(() => {});
+		const hash = window.location.hash;
+		if (hash === '#hyperclose-demo') {
+			const video = document.getElementById('hyperclose-demo-video');
+			if (video) video.play().catch(() => {});
+		} else if (hash === '#hyperclose-off-demo') {
+			const video = document.getElementById('hyperclose-off-demo-video');
+			if (video) video.play().catch(() => {});
+		}
 	}
 	function initDemoExpand() {
 		const video = document.getElementById('hyperclose-demo-video');
 		const container = document.getElementById('hyperclose-demo-container');
-		if (!video || !container) return;
-		video.addEventListener('play', () => container.classList.add('demo-video--playing'));
-		video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+		if (video && container) {
+			video.addEventListener('play', () => container.classList.add('demo-video--playing'));
+			video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+		}
+		const offVideo = document.getElementById('hyperclose-off-demo-video');
+		const offContainer = document.querySelector('.hyperclose-off-demo');
+		if (offVideo && offContainer) {
+			offVideo.addEventListener('play', () => offContainer.classList.add('demo-video--playing'));
+			offVideo.addEventListener('ended', () => offContainer.classList.remove('demo-video--playing'));
+		}
 	}
 	document.addEventListener('DOMContentLoaded', () => {
 		playDemoIfTarget();
@@ -298,6 +353,9 @@ const seo = {
 		border-color: rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+	}
+	#hyperclose-off-demo {
+		scroll-margin-top: 5.5rem;
 	}
 	.proof-capture-link {
 		color: #f5b041;
