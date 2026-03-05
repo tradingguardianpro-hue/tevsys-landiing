@@ -121,6 +121,7 @@ const seo = {
 							<p class="proof-gallery__step">Configuración</p>
 							<p class="proof-gallery__title">No se puede activar protección</p>
 							<p class="proof-gallery__desc">Día configurado como OFF. Si intentas bloquear límites, el sistema lo impide. Para operar ese día, primero tienes que quitar el día OFF en inputs (F7), luego configurar límites y bloquear. Sin ese paso, no hay protección activa.</p>
+							<p class="proof-gallery__caption">🔓 Candado gris = sin protección. Debes configurar y bloquear.</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-modal-00-config.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir modal configuración día OFF en tamaño completo">
 								<img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-modal-00-config.png" alt="Modal día OFF: no se puede activar protección." loading="lazy" />
 							</a>
@@ -128,7 +129,8 @@ const seo = {
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Panel protegido</p>
 							<p class="proof-gallery__title">Día OFF con límites bloqueados</p>
-							<p class="proof-gallery__desc">Día configurado como OFF y límites previamente bloqueados. Los candados en SEMANA indican que la protección está activa; el botón muestra "DÍA OFF · Protegido". Flotante hoy 0,00% porque no se ha operado. Si intentas abrir un trade, el sistema cierra de inmediato y muestra los modales.</p>
+							<p class="proof-gallery__desc">Día configurado como OFF y límites previamente bloqueados. Los candados en SEMANA indican protección activa; el botón muestra "DÍA OFF · Protegido". Flotante hoy 0,00% porque no se ha operado. Si intentas abrir un trade, el sistema cierra de inmediato y muestra los modales.</p>
+							<p class="proof-gallery__caption">🔒 Candado teal = protección configurada y activa.</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-panel-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir panel día OFF protegido en tamaño completo">
 								<img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-panel-protegido.png" alt="Panel día OFF: protegido con límites bloqueados." loading="lazy" />
 							</a>
@@ -455,6 +457,11 @@ const seo = {
 		border-radius: 0.45rem;
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		background: #0a0d13;
+	}
+	.proof-gallery__caption {
+		margin: 0.35rem 0 0.4rem;
+		font-size: 0.8rem;
+		opacity: 0.82;
 	}
 	.proof-gallery__zoom {
 		display: block;
