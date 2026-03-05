@@ -580,6 +580,28 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 
 ### 24.6 Commits asociados
 - `feat(precision): enlazar "Aquí se decide el cierre" a demo rápida`
+
+---
+
+## 25) HyperClose Días OFF completo + Footer indie (Mar 2026)
+
+### 25.1 HyperClose – sección Días OFF finalizada
+- **Capturas:** 5 escenarios en acordeón: config (modal-00), panel protegido, modales 01/02/03 (educativo, advertencia, cláusula).
+- **Vídeo:** `hyperclose-dias-off-demo.mp4` (51 s) con overlays: Día OFF config → Primer intento (cierre + 1.er semáforo) → Segundo intento (2.º semáforo) → Tercer intento (3.er semáforo, exención) → cierre "Tu calendario. Tu decisión. Nosotros lo cumplimos — tevsys".
+- **Captions candado:** En capturas 1 y 2, sobre la imagen. "🔓 Candado gris (esquina inf. izq. del gráfico) = sin protección. Configura y bloquea." | "🔒 Candado verde (esquina inf. izq. del gráfico) = protección activa." Teal→verde para usuario. Margen 2rem 0 2rem.
+- **Archivos:** `src/pages/features/hyperclose.astro`, `public/images/evidence/hyperclose-dias-off-*`, `public/videos/features/hyperclose-dias-off-demo.mp4`.
+
+### 25.2 Footer – frase proyecto independiente
+- **Texto:** "❤️ Made with love for trading. — Desarrollado independientemente. Sin inversores. Sin excusas."
+- **Estilo:** Link con hover amarillo (#f5b041), font 0.95rem. Ubicado encima del copyright.
+- **Archivo:** `src/components/core/Footer.astro`.
+
+### 25.3 Favicon y logo (sesión anterior)
+- Favicon: `logo tevsys_03.png`. Logo en BrandOval (header).
+
+### 25.4 Commits asociados
+- `feat(web): capturas modales Días OFF nivel 1, 2 y 3`
+- `feat(footer): frase proyecto independiente EN/ES + corazón + em dash`
 - `feat(precision): autoplay vídeo demo + scroll y resaltado`
 - `feat(precision): embed compacto que se expande al dar play`
 - `feat(precision): acordeón demo en alta volatilidad`
