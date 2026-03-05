@@ -8,7 +8,7 @@
   </defs>
   <!-- Centro -->
   <circle cx="16" cy="16" r="3" fill="#f5b041"/>
-  <!-- 12 rayos a 30° (centro ? perímetro) -->
+  <!-- 12 rayos a 30ï¿½ (centro ? perï¿½metro) -->
   <g stroke="url(#rayGrad)" stroke-width="2.2" stroke-linecap="round" fill="none">
     <line x1="16" y1="16" x2="16" y2="4"/>
     <line x1="16" y1="16" x2="22" y2="5.6"/>
