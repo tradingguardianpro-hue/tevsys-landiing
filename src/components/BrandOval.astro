@@ -1,6 +1,7 @@
 ---
 ---
 <div class="brand-oval">
+  <img class="brand-oval__logo" src="/favicon.png" alt="" width="28" height="28" />
   <span class="brand-oval__text">tevsys</span>
 </div>
 
@@ -8,10 +9,14 @@
   .brand-oval {
     display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
     padding: 0.6rem 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 2.5rem;
     background: rgba(255, 255, 255, 0.04);
+  }
+  .brand-oval__logo {
+    flex-shrink: 0;
   }
   .brand-oval__text {
     font-size: 1.55rem;
