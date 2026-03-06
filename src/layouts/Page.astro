@@ -31,6 +31,9 @@ const { seo } = Astro.props as Props;
     copyrightName={settings.name}
     showPlug={settings.showPlug}
   >
-    <a href="/" slot="logo" class="footer-brand__name">tevsys™</a>
+    <a href="/" slot="logo" class="footer-brand__name">
+    <img src="/favicon.png" alt="" width="24" height="24" class="footer-brand__logo" />
+    <span>tevsys™</span>
+  </a>
   </Footer>
 </Layout>.

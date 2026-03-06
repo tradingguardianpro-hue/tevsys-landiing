@@ -73,12 +73,16 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   .footer-grid__container {
     padding: 2rem 0 1rem 0;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1.5rem;
   }
   .footer-brand__slot {
     margin-bottom: 0.5rem;
   }
   .footer-brand__slot :global(.footer-brand__name) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-weight: 600;
     font-size: 1.25rem;
     text-decoration: none;
@@ -86,6 +90,9 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   }
   .footer-brand__slot :global(.footer-brand__name:hover) {
     opacity: 0.9;
+  }
+  .footer-brand__slot :global(.footer-brand__logo) {
+    flex-shrink: 0;
   }
   .footer-socials__list {
     margin: 1rem 0;
