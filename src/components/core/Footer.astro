@@ -33,6 +33,16 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
             ))
           }
         </ul>
+        <div class="footer-contact">
+          <a href="mailto:info@tevsys.io" class="footer-contact__item">
+            <img src="/icons/icon-email.svg" alt="" width="20" height="20" />
+            <span>info@tevsys.io</span>
+          </a>
+          <span class="footer-contact__item">
+            <img src="/icons/icon-location.svg" alt="" width="20" height="20" />
+            <span>Barcelona</span>
+          </span>
+        </div>
       </div>
       {
         footerLists.map((list) => (
@@ -102,6 +112,28 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   }
   .footer-socials__item {
     margin-right: 0.5rem;
+  }
+  .footer-contact {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-contact__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  .footer-contact__item:hover {
+    opacity: 1;
+    color: #f5b041;
+  }
+  .footer-contact__item img {
+    flex-shrink: 0;
   }
   .footer-link__list {
     margin: 0;
