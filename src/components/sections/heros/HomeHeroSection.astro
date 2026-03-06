@@ -42,14 +42,16 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     margin: var(--section-margin) auto;
     min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
   }
   .hero-section__text {
     grid-column: 1;
     justify-self: center;
     max-width: 25rem;
+    position: relative;
+    z-index: 1;
   }
   .hero-title {
     font-family: 'Outfit', -apple-system, sans-serif;
@@ -111,11 +113,13 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
+    margin-left: -2rem;
   }
   .hero-image__wrapper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    width: calc(100% + 2rem);
   }
   .hero-image__brand {
     margin-top: 0.75rem;
@@ -128,11 +132,12 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-image__wrapper img,
   .hero-section__image img {
     width: 100%;
-    min-width: 400px;
+    min-width: 420px;
     max-width: 100%;
     height: auto;
     max-height: 85vh;
     object-fit: contain;
+    object-position: right center;
     border-radius: var(--theme-shape-radius);
   }
   @media (max-width: 768px) {
@@ -149,6 +154,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       grid-column: 1;
       grid-row: auto;
       align-items: center;
+      margin-left: 0;
     }
     .hero-image__wrapper {
       width: 100%;
