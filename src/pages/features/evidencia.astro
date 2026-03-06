@@ -44,9 +44,67 @@ const seo = {
 
 		<section id="evidence-sources" class="feature-proof-detail">
 			<h3>Panel y logs: dónde ver los datos</h3>
-			<p>El panel muestra el estado en tiempo real; los logs MT5 registran cada evento por fecha. Dos fuentes internas que puedes contrastar.</p>
-			<p><strong>Cómo validarlo:</strong> Precisión ya incluye demo del panel y guía de logs.</p>
-			<p>
+			<p>El panel muestra el estado en tiempo real; los logs tevsys registran cada evento por fecha. Dos fuentes internas que puedes contrastar.</p>
+			<details id="evidence-logs-tevsys" class="proof-accordion">
+				<summary class="proof-capture-link">Ejemplo de logs propios tevsys (cuenta 50K, límite alcanzado)</summary>
+				<div class="proof-gallery">
+					<p class="proof-gallery__hint">Secuencia de trazabilidad: misma operación en capturas, logs tevsys, HTML e informe MT5. Cuenta 50K, límites ±0,50%. Haz clic en cada captura para verla en tamaño completo.</p>
+					<div class="proof-gallery__grid">
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Captura 1</p>
+							<p class="proof-gallery__title">Operación abierta</p>
+							<p class="proof-gallery__desc">Gráfico + operación abierta + flotantes moviéndose (≠ 0,00). Caja de herramientas visible con cuenta 50K (señalada en amarillo).</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-01-operacion-abierta.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 1 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-01-operacion-abierta.png" alt="Evidencia: operación abierta, gráfico, flotantes moviéndose, cuenta 50K." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Captura 2</p>
+							<p class="proof-gallery__title">Cierre por límite alcanzado</p>
+							<p class="proof-gallery__desc">Gráfico + frases arriba a la izquierda con límite alcanzado + panel mostrando el cierre.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-02-cierre-limite.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 2 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-02-cierre-limite.png" alt="Evidencia: cierre por límite, gráfico, frases, panel." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Captura 3</p>
+							<p class="proof-gallery__title">Logs tevsys — apertura</p>
+							<p class="proof-gallery__desc">Líneas de log internas tevsys en el momento de apertura de la operación.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-03-logs-apertura.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 3 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-03-logs-apertura.png" alt="Evidencia: logs tevsys en apertura." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Captura 4</p>
+							<p class="proof-gallery__title">Logs tevsys — cierre</p>
+							<p class="proof-gallery__desc">Líneas de log internas tevsys en el momento del cierre por límite.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-04-logs-cierre.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 4 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-04-logs-cierre.png" alt="Evidencia: logs tevsys en cierre." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Captura 5</p>
+							<p class="proof-gallery__title">HTML transacciones</p>
+							<p class="proof-gallery__desc">Misma hora, mismo ticket. Cruce con nuestras capturas y logs.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-05-html-transacciones.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 5 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-05-html-transacciones.png" alt="Evidencia: HTML transacciones MT5." loading="lazy" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Captura 6</p>
+							<p class="proof-gallery__title">Informe oficial MT5</p>
+							<p class="proof-gallery__desc">Respaldo externo de la plataforma. Hora y resultado coinciden.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-06-informe-mt5.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 6 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-06-informe-mt5.png" alt="Evidencia: informe oficial MT5." loading="lazy" />
+							</a>
+						</article>
+					</div>
+					<p style="margin-top: 1rem;">
+						<a class="proof-capture-link" href="/features/precision#precision-logs-guide">Ir a guía visual de logs en MT5 <span class="proof-link-meta">VIDEO</span></a>
+					</p>
+				</div>
+			</details>
+			<p style="margin-top: 0.75rem;">
 				<a class="proof-capture-link" href="/features/precision#precision-panel">Demo del panel</a> ·
 				<a class="proof-capture-link" href="/features/precision#precision-logs-guide">Guía visual de logs <span class="proof-link-meta">VIDEO</span></a>
 			</p>
@@ -245,6 +303,78 @@ const seo = {
 		background: rgba(245, 176, 65, 0.12);
 		color: #f7c050;
 		line-height: 1.2;
+	}
+	.proof-accordion {
+		margin: 0.45rem 0 0;
+	}
+	.proof-accordion summary {
+		list-style: none;
+	}
+	.proof-accordion summary::-webkit-details-marker {
+		display: none;
+	}
+	.proof-gallery {
+		margin: 0.75rem 0 0;
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem 1.1rem;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+	}
+	.proof-gallery__hint {
+		margin: 0 0 0.75rem;
+		font-size: 0.88rem;
+		opacity: 0.82;
+	}
+	.proof-gallery__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+	.proof-gallery__item {
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 0.6rem;
+		padding: 0.7rem;
+	}
+	.proof-gallery__step {
+		margin: 0 0 0.2rem;
+		font-size: 0.78rem;
+		opacity: 0.8;
+	}
+	.proof-gallery__title {
+		margin: 0 0 0.5rem;
+		font-size: 0.9rem;
+		font-weight: 600;
+		line-height: 1.35;
+	}
+	.proof-gallery__desc {
+		margin: 0 0 0.5rem;
+		font-size: 0.82rem;
+		line-height: 1.4;
+		opacity: 0.9;
+	}
+	.proof-gallery__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0.45rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #0a0d13;
+	}
+	.proof-gallery__zoom {
+		display: block;
+		border-radius: 0.45rem;
+		overflow: hidden;
+		cursor: zoom-in;
+	}
+	.proof-gallery__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 2px;
+	}
+	@media (max-width: 768px) {
+		.proof-gallery__grid {
+			grid-template-columns: 1fr;
+		}
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);
