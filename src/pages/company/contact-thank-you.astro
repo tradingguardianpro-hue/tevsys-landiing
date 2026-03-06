@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+	title: 'Solicitud recibida | tevsys',
+	description: 'Hemos recibido tu solicitud. Te responderemos en menos de 24h.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="contact-thank-you">
+			<h1>Gracias por tu interés en tevsys</h1>
+			<p>Hemos recibido tu solicitud. Te responderemos en menos de 24 horas con los pasos para acceder a la demo.</p>
+			<p class="contact-thank-you__note">Revisa tu bandeja de entrada (y la de spam, por si acaso).</p>
+			<a href="/" class="contact-thank-you__link">Volver al inicio</a>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.contact-thank-you {
+		min-height: 50vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 3rem 1rem;
+	}
+	.contact-thank-you h1 {
+		margin-bottom: 1rem;
+		font-size: 1.75rem;
+	}
+	.contact-thank-you p {
+		margin-bottom: 0.75rem;
+		max-width: 36ch;
+	}
+	.contact-thank-you__note {
+		font-size: 0.95rem;
+		opacity: 0.9;
+	}
+	.contact-thank-you__link {
+		display: inline-block;
+		margin-top: 1.5rem;
+		padding: 0.6rem 1.25rem;
+		background: var(--theme-primary, #f5b041);
+		color: var(--theme-on-primary, #0a0a0a);
+		text-decoration: none;
+		border-radius: 0.5rem;
+		font-weight: 600;
+	}
+	.contact-thank-you__link:hover {
+		opacity: 0.9;
+	}
+</style>

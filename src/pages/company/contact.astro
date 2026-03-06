@@ -98,18 +98,19 @@ const tips = [
 
 		if (flow === 'demo') {
 			if (titleNode) titleNode.textContent = 'Solicita tu demo de tevsys';
+			const demoProcess = ' Rellena el formulario. Te respondemos en menos de 24h con los pasos para acceder a la demo.';
 			const selectedSource = sourceMap[feature] || sourceMap[origin];
 			if (selectedSource) {
-				if (introNode) introNode.textContent = selectedSource.intro;
-				setTips(selectedSource.tips[0], selectedSource.tips[1], selectedSource.tips[2]);
+				if (introNode) introNode.textContent = selectedSource.intro + demoProcess;
+				setTips(selectedSource.tips[0], selectedSource.tips[1], 'Respuesta en menos de 24h con el enlace de descarga.');
 			} else {
 				if (introNode) {
 					introNode.textContent =
-						'Déjanos tus datos y te ayudamos a empezar rápido. La demo está pensada para validar encaje real con tu operativa, sin ruido ni complicaciones.';
+						'Déjanos tus datos y te ayudamos a empezar rápido.' + demoProcess;
 				}
 				setTips(
 					'Demo orientada a validación real de tu operativa.',
-					'Respuesta rápida con los siguientes pasos para activación.',
+					'Respuesta en menos de 24h con el enlace de descarga.',
 					'También puedes marcar días OFF para proteger tu operativa cuando decides no estar en mercado.'
 				);
 			}
