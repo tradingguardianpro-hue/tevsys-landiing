@@ -9,4 +9,7 @@ export default defineConfig({
   site: 'https://www.tevsys.io', // Dominio público. Usado para redirect Formspree y sitemap.
   sitemap: true, // Generate sitemap (set to "false" to disable)
   integrations: [sitemap(), mdx(), lit(), icon()], // Add renderers to the config
+  redirects: {
+    '/que-es': '/', // La home ya explica qué es tevsys
+  },
 });

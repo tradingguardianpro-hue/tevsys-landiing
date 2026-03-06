@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/que-es",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
