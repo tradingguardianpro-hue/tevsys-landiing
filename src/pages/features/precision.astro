@@ -180,11 +180,20 @@ const seo = {
 		video.addEventListener('play', () => container.classList.add('demo-video--playing'));
 		video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
 	}
+	function openLogsGuideIfTarget() {
+		if (window.location.hash !== '#precision-logs-guide') return;
+		const details = document.getElementById('precision-logs-guide');
+		if (details && details.tagName === 'DETAILS') details.setAttribute('open', '');
+	}
 	document.addEventListener('DOMContentLoaded', () => {
 		playDemoIfTarget();
 		initDemoExpand();
+		openLogsGuideIfTarget();
 	});
-	window.addEventListener('hashchange', playDemoIfTarget);
+	window.addEventListener('hashchange', () => {
+		playDemoIfTarget();
+		openLogsGuideIfTarget();
+	});
 </script>
 
 <style>
@@ -377,7 +386,8 @@ const seo = {
 		font-size: 0.9rem;
 		opacity: 0.78;
 	}
-	.feature-proof-detail:target {
+	.feature-proof-detail:target,
+	#precision-logs:has(#precision-logs-guide:target) {
 		border-color: rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
