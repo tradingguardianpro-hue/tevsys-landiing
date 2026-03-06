@@ -46,8 +46,8 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
       </div>
       {
         footerLists.map((list) => (
-          <div>
-            <p><strong>{list.title}</strong></p>
+          <div class="footer-list-col">
+            <p class="footer-list-col__title"><strong>{list.title}</strong></p>
             <ul class="footer-link__list">
               {list.items.map((item) => (
                 <li>
@@ -135,6 +135,13 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   .footer-contact__item img {
     flex-shrink: 0;
   }
+  .footer-list-col__title {
+    margin-bottom: 0.6rem;
+  }
+  .footer-list-col__title::before {
+    content: "— ";
+    color: #f5b041;
+  }
   .footer-link__list {
     margin: 0;
     padding: 0;
@@ -145,9 +152,10 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   }
   .footer-link__list li a {
     text-decoration: none;
+    transition: color 0.2s ease;
   }
   .footer-link__list li a:hover {
-    opacity: 0.84;
+    color: #f5b041;
   }
   .footer-copyright__container {
     display: flex;
