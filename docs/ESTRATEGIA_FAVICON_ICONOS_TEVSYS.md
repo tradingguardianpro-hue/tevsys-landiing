@@ -96,7 +96,7 @@ Los iconos 192 y 512 se usan cuando el usuario instala la app: icono grande en e
 ## Pendientes
 
 ### Iconos
-- [ ] Exportar icono radial en los tamaños indicados.
+- [ ] Exportar icono radial en los tamaños indicados. **Base disponible:** `favicon-tevsys-icon.svg` (32×32, icono 12 puntas + acento amarillo) — sirve como origen para favicon PC y móvil.
 - [ ] Decidir: monocromo o acento amarillo.
 - [ ] Sustituir favicon.png en `public/`.
 - [ ] Añadir apple-touch-icon y opcionales en `public/`.

@@ -611,3 +611,13 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `feat(hyperclose): nota "Vídeo editado para acortar esperas"`
 - `fix(hyperclose): sustituir vídeo con broker tapado`
 - `feat(hyperclose): acordeón con capturas de los 3 modales`
+- `fix(precision): resaltado amarillo y autoabrir acordeón en #precision-logs-guide`
+
+---
+
+## 26) Evidencia → Precisión: enlace guía de logs (Ene 2026)
+
+### 26.1 Fix enlace «Guía visual de logs (VIDEO)»
+- **Problema:** El enlace desde Evidencia a `#precision-logs-guide` no marcaba el embed en amarillo (el `:target` era el `details`, no la section).
+- **Solución:** CSS `#precision-logs:has(#precision-logs-guide:target)` para aplicar el mismo resaltado; script para autoabrir el acordeón cuando se navega con ese hash.
+- **Archivo:** `src/pages/features/precision.astro`.
