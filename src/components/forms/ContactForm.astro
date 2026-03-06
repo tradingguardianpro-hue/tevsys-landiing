@@ -3,13 +3,21 @@ import { Button, FormInput } from '@components/odyssey-theme';
 
 const { selectedPlan = '', allowNoPlan = false } = Astro.props;
 const normalizedPlan = (selectedPlan || '').toLowerCase();
+
+// Formspree: crea un formulario en formspree.io y reemplaza TU_FORM_ID por tu ID real.
+// Las solicitudes llegarán a tu email corporativo.
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/TU_FORM_ID';
+const thankYouUrl = `${(import.meta.env.SITE || 'https://www.tevsys.io').replace(/\/$/, '')}/company/contact-thank-you`;
 ---
 
-<form id="tevsysContactForm" name="Contact Form" method="POST" action="/contact-thank-you">
+<form id="tevsysContactForm" name="Contact Form" method="POST" action={formspreeEndpoint}>
+  <input type="hidden" name="_next" value={thankYouUrl} />
   <FormInput type="text" label="Nombre" name="Name" placeholder="Tu nombre" required />
   <FormInput type="email" label="Email" name="Email" placeholder="tu@email.com" required />
 
   <input id="planInput" type="hidden" name="Plan" value={normalizedPlan} data-allow-no-plan={allowNoPlan ? 'true' : 'false'} />
+  <input id="flowInput" type="hidden" name="Flow" value="" />
+  <input id="featureInput" type="hidden" name="Feature" value="" />
   <p id="selectedPlanBadge" class="selected-plan-badge" hidden></p>
 
   <div class="form-field__container">
@@ -79,14 +87,23 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
 
     const setPlanFromUrl = () => {
       if (!planInput) return '';
-      const urlFlow = (new URLSearchParams(window.location.search).get('flow') || '').toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      const urlFlow = (params.get('flow') || '').toLowerCase();
+      const urlFeature = (params.get('feature') || '').toLowerCase();
+
       if (urlFlow === 'demo') {
         planInput.dataset.allowNoPlan = 'true';
       }
-      const urlPlan = (new URLSearchParams(window.location.search).get('plan') || '').toLowerCase();
+      const urlPlan = (params.get('plan') || '').toLowerCase();
       if (urlPlan && limits[urlPlan] !== undefined) {
         planInput.value = urlPlan;
       }
+
+      const flowInput = document.getElementById('flowInput');
+      const featureInput = document.getElementById('featureInput');
+      if (flowInput) flowInput.value = urlFlow;
+      if (featureInput) featureInput.value = urlFeature;
+
       return (planInput.value || '').toLowerCase();
     };
 
