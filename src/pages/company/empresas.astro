@@ -16,7 +16,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
 		<section class="feature-hero empresas-hero">
 			<p class="feature-kicker">Canal empresas</p>
 			<h1>Empresas: otro canal, otro trato.</h1>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Estamos en fase de desarrollo y validación del canal empresas.</p>
+			<p class="feature-hook empresas-feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Estamos en fase de desarrollo y validación del canal empresas.</p>
 			<p class="feature-lead">
 				El capital que protegemos aquí no es retail: requiere reuniones y definir bien la oferta. Necesitamos un trato especial porque el alcance, las condiciones y lo que podemos ofrecer se diseña contigo.
 			</p>
@@ -103,18 +103,22 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
 		opacity: 0.8;
 		margin-bottom: 0.5rem;
 	}
+	.empresas-feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		font-size: 1.15rem;
+		opacity: 0.9;
+		margin: 0 0 0.7rem;
+	}
 	.feature-hook__dot {
-		display: inline-block;
-		width: 0.5rem;
-		height: 0.5rem;
+		width: 0.45rem;
+		height: 0.45rem;
 		border-radius: 50%;
 		background: #f5b041;
-		margin-right: 0.4rem;
-		vertical-align: middle;
-	}
-	.feature-hook {
-		font-size: 1.15rem;
-		margin: 0.5rem 0;
+		flex-shrink: 0;
 	}
 	.feature-lead,
 	.feature-trace-note {
@@ -124,27 +128,46 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
 		margin: 0.5rem 0 0;
 	}
 	.empresas-form-section {
-		background: var(--theme-surface-1);
+		background: #06080d;
+		border: 1px solid rgba(245, 176, 65, 0.35);
 		border-radius: var(--theme-shape-radius);
-		padding: 1.5rem 1.25rem;
-		border: 1px solid rgba(245, 176, 65, 0.25);
+		padding: 1.5rem 1.5rem 1.75rem;
 		max-width: 36rem;
 		margin-bottom: 3rem;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.08);
 	}
 	.empresas-form-section h2 {
 		margin: 0 0 1rem;
 		font-size: 1.2rem;
+		font-weight: 600;
 	}
 	.empresas-form {
 		display: grid;
 		gap: 1rem;
 	}
+	.empresas-form-section :global(.form-field__container input),
+	.empresas-form-section :global(.form-field__container textarea) {
+		background: rgba(255, 255, 255, 0.04);
+		border-color: rgba(245, 176, 65, 0.25);
+		color: var(--theme-on-bg);
+	}
+	.empresas-form-section :global(.form-field__container input:focus),
+	.empresas-form-section :global(.form-field__container textarea:focus) {
+		border-color: rgba(245, 176, 65, 0.6);
+	}
+	.empresas-form-section :global(.form-field__container input::placeholder),
+	.empresas-form-section :global(.form-field__container textarea::placeholder) {
+		opacity: 0.6;
+	}
+	.empresas-form-section :global(.form-field__container label) {
+		color: var(--theme-on-bg);
+	}
 	.empresas-form__message {
 		margin: 0;
 		padding: 0.75rem;
 		border-radius: 0.5rem;
-		background: rgba(245, 176, 65, 0.15);
-		border: 1px solid rgba(245, 176, 65, 0.65);
+		background: rgba(245, 176, 65, 0.12);
+		border: 1px solid rgba(245, 176, 65, 0.5);
 		color: var(--theme-on-bg);
 		font-size: 0.95rem;
 	}
