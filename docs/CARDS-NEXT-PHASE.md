@@ -21,6 +21,7 @@ Este documento reemplaza el enfoque inicial de placeholders y recoge el estado a
 
 ### Diseño
 - Sistema visual coherente: negro + icono gris + acento amarillo + iridiscente moderado.
+- **Hero (Mar 2026):** Imagen mano robótica + candado (`mano robotica central web.png`), logo en etiqueta negro apagado. Alineaciones: borde superior con «T» del título; borde izquierdo con «Trading Edge Verification System». Reflexión diseño palabra por palabra + commits: `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` | `CHANGELOG-TEVSYS.md` §27.
 
 ---
 

@@ -1,6 +1,14 @@
 # Prompt para DeepSeek / Psique — Estado web tevsys (Mar 2026)
 
-**Objetivo:** Dar contexto completo a DeepSeek o cualquier IA sobre dónde estamos con la web tevsys. Leer este documento + GUIA_PRODUCCION_VIDEOS antes de trabajar en vídeos o micropáginas.
+**Documento legado.** El prompt maestro completo está en:
+
+→ **`PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`** — contexto completo (hero, footer, favicon, cards, planes, micro-páginas, patrones técnicos, commits, docs). Usar ese como punto de partida.
+
+Este documento se mantiene como referencia específica de vídeos Precisión/HyperClose. Para trabajo general: leer primero el maestro.
+
+---
+
+**Objetivo original:** Dar contexto completo a DeepSeek o cualquier IA sobre dónde estamos con la web tevsys. Leer PROMPT_MAESTRO + GUIA_PRODUCCION_VIDEOS antes de trabajar en vídeos o micropáginas.
 
 ---
 

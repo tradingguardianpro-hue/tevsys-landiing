@@ -12,7 +12,7 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `src/config/nav.js` | Nav final: Inicio, Acceso (CTA), Contacto. |
 | `src/components/core/Header.astro` | Estilos del CTA en nav (botón blanco redondeado). |
 | `src/components/head/BaseHead.astro` | Fuente Outfit cargada globalmente. |
-| `src/components/sections/heros/HomeHeroSection.astro` | Hero refinado: brand debajo imagen, punto 32px, botón amarillo, grid 1fr/1.5fr. |
+| `src/components/sections/heros/HomeHeroSection.astro` | Hero Mar 2026: imagen `mano robotica central web.png`, grid 1fr/2fr, alineación con «T», logo en etiqueta. Reflexión + commits: `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md`, `CHANGELOG-TEVSYS.md` §27. |
 | `src/pages/index.astro` | 4 cards de valor (2x2), textos finales, imágenes nuevas, sección de planes con CTA por plan e imágenes finales. |
 | `src/pages/company/contact.astro` | Contacto por plan con título simplificado + visual dinámico por `?plan=` (sin redundancia en encabezado). |
 | `src/components/forms/ContactForm.astro` | Badge de plan seleccionado + validación plan/capital + compatibilidad con `flow=demo`. |
@@ -63,8 +63,10 @@ Resumen técnico completo para revisión interna / DeepSeq.
 
 ## Ajustes de estilo clave
 
-### Hero
-- `grid-template-columns: 1fr 1.5fr`
+### Hero (Mar 2026)
+- `grid-template-columns: 1fr 2fr` — imagen más protagonista.
+- Imagen: `mano robotica central web.png` (mano robótica + candado, logo en etiqueta).
+- Alineación: borde sup. imagen con «T» del título; borde izq. con «Trading Edge Verification System».
 - Botón amarillo:
   - `background: #f5b041`
   - `hover: #f7c050`

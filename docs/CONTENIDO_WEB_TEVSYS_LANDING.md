@@ -18,7 +18,8 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Punto de tagline:** amarillo grande (`32px`)
 - **Botón:** `Descargar demo →` (amarillo)
 - **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
-- **Imagen:** mano robótica + candado (`hero-tevsys.png`)
+- **Imagen:** mano robótica + candado (`mano robotica central web.png`). Logo tevsys en etiqueta negro apagado (esq. sup. izq.). Alineación: borde superior con la «T» del título; borde izquierdo con inicio de «Trading Edge Verification System».
+- **Reflexión diseño + commits:** `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` | `CHANGELOG-TEVSYS.md` §27.
 - **Texto bajo imagen:** `Trading Edge Verification System`
 
 ### Marco de copy del hero (AIDA)

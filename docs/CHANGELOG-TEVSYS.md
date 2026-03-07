@@ -621,3 +621,67 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - **Problema:** El enlace desde Evidencia a `#precision-logs-guide` no marcaba el embed en amarillo (el `:target` era el `details`, no la section).
 - **Solución:** CSS `#precision-logs:has(#precision-logs-guide:target)` para aplicar el mismo resaltado; script para autoabrir el acordeón cuando se navega con ese hash.
 - **Archivo:** `src/pages/features/precision.astro`.
+
+---
+
+## 27) Hero, Footer, Favicon — sprint Mar 2026 (sesión 6 marzo)
+
+### 27.1 Hero — imagen mano robótica rediseñada
+- **Nueva imagen:** `mano robotica central web.png` — mano robótica + candado dorado, chart de velas de fondo, logo tevsys en etiqueta negro apagado (esquina sup. izq.) para visibilidad.
+- **Alineaciones:**
+  - Borde superior de la imagen alineado con la «T» del título «Tu capital merece más que buenas intenciones».
+  - Borde izquierdo de la imagen alineado con el inicio de «Trading Edge Verification System».
+  - Grid `1fr 2fr`, `align-items: start`, `object-position: right top`.
+- **Archivo:** `src/components/sections/heros/HomeHeroSection.astro`.
+
+### 27.2 Footer — iconos contacto, guiones, hover
+- Iconos SVG (email, ubicación) en amarillo tevsys. Contacto: info@tevsys.io, Barcelona.
+- Guion amarillo (— ) antes de títulos de columnas (Navegación, Producto).
+- Hover amarillo en enlaces de columnas.
+- Enlaces micropáginas: Precisión, HyperClose, SML, Evidencia.
+- Logo en footer (favicon.png) junto a tevsys™.
+- **Archivos:** `src/components/core/Footer.astro`, `src/config/footer.js`, `src/layouts/Page.astro`, `public/icons/icon-email.svg`, `public/icons/icon-location.svg`.
+
+### 27.3 Favicon
+- PC: `favicon.png` (logo con chevrones blanco/naranja). Tras pruebas con `logo-tevsys.png` y `favicon-tevsys-icon.svg`, se mantiene favicon.png como correcto.
+- Móvil: `apple-touch-icon.png` 180×180 añadido (link en BaseHead). Pendiente validar en dispositivos reales.
+
+### 27.4 Reflexión diseño hero (documentada 6 Mar 2026)
+
+> **Antes vs ahora**  
+> Antes la mano robótica perdía peso, el logo competía con el chart y no había jerarquía clara. Ahora hay orden: el título manda, la imagen acompaña sin robar foco, y la marca está presente en la esquina sin gritar.
+>
+> **Reglas respetadas**  
+> - **Jerarquía:** El titular sigue siendo lo primero. La imagen refuerza el mensaje sin competir.  
+> - **Respiración:** El espacio entre texto e imagen evita saturación; no se siente apretado ni vacío.  
+> - **Alineación:** La línea superior compartida con la «T» y el alineamiento con las cards mantienen coherencia.  
+> - **Consistencia:** El logo en la imagen encaja con el resto de la marca (cards, footer, amarillo) sin repetirse.  
+> - **Ritmo:** La transición hero → cards es natural; cada bloque tiene su peso sin competir.
+>
+> **Importancia sin ser estridente**  
+> La mano + candado ya tiene fuerza. El logo en gris sobre fondo apagado suma identidad sin ruido. Presencia de marca sin que el diseño grite.
+>
+> **Conclusión**  
+> La página transmite más orden y profesionalidad. El hero funciona como puerta de entrada, las cards mantienen potencia y todo encaja en el mismo sistema. Base sólida para seguir construyendo.
+
+### 27.5 Documentación cruzada
+- Reflexión completa + commits: `docs/REFLEXION_DISENO_HERO_FOOTER_MAR2026.md`.
+- Referencias: `CONTENIDO_WEB_TEVSYS_LANDING`, `CARDS-NEXT-PHASE`, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS`, `ESTRATEGIA_FAVICON_ICONOS_TEVSYS`.
+- **Prompt maestro para DeepSeek:** `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` — documento único que engloba todo (hero, footer, vídeos, copy, patrones, docs) para onboarding del otro miembro del equipo.
+
+### 27.6 Commits asociados (sesión 6 Mar 2026)
+- `fix(precision): resaltado amarillo y autoabrir acordeón en #precision-logs-guide`
+- `feat(web): favicon tevsys SVG + enlace apple-touch-icon`
+- `fix(web): usar logo-tevsys.png en favicon y BrandOval (icono correcto)`
+- `fix(web): volver a favicon.png para logo en pestaña`
+- `feat(web): añadir apple-touch-icon 180x180 para móvil`
+- `fix(web): centrar logo en apple-touch-icon`
+- `feat(footer): enlaces micropáginas, logo y columna Producto`
+- `feat(footer): iconos SVG contacto (email, Barcelona) en amarillo tevsys`
+- `style(footer): fondo más oscuro y transparente + borde superior sutil`
+- `revert(footer): fondo unificado con theme-surface-1`
+- `feat(footer): guion amarillo en títulos y hover amarillo en enlaces`
+- `feat(hero): nueva imagen mano robótica + candado con logo en etiqueta`
+- `style(hero): imagen más grande, extendida hacia el texto`
+- `style(hero): alinear borde superior de imagen con la "T" del título`
+- `style(hero): reducir extensión izquierda de imagen, más separación del texto`

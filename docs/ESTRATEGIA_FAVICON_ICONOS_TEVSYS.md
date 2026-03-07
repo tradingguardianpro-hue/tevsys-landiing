@@ -7,9 +7,9 @@
 
 ## Contexto actual
 
-- **Problema:** En pestañas de navegador y al añadir la web al móvil aparece "OD" (plantilla Odyssey/Vercel).
-- **Referencia:** `BaseHead.astro` usa `href="/favicon.png"`.
-- **Assets actuales:** Pendiente de sustituir.
+- **Problema:** En pestañas de navegador y al añadir la web al móvil aparecía "OD" (plantilla Odyssey/Vercel).
+- **Estado Mar 2026:** PC usa `favicon.png` (logo chevrones blanco/naranja). Apple-touch-icon 180×180 añadido en `public/`, link en BaseHead. Móvil: pendiente validar en dispositivos reales (puede mostrar "T" por defecto).
+- **Sesión 6 Mar 2026:** Ver commits y reflexión diseño en `CHANGELOG-TEVSYS.md` §27, `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md`.
 
 ---
 
