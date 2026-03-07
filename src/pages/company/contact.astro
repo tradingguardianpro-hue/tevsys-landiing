@@ -10,9 +10,9 @@ const seo = {
 const introText =
 	'Completa el formulario y te indicamos el siguiente paso según tu perfil y el estado actual de cada plan.';
 const tips = [
-	'También puedes marcar días OFF (por ejemplo, lunes o viernes) para proteger tu operativa cuando decides no estar en mercado.',
-	'Essential: acceso demo/beta disponible.',
-	'Advanced y Pro: en desarrollo (lista de espera).',
+	'Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.',
+	'Límite diario, precisión milimétrica y HyperClose incluidos.',
+	'Respuesta en menos de 24h con los siguientes pasos.',
 ];
 const empresasTipHtml = 'Empresas o contacto corporativo: <a href="mailto:info@tevsys.io" class="contact-tip__link">info@tevsys.io</a>';
 ---
@@ -26,6 +26,7 @@ const empresasTipHtml = 'Empresas o contacto corporativo: <a href="mailto:info@t
 				<ul class="contact-hero__tips">
 					{tips.map((tip, idx) => <li id={`contactTip-${idx + 1}`}>{tip}</li>)}
 					<li id="contactTip-4" set:html={empresasTipHtml} />
+					<li id="contactTip-5" class="contact-tip-5" style="display: none;" />
 				</ul>
 				<div class="contact-hero__visual">
 					<img id="contactHeroImage" src="/logo-tevsys.png" alt="Visual de tevsys" loading="lazy" />
@@ -53,13 +54,22 @@ const empresasTipHtml = 'Empresas o contacto corporativo: <a href="mailto:info@t
 		const tip2 = document.getElementById('contactTip-2');
 		const tip3 = document.getElementById('contactTip-3');
 		const tip4 = document.getElementById('contactTip-4');
+		const tip5 = document.getElementById('contactTip-5');
 
 		const empresasTipHtml = 'Empresas o contacto corporativo: <a href="mailto:info@tevsys.io" class="contact-tip__link">info@tevsys.io</a>';
-		const setTips = (a, b, c, d) => {
+		const setTips = (a, b, c, d, e) => {
 			if (tip1) tip1.textContent = a;
 			if (tip2) tip2.textContent = b;
 			if (tip3) tip3.textContent = c;
-			if (tip4 && d !== undefined) tip4.innerHTML = d;
+			if (tip4) {
+				if (e !== undefined) {
+					tip4.textContent = d;
+					if (tip5) { tip5.style.display = ''; tip5.innerHTML = e; }
+				} else {
+					tip4.innerHTML = d;
+					if (tip5) tip5.style.display = 'none';
+				}
+			}
 		};
 
 		const sourceMap = {
@@ -157,6 +167,38 @@ const empresasTipHtml = 'Empresas o contacto corporativo: <a href="mailto:info@t
 		if (imageNode) {
 			imageNode.src = selected.image;
 			imageNode.alt = `Visual del plan ${selected.name}`;
+		}
+
+		const planTipsMap = {
+			essential: [
+				'Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.',
+				'Límite diario, precisión milimétrica y HyperClose incluidos.',
+				'Respuesta en menos de 24h con los siguientes pasos.',
+				empresasTipHtml,
+			],
+			advanced: [
+				'Protección configurable toda la semana + SML para operativas avanzadas.',
+				'Puedes marcar días OFF para proteger tu operativa.',
+				'Puedes probar Essential en demo mientras tanto.',
+				'Horarios de mercado y noticias: en fase de desarrollo.',
+				empresasTipHtml,
+			],
+			pro: [
+				'Para capitales más altos y operativas avanzadas.',
+				'Versión con drawdown y estructura completa.',
+				'Puedes marcar días OFF para proteger tu operativa.',
+				'Horarios de mercado y noticias: en fase de desarrollo.',
+				empresasTipHtml,
+			],
+		};
+
+		const planTips = planTipsMap[plan];
+		if (planTips) {
+			if (planTips.length === 5) {
+				setTips(planTips[0], planTips[1], planTips[2], planTips[3], planTips[4]);
+			} else {
+				setTips(planTips[0], planTips[1], planTips[2], planTips[3]);
+			}
 		}
 	})();
 </script>
