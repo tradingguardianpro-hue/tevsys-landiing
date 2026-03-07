@@ -8,7 +8,7 @@ const seo = {
 	description: 'Contact Page',
 };
 const introText =
-	'Completa el formulario y te indicamos el siguiente paso según tu perfil y el estado actual de cada plan.';
+	'Rellena el formulario y te indicamos el siguiente paso según tu perfil.';
 const tips = [
 	'Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.',
 	'Límite diario, precisión milimétrica y HyperClose incluidos.',
@@ -21,7 +21,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<h1 id="contactHeroTitle">Completa tu acceso a tevsys</h1>
+				<h1 id="contactHeroTitle" class="contact-hero__title">Completa tu acceso a tevsys</h1>
 				<p id="contactHeroIntro">{introText}</p>
 				<ul class="contact-hero__tips">
 					{tips.map((tip, idx) => <li id={`contactTip-${idx + 1}`}>{tip}</li>)}
@@ -117,7 +117,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 			const selectedSource = sourceMap[feature] || sourceMap[origin];
 			if (selectedSource) {
 				if (introNode) introNode.textContent = selectedSource.intro + demoProcess;
-				setTips(selectedSource.tips[0], selectedSource.tips[1], 'Respuesta en menos de 24h con el enlace de descarga.', empresasTipHtml);
+				setTips(selectedSource.tips[0], selectedSource.tips[1], 'Respuesta en menos de 24h con los siguientes pasos.', empresasTipHtml);
 			} else {
 				if (introNode) {
 					introNode.textContent =
@@ -203,6 +203,16 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 </script>
 
 <style>
+	.contact-hero__title::after {
+		content: '';
+		display: inline-block;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		background: #f5b041;
+		margin-left: 0.4rem;
+		vertical-align: middle;
+	}
 	.contact-hero__section {
 		margin: var(--section-margin) auto;
 		display: grid;
