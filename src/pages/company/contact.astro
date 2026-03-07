@@ -13,8 +13,8 @@ const tips = [
 	'También puedes marcar días OFF (por ejemplo, lunes o viernes) para proteger tu operativa cuando decides no estar en mercado.',
 	'Essential: acceso demo/beta disponible.',
 	'Advanced y Pro: en desarrollo (lista de espera).',
-	'Empresas o contacto corporativo: info@tevsys.io',
 ];
+const empresasTipHtml = 'Empresas o contacto corporativo: <a href="mailto:info@tevsys.io" class="contact-tip__link">info@tevsys.io</a>';
 ---
 
 <Layout seo={seo}>
@@ -25,6 +25,7 @@ const tips = [
 				<p id="contactHeroIntro">{introText}</p>
 				<ul class="contact-hero__tips">
 					{tips.map((tip, idx) => <li id={`contactTip-${idx + 1}`}>{tip}</li>)}
+					<li id="contactTip-4" set:html={empresasTipHtml} />
 				</ul>
 				<div class="contact-hero__visual">
 					<img id="contactHeroImage" src="/logo-tevsys.png" alt="Visual de tevsys" loading="lazy" />
@@ -53,11 +54,12 @@ const tips = [
 		const tip3 = document.getElementById('contactTip-3');
 		const tip4 = document.getElementById('contactTip-4');
 
+		const empresasTipHtml = 'Empresas o contacto corporativo: <a href="mailto:info@tevsys.io" class="contact-tip__link">info@tevsys.io</a>';
 		const setTips = (a, b, c, d) => {
 			if (tip1) tip1.textContent = a;
 			if (tip2) tip2.textContent = b;
 			if (tip3) tip3.textContent = c;
-			if (tip4 && d !== undefined) tip4.textContent = d;
+			if (tip4 && d !== undefined) tip4.innerHTML = d;
 		};
 
 		const sourceMap = {
@@ -105,7 +107,7 @@ const tips = [
 			const selectedSource = sourceMap[feature] || sourceMap[origin];
 			if (selectedSource) {
 				if (introNode) introNode.textContent = selectedSource.intro + demoProcess;
-				setTips(selectedSource.tips[0], selectedSource.tips[1], 'Respuesta en menos de 24h con el enlace de descarga.', 'Empresas o contacto corporativo: info@tevsys.io');
+				setTips(selectedSource.tips[0], selectedSource.tips[1], 'Respuesta en menos de 24h con el enlace de descarga.', empresasTipHtml);
 			} else {
 				if (introNode) {
 					introNode.textContent =
@@ -115,7 +117,7 @@ const tips = [
 					'Demo orientada a validación real de tu operativa.',
 					'Incluye precisión, HyperClose y días OFF para probar.',
 					'La demo que recibirás es Essential. Advanced y Pro en fase final de desarrollo — lista de espera.',
-					'Empresas o contacto corporativo: info@tevsys.io'
+					empresasTipHtml
 				);
 			}
 			if (imageNode) {
@@ -186,6 +188,14 @@ const tips = [
 	}
 	.contact-hero__tips li {
 		margin-bottom: 0.35rem;
+	}
+	.contact-tip__link {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.contact-tip__link:hover {
+		color: #f5b041;
 	}
 	.contact-hero__visual {
 		margin-top: 1rem;
