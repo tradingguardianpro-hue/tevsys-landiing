@@ -6,8 +6,9 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Header
 - **Logo:** `tevsys` en óvalo (sin estrella)
-- **Navegación:** Inicio | Acceso | Contacto
+- **Navegación:** Inicio | Empresas | Acceso | Contacto
 - **CTA destacado en nav:** Acceso
+- **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
 
 ---
 
@@ -99,11 +100,23 @@ Documento de contenido/copy actual para revisión de equipo.
 **Título contacto actual:** `Completa tu acceso a tevsys`
 
 **Bullets por plan (acumulativos, Ene 2026):**
-- **Essential:** 1) Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF. 2) Límite diario, precisión milimétrica y HyperClose incluidos. 3) Respuesta en menos de 24h con los siguientes pasos. 4) Empresas o contacto corporativo: [info@tevsys.io](mailto:info@tevsys.io) *(link clicable)*
-- **Advanced:** 1) Todo lo de Essential, además: 2) Protección configurable toda la semana + SML para operativas avanzadas. 3) Puedes marcar días OFF para proteger tu operativa. 4) Horarios de mercado y noticias (mejorados): en fase de desarrollo. 5) Empresas o contacto corporativo: [info@tevsys.io](mailto:info@tevsys.io) *(link clicable)*
-- **Pro:** 1) Todo lo de Advanced, además: 2) Para capitales más altos: drawdown y estructura completa. 3) Horarios de mercado y noticias (con eventos personalizados): en fase de desarrollo. 4) Empresas o contacto corporativo: [info@tevsys.io](mailto:info@tevsys.io) *(link clicable)*
+- **Essential:** 1) Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF. 2) Límite diario, precisión milimétrica y HyperClose incluidos. 3) Respuesta en menos de 24h con los siguientes pasos. 4) [Empresas o contacto corporativo](/company/empresas) *(link a micro-página)*
+- **Advanced:** 1) Todo lo de Essential, además: 2) Protección configurable toda la semana + SML para operativas avanzadas. 3) Puedes marcar días OFF para proteger tu operativa. 4) Horarios de mercado y noticias (mejorados): en fase de desarrollo. 5) [Empresas o contacto corporativo](/company/empresas) *(link a micro-página)*
+- **Pro:** 1) Todo lo de Advanced, además: 2) Para capitales más altos: drawdown y estructura completa. 3) Horarios de mercado y noticias (con eventos personalizados): en fase de desarrollo. 4) [Empresas o contacto corporativo](/company/empresas) *(link a micro-página)*
 
-**Link empresas:** Siempre clicable `mailto:info@tevsys.io`. Ref: `CHANGELOG-TEVSYS.md` §29.
+**Link empresas:** Enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30.
+
+---
+
+## Micro-página Empresas (`/company/empresas`)
+
+- **Nav:** Empresas visible en header (Inicio | Empresas | Acceso | Contacto). Accesible desde home y todas las micro-páginas de features.
+- **Hero:** feature-kicker "Canal empresas", h1 "Empresas: otro canal, otro trato."
+- **Hook (estilo micropáginas):** "Estamos en fase de desarrollo y validación del canal empresas." — cursiva, negrita, punto amarillo.
+- **Copy:** Trato especial; capital distinto a retail; requiere reuniones; definimos oferta contigo. "Si te interesa, déjanos tus datos y te avisaremos cuando estemos listos."
+- **Formulario:** Empresa (req), Email corporativo (req), Rol (opt), Objetivo (opt), Comentario (opt). Formspree. Thank-you: `/company/empresas-thank-you`.
+- **Fallback:** "O escríbenos directo: info@tevsys.io"
+- **Estilo:** Fondo formulario #06080d, borde ámbar, campos con borde ámbar. Ref: `CHANGELOG-TEVSYS.md` §30, `RUTA_EMPRESAS_TRATAMIENTO_EVIDENCIAS_TEVSYS.md`.
 
 ---
 

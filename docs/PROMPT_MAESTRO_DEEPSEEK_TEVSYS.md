@@ -98,9 +98,20 @@
 - **Demo separado:** `Descargar demo` → `/company/contact?flow=demo`
 - **Imágenes cards:** essential-card.png, advanced-card.png, pro-card.png
 - **Imágenes formulario:** essential-form-v4.png, advanced-form-v4.png, pro-form-v4.png — imagen cambia por plan (cache-bust por -v4)
-- **Título contacto:** `Completa tu acceso a tevsys`
+- **Título contacto:** `Completa tu acceso a tevsys` (o "Solicita tu demo de tevsys" cuando flow=demo)
 - **Estado:** Essential demo/beta disponible; Advanced y Pro en desarrollo (acceso anticipado)
-- **Bullets acumulativos (Ene 2026):** Advanced "Todo lo de Essential, además:"; Pro "Todo lo de Advanced, además:". Horarios/noticias diferenciados: Advanced (mejorados), Pro (con eventos personalizados). Link empresas clicable: info@tevsys.io. Ref: `CHANGELOG-TEVSYS.md` §29, `CONTENIDO_WEB_TEVSYS_LANDING.md`
+- **Bullets acumulativos (Ene 2026):** Advanced "Todo lo de Essential, además:"; Pro "Todo lo de Advanced, además:". Horarios/noticias diferenciados: Advanced (mejorados), Pro (con eventos personalizados). **Link empresas:** enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30
+
+---
+
+## 6.1 Empresas (canal B2B) — `/company/empresas`
+
+- **Nav:** Inicio | Empresas | Acceso | Contacto. Empresas accesible desde home y todas las micro-páginas (Precision, HyperClose, SML, Evidencia).
+- **Objetivo:** Captar leads B2B sin cerrar puertas; canal en desarrollo.
+- **Hero:** "Empresas: otro canal, otro trato." Hook: "Estamos en fase de desarrollo y validación del canal empresas." (estilo micropáginas: cursiva, negrita, punto amarillo)
+- **Copy:** Trato especial; capital distinto a retail; requiere reuniones.
+- **Formulario:** Empresa, Email corporativo, Rol, Objetivo, Comentario. Formspree. Thank-you: `/company/empresas-thank-you`.
+- **Estilo:** Fondo #06080d, borde ámbar. Ref: `CHANGELOG-TEVSYS.md` §30, `RUTA_EMPRESAS_TRATAMIENTO_EVIDENCIAS_TEVSYS.md`
 
 ---
 
@@ -221,10 +232,12 @@
 | HomeHeroSection.astro | Hero con imagen, grid, alineaciones |
 | Footer.astro | Footer con iconos, enlaces, frase indie |
 | BaseHead.astro | Favicon, apple-touch-icon, fuentes |
+| nav.js | Config nav: Inicio, Empresas, Acceso, Contacto |
 | footer.js | Config enlaces y columnas |
 | index.astro | Home: cards, planes |
 | contact.astro | Formulario por plan/demo |
-| precision.astro, hyperclose.astro, sml.astro, evidencia.astro | Micro-páginas |
+| empresas.astro, empresas-thank-you.astro | Micro-página canal B2B |
+| precision.astro, hyperclose.astro, sml.astro, evidencia.astro | Micro-páginas features |
 
 ---
 
@@ -233,7 +246,8 @@
 | Doc | Para qué |
 |-----|----------|
 | **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md** (este) | Contexto completo — empezar aquí |
-| CHANGELOG-TEVSYS.md | Historial de todos los cambios, decisión por decisión |
+| CHANGELOG-TEVSYS.md | Historial de todos los cambios, decisión por decisión (§30 Empresas) |
+| RUTA_EMPRESAS_TRATAMIENTO_EVIDENCIAS_TEVSYS.md | Política empresas, niveles acceso, implementado (TGP) |
 | GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md | Specs vídeos, guiones, overlays, OBS/Clipchamp |
 | CONTENIDO_WEB_TEVSYS_LANDING.md | Copy actual de toda la web |
 | CARDS-NEXT-PHASE.md | Tracker micro-páginas, planes, copy freeze, evidencias |
@@ -256,17 +270,20 @@
 - feat(hero): nueva imagen mano robótica + candado con logo en etiqueta
 - style(hero): imagen más grande, alinear borde superior con "T", reducir extensión izquierda
 
-**Sesión Ene 2026 (formulario contacto):**
+**Sesión Ene 2026 (formulario contacto + Empresas):**
 - feat(contact): diferenciar horarios/noticias en Advanced y Pro vs Essential
 - feat(contact): Pro con "eventos personalizados" en horarios/noticias
 - feat(contact): bullets acumulativos (Essential +) en Advanced y Pro
+- feat(empresas): micro-página canal empresas + nav + bullet a /company/empresas
+- fix(empresas): margin-bottom 3rem antes del footer
+- style(empresas): fondo oscuro #06080d, hook como micropáginas, campos con borde ámbar
 
 ---
 
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Hero Mar 2026: mano robotica central web.png, grid 1fr 2fr, alineación con «T». Footer: iconos amarillos, enlaces micropáginas, favicon.png + apple-touch-icon. Precisión CERRADA (3 vídeos: demo 1:07, alta volatilidad con 6 overlays, guía logs; 50 operativas). HyperClose CERRADA salvo vídeo Día OFF. Formulario contacto: imagen por plan, bullets acumulativos (Essential+), link empresas clicable. SML y Evidencia: copy listo, vídeo pendiente. Copy freeze v1 activo. Rutas: public/videos/features/, public/images/evidence/. Docs: CHANGELOG-TEVSYS §28.1 (volatilidad), §29 (formulario), GUIA_PRODUCCION_VIDEOS, CARDS-NEXT-PHASE.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Acceso | Contacto. Hero Mar 2026: mano robotica central web.png, grid 1fr 2fr, alineación con «T». Footer: iconos amarillos, enlaces micropáginas, favicon.png + apple-touch-icon. Precisión CERRADA (3 vídeos: demo 1:07, alta volatilidad con 6 overlays, guía logs; 50 operativas). HyperClose CERRADA salvo vídeo Día OFF. Formulario contacto: imagen por plan, bullets acumulativos (Essential+), link empresas → /company/empresas. Micro-página Empresas: canal B2B en desarrollo, formulario, fondo #06080d. SML y Evidencia: copy listo, vídeo pendiente. Copy freeze v1 activo. Rutas: public/videos/features/, public/images/evidence/. Docs: CHANGELOG-TEVSYS §28.1, §29, §30, RUTA_EMPRESAS, GUIA_PRODUCCION_VIDEOS, CARDS-NEXT-PHASE.
 ```
 
 ---

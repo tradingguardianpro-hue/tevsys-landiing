@@ -711,10 +711,9 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Imágenes: `*-form-v4.png` (essential-form-v4, advanced-form-v4, pro-form-v4) en `/assets/images/plans/`.
 - Al cambiar de plan (Essential / Advanced / Pro), la imagen se actualiza en cliente para reflejar el visual del plan.
 
-### 29.2 Link clicable para empresas y contacto corporativo
-- Bullet fijo en todos los planes: `Empresas o contacto corporativo: info@tevsys.io`
-- Enlace clicable (`mailto:info@tevsys.io`) con clase `contact-tip__link`.
-- Posición: último bullet de cada lista de tips por plan.
+### 29.2 Link empresas (actualizado §30)
+- Bullet fijo en todos los planes: enlace a `/company/empresas` (micro-página canal empresas).
+- Texto del enlace: `Empresas o contacto corporativo`. Ya no es mailto; redirige a la micro-página.
 
 ### 29.3 Diferenciación horarios/noticias por plan
 - **Essential:** No incluye bullet de horarios/noticias (base).
@@ -746,3 +745,60 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `feat(contact): diferenciar horarios/noticias en Advanced y Pro vs Essential`
 - `feat(contact): Pro con "eventos personalizados" en horarios/noticias`
 - `feat(contact): bullets acumulativos (Essential +) en Advanced y Pro`
+
+---
+
+## 30) Micro-página Empresas: canal B2B, nav, formulario, estilo (Ene 2026)
+
+### 30.1 Objetivo
+- No cerrar puertas a B2B mientras se enfoca en retail/Essential.
+- Captar leads empresas sin prometer funcionalidad aún no disponible.
+- Mensaje: canal en desarrollo; avisaremos cuando esté listo.
+
+### 30.2 Nav header
+- Añadido **Empresas** al menú: Inicio | Empresas | Acceso | Contacto.
+- Acceso a `/company/empresas` desde cualquier página (home, micro-páginas de features).
+
+### 30.3 Bullet en formulario contacto
+- El bullet "Empresas o contacto corporativo" enlaza a `/company/empresas` (no mailto).
+- Visible en Essential, Advanced y Pro al seleccionar plan.
+- Mismo enlace cuando `flow=demo` → título "Solicita tu demo de tevsys" (el bullet empresas sigue presente).
+
+### 30.4 Micro-página `/company/empresas`
+- **Ruta:** `/company/empresas`
+- **Hero:** feature-kicker "Canal empresas", h1 "Empresas: otro canal, otro trato."
+- **Hook (estilo micropáginas):** "Estamos en fase de desarrollo y validación del canal empresas." — cursiva, negrita, punto amarillo (mismo que Precision/HyperClose).
+- **Copy:** Trato especial; capital distinto a retail; requiere reuniones; definimos oferta contigo.
+- **CTA:** "Si te interesa, déjanos tus datos y te avisaremos cuando estemos listos."
+
+### 30.5 Formulario empresas
+- **Campos:** Empresa (req), Email corporativo (req), Rol (opt), Objetivo (opt), Comentario (opt).
+- **Hidden:** `_subject: [tevsys Empresas] Nueva solicitud`, `Source: empresas`
+- **Endpoint:** mismo Formspree que contacto (xzdjbenk).
+- **Thank-you:** `/company/empresas-thank-you` — "Te avisaremos cuando estemos listos para el canal empresas."
+- **Fallback:** "O escríbenos directo: info@tevsys.io" (mailto).
+
+### 30.6 Estilo visual
+- **Fondo formulario:** #06080d (igual que demo-video en Precision), no gris theme-surface-1.
+- **Borde:** rgba(245, 176, 65, 0.35) — acento amarillo tevsys.
+- **Campos:** fondo rgba(255,255,255,0.04), borde ámbar, focus más visible.
+- **Margen inferior:** 3rem antes del footer.
+
+### 30.7 Accesos desde micro-páginas
+- Las micro-páginas (Precision, HyperClose, SML, Evidencia) comparten el mismo header.
+- Header incluye Empresas → siempre accesible desde cualquier feature.
+- CTAs de features enlazan a `/company/contact?feature=...&flow=demo` (solicitar demo retail).
+- Empresas es canal paralelo; no sustituye el flujo demo.
+
+### 30.8 Archivos
+- `src/pages/company/empresas.astro`
+- `src/pages/company/empresas-thank-you.astro`
+- `src/config/nav.js`
+- `src/pages/company/contact.astro` (bullet link)
+- `docs/RUTA_EMPRESAS_TRATAMIENTO_EVIDENCIAS_TEVSYS.md`
+- `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`
+
+### 30.9 Commits asociados
+- `feat(empresas): micro-página canal empresas + nav + bullet a /company/empresas`
+- `fix(empresas): margin-bottom 3rem antes del footer`
+- `style(empresas): fondo oscuro #06080d, hook como micropáginas, campos con borde ámbar`

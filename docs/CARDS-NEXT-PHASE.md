@@ -46,7 +46,12 @@ Con CTAs funcionales:
 - Imagen por plan en bloque visual izquierdo (`*-form-v4.png`).
 - Bullets acumulativos: Advanced "Todo lo de Essential, además:", Pro "Todo lo de Advanced, además:".
 - Horarios/noticias diferenciados: Advanced (mejorados), Pro (con eventos personalizados).
-- Link empresas clicable: info@tevsys.io. Ref: `CHANGELOG-TEVSYS.md` §29, `CONTENIDO_WEB_TEVSYS_LANDING.md`.
+- Link empresas: enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30.
+
+### Micro-página Empresas (Ene 2026)
+- Nav: Inicio | Empresas | Acceso | Contacto. Empresas accesible desde todas las páginas.
+- Ruta: `/company/empresas`. Formulario: Empresa, Email corporativo, Rol, Objetivo, Comentario.
+- Estilo: fondo #06080d, borde ámbar, hook como micropáginas. Ref: `RUTA_EMPRESAS_TRATAMIENTO_EVIDENCIAS_TEVSYS.md`.
 
 ---
 
