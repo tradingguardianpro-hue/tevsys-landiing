@@ -685,3 +685,13 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `style(hero): imagen más grande, extendida hacia el texto`
 - `style(hero): alinear borde superior de imagen con la "T" del título`
 - `style(hero): reducir extensión izquierda de imagen, más separación del texto`
+
+---
+
+## 28) Línea de trazabilidad en sección valor (Ene 2026)
+
+- **Cambio:** Añadida línea entre subtítulo y mecanismo: `Trazabilidad completa: logs, panel y reporte MT5. Auditable.`
+- **Objetivo:** Señal de credibilidad temprana para inversores, fondos y escépticos antes de llegar a las cards.
+- **Estructura:** Dolor (pregunta) → Promesa (nosotros sí) → **Prueba (trazabilidad)** → Mecanismo (configuras una vez).
+- **Archivo:** `src/pages/index.astro` — clase `feature-card__intro-trazabilidad`.
+- **Docs:** CONTENIDO_WEB, PROMPT_MAESTRO actualizados.

@@ -87,6 +87,7 @@
 **Sección valor:**
 - Título: `¿Cuánto dinero has perdido por no parar a tiempo?`
 - Subtítulo: `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
+- Trazabilidad: `Trazabilidad completa: logs, panel y reporte MT5. Auditable.`
 - Mecanismo: `Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`
 
 ---
