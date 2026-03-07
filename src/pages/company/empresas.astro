@@ -1,0 +1,181 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import { FormInput, FormTextarea } from '@components/odyssey-theme';
+
+const seo = {
+	title: 'Empresas | tevsys',
+	description: 'tevsys para empresas: canal en desarrollo. Capital institucional, trato diferenciado. Déjanos tus datos y te avisaremos cuando estemos listos.',
+};
+
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xzdjbenk';
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="feature-hero empresas-hero">
+			<p class="feature-kicker">Canal empresas</p>
+			<h1>Empresas: otro canal, otro trato.</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Estamos en fase de desarrollo y validación del canal empresas.</p>
+			<p class="feature-lead">
+				El capital que protegemos aquí no es retail: requiere reuniones y definir bien la oferta. Necesitamos un trato especial porque el alcance, las condiciones y lo que podemos ofrecer se diseña contigo.
+			</p>
+			<p class="feature-trace-note">
+				Si te interesa, déjanos tus datos y te avisaremos cuando estemos listos para este canal.
+			</p>
+		</section>
+
+		<section class="empresas-form-section">
+			<h2>Quiero que me avisen cuando estén listos</h2>
+			<form id="empresasForm" class="empresas-form" data-formspree-endpoint={formspreeEndpoint}>
+				<input type="hidden" name="_subject" value="[tevsys Empresas] Nueva solicitud" />
+				<input type="hidden" name="Source" value="empresas" />
+				<FormInput type="text" label="Empresa" name="Empresa" placeholder="Nombre de la empresa" required />
+				<FormInput type="email" label="Email corporativo" name="Email" placeholder="tu@empresa.com" required />
+				<FormInput type="text" label="Rol (opcional)" name="Rol" placeholder="Ej. Gestor de riesgos, CTO..." />
+				<FormInput type="text" label="Objetivo (opcional)" name="Objetivo" placeholder="Qué te interesa de tevsys" />
+				<FormTextarea label="Comentario (opcional)" name="Comentario" placeholder="Algo más que quieras contarnos..." rows={4} />
+				<p id="empresasFormMessage" class="empresas-form__message" hidden></p>
+				<button type="submit" class="empresas-form__submit">Enviar</button>
+			</form>
+			<p class="empresas-form__fallback">O escríbenos directo: <a href="mailto:info@tevsys.io" class="evidence-link">info@tevsys.io</a></p>
+		</section>
+	</Container>
+</Layout>
+
+<script is:inline>
+	(() => {
+		const form = document.getElementById('empresasForm');
+		if (!form) return;
+
+		const messageNode = document.getElementById('empresasFormMessage');
+		const thankYouUrl = '/company/empresas-thank-you';
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const submitBtn = form.querySelector('button[type="submit"]');
+			const endpoint = form.dataset.formspreeEndpoint;
+			if (!endpoint) return;
+
+			if (submitBtn) {
+				submitBtn.disabled = true;
+				submitBtn.textContent = 'Enviando…';
+			}
+			if (messageNode) {
+				messageNode.hidden = true;
+				messageNode.textContent = '';
+			}
+
+			try {
+				const formData = new FormData(form);
+				const response = await fetch(endpoint, {
+					method: 'POST',
+					body: formData,
+					headers: { 'Accept': 'application/json' }
+				});
+				if (response.ok) {
+					window.location.href = thankYouUrl;
+					return;
+				}
+				throw new Error('Error al enviar');
+			} catch (err) {
+				if (messageNode) {
+					messageNode.hidden = false;
+					messageNode.textContent = 'No se pudo enviar. Inténtalo de nuevo o escríbenos a info@tevsys.io';
+				}
+				if (submitBtn) {
+					submitBtn.disabled = false;
+					submitBtn.textContent = 'Enviar';
+				}
+			}
+		});
+	})();
+</script>
+
+<style>
+	.empresas-hero {
+		margin-bottom: 2.5rem;
+	}
+	.feature-kicker {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		opacity: 0.8;
+		margin-bottom: 0.5rem;
+	}
+	.feature-hook__dot {
+		display: inline-block;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		background: #f5b041;
+		margin-right: 0.4rem;
+		vertical-align: middle;
+	}
+	.feature-hook {
+		font-size: 1.15rem;
+		margin: 0.5rem 0;
+	}
+	.feature-lead,
+	.feature-trace-note {
+		max-width: 72ch;
+		line-height: 1.55;
+		opacity: 0.9;
+		margin: 0.5rem 0 0;
+	}
+	.empresas-form-section {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.5rem 1.25rem;
+		border: 1px solid rgba(245, 176, 65, 0.25);
+		max-width: 36rem;
+	}
+	.empresas-form-section h2 {
+		margin: 0 0 1rem;
+		font-size: 1.2rem;
+	}
+	.empresas-form {
+		display: grid;
+		gap: 1rem;
+	}
+	.empresas-form__message {
+		margin: 0;
+		padding: 0.75rem;
+		border-radius: 0.5rem;
+		background: rgba(245, 176, 65, 0.15);
+		border: 1px solid rgba(245, 176, 65, 0.65);
+		color: var(--theme-on-bg);
+		font-size: 0.95rem;
+	}
+	.empresas-form__submit {
+		background: #f5b041;
+		color: #0a0a0a;
+		border: none;
+		padding: 0.6rem 1.25rem;
+		border-radius: 0.5rem;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background 0.2s ease;
+	}
+	.empresas-form__submit:hover:not(:disabled) {
+		background: #f7c050;
+	}
+	.empresas-form__submit:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+	}
+	.empresas-form__fallback {
+		margin: 1rem 0 0;
+		font-size: 0.95rem;
+		opacity: 0.9;
+	}
+	.evidence-link {
+		color: #ffffff;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.evidence-link:hover {
+		color: #f5b041;
+	}
+</style>
