@@ -113,7 +113,7 @@
 
 **Vídeos publicados:**
 - `precision-demo.mp4` — 1 min 7 s, CON audio. Demo principal.
-- `precision-demo-volatilidad.mp4` — ~1 min 8 s, SIN audio. Límite -1,50%, cierre +1,83% en alta volatilidad.
+- `precision-demo-volatilidad.mp4` — ~1 min 8 s, SIN audio. Overlays: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys
 - `precision-logs-guide.mp4` — Guía logs MT5. SIN audio.
 
 **Estructura:**

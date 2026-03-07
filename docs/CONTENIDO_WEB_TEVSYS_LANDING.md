@@ -275,7 +275,7 @@ Seguimiento interno activo en:
 
 ### Actualización Mar 2026 — Demo y alta volatilidad
 - Demo principal: `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto, autoplay al enlazar.
-- Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4`. Texto: Límite -1,50%. Cierre en ganancias (+1,83%) con alta volatilidad geopolítica.
+- Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4`. Overlays: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys
 - **50 operativas** documentadas en hook, KPIs y card home.
 
 ### Criterio de publicación (recordatorio)

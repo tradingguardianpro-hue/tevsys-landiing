@@ -695,3 +695,8 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - **Estructura:** Dolor (pregunta) → Promesa (nosotros sí) → **Prueba (trazabilidad)** → Mecanismo (configuras una vez).
 - **Archivo:** `src/pages/index.astro` — clase `feature-card__intro-trazabilidad`.
 - **Docs:** CONTENIDO_WEB, PROMPT_MAESTRO actualizados.
+
+### 28.1 Overlays vídeo alta volatilidad (Precisión) — FINAL
+- **Vídeo:** `precision-demo-volatilidad.mp4` — SIN audio.
+- **Overlays (orden):** 1) Abro operación. Límite -1,50% / 1,50%. Mercado en alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys *(frase de marca)*
+- **Estado:** Vídeo editado y listo para exportar/subir.
