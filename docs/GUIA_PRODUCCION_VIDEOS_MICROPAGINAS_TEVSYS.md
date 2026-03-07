@@ -122,9 +122,9 @@ Si estás bloqueado y aun así intentas operar, HyperClose actúa en milisegundo
 - Audio: **con audio** (narración/explicación)
 - Broker y datos: tapados (barra sólida)
 
-**También:** `precision-demo-volatilidad.mp4` — demo en alta volatilidad, límite -1,50%, cierre +1,83% en ganancias. Sin audio, overlays de texto.
+**También:** `precision-demo-volatilidad.mp4` — demo en alta volatilidad, límite -1,50%, cierre +1,83% en ganancias. Sin audio. **Vídeo mejorado** con 6 overlays definitivos (Ene 2026). Ref: `CHANGELOG-TEVSYS.md` §28.1.
 
-**Overlays del vídeo (orden final):**
+**Overlays del vídeo (orden final, versión mejorada):**
 1. Abro operación. Límite -1,50% / 1,50%. Mercado en alta volatilidad.
 2. Panel en tiempo real: flotante y protección activa.
 3. Cero intervención. — tevsys ejecuta.

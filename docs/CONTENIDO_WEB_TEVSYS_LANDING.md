@@ -98,6 +98,13 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Título contacto actual:** `Completa tu acceso a tevsys`
 
+**Bullets por plan (acumulativos, Ene 2026):**
+- **Essential:** 1) Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF. 2) Límite diario, precisión milimétrica y HyperClose incluidos. 3) Respuesta en menos de 24h con los siguientes pasos. 4) Empresas o contacto corporativo: [info@tevsys.io](mailto:info@tevsys.io) *(link clicable)*
+- **Advanced:** 1) Todo lo de Essential, además: 2) Protección configurable toda la semana + SML para operativas avanzadas. 3) Puedes marcar días OFF para proteger tu operativa. 4) Horarios de mercado y noticias (mejorados): en fase de desarrollo. 5) Empresas o contacto corporativo: [info@tevsys.io](mailto:info@tevsys.io) *(link clicable)*
+- **Pro:** 1) Todo lo de Advanced, además: 2) Para capitales más altos: drawdown y estructura completa. 3) Horarios de mercado y noticias (con eventos personalizados): en fase de desarrollo. 4) Empresas o contacto corporativo: [info@tevsys.io](mailto:info@tevsys.io) *(link clicable)*
+
+**Link empresas:** Siempre clicable `mailto:info@tevsys.io`. Ref: `CHANGELOG-TEVSYS.md` §29.
+
 ---
 
 ## Bloque fundador
@@ -152,7 +159,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Estado actual Precisión (Mar 2026)
 - **Demo rápida:** `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto que se expande al dar play.
-- **Aquí se decide el cierre:** enlace a demo + autoplay. Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4` (límite -1,50%, cierre +1,83% en alta volatilidad).
+- **Aquí se decide el cierre:** enlace a demo + autoplay. Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4` (límite -1,50%, cierre +1,83% en alta volatilidad). Vídeo mejorado con 6 overlays definitivos (Ene 2026).
 - **50 operativas** documentadas (hook y KPIs).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
@@ -275,7 +282,7 @@ Seguimiento interno activo en:
 
 ### Actualización Mar 2026 — Demo y alta volatilidad
 - Demo principal: `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto, autoplay al enlazar.
-- Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4`. Overlays: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys
+- Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4`. **Vídeo mejorado** (Ene 2026) con 6 overlays definitivos: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys. Ref: CHANGELOG §28.1.
 - **50 operativas** documentadas en hook, KPIs y card home.
 
 ### Criterio de publicación (recordatorio)

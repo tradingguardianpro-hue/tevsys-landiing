@@ -42,6 +42,12 @@ Con CTAs funcionales:
 - **Advanced:** en desarrollo (captación por acceso anticipado).
 - **Pro:** en desarrollo (captación por acceso anticipado).
 
+### Bullets formulario contacto (Ene 2026)
+- Imagen por plan en bloque visual izquierdo (`*-form-v4.png`).
+- Bullets acumulativos: Advanced "Todo lo de Essential, además:", Pro "Todo lo de Advanced, además:".
+- Horarios/noticias diferenciados: Advanced (mejorados), Pro (con eventos personalizados).
+- Link empresas clicable: info@tevsys.io. Ref: `CHANGELOG-TEVSYS.md` §29, `CONTENIDO_WEB_TEVSYS_LANDING.md`.
+
 ---
 
 ## 3) Decisiones pendientes de equipo

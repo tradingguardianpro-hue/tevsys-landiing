@@ -698,5 +698,51 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 
 ### 28.1 Overlays vídeo alta volatilidad (Precisión) — FINAL
 - **Vídeo:** `precision-demo-volatilidad.mp4` — SIN audio.
+- **Mejora aplicada:** Vídeo actualizado/mejorado con 6 overlays definitivos que guían la narración visual. Sustituye versión previa (si la hubo) con overlays más claros y coherentes.
 - **Overlays (orden):** 1) Abro operación. Límite -1,50% / 1,50%. Mercado en alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys *(frase de marca)*
 - **Estado:** Vídeo editado y listo para exportar/subir.
+
+---
+
+## 29) Formulario contacto: imagen por plan, link empresas, bullets acumulativos (Ene 2026)
+
+### 29.1 Imagen en formulario demo
+- El bloque visual izquierdo del formulario de contacto muestra una imagen distinta según el plan seleccionado.
+- Imágenes: `*-form-v4.png` (essential-form-v4, advanced-form-v4, pro-form-v4) en `/assets/images/plans/`.
+- Al cambiar de plan (Essential / Advanced / Pro), la imagen se actualiza en cliente para reflejar el visual del plan.
+
+### 29.2 Link clicable para empresas y contacto corporativo
+- Bullet fijo en todos los planes: `Empresas o contacto corporativo: info@tevsys.io`
+- Enlace clicable (`mailto:info@tevsys.io`) con clase `contact-tip__link`.
+- Posición: último bullet de cada lista de tips por plan.
+
+### 29.3 Diferenciación horarios/noticias por plan
+- **Essential:** No incluye bullet de horarios/noticias (base).
+- **Advanced:** `Horarios de mercado y noticias (mejorados): en fase de desarrollo.` — mejorados respecto a Essential.
+- **Pro:** `Horarios de mercado y noticias (con eventos personalizados): en fase de desarrollo.` — nivel superior, eventos que el usuario define.
+- Vinculación con diseño: `docs/DISENO_NOTICIAS_HORARIOS_V9_COMPLETO.md` (proyecto TGP).
+
+### 29.4 Bullets acumulativos (Essential + Advanced + Pro)
+- **Enfoque:** Advanced y Pro explicitan que incluyen todo lo anterior más lo nuevo.
+- **Essential** (base): 3 bullets + link empresas.
+- **Advanced:** Línea intro `Todo lo de Essential, además:` + 3 bullets específicos (SML, días OFF, horarios mejorados) + link empresas.
+- **Pro:** Línea intro `Todo lo de Advanced, además:` + 2 bullets específicos (drawdown/estructura, horarios con eventos personalizados) + link empresas.
+- Eliminadas redundancias (días OFF no se repite en Pro; "respecto a Essential" en Advanced implícito por la intro).
+
+### 29.5 Bullets completos por plan (estado actual)
+
+| Plan | Bullets |
+|------|---------|
+| **Essential** | 1) Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF. 2) Límite diario, precisión milimétrica y HyperClose incluidos. 3) Respuesta en menos de 24h con los siguientes pasos. 4) Empresas: info@tevsys.io |
+| **Advanced** | 1) Todo lo de Essential, además: 2) Protección configurable toda la semana + SML para operativas avanzadas. 3) Puedes marcar días OFF para proteger tu operativa. 4) Horarios de mercado y noticias (mejorados): en fase de desarrollo. 5) Empresas: info@tevsys.io |
+| **Pro** | 1) Todo lo de Advanced, además: 2) Para capitales más altos: drawdown y estructura completa. 3) Horarios de mercado y noticias (con eventos personalizados): en fase de desarrollo. 4) Empresas: info@tevsys.io |
+
+### 29.6 Archivos modificados
+- `src/pages/company/contact.astro` — `planTipsMap` con bullets acumulativos y diferenciación horarios/noticias.
+- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` — copy de bullets actualizado.
+- `docs/CHANGELOG-TEVSYS.md` — esta sección.
+
+### 29.7 Commits asociados
+- `feat(contact): diferenciar horarios/noticias en Advanced y Pro vs Essential`
+- `feat(contact): Pro con "eventos personalizados" en horarios/noticias`
+- `feat(contact): bullets acumulativos (Essential +) en Advanced y Pro`

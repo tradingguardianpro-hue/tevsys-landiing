@@ -97,9 +97,10 @@
 - **CTAs:** `/company/contact?plan=essential` (y advanced, pro)
 - **Demo separado:** `Descargar demo` → `/company/contact?flow=demo`
 - **Imágenes cards:** essential-card.png, advanced-card.png, pro-card.png
-- **Imágenes formulario:** essential-form-v4.png, advanced-form-v4.png, pro-form-v4.png (cache-bust por -v4)
+- **Imágenes formulario:** essential-form-v4.png, advanced-form-v4.png, pro-form-v4.png — imagen cambia por plan (cache-bust por -v4)
 - **Título contacto:** `Completa tu acceso a tevsys`
 - **Estado:** Essential demo/beta disponible; Advanced y Pro en desarrollo (acceso anticipado)
+- **Bullets acumulativos (Ene 2026):** Advanced "Todo lo de Essential, además:"; Pro "Todo lo de Advanced, además:". Horarios/noticias diferenciados: Advanced (mejorados), Pro (con eventos personalizados). Link empresas clicable: info@tevsys.io. Ref: `CHANGELOG-TEVSYS.md` §29, `CONTENIDO_WEB_TEVSYS_LANDING.md`
 
 ---
 
@@ -113,7 +114,7 @@
 
 **Vídeos publicados:**
 - `precision-demo.mp4` — 1 min 7 s, CON audio. Demo principal.
-- `precision-demo-volatilidad.mp4` — ~1 min 8 s, SIN audio. Overlays: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys
+- `precision-demo-volatilidad.mp4` — ~1 min 8 s, SIN audio. **Mejorado** con 6 overlays definitivos: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys *(frase de marca)*. Ref: `CHANGELOG-TEVSYS.md` §28.1
 - `precision-logs-guide.mp4` — Guía logs MT5. SIN audio.
 
 **Estructura:**
@@ -242,10 +243,9 @@
 
 ---
 
-## 12. Commits recientes (sesión 6 Mar 2026)
+## 12. Commits recientes
 
-Para trazabilidad cuando hables con el equipo:
-
+**Sesión 6 Mar 2026:**
 - fix(precision): resaltado amarillo y autoabrir acordeón en #precision-logs-guide
 - feat(web): favicon tevsys SVG + enlace apple-touch-icon
 - fix(web): volver a favicon.png para logo en pestaña
@@ -256,14 +256,19 @@ Para trazabilidad cuando hables con el equipo:
 - feat(hero): nueva imagen mano robótica + candado con logo en etiqueta
 - style(hero): imagen más grande, alinear borde superior con "T", reducir extensión izquierda
 
+**Sesión Ene 2026 (formulario contacto):**
+- feat(contact): diferenciar horarios/noticias en Advanced y Pro vs Essential
+- feat(contact): Pro con "eventos personalizados" en horarios/noticias
+- feat(contact): bullets acumulativos (Essential +) en Advanced y Pro
+
 ---
 
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Hero Mar 2026: mano robotica central web.png, grid 1fr 2fr, alineación con «T». Footer: iconos amarillos, enlaces micropáginas, favicon.png + apple-touch-icon. Precisión CERRADA (3 vídeos, 50 operativas). HyperClose CERRADA salvo vídeo Día OFF. SML y Evidencia: copy listo, vídeo pendiente. Copy freeze v1 activo. Rutas: public/videos/features/, public/images/evidence/. Docs: CHANGELOG-TEVSYS, GUIA_PRODUCCION_VIDEOS, CARDS-NEXT-PHASE.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Hero Mar 2026: mano robotica central web.png, grid 1fr 2fr, alineación con «T». Footer: iconos amarillos, enlaces micropáginas, favicon.png + apple-touch-icon. Precisión CERRADA (3 vídeos: demo 1:07, alta volatilidad con 6 overlays, guía logs; 50 operativas). HyperClose CERRADA salvo vídeo Día OFF. Formulario contacto: imagen por plan, bullets acumulativos (Essential+), link empresas clicable. SML y Evidencia: copy listo, vídeo pendiente. Copy freeze v1 activo. Rutas: public/videos/features/, public/images/evidence/. Docs: CHANGELOG-TEVSYS §28.1 (volatilidad), §29 (formulario), GUIA_PRODUCCION_VIDEOS, CARDS-NEXT-PHASE.
 ```
 
 ---
 
-**Última actualización:** Mar 2026. Si algo cambia, actualizar CHANGELOG y este prompt.
+**Última actualización:** Ene 2026. Si algo cambia, actualizar CHANGELOG y este prompt.
