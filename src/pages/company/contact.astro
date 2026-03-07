@@ -189,13 +189,13 @@ const empresasTipHtml = 'Empresas o contacto corporativo: <a href="mailto:info@t
 	.contact-hero__tips li {
 		margin-bottom: 0.35rem;
 	}
-	.contact-hero__tips .contact-tip__link {
+	.contact-hero__tips :global(a.contact-tip__link) {
 		color: inherit;
 		text-decoration: underline;
 		text-underline-offset: 2px;
 	}
-	.contact-hero__tips .contact-tip__link:hover {
-		color: #f5b041 !important;
+	.contact-hero__tips :global(a.contact-tip__link:hover) {
+		color: #f5b041;
 	}
 	.contact-hero__visual {
 		margin-top: 1rem;
