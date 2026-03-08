@@ -34,7 +34,7 @@
 
 ### Copy
 - **H1:** `Tu capital merece más que buenas intenciones`
-- **Interés (2 líneas):** `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`
+- **Interés:** `Plataforma pionera de verificación de disciplina automatizada.`
 - **Tagline:** `Where precision meets the edge` — punto amarillo `32px`
 - **Botón:** `Descargar demo →` — amarillo #f5b041, hover #f7c050
 - **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
