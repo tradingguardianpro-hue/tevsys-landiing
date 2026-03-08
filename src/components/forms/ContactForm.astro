@@ -89,7 +89,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       const urlFlow = (params.get('flow') || '').toLowerCase();
       const urlFeature = (params.get('feature') || '').toLowerCase();
 
-      if (urlFlow === 'demo') {
+      if (urlFlow === 'demo' || urlFlow === 'acceso') {
         planInput.dataset.allowNoPlan = 'true';
       }
       const urlPlan = (params.get('plan') || '').toLowerCase();
@@ -114,7 +114,11 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
         badgeNode.innerHTML = `Plan seleccionado: <strong>${plan.toUpperCase()}</strong>`;
       } else if (canSubmitWithoutPlan) {
         badgeNode.classList.remove('selected-plan-badge--warning');
-        badgeNode.textContent = 'Modo demo: sin plan preseleccionado.';
+        const flowInput = document.getElementById('flowInput');
+        const isAcceso = flowInput && flowInput.value === 'acceso';
+        badgeNode.textContent = isAcceso
+          ? 'Rellena el formulario. Te indicaremos el siguiente paso según tu perfil.'
+          : 'Modo demo: sin plan preseleccionado.';
       } else {
         badgeNode.classList.add('selected-plan-badge--warning');
         badgeNode.textContent = 'No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".';

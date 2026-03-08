@@ -111,6 +111,22 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 			},
 		};
 
+		if (flow === 'acceso') {
+			if (titleNode) titleNode.textContent = 'Completa tu acceso a tevsys';
+			if (introNode) introNode.textContent = 'Rellena el formulario y te indicamos el siguiente paso según tu perfil.';
+			setTips(
+				'Según tu perfil y capital, te indicamos la mejor opción (Essential, Advanced o Pro).',
+				'Respuesta en menos de 24h con los siguientes pasos.',
+				'Si prefieres probar la demo primero, también podemos empezar por ahí.',
+				empresasTipHtml
+			);
+			if (imageNode) {
+				imageNode.src = '/assets/images/plans/essential-form-v4.png';
+				imageNode.alt = 'Acceso tevsys';
+			}
+			return;
+		}
+
 		if (flow === 'demo') {
 			if (titleNode) titleNode.textContent = 'Solicita tu demo de tevsys';
 			const demoProcess = ' Rellena el formulario. Te respondemos en menos de 24h con los pasos para acceder a la demo.';
