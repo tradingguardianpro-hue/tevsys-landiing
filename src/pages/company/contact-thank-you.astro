@@ -12,10 +12,22 @@ const seo = {
 	<Container>
 		<section class="contact-thank-you">
 			<h1>Gracias por tu interés en tevsys</h1>
-			<p>Hemos recibido tu solicitud. Te responderemos en menos de 24 horas con los pasos para acceder a la demo.</p>
+			<p id="thankYouMain">Hemos recibido tu solicitud. Te responderemos en menos de 24 horas con los pasos para acceder a la demo.</p>
+			<p id="thankYouAccesoNote" class="contact-thank-you__acceso-note" hidden>Essential está listo; Advanced y Pro en desarrollo. Te indicaremos el siguiente paso según tu perfil.</p>
 			<p class="contact-thank-you__note">Revisa tu bandeja de entrada (y la de spam, por si acaso).</p>
 			<a href="/" class="contact-thank-you__link">Volver al inicio</a>
 		</section>
+		<script is:inline>
+			(() => {
+				const params = new URLSearchParams(window.location.search);
+				if (params.get('flow') === 'acceso') {
+					const main = document.getElementById('thankYouMain');
+					const note = document.getElementById('thankYouAccesoNote');
+					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
+					if (note) note.hidden = false;
+				}
+			})();
+		</script>
 	</Container>
 </Layout>
 
@@ -36,6 +48,11 @@ const seo = {
 	.contact-thank-you p {
 		margin-bottom: 0.75rem;
 		max-width: 36ch;
+	}
+	.contact-thank-you__acceso-note {
+		font-size: 0.95rem;
+		opacity: 0.95;
+		font-style: italic;
 	}
 	.contact-thank-you__note {
 		font-size: 0.95rem;

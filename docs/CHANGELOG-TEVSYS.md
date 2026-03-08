@@ -818,11 +818,20 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### 31.2 Bullets aplicados
 1. **Essential listo para probar. Advanced y Pro en desarrollo — lista de espera.**
 2. **Respuesta en menos de 24h. Te orientamos según tu perfil.** (antes "Trato personal, sin automatismos" — ajuste por capacidad real; ver §6 ROADMAP)
-3. **Precisión y HyperClose validados con operativas reales. Te mostramos evidencia.**
+3. **Precisión y HyperClose validados con operativas reales. Días OFF y configuración flexible de toda la semana.**
 4. **Empresas o contacto corporativo** — enlace a `/company/empresas`.
 
-### 31.3 Archivo
-- `src/pages/company/contact.astro` — `setTips()` para `flow === 'acceso'`.
+### 31.3 Claridad Essential / Advanced / Pro en desarrollo
+- **Intro Acceso:** "Rellena el formulario... Essential listo; Advanced y Pro en desarrollo."
+- **Thank-you flow-aware:** Si envía desde `?flow=acceso`, redirige a `?flow=acceso` y muestra: "Essential está listo; Advanced y Pro en desarrollo. Te indicaremos el siguiente paso según tu perfil."
 
-### 31.4 Referencia
+### 31.4 Bullet 3 ampliado (Opción B)
+- Añadido: "Días OFF y configuración flexible de toda la semana." — vender features únicos (Essential ya tiene días OFF; Advanced/Pro amplían).
+
+### 31.5 Archivos
+- `src/pages/company/contact.astro` — bullets, intro Acceso.
+- `src/components/forms/ContactForm.astro` — thank-you URL con `?flow=acceso`.
+- `src/pages/company/contact-thank-you.astro` — mensaje condicional por flow.
+
+### 31.6 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.

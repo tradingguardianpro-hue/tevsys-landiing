@@ -169,7 +169,9 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
 
       const submitBtn = form.querySelector('button');
       const endpoint = form.dataset.formspreeEndpoint;
-      const thankYouUrl = '/company/contact-thank-you';
+      const flowInput = document.getElementById('flowInput');
+      const flow = flowInput ? flowInput.value : '';
+      const thankYouUrl = '/company/contact-thank-you' + (flow === 'acceso' ? '?flow=acceso' : '');
       if (!endpoint) return;
 
       if (submitBtn) {
