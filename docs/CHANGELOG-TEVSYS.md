@@ -790,7 +790,10 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - CTAs de features enlazan a `/company/contact?feature=...&flow=demo` (solicitar demo retail).
 - Empresas es canal paralelo; no sustituye el flujo demo.
 
-### 30.8 Archivos
+### 30.8 Pendientes documentados
+- **Verificación email (double opt-in):** `docs/PENDIENTE_VERIFICACION_EMAIL_LEADS.md` — contexto, opciones, decisión aplazada hasta después de Essential estable.
+
+### 30.9 Archivos
 - `src/pages/company/empresas.astro`
 - `src/pages/company/empresas-thank-you.astro`
 - `src/config/nav.js`
@@ -798,7 +801,7 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `docs/RUTA_EMPRESAS_TRATAMIENTO_EVIDENCIAS_TEVSYS.md`
 - `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`
 
-### 30.9 Commits asociados
+### 30.10 Commits asociados
 - `feat(empresas): micro-página canal empresas + nav + bullet a /company/empresas`
 - `fix(empresas): margin-bottom 3rem antes del footer`
 - `style(empresas): fondo oscuro #06080d, hook como micropáginas, campos con borde ámbar`

@@ -246,14 +246,14 @@
 | Doc | Para qué |
 |-----|----------|
 | **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md** (este) | Contexto completo — empezar aquí |
-| CHANGELOG-TEVSYS.md | Historial de todos los cambios, decisión por decisión (§30 Empresas) |
-| RUTA_EMPRESAS_TRATAMIENTO_EVIDENCIAS_TEVSYS.md | Política empresas, niveles acceso, implementado (TGP) |
+| CHANGELOG-TEVSYS.md | Historial de todos los cambios, decisión por decisión |
 | GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md | Specs vídeos, guiones, overlays, OBS/Clipchamp |
 | CONTENIDO_WEB_TEVSYS_LANDING.md | Copy actual de toda la web |
 | CARDS-NEXT-PHASE.md | Tracker micro-páginas, planes, copy freeze, evidencias |
 | REFLEXION_DISENO_HERO_FOOTER_MAR2026.md | Reflexión hero + commits sesión 6 Mar |
 | ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md | Resumen técnico por archivo |
 | ESTRATEGIA_FAVICON_ICONOS_TEVSYS.md | Favicon, apple-touch-icon, PWA |
+| PENDIENTE_VERIFICACION_EMAIL_LEADS.md | Verificación email (double opt-in): pendiente de decisión, opciones valoradas |
 
 ---
 
