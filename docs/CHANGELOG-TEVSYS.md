@@ -854,5 +854,10 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - **allowNoPlan:** Pasado desde Astro según URL (flow=acceso o demo) — permite enviar sin plan.
 - **Imagen:** demo-form-visual.png no existía; fallback a `esse-form-v4.png` para flujos demo/acceso.
 
-### 31.10 Referencia
+### 31.11 Cards Advanced/Pro — todo anterior + extras (Ene 2026)
+- **Advanced:** "Todo lo de Essential, además: protección configurable toda la semana, SML y días OFF. En desarrollo — lista de espera."
+- **Pro:** "Todo lo de Advanced, además: drawdown y estructura completa para capitales más altos. En desarrollo — lista de espera."
+- Alineado con bullets del formulario; diferenciación clara en home.
+
+### 31.12 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.
