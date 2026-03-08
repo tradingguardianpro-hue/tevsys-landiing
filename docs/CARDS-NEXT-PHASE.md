@@ -44,7 +44,7 @@ Con CTAs funcionales:
 
 ### Bullets formulario contacto (Ene 2026)
 - Imagen por plan en bloque visual izquierdo (`*-form-v4.png`).
-- Bullets acumulativos: Advanced "Todo lo de Essential, además:", Pro "Todo lo de Advanced, además:".
+- Bullets acumulativos: Advanced "En Advanced ofrecemos todo lo de Essential, además:", Pro "En Pro ofrecemos todo lo de Advanced, además:".
 - Horarios/noticias diferenciados: Advanced (mejorados), Pro (con eventos personalizados).
 - Link empresas: enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30.
 - **Contacto = Acceso:** Nav Contacto y Acceso → misma experiencia `?flow=acceso`.

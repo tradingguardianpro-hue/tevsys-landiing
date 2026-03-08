@@ -101,13 +101,13 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Cards planes (home, Ene 2026):**
 - **Essential:** Demo/beta disponible. Límite diario, precisión milimétrica y HyperClose para validar operativa real.
-- **Advanced:** Todo lo de Essential, además: protección configurable toda la semana, SML y días OFF. En desarrollo — lista de espera.
-- **Pro:** Todo lo de Advanced, además: drawdown y estructura completa para capitales más altos. En desarrollo — lista de espera.
+- **Advanced:** En Advanced ofrecemos todo lo de Essential, además: protección configurable toda la semana, SML y días OFF. En desarrollo — lista de espera.
+- **Pro:** En Pro ofrecemos todo lo de Advanced, además: drawdown y estructura completa para capitales más altos. En desarrollo — lista de espera.
 
 **Bullets por plan (acumulativos, Ene 2026):**
 - **Essential:** 1) Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF. 2) Límite diario, precisión milimétrica y HyperClose incluidos. 3) Respuesta en menos de 24h con los siguientes pasos. 4) [Empresas o contacto corporativo](/company/empresas) *(link a micro-página)*
-- **Advanced:** 1) Todo lo de Essential, además: 2) Protección configurable toda la semana + SML para operativas avanzadas. 3) Puedes marcar días OFF para proteger tu operativa. 4) Horarios de mercado y noticias (mejorados): en fase de desarrollo. 5) [Empresas o contacto corporativo](/company/empresas) *(link a micro-página)*
-- **Pro:** 1) Todo lo de Advanced, además: 2) Para capitales más altos: drawdown y estructura completa. 3) Horarios de mercado y noticias (con eventos personalizados): en fase de desarrollo. 4) [Empresas o contacto corporativo](/company/empresas) *(link a micro-página)*
+- **Advanced:** 1) En Advanced ofrecemos todo lo de Essential, además: 2) Protección configurable toda la semana + SML para operativas avanzadas. 3) Puedes marcar días OFF para proteger tu operativa. 4) Horarios de mercado y noticias (mejorados): en fase de desarrollo. 5) [Empresas o contacto corporativo](/company/empresas) *(link a micro-página)*
+- **Pro:** 1) En Pro ofrecemos todo lo de Advanced, además: 2) Para capitales más altos: drawdown y estructura completa. 3) Horarios de mercado y noticias (con eventos personalizados): en fase de desarrollo. 4) [Empresas o contacto corporativo](/company/empresas) *(link a micro-página)*
 
 **Link empresas:** Enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30.
 

@@ -865,5 +865,10 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### 31.13 Hero tagline — punto amarillo más discreto (Ene 2026)
 - Punto del tagline "Where precision meets the edge": 32px → 22px. Más discreción, texto gana protagonismo.
 
-### 31.14 Referencia
+### 31.14 Bullets Advanced/Pro — "En [plan] ofrecemos" (Ene 2026)
+- Advanced: "En Advanced ofrecemos todo lo de Essential, además:"
+- Pro: "En Pro ofrecemos todo lo de Advanced, además:"
+- Refuerza nombre del plan y tono directo.
+
+### 31.15 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.
