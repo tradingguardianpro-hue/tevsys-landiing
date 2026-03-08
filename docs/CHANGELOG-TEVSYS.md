@@ -837,11 +837,15 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - **Badge DEMO:** Cuando se muestra la imagen Essential (flow=acceso, flow=demo, plan=essential), se añade badge "DEMO" en la esquina superior derecha. Ámbar con opacidad.
 - **Nota debajo imagen (Advanced/Pro):** Para plan advanced o pro, línea en cursiva debajo de la imagen: "Advanced/Pro en desarrollo. La demo disponible ahora es Essential." — mismo tamaño, blanco, destaca visualmente.
 
-### 31.7 Contacto = Acceso unificado + fixes (Ene 2026)
+### 31.7 Thank-you plan Advanced/Pro (Ene 2026)
+- Si envían desde plan=advanced o plan=pro, redirect incluye ?plan=advanced|pro.
+- Thank-you muestra bloque destacado: "Te añadimos a la lista de espera de Advanced/Pro. Mientras tanto, la demo disponible es Essential." — borde ámbar, fondo suave, importancia visual.
+
+### 31.8 Contacto = Acceso unificado + fixes (Ene 2026)
 - **Nav:** "Contacto" apunta a `/company/contact?flow=acceso` — misma experiencia que Acceso.
 - **Redirect:** `/company/contact` sin params → redirige a `?flow=acceso`.
 - **allowNoPlan:** Pasado desde Astro según URL (flow=acceso o demo) — permite enviar sin plan.
 - **Imagen:** demo-form-visual.png no existía; fallback a `esse-form-v4.png` para flujos demo/acceso.
 
-### 31.8 Referencia
+### 31.9 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.

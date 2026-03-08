@@ -170,8 +170,13 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       const submitBtn = form.querySelector('button');
       const endpoint = form.dataset.formspreeEndpoint;
       const flowInput = document.getElementById('flowInput');
+      const planInput = document.getElementById('planInput');
       const flow = flowInput ? flowInput.value : '';
-      const thankYouUrl = '/company/contact-thank-you' + (flow === 'acceso' ? '?flow=acceso' : '');
+      const plan = (planInput && planInput.value || '').toLowerCase();
+      const q = new URLSearchParams();
+      if (flow === 'acceso') q.set('flow', 'acceso');
+      if (plan === 'advanced' || plan === 'pro') q.set('plan', plan);
+      const thankYouUrl = '/company/contact-thank-you' + (q.toString() ? '?' + q.toString() : '');
       if (!endpoint) return;
 
       if (submitBtn) {

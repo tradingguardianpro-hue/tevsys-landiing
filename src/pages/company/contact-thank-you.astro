@@ -14,17 +14,31 @@ const seo = {
 			<h1>Gracias por tu interés en tevsys</h1>
 			<p id="thankYouMain">Hemos recibido tu solicitud. Te responderemos en menos de 24 horas con los pasos para acceder a la demo.</p>
 			<p id="thankYouAccesoNote" class="contact-thank-you__acceso-note" hidden>Essential está listo; Advanced y Pro en desarrollo. Te indicaremos el siguiente paso según tu perfil.</p>
+			<div id="thankYouDevNote" class="contact-thank-you__dev-block" hidden>
+				<p class="contact-thank-you__dev-title">Te añadimos a la lista de espera.</p>
+				<p class="contact-thank-you__dev-text">Mientras tanto, la demo disponible es Essential.</p>
+			</div>
 			<p class="contact-thank-you__note">Revisa tu bandeja de entrada (y la de spam, por si acaso).</p>
 			<a href="/" class="contact-thank-you__link">Volver al inicio</a>
 		</section>
 		<script is:inline>
 			(() => {
 				const params = new URLSearchParams(window.location.search);
-				if (params.get('flow') === 'acceso') {
-					const main = document.getElementById('thankYouMain');
-					const note = document.getElementById('thankYouAccesoNote');
+				const main = document.getElementById('thankYouMain');
+				const accesoNote = document.getElementById('thankYouAccesoNote');
+				const devBlock = document.getElementById('thankYouDevNote');
+				const plan = (params.get('plan') || '').toLowerCase();
+
+				if (plan === 'advanced' || plan === 'pro') {
 					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
-					if (note) note.hidden = false;
+					if (devBlock) {
+						const title = devBlock.querySelector('.contact-thank-you__dev-title');
+						if (title) title.textContent = 'Te añadimos a la lista de espera de ' + (plan === 'advanced' ? 'Advanced' : 'Pro') + '.';
+						devBlock.hidden = false;
+					}
+				} else if (params.get('flow') === 'acceso') {
+					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
+					if (accesoNote) accesoNote.hidden = false;
 				}
 			})();
 		</script>
@@ -53,6 +67,23 @@ const seo = {
 		font-size: 0.95rem;
 		opacity: 0.95;
 		font-style: italic;
+	}
+	.contact-thank-you__dev-block {
+		margin: 1.5rem 0;
+		padding: 1.25rem 1.5rem;
+		max-width: 36ch;
+		border: 1px solid rgba(245, 176, 65, 0.4);
+		border-radius: 0.5rem;
+		background: rgba(245, 176, 65, 0.08);
+	}
+	.contact-thank-you__dev-title {
+		font-weight: 600;
+		margin-bottom: 0.35rem;
+	}
+	.contact-thank-you__dev-text {
+		font-style: italic;
+		opacity: 0.95;
+		margin-bottom: 0;
 	}
 	.contact-thank-you__note {
 		font-size: 0.95rem;
