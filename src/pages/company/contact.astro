@@ -31,7 +31,8 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 					<li id="contactTip-4" set:html={empresasTipHtml} />
 					<li id="contactTip-5" class="contact-tip-5" style="display: none;" />
 				</ul>
-				<div class="contact-hero__visual">
+				<div class="contact-hero__visual" id="contactHeroVisual">
+					<span id="contactHeroDemoBadge" class="contact-hero__demo-badge" hidden>DEMO</span>
 					<img id="contactHeroImage" src="/logo-tevsys.png" alt="Visual de tevsys" loading="lazy" />
 				</div>
 			</div>
@@ -57,6 +58,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 		const titleNode = document.getElementById('contactHeroTitle');
 		const introNode = document.getElementById('contactHeroIntro');
 		const imageNode = document.getElementById('contactHeroImage');
+		const demoBadge = document.getElementById('contactHeroDemoBadge');
 		const tip1 = document.getElementById('contactTip-1');
 		const tip2 = document.getElementById('contactTip-2');
 		const tip3 = document.getElementById('contactTip-3');
@@ -131,6 +133,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				imageNode.src = '/assets/images/plans/esse-form-v4.png';
 				imageNode.alt = 'Acceso tevsys';
 			}
+			if (demoBadge) demoBadge.hidden = false;
 			return;
 		}
 
@@ -157,6 +160,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				imageNode.src = '/assets/images/plans/esse-form-v4.png';
 				imageNode.alt = 'Demo de tevsys';
 			}
+			if (demoBadge) demoBadge.hidden = false;
 			return;
 		}
 
@@ -191,6 +195,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 			imageNode.src = selected.image;
 			imageNode.alt = `Visual del plan ${selected.name}`;
 		}
+		if (demoBadge) demoBadge.hidden = plan !== 'essential';
 
 		const planTipsMap = {
 			essential: [
@@ -272,12 +277,26 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 		color: #f5b041;
 	}
 	.contact-hero__visual {
+		position: relative;
 		margin-top: 1rem;
 		width: min(360px, 88%);
 		border-radius: 0.85rem;
 		overflow: hidden;
 		background: #06080d;
 		border: 1px solid rgba(245, 176, 65, 0.3);
+	}
+	.contact-hero__demo-badge {
+		position: absolute;
+		top: 0.75rem;
+		right: 0.75rem;
+		padding: 0.25rem 0.6rem;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		color: #0a0a0a;
+		background: #f5b041;
+		border-radius: 0.35rem;
+		z-index: 1;
 	}
 	.contact-hero__visual img {
 		display: block;
