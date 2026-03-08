@@ -70,7 +70,7 @@ Resumen técnico completo para revisión interna / DeepSeq.
 - Botón amarillo:
   - `background: #f5b041`
   - `hover: #f7c050`
-- Tagline dot: `32px`
+- Tagline dot: `22px`
 - Copy en modo AIDA:
   - Atención: `Tu capital merece más que buenas intenciones`
   - Interés: `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`

@@ -862,5 +862,8 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### 31.12 Hero — plataforma pionera (Ene 2026)
 - Subline (2 líneas): "Plataforma pionera en verificación de disciplina automatizada" / "y gestión de riesgo para mercados financieros." — refuerza posicionamiento; evidencia ya en home (trazabilidad, logs, panel).
 
-### 31.13 Referencia
+### 31.13 Hero tagline — punto amarillo más discreto (Ene 2026)
+- Punto del tagline "Where precision meets the edge": 32px → 22px. Más discreción, texto gana protagonismo.
+
+### 31.14 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.

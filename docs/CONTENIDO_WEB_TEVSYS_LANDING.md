@@ -16,7 +16,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **H1:** `Tu capital merece más que buenas intenciones`
 - **Línea aclaratoria (2 líneas):** `Plataforma pionera en verificación de disciplina automatizada` / `y gestión de riesgo para mercados financieros.`
 - **Tagline:** `Where precision meets the edge`
-- **Punto de tagline:** amarillo grande (`32px`)
+- **Punto de tagline:** amarillo discreto (`22px`)
 - **Botón:** `Descargar demo →` (amarillo)
 - **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
 - **Imagen:** mano robótica + candado (`mano robotica central web.png`). Logo tevsys en etiqueta negro apagado (esq. sup. izq.). Alineación: borde superior con la «T» del título; borde izquierdo con inicio de «Trading Edge Verification System».

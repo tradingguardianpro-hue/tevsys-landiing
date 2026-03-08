@@ -35,7 +35,7 @@
 ### Copy
 - **H1:** `Tu capital merece más que buenas intenciones`
 - **Interés (2 líneas):** `Plataforma pionera en verificación de disciplina automatizada` / `y gestión de riesgo para mercados financieros.`
-- **Tagline:** `Where precision meets the edge` — punto amarillo `32px`
+- **Tagline:** `Where precision meets the edge` — punto amarillo `22px` (discreto)
 - **Botón:** `Descargar demo →` — amarillo #f5b041, hover #f7c050
 - **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
 - **Texto bajo imagen:** `Trading Edge Verification System`
