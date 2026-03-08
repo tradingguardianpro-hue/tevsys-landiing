@@ -817,7 +817,7 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 
 ### 31.2 Bullets aplicados
 1. **Essential listo para probar. Advanced y Pro en desarrollo — lista de espera.**
-2. **Respuesta en menos de 24h. Trato personal, sin automatismos.**
+2. **Respuesta en menos de 24h. Te orientamos según tu perfil.** (antes "Trato personal, sin automatismos" — ajuste por capacidad real; ver §6 ROADMAP)
 3. **Precisión y HyperClose validados con operativas reales. Te mostramos evidencia.**
 4. **Empresas o contacto corporativo** — enlace a `/company/empresas`.
 

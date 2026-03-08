@@ -106,7 +106,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Link empresas:** Enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30.
 
-**Flujo Acceso** (`?flow=acceso`): bullets específicos — 1) Essential listo para probar. Advanced y Pro en desarrollo — lista de espera. 2) Respuesta en menos de 24h. Trato personal, sin automatismos. 3) Precisión y HyperClose validados con operativas reales. Te mostramos evidencia. 4) Empresas. Ref: `ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md`.
+**Flujo Acceso** (`?flow=acceso`): bullets específicos — 1) Essential listo para probar. Advanced y Pro en desarrollo — lista de espera. 2) Respuesta en menos de 24h. Te orientamos según tu perfil. 3) Precisión y HyperClose validados con operativas reales. Te mostramos evidencia. 4) Empresas. Ref: `ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md`.
 
 ---
 

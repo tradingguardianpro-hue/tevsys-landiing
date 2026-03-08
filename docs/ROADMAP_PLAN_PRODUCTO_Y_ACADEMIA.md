@@ -68,7 +68,24 @@ Ir paso a paso. No abrir frentes hasta cerrar el anterior. Este doc sirve para r
 
 ---
 
-## 6) Plan claro (evitar adelante-atrás)
+## 6) Estrategia de capacidad y soporte (escalado)
+
+**Contexto:** Equipo limitado (curro a jornada completa, familia, desarrollo Advanced/Pro). Con ~10 leads activos, trato "personalizado" exhaustivo es insostenible. No prometer lo que no se puede dar.
+
+**Bullet flujo Acceso (bullet 2):**  
+*"Respuesta en menos de 24h. Te orientamos según tu perfil."* — El formulario captura perfil; respondes según eso. No promete personalización mano a mano.
+
+| Fase | Qué | Cuándo |
+|------|-----|--------|
+| **Ahora** | Web lista para captar. Bullets honestos. Essential estable. | Antes de volver al curro |
+| **~10 usuarios** | FAQ con preguntas recurrentes. Doc "cómo empezar" (Drive/PDF). Repartir soporte con socios si hace falta. | Cuando lleguen las primeras preguntas repetidas |
+| **Más adelante** | FAQ en web. Manual de usuario. Procesos de onboarding. | Cuando escale de verdad |
+
+**Boca a boca / academia:** Parte de la explicación se da entre ellos. La web no tiene que explicarlo todo.
+
+---
+
+## 7) Plan claro (evitar adelante-atrás)
 
 - **Orden sí, documentación no = riesgo.** Si vamos haciendo cosas una tras otra sin reflejarlas aquí, perdemos el hilo.
 - **Este roadmap + CHANGELOG + docs** = fuente de verdad para saber qué está hecho, qué falta, qué está pendiente.
@@ -76,7 +93,7 @@ Ir paso a paso. No abrir frentes hasta cerrar el anterior. Este doc sirve para r
 
 ---
 
-## 7) Referencias
+## 8) Referencias
 
 - `CHANGELOG-TEVSYS.md` — cambios aplicados
 - `CHECKLIST_WEB_TEVSYS_ANTES_REUNION_ACADEMIA.md` — checklist reunión
