@@ -833,9 +833,9 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `src/components/forms/ContactForm.astro` — thank-you URL con `?flow=acceso`.
 - `src/pages/company/contact-thank-you.astro` — mensaje condicional por flow.
 
-### 31.6 Badge DEMO sobre imagen Essential (Ene 2026)
-- Cuando se muestra la imagen Essential (flow=acceso, flow=demo, plan=essential), se añade badge "DEMO" en la esquina superior derecha.
-- Refuerza: la demo disponible es solo Essential.
+### 31.6 Badge DEMO + nota dev para Advanced/Pro (Ene 2026)
+- **Badge DEMO:** Cuando se muestra la imagen Essential (flow=acceso, flow=demo, plan=essential), se añade badge "DEMO" en la esquina superior derecha. Ámbar con opacidad.
+- **Nota debajo imagen (Advanced/Pro):** Para plan advanced o pro, línea en cursiva debajo de la imagen: "Advanced/Pro en desarrollo. La demo disponible ahora es Essential." — mismo tamaño, blanco, destaca visualmente.
 
 ### 31.7 Contacto = Acceso unificado + fixes (Ene 2026)
 - **Nav:** "Contacto" apunta a `/company/contact?flow=acceso` — misma experiencia que Acceso.
