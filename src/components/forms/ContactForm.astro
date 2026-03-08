@@ -43,6 +43,14 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
     </select>
   </div>
 
+  <div id="notifyContainer" class="form-field__notify-box" hidden>
+    <input type="hidden" id="notifyInput" value="Sí" />
+    <label class="form-field__notify-label">
+      <input type="checkbox" id="notifyCheckbox" checked />
+      <span id="notifyLabelText">Sí, avísame cuando esté disponible.</span>
+    </label>
+  </div>
+
   <div class="form-field__container">
     <label for="contactChannel">Canal de contacto (opcional)</label>
     <input id="contactChannel" type="text" name="ContactChannel" placeholder="Telegram, WhatsApp o teléfono" />
@@ -210,6 +218,22 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
 
     const initializedPlan = setPlanFromUrl();
     renderPlanBadge(initializedPlan);
+
+    const notifyContainer = document.getElementById('notifyContainer');
+    const notifyInput = document.getElementById('notifyInput');
+    const notifyCheckbox = document.getElementById('notifyCheckbox');
+    const notifyLabelText = document.getElementById('notifyLabelText');
+    if (initializedPlan === 'advanced' || initializedPlan === 'pro') {
+      if (notifyContainer) notifyContainer.hidden = false;
+      if (notifyInput) notifyInput.setAttribute('name', 'AvisarCuandoDisponible');
+      if (notifyLabelText) notifyLabelText.textContent = 'Sí, avísame cuando ' + (initializedPlan === 'advanced' ? 'Advanced' : 'Pro') + ' esté disponible.';
+      if (notifyCheckbox && notifyInput) {
+        notifyCheckbox.addEventListener('change', () => {
+          if (notifyInput) notifyInput.value = notifyCheckbox.checked ? 'Sí' : 'No';
+        });
+      }
+    }
+
     capitalSelect && capitalSelect.addEventListener('change', validatePlanAgainstCapital);
   })();
 </script>
@@ -256,5 +280,22 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
   .selected-plan-badge--warning {
     background: rgba(245, 176, 65, 0.12);
     border-color: rgba(245, 176, 65, 0.6);
+  }
+  .form-field__notify-box {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(245, 176, 65, 0.35);
+    background: rgba(245, 176, 65, 0.06);
+  }
+  .form-field__notify-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+  .form-field__notify-label input[type='checkbox'] {
+    width: auto;
+    accent-color: #f5b041;
   }
 </style>

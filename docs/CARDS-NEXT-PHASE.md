@@ -47,6 +47,8 @@ Con CTAs funcionales:
 - Bullets acumulativos: Advanced "Todo lo de Essential, además:", Pro "Todo lo de Advanced, además:".
 - Horarios/noticias diferenciados: Advanced (mejorados), Pro (con eventos personalizados).
 - Link empresas: enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30.
+- **Contacto = Acceso:** Nav Contacto y Acceso → misma experiencia `?flow=acceso`.
+- **Advanced/Pro:** Checkbox "Sí, avísame cuando esté disponible" (default Sí). Nota debajo imagen. Thank-you con bloque lista de espera. Ref: `CHANGELOG-TEVSYS.md` §31.
 
 ### Micro-página Empresas (Ene 2026)
 - Nav: Inicio | Empresas | Acceso | Contacto. Empresas accesible desde todas las páginas.

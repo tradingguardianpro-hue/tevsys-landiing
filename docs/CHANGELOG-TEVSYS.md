@@ -841,11 +841,18 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Si envían desde plan=advanced o plan=pro, redirect incluye ?plan=advanced|pro.
 - Thank-you muestra bloque destacado: "Te añadimos a la lista de espera de Advanced/Pro. Mientras tanto, la demo disponible es Essential." — borde ámbar, fondo suave, importancia visual.
 
-### 31.8 Contacto = Acceso unificado + fixes (Ene 2026)
+### 31.8 Checkbox lista de espera — Advanced/Pro (Ene 2026)
+- **Campo:** "Sí, avísame cuando [Advanced/Pro] esté disponible." — debajo de Experiencia.
+- **Solo visible** cuando plan=advanced o plan=pro.
+- **Default:** Marcado (Sí). Psicología: más síes que noes; deben desmarcar activamente para decir no.
+- **Formspree:** `AvisarCuandoDisponible: Sí | No`. Para filtrar lista de espera cuando Advanced/Pro esté listo.
+- **Estilo:** Caja con borde ámbar, fondo suave.
+
+### 31.9 Contacto = Acceso unificado + fixes (Ene 2026)
 - **Nav:** "Contacto" apunta a `/company/contact?flow=acceso` — misma experiencia que Acceso.
 - **Redirect:** `/company/contact` sin params → redirige a `?flow=acceso`.
 - **allowNoPlan:** Pasado desde Astro según URL (flow=acceso o demo) — permite enviar sin plan.
 - **Imagen:** demo-form-visual.png no existía; fallback a `esse-form-v4.png` para flujos demo/acceso.
 
-### 31.9 Referencia
+### 31.10 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.

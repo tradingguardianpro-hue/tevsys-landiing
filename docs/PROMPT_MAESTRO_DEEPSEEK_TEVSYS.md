@@ -92,15 +92,31 @@
 
 ---
 
-## 6. Planes (Essential / Advanced / Pro)
+## 6. Planes y flujos de contacto (Essential / Advanced / Pro) — Ene 2026
 
-- **CTAs:** `/company/contact?plan=essential` (y advanced, pro)
-- **Demo separado:** `Descargar demo` → `/company/contact?flow=demo`
-- **Imágenes cards:** essential-card.png, advanced-card.png, pro-card.png
-- **Imágenes formulario:** essential-form-v4.png, advanced-form-v4.png, pro-form-v4.png — imagen cambia por plan (cache-bust por -v4)
-- **Título contacto:** `Completa tu acceso a tevsys` (o "Solicita tu demo de tevsys" cuando flow=demo)
-- **Estado:** Essential demo/beta disponible; Advanced y Pro en desarrollo (acceso anticipado)
-- **Bullets acumulativos (Ene 2026):** Advanced "Todo lo de Essential, además:"; Pro "Todo lo de Advanced, además:". Horarios/noticias diferenciados: Advanced (mejorados), Pro (con eventos personalizados). **Link empresas:** enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30
+### Flujos unificados
+- **Acceso / Contacto:** Nav "Acceso" y "Contacto" → `/company/contact?flow=acceso`. Misma experiencia.
+- **Redirect:** `/company/contact` sin params → `?flow=acceso`
+- **CTAs planes:** `/company/contact?plan=essential|advanced|pro`
+- **Demo:** `Descargar demo` → `/company/contact?flow=demo`
+
+### Imágenes y badges
+- **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar, opacidad).
+- **Advanced (plata) / Pro (oro):** Imágenes adva-form-v4.png, pro-form-v4.png. Sin badge. Nota debajo imagen (cursiva): "Advanced/Pro en desarrollo. La demo disponible ahora es Essential."
+
+### Formulario
+- **allowNoPlan:** flow=acceso o flow=demo → permite enviar sin plan preseleccionado.
+- **Checkbox Advanced/Pro:** Solo visible cuando plan=advanced o plan=pro. "Sí, avísame cuando [Advanced/Pro] esté disponible." — **default marcado** (psicología: más síes que noes). Formspree: `AvisarCuandoDisponible: Sí|No`. Caja con borde ámbar.
+- **Lista de espera:** Filtrar Formspree por Plan + AvisarCuandoDisponible=Sí cuando Advanced/Pro esté listo.
+
+### Thank-you
+- **flow=acceso:** "Essential está listo; Advanced y Pro en desarrollo. Te indicaremos el siguiente paso según tu perfil."
+- **plan=advanced|pro:** Bloque destacado: "Te añadimos a la lista de espera de Advanced/Pro. Mientras tanto, la demo disponible es Essential."
+
+### Bullets
+- **Acceso:** Essential listo. 24h. Precisión, HyperClose, días OFF, config semanal. Empresas.
+- **Essential:** Configuras una vez, límite diario, HyperClose, 24h, Empresas.
+- **Advanced/Pro:** Acumulativos. Link empresas. Ref: `CHANGELOG-TEVSYS.md` §29–31
 
 ---
 
@@ -260,6 +276,15 @@
 
 ## 12. Commits recientes
 
+**Sesión Ene 2026 (flujos acceso, formulario, thank-you):**
+- feat(contact): checkbox lista espera Advanced/Pro — default Sí, AvisarCuandoDisponible
+- feat(thank-you): mensaje destacado plan Advanced/Pro — lista espera + demo Essential
+- feat(contact): nota dev debajo imagen Advanced/Pro — demo Essential
+- feat(contact): badge DEMO sobre imagen Essential (acceso, demo, plan essential)
+- fix(contact): unificar Contacto=Acceso, allowNoPlan, imagen fallback
+- fix(acceso): bullet 2 "Te orientamos según tu perfil" + doc estrategia capacidad
+- feat(acceso): bullets Opción A + doc roadmap/plan claro
+
 **Sesión 6 Mar 2026:**
 - fix(precision): resaltado amarillo y autoabrir acordeón en #precision-logs-guide
 - feat(web): favicon tevsys SVG + enlace apple-touch-icon
@@ -284,9 +309,21 @@
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Acceso | Contacto. Hero Mar 2026: mano robotica central web.png, grid 1fr 2fr, alineación con «T». Footer: iconos amarillos, enlaces micropáginas, favicon.png + apple-touch-icon. Precisión CERRADA (3 vídeos: demo 1:07, alta volatilidad con 6 overlays, guía logs; 50 operativas). HyperClose CERRADA salvo vídeo Día OFF. Formulario contacto: imagen por plan, bullets acumulativos (Essential+), link empresas → /company/empresas. Micro-página Empresas: canal B2B en desarrollo, formulario, fondo #06080d. SML y Evidencia: copy listo, vídeo pendiente. Copy freeze v1 activo. Rutas: public/videos/features/, public/images/evidence/. Docs: CHANGELOG-TEVSYS §28.1, §29, §30, RUTA_EMPRESAS, GUIA_PRODUCCION_VIDEOS, CARDS-NEXT-PHASE.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Acceso | Contacto. Contacto=Acceso unificado (?flow=acceso). Hero: mano robotica central web.png. Footer: iconos amarillos, micropáginas. Formulario: imagen por plan; Essential con badge DEMO; Advanced/Pro con nota "demo disponible es Essential" debajo imagen; checkbox "avísame cuando esté disponible" (default Sí) solo Advanced/Pro; Formspree AvisarCuandoDisponible. Thank-you flow-aware (acceso, plan advanced/pro con bloque lista espera). Precisión CERRADA. HyperClose CERRADA salvo Día OFF. Empresas: canal B2B, fondo #06080d. Docs: CHANGELOG-TEVSYS §29–31, ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA, CONTENIDO_WEB.
 ```
 
 ---
 
 **Última actualización:** Ene 2026. Si algo cambia, actualizar CHANGELOG y este prompt.
+
+---
+
+## 14. Flujos contacto — mapa completo (Ene 2026)
+
+| Entrada | URL | Imagen | Badge | Nota dev | Checkbox avisar | Thank-you |
+|---------|-----|--------|-------|----------|-----------------|-----------|
+| Acceso / Contacto | ?flow=acceso | Essential | DEMO | No | No | Essential listo; Adv/Pro en desarrollo |
+| Elegir Essential | ?plan=essential | Essential | DEMO | No | No | Genérico |
+| Elegir Advanced | ?plan=advanced | Advanced | No | Sí | Sí (default) | Lista espera Adv; demo Essential |
+| Elegir Pro | ?plan=pro | Pro | No | Sí | Sí (default) | Lista espera Pro; demo Essential |
+| Demo (feature) | ?flow=demo&feature=… | Essential | DEMO | No | No | Genérico |

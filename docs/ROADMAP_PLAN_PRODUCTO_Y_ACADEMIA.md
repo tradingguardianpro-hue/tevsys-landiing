@@ -19,9 +19,10 @@
 ## 2) Orden de ejecución (ahora → después)
 
 ### Ahora (antes de Angelo)
-- Bullets flujo Acceso (honestos, según situación real)
+- Bullets flujo Acceso (honestos, según situación real) ✓
 - Web coherente y completa
 - Essential funcionando
+- Formulario: checkbox lista espera (Advanced/Pro, default Sí). Formspree captura `AvisarCuandoDisponible`. Filtrar por Plan cuando Advanced/Pro esté listo.
 
 ### Después de Essential estable
 - Ventajas early adopters (soporte prioritario, condiciones especiales)
