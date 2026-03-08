@@ -101,7 +101,7 @@
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
 
 ### Imágenes y badges
-- **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar, opacidad).
+- **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar, opacidad, tamaño compacto).
 - **Advanced (plata) / Pro (oro):** Imágenes adva-form-v4.png, pro-form-v4.png. Sin badge. Nota debajo imagen (cursiva): "Advanced/Pro en desarrollo. La demo disponible ahora es Essential."
 
 ### Formulario
@@ -277,6 +277,7 @@
 ## 12. Commits recientes
 
 **Sesión Ene 2026 (flujos acceso, formulario, thank-you):**
+- style(contact): badge DEMO más pequeño
 - feat(contact): checkbox lista espera Advanced/Pro — default Sí, AvisarCuandoDisponible
 - feat(thank-you): mensaje destacado plan Advanced/Pro — lista espera + demo Essential
 - feat(contact): nota dev debajo imagen Advanced/Pro — demo Essential
