@@ -833,5 +833,11 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `src/components/forms/ContactForm.astro` — thank-you URL con `?flow=acceso`.
 - `src/pages/company/contact-thank-you.astro` — mensaje condicional por flow.
 
-### 31.6 Referencia
+### 31.6 Contacto = Acceso unificado + fixes (Ene 2026)
+- **Nav:** "Contacto" apunta a `/company/contact?flow=acceso` — misma experiencia que Acceso.
+- **Redirect:** `/company/contact` sin params → redirige a `?flow=acceso`.
+- **allowNoPlan:** Pasado desde Astro según URL (flow=acceso o demo) — permite enviar sin plan.
+- **Imagen:** demo-form-visual.png no existía; fallback a `esse-form-v4.png` para flujos demo/acceso.
+
+### 31.7 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.

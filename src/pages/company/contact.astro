@@ -3,6 +3,9 @@ import ContactForm from '../../components/forms/ContactForm.astro';
 import Layout from '../../layouts/Page.astro';
 import { Container } from '@components/odyssey-theme';
 
+const flowFromUrl = (Astro.url.searchParams.get('flow') || '').toLowerCase();
+const allowNoPlan = flowFromUrl === 'acceso' || flowFromUrl === 'demo';
+
 const seo = {
 	title: 'Contact | Astro Odyssey Theme',
 	description: 'Contact Page',
@@ -33,7 +36,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				</div>
 			</div>
 			<div class="col-2__container">
-				<ContactForm selectedPlan="" allowNoPlan={false} />
+				<ContactForm selectedPlan="" allowNoPlan={allowNoPlan} />
 			</div>
 		</section>
 	</Container>
@@ -43,7 +46,11 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 	(() => {
 		const params = new URLSearchParams(window.location.search);
 		const plan = (params.get('plan') || '').toLowerCase();
-		const flow = (params.get('flow') || '').toLowerCase();
+		let flow = (params.get('flow') || '').toLowerCase();
+		if (!flow && !plan && !params.get('feature')) {
+			window.location.replace('/company/contact?flow=acceso');
+			return;
+		}
 		const feature = (params.get('feature') || '').toLowerCase();
 		const origin = (params.get('origin') || '').toLowerCase();
 
@@ -121,7 +128,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				empresasTipHtml
 			);
 			if (imageNode) {
-				imageNode.src = '/assets/images/plans/demo-form-visual.png';
+				imageNode.src = '/assets/images/plans/esse-form-v4.png';
 				imageNode.alt = 'Acceso tevsys';
 			}
 			return;
@@ -147,7 +154,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				);
 			}
 			if (imageNode) {
-				imageNode.src = '/assets/images/plans/demo-form-visual.png';
+				imageNode.src = '/assets/images/plans/esse-form-v4.png';
 				imageNode.alt = 'Demo de tevsys';
 			}
 			return;
