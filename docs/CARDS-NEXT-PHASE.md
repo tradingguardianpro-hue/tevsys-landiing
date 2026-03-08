@@ -72,6 +72,9 @@ Estado actual elegido:
 ### C. Manual
 - Crear `/manual` y enlazar en footer.
 
+### D. Plan producto y academia (roadmap)
+- Ver `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — prioridades, pricing, early adopters, vídeos. Ir paso a paso.
+
 ---
 
 ## 4) Checklist operativo para siguiente iteración

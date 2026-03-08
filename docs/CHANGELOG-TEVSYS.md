@@ -792,6 +792,7 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 
 ### 30.8 Pendientes documentados
 - **Verificación email (double opt-in):** `docs/PENDIENTE_VERIFICACION_EMAIL_LEADS.md` — contexto, opciones, decisión aplazada hasta después de Essential estable.
+- **Plan producto y academia:** `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — prioridades, pricing, early adopters, vídeos, presentación. Ir paso a paso.
 
 ### 30.9 Archivos
 - `src/pages/company/empresas.astro`
@@ -805,3 +806,23 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `feat(empresas): micro-página canal empresas + nav + bullet a /company/empresas`
 - `fix(empresas): margin-bottom 3rem antes del footer`
 - `style(empresas): fondo oscuro #06080d, hook como micropáginas, campos con borde ámbar`
+
+---
+
+## 31) Bullets flujo Acceso — Opción A (Ene 2026)
+
+### 31.1 Contexto
+- Formulario con `?flow=acceso` usa bullets propios (no demo ni plan).
+- Objetivo: claridad sobre Essential vs Advanced/Pro, trato personal, evidencia real.
+
+### 31.2 Bullets aplicados
+1. **Essential listo para probar. Advanced y Pro en desarrollo — lista de espera.**
+2. **Respuesta en menos de 24h. Trato personal, sin automatismos.**
+3. **Precisión y HyperClose validados con operativas reales. Te mostramos evidencia.**
+4. **Empresas o contacto corporativo** — enlace a `/company/empresas`.
+
+### 31.3 Archivo
+- `src/pages/company/contact.astro` — `setTips()` para `flow === 'acceso'`.
+
+### 31.4 Referencia
+- `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.

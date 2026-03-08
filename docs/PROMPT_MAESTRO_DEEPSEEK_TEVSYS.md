@@ -254,6 +254,7 @@
 | ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md | Resumen técnico por archivo |
 | ESTRATEGIA_FAVICON_ICONOS_TEVSYS.md | Favicon, apple-touch-icon, PWA |
 | PENDIENTE_VERIFICACION_EMAIL_LEADS.md | Verificación email (double opt-in): pendiente de decisión, opciones valoradas |
+| ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md | Prioridades, pricing, early adopters, vídeos, academia Angelo. Plan ordenado |
 
 ---
 
