@@ -860,7 +860,7 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Alineado con bullets del formulario; diferenciación clara en home.
 
 ### 31.12 Hero — plataforma pionera (Ene 2026)
-- Subline: "Plataforma pionera de verificación de disciplina automatizada." — refuerza posicionamiento; evidencia ya en home (trazabilidad, logs, panel).
+- Subline (2 líneas): "Plataforma pionera de verificación de disciplina automatizada" / "y gestión de riesgo para mercados financieros." — refuerza posicionamiento; evidencia ya en home (trazabilidad, logs, panel).
 
 ### 31.13 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.

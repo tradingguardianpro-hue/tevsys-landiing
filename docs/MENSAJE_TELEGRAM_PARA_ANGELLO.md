@@ -15,7 +15,7 @@ He hecho lo que he podido — aquí tienes la web: [tevsys.io]
 En resumen, esto es lo que hay:
 
 **Producto**
-• Plataforma de verificación de disciplina y riesgo para MT5
+• Plataforma pionera de verificación de disciplina y gestión de riesgo (MT5)
 • Precisión de cierre documentada (50 operativas, ~0,06% error)
 • HyperClose: cierre en milisegundos cuando intentas operar estando bloqueado
 • Evidencia verificable: logs, panel y reporte MT5 (no "creemos", demostrable)

@@ -14,7 +14,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Hero
 - **H1:** `Tu capital merece más que buenas intenciones`
-- **Línea aclaratoria:** `Plataforma pionera de verificación de disciplina automatizada.`
+- **Línea aclaratoria (2 líneas):** `Plataforma pionera de verificación de disciplina automatizada` / `y gestión de riesgo para mercados financieros.`
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo grande (`32px`)
 - **Botón:** `Descargar demo →` (amarillo)
