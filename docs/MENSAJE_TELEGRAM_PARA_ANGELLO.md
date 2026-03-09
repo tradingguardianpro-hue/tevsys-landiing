@@ -18,7 +18,7 @@ En resumen, esto es lo que hay:
 • Plataforma pionera en verificación de disciplina y gestión de riesgo (MT5)
 • Precisión de cierre documentada (50 operativas, ~0,06% error)
 • HyperClose: cierre en milisegundos cuando intentas operar estando bloqueado
-• Evidencia verificable: logs, panel y reporte MT5 (no "creemos", demostrable)
+• Evidencia verificable: logs, panel y reporte oficial MT5 (no "creemos", demostrable)
 
 **Web**
 • Micro-páginas por feature con vídeos reales
