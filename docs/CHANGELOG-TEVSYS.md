@@ -883,3 +883,7 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 
 ### 31.18 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.
+
+### 31.19 Actualización docs web (Ene 2026)
+- **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md:** Sección "Enlaces para profundizar" con URLs por feature (Precision, HyperClose, SML, Evidencia) para respuesta manual a leads. Intros features, cards Advanced/Pro "En [plan] ofrecemos...", badge DEMO 22px, SML sin Essential demo, trazabilidad sin Auditable, PENDIENTE_VERIFICACION §6. Evidencia: bullet reporte oficial MT5.
+- **CONTENIDO_WEB_TEVSYS_LANDING.md:** Evidencia soporte — reporte oficial MT5.

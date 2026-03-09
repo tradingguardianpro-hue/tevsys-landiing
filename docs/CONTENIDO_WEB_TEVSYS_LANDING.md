@@ -185,7 +185,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - `Evidencia`:
   - Título: `Evidencia verificable: aquí no hay "creemos".`
   - Hook: `• Lo que no se puede demostrar, no cuenta.`
-  - Soporte: panel, logs y reporte oficial.
+  - Soporte: panel, logs y reporte oficial MT5.
 
 ### Estado actual Precisión (Mar 2026)
 - **Demo rápida:** `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto que se expande al dar play.

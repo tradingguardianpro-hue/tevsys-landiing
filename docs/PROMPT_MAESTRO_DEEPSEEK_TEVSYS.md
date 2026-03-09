@@ -87,7 +87,7 @@
 **Sección valor:**
 - Título: `¿Cuánto dinero has perdido por no parar a tiempo?`
 - Subtítulo: `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
-- Trazabilidad: `Trazabilidad completa: logs, panel y reporte oficial MT5.`
+- Trazabilidad: `Trazabilidad completa: logs, panel y reporte oficial MT5.` (sin "Auditable" — trazabilidad ya lo implica)
 - Mecanismo: `Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`
 
 ---
@@ -101,7 +101,7 @@
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
 
 ### Imágenes y badges
-- **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar, opacidad, tamaño compacto).
+- **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar 22px, discreto).
 - **Advanced (plata) / Pro (oro):** Imágenes adva-form-v4.png, pro-form-v4.png. Sin badge. Nota debajo imagen (cursiva): "Advanced/Pro en desarrollo. La demo disponible ahora es Essential."
 
 ### Formulario
@@ -116,7 +116,22 @@
 ### Bullets
 - **Acceso:** Essential listo. 24h. Precisión, HyperClose, días OFF, config semanal. Empresas.
 - **Essential:** Configuras una vez, límite diario, HyperClose, 24h, Empresas.
-- **Advanced/Pro:** Acumulativos. Link empresas. Ref: `CHANGELOG-TEVSYS.md` §29–31
+- **Advanced/Pro:** "En Advanced ofrecemos todo lo de Essential, además:" / "En Pro ofrecemos todo lo de Advanced, además:". Link empresas.
+
+### Intros desde features (flow=demo)
+Cuando vienen de micro-página con `?feature=...&flow=demo`:
+- **Precision, HyperClose, SML, Evidencia:** "Ya has visto [X] en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo."
+- Sin redundancia con lo ya publicado; respuesta manual: enlaces + contexto breve + pasos demo.
+
+### Enlaces para profundizar (respuesta manual)
+Al responder a un lead que vino desde un feature, enviar en el email:
+| Feature | Enlaces a incluir |
+|---------|-------------------|
+| **Precision** | https://tevsys.io/features/precision (demo, #precision-logs-guide, operativas) |
+| **HyperClose** | https://tevsys.io/features/hyperclose (demo, capturas modales, día OFF) |
+| **SML** | https://tevsys.io/features/sml (contenido actual, CTA revisión) |
+| **Evidencia** | https://tevsys.io/features/evidencia + enlaces a Precisión (logs, reporte MT5) |
++ Contexto breve; no dar info sensible. Pasos para acceder a demo.
 
 ---
 
@@ -185,7 +200,7 @@
 - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
 - Hook: `Actívalo cuando quieras. Decide cuánto ampliar el margen: del 5% al 25% (mínimo 75% protegido).`
 
-**Pendiente:** sml-demo.mp4. SML en fase actual para Advanced/Pro (lista de espera).
+**Pendiente:** sml-demo.mp4. SML en fase actual para Advanced/Pro (lista de espera). Nota disponibilidad: solo "Disponible en validación avanzada para cuentas Advanced/Pro (lista de espera)." — sin "En Essential demo no está activo".
 
 ---
 
@@ -194,6 +209,7 @@
 **Copy freeze:**
 - Título: `Evidencia verificable: aquí no hay "creemos".`
 - Hook: `Lo que no se puede demostrar, no cuenta.`
+- Bullet evidencia: incluir "reporte oficial MT5" para consistencia con trazabilidad home.
 
 **Pendiente:** evidencia-demo.mp4
 
@@ -269,7 +285,7 @@
 | REFLEXION_DISENO_HERO_FOOTER_MAR2026.md | Reflexión hero + commits sesión 6 Mar |
 | ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md | Resumen técnico por archivo |
 | ESTRATEGIA_FAVICON_ICONOS_TEVSYS.md | Favicon, apple-touch-icon, PWA |
-| PENDIENTE_VERIFICACION_EMAIL_LEADS.md | Verificación email (double opt-in): pendiente de decisión, opciones valoradas |
+| PENDIENTE_VERIFICACION_EMAIL_LEADS.md | Verificación email: pendiente. §6 caso específico verificación antes de dar link demo (evitar bots, cuentas falsas). |
 | ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md | Prioridades, pricing, early adopters, vídeos, academia Angelo. Plan ordenado |
 
 ---
@@ -277,6 +293,12 @@
 ## 12. Commits recientes
 
 **Sesión Ene 2026 (flujos acceso, formulario, thank-you):**
+- feat(contact): intros features "Ya has visto en esta página" + enlaces para profundizar
+- feat(home): cards Advanced/Pro — "En [plan] ofrecemos todo lo de..."
+- fix(sml): quitar "En Essential demo no está activo"
+- fix(copy): reporte oficial MT5, quitar Auditable
+- style(hero): punto tagline 32px → 22px
+- feat(hero): plataforma pionera en + gestión de riesgo
 - style(contact): badge DEMO más pequeño
 - feat(contact): checkbox lista espera Advanced/Pro — default Sí, AvisarCuandoDisponible
 - feat(thank-you): mensaje destacado plan Advanced/Pro — lista espera + demo Essential
@@ -310,12 +332,12 @@
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Acceso | Contacto. Contacto=Acceso unificado (?flow=acceso). Hero: mano robotica central web.png. Footer: iconos amarillos, micropáginas. Formulario: imagen por plan; Essential con badge DEMO; Advanced/Pro con nota "demo disponible es Essential" debajo imagen; checkbox "avísame cuando esté disponible" (default Sí) solo Advanced/Pro; Formspree AvisarCuandoDisponible. Thank-you flow-aware (acceso, plan advanced/pro con bloque lista espera). Precisión CERRADA. HyperClose CERRADA salvo Día OFF. Empresas: canal B2B, fondo #06080d. Docs: CHANGELOG-TEVSYS §29–31, ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA, CONTENIDO_WEB.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Acceso | Contacto. Contacto=Acceso unificado (?flow=acceso). Hero: "Plataforma pionera en verificación de disciplina automatizada y gestión de riesgo para mercados financieros"; punto tagline 22px. Trazabilidad: logs, panel, reporte oficial MT5. Cards Advanced/Pro: "En [plan] ofrecemos todo lo de...". Formulario: badge DEMO 22px; checkbox avísame (default Sí) Advanced/Pro; intros desde features: "Ya has visto en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo." Respuesta manual: enlaces a micropágina + contexto breve. Thank-you flow-aware. PENDIENTE_VERIFICACION: §6 verificación antes de dar link demo. Docs: CHANGELOG-TEVSYS §31, ROADMAP, CONTENIDO_WEB, PENDIENTE_VERIFICACION.
 ```
 
 ---
 
-**Última actualización:** Ene 2026. Si algo cambia, actualizar CHANGELOG y este prompt.
+**Última actualización:** Ene 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: decisiones §31 (bullets, intros features, enlaces profundizar, cards Advanced/Pro, badge DEMO, SML, trazabilidad, PENDIENTE_VERIFICACION §6).
 
 ---
 
@@ -327,4 +349,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 | Elegir Essential | ?plan=essential | Essential | DEMO | No | No | Genérico |
 | Elegir Advanced | ?plan=advanced | Advanced | No | Sí | Sí (default) | Lista espera Adv; demo Essential |
 | Elegir Pro | ?plan=pro | Pro | No | Sí | Sí (default) | Lista espera Pro; demo Essential |
-| Demo (feature) | ?flow=demo&feature=… | Essential | DEMO | No | No | Genérico |
+| Demo (feature) | ?flow=demo&feature=… | Essential | DEMO | No | No | Genérico — Intro: "Ya has visto [X] en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo." |
