@@ -870,5 +870,8 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - Pro: "En Pro ofrecemos todo lo de Advanced, además:"
 - Refuerza nombre del plan y tono directo.
 
-### 31.15 Referencia
+### 31.15 SML — quitar "En Essential demo no está activo" (Ene 2026)
+- Nota disponibilidad: solo "Disponible en validación avanzada para cuentas Advanced/Pro (lista de espera)." — más limpio.
+
+### 31.16 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.

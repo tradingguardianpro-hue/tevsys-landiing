@@ -275,7 +275,7 @@ Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o deci
 | Convivencia con límites y OFF | Captura panel/estado | Clip breve de flujo real | `sml-offdays-01.png` / `sml-demo.mp4` |
 | Demo principal | Placeholder actual | Vídeo final 40s | `sml-demo.mp4` |
 
-Nota de producto: en fase actual, SML se comunica para Advanced/Pro (lista de espera). En Essential demo no está activo todavía.
+Nota de producto: en fase actual, SML se comunica para Advanced/Pro (lista de espera).
 
 ### 9.4 Evidencia (`/features/evidencia`)
 

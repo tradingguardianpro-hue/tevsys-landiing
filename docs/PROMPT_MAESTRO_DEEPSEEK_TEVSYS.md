@@ -185,7 +185,7 @@
 - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
 - Hook: `Actívalo cuando quieras. Decide cuánto ampliar el margen: del 5% al 25% (mínimo 75% protegido).`
 
-**Pendiente:** sml-demo.mp4. SML en fase actual para Advanced/Pro (lista de espera); en Essential demo no está activo todavía.
+**Pendiente:** sml-demo.mp4. SML en fase actual para Advanced/Pro (lista de espera).
 
 ---
 
