@@ -115,7 +115,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				intro:
 					'Si vienes por evidencia verificable, te mostramos qué se registra en cada cierre, bloqueo y rotación para que puedas comprobarlo.',
 				tips: [
-					'Panel, logs y reporte oficial para validar lo que pasa en real.',
+					'Panel, logs y reporte oficial MT5 para validar lo que pasa en real.',
 					'Todo queda con trazabilidad para revisión propia o auditoría.',
 					'Proceso claro: vemos encaje y te indicamos el siguiente paso.',
 				],
@@ -141,7 +141,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 
 		if (flow === 'demo') {
 			if (titleNode) titleNode.textContent = 'Solicita tu demo de tevsys';
-			const demoProcess = ' Rellena el formulario. Te respondemos en menos de 24h con los pasos para acceder a la demo.';
+			const demoProcess = ' Rellena el formulario. Te indicamos los pasos para acceder a la demo.';
 			const selectedSource = sourceMap[feature] || sourceMap[origin];
 			if (selectedSource) {
 				if (introNode) introNode.textContent = selectedSource.intro + demoProcess;
