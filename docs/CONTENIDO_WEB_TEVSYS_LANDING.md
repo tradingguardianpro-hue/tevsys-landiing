@@ -41,7 +41,7 @@ Documento de contenido/copy actual para revisión de equipo.
 `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
 
 ### Línea de trazabilidad (credibilidad)
-`Trazabilidad completa: logs, panel y reporte oficial MT5. Auditable.`
+`Trazabilidad completa: logs, panel y reporte oficial MT5.`
 
 ### Línea de apoyo (mecanismo)
 `Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`

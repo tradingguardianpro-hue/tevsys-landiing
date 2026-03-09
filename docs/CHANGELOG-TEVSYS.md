@@ -873,5 +873,8 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### 31.15 SML — quitar "En Essential demo no está activo" (Ene 2026)
 - Nota disponibilidad: solo "Disponible en validación avanzada para cuentas Advanced/Pro (lista de espera)." — más limpio.
 
-### 31.16 Referencia
+### 31.16 Trazabilidad — quitar "Auditable" (Ene 2026)
+- Frase: "Trazabilidad completa: logs, panel y reporte oficial MT5." — menos carga; "trazabilidad" ya aporta para quien conoce el término.
+
+### 31.17 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.
