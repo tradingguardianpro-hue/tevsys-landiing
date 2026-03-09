@@ -61,15 +61,29 @@
 
 ---
 
-## 6) Qué falta decidir
+## 6) Caso específico: verificación antes de dar link de descarga demo
+
+**Motivo:** Evitar cuentas falsas, bots y curiosos que descarguen la demo sin interés real.
+
+**Opciones:**
+- Formulario → email de verificación (double opt-in) → tras confirmar, enviar link de descarga.
+- Formulario → respuesta manual; si el lead parece serio, enviar demo (actual).
+- Formulario → email automático con link de verificación → solo tras verificar, link de descarga.
+
+**Estado:** Pendiente de decisión. Conectar con la decisión general de verificación (§4, §5).
+
+---
+
+## 7) Qué falta decidir
 
 - [ ] Momento de implementar verificación (cuando Essential estable + web completa).
 - [ ] Si se hace: flujo propio vs. herramienta externa (Brevo, etc.).
 - [ ] Si Formspree se mantiene o se sustituye por otro backend cuando se añada verificación.
+- [ ] Verificación específica para descarga de demo (§6).
 
 ---
 
-## 7) Referencias
+## 8) Referencias
 
 - Formularios actuales: `src/pages/company/contact.astro`, `src/pages/company/empresas.astro`
 - Formspree endpoint: `xzdjbenk` (config en ContactForm.astro)

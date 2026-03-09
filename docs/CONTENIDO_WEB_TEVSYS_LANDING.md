@@ -113,6 +113,9 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Flujo Acceso** (`?flow=acceso`): bullets específicos — 1) Essential listo para probar. Advanced y Pro en desarrollo — lista de espera. 2) Respuesta en menos de 24h. Te orientamos según tu perfil. 3) Precisión y HyperClose validados con operativas reales. Días OFF y configuración flexible de toda la semana. 4) Empresas. Imagen Essential (bronce) con badge "DEMO". Redirect `/company/contact` → `?flow=acceso`. Ref: `ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md`.
 
+**Formulario contacto — intros desde features (flow=demo):**
+- Precision, HyperClose, SML, Evidencia: "Ya has visto [X] en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo."
+
 **Formulario contacto (flujos Advanced/Pro):**
 - Checkbox debajo Experiencia: "Sí, avísame cuando [Advanced/Pro] esté disponible." — default marcado. Formspree: `AvisarCuandoDisponible: Sí|No`. Caja con borde ámbar.
 - Nota debajo imagen: "Advanced/Pro en desarrollo. La demo disponible ahora es Essential." (cursiva).

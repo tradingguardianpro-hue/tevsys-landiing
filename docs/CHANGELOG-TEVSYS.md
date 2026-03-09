@@ -876,5 +876,10 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### 31.16 Trazabilidad — quitar "Auditable" (Ene 2026)
 - Frase: "Trazabilidad completa: logs, panel y reporte oficial MT5." — menos carga; "trazabilidad" ya aporta para quien conoce el término.
 
-### 31.17 Referencia
+### 31.17 Intros desde features — "Ya has visto en esta página" (Ene 2026)
+- Precision, HyperClose, SML, Evidencia: "Ya has visto [X] en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo."
+- Sin redundancia con lo que ya está en la web; respuesta: enlaces + contexto breve.
+- PENDIENTE_VERIFICACION_EMAIL_LEADS: §6 caso verificación antes de dar link demo (cuentas falsas, bots).
+
+### 31.18 Referencia
 - `docs/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` — plan paso a paso.
