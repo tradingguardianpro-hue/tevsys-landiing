@@ -18,19 +18,14 @@ const seo = {
 			<p class="feature-trace-note">Trazabilidad completa para ti, para tu auditor, para tu historial.</p>
 		</section>
 
-		<section class="feature-demo">
-			<h2>Evidencia en acción</h2>
-			<p>La trazabilidad se ve en Precisión (panel, logs, cierre). Te mostramos ejemplos prácticos ahí.</p>
-			<p>
-				<a class="proof-capture-link" href="/features/precision#precision-demo">
-					Ir a demo de precisión y evidencia <span class="proof-link-meta">VIDEO</span>
-				</a>
-			</p>
-			<p>
-				<a class="proof-capture-link" href="/features/precision#precision-logs-guide">
-					Ir a guía visual de logs <span class="proof-link-meta">VIDEO</span>
-				</a>
-			</p>
+		<section id="evidencia-demo" class="feature-demo">
+			<h2>Demo rápida — Cuenta 100k</h2>
+			<p class="feature-demo-hook">Misma precisión en cuenta grande.</p>
+			<!-- Cuando evidencia-100k.mp4 esté en /videos/features/: reemplazar demo-placeholder por demo-video + video con source evidencia-100k.mp4 -->
+			<div class="demo-placeholder">
+				<p>Vídeo en preparación. Cierre por límite en cuenta 100k con panel, modales y logs visibles.</p>
+				<p class="demo-note">Mientras tanto: <a class="proof-capture-link" href="/features/precision#precision-demo">Ir a demo de precisión <span class="proof-link-meta">VIDEO</span></a> · <a class="proof-capture-link" href="/features/precision#precision-logs-guide">Guía visual de logs <span class="proof-link-meta">VIDEO</span></a></p>
+			</div>
 		</section>
 
 		<section class="feature-proof">
@@ -183,6 +178,14 @@ const seo = {
 		line-height: 1.5;
 		opacity: 0.86;
 		margin: 0.35rem 0 0;
+	}
+	#evidencia-demo {
+		scroll-margin-top: 5.5rem;
+	}
+	.feature-demo-hook {
+		margin: 0 0 0.75rem;
+		font-style: italic;
+		opacity: 0.9;
 	}
 	.feature-demo h2,
 	.feature-proof h2,
