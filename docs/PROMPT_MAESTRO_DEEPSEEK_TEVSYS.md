@@ -14,6 +14,7 @@
 - **Validación:** Primero en `tevsys-landiing.vercel.app`; luego en `tevsys.io` (puede ir con retraso por DNS/CDN).
 - **Copy freeze v1 activo:** Solo cambiar copy por bug, inconsistencia o decisión explícita de producto.
 - **Regla de documentación:** Si algo se publica en web, registrar en `CHANGELOG-TEVSYS.md`. Tracker interno en `CARDS-NEXT-PHASE.md` sección 7.
+- **Plantilla unificada (Mar 2026):** Las 4 micropáginas comparten orden: Hero → Demo rápida → Qué puedes comprobar → Bloques proof → CTA. Vídeo (o placeholder) siempre en bloque 2.
 
 ---
 
@@ -22,6 +23,7 @@
 | Concepto | Valor |
 |----------|-------|
 | Repo | tevsys-landiing (Astro + Odyssey Theme) |
+| Workflow | Cursor (repo en `Documents/GitHub/tevsys-landiing`) + GitHub Desktop para commit/push |
 | Deploy principal | tevsys-landiing.vercel.app |
 | Dominio oficial | tevsys.io |
 | Videos | `public/videos/features/` |
@@ -171,7 +173,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ---
 
-### 7.2 HyperClose (`/features/hyperclose`) — CERRADA salvo Día OFF
+### 7.2 HyperClose (`/features/hyperclose`) — CERRADA
 
 **Copy freeze:**
 - Título: `HyperClose: cuando tu disciplina falla, HyperClose no.`
@@ -188,9 +190,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 3. "Qué puedes comprobar" — 3 enlaces
 4. Bloque "Cierre inmediato" → enlace a demo
 5. Bloque "Semáforo" → enlace a demo + acordeón "Ver capturas de los 3 modales"
-6. Bloque "Compatibilidad con día OFF" — **PENDIENTE vídeo** (hyperclose-demo-dia-off.mp4)
-
-**Día OFF pendiente:** Grabar vídeo: desbloquear EA, miércoles OFF configurado, intentar operar → cierre + semáforos.
+6. Bloque "Compatibilidad con día OFF" — **COMPLETADO.** Vídeo `hyperclose-dias-off-demo.mp4` (51 s), acordeón 5 capturas.
 
 ---
 
@@ -200,18 +200,27 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
 - Hook: `Actívalo cuando quieras. Decide cuánto ampliar el margen: del 5% al 25% (mínimo 75% protegido).`
 
-**Pendiente:** sml-demo.mp4. SML en fase actual para Advanced/Pro (lista de espera). Nota disponibilidad: solo "Disponible en validación avanzada para cuentas Advanced/Pro (lista de espera)." — sin "En Essential demo no está activo".
+**Plantilla unificada (Mar 2026):** Demo rápida con hook "Bonus por rendimiento. Límites ampliados cuando tú decides." Misma estructura que Precisión/HyperClose/Evidencia.
+
+**Pendiente:** sml-demo.mp4. Plan: añadir 2–3 capturas + "En desarrollo fase 5" o similar.
 
 ---
 
-### 7.4 Evidencia (`/features/evidencia`) — Pendiente vídeo
+### 7.4 Evidencia (`/features/evidencia`) — Reestructurado Mar 2026
 
 **Copy freeze:**
 - Título: `Evidencia verificable: aquí no hay "creemos".`
 - Hook: `Lo que no se puede demostrar, no cuenta.`
-- Bullet evidencia: incluir "reporte oficial MT5" para consistencia con trazabilidad home.
 
-**Pendiente:** evidencia-demo.mp4
+**Plantilla unificada:**
+- **Demo cuenta 100k primero** (bloque 2): "Demo rápida — Cuenta 100k"
+- **Subtítulo:** `100.000€ · Misma precisión. Compruébalo tú mismo.`
+- Placeholder hasta `evidencia-100k.mp4`; enlaces alternativos a Precisión y guía logs
+- **Eliminada** sección "Evidencia en acción"
+- **Acordeón Reporte MT5:** "Ver capturas de la operativa 100k" — 4 capturas + "Descargar informe completo PDF"
+- Rutas: `evidencia-100k-reporte-01.png` a `04.png`, `evidencia-100k-informe-mt5.pdf`
+
+**Pendiente:** evidencia-100k.mp4, 4 capturas, PDF. Ver CHANGELOG §32, proyecto TGP `PROMPT_DEEPSEEK_WEB_TEVSYS_ESTADO_COMPLETO.md`.
 
 ---
 
@@ -253,7 +262,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 4. Nombre exacto: precision-demo.mp4, hyperclose-demo.mp4, etc.
 5. Decir al equipo para integrar en web (acordeón, enlace, etc.)
 
-**Vídeos pendientes:** hyperclose-demo-dia-off.mp4, sml-demo.mp4, evidencia-demo.mp4
+**Vídeos pendientes:** sml-demo.mp4, evidencia-100k.mp4. Día OFF: hyperclose-dias-off-demo.mp4 ya publicado.
 
 ---
 
@@ -278,6 +287,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | Doc | Para qué |
 |-----|----------|
 | **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md** (este) | Contexto completo — empezar aquí |
+| **PROMPT_DEEPSEEK_WEB_TEVSYS_ESTADO_COMPLETO.md** (proyecto TGP) | Estado web Mar 2026: plantilla unificada, Evidencia 100k, acordeón reporte MT5, plan vídeo, pendientes |
 | CHANGELOG-TEVSYS.md | Historial de todos los cambios, decisión por decisión |
 | GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md | Specs vídeos, guiones, overlays, OBS/Clipchamp |
 | CONTENIDO_WEB_TEVSYS_LANDING.md | Copy actual de toda la web |
@@ -337,7 +347,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** Ene 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: decisiones §31 (bullets, intros features, enlaces profundizar, cards Advanced/Pro, badge DEMO, SML, trazabilidad, PENDIENTE_VERIFICACION §6).
+**Última actualización:** Mar 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: §31 + §32 (plantilla unificada, Evidencia 100k, acordeón reporte MT5).
 
 ---
 

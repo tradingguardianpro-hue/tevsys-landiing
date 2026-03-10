@@ -887,3 +887,42 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 ### 31.19 Actualización docs web (Ene 2026)
 - **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md:** Sección "Enlaces para profundizar" con URLs por feature (Precision, HyperClose, SML, Evidencia) para respuesta manual a leads. Intros features, cards Advanced/Pro "En [plan] ofrecemos...", badge DEMO 22px, SML sin Essential demo, trazabilidad sin Auditable, PENDIENTE_VERIFICACION §6. Evidencia: bullet reporte oficial MT5.
 - **CONTENIDO_WEB_TEVSYS_LANDING.md:** Evidencia soporte — reporte oficial MT5.
+
+---
+
+## 32) Plantilla unificada 4 micropáginas + Evidencia 100k (Mar 2026)
+
+### 32.1 Plantilla unificada
+- **Orden fijo** en las 4 micropáginas: Hero → Demo rápida → Qué puedes comprobar → Bloques proof → CTA
+- Precisión, HyperClose, Evidencia y SML comparten la misma estructura
+- Vídeo (o placeholder) siempre en bloque 2, mismo peso visual
+- Enlaces "Qué puedes comprobar": clase `evidence-link` (blanco por defecto, amarillo en hover)
+
+### 32.2 Evidencia — Reestructuración
+- **Demo cuenta 100k primero:** Bloque "Demo rápida — Cuenta 100k" inmediatamente después del hero
+- **Subtítulo:** "100.000€ · Misma precisión. Compruébalo tú mismo."
+- **Eliminada** sección "Evidencia en acción"
+- Placeholder hasta que exista `evidencia-100k.mp4`; enlaces alternativos a demo Precisión y guía logs
+
+### 32.3 Evidencia — Acordeón reporte MT5
+- Sección "Reporte oficial MT5: respaldo independiente": acordeón "Ver capturas de la operativa 100k"
+- Galería de 4 capturas (`evidencia-100k-reporte-01.png` a `04.png`) + enlace "Descargar informe completo PDF"
+- Rutas: `public/images/evidence/`, `public/docs/evidencia-100k-informe-mt5.pdf`
+- Enlace a resumen técnico Precisión mantenido debajo
+
+### 32.4 SML — Misma estructura
+- Demo rápida con hook "Bonus por rendimiento. Límites ampliados cuando tú decides."
+- `id="sml-demo"`, `feature-demo-hook`, misma estructura visual que las otras micropáginas
+
+### 32.5 Plan vídeo 100k (pendiente)
+- Secuencia overlays: "Cuenta 100k · Sin operaciones previas" → "Cálculo en curso — cierre inminente" → "Misma precisión. Mismo límite." + marca tevsys
+- Cuando esté listo: sustituir placeholder en evidencia.astro por `demo-video` + `<video>`
+
+### 32.6 Documentación
+- **Proyecto TGP:** `docs/PROMPT_DEEPSEEK_WEB_TEVSYS_ESTADO_COMPLETO.md` — documento maestro para DeepSeek con contexto completo web
+- **CHECKLIST_WEB_TEVSYS_ANTES_REUNION_ACADEMIA:** Evidencia y SML actualizados con plantilla unificada
+
+### 32.7 Commits asociados
+- `feat(web): plantilla unificada Evidencia + SML — vídeo 100k primero, misma estructura 4 micropáginas`
+- `fix(evidencia): subtítulo demo 100k — 100.000€ · Misma precisión. Compruébalo tú mismo.`
+- `feat(evidencia): acordeón 4 capturas operativa 100k + enlace PDF en sección Reporte MT5`
