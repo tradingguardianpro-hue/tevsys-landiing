@@ -19,13 +19,15 @@ const seo = {
 		</section>
 
 		<section id="evidencia-demo" class="feature-demo">
-			<h2>Demo rápida — Cuenta 100k</h2>
-			<p class="feature-demo-hook">100.000€ · Misma precisión. Compruébalo tú mismo.</p>
-			<!-- Cuando evidencia-100k.mp4 esté en /videos/features/: reemplazar demo-placeholder por demo-video + video con source evidencia-100k.mp4 -->
-			<div class="demo-placeholder">
-				<p>Vídeo en preparación. Cierre por límite en cuenta 100k con panel, modales y logs visibles.</p>
-				<p class="demo-note">Mientras tanto: <a class="proof-capture-link" href="/features/precision#precision-demo">Ir a demo de precisión <span class="proof-link-meta">VIDEO</span></a> · <a class="proof-capture-link" href="/features/precision#precision-logs-guide">Guía visual de logs <span class="proof-link-meta">VIDEO</span></a></p>
+			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
+			<p class="feature-demo-hook">100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%</p>
+			<div class="demo-video demo-video--compact" id="evidencia-demo-container">
+				<video id="evidencia-demo-video" controls preload="metadata">
+					<source src="/videos/features/evidencia-100k-perdida.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
 			</div>
+			<p class="demo-edit-note">Vídeo editado para mostrar los momentos clave. Operativa completa verificable en informe MT5.</p>
 		</section>
 
 		<section class="feature-proof">
@@ -264,6 +266,11 @@ const seo = {
 	.demo-note {
 		opacity: 0.8;
 		font-size: 0.95rem;
+	}
+	.demo-edit-note {
+		margin: 0.5rem 0 0;
+		font-size: 0.9rem;
+		opacity: 0.82;
 	}
 	.feature-proof ul {
 		margin: 0;
