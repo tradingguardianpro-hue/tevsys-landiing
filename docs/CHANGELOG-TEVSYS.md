@@ -926,3 +926,116 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `feat(web): plantilla unificada Evidencia + SML — vídeo 100k primero, misma estructura 4 micropáginas`
 - `fix(evidencia): subtítulo demo 100k — 100.000€ · Misma precisión. Compruébalo tú mismo.`
 - `feat(evidencia): acordeón 4 capturas operativa 100k + enlace PDF en sección Reporte MT5`
+
+---
+
+## 33) Home — frase "Ellos deslizan" + ajustes redundancia (Mar 2026)
+
+### 33.1 Frase "Ellos deslizan. En tevsys cerramos."
+- **Ubicación:** Debajo de "Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF."
+- **Estilo:** Punto amarillo (`feature-hook__dot`) + texto gris heredado, cursiva, `font-weight: 600`, `opacity: 0.9`. Mismo patrón visual que hooks de micropáginas.
+- **Decisión:** Se movió debajo de la intro (no justo después de "Nosotros sí") para evitar repetición de "nosotros" en líneas seguidas.
+
+### 33.2 Ajuste redundancia "nosotros"
+- **Problema detectado:** "Nosotros" aparecía 3 veces en el bloque intro + primera card:
+  1. "Las buenas intenciones no cierran… Nosotros sí."
+  2. "Ellos deslizan. Nosotros cerramos."
+  3. "El mercado no perdona. Nosotros tampoco."
+- **Solución:** Cambiar la frase 2 a "Ellos deslizan. **En tevsys** cerramos." (marca en vez de pronombre).
+- **Ajuste adicional:** "tevsys ejecuta siempre" → "**Ejecutamos** siempre" para que la línea anterior no repita "tevsys" justo encima.
+
+### 33.3 Orden final sección valor (home)
+1. h2: ¿Cuánto dinero has perdido por no parar a tiempo?
+2. Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.
+3. Trazabilidad completa: logs, panel y reporte oficial MT5.
+4. Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF.
+5. **• Ellos deslizan. En tevsys cerramos.**
+6. Grid de 4 cards.
+
+### 33.4 Archivo
+- `src/pages/index.astro`
+
+---
+
+## 34) Bug crítico: Variables Globales MT5 sin ADN de cuenta — multi-cuenta (Mar 2026)
+
+### 34.1 Descubrimiento
+- Al probar con cuenta nueva (100k, ActivTrades), la cuenta arrancaba bloqueada sin haber alcanzado ningún límite.
+- Causa: Variables Globales genéricas de MT5 (`TGP_DAILY_LOSS_LIMIT_REACHED`, `TGP_BLOCKED`, etc.) **no llevan el número de cuenta (login)** en su nombre.
+- La sesión anterior (cuenta diferente) dejó esas GVs en `1.0`. La cuenta nueva las leyó y asumió que estaba bloqueada.
+
+### 34.2 Impacto
+
+**Técnico:**
+- Interferencia entre cuentas en el mismo terminal MT5.
+- Estado corrupto al cambiar de cuenta o reinstalar EA.
+- Reinstalar/reiniciar MT5 no borra las GVs (son persistentes por diseño de MetaTrader).
+
+**Negocio:**
+- Si un usuario quiere tevsys en dos cuentas (= dos licencias), el producto no funciona porque las GVs se interfieren.
+- Un usuario podría evadir la protección cambiando de cuenta en el mismo terminal (la GV de bloqueo de la cuenta A no afecta a la cuenta B si se corrige, pero hoy sí la afecta incorrectamente).
+- Se pierde un canal natural de upsell: "Protege más cuentas, paga más licencias."
+
+### 34.3 Qué ya funciona
+- Las GVs con prefijo `SKEL7_<login>_` ya tienen ADN propio (login = número de cuenta). Cada cuenta tiene sus propias variables de bloqueo, estado, etc. Verificado en captura de Variables Globales con dos logins distintos (6198944, 6210646).
+
+### 34.4 Qué falta (el bug)
+- Las GVs escritas con nombre fijo (sin login):
+  - `TGP_DAILY_LOSS_LIMIT_REACHED`
+  - `TGP_BLOCKED`
+  - `TGP_STOP_REASON`
+  - `TGP_WEEKLY_LOSS_LIMIT_REACHED`
+  - `TGP_WEEKLY_PROFIT_LIMIT_REACHED`
+  - `TGP_DAILY_PROFIT_LIMIT_REACHED`
+  - `TGP_WEEKLY_DRAWDOWN_LIMIT_REACHED`
+  - `TGP_KILL_SWITCH`
+  - `TGP_EMERGENCY_STOP`
+
+### 34.5 Solución: migrar a prefijo con login
+- Cada GV genérica pasa a incluir el login: `TGP_<login>_DAILY_LOSS_LIMIT_REACHED`.
+- Cambio mecánico: strings hardcodeados → variables construidas con `AccountInfoInteger(ACCOUNT_LOGIN)`.
+- Mismo patrón que ya usan las `SKEL7_<login>_*`.
+- **Estado:** Prompt detallado enviado al chat de bugs (V11) para implementación.
+
+### 34.6 Workaround temporal (para grabar vídeo hoy)
+- Herramientas → Variables Globales → borrar todas las `TGP_*` genéricas.
+- Borrar `TGP_BlockState_<login>.bin` en `Terminal/Common/Files`.
+- Cerrar MT5 → reabrir → cargar EA → funciona limpio.
+
+---
+
+## 35) Idea de negocio: detección multi-cuenta + upsell (Mar 2026)
+
+### 35.1 Concepto
+- Con el ADN por cuenta (login en todas las GVs), el EA sabe exactamente en qué cuenta se ejecuta.
+- Si se carga en una cuenta no autorizada por la licencia, puede detectarlo y mostrar un mensaje:
+  - *"Esta cuenta no está asociada a tu licencia. Si quieres proteger más capital en otra cuenta, contacta con nosotros."*
+- No es un castigo: es una oferta de upsell natural.
+
+### 35.2 Escenarios a contemplar
+
+**Demo vs real:**
+- Un usuario podría querer probar en demo antes de comprar para su cuenta real.
+- La licencia debería permitir al menos una demo sin restricción, o el mensaje debería ser distinto para demo:
+  - *"Estás probando en demo. Tu licencia protege la cuenta X."*
+
+**Cambio de broker:**
+- Si un usuario migra de ActivTrades a Infinox (misma licencia, cuenta distinta), no debería sentir que le bloquean.
+- Necesita un flujo simple de "migrar licencia a nueva cuenta" (soporte o self-service).
+
+**Timing:**
+- Implementar después de que el EA esté estable. Primero curar al enfermo, luego monetizar la salud.
+
+### 35.3 Monetización
+- Dos cuentas = dos licencias. Canal de ingresos natural.
+- El EA ya tendrá el login en todas las GVs; cruzarlo con la licencia es casi gratis.
+- Compatible con el sistema de licencias por capital documentado en `Formato_Clave_Licencia_Capital_Por_Tier_TEVSYS.md` (Essential 10k, Advanced 50k, Pro 200k).
+
+### 35.4 Qué comunicar en la web (cuando Essential esté estable)
+- En la página de planes o en FAQ: "Cada licencia protege una cuenta MT5. Si operas en varias cuentas, puedes añadir licencias adicionales."
+- En el formulario de contacto: campo opcional "¿Operas en más de una cuenta?" para detectar oportunidades de multi-licencia.
+
+### 35.5 Referencia
+- `docs/Formato_Clave_Licencia_Capital_Por_Tier_TEVSYS.md` — formato clave, capital por tier, popups.
+- `docs/ANALISIS_CAUSA_RAIZ_FECHA_BLOQUEO_09MAR2026.md` — contexto técnico del bug de GVs.
+- `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` — changelog V11.
