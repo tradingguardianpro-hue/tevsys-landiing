@@ -28,137 +28,54 @@ const seo = {
 				</video>
 			</div>
 			<p class="demo-edit-note">Vídeo editado para mostrar los momentos clave. Operativa completa verificable en informe MT5.</p>
-		</section>
-
-		<section class="feature-proof">
-			<h2>Qué puedes comprobar</h2>
-			<ul>
-				<li><a class="evidence-link" href="#evidence-sources">Panel y logs: dónde ver los datos.</a></li>
-				<li><a class="evidence-link" href="#evidence-report">Reporte oficial MT5: respaldo independiente.</a></li>
-				<li><a class="evidence-link" href="#evidence-audit">Trazabilidad para auditoría: tú, tu auditor, tu historial.</a></li>
-			</ul>
-		</section>
-
-		<section id="evidence-sources" class="feature-proof-detail">
-			<h3>Panel y logs: dónde ver los datos</h3>
-			<p>El panel muestra el estado en tiempo real; los logs tevsys registran cada evento por fecha. Dos fuentes internas que puedes contrastar.</p>
-			<details id="evidence-logs-tevsys" class="proof-accordion">
-				<summary class="proof-capture-link">Ejemplo de logs propios tevsys (cuenta 50K, límite alcanzado)</summary>
+			<details id="evidencia-informe-mt5" class="proof-accordion">
+				<summary class="proof-capture-link">Informe oficial MT5 — comprueba esta operativa tú mismo</summary>
 				<div class="proof-gallery">
-					<p class="proof-gallery__hint">Secuencia de trazabilidad: misma operación en capturas, logs tevsys, HTML e informe MT5. Cuenta 50K, límites ±0,50%. Haz clic en cada captura para verla en tamaño completo.</p>
+					<p class="proof-gallery__hint">Informe completo generado por MetaTrader 5. Todas las pestañas, sin editar. Cuenta 100.000€, 2 compras de 10 lotes GER40, cierre por límite -1%. Haz clic en cada captura para verla en tamaño completo.</p>
 					<div class="proof-gallery__grid">
 						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 1</p>
-							<p class="proof-gallery__title">Operación abierta</p>
-							<p class="proof-gallery__desc">Gráfico + operación abierta + flotantes moviéndose (≠ 0,00). Caja de herramientas visible con cuenta 50K (señalada en amarillo).</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-01-operacion-abierta.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 1 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-01-operacion-abierta.png" alt="Evidencia: operación abierta, gráfico, flotantes moviéndose, cuenta 50K." loading="lazy" />
+							<p class="proof-gallery__step">Summary</p>
+							<p class="proof-gallery__title">Resumen general</p>
+							<p class="proof-gallery__desc">Pérdida total: -1.007,20€. Balance final: 98.992,80€. Drawdown máximo: 1,01%.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-informe-resumen.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Summary en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-informe-resumen.png" alt="Informe MT5 100k: Summary — pérdida -1.007,20€, balance 98.992,80€." loading="lazy" />
 							</a>
 						</article>
 						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 2</p>
-							<p class="proof-gallery__title">Cierre por límite alcanzado</p>
-							<p class="proof-gallery__desc">Gráfico + frases arriba a la izquierda con límite alcanzado + panel mostrando el cierre.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-02-cierre-limite.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 2 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-02-cierre-limite.png" alt="Evidencia: cierre por límite, gráfico, frases, panel." loading="lazy" />
+							<p class="proof-gallery__step">Profit & Loss</p>
+							<p class="proof-gallery__title">Desglose de pérdidas</p>
+							<p class="proof-gallery__desc">Loss: -1.007,20€. Sin comisiones, sin swaps, sin dividendos. Resultado neto: -1,01%.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-informe-profitloss.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Profit & Loss en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-informe-profitloss.png" alt="Informe MT5 100k: Profit & Loss — desglose de pérdida -1.007,20€." loading="lazy" />
 							</a>
 						</article>
 						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 3</p>
-							<p class="proof-gallery__title">Logs tevsys — apertura</p>
-							<p class="proof-gallery__desc">Líneas de log internas tevsys en el momento de apertura de la operación.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-03-logs-apertura.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 3 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-03-logs-apertura.png" alt="Evidencia: logs tevsys en apertura." loading="lazy" />
+							<p class="proof-gallery__step">Long & Short</p>
+							<p class="proof-gallery__title">Distribución de operaciones</p>
+							<p class="proof-gallery__desc">100% Long Trades. 2 operaciones manuales. Sin robots ni señales.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-informe-longshort.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Long & Short en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-informe-longshort.png" alt="Informe MT5 100k: Long & Short — 2 compras manuales." loading="lazy" />
 							</a>
 						</article>
 						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 4</p>
-							<p class="proof-gallery__title">Logs tevsys — cierre</p>
-							<p class="proof-gallery__desc">Líneas de log internas tevsys en el momento del cierre por límite.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-04-logs-cierre.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 4 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-04-logs-cierre.png" alt="Evidencia: logs tevsys en cierre." loading="lazy" />
+							<p class="proof-gallery__step">Symbols</p>
+							<p class="proof-gallery__title">Activo operado</p>
+							<p class="proof-gallery__desc">GER40 como único activo. 2 operaciones concentradas en el mismo momento.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-informe-symbols.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Symbols en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-informe-symbols.png" alt="Informe MT5 100k: Symbols — GER40, -1.007,20€." loading="lazy" />
 							</a>
 						</article>
 						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 5</p>
-							<p class="proof-gallery__title">HTML transacciones</p>
-							<p class="proof-gallery__desc">Misma hora, mismo ticket. Cruce con nuestras capturas y logs.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-05-html-transacciones.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 5 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-05-html-transacciones.png" alt="Evidencia: HTML transacciones MT5." loading="lazy" />
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 6</p>
-							<p class="proof-gallery__title">Informe oficial MT5</p>
-							<p class="proof-gallery__desc">Respaldo externo de la plataforma. Hora y resultado coinciden.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-logs-50k-06-informe-mt5.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 6 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-logs-50k-06-informe-mt5.png" alt="Evidencia: informe oficial MT5." loading="lazy" />
+							<p class="proof-gallery__step">Risks</p>
+							<p class="proof-gallery__title">Drawdown y riesgo</p>
+							<p class="proof-gallery__desc">Worst trade: -530,50€. Max. consecutive loss: -1.007,20€. Corte limpio visible en el gráfico.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-informe-risks.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Risks en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-informe-risks.png" alt="Informe MT5 100k: Risks — drawdown y worst trade." loading="lazy" />
 							</a>
 						</article>
 					</div>
-					<p style="margin-top: 1rem;">
-						<a class="proof-capture-link" href="/features/precision#precision-logs-guide">Ir a guía visual de logs en MT5 <span class="proof-link-meta">VIDEO</span></a>
-					</p>
 				</div>
 			</details>
-			<p style="margin-top: 0.75rem;">
-				<a class="proof-capture-link" href="/features/precision#precision-panel">Demo del panel</a> ·
-				<a class="proof-capture-link" href="/features/precision#precision-logs-guide">Guía visual de logs <span class="proof-link-meta">VIDEO</span></a>
-			</p>
-		</section>
-
-		<section id="evidence-report" class="feature-proof-detail">
-			<h3>Reporte oficial MT5: respaldo independiente</h3>
-			<p>No solo nuestro registro: el reporte oficial de la plataforma (Historial &gt; Informe) es una fuente externa que refuerza consistencia.</p>
-			<p><strong>Cómo validarlo:</strong> Caja de herramientas &gt; Historial &gt; Informe &gt; Overview &gt; Guardar como PDF.</p>
-			<details id="evidence-report-100k" class="proof-accordion">
-				<summary class="proof-capture-link">Ver capturas de la operativa 100k</summary>
-				<div class="proof-gallery">
-					<p class="proof-gallery__hint">Cuenta 100.000€, una operación, cierre por límite. Haz clic en cada captura para verla en tamaño completo.</p>
-					<div class="proof-gallery__grid">
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 1</p>
-							<p class="proof-gallery__title">Informe MT5 — Resumen</p>
-							<p class="proof-gallery__desc">Vista general. Una única transacción.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-reporte-01.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 1 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-reporte-01.png" alt="Evidencia 100k: informe MT5 resumen." loading="lazy" />
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 2</p>
-							<p class="proof-gallery__title">Informe MT5 — Transacciones</p>
-							<p class="proof-gallery__desc">Detalle de la operación. Pérdida exacta en %.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-reporte-02.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 2 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-reporte-02.png" alt="Evidencia 100k: informe MT5 transacciones." loading="lazy" />
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 3</p>
-							<p class="proof-gallery__title">Informe MT5 — Resultado</p>
-							<p class="proof-gallery__desc">Balance y métricas de cierre.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-reporte-03.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 3 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-reporte-03.png" alt="Evidencia 100k: informe MT5 resultado." loading="lazy" />
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Captura 4</p>
-							<p class="proof-gallery__title">Informe MT5 — Validación</p>
-							<p class="proof-gallery__desc">Coincidencia hora, acción y resultado.</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-100k-reporte-04.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura 4 en tamaño completo">
-								<img class="proof-gallery__image" src="/images/evidence/evidencia-100k-reporte-04.png" alt="Evidencia 100k: informe MT5 validación." loading="lazy" />
-							</a>
-						</article>
-					</div>
-					<p style="margin-top: 1rem;">
-						<a class="proof-capture-link" href="/docs/evidencia-100k-informe-mt5.pdf" target="_blank" rel="noopener noreferrer">
-							Descargar informe completo <span class="proof-link-meta">PDF</span>
-						</a>
-					</p>
-				</div>
-			</details>
-			<p style="margin-top: 0.75rem;">
-				<a class="proof-capture-link" href="/features/precision#precision-stats">Ver resumen técnico y evidencia (Precisión) <span class="proof-link-meta">PDF</span></a>
-			</p>
 		</section>
 
 		<section id="evidence-audit" class="feature-proof-detail">
