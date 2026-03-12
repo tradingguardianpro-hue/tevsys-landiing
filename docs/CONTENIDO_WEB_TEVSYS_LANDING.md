@@ -6,8 +6,8 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Header
 - **Logo:** `tevsys` en óvalo (sin estrella)
-- **Navegación:** Inicio | Empresas | Acceso | Contacto
-- **CTA destacado en nav:** Acceso
+- **Navegación:** Inicio | Empresas | Contacto
+- **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
 
 ---
@@ -199,17 +199,25 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Cierre inmediato y Semáforo:** ambos enlazan a la demo. Acordeón "Ver capturas de los 3 modales" con imágenes de cada nivel.
 - **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) publicado + acordeón con 5 capturas. **COMPLETADO.**
 
-### Estado actual Evidencia (11 Mar 2026)
+### Estado actual Evidencia (31 Ene 2026)
 - **Demo rápida:** `evidencia-100k-perdida.mp4` (1 min 41 s, con audio). Cuenta 100k nueva, 20 lotes GER40, cierre por límite -1% = -1.007,20€, error 0,0072%. Apertura Wall Street.
 - **Hook demo:** `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
-- **Acordeón 1:** "Informe oficial MT5 — comprueba esta operativa tú mismo" — 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
-- **Acordeón 2:** "Historial de transacciones — detalle por operación" — captura editada (zonas clave en amarillo) + enlace HTML original descargable.
-- **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide` (resaltado amarillo + autoabrir acordeón).
-- **Eliminadas:** sección 50K, bullets "Qué puedes comprobar", sección Reporte MT5 separada.
-- **Pendiente:** vídeo ganancias (+1.111€) como secundario; sección "Auditoría" con contenido propio.
+- **"Qué puedes comprobar":** 4 enlaces de navegación (demo, informe MT5, transacciones, auditoría)
+- **Sección "Informe oficial MT5":** acordeón con 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
+- **Sección "Historial de transacciones":** acordeón con captura editada (zonas clave en amarillo) + enlace HTML original descargable.
+- **Sección "Auditoría: la prueba no es nuestra":** COMPLETADA. Hook "MetaTrader documenta. tevsys ejecuta." + "Para quién" (traders, gestoras, prop firms, academias) + "Dos capas de evidencia" (MT5 + logs tevsys) + enlace a Precisión operativa 49.
+- **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide`
+- **Card home:** "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
+
+### Estado actual SML (31 Ene 2026)
+- **Limpieza:** Eliminadas 4 secciones placeholder + vídeo placeholder. Resultado: Hero + "Qué podrás comprobar" (3 puntos) + nota estado + CTA. 148 líneas.
+
+### Estado actual navegación y footer (31 Ene 2026)
+- **Nav:** Inicio | Empresas | Contacto. "Acceso" eliminado.
+- **Footer:** 4 columnas (Brand, Navegación, Producto, Legal). Frase indie más grande. Copyright con "Todos los derechos reservados."
+- **Páginas legales:** /company/legal, /company/privacidad, /company/terminos (contenido mínimo, pendiente abogado).
 
 ### Pendiente inmediato
-- Mantener doble capa de evidencia en Precision/HyperClose (resumen + detalle técnico).
 - SML: vídeo final según guía de producción.
 
 ---
@@ -217,8 +225,8 @@ Documento de contenido/copy actual para revisión de equipo.
 ## Pendientes para la próxima sesión
 
 1. Vídeo ganancias 100k (+1.111€) como secundario en Evidencia.
-2. Sección "Auditoría" en Evidencia con contenido propio.
-3. Versión final de video para `sml`.
+2. Versión final de vídeo para `sml`.
+3. Asesoramiento jurídico para contenido legal definitivo.
 
 ---
 

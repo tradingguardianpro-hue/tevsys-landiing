@@ -1128,4 +1128,110 @@ Ruta: `public/images/evidence/`
 
 ### 36.8 Pendiente
 - Vídeo de ganancias (+1.111€, ActivTrades, 20 lotes) como vídeo secundario
-- Sección "Auditoría" con contenido propio (actualmente solo enlace a Precisión)
+- ~~Sección "Auditoría" con contenido propio~~ → Completada en §37
+
+---
+
+## 37) Refinamiento completo micropáginas + footer + legal + navegación (31 Ene 2026)
+
+Sesión de pulido integral de las 4 micropáginas, navegación, footer y páginas legales.
+
+### 37.1 Evidencia — reestructuración y auditoría
+
+**Estructura final (patrón Hero → Demo → Qué puedes comprobar → Proof sections → CTA):**
+1. Hero simplificado: "Cada cierre y cada bloqueo queda registrado en panel, logs y reporte oficial MT5."
+2. Demo vídeo 100k con autoplay/hashchange
+3. "Qué puedes comprobar" como guía de navegación (4 enlaces)
+4. Sección "Informe oficial MT5" con acordeón dentro (5 capturas)
+5. Sección "Historial de transacciones" con acordeón dentro (captura + HTML descargable)
+6. Sección "Auditoría: la prueba no es nuestra" — **nuevo contenido completo:**
+   - Hook: "MetaTrader documenta. tevsys ejecuta."
+   - "Para quién": traders retail, gestoras, prop firms, academias
+   - "Dos capas de evidencia": MT5 (qué ocurrió) + logs tevsys (por qué)
+   - "Todo lo de arriba es la prueba": +50 operativas documentadas
+   - Enlace a Precisión operativa 49
+   - Etiquetas amarillas `.audit-label` (uppercase, #f5b041)
+7. CTA final
+
+**Card home (Evidencia verificable):**
+- Datos concretos: "100.000€ · 20 lotes · Apertura Wall Street. Error: 0,0072%."
+- Susurro: "El desafío está servido. Para ti o para quien te audite."
+- Clase `.feature-card__whisper` (italic, 0.92rem, opacity 0.7)
+
+### 37.2 Precisión — vídeo alta volatilidad elevado
+
+- Demo alta volatilidad elevada de acordeón a sección propia con embed visible
+- Nuevo `<section id="precision-volatilidad">` con hook: "Límite ±1,50% · Cierre en +1,83% · Alta volatilidad geopolítica"
+- Embed compacto con expand-on-play (mismo patrón que demo principal)
+- Fix: "Límite -1,50%" → "Límite ±1,50%" (refleja límite bilateral)
+- Auto-open de acordeón `#precision-49-evidence` y highlight de `#precision-stats` con `:has()` CSS
+
+### 37.3 Home — consistencia cards
+
+- Card Precisión: "error promedio" → "error medio" (consistencia con micropágina)
+
+### 37.4 SML — limpieza para presentación
+
+- **Eliminadas:** 4 secciones proof-detail con "Captura en preparación (Advanced/Pro)", placeholder de vídeo, sección "Qué puedes comprobar" con 4 enlaces a secciones eliminadas
+- **Resultado:** Hero + "Qué podrás comprobar" (3 puntos concisos) + nota de estado + CTA
+- ~100 líneas de CSS muerto eliminadas
+- Página de ~245 líneas → 148 líneas
+
+### 37.5 Navegación — eliminar "Acceso"
+
+**Antes:** Inicio | Empresas | Acceso (botón) | Contacto  
+**Después:** Inicio | Empresas | Contacto
+
+- "Acceso" eliminado de `nav.js` y `footer.js` (sin destino propio hasta demo descargable)
+- "Contacto" ahora apunta a `/company/contact` limpio (sin `?flow=acceso`)
+- "Empresas" añadido al footer (antes solo estaba en nav)
+
+### 37.6 Footer — legal y copyright
+
+**Estructura grid (4 columnas):**
+- Brand + contacto | Navegación | Producto | **Legal (nueva)**
+
+**Columna Legal:**
+- Aviso Legal → `/company/legal`
+- Privacidad → `/company/privacidad`
+- Términos de Uso → `/company/terminos`
+
+**Copyright actualizado:** "Copyright © 2026 tevsys. Todos los derechos reservados."  
+**Frase indie:** Aumentada de 0.95rem a 1.08rem con letter-spacing.
+
+### 37.7 Páginas legales (3 nuevas)
+
+| Página | Ruta | Contenido |
+|--------|------|-----------|
+| Aviso Legal | `/company/legal` | Titularidad, propiedad intelectual, limitación de responsabilidad |
+| Privacidad | `/company/privacidad` | Responsable, datos recogidos, finalidad, derechos RGPD |
+| Términos de Uso | `/company/terminos` | Objeto, naturaleza del producto, responsabilidad usuario, uso contenido |
+
+Las tres incluyen: "Será ampliado con asesoramiento jurídico profesional antes del lanzamiento comercial." Estilo sobrio (sin marca amarilla), solo texto.
+
+### 37.8 Archivos modificados
+- `src/pages/features/evidencia.astro`
+- `src/pages/features/precision.astro`
+- `src/pages/features/sml.astro`
+- `src/pages/index.astro`
+- `src/config/nav.js`
+- `src/config/footer.js`
+- `src/components/core/Footer.astro`
+- `src/pages/company/legal.astro` (reescrito)
+- `src/pages/company/privacidad.astro` (nuevo)
+- `src/pages/company/terminos.astro` (nuevo)
+
+### 37.9 Commits asociados
+- `evidencia: reestructurar página — Hero → Demo → Proof sections → Auditoría → CTA`
+- `precisión: elevar vídeo alta volatilidad a sección propia + fix ±1,50%`
+- `home: card evidencia con datos 100k + susurro auditoría`
+- `home: card precisión "error promedio" → "error medio"`
+- `sml: limpiar micro-página — eliminar placeholders y secciones vacías`
+- `nav/footer: eliminar Acceso, añadir Empresas al footer, aumentar frase identidad`
+- `footer: páginas legales (aviso, privacidad, términos) + enlaces + copyright completo`
+- `footer: mover enlaces legales a columna propia en el grid`
+
+### 37.10 Pendiente
+- Vídeo ganancias 100k (+1.111€) como secundario en Evidencia
+- Vídeo SML demo
+- Asesoramiento jurídico para contenido legal definitivo

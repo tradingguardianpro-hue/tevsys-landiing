@@ -55,14 +55,17 @@
 
 ---
 
-## 3. Footer (Mar 2026)
+## 3. Footer (Ene 2026)
 
 - **Iconos SVG:** email y ubicación en amarillo tevsys (`public/icons/icon-email.svg`, `icon-location.svg`)
 - **Contacto:** info@tevsys.io, Barcelona
-- **Guion amarillo (—)** antes de títulos de columnas (Navegación, Producto)
+- **Guion amarillo (—)** antes de títulos de columnas (Navegación, Producto, Legal)
 - **Hover amarillo** en enlaces
-- **Enlaces micropáginas:** Precisión, HyperClose, SML, Evidencia
+- **Grid 4 columnas:** Brand+contacto | Navegación (Inicio, Empresas, Contacto) | Producto (Precisión, HyperClose, SML, Evidencia) | Legal (Aviso Legal, Privacidad, Términos de Uso)
 - **Logo:** favicon.png junto a tevsys™
+- **Frase indie:** 1.08rem con letter-spacing ("Made with love for trading...")
+- **Copyright:** "Copyright © 2026 tevsys. Todos los derechos reservados."
+- **Páginas legales:** `/company/legal`, `/company/privacidad`, `/company/terminos` — contenido mínimo honesto, pendiente asesoramiento jurídico. Estilo sobrio (sin marca amarilla).
 - **Fondo:** theme-surface-1 (unificado, sin fondo diferenciado)
 - **Frase indie:** "❤️ Made with love for trading. — Desarrollado independientemente. Sin inversores. Sin excusas." (link, hover amarillo)
 
@@ -97,8 +100,7 @@
 ## 6. Planes y flujos de contacto (Essential / Advanced / Pro) — Ene 2026
 
 ### Flujos unificados
-- **Acceso / Contacto:** Nav "Acceso" y "Contacto" → `/company/contact?flow=acceso`. Misma experiencia.
-- **Redirect:** `/company/contact` sin params → `?flow=acceso`
+- **Contacto:** Nav "Contacto" → `/company/contact`. "Acceso" eliminado de nav y footer (sin destino propio hasta demo descargable).
 - **CTAs planes:** `/company/contact?plan=essential|advanced|pro`
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
 
@@ -116,7 +118,7 @@
 - **plan=advanced|pro:** Bloque destacado: "Te añadimos a la lista de espera de Advanced/Pro. Mientras tanto, la demo disponible es Essential."
 
 ### Bullets
-- **Acceso:** Essential listo. 24h. Precisión, HyperClose, días OFF, config semanal. Empresas.
+- **Contacto:** Essential listo. 24h. Precisión, HyperClose, días OFF, config semanal. Empresas.
 - **Essential:** Configuras una vez, límite diario, HyperClose, 24h, Empresas.
 - **Advanced/Pro:** "En Advanced ofrecemos todo lo de Essential, además:" / "En Pro ofrecemos todo lo de Advanced, además:". Link empresas.
 
@@ -139,7 +141,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ## 6.1 Empresas (canal B2B) — `/company/empresas`
 
-- **Nav:** Inicio | Empresas | Acceso | Contacto. Empresas accesible desde home y todas las micro-páginas (Precision, HyperClose, SML, Evidencia).
+- **Nav:** Inicio | Empresas | Contacto. Empresas accesible desde home y todas las micro-páginas.
 - **Objetivo:** Captar leads B2B sin cerrar puertas; canal en desarrollo.
 - **Hero:** "Empresas: otro canal, otro trato." Hook: "Estamos en fase de desarrollo y validación del canal empresas." (estilo micropáginas: cursiva, negrita, punto amarillo)
 - **Copy:** Trato especial; capital distinto a retail; requiere reuniones.
@@ -200,9 +202,9 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
 - Hook: `Actívalo cuando quieras. Decide cuánto ampliar el margen: del 5% al 25% (mínimo 75% protegido).`
 
-**Plantilla unificada (Mar 2026):** Demo rápida con hook "Bonus por rendimiento. Límites ampliados cuando tú decides." Misma estructura que Precisión/HyperClose/Evidencia.
+**Limpieza (31 Ene 2026):** Eliminadas 4 secciones proof-detail con placeholders "Captura en preparación" + placeholder de vídeo + sección "Qué puedes comprobar" con enlaces a secciones eliminadas. Resultado: Hero + "Qué podrás comprobar" (3 puntos: config flexible, activación opcional, convivencia con límites) + nota de estado + CTA. Página de ~245 → 148 líneas.
 
-**Pendiente:** sml-demo.mp4. Plan: añadir 2–3 capturas + "En desarrollo fase 5" o similar.
+**Pendiente:** sml-demo.mp4.
 
 ---
 
@@ -222,15 +224,23 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 3. **Acordeón 1:** "Informe oficial MT5 — comprueba esta operativa tú mismo" — 5 capturas (Summary, Profit & Loss, Long & Short, Symbols, Risks). Sin editar.
 4. **Acordeón 2:** "Historial de transacciones — detalle por operación" — captura editada (zonas clave en amarillo) + enlace "Abrir informe HTML original" (UTF-16 LE, datos personales redactados)
 5. Enlace: "¿Quieres ver los logs? Guía visual de logs en MT5 (VIDEO)" → `/features/precision#precision-logs-guide`
-6. Sección "Auditoría" — enlace a Precisión
+6. Sección "Auditoría: la prueba no es nuestra" — **COMPLETADA 31 Ene 2026:**
+   - Hook: "MetaTrader documenta. tevsys ejecuta."
+   - "Para quién": traders retail, gestoras, prop firms, academias
+   - "Dos capas de evidencia": MT5 (qué ocurrió) + logs tevsys (por qué)
+   - "Todo lo de arriba es la prueba": +50 operativas documentadas
+   - Enlace a Precisión operativa 49
+   - Etiquetas amarillas `.audit-label`
 7. CTA final
+
+**Card home actualizada:** Datos concretos "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
 
 **Imágenes (6):** `evidencia-100k-informe-resumen.png`, `-profitloss.png`, `-longshort.png`, `-symbols.png`, `-risks.png`, `evidencia-100k-html-transacciones.png`
 **HTML:** `public/docs/evidencia-100k-historial-transacciones.html`
 
-**Eliminado:** Sección 50K completa, sección "Qué puedes comprobar" (bullets), sección "Reporte oficial MT5" separada.
+**Eliminado:** Sección 50K completa, sección "Qué puedes comprobar" original (reescrita como guía de navegación), sección "Reporte oficial MT5" separada.
 
-**Pendiente:** Vídeo ganancias (+1.111€, 20 lotes) como secundario. Sección "Auditoría" con contenido propio. Ver CHANGELOG §36.
+**Pendiente:** Vídeo ganancias (+1.111€, 20 lotes) como secundario. Ver CHANGELOG §36 + §37.
 
 ---
 
@@ -283,8 +293,11 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | HomeHeroSection.astro | Hero con imagen, grid, alineaciones |
 | Footer.astro | Footer con iconos, enlaces, frase indie |
 | BaseHead.astro | Favicon, apple-touch-icon, fuentes |
-| nav.js | Config nav: Inicio, Empresas, Acceso, Contacto |
-| footer.js | Config enlaces y columnas |
+| nav.js | Config nav: Inicio, Empresas, Contacto (sin Acceso) |
+| footer.js | Config columnas: Navegación, Producto, Legal |
+| legal.astro | Aviso Legal (contenido mínimo, pendiente abogado) |
+| privacidad.astro | Política de Privacidad (contenido mínimo) |
+| terminos.astro | Términos de Uso (contenido mínimo) |
 | index.astro | Home: cards, planes |
 | contact.astro | Formulario por plan/demo |
 | empresas.astro, empresas-thank-you.astro | Micro-página canal B2B |
@@ -352,12 +365,12 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Acceso | Contacto. Contacto=Acceso unificado (?flow=acceso). Hero: "Plataforma pionera en verificación de disciplina automatizada y gestión de riesgo para mercados financieros"; punto tagline 22px. Trazabilidad: logs, panel, reporte oficial MT5. Cards Advanced/Pro: "En [plan] ofrecemos todo lo de...". Formulario: badge DEMO 22px; checkbox avísame (default Sí) Advanced/Pro; intros desde features: "Ya has visto en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo." Respuesta manual: enlaces a micropágina + contexto breve. Thank-you flow-aware. PENDIENTE_VERIFICACION: §6 verificación antes de dar link demo. Docs: CHANGELOG-TEVSYS §31, ROADMAP, CONTENIDO_WEB, PENDIENTE_VERIFICACION.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. "Acceso" eliminado (sin destino hasta demo descargable). Hero: "Plataforma pionera en verificación de disciplina automatizada y gestión de riesgo para mercados financieros"; punto tagline 22px. Trazabilidad: logs, panel, reporte oficial MT5. Cards: Precisión (0,06% error medio), HyperClose, SML, Evidencia (100k + susurro auditoría). Footer: 4 columnas (Navegación, Producto, Legal) + copyright + "Todos los derechos reservados". Páginas legales: /company/legal, /privacidad, /terminos (mínimas, pendiente abogado). Formulario: badge DEMO; intros desde features. Thank-you flow-aware. Docs: CHANGELOG-TEVSYS §31-§37, ROADMAP, CONTENIDO_WEB.
 ```
 
 ---
 
-**Última actualización:** 12 Mar 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: §31 + §32 + §36 (Evidencia 100k completa: vídeo demo, informe MT5, HTML transacciones).
+**Última actualización:** 31 Ene 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: §31–§37 (Evidencia completa + auditoría, SML limpio, footer legal, nav sin Acceso).
 
 ---
 
@@ -365,7 +378,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 | Entrada | URL | Imagen | Badge | Nota dev | Checkbox avisar | Thank-you |
 |---------|-----|--------|-------|----------|-----------------|-----------|
-| Acceso / Contacto | ?flow=acceso | Essential | DEMO | No | No | Essential listo; Adv/Pro en desarrollo |
+| Contacto | /company/contact | Essential | DEMO | No | No | Essential listo; Adv/Pro en desarrollo |
 | Elegir Essential | ?plan=essential | Essential | DEMO | No | No | Genérico |
 | Elegir Advanced | ?plan=advanced | Advanced | No | Sí | Sí (default) | Lista espera Adv; demo Essential |
 | Elegir Pro | ?plan=pro | Pro | No | Sí | Sí (default) | Lista espera Pro; demo Essential |
