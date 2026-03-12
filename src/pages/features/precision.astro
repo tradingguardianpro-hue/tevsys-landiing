@@ -52,18 +52,18 @@ const seo = {
 					Ir a demo del cierre <span class="proof-link-meta">VIDEO</span>
 				</a>
 			</p>
-			<details id="precision-demo-volatilidad" class="proof-accordion">
-				<summary class="proof-capture-link">Ir a demo en alta volatilidad <span class="proof-link-meta">VIDEO</span></summary>
-				<div class="proof-gallery">
-					<p class="proof-gallery__hint">Límite -1,50%. Cierre en ganancias (+1,83%) con alta volatilidad geopolítica. Protección activa en condiciones extremas.</p>
-					<div class="demo-video proof-gallery-video">
-						<video controls preload="metadata">
-							<source src="/videos/features/precision-demo-volatilidad.mp4" type="video/mp4" />
-							Tu navegador no soporta reproducción de video HTML5.
-						</video>
-					</div>
-				</div>
-			</details>
+		</section>
+
+		<section id="precision-volatilidad" class="feature-demo">
+			<h2>Demo en alta volatilidad — Cierre en ganancias</h2>
+			<p class="feature-demo-hook">Límite -1,50% · Cierre en +1,83% · Alta volatilidad geopolítica</p>
+			<div class="demo-video demo-video--compact" id="precision-volatilidad-container">
+				<video id="precision-volatilidad-video" controls preload="metadata">
+					<source src="/videos/features/precision-demo-volatilidad.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
+			<p class="demo-edit-note">Misma precisión en condiciones extremas. El sistema cierra al alcanzar el límite, también en positivo.</p>
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail">
@@ -174,11 +174,13 @@ const seo = {
 		}
 	}
 	function initDemoExpand() {
-		const video = document.getElementById('precision-demo-video');
-		const container = document.getElementById('precision-demo-container');
-		if (!video || !container) return;
-		video.addEventListener('play', () => container.classList.add('demo-video--playing'));
-		video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+		[['precision-demo-video', 'precision-demo-container'], ['precision-volatilidad-video', 'precision-volatilidad-container']].forEach(([vid, ctn]) => {
+			const video = document.getElementById(vid);
+			const container = document.getElementById(ctn);
+			if (!video || !container) return;
+			video.addEventListener('play', () => container.classList.add('demo-video--playing'));
+			video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+		});
 	}
 	function openLogsGuideIfTarget() {
 		if (window.location.hash !== '#precision-logs-guide') return;
@@ -248,12 +250,14 @@ const seo = {
 		opacity: 0.86;
 		margin: 0.35rem 0 0;
 	}
-	#precision-demo {
+	#precision-demo,
+	#precision-volatilidad {
 		scroll-margin-top: 5.5rem;
 		border-radius: var(--theme-shape-radius);
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 	}
-	#precision-demo:target {
+	#precision-demo:target,
+	#precision-volatilidad:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
@@ -265,6 +269,17 @@ const seo = {
 	.feature-cta h2 {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
+	}
+	.feature-demo-hook {
+		margin: 0 0 0.75rem;
+		font-style: italic;
+		opacity: 0.9;
+	}
+	.demo-edit-note {
+		margin: 0.5rem 0 0;
+		font-size: 0.88rem;
+		opacity: 0.7;
+		font-style: italic;
 	}
 	.demo-placeholder {
 		background: var(--theme-surface-1);
