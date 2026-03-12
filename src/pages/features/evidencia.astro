@@ -96,6 +96,15 @@ const seo = {
 			</p>
 		</section>
 
+		<section class="feature-proof">
+			<h2>Qué puedes comprobar</h2>
+			<ul>
+				<li><a class="evidence-link" href="#evidencia-demo">Demo real: cuenta 100k, 20 lotes, cierre automático.</a></li>
+				<li><a class="evidence-link" href="#evidencia-informe-mt5">Informe oficial MT5 (5 pestañas, sin editar).</a></li>
+				<li><a class="evidence-link" href="#evidence-audit">Auditoría: dos capas de evidencia independientes.</a></li>
+			</ul>
+		</section>
+
 		<section id="evidence-audit" class="feature-proof-detail">
 			<h3>Auditoría: la prueba no es nuestra</h3>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>MetaTrader documenta. tevsys ejecuta.</p>
@@ -413,6 +422,13 @@ const seo = {
 </style>
 
 <script>
+	function playDemoIfTarget() {
+		if (window.location.hash !== '#evidencia-demo') return;
+		const video = document.getElementById('evidencia-demo-video');
+		if (video) {
+			video.play().catch(() => {});
+		}
+	}
 	function initDemoExpand() {
 		const video = document.getElementById('evidencia-demo-video');
 		const container = document.getElementById('evidencia-demo-container');
@@ -421,6 +437,10 @@ const seo = {
 		video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
 	}
 	document.addEventListener('DOMContentLoaded', () => {
+		playDemoIfTarget();
 		initDemoExpand();
+	});
+	window.addEventListener('hashchange', () => {
+		playDemoIfTarget();
 	});
 </script>
