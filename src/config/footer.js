@@ -18,4 +18,12 @@ export const footerLists = [
       { title: 'Evidencia', slug: '/features/evidencia' },
     ],
   },
+  {
+    title: 'Legal',
+    items: [
+      { title: 'Aviso Legal', slug: '/company/legal' },
+      { title: 'Privacidad', slug: '/company/privacidad' },
+      { title: 'Términos de Uso', slug: '/company/terminos' },
+    ],
+  },
 ];

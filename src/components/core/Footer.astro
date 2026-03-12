@@ -64,13 +64,6 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
       <p class="footer-independiente">
         <a href="#" class="footer-independiente__link">❤️ Made with love for trading. — Desarrollado independientemente. Sin inversores. Sin excusas.</a>
       </p>
-      <p class="footer-legal-links">
-        <a href="/company/legal">Aviso Legal</a>
-        <span class="footer-legal-sep" aria-hidden="true">·</span>
-        <a href="/company/privacidad">Privacidad</a>
-        <span class="footer-legal-sep" aria-hidden="true">·</span>
-        <a href="/company/terminos">Términos de Uso</a>
-      </p>
       <p>Copyright &copy; {new Date().getFullYear()} {copyrightName}. Todos los derechos reservados.</p>
     </div>
 
@@ -93,7 +86,7 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   .footer-grid__container {
     padding: 2rem 0 1rem 0;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 1.5rem;
   }
   .footer-brand__slot {
@@ -187,31 +180,13 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   .footer-independiente__link:hover {
     color: #f5b041;
   }
-  .footer-legal-links {
-    margin-bottom: 0.4rem;
-    font-size: var(--font-size-sm);
-  }
-  .footer-legal-links a {
-    color: inherit;
-    text-decoration: none;
-    opacity: 0.75;
-    transition: opacity 0.2s ease, color 0.2s ease;
-  }
-  .footer-legal-links a:hover {
-    opacity: 1;
-    color: #f5b041;
-  }
-  .footer-legal-sep {
-    margin: 0 0.4rem;
-    opacity: 0.45;
-  }
   @media (max-width: 768px) {
     .footer-grid__container :first-child {
       grid-column: 1/-1;
     }
     .footer-grid__container {
       padding: 1.5rem 0;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
   }
