@@ -97,14 +97,14 @@ const seo = {
 		</section>
 
 		<section id="evidence-audit" class="feature-proof-detail">
-			<h3>Trazabilidad para auditoría</h3>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>La prueba no la generamos nosotros.</p>
-			<p><strong>Para quién:</strong> Para el trader que quiere verse a sí mismo con datos, no con sensaciones. Para gestoras, prop firms y cualquiera que gestione capital ajeno y necesite demostrar que el límite se cumplió — con datos, no con palabras.</p>
-			<p><strong>Dos capas de evidencia:</strong> MT5 documenta qué ocurrió: hora, precio, volumen, resultado. Informe oficial, independiente de tevsys. Los logs propios de tevsys documentan por qué: el cálculo, el límite configurado, la decisión de cierre. Dos fuentes. Una verificación.</p>
-			<p><strong>Todo lo de arriba es la prueba:</strong> El vídeo, el informe MT5 y las transacciones que acabas de ver son un ejemplo real. 50 operativas documentadas con el mismo nivel de detalle.</p>
+			<h3>Auditoría: la prueba no es nuestra</h3>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>MetaTrader documenta. tevsys ejecuta.</p>
+			<p><span class="audit-label">Para quién</span> Para ti, que quieres verte con datos y no con sensaciones. Y para gestoras, prop firms o cualquiera que gestione capital ajeno y necesite demostrar que el límite se cumplió.</p>
+			<p><span class="audit-label">Dos capas de evidencia</span> MT5 documenta qué ocurrió: hora, precio, volumen, resultado. Informe oficial, independiente de tevsys. Los logs propios de tevsys documentan por qué: el cálculo, el límite, la decisión de cierre. Dos fuentes. Una verificación.</p>
+			<p><span class="audit-label">Todo lo de arriba es la prueba</span> El vídeo, el informe MT5 y las transacciones que acabas de ver son un ejemplo real. Tenemos 50 más, documentadas con el mismo nivel de detalle.</p>
 			<p>
 				<a class="proof-capture-link" href="/features/precision#precision-49-evidence">
-					Ver evidencia operativa documentada (Precisión)
+					Ver las 50 operativas documentadas (Precisión)
 				</a>
 			</p>
 		</section>
@@ -266,8 +266,20 @@ const seo = {
 		flex-shrink: 0;
 	}
 	.feature-proof-detail p {
-		margin: 0;
+		margin: 0.45rem 0 0;
 		line-height: 1.5;
+	}
+	.feature-proof-detail p:first-of-type {
+		margin-top: 0;
+	}
+	.audit-label {
+		display: block;
+		color: #f5b041;
+		font-weight: 700;
+		font-size: 0.88rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		margin-bottom: 0.2rem;
 	}
 	.feature-proof-detail:target {
 		border-color: rgba(245, 176, 65, 0.55);
