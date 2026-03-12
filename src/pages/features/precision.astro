@@ -187,14 +187,21 @@ const seo = {
 		const details = document.getElementById('precision-logs-guide');
 		if (details && details.tagName === 'DETAILS') details.setAttribute('open', '');
 	}
+	function openEvidenceIfTarget() {
+		if (window.location.hash !== '#precision-49-evidence') return;
+		const details = document.getElementById('precision-49-evidence');
+		if (details && details.tagName === 'DETAILS') details.setAttribute('open', '');
+	}
 	document.addEventListener('DOMContentLoaded', () => {
 		playDemoIfTarget();
 		initDemoExpand();
 		openLogsGuideIfTarget();
+		openEvidenceIfTarget();
 	});
 	window.addEventListener('hashchange', () => {
 		playDemoIfTarget();
 		openLogsGuideIfTarget();
+		openEvidenceIfTarget();
 	});
 </script>
 
@@ -402,7 +409,8 @@ const seo = {
 		opacity: 0.78;
 	}
 	.feature-proof-detail:target,
-	#precision-logs:has(#precision-logs-guide:target) {
+	#precision-logs:has(#precision-logs-guide:target),
+	#precision-stats:has(#precision-49-evidence:target) {
 		border-color: rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
