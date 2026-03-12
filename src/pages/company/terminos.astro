@@ -1,0 +1,40 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+  title: 'Términos de Uso | tevsys',
+  description: 'Términos de uso del sitio web y producto tevsys.',
+};
+---
+
+<Layout seo={seo}>
+  <TextSection narrow>
+    <h1>Términos de Uso</h1>
+
+    <h2>Objeto</h2>
+    <p>Este documento establece las condiciones generales de uso del sitio web tevsys.io y del producto tevsys™ (Expert Advisor para MetaTrader 5).</p>
+
+    <h2>Naturaleza del producto</h2>
+    <p>tevsys es una herramienta de gestión de riesgo y disciplina operativa. Ejecuta cierres automáticos según los límites configurados por el usuario. No opera por cuenta del usuario, no emite señales de trading y no constituye asesoramiento financiero de ningún tipo.</p>
+
+    <h2>Responsabilidad del usuario</h2>
+    <p>El usuario es el único responsable de la configuración de sus límites, de sus decisiones operativas y de los resultados derivados del uso del producto. tevsys cumple lo que el usuario configura; la decisión es siempre suya.</p>
+
+    <h2>Uso del contenido</h2>
+    <p>Todo el contenido publicado en este sitio web (textos, vídeos, capturas, informes, documentación técnica) es propiedad de tevsys™ y queda protegido por derechos de propiedad intelectual. Su reproducción o distribución sin autorización expresa está prohibida.</p>
+
+    <h2>Documento en desarrollo</h2>
+    <p>Estos términos de uso serán ampliados y formalizados con asesoramiento jurídico profesional antes del lanzamiento comercial del producto. Para cualquier consulta, contacta con nosotros en <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+
+    <p class="legal-update">Última actualización: enero 2026</p>
+  </TextSection>
+</Layout>
+
+<style>
+  .legal-update {
+    margin-top: 2rem;
+    font-size: 0.88rem;
+    opacity: 0.7;
+  }
+</style>

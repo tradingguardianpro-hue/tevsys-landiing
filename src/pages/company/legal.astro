@@ -3,48 +3,37 @@ import { TextSection } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
 
 const seo = {
-  title: `Legal Page | Astro Odyssey Theme`,
-  description: `This is the legal page template. It is a great starter for your company's Terms of Service, Terms & Conditions, Privacy Policy, etc.`,
+  title: 'Aviso Legal | tevsys',
+  description: 'Aviso legal de tevsys. Propiedad intelectual, titularidad y condiciones generales.',
 };
 ---
 
 <Layout seo={seo}>
   <TextSection narrow>
-    <h1>Legal Page</h1>
+    <h1>Aviso Legal</h1>
 
-    <p>This is the legal page template. It is a great starter for your company's Terms of Service, Terms & Conditions,
-      Privacy Policy, etc.</p>
+    <h2>Titularidad</h2>
+    <p>tevsys™ es un producto de software desarrollado de forma independiente, sin inversores externos, con sede en Barcelona (España).</p>
+    <p>Toda la tecnología, diseño, lógica operativa, documentación y contenido audiovisual publicado en este sitio web es propiedad intelectual de sus creadores.</p>
 
-    <h2>Terms of Service</h2>
+    <h2>Propiedad intelectual</h2>
+    <p>El nombre comercial tevsys™, su logotipo, la arquitectura del Expert Advisor (EA) para MetaTrader 5, los algoritmos de control de riesgo (HyperClose, SML, precisión milimétrica) y toda la documentación técnica asociada están protegidos por derechos de propiedad intelectual.</p>
+    <p>Queda prohibida su reproducción, distribución o modificación total o parcial sin autorización expresa por escrito.</p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, obcaecati. Aspernatur facilis molestias
-      vitae. Aliquid debitis eum quis repudiandae pariatur possimus provident accusantium reiciendis nemo, culpa labore
-      laborum, dolorum ea.</p>
+    <h2>Limitación de responsabilidad</h2>
+    <p>tevsys es una herramienta de gestión de riesgo y disciplina operativa. No constituye asesoramiento financiero, de inversión ni recomendación de trading. El usuario es el único responsable de sus decisiones operativas.</p>
 
-    <p>Corrupti impedit perferendis, libero in, voluptates quod ratione repudiandae veniam sapiente necessitatibus, eius
-      illo. Impedit quibusdam esse saepe placeat incidunt voluptatibus soluta dolore blanditiis ad provident animi
-      illum, est adipisci?</p>
+    <h2>Documento en desarrollo</h2>
+    <p>Este aviso legal será ampliado y revisado con asesoramiento jurídico profesional antes del lanzamiento comercial del producto. Para cualquier consulta legal, contacta con nosotros en <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
 
-    <p>Ratione optio necessitatibus numquam dignissimos sunt molestiae ipsum fugiat quae maxime veniam aspernatur eius
-      quidem vel reprehenderit sequi, molestias perspiciatis, illo architecto perferendis nobis, in dolore! Nam
-      asperiores eaque totam.</p>
-
-    <p>Repudiandae, labore alias. Voluptatem quia itaque sequi, aperiam, reprehenderit ipsum libero quae adipisci
-      possimus eum esse corrupti sapiente harum dignissimos eligendi cum iure tempora magnam nemo, sunt provident vero.
-      Voluptatibus.</p>
-
-    <h2>Privacy Policy</h2>
-
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus eveniet quibusdam ipsa, veniam adipisci rerum
-      temporibus inventore! Sit quas vero laboriosam tempora alias! Fugit, saepe earum quod modi harum qui.
-      Expedita, pariatur consequuntur! Modi, maiores. Quaerat voluptatibus nostrum non harum rerum dolorem totam qui
-      repellendus, itaque dignissimos eveniet consequuntur ducimus! Non commodi magnam nemo, pariatur facilis
-      repellendus sunt fuga ipsa.
-    </p>
-
-    <p>Consequuntur similique ab ea tenetur, quo aperiam molestias sed facilis minus eaque eveniet libero quis
-      accusantium deleniti tempore? Qui vel reiciendis voluptates corporis eum repellat maiores fugit, eveniet sapiente
-      ad.</p>
+    <p class="legal-update">Última actualización: enero 2026</p>
   </TextSection>
 </Layout>
+
+<style>
+  .legal-update {
+    margin-top: 2rem;
+    font-size: 0.88rem;
+    opacity: 0.7;
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+  title: 'Política de Privacidad | tevsys',
+  description: 'Política de privacidad de tevsys. Información sobre el tratamiento de datos personales.',
+};
+---
+
+<Layout seo={seo}>
+  <TextSection narrow>
+    <h1>Política de Privacidad</h1>
+
+    <h2>Responsable del tratamiento</h2>
+    <p>tevsys™, con sede en Barcelona (España). Contacto: <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+
+    <h2>Datos que recogemos</h2>
+    <p>Actualmente, este sitio web solo recoge los datos que el usuario facilita voluntariamente a través del formulario de contacto: nombre, correo electrónico y mensaje.</p>
+    <p>No utilizamos cookies de seguimiento ni herramientas de analítica de terceros en esta fase del producto.</p>
+
+    <h2>Finalidad</h2>
+    <p>Los datos facilitados se utilizan exclusivamente para responder a consultas, gestionar solicitudes de acceso y mantener comunicación relacionada con el producto.</p>
+
+    <h2>Conservación y derechos</h2>
+    <p>Los datos se conservan mientras exista una relación de interés legítimo. El usuario puede ejercer sus derechos de acceso, rectificación, supresión y portabilidad escribiendo a <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+
+    <h2>Documento en desarrollo</h2>
+    <p>Esta política de privacidad será ampliada y adaptada a la normativa vigente (RGPD) con asesoramiento jurídico profesional antes del lanzamiento comercial. Para cualquier consulta, contacta con nosotros en <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+
+    <p class="legal-update">Última actualización: enero 2026</p>
+  </TextSection>
+</Layout>
+
+<style>
+  .legal-update {
+    margin-top: 2rem;
+    font-size: 0.88rem;
+    opacity: 0.7;
+  }
+</style>
