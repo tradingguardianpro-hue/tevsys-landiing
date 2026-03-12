@@ -1039,3 +1039,93 @@ Añadida sección **`Elige tu cuenta`** antes del bloque del fundador.
 - `docs/Formato_Clave_Licencia_Capital_Por_Tier_TEVSYS.md` — formato clave, capital por tier, popups.
 - `docs/ANALISIS_CAUSA_RAIZ_FECHA_BLOQUEO_09MAR2026.md` — contexto técnico del bug de GVs.
 - `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` — changelog V11.
+
+---
+
+## 36) Evidencia 100k completa: vídeo demo + informe MT5 + HTML transacciones (11 Mar 2026)
+
+### 36.1 Vídeo demo pérdida 100k
+
+**Operativa:**
+- Cuenta: 100.000€ nueva (Infinox, demo, Hedge)
+- Activo: GER40, 2 compras de 10 lotes = 20 lotes en mercado
+- Límite configurado: -1%
+- Cierre automático: -1.007,20€ (-1,01%)
+- Error/desviación: 7,20€ = **0,0072%**
+- Contexto: apertura Wall Street, alta volatilidad
+- Duración vídeo: **1 min 41 s**, con audio
+
+**Archivo:** `public/videos/features/evidencia-100k-perdida.mp4`
+
+**Overlays (secuencia):**
+1. Cuenta de 100.000€, cuenta nueva, sin operaciones previas
+2. Primera compra 10 lotes / Límite configurado -1% / Panel a tiempo real
+3. Segunda compra 10 lotes / Total 20 lotes en mercado
+4. 20 lotes en 100K, alto riesgo. El sistema no juzga, protege.
+5. Apertura Wall Street, alta volatilidad
+6. Cálculo en curso. Cierre inminente.
+7. Cierre automático: 2 posiciones, mismo segundo, mismo precio
+8. -1.007,20€ / Error: 7,20€ / Precisión: 0,0072%
+9. tevsys — where precision meets the edge + diana
+
+**Embed:** Compacto (420px), se expande al dar play. Mismo patrón que Precisión y HyperClose.
+
+### 36.2 Reestructuración de evidencia.astro
+
+**Antes (Mar 2026 §32):**
+- Placeholder de vídeo con texto "Vídeo en preparación"
+- Sección "Qué puedes comprobar" con 3 bullets
+- Sección "Panel y logs" con 6 capturas de cuenta 50K
+- Sección "Reporte oficial MT5" con capturas placeholder
+- Sección "Auditoría" con enlace a Precisión
+
+**Después (11 Mar 2026):**
+- **Vídeo real** `evidencia-100k-perdida.mp4` con hook: `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
+- **Acordeón 1:** "Informe oficial MT5 — comprueba esta operativa tú mismo" con 5 capturas (todas las pestañas, sin editar):
+  - Summary, Profit & Loss, Long & Short, Symbols, Risks
+- **Acordeón 2:** "Historial de transacciones — detalle por operación" con captura editada (zonas clave en amarillo) + enlace "Abrir informe HTML original"
+- **Enlace logs:** "¿Quieres ver los logs de esta operativa? Guía visual de logs en MT5 (VIDEO)" → `/features/precision#precision-logs-guide`
+- Sección "Auditoría" mantenida (enlace a Precisión)
+- **Eliminadas:** sección 50K completa, sección "Qué puedes comprobar" (bullets), sección "Reporte oficial MT5" separada
+
+### 36.3 Capturas informe MT5
+
+| # | Archivo | Pestaña MT5 |
+|---|---------|-------------|
+| 1 | `evidencia-100k-informe-resumen.png` | Summary — -1.007,20€, balance 98.992,80€ |
+| 2 | `evidencia-100k-informe-profitloss.png` | Profit & Loss — desglose pérdida |
+| 3 | `evidencia-100k-informe-longshort.png` | Long & Short — 100% Long, 2 manuales |
+| 4 | `evidencia-100k-informe-symbols.png` | Symbols — GER40 único activo |
+| 5 | `evidencia-100k-informe-risks.png` | Risks — drawdown, worst trade |
+
+Ruta: `public/images/evidence/`
+
+### 36.4 HTML transacciones
+
+- **Captura editada:** `evidencia-100k-html-transacciones.png` — zonas clave marcadas en amarillo (Beneficio Neto, Reducción máxima, Reducción relativa)
+- **HTML original descargable:** `public/docs/evidencia-100k-historial-transacciones.html` — archivo MT5 original (UTF-16 LE) con datos personales redactados ([Nombre redactado], [Cuenta redactada], [Broker redactado])
+- **Fix encoding:** Archivo mantenido en UTF-16 LE original. Se añadió header Content-Type en `netlify.toml` para `/docs/*.html`
+
+### 36.5 Fix extensiones dobles
+
+- 4 de 5 capturas del informe se subieron con extensión `.png.png` — renombradas a `.png` correcto.
+
+### 36.6 Archivos modificados
+- `src/pages/features/evidencia.astro` — reestructuración completa
+- `netlify.toml` — header Content-Type para docs HTML
+- `public/videos/features/evidencia-100k-perdida.mp4`
+- `public/images/evidence/evidencia-100k-informe-*.png` (5 capturas)
+- `public/images/evidence/evidencia-100k-html-transacciones.png`
+- `public/docs/evidencia-100k-historial-transacciones.html`
+
+### 36.7 Commits asociados
+- `Evidencia: sustituir placeholder por vídeo real 100k pérdida`
+- `Evidencia: igualar embed vídeo con precisión y hyperclose (compact + expand)`
+- `Evidencia: informe MT5 100k debajo del vídeo, eliminar sección 50K obsoleta`
+- `Evidencia: acordeón HTML transacciones + descarga informe + fix content-type`
+- `Evidencia: fix encoding HTML transacciones (UTF-16 LE original)`
+- `Evidencia: enlace guía visual de logs (precisión)`
+
+### 36.8 Pendiente
+- Vídeo de ganancias (+1.111€, ActivTrades, 20 lotes) como vídeo secundario
+- Sección "Auditoría" con contenido propio (actualmente solo enlace a Precisión)

@@ -185,7 +185,8 @@ Documento de contenido/copy actual para revisión de equipo.
 - `Evidencia`:
   - Título: `Evidencia verificable: aquí no hay "creemos".`
   - Hook: `• Lo que no se puede demostrar, no cuenta.`
-  - Soporte: panel, logs y reporte oficial MT5.
+  - Hook demo: `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
+  - Soporte: vídeo demo 1 min 41 s (con audio), informe MT5 (5 capturas), HTML transacciones descargable.
 
 ### Estado actual Precisión (Mar 2026)
 - **Demo rápida:** `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto que se expande al dar play.
@@ -196,19 +197,28 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Estado actual HyperClose (Mar 2026)
 - **Demo rápida:** `hyperclose-demo.mp4` (1 min 35 s, sin audio). Cierre, 3 niveles semáforo, 7 intentos. Nota: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
 - **Cierre inmediato y Semáforo:** ambos enlazan a la demo. Acordeón "Ver capturas de los 3 modales" con imágenes de cada nivel.
-- **Pendiente:** vídeo Día OFF.
+- **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) publicado + acordeón con 5 capturas. **COMPLETADO.**
+
+### Estado actual Evidencia (11 Mar 2026)
+- **Demo rápida:** `evidencia-100k-perdida.mp4` (1 min 41 s, con audio). Cuenta 100k nueva, 20 lotes GER40, cierre por límite -1% = -1.007,20€, error 0,0072%. Apertura Wall Street.
+- **Hook demo:** `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
+- **Acordeón 1:** "Informe oficial MT5 — comprueba esta operativa tú mismo" — 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
+- **Acordeón 2:** "Historial de transacciones — detalle por operación" — captura editada (zonas clave en amarillo) + enlace HTML original descargable.
+- **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide` (resaltado amarillo + autoabrir acordeón).
+- **Eliminadas:** sección 50K, bullets "Qué puedes comprobar", sección Reporte MT5 separada.
+- **Pendiente:** vídeo ganancias (+1.111€) como secundario; sección "Auditoría" con contenido propio.
 
 ### Pendiente inmediato
-- Vídeo Día OFF para HyperClose.
 - Mantener doble capa de evidencia en Precision/HyperClose (resumen + detalle técnico).
-- SML y Evidencia: videos finales según guía de producción.
+- SML: vídeo final según guía de producción.
 
 ---
 
 ## Pendientes para la próxima sesión
 
-1. Grabar y publicar vídeo Día OFF para HyperClose.
-2. Versiones finales de video para `sml` y `evidencia`.
+1. Vídeo ganancias 100k (+1.111€) como secundario en Evidencia.
+2. Sección "Auditoría" en Evidencia con contenido propio.
+3. Versión final de video para `sml`.
 
 ---
 

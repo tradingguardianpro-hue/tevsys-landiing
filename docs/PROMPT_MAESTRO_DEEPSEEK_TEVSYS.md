@@ -206,21 +206,31 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ---
 
-### 7.4 Evidencia (`/features/evidencia`) — Reestructurado Mar 2026
+### 7.4 Evidencia (`/features/evidencia`) — COMPLETADA 11 Mar 2026
 
 **Copy freeze:**
 - Título: `Evidencia verificable: aquí no hay "creemos".`
 - Hook: `Lo que no se puede demostrar, no cuenta.`
+- Hook demo: `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
 
-**Plantilla unificada:**
-- **Demo cuenta 100k primero** (bloque 2): "Demo rápida — Cuenta 100k"
-- **Subtítulo:** `100.000€ · Misma precisión. Compruébalo tú mismo.`
-- Placeholder hasta `evidencia-100k.mp4`; enlaces alternativos a Precisión y guía logs
-- **Eliminada** sección "Evidencia en acción"
-- **Acordeón Reporte MT5:** "Ver capturas de la operativa 100k" — 4 capturas + "Descargar informe completo PDF"
-- Rutas: `evidencia-100k-reporte-01.png` a `04.png`, `evidencia-100k-informe-mt5.pdf`
+**Vídeo publicado:**
+- `evidencia-100k-perdida.mp4` — 1 min 41 s, CON audio. Cuenta 100k nueva, 2 compras de 10 lotes GER40, cierre por límite -1% = -1.007,20€, error 7,20€ (0,0072%). Apertura Wall Street, alta volatilidad.
 
-**Pendiente:** evidencia-100k.mp4, 4 capturas, PDF. Ver CHANGELOG §32, proyecto TGP `PROMPT_DEEPSEEK_WEB_TEVSYS_ESTADO_COMPLETO.md`.
+**Estructura (11 Mar 2026):**
+1. Hero + hook
+2. Demo rápida: embed compacto (420px) que se expande al dar play. Nota: "Vídeo editado para mostrar los momentos clave."
+3. **Acordeón 1:** "Informe oficial MT5 — comprueba esta operativa tú mismo" — 5 capturas (Summary, Profit & Loss, Long & Short, Symbols, Risks). Sin editar.
+4. **Acordeón 2:** "Historial de transacciones — detalle por operación" — captura editada (zonas clave en amarillo) + enlace "Abrir informe HTML original" (UTF-16 LE, datos personales redactados)
+5. Enlace: "¿Quieres ver los logs? Guía visual de logs en MT5 (VIDEO)" → `/features/precision#precision-logs-guide`
+6. Sección "Auditoría" — enlace a Precisión
+7. CTA final
+
+**Imágenes (6):** `evidencia-100k-informe-resumen.png`, `-profitloss.png`, `-longshort.png`, `-symbols.png`, `-risks.png`, `evidencia-100k-html-transacciones.png`
+**HTML:** `public/docs/evidencia-100k-historial-transacciones.html`
+
+**Eliminado:** Sección 50K completa, sección "Qué puedes comprobar" (bullets), sección "Reporte oficial MT5" separada.
+
+**Pendiente:** Vídeo ganancias (+1.111€, 20 lotes) como secundario. Sección "Auditoría" con contenido propio. Ver CHANGELOG §36.
 
 ---
 
@@ -262,7 +272,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 4. Nombre exacto: precision-demo.mp4, hyperclose-demo.mp4, etc.
 5. Decir al equipo para integrar en web (acordeón, enlace, etc.)
 
-**Vídeos pendientes:** sml-demo.mp4, evidencia-100k.mp4. Día OFF: hyperclose-dias-off-demo.mp4 ya publicado.
+**Vídeos pendientes:** sml-demo.mp4. Evidencia 100k publicado (evidencia-100k-perdida.mp4). Día OFF: hyperclose-dias-off-demo.mp4 ya publicado. Vídeo ganancias 100k (+1.111€): pendiente como secundario en Evidencia.
 
 ---
 
@@ -347,7 +357,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** Mar 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: §31 + §32 (plantilla unificada, Evidencia 100k, acordeón reporte MT5).
+**Última actualización:** 12 Mar 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: §31 + §32 + §36 (Evidencia 100k completa: vídeo demo, informe MT5, HTML transacciones).
 
 ---
 
