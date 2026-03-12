@@ -5,7 +5,7 @@ export const footerLists = [
     title: 'Navegación',
     items: [
       { title: 'Inicio', slug: '/' },
-      { title: 'Acceso', slug: '/company/contact' },
+      { title: 'Empresas', slug: '/company/empresas' },
       { title: 'Contacto', slug: '/company/contact' },
     ],
   },
