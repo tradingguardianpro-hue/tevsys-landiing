@@ -240,6 +240,14 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		background-color: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
+		border: 1px solid transparent;
+		cursor: default;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+	}
+	.plan-card:hover {
+		border-color: rgba(245, 176, 65, 0.4);
+		box-shadow: 0 0 24px rgba(245, 176, 65, 0.2), 0 4px 16px rgba(0, 0, 0, 0.2);
+		transform: translateY(-3px);
 	}
 	.plan-card__image {
 		aspect-ratio: 16 / 9;
@@ -275,6 +283,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		color: #1a1510;
 		font-weight: 600;
 		text-decoration: none;
+		cursor: pointer;
 	}
 	.plan-card__cta:hover {
 		background: #f7c050;
