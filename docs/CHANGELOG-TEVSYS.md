@@ -1280,3 +1280,41 @@ Angello envió audio con feedback sobre la web (imágenes que no llaman, hook m�
 - Vídeo "Guía rápida" o "Cómo funciona en 2 minutos" con voiceover — anunciado a Angello, por grabar
 - Voiceover en vídeos existentes (sustituir música) — valorar
 - Revisar tipografía — valorar
+
+---
+
+## 39) Hero subheadline "Pioneros" + nota MT5 + retroiluminación cards (31 Ene 2026)
+
+Sesión de pulido visual: posicionamiento, legibilidad y consistencia de efectos hover.
+
+### 39.1 Hero — subheadline "Pioneros"
+
+- **Antes:** "Plataforma pionera en verificación de disciplina automatizada y gestión de riesgo para mercados financieros"
+- **Después:** "Pioneros en verificación de disciplina automatizada y gestión de riesgo para mercados financieros"
+- **Racional:** "Pioneros" como posicionamiento diferenciador (precisión documentada, HyperClose, SML, evidencia verificable). Se mantiene "disciplina" por ser central en el mensaje de tevsys.
+
+### 39.2 Hero — nota plataformas más discreta
+
+- **Texto:** "Disponible en MT5 · Próximamente: más plataformas" (debajo del botón Descargar demo)
+- **Cambio:** `font-size: 0.84rem` → `0.76rem` — más sutil, no compite con el CTA
+
+### 39.3 Plan cards — hover con retroiluminación
+
+- **Card no clicable** (`cursor: default`); solo el botón "Elegir X" es clicable
+- **Hover en la card:** borde amarillo, box-shadow con glow (`0 0 24px rgba(245,176,65,0.2)`), `translateY(-3px)` — efecto retroiluminado y 3D
+
+### 39.4 Feature cards — mismo efecto retroiluminación
+
+- **Unificación visual:** `.tevsys-card` (Precisión, HyperClose, SML, Evidencia) ahora usa el mismo efecto que plan cards
+- **Hover:** box-shadow con glow amarillo + `translateY(-3px)` — consistencia entre secciones
+
+### 39.5 Archivos modificados
+
+- `src/components/sections/heros/HomeHeroSection.astro` — subheadline, nota MT5
+- `src/pages/index.astro` — plan-card hover, tevsys-card hover
+
+### 39.6 Commits asociados
+
+- `feat(hero): subheadline Pioneros + reducir nota MT5`
+- `feat(plan-cards): hover con retroiluminación y efecto 3D, solo botón clicable`
+- `feat(cards): unificar efecto retroiluminación en feature cards`
