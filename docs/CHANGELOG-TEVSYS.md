@@ -1235,3 +1235,48 @@ Las tres incluyen: "Será ampliado con asesoramiento jurídico profesional antes
 - Vídeo ganancias 100k (+1.111€) como secundario en Evidencia
 - Vídeo SML demo
 - Asesoramiento jurídico para contenido legal definitivo
+
+---
+
+## 38) Feedback Angello + cards clicables + hook "Tu trading" + jerarquía sección valor (Mar 2026)
+
+Sesión tras feedback de Angello (academia). Cambios aplicados; resto de sugerencias descartadas por alineamiento con estrategia.
+
+### 38.1 Contexto — feedback Angello
+
+Angello envió audio con feedback sobre la web (imágenes que no llaman, hook más directo, vídeos con voiceover, precios, sustituir mano por gráfico). Transcripción en docs. **Decisión:** aplicar lo que encaja (cards, hook, voiceover pendiente); descartar precios (estrategia demo-first), gráfico (mano aporta mensaje), cambios masivos.
+
+**Cierre:** Mensaje firme a Angello: "Con esto cerramos esta ronda. No voy a seguir tocando la web; confío en lo que tenemos." Angello respondió: "al final es tu proyecto... si algún día hay yate, mejor todavía, yo te deseo lo mejor" — interpretado como desvinculación del proyecto. Sin resentimiento; se sigue adelante sin depender de academia.
+
+### 38.2 Cards más clicables (Opción C — híbrido)
+
+- **Flecha "→"** en esquina inferior derecha de cada card (visible, sobre fondo contenido)
+- **Hover marcado:** borde amarillo `rgba(245,176,65,0.45)`, sombra, `translateY(-2px)`
+- **Flecha en hover:** opacity 1, color tevsys amarillo
+- Clase `.tevsys-card__arrow` con `position: absolute; bottom: 1rem; right: 1rem;`
+
+### 38.3 Hero — hook "Tu trading"
+
+- **Antes:** "Tu capital merece más que buenas intenciones"
+- **Después:** "Tu trading merece más que buenas intenciones"
+- **Racional:** "Trading" engloba actividad/oficio — traders individuales y empresas. Más inclusivo que "capital" (evita sonar solo recovery retail).
+
+### 38.4 Sección valor — jerarquía visual
+
+- **Título "¿Cuánto dinero has perdido por no parar a tiempo?":** `1.5rem` → `clamp(1.65rem, 3.5vw, 2rem)`, font-weight 700, margin-bottom 0.5rem
+- **Párrafo hook:** clase `.feature-section__hook`, font-size 1rem, opacity 0.92 — claramente secundario
+
+### 38.5 Archivos modificados
+- `src/pages/index.astro` — cards (arrow + hover), jerarquía sección valor
+- `src/components/sections/heros/HomeHeroSection.astro` — hook "Tu trading"
+
+### 38.6 Commits asociados
+- `home: cards más clicables — flecha + hover marcado (feedback Angello)`
+- `home: mover flecha cards a esquina inferior derecha (mejor visibilidad)`
+- `hero: "Tu capital" → "Tu trading merece más que buenas intenciones"`
+- `home: jerarquía sección valor — pregunta más prominente, párrafo secundario`
+
+### 38.7 Pendiente (pendiente de decisión)
+- Vídeo "Guía rápida" o "Cómo funciona en 2 minutos" con voiceover — anunciado a Angello, por grabar
+- Voiceover en vídeos existentes (sustituir música) — valorar
+- Revisar tipografía — valorar

@@ -72,7 +72,7 @@ Resumen técnico completo para revisión interna / DeepSeq.
   - `hover: #f7c050`
 - Tagline dot: `22px`
 - Copy en modo AIDA:
-  - Atención: `Tu capital merece más que buenas intenciones`
+  - Atención: `Tu trading merece más que buenas intenciones`
   - Interés: `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`
   - Deseo: `Where precision meets the edge`
   - Acción: `Disponible en MT5 · Próximamente: más plataformas` + `Descargar demo →`

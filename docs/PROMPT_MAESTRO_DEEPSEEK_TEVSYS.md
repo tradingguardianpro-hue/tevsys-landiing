@@ -35,7 +35,7 @@
 ## 2. Hero (Mar 2026) — con pelos y señales
 
 ### Copy
-- **H1:** `Tu capital merece más que buenas intenciones`
+- **H1:** `Tu trading merece más que buenas intenciones`
 - **Interés (2 líneas):** `Plataforma pionera en verificación de disciplina automatizada` / `y gestión de riesgo para mercados financieros.`
 - **Tagline:** `Where precision meets the edge` — punto amarillo `22px` (discreto)
 - **Botón:** `Descargar demo →` — amarillo #f5b041, hover #f7c050
@@ -81,6 +81,8 @@
 ---
 
 ## 5. Home — cards de valor (4)
+
+**UX clicable (Mar 2026):** Flecha "→" en esquina inferior derecha de cada card; hover marcado (borde amarillo, sombra, translateY -2px). Opción C híbrido (feedback Angello).
 
 | Card | Hook | Imagen | Enlace |
 |------|------|--------|--------|
@@ -360,17 +362,22 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - fix(empresas): margin-bottom 3rem antes del footer
 - style(empresas): fondo oscuro #06080d, hook como micropáginas, campos con borde ámbar
 
+**Sesión Mar 2026 (feedback Angello):**
+- feat(home): cards más clicables — flecha + hover marcado
+- feat(hero): "Tu capital" → "Tu trading merece más que buenas intenciones"
+- style(home): jerarquía sección valor — título prominente, párrafo secundario
+
 ---
 
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. "Acceso" eliminado (sin destino hasta demo descargable). Hero: "Plataforma pionera en verificación de disciplina automatizada y gestión de riesgo para mercados financieros"; punto tagline 22px. Trazabilidad: logs, panel, reporte oficial MT5. Cards: Precisión (0,06% error medio), HyperClose, SML, Evidencia (100k + susurro auditoría). Footer: 4 columnas (Navegación, Producto, Legal) + copyright + "Todos los derechos reservados". Páginas legales: /company/legal, /privacidad, /terminos (mínimas, pendiente abogado). Formulario: badge DEMO; intros desde features. Thank-you flow-aware. Docs: CHANGELOG-TEVSYS §31-§37, ROADMAP, CONTENIDO_WEB.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). Sección valor: título prominente clamp(1.65-2rem). Footer: 4 columnas + legal + copyright. Docs: CHANGELOG-TEVSYS §31-§38.
 ```
 
 ---
 
-**Última actualización:** 31 Ene 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: §31–§37 (Evidencia completa + auditoría, SML limpio, footer legal, nav sin Acceso).
+**Última actualización:** Mar 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: §31–§38 (cards clicables, hook "Tu trading", jerarquía sección valor, feedback Angello documentado).
 
 ---
 

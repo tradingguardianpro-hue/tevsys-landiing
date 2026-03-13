@@ -13,7 +13,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ---
 
 ## Hero
-- **H1:** `Tu capital merece más que buenas intenciones`
+- **H1:** `Tu trading merece más que buenas intenciones`
 - **Línea aclaratoria (2 líneas):** `Plataforma pionera en verificación de disciplina automatizada` / `y gestión de riesgo para mercados financieros.`
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo discreto (`22px`)
@@ -24,7 +24,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Texto bajo imagen:** `Trading Edge Verification System`
 
 ### Marco de copy del hero (AIDA)
-- **Atención:** `Tu capital merece más que buenas intenciones`
+- **Atención:** `Tu trading merece más que buenas intenciones`
 - **Interés:** `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`
 - **Deseo:** `Where precision meets the edge`
 - **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTA `Descargar demo →`
@@ -36,9 +36,11 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Título
 `¿Cuánto dinero has perdido por no parar a tiempo?`
+- **Jerarquía (Mar 2026):** clamp(1.65rem, 3.5vw, 2rem), font-weight 700 — más prominente que el párrafo
 
-### Subtítulo
+### Subtítulo (feature-section__hook)
 `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
+- font-size 1rem, opacity 0.92 — claramente secundario
 
 ### Línea de trazabilidad (credibilidad)
 `Trazabilidad completa: logs, panel y reporte oficial MT5.`
@@ -47,8 +49,9 @@ Documento de contenido/copy actual para revisión de equipo.
 `Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`
 
 ### Cards (4)
+- **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
 
-#### 1) 0,06% error promedio
+#### 1) 0,06% error medio
 - Hook: `El mercado no perdona. Nosotros tampoco.`
 - Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **50 operativas documentadas**, 0,06% error medio. **Validado en 5 brokers distintos.**
 
