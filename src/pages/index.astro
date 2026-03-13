@@ -15,6 +15,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 			<p class="feature-card__intro-ellos"><span class="feature-hook__dot" aria-hidden="true"></span>Ellos deslizan. En tevsys cerramos.</p>
 			<div class="feature-card__grid">
 				<a href="/features/precision" class="tevsys-card">
+					<span class="tevsys-card__arrow" aria-hidden="true">→</span>
 					<div class="tevsys-card__image">
 						<img src="/assets/images/home/cards/card-1-input.png" alt="0,06% error medio" />
 					</div>
@@ -25,6 +26,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 					</div>
 				</a>
 				<a href="/features/hyperclose" class="tevsys-card">
+					<span class="tevsys-card__arrow" aria-hidden="true">→</span>
 					<div class="tevsys-card__image">
 						<img src="/assets/images/home/cards/card-2-hyperclose.png" alt="HyperClose" />
 					</div>
@@ -35,6 +37,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 					</div>
 				</a>
 				<a href="/features/sml" class="tevsys-card">
+					<span class="tevsys-card__arrow" aria-hidden="true">→</span>
 					<div class="tevsys-card__image">
 						<img src="/assets/images/home/cards/card-3-sml.png" alt="SML Smart Money Lock" />
 					</div>
@@ -47,6 +50,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 					</div>
 				</a>
 				<a href="/features/evidencia" class="tevsys-card">
+					<span class="tevsys-card__arrow" aria-hidden="true">→</span>
 					<div class="tevsys-card__image">
 						<img src="/assets/images/home/cards/card-4-evidencia.png" alt="Evidencia verificable" />
 					</div>
@@ -144,6 +148,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		gap: var(--theme-grid-gap);
 	}
 	.tevsys-card {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		background-color: var(--theme-surface-1);
@@ -151,6 +156,25 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		border-radius: var(--theme-shape-radius);
 		text-decoration: none;
 		overflow: hidden;
+		border: 1px solid transparent;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+	}
+	.tevsys-card:hover {
+		border-color: rgba(245, 176, 65, 0.45);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+		transform: translateY(-2px);
+	}
+	.tevsys-card__arrow {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		font-size: 1.25rem;
+		opacity: 0.45;
+		transition: opacity 0.2s ease, color 0.2s ease;
+	}
+	.tevsys-card:hover .tevsys-card__arrow {
+		opacity: 1;
+		color: #f5b041;
 	}
 	.tevsys-card__image {
 		aspect-ratio: 16/10;
