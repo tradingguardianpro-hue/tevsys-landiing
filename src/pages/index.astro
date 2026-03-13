@@ -9,7 +9,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	<Container>
 		<section class="feature-card__section">
 			<h2 class="feature-section__title">¿Cuánto dinero has perdido por no parar a tiempo?</h2>
-			<p>Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.</p>
+			<p class="feature-section__hook">Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.</p>
 			<p class="feature-card__intro-trazabilidad">Trazabilidad completa: logs, panel y reporte oficial MT5.</p>
 			<p class="feature-card__intro-mecanismo">Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF.</p>
 			<p class="feature-card__intro-ellos"><span class="feature-hook__dot" aria-hidden="true"></span>Ellos deslizan. En tevsys cerramos.</p>
@@ -121,8 +121,14 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	}
 	.feature-section__title {
 		font-family: 'Outfit', -apple-system, sans-serif;
-		font-size: 1.5rem;
-		font-weight: 600;
+		font-size: clamp(1.65rem, 3.5vw, 2rem);
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+	.feature-section__hook {
+		font-size: 1rem;
+		opacity: 0.92;
+		margin-top: 0;
 	}
 	/* Estilo micropáginas: punto amarillo + texto gris (hereda) */
 	.feature-card__intro-ellos {
