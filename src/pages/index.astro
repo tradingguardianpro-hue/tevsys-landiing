@@ -20,7 +20,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 						<img src="/assets/images/home/cards/card-1-input.png" alt="0,06% error medio" />
 					</div>
 					<div class="tevsys-card__content">
-						<h3>0,06% error medio</h3>
+						<h3><span class="card-title__accent">0,06%</span> error medio</h3>
 						<p class="feature-card__hook">El mercado no perdona. Nosotros tampoco.</p>
 						<p>Ajuste en tiempo real: volatilidad • spread • slippage • comisiones</p>
 						<p>50 operativas documentadas. Validado en 5 entornos de ejecución.</p>
@@ -32,7 +32,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 						<img src="/assets/images/home/cards/card-2-hyperclose.png" alt="HyperClose" />
 					</div>
 					<div class="tevsys-card__content">
-						<h3>HyperClose</h3>
+						<h3><span class="card-title__accent">HyperClose</span></h3>
 						<p class="feature-card__hook">La diferencia entre querer parar y no poder seguir.</p>
 						<p>Intentas operar bloqueado, HyperClose cierra en milisegundos.</p>
 						<p>Cada intento queda registrado. También en días OFF.</p>
@@ -44,7 +44,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 						<img src="/assets/images/home/cards/card-3-sml.png" alt="SML Smart Money Lock" />
 					</div>
 					<div class="tevsys-card__content">
-						<h3>SML — Smart Money Lock</h3>
+						<h3><span class="card-title__accent">SML</span> — Smart Money Lock</h3>
 						<p class="feature-card__hook">No es obligatorio. Es una recompensa.</p>
 						<p>Actívalo cuando quieras • Amplías margen 5%-25% (mín. 75% protegido)</p>
 						<p>Conserva lo ganado. Convive con límites y días OFF.</p>
@@ -56,7 +56,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 						<img src="/assets/images/home/cards/card-4-evidencia.png" alt="Evidencia verificable" />
 					</div>
 					<div class="tevsys-card__content">
-						<h3>Evidencia verificable</h3>
+						<h3><span class="card-title__accent">Evidencia</span> verificable</h3>
 						<p class="feature-card__hook">No confíes. Comprueba.</p>
 						<p>100.000€ · 20 lotes · Apertura Wall Street.<br/>Error: -7,20€ al cierre. Vídeo, informe MT5, transacciones.<br/>Todo descargable y verificable.</p>
 						<p class="feature-card__whisper">El desafío está servido. Para ti o para quien te audite.</p>
@@ -75,7 +75,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 						<img src="/assets/images/plans/essential-card.png" alt="Plan Essential" />
 					</div>
 					<div class="plan-card__content">
-						<h3>Essential</h3>
+						<h3><span class="card-title__accent">Essential</span></h3>
 						<p>Demo/beta disponible. Límite diario, precisión milimétrica y HyperClose para validar operativa real.</p>
 						<a href="/company/contact?plan=essential" class="plan-card__cta">Elegir Essential</a>
 					</div>
@@ -85,7 +85,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 						<img src="/assets/images/plans/advanced-card.png" alt="Plan Advanced" />
 					</div>
 					<div class="plan-card__content">
-						<h3>Advanced</h3>
+						<h3><span class="card-title__accent">Advanced</span></h3>
 						<p>En Advanced ofrecemos todo lo de Essential, además: protección configurable toda la semana, SML y días OFF. En desarrollo — lista de espera.</p>
 						<a href="/company/contact?plan=advanced" class="plan-card__cta">Elegir Advanced</a>
 					</div>
@@ -95,7 +95,7 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 						<img src="/assets/images/plans/pro-card.png" alt="Plan Pro" />
 					</div>
 					<div class="plan-card__content">
-						<h3>Pro</h3>
+						<h3><span class="card-title__accent">Pro</span></h3>
 						<p>En Pro ofrecemos todo lo de Advanced, además: drawdown y estructura completa para capitales más altos. En desarrollo — lista de espera.</p>
 						<a href="/company/contact?plan=pro" class="plan-card__cta">Elegir Pro</a>
 					</div>
@@ -197,6 +197,10 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 	}
 	.tevsys-card__content h3 {
 		margin: 0 0 0.5rem 0;
+	}
+	.card-title__accent {
+		color: #f5b041;
+		font-weight: 700;
 	}
 	.tevsys-card__content p {
 		margin: 0 0 0.75rem 0;
