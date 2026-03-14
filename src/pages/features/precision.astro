@@ -71,18 +71,13 @@ const seo = {
 			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
 			<p>Cada evento relevante queda registrado para revisión técnica posterior, con fecha y contexto de ejecución.</p>
 			<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
-			<details id="precision-logs-guide" class="proof-accordion">
-				<summary class="proof-capture-link">Ir a guía de logs <span class="proof-link-meta">VIDEO</span></summary>
-				<div class="proof-gallery">
-					<h3>Guía visual de logs</h3>
-					<div class="demo-video proof-gallery-video">
-						<video controls preload="metadata">
-							<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
-							Tu navegador no soporta reproducción de video HTML5.
-						</video>
-					</div>
-				</div>
-			</details>
+			<p class="feature-demo-hook">Guía visual — otro vídeo que te interesa</p>
+			<div class="demo-video demo-video--compact" id="precision-logs-container">
+				<video id="precision-logs-video" controls preload="metadata">
+					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
 		</section>
 
 		<section id="precision-stats" class="feature-proof-detail">
@@ -174,18 +169,13 @@ const seo = {
 		}
 	}
 	function initDemoExpand() {
-		[['precision-demo-video', 'precision-demo-container'], ['precision-volatilidad-video', 'precision-volatilidad-container']].forEach(([vid, ctn]) => {
+		[['precision-demo-video', 'precision-demo-container'], ['precision-volatilidad-video', 'precision-volatilidad-container'], ['precision-logs-video', 'precision-logs-container']].forEach(([vid, ctn]) => {
 			const video = document.getElementById(vid);
 			const container = document.getElementById(ctn);
 			if (!video || !container) return;
 			video.addEventListener('play', () => container.classList.add('demo-video--playing'));
 			video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
 		});
-	}
-	function openLogsGuideIfTarget() {
-		if (window.location.hash !== '#precision-logs-guide') return;
-		const details = document.getElementById('precision-logs-guide');
-		if (details && details.tagName === 'DETAILS') details.setAttribute('open', '');
 	}
 	function openEvidenceIfTarget() {
 		if (window.location.hash !== '#precision-49-evidence') return;
@@ -195,12 +185,10 @@ const seo = {
 	document.addEventListener('DOMContentLoaded', () => {
 		playDemoIfTarget();
 		initDemoExpand();
-		openLogsGuideIfTarget();
 		openEvidenceIfTarget();
 	});
 	window.addEventListener('hashchange', () => {
 		playDemoIfTarget();
-		openLogsGuideIfTarget();
 		openEvidenceIfTarget();
 	});
 </script>
@@ -409,7 +397,6 @@ const seo = {
 		opacity: 0.78;
 	}
 	.feature-proof-detail:target,
-	#precision-logs:has(#precision-logs-guide:target),
 	#precision-stats:has(#precision-49-evidence:target) {
 		border-color: rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
