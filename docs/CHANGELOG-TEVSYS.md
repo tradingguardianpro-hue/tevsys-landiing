@@ -1364,3 +1364,19 @@ Misma lógica que Precisión e HyperClose: vídeos visibles en secciones propias
 ### 42.2 Commit asociado
 
 - `feat(evidencia): guía logs visible + bullet — misma lógica que Precisión e HyperClose`
+
+---
+
+## 43) Precisión — H1 con punch "SL de mantequilla" (Feb 2026)
+
+Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin pedir perdón.
+
+### 43.1 Cambio aplicado
+
+- **Antes:** "Precisión de cierre: donde configuras, cerramos."
+- **Después:** "Precisión de cierre. / Olvídate de los SL de mantequilla. / Cerramos donde configuras."
+- **Archivo:** `src/pages/features/precision.astro`
+
+### 43.2 Commit asociado
+
+- `feat(precision): H1 con punch — olvídate de los SL de mantequilla`
