@@ -58,9 +58,13 @@ const seo = {
 			<h3>Semáforo de responsabilidad</h3>
 			<p class="feature-proof-subtitle">Tres niveles de aviso por reiteración</p>
 			<p>El sistema escala mensajes educativos y de responsabilidad según la repetición del intento.</p>
-			<p>
-				<a class="proof-capture-link" href="#hyperclose-demo">Ir a demo del cierre <span class="proof-link-meta">VIDEO</span></a> — El mismo vídeo muestra los 3 niveles del semáforo.
-			</p>
+			<p class="feature-demo-hook">Los 3 niveles en vídeo — mismo que demo rápida</p>
+			<div class="demo-video demo-video--compact" id="hyperclose-semaphore-container">
+				<video id="hyperclose-semaphore-video" controls preload="metadata">
+					<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
 			<details class="proof-accordion">
 				<summary class="proof-capture-link">Ver capturas de los 3 modales</summary>
 				<div class="proof-gallery">
@@ -185,18 +189,14 @@ const seo = {
 		}
 	}
 	function initDemoExpand() {
-		const video = document.getElementById('hyperclose-demo-video');
-		const container = document.getElementById('hyperclose-demo-container');
-		if (video && container) {
-			video.addEventListener('play', () => container.classList.add('demo-video--playing'));
-			video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
-		}
-		const offVideo = document.getElementById('hyperclose-off-demo-video');
-		const offContainer = document.querySelector('.hyperclose-off-demo');
-		if (offVideo && offContainer) {
-			offVideo.addEventListener('play', () => offContainer.classList.add('demo-video--playing'));
-			offVideo.addEventListener('ended', () => offContainer.classList.remove('demo-video--playing'));
-		}
+		[['hyperclose-demo-video', 'hyperclose-demo-container'], ['hyperclose-off-demo-video', 'hyperclose-off-demo'], ['hyperclose-semaphore-video', 'hyperclose-semaphore-container']].forEach(([vidId, ctnId]) => {
+			const video = document.getElementById(vidId);
+			const container = document.getElementById(ctnId);
+			if (video && container) {
+				video.addEventListener('play', () => container.classList.add('demo-video--playing'));
+				video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+			}
+		});
 	}
 	document.addEventListener('DOMContentLoaded', () => {
 		playDemoIfTarget();

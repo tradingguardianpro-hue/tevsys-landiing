@@ -1318,3 +1318,31 @@ Sesión de pulido visual: posicionamiento, legibilidad y consistencia de efectos
 - `feat(hero): subheadline Pioneros + reducir nota MT5`
 - `feat(plan-cards): hover con retroiluminación y efecto 3D, solo botón clicable`
 - `feat(cards): unificar efecto retroiluminación en feature cards`
+
+---
+
+## 40) Precisión — Vídeo guía logs visible (Feb 2026)
+
+El vídeo de la guía de logs estaba oculto dentro de un acordeón. Para mejorar la atención y que el usuario vea que hay otro vídeo (además de demo rápida y demo volatilidad), se sacó el vídeo del acordeón y se muestra visible, con el mismo estilo compacto y comportamiento expand-on-play que los otros dos.
+
+### 40.1 Cambio aplicado
+
+- **Antes:** Vídeo `precision-logs-guide.mp4` dentro de acordeón "Ir a guía de logs" — solo visible al expandir
+- **Después:** Vídeo visible en la sección "Sin humo: todo queda registrado", con hook "Guía visual — otro vídeo que te interesa"
+- **Archivo:** `src/pages/features/precision.astro`
+
+### 40.2 Commit asociado
+
+- `feat(precision): mostrar vídeo guía logs visible — igual que demo rápida y volatilidad`
+
+---
+
+## 41) HyperClose — Vídeo semáforo visible en zona gris (Feb 2026)
+
+Mismo patrón que Precisión §40: el vídeo del semáforo (3 niveles) estaba solo como enlace a la demo principal. Se añadió el vídeo embed visible en la sección "Semáforo de responsabilidad" (zona gris) para que el usuario vea que hay otro vídeo sin tener que hacer scroll.
+
+### 41.1 Cambio aplicado
+
+- **Sección:** "Semáforo de responsabilidad" (id hyperclose-semaphore)
+- **Añadido:** Vídeo `hyperclose-demo.mp4` visible con hook "Los 3 niveles en vídeo — mismo que demo rápida"
+- **Archivo:** `src/pages/features/hyperclose.astro`
