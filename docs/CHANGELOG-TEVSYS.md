@@ -1346,3 +1346,21 @@ Mismo patrón que Precisión §40: el vídeo del semáforo (3 niveles) estaba so
 - **Sección:** "Semáforo de responsabilidad" (id hyperclose-semaphore)
 - **Añadido:** Vídeo `hyperclose-demo.mp4` visible con hook "Los 3 niveles en vídeo — mismo que demo rápida"
 - **Archivo:** `src/pages/features/hyperclose.astro`
+
+---
+
+## 42) Evidencia — Guía logs visible + bullet (Feb 2026)
+
+Misma lógica que Precisión e HyperClose: vídeos visibles en secciones propias. Se añadió sección "Guía visual de logs" con vídeo embed y bullet en "Qué puedes comprobar".
+
+### 42.1 Cambio aplicado
+
+- **Bullet nuevo:** "Guía visual de logs (vídeo)" → #evidencia-logs
+- **Sección nueva:** Vídeo `precision-logs-guide.mp4` visible, hook "Otro vídeo que te interesa"
+- **Enlace:** "Ver precisión de cierre y trazabilidad en detalle" → /features/precision#precision-logs
+- **Eliminado:** Link redundante en Historial transacciones
+- **Archivo:** `src/pages/features/evidencia.astro`
+
+### 42.2 Commit asociado
+
+- `feat(evidencia): guía logs visible + bullet — misma lógica que Precisión e HyperClose`
