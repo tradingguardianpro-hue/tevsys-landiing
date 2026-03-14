@@ -199,8 +199,12 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		margin: 0 0 0.5rem 0;
 	}
 	.card-title__accent {
-		color: #f5b041;
 		font-weight: 700;
+		transition: color 0.2s ease;
+	}
+	.tevsys-card:hover .card-title__accent,
+	.plan-card:hover .card-title__accent {
+		color: #f5b041;
 	}
 	.tevsys-card__content p {
 		margin: 0 0 0.75rem 0;
