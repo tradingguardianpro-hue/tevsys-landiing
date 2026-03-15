@@ -12,7 +12,7 @@ const seo = {
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de transparencia</p>
-			<h1>Evidencia verificable: aquí no hay "creemos".</h1>
+			<h1>Evidencia verificable: aquí no hay "<span class="feature-title__accent">creemos</span>".</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Lo que no se puede demostrar, no cuenta.</p>
 			<p class="feature-lead">Cada cierre y cada bloqueo queda registrado en panel, logs y reporte oficial MT5.</p>
 		</section>
@@ -168,6 +168,10 @@ const seo = {
 	.feature-hero h1 {
 		margin: 0 0 0.65rem;
 		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+	}
+	.feature-title__accent {
+		color: #f5b041;
+		font-weight: 700;
 	}
 	.feature-hook {
 		display: inline-flex;

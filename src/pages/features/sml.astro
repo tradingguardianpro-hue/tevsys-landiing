@@ -12,7 +12,7 @@ const seo = {
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de disciplina</p>
-			<h1>SML: protege parte de lo ganado sin frenar tu operativa.</h1>
+			<h1>SML: <span class="feature-title__accent">protege</span> parte de lo ganado sin frenar tu operativa.</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Actívalo cuando quieras. Decide cuánto ampliar el margen: del <span class="feature-hook__accent">5%</span> al <span class="feature-hook__accent">25%</span> (mínimo <span class="feature-hook__accent">75%</span> protegido).</p>
 			<p class="feature-intro">La diferencia no es operar más: es conservar mejor.</p>
 			<p class="feature-lead">SML convive con tus límites diarios y semanales. Se activa bajo tu criterio y amplía automáticamente el margen de pérdida permitido, sin fricción.</p>
@@ -54,6 +54,10 @@ const seo = {
 	.feature-hero h1 {
 		margin: 0 0 0.65rem;
 		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+	}
+	.feature-title__accent {
+		color: #f5b041;
+		font-weight: 700;
 	}
 	.feature-hook {
 		display: inline-flex;
