@@ -213,6 +213,13 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		75% { color: #f5b041; }
 		100% { color: #f5b041; }
 	}
+	@media (prefers-reduced-motion: reduce) {
+		.tevsys-card:hover .card-title__accent,
+		.plan-card:hover .card-title__accent {
+			animation: none;
+			color: #f5b041;
+		}
+	}
 	.tevsys-card__content p {
 		margin: 0 0 0.75rem 0;
 		line-height: 1.5;
