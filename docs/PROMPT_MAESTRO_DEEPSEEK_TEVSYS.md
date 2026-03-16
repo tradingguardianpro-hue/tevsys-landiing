@@ -311,8 +311,9 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 | Doc | Para qué |
 |-----|----------|
-| **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md** (este) | Contexto completo — empezar aquí |
+| **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md** (este) | Contexto completo — empezar aquí. §15 = mejoras EA/producto desde última actualización. |
 | **PROMPT_DEEPSEEK_WEB_TEVSYS_ESTADO_COMPLETO.md** (proyecto TGP) | Estado web Mar 2026: plantilla unificada, Evidencia 100k, acordeón reporte MT5, plan vídeo, pendientes |
+| Proyecto TGP: **ONBOARDING_ESSENTIAL_GUIAS_EDUCATIVAS_Y_MODALS.md**, **RESUMEN_SESION_MODALES_16MAR2026.md**, **QUE_CONTIENE_TGP_Modular_Skeleton_V11.md** | Estado detallado del EA: onboarding Essential, guías educativas F7, modales, Días ON/OFF, ZONA SAGRADA. |
 | CHANGELOG-TEVSYS.md | Historial de todos los cambios, decisión por decisión |
 | GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md | Specs vídeos, guiones, overlays, OBS/Clipchamp |
 | CONTENIDO_WEB_TEVSYS_LANDING.md | Copy actual de toda la web |
@@ -372,12 +373,8 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). Sección valor: título prominente clamp(1.65-2rem). Footer: 4 columnas + legal + copyright. Docs: CHANGELOG-TEVSYS §31-§38.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). Sección valor: título prominente clamp(1.65-2rem). Footer: 4 columnas + legal + copyright. EA: onboarding Essential conectado a input "Mostrar guías educativas" (F7); rotación 00:00; Días ON/OFF (Lunes desde finde). Ver §15. Docs: CHANGELOG-TEVSYS §31-§38.
 ```
-
----
-
-**Última actualización:** Mar 2026. Si algo cambia, actualizar CHANGELOG y este prompt. Web: §31–§38 (cards clicables, hook "Tu trading", jerarquía sección valor, feedback Angello documentado).
 
 ---
 
@@ -390,3 +387,48 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 | Elegir Advanced | ?plan=advanced | Advanced | No | Sí | Sí (default) | Lista espera Adv; demo Essential |
 | Elegir Pro | ?plan=pro | Pro | No | Sí | Sí (default) | Lista espera Pro; demo Essential |
 | Demo (feature) | ?flow=demo&feature=… | Essential | DEMO | No | No | Genérico — Intro: "Ya has visto [X] en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo." |
+
+---
+
+## 15. EA / Producto tevsys — mejoras y decisiones desde última actualización del prompt (Mar 2026)
+
+*Todo lo que hemos hecho en el EA (proyecto TGP/tevsys) desde la última vez que se pasó este prompt a DeepSeek. Sirve para que el copy y los vídeos de la web reflejen el producto real y las decisiones de producto.*
+
+### 15.1 Onboarding Essential — estado actual
+
+- **Flujo:** Bienvenida → Qué incluye ESSENTIAL → Recordatorio Diario (¿quieres aviso de rotación?) → Configuración guardada. Todo conectado al input **"Mostrar guías educativas" (F7)**.
+- **Modal Bienvenida (4 líneas):** L1 = "Bienvenidos a TEVSYS ESSENTIAL"; L2 = frase entre comillas ("Tu mejor version como trader empieza aqui."); L3 = "Nosotros protegemos. Tu creces." (teal); L4 = "Que disfrutes del vuelo. ;)" en gris al final. Ancho 500px, bodyH 240px.
+- **Modal "Qué incluye ESSENTIAL":** Bullets: precisión milimétrica, HyperClose, límites diarios (un día activo), rotación 00:00, emergencia -20%, Noticias/Horarios (próximamente). **Días ON/OFF:** texto claro en 3 líneas: "Días ON/OFF: siempre protegido." / "Desde el fin de semana solo puedes dejar el Lunes en OFF." / "El resto de días: rotación normal." (sin liarse; antes se cortaba o sonaba confuso).
+- **Recordatorio Diario:** Pregunta: "¿Quieres que te mostremos la rotación automática cada día a las **00:00 (inicio del día)**?" — **Ya no decimos "cierre del mercado"**: la rotación real del EA es a las 00:00 servidor, no al cierre de sesión. Coherente con "Rotacion automatica: a las 00:00" en Qué incluye.
+- **Modal Configuración guardada:** Tras Sí/No al recordatorio, se muestra "CONFIGURACION GUARDADA" + "Puedes cambiar esta preferencia en cualquier momento." + **"En inputs (F7), 'Mostrar guías educativas' en False"** / **"  desactiva también el aviso de rotación."** (en dos líneas para que no se corte en pantalla).
+
+### 15.2 Interruptor único "Mostrar guías educativas" (input F7)
+
+- **Decisión:** Un solo input controla todo lo educativo: onboarding Essential + aviso de rotación automática + bienvenida Advanced.
+- **Si Mostrar guías educativas = False:** (1) No se muestra el onboarding Essential en primer arranque — el usuario va directo al panel. (2) No se muestra el popup de rotación al cambiar de día (la rotación de días sigue ejecutándose; solo se oculta el aviso). (3) No se muestra el MessageBox de bienvenida Advanced (ya estaba así).
+- **Implementación:** EA (OnInit): en primer arranque Essential, si `!MostrarGuiasEducativas` → no llamar a Bienvenida, marcar first run, `g_essentialFlowStep = -1`; `g_panelPendientePorEssential` solo true si `MostrarGuiasEducativas`. DaysRotationSystem: antes de mostrar el popup de rotación se comprueba `MostrarGuiasEducativas`; si false no se muestra.
+- **Para copy/web:** En Essential el usuario puede "apagar" todos los popups educativos desde F7. No hace falta un segundo control solo para el aviso de rotación.
+
+### 15.3 Días ON/OFF en Essential
+
+- **Regla clara:** Desde el fin de semana solo pueden poner **el Lunes** en OFF (primer día de la semana). El resto de días: rotación normal (el EA rota a las 00:00). Texto en modals sin sugerir "reconfigurar en finde" para otros días; en Essential la configuración es día a día.
+- **Modales Día OFF (nivel 1 y 3):** Opción 1 en negrita: "Espera a mañana (día activo)". Opción 2 según plan: Essential = "Sé consecuente: el día OFF se mantiene hasta mañana o el próximo día activo."; Advanced+ = "Espera al fin de semana para reconfigurar". SOLUCIÓN en nivel 3: Essential = "Espera a mañana (día activo). Sé consecuente con tu decisión."; otros = "Espera al fin de semana para reconfigurar días OFF."
+- **Modal "DÍA OFF - NO SE PUEDE ACTIVAR PROTECCIÓN":** Si el usuario ya está bloqueado y hoy es OFF (ej. configuró Lunes OFF desde el domingo), no decir "Activa el día en inputs (F7)"; se muestra "SITUACIÓN ACTUAL" con opciones (mañana / próximo día activo en Essential; fin de semana en otros).
+
+### 15.4 Confirmación irreversible y otros modales Essential
+
+- **Confirmación Irreversible (bloquear límites):** En cuentas Essential el texto dice "hasta **hoy 23:59**"; en Advanced/Pro "hasta el **viernes 23:59**".
+- **Inputs ignorados (cuando operan bloqueados):** Última línea según plan: Essential = "Bloqueo activo hasta hoy 23:59."; otros = "Bloqueo activo hasta el fin de semana." Secciones "Cambios detectados" y "Configuración real protegida" con badge color arena.
+
+### 15.5 Documentación y recordatorio futuro
+
+- **Docs actualizados (proyecto TGP):** ONBOARDING_ESSENTIAL_GUIAS_EDUCATIVAS_Y_MODALS.md (estado "conectados a guías educativas"), REFINAMIENTO_MODALES_ONBOARDING_MAR2026.md, INVENTARIO_MODALES_PENDIENTES_AJUSTE.md, QUE_CONTIENE_TGP_Modular_Skeleton_V11.md (entrada 16 Mar 2026), RESUMEN_SESION_MODALES_16MAR2026.md. Autoprompt para nuevo chat de modales: AUTOPROMPT_CHAT_MODALES_TEVSYS.md.
+- **Recordatorio producto:** Cuando se implementen **Horarios** y **Noticias** en el EA, actualizar los modals de bienvenida y "Qué incluye": quitar "próximamente" y describir la función. Nuevos popups educativos deberían respetar el interruptor "Mostrar guías educativas" si aplica.
+
+### 15.6 Dónde está el código del EA (para no confundir con la web)
+
+- El EA y sus modales **no** están en el repo de la landing. Están en las carpetas **Terminal** de MetaTrader 5 (rutas Infinox y ActivTrades). Cualquier cambio de copy o flujo de modales se hace en `Include/TGP/PopupSystem.mqh`, `ModalPremium.mqh`, `DaysRotationSystem.mqh`, `Experts/TGP_MODULAR_SKELETON_V11.mq5` en esas rutas. La landing (tevsys-landiing) solo referencia al producto; el producto se edita en el proyecto TGP/tevsys (Cursor workspace "poyecto TGP con cursor").
+
+---
+
+**Última actualización:** Mar 2026. **Sección 15 añadida:** mejoras y decisiones del EA/producto (onboarding Essential, guías educativas F7, Días ON/OFF, Recordatorio 00:00, Config guardada, modales Essential) para que DeepSeek tenga contexto completo al trabajar en web, vídeos y copy. Si algo del producto o de la web cambia, actualizar CHANGELOG y este prompt.
