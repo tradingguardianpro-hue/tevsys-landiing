@@ -81,6 +81,19 @@ Este documento se mantiene como referencia específica de vídeos Precisión/Hyp
 
 ---
 
+### 2.4 EA / Onboarding y modales (Mar 2026 — para capturas y vídeos)
+
+**Panel principal – hint arrastrar (16 Mar 2026):**
+- Texto en el panel: **"▼ Clic y arrastra ● F7: personaliza"**. Parpadea 3–4 veces, luego fijo hasta el **primer arrastre** del panel; al arrastrar se oculta y no vuelve a mostrarse (GV_PANEL_HINT_VISTO). Solo si el input "Mostrar guías educativas" (F7) está en true. Útil para onboarding y para vídeos donde se quiera mostrar que el panel es arrastrable.
+
+**Modales refinados (17 Mar 2026):**
+- **SML Upsell (Essential):** Intro en 2 líneas ("Si quieres, puedes usar parte de tu ganancia de ayer / para ampliar tu límite de pérdida de hoy"). CÓMO FUNCIONA (3 bullets), EJEMPLO PRÁCTICO (2 bullets), ● DISPONIBLE EN ADVANCED, PRO Y ELITE, "- Conocer planes en tevsys.io". Contenido listo para capturas o vídeo SML.
+- **Confirmación Irreversible:** Pregunta actual: "¿Estás seguro de bloquear los límites configurados?" (una línea). Modal tras Resumen en semana laboral.
+
+**Resumen modales:** Ver en el proyecto TGP `docs/RESUMEN_MODALES_DEFINITIVOS_Y_PENDIENTES.md` (definitivos vs en curso vs pendientes).
+
+---
+
 ## 3. Patrones técnicos aplicados
 
 ### Embed de vídeo
@@ -122,6 +135,8 @@ Este documento se mantiene como referencia específica de vídeos Precisión/Hyp
 
 ```
 Estado web tevsys (Mar 2026): Precisión CERRADA (precision-demo 1:07 + audio, precision-demo-volatilidad, 50 operativas, embed compacto + autoplay). HyperClose CERRADA salvo Día OFF (hyperclose-demo 1:35 sin audio, 3 capturas modales, misma UX que Precisión). Pendiente: vídeo Día OFF, SML demo, Evidencia demo. Ruta videos: public/videos/features/. Documentación actualizada en docs/.
+
+EA/onboarding (Mar 2026): Panel con hint "▼ Clic y arrastra ● F7: personaliza" que parpadea y desaparece tras el primer arrastre (solo si Mostrar guías educativas = true). Modales SML Upsell y Confirmación Irreversible refinados 17 Mar (texto definitivo para capturas). Resumen modales: docs/RESUMEN_MODALES_DEFINITIVOS_Y_PENDIENTES.md (en repo TGP).
 ```
 
 ---
