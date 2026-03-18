@@ -475,11 +475,19 @@ const seo = {
 			}
 		});
 	}
+	function openInformeMt5IfTarget() {
+		if (window.location.hash !== '#evidencia-informe-mt5') return;
+		const section = document.getElementById('evidencia-informe-mt5');
+		const details = section && section.querySelector('details.proof-accordion');
+		if (details) details.setAttribute('open', '');
+	}
 	document.addEventListener('DOMContentLoaded', () => {
 		playDemoIfTarget();
 		initDemoExpand();
+		openInformeMt5IfTarget();
 	});
 	window.addEventListener('hashchange', () => {
 		playDemoIfTarget();
+		openInformeMt5IfTarget();
 	});
 </script>
