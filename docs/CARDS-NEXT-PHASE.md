@@ -118,13 +118,19 @@ Estado actual elegido:
 
 ---
 
-## 6) Plataforma de pago (pendiente post-web)
+## 6) Plataforma de pago — Lemon Squeezy (en marcha, 19 Mar 2026)
 
-> Esta decisión se toma cuando se cierre la web visual y copy final.
+> **Decisión tomada:** Lemon Squeezy para MVP. Cuenta creada, producto Essential configurado.
 
-### Opciones evaluadas
+### Estado actual
+- **Lemon:** Cuenta tevsys, tienda configurada, producto Essential en Draft (39€/mes, 390€/año).
+- **Web:** Botón "Comprar Essential" implementado, controlado por interruptor `checkoutEssentialReady` en `settings.js`. Mientras `false`, solo se muestra "Elegir Essential" (formulario). Evita 404 hasta verificación.
+- **Pendiente:** Verificación identidad (DNI) → publicar producto → copiar checkout link → `checkoutEssentialReady: true`.
+- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_LEMON_SQUEEZY_TEVSYS_PASO_A_PASO.md`. CHANGELOG-TEVSYS §44.
 
-1. **Lemon Squeezy** (recomendada para MVP)
+### Opciones evaluadas (referencia)
+
+1. **Lemon Squeezy** (elegida)
    - Pros: rápida de implementar, checkout sólido, suscripciones, gestión fiscal simplificada.
    - Encaje: salida rápida con planes Essential / Advanced / Pro.
 
@@ -161,12 +167,14 @@ Estado actual elegido:
   - país del negocio,
   - configuración fiscal/comercial de la cuenta.
 
-### Checklist cuando toque activar pagos
-- [ ] Elegir pasarela final.
-- [ ] Definir catálogo de planes y precios finales.
-- [ ] Mapear eventos webhook -> estado de licencia.
+### Checklist activar pagos (progreso)
+- [x] Elegir pasarela (Lemon Squeezy).
+- [x] Producto Essential con variantes mensual/anual.
+- [x] Botón Comprar en web (interruptor hasta verificación).
+- [ ] Verificar identidad Lemon (DNI).
+- [ ] Publicar producto, copiar checkout link, `checkoutEssentialReady: true`.
+- [ ] Mapear eventos webhook -> estado de licencia (fase posterior).
 - [ ] Probar altas, renovaciones, impagos y cancelaciones.
-- [ ] Definir página de éxito/error y soporte post-pago.
 
 ---
 

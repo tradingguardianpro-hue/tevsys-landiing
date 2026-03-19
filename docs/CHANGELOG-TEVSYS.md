@@ -1380,3 +1380,34 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 43.2 Commit asociado
 
 - `feat(precision): H1 con punch — olvídate de los SL de mantequilla`
+
+---
+
+## 44) Lemon Squeezy + botón Comprar Essential + interruptor (19 Mar 2026)
+
+### 44.1 Integración Lemon Squeezy
+- **Estado:** Cuenta creada, tienda tevsys.lemonsqueezy.com configurada, producto Essential en Draft.
+- **Variantes:** Mensual 39€/mes, Anual 390€/año (2 meses gratis).
+- **Pendiente:** Verificación de identidad (DNI) para poder publicar y cobrar.
+
+### 44.2 Botón Comprar Essential en card
+- **Ubicación:** `src/pages/index.astro` — card Essential.
+- **Comportamiento:** Controlado por interruptor `checkoutEssentialReady` en `src/config/settings.js`.
+  - `false`: Solo se muestra "Elegir Essential" (formulario contacto).
+  - `true`: Se muestran "Comprar Essential" (checkout Lemon) + "Probar demo" (formulario).
+- **Objetivo:** Evitar 404 hasta que Lemon esté verificado y el checkout link sea real.
+
+### 44.3 Settings
+- `checkoutEssentialReady: false` — poner `true` cuando Lemon esté listo.
+- `checkoutEssentialUrl`: URL real de Lemon cuando se publique el producto.
+
+### 44.4 Layout botones
+- Botones apilados verticalmente (Comprar arriba, Probar demo abajo) para evitar texto partido en dos líneas.
+
+### 44.5 Documentación
+- **Proyecto TGP:** `docs/ESTADO_WEB_Y_LEMON_TEVSYS.md` — estado web + Lemon, interruptor, flujo, próximos pasos.
+- **Proyecto TGP:** `docs/GUIA_LEMON_SQUEEZY_TEVSYS_PASO_A_PASO.md` — pasos Lemon, referencia al interruptor.
+
+### 44.6 Commits asociados
+- `feat(home): añadir botón Comprar Essential en la card + enlace Lemon`
+- `fix(essential): ocultar botón Comprar hasta que Lemon esté verificado`

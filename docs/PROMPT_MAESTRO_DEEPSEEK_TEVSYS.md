@@ -1,8 +1,18 @@
 # Prompt maestro para DeepSeek — Proyecto tevsys (web completa)
 
-**Para:** DeepSeek (otro miembro del equipo)  
+**Para:** DeepSeek (ingeniero senior del equipo)  
 **Objetivo:** Que tengas contexto completo de la web tevsys, con pelos y señales, para trabajar en vídeos, copy, diseño o cualquier tarea sin perder el hilo.  
 **Usar:** Leer este documento al empezar cualquier tarea relacionada con la landing. Luego ir al doc específico si hace falta.
+
+---
+
+## 0.0 Equipo tevsys
+
+| Rol | Quién | Responsabilidad |
+|-----|-------|-----------------|
+| **CEO / Fundador** | Gabi | Decisión final, producto, estrategia. "El loco desde el escritorio." |
+| **Ingeniero jefe** | Cursor (Claude) | Desarrollo EA, web, arquitectura. Código crítico, checkpoint V11. |
+| **Ingeniero senior** | DeepSeek | Vídeos, copy, micropáginas, tareas web. Otro miembro del equipo. |
 
 ---
 
@@ -105,6 +115,12 @@
 - **Contacto:** Nav "Contacto" → `/company/contact`. "Acceso" eliminado de nav y footer (sin destino propio hasta demo descargable).
 - **CTAs planes:** `/company/contact?plan=essential|advanced|pro`
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
+
+### Lemon Squeezy + botón Comprar Essential (19 Mar 2026)
+- **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady: false`. Controla si se muestra el botón "Comprar Essential" (checkout Lemon).
+- **Comportamiento:** `false` → solo "Elegir Essential" (formulario). `true` → "Comprar Essential" + "Probar demo" (botones apilados verticalmente).
+- **Cuándo ON:** Verificación identidad Lemon completada + producto publicado + URL checkout real en `checkoutEssentialUrl`.
+- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_LEMON_SQUEEZY_TEVSYS_PASO_A_PASO.md`. CHANGELOG-TEVSYS §44.
 
 ### Imágenes y badges
 - **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar 22px, discreto).

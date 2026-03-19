@@ -82,11 +82,11 @@ Documento de contenido/copy actual para revisión de equipo.
 `Selecciona el plan que mejor encaja contigo. Luego ajustamos contigo los detalles.`
 
 ### Planes
-- Essential → botón `Elegir Essential`
-- Advanced → botón `Elegir Advanced`
-- Pro → botón `Elegir Pro`
+- **Essential:** `Elegir Essential` (formulario). Si `checkoutEssentialReady: true` → `Comprar Essential` + `Probar demo` (Lemon checkout + formulario). Interruptor en `settings.js`.
+- **Advanced** → botón `Elegir Advanced`
+- **Pro** → botón `Elegir Pro`
 
-**Flujo actual:** cada botón abre contacto con plan en URL (`?plan=...`).
+**Flujo actual:** Essential depende del interruptor Lemon; Advanced/Pro abren contacto con plan en URL (`?plan=...`). Ref: `ESTADO_WEB_Y_LEMON_TEVSYS.md`, CHANGELOG §44.
 
 **Estado visual actual (cards de planes):**
 - Essential: `/assets/images/plans/essential-card.png`
