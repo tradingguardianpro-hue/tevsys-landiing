@@ -2,6 +2,7 @@
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import settings from '../config/settings.js';
 ---
 
 <Layout>
@@ -90,7 +91,10 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 					<div class="plan-card__content">
 						<h3><span class="card-title__accent">Essential</span></h3>
 						<p>Demo/beta disponible. Límite diario, precisión milimétrica y HyperClose para validar operativa real.</p>
-						<a href="/company/contact?plan=essential" class="plan-card__cta">Elegir Essential</a>
+						<div class="plan-card__cta-row">
+							<a href={settings.checkoutEssentialUrl} class="plan-card__cta plan-card__cta--primary" target="_blank" rel="noopener noreferrer">Comprar Essential</a>
+							<a href="/company/contact?plan=essential" class="plan-card__cta plan-card__cta--secondary">Probar demo</a>
+						</div>
 					</div>
 				</article>
 				<article class="plan-card">
@@ -336,21 +340,47 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 		margin: 0 0 0.9rem;
 		line-height: 1.45;
 	}
+	.plan-card__content > a.plan-card__cta {
+		margin-top: auto;
+	}
+	.plan-card__cta-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: auto;
+	}
 	.plan-card__cta {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		margin-top: auto;
 		padding: 0.48rem 0.95rem;
 		border-radius: 1.5rem;
-		background: #f5b041;
-		color: #1a1510;
 		font-weight: 600;
 		text-decoration: none;
 		cursor: pointer;
+		transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+		background: #f5b041;
+		color: #1a1510;
+		border: 1px solid transparent;
 	}
 	.plan-card__cta:hover {
 		background: #f7c050;
+	}
+	.plan-card__cta--primary {
+		background: #f5b041;
+		color: #1a1510;
+	}
+	.plan-card__cta--primary:hover {
+		background: #f7c050;
+	}
+	.plan-card__cta--secondary {
+		background: transparent;
+		color: inherit;
+		border: 1px solid rgba(245, 176, 65, 0.6);
+	}
+	.plan-card__cta--secondary:hover {
+		border-color: #f5b041;
+		background: rgba(245, 176, 65, 0.12);
 	}
 	@media (max-width: 768px) {
 		.feature-card__grid {

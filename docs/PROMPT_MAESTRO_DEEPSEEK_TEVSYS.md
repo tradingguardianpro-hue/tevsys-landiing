@@ -61,7 +61,7 @@
 - **Contacto:** info@tevsys.io, Barcelona
 - **Guion amarillo (—)** antes de títulos de columnas (Navegación, Producto, Legal)
 - **Hover amarillo** en enlaces
-- **Grid 4 columnas:** Brand+contacto | Navegación (Inicio, Empresas, Contacto) | Producto (Precisión, HyperClose, SML, Evidencia) | Legal (Aviso Legal, Privacidad, Términos de Uso)
+- **Grid 4 columnas:** Brand+contacto | Navegación (Inicio, Empresas, Contacto) | Producto (Cómo instalar, Precisión, HyperClose, SML, Evidencia) | Legal (Aviso Legal, Privacidad, Términos de Uso)
 - **Logo:** favicon.png junto a tevsys™
 - **Frase indie:** 1.08rem con letter-spacing ("Made with love for trading...")
 - **Copyright:** "Copyright © 2026 tevsys. Todos los derechos reservados."
@@ -76,7 +76,7 @@
 - **PC:** `favicon.png` (logo chevrones blanco/naranja) en `public/`
 - **Móvil:** `apple-touch-icon.png` 180×180 — link en BaseHead
 - **Pruebas rechazadas:** logo-tevsys.png y favicon-tevsys-icon.svg como favicon principal (volvimos a favicon.png)
-- **Pendiente:** validar en dispositivos móviles reales; puede seguir mostrando "T" al añadir a pantalla de inicio
+- **Pendiente:** validar favicon en móviles (posible "T" al añadir a pantalla de inicio) — no prioritario
 
 ---
 
@@ -139,6 +139,16 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | **Evidencia** | https://tevsys.io/features/evidencia + enlaces a Precisión (logs, reporte MT5) |
 + Contexto breve; no dar info sensible. Pasos para acceder a demo.
 
+### Demo — envío a leads (Mar 2026)
+
+- **Primer lead:** Fausto (18/03/2026). Respuesta enviada; esperando canal (email/WhatsApp/Telegram) → enviar links cuando responda.
+- **Trading de Futuros:** Academia (Gonzalo). Interesado. Si no responde en 1 semana → mensaje de follow-up.
+- **Flujo:** Lead responde con canal → enviar link Drive (tevsys_Essential_Demo_15dias.ex5) + link vídeo instalación.
+- **Links obligatorios:**
+  - Descarga: link Drive al .ex5 (pegar al enviar)
+  - Vídeo instalación: https://www.tevsys.io/instalacion
+- **Docs:** `LINKS_PARA_ENVIAR_DEMO_TEVSYS.md` (links + plantillas email y WhatsApp/Telegram), `PLANTILLA_EMAIL_DEMO_TEVSYS.md` (plantilla detallada).
+
 ---
 
 ## 6.1 Empresas (canal B2B) — `/company/empresas`
@@ -198,7 +208,9 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ---
 
-### 7.3 SML (`/features/sml`) — Pendiente vídeo
+### 7.3 SML (`/features/sml`) — En validación
+
+- **Estado:** Fase de validación. Se hace solo desde escritorio. Pendiente sml-demo.mp4.
 
 **Copy freeze:**
 - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -242,7 +254,26 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 **Eliminado:** Sección 50K completa, sección "Qué puedes comprobar" original (reescrita como guía de navegación), sección "Reporte oficial MT5" separada.
 
-**Pendiente:** Vídeo ganancias (+1.111€, 20 lotes) como secundario. Ver CHANGELOG §36 + §37.
+**Pendiente:** Vídeo ganancias (+1.111€, 20 lotes) — no prioritario por decisión 19 Mar.
+
+---
+
+### 7.5 Instalación (`/instalacion`) — PUBLICADA 19 Mar 2026
+
+**Objetivo:** Guía paso a paso para instalar la demo en MT5. Página dedicada, visible en footer (Producto → Cómo instalar).
+
+**Vídeo publicado:**
+- `instalacion-demo.mp4` — Cuenta nueva, trading algorítmico, 8 pasos + onboarding. Cierre: pantalla negra + "tevsys — Where precision meets the edge".
+
+**Estructura:**
+1. Hero: "Cómo instalar tevsys en MT5" — cuenta nueva, desde cero
+2. Vídeo: embed compacto (560px), se expande al play
+3. Pasos resumidos (1-8) en texto
+4. CTA: Solicitar demo → /company/contact?flow=demo
+
+**Ruta vídeo:** `public/videos/features/instalacion-demo.mp4`
+
+**Uso:** Link para enviar a leads junto con el link de descarga. Clicable desde móvil y ordenador.
 
 ---
 
@@ -284,7 +315,9 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 4. Nombre exacto: precision-demo.mp4, hyperclose-demo.mp4, etc.
 5. Decir al equipo para integrar en web (acordeón, enlace, etc.)
 
-**Vídeos pendientes:** sml-demo.mp4. Evidencia 100k publicado (evidencia-100k-perdida.mp4). Día OFF: hyperclose-dias-off-demo.mp4 ya publicado. Vídeo ganancias 100k (+1.111€): pendiente como secundario en Evidencia.
+**Vídeos publicados:** instalacion-demo.mp4 (guía instalación, 8 pasos + onboarding), precision-demo.mp4, precision-demo-volatilidad.mp4, precision-logs-guide.mp4, hyperclose-demo.mp4, hyperclose-dias-off-demo.mp4, evidencia-100k-perdida.mp4.
+
+**Vídeos pendientes:** sml-demo.mp4 (SML en fase de validación, se hace desde escritorio). Vídeo ganancias 100k (+1.111€): no prioritario, dejar.
 
 ---
 
@@ -304,6 +337,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | contact.astro | Formulario por plan/demo |
 | empresas.astro, empresas-thank-you.astro | Micro-página canal B2B |
 | precision.astro, hyperclose.astro, sml.astro, evidencia.astro | Micro-páginas features |
+| instalacion.astro | Página guía instalación demo (vídeo + pasos) |
 
 ---
 
@@ -322,6 +356,8 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md | Resumen técnico por archivo |
 | ESTRATEGIA_FAVICON_ICONOS_TEVSYS.md | Favicon, apple-touch-icon, PWA |
 | PENDIENTE_VERIFICACION_EMAIL_LEADS.md | Verificación email: pendiente. §6 caso específico verificación antes de dar link demo (evitar bots, cuentas falsas). |
+| LINKS_PARA_ENVIAR_DEMO_TEVSYS.md | Links Drive + instalación + plantillas email/WhatsApp/Telegram para enviar a leads |
+| PLANTILLA_EMAIL_DEMO_TEVSYS.md | Plantilla email detallada con pasos instalación (proyecto TGP) |
 | ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md | Prioridades, pricing, early adopters, vídeos, academia Angelo. Plan ordenado |
 
 ---
@@ -368,12 +404,17 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - feat(hero): "Tu capital" → "Tu trading merece más que buenas intenciones"
 - style(home): jerarquía sección valor — título prominente, párrafo secundario
 
+**Sesión 19 Mar 2026 (primer lead, demo, instalación):**
+- feat(instalacion): nueva página /instalacion con vídeo instalacion-demo.mp4 + pasos 1-8
+- feat(footer): enlace "Cómo instalar" en Producto (primera posición)
+- docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS.md, PLANTILLA_EMAIL_DEMO_TEVSYS.md
+
 ---
 
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). Sección valor: título prominente clamp(1.65-2rem). Footer: 4 columnas + legal + copyright. EA: onboarding Essential conectado a input "Mostrar guías educativas" (F7); rotación 00:00; Días ON/OFF (Lunes desde finde). Ver §15. Docs: CHANGELOG-TEVSYS §31-§38.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). Footer: Cómo instalar, Producto, Legal. Página /instalacion: vídeo guía + pasos demo. Demo lista: .ex5 15 días, link Drive + https://www.tevsys.io/instalacion. Leads: Fausto (primer contacto), Trading de Futuros/academia (Gonzalo). Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS, PLANTILLA_EMAIL. Ver §15.
 ```
 
 ---
@@ -429,6 +470,21 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 - El EA y sus modales **no** están en el repo de la landing. Están en las carpetas **Terminal** de MetaTrader 5 (rutas Infinox y ActivTrades). Cualquier cambio de copy o flujo de modales se hace en `Include/TGP/PopupSystem.mqh`, `ModalPremium.mqh`, `DaysRotationSystem.mqh`, `Experts/TGP_MODULAR_SKELETON_V11.mq5` en esas rutas. La landing (tevsys-landiing) solo referencia al producto; el producto se edita en el proyecto TGP/tevsys (Cursor workspace "poyecto TGP con cursor").
 
+### 15.7 Demo Essential — listo para enviar (19 Mar 2026)
+
+- **Build:** .ex5 compilado desde TGP_MODULAR_SKELETON_V11. Renombrar a `tevsys_Essential_Demo_15dias.ex5` para distribución.
+- **Demo 15 días:** LicenseKey vacío → modo demo. GV_DEMO_TIMESTAMP por cuenta. DEMO_DAYS=15.
+- **Buffer precisión:** 0,01% (ajustado desde 0,02% por caso cuenta grande).
+- **Metadatos EA:** copyright "Copyright 2025, tevsys"; description "Protección de capital y disciplina automatizada. Límites, precisión milimétrica, HyperClose. — tevsys.io".
+- **Onboarding overlay:** Bienvenida (y Bienvenida Advanced) con overlay (pantalla negra, impacto). A partir del segundo modal (Essential, Recordatorio, etc.) sin overlay — gráfico visible.
+- **Hosting:** Drive (o similar). Link estable. Mismo link para todos.
+
+### 15.8 Vídeo instalación — guion y overlays
+
+- **Nombre archivo:** instalacion-demo.mp4
+- **Pasos (8):** 1) Descarga desde enlace por mail. 2) Abre MT5. 3) Activa trading algorítmico (siempre encendido). 4) Archivo → Abrir carpeta de datos. 5) MQL5 → Experts. 6) Arrastra archivo descargado. 7) Abre Navegador, clic derecho Experts → Actualizar. 8) Arrastra al gráfico o doble clic.
+- **Overlays onboarding:** "Sigue los 3 pasos de bienvenida" (o similar). Cierre: "tevsys cargado. Tu disciplina y riesgo, automatizados. 🎯". Final: pantalla negra + "tevsys — Where precision meets the edge".
+
 ---
 
-**Última actualización:** Mar 2026. **Sección 15 añadida:** mejoras y decisiones del EA/producto (onboarding Essential, guías educativas F7, Días ON/OFF, Recordatorio 00:00, Config guardada, modales Essential) para que DeepSeek tenga contexto completo al trabajar en web, vídeos y copy. Si algo del producto o de la web cambia, actualizar CHANGELOG y este prompt.
+**Última actualización:** 19 Mar 2026. **Sesión 19 Mar:** Primer lead (Fausto), página /instalacion, vídeo instalacion-demo.mp4, docs LINKS_PARA_ENVIAR_DEMO y PLANTILLA_EMAIL. §15.7 y §15.8: demo lista, metadatos EA, overlay onboarding, guion vídeo instalación.
