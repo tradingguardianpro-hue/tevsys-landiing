@@ -345,9 +345,12 @@ import settings from '../config/settings.js';
 	}
 	.plan-card__cta-row {
 		display: flex;
-		flex-wrap: wrap;
 		gap: 0.5rem;
 		margin-top: auto;
+	}
+	.plan-card__cta-row .plan-card__cta {
+		flex: 1;
+		min-width: 0;
 	}
 	.plan-card__cta {
 		display: inline-flex;
