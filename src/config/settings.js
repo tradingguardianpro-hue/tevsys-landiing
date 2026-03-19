@@ -5,6 +5,8 @@ export default {
   name: "tevsys",
   enableThemeSwitcher: false,
   showPlug: false,
-  /** URL checkout Lemon Squeezy Essential. Actualizar cuando publiques el producto. */
+  /** Checkout Essential: poner true cuando verifiques identidad en Lemon y publiques el producto. */
+  checkoutEssentialReady: false,
+  /** URL checkout Lemon Squeezy Essential. Actualizar cuando publiques. */
   checkoutEssentialUrl: "https://tevsys.lemonsqueezy.com/checkout/custom/essential",
 };

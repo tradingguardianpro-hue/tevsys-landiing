@@ -91,10 +91,14 @@ import settings from '../config/settings.js';
 					<div class="plan-card__content">
 						<h3><span class="card-title__accent">Essential</span></h3>
 						<p>Demo/beta disponible. Límite diario, precisión milimétrica y HyperClose para validar operativa real.</p>
-						<div class="plan-card__cta-row">
-							<a href={settings.checkoutEssentialUrl} class="plan-card__cta plan-card__cta--primary" target="_blank" rel="noopener noreferrer">Comprar Essential</a>
-							<a href="/company/contact?plan=essential" class="plan-card__cta plan-card__cta--secondary">Probar demo</a>
-						</div>
+						{settings.checkoutEssentialReady ? (
+							<div class="plan-card__cta-row">
+								<a href={settings.checkoutEssentialUrl} class="plan-card__cta plan-card__cta--primary" target="_blank" rel="noopener noreferrer">Comprar Essential</a>
+								<a href="/company/contact?plan=essential" class="plan-card__cta plan-card__cta--secondary">Probar demo</a>
+							</div>
+						) : (
+							<a href="/company/contact?plan=essential" class="plan-card__cta">Elegir Essential</a>
+						)}
 					</div>
 				</article>
 				<article class="plan-card">
