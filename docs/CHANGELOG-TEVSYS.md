@@ -1411,3 +1411,25 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 44.6 Commits asociados
 - `feat(home): añadir botón Comprar Essential en la card + enlace Lemon`
 - `fix(essential): ocultar botón Comprar hasta que Lemon esté verificado`
+
+---
+
+## 45) Webhook Lemon + Resend — claves automáticas (19 Mar 2026)
+
+### 45.1 Endpoint webhook
+- **Archivo:** `api/webhook-lemon.js` — recibe `order_created` de Lemon.
+- **Flujo:** Lemon avisa → verifica firma → genera clave ESEMEN/ESEANU → envía email con Resend.
+- **Despliegue:** Vercel (tevsys.io/api/webhook-lemon). Responde 405 a GET (correcto; solo acepta POST).
+
+### 45.2 Variables de entorno (Vercel)
+- `RESEND_API_KEY` — envío de emails.
+- `LEMON_WEBHOOK_SECRET` — validación firma (mismo valor que en Lemon).
+
+### 45.3 Email de licencia
+- **Plantilla:** Editable en `api/webhook-lemon.js`, función `enviarEmail`.
+- **Objetivo:** Email premium, nivel tevsys — copy cuidado, tagline, instrucciones claras.
+- **Asunto:** "tevsys Essential — Tu licencia".
+
+### 45.4 Documentación
+- **Proyecto TGP:** `WEBHOOK_LEMON_LO_QUE_HEMOS_HECHO.md`, `WEBHOOK_LEMON_GUIA_PASO_A_PASO_SENCILLA.md`, `GUIA_FUNDADOR_PRIMERA_VENTA_Y_CONTINUIDAD.md`.
+- **Checkpoint:** `FLUJO_VENTAS_LICENCIAS_PENDIENTE.md` actualizado con webhook operativo.

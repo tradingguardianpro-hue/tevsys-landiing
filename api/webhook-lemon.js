@@ -119,31 +119,67 @@ function generarClave(orderNumber, esAnual) {
   return prefix + num;
 }
 
-async function enviarEmail(resend, to, licenseKey) {
+/**
+ * Plantilla email premium tevsys — licencia Essential.
+ * Editable: copy, tono, estructura. Mantener variables: {{licenseKey}}, {{INSTALACION_URL}}.
+ */
+function buildEmailHtml(licenseKey) {
   const INSTALACION_URL = "https://www.tevsys.io/instalacion";
+  const ACCENT = "#f5b041"; // Amarillo tevsys
+  const BORDER = "#e8e8e8";
+
+  return (
+    '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:560px; margin:0 auto; font-family:Segoe UI,Helvetica,Arial,sans-serif; font-size:15px; line-height:1.5; color:#333;">' +
+    "<tr><td style='padding:32px 24px;'>" +
+    // Header
+    "<p style='margin:0 0 8px 0; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#888;'>tevsys</p>" +
+    "<p style='margin:0 0 24px 0; font-size:12px; color:#999;'>Where precision meets the edge</p>" +
+    // Saludo
+    "<p style='margin:0 0 20px 0;'>Bienvenido a tevsys Essential.</p>" +
+    "<p style='margin:0 0 24px 0;'>Has dado el paso. Tu protección automatizada está lista. Aquí tienes tu clave de licencia:</p>" +
+    // Clave
+    "<table role='presentation' cellpadding='0' cellspacing='0' border='0' style='width:100%; margin:0 0 24px 0; border:1px solid " +
+    BORDER +
+    "; border-left:4px solid " +
+    ACCENT +
+    "; border-radius:6px; background:#fafafa;'>" +
+    "<tr><td style='padding:16px 20px;'>" +
+    "<p style='margin:0 0 4px 0; font-size:11px; color:#666;'>Tu clave (10 caracteres)</p>" +
+    "<p style='margin:0; font-size:20px; font-weight:600; font-family:Consolas,Monaco,monospace; letter-spacing:2px; color:#111;'>" +
+    licenseKey +
+    "</p>" +
+    "</td></tr></table>" +
+    // Instrucciones
+    "<p style='margin:0 0 12px 0; font-weight:600; color:#222;'>Cómo activarla en MT5:</p>" +
+    "<ol style='margin:0 0 24px 0; padding-left:20px;'>" +
+    "<li style='margin-bottom:6px;'>Abre MetaTrader 5 y carga tevsys en el gráfico.</li>" +
+    "<li style='margin-bottom:6px;'>Pulsa <strong>F7</strong> (o Herramientas → Opciones → Expert Advisors).</li>" +
+    "<li>Pega la clave en el campo <strong>License Key</strong> del EA.</li>" +
+    "</ol>" +
+    // CTA
+    "<p style='margin:0 0 8px 0;'>¿Primera vez con tevsys? Guía paso a paso:</p>" +
+    "<p style='margin:0 0 24px 0;'><a href='" +
+    INSTALACION_URL +
+    "' style='color:" +
+    ACCENT +
+    "; font-weight:600; text-decoration:none;'>tevsys.io/instalacion</a></p>" +
+    // Cierre
+    "<p style='margin:0 0 4px 0;'>Cualquier duda, aquí estamos: <a href='mailto:info@tevsys.io' style='color:" +
+    ACCENT +
+    ";'>info@tevsys.io</a></p>" +
+    "<p style='margin:0; font-size:13px; color:#777;'>— Gabi · tevsys</p>" +
+    "</td></tr></table>"
+  );
+}
+
+async function enviarEmail(resend, to, licenseKey) {
   const from = process.env.RESEND_FROM || "tevsys <onboarding@resend.dev>";
 
   const { data, error } = await resend.emails.send({
     from: from,
     to: [to],
-    subject: "tevsys Essential — Tu licencia",
-    html:
-      "<p>Gracias por tu compra de tevsys Essential.</p>" +
-      "<p><strong>Tu clave de licencia:</strong></p>" +
-      '<p style="font-size:1.2em; font-family:monospace; background:#f4f4f4; padding:12px; border-radius:6px;">' +
-      licenseKey +
-      "</p>" +
-      "<p><strong>Cómo usarla:</strong></p>" +
-      "<ol><li>Abre MetaTrader 5</li>" +
-      "<li>Pulsa <strong>F7</strong> (o Herramientas → Options → Expert Advisors)</li>" +
-      "<li>Pega la clave en el campo License Key del EA tevsys</li></ol>" +
-      '<p>Instalación: <a href="' +
-      INSTALACION_URL +
-      '">' +
-      INSTALACION_URL +
-      "</a></p>" +
-      "<p>Cualquier duda: info@tevsys.io</p>" +
-      "<p>— Gabi, tevsys</p>",
+    subject: "tevsys Essential — Tu licencia está lista",
+    html: buildEmailHtml(licenseKey),
   });
 
   if (error) throw new Error("Resend: " + JSON.stringify(error));

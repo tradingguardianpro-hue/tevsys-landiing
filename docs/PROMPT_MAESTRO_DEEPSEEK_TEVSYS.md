@@ -116,11 +116,13 @@
 - **CTAs planes:** `/company/contact?plan=essential|advanced|pro`
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
 
-### Lemon Squeezy + botón Comprar Essential (19 Mar 2026)
+### Lemon Squeezy + botón Comprar Essential + Webhook (19 Mar 2026)
 - **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady: false`. Controla si se muestra el botón "Comprar Essential" (checkout Lemon).
 - **Comportamiento:** `false` → solo "Elegir Essential" (formulario). `true` → "Comprar Essential" + "Probar demo" (botones apilados verticalmente).
 - **Cuándo ON:** Verificación identidad Lemon completada + producto publicado + URL checkout real en `checkoutEssentialUrl`.
-- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_LEMON_SQUEEZY_TEVSYS_PASO_A_PASO.md`. CHANGELOG-TEVSYS §44.
+- **Webhook automático:** `api/webhook-lemon.js` recibe `order_created` de Lemon → genera clave ESEMEN/ESEANU → envía email con Resend. Variables: `RESEND_API_KEY`, `LEMON_WEBHOOK_SECRET`.
+- **Email de licencia:** Plantilla premium en webhook. Editable en `api/webhook-lemon.js` (función `enviarEmail`). Debe reflejar nivel tevsys: copy cuidado, tagline, enlace instalación.
+- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_FUNDADOR_PRIMERA_VENTA_Y_CONTINUIDAD.md`, `WEBHOOK_LEMON_LO_QUE_HEMOS_HECHO.md`. CHANGELOG-TEVSYS §44.
 
 ### Imágenes y badges
 - **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar 22px, discreto).

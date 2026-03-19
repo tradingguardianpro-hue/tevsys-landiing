@@ -125,8 +125,10 @@ Estado actual elegido:
 ### Estado actual
 - **Lemon:** Cuenta tevsys, tienda configurada, producto Essential en Draft (39€/mes, 390€/año).
 - **Web:** Botón "Comprar Essential" implementado, controlado por interruptor `checkoutEssentialReady` en `settings.js`. Mientras `false`, solo se muestra "Elegir Essential" (formulario). Evita 404 hasta verificación.
+- **Webhook (19 Mar):** `api/webhook-lemon.js` desplegado. Lemon → webhook → genera clave ESEMEN/ESEANU → Resend envía email. Variables Vercel: RESEND_API_KEY, LEMON_WEBHOOK_SECRET.
+- **Email licencia:** Plantilla premium en webhook. Editable en `api/webhook-lemon.js` (función `enviarEmail`).
 - **Pendiente:** Verificación identidad (DNI) → publicar producto → copiar checkout link → `checkoutEssentialReady: true`.
-- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_LEMON_SQUEEZY_TEVSYS_PASO_A_PASO.md`. CHANGELOG-TEVSYS §44.
+- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_FUNDADOR_PRIMERA_VENTA_Y_CONTINUIDAD.md`, `WEBHOOK_LEMON_LO_QUE_HEMOS_HECHO.md`. CHANGELOG-TEVSYS §44, §45.
 
 ### Opciones evaluadas (referencia)
 
@@ -171,6 +173,7 @@ Estado actual elegido:
 - [x] Elegir pasarela (Lemon Squeezy).
 - [x] Producto Essential con variantes mensual/anual.
 - [x] Botón Comprar en web (interruptor hasta verificación).
+- [x] Webhook Lemon + Resend (claves automáticas).
 - [ ] Verificar identidad Lemon (DNI).
 - [ ] Publicar producto, copiar checkout link, `checkoutEssentialReady: true`.
 - [ ] Mapear eventos webhook -> estado de licencia (fase posterior).
