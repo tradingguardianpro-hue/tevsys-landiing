@@ -5,10 +5,14 @@ Documento de contenido/copy actual para revisión de equipo.
 ---
 
 ## SEO y analytics (Mar 2026)
-- **Meta global:** `src/config/settings.js` — title y description con keywords (protección capital, límites automáticos MT5, 56 operativas).
+- **Meta global:** `src/config/settings.js` — title, description, keyword "disciplina en el trading".
 - **contact.astro:** Título propio ("Contacto y demo | tevsys"); descripción con keywords.
-- **robots.txt:** `public/robots.txt` — Allow all, sitemap.
-- **Vercel Web Analytics:** `@vercel/analytics` en `Base.astro`. Métricas en Vercel dashboard (visitas, páginas, referrers). Doc: `SEO_ANALYTICS_TEVSYS.md`.
+- **robots.txt:** `public/robots.txt` — Allow all, sitemap.xml.
+- **Sitemap:** `public/sitemap.xml` (estático, 11 URLs). Search Console: sitemap.xml enviado.
+- **Search Console:** Verificación HTML file. Indexación solicitada para home y páginas clave.
+- **Schema:** JSON-LD SoftwareApplication en home.
+- **Vercel Web Analytics:** `@vercel/analytics` en `Base.astro`. Métricas en Vercel dashboard.
+- **Core Web Vitals:** WebP, lazy load, fetchpriority hero, preload LCP. Doc: `SEO_ANALYTICS_TEVSYS.md`, `PERFORMANCE_IMAGENES_TEVSYS.md`.
 
 ---
 

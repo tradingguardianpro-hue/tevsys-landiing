@@ -9,6 +9,8 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
+		"image:optimize": "node scripts/optimize-images.js",
+		"prebuild": "node scripts/optimize-images.js",
 		"build": "astro build",
 		"preview": "astro preview",
 		"format": "npx prettier -w .",

@@ -24,6 +24,12 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `public/robots.txt` | **SEO:** Nuevo. Allow all, sitemap. |
 | `package.json` | **Analytics:** `@vercel/analytics` añadido. |
 | `src/layouts/Base.astro` | **Analytics:** `inject()` de @vercel/analytics antes de `</body>`. |
+| `public/sitemap.xml` | **SEO:** Sitemap estático (11 URLs). |
+| `public/google644b0bf8f5617256.html` | **Search Console:** Verificación propiedad. |
+| `src/components/head/BaseHead.astro` | **Schema** JSON-LD, **preload** LCP hero WebP (home). |
+| `src/components/sections/heros/HomeHeroSection.astro` | **Core Web Vitals:** picture WebP, fetchpriority, width/height, decoding. |
+| `src/pages/index.astro` | **Core Web Vitals:** picture WebP, lazy, width/height en cards y planes. |
+| `scripts/optimize-images.js` | **Core Web Vitals:** Genera WebP con sharp. |
 
 ---
 
@@ -435,4 +441,13 @@ Nota: la documentación operativa de custodia (`MASTER/MIRROR/SNAPSHOT`) y la ru
 ### Vercel Web Analytics
 - Paquete `@vercel/analytics`, `inject()` en Base.astro.
 - Activación en Vercel dashboard → Analytics.
-- Doc detallada: `docs/SEO_ANALYTICS_TEVSYS.md`. CHANGELOG §47.
+
+### Google Search Console + sitemap estático (Mar 2026)
+- Verificación: `public/google644b0bf8f5617256.html`.
+- Sitemap: `public/sitemap.xml` (11 URLs). robots.txt apunta a sitemap.xml.
+- Indexación solicitada para home y páginas clave.
+
+### Core Web Vitals / optimización imágenes (Mar 2026)
+- Hero: fetchpriority, preload WebP, width/height. Cards/planes: lazy, picture WebP.
+- Script `scripts/optimize-images.js` genera WebP (prebuild antes de build).
+- Doc: `docs/PERFORMANCE_IMAGENES_TEVSYS.md`. CHANGELOG §47, §48.

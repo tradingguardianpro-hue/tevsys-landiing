@@ -542,8 +542,15 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 - **Integración:** `inject()` en `Base.astro` (antes de `</body>`)
 - **Activación:** Vercel dashboard → proyecto → pestaña Analytics. Habilitar Web Analytics.
 - **Métricas:** Visitantes únicos, vistas, páginas más visitadas, referrers. Gratis en plan Hobby.
-- **Doc:** `docs/SEO_ANALYTICS_TEVSYS.md`
+
+### 17.5 Google Search Console
+- Verificación: `public/google644b0bf8f5617256.html`. Sitemap: `sitemap.xml`.
+- Doc: `docs/SEO_ANALYTICS_TEVSYS.md`
+
+### 17.6 Core Web Vitals / imágenes
+- Script `npm run image:optimize` genera WebP. Hero: fetchpriority, preload. Cards/planes: lazy, picture WebP.
+- Doc: `docs/PERFORMANCE_IMAGENES_TEVSYS.md`
 
 ---
 
-**Última actualización:** 20 Mar 2026. **Sesión 20 Mar:** Operativa 4.56 (Essential, 100 lotes, 7 capturas). Copy comercial: "Nuestra versión Essential. Con el caso más extremo." Auditoría: 56 operativas. Estrategia academias: buscar presentaciones. §16 añadido. §17 SEO y Analytics.
+**Última actualización:** 20 Mar 2026. §17.5 Search Console, §17.6 Core Web Vitals. CHANGELOG §48.

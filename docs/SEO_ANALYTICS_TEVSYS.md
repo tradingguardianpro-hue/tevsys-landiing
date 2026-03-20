@@ -30,9 +30,10 @@ Documento técnico para desarrolladores e ingenieros.
   User-agent: *
   Allow: /
 
-  Sitemap: https://www.tevsys.io/sitemap-index.xml
+  Sitemap: https://www.tevsys.io/sitemap.xml
   ```
 - Accesible en `tevsys.io/robots.txt`.
+- **Nota:** Sitemap dinámico (sitemap-index.xml) daba 404; se usa sitemap estático. Ver §6.
 
 ---
 
@@ -61,20 +62,62 @@ Gratis en plan Hobby.
 
 ---
 
-## 4. Archivos implicados
+## 4. Google Search Console
 
-| Archivo | Cambio |
-|---------|--------|
-| `src/config/settings.js` | title, description SEO |
-| `src/pages/company/contact.astro` | meta propia |
-| `public/robots.txt` | nuevo |
-| `package.json` | @vercel/analytics |
-| `src/layouts/Base.astro` | inject Analytics |
+- **URL:** [search.google.com/search-console](https://search.google.com/search-console)
+- **Propiedad:** `https://www.tevsys.io/`
+- **Verificación:** Archivo HTML `public/google644b0bf8f5617256.html`
+- **Sitemap enviado:** `sitemap.xml`
+- **Indexación:** Solicitada para home y páginas clave (URL inspection → Request indexing)
 
 ---
 
-## 5. Referencias
+## 5. Sitemap estático
 
-- CHANGELOG-TEVSYS.md §47
+- **Archivo:** `public/sitemap.xml`
+- **URLs:** 11 páginas (home, features, contact, empresas, instalacion, legales).
+- **Motivo:** El sitemap dinámico de @astrojs/sitemap v0.1 no se servía correctamente (404).
+
+---
+
+## 6. Schema JSON-LD (SoftwareApplication)
+
+- **Ubicación:** `BaseHead.astro`, solo en home (`pathname === '/'`).
+- **Contenido:** name, applicationCategory, operatingSystem, description, url, offers.
+
+---
+
+## 7. Core Web Vitals / optimización imágenes
+
+- **Script:** `node scripts/optimize-images.js` (o `npm run image:optimize`).
+- **prebuild:** Se ejecuta antes de `npm run build` para generar WebP.
+- **Hero:** fetchpriority="high", preload WebP, width/height.
+- **Cards/planes:** loading="lazy", width/height, picture con WebP.
+- **Doc detallada:** `docs/PERFORMANCE_IMAGENES_TEVSYS.md`
+
+---
+
+## 8. Archivos implicados
+
+| Archivo | Cambio |
+|---------|--------|
+| `src/config/settings.js` | title, description SEO, keyword disciplina |
+| `src/pages/company/contact.astro` | meta propia |
+| `public/robots.txt` | sitemap.xml |
+| `public/sitemap.xml` | sitemap estático |
+| `public/google644b0bf8f5617256.html` | verificación Search Console |
+| `package.json` | @vercel/analytics, image:optimize, prebuild |
+| `src/layouts/Base.astro` | inject Analytics |
+| `src/components/head/BaseHead.astro` | Schema, preload LCP, description |
+| `src/components/sections/heros/HomeHeroSection.astro` | picture WebP, fetchpriority, width/height |
+| `src/pages/index.astro` | picture WebP, lazy, width/height en cards/planes |
+| `scripts/optimize-images.js` | generación WebP con sharp |
+
+---
+
+## 9. Referencias
+
+- CHANGELOG-TEVSYS.md §47, §48
 - PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md §17
 - CONTENIDO_WEB_TEVSYS_LANDING.md (sección SEO y analytics)
+- PERFORMANCE_IMAGENES_TEVSYS.md (Core Web Vitals)

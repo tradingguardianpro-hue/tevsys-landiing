@@ -25,10 +25,15 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     <div class="hero-section__image">
       <div class="hero-image__wrapper">
         <picture>
+          <source type="image/webp" srcset="/mano-robotica-central-web.webp" />
           <img
             src="/mano%20robotica%20central%20web.png"
             alt="tevsys"
             id="home-hero-image"
+            width="1200"
+            height="800"
+            fetchpriority="high"
+            decoding="async"
           />
         </picture>
       </div>

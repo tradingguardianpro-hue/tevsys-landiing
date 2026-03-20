@@ -1493,3 +1493,42 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 
 ### 47.5 Commits asociados
 - `feat: SEO (meta, robots.txt, contacto) + Vercel Analytics`
+
+---
+
+## 48) Google Search Console, sitemap estático, Schema y Core Web Vitals (Mar 2026)
+
+### 48.1 Google Search Console
+- **Verificación:** Archivo `public/google644b0bf8f5617256.html` (método HTML file).
+- **Sitemap:** Enviado `sitemap.xml` (éxito, 27 páginas detectadas).
+- **Indexación:** Solicitada home + precision, hyperclose, sml, evidencia, contact, instalacion.
+- **URL:** [search.google.com/search-console](https://search.google.com/search-console). Propiedad `https://www.tevsys.io/`.
+
+### 48.2 Sitemap estático
+- **Problema:** `sitemap-index.xml` (Astro @astrojs/sitemap v0.1) devolvía 404 en producción.
+- **Solución:** Sitemap estático `public/sitemap.xml` con 11 URLs principales.
+- **robots.txt:** Actualizado a `Sitemap: https://www.tevsys.io/sitemap.xml`.
+
+### 48.3 Keyword y Schema
+- **settings.js:** Descripción con "disciplina en el trading" al inicio.
+- **BaseHead.astro:** Schema JSON-LD `SoftwareApplication` en home (applicationCategory, operatingSystem, offers).
+
+### 48.4 Optimización imágenes (Core Web Vitals)
+- **Problema:** LCP 15,6 s, ~5 MB imágenes (PageSpeed Insights).
+- **Cambios:**
+  - Hero: `fetchpriority="high"`, `decoding="async"`, `width`/`height`, preload WebP en home.
+  - Cards y planes: `width`/`height`, `loading="lazy"`, `decoding="async"`.
+  - `<picture>` con WebP + fallback PNG para hero, cards, planes.
+  - Script `scripts/optimize-images.js`: genera WebP con sharp (max 1200px hero, 800px resto).
+- **Build:** `prebuild` ejecuta `node scripts/optimize-images.js` antes de `astro build`.
+- **Archivos:** HomeHeroSection.astro, index.astro, BaseHead.astro, package.json, scripts/optimize-images.js.
+
+### 48.5 Documentación
+- `docs/SEO_ANALYTICS_TEVSYS.md` (secciones Search Console, sitemap, Performance)
+- `docs/PERFORMANCE_IMAGENES_TEVSYS.md` (nuevo)
+- PROMPT_MAESTRO §17
+- ARREGLOS_WEB, CHECKLIST_WEB (TGP)
+
+### 48.6 Commits sugeridos
+- `feat(seo): Google Search Console, sitemap estático, Schema, keyword disciplina`
+- `perf(images): WebP, lazy load, LCP optimizations (Core Web Vitals)`
