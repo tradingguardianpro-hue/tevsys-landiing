@@ -240,7 +240,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ---
 
-### 7.4 Evidencia (`/features/evidencia`) — COMPLETADA 11 Mar 2026
+### 7.4 Evidencia (`/features/evidencia`) — COMPLETADA 20 Mar 2026
 
 **Copy freeze:**
 - Título: `Evidencia verificable: aquí no hay "creemos".`
@@ -250,29 +250,29 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 **Vídeo publicado:**
 - `evidencia-100k-perdida.mp4` — 1 min 41 s, CON audio. Cuenta 100k nueva, 2 compras de 10 lotes GER40, cierre por límite -1% = -1.007,20€, error 7,20€ (0,0072%). Apertura Wall Street, alta volatilidad.
 
-**Estructura (11 Mar 2026):**
+**Operativa 4.56 — Caso extremo Essential (20 Mar 2026):**
+- **Enlace "Qué puedes comprobar":** "Cuenta Essential: 100 lotes, cierre con 95 € de precisión." → `#evidencia-4-56`
+- **Subtítulo:** "Nuestra versión Essential. Con el caso más extremo. Evidencia por capturas e informe oficial MT5."
+- **Contenido:** 100 lotes GER40 sobre cuenta ~102k. Límite +4%. Cierre real +4.095,10 € (desviación +95 €). Buffer 0,01% validado en lotaje extremo.
+- **Acordeón:** "Ver capturas (7)" — Resumen, P&L, Long & Short, Symbols, Riesgos, Historial (100 lotes, +4.095,10 €), Panel TEV·sys.
+- **Imágenes:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png` en `public/images/evidence/`
+- **Mensaje comercial:** Mismo motor en Essential que en planes superiores; credibilidad para cuenta más accesible.
+
+**Estructura:**
 1. Hero + hook
-2. Demo rápida: embed compacto (420px) que se expande al dar play. Nota: "Vídeo editado para mostrar los momentos clave."
-3. **Acordeón 1:** "Informe oficial MT5 — comprueba esta operativa tú mismo" — 5 capturas (Summary, Profit & Loss, Long & Short, Symbols, Risks). Sin editar.
-4. **Acordeón 2:** "Historial de transacciones — detalle por operación" — captura editada (zonas clave en amarillo) + enlace "Abrir informe HTML original" (UTF-16 LE, datos personales redactados)
-5. Enlace: "¿Quieres ver los logs? Guía visual de logs en MT5 (VIDEO)" → `/features/precision#precision-logs-guide`
-6. Sección "Auditoría: la prueba no es nuestra" — **COMPLETADA 31 Ene 2026:**
-   - Hook: "MetaTrader documenta. tevsys ejecuta."
-   - "Para quién": traders retail, gestoras, prop firms, academias
-   - "Dos capas de evidencia": MT5 (qué ocurrió) + logs tevsys (por qué)
-   - "Todo lo de arriba es la prueba": +50 operativas documentadas
-   - Enlace a Precisión operativa 49
-   - Etiquetas amarillas `.audit-label`
-7. CTA final
+2. Demo rápida (evidencia 100k)
+3. **Qué puedes comprobar:** demo, **operativa 4.56 (Essential, 100 lotes)**, informe MT5, transacciones, logs, auditoría
+4. Acordeón informe MT5 100k (5 capturas)
+5. **Bloque operativa 4.56** (7 capturas)
+6. Historial transacciones
+7. Guía logs
+8. **Auditoría: 56 operativas documentadas**, incluyendo caso extremo 100 lotes
+9. CTA final
 
-**Card home actualizada:** Datos concretos "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
-
-**Imágenes (6):** `evidencia-100k-informe-resumen.png`, `-profitloss.png`, `-longshort.png`, `-symbols.png`, `-risks.png`, `evidencia-100k-html-transacciones.png`
+**Imágenes (13 total):** 6 evidencia-100k-* + 7 evidencia-4.56-* + evidencia-100k-html-transacciones.png
 **HTML:** `public/docs/evidencia-100k-historial-transacciones.html`
 
-**Eliminado:** Sección 50K completa, sección "Qué puedes comprobar" original (reescrita como guía de navegación), sección "Reporte oficial MT5" separada.
-
-**Pendiente:** Vídeo ganancias (+1.111€, 20 lotes) — no prioritario por decisión 19 Mar.
+**Pendiente:** Vídeo ganancias (+1.111€, 20 lotes) — no prioritario.
 
 ---
 
@@ -377,6 +377,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | LINKS_PARA_ENVIAR_DEMO_TEVSYS.md | Links Drive + instalación + plantillas email/WhatsApp/Telegram para enviar a leads |
 | PLANTILLA_EMAIL_DEMO_TEVSYS.md | Plantilla email detallada con pasos instalación (proyecto TGP) |
 | ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md | Prioridades, pricing, early adopters, vídeos, academia Angelo. Plan ordenado |
+| ESTRATEGIA_ACADEMIAS_TEVSYS.md (proyecto TGP) | Estrategia academias: qué mostrar, logros, cómo abordar. 20 Mar 2026 |
 
 ---
 
@@ -432,7 +433,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). Footer: Cómo instalar, Producto, Legal. Página /instalacion: vídeo guía + pasos demo. Demo lista: .ex5 15 días, link Drive + https://www.tevsys.io/instalacion. Leads: Fausto (primer contacto), Trading de Futuros/academia (Gonzalo). Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS, PLANTILLA_EMAIL. Ver §15.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). 56 operativas documentadas. Evidencia: operativa 4.56 Essential (100 lotes, 95 € precisión) + 7 capturas. Footer: Cómo instalar, Producto, Legal. /instalacion: vídeo guía + pasos. Demo: .ex5 15 días, link Drive + tevsys.io/instalacion. Leads: Fausto, Trading de Futuros (Gonzalo). Próximo: buscar academias para presentación. Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS, PLANTILLA_EMAIL. Ver §15, §16.
 ```
 
 ---
@@ -505,4 +506,20 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 19 Mar 2026. **Sesión 19 Mar:** Primer lead (Fausto), página /instalacion, vídeo instalacion-demo.mp4, docs LINKS_PARA_ENVIAR_DEMO y PLANTILLA_EMAIL. §15.7 y §15.8: demo lista, metadatos EA, overlay onboarding, guion vídeo instalación.
+---
+
+## 16. Estrategia academias — siguiente fase (20 Mar 2026)
+
+**Objetivo:** Buscar academias de trading donde presentar tevsys (web + producto), crear interés, mostrar evidencia.
+
+**Estado actual (lo que tenemos para mostrar):**
+- **Web:** Primera web de Gabi. Nivel de calidad profesional: hero, 4 micropáginas (Precisión, HyperClose, SML, Evidencia), plan Essential, formulario, página instalación.
+- **Evidencia:** 56 operativas documentadas. Caso extremo Essential: 100 lotes, cierre con 95 € de precisión (7 capturas MT5 + panel).
+- **Demo:** tevsys_Essential_Demo_15dias.ex5 lista para enviar. Vídeo instalación en /instalacion.
+- **Logros:** Mismo motor en todos los planes; precisión validada; HyperClose; trazabilidad MT5.
+
+**Preparación:** Web lista para enseñar. Docs: CHECKLIST_WEB_TEVSYS_ANTES_REUNION_ACADEMIA.md, ESTRATEGIA_ACADEMIAS_TEVSYS.md (proyecto TGP). Chuleta reunión: CHULETA_1_PAGINA_REUNION_ANGELLO_90_MIN.md.
+
+---
+
+**Última actualización:** 20 Mar 2026. **Sesión 20 Mar:** Operativa 4.56 (Essential, 100 lotes, 7 capturas). Copy comercial: "Nuestra versión Essential. Con el caso más extremo." Auditoría: 56 operativas. Estrategia academias: buscar presentaciones. §16 añadido.

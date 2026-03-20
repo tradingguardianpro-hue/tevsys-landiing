@@ -202,13 +202,15 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Cierre inmediato y Semáforo:** ambos enlazan a la demo. Acordeón "Ver capturas de los 3 modales" con imágenes de cada nivel.
 - **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) publicado + acordeón con 5 capturas. **COMPLETADO.**
 
-### Estado actual Evidencia (31 Ene 2026)
+### Estado actual Evidencia (20 Mar 2026)
 - **Demo rápida:** `evidencia-100k-perdida.mp4` (1 min 41 s, con audio). Cuenta 100k nueva, 20 lotes GER40, cierre por límite -1% = -1.007,20€, error 0,0072%. Apertura Wall Street.
 - **Hook demo:** `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
-- **"Qué puedes comprobar":** 4 enlaces de navegación (demo, informe MT5, transacciones, auditoría)
+- **"Qué puedes comprobar":** demo, **operativa 4.56 Essential (100 lotes, 95 € precisión)**, informe MT5, transacciones, logs, auditoría.
+- **Operativa 4.56 — Caso extremo Essential:** Bloque nuevo. Subtítulo: "Nuestra versión Essential. Con el caso más extremo. Evidencia por capturas e informe oficial MT5." 100 lotes GER40, límite +4%, cierre +4.095,10 € (desviación 95 €). Acordeón "Ver capturas (7)": Resumen, P&L, Long & Short, Symbols, Riesgos, Historial, Panel.
+- **Imágenes 4.56:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png`.
 - **Sección "Informe oficial MT5":** acordeón con 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
 - **Sección "Historial de transacciones":** acordeón con captura editada (zonas clave en amarillo) + enlace HTML original descargable.
-- **Sección "Auditoría: la prueba no es nuestra":** COMPLETADA. Hook "MetaTrader documenta. tevsys ejecuta." + "Para quién" (traders, gestoras, prop firms, academias) + "Dos capas de evidencia" (MT5 + logs tevsys) + enlace a Precisión operativa 49.
+- **Sección "Auditoría":** 56 operativas documentadas, incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
 - **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide`
 - **Card home:** "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
 

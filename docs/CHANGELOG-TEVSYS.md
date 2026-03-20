@@ -1433,3 +1433,33 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 45.4 Documentación
 - **Proyecto TGP:** `WEBHOOK_LEMON_LO_QUE_HEMOS_HECHO.md`, `WEBHOOK_LEMON_GUIA_PASO_A_PASO_SENCILLA.md`, `GUIA_FUNDADOR_PRIMERA_VENTA_Y_CONTINUIDAD.md`.
 - **Checkpoint:** `FLUJO_VENTAS_LICENCIAS_PENDIENTE.md` actualizado con webhook operativo.
+
+---
+
+## 46) Evidencia — Operativa 4.56 Essential, 100 lotes (20 Mar 2026)
+
+### 46.1 Nuevo bloque operativa 4.56
+- **Objetivo:** Documentar caso extremo en Essential — mismo motor que planes superiores, credibilidad para cuenta más accesible.
+- **Datos:** 100 lotes GER40, cuenta ~102k, límite +4%, cierre +4.095,10 €, desviación 95 €. Buffer 0,01% validado.
+- **7 capturas:** Resumen, P&L, Long & Short, Symbols, Riesgos, Historial (100 lotes), Panel TEV·sys.
+- **Imágenes:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png` en `public/images/evidence/`
+
+### 46.2 Copy comercial
+- **Enlace "Qué puedes comprobar":** "Cuenta Essential: 100 lotes, cierre con 95 € de precisión." → `#evidencia-4-56`
+- **Subtítulo bloque:** "Nuestra versión Essential. Con el caso más extremo. Evidencia por capturas e informe oficial MT5."
+- **Auditoría:** Actualizado a 56 operativas documentadas, incluyendo caso extremo 100 lotes.
+
+### 46.3 Archivos modificados
+- `src/pages/features/evidencia.astro`
+- `src/pages/features/precision.astro` (55 → 56 operativas)
+- `src/pages/index.astro` (55 → 56 operativas)
+- `public/images/evidence/evidencia-4.56-*.png` (7 archivos)
+
+### 46.4 Documentación actualizada
+- PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md (§7.4, §16)
+- CONTENIDO_WEB_TEVSYS_LANDING.md
+- CHECKLIST_WEB_TEVSYS_ANTES_REUNION_ACADEMIA.md
+- ESTRATEGIA_ACADEMIAS_TEVSYS.md (proyecto TGP)
+
+### 46.5 Commits asociados
+- `feat(evidencia): operativa 4.56 — Essential, 100 lotes, copy comercial`
