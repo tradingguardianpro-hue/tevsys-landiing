@@ -15,6 +15,7 @@
 		"image:border": "node scripts/add-border-to-image.js"
 	},
 	"dependencies": {
+		"@vercel/analytics": "^1.4.0",
 		"resend": "^3.0.0"
 	},
 	"devDependencies": {
