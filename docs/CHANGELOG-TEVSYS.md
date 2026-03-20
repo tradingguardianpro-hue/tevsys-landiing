@@ -1529,6 +1529,11 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - PROMPT_MAESTRO §17
 - ARREGLOS_WEB, CHECKLIST_WEB (TGP)
 
-### 48.6 Commits sugeridos
+### 48.7 Paso 2 — preconnect fuentes (render-blocking)
+- BaseHead: `preconnect` a fonts.googleapis.com y fonts.gstatic.com.
+- Reduce tiempo de espera antes de cargar la fuente Outfit.
+
+### 48.8 Commits sugeridos
 - `feat(seo): Google Search Console, sitemap estático, Schema, keyword disciplina`
 - `perf(images): WebP, lazy load, LCP optimizations (Core Web Vitals)`
+- `perf(fonts): preconnect para reducir render-blocking`

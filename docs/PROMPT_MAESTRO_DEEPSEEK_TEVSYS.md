@@ -535,7 +535,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ### 17.3 robots.txt
 - **Archivo:** `public/robots.txt`
-- Allow all. Sitemap: `https://www.tevsys.io/sitemap-index.xml`
+- Allow all. Sitemap: `https://www.tevsys.io/sitemap.xml`
 
 ### 17.4 Vercel Web Analytics
 - **Paquete:** `@vercel/analytics`
@@ -547,10 +547,12 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 - Verificación: `public/google644b0bf8f5617256.html`. Sitemap: `sitemap.xml`.
 - Doc: `docs/SEO_ANALYTICS_TEVSYS.md`
 
-### 17.6 Core Web Vitals / imágenes
-- Script `npm run image:optimize` genera WebP. Hero: fetchpriority, preload. Cards/planes: lazy, picture WebP.
-- Doc: `docs/PERFORMANCE_IMAGENES_TEVSYS.md`
+### 17.6 Core Web Vitals / optimización móvil
+- **Problema resuelto:** Carga lenta en móvil (~5 MB imágenes, LCP 15 s).
+- **Cambios:** (1) WebP generados por script `npm run image:optimize` (prebuild en build). (2) Hero: fetchpriority="high", preload, picture WebP. (3) Cards y planes: loading="lazy", width/height, picture WebP. (4) Preload LCP en BaseHead (solo home). (5) preconnect a fonts.googleapis.com y fonts.gstatic.com (render-blocking).
+- **Resultado:** Web más rápida en móvil. No hay que ejecutar nada manualmente; el build en Vercel genera los WebP.
+- Doc: `docs/PERFORMANCE_IMAGENES_TEVSYS.md`. CHANGELOG §48.
 
 ---
 
-**Última actualización:** 20 Mar 2026. §17.5 Search Console, §17.6 Core Web Vitals. CHANGELOG §48.
+**Última actualización:** 20 Mar 2026. §17.3 robots sitemap.xml. §17.6 Core Web Vitals ampliado. CHANGELOG §48.

@@ -65,7 +65,15 @@ O simplemente `npm run build` — el prebuild lo ejecuta.
 
 ---
 
-## 5. Referencias
+## 5. Paso 2: Render-blocking (preconnect fuentes)
+
+- **Problema:** PageSpeed indicaba ~1.640 ms por recursos que bloquean el render.
+- **Solución:** `preconnect` a `fonts.googleapis.com` y `fonts.gstatic.com` en BaseHead.
+- La fuente Outfit ya usa `display=swap` (texto visible de inmediato, fuente carga después).
+
+---
+
+## 6. Referencias
 
 - CHANGELOG-TEVSYS.md §48.4
 - SEO_ANALYTICS_TEVSYS.md §7
