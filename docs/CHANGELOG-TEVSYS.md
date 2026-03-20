@@ -1463,3 +1463,33 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 
 ### 46.5 Commits asociados
 - `feat(evidencia): operativa 4.56 — Essential, 100 lotes, copy comercial`
+
+---
+
+## 47) SEO y Vercel Web Analytics (Mar 2026)
+
+### 47.1 SEO — meta tags y robots.txt
+- **settings.js:** Título y descripción globales orientados a búsquedas (protección capital, límites automáticos MT5, 56 operativas).
+- **contact.astro:** Corregido título "Astro Odyssey Theme" → "Contacto y demo | tevsys". Descripción con keywords.
+- **robots.txt:** Creado en `public/robots.txt`. Permite todo, referencia sitemap.
+
+### 47.2 Vercel Web Analytics
+- **Paquete:** `@vercel/analytics` en dependencias.
+- **Integración:** `inject()` en `src/layouts/Base.astro` (script antes de `</body>`).
+- **Activación:** Habilitar Web Analytics en Vercel → proyecto → pestaña Analytics.
+- **Métricas:** Visitantes únicos, vistas de página, páginas más visitadas, referrers. Gratis en plan Hobby.
+
+### 47.3 Archivos modificados
+- `src/config/settings.js`
+- `src/pages/company/contact.astro`
+- `public/robots.txt` (nuevo)
+- `package.json` (@vercel/analytics)
+- `src/layouts/Base.astro`
+
+### 47.4 Documentación
+- `docs/SEO_ANALYTICS_TEVSYS.md` (nuevo)
+- `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` (§1, §17)
+- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`
+
+### 47.5 Commits asociados
+- `feat: SEO (meta, robots.txt, contacto) + Vercel Analytics`

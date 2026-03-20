@@ -522,4 +522,28 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 20 Mar 2026. **Sesión 20 Mar:** Operativa 4.56 (Essential, 100 lotes, 7 capturas). Copy comercial: "Nuestra versión Essential. Con el caso más extremo." Auditoría: 56 operativas. Estrategia academias: buscar presentaciones. §16 añadido.
+## 17. SEO y Vercel Web Analytics (Mar 2026)
+
+### 17.1 Meta global
+- **Archivo:** `src/config/settings.js`
+- **title:** `tevsys — Protección de capital y límites automáticos para trading MT5`
+- **description:** `Plataforma de disciplina automatizada para MetaTrader 5. Límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 56 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
+- Usado por BaseHead en todas las páginas salvo las que definen `seo` propio.
+
+### 17.2 Páginas con meta propia
+- **contact.astro:** Título `Contacto y demo | tevsys`. Corregido bug Astro Odyssey (antes: "Contact | Astro Odyssey Theme").
+
+### 17.3 robots.txt
+- **Archivo:** `public/robots.txt`
+- Allow all. Sitemap: `https://www.tevsys.io/sitemap-index.xml`
+
+### 17.4 Vercel Web Analytics
+- **Paquete:** `@vercel/analytics`
+- **Integración:** `inject()` en `Base.astro` (antes de `</body>`)
+- **Activación:** Vercel dashboard → proyecto → pestaña Analytics. Habilitar Web Analytics.
+- **Métricas:** Visitantes únicos, vistas, páginas más visitadas, referrers. Gratis en plan Hobby.
+- **Doc:** `docs/SEO_ANALYTICS_TEVSYS.md`
+
+---
+
+**Última actualización:** 20 Mar 2026. **Sesión 20 Mar:** Operativa 4.56 (Essential, 100 lotes, 7 capturas). Copy comercial: "Nuestra versión Essential. Con el caso más extremo." Auditoría: 56 operativas. Estrategia academias: buscar presentaciones. §16 añadido. §17 SEO y Analytics.

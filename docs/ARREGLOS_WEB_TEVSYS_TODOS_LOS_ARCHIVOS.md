@@ -19,6 +19,11 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `public/assets/images/home/cards/*` | Imágenes personalizadas de cards 1-4. |
 | `public/assets/images/plans/*` | Imágenes finales de cards de planes + visuales de formulario por plan. |
 | `docs/*.md` | Documentación actualizada con estado real. |
+| `src/config/settings.js` | **SEO (Mar 2026):** title y description orientados a búsquedas (protección capital, límites MT5, 56 operativas). |
+| `src/pages/company/contact.astro` | **SEO:** Meta propia "Contacto y demo \| tevsys". Bug Astro Odyssey corregido (antes: "Contact \| Astro Odyssey Theme"). |
+| `public/robots.txt` | **SEO:** Nuevo. Allow all, sitemap. |
+| `package.json` | **Analytics:** `@vercel/analytics` añadido. |
+| `src/layouts/Base.astro` | **Analytics:** `inject()` de @vercel/analytics antes de `</body>`. |
 
 ---
 
@@ -414,3 +419,20 @@ Nota: la documentación operativa de custodia (`MASTER/MIRROR/SNAPSHOT`) y la ru
 - Evidencia visual usable (no solo decorativa).
 - Mejor lectura del bloque estadístico (menos ruido, más foco).
 - Menor confusión semántica en mensaje de estado del panel.
+
+---
+
+## SEO y Vercel Analytics (Mar 2026)
+
+### Archivos tocados
+- `src/config/settings.js`, `src/pages/company/contact.astro`, `public/robots.txt`, `package.json`, `src/layouts/Base.astro`
+
+### SEO
+- Meta global: title y description con keywords (protección capital, límites automáticos MT5, 56 operativas).
+- contact.astro: meta propia; corregido título heredado de plantilla Odyssey.
+- robots.txt: Allow all, sitemap tevsys.io.
+
+### Vercel Web Analytics
+- Paquete `@vercel/analytics`, `inject()` en Base.astro.
+- Activación en Vercel dashboard → Analytics.
+- Doc detallada: `docs/SEO_ANALYTICS_TEVSYS.md`. CHANGELOG §47.

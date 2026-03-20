@@ -4,6 +4,14 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ---
 
+## SEO y analytics (Mar 2026)
+- **Meta global:** `src/config/settings.js` — title y description con keywords (protección capital, límites automáticos MT5, 56 operativas).
+- **contact.astro:** Título propio ("Contacto y demo | tevsys"); descripción con keywords.
+- **robots.txt:** `public/robots.txt` — Allow all, sitemap.
+- **Vercel Web Analytics:** `@vercel/analytics` en `Base.astro`. Métricas en Vercel dashboard (visitas, páginas, referrers). Doc: `SEO_ANALYTICS_TEVSYS.md`.
+
+---
+
 ## Header
 - **Logo:** `tevsys` en óvalo (sin estrella)
 - **Navegación:** Inicio | Empresas | Contacto
