@@ -544,13 +544,13 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 - **Métricas:** Visitantes únicos, vistas, páginas más visitadas, referrers. Gratis en plan Hobby.
 
 ### 17.5 Google Search Console
-- Verificación: `public/google644b0bf8f5617256.html`. Sitemap: `sitemap.xml`.
-- Doc: `docs/SEO_ANALYTICS_TEVSYS.md`
+- Verificación: archivo `google644b0bf8f5617256.html` + meta tag en BaseHead (respaldo).
+- Sitemap: `sitemap.xml`. Checklist 5 puntos en `docs/SEO_ANALYTICS_TEVSYS.md`.
 
 ### 17.6 Core Web Vitals / optimización móvil
 - **Problema resuelto:** Carga lenta en móvil (~5 MB imágenes, LCP 15 s).
-- **Cambios:** (1) WebP generados por script `npm run image:optimize` (prebuild en build). (2) Hero: fetchpriority="high", preload, picture WebP. (3) Cards y planes: loading="lazy", width/height, picture WebP. (4) Preload LCP en BaseHead (solo home). (5) preconnect a fonts.googleapis.com y fonts.gstatic.com (render-blocking).
-- **Resultado:** Web más rápida en móvil. No hay que ejecutar nada manualmente; el build en Vercel genera los WebP.
+- **Cambios:** (1) WebP ~40 imágenes (hero, cards, planes, logo, contact, evidencia, hyperclose, precision). (2) preconnect fuentes. (3) Hero fetchpriority, preload. (4) picture WebP en toda la web.
+- **Resultado:** Web más rápida en móvil. Build en Vercel genera WebP (prebuild).
 - Doc: `docs/PERFORMANCE_IMAGENES_TEVSYS.md`. CHANGELOG §48.
 
 ---

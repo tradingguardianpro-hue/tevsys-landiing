@@ -9,7 +9,7 @@ Documento técnico para desarrolladores e ingenieros.
 ### Fuente principal
 - **Archivo:** `src/config/settings.js`
 - **title:** `tevsys — Protección de capital y límites automáticos para trading MT5`
-- **description:** `Plataforma de disciplina automatizada para MetaTrader 5. Límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 56 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
+- **description:** `Disciplina en el trading automatizada. Plataforma para MetaTrader 5: límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 56 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
 
 ### Uso
 - `BaseHead` consume estos valores por defecto.
@@ -66,9 +66,18 @@ Gratis en plan Hobby.
 
 - **URL:** [search.google.com/search-console](https://search.google.com/search-console)
 - **Propiedad:** `https://www.tevsys.io/`
-- **Verificación:** Archivo HTML `public/google644b0bf8f5617256.html`
+- **Verificación:** (1) Archivo HTML `public/google644b0bf8f5617256.html`. (2) Meta tag en BaseHead (`content="0xNV257HhIawlZd5KGvnrpi6ZUfVmlZL2OxE5PDiGlE"`).
 - **Sitemap enviado:** `sitemap.xml`
 - **Indexación:** Solicitada para home y páginas clave (URL inspection → Request indexing)
+
+### Checklist 5 puntos (20 Mar 2026)
+| Punto | Estado |
+|-------|--------|
+| 1. Verificación HTML tag (respaldo) | ✓ Meta tag añadido en BaseHead |
+| 2. International targeting | No disponible — omitido |
+| 3. Pages | Processing; revisar en 1–2 días |
+| 4. Security & Manual Actions | No issues detected ✓ |
+| 5. Associations | No aplica (solo Vercel Analytics) |
 
 ---
 
@@ -108,7 +117,7 @@ Gratis en plan Hobby.
 | `public/google644b0bf8f5617256.html` | verificación Search Console |
 | `package.json` | @vercel/analytics, image:optimize, prebuild |
 | `src/layouts/Base.astro` | inject Analytics |
-| `src/components/head/BaseHead.astro` | Schema, preload LCP, description |
+| `src/components/head/BaseHead.astro` | Schema, preload LCP, meta verification, preconnect fuentes |
 | `src/components/sections/heros/HomeHeroSection.astro` | picture WebP, fetchpriority, width/height |
 | `src/pages/index.astro` | picture WebP, lazy, width/height en cards/planes |
 | `scripts/optimize-images.js` | generación WebP con sharp |

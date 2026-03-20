@@ -1533,7 +1533,22 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - BaseHead: `preconnect` a fonts.googleapis.com y fonts.gstatic.com.
 - Reduce tiempo de espera antes de cargar la fuente Outfit.
 
-### 48.8 Commits sugeridos
-- `feat(seo): Google Search Console, sitemap estático, Schema, keyword disciplina`
-- `perf(images): WebP, lazy load, LCP optimizations (Core Web Vitals)`
-- `perf(fonts): preconnect para reducir render-blocking`
+### 48.8 Verificación HTML tag (respaldo)
+- BaseHead: `<meta name="google-site-verification" content="0xNV257HhIawlZd5KGvnrpi6ZUfVmlZL2OxE5PDiGlE" />`
+- Doble verificación: archivo HTML + meta tag. Si se borra el archivo, sigue verificada.
+
+### 48.9 WebP ampliado (todas las imágenes)
+- Script `optimize-images.js` ampliado: ~40 imágenes (logo, contact form, evidencia, hyperclose, precision).
+- HTML actualizado: Logo.astro, contact.astro (dinámico por plan), evidencia, hyperclose, precision con `<picture>` WebP.
+- width/height en todas para evitar CLS.
+
+### 48.10 Checklist Search Console (5 puntos)
+1. **Verificación:** HTML file + meta tag (respaldo) ✓
+2. **International targeting:** No disponible en esta propiedad — omitido
+3. **Pages:** Processing (revisar en 1–2 días)
+4. **Security & Manual Actions:** No issues detected ✓
+5. **Associations:** No aplica (solo Vercel Analytics, no Google Analytics)
+
+### 48.11 Commits sugeridos
+- `feat(seo): verificación meta tag Search Console + WebP ampliado`
+- `perf(images): WebP para evidencia, hyperclose, precision, contact, logo`

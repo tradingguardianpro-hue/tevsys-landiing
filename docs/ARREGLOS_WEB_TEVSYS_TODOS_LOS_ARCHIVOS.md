@@ -450,4 +450,6 @@ Nota: la documentación operativa de custodia (`MASTER/MIRROR/SNAPSHOT`) y la ru
 ### Core Web Vitals / optimización imágenes (Mar 2026)
 - Hero: fetchpriority, preload WebP, width/height. Cards/planes: lazy, picture WebP.
 - Script `scripts/optimize-images.js` genera WebP (prebuild antes de build).
-- Doc: `docs/PERFORMANCE_IMAGENES_TEVSYS.md`. CHANGELOG §47, §48.
+- Meta tag verificación Search Console en BaseHead (respaldo).
+- WebP ampliado: ~40 imágenes (evidencia, hyperclose, precision, contact, logo). picture en toda la web.
+- Doc: `docs/PERFORMANCE_IMAGENES_TEVSYS.md`. CHANGELOG §48.
