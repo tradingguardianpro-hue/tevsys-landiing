@@ -33,7 +33,10 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				</ul>
 				<div class="contact-hero__visual" id="contactHeroVisual">
 					<span id="contactHeroDemoBadge" class="contact-hero__demo-badge" hidden>DEMO</span>
-					<img id="contactHeroImage" src="/logo-tevsys.png" alt="Visual de tevsys" loading="lazy" />
+					<picture>
+						<source type="image/webp" id="contactHeroSource" srcset="/logo-tevsys.webp" />
+						<img id="contactHeroImage" src="/logo-tevsys.png" alt="Visual de tevsys" loading="lazy" width="400" height="300" decoding="async" />
+					</picture>
 				</div>
 				<p id="contactHeroDevNote" class="contact-hero__dev-note" hidden></p>
 			</div>
@@ -59,6 +62,11 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 		const titleNode = document.getElementById('contactHeroTitle');
 		const introNode = document.getElementById('contactHeroIntro');
 		const imageNode = document.getElementById('contactHeroImage');
+		const sourceNode = document.getElementById('contactHeroSource');
+		const setHeroImage = (pngPath) => {
+			if (imageNode) imageNode.src = pngPath;
+			if (sourceNode) sourceNode.srcset = pngPath.replace('.png', '.webp');
+		};
 		const demoBadge = document.getElementById('contactHeroDemoBadge');
 		const devNote = document.getElementById('contactHeroDevNote');
 		const tip1 = document.getElementById('contactTip-1');
@@ -132,7 +140,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				empresasTipHtml
 			);
 			if (imageNode) {
-				imageNode.src = '/assets/images/plans/esse-form-v4.png';
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
 				imageNode.alt = 'Acceso tevsys';
 			}
 			if (demoBadge) demoBadge.hidden = false;
@@ -159,7 +167,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				);
 			}
 			if (imageNode) {
-				imageNode.src = '/assets/images/plans/esse-form-v4.png';
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
 				imageNode.alt = 'Demo de tevsys';
 			}
 			if (demoBadge) demoBadge.hidden = false;
@@ -194,7 +202,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 		if (!selected) return;
 
 		if (imageNode) {
-			imageNode.src = selected.image;
+			setHeroImage(selected.image);
 			imageNode.alt = `Visual del plan ${selected.name}`;
 		}
 		if (demoBadge) demoBadge.hidden = plan !== 'essential';

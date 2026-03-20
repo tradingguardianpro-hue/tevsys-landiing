@@ -30,12 +30,12 @@ Documento técnico para desarrolladores. Ref: PageSpeed Insights, Google Search 
 - `width`/`height` explícitos (640×400 cards, 640×360 planes).
 - `<picture>` con WebP + fallback PNG.
 
-### 2.3 Script de optimización
+### 2.3 Script de optimización (ampliado)
 
 - **Archivo:** `scripts/optimize-images.js`
 - **Ejecución:** `npm run image:optimize` o automático en `prebuild` antes de `npm run build`.
 - **Función:** Genera WebP con sharp (quality 82, max 1200px hero, 800px resto).
-- **Output:** `public/mano-robotica-central-web.webp`, `public/assets/images/home/cards/*.webp`, `public/assets/images/plans/*.webp`.
+- **Imágenes incluidas:** Hero, 4 cards, 3 plan cards, logo-tevsys, 3 form contact (esse/adva/pro-form-v4), todas las de evidencia (13), hyperclose (8), precision (7). Total ~40 imágenes.
 
 ---
 
