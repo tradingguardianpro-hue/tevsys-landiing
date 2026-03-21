@@ -10,15 +10,20 @@ export const footerLists = [
     ],
   },
   {
-    title: 'Producto',
+    title: 'Guías',
     items: [
       { title: 'Cómo instalar', slug: '/instalacion' },
       { title: 'Guía de configuración', slug: '/configuracion' },
+      { title: 'Precios', slug: '/precios' },
+    ],
+  },
+  {
+    title: 'Producto',
+    items: [
       { title: 'Precisión', slug: '/features/precision' },
       { title: 'HyperClose', slug: '/features/hyperclose' },
       { title: 'SML', slug: '/features/sml' },
       { title: 'Evidencia', slug: '/features/evidencia' },
-      { title: 'Precios', slug: '/precios' },
     ],
   },
   {

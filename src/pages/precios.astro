@@ -4,8 +4,51 @@ import Layout from '../layouts/Page.astro';
 
 const seo = {
 	title: 'Precios y planes | tevsys',
-	description: 'Precios Essential, Advanced y Pro. Oferta lanzamiento primeros 100 clientes. Suscripción mensual o anual.',
+	description: 'Precios Essential, Advanced y Pro. Oferta lanzamiento primeros 100 clientes (durante un año). Suscripción mensual o anual.',
 };
+
+const planes = [
+	{
+		nombre: 'Essential',
+		mensual: '39 €/mes',
+		anual: '390 €/año',
+		estandar: '49 €/mes',
+		capital: '10.000 €',
+		incluye: [
+			'Un día activo, rotación automática',
+			'Precisión milimétrica, HyperClose',
+			'Días OFF',
+		],
+		badge: null,
+	},
+	{
+		nombre: 'Advanced',
+		mensual: '79 €/mes',
+		anual: '790 €/año',
+		estandar: '99 €/mes',
+		capital: '50.000 €',
+		incluye: [
+			'Todo Essential',
+			'Configuración de toda la semana',
+			'Protección desde el lunes o desde que instales',
+			'Límites por cada día, SML',
+		],
+		badge: 'En desarrollo — lista de espera',
+	},
+	{
+		nombre: 'Pro',
+		mensual: '119 €/mes',
+		anual: '1.190 €/año',
+		estandar: '149 €/mes',
+		capital: '200.000 €',
+		incluye: [
+			'Todo Advanced',
+			'Drawdown automático',
+			'Noticias y horarios completos',
+		],
+		badge: 'En desarrollo — lista de espera',
+	},
+];
 ---
 
 <Layout seo={seo}>
@@ -14,51 +57,28 @@ const seo = {
 			<p class="precios-kicker">Planes y precios</p>
 			<h1>Precios, condiciones y funcionalidades por tier</h1>
 			<p class="precios-lead">
-				Todos los planes son suscripciones (mensual o anual). Oferta de lanzamiento para los primeros 100 clientes.
+				Todos los planes son suscripciones (mensual o anual). Oferta de lanzamiento para los primeros 100 clientes — válida durante el primer año.
 			</p>
 		</section>
 
-		<section class="precios-tabla-section">
-			<h2 class="precios-tabla-title">Oferta lanzamiento — primeros 100 clientes</h2>
-			<div class="precios-tabla-wrap">
-				<table class="precios-tabla">
-					<thead>
-						<tr>
-							<th>Plan</th>
-							<th>Mensual (lanzamiento)</th>
-							<th>Anual (lanzamiento)</th>
-							<th>Estándar (año 2+)</th>
-							<th>Capital máx.</th>
-							<th>Qué incluye</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><strong>Essential</strong></td>
-							<td>39 €/mes</td>
-							<td>390 €/año</td>
-							<td>49 €/mes</td>
-							<td>10.000 €</td>
-							<td>Un día activo, rotación automática. Precisión milimétrica, HyperClose, días OFF.</td>
-						</tr>
-						<tr>
-							<td><strong>Advanced</strong></td>
-							<td>79 €/mes</td>
-							<td>790 €/año</td>
-							<td>99 €/mes</td>
-							<td>50.000 €</td>
-							<td>Todo Essential + configuración de toda la semana, protección desde el lunes o desde que instales, límites por cada día, SML. En desarrollo — lista de espera.</td>
-						</tr>
-						<tr>
-							<td><strong>Pro</strong></td>
-							<td>119 €/mes</td>
-							<td>1.190 €/año</td>
-							<td>149 €/mes</td>
-							<td>200.000 €</td>
-							<td>Todo Advanced + drawdown automático, noticias y horarios completos. En desarrollo — lista de espera.</td>
-						</tr>
-					</tbody>
-				</table>
+		<section class="precios-cards-section">
+			<h2 class="precios-cards-title">Oferta lanzamiento — primeros 100 clientes</h2>
+			<p class="precios-cards-sub">(Válida durante el primer año)</p>
+			<div class="precios-cards-grid">
+				{planes.map((plan) => (
+					<article class="precios-card">
+						<h3 class="precios-card__name">{plan.nombre}</h3>
+						{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
+						<div class="precios-card__precios">
+							<p class="precios-card__lanzamiento"><span class="precios-card__label">Lanzamiento</span> {plan.mensual} · {plan.anual}</p>
+							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (año 2+)</span> {plan.estandar}</p>
+						</div>
+						<p class="precios-card__capital"><span class="precios-card__label">Capital máx.</span> {plan.capital}</p>
+						<ul class="precios-card__incluye">
+							{plan.incluye.map((item) => <li>{item}</li>)}
+						</ul>
+					</article>
+				))}
 			</div>
 			<p class="precios-nota">Quien renueve mantiene el precio de lanzamiento un año más. Después pasamos a precios estándar.</p>
 		</section>
@@ -78,7 +98,7 @@ const seo = {
 
 <style>
 	.precios-hero,
-	.precios-tabla-section,
+	.precios-cards-section,
 	.precios-desc,
 	.precios-cta {
 		margin: var(--section-margin) auto;
@@ -99,37 +119,84 @@ const seo = {
 		line-height: 1.55;
 		opacity: 0.9;
 	}
-	.precios-tabla-title {
-		margin: 0 0 1rem;
-		font-size: 1.2rem;
+	.precios-cards-title {
+		margin: 0 0 0.25rem;
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: #f5b041;
+	}
+	.precios-cards-sub {
+		margin: 0 0 1.25rem;
+		font-size: 0.9rem;
+		opacity: 0.85;
+	}
+	.precios-cards-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.25rem;
+		margin-bottom: 1rem;
+	}
+	.precios-card {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.25rem;
+		border: 1px solid var(--theme-surface-2);
+		display: flex;
+		flex-direction: column;
+	}
+	.precios-card:hover {
+		border-color: rgba(245, 176, 65, 0.4);
+	}
+	.precios-card__name {
+		margin: 0 0 0.5rem;
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+	.precios-card__badge {
+		display: inline-block;
+		margin-bottom: 0.75rem;
+		padding: 0.2rem 0.5rem;
+		font-size: 0.75rem;
+		background: rgba(245, 176, 65, 0.2);
+		color: #f5b041;
+		border-radius: 0.35rem;
+		align-self: flex-start;
+	}
+	.precios-card__precios {
+		margin: 0 0 0.5rem;
+	}
+	.precios-card__lanzamiento {
+		margin: 0 0 0.25rem;
+		font-size: 1rem;
 		font-weight: 600;
 	}
-	.precios-tabla-wrap {
-		overflow-x: auto;
-		margin-bottom: 0.75rem;
+	.precios-card__estandar {
+		margin: 0;
+		font-size: 0.88rem;
+		opacity: 0.9;
 	}
-	.precios-tabla {
-		width: 100%;
-		min-width: 640px;
-		border-collapse: collapse;
+	.precios-card__capital {
+		margin: 0 0 0.75rem;
 		font-size: 0.9rem;
 	}
-	.precios-tabla th,
-	.precios-tabla td {
-		padding: 0.6rem 0.75rem;
-		text-align: left;
-		border-bottom: 1px solid var(--theme-surface-2);
+	.precios-card__label {
+		display: block;
+		font-size: 0.75rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		margin-bottom: 0.15rem;
 	}
-	.precios-tabla th {
-		background: var(--theme-surface-1);
-		font-weight: 600;
+	.precios-card__incluye {
+		margin: 0;
+		padding-left: 1.25rem;
+		line-height: 1.6;
+		font-size: 0.9rem;
 		opacity: 0.95;
+		flex: 1;
 	}
-	.precios-tabla td:first-child {
-		font-weight: 500;
-	}
-	.precios-tabla tbody tr:hover {
-		background: rgba(245, 176, 65, 0.06);
+	.precios-card__incluye li {
+		margin-bottom: 0.35rem;
 	}
 	.precios-nota {
 		font-size: 0.88rem;
@@ -172,14 +239,5 @@ const seo = {
 	}
 	.precios-cta__button:hover {
 		background: #f7c050;
-	}
-	@media (max-width: 768px) {
-		.precios-tabla {
-			font-size: 0.82rem;
-		}
-		.precios-tabla th,
-		.precios-tabla td {
-			padding: 0.5rem 0.5rem;
-		}
 	}
 </style>
