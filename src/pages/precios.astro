@@ -60,13 +60,13 @@ const planes = [
 			<p class="precios-kicker">Planes y precios</p>
 			<h1>Precios, condiciones y funcionalidades por tier</h1>
 			<p class="precios-lead">
-				Todos los planes son suscripciones (mensual o anual). Oferta de lanzamiento para los primeros 100 clientes — válida durante el primer año.
+				Todos los planes son suscripciones (mensual o anual). Oferta de lanzamiento para los primeros 100 clientes — precio lanzamiento durante 2 años.
 			</p>
 		</section>
 
 		<section class="precios-cards-section">
 			<h2 class="precios-cards-title">Oferta lanzamiento — primeros 100 clientes</h2>
-			<p class="precios-cards-sub">(Válida durante el primer año)</p>
+			<p class="precios-cards-sub">(Precio lanzamiento: 2 años para los primeros 100)</p>
 			<div class="precios-cards-grid">
 				{planes.map((plan) => (
 					<article class="precios-card">
@@ -74,7 +74,7 @@ const planes = [
 						{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
 						<div class="precios-card__precios">
 							<p class="precios-card__lanzamiento"><span class="precios-card__label">Lanzamiento</span> {plan.mensual} · {plan.anual}</p>
-							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (año 2+)</span> {plan.estandar}</p>
+							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (desde 3.º año)</span> {plan.estandar}</p>
 						</div>
 						<p class="precios-card__capital"><span class="precios-card__label">Capital máx.</span> {plan.capital}</p>
 						<ul class="precios-card__incluye">
@@ -83,7 +83,7 @@ const planes = [
 					</article>
 				))}
 			</div>
-			<p class="precios-nota">Quien renueve mantiene el precio de lanzamiento un año más. Después pasamos a precios estándar.</p>
+			<p class="precios-nota">Los primeros 100 clientes: precio lanzamiento durante 2 años. A partir del tercero, precio estándar.</p>
 		</section>
 
 		<section class="precios-desc">
