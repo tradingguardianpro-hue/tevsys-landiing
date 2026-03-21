@@ -1594,3 +1594,22 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 49.7 Docs proyecto TGP
 - `LINKS_PARA_ENVIAR_DEMO_TEVSYS.md` — Correo 1, Correo 2, link config en plantillas
 - `PLANTILLA_EMAIL_DEMO_TEVSYS.md` — link configuración añadido, nota estrategia spam
+
+---
+
+## 50) Lista de precios oficial — capital con margen 20% (19 Mar 2026)
+
+### 50.1 Decisión de producto
+- **Capital por tier:** Essential 30.000 € (antes 25k), Advanced 120.000 € (antes 100k), Pro 240.000 € (antes 200k), Pro Multi 120.000 € por cuenta.
+- **Margen 20% sobre nominal:** 25k→30k, 100k→120k, 200k→240k. Permite fase examen o beneficio sin cambiar de plan al primer 1% de ganancia.
+- **Estado:** Lista oficial para web y EA (checkpoint 19 Mar 2026). Fuente de verdad: `PLANES_PRECIOS_FEATURES_TEVSYS.md` (proyecto TGP).
+
+### 50.2 Archivos web actualizados
+- `src/pages/precios.astro` — capital en cards (30k, 120k, 240k).
+- `src/components/forms/ContactForm.astro` — límites 30000, 120000, 240000; recomendación por capital; opciones select.
+
+### 50.3 Docs proyecto TGP actualizados
+- `PLANES_PRECIOS_FEATURES_TEVSYS.md`, `Formato_Clave_Licencia_Capital_Por_Tier_TEVSYS.md`, `VALIDACION_CAPITAL_TIER_PRICING.md`, `Resumen_Cuatro_Planes_TEVSYS_Para_Clase.md`, `PITCH_DECK_TEVSYS_TODAS_LAS_SLIDES.md`, `PLAN_SISTEMA_LICENCIAS_PRO_MULTI_EA.md`, `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md`.
+
+### 50.4 PROMPT_MAESTRO_DEEPSEEK
+- Sección §6 "Lista de precios oficial" añadida con tabla y nota del margen 20%.

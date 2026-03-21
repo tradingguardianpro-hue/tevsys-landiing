@@ -111,6 +111,20 @@
 
 ## 6. Planes y flujos de contacto (Essential / Advanced / Pro) — Ene 2026
 
+### Lista de precios oficial (19 Mar 2026)
+
+**Fuente de verdad:** `PLANES_PRECIOS_FEATURES_TEVSYS.md` (proyecto TGP). Capital con margen 20% sobre nominal.
+
+| Plan | Precio lanzamiento (mes/año) | Capital máx. | Cuentas |
+|------|------------------------------|--------------|---------|
+| Essential | 39 €/mes · 390 €/año | 30.000 € | 1 MT5 |
+| Advanced | 79 €/mes · 790 €/año | 120.000 € | 1 MT5 |
+| Pro | 119 €/mes · 1.190 €/año | 240.000 € | 1 MT5 |
+| Pro Multi 2 | 149 €/mes · 1.490 €/año | 120.000 € por cuenta | 2 MT5 |
+| Pro Multi 3 | 179 €/mes · 1.790 €/año | 120.000 € por cuenta | 3 MT5 |
+
+**Margen 20%:** 25k→30k, 100k→120k, 200k→240k. Permite examen y beneficio sin cambiar de plan. Lista oficial para web y EA.
+
 ### Flujos unificados
 - **Contacto:** Nav "Contacto" → `/company/contact`. "Acceso" eliminado de nav y footer (sin destino propio hasta demo descargable).
 - **CTAs planes:** `/company/contact?plan=essential|advanced|pro`
@@ -586,4 +600,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 21 Mar 2026. §7.6 Configuración. §6 Demo flujo Correo 1+2, link configuracion. §12 commits sesión 21 Mar. Footer + instalacion + contact actualizados.
+**Última actualización:** 19 Mar 2026. §6 Lista de precios oficial (30k/120k/240k, margen 20%). §50 CHANGELOG. Fuente de verdad: PLANES_PRECIOS_FEATURES_TEVSYS.md.

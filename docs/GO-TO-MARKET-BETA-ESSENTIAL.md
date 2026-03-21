@@ -1,4 +1,4 @@
-﻿# GO-TO-MARKET BETA — tevsys (Essential-first)
+# GO-TO-MARKET BETA — tevsys (Essential-first)
 
 Documento estratégico para lanzar tevsys de forma coherente con el estado real del producto, minimizar fricción y maximizar aprendizaje con usuarios reales.
 
@@ -86,7 +86,7 @@ Ejemplo:
 ### Validación plan-capital (aplicada)
 - Essential: hasta 10.000 €
 - Advanced: hasta 50.000 €
-- Pro: hasta 200.000 €
+- Pro: hasta 240.000 € (200k+20% margen)
 - Elite: consultar
 
 ---

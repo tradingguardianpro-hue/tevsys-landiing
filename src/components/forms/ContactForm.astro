@@ -25,10 +25,13 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       <option value="5000">Hasta 5.000 €</option>
       <option value="10000">Hasta 10.000 €</option>
       <option value="25000">Hasta 25.000 €</option>
+      <option value="30000">Hasta 30.000 €</option>
       <option value="50000">Hasta 50.000 €</option>
       <option value="100000">Hasta 100.000 €</option>
+      <option value="120000">Hasta 120.000 €</option>
       <option value="200000">Hasta 200.000 €</option>
-      <option value="250000">Más de 200.000 €</option>
+      <option value="240000">Hasta 240.000 €</option>
+      <option value="250000">Más de 240.000 €</option>
     </select>
   </div>
 
@@ -71,9 +74,9 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
     const messageNode = document.getElementById('planValidationMessage');
 
     const limits = {
-      essential: 25000,
-      advanced: 100000,
-      pro: 200000,
+      essential: 30000,
+      advanced: 120000,
+      pro: 240000,
       elite: Number.POSITIVE_INFINITY,
     };
 
@@ -85,9 +88,9 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
     };
 
     const recommendationByCapital = (capital) => {
-      if (capital <= 25000) return 'Essential';
-      if (capital <= 100000) return 'Advanced';
-      if (capital <= 200000) return 'Pro';
+      if (capital <= 30000) return 'Essential';
+      if (capital <= 120000) return 'Advanced';
+      if (capital <= 240000) return 'Pro';
       return 'Elite';
     };
 
