@@ -149,15 +149,15 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 
 		if (flow === 'demo') {
 			if (titleNode) titleNode.textContent = 'Solicita tu demo de tevsys';
-			const demoProcess = ' Rellena el formulario. Te indicamos los pasos para acceder a la demo.';
+			const demoPromise = ' Te enviaremos la demo y las guías de instalación y configuración.';
 			const selectedSource = sourceMap[feature] || sourceMap[origin];
 			if (selectedSource) {
-				if (introNode) introNode.textContent = selectedSource.intro;
+				if (introNode) introNode.textContent = selectedSource.intro + demoPromise;
 				setTips(selectedSource.tips[0], selectedSource.tips[1], 'Respuesta en menos de 24h con los siguientes pasos.', empresasTipHtml);
 			} else {
 				if (introNode) {
 					introNode.textContent =
-						'Déjanos tus datos y te ayudamos a empezar rápido.' + demoProcess;
+						'Rellena el formulario.' + demoPromise;
 				}
 				setTips(
 					'Demo orientada a validación real de tu operativa.',
