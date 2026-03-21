@@ -1613,3 +1613,17 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 
 ### 50.4 PROMPT_MAESTRO_DEEPSEEK
 - Sección §6 "Lista de precios oficial" añadida con tabla y nota del margen 20%.
+
+---
+
+## 51) Política fidelidad: 6 meses en vez de año completo (19 Mar 2026)
+
+### 51.1 Decisión
+- **Antes:** Año 1 lanzamiento; si renuevas, mantienes precio año 2 (24 meses total).
+- **Ahora:** Año 1 lanzamiento; si renuevas, mantienes precio 6 meses más (18 meses total); a partir de mes 19, estándar.
+- **Razón:** Premiar fidelidad de forma sostenible. 18 meses pagando = validación suficiente; transición a estándar más temprana.
+
+### 51.2 Archivos actualizados
+- `src/pages/precios.astro` — lead, subtítulo, nota, labels "Estándar (desde 18 meses)".
+- `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` — sección §6 fidelidad.
+- Proyecto TGP: `PLANES_PRECIOS_FEATURES_TEVSYS.md`, `Resumen_Cuatro_Planes_TEVSYS_Para_Clase.md`, `PITCH_DECK_TEVSYS_TODAS_LAS_SLIDES.md`.

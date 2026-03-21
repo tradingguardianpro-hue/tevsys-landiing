@@ -4,7 +4,7 @@ import Layout from '../layouts/Page.astro';
 
 const seo = {
 	title: 'Precios y planes | tevsys',
-	description: 'Precios Essential, Advanced, Pro y Pro Multi (2–3 cuentas). Oferta lanzamiento primeros 100: año 1 lanzamiento, año 2 si renuevas. 4+ cuentas: empresas.',
+	description: 'Precios Essential, Advanced, Pro y Pro Multi (2–3 cuentas). Oferta lanzamiento primeros 100: año 1 lanzamiento, 6 meses más si renuevas. 4+ cuentas: empresas.',
 };
 
 const planesRetail = [
@@ -99,13 +99,13 @@ const planesMulti = [
 			<p class="precios-kicker">Planes y precios</p>
 			<h1>Precios, condiciones y funcionalidades por tier</h1>
 			<p class="precios-lead">
-				Todos los planes son suscripciones (mensual o anual). Oferta lanzamiento para los primeros 100: precio lanzamiento el primer año; al renovar, si sigues suscrito, mantienes ese precio un segundo año. A partir del tercer año, precio estándar.
+				Todos los planes son suscripciones (mensual o anual). Oferta lanzamiento para los primeros 100: precio lanzamiento el primer año; al renovar, si sigues suscrito, mantienes ese precio 6 meses más (año y medio en total). A partir de los 18 meses, precio estándar.
 			</p>
 		</section>
 
 		<section class="precios-cards-section">
 			<h2 class="precios-cards-title">Oferta lanzamiento — primeros 100 clientes</h2>
-			<p class="precios-cards-sub">(Precio lanzamiento año 1; año 2 si renuevas y sigues suscrito)</p>
+			<p class="precios-cards-sub">(Precio lanzamiento año 1; 6 meses más si renuevas y sigues suscrito)</p>
 			<div class="precios-cards-grid precios-cards-grid--retail">
 				{planesRetail.map((plan) => (
 					<article class="precios-card">
@@ -113,7 +113,7 @@ const planesMulti = [
 						{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
 						<div class="precios-card__precios">
 							<p class="precios-card__lanzamiento"><span class="precios-card__label">Lanzamiento</span> {plan.mensual} · {plan.anual}</p>
-							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (desde 3.º año)</span> {plan.estandar}</p>
+							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (desde 18 meses)</span> {plan.estandar}</p>
 						</div>
 						{plan.cuentas ? (
 							<>
@@ -136,7 +136,7 @@ const planesMulti = [
 						{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
 						<div class="precios-card__precios">
 							<p class="precios-card__lanzamiento"><span class="precios-card__label">Lanzamiento</span> {plan.mensual} · {plan.anual}</p>
-							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (desde 3.º año)</span> {plan.estandar}</p>
+							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (desde 18 meses)</span> {plan.estandar}</p>
 						</div>
 						{plan.cuentas ? (
 							<>
@@ -152,7 +152,7 @@ const planesMulti = [
 					</article>
 				))}
 			</div>
-			<p class="precios-nota">Primeros 100 clientes: precio lanzamiento año 1; si renuevas y sigues suscrito, mantienes ese precio año 2. A partir del tercero, precio estándar.</p>
+			<p class="precios-nota">Primeros 100 clientes: precio lanzamiento año 1; si renuevas y sigues suscrito, mantienes ese precio 6 meses más. A partir de los 18 meses, precio estándar.</p>
 		</section>
 
 		<section class="precios-desc">

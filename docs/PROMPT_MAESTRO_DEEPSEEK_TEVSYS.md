@@ -123,7 +123,7 @@
 | Pro Multi 2 | 149 €/mes · 1.490 €/año | 120.000 € por cuenta | 2 MT5 |
 | Pro Multi 3 | 179 €/mes · 1.790 €/año | 120.000 € por cuenta | 3 MT5 |
 
-**Margen 20%:** 25k→30k, 100k→120k, 200k→240k. Permite examen y beneficio sin cambiar de plan. Lista oficial para web y EA.
+**Margen 20%:** 25k→30k, 100k→120k, 200k→240k. Permite examen y beneficio sin cambiar de plan. **Fidelidad:** Año 1 lanzamiento; 6 meses más si renuevas (año y medio total); estándar desde 18 meses. Lista oficial para web y EA.
 
 ### Flujos unificados
 - **Contacto:** Nav "Contacto" → `/company/contact`. "Acceso" eliminado de nav y footer (sin destino propio hasta demo descargable).
