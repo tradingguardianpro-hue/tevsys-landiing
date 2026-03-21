@@ -71,7 +71,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
     const messageNode = document.getElementById('planValidationMessage');
 
     const limits = {
-      essential: 10000,
+      essential: 25000,
       advanced: 100000,
       pro: 200000,
       elite: Number.POSITIVE_INFINITY,
@@ -85,7 +85,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
     };
 
     const recommendationByCapital = (capital) => {
-      if (capital <= 10000) return 'Essential';
+      if (capital <= 25000) return 'Essential';
       if (capital <= 100000) return 'Advanced';
       if (capital <= 200000) return 'Pro';
       return 'Elite';
