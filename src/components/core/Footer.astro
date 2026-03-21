@@ -51,7 +51,11 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
             <ul class="footer-link__list">
               {list.items.map((item) => (
                 <li>
-                  <a href={item.slug}>{item.title}</a>
+                  {item.slug ? (
+                    <a href={item.slug}>{item.title}</a>
+                  ) : (
+                    <span class="footer-link__disabled">{item.title}</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -86,7 +90,7 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   .footer-grid__container {
     padding: 2rem 0 1rem 0;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     gap: 1.5rem;
   }
   .footer-brand__slot {
@@ -159,6 +163,11 @@ const { footerSocials, footerLists, copyrightName, background, color, showPlug: 
   }
   .footer-link__list li a:hover {
     color: #f5b041;
+  }
+  .footer-link__disabled {
+    opacity: 0.7;
+    cursor: default;
+    text-decoration: none;
   }
   .footer-copyright__container {
     display: flex;
