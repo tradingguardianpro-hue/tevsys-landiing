@@ -4,7 +4,7 @@ import Layout from '../layouts/Page.astro';
 
 const seo = {
 	title: 'Precios y planes | tevsys',
-	description: 'Precios Essential, Advanced y Pro. Oferta lanzamiento primeros 100 clientes (durante un año). Suscripción mensual o anual.',
+	description: 'Precios Essential, Advanced, Pro y Pro Multi (2–3 cuentas). Oferta lanzamiento primeros 100 clientes durante 2 años. 4+ cuentas: empresas.',
 };
 
 const planes = [
@@ -14,6 +14,7 @@ const planes = [
 		anual: '390 €/año',
 		estandar: '49 €/mes',
 		capital: '10.000 €',
+		cuentas: null,
 		incluye: [
 			'Un día activo, rotación automática',
 			'Precisión milimétrica, HyperClose',
@@ -28,6 +29,7 @@ const planes = [
 		anual: '790 €/año',
 		estandar: '99 €/mes',
 		capital: '50.000 €',
+		cuentas: null,
 		incluye: [
 			'Todo Essential',
 			'Configuración de toda la semana',
@@ -43,10 +45,41 @@ const planes = [
 		anual: '1.190 €/año',
 		estandar: '149 €/mes',
 		capital: '200.000 €',
+		cuentas: null,
 		incluye: [
 			'Todo Advanced',
 			'Drawdown automático',
 			'Noticias y horarios completos',
+			'Actualización noticias y horarios (cuando estén listas)',
+		],
+		badge: 'En desarrollo — lista de espera',
+	},
+	{
+		nombre: 'Pro Multi 2',
+		mensual: '149 €/mes',
+		anual: '1.490 €/año',
+		estandar: '179 €/mes',
+		capital: '100.000 € por cuenta',
+		cuentas: '2 cuentas',
+		incluye: [
+			'Todo Pro',
+			'2 cuentas hasta 100k € cada una',
+			'Ideal: 2× FTMO 100k, prop firms',
+			'Actualización noticias y horarios (cuando estén listas)',
+		],
+		badge: 'En desarrollo — lista de espera',
+	},
+	{
+		nombre: 'Pro Multi 3',
+		mensual: '179 €/mes',
+		anual: '1.790 €/año',
+		estandar: '209 €/mes',
+		capital: '100.000 € por cuenta',
+		cuentas: '3 cuentas',
+		incluye: [
+			'Todo Pro',
+			'3 cuentas hasta 100k € cada una',
+			'Ideal: 1 personal + 2 funded',
 			'Actualización noticias y horarios (cuando estén listas)',
 		],
 		badge: 'En desarrollo — lista de espera',
@@ -76,7 +109,14 @@ const planes = [
 							<p class="precios-card__lanzamiento"><span class="precios-card__label">Lanzamiento</span> {plan.mensual} · {plan.anual}</p>
 							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (desde 3.º año)</span> {plan.estandar}</p>
 						</div>
-						<p class="precios-card__capital"><span class="precios-card__label">Capital máx.</span> {plan.capital}</p>
+						{plan.cuentas ? (
+							<>
+								<p class="precios-card__capital"><span class="precios-card__label">Cuentas</span> {plan.cuentas}</p>
+								<p class="precios-card__capital"><span class="precios-card__label">Capital máx. por cuenta</span> {plan.capital}</p>
+							</>
+						) : (
+							<p class="precios-card__capital"><span class="precios-card__label">Capital máx.</span> {plan.capital}</p>
+						)}
 						<ul class="precios-card__incluye">
 							{plan.incluye.map((item) => <li>{item}</li>)}
 						</ul>
@@ -88,6 +128,10 @@ const planes = [
 
 		<section class="precios-desc">
 			<p>Cuando tengamos las actualizaciones para tu cuenta y Advanced y Pro listos, te avisaremos por email. <strong>Lista de espera abierta</strong> — <a href="/company/contact?flow=lista">escríbenos para apuntarte</a>.</p>
+		</section>
+
+		<section class="precios-empresas">
+			<p><strong>¿4 o más cuentas, academia o capital corporativo?</strong> Trato a medida — <a href="/company/empresas">Contacto empresas</a>.</p>
 		</section>
 
 		<section class="precios-cta">
@@ -102,6 +146,7 @@ const planes = [
 	.precios-hero,
 	.precios-cards-section,
 	.precios-desc,
+	.precios-empresas,
 	.precios-cta {
 		margin: var(--section-margin) auto;
 	}
@@ -216,6 +261,23 @@ const planes = [
 	}
 	.precios-desc p:last-child {
 		margin-bottom: 0;
+	}
+	.precios-empresas {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+		border-left: 4px solid rgba(245, 176, 65, 0.6);
+	}
+	.precios-empresas p {
+		margin: 0;
+		line-height: 1.5;
+	}
+	.precios-empresas a {
+		color: #f5b041;
+		font-weight: 600;
+	}
+	.precios-empresas a:hover {
+		text-decoration: underline;
 	}
 	.precios-cta {
 		text-align: center;
