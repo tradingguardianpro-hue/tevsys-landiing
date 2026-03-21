@@ -1,0 +1,185 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Precios y planes | tevsys',
+	description: 'Precios Essential, Advanced y Pro. Oferta lanzamiento primeros 100 clientes. Suscripción mensual o anual.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="precios-hero">
+			<p class="precios-kicker">Planes y precios</p>
+			<h1>Precios, condiciones y funcionalidades por tier</h1>
+			<p class="precios-lead">
+				Todos los planes son suscripciones (mensual o anual). Oferta de lanzamiento para los primeros 100 clientes.
+			</p>
+		</section>
+
+		<section class="precios-tabla-section">
+			<h2 class="precios-tabla-title">Oferta lanzamiento — primeros 100 clientes</h2>
+			<div class="precios-tabla-wrap">
+				<table class="precios-tabla">
+					<thead>
+						<tr>
+							<th>Plan</th>
+							<th>Mensual (lanzamiento)</th>
+							<th>Anual (lanzamiento)</th>
+							<th>Estándar (año 2+)</th>
+							<th>Capital máx.</th>
+							<th>Qué incluye</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>Essential</strong></td>
+							<td>39 €/mes</td>
+							<td>390 €/año</td>
+							<td>49 €/mes</td>
+							<td>10.000 €</td>
+							<td>Un día activo, rotación automática. Precisión milimétrica, HyperClose, días OFF.</td>
+						</tr>
+						<tr>
+							<td><strong>Advanced</strong></td>
+							<td>79 €/mes</td>
+							<td>790 €/año</td>
+							<td>99 €/mes</td>
+							<td>50.000 €</td>
+							<td>Todo Essential + configuración de toda la semana, protección desde el lunes o desde que instales, límites por cada día, SML. En desarrollo — lista de espera.</td>
+						</tr>
+						<tr>
+							<td><strong>Pro</strong></td>
+							<td>119 €/mes</td>
+							<td>1.190 €/año</td>
+							<td>149 €/mes</td>
+							<td>200.000 €</td>
+							<td>Todo Advanced + drawdown automático, noticias y horarios completos. En desarrollo — lista de espera.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p class="precios-nota">Quien renueve mantiene el precio de lanzamiento un año más. Después pasamos a precios estándar.</p>
+		</section>
+
+		<section class="precios-desc">
+			<p>Essential es lo que tienes en la demo. Advanced suma protección toda la semana — desde el lunes o desde que instales —, límites por cada día y SML. Pro añade drawdown, noticias y horarios completos.</p>
+			<p>Tendrás derecho a la actualización de noticias y horarios cuando estén listas, en cualquiera de los tres tipos de cuenta, cada uno con su nivel correspondiente. Cuando tengamos Advanced y Pro listos, te avisaremos.</p>
+		</section>
+
+		<section class="precios-cta">
+			<h2>¿Quieres probar primero?</h2>
+			<p>Solicita la demo y pruébala con calma. Cualquier duda, aquí estamos.</p>
+			<a href="/company/contact?flow=demo" class="precios-cta__button">Solicitar demo</a>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.precios-hero,
+	.precios-tabla-section,
+	.precios-desc,
+	.precios-cta {
+		margin: var(--section-margin) auto;
+	}
+	.precios-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.precios-hero h1 {
+		margin: 0 0 0.65rem;
+		font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+	}
+	.precios-lead {
+		max-width: 60ch;
+		line-height: 1.55;
+		opacity: 0.9;
+	}
+	.precios-tabla-title {
+		margin: 0 0 1rem;
+		font-size: 1.2rem;
+		font-weight: 600;
+	}
+	.precios-tabla-wrap {
+		overflow-x: auto;
+		margin-bottom: 0.75rem;
+	}
+	.precios-tabla {
+		width: 100%;
+		min-width: 640px;
+		border-collapse: collapse;
+		font-size: 0.9rem;
+	}
+	.precios-tabla th,
+	.precios-tabla td {
+		padding: 0.6rem 0.75rem;
+		text-align: left;
+		border-bottom: 1px solid var(--theme-surface-2);
+	}
+	.precios-tabla th {
+		background: var(--theme-surface-1);
+		font-weight: 600;
+		opacity: 0.95;
+	}
+	.precios-tabla td:first-child {
+		font-weight: 500;
+	}
+	.precios-tabla tbody tr:hover {
+		background: rgba(245, 176, 65, 0.06);
+	}
+	.precios-nota {
+		font-size: 0.88rem;
+		opacity: 0.85;
+		font-style: italic;
+	}
+	.precios-desc {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+	}
+	.precios-desc p {
+		margin: 0 0 0.75rem;
+		line-height: 1.55;
+	}
+	.precios-desc p:last-child {
+		margin-bottom: 0;
+	}
+	.precios-cta {
+		text-align: center;
+	}
+	.precios-cta h2 {
+		margin: 0 0 0.5rem;
+		font-size: 1.25rem;
+	}
+	.precios-cta p {
+		margin: 0 0 1rem;
+		opacity: 0.9;
+	}
+	.precios-cta__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem 0.95rem;
+		border-radius: 1.4rem;
+		background: #f5b041;
+		color: #1a1510;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.precios-cta__button:hover {
+		background: #f7c050;
+	}
+	@media (max-width: 768px) {
+		.precios-tabla {
+			font-size: 0.82rem;
+		}
+		.precios-tabla th,
+		.precios-tabla td {
+			padding: 0.5rem 0.5rem;
+		}
+	}
+</style>

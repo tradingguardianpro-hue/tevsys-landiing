@@ -71,7 +71,7 @@
 - **Contacto:** info@tevsys.io, Barcelona
 - **Guion amarillo (—)** antes de títulos de columnas (Navegación, Producto, Legal)
 - **Hover amarillo** en enlaces
-- **Grid 4 columnas:** Brand+contacto | Navegación (Inicio, Empresas, Contacto) | Producto (Cómo instalar, Precisión, HyperClose, SML, Evidencia) | Legal (Aviso Legal, Privacidad, Términos de Uso)
+- **Grid 4 columnas:** Brand+contacto | Navegación (Inicio, Empresas, Contacto) | Producto (Cómo instalar, **Guía de configuración**, Precisión, HyperClose, SML, Evidencia) | Legal (Aviso Legal, Privacidad, Términos de Uso)
 - **Logo:** favicon.png junto a tevsys™
 - **Frase indie:** 1.08rem con letter-spacing ("Made with love for trading...")
 - **Copyright:** "Copyright © 2026 tevsys. Todos los derechos reservados."
@@ -145,6 +145,7 @@
 ### Intros desde features (flow=demo)
 Cuando vienen de micro-página con `?feature=...&flow=demo`:
 - **Precision, HyperClose, SML, Evidencia:** "Ya has visto [X] en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo."
+- **Genérico (flow=demo sin feature):** "Rellena el formulario. Te enviaremos la demo y las guías de instalación y configuración." (21 Mar 2026)
 - Sin redundancia con lo ya publicado; respuesta manual: enlaces + contexto breve + pasos demo.
 
 ### Enlaces para profundizar (respuesta manual)
@@ -161,11 +162,13 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 - **Primer lead:** Fausto (18/03/2026). Respuesta enviada; esperando canal (email/WhatsApp/Telegram) → enviar links cuando responda.
 - **Trading de Futuros:** Academia (Gonzalo). Interesado. Si no responde en 1 semana → mensaje de follow-up.
-- **Flujo:** Lead responde con canal → enviar link Drive (tevsys_Essential_Demo_15dias.ex5) + link vídeo instalación.
-- **Links obligatorios:**
+- **Flujo:** Lead responde con canal → enviar link Drive (tevsys_Essential_Demo_15dias.ex5) + link instalación + link configuración.
+- **Estrategia spam (21 Mar 2026):** Correo 1 (pre-aviso breve, sin links) → Correo 2 (demo con links). Si cae en spam, el lead sabe que debe buscarlo.
+- **Links obligatorios en Correo 2:**
   - Descarga: link Drive al .ex5 (pegar al enviar)
-  - Vídeo instalación: https://www.tevsys.io/instalacion
-- **Docs:** `LINKS_PARA_ENVIAR_DEMO_TEVSYS.md` (links + plantillas email y WhatsApp/Telegram), `PLANTILLA_EMAIL_DEMO_TEVSYS.md` (plantilla detallada).
+  - Instalación: https://www.tevsys.io/instalacion
+  - Configuración: https://www.tevsys.io/configuracion
+- **Docs:** `LINKS_PARA_ENVIAR_DEMO_TEVSYS.md` (Correo 1 + Correo 2, links, plantillas email/WhatsApp/Telegram), `PLANTILLA_EMAIL_DEMO_TEVSYS.md` (plantilla detallada).
 
 ---
 
@@ -286,12 +289,31 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 **Estructura:**
 1. Hero: "Cómo instalar tevsys en MT5" — cuenta nueva, desde cero
 2. Vídeo: embed compacto (560px), se expande al play
-3. Pasos resumidos (1-8) en texto
-4. CTA: Solicitar demo → /company/contact?flow=demo
+3. **Paso 2 — Guía de configuración:** enlace a `/configuracion` con texto "Ver guía de configuración (2:36 min)"
+4. Pasos resumidos (1-8) en texto
+5. CTA: Solicitar demo → /company/contact?flow=demo
 
 **Ruta vídeo:** `public/videos/features/instalacion-demo.mp4`
 
 **Uso:** Link para enviar a leads junto con el link de descarga. Clicable desde móvil y ordenador.
+
+---
+
+### 7.6 Configuración (`/configuracion`) — PUBLICADA 21 Mar 2026
+
+**Objetivo:** Guía de configuración de límites y panel tras instalar. Página dedicada, visible en footer (Producto → Guía de configuración) y desde /instalacion (Paso 2).
+
+**Vídeo embebido:**
+- Drive ID `1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg` — `tevsys_Guia_Rapida_Configuracion.mp4` (2:36 min, Essential, fin de semana). Entre semana el flujo es similar.
+
+**Estructura:**
+1. Hero: "Guía de configuración — tevsys Essential"
+2. Vídeo: iframe Drive embed (560px). Fallback: enlace directo si no carga
+3. CTA: Solicitar demo → /company/contact?flow=demo
+
+**Archivo:** `src/pages/configuracion.astro`
+
+**Uso:** Incluir en emails a leads junto con instalación. Reduce fricción post-instalación.
 
 ---
 
@@ -333,7 +355,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 4. Nombre exacto: precision-demo.mp4, hyperclose-demo.mp4, etc.
 5. Decir al equipo para integrar en web (acordeón, enlace, etc.)
 
-**Vídeos publicados:** instalacion-demo.mp4 (guía instalación, 8 pasos + onboarding), precision-demo.mp4, precision-demo-volatilidad.mp4, precision-logs-guide.mp4, hyperclose-demo.mp4, hyperclose-dias-off-demo.mp4, evidencia-100k-perdida.mp4.
+**Vídeos publicados:** instalacion-demo.mp4 (guía instalación, 8 pasos + onboarding), **tevsys_Guia_Rapida_Configuracion.mp4** (Drive, 2:36 min, embebido en /configuracion), precision-demo.mp4, precision-demo-volatilidad.mp4, precision-logs-guide.mp4, hyperclose-demo.mp4, hyperclose-dias-off-demo.mp4, evidencia-100k-perdida.mp4.
 
 **Vídeos pendientes:** sml-demo.mp4 (SML en fase de validación, se hace desde escritorio). Vídeo ganancias 100k (+1.111€): no prioritario, dejar.
 
@@ -355,7 +377,8 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | contact.astro | Formulario por plan/demo |
 | empresas.astro, empresas-thank-you.astro | Micro-página canal B2B |
 | precision.astro, hyperclose.astro, sml.astro, evidencia.astro | Micro-páginas features |
-| instalacion.astro | Página guía instalación demo (vídeo + pasos) |
+| instalacion.astro | Página guía instalación demo (vídeo + pasos + enlace Paso 2 config) |
+| configuracion.astro | Página guía configuración (vídeo Drive embebido, límites, panel) |
 
 ---
 
@@ -428,12 +451,20 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - feat(footer): enlace "Cómo instalar" en Producto (primera posición)
 - docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS.md, PLANTILLA_EMAIL_DEMO_TEVSYS.md
 
+**Sesión 21 Mar 2026 (guía configuración, flujo demo, spam):**
+- feat(configuracion): nueva página /configuracion con vídeo Drive embebido (2:36 min)
+- feat(footer): enlace "Guía de configuración" en Producto (debajo Cómo instalar)
+- feat(instalacion): sección Paso 2 — Guía de configuración con enlace a /configuracion
+- feat(contact): flow=demo — promesa "Te enviaremos la demo y las guías de instalación y configuración"
+- docs(LINKS): Correo 1 pre-aviso (spam), Correo 2 con link configuración, todas las plantillas actualizadas
+- docs(PLANTILLA_EMAIL): añadir link configuración
+
 ---
 
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). 56 operativas documentadas. Evidencia: operativa 4.56 Essential (100 lotes, 95 € precisión) + 7 capturas. Footer: Cómo instalar, Producto, Legal. /instalacion: vídeo guía + pasos. Demo: .ex5 15 días, link Drive + tevsys.io/instalacion. Leads: Fausto, Trading de Futuros (Gonzalo). Próximo: buscar academias para presentación. Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS, PLANTILLA_EMAIL. Ver §15, §16.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). 56 operativas documentadas. Evidencia: operativa 4.56 Essential (100 lotes, 95 € precisión) + 7 capturas. Footer: Cómo instalar, Guía configuración, Producto, Legal. /instalacion: vídeo + Paso 2 (enlace a config). /configuracion: vídeo guía configuración (2:36 min, Drive). Contact flow=demo: "Te enviaremos la demo y las guías de instalación y configuración". Demo: .ex5 15 días. Flujo email: Correo 1 (pre-aviso spam) → Correo 2 (Drive + instalacion + configuracion). Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS (Correo 1+2, checklist). Ver §15, §16.
 ```
 
 ---
@@ -555,4 +586,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 20 Mar 2026. §17.3 robots sitemap.xml. §17.6 Core Web Vitals ampliado. CHANGELOG §48.
+**Última actualización:** 21 Mar 2026. §7.6 Configuración. §6 Demo flujo Correo 1+2, link configuracion. §12 commits sesión 21 Mar. Footer + instalacion + contact actualizados.

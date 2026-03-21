@@ -18,6 +18,7 @@ export const footerLists = [
       { title: 'HyperClose', slug: '/features/hyperclose' },
       { title: 'SML', slug: '/features/sml' },
       { title: 'Evidencia', slug: '/features/evidencia' },
+      { title: 'Precios', slug: '/precios' },
     ],
   },
   {

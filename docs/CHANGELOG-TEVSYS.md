@@ -1552,3 +1552,45 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 48.11 Commits sugeridos
 - `feat(seo): verificación meta tag Search Console + WebP ampliado`
 - `perf(images): WebP para evidencia, hyperclose, precision, contact, logo`
+
+---
+
+## 49) Guía de configuración, flujo demo y estrategia spam (21 Mar 2026)
+
+### 49.1 Nueva página /configuracion
+- **Archivo:** `src/pages/configuracion.astro`
+- **Objetivo:** Guía de configuración de límites y panel tras instalar. Vídeo Drive embebido (tevsys_Guia_Rapida_Configuracion.mp4, 2:36 min, Essential, fin de semana).
+- **Estructura:** Hero, vídeo iframe, enlace fallback si no carga, CTA Solicitar demo.
+- **URL:** https://www.tevsys.io/configuracion
+
+### 49.2 Footer y instalación
+- **footer.js:** Enlace "Guía de configuración" en columna Producto (debajo de "Cómo instalar").
+- **instalacion.astro:** Nueva sección "Paso 2 — Guía de configuración" con enlace a /configuracion (entre vídeo instalación y pasos resumidos).
+
+### 49.3 Formulario demo — promesa explícita
+- **contact.astro flow=demo:** Intro actualizado: "Rellena el formulario. Te enviaremos la demo y las guías de instalación y configuración."
+- Aplica a genérico y a intros desde features (se añade la promesa al final).
+
+### 49.4 Estrategia spam — Correo 1 + Correo 2
+- **Problema:** Emails de demo caen en correo no deseado (links, Drive, etc.).
+- **Solución:** Flujo de dos correos:
+  - **Correo 1 (pre-aviso):** Breve, sin links. "En el próximo correo te envío la demo y las guías. Si no lo ves, revisa spam."
+  - **Correo 2:** Demo con links (Drive, instalación, configuración).
+- **Doc:** `LINKS_PARA_ENVIAR_DEMO_TEVSYS.md` actualizado con Correo 1, Correo 2, link configuración en todas las plantillas, checklist.
+
+### 49.5 Links obligatorios en emails a leads
+- Descarga: link Drive al .ex5
+- Instalación: https://www.tevsys.io/instalacion
+- Configuración: https://www.tevsys.io/configuracion (nuevo)
+
+### 49.6 Archivos tocados
+- `src/pages/configuracion.astro` (nuevo)
+- `src/config/footer.js`
+- `src/pages/instalacion.astro`
+- `src/pages/company/contact.astro`
+- `public/sitemap.xml` (añadida URL /configuracion)
+- `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`
+
+### 49.7 Docs proyecto TGP
+- `LINKS_PARA_ENVIAR_DEMO_TEVSYS.md` — Correo 1, Correo 2, link config en plantillas
+- `PLANTILLA_EMAIL_DEMO_TEVSYS.md` — link configuración añadido, nota estrategia spam
