@@ -4,10 +4,10 @@ import Layout from '../layouts/Page.astro';
 
 const seo = {
 	title: 'Precios y planes | tevsys',
-	description: 'Precios Essential, Advanced, Pro y Pro Multi (2–3 cuentas). Oferta lanzamiento primeros 100 clientes durante 2 años. 4+ cuentas: empresas.',
+	description: 'Precios Essential, Advanced, Pro y Pro Multi (2–3 cuentas). Oferta lanzamiento primeros 100: año 1 lanzamiento, año 2 si renuevas. 4+ cuentas: empresas.',
 };
 
-const planes = [
+const planesRetail = [
 	{
 		nombre: 'Essential',
 		mensual: '39 €/mes',
@@ -54,6 +54,9 @@ const planes = [
 		],
 		badge: 'En desarrollo — lista de espera',
 	},
+];
+
+const planesMulti = [
 	{
 		nombre: 'Pro Multi 2',
 		mensual: '149 €/mes',
@@ -93,15 +96,15 @@ const planes = [
 			<p class="precios-kicker">Planes y precios</p>
 			<h1>Precios, condiciones y funcionalidades por tier</h1>
 			<p class="precios-lead">
-				Todos los planes son suscripciones (mensual o anual). Oferta de lanzamiento para los primeros 100 clientes — precio lanzamiento durante 2 años.
+				Todos los planes son suscripciones (mensual o anual). Oferta lanzamiento para los primeros 100: precio lanzamiento el primer año; al renovar, si sigues suscrito, mantienes ese precio un segundo año. A partir del tercer año, precio estándar.
 			</p>
 		</section>
 
 		<section class="precios-cards-section">
 			<h2 class="precios-cards-title">Oferta lanzamiento — primeros 100 clientes</h2>
-			<p class="precios-cards-sub">(Precio lanzamiento: 2 años para los primeros 100)</p>
-			<div class="precios-cards-grid">
-				{planes.map((plan) => (
+			<p class="precios-cards-sub">(Precio lanzamiento año 1; año 2 si renuevas y sigues suscrito)</p>
+			<div class="precios-cards-grid precios-cards-grid--retail">
+				{planesRetail.map((plan) => (
 					<article class="precios-card">
 						<h3 class="precios-card__name">{plan.nombre}</h3>
 						{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
@@ -123,7 +126,30 @@ const planes = [
 					</article>
 				))}
 			</div>
-			<p class="precios-nota">Los primeros 100 clientes: precio lanzamiento durante 2 años. A partir del tercero, precio estándar.</p>
+			<div class="precios-cards-grid precios-cards-grid--multi">
+				{planesMulti.map((plan) => (
+					<article class="precios-card">
+						<h3 class="precios-card__name">{plan.nombre}</h3>
+						{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
+						<div class="precios-card__precios">
+							<p class="precios-card__lanzamiento"><span class="precios-card__label">Lanzamiento</span> {plan.mensual} · {plan.anual}</p>
+							<p class="precios-card__estandar"><span class="precios-card__label">Estándar (desde 3.º año)</span> {plan.estandar}</p>
+						</div>
+						{plan.cuentas ? (
+							<>
+								<p class="precios-card__capital"><span class="precios-card__label">Cuentas</span> {plan.cuentas}</p>
+								<p class="precios-card__capital"><span class="precios-card__label">Capital máx. por cuenta</span> {plan.capital}</p>
+							</>
+						) : (
+							<p class="precios-card__capital"><span class="precios-card__label">Capital máx.</span> {plan.capital}</p>
+						)}
+						<ul class="precios-card__incluye">
+							{plan.incluye.map((item) => <li>{item}</li>)}
+						</ul>
+					</article>
+				))}
+			</div>
+			<p class="precios-nota">Primeros 100 clientes: precio lanzamiento año 1; si renuevas y sigues suscrito, mantienes ese precio año 2. A partir del tercero, precio estándar.</p>
 		</section>
 
 		<section class="precios-desc">
@@ -179,9 +205,22 @@ const planes = [
 	}
 	.precios-cards-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 1.25rem;
 		margin-bottom: 1rem;
+	}
+	.precios-cards-grid--retail {
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	}
+	.precios-cards-grid--multi {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@media (max-width: 600px) {
+		.precios-cards-grid--multi {
+			grid-template-columns: 1fr;
+		}
 	}
 	.precios-card {
 		background: var(--theme-surface-1);
