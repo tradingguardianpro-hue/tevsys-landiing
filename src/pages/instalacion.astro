@@ -30,6 +30,15 @@ const seo = {
 			</div>
 		</section>
 
+		<section id="configuracion" class="feature-demo feature-demo--config">
+			<h2>Paso 2 — Guía de configuración</h2>
+			<p class="feature-demo-hook">Tras instalar, configura los límites y el panel. Vídeo en fin de semana; entre semana el flujo es similar.</p>
+			<a href="/configuracion" class="feature-config-link">
+				<span class="feature-config-link__label">Ver guía de configuración (2:36 min)</span>
+				<span class="feature-config-link__arrow">→</span>
+			</a>
+		</section>
+
 		<section class="feature-proof">
 			<h2>Pasos resumidos</h2>
 			<ol class="instalacion-steps">
@@ -112,6 +121,23 @@ const seo = {
 		margin: 0 0 0.75rem;
 		opacity: 0.9;
 		font-style: italic;
+	}
+	.feature-config-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 0.9rem;
+		background: var(--theme-surface-1);
+		border-radius: 0.5rem;
+		color: inherit;
+		text-decoration: none;
+		font-weight: 500;
+	}
+	.feature-config-link:hover {
+		background: var(--theme-surface-2);
+	}
+	.feature-config-link__arrow {
+		opacity: 0.7;
 	}
 	.demo-video {
 		background: #06080d;

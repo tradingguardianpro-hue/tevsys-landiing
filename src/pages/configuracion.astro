@@ -1,0 +1,148 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Guía rápida de configuración | tevsys',
+	description: 'Configura los límites y el panel de tevsys Essential. Vídeo paso a paso en fin de semana. Entre semana el flujo es similar.',
+};
+
+const VIDEO_DRIVE_ID = '1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg';
+const VIDEO_EMBED_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/preview`;
+const VIDEO_LINK_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/view?usp=sharing`;
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="feature-hero">
+			<p class="feature-kicker">Guía rápida</p>
+			<h1>Guía de configuración — tevsys Essential</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Límites, panel y primer uso.</p>
+			<p class="feature-lead">
+				Tras instalar la demo, configura los límites de pérdida y ganancia. Este vídeo muestra el flujo en fin de semana; entre semana el proceso es similar, solo cambia el día activo.
+			</p>
+		</section>
+
+		<section class="feature-demo">
+			<h2>Vídeo — Configuración básica</h2>
+			<p class="feature-demo-hook">2:36 min. Essential, inputs, engranaje y reinicio.</p>
+			<div class="demo-video demo-video--compact">
+				<iframe
+					src={VIDEO_EMBED_URL}
+					width="560"
+					height="315"
+					allow="autoplay"
+					allowfullscreen
+					title="Guía rápida de configuración tevsys"
+				></iframe>
+			</div>
+			<p class="configuracion-fallback">
+				Si el vídeo no se reproduce, <a href={VIDEO_LINK_URL} target="_blank" rel="noopener noreferrer">ábrelo directamente</a>.
+			</p>
+		</section>
+
+		<section class="feature-cta">
+			<h2>¿Necesitas la demo?</h2>
+			<p>Rellena el formulario y te enviamos el enlace de descarga + las guías de instalación y configuración.</p>
+			<a href="/company/contact?flow=demo" class="feature-cta__button">Solicitar demo</a>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.feature-hero,
+	.feature-demo,
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.feature-hero h1 {
+		margin: 0 0 0.65rem;
+		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+	}
+	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		margin: 0 0 0.7rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-lead {
+		max-width: 70ch;
+		line-height: 1.55;
+	}
+	.feature-demo h2,
+	.feature-cta h2 {
+		margin: 0 0 0.75rem;
+		font-size: 1.35rem;
+	}
+	.feature-demo-hook {
+		margin: 0 0 0.75rem;
+		opacity: 0.9;
+		font-style: italic;
+	}
+	.demo-video {
+		background: #06080d;
+		border-radius: var(--theme-shape-radius);
+		overflow: hidden;
+	}
+	.demo-video--compact {
+		max-width: 560px;
+	}
+	.demo-video iframe {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		border: none;
+	}
+	.configuracion-fallback {
+		margin-top: 0.75rem;
+		font-size: 0.9rem;
+		opacity: 0.85;
+	}
+	.configuracion-fallback a {
+		color: #f5b041;
+		text-decoration: underline;
+	}
+	.configuracion-fallback a:hover {
+		opacity: 0.9;
+	}
+	.feature-cta {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+	}
+	.feature-cta p {
+		margin: 0 0 0.9rem;
+		line-height: 1.5;
+	}
+	.feature-cta__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem 0.95rem;
+		border-radius: 1.4rem;
+		background: #f5b041;
+		color: #1a1510;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.feature-cta__button:hover {
+		background: #f7c050;
+	}
+</style>

@@ -13,6 +13,7 @@ export const footerLists = [
     title: 'Producto',
     items: [
       { title: 'Cómo instalar', slug: '/instalacion' },
+      { title: 'Guía de configuración', slug: '/configuracion' },
       { title: 'Precisión', slug: '/features/precision' },
       { title: 'HyperClose', slug: '/features/hyperclose' },
       { title: 'SML', slug: '/features/sml' },
