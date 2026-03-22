@@ -56,6 +56,26 @@ module.exports = async (req, res) => {
   const esAnual = esVarianteAnual(variantName);
   const licenseKey = generarClave(orderNumber, esAnual);
 
+  const expiresAt = calcularExpira(esAnual);
+  const { saveLicense } = require("../lib/licenses");
+  const saveResult = await saveLicense(licenseKey, {
+    email,
+    tier: "essential",
+    variant: esAnual ? "anual" : "mensual",
+    orderId: String(orderNumber),
+    expiresAt,
+  });
+  if (saveResult === "error") {
+    console.error("[webhook-lemon] BD falló. No enviamos email para evitar clave fantasma.");
+    return res.status(500).json({
+      error: "Database save failed",
+      hint: "Clave generada pero no guardada. Revisa UPSTASH_REDIS_*. No se envió email al cliente.",
+    });
+  }
+  if (saveResult === "skipped") {
+    console.warn("[webhook-lemon] BD no configurada. Enviamos email pero la clave NO está persistida.");
+  }
+
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
     try {
@@ -117,6 +137,12 @@ function generarClave(orderNumber, esAnual) {
   const prefix = esAnual ? "ESEANU" : "ESEMEN";
   const num = String(orderNumber).padStart(4, "0").slice(-4);
   return prefix + num;
+}
+
+function calcularExpira(esAnual) {
+  const d = new Date();
+  d.setMonth(d.getMonth() + (esAnual ? 12 : 1));
+  return d.toISOString().slice(0, 10);
 }
 
 /**
