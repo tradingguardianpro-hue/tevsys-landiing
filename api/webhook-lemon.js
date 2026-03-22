@@ -176,11 +176,12 @@ function buildEmailHtml(licenseKey) {
     "</p>" +
     "</td></tr></table>" +
     // Instrucciones
-    "<p style='margin:0 0 12px 0; font-weight:600; color:#222;'>Cómo activarla en MT5:</p>" +
+    "<p style='margin:0 0 12px 0; font-weight:600; color:#222;'>Cómo activarla en MT5 (solo la primera vez):</p>" +
     "<ol style='margin:0 0 24px 0; padding-left:20px;'>" +
-    "<li style='margin-bottom:6px;'>Abre MetaTrader 5 y carga tevsys en el gráfico.</li>" +
-    "<li style='margin-bottom:6px;'>Pulsa <strong>F7</strong> (o Herramientas → Opciones → Expert Advisors).</li>" +
-    "<li>Pega la clave en el campo <strong>License Key</strong> del EA.</li>" +
+    "<li style='margin-bottom:6px;'>Abre MetaTrader 5. Ve a <strong>Herramientas → Opciones → Asesores Expertos</strong>.</li>" +
+    "<li style='margin-bottom:6px;'>Activa <strong>Permitir comercio algorítmico</strong>.</li>" +
+    "<li style='margin-bottom:6px;'>Activa <strong>Permitir WebRequest</strong> y añade <code>https://tevsys.io</code> en la lista de URLs.</li>" +
+    "<li style='margin-bottom:6px;'>Carga tevsys en el gráfico. Pulsa <strong>F7</strong> y pega la clave en <strong>License Key</strong>.</li>" +
     "</ol>" +
     // CTA
     "<p style='margin:0 0 8px 0;'>¿Primera vez con tevsys? Guía paso a paso:</p>" +

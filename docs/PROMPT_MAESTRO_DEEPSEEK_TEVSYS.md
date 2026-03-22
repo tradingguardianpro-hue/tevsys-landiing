@@ -69,9 +69,10 @@
 
 - **Iconos SVG:** email y ubicación en amarillo tevsys (`public/icons/icon-email.svg`, `icon-location.svg`)
 - **Contacto:** info@tevsys.io, Barcelona
-- **Guion amarillo (—)** antes de títulos de columnas (Navegación, Producto, Legal)
+- **Guion amarillo (—)** antes de títulos de columnas (Navegación, Guías, Producto, Legal)
 - **Hover amarillo** en enlaces
-- **Grid 4 columnas:** Brand+contacto | Navegación (Inicio, Empresas, Contacto) | Producto (Cómo instalar, **Guía de configuración**, Precisión, HyperClose, SML, Evidencia) | Legal (Aviso Legal, Privacidad, Términos de Uso)
+- **Grid 4 columnas:** Brand+contacto | Navegación (Inicio, Empresas, Contacto) | Guías (Cómo instalar, Guía de configuración, Precios) | Producto (Precisión, HyperClose, SML, Evidencia) | Legal (Aviso Legal, Privacidad, Términos de Uso)
+- **Futuro:** Añadir en Guías "Activación con licencia" (enlace a vídeo o página) cuando exista el vídeo "Primera vez con licencia". Ver §9 Vídeos pendientes.
 - **Logo:** favicon.png junto a tevsys™
 - **Frase indie:** 1.08rem con letter-spacing ("Made with love for trading...")
 - **Copyright:** "Copyright © 2026 tevsys. Todos los derechos reservados."
@@ -134,9 +135,9 @@
 - **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady: false`. Controla si se muestra el botón "Comprar Essential" (checkout Lemon).
 - **Comportamiento:** `false` → solo "Elegir Essential" (formulario). `true` → "Comprar Essential" + "Probar demo" (botones apilados verticalmente).
 - **Cuándo ON:** Verificación identidad Lemon completada + producto publicado + URL checkout real en `checkoutEssentialUrl`.
-- **Webhook automático:** `api/webhook-lemon.js` recibe `order_created` de Lemon → genera clave ESEMEN/ESEANU → envía email con Resend. Variables: `RESEND_API_KEY`, `LEMON_WEBHOOK_SECRET`.
-- **Email de licencia:** Plantilla premium en webhook. Editable en `api/webhook-lemon.js` (función `enviarEmail`). Debe reflejar nivel tevsys: copy cuidado, tagline, enlace instalación.
-- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_FUNDADOR_PRIMERA_VENTA_Y_CONTINUIDAD.md`, `WEBHOOK_LEMON_LO_QUE_HEMOS_HECHO.md`. CHANGELOG-TEVSYS §44.
+- **Webhook automático:** `api/webhook-lemon.js` recibe `order_created` de Lemon → genera clave ESEMEN/ESEANU → guarda en BD Upstash → envía email con Resend. Variables: `RESEND_API_KEY`, `LEMON_WEBHOOK_SECRET`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`.
+- **Email de licencia:** Plantilla premium en webhook. **Incluye 4 pasos obligatorios:** (1) Herramientas → Opciones → Asesores Expertos; (2) Activar comercio algorítmico; (3) Activar WebRequest y añadir `https://tevsys.io`; (4) Pegar clave en License Key (F7).
+- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_FUNDADOR_PRIMERA_VENTA_Y_CONTINUIDAD.md`, `INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md`, `WEBHOOK_LEMON_LO_QUE_HEMOS_HECHO.md`. CHANGELOG-TEVSYS §44.
 
 ### Imágenes y badges
 - **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar 22px, discreto).
@@ -296,7 +297,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ### 7.5 Instalación (`/instalacion`) — PUBLICADA 19 Mar 2026
 
-**Objetivo:** Guía paso a paso para instalar la demo en MT5. Página dedicada, visible en footer (Producto → Cómo instalar).
+**Objetivo:** Guía paso a paso para instalar la demo en MT5. Página dedicada, visible en footer (Guías → Cómo instalar).
 
 **Vídeo publicado:**
 - `instalacion-demo.mp4` — Cuenta nueva, trading algorítmico, 8 pasos + onboarding. Cierre: pantalla negra + "tevsys — Where precision meets the edge".
@@ -311,6 +312,8 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 **Ruta vídeo:** `public/videos/features/instalacion-demo.mp4`
 
 **Uso:** Link para enviar a leads junto con el link de descarga. Clicable desde móvil y ordenador.
+
+**Nota demo vs licencia:** La demo no requiere WebRequest. Los **compradores** deben añadir `https://tevsys.io` en MT5 (Opciones → Asesores Expertos → WebRequest). Ver `INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md` (proyecto TGP).
 
 ---
 
@@ -372,7 +375,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 **Vídeos publicados:** instalacion-demo.mp4 (guía instalación, 8 pasos + onboarding), **tevsys_Guia_Rapida_Configuracion.mp4** (Drive, 2:36 min, embebido en /configuracion), precision-demo.mp4, precision-demo-volatilidad.mp4, precision-logs-guide.mp4, hyperclose-demo.mp4, hyperclose-dias-off-demo.mp4, evidencia-100k-perdida.mp4.
 
-**Vídeos pendientes:** sml-demo.mp4 (SML en fase de validación, se hace desde escritorio). Vídeo ganancias 100k (+1.111€): no prioritario, dejar.
+**Vídeos pendientes:** sml-demo.mp4 (SML en fase de validación, se hace desde escritorio). Vídeo ganancias 100k (+1.111€): no prioritario, dejar. **Vídeo "Primera vez con licencia" (1–2 min):** Mostrar los 3 pasos (trading algorítmico, WebRequest + tevsys.io, pegar clave). Para enviar a compradores y colgar en web (footer Guías). Doc: `INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md` (proyecto TGP).
 
 ---
 
@@ -415,6 +418,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | PENDIENTE_VERIFICACION_EMAIL_LEADS.md | Verificación email: pendiente. §6 caso específico verificación antes de dar link demo (evitar bots, cuentas falsas). |
 | LINKS_PARA_ENVIAR_DEMO_TEVSYS.md | Links Drive + instalación + plantillas email/WhatsApp/Telegram para enviar a leads |
 | PLANTILLA_EMAIL_DEMO_TEVSYS.md | Plantilla email detallada con pasos instalación (proyecto TGP) |
+| INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md (proyecto TGP) | Los 3 pasos para compradores: trading algorítmico, WebRequest + tevsys.io, pegar clave. Referencia para email webhook, soporte, futuro vídeo. |
 | ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md | Prioridades, pricing, early adopters, vídeos, academia Angelo. Plan ordenado |
 | ESTRATEGIA_ACADEMIAS_TEVSYS.md (proyecto TGP) | Estrategia academias: qué mostrar, logros, cómo abordar. 20 Mar 2026 |
 
@@ -537,10 +541,11 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 - El EA y sus modales **no** están en el repo de la landing. Están en las carpetas **Terminal** de MetaTrader 5 (rutas Infinox y ActivTrades). Cualquier cambio de copy o flujo de modales se hace en `Include/TGP/PopupSystem.mqh`, `ModalPremium.mqh`, `DaysRotationSystem.mqh`, `Experts/TGP_MODULAR_SKELETON_V11.mq5` en esas rutas. La landing (tevsys-landiing) solo referencia al producto; el producto se edita en el proyecto TGP/tevsys (Cursor workspace "poyecto TGP con cursor").
 
-### 15.7 Demo Essential — listo para enviar (19 Mar 2026)
+### 15.7 Demo y licencia — listo (23 Mar 2026)
 
 - **Build:** .ex5 compilado desde TGP_MODULAR_SKELETON_V11. Renombrar a `tevsys_Essential_Demo_15dias.ex5` para distribución.
-- **Demo 15 días:** LicenseKey vacío → modo demo. GV_DEMO_TIMESTAMP por cuenta. DEMO_DAYS=15.
+- **Demo 15 días:** LicenseKey vacío → modo demo. GV_DEMO_TIMESTAMP por cuenta. DEMO_DAYS=15. No requiere WebRequest.
+- **Con licencia:** LicenseKey rellenado → EA llama API `https://tevsys.io/api/validate?key=X`. **El usuario debe añadir tevsys.io en MT5** (Opciones → Asesores Expertos → Permitir WebRequest). Sin eso, popup "Error de conexión".
 - **Buffer precisión:** 0,01% (ajustado desde 0,02% por caso cuenta grande).
 - **Metadatos EA:** copyright "Copyright 2025, tevsys"; description "Protección de capital y disciplina automatizada. Límites, precisión milimétrica, HyperClose. — tevsys.io".
 - **Onboarding overlay:** Bienvenida (y Bienvenida Advanced) con overlay (pantalla negra, impacto). A partir del segundo modal (Essential, Recordatorio, etc.) sin overlay — gráfico visible.
@@ -603,4 +608,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 22 Mar 2026. §52 flow=lista, link amarillo precios, redundancia Pro Multi. §14 mapa flujos. Fuente de verdad: PLANES_PRECIOS_FEATURES_TEVSYS.md.
+**Última actualización:** 23 Mar 2026. §Licencia: instrucciones WebRequest + trading algorítmico para compradores. Email webhook actualizado (4 pasos). Vídeo pendiente "Primera vez con licencia". API validación + EA (punto 4) completado. Fuente de verdad: PLANES_PRECIOS_FEATURES_TEVSYS.md.

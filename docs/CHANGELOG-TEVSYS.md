@@ -1653,3 +1653,29 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - `src/components/forms/ContactForm.astro` — select plan lista, validación, allowNoPlan
 - `src/pages/company/contact-thank-you.astro` — mensaje flow=lista
 - `src/pages/precios.astro` — link amarillo, redundancia Pro Multi
+
+---
+
+## 53) Instrucciones primera vez con licencia + WebRequest (23 Mar 2026)
+
+### 53.1 Contexto
+- El EA valida licencias vía API (`https://tevsys.io/api/validate`). Los compradores **deben añadir tevsys.io** en MT5 (Opciones → Asesores Expertos → Permitir WebRequest) para que funcione.
+- Demo (LicenseKey vacío) no requiere WebRequest; solo los que compran.
+
+### 53.2 Email webhook actualizado
+- **Archivo:** `api/webhook-lemon.js` — función `buildEmailHtml()`
+- **Cambio:** Instrucciones ampliadas a 4 pasos: (1) Herramientas → Opciones → Asesores Expertos; (2) Activar comercio algorítmico; (3) Activar WebRequest y añadir `https://tevsys.io`; (4) Pegar clave en License Key (F7).
+
+### 53.3 Nuevo doc
+- `docs/INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md` — Los 3 pasos obligatorios para compradores. Copia en proyecto TGP.
+
+### 53.4 Vídeo pendiente
+- Crear vídeo "Primera vez con licencia" (1–2 min): trading algorítmico, WebRequest + tevsys.io, pegar clave.
+- Uso: enviar a compradores, colgar en web (footer Guías). Ver PROMPT_MAESTRO §9 Vídeos pendientes.
+
+### 53.5 PROMPT_MAESTRO actualizado
+- Sección Lemon/Webhook: email con 4 pasos, BD Upstash.
+- Sección instalación: nota demo vs licencia.
+- Sección vídeos pendientes: vídeo "Primera vez con licencia".
+- Footer: futuro enlace "Activación con licencia".
+- Doc referencia: INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md.
