@@ -136,7 +136,13 @@ Documento de contenido/copy actual para revisión de equipo.
 - Nota debajo imagen: "Advanced/Pro en desarrollo. La demo disponible ahora es Essential." (cursiva).
 - Thank-you: bloque destacado "Te añadimos a la lista de espera de Advanced/Pro. Mientras tanto, la demo disponible es Essential."
 
-**Contacto = Acceso:** Nav Contacto → `?flow=acceso`. allowNoPlan para flow acceso/demo.
+**Formulario lista de espera (flow=lista):**
+- Origen: link "escríbenos para apuntarte" en `/precios` (amarillo, clicable).
+- Título: "Lista de espera Advanced y Pro". Intro: "Apúntate a la lista de espera. Te avisaremos por email cuando Advanced y Pro estén disponibles."
+- Select: "¿En qué plan estás interesado?" (Advanced / Pro / Ambos). Formspree: `Flow: lista`, `Plan: advanced|pro|ambos`.
+- Thank-you: "Te hemos añadido a la lista de espera. Te avisaremos por email cuando Advanced y Pro estén disponibles."
+
+**Contacto = Acceso:** Nav Contacto → `?flow=acceso`. allowNoPlan para flow acceso, demo y lista.
 
 ---
 

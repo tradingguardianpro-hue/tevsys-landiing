@@ -18,6 +18,16 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
   <input id="featureInput" type="hidden" name="Feature" value="" />
   <p id="selectedPlanBadge" class="selected-plan-badge" hidden></p>
 
+  <div id="listaPlanContainer" class="form-field__container" hidden>
+    <label for="listaPlanSelect">¿En qué plan estás interesado?</label>
+    <select id="listaPlanSelect">
+      <option value="">Selecciona una opción</option>
+      <option value="advanced">Advanced</option>
+      <option value="pro">Pro</option>
+      <option value="ambos">Ambos</option>
+    </select>
+  </div>
+
   <div class="form-field__container">
     <label for="capitalSelect">Capital aproximado</label>
     <select id="capitalSelect" name="ApproxCapital" required>
@@ -100,11 +110,14 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       const urlFlow = (params.get('flow') || '').toLowerCase();
       const urlFeature = (params.get('feature') || '').toLowerCase();
 
-      if (urlFlow === 'demo' || urlFlow === 'acceso') {
+      if (urlFlow === 'demo' || urlFlow === 'acceso' || urlFlow === 'lista') {
         planInput.dataset.allowNoPlan = 'true';
       }
       const urlPlan = (params.get('plan') || '').toLowerCase();
-      if (urlPlan && limits[urlPlan] !== undefined) {
+      if (urlFlow === 'lista') {
+        const listaContainer = document.getElementById('listaPlanContainer');
+        if (listaContainer) listaContainer.hidden = false;
+      } else if (urlPlan && limits[urlPlan] !== undefined) {
         planInput.value = urlPlan;
       }
 
@@ -126,10 +139,15 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       } else if (canSubmitWithoutPlan) {
         badgeNode.classList.remove('selected-plan-badge--warning');
         const flowInput = document.getElementById('flowInput');
-        const isAcceso = flowInput && flowInput.value === 'acceso';
-        badgeNode.textContent = isAcceso
-          ? 'Rellena el formulario. Te indicaremos el siguiente paso según tu perfil.'
-          : 'Modo demo: sin plan preseleccionado.';
+        const flowVal = flowInput ? flowInput.value : '';
+        if (flowVal === 'lista') {
+          badgeNode.textContent = 'Lista de espera — indica tu plan de interés abajo.';
+        } else {
+          const isAcceso = flowVal === 'acceso';
+          badgeNode.textContent = isAcceso
+            ? 'Rellena el formulario. Te indicaremos el siguiente paso según tu perfil.'
+            : 'Modo demo: sin plan preseleccionado.';
+        }
       } else {
         badgeNode.classList.add('selected-plan-badge--warning');
         badgeNode.textContent = 'No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".';
@@ -139,12 +157,25 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
     const validatePlanAgainstCapital = () => {
       const plan = (planInput && planInput.value || '').toLowerCase();
       const capital = Number(capitalSelect && capitalSelect.value || 0);
-
+      const flowInput = document.getElementById('flowInput');
+      const flowVal = flowInput ? flowInput.value : '';
       const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
+
       if (!plan && !canSubmitWithoutPlan) {
         messageNode.hidden = false;
         messageNode.textContent = 'Selecciona un plan desde la home para continuar.';
         return false;
+      }
+
+      if (flowVal === 'lista') {
+        if (!plan || !['advanced', 'pro', 'ambos'].includes(plan)) {
+          messageNode.hidden = false;
+          messageNode.textContent = 'Indica en qué plan estás interesado.';
+          return false;
+        }
+        messageNode.hidden = true;
+        messageNode.textContent = '';
+        return true;
       }
 
       if (!plan && canSubmitWithoutPlan) {
@@ -174,19 +205,32 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       return false;
     };
 
+    const listaPlanSelect = document.getElementById('listaPlanSelect');
+    const flowInputEl = document.getElementById('flowInput');
+    if (listaPlanSelect && flowInputEl && flowInputEl.value === 'lista') {
+      listaPlanSelect.addEventListener('change', () => {
+        if (planInput) planInput.value = (listaPlanSelect.value || '').toLowerCase();
+        validatePlanAgainstCapital();
+      });
+    }
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      const flowInputSubmit = document.getElementById('flowInput');
+      if (flowInputSubmit && flowInputSubmit.value === 'lista' && listaPlanSelect) {
+        if (planInput) planInput.value = (listaPlanSelect.value || '').toLowerCase();
+      }
       if (!validatePlanAgainstCapital()) return;
 
       const submitBtn = form.querySelector('button');
       const endpoint = form.dataset.formspreeEndpoint;
-      const flowInput = document.getElementById('flowInput');
-      const planInput = document.getElementById('planInput');
-      const flow = flowInput ? flowInput.value : '';
-      const plan = (planInput && planInput.value || '').toLowerCase();
+      const flow = flowInputSubmit ? flowInputSubmit.value : '';
+      const planVal = (planInput && planInput.value || '').toLowerCase();
       const q = new URLSearchParams();
       if (flow === 'acceso') q.set('flow', 'acceso');
-      if (plan === 'advanced' || plan === 'pro') q.set('plan', plan);
+      if (flow === 'lista') q.set('flow', 'lista');
+      if (planVal === 'advanced' || planVal === 'pro') q.set('plan', planVal);
+      if (flow === 'lista' && planVal === 'ambos') q.set('plan', 'ambos');
       const thankYouUrl = '/company/contact-thank-you' + (q.toString() ? '?' + q.toString() : '');
       if (!endpoint) return;
 

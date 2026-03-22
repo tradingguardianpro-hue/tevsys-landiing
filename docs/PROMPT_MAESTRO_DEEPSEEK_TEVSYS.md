@@ -143,12 +143,13 @@
 - **Advanced (plata) / Pro (oro):** Imágenes adva-form-v4.png, pro-form-v4.png. Sin badge. Nota debajo imagen (cursiva): "Advanced/Pro en desarrollo. La demo disponible ahora es Essential."
 
 ### Formulario
-- **allowNoPlan:** flow=acceso o flow=demo → permite enviar sin plan preseleccionado.
+- **allowNoPlan:** flow=acceso, flow=demo o flow=lista → permite enviar sin plan preseleccionado desde home (flow=lista tiene select propio).
 - **Checkbox Advanced/Pro:** Solo visible cuando plan=advanced o plan=pro. "Sí, avísame cuando [Advanced/Pro] esté disponible." — **default marcado** (psicología: más síes que noes). Formspree: `AvisarCuandoDisponible: Sí|No`. Caja con borde ámbar.
 - **Lista de espera:** Filtrar Formspree por Plan + AvisarCuandoDisponible=Sí cuando Advanced/Pro esté listo.
 
 ### Thank-you
 - **flow=acceso:** "Essential está listo; Advanced y Pro en desarrollo. Te indicaremos el siguiente paso según tu perfil."
+- **flow=lista:** Formulario específico. Título "Lista de espera Advanced y Pro". Intro "Apúntate a la lista de espera. Te avisaremos por email cuando Advanced y Pro estén disponibles." Select "¿En qué plan estás interesado?" (Advanced / Pro / Ambos). Thank-you: "Te hemos añadido a la lista de espera."
 - **plan=advanced|pro:** Bloque destacado: "Te añadimos a la lista de espera de Advanced/Pro. Mientras tanto, la demo disponible es Essential."
 
 ### Bullets
@@ -388,7 +389,8 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | privacidad.astro | Política de Privacidad (contenido mínimo) |
 | terminos.astro | Términos de Uso (contenido mínimo) |
 | index.astro | Home: cards, planes |
-| contact.astro | Formulario por plan/demo |
+| precios.astro | Página precios, planes retail y Pro Multi, link lista espera (amarillo) → flow=lista |
+| contact.astro | Formulario por plan/demo/lista |
 | empresas.astro, empresas-thank-you.astro | Micro-página canal B2B |
 | precision.astro, hyperclose.astro, sml.astro, evidencia.astro | Micro-páginas features |
 | instalacion.astro | Página guía instalación demo (vídeo + pasos + enlace Paso 2 config) |
@@ -478,7 +480,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). 56 operativas documentadas. Evidencia: operativa 4.56 Essential (100 lotes, 95 € precisión) + 7 capturas. Footer: Cómo instalar, Guía configuración, Producto, Legal. /instalacion: vídeo + Paso 2 (enlace a config). /configuracion: vídeo guía configuración (2:36 min, Drive). Contact flow=demo: "Te enviaremos la demo y las guías de instalación y configuración". Demo: .ex5 15 días. Flujo email: Correo 1 (pre-aviso spam) → Correo 2 (Drive + instalacion + configuracion). Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS (Correo 1+2, checklist). Ver §15, §16.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). 56 operativas documentadas. Evidencia: operativa 4.56 Essential (100 lotes, 95 € precisión) + 7 capturas. Footer: Cómo instalar, Guía configuración, Producto, Legal. /instalacion: vídeo + Paso 2 (enlace a config). /configuracion: vídeo guía configuración (2:36 min, Drive). Contact flow=demo: "Te enviaremos la demo y las guías de instalación y configuración". flow=lista: formulario lista espera Advanced/Pro (select plan). /precios: link "escríbenos para apuntarte" amarillo → flow=lista. Pro Multi 2/3 sin redundancia en incluye. Demo: .ex5 15 días. Flujo email: Correo 1 (pre-aviso spam) → Correo 2 (Drive + instalacion + configuracion). Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS. Ver §15, §16.
 ```
 
 ---
@@ -491,6 +493,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 | Elegir Essential | ?plan=essential | Essential | DEMO | No | No | Genérico |
 | Elegir Advanced | ?plan=advanced | Advanced | No | Sí | Sí (default) | Lista espera Adv; demo Essential |
 | Elegir Pro | ?plan=pro | Pro | No | Sí | Sí (default) | Lista espera Pro; demo Essential |
+| Lista espera (precios) | ?flow=lista | Advanced | No | No | No | "Te hemos añadido a la lista de espera" — select Advanced/Pro/Ambos |
 | Demo (feature) | ?flow=demo&feature=… | Essential | DEMO | No | No | Genérico — Intro: "Ya has visto [X] en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo." |
 
 ---
@@ -600,4 +603,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 19 Mar 2026. §6 Lista de precios oficial (30k/120k/240k, margen 20%). §50 CHANGELOG. Fuente de verdad: PLANES_PRECIOS_FEATURES_TEVSYS.md.
+**Última actualización:** 22 Mar 2026. §52 flow=lista, link amarillo precios, redundancia Pro Multi. §14 mapa flujos. Fuente de verdad: PLANES_PRECIOS_FEATURES_TEVSYS.md.

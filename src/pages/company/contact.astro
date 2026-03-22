@@ -4,7 +4,7 @@ import Layout from '../../layouts/Page.astro';
 import { Container } from '@components/odyssey-theme';
 
 const flowFromUrl = (Astro.url.searchParams.get('flow') || '').toLowerCase();
-const allowNoPlan = flowFromUrl === 'acceso' || flowFromUrl === 'demo';
+const allowNoPlan = flowFromUrl === 'acceso' || flowFromUrl === 'demo' || flowFromUrl === 'lista';
 
 const seo = {
 	title: 'Contacto y demo | tevsys',
@@ -129,6 +129,22 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				],
 			},
 		};
+
+		if (flow === 'lista') {
+			if (titleNode) titleNode.textContent = 'Lista de espera Advanced y Pro';
+			if (introNode) introNode.textContent = 'Apúntate a la lista de espera. Te avisaremos por email cuando Advanced y Pro estén disponibles.';
+			setTips(
+				'Indica en qué plan estás interesado y te añadimos a la lista.',
+				'Te avisaremos en cuanto estén disponibles, sin compromiso.',
+				'Mientras tanto, la demo Essential está lista para probar.',
+				empresasTipHtml
+			);
+			if (imageNode) {
+				setHeroImage('/assets/images/plans/adva-form-v4.png');
+				imageNode.alt = 'Lista de espera Advanced y Pro';
+			}
+			return;
+		}
 
 		if (flow === 'acceso') {
 			if (titleNode) titleNode.textContent = 'Completa tu acceso a tevsys';

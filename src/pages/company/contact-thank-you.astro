@@ -28,15 +28,25 @@ const seo = {
 				const accesoNote = document.getElementById('thankYouAccesoNote');
 				const devBlock = document.getElementById('thankYouDevNote');
 				const plan = (params.get('plan') || '').toLowerCase();
+				const flow = params.get('flow') || '';
 
-				if (plan === 'advanced' || plan === 'pro') {
+				if (flow === 'lista') {
+					if (main) main.textContent = 'Te hemos añadido a la lista de espera.';
+					if (devBlock) {
+						const title = devBlock.querySelector('.contact-thank-you__dev-title');
+						const text = devBlock.querySelector('.contact-thank-you__dev-text');
+						if (title) title.textContent = 'Te avisaremos por email cuando Advanced y Pro estén disponibles.';
+						if (text) text.textContent = 'Mientras tanto, la demo Essential está lista para probar.';
+						devBlock.hidden = false;
+					}
+				} else if (plan === 'advanced' || plan === 'pro') {
 					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
 					if (devBlock) {
 						const title = devBlock.querySelector('.contact-thank-you__dev-title');
 						if (title) title.textContent = 'Te añadimos a la lista de espera de ' + (plan === 'advanced' ? 'Advanced' : 'Pro') + '.';
 						devBlock.hidden = false;
 					}
-				} else if (params.get('flow') === 'acceso') {
+				} else if (flow === 'acceso') {
 					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
 					if (accesoNote) accesoNote.hidden = false;
 				}

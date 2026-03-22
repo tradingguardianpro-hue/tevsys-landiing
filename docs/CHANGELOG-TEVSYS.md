@@ -1627,3 +1627,29 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - `src/pages/precios.astro` — lead, subtítulo, nota, labels "Estándar (desde 18 meses)".
 - `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` — sección §6 fidelidad.
 - Proyecto TGP: `PLANES_PRECIOS_FEATURES_TEVSYS.md`, `Resumen_Cuatro_Planes_TEVSYS_Para_Clase.md`, `PITCH_DECK_TEVSYS_TODAS_LAS_SLIDES.md`.
+
+---
+
+## 52) Flow lista de espera, link amarillo precios, redundancia Pro Multi (22 Mar 2026)
+
+### 52.1 Formulario adaptado para flow=lista
+- **Origen:** Enlace "escríbenos para apuntarte" en `/precios` → formulario específico para lista de espera.
+- **URL:** `/company/contact?flow=lista`
+- **Título:** "Lista de espera Advanced y Pro"
+- **Intro:** "Apúntate a la lista de espera. Te avisaremos por email cuando Advanced y Pro estén disponibles."
+- **Formulario:** Select "¿En qué plan estás interesado?" (Advanced / Pro / Ambos). Badge "Lista de espera — indica tu plan de interés abajo."
+- **Thank-you:** "Te hemos añadido a la lista de espera. Te avisaremos por email cuando Advanced y Pro estén disponibles."
+- **Formspree:** Recibe `Flow: lista`, `Plan: advanced|pro|ambos`.
+
+### 52.2 Link "escríbenos para apuntarte" en amarillo
+- **Archivo:** `src/pages/precios.astro`
+- **Cambio:** Clase `precios-desc__link` con color #f5b041, hover underline. Link a `/company/contact?flow=lista`.
+
+### 52.3 Redundancia Pro Multi 2/3
+- Eliminado bullet repetido "2 cuentas MT5 hasta 120k € cada una" / "3 cuentas MT5 hasta 120k € cada una". La info ya está en CUENTAS y CAPITAL MÁX. POR CUENTA.
+
+### 52.4 Archivos tocados
+- `src/pages/company/contact.astro` — bloque flow=lista
+- `src/components/forms/ContactForm.astro` — select plan lista, validación, allowNoPlan
+- `src/pages/company/contact-thank-you.astro` — mensaje flow=lista
+- `src/pages/precios.astro` — link amarillo, redundancia Pro Multi
