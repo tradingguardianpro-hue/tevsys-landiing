@@ -136,8 +136,8 @@
 - **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady: true`. Botones "Comprar Mensual" y "Comprar Anual" visibles.
 - **Webhook automático:** `api/webhook-lemon.js` recibe `order_created` → genera clave ESEMEN/ESEANU → guarda Upstash → envía email Resend. Variables Vercel: `RESEND_API_KEY`, `RESEND_FROM` (obligatoria: `tevsys <info@tevsys.io>`), `LEMON_WEBHOOK_SECRET`, `UPSTASH_REDIS_REST_*`.
 - **Resend:** Dominio tevsys.io verificado. DNS (DKIM, MX, SPF) en Plesk. Sin RESEND_FROM → 403.
-- **Email de licencia:** Plantilla en `buildEmailHtml()` en webhook. Editable. Incluye 4 pasos F7, enlace /instalacion.
-- **Docs:** `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md` (proyecto TGP).
+- **Email de licencia:** Plantilla en `buildEmailHtml()` en webhook. Editable. Incluye 4 pasos F7, enlace /instalacion. **Cierre soporte (25 Mar 2026, opción B):** *Aquí estamos para lo que necesites:* → **info@tevsys.io** → *Te leemos y te respondemos en cuanto podamos.* → *— Gabi · tevsys* (cercanía sin SLA “inmediato”). Ver `CHANGELOG-TEVSYS.md` §54.
+- **Docs:** `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md` (proyecto TGP), `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (punto 8 email), `CHECKPOINT_V11_SESION_25MAR2026_ESSENTIAL_ADVANCED.md` §8.
 
 ### Imágenes y badges
 - **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar 22px, discreto).
@@ -295,25 +295,26 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ---
 
-### 7.5 Instalación (`/instalacion`) — PUBLICADA 19 Mar 2026
+### 7.5 Instalación (`/instalacion`) — PUBLICADA 19 Mar 2026 (lista pasos actualizada 25 Mar 2026)
 
 **Objetivo:** Guía paso a paso para instalar la demo en MT5. Página dedicada, visible en footer (Guías → Cómo instalar).
 
 **Vídeo publicado:**
-- `instalacion-demo.mp4` — Cuenta nueva, trading algorítmico, 8 pasos + onboarding. Cierre: pantalla negra + "tevsys — Where precision meets the edge".
+- `instalacion-demo.mp4` — Cuenta nueva, trading algorítmico, copia a Experts, onboarding. Cierre: pantalla negra + "tevsys — Where precision meets the edge".
+- **PENDIENTE (grabación nueva):** Incrustar en el vídeo el paso **WebRequest** (misma ventana Asesores Expertos: activar "Permitir WebRequest" y URL `https://tevsys.io` sin barra final). El vídeo actual **no** lo muestra; la página ya advierte y la **lista numerada debajo del vídeo** sí incluye el paso 4 (WebRequest).
 
 **Estructura:**
 1. Hero: "Cómo instalar tevsys en MT5" — cuenta nueva, desde cero
-2. Vídeo: embed compacto (560px), se expande al play
+2. Vídeo: embed compacto (560px), se expande al play; párrafo bajo el título explicando desfase vídeo vs lista
 3. **Paso 2 — Guía de configuración:** enlace a `/configuracion` con texto "Ver guía de configuración (2:36 min)"
-4. Pasos resumidos (1-8) en texto
+4. Pasos resumidos (**9 pasos**) en texto: descarga → MT5 → trading algorítmico → **WebRequest + tevsys.io** → carpeta datos → Experts → copiar .ex5 → Actualizar → arrastrar al gráfico
 5. CTA: Solicitar demo → /company/contact?flow=demo
 
 **Ruta vídeo:** `public/videos/features/instalacion-demo.mp4`
 
 **Uso:** Link para enviar a leads junto con el link de descarga. Clicable desde móvil y ordenador.
 
-**Nota demo vs licencia:** La demo no requiere WebRequest. Los **compradores** deben añadir `https://tevsys.io` en MT5 (Opciones → Asesores Expertos → WebRequest). Ver `INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md` (proyecto TGP).
+**Nota demo vs licencia:** La API de licencia **sí** exige WebRequest + URL. En **demo** el EA no llama a la API; igualmente se recomienda configurar WebRequest en la guía para que al comprar no repitan el paso. Ver `INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md` (proyecto TGP). `CHANGELOG-TEVSYS.md` §55.
 
 ---
 
@@ -478,6 +479,10 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - Resend: DNS (DKIM, MX, SPF) en Plesk. Flujo compra→clave→email validado.
 - Checkpoint: CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md
 
+**Sesión 25 Mar 2026 (email licencia — cierre soporte opción B):**
+- docs+feat(webhook): cierre HTML post-compra — *Aquí estamos para lo que necesites:* → info@tevsys.io → *Te leemos y te respondemos en cuanto podamos.* (firma Gabi · tevsys). `api/webhook-lemon.js` `buildEmailHtml`.
+- CHANGELOG §54; proyecto TGP: QUE_CONTIENE V11 punto 8, CHECKPOINT V11 §8, ESTADO_WEB, WEBHOOK_LEMON, CHECKPOINT_24MAR §6.1.
+
 **Sesión 21 Mar 2026 (guía configuración, flujo demo, spam):**
 - feat(configuracion): nueva página /configuracion con vídeo Drive embebido (2:36 min)
 - feat(footer): enlace "Guía de configuración" en Producto (debajo Cómo instalar)
@@ -520,7 +525,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 - Producto Essential publicado. Checkout en Test mode.
 - Resend: dominio tevsys.io verificado (DNS en Plesk). Variable RESEND_FROM obligatoria: `tevsys <info@tevsys.io>`.
 - Flujo validado: compra → webhook → clave ESEMEN/ESEANU → email automático.
-- Pendiente: Live mode (toggle deshabilitado), mejoras interfaz Lemon, botones web, email editable.
+- Pendiente: Live mode (toggle deshabilitado), mejoras interfaz Lemon, botones web. **Email licencia:** cierre soporte opción B aplicado en código (25 Mar); redeploy Vercel para producción.
 
 **Modales de capital:**
 - **Formato balance:** Números con separador de miles europeo (ej. 106.474 EUR). Nueva función `FormatearNumeroMiles()`.
@@ -590,8 +595,16 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 ### 15.8 Vídeo instalación — guion y overlays
 
 - **Nombre archivo:** instalacion-demo.mp4
-- **Pasos (8):** 1) Descarga desde enlace por mail. 2) Abre MT5. 3) Activa trading algorítmico (siempre encendido). 4) Archivo → Abrir carpeta de datos. 5) MQL5 → Experts. 6) Arrastra archivo descargado. 7) Abre Navegador, clic derecho Experts → Actualizar. 8) Arrastra al gráfico o doble clic.
+- **Pasos en web (lista actual, 25 Mar 2026):** 9 — tras trading algorítmico, **WebRequest** activado + URL `https://tevsys.io` (sin barra final), luego carpeta datos → Experts → .ex5 → Actualizar → gráfico.
+- **Vídeo grabado (estado):** Aún refleja el flujo antiguo **sin** mostrar WebRequest en pantalla. **To-do producción:** Regrabar/editar para insertar ese paso (misma ruta Opciones → Asesores Expertos), alinear con `instalacion.astro` y con email post-compra.
 - **Overlays onboarding:** "Sigue los 3 pasos de bienvenida" (o similar). Cierre: "tevsys cargado. Tu disciplina y riesgo, automatizados. 🎯". Final: pantalla negra + "tevsys — Where precision meets the edge".
+
+### 15.10 Email licencia (post-compra) — cierre soporte opción B (25 Mar 2026)
+
+- **Archivo:** `tevsys-landiing/api/webhook-lemon.js` → `buildEmailHtml()`.
+- **Cierre enviado por Resend al comprador:** *Aquí estamos para lo que necesites:* → enlace **info@tevsys.io** → *Te leemos y te respondemos en cuanto podamos.* → *— Gabi · tevsys*.
+- **Intención:** Tono cercano; sin SLA de respuesta instantánea; encaja si el soporte sigue siendo humano aunque crezca el equipo.
+- **Referencias:** `CHANGELOG-TEVSYS.md` §54; proyecto TGP: `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (25 Mar, punto 8), `CHECKPOINT_V11_SESION_25MAR2026_ESSENTIAL_ADVANCED.md` §8, `CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md` §6.1.
 
 ---
 
@@ -644,4 +657,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 24 Mar 2026. §15.9: Lemon flujo completo operativo (Test mode). Resend dominio verificado. RESEND_FROM obligatoria. Modales capital (formato 106.474, guiones, TEVsys). Pendiente: Live mode, mejoras interfaz Lemon, email editable, botones web. Checkpoint: CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md (proyecto TGP).
+**Última actualización:** 25 Mar 2026. §15.9–§15.10: Lemon flujo completo (Test mode); **email licencia cierre opción B** en webhook (§15.10, CHANGELOG §54). **§7.5 / §15.8 / CHANGELOG §55:** `/instalacion` lista con WebRequest (9 pasos); vídeo MP4 pendiente de renovar. Resend dominio verificado. RESEND_FROM obligatoria. Modales capital (formato 106.474, guiones, TEVsys). Pendiente: Live mode, mejoras interfaz Lemon, botones web, redeploy Vercel si el cierre nuevo no está en prod. Checkpoints: CHECKPOINT_24MAR2026… (proyecto TGP) + CHECKPOINT_V11 §8.

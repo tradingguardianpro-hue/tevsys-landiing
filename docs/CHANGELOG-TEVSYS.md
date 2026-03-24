@@ -1679,3 +1679,40 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - Sección vídeos pendientes: vídeo "Primera vez con licencia".
 - Footer: futuro enlace "Activación con licencia".
 - Doc referencia: INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md.
+
+---
+
+## 54) Email licencia Essential — cierre soporte “opción B” (25 Mar 2026)
+
+### 54.1 Contexto
+- Tras la compra (Lemon → webhook → Resend), el comprador recibe HTML generado en `api/webhook-lemon.js` (`buildEmailHtml`).
+- Se unifica el cierre de soporte con copy acordado: cercanía sin prometer atención instantánea ni depender del verbo “personalmente” a escala.
+
+### 54.2 Texto del cierre (orden en el email)
+1. *Aquí estamos para lo que necesites:*
+2. Enlace mailto / texto destacado: **info@tevsys.io**
+3. *Te leemos y te respondemos en cuanto podamos.*
+4. Firma: *— Gabi · tevsys*
+
+### 54.3 Archivo
+- `api/webhook-lemon.js` — comentario en código: copy acordado, expectativa de respuesta sin SLA agresivo.
+
+### 54.4 Docs y proyecto TGP
+- Proyecto TGP: `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (CHANGELOG 25 Mar, punto 8), `CHECKPOINT_V11_SESION_25MAR2026_ESSENTIAL_ADVANCED.md` §8, `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `WEBHOOK_LEMON_LO_QUE_HEMOS_HECHO.md`, `CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md` §6.1.
+- **Deploy:** Redeploy en Vercel para que el endpoint en producción envíe el HTML actualizado.
+
+---
+
+## 55) /instalación — paso WebRequest en lista + vídeo pendiente de renovar (25 Mar 2026)
+
+### 55.1 Motivo
+- Con licencia, el EA valida vía API: hace falta **Permitir WebRequest** y URL `https://tevsys.io` en MT5. El vídeo `instalacion-demo.mp4` se grabó antes de unificar este mensaje en la guía pública.
+
+### 55.2 Cambios en web
+- **`src/pages/instalacion.astro`:** Lista de pasos pasa a **9** (nuevo paso 4: WebRequest + URL). Meta description y lead actualizados. Bajo el título del vídeo: aviso de que el **vídeo aún no muestra** ese paso y que la lista es la referencia hasta nueva grabación.
+
+### 55.3 Pendiente (fundador / producción)
+- Regrabar o editar `public/videos/features/instalacion-demo.mp4` mostrando en Opciones → Asesores Expertos: (1) trading algorítmico ya mostrado, (2) **Permitir WebRequest** + campo URL `https://tevsys.io`. Subir archivo al repo y quitar o suavizar el aviso de desfase en la página.
+
+### 55.4 Docs
+- `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §7.5 y §15.8. `AGENDA_GABI.md` (proyecto TGP).

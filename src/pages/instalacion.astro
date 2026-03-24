@@ -4,7 +4,8 @@ import Layout from '../layouts/Page.astro';
 
 const seo = {
 	title: 'Cómo instalar tevsys | Guía paso a paso',
-	description: 'Vídeo guía para instalar la demo de tevsys en MetaTrader 5. Descarga, activa trading algorítmico, copia el EA y arrastra al gráfico.',
+	description:
+		'Guía MT5: descarga, trading algorítmico, WebRequest con https://tevsys.io, copiar el EA a Experts y cargarlo en el gráfico. Vídeo en renovación; la lista de pasos está actualizada.',
 };
 ---
 
@@ -15,13 +16,15 @@ const seo = {
 			<h1>Cómo instalar tevsys en MT5</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Cuenta nueva, desde cero. Vídeo paso a paso.</p>
 			<p class="feature-lead">
-				Descarga la demo desde el enlace que te enviamos por email, activa trading algorítmico y sigue estos pasos.
+				Descarga la demo desde el enlace que te enviamos por email, configura MT5 (trading algorítmico y WebRequest) y sigue estos pasos. Con <strong>licencia de pago</strong>, WebRequest es obligatorio para validar la clave.
 			</p>
 		</section>
 
 		<section id="instalacion-video" class="feature-demo">
 			<h2>Vídeo — Instalación rápida</h2>
-			<p class="feature-demo-hook">8 pasos + onboarding. Cuenta nueva, trading algorítmico incluido.</p>
+			<p class="feature-demo-hook">
+				El vídeo muestra la instalación en cuenta nueva; <strong>falta incorporar en imagen el paso WebRequest</strong> (activar y añadir <code>https://tevsys.io</code>). La <strong>lista de pasos debajo del vídeo ya incluye ese paso</strong> — síguela hasta que subamos la grabación nueva.
+			</p>
 			<div class="demo-video demo-video--compact" id="instalacion-demo-container">
 				<video id="instalacion-demo-video" controls preload="metadata">
 					<source src="/videos/features/instalacion-demo.mp4" type="video/mp4" />
@@ -44,14 +47,21 @@ const seo = {
 			<ol class="instalacion-steps">
 				<li>Descarga la demo desde el enlace que te enviamos por mail</li>
 				<li>Abre MetaTrader 5</li>
-				<li>Activa trading algorítmico (Herramientas → Opciones → Experto asesores). Manténlo siempre encendido</li>
+				<li>
+					Activa <strong>trading algorítmico</strong>: Herramientas → Opciones → <strong>Asesores Expertos</strong> → marca &quot;Permitir operar algorítmico&quot;. Manténlo siempre encendido
+				</li>
+				<li>
+					En la misma pestaña <strong>Asesores Expertos</strong>: activa <strong>Permitir WebRequest</strong> y añade exactamente <code>https://tevsys.io</code> en la lista de URLs (sin barra final). Obligatorio cuando uses <strong>licencia</strong>; recomendable en demo para no repetir el paso al comprar
+				</li>
 				<li>Archivo → Abrir carpeta de datos</li>
 				<li>MQL5 → Experts</li>
 				<li>Arrastra el archivo descargado (<code>tevsys_Essential_Demo_15dias.ex5</code>) a la carpeta Experts</li>
 				<li>Abre el Navegador en MT5 (Ctrl+N) y haz clic derecho en Experts → Actualizar</li>
 				<li>Arrastra tevsys al gráfico o doble clic para cargarlo</li>
 			</ol>
-			<p class="instalacion-note">Tras cargar el EA, verás la bienvenida, Essential, recordatorio diario y la configuración guardada. Luego el panel estará listo.</p>
+			<p class="instalacion-note">
+				Tras cargar el EA, verás la bienvenida, Essential, recordatorio diario y la configuración guardada. Luego el panel estará listo.
+			</p>
 		</section>
 
 		<section class="feature-cta">
