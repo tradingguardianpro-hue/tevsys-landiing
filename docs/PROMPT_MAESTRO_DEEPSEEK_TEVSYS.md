@@ -132,6 +132,7 @@
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
 
 ### Lemon Squeezy + botón Comprar Essential + Webhook (19 Mar 2026)
+- **KYC en curso (24 Mar 2026):** Gabi envió DNI para verificación identidad. Lemon revisando. Pantalla "Cuenta activada" / "Vamos a revisar la información que has enviado." Cuando aprueben → activar checkout.
 - **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady: false`. Controla si se muestra el botón "Comprar Essential" (checkout Lemon).
 - **Comportamiento:** `false` → solo "Elegir Essential" (formulario). `true` → "Comprar Essential" + "Probar demo" (botones apilados verticalmente).
 - **Cuándo ON:** Verificación identidad Lemon completada + producto publicado + URL checkout real en `checkoutEssentialUrl`.
@@ -506,6 +507,28 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 *Todo lo que hemos hecho en el EA (proyecto TGP/tevsys) desde la última vez que se pasó este prompt a DeepSeek. Sirve para que el copy y los vídeos de la web reflejen el producto real y las decisiones de producto.*
 
+### 15.9 Sesión 24 Mar 2026 — Modales, capital, Lemon KYC, i18n
+
+**Modales de capital:**
+- **Formato balance:** Números con separador de miles europeo (ej. 106.474 EUR). Nueva función `FormatearNumeroMiles()`.
+- **Guiones estilo ModalPremium:** Frases con "—" para legibilidad en modales capital (1, 2, 3) y grace expirado.
+- **EA → TEVsys:** Sustituido "EA" por "TEVsys" en todos los textos visibles al usuario (modales, popups, advertencias, bloqueo, operaciones en riesgo, etc.).
+- **Modal capital – Color naranja:** ActivTrades tenía `ModalPremium.mqh` sin la línea "Capital superior" en `EsModalInfoAdvertencia`. Sincronizados Include (workspace, Infinox, ActivTrades). El modal sale en naranja en ambos terminales.
+- **Regla sincronización multi-terminal:** Añadida a `.cursorrules`: Include debe ser idéntico en Infinox y ActivTrades.
+
+**Modal Confirmación Irreversible:**
+- Guiones "—" en todas las frases (estilo ModalPremium).
+- Essential: "hasta hoy 23:59"; Pro/Advanced: "hasta el viernes 23:59".
+- TEVsys en lugar de EA.
+
+**Preparación i18n (para cuando haya ventas y se abra mercado global):**
+- Regla en `.cursor/rules/i18n-textos-modulares.mdc`: usar `T("clave")` para texto nuevo visible al usuario (no hardcodear). Facilita futura traducción a inglés u otros idiomas.
+- AGENDA_GABI: i18n pendiente para más adelante.
+
+**Lemon Squeezy – KYC:**
+- 24 Mar 2026: Gabi envió DNI. Lemon revisando identidad. Pantalla "Cuenta activada" / "Vamos a revisar la información que has enviado."
+- Cuando aprueben → activar checkout Essential, probar compra real, webhook, email, clave, EA valida.
+
 ### 15.1 Onboarding Essential — estado actual
 
 - **Flujo:** Bienvenida → Qué incluye ESSENTIAL → Recordatorio Diario (¿quieres aviso de rotación?) → Configuración guardada. Todo conectado al input **"Mostrar guías educativas" (F7)**.
@@ -608,4 +631,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 23 Mar 2026. §Licencia: instrucciones WebRequest + trading algorítmico para compradores. Email webhook actualizado (4 pasos). Vídeo pendiente "Primera vez con licencia". API validación + EA (punto 4) completado. Fuente de verdad: PLANES_PRECIOS_FEATURES_TEVSYS.md.
+**Última actualización:** 24 Mar 2026. §15.9: Modales capital (formato 106.474, guiones, TEVsys, color naranja). Lemon KYC en revisión. Regla i18n T("clave"). §Licencia: instrucciones WebRequest + trading algorítmico para compradores. Email webhook actualizado (4 pasos). Vídeo pendiente "Primera vez con licencia". Fuente de verdad: PLANES_PRECIOS_FEATURES_TEVSYS.md.
