@@ -162,7 +162,8 @@ function buildEmailHtml(licenseKey) {
     "<p style='margin:0 0 24px 0; font-size:12px; color:#999;'>Where precision meets the edge</p>" +
     // Saludo
     "<p style='margin:0 0 20px 0;'>Bienvenido a tevsys Essential.</p>" +
-    "<p style='margin:0 0 24px 0;'>Has dado el paso. Tu protección automatizada está lista. Aquí tienes tu clave de licencia:</p>" +
+    "<p style='margin:0 0 24px 0;'>Has dado el paso. Ahora la disciplina no se negocia. Se ejecuta. Gestión y protección automatizadas.</p>" +
+    "<p style='margin:0 0 24px 0;'>Aquí tienes tu clave de licencia:</p>" +
     // Clave
     "<table role='presentation' cellpadding='0' cellspacing='0' border='0' style='width:100%; margin:0 0 24px 0; border:1px solid " +
     BORDER +
