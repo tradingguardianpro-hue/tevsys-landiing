@@ -90,7 +90,13 @@ import settings from '../config/settings.js';
 					</div>
 					<div class="plan-card__content">
 						<h3><span class="card-title__accent">Essential</span></h3>
-						<p>Demo/beta disponible. Límite diario, precisión milimétrica y HyperClose para validar operativa real.</p>
+						<ul class="plan-card__bullets plan-card__bullets--aperitivo" aria-label="Resumen Essential">
+							<li>Disciplina y protección diaria · precisión milimétrica y HyperClose</li>
+							<li>1 cuenta MT5 · capital hasta 30.000 €</li>
+							<li>Días OFF y rotación diaria (un día activo)</li>
+							<li>Noticias y horarios · cuando estén listas</li>
+						</ul>
+						<p class="plan-card__aperitivo-footer">Demo disponible · detalle y condiciones en <a href="/precios#essential">Precios</a></p>
 						{settings.checkoutEssentialReady ? (
 							<div class="plan-card__cta-row">
 								<a href="/precios#essential" class="plan-card__cta plan-card__cta--primary">Comprar Essential</a>
@@ -343,6 +349,33 @@ import settings from '../config/settings.js';
 	.plan-card__content p {
 		margin: 0 0 0.9rem;
 		line-height: 1.45;
+	}
+	.plan-card__bullets--aperitivo {
+		margin: 0 0 0.55rem;
+		padding-left: 1.1rem;
+		line-height: 1.45;
+		font-size: 0.88rem;
+		opacity: 0.95;
+	}
+	.plan-card__bullets--aperitivo li {
+		margin-bottom: 0.35rem;
+	}
+	.plan-card__bullets--aperitivo li:last-child {
+		margin-bottom: 0;
+	}
+	.plan-card__aperitivo-footer {
+		margin: 0 0 0.75rem;
+		font-size: 0.82rem;
+		line-height: 1.4;
+		opacity: 0.82;
+	}
+	.plan-card__aperitivo-footer a {
+		color: #f5b041;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.plan-card__aperitivo-footer a:hover {
+		text-decoration: underline;
 	}
 	.plan-card__content > a.plan-card__cta {
 		margin-top: auto;
