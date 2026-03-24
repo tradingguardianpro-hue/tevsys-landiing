@@ -93,7 +93,8 @@ import settings from '../config/settings.js';
 						<p>Demo/beta disponible. Límite diario, precisión milimétrica y HyperClose para validar operativa real.</p>
 						{settings.checkoutEssentialReady ? (
 							<div class="plan-card__cta-row">
-								<a href={settings.checkoutEssentialUrl} class="plan-card__cta plan-card__cta--primary" target="_blank" rel="noopener noreferrer">Comprar Essential</a>
+								<a href={settings.checkoutEssentialUrlMensual} class="plan-card__cta plan-card__cta--primary" target="_blank" rel="noopener noreferrer">Comprar Mensual (39 €)</a>
+								<a href={settings.checkoutEssentialUrlAnual} class="plan-card__cta plan-card__cta--primary" target="_blank" rel="noopener noreferrer">Comprar Anual (390 €)</a>
 								<a href="/company/contact?plan=essential" class="plan-card__cta plan-card__cta--secondary">Probar demo</a>
 							</div>
 						) : (

@@ -5,8 +5,10 @@ export default {
   name: "tevsys",
   enableThemeSwitcher: false,
   showPlug: false,
-  /** Checkout Essential: poner true cuando verifiques identidad en Lemon y publiques el producto. */
+  /** Checkout Essential: poner true cuando tengas los links de Lemon y quieras mostrar los botones de compra. */
   checkoutEssentialReady: false,
-  /** URL checkout Lemon Squeezy Essential. Actualizar cuando publiques. */
-  checkoutEssentialUrl: "https://tevsys.lemonsqueezy.com/checkout/custom/essential",
+  /** URL checkout Mensual (39 €/mes). Pegar el link que copias de Lemon Share (solo Mensual activado). */
+  checkoutEssentialUrlMensual: "https://tevsys.lemonsqueezy.com/checkout/buy/e24253bf-82e6-4ce7-ba37-4888b4dd3d03",
+  /** URL checkout Anual (390 €/año). Copiar desde Lemon Share → solo Anual activado. */
+  checkoutEssentialUrlAnual: "https://tevsys.lemonsqueezy.com/checkout/buy/TU_LINK_ANUAL_AQUI",
 };
