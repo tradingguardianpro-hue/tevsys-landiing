@@ -191,10 +191,12 @@ function buildEmailHtml(licenseKey) {
     "' style='color:" +
     ACCENT +
     "; font-weight:600; text-decoration:none;'>tevsys.io/instalacion</a></p>" +
-    // Cierre
-    "<p style='margin:0 0 4px 0;'>Cualquier duda, aquí estamos: <a href='mailto:info@tevsys.io' style='color:" +
+    // Cierre (copy acordado: cercanía + expectativa de respuesta sin acción inmediata)
+    "<p style='margin:0 0 8px 0;'>Aquí estamos para lo que necesites:</p>" +
+    "<p style='margin:0 0 8px 0;'><a href='mailto:info@tevsys.io' style='color:" +
     ACCENT +
-    ";'>info@tevsys.io</a></p>" +
+    "; font-weight:600; text-decoration:none;'>info@tevsys.io</a></p>" +
+    "<p style='margin:0 0 16px 0;'>Te leemos y te respondemos en cuanto podamos.</p>" +
     "<p style='margin:0; font-size:13px; color:#777;'>— Gabi · tevsys</p>" +
     "</td></tr></table>"
   );
