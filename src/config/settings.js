@@ -6,7 +6,7 @@ export default {
   enableThemeSwitcher: false,
   showPlug: false,
   /** Checkout Essential: poner true cuando tengas los links de Lemon y quieras mostrar los botones de compra. */
-  checkoutEssentialReady: false,
+  checkoutEssentialReady: true,
   /** URL checkout Mensual (39 €/mes). Pegar el link que copias de Lemon Share (solo Mensual activado). */
   checkoutEssentialUrlMensual: "https://tevsys.lemonsqueezy.com/checkout/buy/e24253bf-82e6-4ce7-ba37-4888b4dd3d03",
   /** URL checkout Anual (390 €/año). Copiar desde Lemon Share → solo Anual activado. */
