@@ -148,6 +148,7 @@ function calcularExpira(esAnual) {
 /**
  * Plantilla email premium tevsys — licencia Essential.
  * Editable: copy, tono, estructura. Mantener variables: {{licenseKey}}, {{INSTALACION_URL}}.
+ * TODO (cuando tengáis URL estable): bloque "Descarga el EA (.ex5)" con enlace Drive o env var p.ej. TEVSYS_DOWNLOAD_EX5_URL.
  */
 function buildEmailHtml(licenseKey) {
   const INSTALACION_URL = "https://www.tevsys.io/instalacion";
