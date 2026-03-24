@@ -200,6 +200,7 @@ function buildEmailHtml(licenseKey) {
 }
 
 async function enviarEmail(resend, to, licenseKey) {
+  // Dominio verificado: info@tevsys.io. Si no está RESEND_FROM, fallback a onboarding (solo pruebas).
   const from = process.env.RESEND_FROM || "tevsys <onboarding@resend.dev>";
 
   const { data, error } = await resend.emails.send({
@@ -209,6 +210,9 @@ async function enviarEmail(resend, to, licenseKey) {
     html: buildEmailHtml(licenseKey),
   });
 
-  if (error) throw new Error("Resend: " + JSON.stringify(error));
+  if (error) {
+    console.error("[webhook-lemon] Resend error detail:", JSON.stringify(error));
+    throw new Error("Resend: " + JSON.stringify(error));
+  }
   return data;
 }

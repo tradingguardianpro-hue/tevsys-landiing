@@ -131,14 +131,13 @@
 - **CTAs planes:** `/company/contact?plan=essential|advanced|pro`
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
 
-### Lemon Squeezy + botón Comprar Essential + Webhook (19 Mar 2026)
-- **KYC en curso (24 Mar 2026):** Gabi envió DNI para verificación identidad. Lemon revisando. Pantalla "Cuenta activada" / "Vamos a revisar la información que has enviado." Cuando aprueben → activar checkout.
-- **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady: false`. Controla si se muestra el botón "Comprar Essential" (checkout Lemon).
-- **Comportamiento:** `false` → solo "Elegir Essential" (formulario). `true` → "Comprar Essential" + "Probar demo" (botones apilados verticalmente).
-- **Cuándo ON:** Verificación identidad Lemon completada + producto publicado + URL checkout real en `checkoutEssentialUrl`.
-- **Webhook automático:** `api/webhook-lemon.js` recibe `order_created` de Lemon → genera clave ESEMEN/ESEANU → guarda en BD Upstash → envía email con Resend. Variables: `RESEND_API_KEY`, `LEMON_WEBHOOK_SECRET`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`.
-- **Email de licencia:** Plantilla premium en webhook. **Incluye 4 pasos obligatorios:** (1) Herramientas → Opciones → Asesores Expertos; (2) Activar comercio algorítmico; (3) Activar WebRequest y añadir `https://tevsys.io`; (4) Pegar clave en License Key (F7).
-- **Docs:** Proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `GUIA_FUNDADOR_PRIMERA_VENTA_Y_CONTINUIDAD.md`, `INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md`, `WEBHOOK_LEMON_LO_QUE_HEMOS_HECHO.md`. CHANGELOG-TEVSYS §44.
+### Lemon Squeezy + botón Comprar Essential + Webhook (24 Mar 2026 — FLUJO COMPLETO OPERATIVO)
+- **Estado (24 Mar 2026):** Flujo validado. Compra → webhook → clave → email automático. Test mode.
+- **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady: true`. Botones "Comprar Mensual" y "Comprar Anual" visibles.
+- **Webhook automático:** `api/webhook-lemon.js` recibe `order_created` → genera clave ESEMEN/ESEANU → guarda Upstash → envía email Resend. Variables Vercel: `RESEND_API_KEY`, `RESEND_FROM` (obligatoria: `tevsys <info@tevsys.io>`), `LEMON_WEBHOOK_SECRET`, `UPSTASH_REDIS_REST_*`.
+- **Resend:** Dominio tevsys.io verificado. DNS (DKIM, MX, SPF) en Plesk. Sin RESEND_FROM → 403.
+- **Email de licencia:** Plantilla en `buildEmailHtml()` en webhook. Editable. Incluye 4 pasos F7, enlace /instalacion.
+- **Docs:** `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md` (proyecto TGP).
 
 ### Imágenes y badges
 - **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar 22px, discreto).
@@ -472,6 +471,13 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - feat(footer): enlace "Cómo instalar" en Producto (primera posición)
 - docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS.md, PLANTILLA_EMAIL_DEMO_TEVSYS.md
 
+**Sesión 24 Mar 2026 (Lemon + Resend flujo completo):**
+- feat(webhook): RESEND_FROM obligatoria, dominio tevsys.io verificado
+- fix(webhook): log Resend error detail para debug 403
+- Lemon: 2FA, producto publicado, checkout Test mode operativo
+- Resend: DNS (DKIM, MX, SPF) en Plesk. Flujo compra→clave→email validado.
+- Checkpoint: CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md
+
 **Sesión 21 Mar 2026 (guía configuración, flujo demo, spam):**
 - feat(configuracion): nueva página /configuracion con vídeo Drive embebido (2:36 min)
 - feat(footer): enlace "Guía de configuración" en Producto (debajo Cómo instalar)
@@ -507,7 +513,14 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 *Todo lo que hemos hecho en el EA (proyecto TGP/tevsys) desde la última vez que se pasó este prompt a DeepSeek. Sirve para que el copy y los vídeos de la web reflejen el producto real y las decisiones de producto.*
 
-### 15.9 Sesión 24 Mar 2026 — Modales, capital, Lemon KYC, i18n
+### 15.9 Sesión 24 Mar 2026 — Modales, capital, Lemon flujo completo, i18n
+
+**Lemon Squeezy – Flujo compra operativo (24 Mar):**
+- 2FA configurado (Google Authenticator + códigos recuperación).
+- Producto Essential publicado. Checkout en Test mode.
+- Resend: dominio tevsys.io verificado (DNS en Plesk). Variable RESEND_FROM obligatoria: `tevsys <info@tevsys.io>`.
+- Flujo validado: compra → webhook → clave ESEMEN/ESEANU → email automático.
+- Pendiente: Live mode (toggle deshabilitado), mejoras interfaz Lemon, botones web, email editable.
 
 **Modales de capital:**
 - **Formato balance:** Números con separador de miles europeo (ej. 106.474 EUR). Nueva función `FormatearNumeroMiles()`.
@@ -525,9 +538,9 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 - Regla en `.cursor/rules/i18n-textos-modulares.mdc`: usar `T("clave")` para texto nuevo visible al usuario (no hardcodear). Facilita futura traducción a inglés u otros idiomas.
 - AGENDA_GABI: i18n pendiente para más adelante.
 
-**Lemon Squeezy – KYC:**
-- 24 Mar 2026: Gabi envió DNI. Lemon revisando identidad. Pantalla "Cuenta activada" / "Vamos a revisar la información que has enviado."
-- Cuando aprueben → activar checkout Essential, probar compra real, webhook, email, clave, EA valida.
+**Lemon Squeezy – Flujo completo (24 Mar 2026):**
+- KYC verificado. 2FA configurado. Producto publicado.
+- Flujo operativo en Test mode: compra → webhook → clave → email. Resend dominio verificado. RESEND_FROM obligatoria.
 
 ### 15.1 Onboarding Essential — estado actual
 
@@ -631,4 +644,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 24 Mar 2026. §15.9: Modales capital (formato 106.474, guiones, TEVsys, color naranja). Lemon KYC en revisión. Regla i18n T("clave"). §Licencia: instrucciones WebRequest + trading algorítmico para compradores. Email webhook actualizado (4 pasos). Vídeo pendiente "Primera vez con licencia". Fuente de verdad: PLANES_PRECIOS_FEATURES_TEVSYS.md.
+**Última actualización:** 24 Mar 2026. §15.9: Lemon flujo completo operativo (Test mode). Resend dominio verificado. RESEND_FROM obligatoria. Modales capital (formato 106.474, guiones, TEVsys). Pendiente: Live mode, mejoras interfaz Lemon, email editable, botones web. Checkpoint: CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md (proyecto TGP).
