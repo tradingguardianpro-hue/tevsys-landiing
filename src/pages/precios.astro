@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
+import settings from '../config/settings.js';
 
 const seo = {
 	title: 'Precios y planes | tevsys',
@@ -106,7 +107,7 @@ const planesMulti = [
 			<p class="precios-cards-sub">(Precio lanzamiento año 1; 6 meses más si renuevas y sigues suscrito)</p>
 			<div class="precios-cards-grid precios-cards-grid--retail">
 				{planesRetail.map((plan) => (
-					<article class="precios-card">
+					<article class="precios-card" id={plan.nombre.toLowerCase()}>
 						<h3 class="precios-card__name">{plan.nombre}</h3>
 						{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
 						<div class="precios-card__precios">
@@ -124,6 +125,9 @@ const planesMulti = [
 						<ul class="precios-card__incluye">
 							{plan.incluye.map((item) => <li>{item}</li>)}
 						</ul>
+						{plan.nombre === 'Essential' && settings.checkoutEssentialReady && (
+							<a href={settings.checkoutEssentialUrlMensual} class="precios-card__comprar" target="_blank" rel="noopener noreferrer">Comprar</a>
+						)}
 					</article>
 				))}
 			</div>
@@ -284,6 +288,23 @@ const planesMulti = [
 	}
 	.precios-card__incluye li {
 		margin-bottom: 0.35rem;
+	}
+	.precios-card__comprar {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 1rem;
+		padding: 0.5rem 1rem;
+		border-radius: 1.5rem;
+		background: #f5b041;
+		color: #1a1510;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background 0.2s ease;
+		align-self: flex-start;
+	}
+	.precios-card__comprar:hover {
+		background: #f7c050;
 	}
 	.precios-nota {
 		font-size: 0.88rem;
