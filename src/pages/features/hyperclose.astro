@@ -23,9 +23,9 @@ const seo = {
 		</section>
 
 		<section id="hyperclose-demo" class="feature-demo feature-demo--hero">
-			<h2>Demo — HyperClose + precisión milimétrica (2 min 23 s)</h2>
+			<h2>Demo — precisión milimétrica + HyperClose (2:23)</h2>
 			<p class="feature-demo-hook">
-				ActivTrades #6216264 · 15 lotes GER40 · límite -1,00% · desviación ~1,31 € · Wall Street + 3 semáforos + caja de herramientas
+				15 lotes · GER40 · límite -1% · desviación 1,31 € · Apertura Wall Street · Tres semáforos
 			</p>
 			<div class="demo-video demo-video--hero" id="hyperclose-demo-container">
 				<video id="hyperclose-demo-video" controls preload="metadata" playsinline>
@@ -33,16 +33,30 @@ const seo = {
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
-			<p class="demo-edit-note">
-				Duración <strong>2:23</strong>. <strong>Con audio</strong> instrumental (sin voz). Metraje único: precisión documentada → HyperClose (semáforos y ráfaga desde herramientas). Sustituye en repo
-				<code>public/videos/features/hyperclose-demo.mp4</code> por el export final.
-			</p>
 			<details class="proof-accordion hyperclose-demo-evidence">
-				<summary class="proof-capture-link">Compruébalo tú mismo — evidencia MT5 e historial</summary>
-				<p class="hyperclose-demo-evidence__text">
-					Operativa y capturas enlazadas con el mismo criterio que el vídeo: micropágina
-					<a href="/features/evidencia">Evidencia verificable</a> (informe oficial MT5, HTML de transacciones donde aplique).
-				</p>
+				<summary class="proof-capture-link">Compruébalo tú mismo — informe MT5, capturas e historial</summary>
+				<div class="hyperclose-demo-evidence__text">
+					<p>
+						Misma lógica que en <a href="/features/evidencia">Evidencia verificable</a>: el informe lo genera MT5; tú contrastas fechas, lotes y resultado con lo que ves en el vídeo.
+					</p>
+					<p class="proof-links-row">
+						<a class="proof-capture-link" href="/features/evidencia#evidencia-informe-mt5">
+							Ir al informe oficial MT5 <span class="proof-link-meta">EVIDENCIA</span>
+						</a>
+						<a
+							class="proof-capture-link"
+							href="/docs/evidencia-hyperclose-demo-historial-transacciones.html"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Abrir historial HTML (esta demo) <span class="proof-link-meta">HTML</span>
+						</a>
+					</p>
+					<p class="demo-edit-note hyperclose-demo-evidence__footnote">
+						Export MT5 de la misma sesión que el vídeo (15 lotes Ger40, reducción ~1&nbsp;%). Nombre, cuenta y broker redactados. Otro ejemplo con demo 100k:
+						<a href="/features/evidencia#evidencia-html-transacciones">Evidencia — historial HTML</a>.
+					</p>
+				</div>
 			</details>
 		</section>
 
@@ -307,6 +321,27 @@ const seo = {
 		font-weight: 600;
 		text-decoration: underline;
 		text-underline-offset: 2px;
+	}
+	.hyperclose-demo-evidence .proof-links-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-top: 0.45rem;
+	}
+	.hyperclose-demo-evidence__footnote {
+		margin-top: 0.75rem !important;
+	}
+	.hyperclose-demo-evidence .proof-link-meta {
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		padding: 0.08rem 0.38rem;
+		border-radius: 999px;
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.12);
+		color: #f7c050;
+		line-height: 1.2;
 	}
 	#hyperclose-demo:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
