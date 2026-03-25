@@ -1788,10 +1788,10 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - **Tras semáforo 3:** overlay 15 (caja de herramientas + varias aperturas, cierre en ms sin nuevos modales).
 - **CTA web:** overlay 17 coherente con acordeón **bajo** el vídeo en `/features/hyperclose`.
 
-### 57.5 Pendiente en repo (cuando el MP4 esté exportado)
-- Sustituir o versionar `public/videos/features/hyperclose-demo.mp4` (y revisar si la **demo rápida** y el bloque **Semáforo** deben seguir apuntando al mismo archivo o a uno nuevo con nombre explícito).
-- Actualizar nota bajo embed si cambia duración o si se añade audio (respecto al actual “sin audio, 1 min 35 s”).
-- Opcional: enlazar HTML/PDF de la operativa **25 Mar** en acordeón de evidencia (misma lógica que otras micropáginas).
+### 57.5 Pendiente en repo + web (Mar 2026)
+- **Hecho en código web:** `src/pages/features/hyperclose.astro` — demo principal **2:23**, **audio** (nota bajo embed), hook **ActivTrades #6216264 / 15 lotes / -1% / ~1,31 €**, contenedor **más protagonista** (`.demo-video--hero` + halo), acordeón **“Compruébalo tú mismo”** → `/features/evidencia`. Bloque semáforo sigue reutilizando el mismo MP4.
+- **Pendiente operativo:** copiar el **MP4 export final** a `public/videos/features/hyperclose-demo.mp4` (sustituye el archivo anterior) y **redeploy** Vercel.
+- Opcional: enlazar HTML/PDF operativa **25 Mar** en acordeón o en Evidencia (misma lógica que otras micropáginas).
 
 ### 57.6 Docs cruzados
 - **Proyecto TGP:** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` y `TGP_V11_CHECKPOINT_PRODUCCION.md` — sesión vídeo web + fixes EA 24–25 Mar ya registrados.

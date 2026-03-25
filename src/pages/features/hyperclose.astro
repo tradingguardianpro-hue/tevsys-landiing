@@ -22,15 +22,28 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="hyperclose-demo" class="feature-demo">
-			<h2>Demo rápida (1 min 35 s)</h2>
-			<div class="demo-video demo-video--compact" id="hyperclose-demo-container">
-				<video id="hyperclose-demo-video" controls preload="metadata">
+		<section id="hyperclose-demo" class="feature-demo feature-demo--hero">
+			<h2>Demo — HyperClose + precisión milimétrica (2 min 23 s)</h2>
+			<p class="feature-demo-hook">
+				ActivTrades #6216264 · 15 lotes GER40 · límite -1,00% · desviación ~1,31 € · Wall Street + 3 semáforos + caja de herramientas
+			</p>
+			<div class="demo-video demo-video--hero" id="hyperclose-demo-container">
+				<video id="hyperclose-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
-			<p class="demo-edit-note">Vídeo editado para acortar esperas (cadencia 30 s entre modales).</p>
+			<p class="demo-edit-note">
+				Duración <strong>2:23</strong>. <strong>Con audio</strong> instrumental (sin voz). Metraje único: precisión documentada → HyperClose (semáforos y ráfaga desde herramientas). Sustituye en repo
+				<code>public/videos/features/hyperclose-demo.mp4</code> por el export final.
+			</p>
+			<details class="proof-accordion hyperclose-demo-evidence">
+				<summary class="proof-capture-link">Compruébalo tú mismo — evidencia MT5 e historial</summary>
+				<p class="hyperclose-demo-evidence__text">
+					Operativa y capturas enlazadas con el mismo criterio que el vídeo: micropágina
+					<a href="/features/evidencia">Evidencia verificable</a> (informe oficial MT5, HTML de transacciones donde aplique).
+				</p>
+			</details>
 		</section>
 
 		<section class="feature-proof">
@@ -58,9 +71,9 @@ const seo = {
 			<h3>Semáforo de responsabilidad</h3>
 			<p class="feature-proof-subtitle">Tres niveles de aviso por reiteración</p>
 			<p>El sistema escala mensajes educativos y de responsabilidad según la repetición del intento.</p>
-			<p class="feature-demo-hook">Los 3 niveles en vídeo — mismo que demo rápida</p>
+			<p class="feature-demo-hook">Los 3 niveles — mismo metraje que la demo principal (2:23).</p>
 			<div class="demo-video demo-video--compact" id="hyperclose-semaphore-container">
-				<video id="hyperclose-semaphore-video" controls preload="metadata">
+				<video id="hyperclose-semaphore-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
@@ -248,10 +261,52 @@ const seo = {
 		max-width: 70ch;
 		line-height: 1.55;
 	}
+	.feature-demo--hero {
+		position: relative;
+	}
+	.feature-demo--hero::before {
+		content: '';
+		position: absolute;
+		inset: -0.35rem;
+		border-radius: calc(var(--theme-shape-radius) + 2px);
+		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
+		pointer-events: none;
+		z-index: 0;
+	}
+	.feature-demo--hero > * {
+		position: relative;
+		z-index: 1;
+	}
 	#hyperclose-demo {
 		scroll-margin-top: 5.5rem;
 		border-radius: var(--theme-shape-radius);
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+	}
+	.demo-video--hero {
+		max-width: min(100%, 52rem);
+		margin-left: auto;
+		margin-right: auto;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.35), 0 12px 40px rgba(0, 0, 0, 0.35);
+	}
+	.demo-video--hero.demo-video--playing {
+		max-width: none;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
+	}
+	.hyperclose-demo-evidence {
+		margin-top: 0.85rem;
+	}
+	.hyperclose-demo-evidence__text {
+		margin: 0.5rem 0 0;
+		line-height: 1.55;
+		font-size: 0.94rem;
+		opacity: 0.92;
+	}
+	.hyperclose-demo-evidence__text a {
+		color: #f5b041;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 2px;
 	}
 	#hyperclose-demo:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
