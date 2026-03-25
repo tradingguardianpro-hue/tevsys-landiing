@@ -36,12 +36,21 @@ const seo = {
 			<details class="proof-accordion hyperclose-demo-evidence">
 				<summary class="proof-capture-link">Compruébalo tú mismo — informe MT5, capturas e historial</summary>
 				<div class="hyperclose-demo-evidence__text">
-					<p>
-						Misma lógica que en <a href="/features/evidencia">Evidencia verificable</a>: el informe lo genera MT5; tú contrastas fechas, lotes y resultado con lo que ves en el vídeo.
-					</p>
-					<p class="proof-links-row">
+					<div class="hyperclose-mt5-captures">
+						<p class="proof-gallery__hint">
+							Aquí irán las capturas del informe oficial MT5 de esta operativa (misma sesión que el vídeo). Sustituye el recuadro por una galería con enlace a imagen en tamaño completo, igual que en la sección de informe MT5 de Evidencia.
+						</p>
+						<div
+							class="hyperclose-mt5-captures__slot"
+							role="region"
+							aria-label="Reservado para capturas del informe MT5"
+						>
+							<span class="hyperclose-mt5-captures__slot-label">Capturas del informe MT5 — pendientes de publicar</span>
+						</div>
+					</div>
+					<p class="proof-links-row hyperclose-demo-evidence__links">
 						<a class="proof-capture-link" href="/features/evidencia#evidencia-informe-mt5">
-							Ir al informe oficial MT5 <span class="proof-link-meta">EVIDENCIA</span>
+							Ver referencia informe MT5 (demo 100k) <span class="proof-link-meta">EVIDENCIA</span>
 						</a>
 						<a
 							class="proof-capture-link"
@@ -49,12 +58,8 @@ const seo = {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Abrir historial HTML (esta demo) <span class="proof-link-meta">HTML</span>
+							Abrir historial HTML de esta demo <span class="proof-link-meta">HTML</span>
 						</a>
-					</p>
-					<p class="demo-edit-note hyperclose-demo-evidence__footnote">
-						Export MT5 de la misma sesión que el vídeo (15 lotes Ger40, reducción ~1&nbsp;%). Nombre, cuenta y broker redactados. Otro ejemplo con demo 100k:
-						<a href="/features/evidencia#evidencia-html-transacciones">Evidencia — historial HTML</a>.
 					</p>
 				</div>
 			</details>
@@ -328,8 +333,35 @@ const seo = {
 		gap: 0.8rem;
 		margin-top: 0.45rem;
 	}
-	.hyperclose-demo-evidence__footnote {
-		margin-top: 0.75rem !important;
+	.hyperclose-demo-evidence__links {
+		margin-top: 0.85rem;
+	}
+	.hyperclose-mt5-captures {
+		margin-top: 0.35rem;
+	}
+	.hyperclose-mt5-captures .proof-gallery__hint {
+		margin: 0 0 0.65rem;
+		font-size: 0.9rem;
+		opacity: 0.88;
+		line-height: 1.5;
+	}
+	.hyperclose-mt5-captures__slot {
+		min-height: 7.5rem;
+		border: 1px dashed rgba(245, 176, 65, 0.45);
+		border-radius: var(--theme-shape-radius);
+		background: rgba(245, 176, 65, 0.06);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem 1.25rem;
+		text-align: center;
+	}
+	.hyperclose-mt5-captures__slot-label {
+		font-size: 0.88rem;
+		opacity: 0.72;
+		font-style: italic;
+		max-width: 28ch;
+		line-height: 1.45;
 	}
 	.hyperclose-demo-evidence .proof-link-meta {
 		font-size: 0.68rem;
@@ -357,10 +389,11 @@ const seo = {
 		font-size: 1.35rem;
 	}
 	.demo-video--compact {
-		max-width: 420px;
+		max-width: min(100%, 31rem);
 		margin-left: auto;
 		margin-right: auto;
-		transition: max-width 0.35s ease;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.32), 0 10px 32px rgba(0, 0, 0, 0.3);
 	}
 	.demo-video--compact.demo-video--playing {
 		max-width: none;

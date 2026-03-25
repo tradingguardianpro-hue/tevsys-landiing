@@ -17,11 +17,11 @@ const seo = {
 			<p class="feature-lead">Cada cierre y cada bloqueo queda registrado en panel, logs y reporte oficial MT5.</p>
 		</section>
 
-		<section id="evidencia-demo" class="feature-demo">
+		<section id="evidencia-demo" class="feature-demo feature-demo--hero">
 			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
 			<p class="feature-demo-hook">100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%</p>
-			<div class="demo-video demo-video--compact" id="evidencia-demo-container">
-				<video id="evidencia-demo-video" controls preload="metadata">
+			<div class="demo-video demo-video--hero" id="evidencia-demo-container">
+				<video id="evidencia-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/evidencia-100k-perdida.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
@@ -280,6 +280,42 @@ const seo = {
 	}
 	#evidencia-demo {
 		scroll-margin-top: 5.5rem;
+		border-radius: var(--theme-shape-radius);
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+	}
+	#evidencia-demo:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		padding: 1rem;
+		border-radius: var(--theme-shape-radius);
+	}
+	.feature-demo--hero {
+		position: relative;
+	}
+	.feature-demo--hero::before {
+		content: '';
+		position: absolute;
+		inset: -0.35rem;
+		border-radius: calc(var(--theme-shape-radius) + 2px);
+		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
+		pointer-events: none;
+		z-index: 0;
+	}
+	.feature-demo--hero > * {
+		position: relative;
+		z-index: 1;
+	}
+	.demo-video--hero {
+		max-width: min(100%, 52rem);
+		margin-left: auto;
+		margin-right: auto;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.35), 0 12px 40px rgba(0, 0, 0, 0.35);
+	}
+	.demo-video--hero.demo-video--playing {
+		max-width: none;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
 	}
 	.feature-demo-hook {
 		margin: 0 0 0.75rem;
@@ -306,10 +342,11 @@ const seo = {
 		margin-bottom: 0.75rem;
 	}
 	.demo-video--compact {
-		max-width: 420px;
+		max-width: min(100%, 31rem);
 		margin-left: auto;
 		margin-right: auto;
-		transition: max-width 0.35s ease;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.32), 0 10px 32px rgba(0, 0, 0, 0.3);
 	}
 	.demo-video--compact.demo-video--playing {
 		max-width: none;

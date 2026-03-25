@@ -23,11 +23,11 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="precision-demo" class="feature-demo">
+		<section id="precision-demo" class="feature-demo feature-demo--hero">
 			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
 			<p class="feature-demo-hook">100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%</p>
-			<div class="demo-video demo-video--compact" id="precision-demo-container">
-				<video id="precision-demo-video" controls preload="metadata">
+			<div class="demo-video demo-video--hero" id="precision-demo-container">
+				<video id="precision-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/evidencia-100k-perdida.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
@@ -263,6 +263,33 @@ const seo = {
 		opacity: 0.86;
 		margin: 0.35rem 0 0;
 	}
+	.feature-demo--hero {
+		position: relative;
+	}
+	.feature-demo--hero::before {
+		content: '';
+		position: absolute;
+		inset: -0.35rem;
+		border-radius: calc(var(--theme-shape-radius) + 2px);
+		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
+		pointer-events: none;
+		z-index: 0;
+	}
+	.feature-demo--hero > * {
+		position: relative;
+		z-index: 1;
+	}
+	.demo-video--hero {
+		max-width: min(100%, 52rem);
+		margin-left: auto;
+		margin-right: auto;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.35), 0 12px 40px rgba(0, 0, 0, 0.35);
+	}
+	.demo-video--hero.demo-video--playing {
+		max-width: none;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
+	}
 	#precision-demo,
 	#precision-volatilidad {
 		scroll-margin-top: 5.5rem;
@@ -308,10 +335,11 @@ const seo = {
 		margin-bottom: 0.75rem;
 	}
 	.demo-video--compact {
-		max-width: 420px;
+		max-width: min(100%, 31rem);
 		margin-left: auto;
 		margin-right: auto;
-		transition: max-width 0.35s ease;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.32), 0 10px 32px rgba(0, 0, 0, 0.3);
 	}
 	.demo-video--compact.demo-video--playing {
 		max-width: none;
