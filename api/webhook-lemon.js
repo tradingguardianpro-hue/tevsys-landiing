@@ -148,12 +148,12 @@ function calcularExpira(esAnual) {
 /**
  * Plantilla email premium tevsys — licencia Essential.
  * Editable: copy, tono, estructura. Mantener variables: {{licenseKey}}, {{INSTALACION_URL}}.
- * TODO (cuando tengáis URL estable): bloque "Descarga el EA (.ex5)" con enlace Drive o env var p.ej. TEVSYS_DOWNLOAD_EX5_URL.
  */
-function buildEmailHtml(licenseKey) {
+function buildEmailHtml(licenseKey, downloadUrl) {
   const INSTALACION_URL = "https://www.tevsys.io/instalacion";
   const ACCENT = "#f5b041"; // Amarillo tevsys
   const BORDER = "#e8e8e8";
+  const tieneLinkDescarga = typeof downloadUrl === "string" && downloadUrl.trim() !== "";
 
   return (
     '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:560px; margin:0 auto; font-family:Segoe UI,Helvetica,Arial,sans-serif; font-size:15px; line-height:1.5; color:#333;">' +
@@ -164,6 +164,18 @@ function buildEmailHtml(licenseKey) {
     // Saludo
     "<p style='margin:0 0 20px 0;'>Bienvenido a tevsys Essential.</p>" +
     "<p style='margin:0 0 24px 0;'>Has dado el paso. Ahora la disciplina no se negocia. Se ejecuta. Gestión y protección automatizadas.</p>" +
+    // Contexto descarga (mismo flujo para quien ya tenia demo y quien compra directo)
+    "<p style='margin:0 0 10px 0; font-weight:600; color:#222;'>Antes de activar tu clave:</p>" +
+    "<p style='margin:0 0 10px 0;'>Si ya tienes tevsys instalado por la demo, puedes usar ese mismo archivo.</p>" +
+    (tieneLinkDescarga
+      ? "<p style='margin:0 0 24px 0;'>Si no lo tienes aun, descargalo aqui: <a href='" +
+        downloadUrl +
+        "' style='color:" +
+        ACCENT +
+        "; font-weight:600; text-decoration:none;'>Descargar tevsys (.ex5)</a>.</p>"
+      : "<p style='margin:0 0 24px 0;'>Si no lo tienes aun, escríbenos a <a href='mailto:info@tevsys.io' style='color:" +
+        ACCENT +
+        "; font-weight:600; text-decoration:none;'>info@tevsys.io</a> y te enviamos el enlace de descarga.</p>") +
     "<p style='margin:0 0 24px 0;'>Aquí tienes tu clave de licencia:</p>" +
     // Clave
     "<table role='presentation' cellpadding='0' cellspacing='0' border='0' style='width:100%; margin:0 0 24px 0; border:1px solid " +
@@ -206,12 +218,14 @@ function buildEmailHtml(licenseKey) {
 async function enviarEmail(resend, to, licenseKey) {
   // Dominio verificado: info@tevsys.io. Si no está RESEND_FROM, fallback a onboarding (solo pruebas).
   const from = process.env.RESEND_FROM || "tevsys <onboarding@resend.dev>";
+  // Opcional: enlace único de descarga del .ex5 para compradores sin demo previa.
+  const downloadUrl = process.env.TEVSYS_DOWNLOAD_EX5_URL || "";
 
   const { data, error } = await resend.emails.send({
     from: from,
     to: [to],
     subject: "tevsys Essential — Tu licencia está lista",
-    html: buildEmailHtml(licenseKey),
+    html: buildEmailHtml(licenseKey, downloadUrl),
   });
 
   if (error) {
