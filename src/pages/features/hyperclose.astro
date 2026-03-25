@@ -38,7 +38,7 @@ const seo = {
 				<div class="hyperclose-demo-evidence__text">
 					<div class="hyperclose-mt5-captures">
 						<p class="proof-gallery__hint">
-							Aquí irán las capturas del informe oficial MT5 de esta operativa (misma sesión que el vídeo). Sustituye el recuadro por una galería con enlace a imagen en tamaño completo, igual que en la sección de informe MT5 de Evidencia.
+							Aquí irán las capturas del <strong>informe MT5 de la misma cuenta y periodo</strong> que el vídeo (pestañas Resumen, P&amp;L, etc.). Sustituye el recuadro por la galería con zoom, como en Evidencia. El enlace «Evidencia» de abajo es solo <strong>otra cuenta</strong> (demo 100k): sirve para ver el formato del informe, no los números de esta demo.
 						</p>
 						<div
 							class="hyperclose-mt5-captures__slot"
@@ -50,7 +50,7 @@ const seo = {
 					</div>
 					<p class="proof-links-row hyperclose-demo-evidence__links">
 						<a class="proof-capture-link" href="/features/evidencia#evidencia-informe-mt5">
-							Ver referencia informe MT5 (demo 100k) <span class="proof-link-meta">EVIDENCIA</span>
+							Ejemplo de informe MT5 (otra cuenta) <span class="proof-link-meta">EVIDENCIA</span>
 						</a>
 						<a
 							class="proof-capture-link"
@@ -60,6 +60,9 @@ const seo = {
 						>
 							Abrir historial HTML de esta demo <span class="proof-link-meta">HTML</span>
 						</a>
+					</p>
+					<p class="demo-edit-note hyperclose-demo-evidence__mt5-note">
+						<strong>Informe MT5 gráfico vs historial HTML:</strong> el HTML es una instantánea del historial en el momento de exportar. Si después grabaste pruebas extra (p. ej. semáforos o intentos en bloqueo), HyperClose puede haber cerrado operaciones adicionales y generar comisiones que <strong>no</strong> están en ese HTML pero <strong>sí</strong> en un informe MT5 con rango de fechas más amplio. Las capturas que cuelgues arriba deben ser coherentes con el periodo que declares; no pasa nada porque no cuadre céntimo a céntimo con el HTML antiguo si el contexto está explicado.
 					</p>
 				</div>
 			</details>
@@ -335,6 +338,12 @@ const seo = {
 	}
 	.hyperclose-demo-evidence__links {
 		margin-top: 0.85rem;
+	}
+	.hyperclose-demo-evidence__mt5-note {
+		margin-top: 0.85rem !important;
+		line-height: 1.5;
+		font-size: 0.86rem;
+		opacity: 0.88;
 	}
 	.hyperclose-mt5-captures {
 		margin-top: 0.35rem;

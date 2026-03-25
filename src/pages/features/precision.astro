@@ -41,6 +41,8 @@ const seo = {
 				<li><a class="evidence-link" href="#precision-demo">Demo cuenta 100k: cálculo visible en tiempo real y cierre donde configuras.</a></li>
 				<li><a class="evidence-link" href="#precision-logs">Sin humo: todo queda registrado (logs auditables).</a></li>
 				<li><a class="evidence-link" href="#precision-stats">Lo que dicen los resultados (evidencia visual + resumen técnico).</a></li>
+				<li><a class="evidence-link" href="#precision-volatilidad">Alta volatilidad: cierre también en positivo.</a></li>
+				<li><a class="evidence-link" href="#precision-cuenta-pequena">Cuenta más pequeña, mismo criterio de cierre.</a></li>
 			</ul>
 		</section>
 
@@ -58,26 +60,30 @@ const seo = {
 
 		<section id="precision-volatilidad" class="feature-demo">
 			<h2>Demo en alta volatilidad — Cierre en ganancias</h2>
-			<p class="feature-demo-hook">Límite ±1,50% · Cierre en +1,83% · Alta volatilidad geopolítica</p>
+			<p class="feature-demo-hook">
+				Operativa documentada: límite ±1,50% · cierre en +1,83% · contexto de alta volatilidad geopolítica
+			</p>
 			<div class="demo-video demo-video--compact" id="precision-volatilidad-container">
-				<video id="precision-volatilidad-video" controls preload="metadata">
+				<video id="precision-volatilidad-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/precision-demo-volatilidad.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
-			<p class="demo-edit-note">Misma precisión en condiciones extremas. El sistema cierra al alcanzar el límite, también en positivo.</p>
+			<p class="demo-edit-note">
+				En esta grabación el sistema cierra al alcanzar el límite configurado; en escenarios extremos la desviación puede ser mayor que en condiciones normales, pero la protección y el cierre automático se mantienen.
+			</p>
 		</section>
 
 		<section id="precision-cuenta-pequena" class="feature-demo">
-			<details class="proof-accordion">
-				<summary class="proof-capture-link">También en cuenta más pequeña (vídeo 1 min 13 s)</summary>
-				<div class="demo-video demo-video--compact" id="precision-cuenta-pequena-container">
-					<video id="precision-cuenta-pequena-video" controls preload="metadata">
-						<source src="/videos/features/precision-demo.mp4" type="video/mp4" />
-						Tu navegador no soporta reproducción de video HTML5.
-					</video>
-				</div>
-			</details>
+			<h2>Demo en cuenta más pequeña (1 min 13 s)</h2>
+			<p class="feature-demo-hook">Menor nominal · lotaje relativo alto · mismo criterio: el cierre sigue al límite que ves en panel</p>
+			<div class="demo-video demo-video--compact" id="precision-cuenta-pequena-container">
+				<video id="precision-cuenta-pequena-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-demo.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
+			<p class="demo-edit-note">Misma lógica que en la demo principal; aquí el capital es menor y el impacto por lote se nota más en pantalla.</p>
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail">
@@ -291,13 +297,15 @@ const seo = {
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
 	}
 	#precision-demo,
-	#precision-volatilidad {
+	#precision-volatilidad,
+	#precision-cuenta-pequena {
 		scroll-margin-top: 5.5rem;
 		border-radius: var(--theme-shape-radius);
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 	}
 	#precision-demo:target,
-	#precision-volatilidad:target {
+	#precision-volatilidad:target,
+	#precision-cuenta-pequena:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
