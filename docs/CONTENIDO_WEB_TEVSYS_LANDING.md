@@ -216,7 +216,8 @@ Documento de contenido/copy actual para revisión de equipo.
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
 ### Estado actual HyperClose (Mar 2026)
-- **Demo rápida:** `hyperclose-demo.mp4` (1 min 35 s, sin audio). Cierre, 3 niveles semáforo, 7 intentos. Nota: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
+- **Demo rápida (repo actual):** `hyperclose-demo.mp4` (1 min 35 s, sin audio). Cierre, 3 niveles semáforo, 7 intentos. Nota: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
+- **Nuevo vídeo en edición / próximo reemplazo (ver CHANGELOG §57):** duración **2:23**, **audio instrumental** (sin voz), **17 overlays** listados en **§57.3** (precisión #6216264 + HyperClose semáforos + caja herramientas; CTA *compruébalo tú mismo · informe oficial mt5 y html enlazados bajo el vídeo*).
 - **Cierre inmediato y Semáforo:** ambos enlazan a la demo. Acordeón "Ver capturas de los 3 modales" con imágenes de cada nivel.
 - **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) publicado + acordeón con 5 capturas. **COMPLETADO.**
 

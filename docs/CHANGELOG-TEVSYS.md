@@ -1745,3 +1745,61 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 56.4 Operación y despliegue
 - No cambia la lógica de negocio del webhook (clave/BD/envío), solo copy+render condicional del bloque descarga.
 - Para ver el enlace directo en producción: definir `TEVSYS_DOWNLOAD_EX5_URL` y redeploy.
+
+---
+
+## 57) Vídeo HyperClose + precisión milimétrica — producción Mar 2026 (operativa real 25 Mar)
+
+### 57.1 Objetivo del vídeo
+- **Un solo metraje** que enlace **cierre por límite con desviación documentada** (~1,31 € sobre -1,00% en cuenta ~106,4k €, **15 lotes GER40**, apertura Wall Street / alta volatilidad) con **HyperClose en acción**: **3 niveles de semáforo** + ráfaga desde **caja de herramientas** (cierres en ms sin nuevos modales tras el 3.er nivel) + **CTA de verificación** alineado con la ficha web.
+- **Duración publicada (export final):** **2:23**.
+- **Audio:** pista **instrumental** (p. ej. *Symbol*), **sin voz** en off.
+
+### 57.2 Evidencia que lo respalda (MT5)
+- **Cuenta demo ActivTrades** `#6216264`, informe **ReportHistory-6216264.html** (export **2026.03.25 16:10**).
+- **Operativa:** compra **10** lotes **2026.03.25 15:25:41** + compra **5** lotes **15:26:25**; cierre **sell 15** **16:07:23**, P&L **-1.066,05 €**; balance de referencia en tabla **106.474,20 €** → **105.408,15 €** (desviación ~**1,31 €** vs -1,00% teórico sobre la base de cálculo).
+- **Archivo local de referencia (PC fundador):** `Desktop/trade reports para evidencias de precisión milimétrica/operativas precisión 2026/ReportHistory-6216264.html`.
+
+### 57.3 Overlays — texto exacto en pantalla (orden de aparición)
+
+*Copy tal como en el vídeo exportado (2:23). La numeración sigue el guión de edición; no existe tarjeta “12”.*
+
+1. `alta volatilidad · apertura wall street`
+2. `balance de la cuenta · 106.474,20 €`
+3. `primera entrada · ger40 · 10 lotes · compra`
+4. `segunda entrada · ger40 · 5 lotes · compra`
+5. `límite pérdida diario · -1,00% · configurado y protegido`
+6. `hemos acortado tiempos muertos · comprueba la hora del pc`
+7. `cálculo en curso · cierre inminente`
+8. `desviación de cierre · 1,31 € · 15 lotes · apertura wall street`
+9. `ahora verás hyperclose en acción`
+10. `ahora verás hyperclose en acción` *(segunda aparición / beat en el montaje)*
+11. `abro operación · bloqueo por límite alcanzado · cierre en ms · semáforo nivel 1`
+13. `2.º intento · bloqueo por límite alcanzado · cierre en ms · semáforo nivel 2`
+14. `3.er intento · bloqueo por límite alcanzado · cierre en ms · semáforo nivel 3`
+15. `fíjate en la caja de herramientas ahora  ( abro varias operaciones para que se vea como las cierra siempre )`
+16. `7 intentos. 7 cierres. Cero dudas. — tevsys disciplina automatizada 🎯`
+17. `compruébalo tú mismo · informe oficial mt5 y html enlazados bajo el vídeo`
+
+### 57.4 Notas de montaje (Clipchamp)
+- **Saltos temporales:** overlay 6 (reloj del PC visible en grabación).
+- **Pre-cierre:** overlay 7; **post-cierre numérico:** 8 → puente HyperClose 9–10 (misma frase dos veces si el plano lo pide).
+- **Semáforos:** plantilla uniforme 11 / 13 / 14 (nivel 1: “abro operación…”; niveles 2 y 3: “N.º intento…”).
+- **Tras semáforo 3:** overlay 15 (caja de herramientas + varias aperturas, cierre en ms sin nuevos modales).
+- **CTA web:** overlay 17 coherente con acordeón **bajo** el vídeo en `/features/hyperclose`.
+
+### 57.5 Pendiente en repo (cuando el MP4 esté exportado)
+- Sustituir o versionar `public/videos/features/hyperclose-demo.mp4` (y revisar si la **demo rápida** y el bloque **Semáforo** deben seguir apuntando al mismo archivo o a uno nuevo con nombre explícito).
+- Actualizar nota bajo embed si cambia duración o si se añade audio (respecto al actual “sin audio, 1 min 35 s”).
+- Opcional: enlazar HTML/PDF de la operativa **25 Mar** en acordeón de evidencia (misma lógica que otras micropáginas).
+
+### 57.6 Docs cruzados
+- **Proyecto TGP:** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` y `TGP_V11_CHECKPOINT_PRODUCCION.md` — sesión vídeo web + fixes EA 24–25 Mar ya registrados.
+- **Este changelog** es la fuente de verdad del **guión/overlays** acordados en chat (Cursor, Mar 2026).
+
+### 57.7 Archivos tocados (documentación)
+- `docs/CHANGELOG-TEVSYS.md` (esta sección)
+- `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §7.2
+- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` — estado HyperClose
+- `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` — referencia §57
+- Proyecto TGP: `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md`, `TGP_V11_CHECKPOINT_PRODUCCION.md`

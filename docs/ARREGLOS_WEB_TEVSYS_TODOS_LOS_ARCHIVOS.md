@@ -258,6 +258,7 @@ Se trabajó con iteración visual continua (prueba-error controlado) para manten
 
 ### HyperClose
 - `hyperclose-demo.mp4` (1 min 35 s): cierre, 3 niveles semáforo, 7 intentos.
+- **Mar 2026 — próximo vídeo HyperClose+precisión:** **2:23**, **17 overlays** texto literal en `CHANGELOG-TEVSYS.md` **§57.3**; operativa 25 Mar #6216264; audio instrumental; MP4 pendiente de subir.
 - Misma estructura que Precisión: embed compacto, autoplay, links.
 - Nota bajo embed: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
 - Acordeón "Ver capturas de los 3 modales" con `hyperclose-modal-01/02/03-*.png`.

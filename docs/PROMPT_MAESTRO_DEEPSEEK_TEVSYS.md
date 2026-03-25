@@ -231,7 +231,8 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - Hook: `Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
 
 **Vídeos publicados:**
-- `hyperclose-demo.mp4` — 1 min 35 s, SIN audio. Límite ±2%, cierre -2,01%, 3 intentos con modales (nivel 1, 2, 3), 7 intentos ráfaga. Broker tapado #2d2d2d.
+- `hyperclose-demo.mp4` — **Estado repo (hasta Mar 2026):** 1 min 35 s, SIN audio. Límite ±2%, cierre -2,01%, 3 intentos con modales (nivel 1, 2, 3), 7 intentos ráfaga. Broker tapado #2d2d2d.
+- **En producción / edición (Mar 2026):** metraje **2:23** que combina **precisión real** (cuenta demo ActivTrades #6216264, 15 lotes GER40, límite -1%, desviación 1,31 €, Wall Street) + **HyperClose** (3 semáforos + caja de herramientas + 7 cierres). **Audio:** instrumental (*Symbol*), sin voz. **Lista literal de los 17 overlays** (orden 1–11, 13–17) en `CHANGELOG-TEVSYS.md` **§57.3**. **Pendiente:** subir MP4 y actualizar `hyperclose.astro`.
 
 **Imágenes:** hyperclose-modal-01-sistema-bloqueado.png, -02-advertencia.png, -03-advertencia-final.png
 
@@ -363,6 +364,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - Máximo 4-6 palabras. Sin punto final.
 - Estilo: texto blanco, Segoe UI 12
 - Tapar broker: barra sólida #2d2d2d
+- **Referencia extendida (HyperClose + precisión en un clip):** `CHANGELOG-TEVSYS.md` **§57.3** — **17 textos de overlay** en orden (incl. doble *ahora verás hyperclose en acción* en 9–10; sin numeración 12); **§57.4** notas de montaje.
 
 ---
 
@@ -657,4 +659,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 25 Mar 2026. §15.9–§15.10: Lemon flujo completo (Test mode); **email licencia cierre opción B** en webhook (§15.10, CHANGELOG §54). **§7.5 / §15.8 / CHANGELOG §55:** `/instalacion` lista con WebRequest (9 pasos); vídeo MP4 pendiente de renovar. Resend dominio verificado. RESEND_FROM obligatoria. Modales capital (formato 106.474, guiones, TEVsys). Pendiente: Live mode, mejoras interfaz Lemon, botones web, redeploy Vercel si el cierre nuevo no está en prod. Checkpoints: CHECKPOINT_24MAR2026… (proyecto TGP) + CHECKPOINT_V11 §8.
+**Última actualización:** 26 Mar 2026. **CHANGELOG §57.3:** **17 overlays** texto literal + **2:23** + audio instrumental; evidencia ReportHistory-6216264 25 Mar; MP4 pendiente de subir. §15.9–§15.10: Lemon flujo completo (Test mode); **email licencia cierre opción B** (§15.10, CHANGELOG §54). **§7.5 / §15.8 / CHANGELOG §55:** `/instalacion` lista WebRequest (9 pasos); vídeo instalación MP4 pendiente renovar. Resend dominio verificado. RESEND_FROM obligatoria. Checkpoints: CHECKPOINT_24MAR2026… (proyecto TGP) + CHECKPOINT V11 (fixes 24–25 Mar + vídeo web §57).
