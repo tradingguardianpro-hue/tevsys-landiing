@@ -1,6 +1,8 @@
 # Guía de producción de videos para micro-páginas TEVsys
 
-**Para contexto completo del proyecto:** ver `PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md`.
+**Para contexto completo del proyecto:** ver `PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md` y **`PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`** §7.
+
+> **Alineación web 26 Mar 2026 (`CHANGELOG` §58):** En `/features/precision` el **hero** es **`evidencia-100k-perdida.mp4`**; `precision-demo.mp4` queda como sección secundaria (cuenta pequeña). HyperClose: **`hyperclose-demo.mp4`** con metraje **2:23** y texto de overlays en **§57.3**; en la página, acordeón con **6** capturas informe MT5 + HTML historial. Los apartados 1) y 2) más abajo describen además el clip HyperClose **1:35** (referencia de estilo/edición); el guión del clip largo es el de §57.3.
 
 ## Objetivo
 
@@ -28,7 +30,7 @@ Esta guía está pensada para producir videos con calidad profesional sin fricci
 
 ## Estructura estándar (referencia: 40s)
 
-Duración objetivo: **40s** (puede alargarse si el contenido lo requiere; Precision 1:07 y HyperClose 1:35 son válidos).  
+Duración objetivo: **40s** (puede alargarse si el contenido lo requiere; Precision 1:07, HyperClose 1:35 o **2:23** en web, etc.).  
 Formato: **1080p, MP4, 30fps**  
 Audio: según tipo — demo principal con audio; guías/instructivos sin audio.
 
@@ -74,9 +76,14 @@ Objetivo:
 
 ## 1) HyperClose (`hyperclose-demo.mp4`)
 
-### Estado Mar 2026: ✅ PUBLICADO
+### Clip web actual (Mar 2026): metraje **2:23**
 
-**Specs reales del vídeo publicado:**
+- **Guión overlays 1–17 (sin tarjeta 12):** `CHANGELOG-TEVSYS.md` **§57.3**. Contenido: precisión 15 lotes GER40, límite -1%, desviación ~1,31 €, Wall Street + HyperClose (semáforos, caja herramientas, 7 cierres).
+- **Página:** hero + acordeón evidencia (§58). La web **no** menciona audio bajo el embed (el export puede llevar pista instrumental).
+
+### Referencia histórica — clip corto **1 min 35 s** (estilo/edición)
+
+**Specs del vídeo corto (referencia):**
 - Duración: **1 min 35 s**
 - Audio: **sin audio** (overlays explican todo)
 - Broker y datos personales: **tapados con barra gris #2d2d2d**
@@ -114,6 +121,12 @@ Si estás bloqueado y aun así intentas operar, HyperClose actúa en milisegundo
 ---
 
 ## 2) Precisión (`precision-demo.mp4`)
+
+### Hero en web (`/features/precision`)
+
+- **Archivo en hero:** `evidencia-100k-perdida.mp4` (1:41, con audio) — misma pieza que en Evidencia; ver §58.
+
+### `precision-demo.mp4` — sección secundaria (cuenta pequeña)
 
 ### Estado Mar 2026: ✅ PUBLICADO
 
@@ -224,13 +237,13 @@ Guardar videos finales en:
 `public/videos/features/`
 
 Nombres exactos:
-- `precision-demo.mp4` (demo principal 1:07 — con audio) ✅
+- `evidencia-100k-perdida.mp4` (hero Precisión + Evidencia, 1:41 — con audio) ✅
+- `precision-demo.mp4` (cuenta pequeña, 1:07 — con audio) ✅
 - `precision-demo-volatilidad.mp4` (demo alta volatilidad — sin audio) ✅
 - `precision-logs-guide.mp4` (guía logs — sin audio, overlays) ✅
-- `hyperclose-demo.mp4` (demo 1:35 — sin audio) ✅
-- `hyperclose-demo-dia-off.mp4` (pendiente)
+- `hyperclose-demo.mp4` (web **2:23** §57; sustituyó metraje 1:35 en landing) ✅
+- `hyperclose-dias-off-demo.mp4` (Día OFF, 51 s) ✅
 - `sml-demo.mp4` (pendiente)
-- `evidencia-demo.mp4` (pendiente)
 
 ---
 
@@ -248,16 +261,16 @@ Nombres exactos:
 
 ---
 
-## Estado actual (Mar 2026)
+## Estado actual (26 Mar 2026)
 
 | Vídeo | Estado | Duración | Audio |
 |-------|--------|----------|-------|
+| `evidencia-100k-perdida.mp4` | ✅ | 1:41 | Sí |
 | `precision-demo.mp4` | ✅ | 1:07 | Sí |
-| `precision-demo-volatilidad.mp4` | ✅ | ~1:08 | No |
+| `precision-demo-volatilidad.mp4` | ✅ | ~1:04 | No |
 | `precision-logs-guide.mp4` | ✅ | — | No |
-| `hyperclose-demo.mp4` | ✅ | 1:35 | No |
-| `hyperclose-demo-dia-off.mp4` | ⏳ | — | — |
+| `hyperclose-demo.mp4` | ✅ | **2:23** (web) | Opc. instrumental export |
+| `hyperclose-dias-off-demo.mp4` | ✅ | 51 s | No |
 | `sml-demo.mp4` | ⏳ | — | — |
-| `evidencia-demo.mp4` | ⏳ | — | — |
 
-**Nota operativa:** Precisión y HyperClose cerrados. Pendiente: Día OFF, SML, Evidencia. Tapar siempre broker y datos personales con barra #2d2d2d. Overlays: máx 4-6 palabras, sin punto final.
+**Nota operativa:** Precisión / HyperClose / Evidencia (100k) en web alineados §58. Pendiente principal producción: **SML** (`sml-demo.mp4`); HyperClose PNG galería §58.2 en repo; captura 1 Día OFF. Tapar broker #2d2d2d. Overlays: máx 4-6 palabras, sin punto final.

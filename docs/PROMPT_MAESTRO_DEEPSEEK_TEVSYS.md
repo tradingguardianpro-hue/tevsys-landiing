@@ -93,7 +93,7 @@
 
 ## 5. Home — cards de valor (4)
 
-**UX clicable (Mar 2026):** Flecha "→" en esquina inferior derecha de cada card; hover marcado (borde amarillo, sombra, translateY -2px). Opción C híbrido (feedback Angello).
+**UX clicable (Mar 2026):** Flecha "→" en esquina inferior derecha de cada card; hover marcado (borde amarillo, sombra, translateY -2px). Opción C híbrido (tras iteración de feedback externo inicial).
 
 | Card | Hook | Imagen | Enlace |
 |------|------|--------|--------|
@@ -133,7 +133,7 @@
 
 ### Lemon Squeezy + botón Comprar Essential + Webhook (24 Mar 2026 — FLUJO COMPLETO OPERATIVO)
 - **Estado (24 Mar 2026):** Flujo validado. Compra → webhook → clave → email automático. Test mode.
-- **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady: true`. Botones "Comprar Mensual" y "Comprar Anual" visibles.
+- **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady`. **Vigente (Mar 2026):** `false` — en home/precios solo flujo demo/formulario Essential; compra oculta hasta paquete venta listo. Con `true`: aparecen checkout Lemon (mensual/anual) donde corresponda.
 - **Webhook automático:** `api/webhook-lemon.js` recibe `order_created` → genera clave ESEMEN/ESEANU → guarda Upstash → envía email Resend. Variables Vercel: `RESEND_API_KEY`, `RESEND_FROM` (obligatoria: `tevsys <info@tevsys.io>`), `LEMON_WEBHOOK_SECRET`, `UPSTASH_REDIS_REST_*`.
 - **Resend:** Dominio tevsys.io verificado. DNS (DKIM, MX, SPF) en Plesk. Sin RESEND_FROM → 403.
 - **Email de licencia:** Plantilla en `buildEmailHtml()` en webhook. Editable. Incluye 4 pasos F7, enlace /instalacion. **Cierre soporte (25 Mar 2026, opción B):** *Aquí estamos para lo que necesites:* → **info@tevsys.io** → *Te leemos y te respondemos en cuanto podamos.* → *— Gabi · tevsys* (cercanía sin SLA “inmediato”). Ver `CHANGELOG-TEVSYS.md` §54.
@@ -201,48 +201,54 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ## 7. Micro-páginas — estado detallado
 
-### 7.1 Precisión (`/features/precision`) — CERRADA
+### 7.1 Precisión (`/features/precision`) — CERRADA (hero Mar 2026)
 
 **Copy freeze:**
 - Título: `Precisión de cierre: donde configuras, cerramos.`
-- Hook: `50 operativas documentadas. 0,06% de error medio en condiciones normales.`
+- Hook: `59 operativas documentadas. 0,06% de error medio en condiciones normales.` (fuente: `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3, proyecto TGP)
 
 **Vídeos publicados:**
-- `precision-demo.mp4` — 1 min 7 s, CON audio. Demo principal.
-- `precision-demo-volatilidad.mp4` — ~1 min 8 s, SIN audio. **Mejorado** con 6 overlays definitivos: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys *(frase de marca)*. Ref: `CHANGELOG-TEVSYS.md` §28.1
-- `precision-logs-guide.mp4` — Guía logs MT5. SIN audio.
+- **Demo principal (100k):** `evidencia-100k-perdida.mp4` — 1 min 41 s, CON audio. **Hero** `.feature-demo--hero` + `.demo-video--hero` (misma línea visual que HyperClose/Evidencia, ~52rem + halo).
+- `precision-demo-volatilidad.mp4` — ~1 min 4 s, SIN audio. Hook sección: *Operativa documentada:* límite ±1,50%, cierre +1,83%, contexto volatilidad. **Compact** ~31rem + sombra embed.
+- `precision-demo.mp4` — cuenta pequeña; sección con **título + vídeo visible** (no solo `<details>`). Compact.
+- `precision-logs-guide.mp4` — Guía logs MT5. SIN audio. Compact.
 
 **Estructura:**
 1. Hero + hook
-2. Demo rápida: embed compacto (420px) que se expande al dar play
-3. "Qué puedes comprobar" — 3 enlaces. El primero "Aquí se decide el cierre" enlaza a demo + autoplay
-4. Bloque "Aquí se decide el cierre": enlace VIDEO + acordeón "Ir a demo en alta volatilidad"
-5. Bloque "Sin humo": acordeón "Ir a guía de logs VIDEO"
-6. Galería operativa 49 + 50 operativas en KPIs
+2. Demo rápida 100k: **hero** video; expande al play
+3. "Qué puedes comprobar" — **5** enlaces, orden: demo 100k, logs, **alta volatilidad**, **cuenta pequeña**, **resultados al final**
+4. Bloques panel / volatilidad / logs / stats como antes
 
-**UX:** scroll-margin-top 5.5rem, resaltado amarillo en :target, autoplay al hacer clic. Enlace desde Evidencia a #precision-logs-guide autoabre acordeón y resalta.
+**UX:** scroll-margin-top 5.5rem, resaltado :target (incl. `#precision-cuenta-pequena`). Autoplay hash `#precision-demo`. Ref: `CHANGELOG-TEVSYS.md` **§58**.
 
 ---
 
-### 7.2 HyperClose (`/features/hyperclose`) — CERRADA
+### 7.2 HyperClose (`/features/hyperclose`) — CERRADA (evidencia landing Mar 2026)
 
 **Copy freeze:**
 - Título: `HyperClose: cuando tu disciplina falla, HyperClose no.`
-- Hook: `Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
+- Hook: `Cierre en milisegundos. Bloqueo hasta la siguiente rotación (diaria o semanal).`
 
-**Vídeos publicados:**
-- `hyperclose-demo.mp4` — **Estado repo (hasta Mar 2026):** 1 min 35 s, SIN audio. Límite ±2%, cierre -2,01%, 3 intentos con modales (nivel 1, 2, 3), 7 intentos ráfaga. Broker tapado #2d2d2d.
-- **En producción / edición (Mar 2026):** metraje **2:23** que combina **precisión real** (cuenta demo ActivTrades #6216264, 15 lotes GER40, límite -1%, desviación 1,31 €, Wall Street) + **HyperClose** (3 semáforos + caja de herramientas + 7 cierres). **Audio:** instrumental (*Symbol*), sin voz. **Lista literal de los 17 overlays** (orden 1–11, 13–17) en `CHANGELOG-TEVSYS.md` **§57.3**. **Pendiente:** subir MP4 y actualizar `hyperclose.astro`.
+**Vídeo principal:**
+- `hyperclose-demo.mp4` — Metraje objetivo **2:23** (§57.3: **17 overlays** 1–11, 13–17). Precisión 15 lotes GER40, límite -1%, desviación ~1,31 €, Wall Street + HyperClose (semáforos + caja herramientas + 7 cierres). En el **export** puede llevar audio instrumental; en la **página no** se menciona audio bajo el embed.
+- **h2 demo:** `Demo — precisión milimétrica + HyperClose (2:23)`
+- **Hook bajo h2:** `15 lotes · GER40 · límite -1% · desviación 1,31 € · Apertura Wall Street · Tres semáforos` (sin cuenta ni broker en copy público).
 
-**Imágenes:** hyperclose-modal-01-sistema-bloqueado.png, -02-advertencia.png, -03-advertencia-final.png
+**Evidencia bajo vídeo (acordeón):**
+- Galería **6** capturas: informe MT5 (Summary, Profit & Loss, Long & Short, Symbols, Risks) + **Historial** (caja herramientas). PNG: `public/images/evidence/hyperclose-demo-informe-*.png`, `hyperclose-demo-mt5-historial-hoy.png` (**pendiente** copiar al repo si faltan).
+- CTA: **Abrir historial HTML** → `public/docs/evidencia-hyperclose-demo-historial-transacciones.html` (redactado).
+- Línea opcional: *¿Primera vez con las pestañas?* → `/features/evidencia#evidencia-informe-mt5` (ejemplo otra cuenta).
+- Nota pie: **MT5 vs HTML** — HTML = export en instante del cierre del vídeo; informe/historial amplio incluye cierres HyperClose posteriores.
+
+**Imágenes modales HyperClose:** hyperclose-modal-01-sistema-bloqueado.png, -02-advertencia.png, -03-advertencia-final.png
 
 **Estructura:**
 1. Hero + hook
-2. Demo rápida. Nota bajo embed: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
+2. Demo **hero** + acordeón evidencia (arriba)
 3. "Qué puedes comprobar" — 3 enlaces
-4. Bloque "Cierre inmediato" → enlace a demo
-5. Bloque "Semáforo" → enlace a demo + acordeón "Ver capturas de los 3 modales"
-6. Bloque "Compatibilidad con día OFF" — **COMPLETADO.** Vídeo `hyperclose-dias-off-demo.mp4` (51 s), acordeón 5 capturas.
+4. Cierre inmediato / Semáforo (mismo MP4 demo) / Día OFF — **COMPLETADO** vídeo 51 s + 5 capturas (**pendiente** renovar captura 1 día OFF sin protección previa — `AGENDA_GABI`)
+
+**Docs:** `CHANGELOG-TEVSYS.md` §57 + **§58**; `QUE_CONTIENE` V11 §10.
 
 ---
 
@@ -260,7 +266,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 ---
 
-### 7.4 Evidencia (`/features/evidencia`) — COMPLETADA 20 Mar 2026
+### 7.4 Evidencia (`/features/evidencia`) — COMPLETADA (hero + HyperClose link Mar 2026)
 
 **Copy freeze:**
 - Título: `Evidencia verificable: aquí no hay "creemos".`
@@ -268,7 +274,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - Hook demo: `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
 
 **Vídeo publicado:**
-- `evidencia-100k-perdida.mp4` — 1 min 41 s, CON audio. Cuenta 100k nueva, 2 compras de 10 lotes GER40, cierre por límite -1% = -1.007,20€, error 7,20€ (0,0072%). Apertura Wall Street, alta volatilidad.
+- `evidencia-100k-perdida.mp4` — 1 min 41 s, CON audio. **Hero** como Precisión/HyperClose. Cuenta 100k nueva, 2 compras de 10 lotes GER40, cierre por límite -1% = -1.007,20€, error 7,20€ (0,0072%). Apertura Wall Street, alta volatilidad.
 
 **Operativa 4.56 — Caso extremo Essential (20 Mar 2026):**
 - **Enlace "Qué puedes comprobar":** "Cuenta Essential: 100 lotes, cierre con 95 € de precisión." → `#evidencia-4-56`
@@ -286,11 +292,11 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 5. **Bloque operativa 4.56** (7 capturas)
 6. Historial transacciones
 7. Guía logs
-8. **Auditoría: 56 operativas documentadas**, incluyendo caso extremo 100 lotes
+8. **Auditoría: 59 operativas documentadas**, incluyendo caso extremo 100 lotes
 9. CTA final
 
 **Imágenes (13 total):** 6 evidencia-100k-* + 7 evidencia-4.56-* + evidencia-100k-html-transacciones.png
-**HTML:** `public/docs/evidencia-100k-historial-transacciones.html`
+**HTML:** `public/docs/evidencia-100k-historial-transacciones.html` + enlace en página a `evidencia-hyperclose-demo-historial-transacciones.html` (demo HyperClose, redactado)
 
 **Pendiente:** Vídeo ganancias (+1.111€, 20 lotes) — no prioritario.
 
@@ -376,7 +382,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 4. Nombre exacto: precision-demo.mp4, hyperclose-demo.mp4, etc.
 5. Decir al equipo para integrar en web (acordeón, enlace, etc.)
 
-**Vídeos publicados:** instalacion-demo.mp4 (guía instalación, 8 pasos + onboarding), **tevsys_Guia_Rapida_Configuracion.mp4** (Drive, 2:36 min, embebido en /configuracion), precision-demo.mp4, precision-demo-volatilidad.mp4, precision-logs-guide.mp4, hyperclose-demo.mp4, hyperclose-dias-off-demo.mp4, evidencia-100k-perdida.mp4.
+**Vídeos publicados:** instalacion-demo.mp4 (guía instalación, 8 pasos + onboarding), **tevsys_Guia_Rapida_Configuracion.mp4** (Drive, 2:36 min, embebido en /configuracion), **evidencia-100k-perdida.mp4** (hero Precisión + Evidencia), precision-demo.mp4, precision-demo-volatilidad.mp4, precision-logs-guide.mp4, hyperclose-demo.mp4 (metraje 2:23 §57), hyperclose-dias-off-demo.mp4.
 
 **Vídeos pendientes:** sml-demo.mp4 (SML en fase de validación, se hace desde escritorio). Vídeo ganancias 100k (+1.111€): no prioritario, dejar. **Vídeo "Primera vez con licencia" (1–2 min):** Mostrar los 3 pasos (trading algorítmico, WebRequest + tevsys.io, pegar clave). Para enviar a compradores y colgar en web (footer Guías). Doc: `INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md` (proyecto TGP).
 
@@ -422,7 +428,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 | LINKS_PARA_ENVIAR_DEMO_TEVSYS.md | Links Drive + instalación + plantillas email/WhatsApp/Telegram para enviar a leads |
 | PLANTILLA_EMAIL_DEMO_TEVSYS.md | Plantilla email detallada con pasos instalación (proyecto TGP) |
 | INSTRUCCIONES_PRIMERA_VEZ_CON_LICENCIA_TEVSYS.md (proyecto TGP) | Los 3 pasos para compradores: trading algorítmico, WebRequest + tevsys.io, pegar clave. Referencia para email webhook, soporte, futuro vídeo. |
-| ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md | Prioridades, pricing, early adopters, vídeos, academia Angelo. Plan ordenado |
+| `docs/_archive/angello/ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md` | Histórico (Mar 2026). Plan vivo: proyecto TGP `AGENDA_GABI.md`, `ESTRATEGIA_ACADEMIAS_TEVSYS.md`, `CARDS-NEXT-PHASE.md` |
 | ESTRATEGIA_ACADEMIAS_TEVSYS.md (proyecto TGP) | Estrategia academias: qué mostrar, logros, cómo abordar. 20 Mar 2026 |
 
 ---
@@ -464,7 +470,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 - fix(empresas): margin-bottom 3rem antes del footer
 - style(empresas): fondo oscuro #06080d, hook como micropáginas, campos con borde ámbar
 
-**Sesión Mar 2026 (feedback Angello):**
+**Sesión Mar 2026 (iteración UX tras feedback externo):**
 - feat(home): cards más clicables — flecha + hover marcado
 - feat(hero): "Tu capital" → "Tu trading merece más que buenas intenciones"
 - style(home): jerarquía sección valor — título prominente, párrafo secundario
@@ -498,7 +504,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). 56 operativas documentadas. Evidencia: operativa 4.56 Essential (100 lotes, 95 € precisión) + 7 capturas. Footer: Cómo instalar, Guía configuración, Producto, Legal. /instalacion: vídeo + Paso 2 (enlace a config). /configuracion: vídeo guía configuración (2:36 min, Drive). Contact flow=demo: "Te enviaremos la demo y las guías de instalación y configuración". flow=lista: formulario lista espera Advanced/Pro (select plan). /precios: link "escríbenos para apuntarte" amarillo → flow=lista. Pro Multi 2/3 sin redundancia en incluye. Demo: .ex5 15 días. Flujo email: Correo 1 (pre-aviso spam) → Correo 2 (Drive + instalacion + configuracion). Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS. Ver §15, §16.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). **59** operativas documentadas. Precisión/Evidencia/HyperClose: **demo principal en hero** (misma escala visual); HyperClose: acordeón galería MT5 + HTML redactado (§58). Evidencia: operativa 4.56 Essential (100 lotes, 95 € precisión) + 7 capturas. Footer: Cómo instalar, Guía configuración, Producto, Legal. /instalacion: vídeo + Paso 2 (enlace a config). /configuracion: vídeo guía configuración (2:36 min, Drive). Contact flow=demo: "Te enviaremos la demo y las guías de instalación y configuración". flow=lista: formulario lista espera Advanced/Pro (select plan). /precios: link "escríbenos para apuntarte" amarillo → flow=lista. Pro Multi 2/3 sin redundancia en incluye. Demo: .ex5 15 días. Flujo email: Correo 1 (pre-aviso spam) → Correo 2 (Drive + instalacion + configuracion). Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS. Ver §15, §16, **CHANGELOG §58**.
 ```
 
 ---
@@ -617,12 +623,12 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 **Objetivo:** Buscar academias de trading donde presentar tevsys (web + producto), crear interés, mostrar evidencia.
 
 **Estado actual (lo que tenemos para mostrar):**
-- **Web:** Primera web de Gabi. Nivel de calidad profesional: hero, 4 micropáginas (Precisión, HyperClose, SML, Evidencia), plan Essential, formulario, página instalación.
-- **Evidencia:** 56 operativas documentadas. Caso extremo Essential: 100 lotes, cierre con 95 € de precisión (7 capturas MT5 + panel).
+- **Web:** Primera web de Gabi. Nivel de calidad profesional: hero, 4 micropáginas (Precisión, HyperClose, SML, Evidencia), plan Essential, formulario, página instalación. **Mar 2026:** demos estrella en **hero** (Precisión/Evidencia/HyperClose); HyperClose con **galería informe MT5 + HTML** (`CHANGELOG` §58).
+- **Evidencia:** **59** operativas documentadas. Caso extremo Essential: 100 lotes, cierre con 95 € de precisión (7 capturas MT5 + panel).
 - **Demo:** tevsys_Essential_Demo_15dias.ex5 lista para enviar. Vídeo instalación en /instalacion.
 - **Logros:** Mismo motor en todos los planes; precisión validada; HyperClose; trazabilidad MT5.
 
-**Preparación:** Web lista para enseñar. Docs: CHECKLIST_WEB_TEVSYS_ANTES_REUNION_ACADEMIA.md, ESTRATEGIA_ACADEMIAS_TEVSYS.md (proyecto TGP). Chuleta reunión: CHULETA_1_PAGINA_REUNION_ANGELLO_90_MIN.md.
+**Preparación:** Web lista para enseñar. Docs: `CHECKLIST_WEB_TEVSYS_ANTES_REUNION_ACADEMIA.md`, `ESTRATEGIA_ACADEMIAS_TEVSYS.md` (proyecto TGP). Guion reunión 90 min (histórico): proyecto TGP `docs/_archive/angello/CHULETA_1_PAGINA_REUNION_ANGELLO_90_MIN.md`.
 
 ---
 
@@ -631,7 +637,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 ### 17.1 Meta global
 - **Archivo:** `src/config/settings.js`
 - **title:** `tevsys — Protección de capital y límites automáticos para trading MT5`
-- **description:** `Plataforma de disciplina automatizada para MetaTrader 5. Límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 56 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
+- **description:** `Plataforma de disciplina automatizada para MetaTrader 5. Límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 59 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
 - Usado por BaseHead en todas las páginas salvo las que definen `seo` propio.
 
 ### 17.2 Páginas con meta propia
@@ -659,4 +665,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 26 Mar 2026. **CHANGELOG §57.3:** **17 overlays** texto literal + **2:23** + audio instrumental; evidencia ReportHistory-6216264 25 Mar; MP4 pendiente de subir. §15.9–§15.10: Lemon flujo completo (Test mode); **email licencia cierre opción B** (§15.10, CHANGELOG §54). **§7.5 / §15.8 / CHANGELOG §55:** `/instalacion` lista WebRequest (9 pasos); vídeo instalación MP4 pendiente renovar. Resend dominio verificado. RESEND_FROM obligatoria. Checkpoints: CHECKPOINT_24MAR2026… (proyecto TGP) + CHECKPOINT V11 (fixes 24–25 Mar + vídeo web §57).
+**Última actualización:** 26 Mar 2026. **CHANGELOG §57** (vídeo/overlays 2:23) + **§58** (landing: hero Precisión/Evidencia/HyperClose, galería MT5 HyperClose, HTML redactado, 59 operativas, orden enlaces Precisión). **PNG galería HyperClose:** pendiente en `public/images/evidence/` (nombres §58.2). §15.9–§15.10: Lemon Test mode; **email licencia opción B** (§15.10, §54). **§7.5 / §15.8 / §55:** `/instalacion` WebRequest en lista; MP4 instalación pendiente renovar. Resend + RESEND_FROM. **Proyecto TGP:** `QUE_CONTIENE` V11 §10–11, `TGP_V11_CHECKPOINT_PRODUCCION.md`, `CHECKPOINT_V11_SESION_25MAR2026` §9.

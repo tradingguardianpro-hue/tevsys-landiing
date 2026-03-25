@@ -16,14 +16,14 @@ En resumen, esto es lo que hay:
 
 **Producto**
 • Plataforma pionera en verificación de disciplina y gestión de riesgo (MT5)
-• Precisión de cierre documentada (50 operativas, ~0,06% error)
+• Precisión de cierre documentada (59 operativas, ~0,06% error)
 • HyperClose: cierre en milisegundos cuando intentas operar estando bloqueado
 • Evidencia verificable: logs, panel y reporte oficial MT5 (no "creemos", demostrable)
 
 **Web**
 • Micro-páginas por feature con vídeos reales
-• [Esta semana: vídeo evidencia con cuenta grande y cierre en vivo]
-• Flujo de contacto unificado (Acceso/Contacto)
+• Evidencia 100k + HyperClose con galería MT5 en web (CHANGELOG §58)
+• Flujo de contacto unificado (Inicio / Empresas / Contacto)
 • Lista de espera para Advanced y Pro con checkbox "avísame"
 • Thank-you diferenciado según piden Essential, Advanced o Pro
 

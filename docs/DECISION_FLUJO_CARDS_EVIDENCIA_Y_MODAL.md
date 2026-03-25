@@ -152,7 +152,7 @@ Lo más costoso no es el código, es tener el contenido (videos/capturas) bien p
 - Objetivo:
   - facilitar lectura rápida para perfil no técnico
   - mantener profundidad para perfil técnico sin saturar la página principal
-- **Implementado en Precisión (31/01 + Mar 2026):** `precision-logs-guide.mp4`, `precision-demo.mp4`, `precision-demo-volatilidad.mp4` (acordeones, embed compacto, autoplay).
+- **Implementado en Precisión (31/01 + Mar 2026):** `precision-logs-guide.mp4`, `precision-demo.mp4`, `precision-demo-volatilidad.mp4` (acordeones, embed compacto, autoplay). **26 Mar 2026:** hero Precisión = `evidencia-100k-perdida.mp4`; ver `CHANGELOG-TEVSYS.md` §58.
 - **Implementado en HyperClose (Mar 2026):** `hyperclose-demo.mp4`, acordeón 3 capturas de modales.
 - Estado: Precision y HyperClose cerrados; pendiente SML, Evidencia, vídeo Día OFF.
 

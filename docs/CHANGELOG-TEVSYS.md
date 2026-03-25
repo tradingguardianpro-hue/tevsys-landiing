@@ -37,7 +37,7 @@ Se pasó de 3 a 4 cards en layout `2x2`, con copy actualizado.
 
 #### Card 1 — `0,06% error promedio`
 - Hook: `El mercado no perdona. Nosotros tampoco.`
-- Texto actualizado a **50 operativas documentadas**.
+- Texto actualizado a **59 operativas documentadas** (sync `PRECISION_MILIMETRICA…` §3, Mar 2026).
 - Imagen: `/assets/images/home/cards/card-1-input.png`
 
 #### Card 2 — `HyperClose`
@@ -1788,18 +1788,42 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - **Tras semáforo 3:** overlay 15 (caja de herramientas + varias aperturas, cierre en ms sin nuevos modales).
 - **CTA web:** overlay 17 coherente con acordeón **bajo** el vídeo en `/features/hyperclose`.
 
-### 57.5 Pendiente en repo + web (Mar 2026)
-- **Hecho en código web:** `src/pages/features/hyperclose.astro` — demo principal **2:23**, **audio** (nota bajo embed), hook **ActivTrades #6216264 / 15 lotes / -1% / ~1,31 €**, contenedor **más protagonista** (`.demo-video--hero` + halo), acordeón **“Compruébalo tú mismo”** → `/features/evidencia`. Bloque semáforo sigue reutilizando el mismo MP4.
-- **Pendiente operativo:** copiar el **MP4 export final** a `public/videos/features/hyperclose-demo.mp4` (sustituye el archivo anterior) y **redeploy** Vercel.
-- Opcional: enlazar HTML/PDF operativa **25 Mar** en acordeón o en Evidencia (misma lógica que otras micropáginas).
+### 57.5 Estado web respecto al vídeo (Mar 2026 — revisado 26 Mar)
+- **Guión/overlays:** sin cambio — §57.3.
+- **`hyperclose.astro` (actual):** demo **2:23** en título; **hook sin cuenta ni broker**; **sin** nota pública de audio bajo el embed; hero `.feature-demo--hero` + `.demo-video--hero`. Acordeón: **galería 6** (informe MT5 + historial día) + enlace **HTML** redactado + línea opcional a Evidencia (demo 100k) + nota **MT5 vs HTML**. Bloque semáforo reutiliza el mismo MP4.
+- **Pendiente operativo:** MP4 final en `public/videos/features/hyperclose-demo.mp4` si aún no sustituido; **PNG** de galería en `public/images/evidence/` (nombres en **§58.2**).
 
 ### 57.6 Docs cruzados
-- **Proyecto TGP:** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` y `TGP_V11_CHECKPOINT_PRODUCCION.md` — sesión vídeo web + fixes EA 24–25 Mar ya registrados.
-- **Este changelog** es la fuente de verdad del **guión/overlays** acordados en chat (Cursor, Mar 2026).
+- **Proyecto TGP:** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (puntos 10–11) y `TGP_V11_CHECKPOINT_PRODUCCION.md` — vídeo §57 + **landing §58**.
+- **Este changelog** es la fuente de verdad del **guión/overlays** y del **estado de la landing** asociada.
 
 ### 57.7 Archivos tocados (documentación)
-- `docs/CHANGELOG-TEVSYS.md` (esta sección)
+- `docs/CHANGELOG-TEVSYS.md` (esta sección + §58)
 - `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §7.2
-- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` — estado HyperClose
-- `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` — referencia §57
-- Proyecto TGP: `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md`, `TGP_V11_CHECKPOINT_PRODUCCION.md`
+- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` — estado HyperClose / Precisión / Evidencia
+- `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` — referencia §57 y §58
+- Proyecto TGP: `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md`, `TGP_V11_CHECKPOINT_PRODUCCION.md`, `docs/CHECKPOINT_V11_SESION_25MAR2026_ESSENTIAL_ADVANCED.md` §9
+
+---
+
+## 58) Landing 25–26 Mar 2026 — HyperClose evidencia, Precisión/Evidencia hero, 59 operativas
+
+### 58.1 Objetivo
+- Alinear **micropáginas** con el vídeo **2:23** (§57) y con la **evidencia verificable** (HTML redactado + hueco para informe MT5).
+- Unificar **protagonismo visual** del demo principal en **Precisión**, **Evidencia** y **HyperClose** (hero + halo dorado).
+- Actualizar **número de operativas documentadas** a **59** (fuente: `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3, proyecto TGP).
+
+### 58.2 Archivos clave (repo `tevsys-landiing`)
+| Archivo | Cambio resumido |
+|---------|-----------------|
+| `src/pages/features/hyperclose.astro` | Hero demo; acordeón galería 6; HTML + notas MT5/HTML; estilos galería / enlaces. |
+| `src/pages/features/precision.astro` | Hero demo 100k; compactos ~31rem+sombra; volatilidad/cuenta pequeña copy y UX; orden lista “Qué puedes comprobar”; **59** en hook. |
+| `src/pages/features/evidencia.astro` | Hero demo; estilos; **59** en auditoría; enlace HTML HyperClose + vuelta a vídeo. |
+| `src/pages/index.astro` | **59** en card/stats. |
+| `src/config/settings.js` | Meta description con **59** operativas. |
+| `public/docs/evidencia-hyperclose-demo-historial-transacciones.html` | Export MT5 redactado (sesión 15 lotes; sin datos personales). |
+| `public/images/evidence/` | Carpeta + `.gitkeep`; **pendiente** añadir PNG: `hyperclose-demo-informe-summary.png`, `hyperclose-demo-informe-profit-loss.png`, `hyperclose-demo-informe-long-short.png`, `hyperclose-demo-informe-symbols.png`, `hyperclose-demo-informe-risks.png`, `hyperclose-demo-mt5-historial-hoy.png`. |
+
+### 58.3 Docs y checkpoints actualizados
+- **Proyecto TGP:** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` **§10–11**; `TGP_V11_CHECKPOINT_PRODUCCION.md` (bloque landing 26 Mar); `CHECKPOINT_V11_SESION_25MAR2026_ESSENTIAL_ADVANCED.md` **§9**.
+- **Este repo:** `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`, `CONTENIDO_WEB_TEVSYS_LANDING.md`, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`, `SEO_ANALYTICS_TEVSYS.md` (si aplica).

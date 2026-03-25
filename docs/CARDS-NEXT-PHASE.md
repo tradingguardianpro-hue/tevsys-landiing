@@ -239,7 +239,7 @@ Nota de uso: si no hay instrucción explícita nueva, esta regla se aplica por d
 
 - `precision`
   - Título: `Precisión de cierre: donde configuras, cerramos.`
-  - Hook: `50 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - Hook: `59 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; §58)*
 - `hyperclose`
   - Título: `HyperClose: cuando tu disciplina falla, HyperClose no.`
   - Hook: `Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
@@ -261,21 +261,26 @@ Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o deci
 
 ### 9.1 Precision (`/features/precision`)
 
+**Estado 26 Mar 2026:** `CHANGELOG-TEVSYS.md` **§58** — demo **hero** = `evidencia-100k-perdida.mp4`; `precision-demo.mp4` y volatilidad como secciones compactas.
+
 | Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
 |---|---|---|---|
+| Demo hero (alineada Evidencia) | Hero embed ~52rem | Vídeo 1:41 con audio | `evidencia-100k-perdida.mp4` ✅ |
 | Cálculo visible en panel | Demo interna (ancla a video) | Vídeo 20-40s | `precision-demo.mp4` ✅ |
 | Demo alta volatilidad | Acordeón con vídeo | Vídeo con overlays | `precision-demo-volatilidad.mp4` ✅ |
 | Logs auditables | Guía visual en vídeo | Vídeo con overlays (sin audio) | `precision-logs-guide.mp4` ✅ |
-| Resumen estadístico (0,06%) | Galería operativa 49 | 50 operativas documentadas | ✅ |
-| Demo principal | Placeholder actual | Vídeo final 1 min 7 s | `precision-demo.mp4` ✅ |
+| Resumen estadístico (0,06%) | KPIs + enlace auditoría | 59 operativas documentadas | ✅ |
 
 ### 9.2 HyperClose (`/features/hyperclose`)
 
+**Estado 26 Mar 2026:** Vídeo **2:23** (§57.3); página con galería **6** + HTML historial (§58). Día OFF: vídeo publicado; pendiente renovar captura 1 (`AGENDA_GABI`).
+
 | Bloque | Formato mínimo publicable | Formato final deseado | Asset objetivo |
 |---|---|---|---|
-| Intento bloqueado + cierre | Vídeo demo | Vídeo 1:35 cierre + semáforos | `hyperclose-demo.mp4` ✅ |
+| Intento bloqueado + cierre | Vídeo demo hero | Clip 2:23 precisión + HyperClose | `hyperclose-demo.mp4` ✅ |
+| Evidencia informe MT5 | Galería 6 PNG + HTML | Acordeón bajo hero | §58.2 (PNG pendientes si faltan en repo) |
 | Semáforo 3 niveles | Capturas modales | Acordeón con 3 imágenes | `hyperclose-modal-01/02/03-*.png` ✅ |
-| Día OFF | Pendiente | Vídeo cuando esté | `hyperclose-demo-dia-off.mp4` ⏳ |
+| Día OFF | Vídeo + 5 capturas | Misma UX | `hyperclose-dias-off-demo.mp4` ✅ (renovar captura 1 ⏳) |
 
 ### 9.3 SML (`/features/sml`)
 

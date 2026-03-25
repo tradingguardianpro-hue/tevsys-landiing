@@ -23,61 +23,40 @@ Este documento se mantiene como referencia específica de vídeos Precisión/Hyp
 
 ## 2. Dónde hemos llegado (con pelos y señales)
 
+> **26 Mar 2026:** Estado detallado en `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §7 y `CHANGELOG-TEVSYS.md` **§58**. Este apartado es resumen; si hay discrepancia, gana el maestro + CHANGELOG.
+
 ### 2.1 Precisión (`/features/precision`) — CERRADA
 
 **Vídeos publicados:**
-- `precision-demo.mp4` — 1 min 7 s, CON audio. Demo principal de cierre.
-- `precision-demo-volatilidad.mp4` — ~1 min 8 s, SIN audio. Overlays: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys
-- `precision-logs-guide.mp4` — Guía para localizar logs MT5. SIN audio.
+- **Hero:** `evidencia-100k-perdida.mp4` — 1 min 41 s, CON audio (misma línea visual que Evidencia/HyperClose).
+- `precision-demo-volatilidad.mp4` — ~1 min 4 s, SIN audio. Sección compacta; *operativa documentada* ±1,50%, cierre +1,83%.
+- `precision-demo.mp4` — cuenta pequeña; sección con título + vídeo visible (compact).
+- `precision-logs-guide.mp4` — Guía logs MT5. SIN audio.
 
-**Estructura de la página:**
-1. Hero con hook "50 operativas documentadas. 0,06% de error medio"
-2. Demo rápida: embed del vídeo principal. **Embed compacto que se expande al dar play** (420px → ancho completo)
-3. "Qué puedes comprobar" — 3 enlaces. **El primero "Aquí se decide el cierre" enlaza a la demo y hace autoplay**
-4. Bloque "Aquí se decide el cierre":
-   - Enlace "Ir a demo del cierre VIDEO" → scroll + autoplay
-   - Acordeón "Ir a demo en alta volatilidad VIDEO" → precision-demo-volatilidad.mp4
-5. Bloque "Sin humo" → acordeón "Ir a guía de logs VIDEO" → precision-logs-guide.mp4
-6. Bloque "Lo que dicen los resultados" → galería operativa 49 + 50 operativas en KPIs
+**Copy:** Hook **59 operativas** + 0,06% (fuente MD operativas proyecto TGP).
 
-**UX aplicada:** scroll-margin-top 5.5rem, resaltado amarillo en :target, autoplay al hacer clic en enlaces que apuntan a #precision-demo.
+**Estructura (orden enlaces «Qué puedes comprobar»):** demo 100k → logs → alta volatilidad → cuenta pequeña → **resultados al final**.
 
-**Limpieza:** Placeholders internos (rutas de archivo) eliminados de la UI pública.
+**UX:** scroll-margin-top, :target, autoplay por hash (`#precision-demo`, etc.). Ref. §58.
 
 ---
 
-### 2.2 HyperClose (`/features/hyperclose`) — CERRADA (falta Día OFF)
+### 2.2 HyperClose (`/features/hyperclose`) — CERRADA (operativo: PNG informe + captura 1 Día OFF)
 
-**Vídeos publicados:**
-- `hyperclose-demo.mp4` — 1 min 35 s, SIN audio. Contenido:
-  - Dos operaciones, límite ±2%, cierre automático -2,01%
-  - Intento 1 → cierre + modal nivel 1 (Sistema Bloqueado)
-  - Intento 2 → cierre + modal nivel 2 (Advertencia)
-  - Intento 3 → cierre + modal nivel 3 (Advertencia Final)
-  - 7 intentos ráfaga mostrando cierre instantáneo
-  - Broker y datos tapados con barra gris #2d2d2d
+**Vídeo:** `hyperclose-demo.mp4` — metraje objetivo **2:23** (§57.3: 17 overlays). Precisión 15 lotes GER40, -1%, HyperClose semáforos + 7 cierres. Copy público sin cuenta/broker en hook.
 
-**Imágenes publicadas:**
-- `hyperclose-modal-01-sistema-bloqueado.png`
-- `hyperclose-modal-02-advertencia.png`
-- `hyperclose-modal-03-advertencia-final.png`
+**Bajo el vídeo:** acordeón galería **6** capturas (informe MT5 + historial) + enlace HTML `evidencia-hyperclose-demo-historial-transacciones.html` + nota MT5 vs HTML. **PNG:** pendiente copiar al repo si faltan (nombres §58.2).
 
-**Estructura de la página:**
-1. Hero: "HyperClose: cuando tu disciplina falla, HyperClose no."
-2. Demo rápida: embed compacto que se expande al play. **Nota bajo embed:** "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
-3. "Qué puedes comprobar" — 3 enlaces. El primero apunta a la demo.
-4. Bloque "Cierre inmediato" → enlace a demo
-5. Bloque "Semáforo de responsabilidad" → enlace a demo + acordeón "Ver capturas de los 3 modales" con las 3 imágenes
-6. Bloque "Compatibilidad con día OFF" → **pendiente vídeo**
+**Modales:** `hyperclose-modal-01/02/03-*.png`.
 
-**Pendiente:** Grabar vídeo Día OFF (desbloquear EA, miércoles OFF, intentar operar → cierre).
+**Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) + 5 capturas en página — **pendiente** renovar captura 1 sin protección previa (`AGENDA_GABI`).
 
 ---
 
-### 2.3 SML y Evidencia — PENDIENTES
+### 2.3 SML y Evidencia
 
-- SML: copy final, estructura lista. Falta vídeo sml-demo.mp4
-- Evidencia: copy final, estructura lista. Falta vídeo evidencia-demo.mp4
+- **SML:** copy y estructura listos. Falta `sml-demo.mp4`.
+- **Evidencia:** **COMPLETADA** — hero `evidencia-100k-perdida.mp4`, operativa 4.56 (100 lotes), informe MT5, HTML transacciones, enlace segundo HTML HyperClose, auditoría **59** operativas. Ver maestro §7.4.
 
 ---
 
@@ -134,9 +113,9 @@ Este documento se mantiene como referencia específica de vídeos Precisión/Hyp
 ## 5. Resumen para pegar a DeepSeek
 
 ```
-Estado web tevsys (Mar 2026): Precisión CERRADA (precision-demo 1:07 + audio, precision-demo-volatilidad, 50 operativas, embed compacto + autoplay). HyperClose CERRADA salvo Día OFF (hyperclose-demo 1:35 sin audio, 3 capturas modales, misma UX que Precisión). Pendiente: vídeo Día OFF, SML demo, Evidencia demo. Ruta videos: public/videos/features/. Documentación actualizada en docs/.
+Estado web tevsys (26 Mar 2026): CHANGELOG §58. Precisión: hero evidencia-100k-perdida.mp4, 59 operativas, volatilidad + cuenta pequeña + logs compactos. HyperClose: vídeo 2:23, galería 6 + HTML historial; modales 3 PNG; Día OFF con vídeo + capturas (renovar captura 1). Evidencia: hero 100k, 4.56, auditoría 59. SML: falta sml-demo. Videos: public/videos/features/. Docs: PROMPT_MAESTRO §7, CONTENIDO_WEB, ARREGLOS_WEB.
 
-EA/onboarding (Mar 2026): Panel con hint "▼ Clic y arrastra ● F7: personaliza" que parpadea y desaparece tras el primer arrastre (solo si Mostrar guías educativas = true). Modales SML Upsell y Confirmación Irreversible refinados 17 Mar (texto definitivo para capturas). Resumen modales: docs/RESUMEN_MODALES_DEFINITIVOS_Y_PENDIENTES.md (en repo TGP).
+EA/onboarding: Panel hint arrastre + F7; modales refinados Mar 2026. Resumen: RESUMEN_MODALES_DEFINITIVOS_Y_PENDIENTES.md (repo TGP).
 ```
 
 ---

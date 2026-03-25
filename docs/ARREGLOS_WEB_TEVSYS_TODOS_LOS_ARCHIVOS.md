@@ -19,7 +19,7 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `public/assets/images/home/cards/*` | Imágenes personalizadas de cards 1-4. |
 | `public/assets/images/plans/*` | Imágenes finales de cards de planes + visuales de formulario por plan. |
 | `docs/*.md` | Documentación actualizada con estado real. |
-| `src/config/settings.js` | **SEO (Mar 2026):** title y description orientados a búsquedas (protección capital, límites MT5, 56 operativas). |
+| `src/config/settings.js` | **SEO (Mar 2026):** title y description orientados a búsquedas (protección capital, límites MT5, **59** operativas). |
 | `src/pages/company/contact.astro` | **SEO:** Meta propia "Contacto y demo \| tevsys". Bug Astro Odyssey corregido (antes: "Contact \| Astro Odyssey Theme"). |
 | `public/robots.txt` | **SEO:** Nuevo. Allow all, sitemap. |
 | `package.json` | **Analytics:** `@vercel/analytics` añadido. |
@@ -250,19 +250,17 @@ Se trabajó con iteración visual continua (prueba-error controlado) para manten
 
 ## Actualización Mar 2026 — Precisión y HyperClose cerrados
 
+**Estado extendido 25–26 Mar 2026:** `CHANGELOG-TEVSYS.md` **§58** (hero unificado, galería MT5 HyperClose, 59 operativas, HTML redactado).
+
 ### Precisión
-- `precision-demo.mp4` (1 min 7 s) + `precision-demo-volatilidad.mp4` integrados.
-- Embed compacto que se expande al dar play. Autoplay al hacer clic en enlaces.
-- Enlace "Aquí se decide el cierre" → demo. Acordeón demo alta volatilidad.
-- 50 operativas (hook, KPIs, index). Placeholders internos eliminados.
+- **Vigente:** demo principal **100k** `evidencia-100k-perdida.mp4` en **hero**; volatilidad + cuenta pequeña + logs; **59** operativas; orden «Qué puedes comprobar» (resultados al final).
+- *Histórico:* `precision-demo.mp4` (1 min 7 s) como demo principal; 50 operativas en una fase anterior.
 
 ### HyperClose
-- `hyperclose-demo.mp4` (1 min 35 s): cierre, 3 niveles semáforo, 7 intentos.
-- **Mar 2026 — próximo vídeo HyperClose+precisión:** **2:23**, **17 overlays** texto literal en `CHANGELOG-TEVSYS.md` **§57.3**; operativa 25 Mar #6216264; audio instrumental; MP4 pendiente de subir.
-- Misma estructura que Precisión: embed compacto, autoplay, links.
-- Nota bajo embed: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
-- Acordeón "Ver capturas de los 3 modales" con `hyperclose-modal-01/02/03-*.png`.
-- Pendiente: vídeo Día OFF.
+- **Vídeo:** metraje **2:23** (§57.3). **Página:** hero, hook sin cuenta/broker, acordeón galería **6** + HTML `evidencia-hyperclose-demo-historial-transacciones.html` + nota MT5/HTML.
+- **PNG informe:** pendiente en repo — nombres §58.2.
+- Acordeón modales 3 niveles: `hyperclose-modal-01/02/03-*.png`.
+- Día OFF: vídeo + 5 capturas (pendiente renovar captura 1 — `AGENDA_GABI`).
 
 ### Assets añadidos
 - `public/videos/features/precision-demo.mp4`, `precision-demo-volatilidad.mp4`
@@ -429,13 +427,30 @@ Nota: la documentación operativa de custodia (`MASTER/MIRROR/SNAPSHOT`) y la ru
 
 ---
 
+## Landing HyperClose + Precisión + Evidencia + home (25–26 Mar 2026)
+
+**Referencia:** `CHANGELOG-TEVSYS.md` **§58**.
+
+| Archivo | Cambios |
+|---------|---------|
+| `src/pages/features/hyperclose.astro` | Demo hero; acordeón galería 6 (MT5 + historial); HTML redactado; nota MT5/HTML; enlace suave Evidencia; estilos galería. |
+| `src/pages/features/precision.astro` | Hero demo 100k; compactos reforzados; copy volatilidad/cuenta pequeña; orden “Qué puedes comprobar”; hook **59** operativas. |
+| `src/pages/features/evidencia.astro` | Hero demo; **59** en auditoría; enlace HTML HyperClose; `#evidencia-demo:target`. |
+| `src/pages/index.astro` | **59** operativas en copy visible. |
+| `public/docs/evidencia-hyperclose-demo-historial-transacciones.html` | Historial MT5 redactado (demo HyperClose). |
+| `public/images/evidence/` | Carpeta + `.gitkeep`; **pendiente** 6 PNG nombres §58.2. |
+
+**Proyecto TGP:** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` §10–11; `TGP_V11_CHECKPOINT_PRODUCCION.md`; `CHECKPOINT_V11_SESION_25MAR2026_ESSENTIAL_ADVANCED.md` §9.
+
+---
+
 ## SEO y Vercel Analytics (Mar 2026)
 
 ### Archivos tocados
 - `src/config/settings.js`, `src/pages/company/contact.astro`, `public/robots.txt`, `package.json`, `src/layouts/Base.astro`
 
 ### SEO
-- Meta global: title y description con keywords (protección capital, límites automáticos MT5, 56 operativas).
+- Meta global: title y description con keywords (protección capital, límites automáticos MT5, **59** operativas).
 - contact.astro: meta propia; corregido título heredado de plantilla Odyssey.
 - robots.txt: Allow all, sitemap tevsys.io.
 

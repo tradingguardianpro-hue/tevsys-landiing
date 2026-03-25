@@ -45,7 +45,7 @@ Lanzar una versión comercialmente sólida y técnicamente honesta:
 ## 4) Política de demo recomendada
 
 - **Demo estándar:** 15 días.
-- **Cohortes (Academia de Angelo):** 30 días.
+- **Cohortes piloto (academia / partner):** 30 días u otra política — solo si se cierra acuerdo; diseño histórico en proyecto TGP `docs/_archive/angello/`.
 
 ### Incentivo de extensión
 - Extensión adicional condicionada a feedback breve y útil.

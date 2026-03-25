@@ -65,7 +65,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 1) 0,06% error medio
 - Hook: `El mercado no perdona. Nosotros tampoco.`
-- Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **50 operativas documentadas**, 0,06% error medio. **Validado en 5 brokers distintos.**
+- Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **59 operativas documentadas**, 0,06% error medio. **Validado en 5 brokers distintos.**
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`
@@ -197,7 +197,7 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook: `• Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
 - `Precisión`:
   - Título: `Precisión de cierre: donde configuras, cerramos.`
-  - Hook: `• 50 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - Hook: `• 59 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: incluye escenarios extremos documentados con desviación puntual hasta `~0,39%`.
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -209,27 +209,29 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook demo: `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
   - Soporte: vídeo demo 1 min 41 s (con audio), informe MT5 (5 capturas), HTML transacciones descargable.
 
-### Estado actual Precisión (Mar 2026)
-- **Demo rápida:** `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto que se expande al dar play.
-- **Aquí se decide el cierre:** enlace a demo + autoplay. Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4` (límite -1,50%, cierre +1,83% en alta volatilidad). Vídeo mejorado con 6 overlays definitivos (Ene 2026).
-- **50 operativas** documentadas (hook y KPIs).
+### Estado actual Precisión (Mar 2026 — actualizado 26 Mar 2026)
+- **Demo rápida (100k):** `evidencia-100k-perdida.mp4` (1 min 41 s). **Hero** alineado con HyperClose/Evidencia: `.feature-demo--hero` + `.demo-video--hero` (~52rem, halo dorado). Secundarios: `.demo-video--compact` ~31rem + sombra embed.
+- **Volatilidad:** hook *Operativa documentada:* ±1,50% / +1,83% / contexto volatilidad; nota de pie ajustada (protección vs “misma precisión” genérica).
+- **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`).
+- **Qué puedes comprobar:** orden — demo 100k, logs, alta volatilidad, cuenta pequeña, **resultados al final**.
+- **59 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
-### Estado actual HyperClose (Mar 2026)
-- **Demo rápida (repo actual):** `hyperclose-demo.mp4` (1 min 35 s, sin audio). Cierre, 3 niveles semáforo, 7 intentos. Nota: "Vídeo editado para acortar esperas (cadencia 30 s entre modales)."
-- **Nuevo vídeo en edición / próximo reemplazo (ver CHANGELOG §57):** duración **2:23**, **audio instrumental** (sin voz), **17 overlays** listados en **§57.3** (precisión #6216264 + HyperClose semáforos + caja herramientas; CTA *compruébalo tú mismo · informe oficial mt5 y html enlazados bajo el vídeo*).
-- **Cierre inmediato y Semáforo:** ambos enlazan a la demo. Acordeón "Ver capturas de los 3 modales" con imágenes de cada nivel.
-- **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) publicado + acordeón con 5 capturas. **COMPLETADO.**
+### Estado actual HyperClose (Mar 2026 — actualizado 26 Mar 2026)
+- **Vídeo principal:** `hyperclose-demo.mp4` — metraje objetivo **2:23** (§57.3 overlays 1–11, 13–17). **Página:** h2 con duración; hook **sin** cuenta ni broker; **sin** nota pública de audio bajo el embed.
+- **Acordeón “Compruébalo tú mismo”:** galería **6** capturas (informe MT5 ×5 + historial día MT5); enlace **HTML** `evidencia-hyperclose-demo-historial-transacciones.html`; línea *¿Primera vez con las pestañas?* → Evidencia (demo 100k); nota **MT5 vs HTML** (cierre concreto vs cierres posteriores HyperClose). **PNG:** pendiente en `public/images/evidence/` — ver `CHANGELOG-TEVSYS.md` **§58.2**.
+- **Cierre inmediato y Semáforo:** enlazan a la demo. Acordeón modales 3 niveles.
+- **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) + 5 capturas. **Pendiente agenda:** sustituir captura 1 (día OFF sin protección previa) cuando haya material nuevo.
 
-### Estado actual Evidencia (20 Mar 2026)
-- **Demo rápida:** `evidencia-100k-perdida.mp4` (1 min 41 s, con audio). Cuenta 100k nueva, 20 lotes GER40, cierre por límite -1% = -1.007,20€, error 0,0072%. Apertura Wall Street.
+### Estado actual Evidencia (26 Mar 2026)
+- **Demo rápida:** `evidencia-100k-perdida.mp4` (1 min 41 s, con audio). **Hero** como Precisión/HyperClose. Cuenta 100k nueva, 20 lotes GER40, cierre por límite -1% = -1.007,20€, error 0,0072%. Apertura Wall Street.
 - **Hook demo:** `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
 - **"Qué puedes comprobar":** demo, **operativa 4.56 Essential (100 lotes, 95 € precisión)**, informe MT5, transacciones, logs, auditoría.
 - **Operativa 4.56 — Caso extremo Essential:** Bloque nuevo. Subtítulo: "Nuestra versión Essential. Con el caso más extremo. Evidencia por capturas e informe oficial MT5." 100 lotes GER40, límite +4%, cierre +4.095,10 € (desviación 95 €). Acordeón "Ver capturas (7)": Resumen, P&L, Long & Short, Symbols, Riesgos, Historial, Panel.
 - **Imágenes 4.56:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png`.
 - **Sección "Informe oficial MT5":** acordeón con 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
-- **Sección "Historial de transacciones":** acordeón con captura editada (zonas clave en amarillo) + enlace HTML original descargable.
-- **Sección "Auditoría":** 56 operativas documentadas, incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
+- **Sección "Historial de transacciones":** acordeón con captura editada (zonas clave en amarillo) + enlace HTML 100k + **párrafo** con enlace al HTML redactado **demo HyperClose** y vuelta a `/features/hyperclose#hyperclose-demo`.
+- **Sección "Auditoría":** **59** operativas documentadas, incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
 - **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide`
 - **Card home:** "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
 
@@ -290,10 +292,10 @@ Seguimiento interno activo en:
 ### `features/precision` (copy operativo actual)
 
 - Hook de apertura:
-  - `50 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - `59 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
 
 - Bloque `Resumen estadístico` (lectura rápida):
-  - `50 operativas documentadas`
+  - `59 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -328,7 +330,7 @@ Seguimiento interno activo en:
 **Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
 
 - KPIs visibles:
-  - `50 operativas documentadas`
+  - `59 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -353,9 +355,8 @@ Seguimiento interno activo en:
 - Sin audio (texto en overlays)
 
 ### Actualización Mar 2026 — Demo y alta volatilidad
-- Demo principal: `precision-demo.mp4` (1 min 7 s, con audio). Embed compacto, autoplay al enlazar.
-- Acordeón "Ir a demo en alta volatilidad" → `precision-demo-volatilidad.mp4`. **Vídeo mejorado** (Ene 2026) con 6 overlays definitivos: 1) Abro operación. Límite -1,50%/1,50%. Mercado alta volatilidad. 2) Panel en tiempo real: flotante y protección activa. 3) Cero intervención. — tevsys ejecuta. 4) Cálculo en curso. Cierre inminente. 5) Cierre en ganancias (+1,83%). Protección en condiciones extremas. 6) Alta volatilidad. Mismo compromiso. — tevsys. Ref: CHANGELOG §28.1.
-- **50 operativas** documentadas en hook, KPIs y card home.
+- **26 Mar 2026 (vigente):** Ver **«Estado actual Precisión»** en este mismo documento: demo principal = `evidencia-100k-perdida.mp4` en **hero**; volatilidad y cuenta pequeña en secciones propias; **59** operativas; orden de enlaces actualizado. Ref: `CHANGELOG-TEVSYS.md` **§58**.
+- *Histórico (antes del hero unificado):* Demo principal era `precision-demo.mp4` (1 min 7 s). Volatilidad: `precision-demo-volatilidad.mp4`, 6 overlays (CHANGELOG §28.1).
 
 ### Criterio de publicación (recordatorio)
 
