@@ -1716,3 +1716,32 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 
 ### 55.4 Docs
 - `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §7.5 y §15.8. `AGENDA_GABI.md` (proyecto TGP).
+
+---
+
+## 56) Email licencia — escenario demo/no-demo + enlace descarga configurable (Mar 2026)
+
+### 56.1 Contexto de producto
+- En compras reales aparecen dos escenarios: (A) cliente que **ya tenía demo instalada**; (B) cliente que **compra directo** y no tiene el `.ex5`.
+- El mail automático debía cubrir ambos sin romper el flujo actual (Lemon → webhook → clave → BD → Resend).
+
+### 56.2 Cambio aplicado en webhook
+- **Archivo:** `api/webhook-lemon.js` (`buildEmailHtml`).
+- Se añade bloque previo a la clave:
+  - “Si ya tienes tevsys instalado por la demo, puedes usar ese mismo archivo.”
+  - Si no lo tiene, se muestra descarga directa del `.ex5` **si existe variable**.
+- `buildEmailHtml` ahora recibe `downloadUrl` para renderizar el bloque de descarga de forma condicional.
+
+### 56.3 Dónde va cada link y en qué escenario
+- **`TEVSYS_DOWNLOAD_EX5_URL` configurada (Vercel):**
+  - El mail muestra enlace **Descargar tevsys (.ex5)** para clientes sin demo previa.
+  - Clientes con demo pueden ignorar descarga y seguir con activación.
+- **`TEVSYS_DOWNLOAD_EX5_URL` no configurada:**
+  - El mail muestra fallback a `info@tevsys.io` para solicitar el enlace.
+  - El resto del flujo (clave + activación + guía) sigue operativo.
+- **Guía instalación (siempre):** `https://www.tevsys.io/instalacion`.
+- **WebRequest (licencia):** sigue indicado en pasos de activación (`https://tevsys.io` en lista de URLs).
+
+### 56.4 Operación y despliegue
+- No cambia la lógica de negocio del webhook (clave/BD/envío), solo copy+render condicional del bloque descarga.
+- Para ver el enlace directo en producción: definir `TEVSYS_DOWNLOAD_EX5_URL` y redeploy.
