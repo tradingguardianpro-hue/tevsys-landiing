@@ -1877,3 +1877,33 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - Ejecutar simulación `transaction.paid` en Paddle contra `/api/webhook-paddle`.
 - Confirmar respuesta `200`.
 - Realizar una compra de prueba end-to-end (pago → clave → BD → email).
+
+---
+
+## 60) Stripe (26 Mar 2026) — carril activo de pagos tras rechazos MoR
+
+### 60.1 Contexto
+- Se reciben rechazos de Lemon y Paddle (categoría/riesgo/dominio).
+- Se decide pasar a **Stripe + gestoría propia** para recuperar control y evitar más dependencia de aprobación MoR.
+
+### 60.2 Implementación técnica realizada
+- **Nuevo endpoint:** `api/webhook-stripe.js`
+  - Verificación firma `stripe-signature` con `STRIPE_WEBHOOK_SECRET`.
+  - Eventos soportados: `invoice.paid`, `invoice.payment_failed`, `charge.refunded`, `customer.subscription.updated`, `customer.subscription.deleted`, `checkout.session.completed`.
+  - En `invoice.paid`: mapea `STRIPE_PRICE_ID_MONTHLY/YEARLY` -> `ESEMEN/ESEANU`, guarda licencia y envía email (Resend).
+- **Nuevo módulo:** `lib/salesLedger.js`
+  - Upsert de libro de ventas en Redis (`tevsys:sale:*`) para conciliación/gestoría.
+
+### 60.3 Dashboard Stripe (test)
+- Producto creado: `tevsys Essential`.
+- Precios creados: 39 EUR mensual y 390 EUR anual.
+- Destination webhook activo: `tevsys webhook stripe test` -> `/api/webhook-stripe`.
+- Payment Link de prueba creado y checkout test completado.
+
+### 60.4 Estado de validación
+- Endpoint publicado responde `GET 405` (ruta viva).
+- Entrega `POST` actual: `401` firma inválida (pendiente ajuste fino de `STRIPE_WEBHOOK_SECRET`/entorno test).
+- Pendiente para cerrar bloque:
+  1) corregir firma hasta `200` en `invoice.paid`,
+  2) verificar escritura BD (`licenses` + `sales_ledger`),
+  3) verificar email automático.

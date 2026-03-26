@@ -25,7 +25,9 @@ module.exports = async (req, res) => {
   });
 
   const signature = req.headers["stripe-signature"];
-  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  // Fallback v2 para evitar colisiones con variables antiguas compartidas en Vercel.
+  const secret =
+    (process.env.STRIPE_WEBHOOK_SECRET_V2 || process.env.STRIPE_WEBHOOK_SECRET || "").trim();
   if (!verifyStripeSignature(rawBody, signature, secret)) {
     console.error("[webhook-stripe] Firma inválida");
     return res.status(401).json({ error: "Invalid signature" });
