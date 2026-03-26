@@ -25,10 +25,14 @@ module.exports = async (req, res) => {
   });
 
   const signature = req.headers["stripe-signature"];
-  // Fallback v2 para evitar colisiones con variables antiguas compartidas en Vercel.
-  const secret =
-    (process.env.STRIPE_WEBHOOK_SECRET_V2 || process.env.STRIPE_WEBHOOK_SECRET || "").trim();
-  if (!verifyStripeSignature(rawBody, signature, secret)) {
+  // Validación robusta: si en Vercel quedó un STRIPE_WEBHOOK_SECRET_V2 viejo,
+  // podemos quedarnos bloqueados aunque STRIPE_WEBHOOK_SECRET esté correcto.
+  // Probamos ambas candidatas.
+  const secretCandidates = [process.env.STRIPE_WEBHOOK_SECRET_V2, process.env.STRIPE_WEBHOOK_SECRET]
+    .map((s) => (typeof s === "string" ? s.trim() : ""))
+    .filter(Boolean);
+
+  if (!verifyStripeSignature(rawBody, signature, secretCandidates)) {
     console.error("[webhook-stripe] Firma inválida");
     return res.status(401).json({ error: "Invalid signature" });
   }
@@ -274,23 +278,28 @@ function extractInvoicePriceId(invoice) {
   return invoice?.lines?.data?.[0]?.price?.id || null;
 }
 
-function verifyStripeSignature(rawBodyBuf, signatureHeader, secret) {
-  if (!rawBodyBuf || !Buffer.isBuffer(rawBodyBuf) || !signatureHeader || !secret) return false;
+function verifyStripeSignature(rawBodyBuf, signatureHeader, secretCandidates) {
+  if (!rawBodyBuf || !Buffer.isBuffer(rawBodyBuf) || !signatureHeader || !Array.isArray(secretCandidates) || secretCandidates.length === 0) {
+    return false;
+  }
   const parsed = parseStripeSignatureHeader(signatureHeader);
   if (!parsed.t || parsed.v1.length === 0) return false;
 
   // Stripe: compute HMAC-SHA256 on `${t}.${payload}` where payload is the raw request body (bytes).
   const signedPart = Buffer.from(String(parsed.t) + ".", "utf8");
-  const hmac = crypto.createHmac("sha256", secret);
-  hmac.update(signedPart);
-  hmac.update(rawBodyBuf);
-  const expectedHex = hmac.digest("hex");
 
-  return parsed.v1.some((candidate) => {
-    const a = Buffer.from(expectedHex, "utf8");
-    const b = Buffer.from(String(candidate), "utf8");
-    if (a.length !== b.length) return false;
-    return crypto.timingSafeEqual(a, b);
+  return secretCandidates.some((secret) => {
+    const hmac = crypto.createHmac("sha256", secret);
+    hmac.update(signedPart);
+    hmac.update(rawBodyBuf);
+    const expectedHex = hmac.digest("hex");
+
+    return parsed.v1.some((candidate) => {
+      const a = Buffer.from(expectedHex, "utf8");
+      const b = Buffer.from(String(candidate), "utf8");
+      if (a.length !== b.length) return false;
+      return crypto.timingSafeEqual(a, b);
+    });
   });
 }
 
