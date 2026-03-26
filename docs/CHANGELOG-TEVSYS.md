@@ -1827,3 +1827,53 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 58.3 Docs y checkpoints actualizados
 - **Proyecto TGP:** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` **§10–11**; `TGP_V11_CHECKPOINT_PRODUCCION.md` (bloque landing 26 Mar); `CHECKPOINT_V11_SESION_25MAR2026_ESSENTIAL_ADVANCED.md` **§9**.
 - **Este repo:** `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`, `CONTENIDO_WEB_TEVSYS_LANDING.md`, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`, `SEO_ANALYTICS_TEVSYS.md` (si aplica).
+
+---
+
+## 59) Pagos 26 Mar 2026 — transición Lemon → Paddle + política de reembolsos
+
+### 59.1 Contexto y decisión
+- Se recibe rechazo de Lemon por política/riesgo de categoría.
+- Decisión operativa: mantener web y flujo de licencias, y migrar canal de pago a Paddle sin romper producción.
+
+### 59.2 Alta y configuración Paddle (estado base)
+- Cuenta Paddle creada y en revisión.
+- Producto creado: `tevsys Essential`.
+- Precios creados:
+  - Mensual: `39 EUR`
+  - Anual: `390 EUR`
+- IDs guardados para integración:
+  - `pro_...` (producto)
+  - `pri_...` mensual / anual
+- Destination webhook creado con 5 eventos:
+  - `transaction.paid`
+  - `transaction.payment_failed`
+  - `subscription.created`
+  - `subscription.updated`
+  - `subscription.canceled`
+
+### 59.3 Cambios de código en repo web
+- **Nuevo endpoint:** `api/webhook-paddle.js`
+  - Valida firma con `PADDLE_WEBHOOK_SECRET`.
+  - Procesa `transaction.paid`.
+  - Resuelve mensual/anual por `PADDLE_PRICE_ID_MONTHLY` / `PADDLE_PRICE_ID_YEARLY`.
+  - Genera clave `ESEMEN/ESEANU`, persiste en Upstash y envía email con Resend.
+  - Convive con `api/webhook-lemon.js` durante la migración (sin corte abrupto).
+
+### 59.4 Legal para onboarding de pasarela
+- Nueva página legal: `src/pages/company/reembolsos.astro`
+- Enlace añadido en footer legal: `src/config/footer.js` → `/company/reembolsos`
+- URL pública para pasarelas: `https://tevsys.io/company/reembolsos`
+
+### 59.5 Variables de entorno (Paddle)
+- `PADDLE_API_KEY`
+- `PADDLE_WEBHOOK_SECRET`
+- `PADDLE_PRODUCT_ID`
+- `PADDLE_PRICE_ID_MONTHLY`
+- `PADDLE_PRICE_ID_YEARLY`
+- `PADDLE_CLIENT_TOKEN` (puede quedar pendiente temporalmente)
+
+### 59.6 Pendiente inmediato de validación
+- Ejecutar simulación `transaction.paid` en Paddle contra `/api/webhook-paddle`.
+- Confirmar respuesta `200`.
+- Realizar una compra de prueba end-to-end (pago → clave → BD → email).

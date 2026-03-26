@@ -131,13 +131,14 @@
 - **CTAs planes:** `/company/contact?plan=essential|advanced|pro`
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
 
-### Lemon Squeezy + botón Comprar Essential + Webhook (24 Mar 2026 — FLUJO COMPLETO OPERATIVO)
-- **Estado (24 Mar 2026):** Flujo validado. Compra → webhook → clave → email automático. Test mode.
-- **Interruptor:** `src/config/settings.js` → `checkoutEssentialReady`. **Vigente (Mar 2026):** `false` — en home/precios solo flujo demo/formulario Essential; compra oculta hasta paquete venta listo. Con `true`: aparecen checkout Lemon (mensual/anual) donde corresponda.
-- **Webhook automático:** `api/webhook-lemon.js` recibe `order_created` → genera clave ESEMEN/ESEANU → guarda Upstash → envía email Resend. Variables Vercel: `RESEND_API_KEY`, `RESEND_FROM` (obligatoria: `tevsys <info@tevsys.io>`), `LEMON_WEBHOOK_SECRET`, `UPSTASH_REDIS_REST_*`.
-- **Resend:** Dominio tevsys.io verificado. DNS (DKIM, MX, SPF) en Plesk. Sin RESEND_FROM → 403.
-- **Email de licencia:** Plantilla en `buildEmailHtml()` en webhook. Editable. Incluye 4 pasos F7, enlace /instalacion. **Cierre soporte (25 Mar 2026, opción B):** *Aquí estamos para lo que necesites:* → **info@tevsys.io** → *Te leemos y te respondemos en cuanto podamos.* → *— Gabi · tevsys* (cercanía sin SLA “inmediato”). Ver `CHANGELOG-TEVSYS.md` §54.
-- **Docs:** `ESTADO_WEB_Y_LEMON_TEVSYS.md`, `CHECKPOINT_24MAR2026_LEMON_RESEND_FLUJO_COMPLETO.md` (proyecto TGP), `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (punto 8 email), `CHECKPOINT_V11_SESION_25MAR2026_ESSENTIAL_ADVANCED.md` §8.
+### Pagos (Lemon histórico + transición a Paddle, Mar 2026)
+- **Lemon (histórico):** Flujo test mode validado (compra → webhook → clave → email), pero se recibe rechazo de plataforma por política/riesgo de categoría.
+- **Decisión vigente:** Migración a **Paddle**. Mantener compra pública oculta (`checkoutEssentialReady: false`) hasta validar flujo final end-to-end.
+- **Paddle (estado base):** producto/prices Essential creados (39/390), destination webhook activo, y endpoint nuevo `api/webhook-paddle.js` (firma + licencia + BD + email).
+- **Convivencia temporal:** `webhook-lemon.js` se mantiene durante migración para no romper flujo.
+- **Variables clave (Vercel/local):** `PADDLE_API_KEY`, `PADDLE_WEBHOOK_SECRET`, `PADDLE_PRODUCT_ID`, `PADDLE_PRICE_ID_MONTHLY`, `PADDLE_PRICE_ID_YEARLY`, `RESEND_API_KEY`, `RESEND_FROM`, `UPSTASH_REDIS_REST_*`.
+- **Legal para pasarela:** añadida `src/pages/company/reembolsos.astro` + enlace footer `/company/reembolsos`.
+- **Fuente de verdad:** `CHANGELOG-TEVSYS.md` §59 y proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md` (transición documentada).
 
 ### Imágenes y badges
 - **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar 22px, discreto).
