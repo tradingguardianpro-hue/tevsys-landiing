@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
   const rawBody = await new Promise((resolve, reject) => {
     const chunks = [];
     req.on("data", (chunk) => chunks.push(chunk));
-    req.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
+    req.on("end", () => resolve(Buffer.concat(chunks)));
     req.on("error", reject);
   });
 
@@ -33,9 +33,10 @@ module.exports = async (req, res) => {
     return res.status(401).json({ error: "Invalid signature" });
   }
 
+  const rawBodyStr = rawBody.toString("utf8");
   let event;
   try {
-    event = JSON.parse(rawBody);
+    event = JSON.parse(rawBodyStr);
   } catch {
     return res.status(400).json({ error: "Invalid JSON" });
   }
@@ -273,15 +274,24 @@ function extractInvoicePriceId(invoice) {
   return invoice?.lines?.data?.[0]?.price?.id || null;
 }
 
-function verifyStripeSignature(rawBody, signatureHeader, secret) {
-  if (!rawBody || !signatureHeader || !secret) return false;
+function verifyStripeSignature(rawBodyBuf, signatureHeader, secret) {
+  if (!rawBodyBuf || !Buffer.isBuffer(rawBodyBuf) || !signatureHeader || !secret) return false;
   const parsed = parseStripeSignatureHeader(signatureHeader);
   if (!parsed.t || parsed.v1.length === 0) return false;
-  const expected = crypto
-    .createHmac("sha256", secret)
-    .update(`${parsed.t}.${rawBody}`)
-    .digest("hex");
-  return parsed.v1.some((candidate) => safeCompare(expected, candidate));
+
+  // Stripe: compute HMAC-SHA256 on `${t}.${payload}` where payload is the raw request body (bytes).
+  const signedPart = Buffer.from(String(parsed.t) + ".", "utf8");
+  const hmac = crypto.createHmac("sha256", secret);
+  hmac.update(signedPart);
+  hmac.update(rawBodyBuf);
+  const expectedHex = hmac.digest("hex");
+
+  return parsed.v1.some((candidate) => {
+    const a = Buffer.from(expectedHex, "utf8");
+    const b = Buffer.from(String(candidate), "utf8");
+    if (a.length !== b.length) return false;
+    return crypto.timingSafeEqual(a, b);
+  });
 }
 
 function parseStripeSignatureHeader(header) {
@@ -301,16 +311,7 @@ function parseStripeSignatureHeader(header) {
   return out;
 }
 
-function safeCompare(a, b) {
-  try {
-    const ba = Buffer.from(String(a), "utf8");
-    const bb = Buffer.from(String(b), "utf8");
-    if (ba.length !== bb.length) return false;
-    return crypto.timingSafeEqual(ba, bb);
-  } catch {
-    return false;
-  }
-}
+// safeCompare eliminado: ya no se usa en verificación Stripe
 
 function generarClaveDesdeString(sourceId, esAnual) {
   const prefix = esAnual ? "ESEANU" : "ESEMEN";
