@@ -1,0 +1,53 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+  title: 'Política de Reembolsos | tevsys',
+  description: 'Política de reembolsos y cancelaciones de tevsys.',
+};
+---
+
+<Layout seo={seo}>
+  <TextSection narrow>
+    <h1>Política de Reembolsos</h1>
+
+    <h2>Objeto</h2>
+    <p>
+      Esta política describe las condiciones de cancelación y reembolso aplicables a las licencias de software de tevsys.
+    </p>
+
+    <h2>Naturaleza del producto</h2>
+    <p>
+      tevsys es un producto digital de software (licencia de uso). No se trata de un servicio financiero ni de gestión delegada.
+    </p>
+
+    <h2>Cancelaciones</h2>
+    <p>
+      En licencias de suscripción, el usuario puede cancelar renovaciones futuras en cualquier momento. La cancelación evita cobros posteriores, pero no implica devolución automática de importes ya abonados por periodos iniciados.
+    </p>
+
+    <h2>Reembolsos</h2>
+    <p>
+      Las solicitudes de reembolso se revisan caso por caso, atendiendo al motivo reportado, al estado de activación de la licencia y al tiempo transcurrido desde la compra.
+    </p>
+    <p>
+      Para solicitar una revisión, escribe a <a href="mailto:info@tevsys.io">info@tevsys.io</a> indicando el correo de compra y el motivo de la solicitud.
+    </p>
+
+    <h2>Documento en desarrollo</h2>
+    <p>
+      Esta política será ampliada y adaptada con asesoramiento jurídico profesional antes del lanzamiento comercial definitivo.
+    </p>
+
+    <p class="legal-update">Última actualización: marzo 2026</p>
+  </TextSection>
+</Layout>
+
+<style>
+  .legal-update {
+    margin-top: 2rem;
+    font-size: 0.88rem;
+    opacity: 0.7;
+  }
+</style>

@@ -33,6 +33,7 @@ export const footerLists = [
       { title: 'Aviso Legal', slug: '/company/legal' },
       { title: 'Privacidad', slug: '/company/privacidad' },
       { title: 'Términos de Uso', slug: '/company/terminos' },
+      { title: 'Reembolsos', slug: '/company/reembolsos' },
     ],
   },
 ];
