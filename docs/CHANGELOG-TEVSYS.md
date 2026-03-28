@@ -37,7 +37,7 @@ Se pasó de 3 a 4 cards en layout `2x2`, con copy actualizado.
 
 #### Card 1 — `0,06% error promedio`
 - Hook: `El mercado no perdona. Nosotros tampoco.`
-- Texto actualizado a **59 operativas documentadas** (sync `PRECISION_MILIMETRICA…` §3, Mar 2026).
+- Texto actualizado a **60 operativas documentadas** (sync `PRECISION_MILIMETRICA…` §3, Mar 2026).
 - Imagen: `/assets/images/home/cards/card-1-input.png`
 
 #### Card 2 — `HyperClose`
@@ -1907,3 +1907,11 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
   1) corregir firma hasta `200` en `invoice.paid`,
   2) verificar escritura BD (`licenses` + `sales_ledger`),
   3) verificar email automático.
+
+---
+
+## 61) Copy — 60 operativas documentadas (28 Mar 2026)
+
+- **Fuente:** `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (proyecto TGP); última incorporación relevante: operativa **4.60** (overnight + swap, FAQ §8).
+- **Cambio:** número en copy público **59 → 60** (meta description, home, Precisión, Evidencia).
+- **Archivos:** `src/config/settings.js`, `src/pages/index.astro`, `src/pages/features/precision.astro`, `src/pages/features/evidencia.astro`; docs `SEO_ANALYTICS_TEVSYS.md`, `CONTENIDO_WEB_TEVSYS_LANDING.md`, `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`, `PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md`, `CARDS-NEXT-PHASE.md`, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`; §3 Card 1 en este changelog.

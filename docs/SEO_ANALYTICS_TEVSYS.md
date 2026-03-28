@@ -9,7 +9,7 @@ Documento técnico para desarrolladores e ingenieros.
 ### Fuente principal
 - **Archivo:** `src/config/settings.js`
 - **title:** `tevsys — Protección de capital y límites automáticos para trading MT5`
-- **description:** `Disciplina en el trading automatizada. Plataforma para MetaTrader 5: límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 59 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
+- **description:** `Disciplina en el trading automatizada. Plataforma para MetaTrader 5: límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 60 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
 
 ### Uso
 - `BaseHead` consume estos valores por defecto.

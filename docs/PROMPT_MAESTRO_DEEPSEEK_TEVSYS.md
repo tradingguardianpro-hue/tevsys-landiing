@@ -206,7 +206,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 **Copy freeze:**
 - Título: `Precisión de cierre: donde configuras, cerramos.`
-- Hook: `59 operativas documentadas. 0,06% de error medio en condiciones normales.` (fuente: `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3, proyecto TGP)
+- Hook: `60 operativas documentadas. 0,06% de error medio en condiciones normales.` (fuente: `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3, proyecto TGP)
 
 **Vídeos publicados:**
 - **Demo principal (100k):** `evidencia-100k-perdida.mp4` — 1 min 41 s, CON audio. **Hero** `.feature-demo--hero` + `.demo-video--hero` (misma línea visual que HyperClose/Evidencia, ~52rem + halo).
@@ -293,7 +293,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 5. **Bloque operativa 4.56** (7 capturas)
 6. Historial transacciones
 7. Guía logs
-8. **Auditoría: 59 operativas documentadas**, incluyendo caso extremo 100 lotes
+8. **Auditoría: 60 operativas documentadas**, incluyendo caso extremo 100 lotes
 9. CTA final
 
 **Imágenes (13 total):** 6 evidencia-100k-* + 7 evidencia-4.56-* + evidencia-100k-html-transacciones.png
@@ -638,7 +638,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 ### 17.1 Meta global
 - **Archivo:** `src/config/settings.js`
 - **title:** `tevsys — Protección de capital y límites automáticos para trading MT5`
-- **description:** `Plataforma de disciplina automatizada para MetaTrader 5. Límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 59 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
+- **description:** `Plataforma de disciplina automatizada para MetaTrader 5. Límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 60 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
 - Usado por BaseHead en todas las páginas salvo las que definen `seo` propio.
 
 ### 17.2 Páginas con meta propia
@@ -666,4 +666,4 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 26 Mar 2026. **CHANGELOG §57** (vídeo/overlays 2:23) + **§58** (landing: hero Precisión/Evidencia/HyperClose, galería MT5 HyperClose, HTML redactado, 59 operativas, orden enlaces Precisión). **PNG galería HyperClose:** pendiente en `public/images/evidence/` (nombres §58.2). §15.9–§15.10: Lemon Test mode; **email licencia opción B** (§15.10, §54). **§7.5 / §15.8 / §55:** `/instalacion` WebRequest en lista; MP4 instalación pendiente renovar. Resend + RESEND_FROM. **Proyecto TGP:** `QUE_CONTIENE` V11 §10–11, `TGP_V11_CHECKPOINT_PRODUCCION.md`, `CHECKPOINT_V11_SESION_25MAR2026` §9.
+**Última actualización:** 26 Mar 2026. **CHANGELOG §57** (vídeo/overlays 2:23) + **§58** (landing: hero Precisión/Evidencia/HyperClose, galería MT5 HyperClose, HTML redactado, 60 operativas, orden enlaces Precisión). **PNG galería HyperClose:** pendiente en `public/images/evidence/` (nombres §58.2). §15.9–§15.10: Lemon Test mode; **email licencia opción B** (§15.10, §54). **§7.5 / §15.8 / §55:** `/instalacion` WebRequest en lista; MP4 instalación pendiente renovar. Resend + RESEND_FROM. **Proyecto TGP:** `QUE_CONTIENE` V11 §10–11, `TGP_V11_CHECKPOINT_PRODUCCION.md`, `CHECKPOINT_V11_SESION_25MAR2026` §9.

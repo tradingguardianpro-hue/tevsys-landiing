@@ -250,7 +250,7 @@ Se trabajó con iteración visual continua (prueba-error controlado) para manten
 
 ## Actualización Mar 2026 — Precisión y HyperClose cerrados
 
-**Estado extendido 25–26 Mar 2026:** `CHANGELOG-TEVSYS.md` **§58** (hero unificado, galería MT5 HyperClose, 59 operativas, HTML redactado).
+**Estado extendido 25–26 Mar 2026:** `CHANGELOG-TEVSYS.md` **§58** (hero unificado, galería MT5 HyperClose, 60 operativas, HTML redactado).
 
 ### Precisión
 - **Vigente:** demo principal **100k** `evidencia-100k-perdida.mp4` en **hero**; volatilidad + cuenta pequeña + logs; **59** operativas; orden «Qué puedes comprobar» (resultados al final).

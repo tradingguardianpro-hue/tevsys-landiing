@@ -65,7 +65,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 1) 0,06% error medio
 - Hook: `El mercado no perdona. Nosotros tampoco.`
-- Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **59 operativas documentadas**, 0,06% error medio. **Validado en 5 brokers distintos.**
+- Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **60 operativas documentadas**, 0,06% error medio. **Validado en 5 brokers distintos.**
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`
@@ -197,7 +197,7 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook: `• Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
 - `Precisión`:
   - Título: `Precisión de cierre: donde configuras, cerramos.`
-  - Hook: `• 59 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - Hook: `• 60 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: incluye escenarios extremos documentados con desviación puntual hasta `~0,39%`.
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -214,7 +214,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Volatilidad:** hook *Operativa documentada:* ±1,50% / +1,83% / contexto volatilidad; nota de pie ajustada (protección vs “misma precisión” genérica).
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`).
 - **Qué puedes comprobar:** orden — demo 100k, logs, alta volatilidad, cuenta pequeña, **resultados al final**.
-- **59 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
+- **60 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
 ### Estado actual HyperClose (Mar 2026 — actualizado 26 Mar 2026)
@@ -292,10 +292,10 @@ Seguimiento interno activo en:
 ### `features/precision` (copy operativo actual)
 
 - Hook de apertura:
-  - `59 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
+  - `60 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
 
 - Bloque `Resumen estadístico` (lectura rápida):
-  - `59 operativas documentadas`
+  - `60 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -330,7 +330,7 @@ Seguimiento interno activo en:
 **Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
 
 - KPIs visibles:
-  - `59 operativas documentadas`
+  - `60 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
