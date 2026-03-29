@@ -1609,7 +1609,8 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - `src/components/forms/ContactForm.astro` — límites 30000, 120000, 240000; recomendación por capital; opciones select.
 
 ### 50.3 Docs proyecto TGP actualizados
-- `PLANES_PRECIOS_FEATURES_TEVSYS.md`, `Formato_Clave_Licencia_Capital_Por_Tier_TEVSYS.md`, `VALIDACION_CAPITAL_TIER_PRICING.md`, `Resumen_Cuatro_Planes_TEVSYS_Para_Clase.md`, `PITCH_DECK_TEVSYS_TODAS_LAS_SLIDES.md`, `PLAN_SISTEMA_LICENCIAS_PRO_MULTI_EA.md`, `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md`.
+- `PLANES_PRECIOS_FEATURES_TEVSYS.md`, `Formato_Clave_Licencia_Capital_Por_Tier_TEVSYS.md`, `Resumen_Cuatro_Planes_TEVSYS_Para_Clase.md`, `PITCH_DECK_TEVSYS_TODAS_LAS_SLIDES.md`, `PLAN_SISTEMA_LICENCIAS_PRO_MULTI_EA.md`, `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md`.
+- *(29 mar 2026)* En repo TGP: `VALIDACION_CAPITAL_TIER_PRICING.md` **eliminado** (precios desactualizados). Fuente única de importes en TGP: `PLANES_PRECIOS_FEATURES_TEVSYS.md`; ver también `docs/PLAN_MQL5_MARKET_TEVSYS.md` §0.
 
 ### 50.4 PROMPT_MAESTRO_DEEPSEEK
 - Sección §6 "Lista de precios oficial" añadida con tabla y nota del margen 20%.
