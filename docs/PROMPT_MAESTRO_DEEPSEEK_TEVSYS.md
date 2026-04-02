@@ -131,14 +131,15 @@
 - **CTAs planes:** `/company/contact?plan=essential|advanced|pro`
 - **Demo:** `Descargar demo` → `/company/contact?flow=demo`
 
-### Pagos (Lemon histórico + transición a Paddle, Mar 2026)
-- **Lemon (histórico):** Flujo test mode validado (compra → webhook → clave → email), pero se recibe rechazo de plataforma por política/riesgo de categoría.
-- **Decisión vigente:** Migración a **Paddle**. Mantener compra pública oculta (`checkoutEssentialReady: false`) hasta validar flujo final end-to-end.
-- **Paddle (estado base):** producto/prices Essential creados (39/390), destination webhook activo, y endpoint nuevo `api/webhook-paddle.js` (firma + licencia + BD + email).
-- **Convivencia temporal:** `webhook-lemon.js` se mantiene durante migración para no romper flujo.
-- **Variables clave (Vercel/local):** `PADDLE_API_KEY`, `PADDLE_WEBHOOK_SECRET`, `PADDLE_PRODUCT_ID`, `PADDLE_PRICE_ID_MONTHLY`, `PADDLE_PRICE_ID_YEARLY`, `RESEND_API_KEY`, `RESEND_FROM`, `UPSTASH_REDIS_REST_*`.
-- **Legal para pasarela:** añadida `src/pages/company/reembolsos.astro` + enlace footer `/company/reembolsos`.
-- **Fuente de verdad:** `CHANGELOG-TEVSYS.md` §59 y proyecto TGP `ESTADO_WEB_Y_LEMON_TEVSYS.md` (transición documentada).
+### Pagos — estado vigente (abr 2026): Market primero; web en espera de PSP
+
+- **Canal de cobro prioritario:** **MQL5 Market** (MetaQuotes) para licencias por **alquiler** (1/3/6/12 meses). La web **no** es checkout activo hasta tener PSP que acepte la categoría **por escrito**. Ver **§18** (Market + artículo) y proyecto TGP `docs/PLAN_MQL5_MARKET_TEVSYS.md`.
+- **Lemon (histórico):** Flujo test mode validado (compra → webhook → clave → email); rechazo de plataforma por política/riesgo de categoría.
+- **Paddle:** explorado; **rechazo** por política de categoría (misma familia de problema que otros MoR generalistas). No depender de Paddle para roadmap comercial.
+- **Convivencia técnica:** `webhook-lemon.js` puede seguir en repo para pruebas; **fuente de verdad comercial** = Market + futuro PSP alto riesgo.
+- **Variables clave (Vercel) si se reactiva checkout web:** `RESEND_*`, Redis, webhooks según PSP elegido.
+- **Legal:** `src/pages/company/reembolsos.astro` + footer.
+- **PSP web (UniPayment, otros):** **§19** — hilo paralelo; **no** bloquea publicación en Market.
 
 ### Imágenes y badges
 - **Essential (bronce):** Imagen esse-form-v4.png. Badge "DEMO" arriba derecha (ámbar 22px, discreto).
@@ -415,8 +416,11 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 | Doc | Para qué |
 |-----|----------|
-| **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md** (este) | Contexto completo — empezar aquí. §15 = mejoras EA/producto desde última actualización. |
-| **PROMPT_DEEPSEEK_WEB_TEVSYS_ESTADO_COMPLETO.md** (proyecto TGP) | Estado web Mar 2026: plantilla unificada, Evidencia 100k, acordeón reporte MT5, plan vídeo, pendientes |
+| **PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md** (este) | Contexto completo — empezar aquí. §15 = EA/producto; **§18–§20** = MQL5 Market + artículo + UniPayment + checkpoint chat abr 2026. |
+| **PROMPT_DEEPSEEK_WEB_TEVSYS_ESTADO_COMPLETO.md** (proyecto TGP) | Estado web (histórico); si choca con §18–20, **priorizar** este prompt maestro + `QUE_CONTIENE` V11 |
+| **Proyecto TGP:** `docs/PLAN_MQL5_MARKET_TEVSYS.md` | Plan Market + artículo §5.0 + formulario + FAQ comercial |
+| **Proyecto TGP:** `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` | Checkpoint V11: MQL5 (ficha, capturas, HTML link); CHANGELOG 31 mar |
+| **Proyecto TGP:** `docs/CONTACTO_UNIPAYMENT_PENDIENTE_27MAR2026.md` | Hilo Calvin / UniPayment (primer contacto); **§19** de este doc = postura fees |
 | Proyecto TGP: **ONBOARDING_ESSENTIAL_GUIAS_EDUCATIVAS_Y_MODALS.md**, **RESUMEN_SESION_MODALES_16MAR2026.md**, **QUE_CONTIENE_TGP_Modular_Skeleton_V11.md** | Estado detallado del EA: onboarding Essential, guías educativas F7, modales, Días ON/OFF, ZONA SAGRADA. |
 | CHANGELOG-TEVSYS.md | Historial de todos los cambios, decisión por decisión |
 | GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md | Specs vídeos, guiones, overlays, OBS/Clipchamp |
@@ -505,7 +509,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 ## 13. Resumen ultracompacto (para pegar en chat)
 
 ```
-tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards con flecha + hover clicable (Precisión, HyperClose, SML, Evidencia). **59** operativas documentadas. Precisión/Evidencia/HyperClose: **demo principal en hero** (misma escala visual); HyperClose: acordeón galería MT5 + HTML redactado (§58). Evidencia: operativa 4.56 Essential (100 lotes, 95 € precisión) + 7 capturas. Footer: Cómo instalar, Guía configuración, Producto, Legal. /instalacion: vídeo + Paso 2 (enlace a config). /configuracion: vídeo guía configuración (2:36 min, Drive). Contact flow=demo: "Te enviaremos la demo y las guías de instalación y configuración". flow=lista: formulario lista espera Advanced/Pro (select plan). /precios: link "escríbenos para apuntarte" amarillo → flow=lista. Pro Multi 2/3 sin redundancia en incluye. Demo: .ex5 15 días. Flujo email: Correo 1 (pre-aviso spam) → Correo 2 (Drive + instalacion + configuracion). Docs: LINKS_PARA_ENVIAR_DEMO_TEVSYS. Ver §15, §16, **CHANGELOG §58**.
+tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Empresas | Contacto. Hero H1: "Tu trading merece más que buenas intenciones". Cards (Precisión, HyperClose, SML, Evidencia). Operativas documentadas: ver **CHANGELOG / precisión**. HyperClose: galería MT5 + HTML en `/docs/evidencia-hyperclose-demo-historial-transacciones.html`. **MQL5 Market (31 mar 2026):** ficha producto publicada — vídeo YouTube + 7 capturas (panel 00 + informe 01–06); descripción con **6 links** tevsys incl. Historial HTML (demo); **artículo** Seller en flujo revisión; asistente puede marcar **25 %** sin bloquear envío. **Cobro prioridad:** Market; web checkout espera PSP (UniPayment: **no fees iniciales sin ingreso** — §19). Demo EA 15 días sin clave ≠ demo UI Market (ver §18.3). Docs: §18–20, PLAN_MQL5, QUE_CONTIENE V11. Contact flow=demo, LINKS_PARA_ENVIAR_DEMO_TEVSYS. Ver §15, §16, CHANGELOG §58.
 ```
 
 ---
@@ -666,4 +670,110 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-**Última actualización:** 26 Mar 2026. **CHANGELOG §57** (vídeo/overlays 2:23) + **§58** (landing: hero Precisión/Evidencia/HyperClose, galería MT5 HyperClose, HTML redactado, 60 operativas, orden enlaces Precisión). **PNG galería HyperClose:** pendiente en `public/images/evidence/` (nombres §58.2). §15.9–§15.10: Lemon Test mode; **email licencia opción B** (§15.10, §54). **§7.5 / §15.8 / §55:** `/instalacion` WebRequest en lista; MP4 instalación pendiente renovar. Resend + RESEND_FROM. **Proyecto TGP:** `QUE_CONTIENE` V11 §10–11, `TGP_V11_CHECKPOINT_PRODUCCION.md`, `CHECKPOINT_V11_SESION_25MAR2026` §9.
+## 18. MQL5.com — Market + artículo Seller (checkpoint 31 mar 2026)
+
+**Contexto:** El canal **mql5.com** tiene **dos piezas distintas**: (1) **ficha de producto** en Market (utilidad, precios en USD, `.ex5`, capturas, descripción); (2) **artículo** en el área de contenidos / Seller (**Mis artículos**), tipo guía educativa. **No son intercambiables.** Copy definitivo del artículo: proyecto TGP `docs/PLAN_MQL5_MARKET_TEVSYS.md` **§5.0.1** (congelado salvo decisión explícita).
+
+### 18.1 Producto Market — publicado
+
+- **Nombre ejemplo:** *Tevsys Automated Discipline Risk Panel for MT5* (confirmar título exacto en la ficha).
+- **Contenido subido:** vínculo **YouTube** en el bloque de media; **7 capturas** en orden narrativo: **panel** (STOP / demo 25·03·2026 con reloj PC visible) → informe MT5 (Summary, P&L, Long&Short, Symbols, Risks) → **historial** día operativo.
+- **Exports optimizados (proyecto TGP):** carpeta `docs/market_mql5_logo/mql5_captures_optimized/` — archivos `00_panel_STOP_demo_2026-03-25_1607.png` … `06_mt5_history_2026-03-25.png`. Script PowerShell: `docs/market_mql5_logo/_resize_for_market.ps1` (tope 1920×1080, objetivo &lt;2 MB, **mínimo 720 px en el lado mayor** para cumplir reglas del formulario).
+- **Descripción HTML (un solo campo):** primera parte visible **sin** «más detalles» = **tabla de enlaces** a tevsys (`/go?link=…` en mql5) + **dos frases** gancho. **Sexto enlace (mar 2026):** **Historial HTML (demo)** → `https://www.tevsys.io/docs/evidencia-hyperclose-demo-historial-transacciones.html` (mismo patrón que Instalación, Configuración, Precisión, Evidencia, HyperClose). Cuerpo largo debajo: texto legal, precisión documentada, requisitos, modo prueba 15 días sin clave, soporte — alineado con §5.4 del PLAN y `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (checkpoint MQL5).
+
+### 18.2 Artículo Seller — asistente, 25 %, imágenes obligatorias “recomendadas”
+
+- **Checklist del portal (pasos 1–5):** pueden aparecer **todos en verde** y aun así el paso **«5. Artículo»** mostrar una **barra ~25 %**. Eso suele medir **completitud sugerida** del contenido (longitud, estructura, **imágenes**), **no** siempre un bloqueo duro.
+- **Si el sistema muestra:** *«Ahora puede enviar su artículo a la revisión»* y el botón **«Enviar a revisión»** está activo → **siguiente paso operativo = enviar**. El % puede subir después insertando **2–3 imágenes** y títulos con estilo **Heading** (recomendaciones oficiales MQL: artículo sin imágenes se percibe **pobre / “somnoliento”**; PNG preferido para capturas; **ancho máximo recomendado ~750 px** — si subes más ancho, el portal puede reescalar y perder nitidez).
+- **Imagen destacada del artículo (portal):** el formulario puede pedir **1200×628 px** para la tarjeta/preview — subir asset dedicado cuando se decida diseño (logo + claim o captura panel limpia).
+- **Mejoras pendientes (post-validación equipo):** añadir capturas en el cuerpo del artículo (instalación, panel, informe MT5), GIFs cortos solo si la calidad es aceptable (MQL permite GIF; prioridad = **legibilidad**). **Roadmap aprendizaje:** fundador quiere aprender a producir **GIFs** y motion ligero — coordinar con copy/diseño sin saturar el artículo.
+
+### 18.3 Demo en Market — dónde está y cómo funciona (FAQ)
+
+- **¿Dónde está la demo?** En la **ficha del producto** Market, MetaQuotes suele mostrar **descarga de demo** / prueba según el tipo de producto y la configuración del Seller (botón tipo *Free* / *Demo* en la ficha). **No** confundir con la demo **interna del EA** (15 días sin clave en `tevsys_Essential_Demo_15dias.ex5`): son reglas distintas; la descripción del producto puede mencionar el modo prueba interno sin prometer que la UI de Market muestre exactamente los mismos días.
+- **Moderación:** tras **Enviar a revisión** (artículo) o tras cambios en el producto, **equipo MetaQuotes / revisores** pueden **aprobar, pedir cambios o rechazar**. Si **aprueban**, el artículo pasa a visible según reglas del portal; si piden cambios, llega notificación con motivos. **No** asumir que “pasar moderación” responde automáticamente dudas sobre demo: las **preguntas concretas** (por qué no veo el botón demo, límites de activaciones) se resuelven con **ayuda del Market** / documentación Seller o soporte mql5.
+- **Si tras aprobación** algo no cuadra (demo no visible, categoría): **preguntar en el canal oficial de soporte Seller** o foro según indique MetaQuotes — documentar respuesta en `PLAN_MQL5_MARKET_TEVSYS.md` o changelog.
+
+### 18.4 Vínculo artículo ↔ ficha producto
+
+- Cuando **ambas** tengan URL pública, enlazar **en la descripción del producto** al artículo y **en el artículo** a la URL del producto Market (`…/market/product/XXXX`). Pasos: **§5.0.2** del PLAN. **Manual** (no automático).
+
+### 18.5 Documentación cruzada (no duplicar mentiras)
+
+- **Checkpoint código / producto:** `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` — bloque **Checkpoint V11** (MQL5) + **CHANGELOG 31 mar 2026** (ficha publicada, capturas, asistente 25 %).
+- **Plan comercial / formulario:** `docs/PLAN_MQL5_MARKET_TEVSYS.md` (proyecto TGP).
+
+---
+
+## 19. Pagos web — UniPayment y postura del equipo (abr 2026)
+
+**Marco:** Lemon y Paddle **rechazados** por política de categoría (software trading / MT5). La **venta con tarjeta** prioritaria para retail en el corto plazo es **MQL5 Market**. La **pasarela web directa** sigue siendo objetivo medio plazo con PSP **especializado / alto riesgo** que acepte la vertical **por escrito**.
+
+### 19.1 UniPayment — hilo con Calvin (contexto)
+
+- Primer contacto documentado: proyecto TGP `docs/CONTACTO_UNIPAYMENT_PENDIENTE_27MAR2026.md` — Calvin indicó onboarding ~5–7 días, **sin tasas previas** hasta aprobación de cuenta, sujeto a compliance (CFT/AML).
+- **Seguimiento (chat equipo, después de condiciones / pedido de reconsiderar postura):** UniPayment (o su interlocutor) pidió **reconsiderar** condiciones comerciales (p. ej. fees iniciales u onboarding). **Decisión explícita del fundador:** **no pagar fees iniciales / upfront** **sin ningún tipo de ingreso** que los amortigüe — es decir, **sin tracción de ventas web** que justifique ese desembolso a priori. Esto **no cierra la puerta** para el futuro si el modelo de fees cambia o hay ingresos que lo soporten; **sí congela** pagar solo por “entrar” en el momento actual.
+- **Para DeepSeek / IA:** no prometer integración UniPayment ni fechas hasta **escrito** que confirme condiciones aceptables y categoría. Mantener **Market** como verdad operativa de cobro.
+
+### 19.2 Lista corta PSP (pendiente agenda)
+
+- Criterio duro (ver `AGENDA_GABI` / PLAN): sin fee inicial abusivo sin volumen, categoría software MT5 aceptada por escrito, fees y rolling reserve transparentes. **Paralelo** al trabajo Market; **no** bloquea artículo ni ficha.
+
+---
+
+## 20. Chat Cursor + trabajo reciente (mar–abr 2026) — qué quedó hecho
+
+Para **tercera opinión** (DeepSeek) y continuidad sin perder contexto:
+
+| Tema | Resultado |
+|------|-----------|
+| Capturas Market | Script + 7 PNG optimizados; panel desde fotograma vídeo cuando faltaba PNG único del día |
+| Enlace HTML demo | En tabla superior de la ficha (6º link), coherente con micropágina HyperClose |
+| Artículo sin imágenes | Estado “somnoliento” reconocido; recomendaciones MQL: 2–3 imágenes + headings; mejora iterativa |
+| Asistente 25 % | Compatible con envío a revisión si el portal habilita botón |
+| UniPayment | Postura: no fees iniciales sin ingreso; documentado §19 |
+
+**Equipo:** Gabi (decisión), Cursor/Claude (código + docs), DeepSeek (copy/vídeo/web cuando se use este prompt).
+
+---
+
+## 21. Narrativa producto tevsys — validada con código V11 (abr 2026)
+
+**Para qué sirve:** Alinear **copy web, vídeos, artículo MQL5 y FAQ** con el **comportamiento real** del EA, tras debate fundador + lectura **solo lectura** de `TGP_MODULAR_SKELETON_V11.mq5` (terminal ActivTrades, abr 2026). **No** prometer lo que el código no respalde.
+
+### 21.1 Modo observación pasiva y “empezar de cero”
+
+- **Primera carga** (`g_esPrimeraCargaV5`, botón no bloqueado): si **`PositionsTotal() > 0`** → `g_modoObservacionPasiva = true`, persistencia StateManager, **popup** (`MostrarPopupModoObservacionPasiva`), mensaje: **no configurar con trades abiertos**; cerrar y continuar.
+- **Cuando pasan a 0 posiciones** (tramo ~5261–5286): se **desactiva** modo pasivo; **balance día y semana** desde **`ACCOUNT_BALANCE`** actual; mensaje de **protección desde ahora** / flotante 0 % desde ese punto.
+- **Sin posiciones abiertas** en esa primera lógica: prints indican **no evaluar límites** hasta **BLOQUEAR LÍMITES**; **filosofía** de anclar al **balance actual al instalar**, **no** arrastrar el P&L del historial como si fuera “deuda” del día tevsys.
+
+### 21.2 Timer 1 s — no solo ticks del gráfico
+
+- **`EventSetTimer(1)`** en `OnInit`; **`OnTimer`** cada segundo. Comentario en código sobre **fin de semana / pocos ticks** y **redibujado panel**. La narrativa “el EA solo vive en un gráfico” **no** implica que la lógica dependa **solo** del tic de ese símbolo para **todo** (hay timer).
+
+### 21.3 Cuenta completa, varias divisas
+
+- Límites **%** diarios/semanales: lógica de **cuenta** (equity/balance de referencia según diseño documentado en QUE_CONTIENE). **Varias operaciones / símbolos** contribuyen al **mismo** flotante de cuenta. Ante límite alcanzado, el diseño documentado es **cierre a nivel cuenta** (`CerrarTodasLasOperaciones` — ZONA SAGRADA).
+
+### 21.4 Defaults numéricos en el .mq5 leído (abr 2026)
+
+- **Diario:** inputs **±1,5 %** (lunes–viernes según `LimitePerdida*` / `LimiteGanancia*`).
+- **Semanal:** en ese archivo **`LimitePerdidaSemanal = -7.5`**, **`LimiteGananciaSemanal = 7.5`** (**±7,5 %**, no ±5). Si el copy público o una captura muestra otro valor, **alinear** con defaults reales del build o inputs guardados.
+
+### 21.5 Mensajes comerciales a incorporar (pendiente web / vídeos)
+
+- **Un gráfico para tevsys**, **disciplina sobre toda la cuenta**; trader puede poner **otro EA** (ej. Virtual Trade Path) en **otro gráfico** (MT5: un Expert por ventana).
+- **Frases STOP / avisos** en el flujo donde mira el usuario (validar en demo antes de claims fuertes).
+- **Vídeo YouTube parte 1** (~3 min, con audio) — **alta capacidad marketing** vs vídeo **mudo** de ficha Market; **pendiente embed** en **www.tevsys.io** (agenda fundador).
+- **Parte 2 artículo (Clipchamp):** overlays **±1,50 %**, **+0,01 % sobre límite HOY en ganancia**, **ingeniería de producto / evita cierres por un solo tic**; **sin** palabra “buffer” en cartel si así se decidió; **negro** + clip mercado cerrado (rotación, HTML).
+- **Decisión STOP/buffer en UX código:** **después** de cerrar vídeo/Market — ver `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` y `AGENDA_GABI.md`.
+
+### 21.6 Documentación cruzada
+
+- **Checkpoint + CHANGELOG:** proyecto TGP `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (**1 abr 2026**, checkpoint narrativa + CHANGELOG).
+- **Artículo:** `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md`.
+- **Agenda:** `docs/AGENDA_GABI.md`.
+
+---
+
+**Última actualización:** 1 abr 2026. **§18–§20:** MQL5 Market + artículo Seller (ficha publicada 31 mar, capturas 00–06, enlace HTML, asistente 25 %, FAQ demo/moderación, imágenes artículo); **§19** UniPayment — postura fees iniciales sin ingreso. **§21** Narrativa producto validada con V11 (observación pasiva, timer, cuenta multi-activo, defaults ±7,5 % semanal, comercial). **CHANGELOG** landing: seguir §57–§58; **PNG galería HyperClose** en `public/images/evidence/` según §58.2 si faltan. **Proyecto TGP:** `QUE_CONTIENE` V11 checkpoint **1 abr** + CHANGELOG 31 mar; `PLAN_MQL5_MARKET_TEVSYS.md`; `CONTACTO_UNIPAYMENT_PENDIENTE_27MAR2026.md`. **Pagos §6** actualizado (Market primero). **§7.5 / §15.8:** `/instalacion` WebRequest en lista; MP4 instalación pendiente renovar si aplica.
