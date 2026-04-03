@@ -124,9 +124,20 @@ const seo = {
 			}
 		</ul>
 
-		<p class="yt-list-back">
-			<a href="/features/hyperclose">← Volver a HyperClose</a>
-		</p>
+		<nav class="yt-list-nav" aria-label="Seguir explorando en tevsys">
+			<span class="yt-list-nav__label">Seguir explorando:</span>
+			<span class="yt-list-nav__links">
+				<a href="/">Inicio</a>
+				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
+				<a href="/features/precision">Precisión</a>
+				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
+				<a href="/features/hyperclose">HyperClose</a>
+				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
+				<a href="/features/sml">SML</a>
+				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
+				<a href="/features/evidencia">Evidencia</a>
+			</span>
+		</nav>
 	</Container>
 </Layout>
 
@@ -324,11 +335,47 @@ const seo = {
 	a.yt-card--live:hover .yt-card__cta {
 		color: #f7c050;
 	}
-	.yt-list-back {
+	/* Una línea: "Seguir explorando:" a la izquierda, enlaces a la derecha (envuelven en móvil) */
+	.yt-list-nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		column-gap: 0.6rem;
+		row-gap: 0.45rem;
 		margin: 0 0 calc(var(--section-margin) * 1.2);
-		opacity: 0.85;
+		max-width: 100%;
+		font-size: 0.9rem;
+		line-height: 1.45;
 	}
-	.yt-list-back a {
-		color: var(--theme-on-surface-1, #e8eaed);
+	.yt-list-nav__label {
+		flex: 0 0 auto;
+		opacity: 0.58;
+		font-size: 0.8rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.07em;
+		white-space: nowrap;
+	}
+	.yt-list-nav__links {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.15rem 0.3rem;
+		flex: 1 1 auto;
+		min-width: min(100%, 12rem);
+	}
+	.yt-list-nav__links a {
+		color: rgba(232, 234, 237, 0.9);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+		text-decoration-color: rgba(245, 176, 65, 0.35);
+	}
+	.yt-list-nav__links a:hover {
+		color: #f5b041;
+		text-decoration-color: #f5b041;
+	}
+	.yt-list-nav__sep {
+		opacity: 0.4;
+		user-select: none;
 	}
 </style>

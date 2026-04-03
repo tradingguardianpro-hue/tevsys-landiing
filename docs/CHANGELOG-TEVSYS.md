@@ -1942,7 +1942,7 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - Etiquetas y acento “YouTube” en **crimson apagado** (`#9a4a52`), sin `#ff0033`. Kicker de sección: *Vídeos públicos* (menos ruido visual).
 
 ### 62.6 Navegación al pie — `/videos-cierre-youtube` (abr 2026)
-- ~~Franja “Seguir explorando”~~ — **revertido:** de nuevo solo **← Volver a HyperClose** bajo la lista (fundador abr 2026).
+- **Seguir explorando:** (con dos puntos / `:`) a la **izquierda**; a la **derecha en la misma franja** todos los enlaces clicables: **Inicio · Precisión · HyperClose · SML · Evidencia** (orden cards; envuelve en pantallas estrechas).
 
 ### 62.7 Hero `/videos-cierre-youtube` — centrado + tono (abr 2026)
 - **text-align: center** en el bloque hero (antes el texto quedaba alineado a la izquierda dentro de la caja y parecía descuadrado).
