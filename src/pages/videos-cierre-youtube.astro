@@ -1,0 +1,138 @@
+---
+/**
+ * Lista curada de vídeos públicos en YouTube (casos de cierre / presentación).
+ * Editar el array `videos`: título + URL. Dejar url vacía para mostrar "Próximamente".
+ */
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const videos: { title: string; blurb?: string; url: string }[] = [
+	{
+		title: 'Parte 1 · Presentación tevsys (~3 min)',
+		blurb: 'Qué es tevsys, un gráfico, protección a nivel cuenta. Ideal como primera toma de contacto.',
+		url: '',
+	},
+	{
+		title: 'Parte 2 · Cierre al límite y evidencia MT5 (~2 min 22 s)',
+		blurb: 'Operativa documentada, límites, informe HTML, rotación. Complemento del artículo Seller.',
+		url: '',
+	},
+];
+
+const seo = {
+	title: 'Vídeos — casos de cierre (YouTube) | tevsys',
+	description:
+		'Lista de vídeos públicos: presentación de tevsys y casos de cierre documentados en MT5.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="yt-list-hero">
+			<p class="yt-list-kicker">YouTube</p>
+			<h1>Casos de cierre y presentación</h1>
+			<p class="yt-list-lead">
+				Enlaces directos a vídeos publicados en nuestro canal. Sin reproducción embebida aquí: abres en
+				YouTube en una pestaña nueva.
+			</p>
+		</section>
+
+		<ul class="yt-list">
+			{
+				videos.map((v) => (
+					<li class="yt-list__item">
+						<h2 class="yt-list__title">{v.title}</h2>
+						{v.blurb && <p class="yt-list__blurb">{v.blurb}</p>}
+						{v.url ? (
+							<a
+								class="yt-list__link"
+								href={v.url}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Abrir en YouTube
+							</a>
+						) : (
+							<p class="yt-list__pending">Próximamente — enlace cuando el vídeo esté público.</p>
+						)}
+					</li>
+				))
+			}
+		</ul>
+
+		<p class="yt-list-back">
+			<a href="/features/hyperclose">← Volver a HyperClose</a>
+		</p>
+	</Container>
+</Layout>
+
+<style>
+	.yt-list-hero {
+		margin: var(--section-margin) auto 2rem;
+		max-width: 52ch;
+	}
+	.yt-list-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.yt-list-hero h1 {
+		margin: 0 0 0.65rem;
+		font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+		line-height: 1.12;
+	}
+	.yt-list-lead {
+		margin: 0;
+		line-height: 1.55;
+		opacity: 0.92;
+	}
+	.yt-list {
+		list-style: none;
+		margin: 0 0 2.5rem;
+		padding: 0;
+		max-width: 56ch;
+	}
+	.yt-list__item {
+		padding: 1.25rem 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+	.yt-list__item:first-child {
+		padding-top: 0;
+	}
+	.yt-list__title {
+		margin: 0 0 0.4rem;
+		font-size: 1.1rem;
+		font-weight: 600;
+	}
+	.yt-list__blurb {
+		margin: 0 0 0.65rem;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		opacity: 0.88;
+	}
+	.yt-list__link {
+		display: inline-block;
+		color: #f5b041;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+	.yt-list__link:hover {
+		color: #f7c050;
+	}
+	.yt-list__pending {
+		margin: 0;
+		font-size: 0.92rem;
+		opacity: 0.65;
+		font-style: italic;
+	}
+	.yt-list-back {
+		margin: 0 0 calc(var(--section-margin) * 1.2);
+		opacity: 0.85;
+	}
+	.yt-list-back a {
+		color: var(--theme-on-surface-1, #e8eaed);
+	}
+</style>

@@ -33,6 +33,10 @@ const seo = {
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
+			<p class="feature-demo-youtube-more">
+				<a href="/videos-cierre-youtube">Ver más casos de cierre en YouTube</a>
+				<span class="feature-demo-youtube-more__hint"> — lista corta con enlaces y títulos.</span>
+			</p>
 			<details class="proof-accordion hyperclose-demo-evidence">
 				<summary class="proof-capture-link">Compruébalo tú mismo — informe MT5, capturas e historial</summary>
 				<div class="hyperclose-demo-evidence__text">
@@ -408,6 +412,25 @@ const seo = {
 		border-radius: 50%;
 		background: #f5b041;
 		flex-shrink: 0;
+	}
+	.feature-demo-youtube-more {
+		margin: 0.85rem 0 0;
+		font-size: 0.95rem;
+		line-height: 1.45;
+		max-width: 60ch;
+	}
+	.feature-demo-youtube-more a {
+		color: #f5b041;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+	.feature-demo-youtube-more a:hover {
+		color: #f7c050;
+	}
+	.feature-demo-youtube-more__hint {
+		opacity: 0.78;
+		font-weight: 400;
 	}
 	.feature-lead {
 		max-width: 70ch;

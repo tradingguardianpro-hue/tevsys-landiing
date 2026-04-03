@@ -1916,3 +1916,17 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - **Fuente:** `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (proyecto TGP); última incorporación relevante: operativa **4.60** (overnight + swap, FAQ §8).
 - **Cambio:** número en copy público **59 → 60** (meta description, home, Precisión, Evidencia).
 - **Archivos:** `src/config/settings.js`, `src/pages/index.astro`, `src/pages/features/precision.astro`, `src/pages/features/evidencia.astro`; docs `SEO_ANALYTICS_TEVSYS.md`, `CONTENIDO_WEB_TEVSYS_LANDING.md`, `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`, `PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md`, `CARDS-NEXT-PHASE.md`, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`; §3 Card 1 en este changelog.
+
+---
+
+## 62) Página vídeos YouTube — casos de cierre (abr 2026)
+
+### 62.1 Objetivo
+- **URL:** `/videos-cierre-youtube`
+- Lista simple de **títulos + enlaces** a vídeos públicos (presentación ~3 min, parte 2 evidencia, futuros). Sin iframe embebido: abre YouTube en pestaña nueva.
+- Enlaces `url` vacíos muestran *Próximamente* hasta pegar el `watch?v=…` en `src/pages/videos-cierre-youtube.astro` (array `videos`).
+
+### 62.2 Archivos
+- **`src/pages/videos-cierre-youtube.astro`** — contenido editable.
+- **`src/config/footer.js`** — columna Guías: *Vídeos — casos de cierre (YouTube)*.
+- **`src/pages/features/hyperclose.astro`** — bajo la demo MP4: *Ver más casos de cierre en YouTube*.

@@ -774,6 +774,14 @@ Para **tercera opinión** (DeepSeek) y continuidad sin perder contexto:
 - **Artículo:** `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md`.
 - **Agenda:** `docs/AGENDA_GABI.md`.
 
+### 21.7 Vídeo artículo YouTube parte 2 (~2′22″) — modo espejo + MQL5
+
+**Dónde está el guion completo:** `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` → anexo **parte 2** → **«Montaje final parte 2 (abr 2026)»** (timeline, textos espejo, overlays, end card). **CHANGELOG técnico:** mismo repo `QUE_CONTIENE` V11 entrada **«Abr 2026 — Vídeo artículo YouTube parte 2»**.
+
+**Qué es el “modo espejo”:** en Clipchamp, **dos líneas** (Manrope, grises): *Carga tevsys en un gráfico · protege toda tu cuenta* + *Estado, avisos y STOP · en todos los gráficos*; **repetida** en hitos, no fija. Rectángulos **`#2D2D2D`** ocultan broker/UI/descarga; **reloj PC** visible para **cambio de día** en tramo rotación.
+
+**Pendiente:** URL YouTube pública → artículo + ficha; **reeditar parte 1** con mismo paquete; **web** — vídeos embebidos (`AGENDA_GABI`).
+
 ---
 
 **Última actualización:** 1 abr 2026. **§18–§20:** MQL5 Market + artículo Seller (ficha publicada 31 mar, capturas 00–06, enlace HTML, asistente 25 %, FAQ demo/moderación, imágenes artículo); **§19** UniPayment — postura fees iniciales sin ingreso. **§21** Narrativa producto validada con V11 (observación pasiva, timer, cuenta multi-activo, defaults ±7,5 % semanal, comercial). **CHANGELOG** landing: seguir §57–§58; **PNG galería HyperClose** en `public/images/evidence/` según §58.2 si faltan. **Proyecto TGP:** `QUE_CONTIENE` V11 checkpoint **1 abr** + CHANGELOG 31 mar; `PLAN_MQL5_MARKET_TEVSYS.md`; `CONTACTO_UNIPAYMENT_PENDIENTE_27MAR2026.md`. **Pagos §6** actualizado (Market primero). **§7.5 / §15.8:** `/instalacion` WebRequest en lista; MP4 instalación pendiente renovar si aplica.

@@ -15,6 +15,7 @@ export const footerLists = [
       { title: 'Cómo instalar', slug: '/instalacion' },
       { title: 'Guía de configuración', slug: '/configuracion' },
       { title: 'Precios', slug: '/precios' },
+      { title: 'Vídeos — casos de cierre (YouTube)', slug: '/videos-cierre-youtube' },
     ],
   },
   {
