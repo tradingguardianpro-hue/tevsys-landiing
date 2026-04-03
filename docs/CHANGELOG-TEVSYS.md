@@ -1933,3 +1933,7 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 
 ### 62.3 Miniaturas YouTube (abr 2026)
 - **`/videos-cierre-youtube`:** tarjetas con **miniatura oficial** (`img.youtube.com/vi/…/hqdefault.jpg`), etiqueta **YouTube**, play overlay, CTA; grid 2 columnas en escritorio. Sin iframe (abre `watch` en nueva pestaña). Si `url` vacía: tarjeta *Próximamente* sin thumbnail.
+
+### 62.4 Enlaces públicos (abr 2026)
+- **Parte 1:** `https://youtu.be/xnZBaEruRNY` (presentación ~3 min, doc TGP `ARTICULO_*`).
+- **Parte 2:** `https://youtu.be/QU1hC6SKg10` (cierre/evidencia ~2′22″). Ambos en `src/pages/videos-cierre-youtube.astro`.
