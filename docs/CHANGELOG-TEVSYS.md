@@ -1930,3 +1930,6 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - **`src/pages/videos-cierre-youtube.astro`** — contenido editable.
 - **`src/config/footer.js`** — columna Guías: *Vídeos — casos de cierre (YouTube)*.
 - **`src/pages/features/hyperclose.astro`** — bajo la demo MP4: *Ver más casos de cierre en YouTube*.
+
+### 62.3 Miniaturas YouTube (abr 2026)
+- **`/videos-cierre-youtube`:** tarjetas con **miniatura oficial** (`img.youtube.com/vi/…/hqdefault.jpg`), etiqueta **YouTube**, play overlay, CTA; grid 2 columnas en escritorio. Sin iframe (abre `watch` en nueva pestaña). Si `url` vacía: tarjeta *Próximamente* sin thumbnail.
