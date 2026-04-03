@@ -1937,3 +1937,6 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 62.4 Enlaces públicos (abr 2026)
 - **Parte 1:** `https://youtu.be/xnZBaEruRNY` (presentación ~3 min, doc TGP `ARTICULO_*`).
 - **Parte 2:** `https://youtu.be/QU1hC6SKg10` (cierre/evidencia ~2′22″). Ambos en `src/pages/videos-cierre-youtube.astro`.
+
+### 62.5 Estilo marca YouTube (abr 2026)
+- Etiquetas y acento “YouTube” en **crimson apagado** (`#9a4a52`), sin `#ff0033`. Kicker de sección: *Vídeos públicos* (menos ruido visual).

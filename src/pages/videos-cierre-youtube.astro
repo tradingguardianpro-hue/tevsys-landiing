@@ -41,20 +41,20 @@ const videosWithMeta = videos.map((v) => {
 });
 
 const seo = {
-	title: 'Vídeos — casos de cierre (YouTube) | tevsys',
+	title: 'Vídeos — casos de cierre | tevsys',
 	description:
-		'Lista de vídeos públicos: presentación de tevsys y casos de cierre documentados en MT5.',
+		'Lista de vídeos públicos en YouTube: presentación de tevsys y casos de cierre documentados en MT5.',
 };
 ---
 
 <Layout seo={seo}>
 	<Container>
 		<section class="yt-list-hero">
-			<p class="yt-list-kicker">YouTube</p>
+			<p class="yt-list-kicker">Vídeos públicos</p>
 			<h1>Casos de cierre y presentación</h1>
 			<p class="yt-list-lead">
-				Vista previa con miniatura oficial de cada vídeo. Un clic abre la reproducción en <strong>YouTube</strong>{' '}
-				(nueva pestaña).
+				Vista previa con miniatura oficial de cada vídeo. Un clic abre la reproducción en{' '}
+				<span class="yt-list-lead-brand">YouTube</span> (nueva pestaña).
 			</p>
 		</section>
 
@@ -97,7 +97,7 @@ const seo = {
 									</p>
 									<h2 class="yt-card__title">{v.title}</h2>
 									{v.blurb && <p class="yt-card__blurb">{v.blurb}</p>}
-									<span class="yt-card__cta">Abrir en YouTube →</span>
+									<span class="yt-card__cta">Abrir vídeo →</span>
 								</div>
 							</a>
 						) : (
@@ -134,10 +134,11 @@ const seo = {
 	}
 	.yt-list-kicker {
 		margin: 0 0 0.35rem;
-		opacity: 0.8;
+		opacity: 0.72;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
 		font-size: 0.82rem;
+		color: rgba(232, 234, 237, 0.65);
 	}
 	.yt-list-hero h1 {
 		margin: 0 0 0.65rem;
@@ -148,6 +149,11 @@ const seo = {
 		margin: 0;
 		line-height: 1.55;
 		opacity: 0.92;
+	}
+	/* Rojo tipo crimson apagado — evita el #ff0033 “anuncio” */
+	.yt-list-lead-brand {
+		color: #9a4a52;
+		font-weight: 600;
 	}
 	.yt-grid {
 		list-style: none;
@@ -259,10 +265,10 @@ const seo = {
 		gap: 0.35rem;
 		margin: 0;
 		font-size: 0.72rem;
-		font-weight: 700;
+		font-weight: 600;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
-		color: #ff0033;
+		color: #9a4a52;
 	}
 	.yt-card__brand--muted {
 		color: rgba(255, 255, 255, 0.35);
@@ -271,7 +277,8 @@ const seo = {
 		width: 0.45rem;
 		height: 0.45rem;
 		border-radius: 50%;
-		background: #ff0033;
+		background: #9a4a52;
+		opacity: 0.9;
 	}
 	.yt-card__brand-dot--muted {
 		background: rgba(255, 255, 255, 0.25);
