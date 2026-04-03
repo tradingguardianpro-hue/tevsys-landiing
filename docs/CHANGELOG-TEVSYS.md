@@ -1940,3 +1940,10 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 
 ### 62.5 Estilo marca YouTube (abr 2026)
 - Etiquetas y acento “YouTube” en **crimson apagado** (`#9a4a52`), sin `#ff0033`. Kicker de sección: *Vídeos públicos* (menos ruido visual).
+
+### 62.6 Navegación al pie — `/videos-cierre-youtube` (abr 2026)
+- Sustituido un solo “Volver a HyperClose” por franja **Seguir explorando:** enlaces texto **Inicio · HyperClose · Evidencia · Precisión** (compacto, sin cartas).
+
+### 62.7 Hero `/videos-cierre-youtube` — centrado + tono (abr 2026)
+- **text-align: center** en el bloque hero (antes el texto quedaba alineado a la izquierda dentro de la caja y parecía descuadrado).
+- Título con más carácter: kicker *En nuestra casa*, H1 *Pruebas en vídeo.* + acento amarillo *Sin rodeos.*; lead con tono directo (pausa / rebobina / contrasta).

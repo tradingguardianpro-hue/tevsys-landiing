@@ -50,11 +50,14 @@ const seo = {
 <Layout seo={seo}>
 	<Container>
 		<section class="yt-list-hero">
-			<p class="yt-list-kicker">Vídeos públicos</p>
-			<h1>Casos de cierre y presentación</h1>
+			<p class="yt-list-kicker">En nuestra casa</p>
+			<h1 class="yt-list-hero__title">
+				Pruebas en vídeo.
+				<span class="yt-list-hero__accent">Sin rodeos.</span>
+			</h1>
 			<p class="yt-list-lead">
-				Vista previa con miniatura oficial de cada vídeo. Un clic abre la reproducción en{' '}
-				<span class="yt-list-lead-brand">YouTube</span> (nueva pestaña).
+				Dos cortes: presentación rápida y cierre al límite con evidencia MT5. Miniatura oficial; un clic y reproduces
+				en <span class="yt-list-lead-brand">YouTube</span> — pausa, rebobina, contrasta cuando quieras.
 			</p>
 		</section>
 
@@ -121,29 +124,54 @@ const seo = {
 			}
 		</ul>
 
-		<p class="yt-list-back">
-			<a href="/features/hyperclose">← Volver a HyperClose</a>
-		</p>
+		<nav class="yt-list-nav" aria-label="Enlaces a secciones de tevsys">
+			<span class="yt-list-nav__label">Seguir explorando</span>
+			<span class="yt-list-nav__links">
+				<a href="/">Inicio</a>
+				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
+				<a href="/features/hyperclose">HyperClose</a>
+				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
+				<a href="/features/evidencia">Evidencia</a>
+				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
+				<a href="/features/precision">Precisión</a>
+			</span>
+		</nav>
 	</Container>
 </Layout>
 
 <style>
 	.yt-list-hero {
-		margin: var(--section-margin) auto 2rem;
-		max-width: 52ch;
+		margin: var(--section-margin) auto 2.25rem;
+		max-width: min(40rem, 100%);
+		text-align: center;
+		padding: 0 0.5rem;
+		box-sizing: border-box;
 	}
 	.yt-list-kicker {
-		margin: 0 0 0.35rem;
-		opacity: 0.72;
+		margin: 0 0 0.5rem;
+		opacity: 0.75;
 		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-size: 0.82rem;
-		color: rgba(232, 234, 237, 0.65);
+		letter-spacing: 0.1em;
+		font-size: 0.78rem;
+		color: rgba(232, 234, 237, 0.6);
 	}
-	.yt-list-hero h1 {
-		margin: 0 0 0.65rem;
-		font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-		line-height: 1.12;
+	.yt-list-hero__title {
+		margin: 0 0 0.85rem;
+		font-size: clamp(1.75rem, 4vw, 2.45rem);
+		line-height: 1.15;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		max-width: min(30ch, 100%);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.yt-list-hero__accent {
+		display: block;
+		margin-top: 0.45rem;
+		font-size: 0.5em;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		color: #f5b041;
 	}
 	.yt-list-lead {
 		margin: 0;
@@ -305,11 +333,56 @@ const seo = {
 	a.yt-card--live:hover .yt-card__cta {
 		color: #f7c050;
 	}
-	.yt-list-back {
+	.yt-list-nav {
 		margin: 0 0 calc(var(--section-margin) * 1.2);
-		opacity: 0.85;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem 0.65rem;
+		max-width: 56ch;
+		font-size: 0.9rem;
+		line-height: 1.5;
 	}
-	.yt-list-back a {
-		color: var(--theme-on-surface-1, #e8eaed);
+	.yt-list-nav__label {
+		opacity: 0.55;
+		font-size: 0.82rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		width: 100%;
+		margin-bottom: 0.15rem;
+	}
+	@media (min-width: 520px) {
+		.yt-list-nav {
+			flex-direction: row;
+			align-items: center;
+		}
+		.yt-list-nav__label {
+			width: auto;
+			margin-bottom: 0;
+			margin-right: 0.25rem;
+		}
+		.yt-list-nav__label::after {
+			content: ':';
+		}
+	}
+	.yt-list-nav__links {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.2rem 0.35rem;
+	}
+	.yt-list-nav a {
+		color: rgba(232, 234, 237, 0.88);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+		text-decoration-color: rgba(245, 176, 65, 0.35);
+	}
+	.yt-list-nav a:hover {
+		color: #f5b041;
+		text-decoration-color: #f5b041;
+	}
+	.yt-list-nav__sep {
+		opacity: 0.45;
+		user-select: none;
 	}
 </style>
