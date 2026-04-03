@@ -124,20 +124,9 @@ const seo = {
 			}
 		</ul>
 
-		<nav class="yt-list-nav" aria-label="Enlaces a secciones de tevsys">
-			<span class="yt-list-nav__label">Seguir explorando</span>
-			<span class="yt-list-nav__links">
-				<a href="/">Inicio</a>
-				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
-				<a href="/features/precision">Precisión</a>
-				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
-				<a href="/features/hyperclose">HyperClose</a>
-				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
-				<a href="/features/sml">SML</a>
-				<span class="yt-list-nav__sep" aria-hidden="true">·</span>
-				<a href="/features/evidencia">Evidencia</a>
-			</span>
-		</nav>
+		<p class="yt-list-back">
+			<a href="/features/hyperclose">← Volver a HyperClose</a>
+		</p>
 	</Container>
 </Layout>
 
@@ -335,56 +324,11 @@ const seo = {
 	a.yt-card--live:hover .yt-card__cta {
 		color: #f7c050;
 	}
-	.yt-list-nav {
+	.yt-list-back {
 		margin: 0 0 calc(var(--section-margin) * 1.2);
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.35rem 0.65rem;
-		max-width: 56ch;
-		font-size: 0.9rem;
-		line-height: 1.5;
+		opacity: 0.85;
 	}
-	.yt-list-nav__label {
-		opacity: 0.55;
-		font-size: 0.82rem;
-		text-transform: uppercase;
-		letter-spacing: 0.06em;
-		width: 100%;
-		margin-bottom: 0.15rem;
-	}
-	@media (min-width: 520px) {
-		.yt-list-nav {
-			flex-direction: row;
-			align-items: center;
-		}
-		.yt-list-nav__label {
-			width: auto;
-			margin-bottom: 0;
-			margin-right: 0.25rem;
-		}
-		.yt-list-nav__label::after {
-			content: ':';
-		}
-	}
-	.yt-list-nav__links {
-		display: inline-flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.2rem 0.35rem;
-	}
-	.yt-list-nav a {
-		color: rgba(232, 234, 237, 0.88);
-		text-decoration: underline;
-		text-underline-offset: 0.2em;
-		text-decoration-color: rgba(245, 176, 65, 0.35);
-	}
-	.yt-list-nav a:hover {
-		color: #f5b041;
-		text-decoration-color: #f5b041;
-	}
-	.yt-list-nav__sep {
-		opacity: 0.45;
-		user-select: none;
+	.yt-list-back a {
+		color: var(--theme-on-surface-1, #e8eaed);
 	}
 </style>
