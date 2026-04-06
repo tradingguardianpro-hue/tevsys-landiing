@@ -1935,8 +1935,11 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - **`/videos-cierre-youtube`:** tarjetas con **miniatura oficial** (`img.youtube.com/vi/…/hqdefault.jpg`), etiqueta **YouTube**, play overlay, CTA; grid 2 columnas en escritorio. Sin iframe (abre `watch` en nueva pestaña). Si `url` vacía: tarjeta *Próximamente* sin thumbnail.
 
 ### 62.4 Enlaces públicos (abr 2026)
-- **Parte 1:** `https://youtu.be/xnZBaEruRNY` (presentación ~3 min, doc TGP `ARTICULO_*`).
+- **Parte 1:** `https://youtu.be/Kz21Hm_ukZ0` (presentación, reedit modo espejo; doc TGP `ARTICULO_*`). *Histórico:* `xnZBaEruRNY` (versión anterior sin reedit).
 - **Parte 2:** `https://youtu.be/QU1hC6SKg10` (cierre/evidencia ~2′22″). Ambos en `src/pages/videos-cierre-youtube.astro`.
+
+### 62.4.1 Parte 1 — URL definitiva reedit (abr 2026)
+- Sustituido enlace inicial por **`https://youtu.be/Kz21Hm_ukZ0`** (descripción larga en YouTube). `videos-cierre-youtube.astro` + `ARTICULO_*` + `AGENDA_GABI`.
 
 ### 62.5 Estilo marca YouTube (abr 2026)
 - Etiquetas y acento “YouTube” en **crimson apagado** (`#9a4a52`), sin `#ff0033`. Kicker de sección: *Vídeos públicos* (menos ruido visual).
