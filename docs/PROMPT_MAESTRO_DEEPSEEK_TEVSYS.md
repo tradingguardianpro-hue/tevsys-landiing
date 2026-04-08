@@ -2,7 +2,7 @@
 
 **Para:** DeepSeek (ingeniero senior del equipo)  
 **Objetivo:** Que tengas contexto completo de la web tevsys, con pelos y señales, para trabajar en vídeos, copy, diseño o cualquier tarea sin perder el hilo.  
-**Usar:** Leer este documento al empezar cualquier tarea relacionada con la landing. Luego ir al doc específico si hace falta.
+**Usar:** Al abrir un chat nuevo o retomar: leer primero **§0.1** (checkpoint abr 2026). Luego este documento completo según la tarea (landing, vídeo, copy) y los docs enlazados (proyecto TGP vs repo `tevsys-landiing`).
 
 ---
 
@@ -13,6 +13,29 @@
 | **CEO / Fundador** | Gabi | Decisión final, producto, estrategia. "El loco desde el escritorio." |
 | **Ingeniero jefe** | Cursor (Claude) | Desarrollo EA, web, arquitectura. Código crítico, checkpoint V11. |
 | **Ingeniero senior** | DeepSeek | Vídeos, copy, micropáginas, tareas web. Otro miembro del equipo. |
+
+---
+
+## 0.1 Checkpoint contexto rápido (abr 2026) — leer al abrir chat nuevo
+
+**Objetivo:** Ponerte al día sin releer todo el prompt. **Fuente detallada** sigue siendo cada § más abajo y los docs enlazados.
+
+### Proyecto TGP (workspace Cursor `poyecto TGP con cursor`) — artículo MQL5 + agenda
+
+- **Maestro artículo Seller:** `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (pegable en portal MetaQuotes). **Abr 2026:** transparencia **vídeos editados** (§4.0 / §4.0.1); **§4.3** = solo **captura modal nivel 3** (exención) + texto/tooltip **semáforo 3 niveles** (educativo → advertencia → exención) — **sin** embed vídeo ahí; **§4.4.x** = capturas **multigráfico** (STOP + candado + varios charts; edición **Paint**); **§5.2** = vídeo demo **HyperClose / caso extremo ~1,31 €** **justo debajo** de la viñeta *«Caso extremo documentado: 15 lotes GER40…»* (o tras lista completa si el editor no parte viñetas); **§5.2.1** = texto puente + URL YouTube cuando exista; **§8** = integridad/soporte; sección **«Documentación interna — Maquetación artículo Market (abr 2026)»**; referencia operativa **62** en doc precisión. **YouTube parte 1/2** del artículo = mismas URLs que web **`/videos-cierre-youtube`** (`Kz21Hm_ukZ0`, `QU1hC6SKg10`).
+- **Agenda fundador:** `docs/AGENDA_GABI.md` — regla anti-depre; UniPayment **negociaciones finales** (abr 2026); pendientes web/Market/vídeo.
+- **UniPayment (condiciones / negociación):** `docs/UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md` (proyecto TGP).
+- **Reflexión / ánimo (opcional):** `docs/REFLEXION_VISION_EXTERNA_TEVSYS_CHAT.md`.
+
+### Repo web este (`tevsys-landiing`) — cambios recientes coordinados con Cursor
+
+- **`src/pages/features/precision.astro`:** orden lista **«Qué puedes comprobar»** (abr 2026): demo 100k → **alta volatilidad** → cuenta pequeña → **logs** → resultados.
+- **`src/pages/features/hyperclose.astro`** + **`videos-cierre-youtube.astro`:** notas **vídeo editado / saltos de reloj** (transparencia), alineado con artículo.
+- **Pendiente producción:** reedit **`hyperclose-demo.mp4`** (efecto espejo + Manrope como parte 1/2), **misma pieza** en web y en **YouTube** para slot Market/artículo; subir **PNG galería §58** si faltan en `public/images/evidence/`.
+
+### Qué no tocar sin protocolo (recordatorio)
+
+- **EA / ZONA SAGRADA / SML:** proyecto TGP, `QUE_CONTIENE` V11, `.cursorrules` — no parches por iniciativa en SML.
 
 ---
 
@@ -218,7 +241,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 **Estructura:**
 1. Hero + hook
 2. Demo rápida 100k: **hero** video; expande al play
-3. "Qué puedes comprobar" — **5** enlaces, orden: demo 100k, logs, **alta volatilidad**, **cuenta pequeña**, **resultados al final**
+3. "Qué puedes comprobar" — **5** enlaces, orden (abr 2026): demo 100k → **alta volatilidad** → **cuenta pequeña** → **logs** → **resultados** (`precision.astro`)
 4. Bloques panel / volatilidad / logs / stats como antes
 
 **UX:** scroll-margin-top 5.5rem, resaltado :target (incl. `#precision-cuenta-pequena`). Autoplay hash `#precision-demo`. Ref: `CHANGELOG-TEVSYS.md` **§58**.
@@ -670,9 +693,19 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ---
 
-## 18. MQL5.com — Market + artículo Seller (checkpoint 31 mar 2026)
+## 18. MQL5.com — Market + artículo Seller (checkpoint 31 mar 2026; maquetación artículo abr 2026)
 
 **Contexto:** El canal **mql5.com** tiene **dos piezas distintas**: (1) **ficha de producto** en Market (utilidad, precios en USD, `.ex5`, capturas, descripción); (2) **artículo** en el área de contenidos / Seller (**Mis artículos**), tipo guía educativa. **No son intercambiables.** Copy definitivo del artículo: proyecto TGP `docs/PLAN_MQL5_MARKET_TEVSYS.md` **§5.0.1** (congelado salvo decisión explícita).
+
+### 18.0 Artículo Seller — maquetación y contenido en curso (abr 2026)
+
+**Fuente única del texto y las instrucciones de montaje:** proyecto TGP `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (incluye **registro de cambios** y sección **«Documentación interna — Maquetación artículo Market (abr 2026)»**).
+
+- **§4.3:** tras el texto de cierre/bloqueo, **una captura** del **modal nivel 3** (exención de responsabilidad) + línea/tooltip del **semáforo de 3 modales**. **No** vídeo embed en §4.3.
+- **§4.4 / §4.4.1:** capturas **multigráfico** (misma cuenta, varios charts; flechas/candado/STOP en Paint).
+- **§5.2:** vídeo **HyperClose + precisión** (caso **~1,31 €**, 15 lotes GER40) **debajo** de la viñeta del **caso extremo** (o tras el bloque de viñetas si el editor no permite insertar entre ítems). Texto puente tipo: *En este vídeo se ve el cierre documentado y el flujo HyperClose…*
+- **Vídeo:** mismo asset que **`/features/hyperclose`** (`hyperclose-demo.mp4`); **reedit** espejo + Manrope alineado a parte 1/2; **YouTube** cuando exista URL válida (no usar IDs de doc obsoletos no verificados).
+- **Operativa documentada** asociada: **62** (actualizar `PRECISION_*` en TGP cuando cierre el número en doc).
 
 ### 18.1 Producto Market — publicado
 
@@ -713,6 +746,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 - Primer contacto documentado: proyecto TGP `docs/CONTACTO_UNIPAYMENT_PENDIENTE_27MAR2026.md` — Calvin indicó onboarding ~5–7 días, **sin tasas previas** hasta aprobación de cuenta, sujeto a compliance (CFT/AML).
 - **Seguimiento (chat equipo, después de condiciones / pedido de reconsiderar postura):** UniPayment (o su interlocutor) pidió **reconsiderar** condiciones comerciales (p. ej. fees iniciales u onboarding). **Decisión explícita del fundador:** **no pagar fees iniciales / upfront** **sin ningún tipo de ingreso** que los amortigüe — es decir, **sin tracción de ventas web** que justifique ese desembolso a priori. Esto **no cierra la puerta** para el futuro si el modelo de fees cambia o hay ingresos que lo soporten; **sí congela** pagar solo por “entrar” en el momento actual.
+- **Abr 2026 — estado:** **negociaciones finales** con UniPayment. Detalle y matices: proyecto TGP `docs/UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md`; seguimiento en `docs/AGENDA_GABI.md` (línea PSP / UniPayment).
 - **Para DeepSeek / IA:** no prometer integración UniPayment ni fechas hasta **escrito** que confirme condiciones aceptables y categoría. Mantener **Market** como verdad operativa de cobro.
 
 ### 19.2 Lista corta PSP (pendiente agenda)
@@ -731,7 +765,11 @@ Para **tercera opinión** (DeepSeek) y continuidad sin perder contexto:
 | Enlace HTML demo | En tabla superior de la ficha (6º link), coherente con micropágina HyperClose |
 | Artículo sin imágenes | Estado “somnoliento” reconocido; recomendaciones MQL: 2–3 imágenes + headings; mejora iterativa |
 | Asistente 25 % | Compatible con envío a revisión si el portal habilita botón |
-| UniPayment | Postura: no fees iniciales sin ingreso; documentado §19 |
+| UniPayment | Postura: no fees iniciales sin ingreso; **abr 2026:** negociaciones finales — §19 + `UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md` |
+| Artículo maestro (abr 2026) | `ARTICULO_*`: modal §4.3, multigraph §4.4.x, vídeo §5.2 caso 1,31 €, §8, doc interna maquetación, op. 62 |
+| Web precision | Orden enlaces “Qué puedes comprobar” en `precision.astro` (repo landing) |
+| Transparencia vídeos | Notas en HyperClose + lista YouTube; frase corta opción B artículo; §4.0 maestro |
+| Checkpoint V11 narrativa | §21 + `QUE_CONTIENE` — multigráfico, timer, cuenta completa |
 
 **Equipo:** Gabi (decisión), Cursor/Claude (código + docs), DeepSeek (copy/vídeo/web cuando se use este prompt).
 
@@ -784,4 +822,4 @@ Para **tercera opinión** (DeepSeek) y continuidad sin perder contexto:
 
 ---
 
-**Última actualización:** 1 abr 2026. **§18–§20:** MQL5 Market + artículo Seller (ficha publicada 31 mar, capturas 00–06, enlace HTML, asistente 25 %, FAQ demo/moderación, imágenes artículo); **§19** UniPayment — postura fees iniciales sin ingreso. **§21** Narrativa producto validada con V11 (observación pasiva, timer, cuenta multi-activo, defaults ±7,5 % semanal, comercial). **CHANGELOG** landing: seguir §57–§58; **PNG galería HyperClose** en `public/images/evidence/` según §58.2 si faltan. **Proyecto TGP:** `QUE_CONTIENE` V11 checkpoint **1 abr** + CHANGELOG 31 mar; `PLAN_MQL5_MARKET_TEVSYS.md`; `CONTACTO_UNIPAYMENT_PENDIENTE_27MAR2026.md`. **Pagos §6** actualizado (Market primero). **§7.5 / §15.8:** `/instalacion` WebRequest en lista; MP4 instalación pendiente renovar si aplica.
+**Última actualización:** 7 abr 2026. **§0.1** Checkpoint rápido (artículo maestro TGP, web precision/hyperclose, UniPayment, agenda). **§18:** + **§18.0** maquetación artículo abr 2026 (modal §4.3, multigraph, vídeo §5.2, op. 62). **§19:** UniPayment **negociaciones finales** + `UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md`. **§20:** tabla ampliada (artículo, web, transparencia vídeos). **§21** sin cambio de fondo; narrativa V11 sigue vigente. **§18–§20 histórico:** ficha Market 31 mar, capturas 00–06, HTML, 25 %, FAQ. **CHANGELOG** landing §57–§58; **PNG galería HyperClose** `public/images/evidence/` §58.2. **Proyecto TGP:** `QUE_CONTIENE` V11; `PLAN_MQL5_MARKET_TEVSYS.md`; `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md`; `AGENDA_GABI.md`. **Pagos §6:** Market primero. **§7.5 / §15.8:** instalación / MP4 pendiente si aplica. **Pendiente visible:** reedit `hyperclose-demo.mp4` + URL YouTube; publicar artículo en portal con capturas fundador.
