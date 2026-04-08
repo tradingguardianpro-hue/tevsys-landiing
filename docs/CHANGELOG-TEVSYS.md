@@ -1967,4 +1967,5 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 - Reemplazo del MP4 por versión **modo espejo + Manrope** (misma ruta `hyperclose-demo.mp4`).
 
 ### 63.4 `/videos-cierre-youtube`
-- **Tercera tarjeta** en el array: *HyperClose · Precisión 15 lotes + semáforo (~2 min 23 s)* — **diferenciada** de parte 1/2 (artículo en vídeo). `url` vacía hasta pegar el `youtu.be/…` tras subir a YouTube; entonces la tarjeta pasa a *live* con miniatura automática.
+- **Tercera tarjeta** en el array: *HyperClose · Precisión 15 lotes + semáforo (~2 min 23 s)* — **diferenciada** de parte 1/2 (artículo en vídeo).
+- **URL publicada (8 abr 2026):** `https://youtu.be/jwEvJrohR4I` — título en YouTube *tevsys · HyperClose · Precisión 15 lotes + semáforo (~2:23)*; descripción alineada con transparencia de edición + enlaces tevsys.
