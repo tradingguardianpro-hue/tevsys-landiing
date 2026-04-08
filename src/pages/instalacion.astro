@@ -22,10 +22,14 @@ const seo = {
 
 		<section id="instalacion-video" class="feature-demo">
 			<h2>Vídeo — Instalación rápida</h2>
-			<p class="feature-demo-hook">
-				El vídeo muestra la instalación en cuenta nueva; <strong>falta incorporar en imagen el paso WebRequest</strong> (activar y añadir <code>https://tevsys.io</code>). La <strong>lista de pasos debajo del vídeo ya incluye ese paso</strong> — síguela hasta que subamos la grabación nueva.
+			<p class="instalacion-video-badge" role="status">
+				<span class="instalacion-video-badge__icon" aria-hidden="true">▶</span>
+				<span><strong>Vídeo en esta página</strong> — reproducción bajo este bloque.</span>
 			</p>
-			<div class="demo-video demo-video--compact" id="instalacion-demo-container">
+			<p class="feature-demo-hook instalacion-video-note">
+				Nota: la grabación aún no muestra en pantalla el paso <strong>WebRequest</strong>; la <strong>lista numerada</strong> de abajo sí lo incluye. Sigue la lista hasta que renovemos el vídeo.
+			</p>
+			<div class="demo-video demo-video--compact demo-video--instalacion" id="instalacion-demo-container">
 				<video id="instalacion-demo-video" controls preload="metadata">
 					<source src="/videos/features/instalacion-demo.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
@@ -35,32 +39,99 @@ const seo = {
 
 		<section id="configuracion" class="feature-demo feature-demo--config">
 			<h2>Paso 2 — Guía de configuración</h2>
-			<p class="feature-demo-hook">Tras instalar, configura los límites y el panel. Vídeo en fin de semana; entre semana el flujo es similar.</p>
-			<a href="/configuracion" class="feature-config-link">
-				<span class="feature-config-link__label">Ver guía de configuración (2:36 min)</span>
-				<span class="feature-config-link__arrow">→</span>
+			<p class="feature-demo-hook">Cuando el EA ya esté en el gráfico, ajusta límites y panel. Hay <strong>otro vídeo</strong> en la micropágina de configuración.</p>
+			<a href="/configuracion" class="instalacion-cta-video">
+				<span class="instalacion-cta-video__play" aria-hidden="true">▶</span>
+				<span class="instalacion-cta-video__text">
+					<span class="instalacion-cta-video__title">Abrir guía con vídeo</span>
+					<span class="instalacion-cta-video__meta">Configuración del panel · ~2 min 36 s</span>
+				</span>
+				<span class="instalacion-cta-video__arrow" aria-hidden="true">→</span>
 			</a>
 		</section>
 
 		<section class="feature-proof">
 			<h2>Pasos resumidos</h2>
-			<ol class="instalacion-steps">
-				<li>Descarga la demo desde el enlace que te enviamos por mail</li>
-				<li>Abre MetaTrader 5</li>
+			<p class="instalacion-steps-intro">Orden recomendado. Los tres primeros apartados preparan MT5; luego copias el archivo y cargas el EA.</p>
+			<ol class="instalacion-step-list">
 				<li>
-					Activa <strong>trading algorítmico</strong>: Herramientas → Opciones → <strong>Asesores Expertos</strong> → marca &quot;Permitir operar algorítmico&quot;. Manténlo siempre encendido
+					<div class="instalacion-step">
+						<span class="instalacion-step__n">1</span>
+						<div class="instalacion-step__body">
+							<strong class="instalacion-step__title">Descarga</strong>
+							<p class="instalacion-step__detail">Usa el enlace que te enviamos por email (demo).</p>
+						</div>
+					</div>
 				</li>
 				<li>
-					En la misma pestaña <strong>Asesores Expertos</strong>: activa <strong>Permitir WebRequest</strong> y añade exactamente <code>https://tevsys.io</code> en la lista de URLs (sin barra final). Obligatorio cuando uses <strong>licencia</strong>; recomendable en demo para no repetir el paso al comprar
+					<div class="instalacion-step">
+						<span class="instalacion-step__n">2</span>
+						<div class="instalacion-step__body">
+							<strong class="instalacion-step__title">Abre MetaTrader 5</strong>
+						</div>
+					</div>
 				</li>
-				<li>Archivo → Abrir carpeta de datos</li>
-				<li>MQL5 → Experts</li>
-				<li>Arrastra el archivo descargado (<code>tevsys_Essential_Demo_15dias.ex5</code>) a la carpeta Experts</li>
-				<li>Abre el Navegador en MT5 (Ctrl+N) y haz clic derecho en Experts → Actualizar</li>
-				<li>Arrastra tevsys al gráfico o doble clic para cargarlo</li>
+				<li>
+					<div class="instalacion-step">
+						<span class="instalacion-step__n">3</span>
+						<div class="instalacion-step__body">
+							<strong class="instalacion-step__title">Trading algorítmico (siempre encendido)</strong>
+							<p class="instalacion-step__detail">
+								Herramientas → Opciones → <strong>Asesores Expertos</strong> → marca <em>Permitir operar algorítmico</em>.
+							</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="instalacion-step">
+						<span class="instalacion-step__n">4</span>
+						<div class="instalacion-step__body">
+							<strong class="instalacion-step__title">WebRequest + dominio tevsys</strong>
+							<p class="instalacion-step__detail">
+								Misma pestaña <strong>Asesores Expertos</strong>: activa <em>Permitir WebRequest</em> y añade <code>https://tevsys.io</code> (sin barra final). <strong>Obligatorio con licencia de pago.</strong> En demo, recomendable para no repetir el paso al comprar.
+							</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="instalacion-step">
+						<span class="instalacion-step__n">5</span>
+						<div class="instalacion-step__body">
+							<strong class="instalacion-step__title">Carpeta del EA</strong>
+							<p class="instalacion-step__detail">Archivo → Abrir carpeta de datos → <code>MQL5</code> → <code>Experts</code>.</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="instalacion-step">
+						<span class="instalacion-step__n">6</span>
+						<div class="instalacion-step__body">
+							<strong class="instalacion-step__title">Copia el .ex5</strong>
+							<p class="instalacion-step__detail">Arrastra <code>tevsys_Essential_Demo_15dias.ex5</code> a la carpeta Experts.</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="instalacion-step">
+						<span class="instalacion-step__n">7</span>
+						<div class="instalacion-step__body">
+							<strong class="instalacion-step__title">Actualiza la lista en MT5</strong>
+							<p class="instalacion-step__detail">Navegador (Ctrl+N) → clic derecho en Experts → Actualizar.</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="instalacion-step">
+						<span class="instalacion-step__n">8</span>
+						<div class="instalacion-step__body">
+							<strong class="instalacion-step__title">Carga en el gráfico</strong>
+							<p class="instalacion-step__detail">Arrastra tevsys al gráfico o doble clic sobre el EA.</p>
+						</div>
+					</div>
+				</li>
 			</ol>
 			<p class="instalacion-note">
-				Tras cargar el EA, verás la bienvenida, Essential, recordatorio diario y la configuración guardada. Luego el panel estará listo.
+				Tras cargar el EA: bienvenida, Essential, recordatorio y panel listo para configurar.
 			</p>
 		</section>
 
@@ -132,22 +203,151 @@ const seo = {
 		opacity: 0.9;
 		font-style: italic;
 	}
-	.feature-config-link {
-		display: inline-flex;
+	.instalacion-video-badge {
+		display: flex;
 		align-items: center;
-		gap: 0.5rem;
-		padding: 0.5rem 0.9rem;
-		background: var(--theme-surface-1);
+		gap: 0.6rem;
+		margin: 0 0 0.65rem;
+		padding: 0.55rem 0.85rem;
 		border-radius: 0.5rem;
+		border: 1px solid rgba(245, 176, 65, 0.45);
+		background: rgba(245, 176, 65, 0.1);
+		font-size: 0.95rem;
+		line-height: 1.4;
+		max-width: 42rem;
+	}
+	.instalacion-video-badge__icon {
+		color: #f5b041;
+		font-size: 1rem;
+		line-height: 1;
+	}
+	.instalacion-video-note {
+		font-style: normal;
+		opacity: 0.88;
+		font-size: 0.95rem;
+		max-width: 52ch;
+	}
+	.demo-video--instalacion {
+		outline: 1px solid rgba(245, 176, 65, 0.25);
+		outline-offset: 4px;
+	}
+	.instalacion-cta-video {
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+		width: 100%;
+		max-width: 28rem;
+		padding: 0.85rem 1.1rem;
+		border-radius: 0.65rem;
+		border: 2px solid #f5b041;
+		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18) 0%, rgba(245, 176, 65, 0.06) 100%);
 		color: inherit;
 		text-decoration: none;
-		font-weight: 500;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+		transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 	}
-	.feature-config-link:hover {
-		background: var(--theme-surface-2);
+	.instalacion-cta-video:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 8px 28px rgba(245, 176, 65, 0.2);
+		border-color: #f7c050;
 	}
-	.feature-config-link__arrow {
-		opacity: 0.7;
+	.instalacion-cta-video__play {
+		flex-shrink: 0;
+		width: 2.25rem;
+		height: 2.25rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background: #f5b041;
+		color: #1a1510;
+		font-size: 0.85rem;
+		padding-left: 0.15rem;
+	}
+	.instalacion-cta-video__text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.2rem;
+		text-align: left;
+		flex: 1;
+		min-width: 0;
+	}
+	.instalacion-cta-video__title {
+		font-weight: 700;
+		font-size: 1.05rem;
+		line-height: 1.25;
+	}
+	.instalacion-cta-video__meta {
+		font-size: 0.88rem;
+		opacity: 0.85;
+		line-height: 1.35;
+	}
+	.instalacion-cta-video__arrow {
+		flex-shrink: 0;
+		font-size: 1.25rem;
+		opacity: 0.85;
+		color: #f5b041;
+	}
+	.instalacion-steps-intro {
+		margin: 0 0 1rem;
+		max-width: 52ch;
+		line-height: 1.5;
+		opacity: 0.88;
+		font-size: 0.98rem;
+	}
+	.instalacion-step-list {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.65rem;
+		max-width: 40rem;
+	}
+	.instalacion-step {
+		display: flex;
+		gap: 0.75rem;
+		align-items: flex-start;
+		padding: 0.65rem 0.85rem;
+		border-radius: 0.5rem;
+		background: var(--theme-surface-1);
+		border: 1px solid rgba(255, 255, 255, 0.06);
+	}
+	.instalacion-step__n {
+		flex-shrink: 0;
+		width: 1.75rem;
+		height: 1.75rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0.35rem;
+		background: rgba(245, 176, 65, 0.2);
+		color: #f5b041;
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+	.instalacion-step__body {
+		min-width: 0;
+		flex: 1;
+	}
+	.instalacion-step__title {
+		display: block;
+		font-size: 1rem;
+		margin-bottom: 0.25rem;
+		line-height: 1.35;
+	}
+	.instalacion-step__detail {
+		margin: 0;
+		font-size: 0.92rem;
+		line-height: 1.55;
+		opacity: 0.88;
+	}
+	.instalacion-step-list code {
+		background: rgba(0, 0, 0, 0.25);
+		padding: 0.12rem 0.4rem;
+		border-radius: 0.25rem;
+		font-size: 0.88em;
 	}
 	.demo-video {
 		background: #06080d;
@@ -163,20 +363,6 @@ const seo = {
 	.demo-video video {
 		display: block;
 		width: 100%;
-	}
-	.instalacion-steps {
-		padding-left: 1.5rem;
-		line-height: 1.7;
-		margin: 0 0 1rem;
-	}
-	.instalacion-steps li {
-		margin-bottom: 0.5rem;
-	}
-	.instalacion-steps code {
-		background: var(--theme-surface-1);
-		padding: 0.1rem 0.4rem;
-		border-radius: 0.25rem;
-		font-size: 0.9em;
 	}
 	.instalacion-note {
 		opacity: 0.9;

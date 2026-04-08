@@ -1969,3 +1969,11 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 63.4 `/videos-cierre-youtube`
 - **Tercera tarjeta** en el array: *HyperClose · Precisión 15 lotes + semáforo (~2 min 23 s)* — **diferenciada** de parte 1/2 (artículo en vídeo).
 - **URL publicada (8 abr 2026):** `https://youtu.be/jwEvJrohR4I` — título en YouTube *tevsys · HyperClose · Precisión 15 lotes + semáforo (~2:23)*; descripción alineada con transparencia de edición + enlaces tevsys.
+
+---
+
+## 64) `/instalacion` — jerarquía vídeos y pasos (abr 2026)
+
+- **Vídeo principal:** badge *Vídeo en esta página* + nota WebRequest más corta; contorno suave al reproductor.
+- **Paso 2 configuración:** CTA tipo tarjeta (borde/acento dorado, círculo play, título + duración) — sustituye el botón gris discreto.
+- **Pasos resumidos:** lista en **tarjetas** (número + título + detalle breve); 8 pasos (carpeta datos + MQL5/Experts unificados en un bloque); intro de una línea al inicio.
