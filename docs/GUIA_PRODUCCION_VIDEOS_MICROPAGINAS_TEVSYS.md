@@ -78,6 +78,8 @@ Objetivo:
 
 ### Clip web actual (Mar 2026): metraje **2:23**
 
+- **Nombre de proyecto en el editor (ej. Premiere):** *Video Project 090920* u otro título interno — **no** usar ese nombre como archivo en `public/videos/features/` (espacios y URLs rotas). **Siempre** desplegar sustituyendo **`hyperclose-demo.mp4`** salvo que actualices las dos etiquetas `<source>` en `src/pages/features/hyperclose.astro`. Ver **`CHANGELOG-TEVSYS.md` §63**.
+- **Reexport abr 2026:** modo espejo + tipografía **Manrope** alineada con el resto del sitio.
 - **Guión overlays 1–17 (sin tarjeta 12):** `CHANGELOG-TEVSYS.md` **§57.3**. Contenido: precisión 15 lotes GER40, límite -1%, desviación ~1,31 €, Wall Street + HyperClose (semáforos, caja herramientas, 7 cierres).
 - **Página:** hero + acordeón evidencia (§58). La web **no** menciona audio bajo el embed (el export puede llevar pista instrumental).
 

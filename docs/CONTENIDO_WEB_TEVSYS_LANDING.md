@@ -218,7 +218,9 @@ Documento de contenido/copy actual para revisión de equipo.
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
 ### Estado actual HyperClose (Mar 2026 — actualizado 26 Mar 2026)
-- **Vídeo principal:** `hyperclose-demo.mp4` — metraje objetivo **2:23** (§57.3 overlays 1–11, 13–17). **Página:** h2 con duración; hook **sin** cuenta ni broker; **sin** nota pública de audio bajo el embed.
+- **Vídeo principal:** `hyperclose-demo.mp4` — metraje objetivo **2:23** (§57.3 overlays 1–11, 13–17). **Export interno** puede llamarse *Video Project 090920*; en repo el binario debe seguir siendo **`hyperclose-demo.mp4`** (ruta fija en `hyperclose.astro`). **8 abr 2026:** reemplazo con reedit **espejo + Manrope**; si el vídeo “desaparece” en web, comprobar que el archivo no se renombró sin tocar Astro — ver `CHANGELOG-TEVSYS.md` **§63**.
+- **YouTube (lista `/videos-cierre-youtube`):** tercera tarjeta reservada para **esta misma demo** (enlace pendiente hasta publicar en canal); **no** confundir con parte 1/2 del artículo Market.
+- **Página:** h2 con duración; hook **sin** cuenta ni broker; **sin** nota pública de audio bajo el embed.
 - **Acordeón “Compruébalo tú mismo”:** galería **6** capturas (informe MT5 ×5 + historial día MT5); enlace **HTML** `evidencia-hyperclose-demo-historial-transacciones.html`; línea *¿Primera vez con las pestañas?* → Evidencia (demo 100k); nota **MT5 vs HTML** (cierre concreto vs cierres posteriores HyperClose). **PNG:** pendiente en `public/images/evidence/` — ver `CHANGELOG-TEVSYS.md` **§58.2**.
 - **Cierre inmediato y Semáforo:** enlazan a la demo. Acordeón modales 3 niveles.
 - **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) + 5 capturas. **Pendiente agenda:** sustituir captura 1 (día OFF sin protección previa) cuando haya material nuevo.

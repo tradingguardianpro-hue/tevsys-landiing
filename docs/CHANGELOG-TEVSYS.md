@@ -1950,3 +1950,21 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 62.7 Hero `/videos-cierre-youtube` — centrado + tono (abr 2026)
 - **text-align: center** en el bloque hero (antes el texto quedaba alineado a la izquierda dentro de la caja y parecía descuadrado).
 - Título con más carácter: kicker *En nuestra casa*, H1 *Pruebas en vídeo.* + acento amarillo *Sin rodeos.*; lead con tono directo (pausa / rebobina / contrasta).
+
+---
+
+## 63) HyperClose demo MP4 — export «Video Project 090920» + lista YouTube tercer slot (8 abr 2026)
+
+### 63.1 Problema (causa raíz)
+- El `<video>` en `hyperclose.astro` apunta siempre a **`/videos/features/hyperclose-demo.mp4`**.
+- Si el archivo en disco se renombra (p. ej. `Video Project 090920.mp4` con espacios) **sin** actualizar Astro, el reproductor queda en **404** aunque el commit suba bien.
+
+### 63.2 Convención de archivo
+- **Nombre en repo / URL pública:** `public/videos/features/hyperclose-demo.mp4` (sin espacios; estable para CDN y HTML).
+- **Nombre de proyecto en export (Premiere, etc.):** puede ser *Video Project 090920* — anotar en guías; al desplegar, **sustituir** el binario conservando el nombre **`hyperclose-demo.mp4`** (o actualizar las dos rutas `<source>` en `hyperclose.astro` si algún día se cambia el nombre del fichero).
+
+### 63.3 Contenido abr 2026
+- Reemplazo del MP4 por versión **modo espejo + Manrope** (misma ruta `hyperclose-demo.mp4`).
+
+### 63.4 `/videos-cierre-youtube`
+- **Tercera tarjeta** en el array: *HyperClose · Precisión 15 lotes + semáforo (~2 min 23 s)* — **diferenciada** de parte 1/2 (artículo en vídeo). `url` vacía hasta pegar el `youtu.be/…` tras subir a YouTube; entonces la tarjeta pasa a *live* con miniatura automática.
