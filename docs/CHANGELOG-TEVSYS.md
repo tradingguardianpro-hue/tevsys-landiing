@@ -15,8 +15,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ### Multigráfico — copy encima del primer bloque demo (abr 2026)
 - En **precision**, **hyperclose**, **evidencia** y **sml**: línea con punto amarillo (`feature-hook` + `feature-hook__dot`), misma tipografía que el hook del hero, **encima del primer `<h2>`** del bloque demo (o primer bloque post-hero en SML, sin vídeo aún).
-- Texto: `Un gráfico para tevsys. Toda tu cuenta, protegida.`
-- *Pendiente de refinar copy:* los avisos de estado de cuenta pueden mostrarse en **todos** los gráficos; cuando se documente en producto, ajustar frase para no contradecir (ver agenda comunicación multigráfico).
+- Texto (dos líneas en el mismo `feature-hook`): `Un gráfico para tevsys. Toda tu cuenta, protegida.` + `Los avisos de protección aparecen en todos tus gráficos abiertos.`
 
 ---
 
