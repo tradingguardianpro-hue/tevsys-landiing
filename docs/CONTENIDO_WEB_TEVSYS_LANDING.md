@@ -242,8 +242,10 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide`
 - **Card home:** "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
 
-### Estado actual SML (31 Ene 2026)
-- **Limpieza:** Eliminadas 4 secciones placeholder + vídeo placeholder. Resultado: Hero + "Qué podrás comprobar" (3 puntos) + nota estado + CTA. 148 líneas.
+### Estado actual SML (abr 2026)
+- **Hero** + sección **panel en validación:** título `Así se ve hoy en el panel`, dos párrafos (concepto bonus ayer → margen hoy; DISPONIBLE vs 1‑CLICK), `<figure>` con `sml-panel-validacion-demo.png` + pie demo/validación.
+- **Multigráfico** (hook dos líneas) + checklist + nota validación ampliada + CTA lista de espera.
+- **Asset:** `public/assets/images/features/sml-panel-validacion-demo.png` — captura demo fundador; subir si falta en repo.
 
 ### Estado actual navegación y footer (31 Ene 2026)
 - **Nav:** Inicio | Empresas | Contacto. "Acceso" eliminado.

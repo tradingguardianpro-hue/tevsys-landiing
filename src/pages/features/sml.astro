@@ -4,7 +4,8 @@ import Layout from '../../layouts/Page.astro';
 
 const seo = {
 	title: 'SML | tevsys',
-	description: 'Conoce Smart Money Lock (SML): una capa opcional para proteger parte de las ganancias y mejorar tu disciplina diaria.',
+	description:
+		'Smart Money Lock (SML): capa opcional en Advanced/Pro. Cómo amplía margen con ganancia de ayer — panel en validación, sin prometer producto cerrado.',
 };
 ---
 
@@ -17,7 +18,31 @@ const seo = {
 			<p class="feature-intro">La diferencia no es operar más: es conservar mejor.</p>
 			<p class="feature-lead">SML convive con tus límites diarios y semanales. Se activa bajo tu criterio y amplía automáticamente el margen de pérdida permitido, sin fricción.</p>
 			<p class="feature-extreme-note">También puedes combinarlo con días OFF cuando necesites proteger sesiones de alta presión.</p>
-			<p class="feature-availability-note">Disponible en validación avanzada para cuentas Advanced/Pro (lista de espera).</p>
+			<p class="feature-availability-note">No está en Essential. Validación y lista de espera para Advanced/Pro.</p>
+		</section>
+
+		<section class="feature-sml-panel" aria-labelledby="sml-panel-heading">
+			<h2 id="sml-panel-heading">Así se ve hoy en el panel</h2>
+			<p class="feature-sml-panel__lead">
+				Cuando la ganancia neta de <strong>ayer</strong> supera el umbral mínimo del sistema, el EA puede ofrecerte un <strong>bonus</strong>: una parte de esa ganancia pasa a ampliar tu <strong>margen de pérdida permitido</strong> en el día (sin tocar tu operativa en otros gráficos). Tú decides si lo aplicas.
+			</p>
+			<p class="feature-sml-panel__detail">
+				En la captura: <strong>SML DISPONIBLE</strong> muestra el bonus calculado (ej. +0,17 %). <strong>SML 1‑CLICK</strong> aplica el porcentaje que tengas configurado en los inputs del EA (en el ejemplo, 15 % de la ganancia de ayer destinado al bonus). Convive con límites diarios/semanales y con el resto del panel tevsys.
+			</p>
+			<figure class="feature-sml-panel__figure">
+				<img
+					class="feature-sml-panel__img"
+					src="/assets/images/features/sml-panel-validacion-demo.png"
+					width="520"
+					height="780"
+					loading="lazy"
+					decoding="async"
+					alt="Panel tevsys en cuenta demo: límites, protección activa, botones SML DISPONIBLE y SML 1-CLICK."
+				/>
+				<figcaption class="feature-sml-panel__caption">
+					Cuenta <strong>demo</strong>, entorno de validación (marzo 2026). La interfaz puede cambiar mientras cerramos pruebas. No es asesoramiento ni promesa de resultados.
+				</figcaption>
+			</figure>
 		</section>
 
 		<section class="feature-demo">
@@ -28,7 +53,9 @@ const seo = {
 				<li>Activación opcional: lo usas cuando quieras, sin imposiciones.</li>
 				<li>Convivencia con límites diarios, semanales y días OFF.</li>
 			</ul>
-			<p class="sml-status">SML está en fase de validación para Advanced/Pro. Cuando esté disponible, aquí verás demos y capturas reales del funcionamiento.</p>
+			<p class="sml-status">
+				Seguimos en <strong>fase de validación</strong> (escenarios con día en positivo, umbrales, persistencia y convivencia con límites). Cuando haya un paquete estable, ampliaremos esta página con más capturas o un vídeo corto siguiendo la misma línea: <strong>solo lo que el build demuestre</strong>.
+			</p>
 		</section>
 
 		<section class="feature-cta">
@@ -41,9 +68,44 @@ const seo = {
 
 <style>
 	.feature-hero,
+	.feature-sml-panel,
 	.feature-demo,
 	.feature-cta {
 		margin: var(--section-margin) auto;
+	}
+	.feature-sml-panel h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.35rem;
+	}
+	.feature-sml-panel__lead,
+	.feature-sml-panel__detail {
+		max-width: 68ch;
+		line-height: 1.55;
+		margin: 0 0 0.75rem;
+	}
+	.feature-sml-panel__detail {
+		opacity: 0.92;
+		font-size: 0.98rem;
+	}
+	.feature-sml-panel__figure {
+		margin: 1rem 0 0;
+		padding: 0;
+		max-width: min(100%, 28rem);
+	}
+	.feature-sml-panel__img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: var(--theme-shape-radius);
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+	}
+	.feature-sml-panel__caption {
+		margin-top: 0.65rem;
+		font-size: 0.88rem;
+		line-height: 1.45;
+		opacity: 0.78;
+		max-width: 68ch;
 	}
 	.feature-kicker {
 		margin: 0 0 0.35rem;

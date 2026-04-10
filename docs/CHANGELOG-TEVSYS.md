@@ -13,6 +13,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ### Micropágina Precisión (`src/pages/features/precision.astro`)
 - H1 en **dos líneas** (prueba; tercera línea pendiente si hiciera falta): `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` — `casi` con `feature-title__accent`. Sustituye H1 de tres líneas con «SL de mantequilla» (histórico §43).
 
+### Micropágina SML (`src/pages/features/sml.astro`) — abr 2026
+- Bloque nuevo **«Así se ve hoy en el panel»**: explica bonus por ganancia de ayer, DISPONIBLE vs 1‑CLICK, convivencia con límites; **sin** prometer producto cerrado.
+- Figura con imagen `public/assets/images/features/sml-panel-validacion-demo.png` (colocar el PNG de la captura demo del fundador en esa ruta si aún no está en el repo tras pull).
+- SEO `description` ajustado. Nota de validación ampliada bajo checklist.
+
 ### Home — card Evidencia (abr 2026)
 - Copy reorganizado en capas: hook `No confíes: Comprueba.` → caso real 100k/20 lotes/Wall Street → **error 0,0072 %** (accent) → vídeo/MT5/historial → `Todo descargable. Todo verificable.` → whisper. Clases: `feature-card__evidence-*`. Sincronizado `CONTENIDO_WEB` + maestro §5.
 
