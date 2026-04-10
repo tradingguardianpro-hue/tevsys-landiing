@@ -22,16 +22,18 @@
 
 ### Proyecto TGP (workspace Cursor `poyecto TGP con cursor`) — artículo MQL5 + agenda
 
-- **Maestro artículo Seller:** `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (pegable en portal MetaQuotes). **Abr 2026:** transparencia **vídeos editados** (§4.0 / §4.0.1); **§4.3** = solo **captura modal nivel 3** (exención) + texto/tooltip **semáforo 3 niveles** (educativo → advertencia → exención) — **sin** embed vídeo ahí; **§4.4.x** = capturas **multigráfico** (STOP + candado + varios charts; edición **Paint**); **§5.2** = vídeo demo **HyperClose / caso extremo ~1,31 €** **justo debajo** de la viñeta *«Caso extremo documentado: 15 lotes GER40…»* (o tras lista completa si el editor no parte viñetas); **§5.2.1** = texto puente + URL YouTube cuando exista; **§8** = integridad/soporte; sección **«Documentación interna — Maquetación artículo Market (abr 2026)»**; referencia operativa **62** en doc precisión. **YouTube parte 1/2** del artículo = mismas URLs que web **`/videos-cierre-youtube`** (`Kz21Hm_ukZ0`, `QU1hC6SKg10`).
-- **Agenda fundador:** `docs/AGENDA_GABI.md` — regla anti-depre; UniPayment **negociaciones finales** (abr 2026); pendientes web/Market/vídeo.
+- **Maestro artículo Seller:** `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (fuente del cuerpo + **snapshot pre-revisión** al final). **Estado 8–9 abr 2026:** el equipo **envía el artículo a revisión de moderación** MetaQuotes; el texto en portal debe coincidir con el **snapshot** del maestro (§4.3 captura modal + **enlace texto** a demo HyperClose `https://youtu.be/jwEvJrohR4I`; §1 dos embeds parte 1/2 con audio; §5.2 **embed** misma URL; §6 enlace instalación `tevsys.io/instalacion` como hipervínculo; URLs canónicas parte 1/2 `Kz21Hm_ukZ0`, `QU1hC6SKg10`). Transparencia vídeos **§4.0 / §4.0.1**; **§4.4.x** multigráfico; **§8** integridad/soporte; sección **«Documentación interna — Maquetación»** + **«Artículo Market — snapshot acordado antes de enviar a revisión»**.
+- **Handoff DeepSeek:** para revisar copy coherencia o responder a moderación, pasar **el archivo `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` completo** (o export del portal si difiere — indicar qué versión manda). Opcional: pegar **§21** de este prompt + `CONTENIDO_WEB_TEVSYS_LANDING.md` si la tarea toca narrativa pública.
+- **Agenda fundador:** `docs/AGENDA_GABI.md` — regla anti-depre; UniPayment; pendientes post-revisión (vínculo artículo ↔ ficha, etc.).
 - **UniPayment (condiciones / negociación):** `docs/UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md` (proyecto TGP).
 - **Reflexión / ánimo (opcional):** `docs/REFLEXION_VISION_EXTERNA_TEVSYS_CHAT.md`.
 
 ### Repo web este (`tevsys-landiing`) — cambios recientes coordinados con Cursor
 
 - **`src/pages/features/precision.astro`:** orden lista **«Qué puedes comprobar»** (abr 2026): demo 100k → **alta volatilidad** → cuenta pequeña → **logs** → resultados.
-- **`src/pages/features/hyperclose.astro`** + **`videos-cierre-youtube.astro`:** notas **vídeo editado / saltos de reloj** (transparencia), alineado con artículo.
-- **Pendiente producción:** reedit **`hyperclose-demo.mp4`** (efecto espejo + Manrope como parte 1/2), **misma pieza** en web y en **YouTube** para slot Market/artículo; subir **PNG galería §58** si faltan en `public/images/evidence/`.
+- **`src/pages/features/hyperclose.astro`** + **`videos-cierre-youtube.astro`:** notas **vídeo editado / saltos de reloj**; tercer vídeo lista YouTube = **HyperClose** `https://youtu.be/jwEvJrohR4I` (misma demo que artículo §5.2).
+- **`src/pages/instalacion.astro`:** jerarquía vídeos + pasos en tarjetas (**CHANGELOG** §64, abr 2026).
+- **Pendiente si aplica:** **PNG galería §58** HyperClose en `public/images/evidence/` si faltan; renovar **MP4 instalación** cuando se grabe WebRequest en pantalla.
 
 ### Qué no tocar sin protocolo (recordatorio)
 
@@ -695,11 +697,11 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ## 18. MQL5.com — Market + artículo Seller (checkpoint 31 mar 2026; maquetación artículo abr 2026)
 
-**Contexto:** El canal **mql5.com** tiene **dos piezas distintas**: (1) **ficha de producto** en Market (utilidad, precios en USD, `.ex5`, capturas, descripción); (2) **artículo** en el área de contenidos / Seller (**Mis artículos**), tipo guía educativa. **No son intercambiables.** Copy definitivo del artículo: proyecto TGP `docs/PLAN_MQL5_MARKET_TEVSYS.md` **§5.0.1** (congelado salvo decisión explícita).
+**Contexto:** El canal **mql5.com** tiene **dos piezas distintas**: (1) **ficha de producto** en Market (utilidad, precios en USD, `.ex5`, capturas, descripción); (2) **artículo** en el área de contenidos / Seller (**Mis artículos**), tipo guía educativa. **No son intercambiables.** Título/copy corto histórico en **PLAN §5.0.1**; **cuerpo definitivo y snapshot pre-revisión:** `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md`.
 
-### 18.0 Artículo Seller — maquetación y contenido en curso (abr 2026)
+### 18.0 Artículo Seller — maquetación y envío a moderación (abr 2026)
 
-**Fuente única del texto y las instrucciones de montaje:** proyecto TGP `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (incluye **registro de cambios** y sección **«Documentación interna — Maquetación artículo Market (abr 2026)»**).
+**Fuente única del texto, montaje y checklist:** proyecto TGP `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (registro de cambios, **snapshot antes de enviar a revisión**, maquetación interna). **9 abr 2026:** envío a **revisión** moderación; handoff **DeepSeek** = este archivo (+ export portal opcional).
 
 - **§4.3:** tras el texto de cierre/bloqueo, **una captura** del **modal nivel 3** (exención de responsabilidad) + línea/tooltip del **semáforo de 3 modales**. **No** vídeo embed en §4.3.
 - **§4.4 / §4.4.1:** capturas **multigráfico** (misma cuenta, varios charts; flechas/candado/STOP en Paint).
@@ -822,4 +824,4 @@ Para **tercera opinión** (DeepSeek) y continuidad sin perder contexto:
 
 ---
 
-**Última actualización:** 7 abr 2026. **§0.1** Checkpoint rápido (artículo maestro TGP, web precision/hyperclose, UniPayment, agenda). **§18:** + **§18.0** maquetación artículo abr 2026 (modal §4.3, multigraph, vídeo §5.2, op. 62). **§19:** UniPayment **negociaciones finales** + `UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md`. **§20:** tabla ampliada (artículo, web, transparencia vídeos). **§21** sin cambio de fondo; narrativa V11 sigue vigente. **§18–§20 histórico:** ficha Market 31 mar, capturas 00–06, HTML, 25 %, FAQ. **CHANGELOG** landing §57–§58; **PNG galería HyperClose** `public/images/evidence/` §58.2. **Proyecto TGP:** `QUE_CONTIENE` V11; `PLAN_MQL5_MARKET_TEVSYS.md`; `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md`; `AGENDA_GABI.md`. **Pagos §6:** Market primero. **§7.5 / §15.8:** instalación / MP4 pendiente si aplica. **Pendiente visible:** reedit `hyperclose-demo.mp4` + URL YouTube; publicar artículo en portal con capturas fundador.
+**Última actualización:** 9 abr 2026. **§0.1:** artículo Seller **en envío a revisión moderación**; maestro TGP + snapshot; YouTube HyperClose **jwEvJrohR4I**; web `/instalacion` §64. **§18:** maquetación artículo alineada con portal (§4.3 enlace, §5.2 embed, §6 instalación). **§19:** UniPayment + `UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md`. **Handoff DeepSeek:** archivo `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (+ export portal si difiere). **Pendiente post-aprobación:** vínculo artículo ↔ ficha **§5.0.2**; respuesta a observaciones moderación.
