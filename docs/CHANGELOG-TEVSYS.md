@@ -13,6 +13,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ### Micropágina Precisión (`src/pages/features/precision.astro`)
 - H1 en **dos líneas** (prueba; tercera línea pendiente si hiciera falta): `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` — `casi` con `feature-title__accent`. Sustituye H1 de tres líneas con «SL de mantequilla» (histórico §43).
 
+### Multigráfico — copy encima del primer bloque demo (abr 2026)
+- En **precision**, **hyperclose**, **evidencia** y **sml**: línea con punto amarillo (`feature-hook` + `feature-hook__dot`), misma tipografía que el hook del hero, **encima del primer `<h2>`** del bloque demo (o primer bloque post-hero en SML, sin vídeo aún).
+- Texto: `Un gráfico para tevsys. Toda tu cuenta, protegida.`
+- *Pendiente de refinar copy:* los avisos de estado de cuenta pueden mostrarse en **todos** los gráficos; cuando se documente en producto, ajustar frase para no contradecir (ver agenda comunicación multigráfico).
+
 ---
 
 ## 1) Brand, Header y navegación
