@@ -245,7 +245,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Estado actual SML (abr 2026)
 - **Hero** + sección **panel en validación:** título `Así se ve hoy en el panel`, dos párrafos (concepto bonus ayer → margen hoy; DISPONIBLE vs 1‑CLICK), `<figure>` con `sml-panel-validacion-demo.png` + pie demo/validación.
 - **Multigráfico** (hook dos líneas) + checklist + nota validación ampliada + CTA lista de espera.
-- **Asset:** `public/assets/images/features/sml-panel-validacion-demo.png` — captura demo fundador; subir si falta en repo.
+- **Asset:** `public/images/evidence/sml-panel-validacion-demo.png` — captura demo fundador (carpeta **evidence**, no `assets/images/features`).
 
 ### Estado actual navegación y footer (31 Ene 2026)
 - **Nav:** Inicio | Empresas | Contacto. "Acceso" eliminado.

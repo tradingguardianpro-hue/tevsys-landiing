@@ -15,7 +15,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ### Micropágina SML (`src/pages/features/sml.astro`) — abr 2026
 - Bloque nuevo **«Así se ve hoy en el panel»**: explica bonus por ganancia de ayer, DISPONIBLE vs 1‑CLICK, convivencia con límites; **sin** prometer producto cerrado.
-- Figura con imagen `public/assets/images/features/sml-panel-validacion-demo.png` (colocar el PNG de la captura demo del fundador en esa ruta si aún no está en el repo tras pull).
+- Figura: `public/images/evidence/sml-panel-validacion-demo.png` (misma convención que el resto de capturas MT5/panel).
 - SEO `description` ajustado. Nota de validación ampliada bajo checklist.
 
 ### Home — card Evidencia (abr 2026)
