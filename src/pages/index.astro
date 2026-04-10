@@ -70,8 +70,11 @@ import settings from '../config/settings.js';
 							<h3><span class="card-title__accent">Evidencia</span> verificable</h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
-						<p class="feature-card__hook">No confíes. Comprueba.</p>
-						<p>100.000€ · 20 lotes · Apertura Wall Street.<br/>Error: -7,20€ al cierre. Vídeo, informe MT5, transacciones.<br/>Todo descargable y verificable.</p>
+						<p class="feature-card__hook">No confíes: Comprueba.</p>
+						<p class="feature-card__evidence-case"><strong>Caso real:</strong> 100.000 € · 20 lotes · Apertura Wall Street.</p>
+						<p class="feature-card__evidence-stat">Error al cierre: <span class="feature-card__evidence-stat-value">0,0072 %</span></p>
+						<p class="feature-card__evidence-proofline">Vídeo del cierre · Informe MT5 · Historial de transacciones.</p>
+						<p class="feature-card__evidence-close">Todo descargable. Todo verificable.</p>
 						<p class="feature-card__whisper">El desafío está servido. Para ti o para quien te audite.</p>
 					</div>
 				</a>
@@ -291,6 +294,33 @@ import settings from '../config/settings.js';
 		font-style: italic;
 		font-size: 0.92rem;
 		opacity: 0.7;
+	}
+	/* Card Evidencia — jerarquía (caso / dato / medios / cierre) */
+	.tevsys-card__content .feature-card__evidence-case,
+	.tevsys-card__content .feature-card__evidence-stat,
+	.tevsys-card__content .feature-card__evidence-proofline {
+		margin-bottom: 0.45rem;
+		line-height: 1.45;
+	}
+	.tevsys-card__content .feature-card__evidence-case {
+		opacity: 0.95;
+	}
+	.tevsys-card__content .feature-card__evidence-stat {
+		margin-bottom: 0.55rem;
+		font-weight: 600;
+	}
+	.feature-card__evidence-stat-value {
+		color: #f5b041;
+		font-weight: 700;
+	}
+	.tevsys-card__content .feature-card__evidence-proofline {
+		opacity: 0.9;
+	}
+	.tevsys-card__content .feature-card__evidence-close {
+		margin: 0 0 0.65rem;
+		line-height: 1.45;
+		font-weight: 600;
+		opacity: 0.92;
 	}
 	.plans-section {
 		margin: var(--section-margin) auto;

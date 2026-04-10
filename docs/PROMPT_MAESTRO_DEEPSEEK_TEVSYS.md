@@ -125,7 +125,7 @@
 | 0,06% error | ¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo. | card-1-input.png | /features/precision |
 | HyperClose | La diferencia entre querer parar y no poder seguir. | card-2-hyperclose.png | /features/hyperclose |
 | SML | No es obligatorio. Es una recompensa. | card-3-sml.png | /features/sml |
-| Evidencia | No confíes. Comprueba. | card-4-evidencia.png | /features/evidencia |
+| Evidencia | No confíes: Comprueba. (+ bloque caso / 0,0072 % / medios / doble cierre en card) | card-4-evidencia.png | /features/evidencia |
 
 **Sección valor:**
 - Título: `¿Cuánto dinero has perdido por no parar a tiempo?`

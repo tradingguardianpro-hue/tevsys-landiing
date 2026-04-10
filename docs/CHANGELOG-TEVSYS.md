@@ -13,6 +13,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ### Micropágina Precisión (`src/pages/features/precision.astro`)
 - H1 en **dos líneas** (prueba; tercera línea pendiente si hiciera falta): `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` — `casi` con `feature-title__accent`. Sustituye H1 de tres líneas con «SL de mantequilla» (histórico §43).
 
+### Home — card Evidencia (abr 2026)
+- Copy reorganizado en capas: hook `No confíes: Comprueba.` → caso real 100k/20 lotes/Wall Street → **error 0,0072 %** (accent) → vídeo/MT5/historial → `Todo descargable. Todo verificable.` → whisper. Clases: `feature-card__evidence-*`. Sincronizado `CONTENIDO_WEB` + maestro §5.
+
 ### Contador operativas documentadas — 65 (abr 2026)
 - Fuente: `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3. Web: `index.astro`, `precision.astro`, `evidencia.astro`, `settings.js` + docs de referencia (`CONTENIDO_WEB`, maestro, SEO, sync TGP `WEB_SYNC_*`).
 

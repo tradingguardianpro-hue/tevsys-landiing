@@ -79,9 +79,14 @@ Documento de contenido/copy actual para revisión de equipo.
 - Texto 2: `Mantienes tu operativa diaria, pero con una capa extra para conservar mejor lo ganado.`
 - Cierre actual: `Además, convive con tus límites diarios/semanales y con días OFF.`
 
-#### 4) Evidencia verificable
-- Hook: `No confíes. Comprueba.`
-- Texto: `Panel, logs y reporte oficial MT5 por cada cierre. Para trader, inversor o auditor. No hay "creemos que cumple": hay evidencia medible. Cada cierre, cada bloqueo y cada rotación queda registrado.`
+#### 4) Evidencia verificable (home card — jerarquía abr 2026)
+- Hook: `No confíes: Comprueba.`
+- Caso: `Caso real: 100.000 € · 20 lotes · Apertura Wall Street.`
+- Dato: `Error al cierre: 0,0072 %` (accent amarillo en el número, clase `feature-card__evidence-stat-value`)
+- Medios: `Vídeo del cierre · Informe MT5 · Historial de transacciones.`
+- Cierre: `Todo descargable. Todo verificable.`
+- Whisper: `El desafío está servido. Para ti o para quien te audite.`
+- Micropágina `/features/evidencia` mantiene su propio hero y listas; esta es solo la card home (`index.astro`).
 
 ---
 
