@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## 0) Actualización copy — abr 2026
+
+### Home — card Precisión (`src/pages/index.astro`)
+- Hook unificado (sustituye dos líneas previas «SL de mantequilla» / «El mercado no perdona…»): `¿Has sentido que tu Stop Loss te cerró en otro planeta? tevsys te lo cuenta todo.`
+- Docs sincronizados: `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`, `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §5; en proyecto TGP `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`.
+
+---
+
 ## 1) Brand, Header y navegación
 
 ### `src/components/BrandOval.astro`
@@ -36,12 +44,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 Se pasó de 3 a 4 cards en layout `2x2`, con copy actualizado.
 
 #### Card 1 — `0,06% error promedio`
-- Hook: `El mercado no perdona. Nosotros tampoco.`
+- Hook (abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? tevsys te lo cuenta todo.`
 - Texto actualizado a **60 operativas documentadas** (sync `PRECISION_MILIMETRICA…` §3, Mar 2026).
 - Imagen: `/assets/images/home/cards/card-1-input.png`
 
 #### Card 2 — `HyperClose`
-- Hook mantenido: `Nadie te enseña a parar. Aprendes cuando ya es tarde.`
+- Hook: `La diferencia entre querer parar y no poder seguir.`
 - Imagen: `/assets/images/home/cards/card-2-hyperclose.png`
 
 #### Card 3 — `SML — Smart Money Lock`

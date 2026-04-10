@@ -64,8 +64,8 @@ Documento de contenido/copy actual para revisión de equipo.
 - **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
 
 #### 1) 0,06% error medio
-- Hook: `El mercado no perdona. Nosotros tampoco.`
-- Texto: Ajuste en tiempo real que compensa slippage, spread y comisiones. Cierre donde el trader configuró. Logs auditables y panel que muestra el cálculo. **60 operativas documentadas**, 0,06% error medio. **Validado en 5 brokers distintos.**
+- Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? tevsys te lo cuenta todo.`
+- Texto: `Ajuste en tiempo real: volatilidad • spread • slippage • comisiones` + `60 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`
