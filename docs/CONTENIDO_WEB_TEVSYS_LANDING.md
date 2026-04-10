@@ -64,7 +64,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
 
 #### 1) 0,06% error medio
-- Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? tevsys te lo cuenta todo.`
+- Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
 - Texto: `Ajuste en tiempo real: volatilidad • spread • slippage • comisiones` + `60 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
 
 #### 2) HyperClose
