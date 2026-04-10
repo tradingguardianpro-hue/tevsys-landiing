@@ -10,6 +10,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Hook unificado (sustituye dos líneas previas «SL de mantequilla» / «El mercado no perdona…»): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
 - Docs sincronizados: `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`, `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §5; en proyecto TGP `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`.
 
+### Micropágina Precisión (`src/pages/features/precision.astro`)
+- H1 en **dos líneas** (prueba; tercera línea pendiente si hiciera falta): `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` — `casi` con `feature-title__accent`. Sustituye H1 de tres líneas con «SL de mantequilla» (histórico §43).
+
 ---
 
 ## 1) Brand, Header y navegación

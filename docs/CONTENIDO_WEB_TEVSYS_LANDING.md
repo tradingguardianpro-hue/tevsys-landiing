@@ -293,6 +293,8 @@ Seguimiento interno activo en:
 
 ### `features/precision` (copy operativo actual)
 
+- **H1 (abr 2026, dos líneas):** `Precisión de cierre.` / `Menos "casi": más cierre donde toca.` — comillas tipográficas en pantalla según CSS; acento visual en `casi` (`feature-title__accent`).
+
 - Hook de apertura:
   - `60 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
 
