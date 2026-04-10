@@ -65,7 +65,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto: `Ajuste en tiempo real: volatilidad • spread • slippage • comisiones` + `60 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
+- Texto: `Ajuste en tiempo real: volatilidad • spread • slippage • comisiones` + `65 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`
@@ -197,7 +197,7 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook: `• Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
 - `Precisión`:
   - Título: `Precisión de cierre: donde configuras, cerramos.`
-  - Hook: `• 60 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - Hook: `• 65 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: incluye escenarios extremos documentados con desviación puntual hasta `~0,39%`.
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -214,7 +214,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Volatilidad:** hook *Operativa documentada:* ±1,50% / +1,83% / contexto volatilidad; nota de pie ajustada (protección vs “misma precisión” genérica).
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`).
 - **Qué puedes comprobar:** orden — demo 100k, logs, alta volatilidad, cuenta pequeña, **resultados al final**.
-- **60 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
+- **65 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
 ### Estado actual HyperClose (Mar 2026 — actualizado 26 Mar 2026)
@@ -233,7 +233,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Imágenes 4.56:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png`.
 - **Sección "Informe oficial MT5":** acordeón con 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
 - **Sección "Historial de transacciones":** acordeón con captura editada (zonas clave en amarillo) + enlace HTML 100k + **párrafo** con enlace al HTML redactado **demo HyperClose** y vuelta a `/features/hyperclose#hyperclose-demo`.
-- **Sección "Auditoría":** **59** operativas documentadas, incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
+- **Sección "Auditoría":** **65** operativas documentadas, incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
 - **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide`
 - **Card home:** "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
 
@@ -298,10 +298,10 @@ Seguimiento interno activo en:
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.`
 
 - Hook de apertura:
-  - `60 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
+  - `65 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
 
 - Bloque `Resumen estadístico` (lectura rápida):
-  - `60 operativas documentadas`
+  - `65 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -336,7 +336,7 @@ Seguimiento interno activo en:
 **Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
 
 - KPIs visibles:
-  - `60 operativas documentadas`
+  - `65 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -361,7 +361,7 @@ Seguimiento interno activo en:
 - Sin audio (texto en overlays)
 
 ### Actualización Mar 2026 — Demo y alta volatilidad
-- **26 Mar 2026 (vigente):** Ver **«Estado actual Precisión»** en este mismo documento: demo principal = `evidencia-100k-perdida.mp4` en **hero**; volatilidad y cuenta pequeña en secciones propias; **59** operativas; orden de enlaces actualizado. Ref: `CHANGELOG-TEVSYS.md` **§58**.
+- **26 Mar 2026 (vigente):** Ver **«Estado actual Precisión»** en este mismo documento: demo principal = `evidencia-100k-perdida.mp4` en **hero**; volatilidad y cuenta pequeña en secciones propias; **65** operativas; orden de enlaces actualizado. Ref: `CHANGELOG-TEVSYS.md` **§58**.
 - *Histórico (antes del hero unificado):* Demo principal era `precision-demo.mp4` (1 min 7 s). Volatilidad: `precision-demo-volatilidad.mp4`, 6 overlays (CHANGELOG §28.1).
 
 ### Criterio de publicación (recordatorio)
