@@ -24,7 +24,8 @@
 
 - **Maestro artículo Seller:** `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (fuente del cuerpo + **snapshot pre-revisión** al final). **Estado 8–9 abr 2026:** el equipo **envía el artículo a revisión de moderación** MetaQuotes; el texto en portal debe coincidir con el **snapshot** del maestro (§4.3 captura modal + **enlace texto** a demo HyperClose `https://youtu.be/jwEvJrohR4I`; §1 dos embeds parte 1/2 con audio; §5.2 **embed** misma URL; §6 enlace instalación `tevsys.io/instalacion` como hipervínculo; URLs canónicas parte 1/2 `Kz21Hm_ukZ0`, `QU1hC6SKg10`). Transparencia vídeos **§4.0 / §4.0.1**; **§4.4.x** multigráfico; **§8** integridad/soporte; sección **«Documentación interna — Maquetación»** + **«Artículo Market — snapshot acordado antes de enviar a revisión»**.
 - **Handoff DeepSeek:** para revisar copy coherencia o responder a moderación, pasar **el archivo `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` completo** (o export del portal si difiere — indicar qué versión manda). Opcional: pegar **§21** de este prompt + `CONTENIDO_WEB_TEVSYS_LANDING.md` si la tarea toca narrativa pública.
-- **Agenda fundador:** `docs/AGENDA_GABI.md` — regla anti-depre; UniPayment; pendientes post-revisión (vínculo artículo ↔ ficha, etc.).
+- **Agenda fundador:** `docs/AGENDA_GABI.md` — regla anti-depre; UniPayment; pendientes post-revisión (vínculo artículo ↔ ficha, etc.). **Abr 2026:** recordatorio **modal Rotación fin de semana** — validar en vivo **viernes→sábado** (casilla en agenda).
+- **EA — Modal Rotación Essential (abr 2026):** resumen en **§21.8** de este archivo; detalle técnico en proyecto TGP `QUE_CONTIENE` V11 CHANGELOG **27 abr 2026** + `MODAL_PREMIUM_TGP_V11.md` § Rotación.
 - **UniPayment (condiciones / negociación):** `docs/UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md` (proyecto TGP).
 - **Reflexión / ánimo (opcional):** `docs/REFLEXION_VISION_EXTERNA_TEVSYS_CHAT.md`.
 
@@ -666,7 +667,7 @@ tevsys: landing Astro (tevsys-landiing.vercel.app / tevsys.io). Nav: Inicio | Em
 
 ### 17.1 Meta global
 - **Archivo:** `src/config/settings.js`
-- **title:** `tevsys — Protección de capital y límites automáticos para trading MT5`
+- **title:** `tevsys — Pioneros en disciplina automatizada verificada y gestión de riesgo · MT5`
 - **description:** `Plataforma de disciplina automatizada para MetaTrader 5. Límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 65 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
 - Usado por BaseHead en todas las páginas salvo las que definen `seo` propio.
 
@@ -822,6 +823,18 @@ Para **tercera opinión** (DeepSeek) y continuidad sin perder contexto:
 
 **Pendiente:** URL YouTube pública → artículo + ficha; **reeditar parte 1** con mismo paquete; **web** — vídeos embebidos (`AGENDA_GABI`).
 
+### 21.8 Modal Premium — Rotación Diaria Essential (mar–abr 2026)
+
+**Qué es:** Flujo **solo Essential**: aviso/confirmación cuando la **rotación automática de día** cambia el día activo o entra **fin de semana**. UI en `ModalPremium.mqh` + texto en `DaysRotationSystem.mqh`. **No** es narrativa web obligatoria salvo que copy público mencione rotación; sirve para **coherencia** si se describe el panel/modales.
+
+**Lun–Vie:** Modal **confirmación** (Sí/No) — tipo `TGP_CONFIRM_TIPO_ROTACION`; ancho **compacto** (360 px); cuerpo con badges HOY / ROTACIÓN / LÍMITES (arena) y lista de límites con viñetas; ajuste **vertical** propio y **arrastre** corregido (sin doble mover cabecera).
+
+**Fin de semana:** Modal **info** solo «Entendido», centrado — título `Rotación Diaria - Fin de semana`; texto centralizado en `TGP_CuerpoModalFinSemanaEssential()` (líneas cortas, sin wrap en labels); ancho Info ~448 px para evitar cortes.
+
+**Docs TGP:** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` CHANGELOG 27 abr 2026; `MODAL_PREMIUM_TGP_V11.md`; `INVENTARIO_MODALES_PENDIENTES_AJUSTE.md`.
+
+**Validación:** el fundador anota en **`AGENDA_GABI.md`** revisar en un **viernes→sábado** real (sin trucos de hora PC).
+
 ---
 
-**Última actualización:** 9 abr 2026. **§0.1:** artículo Seller **en envío a revisión moderación**; maestro TGP + snapshot; YouTube HyperClose **jwEvJrohR4I**; web `/instalacion` §64. **§18:** maquetación artículo alineada con portal (§4.3 enlace, §5.2 embed, §6 instalación). **§19:** UniPayment + `UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md`. **Handoff DeepSeek:** archivo `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` (+ export portal si difiere). **Pendiente post-aprobación:** vínculo artículo ↔ ficha **§5.0.2**; respuesta a observaciones moderación.
+**Última actualización:** 27 abr 2026. **§21.8** (nuevo): Modal Rotación Essential EA. **§0.1:** puntero agenda modal rotación + artículo Seller / snapshot / HyperClose / instalación. **§18–§19:** sin cambio de fondo. **Handoff DeepSeek:** `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md`. **Pendiente post-aprobación:** vínculo artículo ↔ ficha **§5.0.2**; moderación MQL5.
