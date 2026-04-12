@@ -5,7 +5,8 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 import settings from '../config/settings.js';
 ---
 
-<Layout>
+<!-- seo explícito: un solo <title> desde settings (evita ambigüedad con caché / meta) -->
+<Layout seo={{ title: settings.title, description: settings.description }}>
 	<HomeHeroSection />
 	<Container>
 		<section class="feature-card__section">
