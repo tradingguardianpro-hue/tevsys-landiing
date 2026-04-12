@@ -54,10 +54,17 @@ module.exports = async (req, res) => {
   }
 
   const esAnual = esVarianteAnual(variantName);
-  const licenseKey = generarClave(orderNumber, esAnual);
+  const { generarClaveEssentialUnica } = require("../lib/licenseKey");
+  const { saveLicense, getLicense } = require("../lib/licenses");
+  let licenseKey;
+  try {
+    licenseKey = await generarClaveEssentialUnica(esAnual, getLicense);
+  } catch (e) {
+    console.error("[webhook-lemon] generar clave:", e);
+    return res.status(500).json({ error: "License key generation failed" });
+  }
 
   const expiresAt = calcularExpira(esAnual);
-  const { saveLicense } = require("../lib/licenses");
   const saveResult = await saveLicense(licenseKey, {
     email,
     tier: "essential",
@@ -131,12 +138,6 @@ function esVarianteAnual(variantName) {
     v.indexOf("year") >= 0 ||
     v.indexOf("390") >= 0
   );
-}
-
-function generarClave(orderNumber, esAnual) {
-  const prefix = esAnual ? "ESEANU" : "ESEMEN";
-  const num = String(orderNumber).padStart(4, "0").slice(-4);
-  return prefix + num;
 }
 
 function calcularExpira(esAnual) {

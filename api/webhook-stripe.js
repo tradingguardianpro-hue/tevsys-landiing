@@ -120,11 +120,16 @@ async function handleInvoicePaid(invoice, res) {
   const paidAt = fromEpoch(invoice?.status_transitions?.paid_at) || new Date().toISOString();
 
   const esAnual = variant === "anual";
-  const licenseSource = subscriptionId || invoiceId;
-  const licenseKey = generarClaveDesdeString(licenseSource, esAnual);
+  const { generarClaveEssentialUnica } = require("../lib/licenseKey");
+  const { saveLicense, getLicense } = require("../lib/licenses");
+  let licenseKey;
+  try {
+    licenseKey = await generarClaveEssentialUnica(esAnual, getLicense);
+  } catch (e) {
+    console.error("[webhook-stripe] generar clave:", e);
+    return res.status(500).json({ error: "License key generation failed" });
+  }
   const expiresAt = calcularExpira(esAnual);
-
-  const { saveLicense } = require("../lib/licenses");
   const saveResult = await saveLicense(licenseKey, {
     email,
     tier: "essential",
@@ -321,14 +326,6 @@ function parseStripeSignatureHeader(header) {
 }
 
 // safeCompare eliminado: ya no se usa en verificación Stripe
-
-function generarClaveDesdeString(sourceId, esAnual) {
-  const prefix = esAnual ? "ESEANU" : "ESEMEN";
-  const hash = crypto.createHash("sha256").update(String(sourceId)).digest("hex");
-  const n = parseInt(hash.slice(0, 8), 16) % 10000;
-  const suffix = String(n).padStart(4, "0");
-  return prefix + suffix;
-}
 
 function calcularExpira(esAnual) {
   const d = new Date();

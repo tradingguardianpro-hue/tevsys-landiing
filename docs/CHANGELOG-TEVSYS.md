@@ -4,6 +4,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## API licencias y webhooks — abr 2026
+
+**Repo:** `tevsys-landiing` (desplegar en Vercel).
+
+| Área | Cambio |
+|------|--------|
+| **`api/validate.js`** | Normalización de clave (espacios/guiones); rate limit de **fallos** con Upstash (`lib/rateLimitValidate.js`): por IP (~1 min, default 10) y por clave (~1 h, default 3); respuesta **HTTP 429** + `reason: "rate_limited"` + `Retry-After`. Env opcional: `VALIDATE_RL_IP_MAX`, `VALIDATE_RL_KEY_MAX`. |
+| **`lib/licenseKey.js`** | Nueva: `generarClaveEssentialUnica` — prefijo ESEMEN/ESEANU + 4 aleatorios; anti-colisión con `getLicense`. |
+| **Webhooks** `webhook-lemon.js`, `webhook-stripe.js`, `webhook-paddle.js` | Generación de clave unificada con sufijo aleatorio (sustituye correlativo/determinista). |
+
+**Documentación proyecto EA (workspace TGP):** `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md`, `docs/PUNTO_4_VALIDACION_API_EA_PASO_A_PASO.md`, `docs/LICENCIAS_QUE_SEGUIR_TEVSYS.md`.
+
+---
+
 ## 0) Actualización copy — abr 2026
 
 ### Home — card Precisión (`src/pages/index.astro`)

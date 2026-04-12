@@ -73,10 +73,16 @@ module.exports = async (req, res) => {
 
   const orderId = String(data?.id || data?.transaction_id || data?.subscription_id || Date.now());
   const esAnual = variant === "anual";
-  const licenseKey = generarClaveDesdeString(orderId, esAnual);
+  const { generarClaveEssentialUnica } = require("../lib/licenseKey");
+  const { saveLicense, getLicense } = require("../lib/licenses");
+  let licenseKey;
+  try {
+    licenseKey = await generarClaveEssentialUnica(esAnual, getLicense);
+  } catch (e) {
+    console.error("[webhook-paddle] generar clave:", e);
+    return res.status(500).json({ error: "License key generation failed" });
+  }
   const expiresAt = calcularExpira(esAnual);
-
-  const { saveLicense } = require("../lib/licenses");
   const saveResult = await saveLicense(licenseKey, {
     email,
     tier: "essential",
@@ -204,14 +210,6 @@ async function fetchCustomerEmail(customerId, apiKey) {
   } catch {
     return null;
   }
-}
-
-function generarClaveDesdeString(sourceId, esAnual) {
-  const prefix = esAnual ? "ESEANU" : "ESEMEN";
-  const hash = crypto.createHash("sha256").update(String(sourceId)).digest("hex");
-  const n = parseInt(hash.slice(0, 8), 16) % 10000;
-  const suffix = String(n).padStart(4, "0");
-  return prefix + suffix;
 }
 
 function calcularExpira(esAnual) {
