@@ -61,7 +61,8 @@ html[data-theme='dark'] body::before {
 	  no buscan sincronía; si coinciden a veces, bien.
 	*/
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
-		animation-duration: 23.6s;
+		/* Más lento en home para que no “gane” al barrido del hero al cargar */
+		animation-duration: 32s;
 	}
 }
 
@@ -74,26 +75,24 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 }
 
 /*
-  Solo home: en el primer instante ya hay tono ámbar y se nota movimiento; la bajada imita
-  las fases lentas del KITT de niebla (ease-in-out): arranca suave, sigue uuu, termina suave.
+  Barrido hero (solo index): capa DENTRO del bloque hero, detrás de texto e imagen.
+  Antes estaba en main::before bajo #page → no se veía hasta mucho después (solo el KITT del body).
 */
 @media (prefers-reduced-motion: no-preference) {
-	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
+	html[data-theme='dark'] .tevsys-home-hero-orion::before {
 		content: '';
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: clamp(280px, min(56vh, calc(100vh - var(--navbar-height, 72px) - 12vh)), 760px);
-		pointer-events: none;
+		position: absolute;
+		inset: 0;
 		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
 			transparent 24%,
-			rgba(245, 176, 65, 0.22) 46%,
-			rgba(255, 236, 205, 0.09) 50%,
-			rgba(210, 175, 115, 0.08) 54%,
+			rgba(245, 176, 65, 0.26) 46%,
+			rgba(255, 236, 205, 0.1) 50%,
+			rgba(210, 175, 115, 0.09) 54%,
 			transparent 74%,
 			transparent 100%
 		);
@@ -103,7 +102,8 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 300s) linear infinite;
 	}
 
-	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards) #page {
+	html[data-theme='dark'] .tevsys-home-hero-orion .hero-section__text,
+	html[data-theme='dark'] .tevsys-home-hero-orion .hero-section__image {
 		position: relative;
 		z-index: 1;
 	}
@@ -117,13 +117,13 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 @keyframes tevsys-home-intro-kitt-cycle {
 	0% {
 		background-position: 50% 258%;
-		opacity: 0.56;
+		opacity: 0.66;
 		visibility: visible;
 	}
 	/* ~0,2s: ya se mueve (vida), sin esperar */
 	0.07% {
 		background-position: 50% 248%;
-		opacity: 0.58;
+		opacity: 0.68;
 	}
 	/* ~5s: muy poco desplazamiento = sensación lenta (como el KITT de abajo en sus suaves) */
 	1.85% {
@@ -485,7 +485,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		opacity: 0.75;
 	}
 
-	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
+	html[data-theme='dark'] .tevsys-home-hero-orion::before {
 		animation: none !important;
 		opacity: 0 !important;
 		visibility: hidden !important;
@@ -521,7 +521,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
-		animation-duration: 27.1s;
+		animation-duration: 34s;
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow {
@@ -540,10 +540,6 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 		opacity: 0.62;
 		filter: blur(30px);
-	}
-
-	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
-		height: clamp(240px, 48vh, 580px);
 	}
 
 	html[data-theme='dark'] .tevsys-home-founder-band {
