@@ -227,9 +227,71 @@ html[data-theme='dark'] .tevsys-home-lower-strip {
 	}
 }
 
-html[data-theme='dark'] .tevsys-home-band--lower > :not(.tevsys-home-lower-strip) {
+html[data-theme='dark'] .tevsys-home-band--lower > :not(.tevsys-home-lower-strip):not(.tevsys-home-tail-bubble-solo) {
 	position: relative;
 	z-index: 1;
+}
+
+/* Una sola burbuja: recorre en diagonal / rebota suave; se extiende bajo el footer (el footer pinta encima) */
+html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
+	position: absolute;
+	inset: 0;
+	left: 50%;
+	right: auto;
+	width: 100vw;
+	transform: translateX(-50%);
+	bottom: clamp(-520px, -48vh, -220px);
+	height: auto;
+	min-height: calc(100% + clamp(280px, 42vh, 520px));
+	z-index: 0;
+	pointer-events: none;
+	overflow: hidden;
+	opacity: 0.88;
+	background-image: radial-gradient(
+		ellipse 58vmin 50vmin at 50% 50%,
+		rgba(245, 176, 65, 0.24) 0%,
+		rgba(130, 110, 85, 0.12) 34%,
+		rgba(55, 50, 46, 0.08) 52%,
+		transparent 72%
+	);
+	background-repeat: no-repeat;
+	background-size: 95vmin 85vmin;
+	background-position: 12% 45%;
+	filter: blur(26px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
+		animation: tevsys-home-tail-bubble-solo 52s ease-in-out infinite alternate;
+	}
+}
+
+/* Trayectoria: cruza de izquierda a derecha con ligero zigzag (rebote vía alternate) */
+@keyframes tevsys-home-tail-bubble-solo {
+	0% {
+		background-position: -8% 38%;
+		opacity: 0.82;
+	}
+	20% {
+		background-position: 28% 52%;
+		opacity: 0.9;
+	}
+	40% {
+		background-position: 58% 28%;
+		opacity: 0.86;
+	}
+	60% {
+		background-position: 88% 48%;
+		opacity: 0.92;
+	}
+	80% {
+		background-position: 62% 62%;
+		opacity: 0.84;
+	}
+	100% {
+		background-position: 108% 36%;
+		opacity: 0.88;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -240,7 +302,8 @@ html[data-theme='dark'] .tevsys-home-band--lower > :not(.tevsys-home-lower-strip
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow,
-	html[data-theme='dark'] .tevsys-home-lower-strip {
+	html[data-theme='dark'] .tevsys-home-lower-strip,
+	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 		animation: none !important;
 	}
 }
@@ -277,6 +340,11 @@ html[data-theme='dark'] .tevsys-home-band--lower > :not(.tevsys-home-lower-strip
 
 	html[data-theme='dark'] .tevsys-home-lower-strip {
 		opacity: 0.65;
+	}
+
+	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
+		opacity: 0.62;
+		filter: blur(30px);
 	}
 }
 
