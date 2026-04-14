@@ -66,14 +66,14 @@ html[data-theme='dark'] body::before {
 	}
 }
 
-/* Home — ciclo del barrido superior; ~2.18% ≈ ~7.3s de barrido con ciclo 337s */
+/* Home — ciclo largo; ~5.5% del ciclo ≈ barrido ~26s con ciclo 480s (lento, poco estrés) */
 html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
-	--tevsys-home-intro-cycle: 337s;
+	--tevsys-home-intro-cycle: 480s;
 }
 
 /*
-  Solo home: barrido desde el nav hasta zona del H1 (“…intenciones”); arriba → abajo;
-  más lento y más recorrido; se repite en el ciclo (independiente del KITT del body).
+  Solo home: barrido suave sobre la niebla (misma zona H1); arriba → abajo, muy lento,
+  poco contraste — “sabes que está ahí”. Independiente del KITT del body.
 */
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
@@ -88,17 +88,17 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
-			transparent 26%,
-			rgba(245, 176, 65, 0.4) 47%,
-			rgba(255, 236, 205, 0.14) 50%,
-			rgba(210, 175, 115, 0.11) 53%,
-			transparent 72%,
+			transparent 24%,
+			rgba(245, 176, 65, 0.22) 46%,
+			rgba(255, 236, 205, 0.09) 50%,
+			rgba(210, 175, 115, 0.08) 54%,
+			transparent 74%,
 			transparent 100%
 		);
-		background-size: 100% 520%;
-		background-position: 50% 360%;
+		background-size: 100% 560%;
+		background-position: 50% 380%;
 		background-repeat: no-repeat;
-		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 337s) linear infinite;
+		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 480s) linear infinite;
 	}
 
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards) #page {
@@ -108,39 +108,46 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 }
 
 /*
-  Ciclo largo: solo ~2.18% hace el barrido (resto invisible).
-  Positivo → negativo en Y = franja que baja (de arriba hacia la zona del H1).
+  ~5.5% del ciclo = barrido ~26s (480s): ritmo pausado; keyframes repartidos como ease suave.
 */
 @keyframes tevsys-home-intro-kitt-cycle {
 	0% {
-		background-position: 50% 380%;
-		opacity: 1;
+		background-position: 50% 395%;
+		opacity: 0.45;
 		visibility: visible;
 	}
-	0.48% {
-		background-position: 50% 155%;
-		opacity: 1;
+	0.85% {
+		background-position: 50% 288%;
+		opacity: 0.52;
 	}
-	0.95% {
-		background-position: 50% -35%;
-		opacity: 0.9;
+	1.75% {
+		background-position: 50% 118%;
+		opacity: 0.58;
 	}
-	1.42% {
-		background-position: 50% -175%;
+	2.65% {
+		background-position: 50% -42%;
+		opacity: 0.55;
+	}
+	3.55% {
+		background-position: 50% -168%;
 		opacity: 0.42;
 	}
-	1.85% {
-		background-position: 50% -295%;
-		opacity: 0.12;
+	4.35% {
+		background-position: 50% -278%;
+		opacity: 0.22;
 	}
-	2.18% {
-		background-position: 50% -380%;
+	4.95% {
+		background-position: 50% -352%;
+		opacity: 0.08;
+	}
+	5.5% {
+		background-position: 50% -395%;
 		opacity: 0;
 		visibility: hidden;
 	}
-	2.2%,
+	5.52%,
 	100% {
-		background-position: 50% -380%;
+		background-position: 50% -395%;
 		opacity: 0;
 		visibility: hidden;
 	}
