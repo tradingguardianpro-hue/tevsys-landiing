@@ -147,7 +147,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 }
 
-/* Home — escáner gris en la franja del header (solo /); arranque inmediato (haz ya en pantalla), linear, ciclo corto y “irracional” para no casar con hero/body */
+/* Home — escáner gris en el header (solo /): vida sin cine; bucle irregular (a veces invierte a mitad, no siempre llega al borde); timing propio */
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
 		position: absolute;
@@ -165,11 +165,11 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		background-size: 240% 100%;
-		/* Misma X que el 0% del keyframe: primer pintado ya con gris en la franja (no esperando a que “entre” el haz) */
-		background-position: 86% 50%;
+		/* Alineado con 0%/100% del keyframe: primer pintado con haz en franja */
+		background-position: 82% 50%;
 		background-repeat: no-repeat;
 		opacity: 0.92;
-		animation: tevsys-header-scanner-sweep 5.97s linear 0s infinite alternate;
+		animation: tevsys-header-scanner-sweep 8.13s linear 0s infinite;
 	}
 
 	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .header-nav__container,
@@ -180,11 +180,33 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 }
 
 @keyframes tevsys-header-scanner-sweep {
-	0% {
-		background-position: 86% 50%;
-	}
+	0%,
 	100% {
-		background-position: -24% 50%;
+		background-position: 82% 50%;
+	}
+	/* Avance a la izquierda y media vuelta sin llegar al extremo */
+	14% {
+		background-position: 36% 50%;
+	}
+	24% {
+		background-position: 64% 50%;
+	}
+	/* Recorrido largo hacia la izquierda */
+	41% {
+		background-position: -22% 50%;
+	}
+	49% {
+		background-position: 10% 50%;
+	}
+	/* Hacia la derecha; otra vez no siempre al tope */
+	63% {
+		background-position: 90% 50%;
+	}
+	76% {
+		background-position: 28% 50%;
+	}
+	88% {
+		background-position: 72% 50%;
 	}
 }
 
