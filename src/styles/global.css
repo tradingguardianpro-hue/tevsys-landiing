@@ -147,7 +147,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 }
 
-/* Home — escáner gris en el header (solo /): vida sin cine; bucle irregular (a veces invierte a mitad, no siempre llega al borde); timing propio */
+/* Home — escáner gris en el header (solo /): ritmo lento y suave (premium/calma), mismo bucle irregular pero sin “flash”; timing propio */
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
 		position: absolute;
@@ -158,18 +158,17 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			102deg,
 			transparent 0%,
 			transparent 36%,
-			rgba(110, 114, 128, 0.12) 46%,
-			rgba(188, 192, 204, 0.26) 50%,
-			rgba(95, 98, 110, 0.1) 54%,
+			rgba(110, 114, 128, 0.1) 46%,
+			rgba(186, 190, 202, 0.22) 50%,
+			rgba(95, 98, 110, 0.09) 54%,
 			transparent 64%,
 			transparent 100%
 		);
 		background-size: 240% 100%;
-		/* Alineado con 0%/100% del keyframe: primer pintado con haz en franja */
-		background-position: 82% 50%;
+		background-position: 80% 50%;
 		background-repeat: no-repeat;
-		opacity: 0.92;
-		animation: tevsys-header-scanner-sweep 8.13s linear 0s infinite;
+		opacity: 0.86;
+		animation: tevsys-header-scanner-sweep 33.8s infinite;
 	}
 
 	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .header-nav__container,
@@ -182,31 +181,37 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 @keyframes tevsys-header-scanner-sweep {
 	0%,
 	100% {
-		background-position: 82% 50%;
+		background-position: 80% 50%;
+		animation-timing-function: ease-in-out;
 	}
-	/* Avance a la izquierda y media vuelta sin llegar al extremo */
-	14% {
-		background-position: 36% 50%;
+	/* Tramos largos + ease entre paradas = sin latigazo; a veces retrocede poco, sin llegar al borde */
+	22% {
+		background-position: 48% 50%;
+		animation-timing-function: ease-in-out;
 	}
-	24% {
-		background-position: 64% 50%;
+	29% {
+		background-position: 56% 50%;
+		animation-timing-function: ease-in-out;
 	}
-	/* Recorrido largo hacia la izquierda */
-	41% {
-		background-position: -22% 50%;
+	51% {
+		background-position: -16% 50%;
+		animation-timing-function: ease-in-out;
 	}
-	49% {
-		background-position: 10% 50%;
-	}
-	/* Hacia la derecha; otra vez no siempre al tope */
-	63% {
-		background-position: 90% 50%;
+	57% {
+		background-position: 12% 50%;
+		animation-timing-function: ease-in-out;
 	}
 	76% {
-		background-position: 28% 50%;
+		background-position: 82% 50%;
+		animation-timing-function: ease-in-out;
 	}
-	88% {
+	85% {
+		background-position: 44% 50%;
+		animation-timing-function: ease-in-out;
+	}
+	93% {
 		background-position: 72% 50%;
+		animation-timing-function: ease-in-out;
 	}
 }
 
