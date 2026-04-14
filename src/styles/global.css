@@ -61,8 +61,8 @@ html[data-theme='dark'] body::before {
 	  no buscan sincronía; si coinciden a veces, bien.
 	*/
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
-		/* Más lento en home para que no “gane” al barrido del hero al cargar */
-		animation-duration: 32s;
+		/* Ritmo propio; distinto de los rectángulos del hero (sin sincronía) */
+		animation-duration: 23.3s;
 	}
 }
 
@@ -72,40 +72,78 @@ html[data-theme='dark'] body::before {
 */
 html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 	--tevsys-home-intro-cycle: 300s;
+	/* Barrido “fall” del hero: distinto del ciclo global para no ir a la par */
+	--tevsys-home-fall-cycle: 311s;
 }
 
 /*
-  Barrido hero (solo index): capa DENTRO del bloque hero, detrás de texto e imagen.
-  Antes estaba en main::before bajo #page → no se veía hasta mucho después (solo el KITT del body).
+  Home hero — dos rectángulos superpuestos (solo index), dentro del stack, no bajo todo #page:
+  --rise: misma familia que el KITT de niebla (sube / respira), timing distinto al body.
+  --fall: barrido lento arriba → abajo; ciclo largo, sin sincronía con --rise.
 */
+html[data-theme='dark'] .tevsys-home-hero-stack {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+	border-radius: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+html[data-theme='dark'] .tevsys-home-kitt-rect {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+}
+
+html[data-theme='dark'] .tevsys-home-hero-stack__content {
+	position: relative;
+	z-index: 1;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-	html[data-theme='dark'] .tevsys-home-hero-orion::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 0;
-		pointer-events: none;
-		border-radius: inherit;
+	html[data-theme='dark'] .tevsys-home-kitt-rect--rise {
+		background-image:
+			linear-gradient(
+				188deg,
+				rgba(4, 4, 6, 0.35) 0%,
+				rgba(9, 9, 12, 0.28) 28%,
+				rgba(14, 16, 22, 0.08) 52%,
+				rgba(18, 20, 28, 0.05) 64%,
+				rgba(10, 10, 14, 0.32) 90%,
+				rgba(5, 5, 7, 0.25) 100%
+			),
+			linear-gradient(
+				180deg,
+				transparent 0%,
+				transparent 34%,
+				rgba(245, 176, 65, 0.26) 46%,
+				rgba(255, 236, 205, 0.11) 50%,
+				rgba(210, 175, 115, 0.13) 53%,
+				transparent 62%,
+				transparent 100%
+			);
+		background-size: 100% 125%, 100% 280%;
+		background-position: 50% 0%, 50% -48%;
+		background-repeat: no-repeat;
+		opacity: 0.72;
+		animation: tevsys-top-strip 18.7s ease-in-out infinite alternate;
+	}
+
+	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
 			transparent 24%,
-			rgba(245, 176, 65, 0.26) 46%,
-			rgba(255, 236, 205, 0.1) 50%,
-			rgba(210, 175, 115, 0.09) 54%,
+			rgba(245, 176, 65, 0.32) 46%,
+			rgba(255, 236, 205, 0.12) 50%,
+			rgba(210, 175, 115, 0.1) 54%,
 			transparent 74%,
 			transparent 100%
 		);
 		background-size: 100% 560%;
 		background-position: 50% 258%;
 		background-repeat: no-repeat;
-		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 300s) linear infinite;
-	}
-
-	html[data-theme='dark'] .tevsys-home-hero-orion .hero-section__text,
-	html[data-theme='dark'] .tevsys-home-hero-orion .hero-section__image {
-		position: relative;
-		z-index: 1;
+		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-fall-cycle, 311s) linear infinite;
 	}
 }
 
@@ -485,7 +523,8 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		opacity: 0.75;
 	}
 
-	html[data-theme='dark'] .tevsys-home-hero-orion::before {
+	html[data-theme='dark'] .tevsys-home-kitt-rect--rise,
+	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
 		animation: none !important;
 		opacity: 0 !important;
 		visibility: hidden !important;
@@ -521,7 +560,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
-		animation-duration: 34s;
+		animation-duration: 26s;
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow {

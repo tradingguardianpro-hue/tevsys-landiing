@@ -7,7 +7,13 @@ import settings from '../config/settings.js';
 
 <!-- seo explícito: un solo <title> desde settings (evita ambigüedad con caché / meta) -->
 <Layout seo={{ title: settings.title, description: settings.description }}>
-	<HomeHeroSection />
+	<div class="tevsys-home-hero-stack">
+		<div class="tevsys-home-kitt-rect tevsys-home-kitt-rect--rise" aria-hidden="true"></div>
+		<div class="tevsys-home-kitt-rect tevsys-home-kitt-rect--fall" aria-hidden="true"></div>
+		<div class="tevsys-home-hero-stack__content">
+			<HomeHeroSection />
+		</div>
+	</div>
 	<Container>
 		<div class="tevsys-home-band tevsys-home-band--cards">
 			<div class="tevsys-home-mid-glow" aria-hidden="true"></div>
