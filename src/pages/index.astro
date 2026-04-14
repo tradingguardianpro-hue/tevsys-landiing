@@ -9,6 +9,8 @@ import settings from '../config/settings.js';
 <Layout seo={{ title: settings.title, description: settings.description }}>
 	<HomeHeroSection />
 	<Container>
+		<div class="tevsys-home-band tevsys-home-band--cards">
+			<div class="tevsys-home-mid-glow" aria-hidden="true"></div>
 		<section class="feature-card__section">
 			<h2 class="feature-section__title">¿Cuánto dinero has perdido por no parar a tiempo?</h2>
 			<p class="feature-section__hook">Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.</p>
@@ -81,8 +83,11 @@ import settings from '../config/settings.js';
 				</a>
 			</div>
 		</section>
+		</div>
 	</Container>
-	<Container>
+	<div class="tevsys-home-band tevsys-home-band--lower">
+		<div class="tevsys-home-lower-strip" aria-hidden="true"></div>
+		<Container>
 		<section class="plans-section">
 			<h2 class="plans-section__title">Elige tu cuenta</h2>
 			<p class="plans-section__subtitle">Elige tu cuenta y te guiamos paso a paso. Essential ya está en demo/beta; Advanced y Pro están en acceso anticipado.</p>
@@ -133,8 +138,8 @@ import settings from '../config/settings.js';
 				</article>
 			</div>
 		</section>
-	</Container>
-	<section class="founder-section">
+		</Container>
+		<section class="founder-section">
 		<Container>
 			<div class="founder-message">
 				<p class="founder-claim"><span class="founder-tevsys">tevsys</span> no es el sueño de un inversor. Es la respuesta de un trader.</p>
@@ -144,7 +149,8 @@ import settings from '../config/settings.js';
 				<p class="founder-signature">— Gabi, fundador de tevsys</p>
 			</div>
 		</Container>
-	</section>
+		</section>
+	</div>
 </Layout>
 
 <style>
