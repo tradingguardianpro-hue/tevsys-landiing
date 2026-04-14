@@ -14,11 +14,8 @@ const heroAuroraVariant: 'A' | 'B' = 'A';
       heroAuroraVariant === 'B' && 'hero-section__section--aurora-b',
     ]}
   >
-    <!-- Capas reales (no ::before): overflow:hidden recortaba el blur y el efecto casi no se veía -->
-    <div class="hero-aurora-layers" aria-hidden="true">
-      <span class="hero-aurora-layers__spot hero-aurora-layers__spot--1"></span>
-      <span class="hero-aurora-layers__spot hero-aurora-layers__spot--2"></span>
-    </div>
+    <!-- Degradados animados (sin blur pesado: en fondo oscuro el blur se veía “gris” y casi sin movimiento) -->
+    <div class="hero-aurora-layers" aria-hidden="true"></div>
     <div class="hero-section__text">
       <h1 class="hero-title">Tu trading merece más que buenas intenciones</h1>
       <p class="hero-subline">
@@ -70,110 +67,91 @@ const heroAuroraVariant: 'A' | 'B' = 'A';
 
   .hero-aurora-layers {
     position: absolute;
-    inset: -12% -8% -18% -8%;
+    inset: -6%;
     z-index: 0;
     pointer-events: none;
-    overflow: visible;
+    border-radius: inherit;
+    /* Tres capas: dos radiales + un linear grande; movemos background-position (movimiento claro, sin blur) */
+    background-image:
+      radial-gradient(
+        ellipse 85% 70% at 18% 22%,
+        rgba(56, 189, 248, 0.38) 0%,
+        rgba(56, 189, 248, 0.08) 42%,
+        transparent 58%
+      ),
+      radial-gradient(
+        ellipse 80% 65% at 88% 78%,
+        rgba(129, 140, 248, 0.32) 0%,
+        rgba(59, 130, 246, 0.1) 45%,
+        transparent 60%
+      ),
+      linear-gradient(
+        125deg,
+        rgba(8, 12, 22, 0.2) 0%,
+        rgba(15, 118, 110, 0.12) 28%,
+        rgba(30, 58, 138, 0.14) 55%,
+        rgba(8, 12, 22, 0.25) 100%
+      );
+    background-size: 120% 120%, 130% 130%, 320% 320%;
+    background-position: 10% 15%, 90% 85%, 0% 50%;
+    background-repeat: no-repeat;
+    will-change: background-position;
   }
 
-  .hero-aurora-layers__spot {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(72px);
-    will-change: transform, opacity;
-    transform: translateZ(0);
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-aurora-layers {
+      animation: hero-aurora-flow 22s ease-in-out infinite alternate;
+    }
   }
 
-  /* Variante A — sutil pero visible */
-  .hero-aurora-layers__spot--1 {
-    top: -5%;
-    left: -5%;
-    width: min(58vw, 580px);
-    height: min(58vw, 580px);
-    background: radial-gradient(
-      circle at 40% 40%,
-      rgba(56, 189, 248, 0.32) 0%,
-      rgba(34, 197, 194, 0.14) 38%,
-      transparent 62%
-    );
-    animation: hero-aurora-spot-1 20s ease-in-out infinite alternate;
+  /* Variante B — más contraste y ciclo algo más rápido */
+  .hero-section__section--aurora-b .hero-aurora-layers {
+    background-image:
+      radial-gradient(
+        ellipse 90% 75% at 15% 18%,
+        rgba(56, 189, 248, 0.52) 0%,
+        rgba(45, 212, 191, 0.16) 40%,
+        transparent 58%
+      ),
+      radial-gradient(
+        ellipse 85% 70% at 90% 82%,
+        rgba(165, 180, 252, 0.42) 0%,
+        rgba(99, 102, 241, 0.18) 42%,
+        transparent 58%
+      ),
+      linear-gradient(
+        115deg,
+        rgba(6, 10, 20, 0.15) 0%,
+        rgba(34, 197, 194, 0.18) 30%,
+        rgba(37, 99, 235, 0.2) 60%,
+        rgba(6, 10, 20, 0.2) 100%
+      );
+    background-size: 130% 130%, 140% 140%, 380% 380%;
   }
 
-  .hero-aurora-layers__spot--2 {
-    bottom: -8%;
-    right: -10%;
-    width: min(52vw, 520px);
-    height: min(52vw, 520px);
-    background: radial-gradient(
-      circle at 55% 55%,
-      rgba(96, 165, 250, 0.26) 0%,
-      rgba(59, 130, 246, 0.12) 42%,
-      transparent 65%
-    );
-    animation: hero-aurora-spot-2 24s ease-in-out infinite alternate;
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-section__section--aurora-b .hero-aurora-layers {
+      animation-duration: 14s;
+    }
   }
 
-  /* Variante B — más intensidad */
-  .hero-section__section--aurora-b .hero-aurora-layers__spot--1 {
-    filter: blur(88px);
-    background: radial-gradient(
-      circle at 40% 40%,
-      rgba(56, 189, 248, 0.48) 0%,
-      rgba(45, 212, 191, 0.22) 38%,
-      transparent 60%
-    );
-    animation-duration: 13s;
-  }
-
-  .hero-section__section--aurora-b .hero-aurora-layers__spot--2 {
-    filter: blur(96px);
-    background: radial-gradient(
-      circle at 55% 55%,
-      rgba(129, 140, 248, 0.38) 0%,
-      rgba(59, 130, 246, 0.2) 42%,
-      transparent 62%
-    );
-    animation-duration: 16s;
-  }
-
-  @keyframes hero-aurora-spot-1 {
+  @keyframes hero-aurora-flow {
     0% {
-      transform: translate(0, 0) scale(1);
-      opacity: 0.65;
+      background-position: 8% 12%, 92% 88%, 5% 48%;
+    }
+    50% {
+      background-position: 42% 28%, 62% 72%, 55% 52%;
     }
     100% {
-      transform: translate(24px, 18px) scale(1.07);
-      opacity: 0.95;
-    }
-  }
-
-  @keyframes hero-aurora-spot-2 {
-    0% {
-      transform: translate(0, 0) scale(1);
-      opacity: 0.5;
-    }
-    100% {
-      transform: translate(-20px, -22px) scale(1.09);
-      opacity: 0.85;
+      background-position: 78% 18%, 22% 82%, 95% 46%;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-aurora-layers__spot {
-      animation: none;
-      opacity: 0.55;
-    }
-    .hero-section__section--aurora-b .hero-aurora-layers__spot {
-      opacity: 0.7;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero-aurora-layers__spot {
-      filter: blur(56px);
-    }
-    .hero-section__section--aurora-b .hero-aurora-layers__spot {
-      filter: blur(68px);
+    .hero-aurora-layers {
+      animation: none !important;
+      background-position: 20% 20%, 80% 80%, 40% 50%;
+      opacity: 0.92;
     }
   }
 
