@@ -4,12 +4,10 @@ body {
 }
 
 /*
-  Tema oscuro — referencia “zona Orion” + KITT + burbuja:
-  - ::before (solo altura --tevsys-kitt-zone-h): niebla oscura → azul eléctrico muy suave
-    (como Orion arriba), + barra KITT que sube y baja. No pinta el resto de la página.
-  - ::after: burbuja circular suave, SIEMPRE visible (opacidad mínima), crece/encoge y “salta”
-    por trayectoria irregular; máscara para que NO entre en la zona superior (no compite con el hero).
-  - html: base negra estable.
+  Tema oscuro — niebla suave + KITT + burbuja (todo con scroll, nada “pegado” al cristal):
+  - ::before: franja superior del documento (absolute): negro/gris con un susurro frío muy leve
+    + barra KITT. Al hacer scroll sube con la página → no queda media pantalla azul fija.
+  - ::after: burbuja suave en la zona baja del documento (absolute top… bottom), más elegante.
 */
 html[data-theme='dark'] {
 	min-height: 100%;
@@ -17,10 +15,10 @@ html[data-theme='dark'] {
 	--tevsys-kitt-zone-h: clamp(320px, 50vh, 720px);
 }
 
-/* Zona superior: niebla tipo Orion + scanner KITT (por detrás del header/hero) */
+/* Zona superior del documento (va con el scroll; azul muy contenido para no “partir” la web) */
 html[data-theme='dark'] body::before {
 	content: '';
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -31,12 +29,12 @@ html[data-theme='dark'] body::before {
 	background-image:
 		linear-gradient(
 			188deg,
-			rgba(2, 3, 6, 0.98) 0%,
-			rgba(10, 14, 32, 0.92) 18%,
-			rgba(28, 48, 120, 0.42) 42%,
-			rgba(55, 95, 220, 0.22) 58%,
-			rgba(12, 16, 36, 0.88) 82%,
-			rgba(4, 5, 10, 0.75) 100%
+			rgba(3, 4, 8, 0.96) 0%,
+			rgba(8, 10, 18, 0.88) 22%,
+			rgba(18, 28, 52, 0.22) 48%,
+			rgba(32, 52, 98, 0.12) 62%,
+			rgba(10, 12, 20, 0.82) 88%,
+			rgba(4, 5, 8, 0.7) 100%
 		),
 		linear-gradient(
 			180deg,
@@ -51,13 +49,13 @@ html[data-theme='dark'] body::before {
 	background-size: 100% 125%, 100% 255%;
 	background-position: 50% 0%, 50% -38%;
 	background-repeat: no-repeat;
-	opacity: 0.92;
+	opacity: 0.88;
 }
 
-/* Burbuja: capa solo en la parte baja (desde fin de franja KITT) → no invade el hero; se ve en scroll y pie */
+/* Burbuja: del final de la franja KITT hasta el pie del documento (también con scroll) */
 html[data-theme='dark'] body::after {
 	content: '';
-	position: fixed;
+	position: absolute;
 	top: var(--tevsys-kitt-zone-h);
 	left: 0;
 	right: 0;
@@ -68,16 +66,16 @@ html[data-theme='dark'] body::after {
 	z-index: 0;
 	background-image: radial-gradient(
 		circle closest-side at 50% 50%,
-		rgba(245, 176, 65, 0.14) 0%,
-		rgba(95, 88, 78, 0.08) 38%,
-		rgba(40, 38, 36, 0.05) 55%,
-		transparent 72%
+		rgba(245, 176, 65, 0.1) 0%,
+		rgba(88, 82, 74, 0.055) 40%,
+		rgba(36, 35, 34, 0.04) 56%,
+		transparent 74%
 	);
 	background-repeat: no-repeat;
-	background-position: 55% 42%;
-	background-size: 72vmin 72vmin;
-	opacity: 0.68;
-	filter: blur(44px);
+	background-position: 55% 38%;
+	background-size: 70vmin 70vmin;
+	opacity: 0.62;
+	filter: blur(48px);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -86,7 +84,7 @@ html[data-theme='dark'] body::after {
 	}
 
 	html[data-theme='dark'] body::after {
-		animation: tevsys-bubble-chaos 44s linear infinite;
+		animation: tevsys-bubble-chaos 56s linear infinite;
 	}
 }
 
@@ -109,69 +107,59 @@ html[data-theme='dark'] body::after {
 /* Trayectoria irregular + pulso de tamaño (siempre algo visible); “rebota” sin patrón suave */
 @keyframes tevsys-bubble-chaos {
 	0% {
-		background-position: 12% 58%;
-		background-size: 68vmin 68vmin;
-		opacity: 0.58;
+		background-position: 14% 52%;
+		background-size: 66vmin 66vmin;
+		opacity: 0.52;
 	}
-	7% {
-		background-position: 38% 52%;
-		background-size: 82vmin 82vmin;
-		opacity: 0.72;
-	}
-	14% {
-		background-position: 72% 48%;
-		background-size: 74vmin 74vmin;
-		opacity: 0.64;
-	}
-	22% {
-		background-position: 88% 62%;
-		background-size: 94vmin 94vmin;
-		opacity: 0.78;
-	}
-	31% {
-		background-position: 62% 78%;
-		background-size: 70vmin 70vmin;
+	9% {
+		background-position: 42% 46%;
+		background-size: 76vmin 76vmin;
 		opacity: 0.6;
 	}
-	40% {
-		background-position: 28% 88%;
-		background-size: 88vmin 88vmin;
-		opacity: 0.74;
+	18% {
+		background-position: 74% 44%;
+		background-size: 70vmin 70vmin;
+		opacity: 0.56;
 	}
-	48% {
-		background-position: 8% 72%;
-		background-size: 64vmin 64vmin;
-		opacity: 0.55;
-	}
-	57% {
-		background-position: 22% 42%;
-		background-size: 90vmin 90vmin;
-		opacity: 0.76;
-	}
-	65% {
-		background-position: 52% 28%;
-		background-size: 76vmin 76vmin;
-		opacity: 0.66;
-	}
-	74% {
-		background-position: 82% 22%;
-		background-size: 98vmin 98vmin;
-		opacity: 0.8;
-	}
-	82% {
-		background-position: 92% 40%;
-		background-size: 72vmin 72vmin;
+	28% {
+		background-position: 86% 58%;
+		background-size: 80vmin 80vmin;
 		opacity: 0.62;
 	}
-	91% {
-		background-position: 48% 18%;
-		background-size: 86vmin 86vmin;
-		opacity: 0.7;
+	38% {
+		background-position: 58% 72%;
+		background-size: 68vmin 68vmin;
+		opacity: 0.54;
+	}
+	48% {
+		background-position: 22% 78%;
+		background-size: 78vmin 78vmin;
+		opacity: 0.6;
+	}
+	58% {
+		background-position: 12% 62%;
+		background-size: 64vmin 64vmin;
+		opacity: 0.52;
+	}
+	68% {
+		background-position: 36% 36%;
+		background-size: 74vmin 74vmin;
+		opacity: 0.58;
+	}
+	78% {
+		background-position: 68% 28%;
+		background-size: 82vmin 82vmin;
+		opacity: 0.62;
+	}
+	88% {
+		background-position: 84% 48%;
+		background-size: 70vmin 70vmin;
+		opacity: 0.56;
 	}
 	100% {
-		background-position: 18% 55%;
-		background-size: 70vmin 70vmin;
-		opacity: 0.6;
+		background-position: 20% 56%;
+		background-size: 68vmin 68vmin;
+		opacity: 0.54;
 	}
 }
 
@@ -198,15 +186,15 @@ html[data-theme='dark'] body::after {
 		--tevsys-kitt-zone-h: clamp(270px, 46vh, 540px);
 	}
 
-	/* Scanner KITT apagado en móvil; niebla Orion muy suave */
+	/* Scanner KITT apagado en móvil; niebla muy suave (casi solo negro) */
 	html[data-theme='dark'] body::before {
-		opacity: 0.55;
+		opacity: 0.5;
 		background-image: linear-gradient(
 			188deg,
 			rgba(2, 3, 6, 0.98) 0%,
-			rgba(10, 14, 28, 0.9) 28%,
-			rgba(32, 52, 118, 0.28) 52%,
-			rgba(10, 14, 28, 0.92) 100%
+			rgba(8, 10, 18, 0.92) 35%,
+			rgba(20, 32, 58, 0.14) 55%,
+			rgba(8, 10, 16, 0.94) 100%
 		);
 		background-size: 100% 100%;
 		background-position: 50% 0%;
@@ -214,9 +202,9 @@ html[data-theme='dark'] body::after {
 	}
 
 	html[data-theme='dark'] body::after {
-		filter: blur(52px);
-		opacity: 0.42;
-		animation-duration: 64s;
+		filter: blur(56px);
+		opacity: 0.36;
+		animation-duration: 72s;
 	}
 }
 
@@ -246,6 +234,9 @@ body {
 
 html[data-theme='dark'] body {
 	background-color: transparent;
+	/* Que el body crezca con el scroll: si no, las capas absolute+bottom no cubren toda la página */
+	min-height: 100vh;
+	height: auto;
 }
 
 html {
