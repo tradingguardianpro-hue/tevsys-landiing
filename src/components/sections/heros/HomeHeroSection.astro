@@ -2,20 +2,10 @@
 import { Container } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
-
-/** Fondo hero “aurora”: A = institucional (sutil), B = más visible. Cambiar solo esta línea para comparar. */
-const heroAuroraVariant: 'A' | 'B' = 'A';
 ---
 
 <Container>
-  <section
-    class:list={[
-      'hero-section__section',
-      heroAuroraVariant === 'B' && 'hero-section__section--aurora-b',
-    ]}
-  >
-    <!-- Degradados animados (sin blur pesado: en fondo oscuro el blur se veía “gris” y casi sin movimiento) -->
-    <div class="hero-aurora-layers" aria-hidden="true"></div>
+  <section class="hero-section__section">
     <div class="hero-section__text">
       <h1 class="hero-title">Tu trading merece más que buenas intenciones</h1>
       <p class="hero-subline">
@@ -63,119 +53,6 @@ const heroAuroraVariant: 'A' | 'B' = 'A';
     position: relative;
     isolation: isolate;
     border-radius: clamp(0.75rem, 1.5vw, 1.5rem);
-  }
-
-  .hero-aurora-layers {
-    position: absolute;
-    inset: -10%;
-    z-index: 0;
-    pointer-events: none;
-    border-radius: inherit;
-    /* Radiales más fuertes + linear muy ancho → pocos % de background-position se notan mucho más */
-    background-image:
-      radial-gradient(
-        ellipse 90% 75% at 20% 25%,
-        rgba(56, 189, 248, 0.55) 0%,
-        rgba(56, 189, 248, 0.12) 38%,
-        transparent 58%
-      ),
-      radial-gradient(
-        ellipse 88% 72% at 82% 75%,
-        rgba(165, 180, 252, 0.48) 0%,
-        rgba(99, 102, 241, 0.16) 40%,
-        transparent 58%
-      ),
-      linear-gradient(
-        118deg,
-        rgba(6, 12, 24, 0.35) 0%,
-        rgba(15, 118, 110, 0.22) 22%,
-        rgba(37, 99, 235, 0.26) 48%,
-        rgba(56, 189, 248, 0.14) 72%,
-        rgba(6, 12, 24, 0.38) 100%
-      );
-    background-size: 160% 160%, 170% 170%, 520% 520%;
-    background-position: 0% 0%, 100% 100%, 15% 45%;
-    background-repeat: no-repeat;
-    opacity: 0.96;
-    will-change: background-position, opacity;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-aurora-layers {
-      animation:
-        hero-aurora-flow 10s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate,
-        hero-aurora-breathe 4.5s ease-in-out infinite alternate;
-    }
-  }
-
-  /* Variante B — aún más “radical” (más color + ciclo más corto) */
-  .hero-section__section--aurora-b .hero-aurora-layers {
-    background-image:
-      radial-gradient(
-        ellipse 95% 80% at 18% 22%,
-        rgba(56, 189, 248, 0.68) 0%,
-        rgba(45, 212, 191, 0.2) 36%,
-        transparent 56%
-      ),
-      radial-gradient(
-        ellipse 92% 76% at 85% 78%,
-        rgba(196, 181, 253, 0.55) 0%,
-        rgba(99, 102, 241, 0.22) 38%,
-        transparent 56%
-      ),
-      linear-gradient(
-        112deg,
-        rgba(4, 8, 18, 0.25) 0%,
-        rgba(34, 197, 194, 0.28) 26%,
-        rgba(37, 99, 235, 0.32) 52%,
-        rgba(56, 189, 248, 0.2) 78%,
-        rgba(4, 8, 18, 0.3) 100%
-      );
-    background-size: 175% 175%, 185% 185%, 580% 580%;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-section__section--aurora-b .hero-aurora-layers {
-      animation:
-        hero-aurora-flow 6.5s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate,
-        hero-aurora-breathe 3.2s ease-in-out infinite alternate;
-    }
-  }
-
-  /* Recorrido largo en cada capa (incluye “vuelta” por el centro) */
-  @keyframes hero-aurora-flow {
-    0% {
-      background-position: 0% 5%, 100% 95%, 0% 35%;
-    }
-    25% {
-      background-position: 72% 18%, 28% 82%, 85% 20%;
-    }
-    50% {
-      background-position: 100% 42%, 0% 58%, 45% 70%;
-    }
-    75% {
-      background-position: 22% 78%, 78% 22%, 92% 48%;
-    }
-    100% {
-      background-position: 55% 8%, 45% 92%, 18% 62%;
-    }
-  }
-
-  @keyframes hero-aurora-breathe {
-    0% {
-      opacity: 0.82;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hero-aurora-layers {
-      animation: none !important;
-      background-position: 18% 22%, 82% 78%, 40% 50%;
-      opacity: 0.94;
-    }
   }
 
   .hero-section__text {

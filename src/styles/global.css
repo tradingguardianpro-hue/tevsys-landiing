@@ -3,11 +3,78 @@ body {
 	height: 100%;
 }
 
+/* Fondo vivo en todo el viewport (tema oscuro): el body va centrado y limitado en ancho;
+   si solo pintamos ahí, en monitores anchos quedan “bandas” vacías — lo llevamos al html. */
+html[data-theme='dark'] {
+	min-height: 100%;
+	background-color: var(--theme-bg);
+	background-image:
+		radial-gradient(
+			ellipse 95% 75% at 18% 22%,
+			rgba(56, 189, 248, 0.22) 0%,
+			rgba(56, 189, 248, 0.06) 42%,
+			transparent 62%
+		),
+		radial-gradient(
+			ellipse 90% 72% at 85% 78%,
+			rgba(165, 180, 252, 0.18) 0%,
+			rgba(99, 102, 241, 0.07) 44%,
+			transparent 62%
+		),
+		linear-gradient(
+			118deg,
+			rgba(6, 12, 24, 0.55) 0%,
+			rgba(15, 118, 110, 0.12) 28%,
+			rgba(37, 99, 235, 0.14) 52%,
+			rgba(56, 189, 248, 0.08) 76%,
+			rgba(6, 12, 24, 0.52) 100%
+		);
+	background-size: 150% 150%, 155% 155%, 400% 400%;
+	background-position: 12% 18%, 88% 82%, 40% 45%;
+	background-repeat: no-repeat;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html[data-theme='dark'] {
+		animation: tevsys-ambient-shift 24s ease-in-out infinite alternate;
+	}
+}
+
+@keyframes tevsys-ambient-shift {
+	0% {
+		background-position: 8% 12%, 92% 88%, 20% 40%;
+	}
+	33% {
+		background-position: 55% 28%, 45% 72%, 75% 35%;
+	}
+	66% {
+		background-position: 78% 62%, 22% 38%, 50% 70%;
+	}
+	100% {
+		background-position: 35% 85%, 65% 15%, 85% 55%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html[data-theme='dark'] {
+		animation: none;
+		background-position: 20% 25%, 80% 75%, 45% 50%;
+	}
+}
+
 body {
 	max-width: 1920px;
 	margin: 0 auto;
 	background-color: var(--theme-bg);
 	position: relative;
+}
+
+html[data-theme='dark'] body {
+	background-color: transparent;
+}
+
+html {
+	overflow-x: clip;
 }
 
 pre {
