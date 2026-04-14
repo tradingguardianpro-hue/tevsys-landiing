@@ -38,38 +38,47 @@ html[data-theme='dark'] body::before {
 		linear-gradient(
 			180deg,
 			transparent 0%,
-			transparent 41%,
-			rgba(245, 176, 65, 0.22) 48.2%,
-			rgba(255, 236, 205, 0.1) 50%,
-			rgba(210, 175, 115, 0.12) 51.6%,
-			transparent 57%,
+			transparent 34%,
+			rgba(245, 176, 65, 0.24) 46%,
+			rgba(255, 236, 205, 0.11) 50%,
+			rgba(210, 175, 115, 0.13) 53%,
+			transparent 62%,
 			transparent 100%
 		);
-	background-size: 100% 125%, 100% 255%;
-	background-position: 50% 0%, 50% -38%;
+	background-size: 100% 125%, 100% 280%;
+	background-position: 50% 0%, 50% -48%;
 	background-repeat: no-repeat;
 	opacity: 0.88;
 }
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] body::before {
-		animation: tevsys-top-strip 20s ease-in-out infinite alternate;
+		animation: tevsys-top-strip 24s ease-in-out infinite alternate;
 	}
 }
 
-/* Niebla superior respira; la barra KITT sube y baja en la misma franja */
+/*
+  Niebla superior + barra KITT: el 2º valor del par (capa KITT) debe llegar a % muy negativos
+  para que la franja dorada sea visible también bajo nav / logo (zona superior de la ventana).
+*/
 @keyframes tevsys-top-strip {
 	0% {
-		background-position: 50% -6%, 50% -42%;
+		background-position: 50% -4%, 50% -78%;
 	}
-	35% {
-		background-position: 50% 4%, 50% 55%;
+	18% {
+		background-position: 50% 2%, 50% -52%;
 	}
-	70% {
-		background-position: 50% 10%, 50% 108%;
+	36% {
+		background-position: 50% 6%, 50% 18%;
+	}
+	54% {
+		background-position: 50% 4%, 50% 72%;
+	}
+	72% {
+		background-position: 50% 8%, 50% 108%;
 	}
 	100% {
-		background-position: 50% -2%, 50% -32%;
+		background-position: 50% -2%, 50% -62%;
 	}
 }
 
@@ -105,8 +114,8 @@ html[data-theme='dark'] .tevsys-home-mid-glow {
 			transparent 70%
 		);
 	background-repeat: no-repeat, no-repeat;
-	background-position: 4% 32%, 96% 68%;
-	background-size: 118vmin 100vmin, 96vmin 92vmin;
+	background-position: -12% 38%, 108% 62%;
+	background-size: 122vmin 104vmin, 100vmin 96vmin;
 	filter: blur(22px);
 	opacity: 0.94;
 }
@@ -118,50 +127,46 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
-		animation: tevsys-home-mid-bubbles 58s linear infinite;
+		animation: tevsys-home-mid-bubbles 52s ease-in-out infinite alternate;
 	}
 }
 
+/* Recorrido ancho tipo flechas Paint: casi todo el viewport, diagonal/zigzag como la burbuja inferior */
 @keyframes tevsys-home-mid-bubbles {
 	0% {
-		background-position: 0% 28%, 100% 72%;
-		background-size: 112vmin 96vmin, 90vmin 88vmin;
-		opacity: 0.88;
-	}
-	14% {
-		background-position: 22% 42%, 78% 58%;
-		background-size: 120vmin 102vmin, 84vmin 92vmin;
-		opacity: 0.92;
-	}
-	28% {
-		background-position: 48% 55%, 52% 45%;
-		background-size: 100vmin 90vmin, 100vmin 96vmin;
-		opacity: 0.9;
-	}
-	42% {
-		background-position: 72% 38%, 28% 62%;
-		background-size: 92vmin 104vmin, 108vmin 88vmin;
+		background-position: -22% 26%, 112% 74%;
+		background-size: 118vmin 100vmin, 98vmin 94vmin;
 		opacity: 0.86;
 	}
-	56% {
-		background-position: 92% 48%, 8% 52%;
-		background-size: 104vmin 98vmin, 96vmin 100vmin;
+	16% {
+		background-position: 8% 52%, 88% 38%;
+		background-size: 124vmin 106vmin, 92vmin 98vmin;
+		opacity: 0.92;
+	}
+	32% {
+		background-position: 42% 30%, 58% 58%;
+		background-size: 108vmin 96vmin, 104vmin 100vmin;
+		opacity: 0.88;
+	}
+	48% {
+		background-position: 78% 48%, 22% 52%;
+		background-size: 96vmin 108vmin, 112vmin 90vmin;
 		opacity: 0.93;
 	}
-	70% {
-		background-position: 70% 68%, 30% 32%;
-		background-size: 88vmin 88vmin, 112vmin 104vmin;
+	64% {
+		background-position: 98% 68%, -6% 32%;
+		background-size: 102vmin 98vmin, 118vmin 104vmin;
 		opacity: 0.87;
 	}
-	84% {
-		background-position: 38% 22%, 62% 78%;
-		background-size: 116vmin 94vmin, 82vmin 86vmin;
+	80% {
+		background-position: 52% 22%, 48% 78%;
+		background-size: 114vmin 102vmin, 88vmin 96vmin;
 		opacity: 0.91;
 	}
 	100% {
-		background-position: 0% 28%, 100% 72%;
-		background-size: 112vmin 96vmin, 90vmin 88vmin;
-		opacity: 0.88;
+		background-position: -18% 44%, 108% 56%;
+		background-size: 120vmin 100vmin, 96vmin 98vmin;
+		opacity: 0.89;
 	}
 }
 
@@ -297,7 +302,7 @@ html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 @media (prefers-reduced-motion: reduce) {
 	html[data-theme='dark'] body::before {
 		animation: none !important;
-		background-position: 50% 2%, 50% 28%;
+		background-position: 50% 2%, 50% -40%;
 		opacity: 0.75;
 	}
 
