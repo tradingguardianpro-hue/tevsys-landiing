@@ -55,14 +55,26 @@ html[data-theme='dark'] body::before {
 	html[data-theme='dark'] body::before {
 		animation: tevsys-top-strip 20s ease-in-out infinite alternate;
 	}
+
+	/*
+	  Home: KITT de niebla (body) con duración y retardo distintos al barrido del main —
+	  no buscan sincronía; si coinciden a veces, bien.
+	*/
+	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
+		animation-duration: 23.6s;
+		animation-delay: 4.3s;
+	}
 }
 
-/* Home — ciclo largo; ~1.35% del ciclo ≈ barrido ~3.8s con --tevsys-home-intro-cycle: 280s */
+/* Home — ciclo del barrido superior; ~2.18% ≈ ~7.3s de barrido con ciclo 337s */
 html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
-	--tevsys-home-intro-cycle: 280s;
+	--tevsys-home-intro-cycle: 337s;
 }
 
-/* Solo home: barrido KITT arriba del todo, sentido arriba → abajo; más recorrido y más lento; se repite en el ciclo */
+/*
+  Solo home: barrido desde el nav hasta zona del H1 (“…intenciones”); arriba → abajo;
+  más lento y más recorrido; se repite en el ciclo (independiente del KITT del body).
+*/
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
 		content: '';
@@ -70,23 +82,23 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 		top: 0;
 		left: 0;
 		right: 0;
-		height: clamp(100px, 22vh, 240px);
+		height: clamp(280px, min(56vh, calc(100vh - var(--navbar-height, 72px) - 12vh)), 760px);
 		pointer-events: none;
 		z-index: 0;
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
-			transparent 28%,
-			rgba(245, 176, 65, 0.42) 48%,
-			rgba(255, 236, 205, 0.15) 50%,
-			rgba(210, 175, 115, 0.12) 52%,
-			transparent 70%,
+			transparent 26%,
+			rgba(245, 176, 65, 0.4) 47%,
+			rgba(255, 236, 205, 0.14) 50%,
+			rgba(210, 175, 115, 0.11) 53%,
+			transparent 72%,
 			transparent 100%
 		);
-		background-size: 100% 420%;
-		background-position: 50% 280%;
+		background-size: 100% 520%;
+		background-position: 50% 360%;
 		background-repeat: no-repeat;
-		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 280s) linear infinite;
+		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 337s) linear infinite;
 	}
 
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards) #page {
@@ -96,35 +108,39 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 }
 
 /*
-  Ciclo largo: solo ~1.35% hace el barrido (resto invisible).
-  Segundo valor de background-position: de positivo → negativo = franja que baja (arriba del viewport hacia abajo).
+  Ciclo largo: solo ~2.18% hace el barrido (resto invisible).
+  Positivo → negativo en Y = franja que baja (de arriba hacia la zona del H1).
 */
 @keyframes tevsys-home-intro-kitt-cycle {
 	0% {
-		background-position: 50% 310%;
+		background-position: 50% 380%;
 		opacity: 1;
 		visibility: visible;
 	}
-	0.38% {
-		background-position: 50% 95%;
+	0.48% {
+		background-position: 50% 155%;
 		opacity: 1;
 	}
-	0.72% {
-		background-position: 50% -55%;
-		opacity: 0.88;
+	0.95% {
+		background-position: 50% -35%;
+		opacity: 0.9;
 	}
-	1.05% {
-		background-position: 50% -195%;
-		opacity: 0.38;
+	1.42% {
+		background-position: 50% -175%;
+		opacity: 0.42;
 	}
-	1.35% {
-		background-position: 50% -310%;
+	1.85% {
+		background-position: 50% -295%;
+		opacity: 0.12;
+	}
+	2.18% {
+		background-position: 50% -380%;
 		opacity: 0;
 		visibility: hidden;
 	}
-	1.36%,
+	2.2%,
 	100% {
-		background-position: 50% -310%;
+		background-position: 50% -380%;
 		opacity: 0;
 		visibility: hidden;
 	}
@@ -490,6 +506,11 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		animation: tevsys-orion-mist-mobile 24s ease-in-out infinite alternate;
 	}
 
+	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
+		animation-duration: 27.1s;
+		animation-delay: 2.9s;
+	}
+
 	html[data-theme='dark'] .tevsys-home-mid-glow {
 		filter: blur(28px);
 		opacity: 0.72;
@@ -509,7 +530,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
-		height: clamp(88px, 18vh, 192px);
+		height: clamp(240px, 48vh, 580px);
 	}
 
 	html[data-theme='dark'] .tevsys-home-founder-band {
