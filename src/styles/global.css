@@ -4,20 +4,20 @@ body {
 }
 
 /*
-  Tema oscuro — híbrido “franja KITT + orbe”:
-  - ::before: barra de luz horizontal muy fina que sube y baja solo en la zona superior
-    (cabecera + hero hasta ~“¿Cuánto dinero…?”). Por detrás del contenido.
-  - ::after: mancha circular grande y suave, abajo de esa franja, deambula lento por el resto.
-  - html: color base estable (sin animación en toda la página).
+  Tema oscuro — referencia “zona Orion” + KITT + burbuja:
+  - ::before (solo altura --tevsys-kitt-zone-h): niebla oscura → azul eléctrico muy suave
+    (como Orion arriba), + barra KITT que sube y baja. No pinta el resto de la página.
+  - ::after: burbuja circular suave, SIEMPRE visible (opacidad mínima), crece/encoge y “salta”
+    por trayectoria irregular; máscara para que NO entre en la zona superior (no compite con el hero).
+  - html: base negra estable.
 */
 html[data-theme='dark'] {
 	min-height: 100%;
 	background-color: var(--theme-bg);
-	/* Altura zona “scanner” (cabecera + hero hasta ~enganche) */
 	--tevsys-kitt-zone-h: clamp(320px, 50vh, 720px);
 }
 
-/* Barra tipo scanner: se mueve en vertical dentro de la franja superior */
+/* Zona superior: niebla tipo Orion + scanner KITT (por detrás del header/hero) */
 html[data-theme='dark'] body::before {
 	content: '';
 	position: fixed;
@@ -28,85 +28,150 @@ html[data-theme='dark'] body::before {
 	overflow: hidden;
 	pointer-events: none;
 	z-index: 0;
-	background-image: linear-gradient(
-		180deg,
-		transparent 0%,
-		transparent 42%,
-		rgba(245, 176, 65, 0.26) 48.2%,
-		rgba(255, 232, 190, 0.12) 50%,
-		rgba(200, 165, 110, 0.14) 51.8%,
-		transparent 58%,
-		transparent 100%
-	);
-	background-size: 100% 260%;
-	background-position: 50% -40%;
+	background-image:
+		linear-gradient(
+			188deg,
+			rgba(2, 3, 6, 0.98) 0%,
+			rgba(10, 14, 32, 0.92) 18%,
+			rgba(28, 48, 120, 0.42) 42%,
+			rgba(55, 95, 220, 0.22) 58%,
+			rgba(12, 16, 36, 0.88) 82%,
+			rgba(4, 5, 10, 0.75) 100%
+		),
+		linear-gradient(
+			180deg,
+			transparent 0%,
+			transparent 41%,
+			rgba(245, 176, 65, 0.22) 48.2%,
+			rgba(255, 236, 205, 0.1) 50%,
+			rgba(210, 175, 115, 0.12) 51.6%,
+			transparent 57%,
+			transparent 100%
+		);
+	background-size: 100% 125%, 100% 255%;
+	background-position: 50% 0%, 50% -38%;
 	background-repeat: no-repeat;
-	opacity: 0.88;
+	opacity: 0.92;
 }
 
-/* Orbe redondo: empieza debajo de la franja KITT; no “compite” con el scanner de arriba */
+/* Burbuja: capa solo en la parte baja (desde fin de franja KITT) → no invade el hero; se ve en scroll y pie */
 html[data-theme='dark'] body::after {
 	content: '';
 	position: fixed;
-	left: 50%;
-	top: calc(var(--tevsys-kitt-zone-h) + min(8vh, 72px));
-	width: min(135vmin, 1100px);
-	height: min(135vmin, 1100px);
-	transform: translate(-50%, -18%);
-	border-radius: 50%;
+	top: var(--tevsys-kitt-zone-h);
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	height: auto;
 	pointer-events: none;
 	z-index: 0;
-	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(245, 176, 65, 0.085) 0%,
-		rgba(88, 80, 72, 0.055) 28%,
-		rgba(36, 35, 34, 0.04) 48%,
-		transparent 70%
+	background-image: radial-gradient(
+		circle closest-side at 50% 50%,
+		rgba(245, 176, 65, 0.14) 0%,
+		rgba(95, 88, 78, 0.08) 38%,
+		rgba(40, 38, 36, 0.05) 55%,
+		transparent 72%
 	);
-	filter: blur(52px);
-	opacity: 0.72;
+	background-repeat: no-repeat;
+	background-position: 55% 42%;
+	background-size: 72vmin 72vmin;
+	opacity: 0.68;
+	filter: blur(44px);
 }
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] body::before {
-		animation: tevsys-kitt-sweep 12s ease-in-out infinite alternate;
+		animation: tevsys-top-strip 20s ease-in-out infinite alternate;
 	}
 
 	html[data-theme='dark'] body::after {
-		animation: tevsys-orb-drift 32s ease-in-out infinite alternate;
+		animation: tevsys-bubble-chaos 44s linear infinite;
 	}
 }
 
-@keyframes tevsys-kitt-sweep {
+/* Niebla superior respira; la barra KITT sube y baja en la misma franja */
+@keyframes tevsys-top-strip {
 	0% {
-		background-position: 50% -42%;
-		filter: hue-rotate(-5deg) saturate(1.02);
-		opacity: 0.82;
+		background-position: 50% -6%, 50% -42%;
 	}
-	50% {
-		background-position: 50% 118%;
-		filter: hue-rotate(8deg) saturate(1.08);
-		opacity: 0.92;
+	35% {
+		background-position: 50% 4%, 50% 55%;
+	}
+	70% {
+		background-position: 50% 10%, 50% 108%;
 	}
 	100% {
-		background-position: 50% -36%;
-		filter: hue-rotate(-2deg) saturate(1.04);
-		opacity: 0.86;
+		background-position: 50% -2%, 50% -32%;
 	}
 }
 
-@keyframes tevsys-orb-drift {
+/* Trayectoria irregular + pulso de tamaño (siempre algo visible); “rebota” sin patrón suave */
+@keyframes tevsys-bubble-chaos {
 	0% {
-		transform: translate(calc(-50% - 5vw), -20%) scale(1);
-		opacity: 0.62;
+		background-position: 12% 58%;
+		background-size: 68vmin 68vmin;
+		opacity: 0.58;
 	}
-	50% {
-		transform: translate(calc(-50% + 7vw), -14%) scale(1.07);
+	7% {
+		background-position: 38% 52%;
+		background-size: 82vmin 82vmin;
+		opacity: 0.72;
+	}
+	14% {
+		background-position: 72% 48%;
+		background-size: 74vmin 74vmin;
+		opacity: 0.64;
+	}
+	22% {
+		background-position: 88% 62%;
+		background-size: 94vmin 94vmin;
 		opacity: 0.78;
 	}
+	31% {
+		background-position: 62% 78%;
+		background-size: 70vmin 70vmin;
+		opacity: 0.6;
+	}
+	40% {
+		background-position: 28% 88%;
+		background-size: 88vmin 88vmin;
+		opacity: 0.74;
+	}
+	48% {
+		background-position: 8% 72%;
+		background-size: 64vmin 64vmin;
+		opacity: 0.55;
+	}
+	57% {
+		background-position: 22% 42%;
+		background-size: 90vmin 90vmin;
+		opacity: 0.76;
+	}
+	65% {
+		background-position: 52% 28%;
+		background-size: 76vmin 76vmin;
+		opacity: 0.66;
+	}
+	74% {
+		background-position: 82% 22%;
+		background-size: 98vmin 98vmin;
+		opacity: 0.8;
+	}
+	82% {
+		background-position: 92% 40%;
+		background-size: 72vmin 72vmin;
+		opacity: 0.62;
+	}
+	91% {
+		background-position: 48% 18%;
+		background-size: 86vmin 86vmin;
+		opacity: 0.7;
+	}
 	100% {
-		transform: translate(calc(-50% - 3vw), -17%) scale(1.02);
-		opacity: 0.68;
+		background-position: 18% 55%;
+		background-size: 70vmin 70vmin;
+		opacity: 0.6;
 	}
 }
 
@@ -117,30 +182,52 @@ html[data-theme='dark'] body::after {
 	}
 
 	html[data-theme='dark'] body::before {
-		background-position: 50% 35%;
-		opacity: 0.55;
-	}
-}
-
-/* Móvil: sin scanner (evita sensación de “página rota”); orbe muy calmado */
-@media (max-width: 768px) {
-	html[data-theme='dark'] {
-		--tevsys-kitt-zone-h: clamp(280px, 46vh, 560px);
-	}
-
-	html[data-theme='dark'] body::before {
-		visibility: hidden;
-		opacity: 0 !important;
-		animation: none !important;
+		background-position: 50% 2%, 50% 28%;
+		opacity: 0.75;
 	}
 
 	html[data-theme='dark'] body::after {
-		top: calc(var(--tevsys-kitt-zone-h) + 12px);
-		width: min(160vmin, 900px);
-		height: min(160vmin, 900px);
-		filter: blur(56px);
-		opacity: 0.38;
-		animation-duration: 48s;
+		background-position: 50% 70%;
+		background-size: 76vmin 76vmin;
+		opacity: 0.5;
+	}
+}
+
+@media (max-width: 768px) {
+	html[data-theme='dark'] {
+		--tevsys-kitt-zone-h: clamp(270px, 46vh, 540px);
+	}
+
+	/* Scanner KITT apagado en móvil; niebla Orion muy suave */
+	html[data-theme='dark'] body::before {
+		opacity: 0.55;
+		background-image: linear-gradient(
+			188deg,
+			rgba(2, 3, 6, 0.98) 0%,
+			rgba(10, 14, 28, 0.9) 28%,
+			rgba(32, 52, 118, 0.28) 52%,
+			rgba(10, 14, 28, 0.92) 100%
+		);
+		background-size: 100% 100%;
+		background-position: 50% 0%;
+		animation: tevsys-orion-mist-mobile 24s ease-in-out infinite alternate;
+	}
+
+	html[data-theme='dark'] body::after {
+		filter: blur(52px);
+		opacity: 0.42;
+		animation-duration: 64s;
+	}
+}
+
+@keyframes tevsys-orion-mist-mobile {
+	0% {
+		opacity: 0.48;
+		filter: saturate(1) brightness(1);
+	}
+	100% {
+		opacity: 0.62;
+		filter: saturate(1.08) brightness(1.04);
 	}
 }
 
