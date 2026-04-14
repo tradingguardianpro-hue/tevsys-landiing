@@ -11,9 +11,9 @@ html[data-theme='dark'] {
 	background-image:
 		radial-gradient(
 			ellipse 100% 80% at 20% 18%,
-			rgba(245, 176, 65, 0.09) 0%,
-			rgba(245, 176, 65, 0.02) 38%,
-			transparent 58%
+			rgba(245, 176, 65, 0.034) 0%,
+			rgba(245, 176, 65, 0.008) 34%,
+			transparent 56%
 		),
 		radial-gradient(
 			ellipse 95% 75% at 88% 82%,
@@ -27,7 +27,7 @@ html[data-theme='dark'] {
 			rgba(0, 0, 0, 0.15) 0%,
 			rgba(26, 25, 23, 0.55) 26%,
 			rgba(42, 40, 36, 0.38) 44%,
-			rgba(245, 176, 65, 0.055) 50%,
+			rgba(245, 176, 65, 0.022) 50%,
 			rgba(18, 18, 18, 0.62) 56%,
 			rgba(10, 10, 10, 0.35) 74%,
 			rgba(0, 0, 0, 0.12) 100%
@@ -35,52 +35,65 @@ html[data-theme='dark'] {
 		/* Haz diagonal (nivel 1) que nace cerca del logo */
 		linear-gradient(
 			125deg,
-			rgba(245, 176, 65, 0.26) 0%,
-			rgba(245, 176, 65, 0.16) 6%,
-			rgba(188, 162, 117, 0.1) 14%,
-			rgba(72, 66, 57, 0.07) 24%,
-			rgba(28, 27, 26, 0.04) 36%,
-			transparent 100%
+			rgba(245, 176, 65, 0.78) 0%,
+			rgba(245, 176, 65, 0.22) 2.6%,
+			rgba(120, 102, 72, 0.07) 6.5%,
+			rgba(40, 38, 36, 0.04) 10%,
+			transparent 14%
 		);
-	background-size: 145% 145%, 160% 160%, 520% 340%, 150% 170%;
-	background-position: 14% 20%, 86% 78%, 32% 48%, -10% -12%;
+	background-size: 145% 145%, 160% 160%, 520% 340%, 118% 132%;
+	background-position: 14% 20%, 86% 78%, 32% 48%, -14% -18%;
 	background-repeat: no-repeat;
 }
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] {
-		animation: tevsys-ambient-shift 8s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+		/* Sin alternate: el loop se siente más “destello → negro → destello”. */
+		animation: tevsys-ambient-shift 4.8s cubic-bezier(0.45, 0, 0.2, 1) infinite;
 	}
 }
 
 @keyframes tevsys-ambient-shift {
+	/* Mucho tiempo casi negro; el haz (capa 4) pega picos cortos de amarillo. */
 	0% {
-		background-position: 6% 10%, 94% 90%, 12% 42%, -14% -16%;
-		background-size: 145% 145%, 160% 160%, 520% 340%, 128% 150%;
+		background-position: 6% 10%, 94% 90%, 12% 42%, -16% -20%;
+		background-size: 145% 145%, 160% 160%, 520% 340%, 102% 112%;
 	}
-	25% {
-		background-position: 42% 22%, 58% 78%, 68% 28%, -6% -8%;
-		background-size: 145% 145%, 160% 160%, 500% 332%, 176% 196%;
+	12% {
+		background-position: 10% 12%, 90% 88%, 18% 38%, -12% -16%;
+		background-size: 145% 145%, 160% 160%, 515% 338%, 108% 120%;
 	}
-	50% {
-		background-position: 72% 48%, 28% 52%, 48% 62%, 2% 1%;
-		background-size: 145% 145%, 160% 160%, 520% 340%, 138% 160%;
+	22% {
+		background-position: 16% 14%, 84% 86%, 24% 36%, -6% -8%;
+		background-size: 145% 145%, 160% 160%, 505% 334%, 228% 252%;
 	}
-	75% {
-		background-position: 38% 72%, 62% 28%, 82% 38%, 10% 12%;
-		background-size: 145% 145%, 160% 160%, 505% 334%, 188% 210%;
+	28% {
+		background-position: 20% 16%, 80% 84%, 28% 34%, -14% -12%;
+		background-size: 145% 145%, 160% 160%, 512% 336%, 104% 116%;
+	}
+	38% {
+		background-position: 28% 20%, 72% 80%, 36% 32%, 2% 6%;
+		background-size: 145% 145%, 160% 160%, 518% 338%, 198% 218%;
+	}
+	44% {
+		background-position: 32% 22%, 68% 78%, 40% 30%, -10% -6%;
+		background-size: 145% 145%, 160% 160%, 520% 340%, 106% 118%;
+	}
+	55% {
+		background-position: 44% 28%, 56% 72%, 48% 28%, -18% -14%;
+		background-size: 145% 145%, 160% 160%, 512% 336%, 100% 110%;
 	}
 	100% {
-		background-position: 18% 88%, 82% 12%, 28% 58%, 16% 18%;
-		background-size: 145% 145%, 160% 160%, 520% 340%, 132% 152%;
+		background-position: 6% 10%, 94% 90%, 12% 42%, -16% -20%;
+		background-size: 145% 145%, 160% 160%, 520% 340%, 102% 112%;
 	}
 }
 
 @media (prefers-reduced-motion: reduce) {
 	html[data-theme='dark'] {
 		animation: none;
-		background-position: 18% 22%, 82% 78%, 44% 52%, 0% -2%;
-		background-size: 145% 145%, 160% 160%, 520% 340%, 146% 164%;
+		background-position: 18% 22%, 82% 78%, 44% 52%, -12% -14%;
+		background-size: 145% 145%, 160% 160%, 520% 340%, 108% 120%;
 	}
 }
 
