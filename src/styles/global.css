@@ -62,18 +62,22 @@ html[data-theme='dark'] body::before {
 	*/
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
 		animation-duration: 23.6s;
-		animation-delay: 4.3s;
+		/* Deja aire al barrido del main al cargar (niebla KITT un poco después) */
+		animation-delay: 7.2s;
 	}
 }
 
-/* Home — ciclo largo; ~5.5% del ciclo ≈ barrido ~26s con ciclo 480s (lento, poco estrés) */
+/*
+  Home — ciclo total (repetición del barrido); la fase visible está al INICIO del ciclo
+  (se ve en cuanto carga), no al final de una espera.
+*/
 html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
-	--tevsys-home-intro-cycle: 480s;
+	--tevsys-home-intro-cycle: 300s;
 }
 
 /*
-  Solo home: barrido suave sobre la niebla (misma zona H1); arriba → abajo, muy lento,
-  poco contraste — “sabes que está ahí”. Independiente del KITT del body.
+  Solo home: al cargar ya se ve la franja arriba (~1,5s “¿qué es esto?”), luego baja muy lento
+  mientras lees el H1; luego silencio hasta el siguiente ciclo. Niebla KITT del body aparte.
 */
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
@@ -96,9 +100,10 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 			transparent 100%
 		);
 		background-size: 100% 560%;
-		background-position: 50% 380%;
+		/* Alineado con el primer fotograma del keyframe = visible al instante */
+		background-position: 50% 252%;
 		background-repeat: no-repeat;
-		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 480s) linear infinite;
+		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 300s) linear infinite;
 	}
 
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards) #page {
@@ -108,46 +113,48 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 }
 
 /*
-  ~5.5% del ciclo = barrido ~26s (480s): ritmo pausado; keyframes repartidos como ease suave.
+  Ciclo 300s: 0–0,5% ≈1,5s franja visible arriba (entrada inmediata); 0,5–6,4% ≈17,7s bajada lenta;
+  6,4–6,7% apagado; 6,7–100% invisible (repite ~cada 5 min).
 */
 @keyframes tevsys-home-intro-kitt-cycle {
-	0% {
-		background-position: 50% 395%;
-		opacity: 0.45;
+	0%,
+	0.5% {
+		background-position: 50% 252%;
+		opacity: 0.62;
 		visibility: visible;
 	}
-	0.85% {
-		background-position: 50% 288%;
-		opacity: 0.52;
+	1.1% {
+		background-position: 50% 198%;
+		opacity: 0.6;
 	}
-	1.75% {
-		background-position: 50% 118%;
+	2.1% {
+		background-position: 50% 108%;
 		opacity: 0.58;
 	}
-	2.65% {
-		background-position: 50% -42%;
-		opacity: 0.55;
+	3.2% {
+		background-position: 50% 8%;
+		opacity: 0.56;
 	}
-	3.55% {
-		background-position: 50% -168%;
-		opacity: 0.42;
+	4.2% {
+		background-position: 50% -98%;
+		opacity: 0.48;
 	}
-	4.35% {
+	5.2% {
+		background-position: 50% -198%;
+		opacity: 0.3;
+	}
+	5.9% {
 		background-position: 50% -278%;
-		opacity: 0.22;
+		opacity: 0.12;
 	}
-	4.95% {
-		background-position: 50% -352%;
-		opacity: 0.08;
-	}
-	5.5% {
-		background-position: 50% -395%;
+	6.4% {
+		background-position: 50% -322%;
 		opacity: 0;
 		visibility: hidden;
 	}
-	5.52%,
+	6.7%,
 	100% {
-		background-position: 50% -395%;
+		background-position: 50% -328%;
 		opacity: 0;
 		visibility: hidden;
 	}
@@ -515,7 +522,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
 		animation-duration: 27.1s;
-		animation-delay: 2.9s;
+		animation-delay: 6.4s;
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow {
