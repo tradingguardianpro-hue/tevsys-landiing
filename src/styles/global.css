@@ -57,7 +57,12 @@ html[data-theme='dark'] body::before {
 	}
 }
 
-/* Solo home: al cargar, un barrido KITT corto arriba (poco recorrido, ~1 s) */
+/* Home — duración del ciclo del barrido superior (main::before); ~0.94% del ciclo ≈ 2.25s de barrido */
+html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
+	--tevsys-home-intro-cycle: 240s;
+}
+
+/* Solo home: barrido KITT desde arriba (~2× tiempo y ~2× recorrido del primer diseño); se repite poco a poco */
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
 		content: '';
@@ -65,22 +70,22 @@ html[data-theme='dark'] body::before {
 		top: 0;
 		left: 0;
 		right: 0;
-		height: clamp(64px, 11vh, 140px);
+		height: clamp(88px, 18vh, 200px);
 		pointer-events: none;
 		z-index: 0;
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
-			transparent 36%,
-			rgba(245, 176, 65, 0.42) 49.5%,
-			rgba(255, 236, 205, 0.14) 50.5%,
-			transparent 63%,
+			transparent 32%,
+			rgba(245, 176, 65, 0.44) 49%,
+			rgba(255, 236, 205, 0.16) 50.5%,
+			transparent 66%,
 			transparent 100%
 		);
-		background-size: 100% 260%;
-		background-position: 50% -105%;
+		background-size: 100% 320%;
+		background-position: 50% -150%;
 		background-repeat: no-repeat;
-		animation: tevsys-home-intro-kitt 1.1s ease-out forwards;
+		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 240s) linear infinite;
 	}
 
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards) #page {
@@ -89,16 +94,36 @@ html[data-theme='dark'] body::before {
 	}
 }
 
-@keyframes tevsys-home-intro-kitt {
+/*
+  Ciclo largo: solo el tramo inicial (~0.94%) hace el barrido; el resto invisible.
+  Cada ~4 min vuelve a salir desde arriba sin cargar la página.
+*/
+@keyframes tevsys-home-intro-kitt-cycle {
 	0% {
-		background-position: 50% -118%;
+		background-position: 50% -240%;
+		opacity: 1;
+		visibility: visible;
+	}
+	0.28% {
+		background-position: 50% -95%;
 		opacity: 1;
 	}
-	70% {
-		opacity: 0.75;
+	0.56% {
+		background-position: 50% 52%;
+		opacity: 0.9;
 	}
+	0.78% {
+		background-position: 50% 175%;
+		opacity: 0.4;
+	}
+	0.94% {
+		background-position: 50% 220%;
+		opacity: 0;
+		visibility: hidden;
+	}
+	0.95%,
 	100% {
-		background-position: 50% 28%;
+		background-position: 50% 220%;
 		opacity: 0;
 		visibility: hidden;
 	}
@@ -483,8 +508,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
-		height: clamp(48px, 10vh, 112px);
-		animation-duration: 0.95s;
+		height: clamp(72px, 15vh, 168px);
 	}
 
 	html[data-theme='dark'] .tevsys-home-founder-band {
