@@ -5,13 +5,14 @@ body {
 
 /*
   Tema oscuro — niebla + KITT + dos burbujas (scroll con la página):
-  - ::before: franja superior (absolute): casi todo negro/carbón + barra KITT; matiz frío mínimo.
-  - ::after: dos halos suaves (dos “burbujas”) que se cruzan entre pie y fin de la franja KITT.
+  - Altura franja = misma lógica que el hero (90vh…), para que el corte NO caiga entre botón y “Trading Edge…”.
+  - ::after: dos halos más visibles (menos blur) + main/#page transparentes → se nota en huecos de cartas.
 */
 html[data-theme='dark'] {
 	min-height: 100%;
 	background-color: var(--theme-bg);
-	--tevsys-kitt-zone-h: clamp(320px, 50vh, 720px);
+	/* Misma idea que .hero-section__section min-height en HomeHero */
+	--tevsys-kitt-zone-h: clamp(90vh, 100vw, calc(100vh - var(--navbar-height, 72px)));
 }
 
 /* Zona superior del documento (va con el scroll; azul muy contenido para no “partir” la web) */
@@ -65,24 +66,25 @@ html[data-theme='dark'] body::after {
 	z-index: 0;
 	background-image:
 		radial-gradient(
-			ellipse 54vmin 46vmin at 50% 50%,
-			rgba(245, 176, 65, 0.12) 0%,
-			rgba(96, 88, 78, 0.065) 44%,
-			rgba(38, 36, 34, 0.045) 58%,
-			transparent 72%
+			ellipse 58vmin 48vmin at 50% 50%,
+			rgba(245, 176, 65, 0.2) 0%,
+			rgba(120, 105, 82, 0.1) 40%,
+			rgba(48, 44, 40, 0.06) 55%,
+			transparent 70%
 		),
 		radial-gradient(
-			ellipse 42vmin 52vmin at 50% 50%,
-			rgba(245, 176, 65, 0.095) 0%,
-			rgba(72, 68, 62, 0.055) 42%,
-			rgba(34, 33, 32, 0.04) 56%,
-			transparent 70%
+			ellipse 46vmin 56vmin at 50% 50%,
+			rgba(245, 176, 65, 0.16) 0%,
+			rgba(88, 80, 72, 0.09) 38%,
+			rgba(40, 38, 36, 0.055) 54%,
+			transparent 68%
 		);
 	background-repeat: no-repeat, no-repeat;
 	background-position: 18% 42%, 82% 58%;
 	background-size: 92vmin 92vmin, 76vmin 76vmin;
-	opacity: 0.66;
-	filter: blur(42px);
+	opacity: 0.82;
+	filter: blur(30px);
+	will-change: background-position;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -116,52 +118,52 @@ html[data-theme='dark'] body::after {
 	0% {
 		background-position: 10% 48%, 90% 55%;
 		background-size: 88vmin 88vmin, 72vmin 72vmin;
-		opacity: 0.58;
+		opacity: 0.72;
 	}
 	11% {
 		background-position: 28% 58%, 74% 42%;
 		background-size: 94vmin 94vmin, 68vmin 68vmin;
-		opacity: 0.62;
+		opacity: 0.78;
 	}
 	22% {
 		background-position: 48% 68%, 58% 38%;
 		background-size: 82vmin 82vmin, 80vmin 80vmin;
-		opacity: 0.6;
+		opacity: 0.74;
 	}
 	33% {
 		background-position: 62% 52%, 44% 48%;
 		background-size: 76vmin 76vmin, 88vmin 88vmin;
-		opacity: 0.64;
+		opacity: 0.8;
 	}
 	44% {
 		background-position: 78% 38%, 28% 62%;
 		background-size: 90vmin 90vmin, 74vmin 74vmin;
-		opacity: 0.59;
+		opacity: 0.7;
 	}
 	55% {
 		background-position: 88% 28%, 14% 72%;
 		background-size: 84vmin 84vmin, 86vmin 86vmin;
-		opacity: 0.62;
+		opacity: 0.76;
 	}
 	66% {
 		background-position: 72% 22%, 22% 78%;
 		background-size: 78vmin 78vmin, 92vmin 92vmin;
-		opacity: 0.57;
+		opacity: 0.68;
 	}
 	77% {
 		background-position: 52% 32%, 42% 68%;
 		background-size: 92vmin 92vmin, 70vmin 70vmin;
-		opacity: 0.63;
+		opacity: 0.82;
 	}
 	88% {
 		background-position: 32% 44%, 62% 56%;
 		background-size: 86vmin 86vmin, 78vmin 78vmin;
-		opacity: 0.6;
+		opacity: 0.74;
 	}
 	100% {
 		background-position: 10% 48%, 90% 55%;
 		background-size: 88vmin 88vmin, 72vmin 72vmin;
-		opacity: 0.58;
+		opacity: 0.72;
 	}
 }
 
@@ -179,13 +181,14 @@ html[data-theme='dark'] body::after {
 	html[data-theme='dark'] body::after {
 		background-position: 38% 55%, 62% 48%;
 		background-size: 84vmin 84vmin, 70vmin 70vmin;
-		opacity: 0.48;
+		opacity: 0.58;
 	}
 }
 
 @media (max-width: 768px) {
 	html[data-theme='dark'] {
-		--tevsys-kitt-zone-h: clamp(270px, 46vh, 540px);
+		/* Hero también es alto en móvil: alineamos franja para evitar corte a mitad de bloque */
+		--tevsys-kitt-zone-h: clamp(82vh, 100vw, calc(100vh - var(--navbar-height, 56px)));
 	}
 
 	/* Scanner KITT apagado en móvil; niebla muy suave (casi solo negro) */
@@ -204,9 +207,9 @@ html[data-theme='dark'] body::after {
 	}
 
 	html[data-theme='dark'] body::after {
-		filter: blur(52px);
-		opacity: 0.4;
-		animation-duration: 64s;
+		filter: blur(36px);
+		opacity: 0.62;
+		animation-duration: 56s;
 	}
 }
 
@@ -219,6 +222,12 @@ html[data-theme='dark'] body::after {
 		opacity: 0.62;
 		filter: saturate(1.08) brightness(1.04);
 	}
+}
+
+/* Que el brillo llegue a los huecos del grid (muchas plantillas pintan el main) */
+html[data-theme='dark'] main#content,
+html[data-theme='dark'] main#content #page {
+	background-color: transparent;
 }
 
 /* Contenido por encima de las capas decorativas */
