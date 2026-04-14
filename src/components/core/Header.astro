@@ -1,6 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components'
 const { navData, rightMenu } = Astro.props;
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-header--home-scanner' : null].filter(
+	Boolean
+) as string[];
 ---
 
 <script type="module">
@@ -39,7 +43,8 @@ const { navData, rightMenu } = Astro.props;
   }
 </script>  
 
-<header id="odysseyNavHeader" class={`${rightMenu ? "header--right" : ``.trim()}`}>
+<header id="odysseyNavHeader" class:list={headerClasses}>
+	{isHome && <div class="tevsys-header-scanner" aria-hidden="true"></div>}
   <div class="header-logo-menu__container">
   <button id="menuButton" title="Open Main Menu">
     <span id="menuButtonIconHam">
@@ -78,6 +83,10 @@ const { navData, rightMenu } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  header.tevsys-header--home-scanner {
+    position: relative;
+    overflow: hidden;
   }
   header.header--right {
     display: grid;

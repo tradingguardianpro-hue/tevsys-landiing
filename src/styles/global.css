@@ -147,6 +147,46 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 }
 
+/* Home — escáner gris en la franja del header (solo /); timing propio, sin sincronía con hero/body */
+@media (prefers-reduced-motion: no-preference) {
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		background-image: linear-gradient(
+			102deg,
+			transparent 0%,
+			transparent 36%,
+			rgba(110, 114, 128, 0.12) 46%,
+			rgba(188, 192, 204, 0.26) 50%,
+			rgba(95, 98, 110, 0.1) 54%,
+			transparent 64%,
+			transparent 100%
+		);
+		background-size: 240% 100%;
+		background-position: 118% 50%;
+		background-repeat: no-repeat;
+		opacity: 0.88;
+		animation: tevsys-header-scanner-sweep 20.7s ease-in-out infinite alternate;
+	}
+
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .header-nav__container,
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .header-action-item__container {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+@keyframes tevsys-header-scanner-sweep {
+	0% {
+		background-position: 128% 50%;
+	}
+	100% {
+		background-position: -32% 50%;
+	}
+}
+
 /*
   Ciclo 300s: ~6,4% ≈19s fase visible al inicio del ciclo (carga = frame 0).
   Reparto del tiempo: tramos largos con poco desplazamiento = “lento” como el KITT de abajo;
@@ -525,6 +565,12 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--rise,
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
+		animation: none !important;
+		opacity: 0 !important;
+		visibility: hidden !important;
+	}
+
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
 		animation: none !important;
 		opacity: 0 !important;
 		visibility: hidden !important;
