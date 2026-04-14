@@ -17,7 +17,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Resumen numérico (dark, `prefers-reduced-motion: no-preference`):** niebla home `body::before` **23.3s**; rise **18.7s**; fall **311s** (`--tevsys-home-fall-cycle`); escáner header gris **33.8s** (bucle irregular, `ease-in-out` por tramo); mid burbujas **36s**; lower strip **18s**; tail bubble **38s**; founder strip **16s**. Variables `--tevsys-home-intro-cycle` 300s vs fall 311s para no ir a la par.
 
-**Iteración (equilibrio cromático):** el barrido vertical del hero (`.tevsys-home-kitt-rect--fall`) usa **gris** alineado al escáner del header (misma familia RGB); el **rise** y la niebla del stack siguen en **ámbar**. Sin cambio de duraciones ni keyframes de movimiento.
+**Iteración (equilibrio cromático):** el barrido vertical del hero (`.tevsys-home-kitt-rect--fall`) combina **gris + ámbar** en dos capas (`::before` / `::after`) con la misma trayectoria (~311s) y **mezcla oscilante** (~8.3s, más peso al gris). La franja KITT de **planes** (`.tevsys-home-lower-strip`) repite la idea (niebla en base; KITT en pseudos; mix ~10.3s). Keyframes: `tevsys-home-intro-kitt-cycle-pos`, `tevsys-home-intro-kitt-cycle-fade`, `tevsys-home-fall-mix-*`, `tevsys-home-lower-strip-fog`, `tevsys-home-lower-strip-kitt-pos`, `tevsys-home-lower-kitt-mix-*`.
 
 **Proyecto TGP (solo docs):** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` CHANGELOG **16 abr 2026**; `TGP_V11_CHECKPOINT_PRODUCCION.md` § **CHECKPOINT 16 ABR 2026 — LANDING motion home**.
 

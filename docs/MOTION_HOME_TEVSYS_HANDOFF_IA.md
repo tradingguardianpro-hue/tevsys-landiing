@@ -22,7 +22,7 @@
 
 - **Ámbar / KITT (acento producto):** `rgba(245, 176, 65, …)` (#f5b041), con halos `rgba(255, 236, 205, …)`, sombras `rgba(210, 175, 115, …)` — niebla `body::before`, **rise** (`.tevsys-home-kitt-rect--rise`), franjas inferiores, burbujas, etc.
 - **Niebla / fondo:** azul‑negro muy contenido `rgba(4–18, …)` en gradientes 188°.
-- **Gris “instrumento” (header + fall vertical):** mismos RGB que el escáner del header — `rgba(110, 114, 128)`, `rgba(186, 190, 202)`, `rgba(95, 98, 110)` con alfas según capa. **Header:** banda diagonal ~102°, opacidad capa ~**0.86**. **Fall** (`.tevsys-home-kitt-rect--fall`): barrido **180°**, mismos tonos en el haz vertical (~46–54%); timings/keyframes **sin cambio** respecto al ciclo largo (~311s).
+- **Gris “instrumento” (header + fall vertical + KITT franja inferior):** mismos RGB que el escáner del header — `rgba(110, 114, 128)`, `rgba(186, 190, 202)`, `rgba(95, 98, 110)` con alfas según capa. **Header:** banda diagonal ~102°, opacidad capa ~**0.86**. **Fall** (`.tevsys-home-kitt-rect--fall`): dos pseudo-elementos — haz **gris** (`::before`) y **ámbar** (`::after`); misma trayectoria `tevsys-home-intro-kitt-cycle-pos` (~311s) + mezcla `tevsys-home-fall-mix-gray` / `tevsys-home-fall-mix-amber` (**8.3s**, más peso al gris). **Padre:** solo `tevsys-home-intro-kitt-cycle-fade` (opacidad/visibilidad del barrido). **Lower strip:** niebla en el bloque; KITT en `::before`/`::after` con `tevsys-home-lower-strip-kitt-pos` (18s) + mezcla **10.3s** (`tevsys-home-lower-kitt-mix-*`).
 
 ---
 
@@ -43,10 +43,10 @@
 | A | `body::before` (niebla + KITT zona superior viewport) | `tevsys-top-strip` | **20s** `alternate` (default dark) | `ease-in-out` | Mueve **dos capas** de `background-position` (niebla + franja ámbar). |
 | A′ | Misma capa en **home** (`body:has(.tevsys-home-band--cards)`) | misma | **23.3s** | `ease-in-out` | Solo cambia `animation-duration` → **desincronía** respecto a B/C y respecto a default 20s. |
 | B | `.tevsys-home-kitt-rect--rise` | `tevsys-top-strip` | **18.7s** | `ease-in-out` `alternate` | Misma familia de keyframes que A, **otro periodo** → no va a la par con niebla home ni con fall. |
-| C | `.tevsys-home-kitt-rect--fall` | `tevsys-home-intro-kitt-cycle` | **311s** (`--tevsys-home-fall-cycle`) | `linear` `infinite` | Barrido **vertical** largo; gradiente **gris** (familia header); keyframes con fase visible al **inicio** del ciclo (~19s primer tramo útil en ciclo 300s — comentario en CSS). |
+| C | `.tevsys-home-kitt-rect--fall` | `tevsys-home-intro-kitt-cycle-pos` + `tevsys-home-intro-kitt-cycle-fade` + mix | **311s** pos/fade; **8.3s** mix | `linear` (pos); mix `ease-in-out` `infinite` | Barrido **vertical**; **gris + ámbar** superpuestos, alternancia de opacidad (más tiempo en gris). Fase visible al inicio del ciclo largo. |
 | D | `#odysseyNavHeader .tevsys-header-scanner` | `tevsys-header-scanner-sweep` | **33.8s** | `infinite`; cada tramo con `animation-timing-function: ease-in-out` en keyframes | **Solo gris**; trayectoria **irregular** en un solo bucle (a veces invierte sin llegar al borde); **sin** `alternate` global. |
 | E | `.tevsys-home-mid-glow` (doble radial = “dos burbujas”) | `tevsys-home-mid-bubbles` | **36s** | `ease-in-out` `alternate` | `background-position` **y** `background-size` **y** `opacity` en keyframes → trayectoria ancha tipo zigzag/diagonal. |
-| F | `.tevsys-home-lower-strip` | `tevsys-home-lower-strip` | **18s** | `ease-in-out` `alternate` | Niebla + KITT en franja inferior (planes). |
+| F | `.tevsys-home-lower-strip` | `tevsys-home-lower-strip-fog` + `tevsys-home-lower-strip-kitt-pos` + mix | **18s** fog/kitt; **10.3s** mix | `ease-in-out` `alternate` (fog/kitt) | Niebla en capa base; KITT gris/ámbar en pseudo-elementos (misma idea que fall). |
 | G | `.tevsys-home-tail-bubble-solo` | `tevsys-home-tail-bubble-solo` | **38s** | `ease-in-out` `alternate` | Una burbuja radial; cruza viewport con ligero zigzag; máscara gradiente inferior para no competir con footer. |
 | H | `.tevsys-home-founder-strip` | `tevsys-home-founder-strip` | **16s** | `ease-in-out` `alternate` | Franja fina sobre copy fundador (misma familia visual que cards/lower). |
 
@@ -66,7 +66,8 @@
 ## 6. Keyframes compartidos
 
 - **`tevsys-top-strip`:** usado por **A** (body), **B** (rise). Movimiento combinado posición niebla + franja ámbar.
-- **`tevsys-home-intro-kitt-cycle`:** solo **C** (fall); ciclo largo con tramo de apagado al final del porcentaje del keyframe.
+- **`tevsys-home-intro-kitt-cycle-pos` / `tevsys-home-intro-kitt-cycle-fade`:** **C** (fall); posición en pseudos, apagado global en el padre. **`tevsys-home-fall-mix-*`:** alternancia gris/ámbar en el haz.
+- **`tevsys-home-lower-strip-fog` / `tevsys-home-lower-strip-kitt-pos`:** franja inferior; **`tevsys-home-lower-kitt-mix-*`:** mezcla gris/ámbar (periodo distinto al fall).
 
 ---
 

@@ -129,22 +129,56 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 		animation: tevsys-top-strip 18.7s ease-in-out infinite alternate;
 	}
 
-	/* Fall: barrido vertical largo — gris (misma familia que escáner header); rise/niebla siguen en ámbar */
+	/*
+	  Fall: barrido vertical — dos capas (gris + ámbar) con la misma trayectoria;
+	  tevsys-home-fall-mix-* alterna opacidades (más tiempo en gris) sin tocar el ciclo largo (~311s).
+	*/
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
+		background: none;
+		animation: tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear infinite;
+	}
+
+	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before,
+	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-size: 100% 560%;
+		background-repeat: no-repeat;
+		background-position: 50% 258%;
+		pointer-events: none;
+	}
+
+	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before {
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
 			transparent 24%,
-			rgba(110, 114, 128, 0.16) 46%,
-			rgba(186, 190, 202, 0.26) 50%,
-			rgba(95, 98, 110, 0.1) 54%,
+			rgba(110, 114, 128, 0.2) 46%,
+			rgba(186, 190, 202, 0.3) 50%,
+			rgba(95, 98, 110, 0.12) 54%,
 			transparent 74%,
 			transparent 100%
 		);
-		background-size: 100% 560%;
-		background-position: 50% 258%;
-		background-repeat: no-repeat;
-		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-fall-cycle, 311s) linear infinite;
+		animation:
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear infinite,
+			tevsys-home-fall-mix-gray 8.3s ease-in-out infinite;
+	}
+
+	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
+		background-image: linear-gradient(
+			180deg,
+			transparent 0%,
+			transparent 24%,
+			rgba(245, 176, 65, 0.32) 46%,
+			rgba(255, 236, 205, 0.12) 50%,
+			rgba(210, 175, 115, 0.1) 54%,
+			transparent 74%,
+			transparent 100%
+		);
+		animation:
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear infinite,
+			tevsys-home-fall-mix-amber 8.3s ease-in-out infinite;
 	}
 }
 
@@ -218,52 +252,109 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 
 /*
   Ciclo 300s: ~6,4% ≈19s fase visible al inicio del ciclo (carga = frame 0).
-  Reparto del tiempo: tramos largos con poco desplazamiento = “lento” como el KITT de abajo;
-  tramo central algo más vivo. Sin parada fija de varios segundos arriba.
+  Fall: posición en ::before/::after (tevsys-home-intro-kitt-cycle-pos); opacidad global en el padre (tevsys-home-intro-kitt-cycle-fade).
 */
-@keyframes tevsys-home-intro-kitt-cycle {
+@keyframes tevsys-home-intro-kitt-cycle-pos {
 	0% {
 		background-position: 50% 258%;
-		opacity: 0.66;
-		visibility: visible;
 	}
-	/* ~0,2s: ya se mueve (vida), sin esperar */
 	0.07% {
 		background-position: 50% 248%;
-		opacity: 0.68;
 	}
-	/* ~5s: muy poco desplazamiento = sensación lenta (como el KITT de abajo en sus suaves) */
 	1.85% {
 		background-position: 50% 230%;
-		opacity: 0.58;
 	}
 	2.85% {
 		background-position: 50% 158%;
-		opacity: 0.57;
 	}
 	4% {
 		background-position: 50% 18%;
-		opacity: 0.54;
 	}
 	5.05% {
 		background-position: 50% -108%;
-		opacity: 0.42;
 	}
-	/* ~4s: llegada lenta abajo */
 	5.95% {
 		background-position: 50% -232%;
-		opacity: 0.16;
 	}
 	6.35% {
 		background-position: 50% -292%;
+	}
+	6.4%,
+	100% {
+		background-position: 50% -298%;
+	}
+}
+
+@keyframes tevsys-home-intro-kitt-cycle-fade {
+	0% {
+		opacity: 0.66;
+		visibility: visible;
+	}
+	0.07% {
+		opacity: 0.68;
+	}
+	1.85% {
+		opacity: 0.58;
+	}
+	2.85% {
+		opacity: 0.57;
+	}
+	4% {
+		opacity: 0.54;
+	}
+	5.05% {
+		opacity: 0.42;
+	}
+	5.95% {
+		opacity: 0.16;
+	}
+	6.35% {
 		opacity: 0;
 		visibility: hidden;
 	}
 	6.4%,
 	100% {
-		background-position: 50% -298%;
 		opacity: 0;
 		visibility: hidden;
+	}
+}
+
+/* Mezcla gris/ámbar en el fall (más peso al gris); periodo propio, no casado con 311s */
+@keyframes tevsys-home-fall-mix-gray {
+	0%,
+	100% {
+		opacity: 0.94;
+	}
+	18% {
+		opacity: 0.22;
+	}
+	38% {
+		opacity: 0.9;
+	}
+	58% {
+		opacity: 0.2;
+	}
+	78% {
+		opacity: 0.88;
+	}
+}
+
+@keyframes tevsys-home-fall-mix-amber {
+	0%,
+	100% {
+		opacity: 0.1;
+	}
+	18% {
+		opacity: 0.82;
+	}
+	38% {
+		opacity: 0.12;
+	}
+	58% {
+		opacity: 0.85;
+	}
+	78% {
+		opacity: 0.14;
 	}
 }
 
@@ -399,46 +490,123 @@ html[data-theme='dark'] .tevsys-home-lower-strip {
 	z-index: 0;
 	overflow: hidden;
 	opacity: 0.82;
-	background-image:
-		linear-gradient(
-			188deg,
-			rgba(4, 4, 6, 0.97) 0%,
-			rgba(9, 9, 12, 0.9) 28%,
-			rgba(14, 16, 22, 0.12) 52%,
-			rgba(16, 18, 26, 0.08) 64%,
-			rgba(10, 10, 14, 0.86) 90%,
-			rgba(5, 5, 7, 0.72) 100%
-		),
-		linear-gradient(
-			180deg,
-			transparent 0%,
-			transparent 40%,
-			rgba(245, 176, 65, 0.2) 47.8%,
-			rgba(255, 236, 205, 0.09) 50%,
-			rgba(210, 175, 115, 0.11) 52.2%,
-			transparent 58%,
-			transparent 100%
-		);
-	background-size: 100% 122%, 100% 248%;
-	background-position: 50% 0%, 50% -36%;
+	background-image: linear-gradient(
+		188deg,
+		rgba(4, 4, 6, 0.97) 0%,
+		rgba(9, 9, 12, 0.9) 28%,
+		rgba(14, 16, 22, 0.12) 52%,
+		rgba(16, 18, 26, 0.08) 64%,
+		rgba(10, 10, 14, 0.86) 90%,
+		rgba(5, 5, 7, 0.72) 100%
+	);
+	background-size: 100% 122%;
+	background-position: 50% 0%;
 	background-repeat: no-repeat;
+}
+
+html[data-theme='dark'] .tevsys-home-lower-strip::before,
+html[data-theme='dark'] .tevsys-home-lower-strip::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-size: 100% 248%;
+	background-position: 50% -36%;
+}
+
+/* KITT franja inferior: gris + ámbar alternados (10.3s ≠ 8.3s del hero fall) */
+html[data-theme='dark'] .tevsys-home-lower-strip::before {
+	background-image: linear-gradient(
+		180deg,
+		transparent 0%,
+		transparent 40%,
+		rgba(110, 114, 128, 0.18) 47.8%,
+		rgba(186, 190, 202, 0.26) 50%,
+		rgba(95, 98, 110, 0.11) 52.2%,
+		transparent 58%,
+		transparent 100%
+	);
+	animation:
+		tevsys-home-lower-strip-kitt-pos 18s ease-in-out infinite alternate,
+		tevsys-home-lower-kitt-mix-gray 10.3s ease-in-out infinite;
+}
+
+html[data-theme='dark'] .tevsys-home-lower-strip::after {
+	background-image: linear-gradient(
+		180deg,
+		transparent 0%,
+		transparent 40%,
+		rgba(245, 176, 65, 0.2) 47.8%,
+		rgba(255, 236, 205, 0.09) 50%,
+		rgba(210, 175, 115, 0.11) 52.2%,
+		transparent 58%,
+		transparent 100%
+	);
+	animation:
+		tevsys-home-lower-strip-kitt-pos 18s ease-in-out infinite alternate,
+		tevsys-home-lower-kitt-mix-amber 10.3s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-lower-strip {
-		animation: tevsys-home-lower-strip 18s ease-in-out infinite alternate;
+		animation: tevsys-home-lower-strip-fog 18s ease-in-out infinite alternate;
 	}
 }
 
-@keyframes tevsys-home-lower-strip {
+@keyframes tevsys-home-lower-strip-fog {
 	0% {
-		background-position: 50% -5%, 50% -40%;
+		background-position: 50% -5%;
 	}
 	50% {
-		background-position: 50% 6%, 50% 102%;
+		background-position: 50% 6%;
 	}
 	100% {
-		background-position: 50% -2%, 50% -32%;
+		background-position: 50% -2%;
+	}
+}
+
+@keyframes tevsys-home-lower-strip-kitt-pos {
+	0% {
+		background-position: 50% -40%;
+	}
+	50% {
+		background-position: 50% 102%;
+	}
+	100% {
+		background-position: 50% -32%;
+	}
+}
+
+@keyframes tevsys-home-lower-kitt-mix-gray {
+	0%,
+	100% {
+		opacity: 0.92;
+	}
+	20% {
+		opacity: 0.24;
+	}
+	42% {
+		opacity: 0.88;
+	}
+	64% {
+		opacity: 0.2;
+	}
+}
+
+@keyframes tevsys-home-lower-kitt-mix-amber {
+	0%,
+	100% {
+		opacity: 0.12;
+	}
+	20% {
+		opacity: 0.78;
+	}
+	42% {
+		opacity: 0.14;
+	}
+	64% {
+		opacity: 0.82;
 	}
 }
 
@@ -597,6 +765,18 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		animation: none !important;
 		opacity: 0 !important;
 		visibility: hidden !important;
+	}
+
+	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before,
+	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
+		animation: none !important;
+		opacity: 0 !important;
+	}
+
+	html[data-theme='dark'] .tevsys-home-lower-strip::before,
+	html[data-theme='dark'] .tevsys-home-lower-strip::after {
+		animation: none !important;
+		opacity: 0 !important;
 	}
 
 	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
