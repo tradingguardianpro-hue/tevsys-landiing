@@ -4,6 +4,23 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Motion / vida en home (tema oscuro) — abr 2026
+
+**Objetivo:** Sensación de producto **activo** (instrumento encendido), **sin** estética cinematográfica ni parpadeo agresivo. Animaciones **desacopladas** entre sí (duraciones distintas, sin “reloj maestro”).
+
+**Documentación handoff IA → IA:** `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` (tabla de duraciones, colores, keyframes, archivos).
+
+**Código:**
+- `src/styles/global.css` — niebla `body::before`, KITT hero (`.tevsys-home-kitt-rect--rise` / `--fall`), burbujas (`.tevsys-home-mid-glow`, `.tevsys-home-tail-bubble-solo`), franjas `.tevsys-home-lower-strip`, `.tevsys-home-founder-strip`, escáner header `#odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner`, `@keyframes` asociados, `prefers-reduced-motion`, ajustes móvil.
+- `src/pages/index.astro` — contenedores `tevsys-home-*` (stack hero, bandas, fundador).
+- `src/components/core/Header.astro` — en `/`: clase `tevsys-header--home-scanner` + capa `tevsys-header-scanner` (`aria-hidden`).
+
+**Resumen numérico (dark, `prefers-reduced-motion: no-preference`):** niebla home `body::before` **23.3s**; rise **18.7s**; fall **311s** (`--tevsys-home-fall-cycle`); escáner header gris **33.8s** (bucle irregular, `ease-in-out` por tramo); mid burbujas **36s**; lower strip **18s**; tail bubble **38s**; founder strip **16s**. Variables `--tevsys-home-intro-cycle` 300s vs fall 311s para no ir a la par.
+
+**Proyecto TGP (solo docs):** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` CHANGELOG **16 abr 2026**; `TGP_V11_CHECKPOINT_PRODUCCION.md` § **CHECKPOINT 16 ABR 2026 — LANDING motion home**.
+
+---
+
 ## API licencias y webhooks — abr 2026
 
 **Repo:** `tevsys-landiing` (desplegar en Vercel).

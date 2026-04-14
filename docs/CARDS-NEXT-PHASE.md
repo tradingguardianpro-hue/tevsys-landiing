@@ -201,7 +201,7 @@ Estado actual elegido:
 
 1. No duplicar seguimiento en muchos sitios.
 2. Actualizar este bloque al cerrar cada tarea real.
-3. Si algo se publica en web, registrar también en `CHANGELOG-TEVSYS.md`.
+3. Si algo se publica en web, registrar también en `CHANGELOG-TEVSYS.md`. **Motion home (abr 2026):** si se tocan duraciones o capas de la portada (tema oscuro), actualizar **`docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md`** y la sección Motion del changelog.
 4. Patrón fijo en las 4 micro-páginas: ancla arriba (`Qué puedes comprobar`) + instrucción + `Ver captura` en cada rectángulo.
 5. Patrón visual de navegación: punto amarillo en título de bloque + highlight del destino al hacer click en ancla.
 

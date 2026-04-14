@@ -35,6 +35,7 @@
 - **`src/pages/features/hyperclose.astro`** + **`videos-cierre-youtube.astro`:** notas **vídeo editado / saltos de reloj**; tercer vídeo lista YouTube = **HyperClose** `https://youtu.be/jwEvJrohR4I` (misma demo que artículo §5.2).
 - **`src/pages/instalacion.astro`:** jerarquía vídeos + pasos en tarjetas (**CHANGELOG** §64, abr 2026).
 - **Pendiente si aplica:** **PNG galería §58** HyperClose en `public/images/evidence/` si faltan; renovar **MP4 instalación** cuando se grabe WebRequest en pantalla.
+- **Motion home (abr 2026):** portada tema oscuro — KITT, burbujas, franjas, escáner gris en header; duraciones **desacopladas** a propósito. Handoff técnico IA: **`docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md`**; registro **`docs/CHANGELOG-TEVSYS.md`** § Motion.
 
 ### Qué no tocar sin protocolo (recordatorio)
 

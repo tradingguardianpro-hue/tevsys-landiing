@@ -21,6 +21,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Navegación:** Inicio | Empresas | Contacto
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
+- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** lento, sin sincronía con el resto de animaciones de la portada. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion.
 
 ---
 

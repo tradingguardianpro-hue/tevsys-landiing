@@ -19,6 +19,10 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `public/assets/images/home/cards/*` | Imágenes personalizadas de cards 1-4. |
 | `public/assets/images/plans/*` | Imágenes finales de cards de planes + visuales de formulario por plan. |
 | `docs/*.md` | Documentación actualizada con estado real. |
+| `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` | **Abr 2026:** handoff IA→IA — tabla duraciones/colores/capas motion home; sincronía / asincronía. |
+| `src/styles/global.css` | **Abr 2026:** motion home tema oscuro (KITT, burbujas, franjas, escáner header gris, `prefers-reduced-motion`, móvil). |
+| `src/components/core/Header.astro` | **Abr 2026:** home: `tevsys-header--home-scanner` + `tevsys-header-scanner`. |
+| `src/pages/index.astro` | **Abr 2026:** marcado `tevsys-home-*` para capas animadas detrás del contenido. |
 | `src/config/settings.js` | **SEO (Mar 2026):** title y description orientados a búsquedas (protección capital, límites MT5, **59** operativas). |
 | `src/pages/company/contact.astro` | **SEO:** Meta propia "Contacto y demo \| tevsys". Bug Astro Odyssey corregido (antes: "Contact \| Astro Odyssey Theme"). |
 | `public/robots.txt` | **SEO:** Nuevo. Allow all, sitemap. |

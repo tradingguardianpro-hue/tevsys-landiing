@@ -1,0 +1,87 @@
+# Motion home tevsys — Handoff IA → IA (tema oscuro)
+
+**Repo:** `tevsys-landiing` (Astro). **Alcance:** solo **home** (`/`), **tema oscuro** (`html[data-theme='dark']`). **No afecta** al EA MQL5 ni al workspace TGP salvo documentación enlazada.
+
+**Objetivo de producto:** “Vida” en la página (sistema activo, premium, calmado) **sin** cine ni estroboscopio. Las animaciones **no comparten reloj**: duraciones y funciones de tiempo distintas a propósito; si en algún instante coinciden, es casualidad.
+
+**Accesibilidad:** `prefers-reduced-motion: reduce` apaga animaciones de estas capas (o las fija en estado estático según regla en `global.css`).
+
+---
+
+## 1. Archivos fuente
+
+| Archivo | Rol |
+|---------|-----|
+| `src/styles/global.css` | Todas las `@keyframes`, duraciones, colores, capas `::before`, clases `.tevsys-home-*`, header escáner. |
+| `src/pages/index.astro` | Marcado: hero stack + dos rectángulos KITT; banda cards + `mid-glow`; banda lower + strip + tail bubble; fundador + strip. |
+| `src/components/core/Header.astro` | Si `pathname === '/'`: clase `tevsys-header--home-scanner` en `<header>` + `<div class="tevsys-header-scanner" aria-hidden="true">`. Estilos locales mínimos (`position: relative`, `overflow: hidden` en header). |
+
+---
+
+## 2. Paleta en motion (identidad)
+
+- **Ámbar / KITT (acento producto):** `rgba(245, 176, 65, …)` (#f5b041), con halos `rgba(255, 236, 205, …)`, sombras `rgba(210, 175, 115, …)` — coherente con botones y acentos de la web.
+- **Niebla / fondo:** azul‑negro muy contenido `rgba(4–18, …)` en gradientes 188°.
+- **Header escáner (solo contraste, no “amarillo marca”):** gris `rgba(110–188, …)` en banda diagonal ~102°; opacidad capa ~**0.86**; pico del haz más bajo que el KITT para lectura **calma / confianza**.
+
+---
+
+## 3. Capas y orden (z-index mental)
+
+- **Hero:** `.tevsys-home-hero-stack` con `isolation: isolate`; rectángulos `.tevsys-home-kitt-rect` en `z-index: 0`; contenido real en `.tevsys-home-hero-stack__content` en `z-index: 1`.
+- **Cards:** `.tevsys-home-mid-glow` detrás (`z-index: 0`); grid/títulos en `z-index: 1`.
+- **Header escáner:** `.tevsys-header-scanner` absoluto `inset: 0`, `z-index: 0`; nav / acciones `z-index: 1` para no tapar clics ni lectura.
+
+---
+
+## 4. Lista de animaciones — duración, easing, sincronía
+
+**Regla:** ningún par usa la misma duración **y** el mismo easing **y** el mismo patrón de keyframes; los números “raros” (23.3s, 311s, 33.8s…) reducen batidas periódicas conjuntas.
+
+| # | Selector / capa | Animación | Duración | Easing / notas | Dirección / comportamiento |
+|---|-----------------|-----------|----------|----------------|----------------------------|
+| A | `body::before` (niebla + KITT zona superior viewport) | `tevsys-top-strip` | **20s** `alternate` (default dark) | `ease-in-out` | Mueve **dos capas** de `background-position` (niebla + franja ámbar). |
+| A′ | Misma capa en **home** (`body:has(.tevsys-home-band--cards)`) | misma | **23.3s** | `ease-in-out` | Solo cambia `animation-duration` → **desincronía** respecto a B/C y respecto a default 20s. |
+| B | `.tevsys-home-kitt-rect--rise` | `tevsys-top-strip` | **18.7s** | `ease-in-out` `alternate` | Misma familia de keyframes que A, **otro periodo** → no va a la par con niebla home ni con fall. |
+| C | `.tevsys-home-kitt-rect--fall` | `tevsys-home-intro-kitt-cycle` | **311s** (`--tevsys-home-fall-cycle`) | `linear` `infinite` | Barrido **vertical** largo; keyframes con fase visible al **inicio** del ciclo (~19s primer tramo útil en ciclo 300s — comentario en CSS). |
+| D | `#odysseyNavHeader .tevsys-header-scanner` | `tevsys-header-scanner-sweep` | **33.8s** | `infinite`; cada tramo con `animation-timing-function: ease-in-out` en keyframes | **Solo gris**; trayectoria **irregular** en un solo bucle (a veces invierte sin llegar al borde); **sin** `alternate` global. |
+| E | `.tevsys-home-mid-glow` (doble radial = “dos burbujas”) | `tevsys-home-mid-bubbles` | **36s** | `ease-in-out` `alternate` | `background-position` **y** `background-size` **y** `opacity` en keyframes → trayectoria ancha tipo zigzag/diagonal. |
+| F | `.tevsys-home-lower-strip` | `tevsys-home-lower-strip` | **18s** | `ease-in-out` `alternate` | Niebla + KITT en franja inferior (planes). |
+| G | `.tevsys-home-tail-bubble-solo` | `tevsys-home-tail-bubble-solo` | **38s** | `ease-in-out` `alternate` | Una burbuja radial; cruza viewport con ligero zigzag; máscara gradiente inferior para no competir con footer. |
+| H | `.tevsys-home-founder-strip` | `tevsys-home-founder-strip` | **16s** | `ease-in-out` `alternate` | Franja fina sobre copy fundador (misma familia visual que cards/lower). |
+
+**Variables CSS home (contexto KITT fall):** en `body:has(.tevsys-home-band--cards)`: `--tevsys-home-intro-cycle: 300s`, `--tevsys-home-fall-cycle: 311s` (fall usa la segunda; **311 ≠ 300** a propósito).
+
+---
+
+## 5. Detalle header escáner (D)
+
+- **Gradiente:** `linear-gradient(102deg, …)` con transparencias y grises en ~46–54% del vector de color.
+- **`background-size`:** `240% 100%` (haz ancho, suave).
+- **Keyframes `tevsys-header-scanner-sweep`:** paradas en 0/100%, 22%, 29%, 51%, 57%, 76%, 85%, 93% — recorridos asimétricos; **velocidad perceptual calmada** (evolución respecto a iteraciones previas que parecían “flash” con ciclos cortos + `linear`).
+- **Móvil / reduced motion:** reglas al final de `global.css` reducen niebla, apagan KITT rect, ocultan escáner header, etc. (revisar bloque `@media (prefers-reduced-motion: reduce)` y `@media (max-width: 768px)`).
+
+---
+
+## 6. Keyframes compartidos
+
+- **`tevsys-top-strip`:** usado por **A** (body), **B** (rise). Movimiento combinado posición niebla + franja ámbar.
+- **`tevsys-home-intro-kitt-cycle`:** solo **C** (fall); ciclo largo con tramo de apagado al final del porcentaje del keyframe.
+
+---
+
+## 7. Cómo extender sin romper la filosofía
+
+1. **Nueva capa animada:** elegir duración **no** múltiplo obvio de 16/18/20/23.3/33.8/36/38/311 (p. ej. 27.4s o 41.2s).
+2. **No** reutilizar el mismo `animation-name` con el mismo periodo que otra capa visible simultáneamente si buscáis asincronía perceptible.
+3. **Header:** mantener **gris**; no mezclar ámbar en esa capa (marca vs “instrumento”).
+4. Tras cambios: actualizar **`CHANGELOG-TEVSYS.md`** y este archivo si cambian números o nombres.
+
+---
+
+## 8. Referencias cruzadas
+
+- Changelog publicable: `docs/CHANGELOG-TEVSYS.md` (entrada **Motion / vida en home**).
+- Checkpoint proyecto TGP (contexto comercial, no código EA): `TGP_V11_CHECKPOINT_PRODUCCION.md` § *CHECKPOINT 16 ABR 2026 — LANDING motion home* (ruta según repo del fundador).
+- `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` — entrada CHANGELOG **16 abr 2026 — Web tevsys.io** (correlato).
+- Prompt equipo: `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §0.1 (bullet motion).
