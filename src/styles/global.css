@@ -57,12 +57,12 @@ html[data-theme='dark'] body::before {
 	}
 }
 
-/* Home — duración del ciclo del barrido superior (main::before); ~0.94% del ciclo ≈ 2.25s de barrido */
+/* Home — ciclo largo; ~1.35% del ciclo ≈ barrido ~3.8s con --tevsys-home-intro-cycle: 280s */
 html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
-	--tevsys-home-intro-cycle: 240s;
+	--tevsys-home-intro-cycle: 280s;
 }
 
-/* Solo home: barrido KITT desde arriba (~2× tiempo y ~2× recorrido del primer diseño); se repite poco a poco */
+/* Solo home: barrido KITT arriba del todo, sentido arriba → abajo; más recorrido y más lento; se repite en el ciclo */
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
 		content: '';
@@ -70,22 +70,23 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 		top: 0;
 		left: 0;
 		right: 0;
-		height: clamp(88px, 18vh, 200px);
+		height: clamp(100px, 22vh, 240px);
 		pointer-events: none;
 		z-index: 0;
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
-			transparent 32%,
-			rgba(245, 176, 65, 0.44) 49%,
-			rgba(255, 236, 205, 0.16) 50.5%,
-			transparent 66%,
+			transparent 28%,
+			rgba(245, 176, 65, 0.42) 48%,
+			rgba(255, 236, 205, 0.15) 50%,
+			rgba(210, 175, 115, 0.12) 52%,
+			transparent 70%,
 			transparent 100%
 		);
-		background-size: 100% 320%;
-		background-position: 50% -150%;
+		background-size: 100% 420%;
+		background-position: 50% 280%;
 		background-repeat: no-repeat;
-		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 240s) linear infinite;
+		animation: tevsys-home-intro-kitt-cycle var(--tevsys-home-intro-cycle, 280s) linear infinite;
 	}
 
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards) #page {
@@ -95,35 +96,35 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 }
 
 /*
-  Ciclo largo: solo el tramo inicial (~0.94%) hace el barrido; el resto invisible.
-  Cada ~4 min vuelve a salir desde arriba sin cargar la página.
+  Ciclo largo: solo ~1.35% hace el barrido (resto invisible).
+  Segundo valor de background-position: de positivo → negativo = franja que baja (arriba del viewport hacia abajo).
 */
 @keyframes tevsys-home-intro-kitt-cycle {
 	0% {
-		background-position: 50% -240%;
+		background-position: 50% 310%;
 		opacity: 1;
 		visibility: visible;
 	}
-	0.28% {
-		background-position: 50% -95%;
+	0.38% {
+		background-position: 50% 95%;
 		opacity: 1;
 	}
-	0.56% {
-		background-position: 50% 52%;
-		opacity: 0.9;
+	0.72% {
+		background-position: 50% -55%;
+		opacity: 0.88;
 	}
-	0.78% {
-		background-position: 50% 175%;
-		opacity: 0.4;
+	1.05% {
+		background-position: 50% -195%;
+		opacity: 0.38;
 	}
-	0.94% {
-		background-position: 50% 220%;
+	1.35% {
+		background-position: 50% -310%;
 		opacity: 0;
 		visibility: hidden;
 	}
-	0.95%,
+	1.36%,
 	100% {
-		background-position: 50% 220%;
+		background-position: 50% -310%;
 		opacity: 0;
 		visibility: hidden;
 	}
@@ -508,7 +509,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	html[data-theme='dark'] main#content:has(.tevsys-home-band--cards)::before {
-		height: clamp(72px, 15vh, 168px);
+		height: clamp(88px, 18vh, 192px);
 	}
 
 	html[data-theme='dark'] .tevsys-home-founder-band {
