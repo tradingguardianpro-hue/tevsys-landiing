@@ -487,27 +487,29 @@ html[data-theme='dark'] .tevsys-home-mid-glow {
 	z-index: 0;
 	pointer-events: none;
 	overflow: hidden;
-	/* Burbujas: ámbar marca + halo teal muy tenue (alineado panel); blur un poco menor = menos “mancha muerta” al salir del centro */
+	/*
+	  Opción 3 — doble rol: (1) niebla ámbar ancha y estable; (2) aura teal más pequeña y fría que orbita
+	  (misma trayectoria async; el teal no compite con el ámbar en el mismo gradiente).
+	*/
 	background-image:
 		radial-gradient(
-			ellipse 62vmin 52vmin at 50% 50%,
-			rgba(245, 176, 65, 0.28) 0%,
-			rgba(0, 172, 182, 0.11) 24%,
-			rgba(118, 102, 80, 0.14) 38%,
-			rgba(48, 44, 40, 0.09) 52%,
-			transparent 76%
+			ellipse 64vmin 54vmin at 50% 50%,
+			rgba(245, 176, 65, 0.23) 0%,
+			rgba(255, 218, 175, 0.09) 28%,
+			rgba(120, 105, 82, 0.11) 42%,
+			rgba(42, 40, 36, 0.07) 56%,
+			transparent 78%
 		),
 		radial-gradient(
-			ellipse 48vmin 60vmin at 50% 50%,
-			rgba(245, 176, 65, 0.22) 0%,
-			rgba(0, 158, 170, 0.09) 32%,
-			rgba(88, 80, 72, 0.11) 40%,
-			rgba(40, 38, 36, 0.08) 54%,
-			transparent 74%
+			ellipse 34vmin 42vmin at 50% 50%,
+			rgba(0, 188, 198, 0.12) 0%,
+			rgba(0, 165, 175, 0.065) 40%,
+			rgba(0, 128, 138, 0.035) 54%,
+			transparent 70%
 		);
 	background-repeat: no-repeat, no-repeat;
 	background-position: -12% 38%, 108% 62%;
-	background-size: 122vmin 104vmin, 100vmin 96vmin;
+	background-size: 128vmin 106vmin, 76vmin 82vmin;
 	filter: blur(19px);
 	opacity: 0.96;
 }
@@ -528,39 +530,39 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 @keyframes tevsys-home-mid-bubbles {
 	0% {
 		background-position: -38% 24%, 118% 76%;
-		background-size: 120vmin 102vmin, 100vmin 96vmin;
+		background-size: 126vmin 104vmin, 78vmin 84vmin;
 		opacity: 0.91;
 	}
 	16% {
 		background-position: -18% 48%, 106% 34%;
-		background-size: 124vmin 106vmin, 94vmin 100vmin;
+		background-size: 130vmin 108vmin, 80vmin 86vmin;
 		opacity: 0.97;
 	}
 	32% {
 		/* Incursión breve al centro para percibir profundidad sin “quedarse” detrás de cards */
 		background-position: 30% 34%, 68% 60%;
-		background-size: 110vmin 98vmin, 106vmin 102vmin;
+		background-size: 114vmin 100vmin, 74vmin 80vmin;
 		opacity: 0.93;
 	}
 	48% {
 		background-position: 112% 46%, -14% 54%;
-		background-size: 98vmin 110vmin, 114vmin 92vmin;
+		background-size: 102vmin 112vmin, 72vmin 78vmin;
 		opacity: 0.98;
 	}
 	64% {
 		background-position: 120% 66%, -24% 30%;
-		background-size: 104vmin 100vmin, 118vmin 106vmin;
+		background-size: 108vmin 102vmin, 82vmin 88vmin;
 		opacity: 0.91;
 	}
 	80% {
 		/* Segunda incursión controlada al interior (corta) */
 		background-position: 64% 20%, 36% 80%;
-		background-size: 114vmin 104vmin, 90vmin 98vmin;
+		background-size: 118vmin 106vmin, 76vmin 84vmin;
 		opacity: 0.95;
 	}
 	100% {
 		background-position: -34% 42%, 116% 58%;
-		background-size: 120vmin 102vmin, 98vmin 100vmin;
+		background-size: 126vmin 104vmin, 78vmin 84vmin;
 		opacity: 0.93;
 	}
 }
