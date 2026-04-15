@@ -622,6 +622,80 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 	}
 }
 
+/*
+  Móvil — cards en 1 columna: el brillo debe leerse detrás de la pila (eje ~centro), no solo en laterales
+  como en escritorio 2×2. Rutas distintas a desktop; mismas duraciones 28s / 33.7s.
+*/
+@keyframes tevsys-home-mid-bubbles-a-mobile {
+	0% {
+		background-position: 50% 20%;
+		background-size: 108vmin 96vmin;
+	}
+	12% {
+		background-position: 44% 32%;
+		background-size: 112vmin 100vmin;
+	}
+	25% {
+		background-position: 56% 42%;
+		background-size: 104vmin 98vmin;
+	}
+	38% {
+		background-position: 48% 52%;
+		background-size: 116vmin 102vmin;
+	}
+	52% {
+		background-position: 52% 62%;
+		background-size: 106vmin 100vmin;
+	}
+	66% {
+		background-position: 46% 72%;
+		background-size: 114vmin 104vmin;
+	}
+	80% {
+		background-position: 51% 82%;
+		background-size: 102vmin 96vmin;
+	}
+	100% {
+		background-position: 50% 24%;
+		background-size: 110vmin 98vmin;
+	}
+}
+
+@keyframes tevsys-home-mid-bubbles-b-mobile {
+	0% {
+		background-position: 42% 76%;
+		background-size: 76vmin 84vmin;
+	}
+	14% {
+		background-position: 58% 64%;
+		background-size: 80vmin 88vmin;
+	}
+	29% {
+		background-position: 38% 50%;
+		background-size: 72vmin 80vmin;
+	}
+	43% {
+		background-position: 54% 38%;
+		background-size: 84vmin 90vmin;
+	}
+	57% {
+		background-position: 46% 28%;
+		background-size: 74vmin 82vmin;
+	}
+	71% {
+		background-position: 52% 46%;
+		background-size: 78vmin 86vmin;
+	}
+	86% {
+		background-position: 48% 68%;
+		background-size: 82vmin 88vmin;
+	}
+	100% {
+		background-position: 44% 78%;
+		background-size: 76vmin 84vmin;
+	}
+}
+
 /* Home — inferior: misma idea que arriba (niebla + KITT), más baja; planes + fundador encima */
 html[data-theme='dark'] .tevsys-home-band--lower {
 	--tevsys-lower-strip-h: clamp(150px, 24vh, 340px);
@@ -1001,7 +1075,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	/*
-	  Móvil home: header resaltado; zona cards calmada (burbujas lentas).
+	  Móvil home: header resaltado; burbujas detrás de la columna de cards (keyframes *-mobile).
 	  Hero “rise”: más visible que el recorte agresivo anterior, sin acercarse al brillo de escritorio (0,72).
 	*/
 	@media (prefers-reduced-motion: no-preference) {
@@ -1026,11 +1100,11 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
-			animation-duration: 28s;
+			animation: tevsys-home-mid-bubbles-a-mobile 28s ease-in-out infinite alternate;
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow::before {
-			animation-duration: 33.7s;
+			animation: tevsys-home-mid-bubbles-b-mobile 33.7s ease-in-out infinite alternate;
 		}
 	}
 }

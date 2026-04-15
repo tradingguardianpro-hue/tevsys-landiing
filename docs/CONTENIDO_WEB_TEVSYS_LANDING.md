@@ -21,7 +21,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Navegación:** Inicio | Empresas | Contacto
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
-- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** lento, sin sincronía con el resto de animaciones de la portada. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion.
+- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** (resaltado alineado móvil/escritorio donde aplica), sin sincronía con el resto de la portada. Detrás de las **4 cards**: `.tevsys-home-mid-glow` — **gris instrumento**, doble burbuja con animaciones **28s** y **33.7s** (`::before`); **escritorio:** trayectoria tipo **perímetro** del bloque 2×2 (incl. **SML** y **Evidencia**); **móvil (1 columna):** mismas duraciones con keyframes **`*-mobile`** para que el brillo se mueva **detrás de la columna** de cards. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion (iteración 15–16 abr), `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
 
 ---
 
@@ -63,6 +63,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Cards (4)
 - **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
+- **Motion detrás (15–16 abr 2026):** capa decorativa `.tevsys-home-mid-glow` (ver `global.css`) — **no** altera layout ni textos; atmósfera gris premium; cards siguen siendo el foco. En **móvil**, rutas de animación distintas al escritorio para que el resplandor recorra la **pila vertical** detrás de las cards.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`

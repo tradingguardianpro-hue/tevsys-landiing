@@ -9,13 +9,12 @@
 Eres IA en el repo **tevsys-landiing** (web tevsys.io, tema oscuro). Objetivo inmediato: **ajustar motion en móvil** sin romper desktop.
 
 **Hecho reciente (no repetir debate largo):**
-- Burbujas detrás del bloque de cards (`.tevsys-home-mid-glow`): **sin máscara central**; duración animación **22s** (antes 36s → 26.4s). Desktop + `prefers-reduced-motion: no-preference`.
-- Documentación motion: `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` + `docs/CHANGELOG-TEVSYS.md`.
+- Burbujas detrás del bloque de cards (`.tevsys-home-mid-glow`): **gris instrumento**; **dos animaciones** **28s** + **33.7s** en `::before`. **Escritorio:** `tevsys-home-mid-bubbles-a` / `-b`, trayectoria **perímetro** 2×2 (SML + Evidencia). **Móvil (≤768px):** `tevsys-home-mid-bubbles-a-mobile` / `-b-mobile` — mismo ritmo, recorrido **centrado** y **vertical** detrás de la **columna** de cards. Header escáner resaltado; hero móvil rise **0.68**. Ver **CHANGELOG-TEVSYS.md** § Motion «iteración 15–16 abr 2026».
+- Documentación motion: `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` + `docs/CHANGELOG-TEVSYS.md` + `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` § Motion mid-glow móvil.
 
-**Intención producto (pendiente de implementar cuando el fundador diga «sí»):**
-- **Móvil:** header se percibe bien; se valora **un poco más de “vida” solo en el header** (barrido más legible / algo más de ritmo o contraste, **sin** estrés).
-- **Móvil:** cerca del titular *«¿Cuánto dinero has perdido por no parar a tiempo?»* y las **cards** → **no** sumar animación llamativa; preferir **calma** para no robar foco al mensaje y a las cards.
-- **Hero / franjas en pantalla estrecha:** el mismo tiempo absoluto puede leerse “raro” (poco recorrido visual); valorar **overrides solo `@media (max-width: 768px)`** o apagar capas decorativas selectivas.
+**Intención producto (ajustes finos futuros — no tocar sin OK):**
+- **Móvil:** header ya se percibe; evitar **más** estrés cerca del titular de valor y las cards (prioridad **calma**).
+- **Hero / franjas en pantalla estrecha:** si algo “se lee raro”, valorar **overrides solo `@media (max-width: 768px)`** o apagar capas decorativas selectivas, sin romper desktop.
 - Respetar **`prefers-reduced-motion: reduce`**: ya apaga varias animaciones; no regresar eso.
 
 **Archivos clave:** `src/styles/global.css` (bloques `tevsys-home-*`, `@media (max-width: 768px)`, header `#odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner`), `src/pages/index.astro`, `src/components/core/Header.astro`.
