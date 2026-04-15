@@ -532,14 +532,17 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
-		/* Bucle cerrado (sin alternate): trayectoria orgánica, no “rebote” predecible */
-		animation: tevsys-home-mid-bubbles-a 28s ease-in-out infinite;
+		/*
+		  Bucle cerrado (sin alternate). Duraciones largas + easing suave = calma premium
+		  (muchos hitos en pocos segundos se leían “a la velocidad de la luz”).
+		*/
+		animation: tevsys-home-mid-bubbles-a 54s cubic-bezier(0.42, 0, 0.58, 1) infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow::before {
-		/* 33.7s no múltiplo de 28s + delay irracional → fase distinta a la capa A */
-		animation: tevsys-home-mid-bubbles-b 33.7s ease-in-out infinite;
-		animation-delay: -11.3s;
+		/* 71s no múltiplo de 54s + delay → asincronía sin nerviosismo */
+		animation: tevsys-home-mid-bubbles-b 71s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+		animation-delay: -23.7s;
 	}
 }
 
@@ -1056,7 +1059,7 @@ html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
-		animation: tevsys-home-tail-bubble-solo 38s ease-in-out infinite alternate;
+		animation: tevsys-home-tail-bubble-solo 56s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 	}
 }
 
@@ -1224,7 +1227,7 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 			rgba(55, 50, 46, 0.1) 52%,
 			transparent 72%
 		);
-		animation: tevsys-home-tail-bubble-solo-desktop 38s ease-in-out infinite alternate;
+		animation: tevsys-home-tail-bubble-solo-desktop 56s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 	}
 
 	html[data-theme='dark'] .tevsys-home-founder-strip {
@@ -1383,12 +1386,12 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
-			animation: tevsys-home-mid-bubbles-a-mobile 28s ease-in-out infinite;
+			animation: tevsys-home-mid-bubbles-a-mobile 54s cubic-bezier(0.42, 0, 0.58, 1) infinite;
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow::before {
-			animation: tevsys-home-mid-bubbles-b-mobile 33.7s ease-in-out infinite;
-			animation-delay: -15.7s;
+			animation: tevsys-home-mid-bubbles-b-mobile 71s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+			animation-delay: -27.4s;
 		}
 
 		/*
