@@ -9,7 +9,7 @@
 Eres IA en el repo **tevsys-landiing** (web tevsys.io, tema oscuro). Objetivo inmediato: **ajustar motion en móvil** sin romper desktop.
 
 **Hecho reciente (no repetir debate largo):**
-- Burbujas detrás del bloque de cards (`.tevsys-home-mid-glow`): **gris instrumento**; **62s** + **81s** en `::before`, timing **`linear`**, pocos hitos (evita “sprints”). **Móvil:** mismas duraciones. Header escáner resaltado; hero móvil rise **0.68**. Ver **CHANGELOG-TEVSYS.md** § Motion «iteración 15–16 abr 2026».
+- Burbujas detrás del bloque de cards (`.tevsys-home-mid-glow`): **gris instrumento**; **92s** + **118s** `linear`; mayor parte del tiempo en **márgenes** (fuera de cards), luego centro. **Móvil:** mismas duraciones. Ver **CHANGELOG-TEVSYS.md** § Motion «iteración 15–16 abr 2026».
 - Documentación motion: `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` + `docs/CHANGELOG-TEVSYS.md` + `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` § Motion mid-glow móvil.
 
 **Intención producto (ajustes finos futuros — no tocar sin OK):**

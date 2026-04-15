@@ -533,109 +533,350 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
 		/*
-		  Bucle cerrado, **linear**: entre hitos lejanos el ease-in-out acelera mucho en el centro
-		  (“pierde el bus”). Pocos pasos + saltos moderados = deriva calmada; 62s / 81s asincrónicos.
+		  **linear** + muchos pasos cortos = sin acelerones.
+		  ~75% del tiempo en **márgenes** (fuera del bloque de cards); ~25% vuelta al centro, lento.
 		*/
-		animation: tevsys-home-mid-bubbles-a 62s linear infinite;
+		animation: tevsys-home-mid-bubbles-a 92s linear infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow::before {
-		animation: tevsys-home-mid-bubbles-b 81s linear infinite;
-		animation-delay: -21.4s;
+		animation: tevsys-home-mid-bubbles-b 118s linear infinite;
+		animation-delay: -26.8s;
 	}
 }
 
 /*
-  Burbuja 1 — escritorio: pocos pasos, sin atravesar el viewport entero; visita suave las cuatro zonas.
-  Con timing **linear** no hay “sprints” entre claves (problema del ease-in-out en trayectorias largas).
+  Burbuja 1 — escritorio: ~0–72% recorriendo **perímetro exterior** (pasos cortos = velocidad uniforme con linear);
+  72–100% acercamiento al centro detrás de cards y salida al margen (bucle 0%=100%).
 */
 @keyframes tevsys-home-mid-bubbles-a {
 	0%,
 	100% {
-		background-position: 46% 50%;
-		background-size: 118vmin 108vmin;
+		background-position: -14% 36%;
+		background-size: 120vmin 108vmin;
 	}
-	18% {
-		background-position: 74% 42%;
-		background-size: 116vmin 106vmin;
+	4% {
+		background-position: 2% 24%;
+		background-size: 118vmin 106vmin;
 	}
-	36% {
-		background-position: 78% 68%;
-		background-size: 114vmin 110vmin;
+	8% {
+		background-position: 22% 16%;
+		background-size: 116vmin 104vmin;
 	}
-	52% {
-		background-position: 50% 84%;
+	12% {
+		background-position: 48% 12%;
+		background-size: 116vmin 104vmin;
+	}
+	16% {
+		background-position: 76% 18%;
+		background-size: 118vmin 106vmin;
+	}
+	20% {
+		background-position: 102% 28%;
+		background-size: 120vmin 108vmin;
+	}
+	24% {
+		background-position: 114% 44%;
+		background-size: 122vmin 110vmin;
+	}
+	28% {
+		background-position: 112% 60%;
 		background-size: 120vmin 112vmin;
 	}
-	68% {
-		background-position: 24% 74%;
+	32% {
+		background-position: 100% 76%;
+		background-size: 118vmin 114vmin;
+	}
+	36% {
+		background-position: 88% 88%;
+		background-size: 120vmin 116vmin;
+	}
+	40% {
+		background-position: 68% 92%;
+		background-size: 122vmin 116vmin;
+	}
+	44% {
+		background-position: 42% 94%;
+		background-size: 120vmin 114vmin;
+	}
+	48% {
+		background-position: 16% 90%;
+		background-size: 118vmin 112vmin;
+	}
+	52% {
+		background-position: -6% 78%;
 		background-size: 118vmin 110vmin;
 	}
+	56% {
+		background-position: -18% 58%;
+		background-size: 120vmin 108vmin;
+	}
+	60% {
+		background-position: -20% 42%;
+		background-size: 122vmin 106vmin;
+	}
+	64% {
+		background-position: -12% 28%;
+		background-size: 120vmin 104vmin;
+	}
+	68% {
+		background-position: 6% 22%;
+		background-size: 118vmin 104vmin;
+	}
+	72% {
+		background-position: 28% 32%;
+		background-size: 118vmin 106vmin;
+	}
+	/* Vuelta al centro (corta en tiempo, lenta en espacio por muchos micro-pasos) */
+	76% {
+		background-position: 40% 44%;
+		background-size: 120vmin 108vmin;
+	}
+	80% {
+		background-position: 48% 52%;
+		background-size: 122vmin 110vmin;
+	}
 	84% {
-		background-position: 32% 40%;
-		background-size: 116vmin 106vmin;
+		background-position: 52% 56%;
+		background-size: 120vmin 110vmin;
+	}
+	88% {
+		background-position: 48% 54%;
+		background-size: 118vmin 108vmin;
+	}
+	92% {
+		background-position: 32% 44%;
+		background-size: 118vmin 106vmin;
+	}
+	96% {
+		background-position: 8% 38%;
+		background-size: 120vmin 108vmin;
 	}
 }
 
-/* Burbuja 2 — deriva aparte, pasos cortos; nunca de -30% a 120% en pocos segundos */
+/* Burbuja 2 — otra vuelta por fuera; centro solo ~22–30% del ciclo */
 @keyframes tevsys-home-mid-bubbles-b {
 	0%,
 	100% {
-		background-position: 54% 52%;
-		background-size: 80vmin 90vmin;
-	}
-	22% {
-		background-position: 66% 62%;
+		background-position: 108% 52%;
 		background-size: 82vmin 92vmin;
 	}
-	44% {
-		background-position: 44% 74%;
-		background-size: 84vmin 94vmin;
+	5% {
+		background-position: 92% 28%;
+		background-size: 80vmin 90vmin;
 	}
-	56% {
-		background-position: 40% 48%;
+	10% {
+		background-position: 68% 14%;
 		background-size: 78vmin 88vmin;
 	}
-	78% {
-		background-position: 60% 58%;
+	15% {
+		background-position: 38% 12%;
+		background-size: 78vmin 86vmin;
+	}
+	20% {
+		background-position: 8% 22%;
+		background-size: 80vmin 88vmin;
+	}
+	25% {
+		background-position: -16% 42%;
 		background-size: 82vmin 90vmin;
+	}
+	30% {
+		background-position: -22% 64%;
+		background-size: 84vmin 94vmin;
+	}
+	35% {
+		background-position: -8% 82%;
+		background-size: 86vmin 96vmin;
+	}
+	40% {
+		background-position: 22% 92%;
+		background-size: 88vmin 98vmin;
+	}
+	45% {
+		background-position: 55% 94%;
+		background-size: 86vmin 98vmin;
+	}
+	50% {
+		background-position: 88% 86%;
+		background-size: 84vmin 96vmin;
+	}
+	55% {
+		background-position: 112% 68%;
+		background-size: 82vmin 92vmin;
+	}
+	60% {
+		background-position: 118% 44%;
+		background-size: 80vmin 90vmin;
+	}
+	65% {
+		background-position: 102% 24%;
+		background-size: 78vmin 88vmin;
+	}
+	70% {
+		background-position: 78% 18%;
+		background-size: 78vmin 88vmin;
+	}
+	74% {
+		background-position: 58% 28%;
+		background-size: 80vmin 90vmin;
+	}
+	78% {
+		background-position: 50% 48%;
+		background-size: 82vmin 92vmin;
+	}
+	82% {
+		background-position: 46% 56%;
+		background-size: 84vmin 94vmin;
+	}
+	86% {
+		background-position: 52% 52%;
+		background-size: 82vmin 92vmin;
+	}
+	90% {
+		background-position: 72% 44%;
+		background-size: 80vmin 90vmin;
+	}
+	94% {
+		background-position: 92% 48%;
+		background-size: 80vmin 90vmin;
+	}
+	98% {
+		background-position: 104% 50%;
+		background-size: 82vmin 92vmin;
 	}
 }
 
-/* Móvil — columna: deriva vertical suave + poco vaivén horizontal (sin latigazos). */
+/* Móvil — ~70% en laterales / encima-debajo de la columna; luego centro detrás de cards */
 @keyframes tevsys-home-mid-bubbles-a-mobile {
 	0%,
 	100% {
-		background-position: 50% 48%;
-		background-size: 114vmin 104vmin;
-	}
-	28% {
-		background-position: 50% 82%;
-		background-size: 118vmin 110vmin;
-	}
-	52% {
-		background-position: 46% 38%;
+		background-position: 4% 28%;
 		background-size: 112vmin 102vmin;
 	}
+	6% {
+		background-position: 2% 48%;
+		background-size: 114vmin 104vmin;
+	}
+	12% {
+		background-position: 6% 72%;
+		background-size: 116vmin 108vmin;
+	}
+	18% {
+		background-position: 10% 90%;
+		background-size: 118vmin 112vmin;
+	}
+	24% {
+		background-position: 92% 88%;
+		background-size: 118vmin 112vmin;
+	}
+	30% {
+		background-position: 96% 68%;
+		background-size: 116vmin 108vmin;
+	}
+	36% {
+		background-position: 94% 42%;
+		background-size: 114vmin 104vmin;
+	}
+	42% {
+		background-position: 90% 18%;
+		background-size: 112vmin 100vmin;
+	}
+	48% {
+		background-position: 52% 8%;
+		background-size: 110vmin 98vmin;
+	}
+	54% {
+		background-position: 18% 12%;
+		background-size: 112vmin 100vmin;
+	}
+	60% {
+		background-position: 4% 22%;
+		background-size: 114vmin 102vmin;
+	}
+	66% {
+		background-position: 2% 38%;
+		background-size: 116vmin 104vmin;
+	}
 	72% {
-		background-position: 54% 88%;
-		background-size: 120vmin 112vmin;
+		background-position: 8% 52%;
+		background-size: 116vmin 106vmin;
+	}
+	78% {
+		background-position: 48% 58%;
+		background-size: 118vmin 108vmin;
+	}
+	84% {
+		background-position: 50% 72%;
+		background-size: 120vmin 110vmin;
+	}
+	90% {
+		background-position: 48% 48%;
+		background-size: 118vmin 106vmin;
+	}
+	96% {
+		background-position: 24% 36%;
+		background-size: 114vmin 104vmin;
 	}
 }
 
 @keyframes tevsys-home-mid-bubbles-b-mobile {
 	0%,
 	100% {
-		background-position: 52% 50%;
+		background-position: 96% 46%;
 		background-size: 78vmin 88vmin;
 	}
-	33% {
-		background-position: 44% 72%;
-		background-size: 82vmin 92vmin;
-	}
-	66% {
-		background-position: 56% 36%;
+	8% {
+		background-position: 88% 22%;
 		background-size: 76vmin 86vmin;
+	}
+	16% {
+		background-position: 62% 10%;
+		background-size: 74vmin 84vmin;
+	}
+	24% {
+		background-position: 28% 14%;
+		background-size: 76vmin 86vmin;
+	}
+	32% {
+		background-position: 4% 36%;
+		background-size: 78vmin 90vmin;
+	}
+	40% {
+		background-position: 2% 68%;
+		background-size: 82vmin 94vmin;
+	}
+	48% {
+		background-position: 18% 88%;
+		background-size: 84vmin 98vmin;
+	}
+	56% {
+		background-position: 72% 90%;
+		background-size: 84vmin 98vmin;
+	}
+	64% {
+		background-position: 96% 72%;
+		background-size: 82vmin 94vmin;
+	}
+	72% {
+		background-position: 92% 38%;
+		background-size: 78vmin 90vmin;
+	}
+	78% {
+		background-position: 58% 52%;
+		background-size: 78vmin 88vmin;
+	}
+	84% {
+		background-position: 44% 62%;
+		background-size: 80vmin 90vmin;
+	}
+	90% {
+		background-position: 52% 48%;
+		background-size: 80vmin 88vmin;
+	}
+	96% {
+		background-position: 78% 40%;
+		background-size: 78vmin 88vmin;
 	}
 }
 
@@ -1211,12 +1452,12 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
-			animation: tevsys-home-mid-bubbles-a-mobile 62s linear infinite;
+			animation: tevsys-home-mid-bubbles-a-mobile 92s linear infinite;
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow::before {
-			animation: tevsys-home-mid-bubbles-b-mobile 81s linear infinite;
-			animation-delay: -25.1s;
+			animation: tevsys-home-mid-bubbles-b-mobile 118s linear infinite;
+			animation-delay: -29.5s;
 		}
 
 		/*
