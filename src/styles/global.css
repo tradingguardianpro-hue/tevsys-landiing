@@ -495,8 +495,8 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
-		/* Antes 36s: más lento del deseado; 26.4s = más “vida” sin estrés (sigue desincronizado del resto) */
-		animation: tevsys-home-mid-bubbles 26.4s ease-in-out infinite alternate;
+		/* 36s → 26.4s → 22s: movimiento más legible sin nervio (ease-in-out + alternate) */
+		animation: tevsys-home-mid-bubbles 22s ease-in-out infinite alternate;
 	}
 }
 
