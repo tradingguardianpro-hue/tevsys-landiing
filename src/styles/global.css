@@ -934,8 +934,8 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	/*
-	  Móvil home: header con un poco más de “instrumento encendido”; cards/titular más calmados
-	  (burbujas más lentas/suaves; KITT rise del hero menos presente). Sin tocar prefers-reduced-motion: reduce.
+	  Móvil home: header resaltado; zona cards calmada (burbujas lentas).
+	  Hero “rise”: más visible que el recorte agresivo anterior, sin acercarse al brillo de escritorio (0,72).
 	*/
 	@media (prefers-reduced-motion: no-preference) {
 		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
@@ -955,7 +955,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		}
 
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise {
-			opacity: 0.5;
+			opacity: 0.68;
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
