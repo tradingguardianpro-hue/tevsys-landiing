@@ -228,6 +228,27 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 }
 
+/*
+  Escáner header — solo escritorio: un pelín más legible (más contraste en el haz, sin ámbar).
+  Móvil lleva overrides propios en @media (max-width: 768px) para no competir con el mismo perfil.
+*/
+@media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
+		background-image: linear-gradient(
+			102deg,
+			transparent 0%,
+			transparent 32%,
+			rgba(118, 122, 138, 0.2) 44%,
+			rgba(200, 204, 218, 0.4) 50%,
+			rgba(108, 112, 126, 0.18) 56%,
+			transparent 68%,
+			transparent 100%
+		);
+		background-size: 220% 100%;
+		opacity: 0.94;
+	}
+}
+
 @keyframes tevsys-header-scanner-sweep {
 	0%,
 	100% {
@@ -887,8 +908,8 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow {
-		filter: blur(28px);
-		opacity: 0.72;
+		filter: blur(32px);
+		opacity: 0.56;
 	}
 
 	html[data-theme='dark'] .tevsys-home-band--lower {
@@ -910,6 +931,36 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 	html[data-theme='dark'] .tevsys-home-founder-strip {
 		opacity: 0.62;
+	}
+
+	/*
+	  Móvil home: header con un poco más de “instrumento encendido”; cards/titular más calmados
+	  (burbujas más lentas/suaves; KITT rise del hero menos presente). Sin tocar prefers-reduced-motion: reduce.
+	*/
+	@media (prefers-reduced-motion: no-preference) {
+		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
+			animation-duration: 27.4s;
+			opacity: 0.91;
+			background-image: linear-gradient(
+				102deg,
+				transparent 0%,
+				transparent 35%,
+				rgba(120, 124, 138, 0.24) 46%,
+				rgba(198, 202, 216, 0.45) 50%,
+				rgba(105, 109, 124, 0.22) 54%,
+				transparent 64%,
+				transparent 100%
+			);
+			background-size: 260% 100%;
+		}
+
+		html[data-theme='dark'] .tevsys-home-kitt-rect--rise {
+			opacity: 0.5;
+		}
+
+		html[data-theme='dark'] .tevsys-home-mid-glow {
+			animation-duration: 30s;
+		}
 	}
 }
 
