@@ -81,6 +81,14 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 	--tevsys-home-fall-welcome-dur: 12s;
 	--tevsys-home-fall-welcome-breath: 2.1s;
 	--tevsys-home-fall-phase2-delay: calc(var(--tevsys-home-fall-welcome-dur) + var(--tevsys-home-fall-welcome-breath));
+	/* Burbujas detrás de cards: ancho central sin brillo (viewport). Desktop ancho ~38%; laptop 30% (más lateral). */
+	--tevsys-mid-glow-exclude-pct: 38%;
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+	html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
+		--tevsys-mid-glow-exclude-pct: 30%;
+	}
 }
 
 /*
@@ -496,6 +504,39 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
 		animation: tevsys-home-mid-bubbles 36s ease-in-out infinite alternate;
+	}
+}
+
+/*
+  Desktop / tablet landscape: no burbujas en franja central (cards 2×2); móvil <769px sin máscara.
+  --tevsys-mid-glow-exclude-pct = ancho “apagado” al centro del propio layer (100vw).
+*/
+@media (min-width: 769px) {
+	html[data-theme='dark'] .tevsys-home-mid-glow {
+		-webkit-mask-image: linear-gradient(
+			to right,
+			#000 0%,
+			#000 calc(50% - var(--tevsys-mid-glow-exclude-pct, 38%) / 2),
+			transparent calc(50% - var(--tevsys-mid-glow-exclude-pct, 38%) / 2),
+			transparent calc(50% + var(--tevsys-mid-glow-exclude-pct, 38%) / 2),
+			#000 calc(50% + var(--tevsys-mid-glow-exclude-pct, 38%) / 2),
+			#000 100%
+		);
+		mask-image: linear-gradient(
+			to right,
+			#000 0%,
+			#000 calc(50% - var(--tevsys-mid-glow-exclude-pct, 38%) / 2),
+			transparent calc(50% - var(--tevsys-mid-glow-exclude-pct, 38%) / 2),
+			transparent calc(50% + var(--tevsys-mid-glow-exclude-pct, 38%) / 2),
+			#000 calc(50% + var(--tevsys-mid-glow-exclude-pct, 38%) / 2),
+			#000 100%
+		);
+		-webkit-mask-size: 100% 100%;
+		mask-size: 100% 100%;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		mask-position: center;
 	}
 }
 
