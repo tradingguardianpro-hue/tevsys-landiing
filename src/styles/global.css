@@ -511,13 +511,15 @@ html[data-theme='dark'] .tevsys-home-mid-glow::before {
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
+	/* Menos “hueco” oscuro en el centro (feedback): capa más suave; la burbuja principal no se toca */
+	opacity: 0.76;
 	background-image: radial-gradient(
 		ellipse 38vmin 48vmin at 50% 50%,
-		rgba(188, 192, 206, 0.14) 0%,
-		rgba(105, 109, 124, 0.06) 26%,
-		rgba(178, 184, 200, 0.32) 44%,
-		rgba(88, 92, 108, 0.16) 58%,
-		rgba(42, 44, 52, 0.06) 72%,
+		rgba(188, 192, 206, 0.11) 0%,
+		rgba(145, 149, 164, 0.07) 26%,
+		rgba(178, 184, 200, 0.22) 44%,
+		rgba(120, 124, 138, 0.1) 58%,
+		rgba(72, 74, 86, 0.05) 72%,
 		transparent 80%
 	);
 	background-repeat: no-repeat;
