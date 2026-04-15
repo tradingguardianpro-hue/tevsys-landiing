@@ -487,26 +487,29 @@ html[data-theme='dark'] .tevsys-home-mid-glow {
 	z-index: 0;
 	pointer-events: none;
 	overflow: hidden;
+	/* Burbujas: ámbar marca + halo teal muy tenue (alineado panel); blur un poco menor = menos “mancha muerta” al salir del centro */
 	background-image:
 		radial-gradient(
 			ellipse 62vmin 52vmin at 50% 50%,
-			rgba(245, 176, 65, 0.22) 0%,
-			rgba(118, 102, 80, 0.12) 36%,
-			rgba(48, 44, 40, 0.08) 50%,
-			transparent 72%
+			rgba(245, 176, 65, 0.28) 0%,
+			rgba(0, 172, 182, 0.11) 24%,
+			rgba(118, 102, 80, 0.14) 38%,
+			rgba(48, 44, 40, 0.09) 52%,
+			transparent 76%
 		),
 		radial-gradient(
 			ellipse 48vmin 60vmin at 50% 50%,
-			rgba(245, 176, 65, 0.17) 0%,
-			rgba(88, 80, 72, 0.1) 38%,
-			rgba(40, 38, 36, 0.07) 52%,
-			transparent 70%
+			rgba(245, 176, 65, 0.22) 0%,
+			rgba(0, 158, 170, 0.09) 32%,
+			rgba(88, 80, 72, 0.11) 40%,
+			rgba(40, 38, 36, 0.08) 54%,
+			transparent 74%
 		);
 	background-repeat: no-repeat, no-repeat;
 	background-position: -12% 38%, 108% 62%;
 	background-size: 122vmin 104vmin, 100vmin 96vmin;
-	filter: blur(22px);
-	opacity: 0.94;
+	filter: blur(19px);
+	opacity: 0.96;
 }
 
 html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
@@ -526,37 +529,37 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 	0% {
 		background-position: -22% 26%, 112% 74%;
 		background-size: 118vmin 100vmin, 98vmin 94vmin;
-		opacity: 0.86;
+		opacity: 0.9;
 	}
 	16% {
 		background-position: 8% 52%, 88% 38%;
 		background-size: 124vmin 106vmin, 92vmin 98vmin;
-		opacity: 0.92;
+		opacity: 0.96;
 	}
 	32% {
 		background-position: 42% 30%, 58% 58%;
 		background-size: 108vmin 96vmin, 104vmin 100vmin;
-		opacity: 0.88;
+		opacity: 0.91;
 	}
 	48% {
 		background-position: 78% 48%, 22% 52%;
 		background-size: 96vmin 108vmin, 112vmin 90vmin;
-		opacity: 0.93;
+		opacity: 0.97;
 	}
 	64% {
 		background-position: 98% 68%, -6% 32%;
 		background-size: 102vmin 98vmin, 118vmin 104vmin;
-		opacity: 0.87;
+		opacity: 0.9;
 	}
 	80% {
 		background-position: 52% 22%, 48% 78%;
 		background-size: 114vmin 102vmin, 88vmin 96vmin;
-		opacity: 0.91;
+		opacity: 0.94;
 	}
 	100% {
 		background-position: -18% 44%, 108% 56%;
 		background-size: 120vmin 100vmin, 96vmin 98vmin;
-		opacity: 0.89;
+		opacity: 0.92;
 	}
 }
 
@@ -908,8 +911,8 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow {
-		filter: blur(32px);
-		opacity: 0.56;
+		filter: blur(28px);
+		opacity: 0.62;
 	}
 
 	html[data-theme='dark'] .tevsys-home-band--lower {
