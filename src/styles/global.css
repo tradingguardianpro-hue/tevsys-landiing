@@ -523,8 +523,8 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
-		/* 36s → 26.4s → 22s: movimiento más legible sin nervio (ease-in-out + alternate) */
-		animation: tevsys-home-mid-bubbles 22s ease-in-out infinite alternate;
+		/* Ciclo mid-glow: 26s (prueba equilibrio lectura cards vs “hay vida” detrás) */
+		animation: tevsys-home-mid-bubbles 26s ease-in-out infinite alternate;
 	}
 }
 
@@ -968,7 +968,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
-			animation-duration: 30s;
+			animation-duration: 26s;
 		}
 	}
 }
