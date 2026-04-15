@@ -487,33 +487,42 @@ html[data-theme='dark'] .tevsys-home-mid-glow {
 	z-index: 0;
 	pointer-events: none;
 	overflow: hidden;
-	/*
-	  Burbujas — familia cromática del header (gris instrumento): niebla ancha + segunda elipse con
-	  núcleo suave y aureola más clara/fría hacia el borde (más “separado” del centro = otro tono).
-	*/
-	background-image:
-		radial-gradient(
-			ellipse 64vmin 54vmin at 50% 50%,
-			rgba(200, 204, 218, 0.38) 0%,
-			rgba(148, 152, 168, 0.22) 24%,
-			rgba(98, 102, 116, 0.14) 48%,
-			rgba(48, 50, 58, 0.1) 64%,
-			transparent 82%
-		),
-		radial-gradient(
-			ellipse 38vmin 48vmin at 50% 50%,
-			rgba(188, 192, 206, 0.14) 0%,
-			rgba(105, 109, 124, 0.06) 26%,
-			rgba(178, 184, 200, 0.32) 44%,
-			rgba(88, 92, 108, 0.16) 58%,
-			rgba(42, 44, 52, 0.06) 72%,
-			transparent 80%
-		);
-	background-repeat: no-repeat, no-repeat;
-	background-position: -12% 38%, 108% 62%;
-	background-size: 128vmin 106vmin, 76vmin 82vmin;
+	/* Burbuja 1 — gris ancho (header). Recorrido: tevsys-home-mid-bubbles-a */
+	background-image: radial-gradient(
+		ellipse 64vmin 54vmin at 50% 50%,
+		rgba(200, 204, 218, 0.38) 0%,
+		rgba(148, 152, 168, 0.22) 24%,
+		rgba(98, 102, 116, 0.14) 48%,
+		rgba(48, 50, 58, 0.1) 64%,
+		transparent 82%
+	);
+	background-repeat: no-repeat;
+	background-position: -12% 38%;
+	background-size: 128vmin 106vmin;
 	filter: blur(17px);
 	opacity: 0.99;
+}
+
+/* Burbuja 2 — aureola gris; animación distinta y más lenta = asincronía real vs capa principal */
+html[data-theme='dark'] .tevsys-home-mid-glow::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	background-image: radial-gradient(
+		ellipse 38vmin 48vmin at 50% 50%,
+		rgba(188, 192, 206, 0.14) 0%,
+		rgba(105, 109, 124, 0.06) 26%,
+		rgba(178, 184, 200, 0.32) 44%,
+		rgba(88, 92, 108, 0.16) 58%,
+		rgba(42, 44, 52, 0.06) 72%,
+		transparent 80%
+	);
+	background-repeat: no-repeat;
+	background-position: 108% 62%;
+	background-size: 76vmin 82vmin;
 }
 
 html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
@@ -523,49 +532,93 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
-		/* Ciclo mid-glow: 28s — calma premium; no “discoteca” */
-		animation: tevsys-home-mid-bubbles 28s ease-in-out infinite alternate;
+		animation: tevsys-home-mid-bubbles-a 28s ease-in-out infinite alternate;
+	}
+
+	html[data-theme='dark'] .tevsys-home-mid-glow::before {
+		/* 33.7s ≈ no múltiplo de 28 → patrón combinado menos repetitivo */
+		animation: tevsys-home-mid-bubbles-b 33.7s ease-in-out infinite alternate;
 	}
 }
 
-/* Recorrido ancho tipo flechas Paint: casi todo el viewport, diagonal/zigzag como la burbuja inferior */
-@keyframes tevsys-home-mid-bubbles {
+/*
+  Burbuja 1 — perímetro del bloque 2×2 + títulos: visita explícita zona Evidencia (abajo-dcha) y SML (abajo-izq).
+  Porcentajes irregulares para que forward + alternate no se lean como “misma diagonal” siempre.
+*/
+@keyframes tevsys-home-mid-bubbles-a {
 	0% {
-		background-position: -36% 30%, 118% 68%;
-		background-size: 126vmin 104vmin, 78vmin 84vmin;
-		opacity: 0.94;
+		background-position: -36% 20%;
+		background-size: 126vmin 108vmin;
 	}
-	16% {
-		background-position: -20% 44%, 106% 52%;
-		background-size: 130vmin 108vmin, 80vmin 86vmin;
-		opacity: 1;
+	11% {
+		background-position: 48% 16%;
+		background-size: 122vmin 104vmin;
 	}
-	32% {
-		/* Entre filas de cards (eje vertical ~mitad del bloque) + diagonal suave */
-		background-position: 42% 54%, 58% 58%;
-		background-size: 114vmin 100vmin, 74vmin 80vmin;
-		opacity: 0.96;
+	23% {
+		background-position: 110% 28%;
+		background-size: 116vmin 110vmin;
 	}
-	48% {
-		background-position: 108% 62%, -12% 64%;
-		background-size: 102vmin 112vmin, 72vmin 78vmin;
-		opacity: 1;
+	34% {
+		background-position: 108% 46%;
+		background-size: 108vmin 106vmin;
 	}
-	64% {
-		background-position: 118% 74%, -22% 56%;
-		background-size: 108vmin 102vmin, 82vmin 88vmin;
-		opacity: 0.94;
+	44% {
+		/* Evidencia verificable — card inferior derecha */
+		background-position: 94% 74%;
+		background-size: 114vmin 102vmin;
 	}
-	80% {
-		/* Descenso hacia zona de cards inferiores (ambas elipses más bajas en Y) */
-		background-position: 48% 76%, 52% 82%;
-		background-size: 118vmin 106vmin, 76vmin 84vmin;
-		opacity: 0.98;
+	55% {
+		background-position: 50% 84%;
+		background-size: 120vmin 108vmin;
+	}
+	67% {
+		/* SML — card inferior izquierda */
+		background-position: -20% 80%;
+		background-size: 118vmin 104vmin;
+	}
+	78% {
+		background-position: -34% 46%;
+		background-size: 126vmin 106vmin;
 	}
 	100% {
-		background-position: -32% 36%, 114% 64%;
-		background-size: 126vmin 104vmin, 78vmin 84vmin;
-		opacity: 0.96;
+		background-position: -32% 24%;
+		background-size: 128vmin 108vmin;
+	}
+}
+
+/* Burbuja 2 — otra ruta (laterales, cruce, fila superior); misma calma, distinta “coreografía” */
+@keyframes tevsys-home-mid-bubbles-b {
+	0% {
+		background-position: 118% 72%;
+		background-size: 78vmin 86vmin;
+	}
+	14% {
+		background-position: 58% 78%;
+		background-size: 82vmin 90vmin;
+	}
+	28% {
+		background-position: -8% 74%;
+		background-size: 74vmin 82vmin;
+	}
+	41% {
+		background-position: -24% 36%;
+		background-size: 80vmin 88vmin;
+	}
+	53% {
+		background-position: 22% 20%;
+		background-size: 76vmin 84vmin;
+	}
+	66% {
+		background-position: 92% 18%;
+		background-size: 86vmin 92vmin;
+	}
+	79% {
+		background-position: 104% 44%;
+		background-size: 72vmin 80vmin;
+	}
+	100% {
+		background-position: 44% 58%;
+		background-size: 80vmin 86vmin;
 	}
 }
 
@@ -889,6 +942,11 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	html[data-theme='dark'] .tevsys-home-founder-strip {
 		animation: none !important;
 	}
+
+	html[data-theme='dark'] .tevsys-home-mid-glow::before {
+		animation: none !important;
+		opacity: 0 !important;
+	}
 }
 
 @media (max-width: 768px) {
@@ -969,6 +1027,10 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
 			animation-duration: 28s;
+		}
+
+		html[data-theme='dark'] .tevsys-home-mid-glow::before {
+			animation-duration: 33.7s;
 		}
 	}
 }
