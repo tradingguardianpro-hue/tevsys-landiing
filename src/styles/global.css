@@ -533,284 +533,109 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
 		/*
-		  Bucle cerrado (sin alternate). Duraciones largas + easing suave = calma premium
-		  (muchos hitos en pocos segundos se leían “a la velocidad de la luz”).
+		  Bucle cerrado, **linear**: entre hitos lejanos el ease-in-out acelera mucho en el centro
+		  (“pierde el bus”). Pocos pasos + saltos moderados = deriva calmada; 62s / 81s asincrónicos.
 		*/
-		animation: tevsys-home-mid-bubbles-a 54s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+		animation: tevsys-home-mid-bubbles-a 62s linear infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow::before {
-		/* 71s no múltiplo de 54s + delay → asincronía sin nerviosismo */
-		animation: tevsys-home-mid-bubbles-b 71s cubic-bezier(0.42, 0, 0.58, 1) infinite;
-		animation-delay: -23.7s;
+		animation: tevsys-home-mid-bubbles-b 81s linear infinite;
+		animation-delay: -21.4s;
 	}
 }
 
 /*
-  Burbuja 1 — escritorio 2×2: trayectoria “sin sentido” legible (diagonal / horizontal / vertical),
-  visita las cuatro cards y el cuerpo gris bajo SML y Evidencia. 0% = 100% para bucle sin alternate.
+  Burbuja 1 — escritorio: pocos pasos, sin atravesar el viewport entero; visita suave las cuatro zonas.
+  Con timing **linear** no hay “sprints” entre claves (problema del ease-in-out en trayectorias largas).
 */
 @keyframes tevsys-home-mid-bubbles-a {
 	0%,
 	100% {
-		background-position: 40% 46%;
-		background-size: 120vmin 108vmin;
+		background-position: 46% 50%;
+		background-size: 118vmin 108vmin;
 	}
-	7% {
-		background-position: 108% 22%;
-		background-size: 114vmin 104vmin;
-	}
-	14% {
-		background-position: 18% 30%;
-		background-size: 124vmin 110vmin;
-	}
-	/* Barrido horizontal alto (fila superior) */
 	18% {
-		background-position: -22% 34%;
-		background-size: 118vmin 106vmin;
+		background-position: 74% 42%;
+		background-size: 116vmin 106vmin;
 	}
-	22% {
-		background-position: 118% 34%;
-		background-size: 118vmin 106vmin;
+	36% {
+		background-position: 78% 68%;
+		background-size: 114vmin 110vmin;
 	}
-	28% {
-		background-position: 82% 58%;
-		background-size: 110vmin 108vmin;
+	52% {
+		background-position: 50% 84%;
+		background-size: 120vmin 112vmin;
 	}
-	35% {
-		background-position: 16% 58%;
-		background-size: 116vmin 110vmin;
+	68% {
+		background-position: 24% 74%;
+		background-size: 118vmin 110vmin;
 	}
-	/* Baja en vertical por el eje — cruza zona central */
-	42% {
-		background-position: 50% 42%;
-		background-size: 122vmin 112vmin;
-	}
-	48% {
-		background-position: 50% 92%;
-		background-size: 124vmin 116vmin;
-	}
-	/* SML — protagonismo zona gris inferior */
-	54% {
-		background-position: 10% 94%;
-		background-size: 126vmin 118vmin;
-	}
-	58% {
-		background-position: 24% 88%;
-		background-size: 120vmin 114vmin;
-	}
-	/* Evidencia — mismo */
-	64% {
-		background-position: 90% 94%;
-		background-size: 126vmin 118vmin;
-	}
-	69% {
-		background-position: 76% 86%;
-		background-size: 118vmin 112vmin;
-	}
-	/* Barrido horizontal bajo (toda la fila inferior) */
-	74% {
-		background-position: -18% 90%;
-		background-size: 122vmin 114vmin;
-	}
-	79% {
-		background-position: 112% 90%;
-		background-size: 122vmin 114vmin;
-	}
-	86% {
-		background-position: 52% 24%;
-		background-size: 116vmin 104vmin;
-	}
-	93% {
-		background-position: -30% 72%;
-		background-size: 128vmin 110vmin;
+	84% {
+		background-position: 32% 40%;
+		background-size: 116vmin 106vmin;
 	}
 }
 
-/*
-  Burbuja 2 — más chica: recorridos más largos en % y más cruces con A; bucle cerrado, más “viva”.
-*/
+/* Burbuja 2 — deriva aparte, pasos cortos; nunca de -30% a 120% en pocos segundos */
 @keyframes tevsys-home-mid-bubbles-b {
 	0%,
 	100% {
-		background-position: 58% 52%;
-		background-size: 78vmin 88vmin;
-	}
-	9% {
-		background-position: 122% 68%;
-		background-size: 84vmin 92vmin;
-	}
-	17% {
-		background-position: -32% 44%;
-		background-size: 72vmin 84vmin;
-	}
-	/* Caída casi horizontal (mismo Y, X extremo) */
-	24% {
-		background-position: 115% 56%;
+		background-position: 54% 52%;
 		background-size: 80vmin 90vmin;
 	}
-	28% {
-		background-position: -28% 56%;
-		background-size: 80vmin 90vmin;
-	}
-	36% {
-		background-position: 42% 18%;
-		background-size: 70vmin 82vmin;
+	22% {
+		background-position: 66% 62%;
+		background-size: 82vmin 92vmin;
 	}
 	44% {
-		background-position: 88% 82%;
-		background-size: 88vmin 96vmin;
+		background-position: 44% 74%;
+		background-size: 84vmin 94vmin;
 	}
-	51% {
-		background-position: 48% 48%;
-		background-size: 76vmin 86vmin;
+	56% {
+		background-position: 40% 48%;
+		background-size: 78vmin 88vmin;
 	}
-	58% {
-		background-position: 14% 92%;
-		background-size: 90vmin 100vmin;
-	}
-	65% {
-		background-position: 92% 30%;
-		background-size: 74vmin 84vmin;
-	}
-	/* Subida diagonal + cruce */
-	72% {
-		background-position: 28% 78%;
-		background-size: 86vmin 94vmin;
-	}
-	80% {
-		background-position: 102% 38%;
-		background-size: 72vmin 80vmin;
-	}
-	88% {
-		background-position: 6% 22%;
+	78% {
+		background-position: 60% 58%;
 		background-size: 82vmin 90vmin;
-	}
-	95% {
-		background-position: 70% 66%;
-		background-size: 80vmin 88vmin;
 	}
 }
 
-/*
-  Móvil — columna: barridos horizontales a distinta altura, bajadas verticales, cruces; 0%=100%; sin alternate.
-*/
+/* Móvil — columna: deriva vertical suave + poco vaivén horizontal (sin latigazos). */
 @keyframes tevsys-home-mid-bubbles-a-mobile {
 	0%,
 	100% {
-		background-position: 50% 44%;
+		background-position: 50% 48%;
+		background-size: 114vmin 104vmin;
+	}
+	28% {
+		background-position: 50% 82%;
+		background-size: 118vmin 110vmin;
+	}
+	52% {
+		background-position: 46% 38%;
 		background-size: 112vmin 102vmin;
 	}
-	8% {
-		background-position: 18% 26%;
-		background-size: 108vmin 98vmin;
-	}
-	15% {
-		background-position: 82% 30%;
-		background-size: 110vmin 100vmin;
-	}
-	/* Horizontal medio */
-	20% {
-		background-position: 8% 48%;
-		background-size: 114vmin 104vmin;
-	}
-	24% {
-		background-position: 92% 48%;
-		background-size: 114vmin 104vmin;
-	}
-	32% {
-		background-position: 46% 62%;
-		background-size: 118vmin 108vmin;
-	}
-	40% {
-		background-position: 52% 78%;
+	72% {
+		background-position: 54% 88%;
 		background-size: 120vmin 112vmin;
-	}
-	/* Vertical por la pila (cuerpos grises) */
-	48% {
-		background-position: 50% 34%;
-		background-size: 116vmin 106vmin;
-	}
-	54% {
-		background-position: 48% 94%;
-		background-size: 124vmin 118vmin;
-	}
-	62% {
-		background-position: 42% 88%;
-		background-size: 122vmin 114vmin;
-	}
-	/* Horizontal bajo (toda la anchura detrás de cards) */
-	68% {
-		background-position: 5% 92%;
-		background-size: 120vmin 116vmin;
-	}
-	73% {
-		background-position: 95% 92%;
-		background-size: 120vmin 116vmin;
-	}
-	81% {
-		background-position: 54% 18%;
-		background-size: 106vmin 96vmin;
-	}
-	90% {
-		background-position: 36% 70%;
-		background-size: 118vmin 110vmin;
 	}
 }
 
 @keyframes tevsys-home-mid-bubbles-b-mobile {
 	0%,
 	100% {
-		background-position: 54% 56%;
+		background-position: 52% 50%;
+		background-size: 78vmin 88vmin;
+	}
+	33% {
+		background-position: 44% 72%;
+		background-size: 82vmin 92vmin;
+	}
+	66% {
+		background-position: 56% 36%;
 		background-size: 76vmin 86vmin;
-	}
-	10% {
-		background-position: 88% 22%;
-		background-size: 82vmin 90vmin;
-	}
-	18% {
-		background-position: 12% 38%;
-		background-size: 70vmin 80vmin;
-	}
-	26% {
-		background-position: 95% 58%;
-		background-size: 84vmin 92vmin;
-	}
-	30% {
-		background-position: 8% 58%;
-		background-size: 84vmin 92vmin;
-	}
-	38% {
-		background-position: 50% 40%;
-		background-size: 74vmin 84vmin;
-	}
-	46% {
-		background-position: 44% 96%;
-		background-size: 88vmin 100vmin;
-	}
-	54% {
-		background-position: 58% 72%;
-		background-size: 80vmin 90vmin;
-	}
-	62% {
-		background-position: 22% 84%;
-		background-size: 86vmin 96vmin;
-	}
-	70% {
-		background-position: 78% 44%;
-		background-size: 72vmin 82vmin;
-	}
-	78% {
-		background-position: 48% 20%;
-		background-size: 80vmin 88vmin;
-	}
-	86% {
-		background-position: 6% 68%;
-		background-size: 88vmin 94vmin;
-	}
-	94% {
-		background-position: 72% 30%;
-		background-size: 78vmin 86vmin;
 	}
 }
 
@@ -1059,7 +884,7 @@ html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
-		animation: tevsys-home-tail-bubble-solo 56s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+		animation: tevsys-home-tail-bubble-solo 64s linear infinite alternate;
 	}
 }
 
@@ -1227,7 +1052,7 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 			rgba(55, 50, 46, 0.1) 52%,
 			transparent 72%
 		);
-		animation: tevsys-home-tail-bubble-solo-desktop 56s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+		animation: tevsys-home-tail-bubble-solo-desktop 64s linear infinite alternate;
 	}
 
 	html[data-theme='dark'] .tevsys-home-founder-strip {
@@ -1386,12 +1211,12 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
-			animation: tevsys-home-mid-bubbles-a-mobile 54s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+			animation: tevsys-home-mid-bubbles-a-mobile 62s linear infinite;
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow::before {
-			animation: tevsys-home-mid-bubbles-b-mobile 71s cubic-bezier(0.42, 0, 0.58, 1) infinite;
-			animation-delay: -27.4s;
+			animation: tevsys-home-mid-bubbles-b-mobile 81s linear infinite;
+			animation-delay: -25.1s;
 		}
 
 		/*

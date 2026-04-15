@@ -21,7 +21,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Navegación:** Inicio | Empresas | Contacto
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
-- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** (resaltado alineado móvil/escritorio donde aplica), sin sincronía con el resto de la portada. Detrás de las **4 cards**: `.tevsys-home-mid-glow` — **gris instrumento**, doble burbuja con animaciones **54s** y **71s** (`::before`; ritmo calmado); **escritorio:** trayectoria tipo **perímetro** del bloque 2×2 (incl. **SML** y **Evidencia**); **móvil (1 columna):** mismas duraciones con keyframes **`*-mobile`** para que el brillo se mueva **detrás de la columna** de cards. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion (iteración 15–16 abr), `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
+- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** (resaltado alineado móvil/escritorio donde aplica), sin sincronía con el resto de la portada. Detrás de las **4 cards**: `.tevsys-home-mid-glow` — **gris instrumento**, doble burbuja con animaciones **62s** y **81s** (`::before`; `linear`, ritmo calmado); **escritorio:** trayectoria tipo **perímetro** del bloque 2×2 (incl. **SML** y **Evidencia**); **móvil (1 columna):** mismas duraciones con keyframes **`*-mobile`** para que el brillo se mueva **detrás de la columna** de cards. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion (iteración 15–16 abr), `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
 
 ---
 

@@ -20,7 +20,7 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `public/assets/images/plans/*` | Imágenes finales de cards de planes + visuales de formulario por plan. |
 | `docs/*.md` | Documentación actualizada con estado real. |
 | `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` | **Abr 2026:** handoff IA→IA — tabla duraciones/colores/capas motion home; sincronía / asincronía. |
-| `src/styles/global.css` | **Abr 2026:** motion home tema oscuro (KITT, burbujas, franjas, escáner header gris, `prefers-reduced-motion`, móvil). **Ampliación 16 abr 2026:** en `max-width: 768px` + `prefers-reduced-motion: no-preference`, mid-glow cards usa `@keyframes tevsys-home-mid-bubbles-a-mobile` / `tevsys-home-mid-bubbles-b-mobile` (mismas duraciones **54s / 71s** que escritorio) para que el brillo recorra la **columna** detrás de las cards, no solo el perímetro 2×2 pensado para escritorio. |
+| `src/styles/global.css` | **Abr 2026:** motion home tema oscuro (KITT, burbujas, franjas, escáner header gris, `prefers-reduced-motion`, móvil). **Ampliación 16 abr 2026:** en `max-width: 768px` + `prefers-reduced-motion: no-preference`, mid-glow cards usa `@keyframes tevsys-home-mid-bubbles-a-mobile` / `tevsys-home-mid-bubbles-b-mobile` (mismas duraciones **62s / 81s** `linear` que escritorio) para que el brillo recorra la **columna** detrás de las cards, no solo el perímetro 2×2 pensado para escritorio. |
 | `src/components/core/Header.astro` | **Abr 2026:** home: `tevsys-header--home-scanner` + `tevsys-header-scanner`. |
 | `src/pages/index.astro` | **Abr 2026:** marcado `tevsys-home-*` para capas animadas detrás del contenido. |
 | `src/config/settings.js` | **SEO (Mar 2026):** title y description orientados a búsquedas (protección capital, límites MT5, **59** operativas). |
@@ -109,7 +109,7 @@ Resumen técnico completo para revisión interna / DeepSeq.
 
 ### Motion mid-glow — móvil en 1 columna (abr 2026)
 - **Problema:** con grid **2×2** en escritorio, las rutas `tevsys-home-mid-bubbles-a` / `-b` recorren el **perímetro** del bloque (SML / Evidencia en esquinas). En **móvil** las cards van en **una columna**: gran parte del recorrido lateral queda **fuera** de la pila visual.
-- **Solución:** keyframes dedicados **`*-mobile`**: posición de fondo con **X** ~centro y **Y** variando a lo largo del stack; segunda capa (`::before`) con ruta y fase distintas; duraciones **54s** / **71s** (ritmo calmado).
+- **Solución:** keyframes dedicados **`*-mobile`**: posición de fondo con **X** ~centro y **Y** variando a lo largo del stack; segunda capa (`::before`) con ruta y fase distintas; duraciones **62s** / **81s**, `linear` (ritmo calmado).
 - **Docs:** `CHANGELOG-TEVSYS.md` § Motion iteración 15–16; `MOTION_HOME_TEVSYS_HANDOFF_IA.md` filas E1/E2; este archivo (tabla `global.css` arriba).
 
 ---
