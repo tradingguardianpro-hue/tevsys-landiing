@@ -527,39 +527,41 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 /* Recorrido ancho tipo flechas Paint: casi todo el viewport, diagonal/zigzag como la burbuja inferior */
 @keyframes tevsys-home-mid-bubbles {
 	0% {
-		background-position: -22% 26%, 112% 74%;
-		background-size: 118vmin 100vmin, 98vmin 94vmin;
-		opacity: 0.9;
-	}
-	16% {
-		background-position: 8% 52%, 88% 38%;
-		background-size: 124vmin 106vmin, 92vmin 98vmin;
-		opacity: 0.96;
-	}
-	32% {
-		background-position: 42% 30%, 58% 58%;
-		background-size: 108vmin 96vmin, 104vmin 100vmin;
+		background-position: -38% 24%, 118% 76%;
+		background-size: 120vmin 102vmin, 100vmin 96vmin;
 		opacity: 0.91;
 	}
-	48% {
-		background-position: 78% 48%, 22% 52%;
-		background-size: 96vmin 108vmin, 112vmin 90vmin;
+	16% {
+		background-position: -18% 48%, 106% 34%;
+		background-size: 124vmin 106vmin, 94vmin 100vmin;
 		opacity: 0.97;
 	}
+	32% {
+		/* Incursión breve al centro para percibir profundidad sin “quedarse” detrás de cards */
+		background-position: 30% 34%, 68% 60%;
+		background-size: 110vmin 98vmin, 106vmin 102vmin;
+		opacity: 0.93;
+	}
+	48% {
+		background-position: 112% 46%, -14% 54%;
+		background-size: 98vmin 110vmin, 114vmin 92vmin;
+		opacity: 0.98;
+	}
 	64% {
-		background-position: 98% 68%, -6% 32%;
-		background-size: 102vmin 98vmin, 118vmin 104vmin;
-		opacity: 0.9;
+		background-position: 120% 66%, -24% 30%;
+		background-size: 104vmin 100vmin, 118vmin 106vmin;
+		opacity: 0.91;
 	}
 	80% {
-		background-position: 52% 22%, 48% 78%;
-		background-size: 114vmin 102vmin, 88vmin 96vmin;
-		opacity: 0.94;
+		/* Segunda incursión controlada al interior (corta) */
+		background-position: 64% 20%, 36% 80%;
+		background-size: 114vmin 104vmin, 90vmin 98vmin;
+		opacity: 0.95;
 	}
 	100% {
-		background-position: -18% 44%, 108% 56%;
-		background-size: 120vmin 100vmin, 96vmin 98vmin;
-		opacity: 0.92;
+		background-position: -34% 42%, 116% 58%;
+		background-size: 120vmin 102vmin, 98vmin 100vmin;
+		opacity: 0.93;
 	}
 }
 
