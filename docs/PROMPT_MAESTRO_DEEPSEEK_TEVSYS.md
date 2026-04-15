@@ -2,7 +2,7 @@
 
 **Para:** DeepSeek (ingeniero senior del equipo)  
 **Objetivo:** Que tengas contexto completo de la web tevsys, con pelos y señales, para trabajar en vídeos, copy, diseño o cualquier tarea sin perder el hilo.  
-**Usar:** Al abrir un chat nuevo o retomar: leer primero **§0.1** (checkpoint abr 2026). Luego este documento completo según la tarea (landing, vídeo, copy) y los docs enlazados (proyecto TGP vs repo `tevsys-landiing`).
+**Usar:** Al abrir un chat nuevo o retomar: leer **§0.1** (checkpoint rápido) y **§0.2** (historia + estado web + qué documento manda). Luego este documento por secciones según la tarea y los docs enlazados (proyecto TGP vs repo `tevsys-landiing`).
 
 ---
 
@@ -18,7 +18,7 @@
 
 ## 0.1 Checkpoint contexto rápido (abr 2026) — leer al abrir chat nuevo
 
-**Objetivo:** Ponerte al día sin releer todo el prompt. **Fuente detallada** sigue siendo cada § más abajo y los docs enlazados.
+**Objetivo:** Ponerte al día sin releer todo el prompt. **Si un § antiguo (p. ej. Hero Mar 2026) choca con otro doc, mandan `CHANGELOG-TEVSYS.md` + `CONTENIDO_WEB_TEVSYS_LANDING.md`.** Este maestro conserva criterio y narrativa; el changelog lleva el inventario temporal de producto web.
 
 ### Proyecto TGP (workspace Cursor `poyecto TGP con cursor`) — artículo MQL5 + agenda
 
@@ -29,17 +29,40 @@
 - **UniPayment (condiciones / negociación):** `docs/UNIPAYMENT_CONDICIONES_Y_NEGOCIACION.md` (proyecto TGP).
 - **Reflexión / ánimo (opcional):** `docs/REFLEXION_VISION_EXTERNA_TEVSYS_CHAT.md`.
 
-### Repo web este (`tevsys-landiing`) — cambios recientes coordinados con Cursor
+### Repo web este (`tevsys-landiing`) — dónde está la verdad hoy
 
-- **`src/pages/features/precision.astro`:** orden lista **«Qué puedes comprobar»** (abr 2026): demo 100k → **alta volatilidad** → cuenta pequeña → **logs** → resultados.
-- **`src/pages/features/hyperclose.astro`** + **`videos-cierre-youtube.astro`:** notas **vídeo editado / saltos de reloj**; tercer vídeo lista YouTube = **HyperClose** `https://youtu.be/jwEvJrohR4I` (misma demo que artículo §5.2).
-- **`src/pages/instalacion.astro`:** jerarquía vídeos + pasos en tarjetas (**CHANGELOG** §64, abr 2026).
-- **Pendiente si aplica:** **PNG galería §58** HyperClose en `public/images/evidence/` si faltan; renovar **MP4 instalación** cuando se grabe WebRequest en pantalla.
-- **Motion home (abr 2026):** portada tema oscuro — KITT, burbujas, franjas, escáner gris en header; duraciones **desacopladas** a propósito. Handoff técnico IA: **`docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md`**; registro **`docs/CHANGELOG-TEVSYS.md`** § Motion.
+- **Inventario cronológico de todo lo publicable en la web:** **`docs/CHANGELOG-TEVSYS.md`** (desde base Odyssey + Astro hasta APIs, copy, SEO, motion, etc.). Para “qué se hizo y cuándo”, empieza aquí.
+- **Copy y mensaje público alineado con tevsys.io:** **`docs/CONTENIDO_WEB_TEVSYS_LANDING.md`**.
+- **Motion home (tema oscuro, KITT, burbujas, header gris, bienvenida + fase 2):** **`docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md`** + en changelog la sección **«Motion / vida en home»**.
+- **Tracker interno cards/micro-páginas:** `docs/CARDS-NEXT-PHASE.md` §7.
+- **Resumen por archivo (técnico):** `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
+- **Pendientes típicos:** PNG galería HyperClose §58 si faltan; MP4 instalación cuando exista WebRequest en pantalla (ver changelog).
 
 ### Qué no tocar sin protocolo (recordatorio)
 
 - **EA / ZONA SAGRADA / SML:** proyecto TGP, `QUE_CONTIENE` V11, `.cursorrules` — no parches por iniciativa en SML.
+
+---
+
+## 0.2 Historia resumida de la web (Odyssey → abr 2026) — para no perder el hilo
+
+**Base técnica:** el repo **`tevsys-landiing`** parte de la plantilla **Astro Odyssey Theme** y se fue sustituyendo marca, rutas, estilos y páginas hasta quedar **tevsys.io** (deploy Vercel; dominio oficial `tevsys.io`).
+
+**Línea temporal de producto (orden conceptual; el detalle fechado está en `CHANGELOG-TEVSYS.md`):**
+
+1. **Identidad y armazón:** logo/óvalo `tevsys`, nav (Inicio · Empresas · Contacto; sin “Acceso” hasta tener flujo demo claro), tema oscuro como experiencia principal, footer con columnas (navegación, guías, producto, legal), favicon/apple-touch, páginas legales mínimas.
+2. **Home:** hero con propuesta clara + imagen mano robótica/candado; **4 cards** enlazando a micropáginas (Precisión, HyperClose, SML, Evidencia); bloque de valor con título tipo *“¿Cuánto dinero has perdido por no parar a tiempo?”*; sección planes (Essential / Advanced / Pro) con CTAs a contacto; copy y cifras alineados con evidencias (p. ej. operativas documentadas — ver precisión + changelog).
+3. **Micropáginas:** plantilla unificada (hero → demo → qué comprobar → pruebas → CTA); vídeos y capturas donde aplica; SEO/meta/sitemap/analytics según docs de SEO del repo.
+4. **E-commerce / licencias (evolución):** narrativa Market-first, Lemon en histórico; **API validate + webhooks** (rate limit, claves con sufijo aleatorio) documentados en changelog y en proyecto TGP para el EA — ver entradas API en `CHANGELOG-TEVSYS.md`.
+5. **Motion / “vida” en home (abr 2026, solo `/` + tema oscuro):** capas decorativas **sin un solo metrónomo**: niebla superior, dos rectángulos KITT en el hero (**rise** ámbar + **fall** gris/ámbar con mezcla + **bienvenida** lenta arriba→abajo, respiro, luego ciclo largo asíncrono), burbujas detrás de cards, franja KITT en planes (niebla + doble tono), franja fundador, burbuja cola, **escáner gris** en header solo en home; `prefers-reduced-motion` y ajustes móvil donde aplica. **Técnica:** `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` + `src/styles/global.css` + `src/pages/index.astro` + `Header.astro`.
+
+**Correlación con el EA (no es código web):** trazabilidad en proyecto TGP `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (CHANGELOG **16 abr 2026** correlato web) y `TGP_V11_CHECKPOINT_PRODUCCION.md` § landing motion — solo para que otra IA no mezcle repos.
+
+**Qué hacer tú (DeepSeek) al entrar en un chat web:**  
+(1) `CHANGELOG-TEVSYS.md` → sección que toque la tarea + Motion si es home visual.  
+(2) `CONTENIDO_WEB_TEVSYS_LANDING.md` si es copy público.  
+(3) Este maestro §21 si es narrativa comercial / pitch.  
+(4) §2–§8 de este archivo como **contexto**, pero si algo contradice (1) o (2), **gana el changelog o contenido web**.
 
 ---
 
