@@ -229,23 +229,23 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 }
 
 /*
-  Escáner header — solo escritorio: un pelín más legible (más contraste en el haz, sin ámbar).
-  Móvil lleva overrides propios en @media (max-width: 768px) para no competir con el mismo perfil.
+  Escáner header — escritorio: mismo “resalte” visual que en móvil (gradiente + tamaño del haz).
+  La secuencia de movimiento sigue siendo la misma (animation 33.8s en la regla base; no se redefine aquí).
 */
 @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
 	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
 		background-image: linear-gradient(
 			102deg,
 			transparent 0%,
-			transparent 32%,
-			rgba(118, 122, 138, 0.2) 44%,
-			rgba(200, 204, 218, 0.4) 50%,
-			rgba(108, 112, 126, 0.18) 56%,
-			transparent 68%,
+			transparent 35%,
+			rgba(120, 124, 138, 0.24) 46%,
+			rgba(198, 202, 216, 0.45) 50%,
+			rgba(105, 109, 124, 0.22) 54%,
+			transparent 64%,
 			transparent 100%
 		);
-		background-size: 220% 100%;
-		opacity: 0.94;
+		background-size: 260% 100%;
+		opacity: 0.91;
 	}
 }
 
