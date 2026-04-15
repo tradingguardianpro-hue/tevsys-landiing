@@ -171,7 +171,8 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
+			/* ease-out: el ojo ve bajada desde el primer segundo (evita “arranque dormido” de ease-in-out) */
+			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 12s) ease-out 0s 1 both,
 			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite,
 			tevsys-home-fall-welcome-gray var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
 			tevsys-home-fall-mix-gray 8.3s ease-in-out var(--tevsys-home-fall-phase2-delay, 14.1s) infinite;
@@ -189,7 +190,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
+			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 12s) ease-out 0s 1 both,
 			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite,
 			tevsys-home-fall-welcome-amber var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
 			tevsys-home-fall-mix-amber 8.3s ease-in-out var(--tevsys-home-fall-phase2-delay, 14.1s) infinite;
@@ -264,7 +265,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 }
 
-/* Bienvenida fall: haz ya visible arriba + descenso suave (no “luz a la velocidad de la luz”) */
+/* Bienvenida fall: haz ya visible arriba + descenso (timing ease-out en posición — opción A) */
 @keyframes tevsys-home-fall-welcome-pos {
 	0% {
 		background-position: 50% 248%;
