@@ -74,9 +74,12 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 	--tevsys-home-intro-cycle: 300s;
 	/* Barrido “fall” del hero: distinto del ciclo global para no ir a la par */
 	--tevsys-home-fall-cycle: 311s;
-	/* Bienvenida (primer barrido arriba→abajo): lento + respiro antes del ciclo largo asíncrono */
-	--tevsys-home-fall-welcome-dur: 17.4s;
-	--tevsys-home-fall-welcome-breath: 1.2s;
+	/*
+	  Bienvenida: “vivo al pintar” (haz ya en sitio, como header) + barrido suave más corto;
+	  respiro largo antes del ciclo 311s para no cruzarse con la fase 2.
+	*/
+	--tevsys-home-fall-welcome-dur: 12s;
+	--tevsys-home-fall-welcome-breath: 2.1s;
 	--tevsys-home-fall-phase2-delay: calc(var(--tevsys-home-fall-welcome-dur) + var(--tevsys-home-fall-welcome-breath));
 }
 
@@ -134,14 +137,14 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 
 	/*
-	  Fall: bienvenida lenta (arriba → abajo) + respiro breve + ciclo largo asíncrono.
+	  Fall: bienvenida — presencia inmediata + barrido suave; respiro; ciclo largo.
 	  Tiempos: --tevsys-home-fall-welcome-dur, --tevsys-home-fall-welcome-breath, --tevsys-home-fall-phase2-delay.
 	*/
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
 		background: none;
 		animation:
-			tevsys-home-fall-welcome-fade var(--tevsys-home-fall-welcome-dur, 17.4s) ease-in-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 18.6s) infinite;
+			tevsys-home-fall-welcome-fade var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before,
@@ -151,7 +154,8 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 		inset: 0;
 		background-size: 100% 560%;
 		background-repeat: no-repeat;
-		background-position: 50% 258%;
+		/* Misma Y que el 0% de bienvenida: primer pintado ya con haz en zona útil (como escáner header) */
+		background-position: 50% 248%;
 		pointer-events: none;
 	}
 
@@ -167,10 +171,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 17.4s) ease-in-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 18.6s) infinite,
-			tevsys-home-fall-welcome-gray var(--tevsys-home-fall-welcome-dur, 17.4s) ease-in-out 0s 1 both,
-			tevsys-home-fall-mix-gray 8.3s ease-in-out var(--tevsys-home-fall-phase2-delay, 18.6s) infinite;
+			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite,
+			tevsys-home-fall-welcome-gray var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
+			tevsys-home-fall-mix-gray 8.3s ease-in-out var(--tevsys-home-fall-phase2-delay, 14.1s) infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
@@ -185,10 +189,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 17.4s) ease-in-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 18.6s) infinite,
-			tevsys-home-fall-welcome-amber var(--tevsys-home-fall-welcome-dur, 17.4s) ease-in-out 0s 1 both,
-			tevsys-home-fall-mix-amber 8.3s ease-in-out var(--tevsys-home-fall-phase2-delay, 18.6s) infinite;
+			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite,
+			tevsys-home-fall-welcome-amber var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
+			tevsys-home-fall-mix-amber 8.3s ease-in-out var(--tevsys-home-fall-phase2-delay, 14.1s) infinite;
 	}
 }
 
@@ -260,32 +264,32 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 }
 
-/* Bienvenida fall: primer barrido elegante y lento (arriba -> abajo) */
+/* Bienvenida fall: haz ya visible arriba + descenso suave (no “luz a la velocidad de la luz”) */
 @keyframes tevsys-home-fall-welcome-pos {
 	0% {
-		background-position: 50% 252%;
+		background-position: 50% 248%;
 	}
 	100% {
-		background-position: 50% -214%;
+		background-position: 50% -206%;
 	}
 }
 
 @keyframes tevsys-home-fall-welcome-fade {
 	0% {
-		opacity: 0.07;
+		opacity: 0.56;
 		visibility: visible;
 	}
-	8% {
-		opacity: 0.52;
+	4% {
+		opacity: 0.62;
 	}
-	55% {
-		opacity: 0.56;
+	48% {
+		opacity: 0.58;
 	}
-	92% {
-		opacity: 0.34;
+	88% {
+		opacity: 0.32;
 	}
 	100% {
-		opacity: 0.08;
+		opacity: 0.1;
 		visibility: visible;
 	}
 }
@@ -293,22 +297,22 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 @keyframes tevsys-home-fall-welcome-gray {
 	0%,
 	100% {
-		opacity: 0.24;
+		opacity: 0.32;
 	}
 	44% {
-		opacity: 0.42;
+		opacity: 0.46;
 	}
 }
 
 @keyframes tevsys-home-fall-welcome-amber {
 	0% {
-		opacity: 0.82;
+		opacity: 0.9;
 	}
 	68% {
-		opacity: 0.72;
+		opacity: 0.76;
 	}
 	100% {
-		opacity: 0.18;
+		opacity: 0.22;
 	}
 }
 
