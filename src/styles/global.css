@@ -130,12 +130,14 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 
 	/*
-	  Fall: barrido vertical — dos capas (gris + ámbar) con la misma trayectoria;
-	  tevsys-home-fall-mix-* alterna opacidades (más tiempo en gris) sin tocar el ciclo largo (~311s).
+	  Fall: bienvenida elegante al cargar (arriba → abajo, visible enseguida) + ciclo largo asíncrono.
+	  La mezcla gris/ámbar mantiene más presencia del gris en fase normal.
 	*/
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
 		background: none;
-		animation: tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear infinite;
+		animation:
+			tevsys-home-fall-welcome-fade 3.6s ease-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear 3.6s infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before,
@@ -161,8 +163,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear infinite,
-			tevsys-home-fall-mix-gray 8.3s ease-in-out infinite;
+			tevsys-home-fall-welcome-pos 3.6s ease-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear 3.6s infinite,
+			tevsys-home-fall-welcome-gray 3.6s ease-out 0s 1 both,
+			tevsys-home-fall-mix-gray 8.3s ease-in-out 3.6s infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
@@ -177,8 +181,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear infinite,
-			tevsys-home-fall-mix-amber 8.3s ease-in-out infinite;
+			tevsys-home-fall-welcome-pos 3.6s ease-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear 3.6s infinite,
+			tevsys-home-fall-welcome-amber 3.6s ease-out 0s 1 both,
+			tevsys-home-fall-mix-amber 8.3s ease-in-out 3.6s infinite;
 	}
 }
 
@@ -247,6 +253,55 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	93% {
 		background-position: 72% 50%;
 		animation-timing-function: ease-in-out;
+	}
+}
+
+/* Bienvenida fall: primer barrido suave y temprano (arriba -> abajo) */
+@keyframes tevsys-home-fall-welcome-pos {
+	0% {
+		background-position: 50% 252%;
+	}
+	100% {
+		background-position: 50% -238%;
+	}
+}
+
+@keyframes tevsys-home-fall-welcome-fade {
+	0% {
+		opacity: 0.06;
+		visibility: visible;
+	}
+	12% {
+		opacity: 0.58;
+	}
+	72% {
+		opacity: 0.52;
+	}
+	100% {
+		opacity: 0.12;
+		visibility: visible;
+	}
+}
+
+@keyframes tevsys-home-fall-welcome-gray {
+	0%,
+	100% {
+		opacity: 0.24;
+	}
+	44% {
+		opacity: 0.42;
+	}
+}
+
+@keyframes tevsys-home-fall-welcome-amber {
+	0% {
+		opacity: 0.82;
+	}
+	68% {
+		opacity: 0.72;
+	}
+	100% {
+		opacity: 0.18;
 	}
 }
 
