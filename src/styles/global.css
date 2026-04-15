@@ -919,6 +919,39 @@ html[data-theme='dark'] .tevsys-home-lower-strip::after {
 	}
 }
 
+/* Escritorio ≥769px — misma gama y cadencia; ~medio paso más de presencia que la base (menos que móvil). */
+@keyframes tevsys-home-lower-kitt-mix-gray-desktop {
+	0%,
+	100% {
+		opacity: 0.94;
+	}
+	20% {
+		opacity: 0.28;
+	}
+	42% {
+		opacity: 0.91;
+	}
+	64% {
+		opacity: 0.24;
+	}
+}
+
+@keyframes tevsys-home-lower-kitt-mix-amber-desktop {
+	0%,
+	100% {
+		opacity: 0.17;
+	}
+	20% {
+		opacity: 0.84;
+	}
+	42% {
+		opacity: 0.17;
+	}
+	64% {
+		opacity: 0.85;
+	}
+}
+
 html[data-theme='dark'] .tevsys-home-band--lower > :not(.tevsys-home-lower-strip):not(.tevsys-home-tail-bubble-solo) {
 	position: relative;
 	z-index: 1;
@@ -991,6 +1024,34 @@ html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 	}
 }
 
+/* Escritorio — misma trayectoria que tail-bubble base; opacidades un poco más altas */
+@keyframes tevsys-home-tail-bubble-solo-desktop {
+	0% {
+		background-position: -8% 38%;
+		opacity: 0.86;
+	}
+	20% {
+		background-position: 28% 52%;
+		opacity: 0.94;
+	}
+	40% {
+		background-position: 58% 28%;
+		opacity: 0.9;
+	}
+	60% {
+		background-position: 88% 48%;
+		opacity: 0.96;
+	}
+	80% {
+		background-position: 62% 62%;
+		opacity: 0.88;
+	}
+	100% {
+		background-position: 108% 36%;
+		opacity: 0.92;
+	}
+}
+
 /* Home — fundador: franja fina tipo “cards → planes”, misma familia visual */
 html[data-theme='dark'] .tevsys-home-founder-band {
 	--tevsys-founder-strip-h: clamp(56px, 9vh, 120px);
@@ -1049,6 +1110,80 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 	}
 	100% {
 		background-position: 50% -1%, 50% -30%;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
+	html[data-theme='dark'] .tevsys-home-lower-strip {
+		opacity: 0.88;
+	}
+
+	html[data-theme='dark'] .tevsys-home-lower-strip::before {
+		background-image: linear-gradient(
+			180deg,
+			transparent 0%,
+			transparent 37%,
+			rgba(110, 114, 128, 0.24) 47.7%,
+			rgba(186, 190, 202, 0.34) 50%,
+			rgba(95, 98, 110, 0.16) 52.3%,
+			transparent 60%,
+			transparent 100%
+		);
+		animation:
+			tevsys-home-lower-strip-kitt-pos 18s ease-in-out infinite alternate,
+			tevsys-home-lower-kitt-mix-gray-desktop 10.3s ease-in-out infinite;
+	}
+
+	html[data-theme='dark'] .tevsys-home-lower-strip::after {
+		background-image: linear-gradient(
+			180deg,
+			transparent 0%,
+			transparent 37%,
+			rgba(245, 176, 65, 0.27) 47.7%,
+			rgba(255, 236, 205, 0.115) 50%,
+			rgba(210, 175, 115, 0.16) 52.3%,
+			transparent 60%,
+			transparent 100%
+		);
+		animation:
+			tevsys-home-lower-strip-kitt-pos 18s ease-in-out infinite alternate,
+			tevsys-home-lower-kitt-mix-amber-desktop 10.3s ease-in-out infinite;
+	}
+
+	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
+		opacity: 0.93;
+		filter: blur(22px);
+		background-image: radial-gradient(
+			ellipse 58vmin 50vmin at 50% 50%,
+			rgba(245, 176, 65, 0.3) 0%,
+			rgba(130, 110, 85, 0.14) 34%,
+			rgba(55, 50, 46, 0.1) 52%,
+			transparent 72%
+		);
+		animation: tevsys-home-tail-bubble-solo-desktop 38s ease-in-out infinite alternate;
+	}
+
+	html[data-theme='dark'] .tevsys-home-founder-strip {
+		opacity: 0.86;
+		background-image:
+			linear-gradient(
+				188deg,
+				rgba(4, 4, 6, 0.96) 0%,
+				rgba(9, 9, 12, 0.88) 26%,
+				rgba(14, 16, 22, 0.1) 52%,
+				rgba(12, 12, 16, 0.82) 88%,
+				rgba(5, 5, 7, 0.7) 100%
+			),
+			linear-gradient(
+				180deg,
+				transparent 0%,
+				transparent 41%,
+				rgba(245, 176, 65, 0.24) 48%,
+				rgba(255, 236, 205, 0.11) 50%,
+				rgba(210, 175, 115, 0.13) 52%,
+				transparent 59%,
+				transparent 100%
+			);
 	}
 }
 
