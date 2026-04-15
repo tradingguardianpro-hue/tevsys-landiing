@@ -562,19 +562,33 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 		background-position: 108% 46%;
 		background-size: 108vmin 106vmin;
 	}
+	40% {
+		/* Fila superior — cuerpo gris bajo la imagen (HyperClose / precisión) */
+		background-position: 78% 66%;
+		background-size: 112vmin 108vmin;
+	}
 	44% {
-		/* Evidencia verificable — card inferior derecha */
-		background-position: 94% 74%;
-		background-size: 114vmin 102vmin;
+		/* Evidencia — bajar al bloque de texto gris (no solo la cabecera negra) */
+		background-position: 84% 90%;
+		background-size: 118vmin 112vmin;
+	}
+	50% {
+		background-position: 50% 96%;
+		background-size: 122vmin 114vmin;
 	}
 	55% {
-		background-position: 50% 84%;
-		background-size: 120vmin 108vmin;
+		background-position: 50% 88%;
+		background-size: 120vmin 110vmin;
+	}
+	61% {
+		/* SML — mismo criterio: zona gris legible */
+		background-position: 14% 92%;
+		background-size: 118vmin 112vmin;
 	}
 	67% {
-		/* SML — card inferior izquierda */
-		background-position: -20% 80%;
-		background-size: 118vmin 104vmin;
+		/* SML esquina + arrastre hacia centro bajo */
+		background-position: -12% 86%;
+		background-size: 116vmin 108vmin;
 	}
 	78% {
 		background-position: -34% 46%;
@@ -593,20 +607,28 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 		background-size: 78vmin 86vmin;
 	}
 	14% {
-		background-position: 58% 78%;
-		background-size: 82vmin 90vmin;
+		background-position: 54% 88%;
+		background-size: 86vmin 94vmin;
 	}
 	28% {
-		background-position: -8% 74%;
-		background-size: 74vmin 82vmin;
+		background-position: 18% 90%;
+		background-size: 80vmin 92vmin;
 	}
 	41% {
 		background-position: -24% 36%;
 		background-size: 80vmin 88vmin;
 	}
+	47% {
+		background-position: 72% 92%;
+		background-size: 84vmin 96vmin;
+	}
 	53% {
 		background-position: 22% 20%;
 		background-size: 76vmin 84vmin;
+	}
+	60% {
+		background-position: 28% 84%;
+		background-size: 82vmin 94vmin;
 	}
 	66% {
 		background-position: 92% 18%;
@@ -616,9 +638,13 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 		background-position: 104% 44%;
 		background-size: 72vmin 80vmin;
 	}
+	88% {
+		background-position: 48% 94%;
+		background-size: 88vmin 96vmin;
+	}
 	100% {
-		background-position: 44% 58%;
-		background-size: 80vmin 86vmin;
+		background-position: 44% 68%;
+		background-size: 80vmin 90vmin;
 	}
 }
 
@@ -647,13 +673,26 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 		background-position: 52% 62%;
 		background-size: 106vmin 100vmin;
 	}
+	62% {
+		/* Columna 1 card — cuerpo gris bajo imagen */
+		background-position: 46% 78%;
+		background-size: 118vmin 108vmin;
+	}
 	66% {
 		background-position: 46% 72%;
 		background-size: 114vmin 104vmin;
 	}
+	74% {
+		background-position: 52% 88%;
+		background-size: 116vmin 110vmin;
+	}
 	80% {
 		background-position: 51% 82%;
 		background-size: 102vmin 96vmin;
+	}
+	88% {
+		background-position: 48% 96%;
+		background-size: 120vmin 112vmin;
 	}
 	100% {
 		background-position: 50% 24%;
@@ -682,13 +721,25 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 		background-position: 46% 28%;
 		background-size: 74vmin 82vmin;
 	}
+	65% {
+		background-position: 40% 86%;
+		background-size: 86vmin 96vmin;
+	}
 	71% {
 		background-position: 52% 46%;
 		background-size: 78vmin 86vmin;
 	}
+	80% {
+		background-position: 56% 92%;
+		background-size: 84vmin 98vmin;
+	}
 	86% {
 		background-position: 48% 68%;
 		background-size: 82vmin 88vmin;
+	}
+	93% {
+		background-position: 50% 98%;
+		background-size: 88vmin 100vmin;
 	}
 	100% {
 		background-position: 44% 78%;
@@ -832,6 +883,39 @@ html[data-theme='dark'] .tevsys-home-lower-strip::after {
 	}
 	64% {
 		opacity: 0.82;
+	}
+}
+
+/* Móvil — franja entre valor y «Elige tu cuenta»: misma gama gris/ámbar, lectura más cercana al escáner del header */
+@keyframes tevsys-home-lower-kitt-mix-gray-mobile {
+	0%,
+	100% {
+		opacity: 0.96;
+	}
+	20% {
+		opacity: 0.32;
+	}
+	42% {
+		opacity: 0.94;
+	}
+	64% {
+		opacity: 0.28;
+	}
+}
+
+@keyframes tevsys-home-lower-kitt-mix-amber-mobile {
+	0%,
+	100% {
+		opacity: 0.22;
+	}
+	20% {
+		opacity: 0.9;
+	}
+	42% {
+		opacity: 0.2;
+	}
+	64% {
+		opacity: 0.88;
 	}
 }
 
@@ -1105,6 +1189,45 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 		html[data-theme='dark'] .tevsys-home-mid-glow::before {
 			animation: tevsys-home-mid-bubbles-b-mobile 33.7s ease-in-out infinite alternate;
+		}
+
+		/*
+		  Franja KITT sobre «Elige tu cuenta» (solo móvil): más contraste, mismos RGB que header/franja desktop.
+		*/
+		html[data-theme='dark'] .tevsys-home-lower-strip {
+			opacity: 0.84;
+		}
+
+		html[data-theme='dark'] .tevsys-home-lower-strip::before {
+			background-image: linear-gradient(
+				180deg,
+				transparent 0%,
+				transparent 36%,
+				rgba(110, 114, 128, 0.3) 47.6%,
+				rgba(186, 190, 202, 0.42) 50%,
+				rgba(95, 98, 110, 0.2) 52.4%,
+				transparent 61%,
+				transparent 100%
+			);
+			animation:
+				tevsys-home-lower-strip-kitt-pos 18s ease-in-out infinite alternate,
+				tevsys-home-lower-kitt-mix-gray-mobile 10.3s ease-in-out infinite;
+		}
+
+		html[data-theme='dark'] .tevsys-home-lower-strip::after {
+			background-image: linear-gradient(
+				180deg,
+				transparent 0%,
+				transparent 36%,
+				rgba(245, 176, 65, 0.34) 47.6%,
+				rgba(255, 236, 205, 0.14) 50%,
+				rgba(210, 175, 115, 0.2) 52.4%,
+				transparent 61%,
+				transparent 100%
+			);
+			animation:
+				tevsys-home-lower-strip-kitt-pos 18s ease-in-out infinite alternate,
+				tevsys-home-lower-kitt-mix-amber-mobile 10.3s ease-in-out infinite;
 		}
 	}
 }
