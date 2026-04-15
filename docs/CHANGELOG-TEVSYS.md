@@ -15,7 +15,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - `src/pages/index.astro` — contenedores `tevsys-home-*` (stack hero, bandas, fundador).
 - `src/components/core/Header.astro` — en `/`: clase `tevsys-header--home-scanner` + capa `tevsys-header-scanner` (`aria-hidden`).
 
-**Resumen numérico (dark, `prefers-reduced-motion: no-preference`):** niebla home `body::before` **23.3s**; rise **18.7s**; fall **311s** (`--tevsys-home-fall-cycle`); escáner header gris **33.8s** (bucle irregular, `ease-in-out` por tramo); mid burbujas **36s**; lower strip **18s**; tail bubble **38s**; founder strip **16s**. Variables `--tevsys-home-intro-cycle` 300s vs fall 311s para no ir a la par.
+**Resumen numérico (dark, `prefers-reduced-motion: no-preference`):** niebla home `body::before` **23.3s**; rise **18.7s**; fall **311s** (`--tevsys-home-fall-cycle`); escáner header gris **33.8s** (bucle irregular, `ease-in-out` por tramo); mid burbujas **26.4s** (antes 36s — más movimiento perceptible; sin máscara central); lower strip **18s**; tail bubble **38s**; founder strip **16s**. Variables `--tevsys-home-intro-cycle` 300s vs fall 311s para no ir a la par.
 
 **Iteración (equilibrio cromático):** el barrido vertical del hero (`.tevsys-home-kitt-rect--fall`) combina **gris + ámbar** en dos capas (`::before` / `::after`) con la misma trayectoria (~311s) y **mezcla oscilante** (~8.3s, más peso al gris). La franja KITT de **planes** (`.tevsys-home-lower-strip`) repite la idea (niebla en base; KITT en pseudos; mix ~10.3s). Keyframes: `tevsys-home-intro-kitt-cycle-pos`, `tevsys-home-intro-kitt-cycle-fade`, `tevsys-home-fall-mix-*`, `tevsys-home-lower-strip-fog`, `tevsys-home-lower-strip-kitt-pos`, `tevsys-home-lower-kitt-mix-*`.
 
