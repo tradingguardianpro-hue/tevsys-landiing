@@ -136,8 +136,8 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
 		background: none;
 		animation:
-			tevsys-home-fall-welcome-fade 3.6s ease-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear 3.6s infinite;
+			tevsys-home-fall-welcome-fade 8.8s ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear 8.8s infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before,
@@ -163,10 +163,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-fall-welcome-pos 3.6s ease-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear 3.6s infinite,
-			tevsys-home-fall-welcome-gray 3.6s ease-out 0s 1 both,
-			tevsys-home-fall-mix-gray 8.3s ease-in-out 3.6s infinite;
+			tevsys-home-fall-welcome-pos 8.8s ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear 8.8s infinite,
+			tevsys-home-fall-welcome-gray 8.8s ease-in-out 0s 1 both,
+			tevsys-home-fall-mix-gray 8.3s ease-in-out 8.8s infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
@@ -181,10 +181,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-fall-welcome-pos 3.6s ease-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear 3.6s infinite,
-			tevsys-home-fall-welcome-amber 3.6s ease-out 0s 1 both,
-			tevsys-home-fall-mix-amber 8.3s ease-in-out 3.6s infinite;
+			tevsys-home-fall-welcome-pos 8.8s ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear 8.8s infinite,
+			tevsys-home-fall-welcome-amber 8.8s ease-in-out 0s 1 both,
+			tevsys-home-fall-mix-amber 8.3s ease-in-out 8.8s infinite;
 	}
 }
 
@@ -256,13 +256,13 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 	}
 }
 
-/* Bienvenida fall: primer barrido suave y temprano (arriba -> abajo) */
+/* Bienvenida fall: primer barrido elegante y lento (arriba -> abajo) */
 @keyframes tevsys-home-fall-welcome-pos {
 	0% {
 		background-position: 50% 252%;
 	}
 	100% {
-		background-position: 50% -238%;
+		background-position: 50% -214%;
 	}
 }
 
