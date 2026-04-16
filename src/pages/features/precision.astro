@@ -42,6 +42,7 @@ const seo = {
 				<li><a class="evidence-link" href="#precision-demo">Demo cuenta 100k: cálculo visible en tiempo real y cierre donde configuras.</a></li>
 				<li><a class="evidence-link" href="#precision-volatilidad">Alta volatilidad: cierre también en positivo.</a></li>
 				<li><a class="evidence-link" href="#precision-cuenta-pequena">Cuenta más pequeña, mismo criterio de cierre.</a></li>
+				<li><a class="evidence-link" href="#precision-nasdaq">Otro activo, misma regla: Nasdaq (grabación en tema claro).</a></li>
 				<li><a class="evidence-link" href="#precision-logs">Sin humo: todo queda registrado (logs auditables).</a></li>
 				<li><a class="evidence-link" href="#precision-stats">Lo que dicen los resultados (evidencia visual + resumen técnico).</a></li>
 			</ul>
@@ -85,6 +86,22 @@ const seo = {
 				</video>
 			</div>
 			<p class="demo-edit-note">Misma lógica que en la demo principal; aquí el capital es menor y el impacto por lote se nota más en pantalla.</p>
+		</section>
+
+		<section id="precision-nasdaq" class="feature-demo">
+			<h2>Demo — Nasdaq · multi‑activo (tema claro)</h2>
+			<p class="feature-demo-hook">
+				NAS100 · cuenta USD · una operación · límite diario +1% · cierre coherente con buffer (+0,01 p.p.) — mismo producto, <strong>activo distinto</strong> a los ejemplos en GER40 de arriba.
+			</p>
+			<div class="demo-video demo-video--compact demo-video--light" id="precision-nasdaq-container">
+				<video id="precision-nasdaq-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-demo-nasdaq.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
+			<p class="demo-edit-note">
+				Grabación con <strong>gráfico y panel en tema claro</strong> para que se vea que tevsys convive con el estilo visual que elijas en MT5. El marco del reproductor usa fondo claro a propósito, para que no choque con el tema oscuro de la web.
+			</p>
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail">
@@ -190,7 +207,7 @@ const seo = {
 		}
 	}
 	function initDemoExpand() {
-		[['precision-demo-video', 'precision-demo-container'], ['precision-volatilidad-video', 'precision-volatilidad-container'], ['precision-cuenta-pequena-video', 'precision-cuenta-pequena-container'], ['precision-logs-video', 'precision-logs-container']].forEach(([vid, ctn]) => {
+		[['precision-demo-video', 'precision-demo-container'], ['precision-volatilidad-video', 'precision-volatilidad-container'], ['precision-cuenta-pequena-video', 'precision-cuenta-pequena-container'], ['precision-nasdaq-video', 'precision-nasdaq-container'], ['precision-logs-video', 'precision-logs-container']].forEach(([vid, ctn]) => {
 			const video = document.getElementById(vid);
 			const container = document.getElementById(ctn);
 			if (!video || !container) return;
@@ -299,14 +316,16 @@ const seo = {
 	}
 	#precision-demo,
 	#precision-volatilidad,
-	#precision-cuenta-pequena {
+	#precision-cuenta-pequena,
+	#precision-nasdaq {
 		scroll-margin-top: 5.5rem;
 		border-radius: var(--theme-shape-radius);
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 	}
 	#precision-demo:target,
 	#precision-volatilidad:target,
-	#precision-cuenta-pequena:target {
+	#precision-cuenta-pequena:target,
+	#precision-nasdaq:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
@@ -342,6 +361,18 @@ const seo = {
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
 		margin-bottom: 0.75rem;
+	}
+	/* Vídeos con MT5 tema claro (gráfico + panel blancos): evita “mancha” oscura alrededor del plano en landing oscura */
+	.demo-video--light {
+		background: linear-gradient(180deg, #eceef2 0%, #e2e5eb 100%);
+		border: 1px solid rgba(245, 176, 65, 0.42);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.22), 0 6px 22px rgba(0, 0, 0, 0.2);
+	}
+	.demo-video--light.demo-video--compact {
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.3), 0 8px 26px rgba(0, 0, 0, 0.22);
+	}
+	.demo-video--light.demo-video--compact.demo-video--playing {
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.4), 0 12px 34px rgba(0, 0, 0, 0.28);
 	}
 	.demo-video--compact {
 		max-width: min(100%, 31rem);

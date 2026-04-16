@@ -4,6 +4,21 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión — `demo-video--light` + bloque multi‑activo Nasdaq (17 abr 2026)
+
+**Objetivo:** Incrustar vídeos con **MT5 en tema claro** (gráfico + panel blancos) sin un marco **#06080d** que parezca una mancha alrededor del plano en la micropágina oscura.
+
+**Código:** `src/pages/features/precision.astro`
+- Clase **`demo-video--light`**: fondo claro en gradiente suave, borde y sombra acordes con la línea dorada existente; pensada para **compact** (y extensible a hero si hiciera falta).
+- Sección **`#precision-nasdaq`**: posición **después** de “Cuenta más pequeña” y **antes** de logs; copy centrado en **multi‑activo** (NASDAQ distinto de GER40), USD, operativa limpia; reproductor **`demo-video--compact demo-video--light`**.
+- Fuente vídeo esperada: **`public/videos/features/precision-demo-nasdaq.mp4`** — subir el export final de Clipchamp con ese nombre (o ajustar la ruta en Astro si se prefiere otro slug).
+
+**Lista “Qué puedes comprobar”:** nuevo enlace ancla a `#precision-nasdaq`. **Script:** `initDemoExpand` incluye `precision-nasdaq-video` / `precision-nasdaq-container`. **`:target` / scroll-margin:** mismo tratamiento que otros bloques demo.
+
+**Pendiente operativo:** Copiar el MP4 a `public/videos/features/precision-demo-nasdaq.mp4` al tener el archivo listo.
+
+---
+
 ## Motion / vida en home (tema oscuro) — abr 2026
 
 **Objetivo:** Sensación de producto **activo** (instrumento encendido), **sin** estética cinematográfica ni parpadeo agresivo. Animaciones **desacopladas** entre sí (duraciones distintas, sin “reloj maestro”).
@@ -28,7 +43,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 | **Header escáner (home)** | Escritorio **≥769px**: mismo **resalte** visual que móvil (gradiente gris reforzado, `background-size` 260%, `opacity` ~0.91); **secuencia 33.8s** intacta. Móvil: duración barrido **27.4s**; misma familia cromática. |
 | **Hero móvil** | KITT **rise** opacidad **0.68** (más “instrumento” en titular + mano; cards siguen calmadas vía mid-glow/blur móvil). |
 | **Mid-glow (detrás de las 4 cards)** | **Gris instrumento** (alineado header/panel), dos lecturas: **núcleo** + **aureola** más clara hacia el borde en la segunda elipse. **Segunda burbuja** en **`::before`** con `@keyframes tevsys-home-mid-bubbles-b` **33.7s** `alternate`; capa host **`tevsys-home-mid-bubbles-a` 28s** — duraciones **no** múltiplos obvios → combinación menos repetitiva que una sola animación moviendo dos `background-image`. **Escritorio:** rutas con **perímetro** del rectángulo 2×2: paradas para **SML** (inferior izquierda) y **Evidencia verificable** (inferior derecha); laterales y fila baja. **Móvil (≤768px):** mismas duraciones pero **`animation-name`** distinto: `tevsys-home-mid-bubbles-a-mobile` / `tevsys-home-mid-bubbles-b-mobile` — eje ~centro horizontal y barrido **vertical** por la **columna** de cards para que el movimiento se lea **detrás** de la pila (el perímetro 2×2 en columna única no bastaba). Blur/opacidad desktop y móvil afinados. **Refino posterior:** keyframes desktop y móvil con más pasos en **Y alto** (~88–98%) para cubrir el **cuerpo gris** bajo las imágenes de las cards; franja inferior (`.tevsys-home-lower-strip`) en móvil: gradientes gris/ámbar más legibles + `tevsys-home-lower-kitt-mix-*-mobile` (sin cambiar gama cromática). **Escritorio ≥769px:** mismo criterio de presencia con `tevsys-home-lower-kitt-mix-*-desktop` (medio paso por debajo del móvil), franja sobre planes + `tevsys-home-founder-strip` + `tevsys-home-tail-bubble-solo` / `tevsys-home-tail-bubble-solo-desktop`. **Mid-glow cards:** bucles **sin `alternate`** (0%=100%), barridos **horizontal/vertical/diagonal**, pasos en SML/Evidencia bajo; capa B con **`animation-delay`** negativo + keyframes más móviles para asincronía perceptible. |
-| **Calma / premium** | Mid-glow **92s / 118s** `linear`: brillo **mayoría del tiempo en márgenes** (fuera del bloque de cards), vuelta al centro lenta; muchos pasos cortos evitan acelerones. Tail **64s** `linear`. `prefers-reduced-motion: reduce` apaga también animación del `::before`. |
+| **Calma / premium** | Mid-glow **92s / 118s** `linear`: brillo **mayoría del tiempo en márgenes** (fuera del bloque de cards), vuelta al centro lenta; muchos pasos cortos evitan acelerones. Tail **64s** `linear`. `prefers-reduced-motion: reduce` apaga también animación del `::before`. **Post revisión:** segunda burbuja (`mid-glow::before`) — `opacity` ~**0,66** y radial más suave para que **no robe foco** a las cards (sigue leyéndose movimiento premium detrás). |
 
 **Referencias:** `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` (tabla y notas actualizadas); `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §0.1 / §0.2; `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` (nota cards + motion); `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` (tabla + nota motion móvil columna).
 
