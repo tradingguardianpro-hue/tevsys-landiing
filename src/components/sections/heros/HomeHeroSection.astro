@@ -10,7 +10,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     <div class="hero-section__inner">
       <div class="hero-section__text">
         <h1 class="hero-title">
-          MT5: <span class="hero-title__underline">disciplina automatizada</span>. Tú pones los límites, <span class="hero-title__brand">tevsys</span> los blinda, no negocia y lo registra.
+          <span class="hero-title__mt5">MT5</span>: <span class="hero-title__underline">disciplina automatizada</span>. Tú pones los límites, <span class="hero-title__brand">tevsys</span> los blinda, no negocia y lo registra.
         </h1>
         <div class="hero-tagline-wrap">
           <div class="hero-tagline">
@@ -26,9 +26,10 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       </div>
       <div class="hero-section__image">
         <div class="hero-image__wrapper">
-          <picture>
+          <picture class="hero-image__picture">
             <source type="image/webp" srcset="/mano-robotica-central-web.webp" />
             <img
+              class="hero-image__img"
               src="/mano%20robotica%20central%20web.png"
               alt="tevsys"
               id="home-hero-image"
@@ -87,16 +88,21 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     align-items: center;
   }
 
+  /* Misma familia que .feature-section__title (index): coherencia con “¿Cuánto dinero…?” */
   .hero-title {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-weight: 600;
-    font-size: clamp(1.35rem, 4.2vw, 2.05rem);
-    line-height: 1.22;
-    letter-spacing: -0.015em;
+    font-family: 'Outfit', -apple-system, sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.6vw, 2.05rem);
+    line-height: 1.28;
+    letter-spacing: -0.02em;
     margin: 0;
-    max-width: 19em;
+    max-width: 22em;
     color: rgba(255, 255, 255, 0.98);
     text-align: center;
+  }
+  .hero-title__mt5 {
+    font-variant-numeric: lining-nums;
+    font-feature-settings: 'lnum' 1;
   }
   .hero-title__underline {
     text-decoration: underline;
@@ -105,7 +111,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-decoration-color: rgba(255, 255, 255, 0.95);
   }
   .hero-title__brand {
-    font-family: 'Outfit', -apple-system, sans-serif;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: #f5b041;
@@ -173,6 +178,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     align-items: center;
     justify-content: flex-start;
     margin-top: clamp(1.25rem, 3vw, 2rem);
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     max-width: 36rem;
     position: relative;
@@ -184,6 +191,13 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     justify-content: center;
     width: 100%;
   }
+  .hero-image__picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
   .hero-image__brand {
     margin-top: 0.5rem;
     font-size: 0.72rem;
@@ -192,14 +206,18 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     letter-spacing: 0.02em;
     text-align: center;
   }
+  .hero-image__img,
   .hero-image__wrapper img,
   .hero-section__image img {
-    width: 100%;
+    display: block;
+    width: auto;
     max-width: min(100%, 340px);
     height: auto;
     max-height: min(36vh, 320px);
+    margin-left: auto;
+    margin-right: auto;
     object-fit: contain;
-    object-position: center;
+    object-position: center center;
     border-radius: var(--theme-shape-radius);
   }
   @media (max-width: 768px) {

@@ -68,4 +68,4 @@ y anotad aquí la fecha en una línea:
 
 ---
 
-**Última actualización:** documento creado abr 2026 — coherente con experimentos hero (MT5 centrado, Cormorant, halo ámbar). El archivo **CLASICO** describe el estado **anterior** a esos experimentos.
+**Última actualización:** documento creado abr 2026 — experimentos hero (MT5 centrado, halo ámbar; tipografía hero alineada con sección de cards = Outfit). El archivo **CLASICO** describe el estado **anterior** a esos experimentos.
