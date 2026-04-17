@@ -67,7 +67,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto: `Ajuste en tiempo real: volatilidad • spread • slippage • comisiones` + `65 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
+- Texto: `Ajuste en tiempo real: volatilidad • spread • slippage • comisiones` + `71 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`
@@ -204,7 +204,7 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook: `• Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
 - `Precisión`:
   - Título: `Precisión de cierre: donde configuras, cerramos.`
-  - Hook: `• 65 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - Hook: `• 71 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: incluye escenarios extremos documentados con desviación puntual hasta `~0,39%`.
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -221,7 +221,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Volatilidad:** hook *Operativa documentada:* ±1,50% / +1,83% / contexto volatilidad; nota de pie ajustada (protección vs “misma precisión” genérica).
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`).
 - **Qué puedes comprobar:** orden — demo 100k, logs, alta volatilidad, cuenta pequeña, **resultados al final**.
-- **65 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
+- **71 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
 ### Estado actual HyperClose (Mar 2026 — actualizado 26 Mar 2026)
@@ -307,10 +307,10 @@ Seguimiento interno activo en:
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.`
 
 - Hook de apertura:
-  - `65 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
+  - `71 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
 
 - Bloque `Resumen estadístico` (lectura rápida):
-  - `65 operativas documentadas`
+  - `71 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -345,7 +345,7 @@ Seguimiento interno activo en:
 **Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
 
 - KPIs visibles:
-  - `65 operativas documentadas`
+  - `71 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`

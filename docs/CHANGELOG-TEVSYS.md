@@ -4,18 +4,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Precisión — `demo-video--light` + bloque multi‑activo Nasdaq (17 abr 2026)
+## Precisión — `demo-video--light` + bloque multi‑activo Nasdaq (17 abr 2026) — **binario publicado**
 
 **Objetivo:** Incrustar vídeos con **MT5 en tema claro** (gráfico + panel blancos) sin un marco **#06080d** que parezca una mancha alrededor del plano en la micropágina oscura.
 
 **Código:** `src/pages/features/precision.astro`
 - Clase **`demo-video--light`**: fondo claro en gradiente suave, borde y sombra acordes con la línea dorada existente; pensada para **compact** (y extensible a hero si hiciera falta).
 - Sección **`#precision-nasdaq`**: posición **después** de “Cuenta más pequeña” y **antes** de logs; copy centrado en **multi‑activo** (NASDAQ distinto de GER40), USD, operativa limpia; reproductor **`demo-video--compact demo-video--light`**.
-- Fuente vídeo esperada: **`public/videos/features/precision-demo-nasdaq.mp4`** — subir el export final de Clipchamp con ese nombre (o ajustar la ruta en Astro si se prefiere otro slug).
+- **Vídeo publicado:** **`public/videos/features/precision-demo-nasdaq.mp4`** (~**1′47″** export Clipchamp; ~7,9 MB en el commit del fundador).
 
 **Lista “Qué puedes comprobar”:** nuevo enlace ancla a `#precision-nasdaq`. **Script:** `initDemoExpand` incluye `precision-nasdaq-video` / `precision-nasdaq-container`. **`:target` / scroll-margin:** mismo tratamiento que otros bloques demo.
 
-**Pendiente operativo:** Copiar el MP4 a `public/videos/features/precision-demo-nasdaq.mp4` al tener el archivo listo.
+**Número operativas + duraciones en títulos (abr 2026):** copy visible y docs espejo alineados a **71** operativas documentadas (`index.astro`, `settings.js`, `evidencia.astro`, hook hero `precision.astro`; `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`, `SEO_ANALYTICS_TEVSYS.md`, `CARDS-NEXT-PHASE.md`). En `precision.astro`, los `h2` de las demos incluyen duración: **Demo en alta volatilidad — Cierre en ganancias (1 min 4 s)** y **Demo — Nasdaq · multi‑activo (tema claro) (1 min 47 s)**.
+
+**Contenido del vídeo (referencia editorial / handoff):** operativa **documentada** cuenta **50.000 USD**, **NAS100**, **1 posición · 5 lotes**, límite ganancia **+1,00 %**, cierre **+506,05 USD** (**~+1,01 %** redondeo; **precisión exacta +1,0121 %** sobre base); en copy pública se habla de **margen de umbral +0,01 %** (evitar jerga “buffer” en overlay). **Transparencia de montaje:** grabación larga (**~57 min** hasta el cierre real) recortada a **momentos clave**; cartelas de **edición / salto de reloj**; bloque **WOW** + **“Ahora la evidencia”** solapado antes del fade de precisión exacta; **HTML / informe** con **mismas cifras**; broker **oculto** con rectángulos; cierre en **gris** + **`tevsys — Where precision meets the edge`**. **Música:** *Carry me home* — **Afro House Galaxy** (voz + afro house elegante); **YouTube / copyright:** revisar Content ID si aplica; en la micropágina Precisión hay **5** embeds y **solo 2** llevan música — patrón aceptado (instrucción vs prueba con pulso).
+
+**Copy web Nasdaq (`#precision-nasdaq`):** hook con apertura *Otro activo. Misma regla.* + cifras operativa **4.71** (50.000 USD, +1,00 % umbral, +506,05 USD / +1,0121 % exacto, margen +0,01 p.p. vs +1,01 % panel); sin término *buffer* en copy pública.
 
 ---
 
@@ -122,7 +126,7 @@ Se pasó de 3 a 4 cards en layout `2x2`, con copy actualizado.
 
 #### Card 1 — `0,06% error promedio`
 - Hook (abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto: **65 operativas documentadas** (sync `PRECISION_MILIMETRICA…` §3; antes 60 hasta mar 2026).
+- Texto: **71 operativas documentadas** (abr 2026; sync `PRECISION_MILIMETRICA…` §3; 65 hasta mar 2026; antes 60).
 - Imagen: `/assets/images/home/cards/card-1-input.png`
 
 #### Card 2 — `HyperClose`
