@@ -277,7 +277,8 @@ import settings from '../config/settings.js';
 	}
 	.tevsys-card__content {
 		flex: 1;
-		background-color: var(--theme-surface-1);
+		/* Menos “caja gris” que --theme-surface-1 (~20%): más cerca del negro de la página */
+		background-color: hsl(0, 0%, 8%);
 		padding: 1.25rem;
 	}
 	.tevsys-card__title-row {
@@ -407,7 +408,7 @@ import settings from '../config/settings.js';
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		background-color: var(--theme-surface-1);
+		background-color: hsl(0, 0%, 8%);
 		border-radius: clamp(0.85rem, 1.5vw, 1.15rem);
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.06);
