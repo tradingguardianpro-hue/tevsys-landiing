@@ -53,7 +53,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    border-radius: clamp(0.75rem, 1.5vw, 1.5rem);
+    /* Un solo redondeo visible: lo aplica .tevsys-home-hero-stack (evita doble “marco”) */
+    border-radius: 0;
   }
 
   /* Halo fijo ámbar (marca tevsys), solo en hero; motions globales siguen en index/global */
@@ -69,7 +70,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       radial-gradient(ellipse 50% 45% at 78% 45%, rgba(247, 192, 80, 0.1) 0%, transparent 42%);
   }
 
-  /* Tipografía solo en este bloque: Inter (producto/legibilidad). Resto de la web sigue Outfit hasta decisión global. */
+  /* Tipografía solo en este bloque: Inter (producto/legibilidad). Resto de la web: tema hasta decisión global. */
   .hero-section__inner {
     position: relative;
     z-index: 1;
