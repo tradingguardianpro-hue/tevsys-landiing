@@ -218,7 +218,9 @@ import settings from '../config/settings.js';
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		background-color: var(--theme-surface-1);
+		height: 100%;
+		/* Gris solo en el bloque de texto: si hay rendija bajo la imagen, no se ve “franja” gris del fondo de la card */
+		background-color: transparent;
 		color: var(--theme-on-surface-1);
 		border-radius: var(--feature-card-radius);
 		text-decoration: none;
@@ -251,19 +253,29 @@ import settings from '../config/settings.js';
 		color: #f5b041;
 		transform: scale(1.2);
 	}
-	/* PNG con negro muy puro: solo filtro suave (sin capa encima → evita “franja” entre imagen y texto) */
+	/* Zona ilustración: mate; img en bloque evita la rendija típica bajo <img> inline */
 	.tevsys-card__image {
+		flex-shrink: 0;
 		aspect-ratio: 16/10;
 		overflow: hidden;
-		background-color: hsl(0, 0%, 4%);
+		background-color: hsl(0, 0%, 3.5%);
+		line-height: 0;
+	}
+	.tevsys-card__image picture {
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 	.tevsys-card__image img {
+		display: block;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		filter: brightness(0.94) saturate(0.98);
 	}
 	.tevsys-card__content {
+		flex: 1;
+		background-color: var(--theme-surface-1);
 		padding: 1.25rem;
 	}
 	.tevsys-card__title-row {
