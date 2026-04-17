@@ -1,0 +1,3 @@
+<!-- Sustituir la línea <link href="fonts.googleapis.com/css2?family=..."> en src/components/head/BaseHead.astro por esta (solo Outfit, sin Cormorant ni Playfair): -->
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />

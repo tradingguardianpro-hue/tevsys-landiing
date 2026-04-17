@@ -1,0 +1,190 @@
+---
+/**
+ * COPIA DE SEGURIDAD — Hero home “clásico” (antes de experimentos abr 2026)
+ * Restaurar: copiar este archivo sobre src/components/sections/heros/HomeHeroSection.astro
+ * Fuente tipográfica global: solo Outfit (ver baseline/BaseHead-fuente-CLASICO.txt)
+ */
+import { Container } from '@components/odyssey-theme';
+import settings from '../../../config/settings.js';
+import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
+---
+
+<Container>
+  <section class="hero-section__section">
+    <div class="hero-section__text">
+      <h1 class="hero-title">Tu trading merece más que buenas intenciones</h1>
+      <p class="hero-subline">
+        <span>Pioneros en verificación de disciplina automatizada</span><br />
+        <span>y gestión de riesgo para mercados financieros.</span>
+      </p>
+      <div class="hero-tagline">
+        <span class="hero-tagline__dot"></span>
+        <span class="hero-tagline__text">Where precision meets the edge</span>
+      </div>
+      <a href="/company/contact?flow=demo" class="hero-download-btn">
+        Descargar demo →
+      </a>
+      <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
+      {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
+    </div>
+    <div class="hero-section__image">
+      <div class="hero-image__wrapper">
+        <picture>
+          <source type="image/webp" srcset="/mano-robotica-central-web.webp" />
+          <img
+            src="/mano%20robotica%20central%20web.png"
+            alt="tevsys"
+            id="home-hero-image"
+            width="1200"
+            height="800"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <span class="hero-image__brand">Trading Edge Verification System</span>
+    </div>
+  </section>
+</Container>
+
+<style>
+  .hero-section__section {
+    margin: var(--section-margin) auto;
+    min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+    gap: 1rem;
+    position: relative;
+    isolation: isolate;
+    border-radius: clamp(0.75rem, 1.5vw, 1.5rem);
+  }
+
+  .hero-section__text {
+    grid-column: 1;
+    justify-self: center;
+    max-width: 25rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-title {
+    font-family: 'Outfit', -apple-system, sans-serif;
+  }
+  .hero-subline {
+    margin: 0.6rem 0 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    opacity: 0.9;
+    max-width: 34ch;
+  }
+  .hero-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 2rem;
+    background: #f5b041;
+    color: #1a1510;
+    text-decoration: none;
+  }
+  .hero-platform-note {
+    margin: 0.65rem 0 0;
+    font-size: 0.76rem;
+    opacity: 0.78;
+  }
+  .hero-tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.6rem 1.2rem;
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .hero-tagline__dot {
+    width: 22px;
+    height: 22px;
+    background: #f5b041;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .hero-tagline__text {
+    font-size: 1.05rem;
+    opacity: 0.95;
+  }
+  .hero-section__image {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-image__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .hero-image__brand {
+    margin-top: 0.75rem;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.02em;
+  }
+  .hero-image__wrapper img,
+  .hero-section__image img {
+    width: 100%;
+    min-width: 420px;
+    max-width: 100%;
+    height: auto;
+    max-height: 85vh;
+    object-fit: contain;
+    object-position: right top;
+    border-radius: var(--theme-shape-radius);
+  }
+  @media (max-width: 768px) {
+    .hero-section__section {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      gap: 1.25rem;
+    }
+    .hero-section__text {
+      justify-self: stretch;
+      max-width: 100%;
+    }
+    .hero-section__image {
+      grid-column: 1;
+      grid-row: auto;
+      align-items: center;
+    }
+    .hero-image__wrapper {
+      width: 100%;
+      justify-content: center;
+    }
+    .hero-image__wrapper img,
+    .hero-section__image img {
+      min-width: unset;
+      width: min(96vw, 540px);
+      max-height: none;
+    }
+    .hero-image__brand {
+      align-self: center;
+      text-align: center;
+    }
+  }
+  @media (max-width: 420px) {
+    .hero-image__wrapper img,
+    .hero-section__image img {
+      width: 100%;
+    }
+  }
+</style>
