@@ -77,12 +77,16 @@ const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-head
 </header>
 
 <style>
+  /* Nav distinta del hero (Inter): Outfit, más “marca”; barra un poco más baja */
   header {
     width: 100%;
-    padding: 1rem 0.5rem;
+    padding: 0.55rem clamp(0.65rem, 2vw, 1.15rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Outfit', var(--theme-font-family-sans);
+    font-feature-settings: 'kern' 1;
+    -webkit-font-smoothing: antialiased;
   }
   header.tevsys-header--home-scanner {
     position: relative;
@@ -131,7 +135,10 @@ const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-head
     text-decoration: none;
     margin-right: 1rem;
     color: inherit;
-    opacity: 0.72;
+    opacity: 0.78;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     transition: opacity linear 150ms;
   }
   nav ul li a.nav-link--button {

@@ -63,6 +63,28 @@ html[data-theme='dark'] body::before {
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
 		/* Ritmo propio; distinto de los rectángulos del hero (sin sincronía) */
 		animation-duration: 23.3s;
+		/* Home: menos halo ámbar arriba (header + hero); menos “discoteca” con el escáner */
+		opacity: 0.66;
+		background-image:
+			linear-gradient(
+				188deg,
+				rgba(4, 4, 6, 0.98) 0%,
+				rgba(9, 9, 12, 0.92) 28%,
+				rgba(14, 16, 22, 0.12) 52%,
+				rgba(18, 20, 28, 0.08) 64%,
+				rgba(10, 10, 14, 0.88) 90%,
+				rgba(5, 5, 7, 0.78) 100%
+			),
+			linear-gradient(
+				180deg,
+				transparent 0%,
+				transparent 36%,
+				rgba(245, 176, 65, 0.14) 46%,
+				rgba(255, 236, 205, 0.07) 50%,
+				rgba(210, 175, 115, 0.08) 53%,
+				transparent 64%,
+				transparent 100%
+			);
 	}
 }
 
@@ -207,17 +229,17 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 		background-image: linear-gradient(
 			102deg,
 			transparent 0%,
-			transparent 36%,
-			rgba(110, 114, 128, 0.1) 46%,
-			rgba(186, 190, 202, 0.22) 50%,
-			rgba(95, 98, 110, 0.09) 54%,
-			transparent 64%,
+			transparent 38%,
+			rgba(110, 114, 128, 0.06) 47%,
+			rgba(186, 190, 202, 0.14) 50%,
+			rgba(95, 98, 110, 0.05) 53%,
+			transparent 66%,
 			transparent 100%
 		);
-		background-size: 240% 100%;
+		background-size: 220% 100%;
 		background-position: 80% 50%;
 		background-repeat: no-repeat;
-		opacity: 0.86;
+		opacity: 0.48;
 		animation: tevsys-header-scanner-sweep 33.8s infinite;
 	}
 
@@ -237,15 +259,15 @@ html[data-theme='dark'] .tevsys-home-hero-stack__content {
 		background-image: linear-gradient(
 			102deg,
 			transparent 0%,
-			transparent 35%,
-			rgba(120, 124, 138, 0.24) 46%,
-			rgba(198, 202, 216, 0.45) 50%,
-			rgba(105, 109, 124, 0.22) 54%,
-			transparent 64%,
+			transparent 37%,
+			rgba(120, 124, 138, 0.12) 47%,
+			rgba(198, 202, 216, 0.22) 50%,
+			rgba(105, 109, 124, 0.1) 53%,
+			transparent 66%,
 			transparent 100%
 		);
-		background-size: 260% 100%;
-		opacity: 0.91;
+		background-size: 240% 100%;
+		opacity: 0.52;
 	}
 }
 
@@ -1435,18 +1457,18 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	@media (prefers-reduced-motion: no-preference) {
 		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
 			animation-duration: 27.4s;
-			opacity: 0.91;
+			opacity: 0.52;
 			background-image: linear-gradient(
 				102deg,
 				transparent 0%,
-				transparent 35%,
-				rgba(120, 124, 138, 0.24) 46%,
-				rgba(198, 202, 216, 0.45) 50%,
-				rgba(105, 109, 124, 0.22) 54%,
-				transparent 64%,
+				transparent 37%,
+				rgba(120, 124, 138, 0.12) 47%,
+				rgba(198, 202, 216, 0.22) 50%,
+				rgba(105, 109, 124, 0.1) 53%,
+				transparent 66%,
 				transparent 100%
 			);
-			background-size: 260% 100%;
+			background-size: 240% 100%;
 		}
 
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise {
