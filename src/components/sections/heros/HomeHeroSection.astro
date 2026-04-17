@@ -6,36 +6,41 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
 <Container>
   <section class="hero-section__section">
-    <div class="hero-section__text">
-      <h1 class="hero-title">
-        MT5: <span class="hero-title__underline">disciplina automatizada</span>. Tú pones los límites, <span class="hero-title__brand">tevsys</span> los blinda, no negocia y lo registra.
-      </h1>
-      <div class="hero-tagline">
-        <span class="hero-tagline__dot"></span>
-        <span class="hero-tagline__text">Where precision meets the edge</span>
+    <div class="hero-section__glow" aria-hidden="true"></div>
+    <div class="hero-section__inner">
+      <div class="hero-section__text">
+        <h1 class="hero-title">
+          MT5: <span class="hero-title__underline">disciplina automatizada</span>. Tú pones los límites, <span class="hero-title__brand">tevsys</span> los blinda, no negocia y lo registra.
+        </h1>
+        <div class="hero-tagline-wrap">
+          <div class="hero-tagline">
+            <span class="hero-tagline__dot"></span>
+            <span class="hero-tagline__text">Where precision meets the edge</span>
+          </div>
+        </div>
+        <a href="/company/contact?flow=demo" class="hero-download-btn">
+          Descargar demo →
+        </a>
+        <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
+        {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
       </div>
-      <a href="/company/contact?flow=demo" class="hero-download-btn">
-        Descargar demo →
-      </a>
-      <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
-      {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
-    </div>
-    <div class="hero-section__image">
-      <div class="hero-image__wrapper">
-        <picture>
-          <source type="image/webp" srcset="/mano-robotica-central-web.webp" />
-          <img
-            src="/mano%20robotica%20central%20web.png"
-            alt="tevsys"
-            id="home-hero-image"
-            width="1200"
-            height="800"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </picture>
+      <div class="hero-section__image">
+        <div class="hero-image__wrapper">
+          <picture>
+            <source type="image/webp" srcset="/mano-robotica-central-web.webp" />
+            <img
+              src="/mano%20robotica%20central%20web.png"
+              alt="tevsys"
+              id="home-hero-image"
+              width="1200"
+              height="800"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <span class="hero-image__brand">Trading Edge Verification System</span>
       </div>
-      <span class="hero-image__brand">Trading Edge Verification System</span>
     </div>
   </section>
 </Container>
@@ -43,45 +48,79 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 <style>
   .hero-section__section {
     margin: var(--section-margin) auto;
-    min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: start;
-    gap: 1rem;
+    min-height: clamp(88vh, 92vw, calc(100vh - var(--navbar-height)));
     position: relative;
     isolation: isolate;
+    overflow: hidden;
     border-radius: clamp(0.75rem, 1.5vw, 1.5rem);
   }
 
-  .hero-section__text {
-    grid-column: 1;
-    justify-self: center;
-    max-width: min(36rem, 100%);
+  /* Halo fijo rojizo/rosa (solo hero; no sustituye motions globales en el resto de la home) */
+  /* Halo fijo en paleta tevsys (ámbar / dorado), no rosa ajeno a marca */
+  .hero-section__glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+    background:
+      radial-gradient(ellipse 88% 78% at 90% 30%, rgba(245, 176, 65, 0.28) 0%, transparent 54%),
+      radial-gradient(ellipse 60% 55% at 96% 68%, rgba(255, 210, 120, 0.16) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 45% at 78% 45%, rgba(247, 192, 80, 0.1) 0%, transparent 42%);
+  }
+
+  .hero-section__inner {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: clamp(1.25rem, 4vw, 2.5rem) 1rem 1.5rem;
+    box-sizing: border-box;
   }
+
+  .hero-section__text {
+    max-width: min(40rem, 100%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero-title {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-weight: 600;
-    font-size: clamp(1.2rem, 3.6vw, 1.75rem);
-    line-height: 1.28;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.35rem, 4.2vw, 2.05rem);
+    line-height: 1.22;
+    letter-spacing: -0.015em;
     margin: 0;
-    max-width: 22em;
+    max-width: 19em;
     color: rgba(255, 255, 255, 0.98);
+    text-align: center;
   }
   .hero-title__underline {
     text-decoration: underline;
-    text-decoration-thickness: 0.11em;
-    text-underline-offset: 0.18em;
-    text-decoration-color: rgba(255, 255, 255, 0.92);
+    text-decoration-thickness: 0.14em;
+    text-underline-offset: 0.2em;
+    text-decoration-color: rgba(255, 255, 255, 0.95);
   }
   .hero-title__brand {
     font-family: 'Outfit', -apple-system, sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.04em;
     color: #f5b041;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: rgba(245, 176, 65, 0.95);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.14em;
+  }
+
+  .hero-tagline-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.85rem;
   }
   .hero-download-btn {
     display: inline-flex;
@@ -105,13 +144,15 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     margin: 0.65rem 0 0;
     font-size: 0.76rem;
     opacity: 0.78;
+    text-align: center;
+    max-width: 28rem;
   }
   .hero-tagline {
     display: inline-flex;
     align-items: center;
     gap: 0.85rem;
     padding: 0.6rem 1.2rem;
-    margin: 0.75rem 0 0;
+    margin: 0;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 2rem;
     background: rgba(255, 255, 255, 0.03);
@@ -128,74 +169,56 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     opacity: 0.95;
   }
   .hero-section__image {
-    grid-column: 2;
-    grid-row: 1 / -1;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-start;
+    margin-top: clamp(1.25rem, 3vw, 2rem);
+    width: 100%;
+    max-width: 36rem;
     position: relative;
     z-index: 1;
   }
   .hero-image__wrapper {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
   }
   .hero-image__brand {
-    margin-top: 0.75rem;
-    align-self: flex-start;
-    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    font-size: 0.72rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.42);
     letter-spacing: 0.02em;
+    text-align: center;
   }
   .hero-image__wrapper img,
   .hero-section__image img {
     width: 100%;
-    min-width: min(280px, 100%);
-    max-width: min(100%, 480px);
+    max-width: min(100%, 340px);
     height: auto;
-    max-height: min(48vh, 520px);
+    max-height: min(36vh, 320px);
     object-fit: contain;
-    object-position: right top;
+    object-position: center;
     border-radius: var(--theme-shape-radius);
   }
   @media (max-width: 768px) {
     .hero-section__section {
-      grid-template-columns: 1fr;
       min-height: auto;
-      gap: 1.25rem;
     }
-    .hero-section__text {
-      justify-self: stretch;
-      max-width: 100%;
-    }
-    .hero-section__image {
-      grid-column: 1;
-      grid-row: auto;
-      align-items: center;
-    }
-    .hero-image__wrapper {
-      width: 100%;
-      justify-content: center;
+    .hero-section__inner {
+      padding-bottom: 1.25rem;
     }
     .hero-image__wrapper img,
     .hero-section__image img {
-      min-width: unset;
-      width: min(88vw, 400px);
-      max-height: min(42vh, 380px);
-    }
-    .hero-image__brand {
-      align-self: center;
-      text-align: center;
+      max-width: min(88vw, 300px);
+      max-height: min(34vh, 280px);
     }
   }
   @media (max-width: 420px) {
-    .hero-image__wrapper img,
-    .hero-section__image img {
-      width: 100%;
+    .hero-title {
+      max-width: 100%;
     }
   }
 </style>
