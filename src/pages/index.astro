@@ -254,13 +254,12 @@ import settings from '../config/settings.js';
 		color: #f5b041;
 		transform: scale(1.2);
 	}
-	/* Zona ilustración: mate; img en bloque evita la rendija típica bajo <img> inline */
+	/* Zona ilustración: casi el negro de la web (theme ~#050505), +1 paso para que no se mimetice */
 	.tevsys-card__image {
 		flex-shrink: 0;
 		aspect-ratio: 16/10;
 		overflow: hidden;
-		/* Alineado con fondo recomendado en exports (mate apreciable, p. ej. #161618) */
-		background-color: #161618;
+		background-color: #060606;
 		line-height: 0;
 	}
 	.tevsys-card__image picture {
@@ -273,7 +272,8 @@ import settings from '../config/settings.js';
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		filter: brightness(0.94) saturate(0.98);
+		/* Base más negra en contenedor: menos apagado en el arte */
+		filter: brightness(0.97) saturate(0.99);
 	}
 	.tevsys-card__content {
 		flex: 1;
