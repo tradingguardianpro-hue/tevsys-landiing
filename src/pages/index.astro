@@ -254,12 +254,12 @@ import settings from '../config/settings.js';
 		color: #f5b041;
 		transform: scale(1.2);
 	}
-	/* Zona ilustración: casi el negro de la web (theme ~#050505), +1 paso para que no se mimetice */
+	/* Mismo negro que la página: el “pegote” suele venir del PNG; el contenedor no añade otro gris */
 	.tevsys-card__image {
 		flex-shrink: 0;
 		aspect-ratio: 16/10;
 		overflow: hidden;
-		background-color: #060606;
+		background-color: var(--theme-bg);
 		line-height: 0;
 	}
 	.tevsys-card__image picture {
@@ -272,14 +272,13 @@ import settings from '../config/settings.js';
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		/* Base más negra en contenedor: menos apagado en el arte */
-		filter: brightness(0.97) saturate(0.99);
+		/* Sin oscurecer el arte en CSS; si sigue gris, bajar brillo en Canva en el propio asset */
 	}
 	.tevsys-card__content {
 		flex: 1;
-		/* Menos “caja gris” que --theme-surface-1 (~20%): más cerca del negro de la página */
-		background-color: hsl(0, 0%, 8%);
-		padding: 1.25rem;
+		/* Un pelo más claro que el fondo para leer; el texto no va sobre negro puro */
+		background-color: hsl(0, 0%, 9%);
+		padding: 1.25rem 1.35rem 1.35rem;
 	}
 	.tevsys-card__title-row {
 		display: flex;
@@ -292,9 +291,10 @@ import settings from '../config/settings.js';
 		margin: 0;
 		flex: 1;
 		min-width: 0;
-		font-weight: 600;
+		font-weight: 700;
 		letter-spacing: -0.02em;
-		line-height: 1.25;
+		line-height: 1.3;
+		color: #f4f6f8;
 	}
 	.tevsys-card__saber-mas {
 		flex-shrink: 0;
@@ -317,10 +317,19 @@ import settings from '../config/settings.js';
 	}
 	.tevsys-card__content p {
 		margin: 0 0 0.75rem 0;
-		line-height: 1.5;
+		font-size: 0.9375rem;
+		font-weight: 500;
+		line-height: 1.55;
+		color: rgba(244, 246, 248, 0.94);
 	}
 	.tevsys-card__content p:last-child {
 		margin-bottom: 0;
+	}
+	.tevsys-card__content p.feature-card__hook {
+		font-style: italic;
+		font-weight: 600;
+		color: rgba(244, 246, 248, 0.96);
+		opacity: 1;
 	}
 	.card-title__accent {
 		font-weight: 700;
@@ -347,6 +356,10 @@ import settings from '../config/settings.js';
 	.feature-card__hook {
 		font-style: italic;
 		opacity: 0.9;
+	}
+	/* En cards el hook debe leerse fuerte (la regla de arriba bajaba contraste) */
+	.tevsys-card .feature-card__hook {
+		opacity: 1;
 	}
 	.feature-card__whisper {
 		font-style: italic;
