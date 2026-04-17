@@ -163,18 +163,32 @@ import settings from '../config/settings.js';
 
 <style>
 	.feature-card__section {
+		--feature-card-radius: clamp(0.85rem, 1.5vw, 1.15rem);
 		margin: var(--section-margin) auto;
+		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
 	}
 	.feature-section__title {
-		font-family: 'Outfit', -apple-system, sans-serif;
 		font-size: clamp(1.65rem, 3.5vw, 2rem);
 		font-weight: 700;
-		margin-bottom: 0.5rem;
+		letter-spacing: -0.03em;
+		line-height: 1.25;
+		margin: 0 0 1.125rem;
 	}
 	.feature-section__hook {
 		font-size: 1rem;
 		opacity: 0.92;
-		margin-top: 0;
+		margin: 0 0 0.7rem;
+		line-height: 1.55;
+	}
+	.feature-card__intro-trazabilidad,
+	.feature-card__intro-mecanismo {
+		font-size: 1rem;
+		line-height: 1.55;
+		margin: 0 0 0.65rem;
+		opacity: 0.9;
 	}
 	/* Estilo micropáginas: punto amarillo + texto gris (hereda) */
 	.feature-card__intro-ellos {
@@ -185,7 +199,8 @@ import settings from '../config/settings.js';
 		font-weight: 600;
 		opacity: 0.9;
 		font-size: 1.05rem;
-		margin: 0.5rem 0 1rem 0;
+		margin: 0.35rem 0 1.75rem;
+		line-height: 1.45;
 	}
 	.feature-card__intro-ellos .feature-hook__dot {
 		width: 0.45rem;
@@ -197,7 +212,7 @@ import settings from '../config/settings.js';
 	.feature-card__grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
+		gap: clamp(1rem, 2.5vw, 1.35rem);
 	}
 	.tevsys-card {
 		position: relative;
@@ -205,16 +220,23 @@ import settings from '../config/settings.js';
 		flex-direction: column;
 		background-color: var(--theme-surface-1);
 		color: var(--theme-on-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-card-radius);
 		text-decoration: none;
 		overflow: hidden;
-		border: 1px solid transparent;
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		box-shadow: 0 18px 52px -30px rgba(0, 0, 0, 0.5);
 		transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 	}
 	.tevsys-card:hover {
 		border-color: rgba(245, 176, 65, 0.45);
-		box-shadow: 0 0 24px rgba(245, 176, 65, 0.2), 0 4px 16px rgba(0, 0, 0, 0.25);
+		box-shadow:
+			0 0 28px rgba(245, 176, 65, 0.18),
+			0 20px 48px -24px rgba(0, 0, 0, 0.55);
 		transform: translateY(-3px);
+	}
+	.tevsys-card:focus-visible {
+		outline: 2px solid rgba(245, 176, 65, 0.85);
+		outline-offset: 3px;
 	}
 	.tevsys-card__arrow {
 		position: absolute;
@@ -252,6 +274,9 @@ import settings from '../config/settings.js';
 		margin: 0;
 		flex: 1;
 		min-width: 0;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		line-height: 1.25;
 	}
 	.tevsys-card__saber-mas {
 		flex-shrink: 0;
@@ -339,12 +364,17 @@ import settings from '../config/settings.js';
 	}
 	.plans-section {
 		margin: var(--section-margin) auto;
+		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
 	}
 	.plans-section__title {
-		font-family: 'Outfit', -apple-system, sans-serif;
 		font-size: 1.5rem;
 		font-weight: 600;
-		margin-bottom: 0.4rem;
+		letter-spacing: -0.02em;
+		margin-bottom: 0.5rem;
+		line-height: 1.3;
 	}
 	.plans-section__subtitle {
 		margin-top: 0;
@@ -361,15 +391,18 @@ import settings from '../config/settings.js';
 		flex-direction: column;
 		height: 100%;
 		background-color: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: clamp(0.85rem, 1.5vw, 1.15rem);
 		overflow: hidden;
-		border: 1px solid transparent;
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		box-shadow: 0 18px 52px -30px rgba(0, 0, 0, 0.5);
 		cursor: default;
 		transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 	}
 	.plan-card:hover {
 		border-color: rgba(245, 176, 65, 0.4);
-		box-shadow: 0 0 24px rgba(245, 176, 65, 0.2), 0 4px 16px rgba(0, 0, 0, 0.2);
+		box-shadow:
+			0 0 28px rgba(245, 176, 65, 0.16),
+			0 20px 48px -24px rgba(0, 0, 0, 0.5);
 		transform: translateY(-3px);
 	}
 	.plan-card__image {
@@ -469,8 +502,16 @@ import settings from '../config/settings.js';
 		background: rgba(245, 176, 65, 0.12);
 	}
 	@media (max-width: 768px) {
+		.feature-section__title {
+			margin-bottom: 1rem;
+		}
 		.feature-card__grid {
 			grid-template-columns: 1fr;
+			gap: 1.15rem;
+		}
+		.tevsys-card__image {
+			aspect-ratio: 16 / 9;
+			max-height: min(48vw, 210px);
 		}
 		.plans-grid {
 			grid-template-columns: 1fr;
