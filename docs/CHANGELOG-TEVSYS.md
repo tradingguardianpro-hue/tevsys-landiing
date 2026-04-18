@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero KITT — tono 60% ámbar / 40% gris en tiempo (18 abr 2026)
+
+**Objetivo:** Mismo movimiento (`tevsys-top-strip` / ciclo vertical fall); el haz KITT alterna **predominio** ámbar vs gris **scanner** (~`rgba(110,114,128)` familia) en **proporción temporal** (~60/40), con ciclos **31s** (rise) y **29.3s** (fall, tras delay de fase 2) — **sin** sincronía con 18.7s / 311s.
+
+**Código:** `src/styles/global.css` — rise: niebla + `::before` ámbar + `::after` gris; fall: `tevsys-hero-kitt-tone-*` sustituye `tevsys-home-fall-mix-*` (keyframes antiguos eliminados). **Header:** sin cambios.
+
+**Doc:** `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` (tabla B/C y §6).
+
+---
+
 ## Hero — H1 escaneo en tres tiempos (16 abr 2026)
 
 **Objetivo:** Titular más escaneable (usuario → marca → claim); **MT5** solo en `.hero-context-line`, no en el H1.
@@ -60,7 +70,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Resumen numérico (dark, `prefers-reduced-motion: no-preference`):** niebla home `body::before` **23.3s**; rise **18.7s**; fall **311s** (`--tevsys-home-fall-cycle`); escáner header gris **33.8s** (bucle irregular, `ease-in-out` por tramo); **mid-glow** burbuja A **92s** + burbuja B (`::before`) **118s** (`linear`; ~70–75% tiempo en **márgenes** fuera de cards; ver iteración 15–16 abr abajo); lower strip **18s**; tail bubble **64s** `linear`; founder strip **16s**. Variables `--tevsys-home-intro-cycle` 300s vs fall 311s para no ir a la par.
 
-**Iteración (equilibrio cromático):** el barrido vertical del hero (`.tevsys-home-kitt-rect--fall`) combina **gris + ámbar** en dos capas (`::before` / `::after`) con la misma trayectoria (~311s) y **mezcla oscilante** (~8.3s, más peso al gris). La franja KITT de **planes** (`.tevsys-home-lower-strip`) repite la idea (niebla en base; KITT en pseudos; mix ~10.3s). Keyframes: `tevsys-home-intro-kitt-cycle-pos`, `tevsys-home-intro-kitt-cycle-fade`, `tevsys-home-fall-mix-*`, `tevsys-home-lower-strip-fog`, `tevsys-home-lower-strip-kitt-pos`, `tevsys-home-lower-kitt-mix-*`.
+**Iteración (equilibrio cromático):** el barrido vertical del hero (`.tevsys-home-kitt-rect--fall`) combina **gris + ámbar** en dos capas (`::before` / `::after`) con la misma trayectoria (~311s); el predominio cromático en tiempo usa **`tevsys-hero-kitt-tone-*`** (~60% ámbar / ~40% gris, ciclo **29.3s** tras delay de fase 2; antes ~8.3s `tevsys-home-fall-mix-*`, eliminados). **Rise:** niebla + dos pseudos KITT con `tevsys-hero-kitt-tone-*` (**31s**). La franja KITT de **planes** (`.tevsys-home-lower-strip`) sigue con mix ~10.3s (`tevsys-home-lower-kitt-mix-*`). Keyframes trayectoria: `tevsys-home-intro-kitt-cycle-pos`, `tevsys-home-intro-kitt-cycle-fade`, `tevsys-home-lower-strip-fog`, `tevsys-home-lower-strip-kitt-pos`.
 
 **Proyecto TGP (solo docs):** `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` CHANGELOG **16 abr 2026** + **15–16 abr 2026 (ampliación motion)**; `TGP_V11_CHECKPOINT_PRODUCCION.md` § **CHECKPOINT 16 ABR 2026 — LANDING motion home**.
 
