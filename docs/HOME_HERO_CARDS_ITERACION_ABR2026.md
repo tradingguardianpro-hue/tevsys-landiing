@@ -11,9 +11,9 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 | Tema | Detalle |
 |------|---------|
 | **Tipografía** | **Inter** en todo el bloque `.hero-section__inner` (producto / legibilidad). |
-| **H1** | `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` (`hero-title__brand`) y subrayado en el claim (`hero-title__underline`). MT5 en la línea de contexto, no en el H1. |
+| **H1** | `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` ámbar (`hero-title__brand`, sin subrayado); subrayado solo en el claim (`hero-title__underline`). MT5 en la línea de contexto, no en el H1. |
 | **Línea de contexto** | Clase `.hero-context-line`: *Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.* (debajo del H1, encima del badge; texto más pequeño, no compite con el titular). Motivo: anclar **cuenta MT5 / riesgo** para visitantes que no lean solo “disciplina”. |
-| **Ritmo vertical** | Más margen entre titular → badge “Where precision…” → CTA → nota plataformas. |
+| **Ritmo vertical** | Margen amplio entre titular → badge “Where precision…” (`.hero-tagline-wrap`: `margin-top` / `margin-bottom` en clamp) → CTA (`.hero-download-btn`: `margin-top` en clamp) → nota plataformas (`hero-platform-note`). Abr 2026: más “aire” entre badge inglés y botón demo. |
 | **Halo** | `.hero-section__glow`: gradientes radiales ámbar (marca), solo en hero. |
 | **Imagen mano/candado** | Filtro suave (brillo/saturación/contraste); viñeta en `.hero-image__wrapper`; `--hero-image-radius` explícito (el tema oscuro pone `--theme-shape-radius: 0`). |
 | **Stack home** | Estilos en `global.css` (`.tevsys-home-hero-stack`): fondo `var(--theme-bg)`, sombra exterior para fundir con la página, viñeta `::after`, `z-index` contenido; el **redondeo** lo lleva el stack, no la `section` interna (evita doble “marco”). |

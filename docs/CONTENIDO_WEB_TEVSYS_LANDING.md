@@ -27,7 +27,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ---
 
 ## Hero
-- **H1 (actual, abr 2026):** `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` y subrayado en “Disciplina automatizada” según clases (`hero-title__brand`, `hero-title__underline`).
+- **H1 (actual, abr 2026):** `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` en ámbar (`hero-title__brand`, sin subrayado); subrayado solo en “Disciplina automatizada” (`hero-title__underline`).
 - **Línea de contexto (debajo H1):** `Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.` (clase `hero-context-line`; **MT5 y cuenta** aquí; el H1 prioriza escaneo en tres tiempos).
 - **Tipografía:** **Inter** en el bloque hero.
 - **Tagline:** `Where precision meets the edge`
