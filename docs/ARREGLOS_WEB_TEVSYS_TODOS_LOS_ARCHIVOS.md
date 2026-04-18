@@ -8,21 +8,23 @@ Resumen técnico completo para revisión interna / DeepSeq.
 
 | Archivo | Cambios aplicados |
 |---|---|
-| `src/components/BrandOval.astro` | Logo simplificado: solo texto `tevsys` en óvalo. |
+| `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` | **Abr 2026:** documento maestro — hero (Inter, context line MT5, imagen mano, stack), header (Inter, escáner/niebla suavizados), cards home (Inter, grises, texto legible, card-1 PNG), próximos pasos micropáginas. |
+| `docs/CHANGELOG-TEVSYS.md` | **Abr 2026:** entrada resumida misma iteración + enlace al doc anterior. |
+| `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` | **Abr 2026:** hero/header/cards alineados a copy y diseño actuales. |
+| `docs/CARDS-NEXT-PHASE.md` | **Abr 2026:** bloque estado + siguiente fase (decisión cards + micropáginas). |
+| `src/components/BrandOval.astro` | Logo simplificado: solo texto `tevsys` en óvalo. **Abr 2026:** Inter en pastilla. |
 | `src/config/nav.js` | Nav final: Inicio, Acceso (CTA), Contacto. |
-| `src/components/core/Header.astro` | Estilos del CTA en nav (botón blanco redondeado). |
+| `src/components/core/Header.astro` | Estilos del CTA en nav (botón blanco redondeado). **Abr 2026:** Inter, barra más baja, nav refinada; en `/` clase `tevsys-header--home-scanner` + capa escáner; motion escáner vía `global.css`. |
 | `src/components/head/BaseHead.astro` | Fuente Outfit cargada globalmente. |
-| `src/components/sections/heros/HomeHeroSection.astro` | Hero Mar 2026: imagen `mano robotica central web.png`, grid 1fr/2fr, alineación con «T», logo en etiqueta. Reflexión + commits: `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md`, `CHANGELOG-TEVSYS.md` §27. |
-| `src/pages/index.astro` | 4 cards de valor (2x2), textos finales, imágenes nuevas, sección de planes con CTA por plan e imágenes finales. |
+| `src/components/sections/heros/HomeHeroSection.astro` | Hero Mar 2026: imagen `mano robotica central web.png`, grid 1fr/2fr, alineación con «T», logo en etiqueta. Reflexión + commits: `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md`, `CHANGELOG-TEVSYS.md` §27. **Abr 2026:** H1 MT5 + `hero-context-line`, ritmo vertical, halo, imagen con radio/filtros/viñeta. |
+| `src/pages/index.astro` | 4 cards de valor (2x2), textos finales, imágenes nuevas, sección de planes con CTA por plan e imágenes finales. **Abr 2026:** marcado `tevsys-home-*`; Inter, cards/planes tonos gris oscuro, estructura card sin franja, legibilidad texto, card 1 PNG; ver `HOME_HERO_CARDS_ITERACION_ABR2026.md`. |
 | `src/pages/company/contact.astro` | Contacto por plan con título simplificado + visual dinámico por `?plan=` (sin redundancia en encabezado). |
 | `src/components/forms/ContactForm.astro` | Badge de plan seleccionado + validación plan/capital + compatibilidad con `flow=demo`. |
 | `public/assets/images/home/cards/*` | Imágenes personalizadas de cards 1-4. |
 | `public/assets/images/plans/*` | Imágenes finales de cards de planes + visuales de formulario por plan. |
 | `docs/*.md` | Documentación actualizada con estado real. |
 | `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` | **Abr 2026:** handoff IA→IA — tabla duraciones/colores/capas motion home; sincronía / asincronía. |
-| `src/styles/global.css` | **Abr 2026:** motion home tema oscuro (KITT, burbujas, franjas, escáner header gris, `prefers-reduced-motion`, móvil). **Ampliación 16 abr 2026:** en `max-width: 768px` + `prefers-reduced-motion: no-preference`, mid-glow cards usa `@keyframes tevsys-home-mid-bubbles-a-mobile` / `tevsys-home-mid-bubbles-b-mobile` (mismas duraciones **92s / 118s** `linear` que escritorio) para que el brillo recorra la **columna** detrás de las cards, no solo el perímetro 2×2 pensado para escritorio. |
-| `src/components/core/Header.astro` | **Abr 2026:** home: `tevsys-header--home-scanner` + `tevsys-header-scanner`. |
-| `src/pages/index.astro` | **Abr 2026:** marcado `tevsys-home-*` para capas animadas detrás del contenido. |
+| `src/styles/global.css` | **Abr 2026:** motion home tema oscuro (KITT, burbujas, franjas, escáner header gris, `prefers-reduced-motion`, móvil). **Ampliación 16 abr 2026:** en `max-width: 768px` + `prefers-reduced-motion: no-preference`, mid-glow cards usa `@keyframes tevsys-home-mid-bubbles-a-mobile` / `tevsys-home-mid-bubbles-b-mobile` (mismas duraciones **92s / 118s** `linear` que escritorio) para que el brillo recorra la **columna** detrás de las cards, no solo el perímetro 2×2 pensado para escritorio. **Iteración diseño abr 2026:** niebla `body::before` home + escáner header suavizados; stack hero fondo/sombra/viñeta. |
 | `src/config/settings.js` | **SEO (Mar 2026):** title y description orientados a búsquedas (protección capital, límites MT5, **59** operativas). |
 | `src/pages/company/contact.astro` | **SEO:** Meta propia "Contacto y demo \| tevsys". Bug Astro Odyssey corregido (antes: "Contact \| Astro Odyssey Theme"). |
 | `public/robots.txt` | **SEO:** Nuevo. Allow all, sitemap. |

@@ -2,6 +2,13 @@
 
 Este documento reemplaza el enfoque inicial de placeholders y recoge el estado actual + siguiente iteración.
 
+### Estado abr 2026 — iteración diseño (confirmado)
+
+- **Documentación única:** `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` (hero, header, motion suavizado, cards: tipografía, grises, asset `card-1-input`, PNG vs WebP).
+- **Changelog:** `CHANGELOG-TEVSYS.md` (entrada “Home, hero, header y cards — abr 2026”).
+- **Hecho:** refinamiento visual y copy en home (cards + planes en misma página).
+- **Siguiente (equipo):** decidir **qué cards** y mensajes definitivos en home; luego **micropáginas una por una** (Precisión, HyperClose, SML, Evidencia, …) alineadas a esa decisión.
+
 ---
 
 ## 1) Estado actual (ya implementado)

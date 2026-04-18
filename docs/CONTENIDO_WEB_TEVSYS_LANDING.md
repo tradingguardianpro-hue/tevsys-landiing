@@ -19,29 +19,30 @@ Documento de contenido/copy actual para revisión de equipo.
 ## Header
 - **Logo:** `tevsys` en óvalo (sin estrella)
 - **Navegación:** Inicio | Empresas | Contacto
+- **Tipografía (abr 2026):** **Inter** en barra y pastilla (`Header.astro`, `BrandOval.astro`), alineado al hero.
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
-- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** (resaltado alineado móvil/escritorio donde aplica), sin sincronía con el resto de la portada. Detrás de las **4 cards**: `.tevsys-home-mid-glow` — **gris instrumento**, doble burbuja con animaciones **92s** y **118s** (`::before`; `linear`; mayoría del tiempo en márgenes); **escritorio:** trayectoria tipo **perímetro** del bloque 2×2 (incl. **SML** y **Evidencia**); **móvil (1 columna):** mismas duraciones con keyframes **`*-mobile`** para que el brillo se mueva **detrás de la columna** de cards. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion (iteración 15–16 abr), `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
+- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** (resaltado alineado móvil/escritorio donde aplica), sin sincronía con el resto de la portada. **Iteración abr 2026:** intensidad/opacidad del escáner **reducida** para no competir con el hero. Detrás de las **4 cards**: `.tevsys-home-mid-glow` — **gris instrumento**, doble burbuja con animaciones **92s** y **118s** (`::before`; `linear`; mayoría del tiempo en márgenes); **escritorio:** trayectoria tipo **perímetro** del bloque 2×2 (incl. **SML** y **Evidencia**); **móvil (1 columna):** mismas duraciones con keyframes **`*-mobile`** para que el brillo se mueva **detrás de la columna** de cards. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion (iteración 15–16 abr), `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
 
 ---
 
 ## Hero
-- **H1:** `Tu trading merece más que buenas intenciones`
-- **Línea aclaratoria (2 líneas):** `Plataforma pionera en verificación de disciplina automatizada` / `y gestión de riesgo para mercados financieros.`
+- **H1 (actual, abr 2026):** `MT5: disciplina automatizada. Tú pones los límites, tevsys los blinda, no negocia y lo registra.`
+- **Línea de contexto (debajo H1):** `Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.` (clase `hero-context-line`; ancla producto para quien no asocie solo “disciplina” con trading/MT5).
+- **Tipografía:** **Inter** en el bloque hero.
 - **Tagline:** `Where precision meets the edge`
-- **Punto de tagline:** amarillo discreto (`22px`)
-- **Botón:** `Descargar demo →` (amarillo)
+- **Punto de tagline:** amarillo (dot + badge)
+- **Botón:** `Descargar demo →` (ámbar marca)
 - **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
-- **Imagen:** mano robótica + candado (`mano robotica central web.png`). Logo tevsys en etiqueta negro apagado (esq. sup. izq.). Alineación: borde superior con la «T» del título; borde izquierdo con inicio de «Trading Edge Verification System».
-- **Reflexión diseño + commits:** `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` | `CHANGELOG-TEVSYS.md` §27.
+- **Imagen:** mano robótica + candado (`mano robotica central web.png` / WebP). Tratamiento CSS: filtros/viñeta/radio imagen; stack home con viñeta y un solo redondeo exterior (`CHANGELOG` + `HOME_HERO_CARDS_ITERACION_ABR2026.md`).
+- **Reflexión diseño histórica:** `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` (copy anterior); iteración actual: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
 - **Texto bajo imagen:** `Trading Edge Verification System`
 
-### Marco de copy del hero (AIDA)
-- **Atención:** `Tu trading merece más que buenas intenciones`
-- **Interés:** `Plataforma de verificación de disciplina automatizada y gestión de riesgo para mercados financieros.`
-- **Deseo:** `Where precision meets the edge`
+### Marco de copy del hero (referencia abr 2026)
+- **Titular + MT5:** ver H1 arriba.
+- **Contexto temprano:** línea `hero-context-line` (cuenta MT5, automatizado, registrado).
+- **Deseo / marca:** `Where precision meets the edge`
 - **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTA `Descargar demo →`
-- **Criterio:** mantener mensaje completo (sin recortes) y optimizar presentación con salto de línea para legibilidad.
 
 ---
 
@@ -63,6 +64,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Cards (4)
 - **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
+- **Diseño abr 2026 (confirmado en código):** Inter en la sección; bloque de texto con gris oscuro (~9% luminosidad); zona ilustración con fondo `var(--theme-bg)`; tipografía cuerpo reforzada (peso/color); card 1 puede servirse solo en PNG mientras se regenera WebP. Detalle: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
 - **Motion detrás (15–16 abr 2026):** capa decorativa `.tevsys-home-mid-glow` (ver `global.css`) — **no** altera layout ni textos; atmósfera gris premium; cards siguen siendo el foco. En **móvil**, rutas de animación distintas al escritorio para que el resplandor recorra la **pila vertical** detrás de las cards.
 
 #### 1) 0,06% error medio

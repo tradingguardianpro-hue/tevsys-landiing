@@ -4,6 +4,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home, hero, header y cards — iteración diseño (abr 2026) — **confirmado**
+
+**Objetivo:** Inter en superficie producto, menos choque motion header/hero, hero y cards integrados en negro mate, línea de contexto MT5, legibilidad en cards y assets Canva para card Precisión.
+
+**Documentación completa:** `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md`.
+
+**Archivos tocados (principal):** `src/components/sections/heros/HomeHeroSection.astro`, `src/components/core/Header.astro`, `src/components/BrandOval.astro`, `src/styles/global.css`, `src/pages/index.astro`, `public/assets/images/home/cards/card-1-input.png`.
+
+**Resumen:** H1 MT5 + `.hero-context-line`; halo y mano con filtros/viñeta/radio; stack hero con viñeta y sin doble borde; header Inter y escáner/niebla suavizados; cards Inter, gris solo en bloque texto, zona imagen `var(--theme-bg)`, tipografía cuerpo reforzada, card 1 con PNG directo hasta regenerar WebP; planes home mismo tono.
+
+**Siguiente (fuera de este commit conceptual):** decidir cards finales; micropáginas **una por una**.
+
+---
+
 ## Precisión — `demo-video--light` + bloque multi‑activo Nasdaq (17 abr 2026) — **binario publicado**
 
 **Objetivo:** Incrustar vídeos con **MT5 en tema claro** (gráfico + panel blancos) sin un marco **#06080d** que parezca una mancha alrededor del plano en la micropágina oscura.
