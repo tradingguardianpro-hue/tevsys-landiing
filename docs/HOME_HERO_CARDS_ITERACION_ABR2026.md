@@ -42,7 +42,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 |------|---------|
 | **Tipografía** | Inter en `.feature-card__section` y bloque de planes; **`h2` / `h3` de la home con Inter explícito** en clase (el tema Odyssey pone serif en `h1`–`h3` vía `typography.css`). |
 | **Título sección** | “¿Cuánto dinero has perdido por no parar a tiempo?” — espaciado y jerarquía afinados. |
-| **Grid** | 2 columnas desktop; 1 columna móvil; gap aumentado. |
+| **Grid** | 2 columnas desktop; 1 columna móvil; gap aumentado. **Abr 2026:** más aire antes del grid (`margin` bajo intro “Ellos deslizan…” + `margin-top` en `.feature-card__grid`). |
 | **Cards (`.tevsys-card`)** | `--feature-card-radius`; borde/sombra suaves + halo ámbar muy bajo en reposo; hover acentuado sin borde tan duro (abr 2026, integración SaaS). |
 | **Estructura** | Fondo de la card **transparente**; **gris solo** en `.tevsys-card__content` (texto). Evita franja gris entre imagen y texto por fondo heredado + rendija bajo `<img>` (img `display: block`, `picture` bloque, `line-height: 0`). |
 | **Zona imagen** | `background-color: var(--theme-bg)`. **`img`:** `filter` alineado al hero (`brightness(0.78) saturate(0.9) contrast(0.96)`); hover algo más luminoso; PNG/Canva sigue siendo la base. |
@@ -56,6 +56,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 
 ## 4. Assets Canva / `card-1-input`
 
+- **Cintas / formas iridiscentes:** en Canva, seleccionar esas capas y **bajar brillo** y **saturación** (o “Tono” / “Transparencia” si el efecto sigue fuerte). Objetivo: que el color no compita con el ámbar de la web; reexportar **mismo tamaño** que el PNG actual. Sustituir en `public/assets/images/home/cards/` y subir `?v=` en `index.astro` si hace falta forzar caché.
 - Fondos probados en diseño: de gris apreciable (**#161618**) a casi negro página (**#060606**, **#050505** / alinear a `--theme-bg`).
 - **Confirmado en código:** contenedor imagen = `var(--theme-bg)`; reexportes sucesivos del usuario a **`public/assets/images/home/cards/card-1-input.png`** (abr 2026). **Cache-bust** en la home: `card-1-input.png?v=2` si hace falta forzar recarga tras sustituir asset.
 - **WebP** (`card-1-input.webp`): debe **regenerarse** localmente con `scripts/optimize-images.js` cuando el entorno tenga dependencias instaladas; hasta entonces la home puede usar solo PNG en esa card.
