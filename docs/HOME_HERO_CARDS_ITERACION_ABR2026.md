@@ -43,12 +43,12 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 | **Tipografía** | Inter en `.feature-card__section` y bloque de planes en home. |
 | **Título sección** | “¿Cuánto dinero has perdido por no parar a tiempo?” — espaciado y jerarquía afinados. |
 | **Grid** | 2 columnas desktop; 1 columna móvil; gap aumentado. |
-| **Cards (`.tevsys-card`)** | `--feature-card-radius`; borde/sombra suaves; hover sin cambiar lógica. |
+| **Cards (`.tevsys-card`)** | `--feature-card-radius`; borde/sombra suaves + halo ámbar muy bajo en reposo; hover acentuado sin borde tan duro (abr 2026, integración SaaS). |
 | **Estructura** | Fondo de la card **transparente**; **gris solo** en `.tevsys-card__content` (texto). Evita franja gris entre imagen y texto por fondo heredado + rendija bajo `<img>` (img `display: block`, `picture` bloque, `line-height: 0`). |
-| **Zona imagen** | `background-color: var(--theme-bg)` (mismo negro que la web); **sin** `filter` en el `img` (el matiz final va en el **PNG** de Canva). |
-| **Zona texto** | Fondo ~`hsl(0, 0%, 9%)` (iterado respecto al `--theme-surface-1` muy claro); párrafos con tamaño, peso 500, color explícito; **hooks** `.feature-card__hook` con **opacity: 1** dentro de cards (la regla global con 0.9 apagaba el texto). **H3** con peso 700. |
+| **Zona imagen** | `background-color: var(--theme-bg)`. **`img`:** `filter` alineado al hero (`brightness(0.78) saturate(0.9) contrast(0.96)`); hover algo más luminoso; PNG/Canva sigue siendo la base. |
+| **Zona texto** | Fondo ~`hsl(0, 0%, 6%)` (más cerca del `--theme-bg` ~2% L); párrafos con tamaño, peso 500, color explícito; **hooks** `.feature-card__hook` con **opacity: 1** dentro de cards (la regla global con 0.9 apagaba el texto). **H3** con peso 700. |
 | **Card 1 (Precisión / cerdito)** | Primera versión: `<picture>` WebP + PNG; **ajuste:** solo **PNG** en `<img>` para ver exports nuevos sin depender de regenerar `.webp` (cuando haya `npm` + `sharp`, ejecutar `node scripts/optimize-images.js` y se puede volver a `<picture>`). |
-| **Planes (misma página)** | Cards de planes con el **mismo** criterio de gris oscuro (`hsl` alineado a cards de valor). |
+| **Planes (misma página)** | Fondo y borde/sombra alineados a las cards de valor (`hsl(0,0%,6%)`, halo suave). |
 | **Móvil** | Imagen de card con `aspect-ratio` y `max-height` acotados. |
 | **Accesibilidad** | `:focus-visible` en enlaces `.tevsys-card`. |
 
@@ -57,7 +57,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 ## 4. Assets Canva / `card-1-input`
 
 - Fondos probados en diseño: de gris apreciable (**#161618**) a casi negro página (**#060606**, **#050505** / alinear a `--theme-bg`).
-- **Confirmado en código:** contenedor imagen = `var(--theme-bg)`; reexportes sucesivos del usuario a **`public/assets/images/home/cards/card-1-input.png`** (abr 2026).
+- **Confirmado en código:** contenedor imagen = `var(--theme-bg)`; reexportes sucesivos del usuario a **`public/assets/images/home/cards/card-1-input.png`** (abr 2026). **Cache-bust** en la home: `card-1-input.png?v=2` si hace falta forzar recarga tras sustituir asset.
 - **WebP** (`card-1-input.webp`): debe **regenerarse** localmente con `scripts/optimize-images.js` cuando el entorno tenga dependencias instaladas; hasta entonces la home puede usar solo PNG en esa card.
 
 ---

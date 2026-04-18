@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home cards — integración visual SaaS (18 abr 2026)
+
+**Objetivo:** Menos discontinuidad entre hero y grid de valor: imágenes de card **menos “pegatinas”** frente al fondo; contenedor más **fundido** con la página.
+
+**Código:** `src/pages/index.astro` — `.tevsys-card__image img`: `filter` alineado al hero (`brightness` / `saturate` / `contrast`); hover levemente más luminoso; franja imagen `background-color: var(--theme-bg)`; texto `.tevsys-card__content` a **~6%** L (antes ~9%) para acercar a `--theme-bg`; borde/sombra en reposo más suaves + **halo ámbar muy bajo**; hover mantiene acento sin subir tanto el borde.
+
+**Doc:** `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` §3.
+
+---
+
 ## Hero KITT — tono 60% ámbar / 40% gris en tiempo (18 abr 2026)
 
 **Objetivo:** Mismo movimiento (`tevsys-top-strip` / ciclo vertical fall); el haz KITT alterna **predominio** ámbar vs gris **scanner** (~`rgba(110,114,128)` familia) en **proporción temporal** (~60/40), con ciclos **31s** (rise) y **29.3s** (fall, tras delay de fase 2) — **sin** sincronía con 18.7s / 311s.
