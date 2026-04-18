@@ -213,10 +213,10 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     position: relative;
     border-radius: var(--hero-image-radius);
     overflow: hidden;
-    /* Funde la silueta con el hero (menos “pegatine” rectangular) */
+    /* Solo sombra de profundidad; los rectángulos ovalados son los del PNG, no marcos CSS */
     box-shadow: 0 22px 56px -28px rgba(0, 0, 0, 0.5);
   }
-  /* Viñeta más suave: antes apagaba demasiado la mano (sensación “segundo plano”) */
+  /* Viñeta muy suave: si es fuerte, tapa los perímetros ovalados que vienen en la foto */
   .hero-image__wrapper::after {
     content: '';
     position: absolute;
@@ -224,8 +224,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     border-radius: inherit;
     pointer-events: none;
     box-shadow:
-      inset 0 0 48px 28px rgba(0, 0, 0, 0.28),
-      inset 0 0 100px 44px rgba(0, 0, 0, 0.16);
+      inset 0 0 40px 22px rgba(0, 0, 0, 0.18),
+      inset 0 0 88px 40px rgba(0, 0, 0, 0.1);
   }
   .hero-image__picture {
     display: flex;
@@ -256,12 +256,12 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     object-position: center center;
     border-radius: var(--hero-image-radius);
     transition: filter 0.28s ease;
-    /* Mano más al frente y nítida; hover = feedback leve (antes parecía “muerta”) */
-    filter: brightness(0.99) saturate(1.04) contrast(1.12);
+    /* Contraste un poco más alto para que se lean los óvalos/rejillas del arte (misma foto, sin marcos extra) */
+    filter: brightness(1) saturate(1.05) contrast(1.16);
   }
   .hero-image__wrapper:hover .hero-image__img,
   .hero-image__wrapper:hover img {
-    filter: brightness(1.04) saturate(1.06) contrast(1.14);
+    filter: brightness(1.03) saturate(1.06) contrast(1.18);
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-image__img,
