@@ -212,9 +212,35 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     width: 100%;
     position: relative;
     border-radius: var(--hero-image-radius);
-    overflow: hidden;
-    /* Solo sombra de profundidad; los rectángulos ovalados son los del PNG, no marcos CSS */
-    box-shadow: 0 22px 56px -28px rgba(0, 0, 0, 0.5);
+    /* visible: el marco exterior (box-shadow) no se recorta; la foto sigue redondeada en el <img> */
+    overflow: visible;
+    /*
+      Rectángulo ovalado exterior inmediatamente fuera de la foto:
+      siempre algo visible; con motion (abajo) respira y sube de intensidad.
+    */
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.09),
+      0 0 22px -8px rgba(245, 176, 65, 0.08),
+      0 22px 56px -28px rgba(0, 0, 0, 0.5);
+  }
+  @keyframes tevsys-hero-hand-outer-frame {
+    from {
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.09),
+        0 0 22px -8px rgba(245, 176, 65, 0.08),
+        0 22px 56px -28px rgba(0, 0, 0, 0.5);
+    }
+    to {
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.18),
+        0 0 38px -4px rgba(245, 176, 65, 0.22),
+        0 22px 56px -28px rgba(0, 0, 0, 0.5);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-image__wrapper {
+      animation: tevsys-hero-hand-outer-frame 21s ease-in-out infinite alternate;
+    }
   }
   /* Viñeta muy suave: si es fuerte, tapa los perímetros ovalados que vienen en la foto */
   .hero-image__wrapper::after {
@@ -268,6 +294,10 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-image__wrapper img,
     .hero-section__image img {
       transition: none;
+    }
+    /* Mismo marco base que “from”; sin pulso (el perímetro sigue viéndose) */
+    .hero-image__wrapper {
+      animation: none;
     }
   }
   @media (max-width: 768px) {
