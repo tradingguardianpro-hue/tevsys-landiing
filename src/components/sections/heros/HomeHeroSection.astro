@@ -216,7 +216,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     /* Funde la silueta con el hero (menos “pegatine” rectangular) */
     box-shadow: 0 22px 56px -28px rgba(0, 0, 0, 0.5);
   }
-  /* Viñeta un poco más generosa en bordes y esquinas */
+  /* Viñeta más suave: antes apagaba demasiado la mano (sensación “segundo plano”) */
   .hero-image__wrapper::after {
     content: '';
     position: absolute;
@@ -224,8 +224,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     border-radius: inherit;
     pointer-events: none;
     box-shadow:
-      inset 0 0 72px 40px rgba(0, 0, 0, 0.42),
-      inset 0 0 148px 64px rgba(0, 0, 0, 0.28);
+      inset 0 0 48px 28px rgba(0, 0, 0, 0.28),
+      inset 0 0 100px 44px rgba(0, 0, 0, 0.16);
   }
   .hero-image__picture {
     display: flex;
@@ -255,8 +255,20 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     object-fit: contain;
     object-position: center center;
     border-radius: var(--hero-image-radius);
-    /* Mano: un pelín más presente y nítida que las cards (foto vs ilustración); solo hero, sin Canva */
-    filter: brightness(0.94) saturate(1) contrast(1.08);
+    transition: filter 0.28s ease;
+    /* Mano más al frente y nítida; hover = feedback leve (antes parecía “muerta”) */
+    filter: brightness(0.99) saturate(1.04) contrast(1.12);
+  }
+  .hero-image__wrapper:hover .hero-image__img,
+  .hero-image__wrapper:hover img {
+    filter: brightness(1.04) saturate(1.06) contrast(1.14);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image__img,
+    .hero-image__wrapper img,
+    .hero-section__image img {
+      transition: none;
+    }
   }
   @media (max-width: 768px) {
     .hero-section__section {
