@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero — H1 escaneo en tres tiempos (16 abr 2026)
+
+**Objetivo:** Titular más escaneable (usuario → marca → claim); **MT5** solo en `.hero-context-line`, no en el H1.
+
+**Copy H1:** `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` (`hero-title__brand` / `hero-title__underline`). Eliminado prefijo `MT5:` en titular y estilos huérfanos `.hero-title__mt5`.
+
+**Archivos:** `src/components/sections/heros/HomeHeroSection.astro`, `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`, `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md`.
+
+---
+
 ## Home, hero, header y cards — iteración diseño (abr 2026) — **confirmado**
 
 **Objetivo:** Inter en superficie producto, menos choque motion header/hero, hero y cards integrados en negro mate, línea de contexto MT5, legibilidad en cards y assets Canva para card Precisión.

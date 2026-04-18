@@ -11,7 +11,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 | Tema | Detalle |
 |------|---------|
 | **Tipografía** | **Inter** en todo el bloque `.hero-section__inner` (producto / legibilidad). |
-| **H1** | `MT5: disciplina automatizada. Tú pones los límites, tevsys los blinda, no negocia y lo registra.` — `tevsys` y subrayados según clases existentes. |
+| **H1** | `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` (`hero-title__brand`) y subrayado en el claim (`hero-title__underline`). MT5 en la línea de contexto, no en el H1. |
 | **Línea de contexto** | Clase `.hero-context-line`: *Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.* (debajo del H1, encima del badge; texto más pequeño, no compite con el titular). Motivo: anclar **cuenta MT5 / riesgo** para visitantes que no lean solo “disciplina”. |
 | **Ritmo vertical** | Más margen entre titular → badge “Where precision…” → CTA → nota plataformas. |
 | **Halo** | `.hero-section__glow`: gradientes radiales ámbar (marca), solo en hero. |

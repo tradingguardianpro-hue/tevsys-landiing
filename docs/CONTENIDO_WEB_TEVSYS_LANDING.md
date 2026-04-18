@@ -27,8 +27,8 @@ Documento de contenido/copy actual para revisión de equipo.
 ---
 
 ## Hero
-- **H1 (actual, abr 2026):** `MT5: disciplina automatizada. Tú pones los límites, tevsys los blinda, no negocia y lo registra.`
-- **Línea de contexto (debajo H1):** `Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.` (clase `hero-context-line`; ancla producto para quien no asocie solo “disciplina” con trading/MT5).
+- **H1 (actual, abr 2026):** `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` y subrayado en “Disciplina automatizada” según clases (`hero-title__brand`, `hero-title__underline`).
+- **Línea de contexto (debajo H1):** `Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.` (clase `hero-context-line`; **MT5 y cuenta** aquí; el H1 prioriza escaneo en tres tiempos).
 - **Tipografía:** **Inter** en el bloque hero.
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo (dot + badge)
@@ -39,7 +39,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Texto bajo imagen:** `Trading Edge Verification System`
 
 ### Marco de copy del hero (referencia abr 2026)
-- **Titular + MT5:** ver H1 arriba.
+- **Titular (tres tiempos):** ver H1 arriba; MT5 no va en el H1.
 - **Contexto temprano:** línea `hero-context-line` (cuenta MT5, automatizado, registrado).
 - **Deseo / marca:** `Where precision meets the edge`
 - **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTA `Descargar demo →`
