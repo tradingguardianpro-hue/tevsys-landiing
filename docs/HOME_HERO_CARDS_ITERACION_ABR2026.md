@@ -15,7 +15,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 | **Línea de contexto** | Clase `.hero-context-line`: *Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.* (debajo del H1, encima del badge; texto más pequeño, no compite con el titular). Motivo: anclar **cuenta MT5 / riesgo** para visitantes que no lean solo “disciplina”. |
 | **Ritmo vertical** | Margen amplio entre titular → badge “Where precision…” (`.hero-tagline-wrap`: `margin-top` / `margin-bottom` en clamp) → CTA (`.hero-download-btn`: `margin-top` en clamp) → nota plataformas (`hero-platform-note`). Abr 2026: más “aire” entre badge inglés y botón demo. |
 | **Halo** | `.hero-section__glow`: gradientes radiales ámbar (marca), solo en hero. |
-| **Imagen mano/candado** | Filtro suave (brillo/saturación/contraste); viñeta en `.hero-image__wrapper`; `--hero-image-radius` explícito (el tema oscuro pone `--theme-shape-radius: 0`). |
+| **Imagen mano/candado** | Filtro **alineado a cards** (`brightness(0.91) saturate(0.97) contrast(1.04)`); viñeta en `.hero-image__wrapper`; `--hero-image-radius` explícito (el tema oscuro pone `--theme-shape-radius: 0`). |
 | **Stack home** | Estilos en `global.css` (`.tevsys-home-hero-stack`): fondo `var(--theme-bg)`, sombra exterior para fundir con la página, viñeta `::after`, `z-index` contenido; el **redondeo** lo lleva el stack, no la `section` interna (evita doble “marco”). |
 
 ---
@@ -45,7 +45,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 | **Grid** | 2 columnas desktop; 1 columna móvil; gap aumentado. **Abr 2026:** más aire antes del grid (`margin` bajo intro “Ellos deslizan…” + `margin-top` en `.feature-card__grid`). |
 | **Cards (`.tevsys-card`)** | `--feature-card-radius`; borde/sombra suaves + halo ámbar muy bajo en reposo; hover acentuado sin borde tan duro (abr 2026, integración SaaS). |
 | **Estructura** | Fondo de la card **transparente**; **gris solo** en `.tevsys-card__content` (texto). Evita franja gris entre imagen y texto por fondo heredado + rendija bajo `<img>` (img `display: block`, `picture` bloque, `line-height: 0`). |
-| **Zona imagen** | `background-color: var(--theme-bg)`. **`img`:** `filter` alineado al hero (`brightness(0.78) saturate(0.9) contrast(0.96)`); hover algo más luminoso; PNG/Canva sigue siendo la base. |
+| **Zona imagen** | `background-color: var(--theme-bg)`. **`img`:** mismo `filter` que la mano del hero (`brightness(0.91) saturate(0.97) contrast(1.04)`); hover un poco más vivo; **contraste ≥1** para no parecer borroso. PNG/Canva sigue siendo la base. |
 | **Zona texto** | Fondo ~`hsl(0, 0%, 6%)` (más cerca del `--theme-bg` ~2% L); párrafos con tamaño, peso 500, color explícito; **hooks** `.feature-card__hook` con **opacity: 1** dentro de cards (la regla global con 0.9 apagaba el texto). **H3** con peso 700. |
 | **Card 1 (Precisión / cerdito)** | Primera versión: `<picture>` WebP + PNG; **ajuste:** solo **PNG** en `<img>` para ver exports nuevos sin depender de regenerar `.webp` (cuando haya `npm` + `sharp`, ejecutar `node scripts/optimize-images.js` y se puede volver a `<picture>`). |
 | **Planes (misma página)** | Fondo y borde/sombra alineados a las cards de valor (`hsl(0,0%,6%)`, halo suave). |

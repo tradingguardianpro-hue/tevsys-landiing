@@ -8,7 +8,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Objetivo:** Menos discontinuidad entre hero y grid de valor: imágenes de card **menos “pegatinas”** frente al fondo; contenedor más **fundido** con la página.
 
-**Código:** `src/pages/index.astro` — `.tevsys-card__image img`: `filter` alineado al hero (`brightness` / `saturate` / `contrast`); hover levemente más luminoso; franja imagen `background-color: var(--theme-bg)`; texto `.tevsys-card__content` a **~6%** L (antes ~9%) para acercar a `--theme-bg`; borde/sombra en reposo más suaves + **halo ámbar muy bajo**; hover mantiene acento sin subir tanto el borde. **Iteración:** más **aire** antes del grid (margen bajo `.feature-card__intro-ellos` + `margin-top` en `.feature-card__grid`).
+**Código:** `src/pages/index.astro` — `.tevsys-card__image img`: `filter` compartido con hero (ver iteración **nitidez**); franja imagen `background-color: var(--theme-bg)`; texto `.tevsys-card__content` a **~6%** L; borde/sombra + halo; **aire** antes del grid. **Abr 2026 (nitidez):** `contrast` pasó de **&lt;1** a **~1.04** y brillo algo mayor — misma receta en `HomeHeroSection` (mano) y cards para evitar sensación “borrosa” / error de carga.
 
 **Doc:** `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` §3–4.
 

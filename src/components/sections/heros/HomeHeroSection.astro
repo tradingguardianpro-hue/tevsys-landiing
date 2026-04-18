@@ -255,8 +255,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     object-fit: contain;
     object-position: center center;
     border-radius: var(--hero-image-radius);
-    /* Menos brillo metálico / menos contraste: la mano no compite con el titular */
-    filter: brightness(0.78) saturate(0.9) contrast(0.96);
+    /* Misma receta que cards: integra sin “apagar”; contraste ≥1 para sensación nítida (evita aspecto borroso) */
+    filter: brightness(0.91) saturate(0.97) contrast(1.04);
   }
   @media (max-width: 768px) {
     .hero-section__section {
