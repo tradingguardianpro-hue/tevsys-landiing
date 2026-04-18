@@ -37,7 +37,7 @@ import settings from '../config/settings.js';
 						</div>
 						<p class="feature-card__hook">¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.</p>
 						<p>Ajuste en tiempo real: volatilidad • spread • slippage • comisiones</p>
-						<p>71 operativas documentadas. Validado en 5 entornos de ejecución.</p>
+						<p><span class="feature-card__value-accent">71</span> operativas documentadas. Validado en 5 entornos de ejecución.</p>
 					</div>
 				</a>
 				<a href="/features/hyperclose" class="tevsys-card">
@@ -50,7 +50,7 @@ import settings from '../config/settings.js';
 							<h3><span class="card-title__accent">HyperClose</span></h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
-						<p class="feature-card__hook">La diferencia entre querer parar y no poder seguir.</p>
+						<p class="feature-card__hook">La diferencia entre querer parar y <span class="feature-card__value-accent">no poder seguir</span>.</p>
 						<p>Intentas operar bloqueado, HyperClose cierra en milisegundos.</p>
 						<p>Cada intento queda registrado. También en días OFF.</p>
 					</div>
@@ -66,7 +66,7 @@ import settings from '../config/settings.js';
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
 						<p class="feature-card__hook">No es obligatorio. Es una recompensa.</p>
-						<p>Actívalo cuando quieras • Amplías margen 5%-25% (mín. 75% protegido)</p>
+						<p>Actívalo cuando quieras • Amplías margen 5%-25% (<span class="feature-card__value-accent">mín. 75 % protegido</span>)</p>
 						<p>Conserva lo ganado. Convive con límites y días OFF.</p>
 					</div>
 				</a>
@@ -396,9 +396,14 @@ import settings from '../config/settings.js';
 		margin-bottom: 0.55rem;
 		font-weight: 600;
 	}
-	.feature-card__evidence-stat-value {
+	.feature-card__evidence-stat-value,
+	.feature-card__value-accent {
 		color: #f5b041;
 		font-weight: 700;
+	}
+	/* Frase resaltada dentro del hook en cursiva: se lee más claro en redonda */
+	.tevsys-card .feature-card__hook .feature-card__value-accent {
+		font-style: normal;
 	}
 	.tevsys-card__content .feature-card__evidence-proofline {
 		opacity: 0.9;
