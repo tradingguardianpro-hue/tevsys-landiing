@@ -269,7 +269,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	}
 }
 
-/* Home — escáner gris en el header (solo /): ritmo lento y suave (premium/calma), mismo bucle irregular pero sin “flash”; timing propio */
+/* Home — escáner gris en el header (solo /): bucle irregular sin “flash”; intensidad restaurada (zona cards sin KITT → el header aporta vida) */
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
 		position: absolute;
@@ -280,17 +280,17 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			102deg,
 			transparent 0%,
 			transparent 38%,
-			rgba(110, 114, 128, 0.06) 47%,
-			rgba(186, 190, 202, 0.14) 50%,
-			rgba(95, 98, 110, 0.05) 53%,
+			rgba(110, 114, 128, 0.1) 47%,
+			rgba(186, 190, 202, 0.22) 50%,
+			rgba(95, 98, 110, 0.09) 53%,
 			transparent 66%,
 			transparent 100%
 		);
-		background-size: 220% 100%;
+		background-size: 230% 100%;
 		background-position: 80% 50%;
 		background-repeat: no-repeat;
-		opacity: 0.48;
-		animation: tevsys-header-scanner-sweep 33.8s infinite;
+		opacity: 0.68;
+		animation: tevsys-header-scanner-sweep 29.5s infinite;
 	}
 
 	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .header-nav__container,
@@ -310,14 +310,15 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			102deg,
 			transparent 0%,
 			transparent 37%,
-			rgba(120, 124, 138, 0.12) 47%,
-			rgba(198, 202, 216, 0.22) 50%,
-			rgba(105, 109, 124, 0.1) 53%,
+			rgba(120, 124, 138, 0.18) 47%,
+			rgba(198, 202, 216, 0.32) 50%,
+			rgba(105, 109, 124, 0.15) 53%,
 			transparent 66%,
 			transparent 100%
 		);
-		background-size: 240% 100%;
-		opacity: 0.52;
+		background-size: 250% 100%;
+		opacity: 0.78;
+		animation-duration: 28s;
 	}
 }
 
@@ -1544,19 +1545,19 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	*/
 	@media (prefers-reduced-motion: no-preference) {
 		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
-			animation-duration: 27.4s;
-			opacity: 0.52;
+			animation-duration: 23.5s;
+			opacity: 0.74;
 			background-image: linear-gradient(
 				102deg,
 				transparent 0%,
 				transparent 37%,
-				rgba(120, 124, 138, 0.12) 47%,
-				rgba(198, 202, 216, 0.22) 50%,
-				rgba(105, 109, 124, 0.1) 53%,
+				rgba(120, 124, 138, 0.18) 47%,
+				rgba(198, 202, 216, 0.32) 50%,
+				rgba(105, 109, 124, 0.15) 53%,
 				transparent 66%,
 				transparent 100%
 			);
-			background-size: 240% 100%;
+			background-size: 250% 100%;
 		}
 
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise {
