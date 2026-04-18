@@ -254,12 +254,12 @@ import settings from '../config/settings.js';
 		color: #f5b041;
 		transform: scale(1.2);
 	}
-	/* Mismo negro que la página: el “pegote” suele venir del PNG; el contenedor no añade otro gris */
+	/* Negro puro en la franja de la imagen (como diseño inicial); el PNG encima define el arte */
 	.tevsys-card__image {
 		flex-shrink: 0;
 		aspect-ratio: 16/10;
 		overflow: hidden;
-		background-color: var(--theme-bg);
+		background-color: #000;
 		line-height: 0;
 	}
 	.tevsys-card__image picture {
@@ -272,7 +272,6 @@ import settings from '../config/settings.js';
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		/* Sin oscurecer el arte en CSS; si sigue gris, bajar brillo en Canva en el propio asset */
 	}
 	.tevsys-card__content {
 		flex: 1;
