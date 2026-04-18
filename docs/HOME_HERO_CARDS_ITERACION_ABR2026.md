@@ -11,7 +11,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 | Tema | Detalle |
 |------|---------|
 | **Tipografía** | **Inter** en todo el bloque `.hero-section__inner` (producto / legibilidad). |
-| **H1** | `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` ámbar (`hero-title__brand`, sin subrayado); subrayado solo en el claim (`hero-title__underline`). MT5 en la línea de contexto, no en el H1. |
+| **H1** | `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` ámbar (`hero-title__brand`, sin subrayado); subrayado solo en el claim (`hero-title__underline`). MT5 en la línea de contexto, no en el H1. **`font-family: Inter` explícita en `.hero-title`** (abr 2026: anula `h1` global en serif del tema). |
 | **Línea de contexto** | Clase `.hero-context-line`: *Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.* (debajo del H1, encima del badge; texto más pequeño, no compite con el titular). Motivo: anclar **cuenta MT5 / riesgo** para visitantes que no lean solo “disciplina”. |
 | **Ritmo vertical** | Margen amplio entre titular → badge “Where precision…” (`.hero-tagline-wrap`: `margin-top` / `margin-bottom` en clamp) → CTA (`.hero-download-btn`: `margin-top` en clamp) → nota plataformas (`hero-platform-note`). Abr 2026: más “aire” entre badge inglés y botón demo. |
 | **Halo** | `.hero-section__glow`: gradientes radiales ámbar (marca), solo en hero. |
@@ -40,7 +40,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 
 | Tema | Detalle |
 |------|---------|
-| **Tipografía** | Inter en `.feature-card__section` y bloque de planes en home. |
+| **Tipografía** | Inter en `.feature-card__section` y bloque de planes; **`h2` / `h3` de la home con Inter explícito** en clase (el tema Odyssey pone serif en `h1`–`h3` vía `typography.css`). |
 | **Título sección** | “¿Cuánto dinero has perdido por no parar a tiempo?” — espaciado y jerarquía afinados. |
 | **Grid** | 2 columnas desktop; 1 columna móvil; gap aumentado. |
 | **Cards (`.tevsys-card`)** | `--feature-card-radius`; borde/sombra suaves + halo ámbar muy bajo en reposo; hover acentuado sin borde tan duro (abr 2026, integración SaaS). |

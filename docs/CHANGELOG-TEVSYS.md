@@ -14,6 +14,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — Inter en encabezados (hero + valor + planes) (18 abr 2026)
+
+**Motivo:** En `typography.css`, `h1` / `h2` / `h3` usan **`--theme-font-family-serif`** (Roboto Serif). Los bloques ya tenían Inter en el contenedor, pero los **títulos** seguían en serif por esa regla global.
+
+**Código:** `font-family: 'Inter', …` explícita en `.hero-title` (`HomeHeroSection.astro`); en `index.astro` en `.feature-section__title`, `.tevsys-card__title-row h3`, `.plans-section__title`, `.plan-card__content h3` (+ `font-weight: 700` en planes donde aplica).
+
+**Doc:** `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` §1 y §3.
+
+---
+
 ## Hero KITT — tono 60% ámbar / 40% gris en tiempo (18 abr 2026)
 
 **Objetivo:** Mismo movimiento (`tevsys-top-strip` / ciclo vertical fall); el haz KITT alterna **predominio** ámbar vs gris **scanner** (~`rgba(110,114,128)` familia) en **proporción temporal** (~60/40), con ciclos **31s** (rise) y **29.3s** (fall, tras delay de fase 2) — **sin** sincronía con 18.7s / 311s.
