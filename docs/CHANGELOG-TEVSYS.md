@@ -17,6 +17,19 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — card 2 (HyperClose): candado cerrado (19 abr 2026)
+
+**Motivo:** Sustituir ilustración anterior más genérica por **candado cerrado** (bloqueo coherente con HyperClose). Alineación con **hero** (candado) y con **panel / gráficos del EA**, donde el candado es señal reconocible.
+
+| Área | Detalle |
+|------|--------|
+| **Asset** | `public/assets/images/home/cards/card-2-hyperclose.png` — export usuario (`Downloads/card-2-hyperclose.png`). |
+| **Web** | `src/pages/index.astro` — **cache-bust `?v=9`**. |
+
+**Doc:** `HOME_HERO_CARDS_ITERACION_ABR2026.md` §3, `CONTENIDO_WEB_TEVSYS_LANDING.md`, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
+
+---
+
 ## Web — coherencia tipográfica, hero, cards, CTAs y micropáginas (19 abr 2026)
 
 **Objetivo:** Una sola lectura de producto (Inter + DM Sans solo en H1 home), negro unificado, CTAs demo idénticos, micropáginas alineadas y documentación al día con decisiones recientes.
@@ -27,7 +40,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 | **H1 hero** | **DM Sans** solo en `.hero-title` (se probó Plus Jakarta Sans, descartada). Resto del hero y header siguen en **Inter**. Google Fonts: `DM+Sans` + `Inter` en `BaseHead.astro`. | `BaseHead.astro`, `HomeHeroSection.astro` |
 | **Imagen mano** | Viñeta más suave; filtros para nitidez; marco exterior del recorte con **animación opcional** de brillo (reduced-motion sin animación); sin marcos CSS que imiten óvalos del PNG. | `HomeHeroSection.astro` |
 | **Escáner header (home)** | **Intensidad restaurada** respecto a la iteración “menos discoteca”: más opacidad, gradientes y `animation-duration` algo más cortas (escritorio/móvil) para dar “vida” sin tocar filosofía del motion. | `global.css` |
-| **Cards home** | Nuevos PNG en `public/.../card-*.png`; **cache-bust** en `index.astro` (card 1 **`?v=8`** desde engranaje motor; otras cards según iteración). Cintas retocadas en origen (tonos ámbar/gris/negro, sin arcoíris). **Lectura:** `feature-card__value-accent` en cuerpo — **71 operativas**, **no poder seguir**, **mín. 75 % protegido** (misma línea que evidencia `0,0072 %`). | `index.astro`, assets |
+| **Cards home** | Nuevos PNG en `public/.../card-*.png`; **cache-bust** en `index.astro` (card 1 **`?v=8`** engranaje; card 2 **`?v=9`** candado HyperClose; otras según iteración). Cintas retocadas en origen (tonos ámbar/gris/negro, sin arcoíris). **Lectura:** `feature-card__value-accent` en cuerpo — **71 operativas**, **no poder seguir**, **mín. 75 % protegido** (misma línea que evidencia `0,0072 %`). | `index.astro`, assets |
 | **Tema oscuro — tipografía global** | **`[data-theme='dark']`:** `--theme-font-family-sans` y `--theme-font-family-serif` → **Inter** (antes Lato + Roboto Serif en cuerpo/títulos); micropáginas y `h1`–`h3` alineados con la home. | `theme.css` |
 | **CTAs demo** | Reglas globales: mismo **Inter 1rem**, padding, radio, colores y hover para `hero-download-btn`, `feature-cta__button`, `precios-cta__button`, `plan-card__cta` (excepto secundario outline). | `global.css`; estilos locales duplicados retirados en varias páginas |
 | **Contacto / demo** | Bloque izquierdo + columna formulario con **Inter** explícito (alineación con micro-páginas). | `contact.astro` |
