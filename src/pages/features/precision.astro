@@ -24,8 +24,14 @@ const seo = {
 		</section>
 
 		<section id="precision-demo" class="feature-demo feature-demo--hero">
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span><span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span></p>
-			<div class="feature-demo__title">
+			<div class="precision-multichart">
+				<p class="feature-hook precision-multichart__lead">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					<span>Un gráfico para tevsys. Toda tu cuenta, protegida.</span>
+				</p>
+				<p class="precision-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
+			</div>
+			<div class="feature-demo__title feature-demo__title--primary-demo">
 				<span class="feature-hook__dot" aria-hidden="true"></span>
 				<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
 			</div>
@@ -298,6 +304,26 @@ const seo = {
 		line-height: 1.5;
 		opacity: 0.86;
 		margin: 0.35rem 0 0;
+	}
+	/* Primer demo: el claim multigráfico respira antes del título “Demo rápida” */
+	.precision-multichart {
+		margin: 0 0 clamp(1.35rem, 3.6vw, 2.1rem);
+		max-width: 52ch;
+	}
+	.precision-multichart__lead {
+		margin: 0 0 0.5rem;
+		align-items: flex-start;
+	}
+	.precision-multichart__sub {
+		margin: 0;
+		padding-left: calc(0.45rem + 0.5rem);
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		line-height: 1.55;
+	}
+	#precision-demo .feature-demo__title--primary-demo {
+		margin-bottom: 0.75rem;
 	}
 	.feature-demo--hero {
 		position: relative;
