@@ -35,7 +35,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Botón:** `Descargar demo →` (ámbar marca)
 - **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
 - **Stack home (tema oscuro):** fondo **`#000`** en `.tevsys-home-hero-stack` (coherencia con zona imagen cards); capas KITT sin cambio de filosofía.
-- **Imagen:** mano robótica + candado (`mano robotica central web.png` / WebP). Tratamiento CSS: filtros/viñeta/radio imagen; stack home con viñeta y un solo redondeo exterior (`CHANGELOG` + `HOME_HERO_CARDS_ITERACION_ABR2026.md`).
+- **Imagen:** mano robótica + candado (`mano robotica central web.png`; hero con `?v=2` tras arte velas neutras). Tratamiento CSS: filtros/viñeta/radio imagen; stack home con viñeta y un solo redondeo exterior (`CHANGELOG` + `HOME_HERO_CARDS_ITERACION_ABR2026.md`).
 - **Reflexión diseño histórica:** `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` (copy anterior); iteración actual: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
 - **Texto bajo imagen:** `Trading Edge Verification System`
 

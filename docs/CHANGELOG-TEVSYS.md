@@ -37,6 +37,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero — imagen mano + candado (velas neutras, 19 abr 2026)
+
+**Motivo:** Nueva exportación Canva: gráfico de velas **sin rojo** (mejor armonía con paleta web). **Asset:** `public/mano robotica central web.png` — origen `Downloads/mano robotica central web.png`.
+
+**Código:** `HomeHeroSection.astro` — imagen hero con **`?v=2`**; eliminado `<source>` WebP (no había `mano-robotica-central-web.webp` en repo; evita 404). `BaseHead.astro` — preload LCP y meta imagen por defecto al **mismo PNG**.
+
+**Opcional:** `node scripts/optimize-images.js` regenera `mano-robotica-central-web.webp` y se puede volver a `<picture>` con `source` cuando el entorno tenga `sharp`.
+
+---
+
 ## Web — coherencia tipográfica, hero, cards, CTAs y micropáginas (19 abr 2026)
 
 **Objetivo:** Una sola lectura de producto (Inter + DM Sans solo en H1 home), negro unificado, CTAs demo idénticos, micropáginas alineadas y documentación al día con decisiones recientes.

@@ -14,7 +14,7 @@ export interface Props {
 const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
 const canonicalURL = Astro.props.canonicalURL || new URL(Astro.url.pathname, Astro.site);
-const image = new URL(Astro.props.image || '/mano-robotica-central-web.webp', Astro.site);
+const image = new URL(Astro.props.image || '/mano%20robotica%20central%20web.png', Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -34,7 +34,7 @@ const image = new URL(Astro.props.image || '/mano-robotica-central-web.webp', As
 <link rel="canonical" href={canonicalURL} />
 <!-- Preload LCP hero (solo home) -->
 {(Astro.url.pathname === '/' || Astro.url.pathname === '') && (
-  <link rel="preload" as="image" href="/mano-robotica-central-web.webp" type="image/webp" />
+  <link rel="preload" as="image" href="/mano%20robotica%20central%20web.png?v=2" />
 )}
 <!-- Schema.org JSON-LD (SoftwareApplication) -->
 {Astro.url.pathname === '/' || Astro.url.pathname === '' ? (
