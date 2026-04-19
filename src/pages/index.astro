@@ -525,34 +525,28 @@ import settings from '../config/settings.js';
 		width: 100%;
 		text-align: center;
 	}
+	/* CTA ámbar: global.css. Secundario (outline): misma caja, sin relleno ámbar */
 	.plan-card__cta {
+		transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+	}
+	.plan-card__cta--secondary {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0.48rem 0.95rem;
-		border-radius: 1.5rem;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0.55rem 1.25rem;
+		border-radius: 2rem;
+		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+		font-size: 1rem;
 		font-weight: 600;
+		line-height: 1.35;
 		text-decoration: none;
 		cursor: pointer;
-		transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-		background: #f5b041;
-		color: #1a1510;
-		border: 1px solid transparent;
-	}
-	.plan-card__cta:hover {
-		background: #f7c050;
-	}
-	.plan-card__cta--primary {
-		background: #f5b041;
-		color: #1a1510;
-	}
-	.plan-card__cta--primary:hover {
-		background: #f7c050;
-	}
-	.plan-card__cta--secondary {
 		background: transparent;
 		color: inherit;
 		border: 1px solid rgba(245, 176, 65, 0.6);
+		transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 	}
 	.plan-card__cta--secondary:hover {
 		border-color: #f5b041;

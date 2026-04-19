@@ -1667,3 +1667,41 @@ pre {
 pre .language-id {
   display: none;
 }
+
+/*
+  CTAs ámbar (Descargar demo / Solicitar demo / Probar… en demo / planes sin secundario):
+  misma tipografía y caja que el hero; tema oscuro.
+*/
+html[data-theme='dark'] a.hero-download-btn,
+html[data-theme='dark'] a.feature-cta__button,
+html[data-theme='dark'] a.precios-cta__button,
+html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary) {
+	font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.35;
+	padding: 0.55rem 1.25rem;
+	border-radius: 2rem;
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	cursor: pointer;
+	background: #f5b041;
+	color: #1a1510;
+	border: 1px solid transparent;
+	transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, filter 0.2s ease;
+}
+
+html[data-theme='dark'] a.hero-download-btn {
+	box-shadow: 0 4px 20px rgba(245, 176, 65, 0.35);
+}
+
+html[data-theme='dark'] a.hero-download-btn:hover,
+html[data-theme='dark'] a.feature-cta__button:hover,
+html[data-theme='dark'] a.precios-cta__button:hover,
+html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
+	background: #f7c050;
+	filter: none;
+}
