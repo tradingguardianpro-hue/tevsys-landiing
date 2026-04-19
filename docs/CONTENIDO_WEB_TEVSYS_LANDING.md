@@ -22,18 +22,19 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Tipografía (abr 2026):** **Inter** en barra y pastilla (`Header.astro`, `BrandOval.astro`), alineado al hero.
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
-- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** (resaltado alineado móvil/escritorio donde aplica), sin sincronía con el resto de la portada. **Iteración abr 2026:** intensidad/opacidad del escáner **reducida** para no competir con el hero. Detrás de las **4 cards**: `.tevsys-home-mid-glow` — **gris instrumento**, doble burbuja con animaciones **92s** y **118s** (`::before`; `linear`; mayoría del tiempo en márgenes); **escritorio:** trayectoria tipo **perímetro** del bloque 2×2 (incl. **SML** y **Evidencia**); **móvil (1 columna):** mismas duraciones con keyframes **`*-mobile`** para que el brillo se mueva **detrás de la columna** de cards. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion (iteración 15–16 abr), `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
+- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** (resaltado alineado móvil/escritorio donde aplica), sin sincronía con el resto de la portada. **Iteración 15–16 abr 2026:** se bajó intensidad (“menos discoteca”). **19 abr 2026:** **intensidad restaurada** (más opacidad/gradiente y duraciones por breakpoint: base **29,5s**, escritorio **28s**, móvil **23,5s**) — ver `global.css` y `MOTION_HOME_TEVSYS_HANDOFF_IA.md`. Detrás de las **4 cards**: `.tevsys-home-mid-glow` — **gris instrumento**, doble burbuja con animaciones **92s** y **118s** (`::before`; `linear`; mayoría del tiempo en márgenes); **escritorio:** trayectoria tipo **perímetro** del bloque 2×2 (incl. **SML** y **Evidencia**); **móvil (1 columna):** mismas duraciones con keyframes **`*-mobile`** para que el brillo se mueva **detrás de la columna** de cards. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
 
 ---
 
 ## Hero
 - **H1 (actual, abr 2026):** `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` en ámbar (`hero-title__brand`, sin subrayado); subrayado solo en “Disciplina automatizada” (`hero-title__underline`).
 - **Línea de contexto (debajo H1):** `Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.` (clase `hero-context-line`; **MT5 y cuenta** aquí; el H1 prioriza escaneo en tres tiempos).
-- **Tipografía:** **Inter** en el bloque hero.
+- **Tipografía (19 abr 2026):** **DM Sans** solo en `.hero-title` (H1); resto del bloque hero y header en **Inter**. Carga de fuentes en `BaseHead.astro` (Inter + DM Sans).
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo (dot + badge)
 - **Botón:** `Descargar demo →` (ámbar marca)
 - **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
+- **Stack home (tema oscuro):** fondo **`#000`** en `.tevsys-home-hero-stack` (coherencia con zona imagen cards); capas KITT sin cambio de filosofía.
 - **Imagen:** mano robótica + candado (`mano robotica central web.png` / WebP). Tratamiento CSS: filtros/viñeta/radio imagen; stack home con viñeta y un solo redondeo exterior (`CHANGELOG` + `HOME_HERO_CARDS_ITERACION_ABR2026.md`).
 - **Reflexión diseño histórica:** `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` (copy anterior); iteración actual: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
 - **Texto bajo imagen:** `Trading Edge Verification System`
@@ -64,7 +65,10 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Cards (4)
 - **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
-- **Diseño abr 2026 (confirmado en código):** Inter en la sección; bloque de texto con gris oscuro (~9% luminosidad); zona ilustración con fondo `var(--theme-bg)`; tipografía cuerpo reforzada (peso/color); card 1 puede servirse solo en PNG mientras se regenera WebP. Detalle: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
+- **Diseño abr 2026 (confirmado en código):** Inter en la sección; bloque de texto con gris oscuro (~9% luminosidad); zona ilustración con fondo `var(--theme-bg)`; tipografía cuerpo reforzada (peso/color); card 1 puede servirse solo en PNG mientras se regenera WebP. **19 abr 2026:** imágenes `card-*.png` renovadas; **cache-bust `?v=7`**; **acentos de lectura** `.feature-card__value-accent` (71 operativas; no poder seguir; mín. 75 % protegido). Detalle: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
+- **CTAs demo (19 abr 2026):** mismas reglas globales para botones demo en hero, features, precios y planes (Inter, padding, hover) — `global.css`; ver `CHANGELOG-TEVSYS.md`.
+- **Tema oscuro — tipografía global (19 abr 2026):** en `[data-theme='dark']`, cuerpo y títulos de micropáginas usan **Inter** vía `theme.css` (antes Lato + Roboto Serif en variables de tema).
+- **Micropáginas — respiro (19 abr 2026):** espaciado bajo `.feature-hero` unificado en `global.css` (mismo criterio en todas las guías).
 - **Motion detrás (15–16 abr 2026):** capa decorativa `.tevsys-home-mid-glow` (ver `global.css`) — **no** altera layout ni textos; atmósfera gris premium; cards siguen siendo el foco. En **móvil**, rutas de animación distintas al escritorio para que el resplandor recorra la **pila vertical** detrás de las cards.
 
 #### 1) 0,06% error medio
@@ -122,6 +126,8 @@ Documento de contenido/copy actual para revisión de equipo.
 - Nota técnica: nombres `*-form-v4` usados para evitar caché obsoleta en CDN/navegador.
 
 **Título contacto actual:** `Completa tu acceso a tevsys`
+
+- **Tipografía / coherencia (19 abr 2026):** en `contact.astro`, bloque de copy izquierdo y columna del formulario con **Inter** explícita, alineada a micropáginas y tema oscuro.
 
 **Cards planes (home, Ene 2026):**
 - **Essential:** Demo/beta disponible. Límite diario, precisión milimétrica y HyperClose para validar operativa real.
@@ -218,11 +224,12 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook demo: `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
   - Soporte: vídeo demo 1 min 41 s (con audio), informe MT5 (5 capturas), HTML transacciones descargable.
 
-### Estado actual Precisión (Mar 2026 — actualizado 26 Mar 2026)
+### Estado actual Precisión (26 Mar 2026; orden demos 19 abr 2026)
 - **Demo rápida (100k):** `evidencia-100k-perdida.mp4` (1 min 41 s). **Hero** alineado con HyperClose/Evidencia: `.feature-demo--hero` + `.demo-video--hero` (~52rem, halo dorado). Secundarios: `.demo-video--compact` ~31rem + sombra embed.
 - **Volatilidad:** hook *Operativa documentada:* ±1,50% / +1,83% / contexto volatilidad; nota de pie ajustada (protección vs “misma precisión” genérica).
-- **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`).
-- **Qué puedes comprobar:** orden — demo 100k, logs, alta volatilidad, cuenta pequeña, **resultados al final**.
+- **Nasdaq (multi‑activo):** bloque de demo **inmediatamente después** de alta volatilidad (narrativa: volatilidad → multi‑activo NASDAQ).
+- **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`); en el flujo de página va **antes** del bloque de logs / “Sin humo” (tras volatilidad y Nasdaq).
+- **Qué puedes comprobar / orden de secciones en página (19 abr 2026):** alta volatilidad → **Nasdaq** → **cuenta pequeña** → **logs / trazabilidad**; lista de anclas y script de expansión de demos alineados con ese orden en `precision.astro`.
 - **71 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
@@ -242,7 +249,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Imágenes 4.56:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png`.
 - **Sección "Informe oficial MT5":** acordeón con 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
 - **Sección "Historial de transacciones":** acordeón con captura editada (zonas clave en amarillo) + enlace HTML 100k + **párrafo** con enlace al HTML redactado **demo HyperClose** y vuelta a `/features/hyperclose#hyperclose-demo`.
-- **Sección "Auditoría":** **65** operativas documentadas, incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
+- **Sección "Auditoría":** **71** operativas documentadas (alineado a hook Precisión / resumen estadístico), incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
 - **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide`
 - **Card home:** "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
 
@@ -372,7 +379,7 @@ Seguimiento interno activo en:
 - Sin audio (texto en overlays)
 
 ### Actualización Mar 2026 — Demo y alta volatilidad
-- **26 Mar 2026 (vigente):** Ver **«Estado actual Precisión»** en este mismo documento: demo principal = `evidencia-100k-perdida.mp4` en **hero**; volatilidad y cuenta pequeña en secciones propias; **65** operativas; orden de enlaces actualizado. Ref: `CHANGELOG-TEVSYS.md` **§58**.
+- **26 Mar 2026 (vigente):** Ver **«Estado actual Precisión»** en este mismo documento: demo principal = `evidencia-100k-perdida.mp4` en **hero**; volatilidad y cuenta pequeña en secciones propias; **71** operativas en hook/resumen (sustituye referencias antiguas a **65** donde aún aparezcan); orden de enlaces actualizado. **19 abr 2026:** reordenación de bloques de demo — **Nasdaq tras volatilidad**, **cuenta pequeña antes de logs**. Ref: `CHANGELOG-TEVSYS.md` **§58** y entrada **19 abr 2026**.
 - *Histórico (antes del hero unificado):* Demo principal era `precision-demo.mp4` (1 min 7 s). Volatilidad: `precision-demo-volatilidad.mp4`, 6 overlays (CHANGELOG §28.1).
 
 ### Criterio de publicación (recordatorio)

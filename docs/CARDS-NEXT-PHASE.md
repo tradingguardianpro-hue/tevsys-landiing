@@ -4,10 +4,11 @@ Este documento reemplaza el enfoque inicial de placeholders y recoge el estado a
 
 ### Estado abr 2026 — iteración diseño (confirmado)
 
-- **Documentación única:** `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` (hero, header, motion suavizado, cards: tipografía, grises, asset `card-1-input`, PNG vs WebP).
-- **Changelog:** `CHANGELOG-TEVSYS.md` (entrada “Home, hero, header y cards — abr 2026”).
+- **Documentación única:** `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` (hero, header, cards, motion escáner, tema oscuro, CTAs, micropáginas).
+- **Changelog:** `CHANGELOG-TEVSYS.md` (entrada “Home, hero, header y cards — abr 2026” + **“Web — coherencia tipográfica…” — 19 abr 2026**).
 - **Hecho:** refinamiento visual y copy en home (cards + planes en misma página).
-- **Siguiente (equipo):** decidir **qué cards** y mensajes definitivos en home; luego **micropáginas una por una** (Precisión, HyperClose, SML, Evidencia, …) alineadas a esa decisión.
+- **19 abr 2026 (cerrado en código + docs):** stack hero **`#000`**; **DM Sans** solo en H1 home; imágenes cards nuevas + **`?v=7`**; **Inter** en tema oscuro global (`theme.css`); CTAs demo unificados (`global.css`); contacto con **Inter** explícita; escáner header con **intensidad restaurada** (duraciones 29,5s / 28s / 23,5s); **`.feature-hero`** con respiro global; **Precisión:** orden demos volatilidad → Nasdaq → cuenta pequeña → logs.
+- **Siguiente (equipo):** decidir **qué cards** y mensajes definitivos en home; seguir **micropáginas** alineadas; **revisión móvil** (hero feo / escáner) cuando se priorice.
 
 ---
 
@@ -27,8 +28,8 @@ Este documento reemplaza el enfoque inicial de placeholders y recoge el estado a
 - `/assets/images/home/cards/card-4-evidencia.png`
 
 ### Diseño
-- Sistema visual coherente: negro + icono gris + acento amarillo + iridiscente moderado.
-- **Hero (Mar 2026):** Imagen mano robótica + candado (`mano robotica central web.png`), logo en etiqueta negro apagado. Alineaciones: borde superior con «T» del título; borde izquierdo con «Trading Edge Verification System». Reflexión diseño palabra por palabra + commits: `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` | `CHANGELOG-TEVSYS.md` §27.
+- Sistema visual coherente: negro + icono gris + acento amarillo + iridiscente moderado (cintas Canva retocadas hacia ámbar/gris/negro, sin arcoíris).
+- **Hero (Mar 2026 + 19 abr 2026):** Imagen mano robótica + candado (`mano robotica central web.png`), logo en etiqueta negro apagado. **H1** en **DM Sans**; stack tema oscuro **`#000`**. Alineaciones: borde superior con «T» del título; borde izquierdo con «Trading Edge Verification System». Reflexión diseño palabra por palabra + commits: `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` | `CHANGELOG-TEVSYS.md` §27 y entrada 19 abr 2026.
 
 ---
 

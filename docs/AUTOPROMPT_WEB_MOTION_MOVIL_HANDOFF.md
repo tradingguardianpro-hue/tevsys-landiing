@@ -10,10 +10,11 @@ Eres IA en el repo **tevsys-landiing** (web tevsys.io, tema oscuro). Objetivo in
 
 **Hecho reciente (no repetir debate largo):**
 - Burbujas detrás del bloque de cards (`.tevsys-home-mid-glow`): **gris instrumento**; **92s** + **118s** `linear`; mayor parte del tiempo en **márgenes** (fuera de cards), luego centro. **Móvil:** mismas duraciones. Ver **CHANGELOG-TEVSYS.md** § Motion «iteración 15–16 abr 2026».
+- **19 abr 2026:** escáner del header — intensidad **restaurada**; duraciones **29,5s** (base) / **28s** (≥769px) / **23,5s** (≤768px). Entrada **«Web — coherencia tipográfica…»** en CHANGELOG + `MOTION_HOME_TEVSYS_HANDOFF_IA.md` § D.
 - Documentación motion: `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` + `docs/CHANGELOG-TEVSYS.md` + `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` § Motion mid-glow móvil.
 
 **Intención producto (ajustes finos futuros — no tocar sin OK):**
-- **Móvil:** header ya se percibe; evitar **más** estrés cerca del titular de valor y las cards (prioridad **calma**).
+- **Móvil:** pendiente de sesión dedicada si el escáner sigue sintiéndose a **trompicones** o el hero sigue flojo; evitar **más** estrés cerca del titular de valor y las cards salvo diagnóstico (prioridad **calma**).
 - **Hero / franjas en pantalla estrecha:** si algo “se lee raro”, valorar **overrides solo `@media (max-width: 768px)`** o apagar capas decorativas selectivas, sin romper desktop.
 - Respetar **`prefers-reduced-motion: reduce`**: ya apaga varias animaciones; no regresar eso.
 
