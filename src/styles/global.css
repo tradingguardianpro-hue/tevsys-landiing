@@ -115,8 +115,11 @@ html[data-theme='dark'] .tevsys-home-hero-stack {
 	isolation: isolate;
 	overflow: hidden;
 	border-radius: clamp(0.75rem, 1.5vw, 1.5rem);
-	/* Mismo negro que la página: menos salto de luminosidad en el borde */
-	background-color: var(--theme-bg);
+	/*
+	  Negro puro (prueba alineación con zona imagen cards); cuerpo sigue en --theme-bg (~2 % L).
+	  Capas KITT / motion: sin cambios.
+	*/
+	background-color: #000;
 	/* Funde el recorte con el exterior (difumina el canto respecto al negro de la página) */
 	box-shadow: 0 48px 100px -28px rgba(0, 0, 0, 0.5);
 }
