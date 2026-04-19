@@ -65,7 +65,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Cards (4)
 - **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
-- **Diseño abr 2026 (confirmado en código):** Inter en la sección; bloque de texto con gris oscuro (~9% luminosidad); zona ilustración con fondo `var(--theme-bg)`; tipografía cuerpo reforzada (peso/color); card 1 puede servirse solo en PNG mientras se regenera WebP. **19 abr 2026:** card 1 (Precisión) — **engranajes + esfera**; **`card-1-input.png?v=8`**; card 2 (HyperClose) — **candado cerrado**; **`card-2-hyperclose.png?v=9`**; **acentos de lectura** `.feature-card__value-accent` (71 operativas; no poder seguir; mín. 75 % protegido). Detalle: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
+- **Diseño abr 2026 (confirmado en código):** Inter en la sección; bloque de texto con gris oscuro (~9% luminosidad); zona ilustración con fondo `var(--theme-bg)`; tipografía cuerpo reforzada (peso/color); card 1 puede servirse solo en PNG mientras se regenera WebP. **19 abr 2026:** card 1 (Precisión) — **engranajes + esfera**; **`card-1-input.png?v=8`**; card 2 (HyperClose) — **candado cerrado**; **`card-2-hyperclose.png?v=9`**; **acentos de lectura** `.feature-card__value-accent` (Precisión: **Ajuste a tiempo real**; HyperClose: no poder seguir; SML: mín. 75 % protegido). Detalle: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
 - **CTAs demo (19 abr 2026):** mismas reglas globales para botones demo en hero, features, precios y planes (Inter, padding, hover) — `global.css`; ver `CHANGELOG-TEVSYS.md`.
 - **Tema oscuro — tipografía global (19 abr 2026):** en `[data-theme='dark']`, cuerpo y títulos de micropáginas usan **Inter** vía `theme.css` (antes Lato + Roboto Serif en variables de tema).
 - **Micropáginas — respiro (19 abr 2026):** espaciado bajo `.feature-hero` unificado en `global.css` (mismo criterio en todas las guías).
@@ -73,7 +73,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto: `Ajuste en tiempo real: volatilidad • spread • slippage • comisiones` + `71 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
+- Texto: `Volatilidad • spread • slippage • comisiones` + ámbar **`Ajuste a tiempo real`** + `71 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`
