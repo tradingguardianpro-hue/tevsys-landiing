@@ -41,8 +41,8 @@ const seo = {
 			<ul>
 				<li><a class="evidence-link" href="#precision-demo">Demo cuenta 100k: cálculo visible en tiempo real y cierre donde configuras.</a></li>
 				<li><a class="evidence-link" href="#precision-volatilidad">Alta volatilidad: cierre también en positivo.</a></li>
-				<li><a class="evidence-link" href="#precision-cuenta-pequena">Cuenta más pequeña, mismo criterio de cierre.</a></li>
 				<li><a class="evidence-link" href="#precision-nasdaq">Otro activo, misma regla: Nasdaq (grabación en tema claro).</a></li>
+				<li><a class="evidence-link" href="#precision-cuenta-pequena">Cuenta más pequeña, mismo criterio de cierre.</a></li>
 				<li><a class="evidence-link" href="#precision-logs">Sin humo: todo queda registrado (logs auditables).</a></li>
 				<li><a class="evidence-link" href="#precision-stats">Lo que dicen los resultados (evidencia visual + resumen técnico).</a></li>
 			</ul>
@@ -76,18 +76,6 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="precision-cuenta-pequena" class="feature-demo">
-			<h2>Demo en cuenta más pequeña (1 min 13 s)</h2>
-			<p class="feature-demo-hook">Operativa documentada: menor nominal · lotaje relativo alto · mismo criterio: el cierre sigue al límite que ves en panel</p>
-			<div class="demo-video demo-video--compact" id="precision-cuenta-pequena-container">
-				<video id="precision-cuenta-pequena-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/precision-demo.mp4" type="video/mp4" />
-					Tu navegador no soporta reproducción de video HTML5.
-				</video>
-			</div>
-			<p class="demo-edit-note">Misma lógica que en la demo principal; aquí el capital es menor y el impacto por lote se nota más en pantalla.</p>
-		</section>
-
 		<section id="precision-nasdaq" class="feature-demo">
 			<h2>Demo — Nasdaq · multi‑activo (tema claro) (1 min 47 s)</h2>
 			<p class="feature-demo-hook">NAS100 · cuenta USD · límite +1,00 % · desviación de cierre +1,0121 % exacto · margen de umbral propio en ganancias aplicado de 0,01 %</p>
@@ -100,6 +88,18 @@ const seo = {
 			<p class="demo-edit-note">
 				Grabación con <strong>gráfico y panel en tema claro</strong> para que se vea que tevsys convive con el estilo visual que elijas en MT5. El marco del reproductor usa fondo claro a propósito, para que no choque con el tema oscuro de la web.
 			</p>
+		</section>
+
+		<section id="precision-cuenta-pequena" class="feature-demo">
+			<h2>Demo en cuenta más pequeña (1 min 13 s)</h2>
+			<p class="feature-demo-hook">Operativa documentada: menor nominal · lotaje relativo alto · mismo criterio: el cierre sigue al límite que ves en panel</p>
+			<div class="demo-video demo-video--compact" id="precision-cuenta-pequena-container">
+				<video id="precision-cuenta-pequena-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-demo.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
+			<p class="demo-edit-note">Misma lógica que en la demo principal; aquí el capital es menor y el impacto por lote se nota más en pantalla.</p>
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail">
@@ -205,7 +205,7 @@ const seo = {
 		}
 	}
 	function initDemoExpand() {
-		[['precision-demo-video', 'precision-demo-container'], ['precision-volatilidad-video', 'precision-volatilidad-container'], ['precision-cuenta-pequena-video', 'precision-cuenta-pequena-container'], ['precision-nasdaq-video', 'precision-nasdaq-container'], ['precision-logs-video', 'precision-logs-container']].forEach(([vid, ctn]) => {
+		[['precision-demo-video', 'precision-demo-container'], ['precision-volatilidad-video', 'precision-volatilidad-container'], ['precision-nasdaq-video', 'precision-nasdaq-container'], ['precision-cuenta-pequena-video', 'precision-cuenta-pequena-container'], ['precision-logs-video', 'precision-logs-container']].forEach(([vid, ctn]) => {
 			const video = document.getElementById(vid);
 			const container = document.getElementById(ctn);
 			if (!video || !container) return;
