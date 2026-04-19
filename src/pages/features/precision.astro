@@ -25,7 +25,10 @@ const seo = {
 
 		<section id="precision-demo" class="feature-demo feature-demo--hero">
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span><span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span></p>
-			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
+			<div class="feature-demo__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
+			</div>
 			<p class="feature-demo-hook">100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%</p>
 			<div class="demo-video demo-video--hero" id="precision-demo-container">
 				<video id="precision-demo-video" controls preload="metadata" playsinline>
@@ -61,7 +64,10 @@ const seo = {
 		</section>
 
 		<section id="precision-volatilidad" class="feature-demo">
-			<h2>Demo en alta volatilidad — Cierre en ganancias (1 min 4 s)</h2>
+			<div class="feature-demo__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2>Demo en alta volatilidad — Cierre en ganancias (1 min 4 s)</h2>
+			</div>
 			<p class="feature-demo-hook">
 				Operativa documentada: límite ±1,50% · cierre en +1,83% · contexto de alta volatilidad geopolítica
 			</p>
@@ -77,7 +83,10 @@ const seo = {
 		</section>
 
 		<section id="precision-nasdaq" class="feature-demo">
-			<h2>Demo — Nasdaq · multi‑activo (tema claro) (1 min 47 s)</h2>
+			<div class="feature-demo__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2>Demo — Nasdaq · multi‑activo (tema claro) (1 min 47 s)</h2>
+			</div>
 			<p class="feature-demo-hook">NAS100 · cuenta USD · límite +1,00 % · desviación de cierre +1,0121 % exacto · margen de umbral propio en ganancias aplicado de 0,01 %</p>
 			<div class="demo-video demo-video--compact demo-video--light" id="precision-nasdaq-container">
 				<video id="precision-nasdaq-video" controls preload="metadata" playsinline>
@@ -91,7 +100,10 @@ const seo = {
 		</section>
 
 		<section id="precision-cuenta-pequena" class="feature-demo">
-			<h2>Demo en cuenta más pequeña (1 min 13 s)</h2>
+			<div class="feature-demo__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2>Demo en cuenta más pequeña (1 min 13 s)</h2>
+			</div>
 			<p class="feature-demo-hook">Operativa documentada: menor nominal · lotaje relativo alto · mismo criterio: el cierre sigue al límite que ves en panel</p>
 			<div class="demo-video demo-video--compact" id="precision-cuenta-pequena-container">
 				<video id="precision-cuenta-pequena-video" controls preload="metadata" playsinline>
@@ -107,7 +119,10 @@ const seo = {
 			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
 			<p>Cada evento relevante queda registrado para revisión técnica posterior, con fecha y contexto de ejecución.</p>
 			<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
-			<p class="feature-demo-hook">Guía visual — otro vídeo que te interesa</p>
+			<p class="feature-hook feature-hook--logs-video">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<span>Guía visual — otro vídeo que te interesa</span>
+			</p>
 			<div class="demo-video demo-video--compact" id="precision-logs-container">
 				<video id="precision-logs-video" controls preload="metadata">
 					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
@@ -334,6 +349,19 @@ const seo = {
 	.feature-cta h2 {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
+	}
+	.feature-demo__title {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+		margin: 0 0 0.65rem;
+	}
+	.feature-demo__title .feature-hook__dot {
+		margin-top: 0.42rem;
+		flex-shrink: 0;
+	}
+	.feature-demo__title h2 {
+		margin: 0;
 	}
 	.feature-demo-hook {
 		margin: 0 0 0.75rem;
