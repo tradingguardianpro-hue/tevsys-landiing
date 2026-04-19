@@ -120,17 +120,22 @@ const seo = {
 			<p class="demo-edit-note">Misma lógica que en la demo principal; aquí el capital es menor y el impacto por lote se nota más en pantalla.</p>
 		</section>
 
-		<section id="precision-logs" class="feature-proof-detail">
-			<h3>Sin humo: todo queda registrado</h3>
-			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
-			<p>Cada evento relevante queda registrado para revisión técnica posterior, con fecha y contexto de ejecución.</p>
-			<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
+		<section id="precision-logs" class="feature-demo">
+			<div class="feature-demo__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2>Sin humo: todo queda registrado</h2>
+			</div>
+			<p class="feature-demo-hook">Trazabilidad en logs MT5</p>
+			<div class="precision-logs__copy">
+				<p>Cada evento relevante queda registrado para revisión técnica posterior, con fecha y contexto de ejecución.</p>
+				<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
+			</div>
 			<p class="feature-hook feature-hook--logs-video">
 				<span class="feature-hook__dot" aria-hidden="true"></span>
 				<span>Guía visual — otro vídeo que te interesa</span>
 			</p>
 			<div class="demo-video demo-video--compact" id="precision-logs-container">
-				<video id="precision-logs-video" controls preload="metadata">
+				<video id="precision-logs-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
@@ -355,15 +360,28 @@ const seo = {
 	#precision-demo,
 	#precision-volatilidad,
 	#precision-cuenta-pequena,
-	#precision-nasdaq {
+	#precision-nasdaq,
+	#precision-logs {
 		scroll-margin-top: 5.5rem;
 		border-radius: var(--theme-shape-radius);
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 	}
+	#precision-logs .precision-logs__copy {
+		margin: 0 0 0.85rem;
+		max-width: 65ch;
+	}
+	#precision-logs .precision-logs__copy p {
+		margin: 0 0 0.5rem;
+		line-height: 1.5;
+	}
+	#precision-logs .precision-logs__copy p:last-child {
+		margin-bottom: 0;
+	}
 	#precision-demo:target,
 	#precision-volatilidad:target,
 	#precision-cuenta-pequena:target,
-	#precision-nasdaq:target {
+	#precision-nasdaq:target,
+	#precision-logs:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
