@@ -1,6 +1,6 @@
 # Home, hero, header y cards — iteración abril 2026 (confirmado)
 
-Documento de referencia para lo acordado y aplicado en código hasta **abr 2026**. **19 abr 2026:** coherencia tipográfica global (tema oscuro), hero (H1 DM Sans, stack `#000`), escáner con intensidad restaurada, cards `?v=7`, CTAs demo unificados, respiro `.feature-hero` en micropáginas. Estado: **cards** con assets y lectura reforzada; **siguiente fase:** decisión de equipo sobre mensajes finales + **revisión móvil** (hero / escáner) cuando se priorice.
+Documento de referencia para lo acordado y aplicado en código hasta **abr 2026**. **19 abr 2026:** coherencia tipográfica global (tema oscuro), hero (H1 DM Sans, stack `#000`), escáner con intensidad restaurada, CTAs demo unificados, respiro `.feature-hero` en micropáginas; **card 1 (Precisión)** — ilustración **engranajes + esfera** (motor / coherencia con icono EA fin de semana), **`card-1-input.png?v=8`**. Estado: **cards** con assets y lectura reforzada; **siguiente fase:** mensajes finales + ajustes menores si hace falta.
 
 **Repos / rutas:** proyecto `tevsys-landiing` (Astro). Imágenes públicas bajo `public/assets/...`.
 
@@ -45,9 +45,9 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 | **Grid** | 2 columnas desktop; 1 columna móvil; gap aumentado. **Abr 2026:** más aire antes del grid (`margin` bajo intro “Ellos deslizan…” + `margin-top` en `.feature-card__grid`). |
 | **Cards (`.tevsys-card`)** | `--feature-card-radius`; borde/sombra suaves + halo ámbar muy bajo en reposo; hover acentuado sin borde tan duro (abr 2026, integración SaaS). |
 | **Estructura** | Fondo de la card **transparente**; **gris solo** en `.tevsys-card__content` (texto). Evita franja gris entre imagen y texto por fondo heredado + rendija bajo `<img>` (img `display: block`, `picture` bloque, `line-height: 0`). |
-| **Zona imagen** | `background-color: var(--theme-bg)`. **`img`:** mismo `filter` que la mano del hero (`brightness(0.91) saturate(0.97) contrast(1.04)`); hover un poco más vivo; **contraste ≥1** para no parecer borroso. PNG/Canva sigue siendo la base. **19 abr 2026:** cuatro PNG nuevos en `public/.../card-*.png`; **cache-bust `?v=7`** en las cuatro rutas en `index.astro`. |
+| **Zona imagen** | `background-color: var(--theme-bg)`. **`img`:** mismo `filter` que la mano del hero (`brightness(0.91) saturate(0.97) contrast(1.04)`); hover un poco más vivo; **contraste ≥1** para no parecer borroso. PNG/Canva sigue siendo la base. **19 abr 2026:** renovación de assets; **card 1** — **`?v=8`** (`engranaje motor`). |
 | **Zona texto** | Fondo ~`hsl(0, 0%, 6%)` (más cerca del `--theme-bg` ~2% L); párrafos con tamaño, peso 500, color explícito; **hooks** `.feature-card__hook` con **opacity: 1** dentro de cards (la regla global con 0.9 apagaba el texto). **H3** con peso 700. **Lectura reforzada:** clase `.feature-card__value-accent` en cuerpo — **71 operativas**, **no poder seguir**, **mín. 75 % protegido** (misma línea que evidencia `0,0072 %`). |
-| **Card 1 (Precisión / cerdito)** | Primera versión: `<picture>` WebP + PNG; **ajuste:** solo **PNG** en `<img>` para ver exports nuevos sin depender de regenerar `.webp` (cuando haya `npm` + `sharp`, ejecutar `node scripts/optimize-images.js` y se puede volver a `<picture>`). |
+| **Card 1 (Precisión)** | Ilustración **engranajes + esfera ámbar** (motor / ajuste en tiempo real); alineada al **icono engranaje** del EA en configuración fin de semana (vs candado en operativa). Solo **PNG** en `<img>` (WebP opcional tras `optimize-images.js`). Sustituye diseño anterior con alcancía. |
 | **Planes (misma página)** | Fondo y borde/sombra alineados a las cards de valor (`hsl(0,0%,6%)`, halo suave). CTA primario alineado al estilo global de demo (ver **CTAs** abajo). |
 | **CTAs “Descargar demo” / planes** | Reglas compartidas en `global.css` para `a.hero-download-btn`, `a.feature-cta__button`, `a.precios-cta__button`, `a.plan-card__cta:not(.secondary)` — misma tipografía (**Inter 1rem**), padding, radio, color y hover; duplicados locales retirados donde aplica. |
 | **Móvil** | Imagen de card con `aspect-ratio` y `max-height` acotados. |
@@ -63,7 +63,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 
 - **Cintas / formas iridiscentes:** en Canva, seleccionar esas capas y **bajar brillo** y **saturación** (o “Tono” / “Transparencia” si el efecto sigue fuerte). Objetivo: que el color no compita con el ámbar de la web; reexportar **mismo tamaño** que el PNG actual. Sustituir en `public/assets/images/home/cards/` y subir `?v=` en `index.astro` si hace falta forzar caché.
 - Fondos probados en diseño: de gris apreciable (**#161618**) a casi negro página (**#060606**, **#050505** / alinear a `--theme-bg`).
-- **Confirmado en código:** contenedor imagen = `var(--theme-bg)`; reexportes sucesivos del usuario a **`public/assets/images/home/cards/card-*.png`** (abr 2026). **Cache-bust** en la home: **`?v=7`** (19 abr 2026) para las cuatro cards.
+- **Confirmado en código:** contenedor imagen = `var(--theme-bg)`; reexportes del usuario a **`public/assets/images/home/cards/card-*.png`**. **Cache-bust card 1:** **`?v=8`** (19 abr 2026, engranaje motor); demás cards según `index.astro`.
 - **WebP** (`card-1-input.webp`): debe **regenerarse** localmente con `scripts/optimize-images.js` cuando el entorno tenga dependencias instaladas; hasta entonces la home puede usar solo PNG en esa card.
 
 ---

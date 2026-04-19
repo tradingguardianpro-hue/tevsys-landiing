@@ -7,7 +7,7 @@ Este documento reemplaza el enfoque inicial de placeholders y recoge el estado a
 - **Documentación única:** `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` (hero, header, cards, motion escáner, tema oscuro, CTAs, micropáginas).
 - **Changelog:** `CHANGELOG-TEVSYS.md` (entrada “Home, hero, header y cards — abr 2026” + **“Web — coherencia tipográfica…” — 19 abr 2026**).
 - **Hecho:** refinamiento visual y copy en home (cards + planes en misma página).
-- **19 abr 2026 (cerrado en código + docs):** stack hero **`#000`**; **DM Sans** solo en H1 home; imágenes cards nuevas + **`?v=7`**; **Inter** en tema oscuro global (`theme.css`); CTAs demo unificados (`global.css`); contacto con **Inter** explícita; escáner header con **intensidad restaurada** (duraciones 29,5s / 28s / 23,5s); **`.feature-hero`** con respiro global; **Precisión:** orden demos volatilidad → Nasdaq → cuenta pequeña → logs.
+- **19 abr 2026 (cerrado en código + docs):** stack hero **`#000`**; **DM Sans** solo en H1 home; imágenes cards renovadas (**card 1** `card-1-input.png` engranaje motor + **`?v=8`**); **Inter** en tema oscuro global (`theme.css`); CTAs demo unificados (`global.css`); contacto con **Inter** explícita; escáner header con **intensidad restaurada** (duraciones 29,5s / 28s / 23,5s); **`.feature-hero`** con respiro global; **Precisión:** orden demos volatilidad → Nasdaq → cuenta pequeña → logs.
 - **Siguiente (equipo):** decidir **qué cards** y mensajes definitivos en home; seguir **micropáginas** alineadas; **revisión móvil** (hero feo / escáner) cuando se priorice.
 
 ---
