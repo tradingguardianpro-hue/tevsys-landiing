@@ -26,7 +26,7 @@ const VIDEO_LINK_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/view?u
 		<section class="feature-demo">
 			<h2>Vídeo — Configuración básica</h2>
 			<p class="feature-demo-hook">2:36 min. Essential, inputs, engranaje y reinicio.</p>
-			<div class="demo-video demo-video--compact">
+			<div class="demo-video demo-video--compact demo-video--embed-chrome">
 				<iframe
 					src={VIDEO_EMBED_URL}
 					width="560"
@@ -99,6 +99,12 @@ const VIDEO_LINK_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/view?u
 		background: #06080d;
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
+	}
+	/* Embed (Drive/YouTube): gris cromado propio; los vídeos MT5 siguen en #06080d en otras páginas */
+	.demo-video--embed-chrome {
+		background: var(--theme-embed-chrome);
+		border: 1px solid var(--theme-embed-chrome-border);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 	}
 	.demo-video--compact {
 		max-width: 560px;

@@ -17,6 +17,9 @@
 	--theme-surface-border: rgba(0, 0, 0, 0.09);
 	--theme-surface-elevated-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 
+	--theme-embed-chrome: hsl(220, 12%, 90%);
+	--theme-embed-chrome-border: rgba(0, 0, 0, 0.1);
+
 	/* Theme Shapes */
 	/* Set this to 0 if you want all of the rounded cards, images, etc to be straight edges */
 	--theme-shape-radius: clamp(1rem, 2rem, 3rem);
@@ -60,6 +63,9 @@
 	--theme-surface-border: rgba(0, 0, 0, 0.09);
 	--theme-surface-elevated-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 
+	--theme-embed-chrome: hsl(220, 12%, 90%);
+	--theme-embed-chrome-border: rgba(0, 0, 0, 0.1);
+
 	/* Theme Shape */
 	/* Set this to 0 if you want all of the rounded cards, images, etc to be straight edges */
 	--theme-shape-radius: clamp(1rem, 2rem, 3rem);
@@ -97,6 +103,10 @@
 	--theme-surface-elevated-shadow:
 		0 0 0 1px rgba(0, 0, 0, 0.42),
 		inset 0 1px 0 rgba(255, 255, 255, 0.048);
+
+	/* Marco de iframes (Drive/YouTube): gris elegante, distinto de tarjetas (--theme-surface-1) y de #06080d de vídeos MT5 */
+	--theme-embed-chrome: hsl(220, 8%, 18%);
+	--theme-embed-chrome-border: rgba(255, 255, 255, 0.1);
 
 	--theme-surface-2: #203422;
 	--theme-on-surface-2: #ffffff;
