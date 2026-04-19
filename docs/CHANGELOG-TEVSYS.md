@@ -31,6 +31,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — card 3 (SML): arte reposicionado (19 abr 2026)
+
+**Motivo:** Mejora de composición (gráfico + flecha). **Asset:** `public/assets/images/home/cards/card-3-sml.png` — `Downloads/card-3-sml.png`. **Web:** `index.astro` — **`?v=10`**.
+
+---
+
 ## Web — coherencia tipográfica, hero, cards, CTAs y micropáginas (19 abr 2026)
 
 **Objetivo:** Una sola lectura de producto (Inter + DM Sans solo en H1 home), negro unificado, CTAs demo idénticos, micropáginas alineadas y documentación al día con decisiones recientes.
