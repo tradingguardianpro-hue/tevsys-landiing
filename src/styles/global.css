@@ -1705,3 +1705,16 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 	background: #f7c050;
 	filter: none;
 }
+
+/*
+  Micro-páginas y guías (section.feature-hero): mismo respiro bajo el título y antes del siguiente bloque.
+*/
+.feature-hero h1 {
+	margin: 0 0 clamp(1.2rem, 3.2vw, 2rem);
+}
+.feature-hero {
+	padding-bottom: clamp(0.75rem, 2.5vw, 1.5rem);
+}
+.feature-hero + section {
+	margin-top: clamp(1rem, 3vw, 2rem);
+}
