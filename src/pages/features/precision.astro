@@ -36,7 +36,7 @@ const seo = {
 				<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
 			</div>
 			<p class="feature-demo-hook">100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%</p>
-			<div class="demo-video demo-video--hero" id="precision-demo-container">
+			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="precision-demo-container">
 				<video id="precision-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/evidencia-100k-perdida.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
@@ -317,7 +317,7 @@ const seo = {
 	}
 	.precision-multichart__lead {
 		margin: 0 0 0.5rem;
-		align-items: flex-start;
+		align-items: center;
 	}
 	.precision-multichart__sub {
 		margin: 0;
@@ -353,9 +353,22 @@ const seo = {
 		transition: max-width 0.35s ease, box-shadow 0.25s ease;
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.35), 0 12px 40px rgba(0, 0, 0, 0.35);
 	}
+	/* Primer vídeo (hero): marco gris elegante, sin protagonismo ámbar */
+	.demo-video--hero-elegant {
+		background: var(--theme-embed-chrome);
+		border-color: var(--theme-embed-chrome-border);
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.05),
+			0 12px 36px rgba(0, 0, 0, 0.34);
+	}
 	.demo-video--hero.demo-video--playing {
 		max-width: none;
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
+	}
+	.demo-video--hero-elegant.demo-video--playing {
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.08),
+			0 16px 46px rgba(0, 0, 0, 0.4);
 	}
 	#precision-demo,
 	#precision-volatilidad,
