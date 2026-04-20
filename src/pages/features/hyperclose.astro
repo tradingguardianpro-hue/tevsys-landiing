@@ -580,9 +580,31 @@ const seo = {
 	#hyperclose-off-demo:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
-		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		box-shadow:
+			0 0 0 1px rgba(245, 176, 65, 0.42),
+			0 0 26px rgba(245, 176, 65, 0.2);
 		padding: 0.5rem;
 		border-radius: var(--theme-shape-radius);
+		animation: hyperclose-target-flash 1.35s ease-out 1;
+	}
+	#hyperclose-semaphore:has(#hyperclose-semaphore-container:target),
+	#hyperclose-off:has(#hyperclose-off-demo:target) {
+		border-color: rgba(245, 176, 65, 0.45);
+		box-shadow:
+			var(--theme-surface-elevated-shadow),
+			0 0 0 1px rgba(245, 176, 65, 0.22);
+	}
+	@keyframes hyperclose-target-flash {
+		0% {
+			box-shadow:
+				0 0 0 1px rgba(245, 176, 65, 0.58),
+				0 0 34px rgba(245, 176, 65, 0.3);
+		}
+		100% {
+			box-shadow:
+				0 0 0 1px rgba(245, 176, 65, 0.42),
+				0 0 26px rgba(245, 176, 65, 0.2);
+		}
 	}
 	.feature-demo h2,
 	.feature-proof h2,
