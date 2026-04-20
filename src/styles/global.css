@@ -97,10 +97,11 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 	/* Barrido “fall” del hero: distinto del ciclo global para no ir a la par */
 	--tevsys-home-fall-cycle: 311s;
 	/*
-	  Bienvenida: “vivo al pintar” (haz ya en sitio, como header) + barrido suave más corto;
-	  respiro largo antes del ciclo 311s para no cruzarse con la fase 2.
+	  Bienvenida: “vivo al pintar” (haz ya en sitio, como header) + barrido suave;
+	  duración algo mayor + ease-in-out en posición (menos “latigazo” inicial hacia abajo).
+	  Respiro antes del ciclo 311s para no cruzarse con la fase 2.
 	*/
-	--tevsys-home-fall-welcome-dur: 12s;
+	--tevsys-home-fall-welcome-dur: 18s;
 	--tevsys-home-fall-welcome-breath: 2.1s;
 	--tevsys-home-fall-phase2-delay: calc(var(--tevsys-home-fall-welcome-dur) + var(--tevsys-home-fall-welcome-breath));
 }
@@ -218,8 +219,8 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
 		background: none;
 		animation:
-			tevsys-home-fall-welcome-fade var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite;
+			tevsys-home-fall-welcome-fade var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before,
@@ -246,11 +247,11 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			transparent 100%
 		);
 		animation:
-			/* ease-out: el ojo ve bajada desde el primer segundo (evita “arranque dormido” de ease-in-out) */
-			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 12s) ease-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite,
-			tevsys-home-fall-welcome-gray var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
-			tevsys-hero-kitt-tone-gray 29.3s linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite;
+			/* ease-in-out: bajada menos agresiva al cargar (ease-out aceleraba demasiado el inicio) */
+			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite,
+			tevsys-home-fall-welcome-gray var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
+			tevsys-hero-kitt-tone-gray 29.3s linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
@@ -265,10 +266,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 12s) ease-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite,
-			tevsys-home-fall-welcome-amber var(--tevsys-home-fall-welcome-dur, 12s) ease-in-out 0s 1 both,
-			tevsys-hero-kitt-tone-amber 29.3s linear var(--tevsys-home-fall-phase2-delay, 14.1s) infinite;
+			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 311s) linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite,
+			tevsys-home-fall-welcome-amber var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
+			tevsys-hero-kitt-tone-amber 29.3s linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite;
 	}
 }
 

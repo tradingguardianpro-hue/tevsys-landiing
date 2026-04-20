@@ -4,6 +4,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Motion home — barrido inicial KITT “fall” más calmado (21 abr 2026)
+
+**Problema:** al cargar `/` en tema oscuro, el primer barrido vertical del haz en `.tevsys-home-kitt-rect--fall` se percibía **demasiado rápido** (mucho recorrido en poco tiempo al inicio).
+
+**Causa técnica:** `tevsys-home-fall-welcome-pos` animaba `background-position` Y de **248% → -206%** en **12s** con **`ease-out`**, que concentra velocidad al **comienzo** del intervalo.
+
+**Cambio (`src/styles/global.css`):**
+
+- `--tevsys-home-fall-welcome-dur`: **12s → 18s** (misma distancia, más tiempo).
+- `tevsys-home-fall-welcome-pos` en `::before` / `::after`: **`ease-out` → `ease-in-out`** (arranque menos agresivo).
+- Fallbacks de `var(--tevsys-home-fall-phase2-delay, …)` actualizados a **20.1s** (18 + 2.1 respiro) donde aplica; el delay real sigue siendo `calc(welcome-dur + breath)` en `body:has(.tevsys-home-band--cards)`.
+
+**Doc:** `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` (tabla / nota fall bienvenida).
+
+---
+
 ## Micropágina Precisión + Hero Home — ajuste visual fino (20 abr 2026)
 
 **Contexto:** Iteración guiada por feedback en vivo (capturas). Objetivo: reforzar elegancia y coherencia visual sin oscurecer en exceso ni perder jerarquía.
