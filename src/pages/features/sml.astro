@@ -20,16 +20,16 @@ const seo = {
 			<p class="feature-extreme-note">También puedes combinarlo con días OFF cuando necesites proteger sesiones de alta presión.</p>
 			<p class="feature-availability-note">No está en Essential. Validación y lista de espera para Advanced/Pro.</p>
 		</section>
+		<p class="feature-hook feature-sml-bridge">
+			<span class="feature-hook__dot" aria-hidden="true"></span>
+			<span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span>
+		</p>
 
 		<section class="feature-sml-panel" aria-labelledby="sml-panel-heading">
 			<div class="feature-sml-panel__title">
 				<span class="feature-hook__dot" aria-hidden="true"></span>
 				<h2 id="sml-panel-heading">Así se ve hoy en el panel</h2>
 			</div>
-			<p class="feature-hook feature-sml-panel__hook">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span>
-			</p>
 			<p class="feature-sml-panel__lead">
 				Cuando la ganancia neta de <strong>ayer</strong> supera el umbral mínimo del sistema, el EA puede ofrecerte un <strong>bonus</strong>: una parte de esa ganancia pasa a ampliar tu <strong>margen de pérdida permitido</strong> en el día (sin tocar tu operativa en otros gráficos). Tú decides si lo aplicas.
 			</p>
@@ -101,8 +101,9 @@ const seo = {
 		line-height: 1.55;
 		margin: 0 0 0.75rem;
 	}
-	.feature-sml-panel__hook {
-		margin: 0 0 0.85rem;
+	.feature-sml-bridge {
+		margin: calc(var(--section-margin) * -0.45) auto calc(var(--section-margin) * 0.7);
+		max-width: 68ch;
 	}
 	.feature-sml-panel__detail {
 		opacity: 0.92;
