@@ -18,6 +18,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Doc:** `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` (tabla / nota fall bienvenida).
 
+### Motion home — móvil: escáner header + franja ámbar menos “a trozos” (21 abr 2026)
+
+**Problema:** en `max-width: 768px`, el escáner del header y el barrido ámbar/gris de la franja inferior (planes) se percibían **poco fluidos** (“trompicones”).
+
+**Cambios (`src/styles/global.css`, solo móvil + `prefers-reduced-motion: no-preference`):**
+
+- **Header:** `tevsys-header-scanner-sweep-mobile` pasa de 3 a **8 paradas** en X; animación **56s** **`linear`** (antes 40s ease-in-out en un solo vaivén). `will-change: background-position` en el escáner.
+- **Franja inferior (`::before` / `::after`):** nuevo `tevsys-home-lower-strip-kitt-pos-mobile` (barrido vertical en pasos, sin salto -40%→102% en un tramo); **36s** `linear` `alternate` + mezclas gris/ámbar **18s** `linear` con **keyframes más graduales** en opacidad.
+- **Hero KITT rise:** niebla y franjas **26s** (antes 18,7s) para bajar velocidad perceptual del barrido en pantalla pequeña.
+
+**Doc:** `MOTION_HOME_TEVSYS_HANDOFF_IA.md` § móvil; `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` (fila `global.css`).
+
 ---
 
 ## Micropágina Precisión + Hero Home — ajuste visual fino (20 abr 2026)
