@@ -23,7 +23,13 @@ const seo = {
 		</section>
 
 		<section id="hyperclose-demo" class="feature-demo feature-demo--hero">
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span><span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span></p>
+			<div class="hyperclose-multichart">
+				<p class="feature-hook hyperclose-multichart__lead">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					<span>Un gráfico para tevsys. Toda tu cuenta, protegida.</span>
+				</p>
+				<p class="hyperclose-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
+			</div>
 			<h2>Demo — precisión milimétrica + HyperClose (2:23)</h2>
 			<p class="feature-demo-hook">
 				15 lotes · GER40 · límite -1% · desviación 1,31 € · Apertura Wall Street · Tres semáforos
@@ -442,6 +448,26 @@ const seo = {
 	.feature-demo--hero {
 		position: relative;
 	}
+	.hyperclose-multichart {
+		margin: 0 0 clamp(1.35rem, 3.6vw, 2.1rem);
+		max-width: 52ch;
+	}
+	.hyperclose-multichart__lead {
+		margin: 0 0 0.5rem;
+		align-items: center;
+		gap: 0.35rem;
+	}
+	.hyperclose-multichart__lead .feature-hook__dot {
+		margin-top: 0;
+	}
+	.hyperclose-multichart__sub {
+		margin: 0;
+		padding-left: calc(0.45rem + 0.5rem);
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		line-height: 1.55;
+	}
 	.feature-demo--hero::before {
 		content: '';
 		position: absolute;
@@ -562,8 +588,10 @@ const seo = {
 	}
 	.demo-edit-note {
 		margin: 0.5rem 0 0;
-		font-size: 0.9rem;
-		opacity: 0.82;
+		font-size: 0.84rem;
+		opacity: 0.74;
+		line-height: 1.45;
+		max-width: 74ch;
 	}
 	.demo-placeholder {
 		background: var(--theme-surface-1);
