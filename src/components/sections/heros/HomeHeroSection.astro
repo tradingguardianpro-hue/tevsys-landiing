@@ -206,21 +206,21 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       siempre algo visible; con motion (abajo) respira y sube de intensidad.
     */
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.09),
-      0 0 22px -8px rgba(245, 176, 65, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 0 26px -10px rgba(245, 176, 65, 0.07),
       0 22px 56px -28px rgba(0, 0, 0, 0.5);
   }
   @keyframes tevsys-hero-hand-outer-frame {
     from {
       box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.09),
-        0 0 22px -8px rgba(245, 176, 65, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 0 26px -10px rgba(245, 176, 65, 0.07),
         0 22px 56px -28px rgba(0, 0, 0, 0.5);
     }
     to {
       box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.18),
-        0 0 38px -4px rgba(245, 176, 65, 0.22),
+        0 0 0 1px rgba(255, 255, 255, 0.14),
+        0 0 30px -6px rgba(245, 176, 65, 0.14),
         0 22px 56px -28px rgba(0, 0, 0, 0.5);
     }
   }
@@ -237,8 +237,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     border-radius: inherit;
     pointer-events: none;
     box-shadow:
-      inset 0 0 40px 22px rgba(0, 0, 0, 0.18),
-      inset 0 0 88px 40px rgba(0, 0, 0, 0.1);
+      inset 0 0 34px 18px rgba(0, 0, 0, 0.14),
+      inset 0 0 78px 34px rgba(0, 0, 0, 0.08);
   }
   .hero-image__picture {
     display: flex;
@@ -269,22 +269,22 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     object-position: center center;
     border-radius: var(--hero-image-radius);
     transition: filter 0.28s ease;
-    transform: scale(1.14);
+    transform: scale(1.08);
     transform-origin: center center;
     /* Contraste un poco más alto para que se lean los óvalos/rejillas del arte (misma foto, sin marcos extra) */
-    filter: brightness(1) saturate(1.05) contrast(1.16);
+    filter: brightness(0.99) saturate(1.02) contrast(1.1);
   }
   .hero-image__wrapper:hover .hero-image__img,
   .hero-image__wrapper:hover img {
-    transform: scale(1.17);
-    filter: brightness(1.03) saturate(1.06) contrast(1.18);
+    transform: scale(1.1);
+    filter: brightness(1.01) saturate(1.03) contrast(1.12);
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-image__img,
     .hero-image__wrapper img,
     .hero-section__image img {
       transition: none;
-      transform: scale(1.14);
+      transform: scale(1.08);
     }
     /* Mismo marco base que “from”; sin pulso (el perímetro sigue viéndose) */
     .hero-image__wrapper {
@@ -302,7 +302,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-section__image img {
       max-width: min(92vw, 340px);
       max-height: min(40vh, 330px);
-      transform: scale(1.09);
+      transform: scale(1.05);
     }
   }
   @media (max-width: 420px) {
