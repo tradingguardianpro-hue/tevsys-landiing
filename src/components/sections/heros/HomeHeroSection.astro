@@ -188,7 +188,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 36rem;
+    max-width: 41rem;
     position: relative;
     z-index: 1;
   }
@@ -260,20 +260,23 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-section__image img {
     display: block;
     width: auto;
-    max-width: min(100%, 340px);
+    max-width: min(100%, 390px);
     height: auto;
-    max-height: min(36vh, 320px);
+    max-height: min(42vh, 380px);
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
     object-position: center center;
     border-radius: var(--hero-image-radius);
     transition: filter 0.28s ease;
+    transform: scale(1.14);
+    transform-origin: center center;
     /* Contraste un poco más alto para que se lean los óvalos/rejillas del arte (misma foto, sin marcos extra) */
     filter: brightness(1) saturate(1.05) contrast(1.16);
   }
   .hero-image__wrapper:hover .hero-image__img,
   .hero-image__wrapper:hover img {
+    transform: scale(1.17);
     filter: brightness(1.03) saturate(1.06) contrast(1.18);
   }
   @media (prefers-reduced-motion: reduce) {
@@ -281,6 +284,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-image__wrapper img,
     .hero-section__image img {
       transition: none;
+      transform: scale(1.14);
     }
     /* Mismo marco base que “from”; sin pulso (el perímetro sigue viéndose) */
     .hero-image__wrapper {
@@ -296,8 +300,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
     .hero-image__wrapper img,
     .hero-section__image img {
-      max-width: min(88vw, 300px);
-      max-height: min(34vh, 280px);
+      max-width: min(92vw, 340px);
+      max-height: min(40vh, 330px);
+      transform: scale(1.09);
     }
   }
   @media (max-width: 420px) {

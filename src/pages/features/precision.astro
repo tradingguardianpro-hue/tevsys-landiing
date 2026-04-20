@@ -318,6 +318,10 @@ const seo = {
 	.precision-multichart__lead {
 		margin: 0 0 0.5rem;
 		align-items: center;
+		gap: 0.35rem;
+	}
+	.precision-multichart__lead .feature-hook__dot {
+		margin-top: 0;
 	}
 	.precision-multichart__sub {
 		margin: 0;
@@ -341,6 +345,10 @@ const seo = {
 		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
 		pointer-events: none;
 		z-index: 0;
+	}
+	/* Primer bloque de demo en precisión: neutralizamos el lavado ámbar del fondo */
+	#precision-demo.feature-demo--hero::before {
+		background: linear-gradient(140deg, rgba(155, 162, 175, 0.12), rgba(115, 122, 136, 0.04));
 	}
 	.feature-demo--hero > * {
 		position: relative;
@@ -443,6 +451,11 @@ const seo = {
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
 		margin-bottom: 0.75rem;
+	}
+	/* El primer embed debe verse gris elegante, sin borde ámbar */
+	.demo-video.demo-video--hero-elegant {
+		background: var(--theme-embed-chrome);
+		border-color: var(--theme-embed-chrome-border);
 	}
 	/* Vídeos con MT5 tema claro (gráfico + panel blancos): evita “mancha” oscura alrededor del plano en landing oscura */
 	.demo-video--light {
