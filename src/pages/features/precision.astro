@@ -398,6 +398,9 @@ const seo = {
 	#precision-logs .precision-logs__copy p:last-child {
 		margin-bottom: 0;
 	}
+	#precision-logs-container {
+		scroll-margin-top: 5.5rem;
+	}
 	#precision-demo:target,
 	#precision-volatilidad:target,
 	#precision-cuenta-pequena:target,
@@ -407,6 +410,13 @@ const seo = {
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 		padding: 1rem;
+		border-radius: var(--theme-shape-radius);
+	}
+	#precision-logs-container:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25), 0 0 22px rgba(245, 176, 65, 0.18);
+		padding: 0.5rem;
 		border-radius: var(--theme-shape-radius);
 	}
 	.feature-demo h2,
