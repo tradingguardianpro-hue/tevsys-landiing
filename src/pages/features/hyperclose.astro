@@ -28,7 +28,7 @@ const seo = {
 			<p class="feature-demo-hook">
 				15 lotes · GER40 · límite -1% · desviación 1,31 € · Apertura Wall Street · Tres semáforos
 			</p>
-			<div class="demo-video demo-video--hero" id="hyperclose-demo-container">
+			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="hyperclose-demo-container">
 				<video id="hyperclose-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
@@ -451,6 +451,10 @@ const seo = {
 		pointer-events: none;
 		z-index: 0;
 	}
+	/* Primer bloque de HyperClose: acabado neutro como en Precisión (sin lavado ámbar dominante) */
+	#hyperclose-demo.feature-demo--hero::before {
+		background: linear-gradient(140deg, rgba(155, 162, 175, 0.12), rgba(115, 122, 136, 0.04));
+	}
 	.feature-demo--hero > * {
 		position: relative;
 		z-index: 1;
@@ -467,9 +471,21 @@ const seo = {
 		transition: max-width 0.35s ease, box-shadow 0.25s ease;
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.35), 0 12px 40px rgba(0, 0, 0, 0.35);
 	}
+	.demo-video--hero-elegant {
+		background: var(--theme-embed-chrome);
+		border-color: var(--theme-embed-chrome-border);
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.05),
+			0 12px 36px rgba(0, 0, 0, 0.34);
+	}
 	.demo-video--hero.demo-video--playing {
 		max-width: none;
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
+	}
+	.demo-video--hero-elegant.demo-video--playing {
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.08),
+			0 16px 46px rgba(0, 0, 0, 0.4);
 	}
 	.hyperclose-demo-evidence {
 		margin-top: 0.85rem;
@@ -580,16 +596,54 @@ const seo = {
 	}
 	.feature-proof ul {
 		margin: 0;
-		padding-left: 1.1rem;
+		padding: 0;
+		list-style: none;
 	}
 	.feature-proof li {
 		margin-bottom: 0.45rem;
 		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.feature-proof li::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.82);
+		margin-right: 0.55rem;
+		vertical-align: middle;
+	}
+	.feature-proof li:hover {
+		border-left-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
+	}
+	.feature-proof li:last-child {
+		margin-bottom: 0;
+	}
+	.feature-proof {
+		position: relative;
+		overflow: hidden;
+	}
+	.feature-proof::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -10%;
+		width: 42%;
+		height: 100%;
+		pointer-events: none;
+		background: radial-gradient(ellipse at right center, rgba(245, 176, 65, 0.11) 0%, rgba(245, 176, 65, 0.045) 42%, transparent 74%);
 	}
 	.evidence-link {
 		color: #ffffff;
 		text-decoration: underline;
-		text-underline-offset: 2px;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2.5px;
 		transition: color 0.2s ease;
 		cursor: pointer;
 	}
