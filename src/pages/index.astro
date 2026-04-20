@@ -50,7 +50,7 @@ import settings from '../config/settings.js';
 							<h3><span class="card-title__accent">HyperClose</span></h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
-						<p class="feature-card__hook">La diferencia entre querer parar y<span class="feature-card__value-accent"> no poder seguir</span>.</p>
+						<p class="feature-card__hook">La diferencia entre querer parar y<span class="feature-card__value-accent feature-card__value-accent--spaced">no poder seguir</span>.</p>
 						<p>Intentas operar bloqueado, HyperClose cierra en milisegundos.</p>
 						<p>Cada intento queda registrado. También en días OFF.</p>
 					</div>
@@ -400,6 +400,9 @@ import settings from '../config/settings.js';
 	.feature-card__value-accent {
 		color: #f5b041;
 		font-weight: 700;
+	}
+	.feature-card__value-accent--spaced {
+		margin-left: 0.22ch;
 	}
 	/* Frase resaltada dentro del hook en cursiva: se lee más claro en redonda */
 	.tevsys-card .feature-card__hook .feature-card__value-accent {
