@@ -216,8 +216,8 @@ const seo = {
 			<h2>Qué puedes comprobar</h2>
 			<ul>
 				<li><a class="evidence-link" href="#hyperclose-demo">Cierre inmediato en milisegundos.</a></li>
-				<li><a class="evidence-link" href="#hyperclose-semaphore">Semáforo de responsabilidad (3 niveles).</a></li>
-				<li><a class="evidence-link" href="#hyperclose-off">Compatibilidad con día OFF.</a></li>
+				<li><a class="evidence-link" href="#hyperclose-semaphore-container">Semáforo de responsabilidad (3 niveles).</a></li>
+				<li><a class="evidence-link" href="#hyperclose-off-demo">Compatibilidad con día OFF.</a></li>
 			</ul>
 		</section>
 
@@ -490,6 +490,12 @@ const seo = {
 		border-radius: var(--theme-shape-radius);
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 	}
+	#hyperclose-semaphore-container,
+	#hyperclose-off-demo {
+		scroll-margin-top: 5.5rem;
+		border-radius: var(--theme-shape-radius);
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+	}
 	.demo-video--hero {
 		max-width: min(100%, 52rem);
 		margin-left: auto;
@@ -568,6 +574,14 @@ const seo = {
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 		padding: 1rem;
+		border-radius: var(--theme-shape-radius);
+	}
+	#hyperclose-semaphore-container:target,
+	#hyperclose-off-demo:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		padding: 0.5rem;
 		border-radius: var(--theme-shape-radius);
 	}
 	.feature-demo h2,
@@ -774,9 +788,6 @@ const seo = {
 	#hyperclose-semaphore .proof-capture-link,
 	#hyperclose-off .proof-capture-link {
 		font-weight: 600;
-	}
-	#hyperclose-off-demo {
-		scroll-margin-top: 5.5rem;
 	}
 	.proof-capture-link {
 		color: #f5b041;
