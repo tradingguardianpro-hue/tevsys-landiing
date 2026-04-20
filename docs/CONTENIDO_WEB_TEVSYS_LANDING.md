@@ -221,8 +221,9 @@ Documento de contenido/copy actual para revisión de equipo.
 - `Evidencia`:
   - Título: `Evidencia verificable: aquí no hay "creemos".`
   - Hook: `• Lo que no se puede demostrar, no cuenta.`
-  - Hook demo: `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
-  - Soporte: vídeo demo 1 min 41 s (con audio), informe MT5 (5 capturas), HTML transacciones descargable.
+  - Lead (micropágina): **«Doble trazabilidad»** en acento + frase MT5/tevsys ya acordada.
+  - Hook demo (20 abr 2026): `Caso real 100k: apertura Wall Street, 20 lotes, cierre automático con desviación documentada (0,0072%).`
+  - Soporte: vídeo demo 1 min 41 s (con audio), informe MT5 (5 capturas), HTML transacciones descargable; CTA “validar evidencia en tu operativa”.
 
 ### Estado actual Precisión (26 Mar 2026; orden demos 19 abr 2026)
 - **Demo rápida (100k):** `evidencia-100k-perdida.mp4` (1 min 41 s). **Hero** alineado con HyperClose/Evidencia: `.feature-demo--hero` + `.demo-video--hero` (~52rem, halo dorado). Secundarios: `.demo-video--compact` ~31rem + sombra embed.
@@ -241,22 +242,28 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Cierre inmediato y Semáforo:** enlazan a la demo. Acordeón modales 3 niveles.
 - **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) + 5 capturas. **Pendiente agenda:** sustituir captura 1 (día OFF sin protección previa) cuando haya material nuevo.
 
-### Estado actual Evidencia (26 Mar 2026)
+### Estado actual Evidencia (26 Mar 2026; copy narrativa 20 abr 2026)
 - **Demo rápida:** `evidencia-100k-perdida.mp4` (1 min 41 s, con audio). **Hero** como Precisión/HyperClose. Cuenta 100k nueva, 20 lotes GER40, cierre por límite -1% = -1.007,20€, error 0,0072%. Apertura Wall Street.
-- **Hook demo:** `100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%`
-- **"Qué puedes comprobar":** demo, **operativa 4.56 Essential (100 lotes, 95 € precisión)**, informe MT5, transacciones, logs, auditoría.
+- **Lead:** doble trazabilidad con acento en **«Doble trazabilidad»** (`feature-title__accent`).
+- **Hook demo:** `Caso real 100k: apertura Wall Street, 20 lotes, cierre automático con desviación documentada (0,0072%).`
+- **"Qué puedes comprobar":** mismos destinos; textos de enlace reorientados a **verificación** (informe MT5 independiente, caso extremo Essential con desviación documentada, export MT5, guía logs + puente a Precisión, auditoría dos capas). Ver `CHANGELOG-TEVSYS.md` **§15**.
 - **Operativa 4.56 — Caso extremo Essential:** Bloque nuevo. Subtítulo: "Nuestra versión Essential. Con el caso más extremo. Evidencia por capturas e informe oficial MT5." 100 lotes GER40, límite +4%, cierre +4.095,10 € (desviación 95 €). Acordeón "Ver capturas (7)": Resumen, P&L, Long & Short, Symbols, Riesgos, Historial, Panel.
 - **Imágenes 4.56:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png`.
 - **Sección "Informe oficial MT5":** acordeón con 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
 - **Sección "Historial de transacciones":** acordeón con captura editada (zonas clave en amarillo) + enlace HTML 100k + **párrafo** con enlace al HTML redactado **demo HyperClose** y vuelta a `/features/hyperclose#hyperclose-demo`.
 - **Sección "Auditoría":** **71** operativas documentadas (alineado a hook Precisión / resumen estadístico), incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
-- **Enlace logs:** Guía visual de logs en MT5 → `/features/precision#precision-logs-guide`
-- **Card home:** "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite."
+- **Guía logs + enlace a Precisión:** texto ancla bajo el vídeo → `/features/precision#precision-logs` (bloque “Sin humo / logs”; foco `:target` en sección + contenedor).
+- **Bloque vídeo logs:** hook operativo (localizar/leer registros MT5); vídeo con `playsinline`.
+- **CTA final:** título “¿Quieres validar la evidencia en tu operativa?” + cuerpo en línea con otras micros.
+- **Meta:** `description` SEO alineada a doble fuente MT5 + tevsys.
+- **Card home:** "100.000€ · 20 lotes · Error: 0,0072%" + susurro "El desafío está servido. Para ti o para quien te audite." *(La card home puede actualizarse en otra iteración si se desea alinear literalmente al hook de la micro.)*
 
-### Estado actual SML (abr 2026)
-- **Hero** + sección **panel en validación:** título `Así se ve hoy en el panel`, dos párrafos (concepto bonus ayer → margen hoy; DISPONIBLE vs 1‑CLICK), `<figure>` con `sml-panel-validacion-demo.png` + pie demo/validación.
-- **Multigráfico** (hook dos líneas) + checklist + nota validación ampliada + CTA lista de espera.
-- **Asset:** `public/images/evidence/sml-panel-validacion-demo.png` — captura demo fundador (carpeta **evidence**, no `assets/images/features`).
+### Estado actual SML (abr 2026; copy narrativa 20 abr 2026)
+- **Hero** + sección **panel en validación:** título `Así se ve hoy en el panel`, dos párrafos (bonus desde ayer → margen hoy; **cifra en DISPONIBLE antes de 1‑CLICK**; convivencia con límites). `<figure>` con `sml-panel-validacion-demo.png` + pie demo/validación.
+- **Intro / lead:** “No es más riesgo por defecto…” + lead con acento **«Opcional y bajo tu control»** (convivencia con límites diarios/semanales, bonus solo si activas).
+- **Multigráfico** (hook dos líneas entre hero y panel) + **«Qué podrás comprobar»** (rango 5–25% + 75% protegido; DISPONIBLE vs 1‑CLICK; convivencia medible con límites y OFF) + nota validación + CTA lista de espera Advanced/Pro.
+- **CTA:** cuerpo orientado a contrastar escenarios con límites reales. **Meta `description`:** bonus opcional + clic + validación tier.
+- **Asset:** `public/images/evidence/sml-panel-validacion-demo.png` — captura demo fundador (carpeta **evidence**, no `assets/images/features`). Ref. `CHANGELOG-TEVSYS.md` **§16**.
 
 ### Estado actual navegación y footer (31 Ene 2026)
 - **Nav:** Inicio | Empresas | Contacto. "Acceso" eliminado.

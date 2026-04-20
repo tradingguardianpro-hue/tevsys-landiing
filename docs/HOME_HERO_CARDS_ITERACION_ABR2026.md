@@ -142,4 +142,5 @@ Aplicar este patrón en `precision`, `evidencia`, `hyperclose`, `sml`, `instalac
 - **Precisión:** lead técnico-comercial compacto + lista “Qué puedes comprobar” orientada a validación.
 - **HyperClose:** lead, hook demo, checklist y CTA en tono de prueba operativa clara.
 - **Evidencia:** lead con acento en “Doble trazabilidad”, hook demo con desviación documentada, checklist y CTA en el mismo registro; hook del vídeo de logs sustituye texto genérico.
+- **SML:** intro + lead con acento “Opcional y bajo tu control”, panel con lectura verificable (DISPONIBLE vs 1‑CLICK), “Qué podrás comprobar” en tono de comprobación, CTA y meta alineados a validación Advanced/Pro (sin cambiar nota de fase).
 - **Principio aplicado:** el diseño queda estable; la mejora se concentra en copy con más precisión comercial y técnica.

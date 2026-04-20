@@ -67,6 +67,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Reubicación del hook “Un gráfico para tevsys…”:
   - **sale** de la zona “en medio de la nada”,
   - **entra** entre el cierre del hero (`No está en Essential...`) y el inicio del bloque de panel.
+- **Tono comercial (§16, misma fecha):** copy hero/panel/checklist/CTA/SEO alineada a verificación sin relajar el mensaje de validación — detalle en **§16**.
 
 ### 8) Home Hero — mano robótica (microajustes por capturas)
 
@@ -151,6 +152,19 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Bloque logs:** sustituido el placeholder *“Otro vídeo que te interesa”* por hook operativo (localizar/leer registros MT5); `playsinline` en el vídeo de logs.
 - **CTA final:** título y cuerpo alineados al patrón “validar en tu operativa” + pasos de comprobación.
 - **SEO `description`:** alineada al mensaje de doble fuente (MT5 + tevsys).
+- **Documentación correlativa (20 abr 2026):** en este repo — `CONTENIDO_WEB_TEVSYS_LANDING.md` (estado Evidencia), `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` (tabla docs), `HOME_HERO_CARDS_ITERACION_ABR2026.md` §7.6. En workspace **TGP** (correlato EA V11): `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (cabecera correlato web + nueva entrada CHANGELOG V11), `docs/RESUMEN_COMPARATIVO_SKELETON_V2_V3_V4.md` (nota contexto web).
+
+### 16) SML — iteración de tono comercial (20 abr 2026)
+
+- **Objetivo:** alinear `/features/sml` al mismo registro que el resto de micros: **control verificable**, bonus **opcional**, sin prometer producto cerrado (sigue la nota de validación).
+- **Intro + lead:** intro más explícita sobre “no es más riesgo por defecto”; lead con acento **«Opcional y bajo tu control»** + convivencia con límites y bonus desde ganancia de ayer.
+- **Panel (captura):** copy reforzado en **número comprobable antes de 1‑CLICK** y claridad multi‑gráfico.
+- **«Qué podrás comprobar»:** tres bullets en lenguaje de **configuración / decisión / convivencia medible** (75% protegido, DISPONIBLE vs 1‑CLICK, límites + OFF).
+- **Estado validación:** mismo compromiso “solo lo que el build demuestre”, redacción más directa.
+- **CTA:** cuerpo alineado a **contrastar escenarios con límites reales** (Advanced/Pro, lista de espera).
+- **SEO `description`:** bonus opcional + clic + validación Advanced/Pro.
+
+**Docs:** `CONTENIDO_WEB_TEVSYS_LANDING.md` (estado SML); `HOME_HERO_CARDS_ITERACION_ABR2026.md` §7.6; `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`; workspace TGP `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (entrada CHANGELOG V11 SML).
 
 **Archivos principales tocados en esta tanda:**
 - `src/pages/features/precision.astro`
@@ -158,7 +172,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - `src/components/sections/heros/HomeHeroSection.astro`
 - `src/pages/configuracion.astro`
 - `src/styles/theme.css`
-- (coherencia de bloques en features) `src/pages/features/evidencia.astro` (incl. §15 tono comercial), `src/pages/features/hyperclose.astro`, `src/pages/features/sml.astro`, `src/pages/instalacion.astro`, `src/pages/configuracion.astro`
+- (coherencia de bloques en features) `src/pages/features/evidencia.astro` (incl. §15 tono comercial), `src/pages/features/hyperclose.astro`, `src/pages/features/sml.astro` (incl. §16 tono comercial), `src/pages/instalacion.astro`, `src/pages/configuracion.astro`
 
 ---
 

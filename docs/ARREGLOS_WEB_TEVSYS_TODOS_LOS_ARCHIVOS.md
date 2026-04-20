@@ -9,8 +9,8 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | Archivo | Cambios aplicados |
 |---|---|
 | `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` | **Abr 2026:** documento maestro — hero, header, cards. **19 abr 2026:** H1 **DM Sans**, stack **`#000`**, escáner restaurado, cards **`?v=7`**, accents lectura, Inter tema oscuro global, CTAs unificados, `.feature-hero`, orden Precisión. |
-| `docs/CHANGELOG-TEVSYS.md` | **Abr 2026:** entrada iteración hero/cards. **19 abr 2026:** entrada **“Web — coherencia tipográfica…”** + corrección orden Nasdaq en entrada histórica Precisión. |
-| `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` | **Abr 2026:** hero/header/cards. **19 abr 2026:** motion escáner, DM Sans H1, stack `#000`, contacto Inter, CTAs, theme oscuro, respiro micropáginas, estado Precisión (orden demos). |
+| `docs/CHANGELOG-TEVSYS.md` | **Abr 2026:** entrada iteración hero/cards. **19 abr 2026:** entrada **“Web — coherencia tipográfica…”** + corrección orden Nasdaq en entrada histórica Precisión. **20 abr 2026:** patrón micros + tono comercial (§13–§16, incl. Evidencia y SML). |
+| `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` | **Abr 2026:** hero/header/cards. **19 abr 2026:** motion escáner, DM Sans H1, stack `#000`, contacto Inter, CTAs, theme oscuro, respiro micropáginas, estado Precisión (orden demos). **20 abr 2026:** estado Evidencia (copy, CTA, meta, enlace logs); estado SML (copy §16). |
 | `docs/CARDS-NEXT-PHASE.md` | **Abr 2026:** bloque estado + siguiente fase. **19 abr 2026:** mismo hito documentado. |
 | `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` | **19 abr 2026:** duraciones escáner header actualizadas (29,5s / 28s / 23,5s); nota “intensidad restaurada”. |
 | `src/components/BrandOval.astro` | Logo simplificado: solo texto `tevsys` en óvalo. **Abr 2026:** Inter en pastilla. |
