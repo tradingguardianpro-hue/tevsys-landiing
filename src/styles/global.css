@@ -1573,6 +1573,12 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		--tevsys-kitt-zone-h: clamp(82vh, 100vw, calc(100vh - var(--navbar-height, 56px)));
 	}
 
+	/* Marco mano hero: el stack no debe recortar el box-shadow ovalado a los lados */
+	html[data-theme='dark'] .tevsys-home-hero-stack {
+		overflow-x: visible;
+		overflow-y: hidden;
+	}
+
 	/* Scanner KITT apagado en móvil; niebla muy suave (casi solo negro) */
 	html[data-theme='dark'] body::before {
 		opacity: 0.5;

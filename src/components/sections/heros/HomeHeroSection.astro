@@ -290,16 +290,22 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   @media (max-width: 768px) {
     .hero-section__section {
       min-height: auto;
+      /* No recortar el anillo claro del marco ovalado a izquierda/derecha */
+      overflow-x: visible;
+      overflow-y: hidden;
     }
     .hero-section__inner {
       padding-bottom: 1.25rem;
+      padding-left: max(1rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1rem, env(safe-area-inset-right, 0px));
     }
     /* Marco ovalado: más aire para que el borde blanco envuelva la mano (el scale del img pinta fuera del box) */
     .hero-section__image {
       --hero-image-radius: clamp(1.35rem, 4.5vw, 1.95rem);
     }
+    /* Más aire lateral que vertical: arriba/abajo ya iban bien; lados recortaban el perímetro */
     .hero-image__wrapper {
-      padding: 1rem 1.35rem;
+      padding: 1.05rem clamp(2rem, 9vw, 2.85rem);
       border-radius: var(--hero-image-radius);
     }
     .hero-image__wrapper::after {
@@ -309,9 +315,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
     .hero-image__wrapper img,
     .hero-section__image img {
-      max-width: min(92vw, 340px);
+      max-width: min(86vw, 322px);
       max-height: min(40vh, 330px);
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
   }
   @media (max-width: 420px) {

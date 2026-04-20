@@ -30,6 +30,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Hero mano (móvil, `HomeHeroSection.astro`):** más **padding** en `.hero-image__wrapper`, **radio** alineado al img, **scale** img **1,06 → 1,04**, viñeta `::after` algo más suave — el borde blanco envuelve mejor la foto.
 
+**Ajuste lateral (móvil):** padding **horizontal mayor** en el marco ovalado (`clamp(2rem, 9vw, 2.85rem)`), img un poco más contenida (`86vw` / **scale 1,03**), `overflow-x: visible` en **`.hero-section__section`** y en **`.tevsys-home-hero-stack`** (`global.css`) para que **no se recorten** los bordes del anillo a izquierda y derecha.
+
 **Doc:** `MOTION_HOME_TEVSYS_HANDOFF_IA.md` § móvil; `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` (fila `global.css`).
 
 ---
