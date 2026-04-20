@@ -1655,9 +1655,18 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 			animation: tevsys-top-strip-niebla-only 26s ease-in-out infinite alternate;
 		}
 
-		html[data-theme='dark'] .tevsys-home-kitt-rect--rise::before,
+		/*
+		  Sin tevsys-hero-kitt-tone-* en móvil: esos keyframes alternan opacidad muy brusca (54→58%)
+		  y con PNG antialiased detrás se lee como parpadeo en la mano.
+		*/
+		html[data-theme='dark'] .tevsys-home-kitt-rect--rise::before {
+			animation: tevsys-top-strip-kitt-only 26s ease-in-out infinite alternate;
+			opacity: 0.4;
+		}
+
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise::after {
-			animation-duration: 26s, 31s;
+			animation: tevsys-top-strip-kitt-only 26s ease-in-out infinite alternate;
+			opacity: 0.34;
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {

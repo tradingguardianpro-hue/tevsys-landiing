@@ -307,6 +307,12 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-image__wrapper {
       padding: 1.05rem clamp(2rem, 9vw, 2.85rem);
       border-radius: var(--hero-image-radius);
+      /* Animar box-shadow en móvil fuerza repintados y parpadeo tipo “fluorescente” con la foto */
+      animation: none;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.11),
+        0 0 28px -8px rgba(245, 176, 65, 0.1),
+        0 22px 56px -28px rgba(0, 0, 0, 0.5);
     }
     .hero-image__wrapper::after {
       box-shadow:
@@ -317,7 +323,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-section__image img {
       max-width: min(86vw, 322px);
       max-height: min(40vh, 330px);
-      transform: scale(1.03);
+      transform: translate3d(0, 0, 0) scale(1.03);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
   }
   @media (max-width: 420px) {

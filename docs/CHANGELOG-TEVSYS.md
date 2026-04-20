@@ -32,6 +32,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Ajuste lateral (móvil):** padding **horizontal mayor** en el marco ovalado (`clamp(2rem, 9vw, 2.85rem)`), img un poco más contenida (`86vw` / **scale 1,03**), `overflow-x: visible` en **`.hero-section__section`** y en **`.tevsys-home-hero-stack`** (`global.css`) para que **no se recorten** los bordes del anillo a izquierda y derecha.
 
+**Parpadeo mano (móvil):** sin animación de **box-shadow** en `.hero-image__wrapper` (sombra fija); KITT **rise** sin **`tevsys-hero-kitt-tone-*`** (solo barrido `kitt-only` + opacidad fija); **`translate3d` + `backface-visibility: hidden`** en la imagen para capa estable.
+
 **Doc:** `MOTION_HOME_TEVSYS_HANDOFF_IA.md` § móvil; `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` (fila `global.css`).
 
 ---
