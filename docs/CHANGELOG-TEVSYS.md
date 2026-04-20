@@ -4,6 +4,49 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Micropágina Precisión + Hero Home — ajuste visual fino (20 abr 2026)
+
+**Contexto:** Iteración guiada por feedback en vivo (capturas). Objetivo: reforzar elegancia y coherencia visual sin oscurecer en exceso ni perder jerarquía.
+
+### 1) Precisión (`/features/precision`)
+
+- **Bloque de logs unificado** con el lenguaje de demos: `#precision-logs` pasó a `feature-demo` (sin caja gris tipo panel aislado).
+- **Primer vídeo (Demo rápida 100k):** marco y cromado movidos a **gris elegante** (neutral), evitando protagonismo ámbar en el embed.
+- **Lavado del bloque hero de Precisión:** neutralizado para que no tiña el primer vídeo en ámbar.
+- **Frase inicial “Un gráfico para tevsys…”:** ajuste de alineación del punto y separación para lectura estable.
+
+### 2) Home — card 1 (Precisión)
+
+- **Copy corregido a una sola línea** por criterio de negocio:
+  - `Ajuste a tiempo real · Volatilidad · spread · slippage · comisiones`
+- Línea de prueba separada:
+  - `71 operativas documentadas. Validado en 5 entornos de ejecución.`
+
+### 3) Hero Home — mano robótica (iteración por capturas)
+
+- Se descartó el enfoque de “hacer solo más grande el contenedor”.
+- Se aplicó y refinó el enfoque correcto: **dar más protagonismo a la foto real**.
+- Ajustes cerrados:
+  - eliminación del zoom variable (foto estable, sin efecto pegatina por hover),
+  - rebalanceo entre foto y rectángulo ovalado exterior,
+  - suavizado de contraste/viñeta/motion para integrar mejor con el halo.
+- Resultado buscado y validado en iteración: **foto con mayor presencia + marco exterior claramente envolvente**.
+
+### 4) Tokens y coherencia visual en oscuro
+
+- Tema oscuro actualizado hacia tonos carbón/azulados más elegantes.
+- Añadidos tokens de superficie/borde/sombra y de cromado para embeds (`--theme-embed-chrome`), aplicados donde corresponde.
+
+**Archivos principales tocados en esta tanda:**
+- `src/pages/features/precision.astro`
+- `src/pages/index.astro`
+- `src/components/sections/heros/HomeHeroSection.astro`
+- `src/pages/configuracion.astro`
+- `src/styles/theme.css`
+- (coherencia de bloques en features) `src/pages/features/evidencia.astro`, `src/pages/features/hyperclose.astro`, `src/pages/features/sml.astro`, `src/pages/instalacion.astro`, `src/pages/configuracion.astro`
+
+---
+
 ## Home — card 1 (Precisión): engranaje motor (19 abr 2026)
 
 **Motivo:** Sustituir la ilustración anterior (alcancía / “cerdito”) por **engranajes + esfera ámbar**, metáfora de **motor / ajuste en tiempo real**. Alineado con el producto: en el EA, icono de **engranaje** en modo configuración fin de semana; **candado teal** al pasar a operativa protegida.
