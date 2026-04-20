@@ -22,7 +22,10 @@ const seo = {
 		</section>
 
 		<section class="feature-sml-panel" aria-labelledby="sml-panel-heading">
-			<h2 id="sml-panel-heading">Así se ve hoy en el panel</h2>
+			<div class="feature-sml-panel__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2 id="sml-panel-heading">Así se ve hoy en el panel</h2>
+			</div>
 			<p class="feature-sml-panel__lead">
 				Cuando la ganancia neta de <strong>ayer</strong> supera el umbral mínimo del sistema, el EA puede ofrecerte un <strong>bonus</strong>: una parte de esa ganancia pasa a ampliar tu <strong>margen de pérdida permitido</strong> en el día (sin tocar tu operativa en otros gráficos). Tú decides si lo aplicas.
 			</p>
@@ -45,7 +48,7 @@ const seo = {
 			</figure>
 		</section>
 
-		<section class="feature-demo">
+		<section class="feature-demo feature-demo--sml-check">
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span><span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span></p>
 			<h2>Qué podrás comprobar</h2>
 			<ul class="sml-checklist">
@@ -76,6 +79,18 @@ const seo = {
 	.feature-sml-panel h2 {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
+	}
+	.feature-sml-panel__title {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0 0 0.65rem;
+	}
+	.feature-sml-panel__title h2 {
+		margin: 0;
+	}
+	.feature-sml-panel__title .feature-hook__dot {
+		margin-top: 0.08rem;
 	}
 	.feature-sml-panel__lead,
 	.feature-sml-panel__detail {
@@ -169,13 +184,50 @@ const seo = {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
 	}
+	.feature-demo--sml-check {
+		position: relative;
+		overflow: hidden;
+	}
+	.feature-demo--sml-check::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -10%;
+		width: 42%;
+		height: 100%;
+		pointer-events: none;
+		background: radial-gradient(ellipse at right center, rgba(245, 176, 65, 0.11) 0%, rgba(245, 176, 65, 0.045) 42%, transparent 74%);
+	}
 	.sml-checklist {
 		margin: 0;
-		padding-left: 1.1rem;
+		padding: 0;
+		list-style: none;
 	}
 	.sml-checklist li {
 		margin-bottom: 0.45rem;
 		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.sml-checklist li::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.82);
+		margin-right: 0.55rem;
+		vertical-align: middle;
+	}
+	.sml-checklist li:hover {
+		border-left-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
+	}
+	.sml-checklist li:last-child {
+		margin-bottom: 0;
 	}
 	.sml-status {
 		margin-top: 1rem;
