@@ -117,6 +117,31 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
   - `Control de riesgo y límites para trading real en tu cuenta MT5 — automatizado y registrado.`
 - **Estado final de fase visual:** baseline aprobado para seguir con optimización de tono comercial en micropáginas sin reabrir cambios estéticos grandes.
 
+### 13) Iteración de tono comercial (Precisión + HyperClose) — 20 abr 2026
+
+- **Objetivo:** elevar credibilidad comercial sin reabrir diseño (evolución narrativa, no cambio estético).
+- **Precisión (`/features/precision`):**
+  - lead principal actualizado a claim compacto y verificable:
+    - `Cierre real en MT5: límite configurado, resultado verificable, desviación documentada.`
+  - bloque “Qué puedes comprobar” reescrito en tono técnico-comercial (más orientado a validación, menos descriptivo).
+- **HyperClose (`/features/hyperclose`):**
+  - lead principal actualizado:
+    - `Cierre inmediato en MT5: intento de operar en bloqueo, ejecución automática y trazabilidad verificable.`
+  - subhook demo 2:23 reforzado:
+    - caso real + desviación documentada + protocolo 3 niveles.
+  - “Qué puedes comprobar” reescrito en lenguaje de prueba operativa.
+  - CTA final actualizado a lenguaje claro:
+    - `Te mostramos el protocolo completo en tu contexto y te enseñamos las pruebas para comprobarlo.`
+- **Home (hero):**
+  - línea de contexto consolidada para público mixto (novato/intermedio/avanzado):
+    - `Control de riesgo y límites para trading real en tu cuenta MT5 — automatizado y registrado.`
+
+### 14) Ajuste final de enlace de logs (Evidencia → Precisión) — 20 abr 2026
+
+- Se corrige destino para que la navegación sea inequívoca hacia el bloque **“Sin humo: todo queda registrado”**:
+  - enlace desde Evidencia apunta a `#precision-logs` (sección objetivo),
+  - en Precisión se refuerza el foco visual del bloque y del embed de logs al llegar por ancla.
+
 **Archivos principales tocados en esta tanda:**
 - `src/pages/features/precision.astro`
 - `src/pages/index.astro`

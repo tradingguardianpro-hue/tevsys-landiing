@@ -126,7 +126,7 @@ Aplicar este patrón en `precision`, `evidencia`, `hyperclose`, `sml`, `instalac
   - apertura de demo con respiración y embed neutro,
   - “Qué puedes comprobar” con halo + jerarquía escaneable,
   - copy alineado a doble trazabilidad tevsys/MT5,
-  - navegación cruzada a logs en Precisión apuntando a `#precision-logs-container`.
+  - navegación cruzada a logs en Precisión apuntando al bloque `#precision-logs` con foco reforzado de sección+embed.
 
 ### 7.5 Cierre baseline visual (20 abr 2026)
 
@@ -136,3 +136,9 @@ Aplicar este patrón en `precision`, `evidencia`, `hyperclose`, `sml`, `instalac
   - contexto hero con mención explícita a **trading real en MT5** + **automatizado y registrado**.
 - Cards home actualizadas con assets retocados (centrado de iconos) y copy HyperClose con separación robusta.
 - Decisión de equipo: **cerrar fase visual** y pasar a iteración de **tono comercial por micropágina** (sin reabrir diseño salvo incidencias críticas).
+
+### 7.6 Evolución narrativa (20 abr 2026)
+
+- **Precisión:** lead técnico-comercial compacto + lista “Qué puedes comprobar” orientada a validación.
+- **HyperClose:** lead, hook demo, checklist y CTA en tono de prueba operativa clara.
+- **Principio aplicado:** el diseño queda estable; la mejora se concentra en copy con más precisión comercial y técnica.
