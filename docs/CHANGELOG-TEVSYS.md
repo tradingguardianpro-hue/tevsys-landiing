@@ -77,6 +77,34 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
   - ajuste final de altura del marco exterior (borde blanco) para evitar solape.
 - Resultado final: mayor protagonismo de mano robótica sin romper la jerarquía visual del hero.
 
+### 9) Evidencia — alineación completa con patrón de micros (20 abr 2026)
+
+- Bloque inicial de demo ajustado al mismo estándar de `precision`/`hyperclose`:
+  - frase “Un gráfico para tevsys…” con respiración en dos líneas,
+  - embed principal con cromado gris elegante (neutral),
+  - neutralización del lavado ámbar dominante.
+- Sección “Qué puedes comprobar” actualizada al patrón visual común:
+  - filas escaneables (barra/punto),
+  - halo lateral ámbar suave,
+  - subrayado/hovers de enlace coherentes.
+- Decisión de UX mantenida: **sin autoplay** al navegar por anclas (lectura primero, play opcional).
+- Copy de credibilidad reforzado:
+  - hero de Evidencia cambia a: `Doble trazabilidad real: tevsys registra la lógica interna y MT5 certifica la ejecución oficial.`
+
+### 10) Enlaces cruzados Evidencia ↔ Precisión (logs)
+
+- Fix de navegación desde Evidencia:
+  - el enlace “Ver precisión de cierre y trazabilidad en detalle” ahora apunta al objetivo visual exacto `#precision-logs-container` (no al bloque general).
+- En Precisión se añadió:
+  - `scroll-margin-top` para `#precision-logs-container`,
+  - estado `:target` puntual con resaltado ámbar en el propio contenedor de vídeo.
+
+### 11) Home — card HyperClose (espaciado robusto de copy)
+
+- Frase: `La diferencia entre querer parar y no poder seguir.`
+- Tras varios intentos visuales, se fija solución robusta ante minificado/deploy:
+  - espacio no separable inyectado por CSS (`::before` con `\00a0`) en el acento de `no poder seguir`.
+
 **Archivos principales tocados en esta tanda:**
 - `src/pages/features/precision.astro`
 - `src/pages/index.astro`

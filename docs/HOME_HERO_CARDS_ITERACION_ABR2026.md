@@ -122,3 +122,8 @@ Aplicar este patrón en `precision`, `evidencia`, `hyperclose`, `sml`, `instalac
   - fase 2 (zona protocolaria gris mantenida pero refinada en legibilidad),
   - anclas con foco ámbar puntual reforzado, sin autoplay.
 - **`sml`**: patrón aplicado a la sección de comprobación (no clicable por ahora) y reordenación del hook de gráficos para contexto correcto.
+- **`evidencia`**: patrón aplicado completo:
+  - apertura de demo con respiración y embed neutro,
+  - “Qué puedes comprobar” con halo + jerarquía escaneable,
+  - copy alineado a doble trazabilidad tevsys/MT5,
+  - navegación cruzada a logs en Precisión apuntando a `#precision-logs-container`.
