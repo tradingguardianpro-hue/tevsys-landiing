@@ -142,13 +142,23 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
   - enlace desde Evidencia apunta a `#precision-logs` (sección objetivo),
   - en Precisión se refuerza el foco visual del bloque y del embed de logs al llegar por ancla.
 
+### 15) Evidencia — iteración de tono comercial (20 abr 2026)
+
+- **Objetivo:** mismo criterio que Precisión/HyperClose — copy orientada a **comprobación**, no a promesa.
+- **Lead:** acento de marca en `Doble trazabilidad` (lectura escaneable alineada con otras micros).
+- **Hook demo principal:** caso 100k + contexto + **desviación documentada** (0,0072%) en una sola frase verificable.
+- **“Qué puedes comprobar”:** bullets reescritos (demo, informe MT5 independiente, caso extremo Essential, export MT5, guía logs + puente a Precisión, auditoría en dos capas).
+- **Bloque logs:** sustituido el placeholder *“Otro vídeo que te interesa”* por hook operativo (localizar/leer registros MT5); `playsinline` en el vídeo de logs.
+- **CTA final:** título y cuerpo alineados al patrón “validar en tu operativa” + pasos de comprobación.
+- **SEO `description`:** alineada al mensaje de doble fuente (MT5 + tevsys).
+
 **Archivos principales tocados en esta tanda:**
 - `src/pages/features/precision.astro`
 - `src/pages/index.astro`
 - `src/components/sections/heros/HomeHeroSection.astro`
 - `src/pages/configuracion.astro`
 - `src/styles/theme.css`
-- (coherencia de bloques en features) `src/pages/features/evidencia.astro`, `src/pages/features/hyperclose.astro`, `src/pages/features/sml.astro`, `src/pages/instalacion.astro`, `src/pages/configuracion.astro`
+- (coherencia de bloques en features) `src/pages/features/evidencia.astro` (incl. §15 tono comercial), `src/pages/features/hyperclose.astro`, `src/pages/features/sml.astro`, `src/pages/instalacion.astro`, `src/pages/configuracion.astro`
 
 ---
 

@@ -4,7 +4,8 @@ import Layout from '../../layouts/Page.astro';
 
 const seo = {
 	title: 'Evidencia verificable | tevsys',
-	description: 'Comprueba cómo tevsys deja trazabilidad de cierres, bloqueos y rotaciones con panel, logs y reporte oficial.',
+	description:
+		'MT5 certifica la ejecución; tevsys documenta la lógica. Demo, informe oficial, historial exportable y guía de logs para comprobarlo.',
 };
 ---
 
@@ -14,7 +15,9 @@ const seo = {
 			<p class="feature-kicker">Feature de transparencia</p>
 			<h1>Evidencia verificable: aquí no hay "<span class="feature-title__accent">creemos</span>".</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Lo que no se puede demostrar, no cuenta.</p>
-			<p class="feature-lead">Doble trazabilidad real: tevsys registra la lógica interna y MT5 certifica la ejecución oficial.</p>
+			<p class="feature-lead">
+				<span class="feature-title__accent">Doble trazabilidad</span> real: tevsys registra la lógica interna y MT5 certifica la ejecución oficial.
+			</p>
 		</section>
 
 		<section id="evidencia-demo" class="feature-demo feature-demo--hero">
@@ -26,7 +29,9 @@ const seo = {
 				<p class="evidencia-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
 			</div>
 			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
-			<p class="feature-demo-hook">100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%</p>
+			<p class="feature-demo-hook">
+				Caso real 100k: apertura Wall Street, 20 lotes, cierre automático con desviación documentada (0,0072%).
+			</p>
 			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="evidencia-demo-container">
 				<video id="evidencia-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/evidencia-100k-perdida.mp4" type="video/mp4" />
@@ -39,12 +44,24 @@ const seo = {
 		<section class="feature-proof">
 			<h2>Qué puedes comprobar</h2>
 			<ul>
-				<li><a class="evidence-link" href="#evidencia-demo">Demo real: cuenta 100k, 20 lotes, cierre automático.</a></li>
-				<li><a class="evidence-link" href="#evidencia-informe-mt5">Comprueba esta operativa tú mismo (informe oficial MT5).</a></li>
-				<li><a class="evidence-link" href="#evidencia-4-56">Nuestra versión Essential. Con el caso más extremo: 100 lotes, 95 € de precisión.</a></li>
-				<li><a class="evidence-link" href="#evidencia-html-transacciones">Historial de transacciones descargable.</a></li>
-				<li><a class="evidence-link" href="#evidencia-logs">Guía visual de logs (vídeo).</a></li>
-				<li><a class="evidence-link" href="#evidence-audit">Auditoría: la prueba no es nuestra.</a></li>
+				<li>
+					<a class="evidence-link" href="#evidencia-demo">Demo en cuenta 100k: cierre automático con cifras auditables en vídeo.</a>
+				</li>
+				<li>
+					<a class="evidence-link" href="#evidencia-informe-mt5">Informe oficial MT5 de la misma operativa (verificación independiente).</a>
+				</li>
+				<li>
+					<a class="evidence-link" href="#evidencia-4-56">Caso Essential extremo: 100 lotes, desviación de cierre documentada (+95 €).</a>
+				</li>
+				<li>
+					<a class="evidence-link" href="#evidencia-html-transacciones">Historial exportable desde MT5 (posiciones, órdenes, resultado).</a>
+				</li>
+				<li>
+					<a class="evidence-link" href="#evidencia-logs">Guía visual de logs MT5 + salto a Precisión para trazabilidad en detalle.</a>
+				</li>
+				<li>
+					<a class="evidence-link" href="#evidence-audit">Auditoría: ejecución certificada por MT5 + decisión de lógica en logs tevsys.</a>
+				</li>
 			</ul>
 		</section>
 
@@ -175,9 +192,9 @@ const seo = {
 			<h3>Guía visual de logs</h3>
 			<p class="feature-proof-subtitle">Dónde está todo registrado</p>
 			<p>Cada evento relevante queda registrado en logs MT5 para revisión técnica. Esta guía muestra cómo encontrarlos.</p>
-			<p class="feature-demo-hook">Otro vídeo que te interesa</p>
+			<p class="feature-demo-hook">Cómo localizar y leer los registros en MT5: misma lógica de verificación, paso a paso.</p>
 			<div class="demo-video demo-video--compact" id="evidencia-logs-container">
-				<video id="evidencia-logs-video" controls preload="metadata">
+				<video id="evidencia-logs-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
@@ -231,8 +248,8 @@ const seo = {
 		</section>
 
 		<section class="feature-cta">
-			<h2>¿Quieres verlo en tu caso?</h2>
-			<p>Te enseñamos la trazabilidad aplicada a tu operativa para que decidas con evidencia, no con promesas.</p>
+			<h2>¿Quieres validar la evidencia en tu operativa?</h2>
+			<p>Te mostramos las dos capas de trazabilidad en tu contexto y los pasos para comprobarlas tú mismo.</p>
 			<a href="/company/contact?feature=evidence&flow=demo" class="feature-cta__button">Probar evidencia en demo</a>
 		</section>
 	</Container>
