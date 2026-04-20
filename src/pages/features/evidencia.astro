@@ -18,10 +18,16 @@ const seo = {
 		</section>
 
 		<section id="evidencia-demo" class="feature-demo feature-demo--hero">
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span><span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span></p>
+			<div class="evidencia-multichart">
+				<p class="feature-hook evidencia-multichart__lead">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					<span>Un gráfico para tevsys. Toda tu cuenta, protegida.</span>
+				</p>
+				<p class="evidencia-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
+			</div>
 			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
 			<p class="feature-demo-hook">100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%</p>
-			<div class="demo-video demo-video--hero" id="evidencia-demo-container">
+			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="evidencia-demo-container">
 				<video id="evidencia-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/evidencia-100k-perdida.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
@@ -294,6 +300,26 @@ const seo = {
 	.feature-demo--hero {
 		position: relative;
 	}
+	.evidencia-multichart {
+		margin: 0 0 clamp(1.35rem, 3.6vw, 2.1rem);
+		max-width: 52ch;
+	}
+	.evidencia-multichart__lead {
+		margin: 0 0 0.5rem;
+		align-items: center;
+		gap: 0.35rem;
+	}
+	.evidencia-multichart__lead .feature-hook__dot {
+		margin-top: 0;
+	}
+	.evidencia-multichart__sub {
+		margin: 0;
+		padding-left: calc(0.45rem + 0.5rem);
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		line-height: 1.55;
+	}
 	.feature-demo--hero::before {
 		content: '';
 		position: absolute;
@@ -302,6 +328,9 @@ const seo = {
 		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
 		pointer-events: none;
 		z-index: 0;
+	}
+	#evidencia-demo.feature-demo--hero::before {
+		background: linear-gradient(140deg, rgba(155, 162, 175, 0.12), rgba(115, 122, 136, 0.04));
 	}
 	.feature-demo--hero > * {
 		position: relative;
@@ -314,9 +343,21 @@ const seo = {
 		transition: max-width 0.35s ease, box-shadow 0.25s ease;
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.35), 0 12px 40px rgba(0, 0, 0, 0.35);
 	}
+	.demo-video--hero-elegant {
+		background: var(--theme-embed-chrome);
+		border-color: var(--theme-embed-chrome-border);
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.05),
+			0 12px 36px rgba(0, 0, 0, 0.34);
+	}
 	.demo-video--hero.demo-video--playing {
 		max-width: none;
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
+	}
+	.demo-video--hero-elegant.demo-video--playing {
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.08),
+			0 16px 46px rgba(0, 0, 0, 0.4);
 	}
 	.feature-demo-hook {
 		margin: 0 0 0.75rem;
@@ -370,21 +411,61 @@ const seo = {
 	}
 	.demo-edit-note {
 		margin: 0.5rem 0 0;
-		font-size: 0.9rem;
-		opacity: 0.82;
+		font-size: 0.84rem;
+		opacity: 0.74;
+		line-height: 1.45;
+		max-width: 74ch;
 	}
 	.feature-proof ul {
 		margin: 0;
-		padding-left: 1.1rem;
+		padding: 0;
+		list-style: none;
 	}
 	.feature-proof li {
 		margin-bottom: 0.45rem;
 		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.feature-proof li::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.82);
+		margin-right: 0.55rem;
+		vertical-align: middle;
+	}
+	.feature-proof li:hover {
+		border-left-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
+	}
+	.feature-proof li:last-child {
+		margin-bottom: 0;
+	}
+	.feature-proof {
+		position: relative;
+		overflow: hidden;
+	}
+	.feature-proof::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -10%;
+		width: 42%;
+		height: 100%;
+		pointer-events: none;
+		background: radial-gradient(ellipse at right center, rgba(245, 176, 65, 0.11) 0%, rgba(245, 176, 65, 0.045) 42%, transparent 74%);
 	}
 	.evidence-link {
 		color: #ffffff;
 		text-decoration: underline;
-		text-underline-offset: 2px;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2.5px;
 		transition: color 0.2s ease;
 		cursor: pointer;
 	}
@@ -572,13 +653,6 @@ const seo = {
 </style>
 
 <script>
-	function playDemoIfTarget() {
-		if (window.location.hash !== '#evidencia-demo') return;
-		const video = document.getElementById('evidencia-demo-video');
-		if (video) {
-			video.play().catch(() => {});
-		}
-	}
 	function initDemoExpand() {
 		[['evidencia-demo-video', 'evidencia-demo-container'], ['evidencia-logs-video', 'evidencia-logs-container']].forEach(([vidId, ctnId]) => {
 			const video = document.getElementById(vidId);
@@ -596,12 +670,10 @@ const seo = {
 		if (details) details.setAttribute('open', '');
 	}
 	document.addEventListener('DOMContentLoaded', () => {
-		playDemoIfTarget();
 		initDemoExpand();
 		openInformeMt5IfTarget();
 	});
 	window.addEventListener('hashchange', () => {
-		playDemoIfTarget();
 		openInformeMt5IfTarget();
 	});
 </script>
