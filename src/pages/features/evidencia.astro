@@ -233,12 +233,38 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="evidence-audit" class="feature-proof-detail">
+		<section id="evidence-audit" class="feature-proof-detail feature-proof-detail--audit">
 			<h3>Auditoría: la prueba no es nuestra</h3>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>MetaTrader documenta. tevsys ejecuta.</p>
-			<p><span class="audit-label">Para quién</span> Para ti, que quieres verte con datos y no con sensaciones. Para gestoras, prop firms o cualquiera que gestione capital ajeno. Y para academias, donde la disciplina no se enseña solo en clase — se practica con un sistema que no permite saltarse la lección.</p>
-			<p><span class="audit-label">Dos capas de evidencia</span> MT5 documenta qué ocurrió: hora, precio, volumen, resultado. Informe oficial, independiente de tevsys. Los logs propios de tevsys documentan por qué: el cálculo, el límite, la decisión de cierre. Dos fuentes. Una verificación.</p>
-			<p><span class="audit-label">Todo lo de arriba es la prueba</span> El vídeo, el informe MT5 y las transacciones que acabas de ver son ejemplos reales. Llevamos 71 operativas documentadas con el mismo rigor, incluyendo el caso extremo de 100 lotes (operativa 4.56).</p>
+			<p class="feature-hook feature-hook--audit-lead">
+				<span class="feature-hook__dot" aria-hidden="true"></span>MetaTrader documenta. tevsys ejecuta.
+			</p>
+
+			<div class="audit-block">
+				<p class="audit-block__title">¿Para quién desarrollamos?</p>
+				<p class="audit-block__body">
+					Para ti, que quieres verte con datos y no con sensaciones. Para gestoras, prop firms o quien gestione capital ajeno. Y para academias: la disciplina no se enseña solo en clase — se practica con un sistema que no permite saltarse la lección.
+				</p>
+			</div>
+
+			<div class="audit-block">
+				<p class="audit-block__title">Dos capas de evidencia</p>
+				<p class="audit-block__lead">Dos fuentes que se cruzan: qué ocurrió en la cuenta (oficial) y por qué actuó tevsys (lógica interna).</p>
+				<p class="audit-block__body">
+					<strong>MT5</strong> deja constancia de qué ocurrió: hora, precio, volumen y resultado. Informe oficial, independiente de tevsys.
+				</p>
+				<p class="audit-block__body">
+					<strong>tevsys</strong> registra el porqué: cálculo, límite configurado y decisión de cierre — en logs auditables.
+				</p>
+			</div>
+
+			<div class="audit-block">
+				<p class="audit-block__title">Todo lo de arriba es la prueba</p>
+				<p class="audit-block__body">El vídeo, el informe MT5 y las transacciones que acabas de ver son ejemplos reales.</p>
+				<p class="audit-block__body">
+					Llevamos <strong>71 operativas</strong> documentadas con el mismo rigor, incluido el caso extremo de 100 lotes (operativa 4.56).
+				</p>
+			</div>
+
 			<p class="audit-for-whom-line">Pensado para quien opera con reglas y quiere que la cuenta las respete.</p>
 			<p>
 				<a class="proof-capture-link" href="/features/precision#precision-49-evidence">
@@ -533,17 +559,53 @@ const seo = {
 	.feature-proof-detail p:first-of-type {
 		margin-top: 0;
 	}
-	.audit-label {
-		display: block;
+	/* Auditoría — bloques con respiro (legibilidad frente a muro de texto) */
+	#evidence-audit.feature-proof-detail--audit {
+		padding-top: 1.15rem;
+		padding-bottom: 1.35rem;
+	}
+	#evidence-audit .feature-hook--audit-lead {
+		margin: 0 0 1.2rem;
+		line-height: 1.55;
+	}
+	#evidence-audit .audit-block {
+		margin-top: 1.4rem;
+		padding-top: 1.2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.085);
+	}
+	#evidence-audit .audit-block:first-of-type {
+		margin-top: 0.25rem;
+		padding-top: 0;
+		border-top: none;
+	}
+	#evidence-audit .audit-block__title {
+		margin: 0 0 0.7rem;
 		color: #f5b041;
 		font-weight: 700;
-		font-size: 0.88rem;
+		font-size: 0.9rem;
 		text-transform: uppercase;
-		letter-spacing: 0.04em;
-		margin-bottom: 0.2rem;
+		letter-spacing: 0.05em;
+		line-height: 1.4;
+		max-width: 42rem;
 	}
-	.audit-for-whom-line {
-		margin: 0.85rem 0 0;
+	#evidence-audit .audit-block__lead {
+		margin: 0 0 0.75rem;
+		font-size: 0.98rem;
+		line-height: 1.62;
+		opacity: 0.9;
+		max-width: 66ch;
+	}
+	#evidence-audit .audit-block__body {
+		margin: 0;
+		line-height: 1.65;
+		max-width: 68ch;
+		font-size: 0.98rem;
+	}
+	#evidence-audit .audit-block__body + .audit-block__body {
+		margin-top: 0.75rem;
+	}
+	#evidence-audit .audit-for-whom-line {
+		margin: 1.45rem 0 0;
 		font-style: italic;
 		font-weight: 600;
 		opacity: 0.93;
