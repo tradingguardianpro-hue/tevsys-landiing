@@ -127,3 +127,12 @@ Aplicar este patrón en `precision`, `evidencia`, `hyperclose`, `sml`, `instalac
   - “Qué puedes comprobar” con halo + jerarquía escaneable,
   - copy alineado a doble trazabilidad tevsys/MT5,
   - navegación cruzada a logs en Precisión apuntando a `#precision-logs-container`.
+
+### 7.5 Cierre baseline visual (20 abr 2026)
+
+- Hero validado visualmente:
+  - mano robótica con versión final de imagen (más presencia sin estridencia),
+  - marco exterior equilibrado y estable,
+  - contexto hero con mención explícita a **trading real en MT5** + **automatizado y registrado**.
+- Cards home actualizadas con assets retocados (centrado de iconos) y copy HyperClose con separación robusta.
+- Decisión de equipo: **cerrar fase visual** y pasar a iteración de **tono comercial por micropágina** (sin reabrir diseño salvo incidencias críticas).

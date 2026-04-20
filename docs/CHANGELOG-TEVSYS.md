@@ -105,6 +105,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Tras varios intentos visuales, se fija solución robusta ante minificado/deploy:
   - espacio no separable inyectado por CSS (`::before` con `\00a0`) en el acento de `no poder seguir`.
 
+### 12) Home — cierre visual hero/cards + copy de contexto (20 abr 2026)
+
+- **Assets cards home actualizados (retocados y centrados):**
+  - `card-1-input.png`
+  - `card-2-hyperclose.png`
+  - `card-3-sml.png`
+  - `card-4-evidencia.png`
+- **Hero mano robótica:** reemplazo final de imagen (`public/mano robotica central web.png`) con versión más visible (Canva), validada visualmente como solución definitiva.
+- **Línea de contexto hero (claridad comercial):**
+  - `Control de riesgo y límites para trading real en tu cuenta MT5 — automatizado y registrado.`
+- **Estado final de fase visual:** baseline aprobado para seguir con optimización de tono comercial en micropáginas sin reabrir cambios estéticos grandes.
+
 **Archivos principales tocados en esta tanda:**
 - `src/pages/features/precision.astro`
 - `src/pages/index.astro`
