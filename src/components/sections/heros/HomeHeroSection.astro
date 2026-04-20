@@ -268,16 +268,11 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     object-fit: contain;
     object-position: center center;
     border-radius: var(--hero-image-radius);
-    transition: filter 0.28s ease;
+    transition: none;
     transform: scale(1.08);
     transform-origin: center center;
     /* Contraste un poco más alto para que se lean los óvalos/rejillas del arte (misma foto, sin marcos extra) */
     filter: brightness(0.99) saturate(1.02) contrast(1.1);
-  }
-  .hero-image__wrapper:hover .hero-image__img,
-  .hero-image__wrapper:hover img {
-    transform: scale(1.1);
-    filter: brightness(1.01) saturate(1.03) contrast(1.12);
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-image__img,
