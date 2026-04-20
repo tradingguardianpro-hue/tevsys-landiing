@@ -37,6 +37,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Tema oscuro actualizado hacia tonos carbón/azulados más elegantes.
 - Añadidos tokens de superficie/borde/sombra y de cromado para embeds (`--theme-embed-chrome`), aplicados donde corresponde.
 
+### 5) Estandarización para próximas micropáginas
+
+- Se fija patrón replicable:
+  - bloque inicial frase + demo con respiración y embed gris elegante,
+  - sección “Qué puedes comprobar” con jerarquía escaneable y halo ámbar suave,
+  - acento de marca controlado (no invasivo) para sostener imagen premium.
+- Documentación de referencia para réplica: `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` §7.
+
 **Archivos principales tocados en esta tanda:**
 - `src/pages/features/precision.astro`
 - `src/pages/index.astro`

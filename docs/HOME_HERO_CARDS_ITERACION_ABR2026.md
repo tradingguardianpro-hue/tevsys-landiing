@@ -85,3 +85,31 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 - Fase cards/planes: `CARDS-NEXT-PHASE.md`.
 - Tabla por archivo: `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
 - Motion: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion.
+
+---
+
+## 7. Estándar visual reusable para micropáginas (20 abr 2026)
+
+Aplicar este patrón en `precision`, `evidencia`, `hyperclose`, `sml`, `instalacion`, `configuracion` para mantener imagen premium sobria (sin estridencia).
+
+### 7.1 Bloque de apertura de demo (frase + vídeo)
+
+- **Frase inicial con punto** (ej.: “Un gráfico para tevsys…”): punto alineado en línea base visual, espaciado corto y lectura estable.
+- **Respiración entre frase y título de demo:** margen claro para separar contexto de acción.
+- **Embed / vídeo principal:** cromado **gris elegante** (neutral), sin dominancia ámbar en marco.
+- **Ámbar** reservado para acentos de marca (dot, h2, links), no para teñir el bloque completo.
+
+### 7.2 Sección “Qué puedes comprobar” (lista de anclas)
+
+- Convertir lista plana en **filas escaneables**:
+  - más aire vertical,
+  - micro-acento por fila (barra/punto ámbar tenue),
+  - hover limpio en color de marca.
+- **Halo lateral ámbar** muy suave (presencia de marca sin competir con la lectura).
+- Mantener foco en copy y clicabilidad; evitar efectos decorativos fuertes o animación continua.
+
+### 7.3 Criterio de diseño de negocio (tevsys)
+
+- Sensación objetivo: **control, precisión, trazabilidad**.
+- Evitar estética “demo llamativa”; priorizar “producto serio y verificable”.
+- Cada mejora visual debe responder a esta regla: **más claridad + más jerarquía + misma sobriedad**.
