@@ -233,7 +233,7 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="hyperclose-semaphore" class="feature-proof-detail">
+		<section id="hyperclose-semaphore" class="feature-proof-detail feature-proof-detail--protocol">
 			<h3>Semáforo de responsabilidad</h3>
 			<p class="feature-proof-subtitle">Tres niveles de aviso por reiteración</p>
 			<p>El sistema escala mensajes educativos y de responsabilidad según la repetición del intento.</p>
@@ -278,7 +278,7 @@ const seo = {
 			</details>
 		</section>
 
-		<section id="hyperclose-off" class="feature-proof-detail">
+		<section id="hyperclose-off" class="feature-proof-detail feature-proof-detail--protocol">
 			<h3>Rotación automática y día OFF protegido</h3>
 			<p class="feature-proof-subtitle">Cuando cambia el día, tevsys toma el control.</p>
 			<p>De día ON a día OFF: el sistema rota automáticamente, cambia el estado y activa protección con candado verde.</p>
@@ -723,6 +723,57 @@ const seo = {
 		border-color: rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+	}
+	/* Fase 2 HyperClose: se mantienen en zona agrupada, pero con lectura premium más ligera */
+	#hyperclose-semaphore,
+	#hyperclose-off {
+		background:
+			linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.008)),
+			var(--theme-surface-1);
+		border-color: rgba(255, 255, 255, 0.11);
+		box-shadow:
+			var(--theme-surface-elevated-shadow),
+			0 0 0 1px rgba(255, 255, 255, 0.02);
+	}
+	#hyperclose-semaphore h3,
+	#hyperclose-off h3 {
+		font-size: 1.08rem;
+	}
+	#hyperclose-semaphore .feature-proof-subtitle,
+	#hyperclose-off .feature-proof-subtitle {
+		font-size: 0.92rem;
+		opacity: 0.95;
+	}
+	#hyperclose-semaphore p,
+	#hyperclose-off p {
+		max-width: 78ch;
+	}
+	#hyperclose-semaphore p + p,
+	#hyperclose-off p + p {
+		margin-top: 0.48rem;
+	}
+	#hyperclose-semaphore .feature-demo-hook {
+		margin-top: 0.55rem;
+		font-size: 0.86rem;
+		letter-spacing: 0.01em;
+		opacity: 0.82;
+	}
+	#hyperclose-semaphore .demo-video--compact,
+	#hyperclose-off .demo-video--compact {
+		max-width: min(100%, 34rem);
+		background: var(--theme-embed-chrome);
+		border-color: var(--theme-embed-chrome-border);
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.05),
+			0 10px 30px rgba(0, 0, 0, 0.28);
+	}
+	#hyperclose-semaphore .proof-accordion,
+	#hyperclose-off .proof-accordion {
+		margin-top: 0.65rem;
+	}
+	#hyperclose-semaphore .proof-capture-link,
+	#hyperclose-off .proof-capture-link {
+		font-weight: 600;
 	}
 	#hyperclose-off-demo {
 		scroll-margin-top: 5.5rem;
