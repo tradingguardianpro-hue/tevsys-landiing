@@ -1620,31 +1620,32 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 	/*
 	  Móvil home: header resaltado; burbujas detrás de la columna de cards (keyframes *-mobile).
-	  Hero “rise”: más visible que el recorte agresivo anterior, sin acercarse al brillo de escritorio (0,72).
+	  Hero “rise”: 26s (menos prisa); opacidad baja (~0,44) para que no lea como “segundo marco” junto a la mano.
 	*/
 	@media (prefers-reduced-motion: no-preference) {
 		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
-			/* linear + más keyframes: el compositor móvil interpola más suave que un solo ease-in-out 0–50–100 */
-			animation: tevsys-header-scanner-sweep-mobile 56s linear infinite;
+			/* Más “vida” que 56s, manteniendo keyframes finos + linear (sin trompicones) */
+			animation: tevsys-header-scanner-sweep-mobile 42s linear infinite;
 			transform: translateZ(0);
 			will-change: background-position;
 			backface-visibility: hidden;
-			opacity: 0.74;
+			opacity: 0.84;
 			background-image: linear-gradient(
 				102deg,
 				transparent 0%,
-				transparent 37%,
-				rgba(120, 124, 138, 0.18) 47%,
-				rgba(198, 202, 216, 0.32) 50%,
-				rgba(105, 109, 124, 0.15) 53%,
-				transparent 66%,
+				transparent 32%,
+				rgba(120, 124, 138, 0.22) 46%,
+				rgba(198, 202, 216, 0.4) 50%,
+				rgba(105, 109, 124, 0.2) 54%,
+				transparent 68%,
 				transparent 100%
 			);
-			background-size: 250% 100%;
+			background-size: 278% 100%;
 		}
 
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise {
-			opacity: 0.68;
+			/* Menos “segundo rectángulo” junto a la mano en columna estrecha */
+			opacity: 0.44;
 			animation: tevsys-top-strip-niebla-only 26s ease-in-out infinite alternate;
 		}
 

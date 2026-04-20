@@ -24,9 +24,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Cambios (`src/styles/global.css`, solo móvil + `prefers-reduced-motion: no-preference`):**
 
-- **Header:** `tevsys-header-scanner-sweep-mobile` pasa de 3 a **8 paradas** en X; animación **56s** **`linear`** (antes 40s ease-in-out en un solo vaivén). `will-change: background-position` en el escáner.
+- **Header:** `tevsys-header-scanner-sweep-mobile` con **8 paradas** en X + **`linear`** (56s → **42s** tras feedback: más vida sin volver a trompicones); haz **más ancho** (`background-size` ~278%) y algo **más luminoso** (opacidad/gradiente). `will-change: background-position` en el escáner.
 - **Franja inferior (`::before` / `::after`):** nuevo `tevsys-home-lower-strip-kitt-pos-mobile` (barrido vertical en pasos, sin salto -40%→102% en un tramo); **36s** `linear` `alternate` + mezclas gris/ámbar **18s** `linear` con **keyframes más graduales** en opacidad.
-- **Hero KITT rise:** niebla y franjas **26s** (antes 18,7s) para bajar velocidad perceptual del barrido en pantalla pequeña.
+- **Hero KITT rise:** niebla y franjas **26s** (antes 18,7s) para bajar velocidad perceptual del barrido en pantalla pequeña; **opacidad rise** en móvil **~0,44** (menos “rectángulo fantasma” junto a la mano).
+
+**Hero mano (móvil, `HomeHeroSection.astro`):** más **padding** en `.hero-image__wrapper`, **radio** alineado al img, **scale** img **1,06 → 1,04**, viñeta `::after` algo más suave — el borde blanco envuelve mejor la foto.
 
 **Doc:** `MOTION_HOME_TEVSYS_HANDOFF_IA.md` § móvil; `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` (fila `global.css`).
 
