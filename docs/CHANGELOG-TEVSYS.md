@@ -45,6 +45,38 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
   - acento de marca controlado (no invasivo) para sostener imagen premium.
 - Documentación de referencia para réplica: `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md` §7.
 
+### 6) HyperClose — fase 1 y fase 2 (20 abr 2026)
+
+- **Fase 1 (alineación con Precisión):**
+  - bloque inicial (2:23) con respiración de frase previa y embed en gris elegante,
+  - lista “Qué puedes comprobar” con jerarquía escaneable + halo ámbar suave,
+  - texto “Vídeo editado” rebajado para no competir con el vídeo.
+- **Fase 2 (zona protocolaria en gris):**
+  - se conserva la agrupación de `Semáforo` y `Día OFF`, pero con acabado menos “panel pesado”,
+  - mejor jerarquía (títulos/subtítulos/espaciado) y embeds compactos con cromado neutral.
+- **Navegación por anclas:**
+  - links de “Qué puedes comprobar” apuntan al objetivo visual correcto del embed,
+  - resaltado puntual ámbar reforzado (flash breve + halo) para marcar claramente el destino,
+  - decisión explícita: **sin autoplay** (prioridad a lectura y control del usuario).
+
+### 7) SML — orden narrativo y lenguaje visual (20 abr 2026)
+
+- Se aplica el mismo patrón visual de “Qué puedes comprobar” aunque no haya anclas clicables:
+  - filas con punto/barra + halo suave + mejor escaneo.
+- “Así se ve hoy en el panel” recibe título con dot (misma familia visual que el resto).
+- Reubicación del hook “Un gráfico para tevsys…”:
+  - **sale** de la zona “en medio de la nada”,
+  - **entra** entre el cierre del hero (`No está en Essential...`) y el inicio del bloque de panel.
+
+### 8) Home Hero — mano robótica (microajustes por capturas)
+
+- Ajustes incrementales de tamaño/encaje para aumentar presencia de la imagen real.
+- Correcciones de integración:
+  - eliminación de zoom variable,
+  - reequilibrio entre rectángulo interior y marco ovalado exterior,
+  - ajuste final de altura del marco exterior (borde blanco) para evitar solape.
+- Resultado final: mayor protagonismo de mano robótica sin romper la jerarquía visual del hero.
+
 **Archivos principales tocados en esta tanda:**
 - `src/pages/features/precision.astro`
 - `src/pages/index.astro`

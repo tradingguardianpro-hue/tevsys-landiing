@@ -113,3 +113,12 @@ Aplicar este patrón en `precision`, `evidencia`, `hyperclose`, `sml`, `instalac
 - Sensación objetivo: **control, precisión, trazabilidad**.
 - Evitar estética “demo llamativa”; priorizar “producto serio y verificable”.
 - Cada mejora visual debe responder a esta regla: **más claridad + más jerarquía + misma sobriedad**.
+
+### 7.4 Aplicación práctica (estado 20 abr 2026)
+
+- **`precision`**: patrón aplicado completo (embed inicial neutro + lista escaneable + estado puntual de navegación visible).
+- **`hyperclose`**: patrón aplicado con adaptación:
+  - fase 1 (igualación de apertura/lista),
+  - fase 2 (zona protocolaria gris mantenida pero refinada en legibilidad),
+  - anclas con foco ámbar puntual reforzado, sin autoplay.
+- **`sml`**: patrón aplicado a la sección de comprobación (no clicable por ahora) y reordenación del hook de gráficos para contexto correcto.
