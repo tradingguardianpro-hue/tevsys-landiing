@@ -197,7 +197,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0.65rem 1.45rem;
+    padding: 0.45rem 0.95rem;
     position: relative;
     border-radius: var(--hero-image-radius);
     /* visible: el marco exterior (box-shadow) no se recorta; la foto sigue redondeada en el <img> */
@@ -261,16 +261,16 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-section__image img {
     display: block;
     width: auto;
-    max-width: min(100%, 382px);
+    max-width: min(100%, 410px);
     height: auto;
-    max-height: min(42vh, 380px);
+    max-height: min(43vh, 392px);
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
     object-position: center center;
     border-radius: var(--hero-image-radius);
     transition: none;
-    transform: scale(1.06);
+    transform: scale(1.1);
     transform-origin: center center;
     /* Contraste un poco más alto para que se lean los óvalos/rejillas del arte (misma foto, sin marcos extra) */
     filter: brightness(0.99) saturate(1.02) contrast(1.1);
@@ -280,7 +280,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-image__wrapper img,
     .hero-section__image img {
       transition: none;
-      transform: scale(1.06);
+      transform: scale(1.1);
     }
     /* Mismo marco base que “from”; sin pulso (el perímetro sigue viéndose) */
     .hero-image__wrapper {
@@ -298,7 +298,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-section__image img {
       max-width: min(92vw, 340px);
       max-height: min(40vh, 330px);
-      transform: scale(1.03);
+      transform: scale(1.06);
     }
   }
   @media (max-width: 420px) {
