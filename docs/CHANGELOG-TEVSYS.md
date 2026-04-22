@@ -11,6 +11,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 **Cambio (`src/pages/index.astro`):**
 
 - Reagrupación del texto introductorio en un bloque visual suave (`.feature-card__intro-stack`).
+- Borde del bloque ajustado a ámbar sutil (sin halo) para reforzar marca sin romper estética.
 - Ajuste fino de opacidades/márgenes en hook e intros para dar más jerarquía.
 - Microajuste de espaciado del claim `Ellos deslizan. En tevsys cerramos.` para que actúe como remate antes del grid.
 - Ajuste responsive del bloque de intro en móvil.
