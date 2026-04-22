@@ -52,6 +52,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home cards — microajuste de escaneo en card 2 (22 abr 2026)
+
+**Objetivo:** hacer más directa la lectura de mecanismo en `HyperClose`.
+
+**Cambio (`src/pages/index.astro`):**
+
+- Frase principal de mecanismo simplificada:
+  - de `Intentas operar bloqueado...`
+  - a `Si operas bloqueado, HyperClose cierra en milisegundos.`
+
+**Resultado buscado:** menor fricción verbal y lectura más instantánea sin cambiar el contenido funcional.
+
+---
+
 ## Home Hero — medicion de clics sin Vercel Pro (22 abr 2026)
 
 **Objetivo:** medir clics del CTA secundario con plan free de Vercel (sin Custom Events).
