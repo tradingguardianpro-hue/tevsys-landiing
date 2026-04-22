@@ -113,6 +113,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home Hero — redistribución final de mensaje (22 abr 2026)
+
+**Objetivo:** reducir carga visual y clarificar el mensaje funcional para perfil novato y perfil técnico.
+
+**Cambio (`src/components/sections/heros/HomeHeroSection.astro`):**
+
+- Microfrase reducida a una línea directa:
+  - `No damos señales.`
+- Línea funcional actualizada:
+  - `Automatizamos el control de riesgo para que tus reglas se cumplan siempre en tu cuenta MT5.`
+- Sin subrayado adicional en estas líneas (solo jerarquía tipográfica).
+
+**Resultado buscado:** más claridad en 2 golpes de lectura y mejor separación entre desmarque y propuesta funcional.
+
+---
+
 ## Home Hero — CTA secundario de validación rápida (22 abr 2026)
 
 **Objetivo:** añadir un atajo de evaluación para perfiles escépticos (academias/traders) sin romper la estética ni desplazar el CTA principal de demo.
