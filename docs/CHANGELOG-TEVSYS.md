@@ -4,6 +4,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home Hero — tracking de clic en CTA "Ver evidencia en 5 minutos" (22 abr 2026)
+
+**Objetivo:** medir con datos reales cuantas personas usan el atajo de evidencia desde el hero.
+
+**Cambio (`src/components/sections/heros/HomeHeroSection.astro`):**
+
+- Evento personalizado en Vercel Analytics al hacer clic en el CTA secundario:
+  - `hero_evidence_5min_click`
+- Metadatos enviados:
+  - `location: home_hero`
+  - `target: /features/hyperclose#hyperclose-demo`
+
+**Uso esperado:** revisar en Analytics el volumen de clics y comparar contra visitas de home para validar si el mensaje de confianza mejora interaccion.
+
+---
+
 ## Home Hero — CTA secundario de validación rápida (22 abr 2026)
 
 **Objetivo:** añadir un atajo de evaluación para perfiles escépticos (academias/traders) sin romper la estética ni desplazar el CTA principal de demo.

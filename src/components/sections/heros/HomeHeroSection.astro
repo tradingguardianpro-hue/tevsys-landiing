@@ -409,3 +409,18 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
   }
 </style>
+
+<script>
+  import { track } from '@vercel/analytics';
+
+  const evidenceCta = document.querySelector('.hero-audit-btn');
+
+  if (evidenceCta) {
+    evidenceCta.addEventListener('click', () => {
+      track('hero_evidence_5min_click', {
+        location: 'home_hero',
+        target: '/features/hyperclose#hyperclose-demo'
+      });
+    });
+  }
+</script>
