@@ -66,6 +66,21 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home cards — microajuste de escaneo en card 3 (22 abr 2026)
+
+**Objetivo:** mejorar claridad de lectura en la card `SML` manteniendo su propuesta actual.
+
+**Cambio (`src/pages/index.astro`):**
+
+- Frase de mecanismo reordenada para lectura natural:
+  - `Lo activas cuando quieras: amplías margen entre 5 % y 25 % (mín. 75 % protegido).`
+- Frase de cierre simplificada:
+  - `Conserva lo ganado y convive con tus límites y días OFF.`
+
+**Resultado buscado:** mismo contenido funcional, mejor escaneo en pocos segundos.
+
+---
+
 ## Home Hero — medicion de clics sin Vercel Pro (22 abr 2026)
 
 **Objetivo:** medir clics del CTA secundario con plan free de Vercel (sin Custom Events).
