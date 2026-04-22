@@ -4,6 +4,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home Hero — CTA secundario de validación rápida (22 abr 2026)
+
+**Objetivo:** añadir un atajo de evaluación para perfiles escépticos (academias/traders) sin romper la estética ni desplazar el CTA principal de demo.
+
+**Cambio (`src/components/sections/heros/HomeHeroSection.astro`):**
+
+- Nuevo bloque `.hero-cta-row` con dos botones en la misma zona:
+  - primario: `Descargar demo →` (se mantiene),
+  - secundario: `Ver evidencia en 5 minutos`.
+- El nuevo botón enlaza a `/features/hyperclose#hyperclose-demo` para llevar directo a vídeo + pruebas.
+- Estilo secundario tipo outline (`.hero-audit-btn`) y ajustes responsive para móvil.
+
+**Resultado buscado:** facilitar “validación en pocos minutos” sin convertir la home en una página solo para academias.
+
+---
+
 ## Home Hero — microfrase de desmarque anti-señales (22 abr 2026)
 
 **Objetivo:** reforzar en los primeros 3 segundos que TEVSYS no pertenece a la categoría de “EA de señales”, sin desplazar el protagonismo del H1 principal.
