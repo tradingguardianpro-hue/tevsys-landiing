@@ -17,7 +17,7 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `src/config/nav.js` | Nav final: Inicio, Acceso (CTA), Contacto. |
 | `src/components/core/Header.astro` | Estilos del CTA en nav (botón blanco redondeado). **Abr 2026:** Inter, barra más baja, nav refinada; en `/` clase `tevsys-header--home-scanner` + capa escáner; motion escáner vía `global.css`. |
 | `src/components/head/BaseHead.astro` | Fuentes: **Inter**, **DM Sans** (H1 hero), Outfit según tema. **19 abr 2026:** carga alineada a tipografía hero + micropáginas. **Schema** JSON-LD, **preload** LCP hero WebP (home). |
-| `src/components/sections/heros/HomeHeroSection.astro` | Hero Mar 2026: imagen `mano robotica central web.png`, grid 1fr/2fr, alineación con «T», logo en etiqueta. Reflexión + commits: `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md`, `CHANGELOG-TEVSYS.md` §27. **Abr 2026:** `hero-context-line`, ritmo vertical, halo, imagen con radio/filtros/viñeta. **19 abr 2026:** H1 **DM Sans** (`.hero-title`), mano/viñeta/marco iterados. |
+| `src/components/sections/heros/HomeHeroSection.astro` | Hero Mar 2026: imagen `mano robotica central web.png`, grid 1fr/2fr, alineación con «T», logo en etiqueta. Reflexión + commits: `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md`, `CHANGELOG-TEVSYS.md` §27. **Abr 2026:** `hero-context-line`, ritmo vertical, halo, imagen con radio/filtros/viñeta. **19 abr 2026:** H1 **DM Sans** (`.hero-title`), mano/viñeta/marco iterados. **22 abr 2026:** microfrase anti-señales (`hero-microline`), CTA secundario `Ver evidencia en 5 minutos`, fila doble de CTAs, pulido de márgenes/jerarquía. |
 | `src/pages/index.astro` | 4 cards de valor (2x2), textos finales, imágenes nuevas, sección de planes con CTA por plan e imágenes finales. **Abr 2026:** marcado `tevsys-home-*`; Inter, cards/planes tonos gris oscuro, estructura card sin franja, legibilidad texto, card 1 PNG. **19 abr 2026:** accents `.feature-card__value-accent`; CTA planes secundario con estilo local donde aplica. **Card 1 Precisión:** `card-1-input.png` engranaje; **`?v=8`**. **Card 2 HyperClose:** `card-2-hyperclose.png` candado; **`?v=9`**. **Card 3 SML:** `card-3-sml.png`; **`?v=10`**. |
 | `src/pages/company/contact.astro` | Contacto por plan con título simplificado + visual dinámico por `?plan=` (sin redundancia en encabezado). **19 abr 2026:** **Inter** explícita en copy + formulario (coherencia con micro-páginas). |
 | `src/components/forms/ContactForm.astro` | Badge de plan seleccionado + validación plan/capital + compatibilidad con `flow=demo`. |
@@ -33,6 +33,7 @@ Resumen técnico completo para revisión interna / DeepSeq.
 | `public/robots.txt` | **SEO:** Nuevo. Allow all, sitemap. |
 | `package.json` | **Analytics:** `@vercel/analytics` añadido. |
 | `src/layouts/Base.astro` | **Analytics:** `inject()` de @vercel/analytics antes de `</body>`. |
+| `src/pages/go/evidencia-5min.astro` | **22 abr 2026:** ruta puente para medir clics del CTA secundario en plan free de Vercel; redirección a HyperClose con fondo oscuro mínimo (sin header/footer) para evitar flash visual. |
 | `public/sitemap.xml` | **SEO:** Sitemap estático (11 URLs). |
 | `public/google644b0bf8f5617256.html` | **Search Console:** Verificación propiedad. |
 | `src/components/sections/heros/HomeHeroSection.astro` | **Core Web Vitals:** picture WebP, fetchpriority, width/height, decoding. |
@@ -122,6 +123,16 @@ Resumen técnico completo para revisión interna / DeepSeq.
 
 1. Decidir ajustes finos de encuadre/contraste para visuales de formulario por plan.
 2. Crear página de manual y añadir enlace en footer.
+
+---
+
+## Checkpoint sesión — 22 abr 2026 (hero + confianza + medición)
+
+- Se refuerza posicionamiento anti-categoría en hero: `No damos señales. Hacemos que tus reglas se cumplan.`
+- Se añade CTA secundario de validación rápida: `Ver evidencia en 5 minutos`.
+- El CTA secundario apunta a `/go/evidencia-5min` y redirige a `/features/hyperclose#hyperclose-demo`.
+- Métrica operativa sin Vercel Pro: page views de `/go/evidencia-5min` = proxy de clics CTA.
+- Se corrige flash visual en la ruta puente: HTML mínimo oscuro + redirección breve.
 
 ---
 

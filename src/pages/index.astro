@@ -19,9 +19,11 @@ import settings from '../config/settings.js';
 			<div class="tevsys-home-mid-glow" aria-hidden="true"></div>
 		<section class="feature-card__section">
 			<h2 class="feature-section__title">¿Cuánto dinero has perdido por no parar a tiempo?</h2>
-			<p class="feature-section__hook">Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.</p>
-			<p class="feature-card__intro-trazabilidad">Doble trazabilidad real: lógica interna tevsys + ejecución oficial MT5.</p>
-			<p class="feature-card__intro-mecanismo">Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF.</p>
+			<div class="feature-card__intro-stack">
+				<p class="feature-section__hook">Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.</p>
+				<p class="feature-card__intro-trazabilidad">Doble trazabilidad real: lógica interna tevsys + ejecución oficial MT5.</p>
+				<p class="feature-card__intro-mecanismo">Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF.</p>
+			</div>
 			<p class="feature-card__intro-ellos"><span class="feature-hook__dot" aria-hidden="true"></span>Ellos deslizan. En tevsys cerramos.</p>
 			<div class="feature-card__grid">
 				<a href="/features/precision" class="tevsys-card">
@@ -181,16 +183,31 @@ import settings from '../config/settings.js';
 	}
 	.feature-section__hook {
 		font-size: 1rem;
-		opacity: 0.92;
+		opacity: 0.94;
 		margin: 0 0 0.7rem;
 		line-height: 1.55;
+	}
+	.feature-card__intro-stack {
+		max-width: min(54rem, 100%);
+		padding: clamp(0.8rem, 1.8vw, 1.05rem) clamp(0.9rem, 2vw, 1.2rem);
+		margin: 0 0 0.8rem;
+		border-radius: 0.85rem;
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.028) 0%,
+			rgba(255, 255, 255, 0.012) 100%
+		);
+		border: 1px solid rgba(255, 255, 255, 0.08);
 	}
 	.feature-card__intro-trazabilidad,
 	.feature-card__intro-mecanismo {
 		font-size: 1rem;
 		line-height: 1.55;
-		margin: 0 0 0.65rem;
-		opacity: 0.9;
+		margin: 0 0 0.55rem;
+		opacity: 0.92;
+	}
+	.feature-card__intro-stack p:last-child {
+		margin-bottom: 0;
 	}
 	/* Estilo micropáginas: punto amarillo + texto gris (hereda) */
 	.feature-card__intro-ellos {
@@ -201,7 +218,7 @@ import settings from '../config/settings.js';
 		font-weight: 600;
 		opacity: 0.9;
 		font-size: 1.05rem;
-		margin: 0.35rem 0 clamp(2rem, 4vw, 2.65rem);
+		margin: 0.25rem 0 clamp(2rem, 4vw, 2.65rem);
 		line-height: 1.45;
 	}
 	.feature-card__intro-ellos .feature-hook__dot {
@@ -559,6 +576,10 @@ import settings from '../config/settings.js';
 	@media (max-width: 768px) {
 		.feature-section__title {
 			margin-bottom: 1rem;
+		}
+		.feature-card__intro-stack {
+			padding: 0.78rem 0.82rem;
+			border-radius: 0.75rem;
 		}
 		.feature-card__grid {
 			grid-template-columns: 1fr;

@@ -4,6 +4,21 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — pulido bloque previo a cards (22 abr 2026)
+
+**Objetivo:** mejorar lectura en diagonal y transición hacia las 4 cards sin tocar la propuesta de valor.
+
+**Cambio (`src/pages/index.astro`):**
+
+- Reagrupación del texto introductorio en un bloque visual suave (`.feature-card__intro-stack`).
+- Ajuste fino de opacidades/márgenes en hook e intros para dar más jerarquía.
+- Microajuste de espaciado del claim `Ellos deslizan. En tevsys cerramos.` para que actúe como remate antes del grid.
+- Ajuste responsive del bloque de intro en móvil.
+
+**Resultado buscado:** sección más escaneable, menos “texto suelto” y entrada más limpia al bloque de cards.
+
+---
+
 ## Home Hero — medicion de clics sin Vercel Pro (22 abr 2026)
 
 **Objetivo:** medir clics del CTA secundario con plan free de Vercel (sin Custom Events).

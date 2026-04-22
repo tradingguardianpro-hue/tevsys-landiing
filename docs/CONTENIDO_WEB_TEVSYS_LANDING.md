@@ -28,11 +28,15 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Hero
 - **H1 (actual, abr 2026):** `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` en ámbar (`hero-title__brand`, sin subrayado); subrayado solo en “Disciplina automatizada” (`hero-title__underline`).
+- **Microfrase de desmarque (22 abr 2026):** `No damos señales. Hacemos que tus reglas se cumplan.` (clase `hero-microline`, entre H1 y contexto).
 - **Línea de contexto (debajo H1):** `Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.` (clase `hero-context-line`; **MT5 y cuenta** aquí; el H1 prioriza escaneo en tres tiempos).
 - **Tipografía (19 abr 2026):** **DM Sans** solo en `.hero-title` (H1); resto del bloque hero y header en **Inter**. Carga de fuentes en `BaseHead.astro` (Inter + DM Sans).
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo (dot + badge)
 - **Botón:** `Descargar demo →` (ámbar marca)
+- **CTA secundario (22 abr 2026):** `Ver evidencia en 5 minutos` (estilo outline, junto al CTA principal).
+- **Ruta de CTA secundario (22 abr 2026):** `/go/evidencia-5min` → redirige a `/features/hyperclose#hyperclose-demo`.
+- **Medición Vercel free (22 abr 2026):** visitas a `/go/evidencia-5min` se usan como proxy de clics del CTA secundario (sin eventos Pro).
 - **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
 - **Stack home (tema oscuro):** fondo **`#000`** en `.tevsys-home-hero-stack` (coherencia con zona imagen cards); capas KITT sin cambio de filosofía.
 - **Imagen:** mano robótica + candado (`mano robotica central web.png`; hero con `?v=2` tras arte velas neutras). Tratamiento CSS: filtros/viñeta/radio imagen; stack home con viñeta y un solo redondeo exterior (`CHANGELOG` + `HOME_HERO_CARDS_ITERACION_ABR2026.md`).
