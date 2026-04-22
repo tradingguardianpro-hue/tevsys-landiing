@@ -12,6 +12,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
         <h1 class="hero-title">
           Tú pones los límites. <span class="hero-title__brand">TEVSYS</span> los blinda. <span class="hero-title__underline">Disciplina automatizada</span>.
         </h1>
+        <p class="hero-microline">
+          <strong>No damos señales.</strong> Hacemos que tus reglas se cumplan.
+        </p>
         <p class="hero-context-line">
           Control de riesgo y límites para trading real en tu cuenta MT5 — automatizado y registrado.
         </p>
@@ -121,9 +124,25 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-decoration: none;
   }
 
+  .hero-microline {
+    margin: 0.7rem 0 0;
+    max-width: min(33rem, 100%);
+    padding: 0 0.25rem;
+    font-size: clamp(1.02rem, 2.45vw, 1.28rem);
+    font-weight: 500;
+    line-height: 1.34;
+    letter-spacing: -0.02em;
+    color: rgba(244, 246, 248, 0.93);
+    text-align: center;
+  }
+  .hero-microline strong {
+    font-weight: 700;
+    color: #f4f6f8;
+  }
+
   /* Contexto temprano (novatos): no compite con el H1 */
   .hero-context-line {
-    margin: 0.875rem 0 0;
+    margin: 0.75rem 0 0;
     max-width: min(34rem, 100%);
     padding: 0 0.25rem;
     font-size: clamp(0.9375rem, 2.1vw, 1.0625rem);

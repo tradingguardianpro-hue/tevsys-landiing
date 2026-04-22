@@ -4,6 +4,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home Hero — microfrase de desmarque anti-señales (22 abr 2026)
+
+**Objetivo:** reforzar en los primeros 3 segundos que TEVSYS no pertenece a la categoría de “EA de señales”, sin desplazar el protagonismo del H1 principal.
+
+**Cambio (`src/components/sections/heros/HomeHeroSection.astro`):**
+
+- Nueva línea entre H1 y `.hero-context-line`: `No damos señales. Hacemos que tus reglas se cumplan.`
+- Jerarquía tipográfica intermedia con clase `.hero-microline` (tamaño/peso por debajo del H1 y por encima del contexto).
+- Énfasis selectivo en `No damos señales.` para filtrar categoría de forma instantánea.
+
+**Resultado buscado:** mantener el claim de marca (`Tú pones los límites...`) y añadir una lectura inequívoca de producto (disciplina operativa, no promesa de señales).
+
+---
+
 ## Motion home — barrido inicial KITT “fall” más calmado (21 abr 2026)
 
 **Problema:** al cargar `/` en tema oscuro, el primer barrido vertical del haz en `.tevsys-home-kitt-rect--fall` se percibía **demasiado rápido** (mucho recorrido en poco tiempo al inicio).
