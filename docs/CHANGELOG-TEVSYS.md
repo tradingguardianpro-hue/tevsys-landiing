@@ -13,7 +13,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Se retira el tracking por evento personalizado (requiere plan Pro).
 - Nuevo enlace del CTA secundario: `/go/evidencia-5min`.
 - Nueva ruta puente medible: `/go/evidencia-5min` (pagina intermedia que redirige a `/features/hyperclose#hyperclose-demo`).
-- La ruta puente usa `Layout` (con script de Analytics ya inyectado) y una redireccion breve para permitir registro en Vercel Analytics.
+- La ruta puente se sirve en HTML minimo oscuro (sin header/footer) para evitar flash visual, inyecta Analytics y redirige con delay corto para registrar pageview.
 
 **Uso esperado:** medir en Analytics las visitas a `/go/evidencia-5min` como proxy directo de clics en el boton del hero.
 
