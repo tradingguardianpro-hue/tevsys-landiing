@@ -21,6 +21,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home planes — estado visible por card (22 abr 2026)
+
+**Objetivo:** dejar claro en 1 vistazo qué plan está disponible ya y cuáles están en espera.
+
+**Cambio (`src/pages/index.astro`):**
+
+- Etiqueta en card `Essential`: `Demo activa`.
+- Etiquetas en `Advanced` y `Pro`: `Lista de espera`.
+- Estilo visual de estado:
+  - `Demo activa` en ámbar suave.
+  - `Lista de espera` en gris neutro.
+
+**Resultado buscado:** más claridad comercial sin añadir botones extra ni cambiar el flujo actual.
+
+---
+
 ## Home Hero — medicion de clics sin Vercel Pro (22 abr 2026)
 
 **Objetivo:** medir clics del CTA secundario con plan free de Vercel (sin Custom Events).

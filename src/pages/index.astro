@@ -108,6 +108,7 @@ import settings from '../config/settings.js';
 						<picture><source type="image/webp" srcset="/assets/images/plans/essential-card.webp" /><img src="/assets/images/plans/essential-card.png" alt="Plan Essential" width="640" height="360" loading="lazy" decoding="async" /></picture>
 					</div>
 					<div class="plan-card__content">
+						<p class="plan-card__status plan-card__status--live">Demo activa</p>
 						<h3><span class="card-title__accent">Essential</span></h3>
 						<ul class="plan-card__bullets plan-card__bullets--aperitivo" aria-label="Resumen Essential">
 							<li><strong>Disciplina automatizada</strong> y <strong>gestión de riesgo</strong> con los límites que tú configuras.</li>
@@ -132,6 +133,7 @@ import settings from '../config/settings.js';
 						<picture><source type="image/webp" srcset="/assets/images/plans/advanced-card.webp" /><img src="/assets/images/plans/advanced-card.png" alt="Plan Advanced" width="640" height="360" loading="lazy" decoding="async" /></picture>
 					</div>
 					<div class="plan-card__content">
+						<p class="plan-card__status plan-card__status--waitlist">Lista de espera</p>
 						<h3><span class="card-title__accent">Advanced</span></h3>
 						<p>En Advanced ofrecemos todo lo de Essential, además: protección configurable toda la semana, SML y días OFF. En desarrollo — lista de espera.</p>
 						<a href="/company/contact?plan=advanced" class="plan-card__cta">Elegir Advanced</a>
@@ -142,6 +144,7 @@ import settings from '../config/settings.js';
 						<picture><source type="image/webp" srcset="/assets/images/plans/pro-card.webp" /><img src="/assets/images/plans/pro-card.png" alt="Plan Pro" width="640" height="360" loading="lazy" decoding="async" /></picture>
 					</div>
 					<div class="plan-card__content">
+						<p class="plan-card__status plan-card__status--waitlist">Lista de espera</p>
 						<h3><span class="card-title__accent">Pro</span></h3>
 						<p>En Pro ofrecemos todo lo de Advanced, además: drawdown y estructura completa para capitales más altos. En desarrollo — lista de espera.</p>
 						<a href="/company/contact?plan=pro" class="plan-card__cta">Elegir Pro</a>
@@ -515,6 +518,27 @@ import settings from '../config/settings.js';
 		display: flex;
 		flex-direction: column;
 		flex: 1;
+	}
+	.plan-card__status {
+		align-self: flex-start;
+		margin: 0 0 0.45rem;
+		padding: 0.2rem 0.58rem;
+		border-radius: 999px;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		line-height: 1.25;
+	}
+	.plan-card__status--live {
+		background: rgba(245, 176, 65, 0.16);
+		border: 1px solid rgba(245, 176, 65, 0.52);
+		color: #f5b041;
+	}
+	.plan-card__status--waitlist {
+		background: rgba(255, 255, 255, 0.06);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+		color: rgba(244, 246, 248, 0.92);
 	}
 	.plan-card__content h3 {
 		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
