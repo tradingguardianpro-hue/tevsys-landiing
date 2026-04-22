@@ -37,6 +37,21 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home cards — microajuste de escaneo en card 1 (22 abr 2026)
+
+**Objetivo:** mejorar lectura rápida de la card `0,06% error medio` sin alterar su fondo técnico.
+
+**Cambio (`src/pages/index.astro`):**
+
+- Línea técnica simplificada:
+  - de lista separada por puntos a frase compacta con `Ajuste a tiempo real: ...`.
+- Cierre de prueba más limpio:
+  - `71 operativas documentadas en 5 entornos de ejecución.`
+
+**Resultado buscado:** misma información, menor fricción de lectura en 2-3 segundos.
+
+---
+
 ## Home Hero — medicion de clics sin Vercel Pro (22 abr 2026)
 
 **Objetivo:** medir clics del CTA secundario con plan free de Vercel (sin Custom Events).
