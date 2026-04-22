@@ -122,7 +122,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Microfrase reducida a una línea directa:
   - `No damos señales.`
 - Línea funcional actualizada:
-  - `Automatizamos el control de riesgo para que tus reglas se cumplan siempre en tu cuenta MT5.`
+  - `Automatizamos, vigilamos y actuamos para que tus reglas se cumplan siempre en tu cuenta MT5.`
 - Sin subrayado adicional en estas líneas (solo jerarquía tipográfica).
 
 **Resultado buscado:** más claridad en 2 golpes de lectura y mejor separación entre desmarque y propuesta funcional.
