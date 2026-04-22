@@ -4,19 +4,17 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Home Hero — tracking de clic en CTA "Ver evidencia en 5 minutos" (22 abr 2026)
+## Home Hero — medicion de clics sin Vercel Pro (22 abr 2026)
 
-**Objetivo:** medir con datos reales cuantas personas usan el atajo de evidencia desde el hero.
+**Objetivo:** medir clics del CTA secundario con plan free de Vercel (sin Custom Events).
 
-**Cambio (`src/components/sections/heros/HomeHeroSection.astro`):**
+**Cambios (`src/components/sections/heros/HomeHeroSection.astro`, `src/pages/go/evidencia-5min.astro`):**
 
-- Evento personalizado en Vercel Analytics al hacer clic en el CTA secundario:
-  - `hero_evidence_5min_click`
-- Metadatos enviados:
-  - `location: home_hero`
-  - `target: /features/hyperclose#hyperclose-demo`
+- Se retira el tracking por evento personalizado (requiere plan Pro).
+- Nuevo enlace del CTA secundario: `/go/evidencia-5min`.
+- Nueva ruta puente medible: `/go/evidencia-5min` (pagina intermedia que redirige a `/features/hyperclose#hyperclose-demo`).
 
-**Uso esperado:** revisar en Analytics el volumen de clics y comparar contra visitas de home para validar si el mensaje de confianza mejora interaccion.
+**Uso esperado:** medir en Analytics las visitas a `/go/evidencia-5min` como proxy directo de clics en el boton del hero.
 
 ---
 
@@ -29,7 +27,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Nuevo bloque `.hero-cta-row` con dos botones en la misma zona:
   - primario: `Descargar demo →` (se mantiene),
   - secundario: `Ver evidencia en 5 minutos`.
-- El nuevo botón enlaza a `/features/hyperclose#hyperclose-demo` para llevar directo a vídeo + pruebas.
+- El nuevo botón enlaza a `/go/evidencia-5min` para medir clic y redirigir a vídeo + pruebas.
 - Estilo secundario tipo outline (`.hero-audit-btn`) y ajustes responsive para móvil.
 
 **Resultado buscado:** facilitar “validación en pocos minutos” sin convertir la home en una página solo para academias.
