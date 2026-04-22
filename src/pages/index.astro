@@ -19,10 +19,12 @@ import settings from '../config/settings.js';
 			<div class="tevsys-home-mid-glow" aria-hidden="true"></div>
 		<section class="feature-card__section">
 			<h2 class="feature-section__title">¿Cuánto dinero has perdido por no parar a tiempo?</h2>
-			<div class="feature-card__intro-stack">
+			<div class="feature-card__checklist-static">
 				<p class="feature-section__hook">Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.</p>
-				<p class="feature-card__intro-trazabilidad">Doble trazabilidad real: lógica interna tevsys + ejecución oficial MT5.</p>
-				<p class="feature-card__intro-mecanismo">Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF.</p>
+				<ul class="feature-card__checklist-static-items" aria-label="Checklist resumen de valor">
+					<li>Doble trazabilidad real: lógica interna tevsys + ejecución oficial MT5.</li>
+					<li>Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF.</li>
+				</ul>
 			</div>
 			<p class="feature-card__intro-ellos"><span class="feature-hook__dot" aria-hidden="true"></span>Ellos deslizan. En tevsys cerramos.</p>
 			<div class="feature-card__grid">
@@ -187,7 +189,7 @@ import settings from '../config/settings.js';
 		margin: 0 0 0.7rem;
 		line-height: 1.55;
 	}
-	.feature-card__intro-stack {
+	.feature-card__checklist-static {
 		max-width: min(54rem, 100%);
 		padding: clamp(0.8rem, 1.8vw, 1.05rem) clamp(0.9rem, 2vw, 1.2rem);
 		margin: 0 0 0.8rem;
@@ -199,14 +201,31 @@ import settings from '../config/settings.js';
 		);
 		border: 1px solid rgba(245, 176, 65, 0.34);
 	}
-	.feature-card__intro-trazabilidad,
-	.feature-card__intro-mecanismo {
+	.feature-card__checklist-static-items {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.feature-card__checklist-static-items li {
+		position: relative;
+		padding-left: 1.15rem;
+		margin: 0 0 0.45rem;
 		font-size: 1rem;
 		line-height: 1.55;
-		margin: 0 0 0.55rem;
 		opacity: 0.92;
+		color: rgba(244, 246, 248, 0.94);
 	}
-	.feature-card__intro-stack p:last-child {
+	.feature-card__checklist-static-items li::before {
+		content: '';
+		position: absolute;
+		left: 0.05rem;
+		top: 0.62rem;
+		width: 0.42rem;
+		height: 0.42rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.9);
+	}
+	.feature-card__checklist-static-items li:last-child {
 		margin-bottom: 0;
 	}
 	/* Estilo micropáginas: punto amarillo + texto gris (hereda) */
@@ -577,7 +596,7 @@ import settings from '../config/settings.js';
 		.feature-section__title {
 			margin-bottom: 1rem;
 		}
-		.feature-card__intro-stack {
+		.feature-card__checklist-static {
 			padding: 0.78rem 0.82rem;
 			border-radius: 0.75rem;
 		}
