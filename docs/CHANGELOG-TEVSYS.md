@@ -111,6 +111,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Uso esperado:** medir en Analytics las visitas a `/go/evidencia-5min` como proxy directo de clics en el boton del hero.
 
+**Ajuste UX (22 abr 2026):**
+- Desde el CTA del hero, la ruta puente redirige a `/features/hyperclose?src=hero#hyperclose-demo`.
+- En `hyperclose.astro`, si `src=hero`, se evita autoplay del vídeo principal para priorizar lectura inicial.
+
 ---
 
 ## Home Hero — redistribución final de mensaje (22 abr 2026)

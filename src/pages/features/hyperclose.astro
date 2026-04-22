@@ -357,10 +357,12 @@ const seo = {
 
 <script>
 	function playDemoIfTarget() {
+		const params = new URLSearchParams(window.location.search);
+		const fromHero = params.get('src') === 'hero';
 		const hash = window.location.hash;
 		if (hash === '#hyperclose-demo') {
 			const video = document.getElementById('hyperclose-demo-video');
-			if (video) video.play().catch(() => {});
+			if (video && !fromHero) video.play().catch(() => {});
 		} else if (hash === '#hyperclose-off-demo') {
 			const video = document.getElementById('hyperclose-off-demo-video');
 			if (video) video.play().catch(() => {});
