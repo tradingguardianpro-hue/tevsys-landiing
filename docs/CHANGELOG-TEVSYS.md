@@ -81,6 +81,23 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home cards — microajuste de escaneo en card 4 (22 abr 2026)
+
+**Objetivo:** mantener fuerza de prueba en `Evidencia verificable` con menor carga de lectura.
+
+**Cambio (`src/pages/index.astro`):**
+
+- Línea de medios simplificada:
+  - `Vídeo del cierre, informe MT5 e historial de transacciones.`
+- Cierre compacto:
+  - `Todo verificable. Todo descargable.`
+- Whisper final más directo:
+  - `Para ti o para quien te audite.`
+
+**Resultado buscado:** misma contundencia de prueba con mejor ritmo visual.
+
+---
+
 ## Home Hero — medicion de clics sin Vercel Pro (22 abr 2026)
 
 **Objetivo:** medir clics del CTA secundario con plan free de Vercel (sin Custom Events).
