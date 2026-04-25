@@ -1,0 +1,287 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Auditoría con IA | tevsys',
+	description:
+		'Auditoría manual-asistida en MT5: ejecución, cumplimiento de límites y evidencia real. Para traders, academias y equipos que exigen trazabilidad.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="audit-hero">
+			<p class="audit-kicker">Auditoría con IA · Fase 1</p>
+			<h1>¿Quieres auditar tu operativa con IA?</h1>
+			<p class="audit-subtitle">No venimos a juzgar tu estrategia: venimos a verificar tu ejecución con datos.</p>
+			<p class="audit-hero-copy">Sin promesas, sin relato. Con datos trazables.</p>
+			<div class="audit-hero-ctas">
+				<a class="audit-cta audit-cta--primary" href="/company/contact?flow=auditoria-ia">Solicitar auditoría</a>
+				<a class="audit-cta audit-cta--secondary" href="#que-debes-enviar">Ver qué debes enviar</a>
+			</div>
+		</section>
+
+		<section class="audit-dual">
+			<article class="audit-card">
+				<h2>Qué auditamos</h2>
+				<ul>
+					<li>Cumplimiento de límites configurados en tevsys.</li>
+					<li>Coherencia entre registros internos, logs de sesión e informe MT5.</li>
+					<li>Eventos de control: bloqueos, intentos, cierres y estado operativo.</li>
+				</ul>
+			</article>
+			<article class="audit-card">
+				<h2>Qué no auditamos</h2>
+				<ul>
+					<li>Estrategias de entrada o salida.</li>
+					<li>Señales de trading.</li>
+					<li>Promesas de rentabilidad futura.</li>
+				</ul>
+			</article>
+		</section>
+
+		<section class="audit-flow">
+			<h2>Cómo funciona</h2>
+			<ol>
+				<li>Nos envías el pack de evidencia del periodo.</li>
+				<li>Verificamos la integridad y consistencia del material.</li>
+				<li>Revisamos con plantilla técnica + análisis asistido por IA.</li>
+				<li>Recibes el informe con resultado y recomendaciones.</li>
+			</ol>
+		</section>
+
+		<section id="que-debes-enviar" class="audit-pack">
+			<h2>Qué debes enviar</h2>
+			<ul>
+				<li>Logs del periodo auditado.</li>
+				<li>Captura del panel con fecha/hora visible.</li>
+				<li>Informe HTML MT5 del mismo periodo.</li>
+				<li>Broker, símbolo principal, tipo de cuenta y franja horaria.</li>
+			</ul>
+			<p class="audit-note">Si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</p>
+		</section>
+
+		<section class="audit-output">
+			<h2>Qué recibes</h2>
+			<p class="audit-output-status">Resultado estándar: <strong>Apto</strong> · <strong>Apto con observaciones</strong> · <strong>No apto</strong>.</p>
+			<p class="audit-output-context">Estos datos se extraen directamente de tus logs de sesión. Son los mismos que tevsys utiliza para proteger tu cuenta.</p>
+			<div class="audit-metrics">
+				<p><strong>Límites configurados en tevsys (según logs):</strong> X%</p>
+				<p><strong>Cierre ejecutado por tevsys:</strong> X%</p>
+				<p><strong>Precisión de cierre y desviación:</strong> X%</p>
+			</div>
+			<p class="audit-impact">No te contamos lo que creemos: te mostramos lo que configuraste y cómo cerró tevsys.</p>
+		</section>
+
+		<section class="audit-academy">
+			<h2>Para academias y equipos</h2>
+			<p>¿Quieres auditar a tus alumnos con evidencia real?</p>
+			<ul>
+				<li>Mismo criterio para todos.</li>
+				<li>Menos relato, más trazabilidad.</li>
+				<li>Informe claro para seguimiento y mejora.</li>
+			</ul>
+		</section>
+
+		<section class="audit-faq">
+			<h2>FAQ breve</h2>
+			<details>
+				<summary>¿Esto evalúa mi estrategia?</summary>
+				<p>No. Evaluamos ejecución, límites y evidencia.</p>
+			</details>
+			<details>
+				<summary>¿Sirve para cuentas demo y reales?</summary>
+				<p>Sí, en ambos casos.</p>
+			</details>
+			<details>
+				<summary>¿Puedo solicitar una auditoría sin usar tevsys?</summary>
+				<p>No. Sin tevsys no podemos emitir este dictamen con el estándar de trazabilidad de esta auditoría.</p>
+			</details>
+			<details>
+				<summary>¿Qué significa “Apto con observaciones”?</summary>
+				<p>Que hay base válida, pero detectamos puntos concretos a mejorar.</p>
+			</details>
+		</section>
+
+		<section class="audit-closing">
+			<p>Si quieres validar tu operativa con datos reales, aquí empezamos.</p>
+			<a class="audit-cta audit-cta--primary" href="/company/contact?flow=auditoria-ia">Solicitar auditoría con IA</a>
+			<p class="audit-legal">Fase 1 manual-asistida, la IA apoya la revisión; no sustituye el criterio técnico ni ofrece asesoramiento de inversión.</p>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.audit-hero,
+	.audit-dual,
+	.audit-flow,
+	.audit-pack,
+	.audit-output,
+	.audit-academy,
+	.audit-faq,
+	.audit-closing {
+		margin: var(--section-margin) auto;
+	}
+	.audit-hero {
+		max-width: 52rem;
+		padding: clamp(1.05rem, 2.3vw, 1.45rem) clamp(1.1rem, 2.6vw, 1.65rem);
+		border-radius: 1rem;
+		border: 1px solid rgba(100, 196, 255, 0.28);
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
+		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
+	}
+	.audit-kicker {
+		margin: 0 0 0.45rem;
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-weight: 700;
+		color: rgba(245, 176, 65, 0.96);
+	}
+	.audit-hero h1 {
+		margin: 0 0 0.75rem;
+		font-size: clamp(1.45rem, 2.8vw, 2rem);
+		letter-spacing: -0.02em;
+		line-height: 1.25;
+	}
+	.audit-subtitle {
+		margin: 0 0 0.55rem;
+		font-size: 1.02rem;
+		line-height: 1.55;
+		opacity: 0.96;
+	}
+	.audit-hero-copy {
+		margin: 0 0 0.9rem;
+		font-size: 0.95rem;
+		opacity: 0.85;
+	}
+	.audit-hero-ctas {
+		display: flex;
+		gap: 0.6rem;
+		flex-wrap: wrap;
+	}
+	.audit-cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.54rem 0.95rem;
+		border-radius: 0.65rem;
+		font-size: 0.87rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background-color 0.2s ease, border-color 0.2s ease;
+	}
+	.audit-cta--primary {
+		border: 1px solid rgba(100, 196, 255, 0.5);
+		color: rgba(232, 247, 255, 0.98);
+		background: rgba(100, 196, 255, 0.12);
+	}
+	.audit-cta--primary:hover {
+		background: rgba(100, 196, 255, 0.18);
+		border-color: rgba(100, 196, 255, 0.72);
+	}
+	.audit-cta--secondary {
+		border: 1px solid rgba(245, 176, 65, 0.42);
+		color: rgba(255, 241, 218, 0.95);
+		background: rgba(245, 176, 65, 0.1);
+	}
+	.audit-cta--secondary:hover {
+		background: rgba(245, 176, 65, 0.16);
+		border-color: rgba(245, 176, 65, 0.66);
+	}
+	.audit-dual {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+	}
+	.audit-card {
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 0.85rem;
+		padding: 1rem 1.05rem;
+	}
+	.audit-card h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.12rem;
+	}
+	.audit-card ul,
+	.audit-flow ol,
+	.audit-pack ul,
+	.audit-academy ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		line-height: 1.5;
+		opacity: 0.93;
+	}
+	.audit-flow h2,
+	.audit-pack h2,
+	.audit-output h2,
+	.audit-academy h2,
+	.audit-faq h2 {
+		margin: 0 0 0.75rem;
+		font-size: 1.22rem;
+	}
+	.audit-note {
+		margin: 0.7rem 0 0;
+		opacity: 0.82;
+	}
+	.audit-output-status {
+		margin: 0 0 0.5rem;
+	}
+	.audit-output-context {
+		margin: 0 0 0.65rem;
+		opacity: 0.88;
+	}
+	.audit-metrics {
+		border: 1px solid rgba(245, 176, 65, 0.38);
+		border-radius: 0.75rem;
+		padding: 0.75rem 0.9rem;
+		background: rgba(245, 176, 65, 0.08);
+		margin: 0 0 0.65rem;
+	}
+	.audit-metrics p {
+		margin: 0 0 0.35rem;
+	}
+	.audit-metrics p:last-child {
+		margin-bottom: 0;
+	}
+	.audit-impact {
+		margin: 0;
+		font-weight: 600;
+	}
+	.audit-faq details {
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 0.7rem;
+		padding: 0.7rem 0.85rem;
+		margin-bottom: 0.55rem;
+		background: rgba(255, 255, 255, 0.015);
+	}
+	.audit-faq summary {
+		cursor: pointer;
+		font-weight: 600;
+	}
+	.audit-faq p {
+		margin: 0.55rem 0 0;
+		opacity: 0.88;
+	}
+	.audit-closing {
+		text-align: center;
+		max-width: 46rem;
+	}
+	.audit-closing > p:first-child {
+		font-size: 1.03rem;
+		margin: 0 0 0.85rem;
+	}
+	.audit-legal {
+		margin: 0.75rem 0 0;
+		font-size: 0.86rem;
+		opacity: 0.72;
+		line-height: 1.45;
+	}
+	@media (max-width: 768px) {
+		.audit-dual {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

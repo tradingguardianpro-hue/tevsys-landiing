@@ -26,6 +26,34 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Nueva página — `auditoria-ia` (25 abr 2026)
+
+**Objetivo:** abrir un flujo completo y honesto para auditoría manual-asistida con IA, alineado a Fase 1 (sin prometer automatización total ni señales).
+
+**Cambios (`src/pages/auditoria-ia.astro`):**
+
+- Hero con posicionamiento:
+  - `¿Quieres auditar tu operativa con IA?`
+  - subtítulo acordado: `No venimos a juzgar tu estrategia: venimos a verificar tu ejecución con datos.`
+  - cierre corto: `Sin promesas, sin relato. Con datos trazables.`
+- Secciones principales:
+  - `Qué auditamos / Qué no auditamos`
+  - `Cómo funciona` (4 pasos)
+  - `Qué debes enviar` (pack mínimo + aviso no punitivo)
+  - `Qué recibes` (estados + bloque de precisión/datos)
+  - `Para academias y equipos`
+  - `FAQ` (incluye requisito de usar tevsys para emitir dictamen bajo este estándar)
+  - CTA final + microtexto legal de Fase 1.
+- Estilo visual:
+  - base oscura, acento azul/cian para el módulo de auditoría,
+  - ámbar de marca en puntos de apoyo,
+  - coherencia tipográfica con home (sin crear “otro producto visual”).
+
+**Integración home:**
+- CTA del teaser de home (`index.astro`) actualizado a `/auditoria-ia` (`Ver auditoría IA`) como puerta de entrada al flujo.
+
+---
+
 ## Home — pulido bloque previo a cards (22 abr 2026)
 
 **Objetivo:** mejorar lectura en diagonal y transición hacia las 4 cards sin tocar la propuesta de valor.
