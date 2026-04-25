@@ -98,9 +98,13 @@ import settings from '../config/settings.js';
 		<section class="audit-teaser-section" aria-labelledby="audit-teaser-title">
 			<div class="audit-teaser-shell">
 				<p class="audit-teaser-kicker">Verificación con IA</p>
-				<h2 id="audit-teaser-title">¿Quieres que te auditemos con IA?</h2>
-				<p class="audit-teaser-lead">Contrastamos evidencia real: registros internos tevsys, logs de sesión e informe oficial MT5.</p>
-				<p class="audit-teaser-note">Ruta inicial pensada para traders y academias que quieren validar disciplina con pruebas.</p>
+				<h2 id="audit-teaser-title">¿Quieres auditar disciplina con IA?</h2>
+				<p class="audit-teaser-lead">No auditamos tu estrategia: auditamos cumplimiento y evidencia.</p>
+				<ul class="audit-teaser-points" aria-label="Qué revisamos en auditoría IA">
+					<li>Registros internos de tevsys (estado, bloqueos y eventos clave).</li>
+					<li>Logs de sesión + informe oficial MT5 del mismo periodo.</li>
+				</ul>
+				<p class="audit-teaser-note">Útil para traders y academias que quieren validar disciplina con pruebas, no con relato.</p>
 				<a href="/company/contact?flow=auditoria-ia" class="audit-teaser-cta">Solicitar revisión</a>
 			</div>
 		</section>
@@ -273,9 +277,9 @@ import settings from '../config/settings.js';
 		margin: 0 auto;
 		padding: clamp(0.95rem, 2.2vw, 1.3rem) clamp(1rem, 2.4vw, 1.5rem);
 		border-radius: 1rem;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.018) 100%);
-		backdrop-filter: blur(2px);
+		border: 1px solid rgba(100, 196, 255, 0.28);
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
+		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
 	}
 	.audit-teaser-kicker {
 		margin: 0 0 0.35rem;
@@ -297,11 +301,37 @@ import settings from '../config/settings.js';
 		line-height: 1.5;
 		opacity: 0.95;
 	}
+	.audit-teaser-points {
+		margin: 0 0 0.55rem;
+		padding: 0;
+		list-style: none;
+	}
+	.audit-teaser-points li {
+		position: relative;
+		padding-left: 1.05rem;
+		margin: 0 0 0.34rem;
+		font-size: 0.94rem;
+		line-height: 1.45;
+		opacity: 0.9;
+	}
+	.audit-teaser-points li::before {
+		content: '';
+		position: absolute;
+		left: 0.05rem;
+		top: 0.54rem;
+		width: 0.38rem;
+		height: 0.38rem;
+		border-radius: 50%;
+		background: rgba(100, 196, 255, 0.9);
+	}
+	.audit-teaser-points li:last-child {
+		margin-bottom: 0;
+	}
 	.audit-teaser-note {
 		margin: 0 0 0.85rem;
 		font-size: 0.92rem;
 		line-height: 1.5;
-		opacity: 0.8;
+		opacity: 0.84;
 	}
 	.audit-teaser-cta {
 		display: inline-flex;
@@ -309,17 +339,17 @@ import settings from '../config/settings.js';
 		justify-content: center;
 		padding: 0.54rem 0.92rem;
 		border-radius: 0.65rem;
-		border: 1px solid rgba(245, 176, 65, 0.52);
-		color: rgba(255, 245, 229, 0.98);
-		background: rgba(245, 176, 65, 0.12);
+		border: 1px solid rgba(100, 196, 255, 0.5);
+		color: rgba(232, 247, 255, 0.98);
+		background: rgba(100, 196, 255, 0.12);
 		font-size: 0.86rem;
 		font-weight: 600;
 		text-decoration: none;
 		transition: background-color 0.2s ease, border-color 0.2s ease;
 	}
 	.audit-teaser-cta:hover {
-		background: rgba(245, 176, 65, 0.19);
-		border-color: rgba(245, 176, 65, 0.7);
+		background: rgba(100, 196, 255, 0.18);
+		border-color: rgba(100, 196, 255, 0.72);
 	}
 	.tevsys-card {
 		position: relative;
