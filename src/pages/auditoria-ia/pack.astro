@@ -33,7 +33,7 @@ const seo = {
 		</section>
 
 		<section class="pack-check">
-			<h2>Checklist mínimo</h2>
+			<h2>Checklist mínimo del pack</h2>
 			<ul>
 				<li id="req-logs" class="pack-req is-pending">Logs del periodo auditado.</li>
 				<li id="req-panel" class="pack-req is-pending">Captura del panel con fecha/hora visible.</li>
@@ -41,7 +41,7 @@ const seo = {
 				<li id="req-context" class="pack-req is-manual">Periodo + cuenta auditada + objetivo de revisión.</li>
 			</ul>
 			<div class="pack-manual">
-				<h3>Datos de contraste (formulario mínimo)</h3>
+				<h3>Datos para contrastar tu auditoría</h3>
 				<div class="pack-manual-grid">
 					<label class="pack-field">
 						<span>Periodo desde</span>
@@ -78,6 +78,7 @@ const seo = {
 				<a id="pack-contact-cta" class="pack-cta pack-cta--primary is-disabled" href="/company/contact?flow=auditoria-ia&step=pack" aria-disabled="true">Continuar por contacto</a>
 				<a class="pack-cta pack-cta--secondary" href="/auditoria-ia">Volver a auditoría IA</a>
 			</div>
+			<p id="pack-cta-note" class="pack-cta-note">Completa checklist + datos de contraste para continuar.</p>
 		</section>
 	</Container>
 </Layout>
@@ -88,12 +89,13 @@ const seo = {
 	const fileList = document.getElementById('pack-file-list');
 	const status = document.getElementById('pack-status');
 	const contactCta = document.getElementById('pack-contact-cta');
+	const ctaNote = document.getElementById('pack-cta-note');
 	const auditFrom = document.getElementById('audit-from');
 	const auditTo = document.getElementById('audit-to');
 	const auditAccount = document.getElementById('audit-account');
 	const auditFocus = document.getElementById('audit-focus');
 
-	if (dropzone && fileInput && fileList && status && contactCta && auditFrom && auditTo && auditAccount && auditFocus) {
+	if (dropzone && fileInput && fileList && status && contactCta && ctaNote && auditFrom && auditTo && auditAccount && auditFocus) {
 		const allFiles = new Map();
 
 		const hasLogs = (name) => /\.(log|txt|zip)$/i.test(name);
@@ -143,6 +145,7 @@ const seo = {
 				status.textContent = 'Aún no hay archivos cargados.';
 				contactCta.classList.add('is-disabled');
 				contactCta.setAttribute('aria-disabled', 'true');
+				ctaNote.textContent = 'Completa checklist + datos de contraste para continuar.';
 				return;
 			}
 
@@ -162,6 +165,9 @@ const seo = {
 
 			contactCta.classList.toggle('is-disabled', !ready);
 			contactCta.setAttribute('aria-disabled', String(!ready));
+			ctaNote.textContent = ready
+				? 'Pack listo para enviar. Puedes continuar por contacto.'
+				: 'Completa checklist + datos de contraste para continuar.';
 		};
 
 		const ingestFiles = (files) => {
@@ -330,13 +336,14 @@ const seo = {
 		border: 1px solid rgba(255, 255, 255, 0.12);
 		border-radius: 0.95rem;
 		background: rgba(255, 255, 255, 0.015);
-		padding: 1rem 1.05rem 1.1rem;
+		padding: 0.92rem 1rem 1rem;
 	}
 	.pack-check h2 {
-		margin: 0 0 0.7rem;
+		margin: 0 0 0.56rem;
+		font-size: clamp(1.05rem, 2.15vw, 1.22rem);
 	}
 	.pack-manual {
-		margin: 0.72rem 0 0.85rem;
+		margin: 1rem 0 0.82rem;
 		padding: 0.76rem 0.82rem;
 		border: 1px solid rgba(172, 180, 196, 0.22);
 		border-radius: 0.72rem;
@@ -385,7 +392,7 @@ const seo = {
 	.pack-req {
 		position: relative;
 		padding-left: 1.5rem;
-		margin-bottom: 0.34rem;
+		margin-bottom: 0.24rem;
 	}
 	.pack-req::before {
 		content: '•';
@@ -402,9 +409,9 @@ const seo = {
 		align-items: center;
 		justify-content: center;
 		margin-left: 0.5rem;
-		padding: 0.03rem 0.4rem;
+		padding: 0.02rem 0.36rem;
 		border-radius: 999px;
-		font-size: 0.66rem;
+		font-size: 0.62rem;
 		font-weight: 700;
 		letter-spacing: 0.01em;
 		text-transform: uppercase;
@@ -443,8 +450,9 @@ const seo = {
 		color: rgba(190, 246, 209, 0.96);
 	}
 	.pack-status {
-		margin: 0.82rem 0 0.66rem;
+		margin: 0.56rem 0 0.55rem;
 		font-weight: 600;
+		font-size: 0.93rem;
 	}
 	.pack-files {
 		border: 1px solid rgba(100, 196, 255, 0.22);
@@ -464,10 +472,16 @@ const seo = {
 		opacity: 0.75;
 	}
 	.pack-cta-row {
-		margin-top: 0.9rem;
+		margin-top: 0.76rem;
 		display: flex;
 		gap: 0.6rem;
 		flex-wrap: wrap;
+	}
+	.pack-cta-note {
+		margin: 0.52rem 0 0;
+		font-size: 0.8rem;
+		opacity: 0.78;
+		color: rgba(201, 214, 231, 0.9);
 	}
 	.pack-cta {
 		display: inline-flex;
