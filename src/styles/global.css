@@ -1045,6 +1045,7 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 /* Home — inferior: misma idea que arriba (niebla + KITT), más baja; planes + fundador encima */
 html[data-theme='dark'] .tevsys-home-band--lower {
 	--tevsys-lower-strip-h: clamp(150px, 24vh, 340px);
+	--tevsys-lower-strip-offset-y: clamp(26px, 3.2vh, 56px);
 	position: relative;
 	isolation: isolate;
 	padding-top: var(--tevsys-lower-strip-h);
@@ -1052,7 +1053,7 @@ html[data-theme='dark'] .tevsys-home-band--lower {
 
 html[data-theme='dark'] .tevsys-home-lower-strip {
 	position: absolute;
-	top: 0;
+	top: var(--tevsys-lower-strip-offset-y);
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100vw;
