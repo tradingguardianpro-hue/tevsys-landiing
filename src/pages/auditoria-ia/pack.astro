@@ -210,7 +210,7 @@ const seo = {
 		max-width: 54rem;
 	}
 	.pack-dropzone {
-		border: 1px dashed rgba(154, 165, 182, 0.58);
+		border: 1px dashed rgba(168, 180, 199, 0.72);
 		border-radius: 0.95rem;
 		background: linear-gradient(180deg, rgba(158, 167, 183, 0.12) 0%, rgba(158, 167, 183, 0.04) 100%);
 		padding: clamp(1.2rem, 3.5vw, 1.85rem);
@@ -256,7 +256,8 @@ const seo = {
 	.pack-trust {
 		margin: 0.56rem 0 0;
 		font-size: 0.85rem;
-		opacity: 0.72;
+		opacity: 0.88;
+		color: rgba(218, 226, 238, 0.92);
 	}
 	.pack-check {
 		max-width: 54rem;
@@ -271,7 +272,7 @@ const seo = {
 	.pack-check ul {
 		margin: 0;
 		padding-left: 1.1rem;
-		line-height: 1.5;
+		line-height: 1.62;
 	}
 	.pack-check li::marker {
 		color: rgba(100, 196, 255, 0.95);
@@ -325,6 +326,11 @@ const seo = {
 	.pack-cta--primary:hover {
 		background: rgba(100, 196, 255, 0.2);
 		border-color: rgba(100, 196, 255, 0.72);
+	}
+	.pack-cta--primary:not(.is-disabled) {
+		background: rgba(100, 196, 255, 0.22);
+		border-color: rgba(100, 196, 255, 0.78);
+		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.18) inset;
 	}
 	.pack-cta--secondary {
 		border: 1px solid rgba(100, 196, 255, 0.34);
