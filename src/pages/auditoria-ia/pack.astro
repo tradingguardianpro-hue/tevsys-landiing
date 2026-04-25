@@ -38,8 +38,35 @@ const seo = {
 				<li id="req-logs" class="pack-req is-pending">Logs del periodo auditado.</li>
 				<li id="req-panel" class="pack-req is-pending">Captura del panel con fecha/hora visible.</li>
 				<li id="req-report" class="pack-req is-pending">Informe HTML MT5 del mismo periodo.</li>
-				<li id="req-context" class="pack-req is-manual">Broker, símbolo principal, tipo de cuenta y franja horaria.</li>
+				<li id="req-context" class="pack-req is-manual">Periodo + cuenta auditada + objetivo de revisión.</li>
 			</ul>
+			<div class="pack-manual">
+				<h3>Datos de contraste (formulario mínimo)</h3>
+				<div class="pack-manual-grid">
+					<label class="pack-field">
+						<span>Periodo desde</span>
+						<input id="audit-from" type="datetime-local" />
+					</label>
+					<label class="pack-field">
+						<span>Periodo hasta</span>
+						<input id="audit-to" type="datetime-local" />
+					</label>
+					<label class="pack-field">
+						<span>Cuenta auditada (login o ID visible)</span>
+						<input id="audit-account" type="text" placeholder="Ej. 541239763" />
+					</label>
+					<label class="pack-field">
+						<span>Objetivo principal de auditoría</span>
+						<select id="audit-focus">
+							<option value="">Selecciona objetivo</option>
+							<option value="precision">Precisión de cierre</option>
+							<option value="disciplina">Disciplina y cumplimiento</option>
+							<option value="bloqueos">Bloqueos / HyperClose</option>
+							<option value="sml">Comportamiento SML</option>
+						</select>
+					</label>
+				</div>
+			</div>
 			<p id="pack-status" class="pack-status">Aún no hay archivos cargados.</p>
 			<div class="pack-files">
 				<h3>Archivos detectados</h3>
@@ -61,8 +88,12 @@ const seo = {
 	const fileList = document.getElementById('pack-file-list');
 	const status = document.getElementById('pack-status');
 	const contactCta = document.getElementById('pack-contact-cta');
+	const auditFrom = document.getElementById('audit-from');
+	const auditTo = document.getElementById('audit-to');
+	const auditAccount = document.getElementById('audit-account');
+	const auditFocus = document.getElementById('audit-focus');
 
-	if (dropzone && fileInput && fileList && status && contactCta) {
+	if (dropzone && fileInput && fileList && status && contactCta && auditFrom && auditTo && auditAccount && auditFocus) {
 		const allFiles = new Map();
 
 		const hasLogs = (name) => /\.(log|txt|zip)$/i.test(name);
@@ -76,11 +107,19 @@ const seo = {
 			el.classList.toggle('is-pending', !ok);
 		};
 
-		const setReqManual = (id) => {
+		const setReqManual = (id, ok) => {
 			const el = document.getElementById(id);
 			if (!el) return;
-			el.classList.remove('is-ok', 'is-pending');
-			el.classList.add('is-manual');
+			el.classList.remove('is-ok', 'is-pending', 'is-manual-ok');
+			el.classList.add(ok ? 'is-manual-ok' : 'is-manual');
+		};
+
+		const hasManualContext = () => {
+			const from = String(auditFrom.value || '').trim();
+			const to = String(auditTo.value || '').trim();
+			const account = String(auditAccount.value || '').trim();
+			const focus = String(auditFocus.value || '').trim();
+			return Boolean(from && to && account && focus);
 		};
 
 		const updateUi = () => {
@@ -92,7 +131,8 @@ const seo = {
 			setReqState('req-logs', logOk);
 			setReqState('req-panel', panelOk);
 			setReqState('req-report', reportOk);
-			setReqManual('req-context');
+			const manualOk = hasManualContext();
+			setReqManual('req-context', manualOk);
 
 			fileList.innerHTML = '';
 			if (!names.length) {
@@ -113,12 +153,16 @@ const seo = {
 			});
 
 			const complete = logOk && panelOk && reportOk;
+			const manualOk = hasManualContext();
+			const ready = complete && manualOk;
 			status.textContent = complete
-				? 'Pack técnico completo. Solo falta añadir el contexto (broker, símbolo, tipo de cuenta y franja horaria) en el formulario de contacto.'
+				? (manualOk
+					? 'Pack completo y contextualizado. Ya puedes continuar por contacto.'
+					: 'Pack técnico completo. Falta completar el formulario mínimo de contraste.')
 				: 'Pack parcial. Falta al menos una pieza obligatoria del checklist.';
 
-			contactCta.classList.toggle('is-disabled', !complete);
-			contactCta.setAttribute('aria-disabled', String(!complete));
+			contactCta.classList.toggle('is-disabled', !ready);
+			contactCta.setAttribute('aria-disabled', String(!ready));
 		};
 
 		const ingestFiles = (files) => {
@@ -141,6 +185,11 @@ const seo = {
 			if (!target.files) return;
 			ingestFiles(target.files);
 			target.value = '';
+		});
+
+		[auditFrom, auditTo, auditAccount, auditFocus].forEach((field) => {
+			field.addEventListener('input', updateUi);
+			field.addEventListener('change', updateUi);
 		});
 
 		['dragenter', 'dragover'].forEach((evtName) => {
@@ -166,7 +215,17 @@ const seo = {
 		contactCta.addEventListener('click', (e) => {
 			if (contactCta.classList.contains('is-disabled')) {
 				e.preventDefault();
+				return;
 			}
+			const params = new URLSearchParams({
+				flow: 'auditoria-ia',
+				step: 'pack',
+				period_from: auditFrom.value,
+				period_to: auditTo.value,
+				account: auditAccount.value,
+				focus: auditFocus.value,
+			});
+			contactCta.setAttribute('href', `/company/contact?${params.toString()}`);
 		});
 	}
 </script>
@@ -277,6 +336,47 @@ const seo = {
 	.pack-check h2 {
 		margin: 0 0 0.7rem;
 	}
+	.pack-manual {
+		margin: 0.72rem 0 0.85rem;
+		padding: 0.76rem 0.82rem;
+		border: 1px solid rgba(172, 180, 196, 0.22);
+		border-radius: 0.72rem;
+		background: linear-gradient(180deg, rgba(130, 138, 152, 0.09) 0%, rgba(130, 138, 152, 0.03) 100%);
+	}
+	.pack-manual h3 {
+		margin: 0 0 0.58rem;
+		font-size: 0.92rem;
+		opacity: 0.9;
+	}
+	.pack-manual-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.55rem;
+	}
+	.pack-field {
+		display: grid;
+		gap: 0.28rem;
+	}
+	.pack-field span {
+		font-size: 0.78rem;
+		opacity: 0.86;
+	}
+	.pack-field input,
+	.pack-field select {
+		width: 100%;
+		border-radius: 0.52rem;
+		border: 1px solid rgba(173, 182, 200, 0.34);
+		background: rgba(16, 20, 28, 0.78);
+		color: rgba(232, 239, 250, 0.96);
+		padding: 0.42rem 0.52rem;
+		font-size: 0.84rem;
+	}
+	.pack-field input:focus,
+	.pack-field select:focus {
+		outline: none;
+		border-color: rgba(100, 196, 255, 0.72);
+		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.22);
+	}
 	.pack-check ul {
 		margin: 0;
 		padding-left: 0;
@@ -325,13 +425,23 @@ const seo = {
 	}
 	.pack-req.is-manual::before {
 		content: '•';
-		color: rgba(245, 176, 65, 0.95);
+		color: rgba(168, 178, 198, 0.95);
 	}
 	.pack-req.is-manual::after {
-		content: 'Formulario';
-		border-color: rgba(245, 176, 65, 0.5);
-		background: rgba(245, 176, 65, 0.14);
-		color: rgba(255, 226, 178, 0.96);
+		content: 'Dato manual';
+		border-color: rgba(168, 178, 198, 0.48);
+		background: rgba(168, 178, 198, 0.13);
+		color: rgba(218, 226, 239, 0.95);
+	}
+	.pack-req.is-manual-ok::before {
+		content: '✓';
+		color: rgba(134, 226, 168, 0.98);
+	}
+	.pack-req.is-manual-ok::after {
+		content: 'OK';
+		border-color: rgba(134, 226, 168, 0.56);
+		background: rgba(134, 226, 168, 0.13);
+		color: rgba(190, 246, 209, 0.96);
 	}
 	.pack-status {
 		margin: 0.82rem 0 0.66rem;
@@ -401,6 +511,9 @@ const seo = {
 	@media (max-width: 768px) {
 		.pack-hero::before {
 			width: clamp(440px, 110vw, 760px);
+		}
+		.pack-manual-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
