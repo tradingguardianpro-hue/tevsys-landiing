@@ -61,6 +61,9 @@ const seo = {
 				<li>Broker, símbolo principal, tipo de cuenta y franja horaria.</li>
 			</ul>
 			<p class="audit-note">Si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</p>
+			<div class="audit-pack-cta-row">
+				<a class="audit-cta audit-cta--secondary" href="/company/contact?flow=auditoria-ia&step=pack">Preparar y enviar pack</a>
+			</div>
 		</section>
 
 		<section class="audit-output">
@@ -138,9 +141,9 @@ const seo = {
 	.audit-hero::before {
 		content: '';
 		position: absolute;
-		left: 50%;
+		right: -10%;
 		top: 50%;
-		transform: translate(-50%, -52%);
+		transform: translateY(-52%);
 		width: clamp(520px, 76vw, 980px);
 		height: clamp(320px, 48vw, 620px);
 		pointer-events: none;
@@ -296,6 +299,19 @@ const seo = {
 		margin: 0.7rem 0 0;
 		opacity: 0.82;
 	}
+	.audit-pack-cta-row {
+		margin-top: 0.85rem;
+		display: flex;
+		justify-content: flex-end;
+	}
+	.audit-pack:target {
+		border: 1px solid rgba(176, 186, 204, 0.38);
+		background: linear-gradient(180deg, rgba(158, 167, 183, 0.12) 0%, rgba(158, 167, 183, 0.04) 100%);
+		border-radius: 0.85rem;
+		padding: 0.9rem 1rem 1rem;
+		box-shadow: 0 0 0 1px rgba(176, 186, 204, 0.08) inset;
+		scroll-margin-top: 6.4rem;
+	}
 	.audit-output-status {
 		margin: 0 0 0.5rem;
 	}
@@ -368,6 +384,13 @@ const seo = {
 		}
 		.audit-flow ol {
 			grid-template-columns: 1fr;
+		}
+		.audit-hero::before {
+			right: -24%;
+			width: clamp(460px, 108vw, 760px);
+		}
+		.audit-pack-cta-row {
+			justify-content: flex-start;
 		}
 	}
 </style>
