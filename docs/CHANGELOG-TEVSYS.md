@@ -4,6 +4,42 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Auditoría IA — pack interactivo + criterios de evidencia (25 abr 2026, cierre de tanda)
+
+**Objetivo:** consolidar la micro `/auditoria-ia/pack` como flujo usable de preparación de evidencias, sin backend de subida todavía, y dejar base coherente para validación interna.
+
+**Cambios funcionales y UI (`src/pages/auditoria-ia/pack.astro`):**
+
+- Zona drag&drop + selector de archivos (logs, captura, html, zip) con lista de archivos detectados.
+- Chips de formatos permitidos y microcopy de confianza:
+  - `Tus archivos solo se usarán para esta auditoría.`
+- Checklist con estados visuales:
+  - `Pendiente` (azul),
+  - `OK` (tick verde),
+  - `Dato manual` para campos declarativos.
+- Formulario mínimo de contraste integrado en la misma pantalla:
+  - `Periodo desde`,
+  - `Periodo hasta`,
+  - `Cuenta auditada`,
+  - `Objetivo principal`.
+- Regla de habilitación CTA:
+  - se activa `Continuar por contacto` solo cuando el pack técnico está completo **y** el formulario mínimo está completo.
+- Paso a contacto con query de contexto (`flow=auditoria-ia&step=pack` + campos mínimos).
+- Pulidos de jerarquía/respiración:
+  - compactación de densidad,
+  - separación del bloque de contraste,
+  - mejora de título del checklist para evitar pérdida de jerarquía.
+
+**Correcciones técnicas realizadas durante la tanda:**
+
+- Fix build Vercel por variable duplicada en script cliente (`manualOk`).
+- Fix de render "sin estilos" en producción:
+  - estilos de la página definidos con `style is:global` para evitar pérdida de CSS local en esta micro.
+
+**Resultado buscado:** flujo claro y presentable para capturar packs en Fase 1 (manual-asistida), con validación visual suficiente y base lista para endurecer reglas de coherencia.
+
+---
+
 ## Auditoría IA — halo trasero azul + micro sin motion ámbar (25 abr 2026)
 
 **Objetivo:** reducir ruido visual en `/auditoria-ia` y reforzar una sola capa protagonista (halo azul permanente) sin afectar el resto de micros.
