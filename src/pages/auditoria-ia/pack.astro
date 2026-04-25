@@ -35,10 +35,10 @@ const seo = {
 		<section class="pack-check">
 			<h2>Checklist mínimo</h2>
 			<ul>
-				<li id="req-logs">Logs del periodo auditado.</li>
-				<li id="req-panel">Captura del panel con fecha/hora visible.</li>
-				<li id="req-report">Informe HTML MT5 del mismo periodo.</li>
-				<li id="req-context">Broker, símbolo principal, tipo de cuenta y franja horaria.</li>
+				<li id="req-logs" class="pack-req is-pending">Logs del periodo auditado.</li>
+				<li id="req-panel" class="pack-req is-pending">Captura del panel con fecha/hora visible.</li>
+				<li id="req-report" class="pack-req is-pending">Informe HTML MT5 del mismo periodo.</li>
+				<li id="req-context" class="pack-req is-manual">Broker, símbolo principal, tipo de cuenta y franja horaria.</li>
 			</ul>
 			<p id="pack-status" class="pack-status">Aún no hay archivos cargados.</p>
 			<div class="pack-files">
@@ -73,6 +73,14 @@ const seo = {
 			const el = document.getElementById(id);
 			if (!el) return;
 			el.classList.toggle('is-ok', ok);
+			el.classList.toggle('is-pending', !ok);
+		};
+
+		const setReqManual = (id) => {
+			const el = document.getElementById(id);
+			if (!el) return;
+			el.classList.remove('is-ok', 'is-pending');
+			el.classList.add('is-manual');
 		};
 
 		const updateUi = () => {
@@ -84,7 +92,7 @@ const seo = {
 			setReqState('req-logs', logOk);
 			setReqState('req-panel', panelOk);
 			setReqState('req-report', reportOk);
-			setReqState('req-context', true);
+			setReqManual('req-context');
 
 			fileList.innerHTML = '';
 			if (!names.length) {
@@ -271,14 +279,59 @@ const seo = {
 	}
 	.pack-check ul {
 		margin: 0;
-		padding-left: 1.1rem;
+		padding-left: 0;
 		line-height: 1.62;
+		list-style: none;
 	}
-	.pack-check li::marker {
+	.pack-req {
+		position: relative;
+		padding-left: 1.5rem;
+		margin-bottom: 0.34rem;
+	}
+	.pack-req::before {
+		content: '•';
+		position: absolute;
+		left: 0.2rem;
+		top: 0.02rem;
+		font-weight: 700;
+		font-size: 1.02rem;
 		color: rgba(100, 196, 255, 0.95);
 	}
-	.pack-check li.is-ok {
-		color: rgba(168, 236, 188, 0.96);
+	.pack-req::after {
+		content: 'Pendiente';
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: 0.5rem;
+		padding: 0.03rem 0.4rem;
+		border-radius: 999px;
+		font-size: 0.66rem;
+		font-weight: 700;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		border: 1px solid rgba(100, 196, 255, 0.45);
+		background: rgba(100, 196, 255, 0.11);
+		color: rgba(205, 234, 255, 0.94);
+	}
+	.pack-req.is-ok::before {
+		content: '✓';
+		color: rgba(134, 226, 168, 0.98);
+	}
+	.pack-req.is-ok::after {
+		content: 'OK';
+		border-color: rgba(134, 226, 168, 0.56);
+		background: rgba(134, 226, 168, 0.13);
+		color: rgba(190, 246, 209, 0.96);
+	}
+	.pack-req.is-manual::before {
+		content: '•';
+		color: rgba(245, 176, 65, 0.95);
+	}
+	.pack-req.is-manual::after {
+		content: 'Formulario';
+		border-color: rgba(245, 176, 65, 0.5);
+		background: rgba(245, 176, 65, 0.14);
+		color: rgba(255, 226, 178, 0.96);
 	}
 	.pack-status {
 		margin: 0.82rem 0 0.66rem;
