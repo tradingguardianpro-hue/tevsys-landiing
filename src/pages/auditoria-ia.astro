@@ -62,7 +62,7 @@ const seo = {
 			</ul>
 			<p class="audit-note">Si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</p>
 			<div class="audit-pack-cta-row">
-				<a class="audit-cta audit-cta--secondary" href="/company/contact?flow=auditoria-ia&step=pack">Preparar y enviar pack</a>
+				<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/pack">Preparar y enviar pack</a>
 			</div>
 		</section>
 
@@ -141,9 +141,9 @@ const seo = {
 	.audit-hero::before {
 		content: '';
 		position: absolute;
-		right: -10%;
+		left: 50%;
 		top: 50%;
-		transform: translateY(-52%);
+		transform: translate(-50%, -52%);
 		width: clamp(520px, 76vw, 980px);
 		height: clamp(320px, 48vw, 620px);
 		pointer-events: none;
@@ -386,7 +386,8 @@ const seo = {
 			grid-template-columns: 1fr;
 		}
 		.audit-hero::before {
-			right: -24%;
+			left: 50%;
+			transform: translate(-50%, -52%);
 			width: clamp(460px, 108vw, 760px);
 		}
 		.audit-pack-cta-row {

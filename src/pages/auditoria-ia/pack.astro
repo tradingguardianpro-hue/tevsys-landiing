@@ -1,0 +1,322 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+	title: 'Preparar pack de auditoría | tevsys',
+	description:
+		'Prepara tu pack de auditoría en un solo paso: logs, captura de panel e informe MT5. Flujo guiado para traders, academias y equipos.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="pack-hero">
+			<p class="pack-kicker">Auditoría con IA · Pack de evidencia</p>
+			<h1>Arrastra aquí tus archivos y valida tu pack</h1>
+			<p class="pack-subtitle">Te guiamos para que envíes todo completo: logs, captura del panel e informe MT5 del mismo periodo.</p>
+		</section>
+
+		<section class="pack-dropzone-wrap">
+			<div id="pack-dropzone" class="pack-dropzone" role="button" tabindex="0" aria-label="Zona para arrastrar archivos">
+				<p class="pack-dropzone-title">Arrastra tus archivos aquí</p>
+				<p class="pack-dropzone-sub">o haz clic para seleccionarlos desde tu equipo</p>
+				<input id="pack-file-input" type="file" multiple accept=".log,.txt,.png,.jpg,.jpeg,.html,.htm,.zip" />
+			</div>
+			<p class="pack-hint">Formatos permitidos: LOG/TXT, PNG/JPG, HTML/HTM, ZIP.</p>
+		</section>
+
+		<section class="pack-check">
+			<h2>Checklist mínimo</h2>
+			<ul>
+				<li id="req-logs">Logs del periodo auditado.</li>
+				<li id="req-panel">Captura del panel con fecha/hora visible.</li>
+				<li id="req-report">Informe HTML MT5 del mismo periodo.</li>
+				<li id="req-context">Broker, símbolo principal, tipo de cuenta y franja horaria.</li>
+			</ul>
+			<p id="pack-status" class="pack-status">Aún no hay archivos cargados.</p>
+			<div class="pack-files">
+				<h3>Archivos detectados</h3>
+				<ul id="pack-file-list">
+					<li class="pack-file-empty">No hay archivos todavía.</li>
+				</ul>
+			</div>
+			<div class="pack-cta-row">
+				<a id="pack-contact-cta" class="pack-cta pack-cta--primary is-disabled" href="/company/contact?flow=auditoria-ia&step=pack" aria-disabled="true">Continuar por contacto</a>
+				<a class="pack-cta pack-cta--secondary" href="/auditoria-ia">Volver a auditoría IA</a>
+			</div>
+		</section>
+	</Container>
+</Layout>
+
+<script>
+	const dropzone = document.getElementById('pack-dropzone');
+	const fileInput = document.getElementById('pack-file-input');
+	const fileList = document.getElementById('pack-file-list');
+	const status = document.getElementById('pack-status');
+	const contactCta = document.getElementById('pack-contact-cta');
+
+	if (dropzone && fileInput && fileList && status && contactCta) {
+		const allFiles = new Map();
+
+		const hasLogs = (name) => /\.(log|txt|zip)$/i.test(name);
+		const hasPanel = (name) => /\.(png|jpe?g)$/i.test(name);
+		const hasReport = (name) => /\.html?$/i.test(name);
+
+		const setReqState = (id, ok) => {
+			const el = document.getElementById(id);
+			if (!el) return;
+			el.classList.toggle('is-ok', ok);
+		};
+
+		const updateUi = () => {
+			const names = [...allFiles.keys()];
+			const logOk = names.some((name) => hasLogs(name));
+			const panelOk = names.some((name) => hasPanel(name));
+			const reportOk = names.some((name) => hasReport(name));
+
+			setReqState('req-logs', logOk);
+			setReqState('req-panel', panelOk);
+			setReqState('req-report', reportOk);
+			setReqState('req-context', true);
+
+			fileList.innerHTML = '';
+			if (!names.length) {
+				const li = document.createElement('li');
+				li.className = 'pack-file-empty';
+				li.textContent = 'No hay archivos todavía.';
+				fileList.appendChild(li);
+				status.textContent = 'Aún no hay archivos cargados.';
+				contactCta.classList.add('is-disabled');
+				contactCta.setAttribute('aria-disabled', 'true');
+				return;
+			}
+
+			names.forEach((name) => {
+				const li = document.createElement('li');
+				li.textContent = name;
+				fileList.appendChild(li);
+			});
+
+			const complete = logOk && panelOk && reportOk;
+			status.textContent = complete
+				? 'Pack técnico completo. Solo falta añadir el contexto (broker, símbolo, tipo de cuenta y franja horaria) en el formulario de contacto.'
+				: 'Pack parcial. Falta al menos una pieza obligatoria del checklist.';
+
+			contactCta.classList.toggle('is-disabled', !complete);
+			contactCta.setAttribute('aria-disabled', String(!complete));
+		};
+
+		const ingestFiles = (files) => {
+			[...files].forEach((file) => allFiles.set(file.name, file));
+			updateUi();
+		};
+
+		const openPicker = () => fileInput.click();
+
+		dropzone.addEventListener('click', openPicker);
+		dropzone.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				openPicker();
+			}
+		});
+
+		fileInput.addEventListener('change', (e) => {
+			const target = e.target;
+			if (!target.files) return;
+			ingestFiles(target.files);
+			target.value = '';
+		});
+
+		['dragenter', 'dragover'].forEach((evtName) => {
+			dropzone.addEventListener(evtName, (e) => {
+				e.preventDefault();
+				dropzone.classList.add('is-drag');
+			});
+		});
+
+		['dragleave', 'drop'].forEach((evtName) => {
+			dropzone.addEventListener(evtName, (e) => {
+				e.preventDefault();
+				dropzone.classList.remove('is-drag');
+			});
+		});
+
+		dropzone.addEventListener('drop', (e) => {
+			const dt = e.dataTransfer;
+			if (!dt?.files?.length) return;
+			ingestFiles(dt.files);
+		});
+
+		contactCta.addEventListener('click', (e) => {
+			if (contactCta.classList.contains('is-disabled')) {
+				e.preventDefault();
+			}
+		});
+	}
+</script>
+
+<style>
+	.pack-hero,
+	.pack-dropzone-wrap,
+	.pack-check {
+		margin: var(--section-margin) auto;
+	}
+	.pack-hero {
+		max-width: 54rem;
+		border-radius: 1rem;
+		border: 1px solid rgba(100, 196, 255, 0.24);
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
+		padding: clamp(1rem, 2.4vw, 1.4rem) clamp(1.1rem, 2.5vw, 1.55rem);
+		position: relative;
+		isolation: isolate;
+	}
+	.pack-hero::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: clamp(520px, 80vw, 980px);
+		height: clamp(300px, 45vw, 580px);
+		z-index: -1;
+		pointer-events: none;
+		background: radial-gradient(ellipse, rgba(100, 196, 255, 0.32) 0%, rgba(100, 196, 255, 0.16) 36%, rgba(100, 196, 255, 0.05) 56%, rgba(100, 196, 255, 0) 74%);
+		filter: blur(18px);
+	}
+	.pack-kicker {
+		margin: 0 0 0.45rem;
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-weight: 700;
+		color: rgba(153, 218, 255, 0.96);
+	}
+	.pack-hero h1 {
+		margin: 0 0 0.65rem;
+		font-size: clamp(1.45rem, 2.8vw, 2rem);
+		line-height: 1.2;
+	}
+	.pack-subtitle {
+		margin: 0;
+		opacity: 0.9;
+		line-height: 1.5;
+	}
+	.pack-dropzone-wrap {
+		max-width: 54rem;
+	}
+	.pack-dropzone {
+		border: 1px dashed rgba(154, 165, 182, 0.58);
+		border-radius: 0.95rem;
+		background: linear-gradient(180deg, rgba(158, 167, 183, 0.12) 0%, rgba(158, 167, 183, 0.04) 100%);
+		padding: clamp(1.2rem, 3.5vw, 1.85rem);
+		text-align: center;
+		cursor: pointer;
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.pack-dropzone.is-drag {
+		border-color: rgba(100, 196, 255, 0.8);
+		background: linear-gradient(180deg, rgba(100, 196, 255, 0.18) 0%, rgba(100, 196, 255, 0.06) 100%);
+	}
+	.pack-dropzone-title {
+		margin: 0 0 0.4rem;
+		font-size: 1.06rem;
+		font-weight: 700;
+	}
+	.pack-dropzone-sub {
+		margin: 0;
+		opacity: 0.82;
+	}
+	#pack-file-input {
+		display: none;
+	}
+	.pack-hint {
+		margin: 0.6rem 0 0;
+		font-size: 0.88rem;
+		opacity: 0.75;
+	}
+	.pack-check {
+		max-width: 54rem;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 0.95rem;
+		background: rgba(255, 255, 255, 0.015);
+		padding: 1rem 1.05rem 1.1rem;
+	}
+	.pack-check h2 {
+		margin: 0 0 0.7rem;
+	}
+	.pack-check ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		line-height: 1.5;
+	}
+	.pack-check li.is-ok {
+		color: rgba(168, 236, 188, 0.96);
+	}
+	.pack-status {
+		margin: 0.82rem 0 0.66rem;
+		font-weight: 600;
+	}
+	.pack-files {
+		border: 1px solid rgba(100, 196, 255, 0.22);
+		border-radius: 0.75rem;
+		background: rgba(100, 196, 255, 0.06);
+		padding: 0.78rem 0.85rem;
+	}
+	.pack-files h3 {
+		margin: 0 0 0.48rem;
+		font-size: 0.95rem;
+	}
+	.pack-files ul {
+		margin: 0;
+		padding-left: 1rem;
+	}
+	.pack-file-empty {
+		opacity: 0.75;
+	}
+	.pack-cta-row {
+		margin-top: 0.9rem;
+		display: flex;
+		gap: 0.6rem;
+		flex-wrap: wrap;
+	}
+	.pack-cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.56rem 0.95rem;
+		border-radius: 0.65rem;
+		font-size: 0.88rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+	}
+	.pack-cta--primary {
+		border: 1px solid rgba(100, 196, 255, 0.5);
+		color: rgba(232, 247, 255, 0.98);
+		background: rgba(100, 196, 255, 0.14);
+	}
+	.pack-cta--primary:hover {
+		background: rgba(100, 196, 255, 0.2);
+		border-color: rgba(100, 196, 255, 0.72);
+	}
+	.pack-cta--secondary {
+		border: 1px solid rgba(100, 196, 255, 0.34);
+		color: rgba(221, 243, 255, 0.95);
+		background: rgba(100, 196, 255, 0.08);
+	}
+	.pack-cta--secondary:hover {
+		background: rgba(100, 196, 255, 0.13);
+	}
+	.pack-cta.is-disabled {
+		opacity: 0.45;
+		cursor: not-allowed;
+		pointer-events: auto;
+	}
+	@media (max-width: 768px) {
+		.pack-hero::before {
+			width: clamp(440px, 110vw, 760px);
+		}
+	}
+</style>

@@ -21,6 +21,31 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Auditoría IA — opción A (halo centrado) + nueva micro de pack (25 abr 2026)
+
+**Objetivo:** cerrar la elección visual del hero en `auditoria-ia` y abrir un flujo práctico para preparar evidencia antes del contacto.
+
+**Cambios:**
+
+- `src/pages/auditoria-ia.astro`
+  - Se fija la variante **A** del hero: halo azul **centrado** detrás del bloque principal.
+  - CTA de `Qué debes enviar` actualizado a nueva ruta: `/auditoria-ia/pack`.
+
+- `src/pages/auditoria-ia/pack.astro` (nueva)
+  - Nueva micro para preparar pack de auditoría.
+  - Zona drag&drop + selector de archivos.
+  - Checklist visual mínimo:
+    - logs,
+    - captura panel,
+    - informe HTML/MT5,
+    - contexto operativo.
+  - Detección básica en cliente por tipo de archivo y estado del pack.
+  - CTA principal habilitado cuando hay pack técnico completo, y paso a contacto con `flow=auditoria-ia&step=pack`.
+
+**Resultado buscado:** dar sensación de producto completo desde ya (flujo guiado), sin esperar al backend de subida final.
+
+---
+
 ## Home — teaser “Auditoría con IA” entre cards y planes (25 abr 2026)
 
 **Objetivo:** abrir una vía de valor para traders/academias/equipos sin encasillar el mensaje en “indisciplina” y sin romper el lenguaje visual de la home.
