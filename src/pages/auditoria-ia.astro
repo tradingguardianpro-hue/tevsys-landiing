@@ -10,6 +10,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
+	<div class="audit-page-motion-off" aria-hidden="true"></div>
 	<Container>
 		<section class="audit-hero">
 			<p class="audit-kicker">Auditoría con IA · Fase 1</p>
@@ -131,18 +132,26 @@ const seo = {
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
 		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
 		position: relative;
-		overflow: hidden;
+		overflow: visible;
+		isolation: isolate;
 	}
-	.audit-hero::after {
+	.audit-hero::before {
 		content: '';
 		position: absolute;
-		top: -24%;
-		right: -12%;
-		width: clamp(190px, 28vw, 320px);
-		height: clamp(190px, 28vw, 320px);
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -52%);
+		width: clamp(520px, 76vw, 980px);
+		height: clamp(320px, 48vw, 620px);
 		pointer-events: none;
-		background: radial-gradient(circle, rgba(100, 196, 255, 0.22) 0%, rgba(100, 196, 255, 0.08) 38%, rgba(100, 196, 255, 0) 74%);
-		filter: blur(6px);
+		z-index: -1;
+		background: radial-gradient(ellipse, rgba(100, 196, 255, 0.34) 0%, rgba(100, 196, 255, 0.16) 33%, rgba(100, 196, 255, 0.06) 56%, rgba(100, 196, 255, 0) 74%);
+		filter: blur(18px);
+	}
+	:global(html[data-theme='dark'] body:has(.audit-page-motion-off)::before) {
+		animation: none !important;
+		background-image: none !important;
+		opacity: 0 !important;
 	}
 	.audit-kicker {
 		margin: 0 0 0.45rem;

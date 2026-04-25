@@ -4,6 +4,23 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Auditoría IA — halo trasero azul + micro sin motion ámbar (25 abr 2026)
+
+**Objetivo:** reducir ruido visual en `/auditoria-ia` y reforzar una sola capa protagonista (halo azul permanente) sin afectar el resto de micros.
+
+**Cambios (`src/pages/auditoria-ia.astro`):**
+
+- Se añade un selector de página (`.audit-page-motion-off`) para aplicar comportamiento exclusivo de esta ruta.
+- El halo del hero deja de sentirse “interno”:
+  - se elimina el efecto pequeño dentro del rectángulo,
+  - se crea halo **grande, permanente y azul** detrás del bloque principal (`.audit-hero::before`), con blur amplio y radial elíptico.
+- Se desactiva el barrido/motion ámbar global **solo en esta micro**:
+  - `body::before` queda sin animación y sin fondo cuando la ruta contiene `.audit-page-motion-off`.
+
+**Resultado buscado:** estética más limpia y coherente para auditoría (menos mezcla de capas), manteniendo el motion activo en home y en el resto de micropáginas.
+
+---
+
 ## Home — teaser “Auditoría con IA” entre cards y planes (25 abr 2026)
 
 **Objetivo:** abrir una vía de valor para traders/academias/equipos sin encasillar el mensaje en “indisciplina” y sin romper el lenguaje visual de la home.
