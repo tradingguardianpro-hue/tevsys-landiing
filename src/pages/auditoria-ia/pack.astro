@@ -171,10 +171,7 @@ const seo = {
 	}
 	.pack-hero {
 		max-width: 54rem;
-		border-radius: 1rem;
-		border: 1px solid rgba(100, 196, 255, 0.24);
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
-		padding: clamp(1rem, 2.4vw, 1.4rem) clamp(1.1rem, 2.5vw, 1.55rem);
+		padding: 0;
 		position: relative;
 		isolation: isolate;
 	}
@@ -275,6 +272,9 @@ const seo = {
 		margin: 0;
 		padding-left: 1.1rem;
 		line-height: 1.5;
+	}
+	.pack-check li::marker {
+		color: rgba(100, 196, 255, 0.95);
 	}
 	.pack-check li.is-ok {
 		color: rgba(168, 236, 188, 0.96);
