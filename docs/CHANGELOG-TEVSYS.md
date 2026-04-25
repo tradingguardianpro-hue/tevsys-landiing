@@ -4,6 +4,28 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — teaser “Auditoría con IA” entre cards y planes (25 abr 2026)
+
+**Objetivo:** abrir una vía de valor para traders/academias/equipos sin encasillar el mensaje en “indisciplina” y sin romper el lenguaje visual de la home.
+
+**Cambios (`src/pages/index.astro` + `src/styles/global.css`):**
+
+- Nuevo bloque teaser entre cards y planes (`audit-teaser-section`) con CTA a contacto (`flow=auditoria-ia`).
+- Copy inicial evolucionado a tono más polivalente:
+  - Título: `¿Quieres auditar tu operativa con IA?`
+  - Lead: `No auditamos tu estrategia: auditamos ejecución, cumplimiento de límites y evidencia real.`
+  - Nota: orientado a traders, academias y equipos (decisiones con datos verificables).
+- Integración visual con motion:
+  - bloque más estrecho que cards para dejar “respirar” el fondo,
+  - ajuste fino de superposición para que el barrido quede detrás del rectángulo completo (desde zona inferior del bloque hasta su parte alta),
+  - respiración tipográfica recalibrada: más aire en el título y compactación del cuerpo explicativo.
+- Diferenciación suave respecto al bloque superior:
+  - misma familia visual de home, pero identidad propia (acento cian/azul) para señalizar “módulo distinto”.
+
+**Resultado buscado:** que el bloque sea creíble, legible y coherente con marca; preparado para evolucionar a micropágina de auditoría (Fase 1 manual-asistida) sin prometer automatización total.
+
+---
+
 ## Home — pulido bloque previo a cards (22 abr 2026)
 
 **Objetivo:** mejorar lectura en diagonal y transición hacia las 4 cards sin tocar la propuesta de valor.
