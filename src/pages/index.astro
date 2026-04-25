@@ -95,22 +95,22 @@ import settings from '../config/settings.js';
 			</div>
 		</section>
 		</div>
+	</Container>
+	<div class="tevsys-home-band tevsys-home-band--lower">
+		<div class="tevsys-home-lower-strip" aria-hidden="true"></div>
 		<section class="audit-teaser-section" aria-labelledby="audit-teaser-title">
 			<div class="audit-teaser-shell">
 				<p class="audit-teaser-kicker">Verificación con IA</p>
-				<h2 id="audit-teaser-title">¿Quieres auditar disciplina con IA?</h2>
-				<p class="audit-teaser-lead">No auditamos tu estrategia: auditamos cumplimiento y evidencia.</p>
+				<h2 id="audit-teaser-title">¿Quieres auditar tu operativa con IA?</h2>
+				<p class="audit-teaser-lead">No auditamos tu estrategia: auditamos ejecución, coherencia y evidencia real.</p>
 				<ul class="audit-teaser-points" aria-label="Qué revisamos en auditoría IA">
 					<li>Registros internos de tevsys (estado, bloqueos y eventos clave).</li>
 					<li>Logs de sesión + informe oficial MT5 del mismo periodo.</li>
 				</ul>
-				<p class="audit-teaser-note">Útil para traders y academias que quieren validar disciplina con pruebas, no con relato.</p>
+				<p class="audit-teaser-note">Pensado para traders, academias y equipos que quieren decisiones apoyadas en datos verificables.</p>
 				<a href="/company/contact?flow=auditoria-ia" class="audit-teaser-cta">Solicitar revisión</a>
 			</div>
 		</section>
-	</Container>
-	<div class="tevsys-home-band tevsys-home-band--lower">
-		<div class="tevsys-home-lower-strip" aria-hidden="true"></div>
 		<Container>
 		<section class="plans-section">
 			<h2 class="plans-section__title">Elige tu cuenta</h2>
@@ -270,7 +270,12 @@ import settings from '../config/settings.js';
 		margin-top: clamp(0.35rem, 1.2vw, 0.85rem);
 	}
 	.audit-teaser-section {
-		margin: clamp(1.3rem, 3vw, 2rem) auto clamp(2rem, 4vw, 2.75rem);
+		margin: calc(var(--tevsys-lower-strip-h, 180px) * -0.72) auto clamp(2rem, 4vw, 2.75rem);
+	}
+	@media (max-width: 768px) {
+		.audit-teaser-section {
+			margin-top: calc(var(--tevsys-lower-strip-h, 150px) * -0.66);
+		}
 	}
 	.audit-teaser-shell {
 		max-width: min(52rem, 92%);
