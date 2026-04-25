@@ -95,6 +95,15 @@ import settings from '../config/settings.js';
 			</div>
 		</section>
 		</div>
+		<section class="audit-teaser-section" aria-labelledby="audit-teaser-title">
+			<div class="audit-teaser-shell">
+				<p class="audit-teaser-kicker">Verificación con IA</p>
+				<h2 id="audit-teaser-title">¿Quieres que te auditemos con IA?</h2>
+				<p class="audit-teaser-lead">Contrastamos evidencia real: registros internos tevsys, logs de sesión e informe oficial MT5.</p>
+				<p class="audit-teaser-note">Ruta inicial pensada para traders y academias que quieren validar disciplina con pruebas.</p>
+				<a href="/company/contact?flow=auditoria-ia" class="audit-teaser-cta">Solicitar revisión</a>
+			</div>
+		</section>
 	</Container>
 	<div class="tevsys-home-band tevsys-home-band--lower">
 		<div class="tevsys-home-lower-strip" aria-hidden="true"></div>
@@ -255,6 +264,62 @@ import settings from '../config/settings.js';
 		grid-template-columns: repeat(2, 1fr);
 		gap: clamp(1rem, 2.5vw, 1.35rem);
 		margin-top: clamp(0.35rem, 1.2vw, 0.85rem);
+	}
+	.audit-teaser-section {
+		margin: clamp(1.3rem, 3vw, 2rem) auto clamp(2rem, 4vw, 2.75rem);
+	}
+	.audit-teaser-shell {
+		max-width: min(52rem, 92%);
+		margin: 0 auto;
+		padding: clamp(0.95rem, 2.2vw, 1.3rem) clamp(1rem, 2.4vw, 1.5rem);
+		border-radius: 1rem;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.018) 100%);
+		backdrop-filter: blur(2px);
+	}
+	.audit-teaser-kicker {
+		margin: 0 0 0.35rem;
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-weight: 700;
+		color: rgba(245, 176, 65, 0.95);
+	}
+	.audit-teaser-shell h2 {
+		margin: 0 0 0.45rem;
+		font-size: clamp(1.2rem, 2.3vw, 1.5rem);
+		line-height: 1.25;
+		letter-spacing: -0.02em;
+	}
+	.audit-teaser-lead {
+		margin: 0 0 0.4rem;
+		font-size: 0.99rem;
+		line-height: 1.5;
+		opacity: 0.95;
+	}
+	.audit-teaser-note {
+		margin: 0 0 0.85rem;
+		font-size: 0.92rem;
+		line-height: 1.5;
+		opacity: 0.8;
+	}
+	.audit-teaser-cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.54rem 0.92rem;
+		border-radius: 0.65rem;
+		border: 1px solid rgba(245, 176, 65, 0.52);
+		color: rgba(255, 245, 229, 0.98);
+		background: rgba(245, 176, 65, 0.12);
+		font-size: 0.86rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background-color 0.2s ease, border-color 0.2s ease;
+	}
+	.audit-teaser-cta:hover {
+		background: rgba(245, 176, 65, 0.19);
+		border-color: rgba(245, 176, 65, 0.7);
 	}
 	.tevsys-card {
 		position: relative;
