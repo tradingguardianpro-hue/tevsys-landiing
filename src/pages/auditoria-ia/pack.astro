@@ -23,7 +23,13 @@ const seo = {
 				<p class="pack-dropzone-sub">o haz clic para seleccionarlos desde tu equipo</p>
 				<input id="pack-file-input" type="file" multiple accept=".log,.txt,.png,.jpg,.jpeg,.html,.htm,.zip" />
 			</div>
-			<p class="pack-hint">Formatos permitidos: LOG/TXT, PNG/JPG, HTML/HTM, ZIP.</p>
+			<div class="pack-format-chips" aria-label="Formatos permitidos">
+				<span class="pack-chip">LOG / TXT</span>
+				<span class="pack-chip">PNG / JPG</span>
+				<span class="pack-chip">HTML / HTM</span>
+				<span class="pack-chip">ZIP</span>
+			</div>
+			<p class="pack-trust">Tus archivos solo se usarán para esta auditoría.</p>
 		</section>
 
 		<section class="pack-check">
@@ -231,10 +237,29 @@ const seo = {
 	#pack-file-input {
 		display: none;
 	}
-	.pack-hint {
-		margin: 0.6rem 0 0;
-		font-size: 0.88rem;
-		opacity: 0.75;
+	.pack-format-chips {
+		margin-top: 0.66rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+	.pack-chip {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.2rem 0.54rem;
+		border-radius: 999px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		border: 1px solid rgba(154, 165, 182, 0.45);
+		background: rgba(158, 167, 183, 0.11);
+		color: rgba(225, 232, 243, 0.95);
+	}
+	.pack-trust {
+		margin: 0.56rem 0 0;
+		font-size: 0.85rem;
+		opacity: 0.72;
 	}
 	.pack-check {
 		max-width: 54rem;
