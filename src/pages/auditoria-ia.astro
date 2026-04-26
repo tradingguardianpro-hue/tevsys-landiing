@@ -168,25 +168,25 @@ const seo = {
 		overflow: visible;
 		isolation: isolate;
 	}
-	/* Halo hero: una sola mancha fija, baja intensidad (sin competir con el titular) */
+	/* Halo hero: fijo, un pelín más presente al entrar (sin volver al brillo anterior) */
 	.audit-hero::before {
 		content: '';
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -52%);
-		width: clamp(480px, 70vw, 860px);
-		height: clamp(280px, 42vw, 520px);
+		width: clamp(500px, 72vw, 900px);
+		height: clamp(300px, 44vw, 560px);
 		pointer-events: none;
 		z-index: -1;
 		background: radial-gradient(
 			ellipse,
-			rgba(100, 196, 255, 0.1) 0%,
-			rgba(100, 196, 255, 0.048) 38%,
-			rgba(100, 196, 255, 0.018) 58%,
-			rgba(100, 196, 255, 0) 78%
+			rgba(100, 196, 255, 0.145) 0%,
+			rgba(100, 196, 255, 0.068) 40%,
+			rgba(100, 196, 255, 0.026) 60%,
+			rgba(100, 196, 255, 0) 80%
 		);
-		filter: blur(22px);
+		filter: blur(20px);
 	}
 	:global(html[data-theme='dark'] body:has(.audit-page-motion-off)::before) {
 		animation: none !important;
@@ -397,6 +397,10 @@ const seo = {
 		padding: 0.9rem 1rem 1rem;
 		box-shadow: 0 0 0 1px rgba(176, 186, 204, 0.08) inset;
 		scroll-margin-top: 6.4rem;
+	}
+	/* Ancla activa: viñetas alineadas con el resto de la micro (cian marca) */
+	.audit-pack:target ul li::marker {
+		color: rgba(100, 196, 255, 0.92);
 	}
 	.audit-output-status {
 		margin: 0 0 0.5rem;
