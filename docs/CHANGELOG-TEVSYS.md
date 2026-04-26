@@ -11,6 +11,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
 
+**Tanda siguiente (misma página):** subrayado bicolor **corto** bajo los H2 de «Qué auditamos / no» (`h2::after`); halo hero algo más suave; kicker menos eléctrico; listas con más contraste; **sin** segundo movimiento global.
+
 ---
 
 ## `/auditoria-ia` — hero + tarjetas: ámbar puntual y jerarquía (27 abr 2026, UI)
