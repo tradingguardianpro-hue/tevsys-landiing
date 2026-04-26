@@ -31,6 +31,7 @@ const seo = {
 					<li>Cumplimiento de límites configurados en tevsys.</li>
 					<li>Coherencia entre registros internos, logs de sesión e informe MT5.</li>
 					<li>Eventos de control: bloqueos, intentos, cierres y estado operativo.</li>
+					<li>Precisión de cierre: coherencia entre lo que configuraste, lo que hizo tevsys y el informe MT5 del mismo periodo.</li>
 				</ul>
 			</article>
 			<article class="audit-card">
@@ -133,7 +134,12 @@ const seo = {
 	.audit-closing {
 		margin: var(--section-margin) auto;
 	}
+	/* Menos aire entre hero y tarjetas Qué auditamos / no auditamos */
+	.audit-dual {
+		margin-top: calc(var(--section-margin) * 0.42);
+	}
 	.audit-hero {
+		margin-bottom: calc(var(--section-margin) * 0.52);
 		max-width: 52rem;
 		padding: clamp(1.05rem, 2.3vw, 1.45rem) clamp(1.1rem, 2.6vw, 1.65rem);
 		border-radius: 1rem;

@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — viñeta precisión en «Qué auditamos»; menos margen hero→dual (27 abr 2026)
+
+- Cuarta viñeta: precisión de cierre (configuración, tevsys, informe MT5, mismo periodo).
+- Ajuste de márgenes para acercar el bloque de las dos tarjetas al hero.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — qué deberás enviar: 3 piezas; pack oculto por `settings` (27 abr 2026)
 
 **Cambio:** se elimina la viñeta fija (broker, símbolo, etc.); se añade una **línea** de criterio futuro (contrastar con informe + licencia / protocolo). CTA **“Preparar y enviar pack”** pasa a **`settings.auditPackPreparationVisible`** (defecto `false`) — misma lógica que el interruptor de **checkout** en planes. Ruta `/auditoria-ia/pack` **no** se elimina; solo el enlace público en la micro.
