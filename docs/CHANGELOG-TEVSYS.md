@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/pack` — opción “Auditoría completa” + hint de foco (27 abr 2026, producto)
+
+- **Select `audit-focus`:** nueva opción `completo` — *Auditoría completa (todos los pilares)*; texto de ayuda bajo el campo: foco = énfasis en el informe, no pack distinto; sin asesoramiento personal.
+- **Doc:** `docs/PROTOCOLO_AUDITORIA_IA_FASE1_MANUAL_ASISTIDA.md` (§4, criterio foco vs triangulación).
+
+**Archivo:** `src/pages/auditoria-ia/pack.astro` (repo `tevsys-landiing`).
+
+---
+
 ## `/auditoria-ia` — sin mid-glow animado; halo hero más suave (26 abr 2026, UX)
 
 - **Quitada** la capa `tevsys-home-mid-glow` en esta URL (las dos burbujas en movimiento pasaban por detrás del hero semitransparente y distraían). La **home** sigue igual (`index.astro` + `global.css`).

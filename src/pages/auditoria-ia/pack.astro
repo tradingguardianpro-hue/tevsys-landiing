@@ -68,6 +68,7 @@ const seo = {
 						<span>Objetivo principal de auditoría</span>
 						<select id="audit-focus">
 							<option value="">Selecciona objetivo</option>
+							<option value="completo">Auditoría completa (todos los pilares)</option>
 							<option value="precision">Precisión de cierre</option>
 							<option value="disciplina">Disciplina y cumplimiento</option>
 							<option value="bloqueos">Bloqueos / HyperClose</option>
@@ -75,6 +76,9 @@ const seo = {
 						</select>
 					</label>
 				</div>
+				<p class="pack-focus-hint">
+					El objetivo indica <strong>énfasis y orden de lectura</strong> en el informe (qué remarcamos primero). El <strong>pack mínimo y la triangulación</strong> (logs + panel + informe MT5 en el periodo) son las mismas salvo criterio interno ampliado; <strong>no</strong> es asesoramiento personal ni “solo miramos una cosa y el resto no” — si eligen un foco, profundizamos más ahí con <strong>evidencia en logs</strong>.
+				</p>
 			</div>
 			<p id="pack-status" class="pack-status">Aún no hay archivos cargados.</p>
 			<div class="pack-files">
@@ -413,6 +417,12 @@ const seo = {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.55rem;
+	}
+	.pack-focus-hint {
+		margin: 0.48rem 0 0;
+		font-size: 0.78rem;
+		line-height: 1.48;
+		opacity: 0.84;
 	}
 	.pack-field {
 		display: grid;
