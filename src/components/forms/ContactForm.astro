@@ -110,7 +110,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       const urlFlow = (params.get('flow') || '').toLowerCase();
       const urlFeature = (params.get('feature') || '').toLowerCase();
 
-      if (urlFlow === 'demo' || urlFlow === 'acceso' || urlFlow === 'lista') {
+      if (urlFlow === 'demo' || urlFlow === 'acceso' || urlFlow === 'lista' || urlFlow === 'auditoria-ia') {
         planInput.dataset.allowNoPlan = 'true';
       }
       const urlPlan = (params.get('plan') || '').toLowerCase();
@@ -142,6 +142,9 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
         const flowVal = flowInput ? flowInput.value : '';
         if (flowVal === 'lista') {
           badgeNode.textContent = 'Lista de espera — indica tu plan de interés abajo.';
+        } else if (flowVal === 'auditoria-ia') {
+          badgeNode.textContent =
+            'Solicitud de auditoría: sin plan en URL — te guiaremos con el pack (logs, informe, panel).';
         } else {
           const isAcceso = flowVal === 'acceso';
           badgeNode.textContent = isAcceso

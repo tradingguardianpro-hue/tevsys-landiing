@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Contacto — `flow=auditoria-ia` ya no muestra "Completa tu acceso" (26 abr 2026)
+
+**Problema:** el enlace `Solicitar auditoría` desde `/auditoria-ia` iba a `/company/contact?flow=auditoria-ia`, pero el script de la página de contacto **no tenía rama** para ese `flow` y dejaba el título/intro por defecto de demo/acceso.
+
+**Cambio:** rama dedicada con título **«Solicitar auditoría (Fase 1)»**, intro y viñetas alineadas a evidencia/pack. **Formulario:** `flow=auditoria-ia` pasa a permitir envío sin plan en URL (mismo criterio que `acceso`/`demo` vía `allowNoPlan` + `ContactForm`).
+
+**Archivos:** `src/pages/company/contact.astro`, `src/components/forms/ContactForm.astro`.
+
+---
+
 ## Auditoría IA — pack: badges checklist más discretos (26 abr 2026)
 
 **Objetivo:** bajar un punto el tamaño y el peso visual de las etiquetas `Pendiente`, `OK` y `Dato manual` en el checklist de `/auditoria-ia/pack` para que no compitan con el título y el cuerpo de la lista.

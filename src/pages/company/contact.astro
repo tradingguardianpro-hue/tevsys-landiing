@@ -4,7 +4,8 @@ import Layout from '../../layouts/Page.astro';
 import { Container } from '@components/odyssey-theme';
 
 const flowFromUrl = (Astro.url.searchParams.get('flow') || '').toLowerCase();
-const allowNoPlan = flowFromUrl === 'acceso' || flowFromUrl === 'demo' || flowFromUrl === 'lista';
+const allowNoPlan =
+	flowFromUrl === 'acceso' || flowFromUrl === 'demo' || flowFromUrl === 'lista' || flowFromUrl === 'auditoria-ia';
 
 const seo = {
 	title: 'Contacto y demo | tevsys',
@@ -187,6 +188,27 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				imageNode.alt = 'Demo de tevsys';
 			}
 			if (demoBadge) demoBadge.hidden = false;
+			return;
+		}
+
+		/** Flujo desde /auditoria-ia: antes caía al copy genérico "Completa tu acceso" sin rama en el script. */
+		if (flow === 'auditoria-ia') {
+			if (titleNode) titleNode.textContent = 'Solicitar auditoría (Fase 1)';
+			if (introNode) {
+				introNode.textContent =
+					'Cuéntanos quién eres (trader, academia o equipo) y tu email de contacto. Luego te indicamos el siguiente paso para enviar el pack de evidencias. No prometemos rentabilidad: revisamos trazabilidad, límites y coherencia con el protocolo tevsys.';
+			}
+			setTips(
+				'Fase 1: revisión con evidencia (logs, informe MT5, captura de panel con fecha visible).',
+				'Necesitamos un periodo claro y que la evidencia encaje: cuenta, fechas e informe del mismo rango.',
+				'Objetivo operativo: respondemos en poco tiempo cuando el material esté completo y legible.',
+				empresasTipHtml
+			);
+			if (imageNode) {
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
+				imageNode.alt = 'Auditoría tevsys';
+			}
+			if (demoBadge) demoBadge.hidden = true;
 			return;
 		}
 
