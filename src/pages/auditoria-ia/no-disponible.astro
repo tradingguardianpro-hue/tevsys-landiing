@@ -1,0 +1,105 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+	title: 'Auditoría — servicio en preparación | tevsys',
+	description:
+		'La solicitud de auditoría con IA no está abierta aún. Gracias por el interés; el flujo se activará cuando toque.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="audit-nd" aria-labelledby="audit-nd-title">
+			<p class="audit-nd-kicker">Auditoría con IA · estado del servicio</p>
+			<h1 id="audit-nd-title">Servicio no disponible por ahora</h1>
+			<p class="audit-nd-lead">
+				En este momento <strong>no aceptamos solicitudes</strong> de auditoría. Gracias por el interés: <strong>próximamente</strong> abriremos el
+				canal cuando esté alineado con el producto y con el flujo comercial.
+			</p>
+			<p class="audit-nd-sub">Si has utilizado la herramienta local de comprobación de pack, has adelantado trabajo; el envío formal lo
+				activaremos con el servicio.</p>
+			<div class="audit-nd-actions">
+				<a class="audit-nd-btn audit-nd-btn--pri" href="/">Ir al inicio</a>
+				<a class="audit-nd-btn audit-nd-btn--sec" href="/auditoria-ia">Volver a la página de auditoría</a>
+			</div>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.audit-nd {
+		max-width: 42rem;
+		margin: clamp(2rem, 5vw, 3.5rem) auto clamp(3rem, 7vw, 4.5rem);
+		padding: clamp(1.1rem, 2.4vw, 1.5rem) clamp(1.05rem, 2.2vw, 1.45rem);
+		border-radius: 1rem;
+		border: 1px solid rgba(100, 196, 255, 0.3);
+		background: linear-gradient(180deg, rgba(100, 196, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.07) inset;
+	}
+	.audit-nd-kicker {
+		margin: 0 0 0.5rem;
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-weight: 700;
+		color: rgba(153, 218, 255, 0.96);
+	}
+	.audit-nd h1 {
+		margin: 0 0 0.75rem;
+		font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+		letter-spacing: -0.02em;
+		line-height: 1.28;
+	}
+	.audit-nd-lead {
+		margin: 0 0 0.65rem;
+		font-size: 1.02rem;
+		line-height: 1.55;
+		color: rgba(230, 238, 250, 0.96);
+	}
+	.audit-nd-sub {
+		margin: 0 0 1.1rem;
+		font-size: 0.92rem;
+		line-height: 1.5;
+		opacity: 0.86;
+	}
+	.audit-nd-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+	}
+	.audit-nd-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.52rem 0.92rem;
+		border-radius: 0.65rem;
+		font-size: 0.87rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background-color 0.2s ease, border-color 0.2s ease;
+		border: 1px solid rgba(100, 196, 255, 0.4);
+		color: rgba(221, 243, 255, 0.95);
+		background: rgba(100, 196, 255, 0.1);
+	}
+	.audit-nd-btn--pri {
+		border-color: rgba(100, 196, 255, 0.55);
+		background: rgba(100, 196, 255, 0.16);
+		color: rgba(232, 247, 255, 0.99);
+	}
+	.audit-nd-btn--pri:hover {
+		background: rgba(100, 196, 255, 0.24);
+		border-color: rgba(100, 196, 255, 0.78);
+	}
+	.audit-nd-btn--sec:hover {
+		background: rgba(100, 196, 255, 0.14);
+		border-color: rgba(100, 196, 255, 0.6);
+	}
+	@media (max-width: 520px) {
+		.audit-nd-actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+</style>

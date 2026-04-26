@@ -4,6 +4,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Auditoría IA — servicio cerrado al público + página de cierre (26 abr 2026, tanda 2)
+
+**Problema:** los CTAs “Solicitar auditoría” llevaban a **contacto** aunque el servicio aún no está abierto; faltaba un cierre claro y coherente con el **frenazo** documentado en TGP.
+
+**Cambio:**
+- Nueva ruta **`/auditoria-ia/no-disponible`**: mensaje breve (no disponible, gracias, próximamente) + enlaces a inicio y a `/auditoria-ia`.
+- **`/auditoria-ia`:** kicker **próximamente**; “Solicitar auditoría” (hero y cierre) → `no-disponible`; secundario **“En el futuro: qué deberás enviar”** → ancla; bloque **#que-debes-enviar** con título y nota en futuro; cierre de copy alineado.
+- **`/auditoria-ia/pack`:** CTA “Continuar por contacto” → **“Siguiente paso”** → `no-disponible` (sin query a contacto); mejora visual de **aviso**, **dropzone** (borde/foco/hover), **chips** y **checklist**; nota bajo CTA cuando el pack está listo.
+- **Párrafo largo del hero del pack** (criterio cliente / local): **sin cambios** de copy.
+
+**Archivos:** `src/pages/auditoria-ia/no-disponible.astro`, `src/pages/auditoria-ia.astro`, `src/pages/auditoria-ia/pack.astro`.
+
+---
+
 ## `/auditoria-ia/pack` — criterio cliente, sin subida; validación local (27 abr 2026)
 
 **Problema:** el recuadro de “arrastrar” parecía abrir envío a cualquiera. Hacía falta alinear con el producto: **tevsys en gráfico**, captura con el **mismo rigor** que en documentación de precisión, y **cribado** vía relación comercial; además dejar claro que **hoy no hay upload** a servidores tevsys (solo comprobación en el navegador).

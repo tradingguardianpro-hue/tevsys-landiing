@@ -13,13 +13,13 @@ const seo = {
 	<div class="audit-page-motion-off" aria-hidden="true"></div>
 	<Container>
 		<section class="audit-hero">
-			<p class="audit-kicker">Auditoría con IA · Fase 1</p>
+			<p class="audit-kicker">Auditoría con IA · próximamente</p>
 			<h1>¿Quieres auditar tu operativa con IA?</h1>
 			<p class="audit-subtitle">No venimos a juzgar tu estrategia: venimos a verificar tu ejecución con datos.</p>
 			<p class="audit-hero-copy">Sin promesas, sin relato. Con datos trazables.</p>
 			<div class="audit-hero-ctas">
-				<a class="audit-cta audit-cta--primary" href="/company/contact?flow=auditoria-ia">Solicitar auditoría</a>
-				<a class="audit-cta audit-cta--secondary" href="#que-debes-enviar">Ver qué debes enviar</a>
+				<a class="audit-cta audit-cta--primary" href="/auditoria-ia/no-disponible">Solicitar auditoría</a>
+				<a class="audit-cta audit-cta--secondary" href="#que-debes-enviar">En el futuro: qué deberás enviar</a>
 			</div>
 		</section>
 
@@ -52,15 +52,16 @@ const seo = {
 			</ol>
 		</section>
 
-		<section id="que-debes-enviar" class="audit-pack">
-			<h2>Qué debes enviar</h2>
+		<section id="que-debes-enviar" class="audit-pack audit-pack--preview">
+			<h2>En el futuro: qué deberás enviar</h2>
+			<p class="audit-pack-lead">Adelanto de requisitos. El envío formal se activará con el servicio.</p>
 			<ul>
 				<li>Logs del periodo auditado.</li>
 				<li>Captura del panel con fecha/hora visible.</li>
 				<li>Informe HTML MT5 del mismo periodo.</li>
 				<li>Broker, símbolo principal, tipo de cuenta y franja horaria.</li>
 			</ul>
-			<p class="audit-note">Si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</p>
+			<p class="audit-note">Cuando abramos el canal, si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</p>
 			<div class="audit-pack-cta-row">
 				<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/pack">Preparar y enviar pack</a>
 			</div>
@@ -109,8 +110,8 @@ const seo = {
 		</section>
 
 		<section class="audit-closing">
-			<p>Si quieres validar tu operativa con datos reales, aquí empezamos.</p>
-			<a class="audit-cta audit-cta--primary" href="/company/contact?flow=auditoria-ia">Solicitar auditoría con IA</a>
+			<p>Cuando abramos el servicio, aquí estará el punto de partida.</p>
+			<a class="audit-cta audit-cta--primary" href="/auditoria-ia/no-disponible">Solicitar auditoría con IA</a>
 			<p class="audit-legal">Fase 1 manual-asistida, la IA apoya la revisión; no sustituye el criterio técnico ni ofrece asesoramiento de inversión.</p>
 		</section>
 	</Container>
@@ -294,6 +295,15 @@ const seo = {
 	.audit-faq h2 {
 		margin: 0 0 0.75rem;
 		font-size: 1.22rem;
+	}
+	.audit-pack--preview {
+		scroll-margin-top: 6.4rem;
+	}
+	.audit-pack-lead {
+		margin: 0.35rem 0 0.6rem;
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: rgba(165, 220, 255, 0.95);
 	}
 	.audit-note {
 		margin: 0.7rem 0 0;
