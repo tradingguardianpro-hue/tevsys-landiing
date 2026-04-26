@@ -4,6 +4,17 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — hero + tarjetas: ámbar puntual y jerarquía (27 abr 2026, UI)
+
+- Kicker partido: parte cian + **próximamente** en ámbar suave.
+- Barra de acento **ámbar → cian** bajo el H1.
+- Subtítulo con `max-width` + interlineado; línea “Sin promesas…” más secundaria (tamaño/opacidad).
+- Tarjeta **Qué auditamos:** franja superior gradiente, título cálido, viñetas ámbar. **Qué no auditamos:** título frío, viñetas gris‑azulado.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — copy perímetro «Qué auditamos / no auditamos» (27 abr 2026, tanda copy)
 
 - **Auditamos:** eventos **relevantes** de control; precisión en una línea (configurado · tevsys · MT5 mismo periodo); todo con **tevsys** en minúsculas.

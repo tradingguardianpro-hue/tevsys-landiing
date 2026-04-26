@@ -14,8 +14,13 @@ const seo = {
 	<div class="audit-page-motion-off" aria-hidden="true"></div>
 	<Container>
 		<section class="audit-hero">
-			<p class="audit-kicker">Auditoría con IA · próximamente</p>
+			<p class="audit-kicker">
+				<span class="audit-kicker__main">Auditoría con IA</span>
+				<span class="audit-kicker__sep" aria-hidden="true">·</span>
+				<span class="audit-kicker__soon">próximamente</span>
+			</p>
 			<h1>¿Quieres auditar tu operativa con IA?</h1>
+			<div class="audit-hero-accent" aria-hidden="true"></div>
 			<p class="audit-subtitle">No venimos a juzgar tu estrategia: venimos a verificar tu ejecución con datos.</p>
 			<p class="audit-hero-copy">Sin promesas, sin relato. Con datos trazables.</p>
 			<div class="audit-hero-ctas">
@@ -169,29 +174,61 @@ const seo = {
 		opacity: 0 !important;
 	}
 	.audit-kicker {
-		margin: 0 0 0.45rem;
+		margin: 0 0 0.5rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.2rem 0.35rem;
 		font-size: 0.78rem;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
 		font-weight: 700;
+	}
+	.audit-kicker__main {
 		color: rgba(153, 218, 255, 0.96);
 	}
+	.audit-kicker__sep {
+		color: rgba(150, 170, 195, 0.5);
+		font-weight: 600;
+	}
+	.audit-kicker__soon {
+		color: rgba(255, 205, 140, 0.96);
+		text-shadow: 0 0 18px rgba(245, 176, 65, 0.22);
+	}
 	.audit-hero h1 {
-		margin: 0 0 0.75rem;
+		margin: 0 0 0.5rem;
 		font-size: clamp(1.45rem, 2.8vw, 2rem);
 		letter-spacing: -0.02em;
 		line-height: 1.25;
 	}
+	.audit-hero-accent {
+		height: 3px;
+		width: min(13rem, 48%);
+		margin: 0 0 0.95rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(230, 190, 120, 0.55) 28%,
+			rgba(100, 196, 255, 0.82) 72%,
+			rgba(100, 196, 255, 0.12) 100%
+		);
+		box-shadow: 0 0 12px rgba(245, 176, 65, 0.15);
+	}
 	.audit-subtitle {
-		margin: 0 0 0.55rem;
+		margin: 0 0 0.65rem;
 		font-size: 1.02rem;
-		line-height: 1.55;
+		line-height: 1.58;
 		opacity: 0.96;
+		max-width: 46rem;
 	}
 	.audit-hero-copy {
-		margin: 0 0 0.9rem;
-		font-size: 0.95rem;
-		opacity: 0.85;
+		margin: 0 0 0.95rem;
+		font-size: 0.88rem;
+		line-height: 1.52;
+		opacity: 0.78;
+		letter-spacing: 0.01em;
+		max-width: 40rem;
 	}
 	.audit-hero-ctas {
 		display: flex;
@@ -242,6 +279,18 @@ const seo = {
 	.audit-card:first-child {
 		border-color: rgba(100, 196, 255, 0.34);
 		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
+		padding-top: 1.12rem;
+	}
+	.audit-card:first-child::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: 2px;
+		border-radius: 0.85rem 0.85rem 0 0;
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.88) 0%, rgba(100, 196, 255, 0.65) 100%);
+		pointer-events: none;
 	}
 	.audit-card:last-child {
 		border-color: rgba(100, 196, 255, 0.22);
@@ -251,18 +300,24 @@ const seo = {
 		margin: 0 0 0.65rem;
 		font-size: 1.12rem;
 	}
+	.audit-card:first-child h2 {
+		color: rgba(255, 218, 185, 0.98);
+	}
+	.audit-card:last-child h2 {
+		color: rgba(220, 236, 255, 0.96);
+	}
 	.audit-card:first-child ul li::marker {
-		color: rgba(100, 196, 255, 0.95);
+		color: rgba(255, 200, 130, 0.98);
 	}
 	.audit-card:last-child ul li::marker {
-		color: rgba(100, 196, 255, 0.82);
+		color: rgba(130, 155, 185, 0.88);
 	}
 	.audit-card ul,
 	.audit-pack ul,
 	.audit-academy ul {
 		margin: 0;
 		padding-left: 1.1rem;
-		line-height: 1.5;
+		line-height: 1.58;
 		opacity: 0.93;
 	}
 	.audit-flow ol {
