@@ -65,10 +65,10 @@ const seo = {
 				<li>Captura del panel con fecha/hora visible.</li>
 				<li>Informe HTML MT5 del mismo periodo.</li>
 			</ul>
-			<p class="audit-pack-hint">
-				Cuenta, broker y contexto: se podrán contrastar con el <strong>informe MT5</strong>, tu <strong>licencia</strong> y el protocolo del momento; no fijamos aún un formulario fijo de metadatos.
-			</p>
-			<p class="audit-note">Cuando abramos el canal, si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</p>
+			<ul class="audit-pack-notes" aria-label="Aclaraciones del envío">
+				<li>Cuenta, broker y contexto: se podrán contrastar con el <strong>informe MT5</strong>, tu <strong>licencia</strong> y el protocolo del momento; no fijamos aún un formulario fijo de metadatos.</li>
+				<li>Cuando abramos el canal, si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</li>
+			</ul>
 			{settings.auditPackPreparationVisible ? (
 				<div class="audit-pack-cta-row">
 					<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/pack">Preparar y enviar pack</a>
@@ -78,19 +78,18 @@ const seo = {
 
 		<section class="audit-output">
 			<h2>Qué recibes</h2>
-			<p class="audit-output-status">Resultado estándar: <strong>Apto</strong> · <strong>Apto con observaciones</strong> · <strong>No apto</strong>.</p>
-			<p class="audit-output-context">Estos datos se extraen directamente de tus logs de sesión. Son los mismos que tevsys utiliza para proteger tu cuenta.</p>
-			<div class="audit-metrics">
-				<p><strong>Límites configurados en tevsys (según logs):</strong> X%</p>
-				<p><strong>Cierre ejecutado por tevsys:</strong> X%</p>
-				<p><strong>Precisión de cierre y desviación:</strong> X%</p>
-			</div>
-			<p class="audit-impact">No te contamos lo que creemos: te mostramos lo que configuraste y cómo cerró tevsys.</p>
+			<p class="audit-output-lead">Un informe claro, accionable y fácil de revisar.</p>
+			<ul class="audit-output-list">
+				<li>Resumen del periodo auditado con foco en ejecución y control.</li>
+				<li>Hallazgos clave con evidencia trazable (logs + informe MT5 del mismo periodo).</li>
+				<li>Recomendaciones concretas para corregir desvíos y reforzar disciplina operativa.</li>
+			</ul>
+			<p class="audit-impact">Sales con próximos pasos concretos, no con teoría.</p>
 		</section>
 
 		<section class="audit-academy">
 			<h2>Para academias y equipos</h2>
-			<p>¿Quieres auditar a tus alumnos con evidencia real?</p>
+			<p>También pensado para academias y equipos que necesitan un criterio común, repetible y trazable.</p>
 			<ul>
 				<li>Mismo criterio para todos.</li>
 				<li>Menos relato, más trazabilidad.</li>
@@ -383,19 +382,26 @@ const seo = {
 		font-weight: 600;
 		color: rgba(165, 220, 255, 0.95);
 	}
-	.audit-pack-hint {
-		margin: 0.55rem 0 0.65rem;
-		font-size: 0.88rem;
+	.audit-pack-notes {
+		list-style: none;
+		margin: 0.62rem 0 0;
+		padding: 0;
+	}
+	.audit-pack-notes li {
+		position: relative;
+		padding-left: 1rem;
+		margin: 0 0 0.45rem;
 		line-height: 1.5;
-		opacity: 0.88;
+		opacity: 0.86;
 	}
-	.audit-pack-hint strong {
-		color: rgba(200, 232, 255, 0.98);
-		font-weight: 600;
+	.audit-pack-notes li:last-child {
+		margin-bottom: 0;
 	}
-	.audit-note {
-		margin: 0.7rem 0 0;
-		opacity: 0.82;
+	.audit-pack-notes li::before {
+		content: '—';
+		position: absolute;
+		left: 0;
+		color: rgba(165, 220, 255, 0.9);
 	}
 	.audit-pack-cta-row {
 		margin-top: 0.85rem;
@@ -410,12 +416,19 @@ const seo = {
 		box-shadow: 0 0 0 1px rgba(176, 186, 204, 0.08) inset;
 		scroll-margin-top: 6.4rem;
 	}
-	.audit-output-status {
-		margin: 0 0 0.5rem;
+	.audit-output-lead {
+		margin: 0 0 0.52rem;
+		opacity: 0.95;
+		font-weight: 600;
 	}
-	.audit-output-context {
-		margin: 0 0 0.65rem;
-		opacity: 0.88;
+	.audit-output-list {
+		margin: 0.15rem 0 0.7rem;
+		padding-left: 1.1rem;
+		line-height: 1.58;
+		opacity: 0.94;
+	}
+	.audit-output-list li::marker {
+		color: rgba(100, 196, 255, 0.92);
 	}
 	.audit-academy {
 		max-width: 52rem;
@@ -425,25 +438,12 @@ const seo = {
 		background: linear-gradient(180deg, rgba(100, 196, 255, 0.08) 0%, rgba(100, 196, 255, 0.02) 100%);
 	}
 	.audit-academy > p {
-		margin: 0 0 0.58rem;
+		margin: 0 0 0.62rem;
 		font-weight: 600;
+		opacity: 0.96;
 	}
 	.audit-academy ul li::marker {
 		color: rgba(100, 196, 255, 0.9);
-	}
-	.audit-metrics {
-		border: 1px solid rgba(245, 176, 65, 0.2);
-		border-radius: 0.75rem;
-		padding: 0.75rem 0.9rem;
-		background: linear-gradient(180deg, rgba(245, 176, 65, 0.035) 0%, rgba(245, 176, 65, 0.015) 100%);
-		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.05) inset;
-		margin: 0 0 0.65rem;
-	}
-	.audit-metrics p {
-		margin: 0 0 0.35rem;
-	}
-	.audit-metrics p:last-child {
-		margin-bottom: 0;
 	}
 	.audit-impact {
 		margin: 0;
