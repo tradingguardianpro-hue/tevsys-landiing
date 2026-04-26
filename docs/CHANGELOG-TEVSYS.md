@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Auditoría IA — pack: badges checklist más discretos (26 abr 2026)
+
+**Objetivo:** bajar un punto el tamaño y el peso visual de las etiquetas `Pendiente`, `OK` y `Dato manual` en el checklist de `/auditoria-ia/pack` para que no compitan con el título y el cuerpo de la lista.
+
+**Cambio (`src/pages/auditoria-ia/pack.astro`):**
+- `font-size` de badges ~0.62rem → **0.55rem**, `font-weight` 700 → **600**, padding horizontal algo más ajustado.
+- `Dato manual`: `text-transform: none` (etiqueta mixta legible a tamaño pequeño) y mismo tamaño/peso alineado al resto.
+
+---
+
 ## Auditoría IA — pack interactivo + criterios de evidencia (25 abr 2026, cierre de tanda)
 
 **Objetivo:** consolidar la micro `/auditoria-ia/pack` como flujo usable de preparación de evidencias, sin backend de subida todavía, y dejar base coherente para validación interna.

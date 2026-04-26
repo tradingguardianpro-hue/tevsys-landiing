@@ -425,11 +425,12 @@ const seo = {
 		align-items: center;
 		justify-content: center;
 		margin-left: 0.5rem;
-		padding: 0.02rem 0.36rem;
+		padding: 0.01rem 0.28rem;
 		border-radius: 999px;
-		font-size: 0.62rem;
-		font-weight: 700;
-		letter-spacing: 0.01em;
+		font-size: 0.55rem;
+		font-weight: 600;
+		line-height: 1.15;
+		letter-spacing: 0.008em;
 		text-transform: uppercase;
 		border: 1px solid rgba(100, 196, 255, 0.45);
 		background: rgba(100, 196, 255, 0.11);
@@ -451,6 +452,11 @@ const seo = {
 	}
 	.pack-req.is-manual::after {
 		content: 'Dato manual';
+		/* Título mixto: sin mayúsculas forzadas para no “hinchar” el ancho */
+		text-transform: none;
+		letter-spacing: 0.01em;
+		font-size: 0.55rem;
+		font-weight: 600;
 		border-color: rgba(168, 178, 198, 0.48);
 		background: rgba(168, 178, 198, 0.13);
 		color: rgba(218, 226, 239, 0.95);
