@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — copy perímetro «Qué auditamos / no auditamos» (27 abr 2026, tanda copy)
+
+- **Auditamos:** eventos **relevantes** de control; precisión en una línea (configurado · tevsys · MT5 mismo periodo); todo con **tevsys** en minúsculas.
+- **No auditamos:** estrategias/señales en una viñeta; riesgo fuera de lo que registra tevsys; rentabilidad futura / predicciones (sustituye “promesas de rentabilidad futura”).
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — viñeta precisión en «Qué auditamos»; menos margen hero→dual (27 abr 2026)
 
 - Cuarta viñeta: precisión de cierre (configuración, tevsys, informe MT5, mismo periodo).
