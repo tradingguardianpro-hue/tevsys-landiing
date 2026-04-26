@@ -319,6 +319,10 @@ const seo = {
 		line-height: 1.58;
 		opacity: 0.93;
 	}
+	/* Siempre cian en las tres viñetas del pack para reforzar lectura sin depender del clic */
+	.audit-pack ul li::marker {
+		color: rgba(100, 196, 255, 0.92);
+	}
 	.audit-flow ol {
 		list-style: none;
 		padding: 0;
@@ -397,10 +401,6 @@ const seo = {
 		padding: 0.9rem 1rem 1rem;
 		box-shadow: 0 0 0 1px rgba(176, 186, 204, 0.08) inset;
 		scroll-margin-top: 6.4rem;
-	}
-	/* Ancla activa: viñetas alineadas con el resto de la micro (cian marca) */
-	.audit-pack:target ul li::marker {
-		color: rgba(100, 196, 255, 0.92);
 	}
 	.audit-output-status {
 		margin: 0 0 0.5rem;

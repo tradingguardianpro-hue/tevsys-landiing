@@ -8,7 +8,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 - **Quitada** la capa `tevsys-home-mid-glow` en esta URL (las dos burbujas en movimiento pasaban por detrás del hero semitransparente y distraían). La **home** sigue igual (`index.astro` + `global.css`).
 - **Hero:** halo radial estático **menos intenso**, más blur, elipse algo más contenida; **fondo** del bloque con una velatura oscura muy fina para que el texto no compita con lo que queda detrás.
-- **Ajuste fino:** halo fijo un poco más visible al entrar; con ancla `#que-debes-enviar` activa, **viñetas** de las tres líneas en **cian marca** (`::marker`).
+- **Ajuste fino:** halo fijo un poco más visible al entrar; **viñetas del bloque «En el futuro: qué deberás enviar» en cian siempre** (`::marker`), no solo con ancla activa.
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
 
