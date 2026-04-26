@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — sin mid-glow animado; halo hero más suave (26 abr 2026, UX)
+
+- **Quitada** la capa `tevsys-home-mid-glow` en esta URL (las dos burbujas en movimiento pasaban por detrás del hero semitransparente y distraían). La **home** sigue igual (`index.astro` + `global.css`).
+- **Hero:** halo radial estático **menos intenso**, más blur, elipse algo más contenida; **fondo** del bloque con una velatura oscura muy fina para que el texto no compita con lo que queda detrás.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — mid-glow home + copy en azul; ámbar solo subrayado (27 abr 2026, UI)
 
 - **Movimiento:** misma capa `tevsys-home-mid-glow` que la home (`global.css`), dentro de `tevsys-home-band--cards` + wrapper con `z-index` para lectura por encima.

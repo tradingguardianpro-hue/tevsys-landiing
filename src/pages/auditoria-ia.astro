@@ -14,7 +14,6 @@ const seo = {
 	<div class="audit-page-motion-off" aria-hidden="true"></div>
 	<Container>
 		<div class="tevsys-home-band tevsys-home-band--cards audit-page-band-motion">
-			<div class="tevsys-home-mid-glow" aria-hidden="true"></div>
 			<div class="audit-page-band-motion__inner">
 		<section class="audit-hero">
 			<p class="audit-kicker">Auditoría con IA · próximamente</p>
@@ -130,7 +129,7 @@ const seo = {
 </Layout>
 
 <style>
-	/* Misma capa de burbujas que la home (global.css); contenido por encima */
+	/* Sin burbujas animadas de la home: micropágina prioriza lectura */
 	.audit-page-band-motion {
 		position: relative;
 		isolation: isolate;
@@ -160,31 +159,34 @@ const seo = {
 		padding: clamp(1.05rem, 2.3vw, 1.45rem) clamp(1.1rem, 2.6vw, 1.65rem);
 		border-radius: 1rem;
 		border: 1px solid rgba(100, 196, 255, 0.28);
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
+		/* Capa base un poco más opaca para que nada de detrás “coma” el contraste del texto */
+		background:
+			linear-gradient(180deg, rgba(6, 8, 13, 0.55) 0%, rgba(6, 8, 13, 0.42) 100%),
+			linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
 		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
 		position: relative;
 		overflow: visible;
 		isolation: isolate;
 	}
-	/* Halo hero: un poco más suave (menos “lavado” sobre el texto) */
+	/* Halo hero: una sola mancha fija, baja intensidad (sin competir con el titular) */
 	.audit-hero::before {
 		content: '';
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -52%);
-		width: clamp(520px, 76vw, 980px);
-		height: clamp(320px, 48vw, 620px);
+		width: clamp(480px, 70vw, 860px);
+		height: clamp(280px, 42vw, 520px);
 		pointer-events: none;
 		z-index: -1;
 		background: radial-gradient(
 			ellipse,
-			rgba(100, 196, 255, 0.24) 0%,
-			rgba(100, 196, 255, 0.11) 34%,
-			rgba(100, 196, 255, 0.045) 56%,
-			rgba(100, 196, 255, 0) 74%
+			rgba(100, 196, 255, 0.1) 0%,
+			rgba(100, 196, 255, 0.048) 38%,
+			rgba(100, 196, 255, 0.018) 58%,
+			rgba(100, 196, 255, 0) 78%
 		);
-		filter: blur(18px);
+		filter: blur(22px);
 	}
 	:global(html[data-theme='dark'] body:has(.audit-page-motion-off)::before) {
 		animation: none !important;
