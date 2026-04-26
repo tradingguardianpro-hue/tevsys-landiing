@@ -11,6 +11,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Ajuste fino:** halo fijo un poco más visible al entrar; **viñetas del bloque «En el futuro: qué deberás enviar» en cian siempre** (`::marker`), no solo con ancla activa.
 - **Copy de facilidad:** en «En el futuro», se refuerza que el envío será **simple** y la primera viñeta anticipa flujo tipo **arrastrar archivos y listo** (cuando se abra el canal).
 - **Legibilidad 2ª mitad (replanteo):** `Qué recibes` se rehace en formato entregables (sin `Apto/Apto con observaciones/No apto`, sin frase redundante de logs y sin placeholders `X%`); `En el futuro` cierra con dos aclaraciones en formato guion; `Para academias y equipos` refuerza enfoque de uso en estructura/equipo y mantiene viñetas cian.
+- **Jerarquía visual:** `Qué recibes` y `Para academias y equipos` incorporan subrayado corto bicolor en `h2` (misma familia visual que `Qué auditamos / Qué no auditamos`).
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
 
