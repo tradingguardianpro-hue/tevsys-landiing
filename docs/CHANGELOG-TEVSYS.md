@@ -10,6 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Hero:** halo radial estático **menos intenso**, más blur, elipse algo más contenida; **fondo** del bloque con una velatura oscura muy fina para que el texto no compita con lo que queda detrás.
 - **Ajuste fino:** halo fijo un poco más visible al entrar; **viñetas del bloque «En el futuro: qué deberás enviar» en cian siempre** (`::marker`), no solo con ancla activa.
 - **Copy de facilidad:** en «En el futuro», se refuerza que el envío será **simple** y la primera viñeta anticipa flujo tipo **arrastrar archivos y listo** (cuando se abra el canal).
+- **Legibilidad 2ª mitad:** `Qué recibes` pasa a contenedor suave (borde/fondo cian muy tenue) para no perder el hilo tras el bloque anterior; caja de métricas en **ámbar rebajado** (menos “grito” visual); viñetas de `Para academias y equipos` en cian.
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
 
