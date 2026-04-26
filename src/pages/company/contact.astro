@@ -191,17 +191,17 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 			return;
 		}
 
-		/** Flujo desde /auditoria-ia: antes caía al copy genérico "Completa tu acceso" sin rama en el script. */
+		/** Flujo desde /auditoria-ia: sin “Fase 1” en título (genera fricción); formulario aligerado vía ContactForm. */
 		if (flow === 'auditoria-ia') {
-			if (titleNode) titleNode.textContent = 'Solicitar auditoría (Fase 1)';
+			if (titleNode) titleNode.textContent = 'Solicitar auditoría';
 			if (introNode) {
 				introNode.textContent =
-					'Cuéntanos quién eres (trader, academia o equipo) y tu email de contacto. Luego te indicamos el siguiente paso para enviar el pack de evidencias. No prometemos rentabilidad: revisamos trazabilidad, límites y coherencia con el protocolo tevsys.';
+					'Dejanos nombre, email y un contacto si quieres. Te respondemos con el siguiente paso: enviar el pack de evidencia (panel, informe MT5, logs) cuando toque. No prometemos rentabilidad: revisamos trazabilidad y coherencia con el uso de tevsys.';
 			}
 			setTips(
-				'Fase 1: revisión con evidencia (logs, informe MT5, captura de panel con fecha visible).',
-				'Necesitamos un periodo claro y que la evidencia encaje: cuenta, fechas e informe del mismo rango.',
-				'Objetivo operativo: respondemos en poco tiempo cuando el material esté completo y legible.',
+				'Paso sencillo: con tu email abrimos el hilo. El detalle del pack lo enseñamos en la guía, sin abrumar aquí.',
+				'Necesitaremos un periodo claro y documentos alineados: lo verás al preparar el envío.',
+				'Te respondemos por email con el siguiente paso.',
 				empresasTipHtml
 			);
 			if (imageNode) {

@@ -4,6 +4,19 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Contacto — solicitud auditoría: formulario aligerado (26 abr 2026, 2.ª pasada)
+
+**Problema:** el flujo `flow=auditoria-ia` seguía pidiendo **capital** y **experiencia** (pensado para demo/venta) y el título llevaba **(Fase 1)**, generando fricción y la sensación de “proceso en varias fases”.
+
+**Cambio:**
+- Título: **Solicitar auditoría** (sin paréntesis). Copy del hero más corto; viñetas sin tecnicismos de fase.
+- Formulario: con `flow=auditoria-ia` se **ocultan** capital y experiencia; se envían valores comodín en campos ocultos para Formspree; se **oculta** la caja informativa del plan; botón **Enviar**. Validación JS acorde.
+- **Gracias:** `contact-thank-you` con mensaje específico para `flow=auditoria-ia` y query en redirect.
+
+**Archivos:** `src/pages/company/contact.astro`, `src/components/forms/ContactForm.astro`, `src/pages/company/contact-thank-you.astro`.
+
+---
+
 ## Contacto — `flow=auditoria-ia` ya no muestra "Completa tu acceso" (26 abr 2026)
 
 **Problema:** el enlace `Solicitar auditoría` desde `/auditoria-ia` iba a `/company/contact?flow=auditoria-ia`, pero el script de la página de contacto **no tenía rama** para ese `flow` y dejaba el título/intro por defecto de demo/acceso.

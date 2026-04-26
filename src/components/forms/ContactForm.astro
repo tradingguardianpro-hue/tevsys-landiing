@@ -28,7 +28,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
     </select>
   </div>
 
-  <div class="form-field__container">
+  <div id="contactFieldCapital" class="form-field__container">
     <label for="capitalSelect">Capital aproximado</label>
     <select id="capitalSelect" name="ApproxCapital" required>
       <option value="">Selecciona capital</option>
@@ -45,7 +45,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
     </select>
   </div>
 
-  <div class="form-field__container">
+  <div id="contactFieldExperience" class="form-field__container">
     <label for="experienceSelect">Experiencia</label>
     <select id="experienceSelect" name="Experience" required>
       <option value="">Selecciona una opción</option>
@@ -70,7 +70,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
   </div>
 
   <p id="planValidationMessage" class="plan-validation-message" hidden></p>
-  <Button type="submit">Enviar solicitud</Button>
+  <Button id="contactSubmitBtn" type="submit">Enviar solicitud</Button>
 </form>
 
 <script is:inline>
@@ -126,11 +126,53 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       if (flowInput) flowInput.value = urlFlow;
       if (featureInput) featureInput.value = urlFeature;
 
+      /** Solicitud auditoría: quitar miedo y carga; sin capital ni experiencia en este paso. */
+      if (urlFlow === 'auditoria-ia') {
+        const capWrap = document.getElementById('contactFieldCapital');
+        const expWrap = document.getElementById('contactFieldExperience');
+        const capSel = document.getElementById('capitalSelect');
+        const expSel = document.getElementById('experienceSelect');
+        const subBtn = document.getElementById('contactSubmitBtn');
+        if (capWrap) capWrap.hidden = true;
+        if (expWrap) expWrap.hidden = true;
+        if (capSel) {
+          capSel.removeAttribute('required');
+          capSel.removeAttribute('name');
+        }
+        if (expSel) {
+          expSel.removeAttribute('required');
+          expSel.removeAttribute('name');
+        }
+        if (badgeNode) badgeNode.hidden = true;
+        if (subBtn) subBtn.textContent = 'Enviar';
+        if (!form.querySelector('input[name="ApproxCapital"][data-audit-dummy]')) {
+          const h1 = document.createElement('input');
+          h1.type = 'hidden';
+          h1.name = 'ApproxCapital';
+          h1.setAttribute('data-audit-dummy', '1');
+          h1.value = 'solicitud_auditoria';
+          form.appendChild(h1);
+        }
+        if (!form.querySelector('input[name="Experience"][data-audit-dummy]')) {
+          const h2 = document.createElement('input');
+          h2.type = 'hidden';
+          h2.name = 'Experience';
+          h2.setAttribute('data-audit-dummy', '1');
+          h2.value = 'solicitud_auditoria';
+          form.appendChild(h2);
+        }
+      }
+
       return (planInput.value || '').toLowerCase();
     };
 
     const renderPlanBadge = (plan) => {
       if (!badgeNode) return;
+      const flowInputEarly = document.getElementById('flowInput');
+      if (flowInputEarly && flowInputEarly.value === 'auditoria-ia') {
+        badgeNode.hidden = true;
+        return;
+      }
       const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
       badgeNode.hidden = false;
       if (plan) {
@@ -163,6 +205,14 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       const flowInput = document.getElementById('flowInput');
       const flowVal = flowInput ? flowInput.value : '';
       const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
+
+      if (flowVal === 'auditoria-ia') {
+        if (messageNode) {
+          messageNode.hidden = true;
+          messageNode.textContent = '';
+        }
+        return true;
+      }
 
       if (!plan && !canSubmitWithoutPlan) {
         messageNode.hidden = false;
@@ -232,6 +282,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       const q = new URLSearchParams();
       if (flow === 'acceso') q.set('flow', 'acceso');
       if (flow === 'lista') q.set('flow', 'lista');
+      if (flow === 'auditoria-ia') q.set('flow', 'auditoria-ia');
       if (planVal === 'advanced' || planVal === 'pro') q.set('plan', planVal);
       if (flow === 'lista' && planVal === 'ambos') q.set('plan', 'ambos');
       const thankYouUrl = '/company/contact-thank-you' + (q.toString() ? '?' + q.toString() : '');

@@ -39,6 +39,11 @@ const seo = {
 						if (text) text.textContent = 'Mientras tanto, la demo Essential está lista para probar.';
 						devBlock.hidden = false;
 					}
+				} else if (flow === 'auditoria-ia') {
+					if (main) {
+						main.textContent =
+							'Hemos recibido tu solicitud. Te escribimos en breve con el siguiente paso: envío del pack de evidencia (guía y requisitos).';
+					}
 				} else if (plan === 'advanced' || plan === 'pro') {
 					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
 					if (devBlock) {
