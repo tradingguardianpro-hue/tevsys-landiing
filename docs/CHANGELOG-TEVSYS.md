@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — mid-glow home + copy en azul; ámbar solo subrayado (27 abr 2026, UI)
+
+- **Movimiento:** misma capa `tevsys-home-mid-glow` que la home (`global.css`), dentro de `tevsys-home-band--cards` + wrapper con `z-index` para lectura por encima.
+- **Color:** kicker y tarjetas otra vez en **familia cian/azul**; viñetas alineadas; **único** gradiente ámbar→azul en el **subrayado** bajo el H1 (sin mezcla en títulos/listas).
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — hero + tarjetas: ámbar puntual y jerarquía (27 abr 2026, UI)
 
 - Kicker partido: parte cian + **próximamente** en ámbar suave.
