@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — qué deberás enviar: 3 piezas; pack oculto por `settings` (27 abr 2026)
+
+**Cambio:** se elimina la viñeta fija (broker, símbolo, etc.); se añade una **línea** de criterio futuro (contrastar con informe + licencia / protocolo). CTA **“Preparar y enviar pack”** pasa a **`settings.auditPackPreparationVisible`** (defecto `false`) — misma lógica que el interruptor de **checkout** en planes. Ruta `/auditoria-ia/pack` **no** se elimina; solo el enlace público en la micro.
+
+**Archivos:** `src/config/settings.js`, `src/pages/auditoria-ia.astro`.
+
+---
+
 ## Auditoría IA — servicio cerrado al público + página de cierre (26 abr 2026, tanda 2)
 
 **Problema:** los CTAs “Solicitar auditoría” llevaban a **contacto** aunque el servicio aún no está abierto; faltaba un cierre claro y coherente con el **frenazo** documentado en TGP.

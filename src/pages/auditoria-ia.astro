@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
+import settings from '../config/settings.js';
 
 const seo = {
 	title: 'Auditoría con IA | tevsys',
@@ -59,12 +60,16 @@ const seo = {
 				<li>Logs del periodo auditado.</li>
 				<li>Captura del panel con fecha/hora visible.</li>
 				<li>Informe HTML MT5 del mismo periodo.</li>
-				<li>Broker, símbolo principal, tipo de cuenta y franja horaria.</li>
 			</ul>
+			<p class="audit-pack-hint">
+				Cuenta, broker y contexto: se podrán contrastar con el <strong>informe MT5</strong>, tu <strong>licencia</strong> y el protocolo del momento; no fijamos aún un formulario fijo de metadatos.
+			</p>
 			<p class="audit-note">Cuando abramos el canal, si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</p>
-			<div class="audit-pack-cta-row">
-				<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/pack">Preparar y enviar pack</a>
-			</div>
+			{settings.auditPackPreparationVisible ? (
+				<div class="audit-pack-cta-row">
+					<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/pack">Preparar y enviar pack</a>
+				</div>
+			) : null}
 		</section>
 
 		<section class="audit-output">
@@ -304,6 +309,16 @@ const seo = {
 		font-size: 0.95rem;
 		font-weight: 600;
 		color: rgba(165, 220, 255, 0.95);
+	}
+	.audit-pack-hint {
+		margin: 0.55rem 0 0.65rem;
+		font-size: 0.88rem;
+		line-height: 1.5;
+		opacity: 0.88;
+	}
+	.audit-pack-hint strong {
+		color: rgba(200, 232, 255, 0.98);
+		font-weight: 600;
 	}
 	.audit-note {
 		margin: 0.7rem 0 0;
