@@ -12,6 +12,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Copy de facilidad:** en «En el futuro», se refuerza que el envío será **simple** y la primera viñeta anticipa flujo tipo **arrastrar archivos y listo** (cuando se abra el canal).
 - **Legibilidad 2ª mitad (replanteo):** `Qué recibes` se rehace en formato entregables (sin `Apto/Apto con observaciones/No apto`, sin frase redundante de logs y sin placeholders `X%`); `En el futuro` cierra con dos aclaraciones en formato guion; `Para academias y equipos` refuerza enfoque de uso en estructura/equipo y mantiene viñetas cian.
 - **Jerarquía visual:** `Qué recibes` y `Para academias y equipos` incorporan subrayado corto bicolor en `h2` (misma familia visual que `Qué auditamos / Qué no auditamos`).
+- **Pulido FAQ + cierre:** FAQ gana lead corto, acordeón con señal visual más clara (estado abierto/cerrado) y contraste cian suave; cierre inferior con más respiración y contenedor tenue. Ajuste de guion/espaciado en notas de `En el futuro` y FAQ alineada al nuevo enfoque (sin referencia a “Apto con observaciones”).
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
 
