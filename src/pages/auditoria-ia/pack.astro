@@ -13,14 +13,23 @@ const seo = {
 	<Container>
 		<section class="pack-hero">
 			<p class="pack-kicker">Auditoría con IA · Pack de evidencia</p>
-			<h1>Arrastra aquí tus archivos y valida tu pack</h1>
-			<p class="pack-subtitle">Te guiamos para que envíes todo completo: logs, captura del panel e informe MT5 del mismo periodo.</p>
+			<h1>Prepara y comprueba tu pack en tu equipo</h1>
+			<p class="pack-subtitle">
+				Valida que reúnes logs, informe MT5 y captura de panel (fecha/hora del PC visible, panel abajo a la derecha del gráfico, mismo criterio de claridad que usamos al documentar precisión). El dictamen bajo nuestro protocolo es para
+				<strong>quien opera con tevsys activo</strong> y <strong>tiene relación comercial o acuerdo con nosotros</strong> (p. ej. licencia) — hace falta el panel en el gráfico para contrastar. Si aún no eres cliente, <a class="pack-inline-link" href="/company/contact?flow=acceso">escríbenos</a> o pide
+				<a class="pack-inline-link" href="/company/contact?flow=demo">demo</a> y te orientamos sin compromiso.
+			</p>
 		</section>
 
+		<p class="pack-notice" role="status">
+			<strong>Importante:</strong> en esta pantalla <strong>no se sube nada a nuestros servidores</strong> — el arrastre y la comprobación son <strong>solo en tu navegador</strong>. Así puedes adelantar trabajo sin abrir aún un envío formal; la solicitud y el cierre (si procede) van por el
+			<strong>canal que te indiquemos</strong> (contacto) y, cuando acordemos continuar, enviarás el pack por ese medio.
+		</p>
+
 		<section class="pack-dropzone-wrap">
-			<div id="pack-dropzone" class="pack-dropzone" role="button" tabindex="0" aria-label="Zona para arrastrar archivos">
-				<p class="pack-dropzone-title">Arrastra tus archivos aquí</p>
-				<p class="pack-dropzone-sub">o haz clic para seleccionarlos desde tu equipo</p>
+			<div id="pack-dropzone" class="pack-dropzone" role="button" tabindex="0" aria-label="Zona local para comprobar archivos del pack en tu navegador">
+				<p class="pack-dropzone-title">Comprueba aquí los archivos (en tu PC)</p>
+				<p class="pack-dropzone-sub">arrastra o elige — solo validación local, sin subir a tevsys</p>
 				<input id="pack-file-input" type="file" multiple accept=".log,.txt,.png,.jpg,.jpeg,.html,.htm,.zip" />
 			</div>
 			<div class="pack-format-chips" aria-label="Formatos permitidos">
@@ -29,7 +38,7 @@ const seo = {
 				<span class="pack-chip">HTML / HTM</span>
 				<span class="pack-chip">ZIP</span>
 			</div>
-			<p class="pack-trust">Tus archivos solo se usarán para esta auditoría.</p>
+			<p class="pack-trust">Nada se envía a internet desde este recuadro. Cuando tengas canal con nosotros, reenvía el pack por el medio acordado.</p>
 		</section>
 
 		<section class="pack-check">
@@ -238,8 +247,33 @@ const seo = {
 <style is:global>
 	.pack-hero,
 	.pack-dropzone-wrap,
-	.pack-check {
+	.pack-check,
+	.pack-notice {
 		margin: var(--section-margin) auto;
+	}
+	.pack-notice {
+		max-width: 54rem;
+		margin-top: 0.5rem;
+		margin-bottom: 0.25rem;
+		padding: 0.75rem 0.95rem;
+		border-radius: 0.72rem;
+		border: 1px solid rgba(100, 196, 255, 0.32);
+		background: rgba(100, 196, 255, 0.08);
+		font-size: 0.88rem;
+		line-height: 1.55;
+		color: rgba(218, 228, 240, 0.96);
+	}
+	.pack-notice strong {
+		color: rgba(232, 244, 255, 0.99);
+	}
+	.pack-hero .pack-subtitle a.pack-inline-link,
+	.pack-hero a.pack-inline-link {
+		color: rgba(150, 214, 255, 0.98);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.pack-hero a.pack-inline-link:hover {
+		color: rgba(190, 232, 255, 1);
 	}
 	.pack-hero {
 		max-width: 54rem;

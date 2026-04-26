@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/pack` — criterio cliente, sin subida; validación local (27 abr 2026)
+
+**Problema:** el recuadro de “arrastrar” parecía abrir envío a cualquiera. Hacía falta alinear con el producto: **tevsys en gráfico**, captura con el **mismo rigor** que en documentación de precisión, y **cribado** vía relación comercial; además dejar claro que **hoy no hay upload** a servidores tevsys (solo comprobación en el navegador).
+
+**Cambio:** copy del hero, aviso explícito, textos del dropzone y enlace a contacto/demo para quien aún no es cliente.
+
+**Archivo:** `src/pages/auditoria-ia/pack.astro`.
+
+---
+
 ## Contacto — solicitud auditoría: formulario aligerado (26 abr 2026, 2.ª pasada)
 
 **Problema:** el flujo `flow=auditoria-ia` seguía pidiendo **capital** y **experiencia** (pensado para demo/venta) y el título llevaba **(Fase 1)**, generando fricción y la sensación de “proceso en varias fases”.
