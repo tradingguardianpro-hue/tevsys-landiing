@@ -11,7 +11,7 @@ Documento de referencia para lo acordado y aplicado en código hasta **abr 2026*
 | Tema | Detalle |
 |------|---------|
 | **Tipografía** | **Inter** en el bloque salvo el **H1**: **DM Sans** solo en `.hero-title` (se probó Plus Jakarta Sans, descartada). `BaseHead.astro` carga **Inter** + **DM Sans** (+ Outfit donde aplique). |
-| **H1** | `Tú pones los límites. TEVSYS los blinda. Disciplina automatizada.` — `TEVSYS` ámbar (`hero-title__brand`, sin subrayado); subrayado solo en el claim (`hero-title__underline`). MT5 en la línea de contexto, no en el H1. |
+| **H1** | `Tú pones los límites. TEVSYS los blinda. Disciplina y precisión automatizadas.` — `TEVSYS` ámbar (`hero-title__brand`, sin subrayado); subrayado solo en el claim (`hero-title__underline`). MT5 en la línea de contexto, no en el H1. |
 | **Línea de contexto** | Clase `.hero-context-line`: *Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.* (debajo del H1, encima del badge; texto más pequeño, no compite con el titular). Motivo: anclar **cuenta MT5 / riesgo** para visitantes que no lean solo “disciplina”. |
 | **Ritmo vertical** | Margen amplio entre titular → badge “Where precision…” (`.hero-tagline-wrap`: `margin-top` / `margin-bottom` en clamp) → CTA (`.hero-download-btn`: `margin-top` en clamp) → nota plataformas (`hero-platform-note`). Abr 2026: más “aire” entre badge inglés y botón demo. |
 | **Halo** | `.hero-section__glow`: gradientes radiales ámbar (marca), solo en hero. |

@@ -732,6 +732,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero — ajuste claim subrayado (27 abr 2026)
+
+**Objetivo:** incluir “precisión” en el primer impacto del H1 sin alargar el titular ni romper el ritmo de lectura.
+
+**Cambio:** claim subrayado actualizado a `Disciplina y precisión automatizadas` en hero (`.hero-title__underline`).
+
+**Archivos:** `src/components/sections/heros/HomeHeroSection.astro`, `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`, `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md`.
+
+---
+
 ## Home, hero, header y cards — iteración diseño (abr 2026) — **confirmado**
 
 **Objetivo:** Inter en superficie producto, menos choque motion header/hero, hero y cards integrados en negro mate, línea de contexto MT5, legibilidad en cards y assets Canva para card Precisión.
