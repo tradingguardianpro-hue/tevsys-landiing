@@ -2775,6 +2775,12 @@ Refuerzo del claim: diferenciación vs SL tradicional. Nuevo H1 directo, sin ped
 ### 62.3 Miniaturas YouTube (abr 2026)
 - **`/videos-cierre-youtube`:** tarjetas con **miniatura oficial** (`img.youtube.com/vi/…/hqdefault.jpg`), etiqueta **YouTube**, play overlay, CTA; grid 2 columnas en escritorio. Sin iframe (abre `watch` en nueva pestaña). Si `url` vacía: tarjeta *Próximamente* sin thumbnail.
 
+### 62.3 bis Alta vídeo Nasdaq (27 abr 2026)
+- Añadido vídeo **NAS100** en `src/pages/videos-cierre-youtube.astro`.
+- URL: `https://youtu.be/GR8WrfeBU1E`
+- Título mostrado: `Precisión Nasdaq 100 | Cierre documentado en MT5`
+- Copy alineado al bloque multi-activo de `features/precision`.
+
 ### 62.4 Enlaces públicos (abr 2026)
 - **Parte 1:** `https://youtu.be/Kz21Hm_ukZ0` (presentación, reedit modo espejo; doc TGP `ARTICULO_*`). *Histórico:* `xnZBaEruRNY` (versión anterior sin reedit).
 - **Parte 2:** `https://youtu.be/QU1hC6SKg10` (cierre/evidencia ~2′22″). Ambos en `src/pages/videos-cierre-youtube.astro`.
