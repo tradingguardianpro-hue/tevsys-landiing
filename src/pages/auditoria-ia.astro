@@ -59,7 +59,12 @@ const seo = {
 
 		<hr class="audit-section-divider audit-section-divider--pack" aria-hidden="true" />
 
-		<div id="que-debes-enviar" class="audit-pack-anchor-wrap audit-pack--preview">
+		<div
+			id="que-debes-enviar"
+			class="audit-pack-anchor-wrap audit-pack--preview"
+			role="region"
+			aria-label="Vista previa del envío de evidencias"
+		>
 			<p class="audit-pack-chapter-kicker" id="fase-vista-envio">Siguiente · vista previa del envío</p>
 			<section class="audit-pack audit-pack--compact" aria-labelledby="fase-vista-envio">
 				<div class="audit-pack-compact-surface">
@@ -347,6 +352,10 @@ const seo = {
 		line-height: 1.45;
 		opacity: 0.95;
 	}
+	/* Tramo 1 → tramo 2: más aire tras el proceso (sin tocar el copy de alcance) */
+	.audit-page-anchor-flow .audit-flow {
+		margin-bottom: clamp(2.75rem, 9vh, 5rem);
+	}
 	.audit-flow ol li::before {
 		counter-increment: audit-step;
 		content: counter(audit-step);
@@ -389,13 +398,46 @@ const seo = {
 		border: 1px solid rgba(100, 196, 255, 0.2);
 		background: linear-gradient(180deg, rgba(100, 196, 255, 0.035) 0%, rgba(100, 196, 255, 0.012) 100%);
 	}
-	/* Ancla hero → embed: capítulo aparte + scroll suave (html:has abajo) */
+	/* Tramo “envío”: banda propia + ancla hero con más desplazamiento vertical */
 	.audit-pack-anchor-wrap.audit-pack--preview {
-		padding-top: clamp(0.35rem, 1.2vw, 0.85rem);
-		scroll-margin-top: min(56vh, 20rem);
+		position: relative;
+		isolation: isolate;
+		margin-top: clamp(1.75rem, 6vw, 3rem);
+		margin-bottom: clamp(1.35rem, 3.5vw, 2.25rem);
+		padding: clamp(2.75rem, 16vh, 7.5rem) clamp(0.85rem, 2.5vw, 1.35rem) clamp(1.35rem, 3.5vw, 2rem);
+		scroll-margin-top: min(72vh, 28rem);
+		border-radius: 1rem;
+		background: linear-gradient(
+			168deg,
+			rgba(100, 196, 255, 0.09) 0%,
+			rgba(8, 12, 20, 0.62) 42%,
+			rgba(6, 9, 14, 0.45) 100%
+		);
+		box-shadow:
+			0 0 0 1px rgba(100, 196, 255, 0.1) inset,
+			0 18px 48px -36px rgba(0, 0, 0, 0.55);
+	}
+	.audit-pack-anchor-wrap.audit-pack--preview::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: clamp(1.1rem, 3.5vh, 1.75rem);
+		transform: translateX(-50%);
+		width: min(46rem, 92%);
+		height: 2px;
+		border-radius: 999px;
+		background: linear-gradient(90deg, transparent, rgba(100, 196, 255, 0.5), transparent);
+		opacity: 0.85;
+		pointer-events: none;
+	}
+	.audit-pack-anchor-wrap .audit-pack.audit-pack--compact {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 	.audit-pack-chapter-kicker {
-		margin: 0 auto clamp(0.45rem, 1.2vw, 0.7rem);
+		position: relative;
+		z-index: 1;
+		margin: 0 auto clamp(0.55rem, 1.5vw, 0.85rem);
 		max-width: 52rem;
 		padding: 0 0.1rem 0 0.2rem;
 		font-size: 0.7rem;
@@ -403,8 +445,30 @@ const seo = {
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		line-height: 1.35;
-		opacity: 0.66;
-		color: rgba(186, 198, 222, 0.88);
+		opacity: 0.72;
+		color: rgba(196, 210, 235, 0.92);
+	}
+	@keyframes audit-chapter-reveal {
+		from {
+			opacity: 0.45;
+			transform: translateY(12px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	.audit-pack-anchor-wrap:target .audit-pack-chapter-kicker {
+		animation: audit-chapter-reveal 0.52s ease-out both;
+	}
+	.audit-pack-anchor-wrap:target .audit-pack-compact-surface {
+		animation: audit-chapter-reveal 0.52s ease-out 0.08s both;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.audit-pack-anchor-wrap:target .audit-pack-chapter-kicker,
+		.audit-pack-anchor-wrap:target .audit-pack-compact-surface {
+			animation: none;
+		}
 	}
 	/* Bloque #que-debes-enviar: banda ancha + acento lateral (menos “caja pegote”) */
 	.audit-pack--compact {
@@ -492,8 +556,8 @@ const seo = {
 		opacity: 0.95;
 	}
 	.audit-section-divider--pack {
-		margin-top: clamp(2rem, 5vw, 3.4rem);
-		margin-bottom: clamp(1.35rem, 3.2vw, 2.4rem);
+		margin-top: clamp(2.75rem, 8vw, 4.25rem);
+		margin-bottom: clamp(2rem, 5.5vw, 3.5rem);
 		max-width: min(44rem, 92vw);
 	}
 	.audit-pack-anchor-wrap:target .audit-pack-compact-surface {

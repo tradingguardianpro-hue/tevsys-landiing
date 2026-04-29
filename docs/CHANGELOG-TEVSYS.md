@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — tramo envío: más aire, banda visual y motion al ancla (29 abr 2026, UX)
+
+- Más **margen** tras *Cómo funciona*, **HR** `--pack` más separado, **`scroll-margin-top`** mayor en el ancla.
+- Contenedor **`audit-pack-anchor-wrap`**: **banda** (fondo + sombra + línea superior), **padding vertical** generoso; el **pack** interno sin doble `margin` de sección.
+- Al llegar por **`#que-debes-enviar`**: animación breve en kicker + superficie (**`prefers-reduced-motion`** la anula).
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — hero → ancla embed + scroll suave + capítulo (29 abr 2026, UX)
 
 - CTA hero **“En el futuro…”** vuelve a **`#que-debes-enviar`** (misma página): **`scroll-behavior: smooth`** solo en esta micro (`html:has(.audit-page-anchor-flow)`), **scroll-margin** mayor, **HR** con clase `--pack` (más aire), kicker **Siguiente · vista previa del envío** y contenedor ancla **`audit-pack-anchor-wrap`** para que el resaltado **`:target`** aplique al embed.
