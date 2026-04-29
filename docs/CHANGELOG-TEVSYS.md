@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/empezar` — título «Eres cliente de tevsys» (mayúsculas cian) + ··· por frase + barra bajo «Tres pasos» (29 abr 2026, UX)
+
+**Archivo:** `src/pages/auditoria-ia/empezar.astro`.
+
+- Prefacio: kicker **ERES CLIENTE DE TEVSYS** (misma línea cian); viñeta **···** cian y más margen entre párrafos.
+- Hero: **Tres pasos** al tamaño/peso del hero principal + **barra** ámbar→cian como en `/auditoria-ia`.
+
+---
+
 ## `/auditoria-ia/empezar` — prefacio: kicker cian «Antes: cliente e ID…» + lead corto + ID en correo con licencia (29 abr 2026, copy + UX)
 
 **Archivo:** `src/pages/auditoria-ia/empezar.astro`.

@@ -15,22 +15,32 @@ const seo = {
 		<div class="tevsys-home-band tevsys-home-band--cards audit-step-band">
 			<section class="audit-step-hero audit-step-hero--lite">
 				<p class="audit-step-kicker">Auditoría con IA</p>
-				<h1>Tres pasos</h1>
+				<h1 class="audit-step-hero-title">Tres pasos</h1>
+				<div class="audit-step-hero-title-accent" aria-hidden="true"></div>
 				<p class="audit-step-lead audit-step-lead--one">Tu ID arriba. Tres piezas del pack abajo. Comprobación local.</p>
 			</section>
 
 			<div class="audit-step-preface" role="region" aria-labelledby="audit-step-preface-title">
-				<p id="audit-step-preface-title" class="audit-step-preface__title">Antes: cliente e ID tevsys</p>
+				<p id="audit-step-preface-title" class="audit-step-preface__title">Eres cliente de tevsys</p>
 				<p class="audit-step-preface__body">
-					<strong>Necesitamos tu ID</strong> (<strong>TVS-…</strong>): en el <strong>panel expandido</strong> (botón
-					<strong>ID</strong>) y en el <strong>correo</strong> que te enviamos con la <strong>licencia</strong>.
+					<span class="audit-step-preface__dots" aria-hidden="true">···</span>
+					<span class="audit-step-preface__body-text">
+						<strong>Necesitamos tu ID</strong> (<strong>TVS-…</strong>): en el <strong>panel expandido</strong> (botón
+						<strong>ID</strong>) y en el <strong>correo</strong> que te enviamos con la <strong>licencia</strong>.
+					</span>
 				</p>
 				<p class="audit-step-preface__body">
-					<strong>Cópialo y consérvalo.</strong> Cuando abramos el envío: <strong>elegibilidad</strong> y seguimiento.
+					<span class="audit-step-preface__dots" aria-hidden="true">···</span>
+					<span class="audit-step-preface__body-text">
+						<strong>Cópialo y consérvalo.</strong> Cuando abramos el envío: <strong>elegibilidad</strong> y seguimiento.
+					</span>
 				</p>
 				<p class="audit-step-preface__body">
-					¿Aún no eres cliente?
-					<a class="audit-step-preface__link" href="/company/contact?flow=demo">Demo y contacto</a>
+					<span class="audit-step-preface__dots" aria-hidden="true">···</span>
+					<span class="audit-step-preface__body-text">
+						¿Aún no eres cliente?
+						<a class="audit-step-preface__link" href="/company/contact?flow=demo">Demo y contacto</a>
+					</span>
 				</p>
 			</div>
 
@@ -85,7 +95,7 @@ const seo = {
 	.audit-step-preface {
 		max-width: 52rem;
 		margin: 0 auto clamp(1.15rem, 2.8vw, 1.65rem);
-		padding: clamp(0.85rem, 2vw, 1.1rem) clamp(0.95rem, 2.2vw, 1.15rem);
+		padding: clamp(1rem, 2.2vw, 1.25rem) clamp(0.95rem, 2.2vw, 1.15rem);
 		border-radius: 0.85rem;
 		border: 1px solid rgba(100, 196, 255, 0.22);
 		border-left: 3px solid rgba(100, 196, 255, 0.55);
@@ -98,7 +108,7 @@ const seo = {
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
 	}
 	.audit-step-preface__title {
-		margin: 0 0 0.5rem;
+		margin: 0 0 clamp(0.65rem, 1.6vw, 0.85rem);
 		font-size: clamp(0.78rem, 1.45vw, 0.88rem);
 		font-weight: 800;
 		letter-spacing: 0.06em;
@@ -107,12 +117,28 @@ const seo = {
 		color: rgba(172, 224, 255, 0.96);
 	}
 	.audit-step-preface__body {
-		margin: 0 0 0.48rem;
+		display: flex;
+		align-items: flex-start;
+		gap: 0.55rem;
+		margin: 0 0 clamp(0.85rem, 2.2vw, 1.15rem);
 		font-size: 0.88rem;
 		font-weight: 600;
-		line-height: 1.48;
+		line-height: 1.52;
 		color: rgba(236, 244, 255, 0.94);
 		opacity: 0.96;
+	}
+	.audit-step-preface__dots {
+		flex: 0 0 auto;
+		margin-top: 0.1em;
+		font-size: 0.68rem;
+		font-weight: 800;
+		letter-spacing: 0.14em;
+		line-height: 1.5;
+		color: rgba(100, 196, 255, 0.95);
+	}
+	.audit-step-preface__body-text {
+		flex: 1 1 auto;
+		min-width: 0;
 	}
 	.audit-step-preface__body:last-of-type {
 		margin-bottom: 0;
@@ -178,11 +204,21 @@ const seo = {
 		font-weight: 700;
 		color: rgba(153, 218, 255, 0.96);
 	}
-	.audit-step-hero h1 {
-		margin: 0 0 0.55rem;
-		font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+	/* Misma familia que hero / «Tu dictamen…» en auditoria-ia: título más presente + barra bicolor */
+	.audit-step-hero-title {
+		margin: 0 0 0.42rem;
+		font-size: clamp(1.45rem, 2.8vw, 2rem);
+		font-weight: 800;
 		letter-spacing: -0.02em;
 		line-height: 1.22;
+		color: rgba(236, 244, 255, 0.99);
+	}
+	.audit-step-hero-title-accent {
+		height: 3px;
+		width: min(11rem, 52%);
+		margin: 0 0 0.72rem;
+		border-radius: 999px;
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.95) 0%, rgba(100, 196, 255, 0.75) 100%);
 	}
 	.audit-step-lead {
 		margin: 0;
