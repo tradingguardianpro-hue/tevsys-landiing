@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — dictamen: títulos Qué pasó / Contraste / Qué revisar + precisión si pack (29 abr 2026, copy)
+
+- Viñetas alineadas a **`PROTOCOLO_AUDITORIA_IA_FASE1_MANUAL_ASISTIDA.md` §9.6** (resumen, evidencia, precisión/límites cuando aplique); micro más corta.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — «Tu dictamen de ejecución»: copy DeepSeek+Claude + escaneo + Te llevas (29 abr 2026, copy + UX)
 
 - Sustituye **Qué recibes** por título **Tu dictamen de ejecución**, lead con **protocolo de trazabilidad**, lista **escaneable** (título + micro) y bloque **Te llevas** (micro-checklist).
