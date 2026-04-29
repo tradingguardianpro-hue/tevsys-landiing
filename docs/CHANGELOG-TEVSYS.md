@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — dictamen: micro «Qué revisar primero» (coherencia, reglas, ejecución) (29 abr 2026, copy)
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — dictamen: «Te llevas» más escaneable + títulos scanlist cian suave (29 abr 2026, copy + UX)
 
 - **Te llevas:** veredicto / prioridades cortas / mismas piezas para revisión propia.
