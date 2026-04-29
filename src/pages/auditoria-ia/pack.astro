@@ -11,6 +11,11 @@ const seo = {
 
 <Layout seo={seo}>
 	<Container>
+		<p class="pack-back">
+			<a class="pack-back-link" href="/auditoria-ia/empezar">← Resumen del pack (paso 1)</a>
+			<span class="pack-back-sep" aria-hidden="true">·</span>
+			<span class="pack-back-here">Paso 2 · archivos en tu navegador</span>
+		</p>
 		<section class="pack-hero">
 			<p class="pack-kicker">Auditoría con IA · Pack de evidencia</p>
 			<h1>Prepara y comprueba tu pack en tu equipo</h1>
@@ -243,6 +248,30 @@ const seo = {
 </script>
 
 <style is:global>
+	.pack-back {
+		margin: clamp(0.75rem, 2vw, 1.1rem) auto 0;
+		max-width: 52rem;
+		font-size: 0.84rem;
+		opacity: 0.88;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.35rem 0.5rem;
+	}
+	.pack-back-link {
+		color: rgba(165, 220, 255, 0.95);
+		text-decoration: none;
+		font-weight: 600;
+	}
+	.pack-back-link:hover {
+		text-decoration: underline;
+	}
+	.pack-back-sep {
+		opacity: 0.55;
+	}
+	.pack-back-here {
+		opacity: 0.75;
+	}
 	.pack-hero,
 	.pack-dropzone-wrap,
 	.pack-check,

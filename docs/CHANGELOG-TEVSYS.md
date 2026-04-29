@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/empezar` — transición checklist antes del pack (29 abr 2026, UX)
+
+- **Flujo en dos pasos:** desde `/auditoria-ia`, el CTA **Preparar y enviar pack** abre **`/auditoria-ia/empezar`** (cuatro piezas del pack en tarjetas, copy breve, sin zona de archivos). El CTA principal lleva a **`/auditoria-ia/pack`** (herramienta local existente).
+- **`/auditoria-ia/pack`:** línea superior *← Resumen del pack (paso 1)* + indicación *Paso 2*.
+
+**Archivos:** `src/pages/auditoria-ia/empezar.astro`, `src/pages/auditoria-ia.astro`, `src/pages/auditoria-ia/pack.astro`, `src/config/settings.js` (comentario).
+
+---
+
 ## SEO pestaña (`<title>`): sin «Pioneros»; alineado a mensaje actual (29 abr 2026)
 
 - **`settings.js` → `title`:** de *Pioneros en disciplina…* a **disciplina verificada + precisión de cierre + gestión de riesgo · MT5** (misma línea argumental que home, sin superlativo difícil de sustentar).

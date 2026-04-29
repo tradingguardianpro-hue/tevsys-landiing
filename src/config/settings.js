@@ -8,7 +8,7 @@ export default {
   /** Checkout Essential: true = mostrar Comprar + Probar demo en Essential. false = solo Elegir Essential (formulario). Mar 2026: OFF hasta mail + descarga + flujo listos para venta pública. */
   checkoutEssentialReady: false,
   /**
-   * Enlace "Preparar y enviar pack" en /auditoria-ia. false = oculto (sin flujo público; la ruta /auditoria-ia/pack sigue existiendo para pruebas o futuro). true = mostrar y enlazar al pack interactivo.
+   * Enlace "Preparar y enviar pack" en /auditoria-ia. false = oculto. true = enlaza a /auditoria-ia/empezar (transición checklist) → usuario sigue a /auditoria-ia/pack (herramienta local).
    */
   auditPackPreparationVisible: true,
   /** URL checkout Mensual (39 €/mes). Pegar el link que copias de Lemon Share (solo Mensual activado). */

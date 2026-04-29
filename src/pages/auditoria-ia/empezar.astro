@@ -1,0 +1,205 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+	title: 'Antes del pack: checklist | Auditoría tevsys',
+	description:
+		'Resumen en una pantalla: qué entra en el pack mínimo de auditoría. Sin archivos todavía; el siguiente paso es comprobarlos en tu equipo.',
+};
+---
+
+<Layout seo={seo}>
+	<div class="audit-page-motion-off" aria-hidden="true"></div>
+	<Container>
+		<div class="tevsys-home-band tevsys-home-band--cards audit-step-band">
+			<section class="audit-step-hero">
+				<p class="audit-step-kicker">Auditoría con IA · Paso 1 de 2</p>
+				<h1>El pack, en cuatro piezas</h1>
+				<p class="audit-step-lead">
+					Aquí no arrastras nada: solo ves <strong>qué vas a necesitar</strong>. Cuando quieras comprobar que lo tienes en el PC, pasas al paso 2 (también en tu navegador, sin subir a tevsys).
+				</p>
+			</section>
+
+			<ol class="audit-step-cards" aria-label="Checklist mínimo del pack">
+				<li class="audit-step-card">
+					<span class="audit-step-num" aria-hidden="true">1</span>
+					<div>
+						<h2>Logs del periodo</h2>
+						<p>Archivos de registro del mismo intervalo que quieres auditar.</p>
+					</div>
+				</li>
+				<li class="audit-step-card">
+					<span class="audit-step-num" aria-hidden="true">2</span>
+					<div>
+						<h2>Captura del panel</h2>
+						<p>Fecha y hora del PC visibles; panel tevsys en el gráfico (abajo a la derecha), legible.</p>
+					</div>
+				</li>
+				<li class="audit-step-card">
+					<span class="audit-step-num" aria-hidden="true">3</span>
+					<div>
+						<h2>Informe HTML MT5</h2>
+						<p>Del <strong>mismo periodo</strong> que los logs, para poder contrastar.</p>
+					</div>
+				</li>
+				<li class="audit-step-card">
+					<span class="audit-step-num" aria-hidden="true">4</span>
+					<div>
+						<h2>Contexto del caso</h2>
+						<p>Periodo concreto, cuenta auditada y qué quieres que miremos con más énfasis (lo eliges en el siguiente paso).</p>
+					</div>
+				</li>
+			</ol>
+
+			<p class="audit-step-note" role="status">
+				El envío formal a tevsys llegará cuando abramos el servicio; antes habrá verificación de <strong>ID</strong> y elegibilidad. Esta ruta solo te prepara el terreno.
+			</p>
+
+			<div class="audit-step-ctas">
+				<a class="audit-step-cta audit-step-cta--primary" href="/auditoria-ia/pack">Siguiente: comprobar archivos en tu equipo</a>
+				<a class="audit-step-cta audit-step-cta--secondary" href="/auditoria-ia">Volver a Auditoría IA</a>
+			</div>
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.audit-step-band {
+		position: relative;
+		isolation: isolate;
+		overflow-x: clip;
+		padding-bottom: clamp(2rem, 5vw, 3.5rem);
+	}
+	.audit-step-hero {
+		max-width: 48rem;
+		margin: var(--section-margin) auto clamp(1.25rem, 3vw, 1.75rem);
+		padding: clamp(1rem, 2.2vw, 1.35rem) clamp(1rem, 2.4vw, 1.5rem);
+		border-radius: 1rem;
+		border: 1px solid rgba(100, 196, 255, 0.28);
+		background:
+			linear-gradient(180deg, rgba(6, 8, 13, 0.52) 0%, rgba(6, 8, 13, 0.38) 100%),
+			linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.006) 100%);
+		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
+	}
+	.audit-step-kicker {
+		margin: 0 0 0.45rem;
+		font-size: 0.76rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-weight: 700;
+		color: rgba(153, 218, 255, 0.96);
+	}
+	.audit-step-hero h1 {
+		margin: 0 0 0.55rem;
+		font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+		letter-spacing: -0.02em;
+		line-height: 1.22;
+	}
+	.audit-step-lead {
+		margin: 0;
+		font-size: 0.98rem;
+		line-height: 1.55;
+		opacity: 0.94;
+		max-width: 42rem;
+	}
+	.audit-step-cards {
+		list-style: none;
+		margin: 0 auto clamp(1.25rem, 3vw, 2rem);
+		padding: 0;
+		max-width: 52rem;
+		display: grid;
+		gap: 0.75rem;
+	}
+	.audit-step-card {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.85rem 1rem;
+		align-items: start;
+		padding: 1rem 1.1rem;
+		border-radius: 0.85rem;
+		border: 1px solid rgba(100, 196, 255, 0.24);
+		background: linear-gradient(180deg, rgba(100, 196, 255, 0.07) 0%, rgba(100, 196, 255, 0.02) 100%);
+	}
+	.audit-step-num {
+		display: grid;
+		place-items: center;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		font-size: 0.85rem;
+		font-weight: 800;
+		color: rgba(255, 247, 234, 0.96);
+		background: rgba(100, 196, 255, 0.55);
+		flex-shrink: 0;
+	}
+	.audit-step-card h2 {
+		margin: 0 0 0.28rem;
+		font-size: 1.02rem;
+		color: rgba(236, 244, 255, 0.99);
+	}
+	.audit-step-card p {
+		margin: 0;
+		font-size: 0.9rem;
+		line-height: 1.5;
+		opacity: 0.88;
+	}
+	.audit-step-note {
+		max-width: 48rem;
+		margin: 0 auto 1.25rem;
+		padding: 0.75rem 1rem;
+		border-radius: 0.7rem;
+		border: 1px solid rgba(176, 186, 204, 0.28);
+		background: rgba(255, 255, 255, 0.03);
+		font-size: 0.88rem;
+		line-height: 1.5;
+		opacity: 0.86;
+	}
+	.audit-step-ctas {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+		justify-content: center;
+		max-width: 52rem;
+		margin: 0 auto;
+	}
+	.audit-step-cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.55rem 1.05rem;
+		border-radius: 0.65rem;
+		font-size: 0.88rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background-color 0.2s ease, border-color 0.2s ease;
+	}
+	.audit-step-cta--primary {
+		border: 1px solid rgba(100, 196, 255, 0.52);
+		color: rgba(232, 247, 255, 0.98);
+		background: rgba(100, 196, 255, 0.14);
+	}
+	.audit-step-cta--primary:hover {
+		background: rgba(100, 196, 255, 0.22);
+		border-color: rgba(100, 196, 255, 0.72);
+	}
+	.audit-step-cta--secondary {
+		border: 1px solid rgba(100, 196, 255, 0.32);
+		color: rgba(221, 243, 255, 0.94);
+		background: rgba(100, 196, 255, 0.06);
+	}
+	.audit-step-cta--secondary:hover {
+		background: rgba(100, 196, 255, 0.12);
+		border-color: rgba(100, 196, 255, 0.55);
+	}
+	@media (max-width: 520px) {
+		.audit-step-card {
+			grid-template-columns: 1fr;
+		}
+		.audit-step-num {
+			width: 1.75rem;
+			height: 1.75rem;
+			font-size: 0.8rem;
+		}
+	}
+</style>
