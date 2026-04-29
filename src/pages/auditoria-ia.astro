@@ -89,7 +89,7 @@ const seo = {
 		<section class="audit-output">
 			<h2>Tu dictamen de ejecución</h2>
 			<p class="audit-output-lead">
-				No es análisis de mercado. Es la verificación de tus reglas, ¿cómo hemos actuado nosotros? Y todo ello bajo
+				No es análisis de mercado. Es la verificación de tus reglas, cómo hemos actuado nosotros. Y todo ello bajo
 				protocolo de trazabilidad.
 			</p>
 			<ul class="audit-output-scanlist">
@@ -741,10 +741,23 @@ const seo = {
 	}
 	.audit-output-scanlist__d {
 		display: block;
+		position: relative;
+		padding-left: 1.05rem;
 		font-size: clamp(0.8rem, 1.45vw, 0.88rem);
 		line-height: 1.5;
 		opacity: 0.87;
 		font-weight: 500;
+	}
+	.audit-output-scanlist__d::before {
+		content: '·';
+		position: absolute;
+		left: 0.05rem;
+		top: 0;
+		color: rgba(100, 196, 255, 0.95);
+		font-weight: 800;
+		font-size: 1.15em;
+		line-height: 1.5;
+		pointer-events: none;
 	}
 	.audit-output-exit {
 		margin-top: 0.55rem;

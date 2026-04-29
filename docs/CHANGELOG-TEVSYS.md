@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — dictamen: lead sin interrogantes + punto cian en micros (29 abr 2026, copy + UX)
+
+- Lead enunciativo (*…cómo hemos actuado nosotros.*); micro de cada viñeta con **·** cian vía `::before`.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — dictamen: lead sin «contra los hechos» + pregunta intermedia (29 abr 2026, copy)
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
