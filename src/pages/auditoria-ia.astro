@@ -89,7 +89,8 @@ const seo = {
 		<section class="audit-output">
 			<h2>Tu dictamen de ejecución</h2>
 			<p class="audit-output-lead">
-				No es análisis de mercado. Es la verificación de tus reglas contra los hechos, bajo protocolo de trazabilidad.
+				No es análisis de mercado. Es la verificación de tus reglas, ¿cómo hemos actuado nosotros? Y todo ello bajo
+				protocolo de trazabilidad.
 			</p>
 			<ul class="audit-output-scanlist">
 				<li>
@@ -408,6 +409,9 @@ const seo = {
 		font-size: 1.22rem;
 	}
 	/* Jerarquía visual coherente con "Qué auditamos / no auditamos" */
+	.audit-output > h2 {
+		margin-bottom: clamp(1.05rem, 3.2vh, 1.75rem);
+	}
 	.audit-output h2::after,
 	.audit-academy h2::after {
 		content: '';
@@ -705,12 +709,12 @@ const seo = {
 			0 0 0 1px rgba(176, 186, 204, 0.1) inset;
 	}
 	.audit-output-lead {
-		margin: 0 0 0.62rem;
+		margin: clamp(0.35rem, 1.4vw, 0.75rem) 0 0.72rem;
 		max-width: 44rem;
 		opacity: 0.93;
 		font-weight: 600;
 		font-size: clamp(0.86rem, 1.55vw, 0.95rem);
-		line-height: 1.52;
+		line-height: 1.56;
 	}
 	.audit-output-scanlist {
 		list-style: none;

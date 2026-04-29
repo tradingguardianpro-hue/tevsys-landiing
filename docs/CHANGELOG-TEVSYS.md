@@ -4,6 +4,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — dictamen: lead sin «contra los hechos» + pregunta intermedia (29 abr 2026, copy)
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
+## `/auditoria-ia` — dictamen: aire título→lead + lead en tres tiempos (29 abr 2026, copy + UX)
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — dictamen: títulos Qué pasó / Contraste / Qué revisar + precisión si pack (29 abr 2026, copy)
 
 - Viñetas alineadas a **`PROTOCOLO_AUDITORIA_IA_FASE1_MANUAL_ASISTIDA.md` §9.6** (resumen, evidencia, precisión/límites cuando aplique); micro más corta.
