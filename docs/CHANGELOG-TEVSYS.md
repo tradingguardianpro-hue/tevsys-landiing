@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `settings.js` — `auditPackPreparationVisible: false` (30 abr 2026, producto)
+
+**Archivo:** `src/config/settings.js`.
+
+- CTA «**Preparar y enviar pack**» en **`/auditoria-ia`** **oculto** hasta retomar bloque auditoría en público. Rutas **`/auditoria-ia/empezar`** y **`/auditoria-ia/pack`** siguen en el proyecto.
+
+---
+
 ## `/auditoria-ia/empezar` — CTA principal «Valida tu ID y tus archivos aquí» (prominente) + Volver a Auditoría IA (29 abr 2026, copy + UX)
 
 **Archivo:** `src/pages/auditoria-ia/empezar.astro`.

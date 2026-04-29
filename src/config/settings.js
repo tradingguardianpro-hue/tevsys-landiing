@@ -10,7 +10,7 @@ export default {
   /**
    * Enlace "Preparar y enviar pack" en /auditoria-ia. false = oculto. true = enlaza a /auditoria-ia/empezar (transición checklist) → usuario sigue a /auditoria-ia/pack (herramienta local).
    */
-  auditPackPreparationVisible: true,
+  auditPackPreparationVisible: false,
   /** URL checkout Mensual (39 €/mes). Pegar el link que copias de Lemon Share (solo Mensual activado). */
   checkoutEssentialUrlMensual: "https://tevsys.lemonsqueezy.com/checkout/buy/e24253bf-82e6-4ce7-ba37-4888b4dd3d03",
   /** URL checkout Anual (390 €/año). Copiar desde Lemon Share → solo Anual activado. */
