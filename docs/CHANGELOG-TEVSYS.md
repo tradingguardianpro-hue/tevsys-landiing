@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — pack: «En dos pasos» h2 + tarjeta «Resumen» y viñetas (29 abr 2026, copy + UX)
+
+- Sustituye kicker largo por **`h2` «En dos pasos»** (tamaño jerárquico + subrayado bicolor como otras secciones).
+- Dentro de **`audit-pack-compact-surface`:** **`h3` «Resumen»** + viñetas *Periodo a auditar. Fechas claras.* (sin “hero” en copy).
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — scroll suave otra vez + marco azul tramo 2 + tipografía explícita (29 abr 2026, UX)
 
 - **`scroll-behavior: smooth`** de vuelta en la micro; **`prefers-reduced-motion`** sigue forzando salto seco.

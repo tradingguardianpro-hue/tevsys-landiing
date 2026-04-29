@@ -66,18 +66,14 @@ const seo = {
 			aria-label="Resumen de envío, qué recibes, academias y preguntas frecuentes"
 		>
 		<div class="audit-pack-anchor-wrap audit-pack--preview">
-			<p class="audit-pack-chapter-kicker" id="fase-dos-pasos-envio">
-				<span class="audit-pack-chapter-kicker__lead">En dos pasos</span>
-				<span class="audit-pack-chapter-kicker__sep" aria-hidden="true"> · </span>
-				<span class="audit-pack-chapter-kicker__trail">mismo tema que el botón del hero — aquí solo el resumen</span>
-			</p>
+			<h2 class="audit-pack-phase-title" id="fase-dos-pasos-envio">En dos pasos</h2>
 			<section class="audit-pack audit-pack--compact" aria-labelledby="fase-dos-pasos-envio">
 				<div class="audit-pack-compact-surface">
 					<div class="audit-pack-compact-copy">
-						<h2>Qué reunir (vista previa)</h2>
+						<h3 class="audit-pack-summary-heading">Resumen</h3>
 						<ul class="audit-pack-tight" aria-label="Requisitos esenciales">
 							<li><strong>Archivos arrastrables.</strong></li>
-							<li><strong>Periodo</strong> a auditar (fechas claras).</li>
+							<li><strong>Periodo</strong> a auditar. Fechas claras.</li>
 						</ul>
 						<p class="audit-pack-micro">Canal de envío: cuando activemos el servicio.</p>
 					</div>
@@ -442,30 +438,27 @@ const seo = {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
-	.audit-pack-chapter-kicker {
+	.audit-pack-phase-title {
 		position: relative;
 		z-index: 1;
-		margin: 0 auto clamp(1.15rem, 3.5vh, 2rem);
+		margin: 0 auto clamp(0.55rem, 1.8vw, 0.95rem);
 		max-width: 52rem;
-		padding: 0 0.15rem 0 0.25rem;
-		font-size: clamp(0.8rem, 1.85vw, 0.92rem);
-		font-weight: 500;
-		letter-spacing: 0.01em;
-		text-transform: none;
-		line-height: 1.45;
-		opacity: 0.9;
-		color: rgba(210, 222, 245, 0.95);
-	}
-	.audit-pack-chapter-kicker__lead {
+		padding: 0 0.2rem 0 0.28rem;
+		font-size: clamp(1.18rem, 2.65vw, 1.52rem);
 		font-weight: 700;
-		color: rgba(232, 244, 255, 0.98);
+		letter-spacing: -0.022em;
+		line-height: 1.18;
+		color: rgba(240, 248, 255, 0.99);
 	}
-	.audit-pack-chapter-kicker__sep {
-		opacity: 0.55;
-		font-weight: 500;
-	}
-	.audit-pack-chapter-kicker__trail {
-		opacity: 0.88;
+	.audit-pack-phase-title::after {
+		content: '';
+		display: block;
+		width: min(10rem, 46%);
+		height: 2px;
+		margin-top: 0.42rem;
+		border-radius: 999px;
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.88) 0%, rgba(100, 196, 255, 0.68) 100%);
+		opacity: 0.92;
 	}
 	@keyframes audit-chapter-reveal {
 		from {
@@ -477,11 +470,11 @@ const seo = {
 			transform: translateY(0);
 		}
 	}
-	#que-debes-enviar:target .audit-pack-chapter-kicker {
+	#que-debes-enviar:target .audit-pack-phase-title {
 		animation: audit-chapter-reveal 0.52s ease-out both;
 	}
 	@media (prefers-reduced-motion: reduce) {
-		#que-debes-enviar:target .audit-pack-chapter-kicker,
+		#que-debes-enviar:target .audit-pack-phase-title,
 		#que-debes-enviar:target .audit-pack-compact-surface {
 			animation: none;
 		}
@@ -515,16 +508,17 @@ const seo = {
 	.audit-pack-anchor-wrap .audit-pack-compact-surface {
 		padding-top: clamp(1.05rem, 2.8vw, 1.55rem);
 	}
-	.audit-pack-compact-copy h2 {
-		margin: 0 0 0.32rem;
-		font-size: 1rem;
-		letter-spacing: -0.01em;
+	.audit-pack-compact-copy .audit-pack-summary-heading {
+		margin: 0 0 0.36rem;
+		font-size: clamp(0.96rem, 1.75vw, 1.08rem);
+		letter-spacing: -0.012em;
 		font-weight: 700;
-		line-height: 1.25;
+		line-height: 1.28;
+		color: rgba(232, 242, 255, 0.98);
 	}
-	.audit-pack-anchor-wrap .audit-pack-compact-copy h2 {
-		margin-top: clamp(0.2rem, 0.8vw, 0.45rem);
-		margin-bottom: clamp(0.65rem, 2.2vw, 1.05rem);
+	.audit-pack-anchor-wrap .audit-pack-compact-copy .audit-pack-summary-heading {
+		margin-top: clamp(0.15rem, 0.6vw, 0.35rem);
+		margin-bottom: clamp(0.55rem, 1.9vw, 0.92rem);
 	}
 	.audit-pack-tight {
 		margin: 0 0 0.28rem;
