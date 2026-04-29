@@ -16,7 +16,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
           No damos señales ni promesas de beneficio.
         </p>
         <p class="hero-context-line">
-          Disciplina automatizada, precisión de cierre de operaciones, trazabilidad verificable y protección activa en MT5.
+          Disciplina automatizada, precisión de cierre de operaciones,<br class="hero-context-br hero-context-br--mobile" aria-hidden="true" />
+          trazabilidad verificable y protección activa en MT5.
         </p>
         <div class="hero-tagline-wrap">
           <div class="hero-tagline">
@@ -156,6 +157,11 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     letter-spacing: -0.015em;
     color: rgba(244, 246, 248, 0.77);
     text-align: center;
+    text-wrap: balance;
+  }
+  /* Salto solo en móvil: evita un bloque de 3 líneas finas; en desktop sigue un solo párrafo fluido */
+  .hero-context-br--mobile {
+    display: none;
   }
 
   .hero-tagline-wrap {
@@ -363,6 +369,14 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
     .hero-context-line {
       margin-top: 0.96rem;
+      font-size: 0.9rem;
+      line-height: 1.52;
+      max-width: min(34rem, 100%);
+      padding-left: 0.35rem;
+      padding-right: 0.35rem;
+    }
+    .hero-context-br--mobile {
+      display: block;
     }
     .hero-cta-row {
       margin-top: clamp(1.5rem, 4vw, 2rem);
