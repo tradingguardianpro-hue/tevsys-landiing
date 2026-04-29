@@ -4,7 +4,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## `/auditoria-ia` — dictamen: lead «cómo ha actuado TEVSYS» en cian (29 abr 2026, copy + UX)
+## `/auditoria-ia` — dictamen: solo marca TEVSYS en cian en el lead (29 abr 2026, copy + UX)
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
 
