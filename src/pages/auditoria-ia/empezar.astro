@@ -23,24 +23,15 @@ const seo = {
 			<div class="audit-step-preface" role="region" aria-labelledby="audit-step-preface-title">
 				<p id="audit-step-preface-title" class="audit-step-preface__title">Eres cliente de tevsys</p>
 				<p class="audit-step-preface__body">
-					<span class="audit-step-preface__dots" aria-hidden="true">···</span>
-					<span class="audit-step-preface__body-text">
-						<strong>Necesitamos tu ID</strong> (<strong>TVS-…</strong>): en el <strong>panel expandido</strong> (botón
-						<strong>ID</strong>) y en el <strong>correo</strong> que te enviamos con la <strong>licencia</strong>.
-					</span>
+					<strong>Necesitamos tu ID</strong> (<strong>TVS-…</strong>): en el <strong>panel expandido</strong> (botón
+					<strong>ID</strong>) y en el <strong>correo</strong> que te enviamos con la <strong>licencia</strong>.
 				</p>
 				<p class="audit-step-preface__body">
-					<span class="audit-step-preface__dots" aria-hidden="true">···</span>
-					<span class="audit-step-preface__body-text">
-						<strong>Cópialo y consérvalo.</strong> Cuando abramos el envío: <strong>elegibilidad</strong> y seguimiento.
-					</span>
+					<strong>Cópialo y consérvalo.</strong> Cuando abramos el envío: <strong>elegibilidad</strong> y seguimiento.
 				</p>
 				<p class="audit-step-preface__body">
-					<span class="audit-step-preface__dots" aria-hidden="true">···</span>
-					<span class="audit-step-preface__body-text">
-						¿Aún no eres cliente?
-						<a class="audit-step-preface__link" href="/company/contact?flow=demo">Demo y contacto</a>
-					</span>
+					¿Aún no eres cliente?
+					<a class="audit-step-preface__link" href="/company/contact?flow=demo">Demo y contacto</a>
 				</p>
 			</div>
 
@@ -116,29 +107,26 @@ const seo = {
 		line-height: 1.3;
 		color: rgba(172, 224, 255, 0.96);
 	}
+	/* Misma familia visual que viñetas del checklist en /auditoria-ia/pack (.pack-req) */
 	.audit-step-preface__body {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.55rem;
+		position: relative;
 		margin: 0 0 clamp(0.85rem, 2.2vw, 1.15rem);
+		padding-left: 1.45rem;
 		font-size: 0.88rem;
 		font-weight: 600;
 		line-height: 1.52;
 		color: rgba(236, 244, 255, 0.94);
 		opacity: 0.96;
 	}
-	.audit-step-preface__dots {
-		flex: 0 0 auto;
-		margin-top: 0.1em;
-		font-size: 0.68rem;
-		font-weight: 800;
-		letter-spacing: 0.14em;
-		line-height: 1.5;
+	.audit-step-preface__body::before {
+		content: '•';
+		position: absolute;
+		left: 0.12rem;
+		top: 0.04em;
+		font-weight: 700;
+		font-size: 0.98rem;
+		line-height: 1.45;
 		color: rgba(100, 196, 255, 0.95);
-	}
-	.audit-step-preface__body-text {
-		flex: 1 1 auto;
-		min-width: 0;
 	}
 	.audit-step-preface__body:last-of-type {
 		margin-bottom: 0;
