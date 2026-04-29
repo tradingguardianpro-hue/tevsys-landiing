@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — hero sin ancla brusca + aire antes del bloque envío (29 abr 2026, UX)
+
+- CTA secundario **“En el futuro…”** → **`/auditoria-ia/empezar`** (ya no `#que-debes-enviar`).
+- **HR** suave entre *Cómo funciona* y el bloque compacto; **`scroll-margin-top`** mayor en `#que-debes-enviar` por enlaces externos.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` + `/auditoria-ia/empezar` — copy mínimo (29 abr 2026, segunda pasada)
 
 - **#que-debes-enviar:** 2 viñetas (**Archivos arrastrables** · **Periodo** a auditar) + micro “Canal de envío…”.

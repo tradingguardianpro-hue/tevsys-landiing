@@ -23,7 +23,7 @@ const seo = {
 			<p class="audit-hero-copy">Sin promesas, sin relato. Con datos trazables.</p>
 			<div class="audit-hero-ctas">
 				<a class="audit-cta audit-cta--primary" href="/auditoria-ia/no-disponible">Solicitar auditoría</a>
-				<a class="audit-cta audit-cta--secondary" href="#que-debes-enviar">En el futuro: qué deberás enviar</a>
+				<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/empezar">En el futuro: qué deberás enviar</a>
 			</div>
 		</section>
 
@@ -56,6 +56,8 @@ const seo = {
 				<li>Recibes el informe con resultado y recomendaciones.</li>
 			</ol>
 		</section>
+
+		<hr class="audit-section-divider" aria-hidden="true" />
 
 		<section id="que-debes-enviar" class="audit-pack audit-pack--preview audit-pack--compact">
 			<h2>En el futuro: qué deberás enviar</h2>
@@ -381,7 +383,8 @@ const seo = {
 		background: linear-gradient(180deg, rgba(100, 196, 255, 0.035) 0%, rgba(100, 196, 255, 0.012) 100%);
 	}
 	.audit-pack--preview {
-		scroll-margin-top: 6.4rem;
+		/* Si alguien enlaza #que-debes-enviar: dejar aire arriba para no “comerse” Qué auditamos / Cómo funciona */
+		scroll-margin-top: min(42vh, 15rem);
 	}
 	/* Bloque ancla #que-debes-enviar: poco texto, lectura en diagonal */
 	.audit-pack--compact {
@@ -429,11 +432,19 @@ const seo = {
 		margin-top: 0.35rem;
 		justify-content: flex-start;
 	}
+	.audit-section-divider {
+		border: 0;
+		height: 1px;
+		margin: clamp(1.35rem, 3.5vw, 2.35rem) auto clamp(1.1rem, 2.8vw, 1.85rem);
+		max-width: 40rem;
+		background: linear-gradient(90deg, transparent, rgba(100, 196, 255, 0.22), transparent);
+		opacity: 0.95;
+	}
 	.audit-pack--compact:target {
 		border-color: rgba(176, 186, 204, 0.42);
 		background: linear-gradient(180deg, rgba(158, 167, 183, 0.1) 0%, rgba(158, 167, 183, 0.035) 100%);
 		box-shadow: 0 0 0 1px rgba(176, 186, 204, 0.08) inset;
-		scroll-margin-top: 6.4rem;
+		scroll-margin-top: min(42vh, 15rem);
 	}
 	.audit-output-lead {
 		margin: 0 0 0.52rem;
