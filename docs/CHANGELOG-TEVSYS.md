@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — kicker envío: “En dos pasos” + puente al hero; más aire en viñetas (29 abr 2026, copy + UX)
+
+- Sustituye **Siguiente · vista previa del envío** por frase que conecta con el CTA del hero (**En dos pasos** + tramo explicativo); tipografía **sin** all-caps de etiqueta.
+- Más **margen** kicker → tarjeta; **padding-top** de la superficie y **interlineado / márgenes** entre H2 y viñetas en el bloque ancla.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — tramo envío: más aire, banda visual y motion al ancla (29 abr 2026, UX)
 
 - Más **margen** tras *Cómo funciona*, **HR** `--pack` más separado, **`scroll-margin-top`** mayor en el ancla.
