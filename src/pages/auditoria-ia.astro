@@ -60,17 +60,21 @@ const seo = {
 		<hr class="audit-section-divider" aria-hidden="true" />
 
 		<section id="que-debes-enviar" class="audit-pack audit-pack--preview audit-pack--compact">
-			<h2>En el futuro: qué deberás enviar</h2>
-			<ul class="audit-pack-tight" aria-label="Requisitos esenciales">
-				<li><strong>Archivos arrastrables.</strong></li>
-				<li><strong>Periodo</strong> a auditar (fechas claras).</li>
-			</ul>
-			<p class="audit-pack-micro">Canal de envío: cuando activemos el servicio.</p>
-			{settings.auditPackPreparationVisible ? (
-				<div class="audit-pack-cta-row audit-pack-cta-row--compact">
-					<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/empezar">Preparar y enviar pack</a>
+			<div class="audit-pack-compact-surface">
+				<div class="audit-pack-compact-copy">
+					<h2>En el futuro: qué deberás enviar</h2>
+					<ul class="audit-pack-tight" aria-label="Requisitos esenciales">
+						<li><strong>Archivos arrastrables.</strong></li>
+						<li><strong>Periodo</strong> a auditar (fechas claras).</li>
+					</ul>
+					<p class="audit-pack-micro">Canal de envío: cuando activemos el servicio.</p>
 				</div>
-			) : null}
+				{settings.auditPackPreparationVisible ? (
+					<div class="audit-pack-compact-action">
+						<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/empezar">Preparar y enviar pack</a>
+					</div>
+				) : null}
+			</div>
 		</section>
 
 		<section class="audit-output">
@@ -386,26 +390,45 @@ const seo = {
 		/* Si alguien enlaza #que-debes-enviar: dejar aire arriba para no “comerse” Qué auditamos / Cómo funciona */
 		scroll-margin-top: min(42vh, 15rem);
 	}
-	/* Bloque ancla #que-debes-enviar: poco texto, lectura en diagonal */
+	/* Bloque #que-debes-enviar: banda ancha + acento lateral (menos “caja pegote”) */
 	.audit-pack--compact {
-		max-width: 38rem;
+		max-width: 52rem;
 		margin-left: auto;
 		margin-right: auto;
-		padding: 0.55rem 0.75rem 0.65rem;
-		border-radius: 0.75rem;
-		border: 1px solid rgba(100, 196, 255, 0.22);
-		background: linear-gradient(180deg, rgba(100, 196, 255, 0.06) 0%, rgba(100, 196, 255, 0.02) 100%);
+		padding: 0;
+		background: transparent;
+		border: none;
 	}
-	.audit-pack--compact h2 {
-		margin: 0 0 0.35rem;
-		font-size: 1.05rem;
+	.audit-pack-compact-surface {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.75rem 1rem;
+		align-items: stretch;
+		padding: 0.78rem 1rem 0.88rem 1.05rem;
+		border-radius: 0.7rem;
+		border: 1px solid rgba(100, 196, 255, 0.12);
+		border-left: 3px solid rgba(100, 196, 255, 0.55);
+		background: linear-gradient(
+			105deg,
+			rgba(100, 196, 255, 0.07) 0%,
+			rgba(6, 8, 13, 0.42) 42%,
+			rgba(6, 8, 13, 0.28) 100%
+		);
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+	}
+	.audit-pack-compact-copy h2 {
+		margin: 0 0 0.32rem;
+		font-size: 1rem;
+		letter-spacing: -0.01em;
+		font-weight: 700;
+		line-height: 1.25;
 	}
 	.audit-pack-tight {
-		margin: 0 0 0.35rem;
+		margin: 0 0 0.28rem;
 		padding-left: 1rem;
-		font-size: 0.82rem;
-		line-height: 1.38;
-		opacity: 0.88;
+		font-size: 0.83rem;
+		line-height: 1.36;
+		opacity: 0.9;
 	}
 	.audit-pack-tight li {
 		margin: 0 0 0.28rem;
@@ -422,15 +445,27 @@ const seo = {
 		justify-content: flex-end;
 	}
 	.audit-pack-micro {
-		margin: 0.35rem 0 0.45rem;
-		font-size: 0.78rem;
-		line-height: 1.35;
-		opacity: 0.72;
-		max-width: 28rem;
+		margin: 0.25rem 0 0;
+		font-size: 0.76rem;
+		line-height: 1.34;
+		opacity: 0.68;
+		max-width: 36rem;
 	}
-	.audit-pack-cta-row--compact {
-		margin-top: 0.35rem;
+	.audit-pack-compact-action {
+		display: flex;
+		align-items: center;
 		justify-content: flex-start;
+	}
+	@media (min-width: 640px) {
+		.audit-pack-compact-surface {
+			grid-template-columns: minmax(0, 1fr) auto;
+			align-items: center;
+			padding: 0.72rem 1.05rem 0.82rem 1.1rem;
+		}
+		.audit-pack-compact-action {
+			justify-content: flex-end;
+			padding-bottom: 0.05rem;
+		}
 	}
 	.audit-section-divider {
 		border: 0;
@@ -440,10 +475,14 @@ const seo = {
 		background: linear-gradient(90deg, transparent, rgba(100, 196, 255, 0.22), transparent);
 		opacity: 0.95;
 	}
+	.audit-pack--compact:target .audit-pack-compact-surface {
+		border-left-color: rgba(165, 220, 255, 0.85);
+		border-color: rgba(100, 196, 255, 0.22);
+		box-shadow:
+			0 1px 0 rgba(255, 255, 255, 0.05) inset,
+			0 0 0 1px rgba(176, 186, 204, 0.1) inset;
+	}
 	.audit-pack--compact:target {
-		border-color: rgba(176, 186, 204, 0.42);
-		background: linear-gradient(180deg, rgba(158, 167, 183, 0.1) 0%, rgba(158, 167, 183, 0.035) 100%);
-		box-shadow: 0 0 0 1px rgba(176, 186, 204, 0.08) inset;
 		scroll-margin-top: min(42vh, 15rem);
 	}
 	.audit-output-lead {
@@ -555,6 +594,13 @@ const seo = {
 		}
 		.audit-pack-cta-row {
 			justify-content: flex-start;
+		}
+		.audit-pack-compact-action {
+			justify-content: stretch;
+		}
+		.audit-pack-compact-action .audit-cta {
+			width: 100%;
+			justify-content: center;
 		}
 	}
 </style>

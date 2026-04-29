@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — bloque envío: ancho alineado + rail + CTA a la derecha (29 abr 2026, visual)
+
+- **#que-debes-enviar:** superficie `audit-pack-compact-surface` (gradiente suave, borde fino + **acento izquierdo**); **52rem** como el resto; en `≥640px` texto a la izquierda y **Preparar y enviar pack** a la derecha; móvil CTA ancho útil.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — hero sin ancla brusca + aire antes del bloque envío (29 abr 2026, UX)
 
 - CTA secundario **“En el futuro…”** → **`/auditoria-ia/empezar`** (ya no `#que-debes-enviar`).
