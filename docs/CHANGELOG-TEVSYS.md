@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — CTA hero secundario acortado (29 abr 2026, copy)
+
+- Texto del botón: **«¿Qué deberás enviar?»** (sustituye *En el futuro: qué deberás enviar*; el kicker *próximamente* ya da contexto temporal).
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — acto II: región pack→FAQ, sheen lento + H2 sin repetir hero (29 abr 2026, UX + copy)
 
 - Contenedor **`audit-page-act-two`**: desde **`#que-debes-enviar`** hasta **FAQ**; fondo distinto + **`::before`** gradiente con animación **~52s** alternate; **`prefers-reduced-motion`** la fija.
