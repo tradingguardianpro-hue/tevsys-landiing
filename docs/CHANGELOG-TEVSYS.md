@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/empezar` — prefacio: kicker cian «Antes: cliente e ID…» + lead corto + ID en correo con licencia (29 abr 2026, copy + UX)
+
+**Archivo:** `src/pages/auditoria-ia/empezar.astro`.
+
+- Título del rectángulo: estilo compacto mayúsculas / acento cian (no título grande tipo pregunta).
+- Lead bajo «Tres pasos»: una línea breve (ID arriba, tres piezas, comprobación local).
+- Párrafo ID: afirmativo — correo que enviamos con la licencia; sin condicional «si te lo enviamos».
+
+---
+
 ## `/auditoria-ia/empezar` — franja «¿Eres cliente de tevsys?» + ID panel/correo (29 abr 2026, copy)
 
 **Archivo:** `src/pages/auditoria-ia/empezar.astro`.
