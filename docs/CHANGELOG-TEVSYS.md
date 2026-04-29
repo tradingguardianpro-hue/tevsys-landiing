@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — dictamen: micro «Qué mirar primero…» orden material → coherencia → precisión (29 abr 2026, copy)
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## Home — `plans-section`: banda `#000` + bleed (sin cian; cian solo teaser auditoría) (29 abr 2026, UX)
 
 **Archivo:** `src/pages/index.astro`.
