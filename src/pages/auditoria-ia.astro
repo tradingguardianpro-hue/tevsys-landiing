@@ -14,7 +14,7 @@ const seo = {
 	<div class="audit-page-motion-off" aria-hidden="true"></div>
 	<Container>
 		<div class="tevsys-home-band tevsys-home-band--cards audit-page-band-motion">
-			<div class="audit-page-band-motion__inner">
+			<div class="audit-page-band-motion__inner audit-page-anchor-flow">
 		<section class="audit-hero">
 			<p class="audit-kicker">Auditoría con IA · próximamente</p>
 			<h1>¿Quieres auditar tu operativa con IA?</h1>
@@ -23,7 +23,7 @@ const seo = {
 			<p class="audit-hero-copy">Sin promesas, sin relato. Con datos trazables.</p>
 			<div class="audit-hero-ctas">
 				<a class="audit-cta audit-cta--primary" href="/auditoria-ia/no-disponible">Solicitar auditoría</a>
-				<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/empezar">En el futuro: qué deberás enviar</a>
+				<a class="audit-cta audit-cta--secondary" href="#que-debes-enviar">En el futuro: qué deberás enviar</a>
 			</div>
 		</section>
 
@@ -57,25 +57,28 @@ const seo = {
 			</ol>
 		</section>
 
-		<hr class="audit-section-divider" aria-hidden="true" />
+		<hr class="audit-section-divider audit-section-divider--pack" aria-hidden="true" />
 
-		<section id="que-debes-enviar" class="audit-pack audit-pack--preview audit-pack--compact">
-			<div class="audit-pack-compact-surface">
-				<div class="audit-pack-compact-copy">
-					<h2>En el futuro: qué deberás enviar</h2>
-					<ul class="audit-pack-tight" aria-label="Requisitos esenciales">
-						<li><strong>Archivos arrastrables.</strong></li>
-						<li><strong>Periodo</strong> a auditar (fechas claras).</li>
-					</ul>
-					<p class="audit-pack-micro">Canal de envío: cuando activemos el servicio.</p>
-				</div>
-				{settings.auditPackPreparationVisible ? (
-					<div class="audit-pack-compact-action">
-						<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/empezar">Preparar y enviar pack</a>
+		<div id="que-debes-enviar" class="audit-pack-anchor-wrap audit-pack--preview">
+			<p class="audit-pack-chapter-kicker" id="fase-vista-envio">Siguiente · vista previa del envío</p>
+			<section class="audit-pack audit-pack--compact" aria-labelledby="fase-vista-envio">
+				<div class="audit-pack-compact-surface">
+					<div class="audit-pack-compact-copy">
+						<h2>En el futuro: qué deberás enviar</h2>
+						<ul class="audit-pack-tight" aria-label="Requisitos esenciales">
+							<li><strong>Archivos arrastrables.</strong></li>
+							<li><strong>Periodo</strong> a auditar (fechas claras).</li>
+						</ul>
+						<p class="audit-pack-micro">Canal de envío: cuando activemos el servicio.</p>
 					</div>
-				) : null}
-			</div>
-		</section>
+					{settings.auditPackPreparationVisible ? (
+						<div class="audit-pack-compact-action">
+							<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/empezar">Preparar y enviar pack</a>
+						</div>
+					) : null}
+				</div>
+			</section>
+		</div>
 
 		<section class="audit-output">
 			<h2>Qué recibes</h2>
@@ -386,9 +389,22 @@ const seo = {
 		border: 1px solid rgba(100, 196, 255, 0.2);
 		background: linear-gradient(180deg, rgba(100, 196, 255, 0.035) 0%, rgba(100, 196, 255, 0.012) 100%);
 	}
-	.audit-pack--preview {
-		/* Si alguien enlaza #que-debes-enviar: dejar aire arriba para no “comerse” Qué auditamos / Cómo funciona */
-		scroll-margin-top: min(42vh, 15rem);
+	/* Ancla hero → embed: capítulo aparte + scroll suave (html:has abajo) */
+	.audit-pack-anchor-wrap.audit-pack--preview {
+		padding-top: clamp(0.35rem, 1.2vw, 0.85rem);
+		scroll-margin-top: min(56vh, 20rem);
+	}
+	.audit-pack-chapter-kicker {
+		margin: 0 auto clamp(0.45rem, 1.2vw, 0.7rem);
+		max-width: 52rem;
+		padding: 0 0.1rem 0 0.2rem;
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		line-height: 1.35;
+		opacity: 0.66;
+		color: rgba(186, 198, 222, 0.88);
 	}
 	/* Bloque #que-debes-enviar: banda ancha + acento lateral (menos “caja pegote”) */
 	.audit-pack--compact {
@@ -475,15 +491,17 @@ const seo = {
 		background: linear-gradient(90deg, transparent, rgba(100, 196, 255, 0.22), transparent);
 		opacity: 0.95;
 	}
-	.audit-pack--compact:target .audit-pack-compact-surface {
+	.audit-section-divider--pack {
+		margin-top: clamp(2rem, 5vw, 3.4rem);
+		margin-bottom: clamp(1.35rem, 3.2vw, 2.4rem);
+		max-width: min(44rem, 92vw);
+	}
+	.audit-pack-anchor-wrap:target .audit-pack-compact-surface {
 		border-left-color: rgba(165, 220, 255, 0.85);
 		border-color: rgba(100, 196, 255, 0.22);
 		box-shadow:
 			0 1px 0 rgba(255, 255, 255, 0.05) inset,
 			0 0 0 1px rgba(176, 186, 204, 0.1) inset;
-	}
-	.audit-pack--compact:target {
-		scroll-margin-top: min(42vh, 15rem);
 	}
 	.audit-output-lead {
 		margin: 0 0 0.52rem;
@@ -601,6 +619,15 @@ const seo = {
 		.audit-pack-compact-action .audit-cta {
 			width: 100%;
 			justify-content: center;
+		}
+	}
+	:global(html:has(.audit-page-anchor-flow)) {
+		scroll-behavior: smooth;
+		scroll-padding-top: 0.65rem;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		:global(html:has(.audit-page-anchor-flow)) {
+			scroll-behavior: auto;
 		}
 	}
 </style>
