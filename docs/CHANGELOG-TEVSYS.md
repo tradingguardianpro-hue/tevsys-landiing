@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/empezar` — viñeta 1: arrastre en web + aclaración sin subida a servidores (29 abr 2026, copy)
+
+**Archivo:** `src/pages/auditoria-ia/empezar.astro`.
+
+- Paso 1 alineado al flujo real del **pack**: arrastrar/elegir en la micro web para **comprobar** localmente; no implica recepción automática en servidores tevsys.
+
+---
+
 ## `/auditoria-ia/empezar` — título «Eres cliente de tevsys» (mayúsculas cian) + viñeta • pack + barra bajo «Tres pasos» (29 abr 2026, UX)
 
 **Archivo:** `src/pages/auditoria-ia/empezar.astro`.
