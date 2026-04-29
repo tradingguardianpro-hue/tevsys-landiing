@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — bloque academias: banda + superficie (ritmo como En dos pasos; acento ámbar) (29 abr 2026, UX)
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — dictamen: límite inversión pasa a cuarta viñeta «Te llevas» (29 abr 2026, copy)
 
 - Micro *Qué mirar primero…* cierra en precisión/límites; **Te llevas** suma viñeta **No es orientación de inversión:** …
