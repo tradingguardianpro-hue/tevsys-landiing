@@ -57,26 +57,18 @@ const seo = {
 			</ol>
 		</section>
 
-		<section id="que-debes-enviar" class="audit-pack audit-pack--preview">
+		<section id="que-debes-enviar" class="audit-pack audit-pack--preview audit-pack--compact">
 			<h2>En el futuro: qué deberás enviar</h2>
-			<p class="audit-pack-lead">Adelanto de requisitos. El envío formal será simple de completar y se activará con el servicio.</p>
-			<ul>
-				<li>Subida guiada y sencilla: arrastras los archivos del periodo y listo (cuando abramos el envío).</li>
-				<li>Captura del panel con fecha/hora visible.</li>
-				<li>Informe HTML MT5 del mismo periodo.</li>
-			</ul>
-			<ul class="audit-pack-notes" aria-label="Aclaraciones del envío">
-				<li>
-					El botón <strong>Preparar y enviar pack</strong> abre una <strong>herramienta local</strong>: ordenas y compruebas archivos en tu navegador; <strong>nada se sube</strong> a tevsys desde ahí (sirve para adelantar trabajo y ver el siguiente paso natural).
-				</li>
-				<li>
-					Cuando abramos el servicio, el envío formal pasará antes por <strong>verificación de identidad tevsys</strong> (tu <strong>ID</strong> y, si hace falta, prueba de buzón u otro dato mínimo acordado) y <strong>elegibilidad</strong>; sin eso no habrá subida “oficial” de pack.
-				</li>
-				<li>Cuenta, broker y contexto: se podrán contrastar con el <strong>informe MT5</strong>, tu <strong>licencia</strong> y el protocolo del momento; no fijamos aún un formulario fijo de metadatos.</li>
-				<li>Cuando abramos el canal, si falta alguna pieza, te indicaremos qué falta y podrás completarlo.</li>
+			<p class="audit-pack-lead audit-pack-lead--tight">
+				Resumen → comprobar en tu PC. <strong>Sin subida</strong> a tevsys hasta abrir el servicio (luego <strong>ID</strong> y elegibilidad).
+			</p>
+			<ul class="audit-pack-tight" aria-label="En pocas palabras">
+				<li>Dos pantallas: <strong>qué entra</strong> en el pack y <strong>comprobar archivos</strong> (local).</li>
+				<li>Con <strong>tevsys en el gráfico</strong> del periodo que quieras auditar.</li>
+				<li>El detalle técnico lo ves al pulsar el botón; aquí solo el atajo.</li>
 			</ul>
 			{settings.auditPackPreparationVisible ? (
-				<div class="audit-pack-cta-row">
+				<div class="audit-pack-cta-row audit-pack-cta-row--compact">
 					<a class="audit-cta audit-cta--secondary" href="/auditoria-ia/empezar">Preparar y enviar pack</a>
 				</div>
 			) : null}
@@ -394,45 +386,61 @@ const seo = {
 	.audit-pack--preview {
 		scroll-margin-top: 6.4rem;
 	}
+	/* Bloque ancla #que-debes-enviar: poco texto, lectura en diagonal */
+	.audit-pack--compact {
+		max-width: 38rem;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0.55rem 0.75rem 0.65rem;
+		border-radius: 0.75rem;
+		border: 1px solid rgba(100, 196, 255, 0.22);
+		background: linear-gradient(180deg, rgba(100, 196, 255, 0.06) 0%, rgba(100, 196, 255, 0.02) 100%);
+	}
+	.audit-pack--compact h2 {
+		margin: 0 0 0.35rem;
+		font-size: 1.05rem;
+	}
 	.audit-pack-lead {
 		margin: 0.35rem 0 0.6rem;
 		font-size: 0.95rem;
 		font-weight: 600;
 		color: rgba(165, 220, 255, 0.95);
 	}
-	.audit-pack-notes {
-		list-style: none;
-		margin: 0.62rem 0 0;
-		padding: 0;
+	.audit-pack-lead--tight {
+		margin: 0 0 0.4rem;
+		font-size: 0.84rem;
+		font-weight: 500;
+		line-height: 1.45;
+		opacity: 0.9;
 	}
-	.audit-pack-notes li {
-		position: relative;
-		padding-left: 1.18rem;
-		margin: 0 0 0.45rem;
-		line-height: 1.5;
-		opacity: 0.86;
+	.audit-pack-tight {
+		margin: 0 0 0.35rem;
+		padding-left: 1rem;
+		font-size: 0.82rem;
+		line-height: 1.38;
+		opacity: 0.88;
 	}
-	.audit-pack-notes li:last-child {
+	.audit-pack-tight li {
+		margin: 0 0 0.28rem;
+	}
+	.audit-pack-tight li:last-child {
 		margin-bottom: 0;
 	}
-	.audit-pack-notes li::before {
-		content: '-';
-		position: absolute;
-		left: 0;
-		top: 0.02rem;
-		color: rgba(165, 220, 255, 0.9);
-		font-weight: 700;
+	.audit-pack-tight li::marker {
+		color: rgba(100, 196, 255, 0.85);
 	}
 	.audit-pack-cta-row {
 		margin-top: 0.85rem;
 		display: flex;
 		justify-content: flex-end;
 	}
-	.audit-pack:target {
-		border: 1px solid rgba(176, 186, 204, 0.38);
-		background: linear-gradient(180deg, rgba(158, 167, 183, 0.12) 0%, rgba(158, 167, 183, 0.04) 100%);
-		border-radius: 0.85rem;
-		padding: 0.9rem 1rem 1rem;
+	.audit-pack-cta-row--compact {
+		margin-top: 0.45rem;
+		justify-content: flex-start;
+	}
+	.audit-pack--compact:target {
+		border-color: rgba(176, 186, 204, 0.42);
+		background: linear-gradient(180deg, rgba(158, 167, 183, 0.1) 0%, rgba(158, 167, 183, 0.035) 100%);
 		box-shadow: 0 0 0 1px rgba(176, 186, 204, 0.08) inset;
 		scroll-margin-top: 6.4rem;
 	}

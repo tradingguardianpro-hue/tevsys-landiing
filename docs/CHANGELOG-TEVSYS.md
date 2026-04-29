@@ -4,10 +4,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — bloque ancla “En el futuro…” recortado + estilo compacto (29 abr 2026, copy)
+
+- **#que-debes-enviar:** menos texto; 3 viñetas atajo + CTA; sin duplicar listado técnico del pack (empezar/pack).
+- **Clases:** `audit-pack--compact`, `audit-pack-tight`, etc.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia/empezar` — transición checklist antes del pack (29 abr 2026, UX)
 
 - **Flujo en dos pasos:** desde `/auditoria-ia`, el CTA **Preparar y enviar pack** abre **`/auditoria-ia/empezar`** (cuatro piezas del pack en tarjetas, copy breve, sin zona de archivos). El CTA principal lleva a **`/auditoria-ia/pack`** (herramienta local existente).
 - **`/auditoria-ia/pack`:** línea superior *← Resumen del pack (paso 1)* + indicación *Paso 2*.
+- **Misma tanda (recorte):** títulos y líneas más cortas en **empezar** (`audit-step-*--lite`) para sensación “rápido”, no muro.
 
 **Archivos:** `src/pages/auditoria-ia/empezar.astro`, `src/pages/auditoria-ia.astro`, `src/pages/auditoria-ia/pack.astro`, `src/config/settings.js` (comentario).
 

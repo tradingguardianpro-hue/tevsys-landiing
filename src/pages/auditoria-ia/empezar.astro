@@ -13,47 +13,47 @@ const seo = {
 	<div class="audit-page-motion-off" aria-hidden="true"></div>
 	<Container>
 		<div class="tevsys-home-band tevsys-home-band--cards audit-step-band">
-			<section class="audit-step-hero">
+			<section class="audit-step-hero audit-step-hero--lite">
 				<p class="audit-step-kicker">Auditoría con IA · Paso 1 de 2</p>
-				<h1>El pack, en cuatro piezas</h1>
+				<h1>Cuatro piezas, un vistazo</h1>
 				<p class="audit-step-lead">
-					Aquí no arrastras nada: solo ves <strong>qué vas a necesitar</strong>. Cuando quieras comprobar que lo tienes en el PC, pasas al paso 2 (también en tu navegador, sin subir a tevsys).
+					Sin archivos todavía. El <strong>paso 2</strong> es comprobarlos en tu PC (navegador, <strong>sin subir</strong> a tevsys).
 				</p>
 			</section>
 
-			<ol class="audit-step-cards" aria-label="Checklist mínimo del pack">
+			<ol class="audit-step-cards audit-step-cards--lite" aria-label="Checklist mínimo del pack">
 				<li class="audit-step-card">
 					<span class="audit-step-num" aria-hidden="true">1</span>
 					<div>
-						<h2>Logs del periodo</h2>
-						<p>Archivos de registro del mismo intervalo que quieres auditar.</p>
+						<h2>Logs</h2>
+						<p>Registro tevsys del tramo que auditarás.</p>
 					</div>
 				</li>
 				<li class="audit-step-card">
 					<span class="audit-step-num" aria-hidden="true">2</span>
 					<div>
-						<h2>Captura del panel</h2>
-						<p>Fecha y hora del PC visibles; panel tevsys en el gráfico (abajo a la derecha), legible.</p>
+						<h2>Panel en el gráfico</h2>
+						<p>Una captura clara; fecha/hora visibles.</p>
 					</div>
 				</li>
 				<li class="audit-step-card">
 					<span class="audit-step-num" aria-hidden="true">3</span>
 					<div>
-						<h2>Informe HTML MT5</h2>
-						<p>Del <strong>mismo periodo</strong> que los logs, para poder contrastar.</p>
+						<h2>Informe MT5</h2>
+						<p>HTML del mismo periodo.</p>
 					</div>
 				</li>
 				<li class="audit-step-card">
 					<span class="audit-step-num" aria-hidden="true">4</span>
 					<div>
-						<h2>Contexto del caso</h2>
-						<p>Periodo concreto, cuenta auditada y qué quieres que miremos con más énfasis (lo eliges en el siguiente paso).</p>
+						<h2>Fechas y foco</h2>
+						<p>Lo rellenas en el paso 2.</p>
 					</div>
 				</li>
 			</ol>
 
 			<p class="audit-step-note" role="status">
-				El envío formal a tevsys llegará cuando abramos el servicio; antes habrá verificación de <strong>ID</strong> y elegibilidad. Esta ruta solo te prepara el terreno.
+				Envío formal: cuando abramos el servicio; antes, <strong>ID</strong> + elegibilidad.
 			</p>
 
 			<div class="audit-step-ctas">
@@ -70,6 +70,22 @@ const seo = {
 		isolation: isolate;
 		overflow-x: clip;
 		padding-bottom: clamp(2rem, 5vw, 3.5rem);
+	}
+	.audit-step-hero--lite {
+		margin-bottom: clamp(0.85rem, 2vw, 1.15rem) !important;
+	}
+	.audit-step-cards--lite .audit-step-card {
+		padding: 0.72rem 0.85rem;
+		gap: 0.65rem 0.85rem;
+	}
+	.audit-step-cards--lite .audit-step-card h2 {
+		font-size: 0.95rem;
+		margin-bottom: 0.12rem;
+	}
+	.audit-step-cards--lite .audit-step-card p {
+		font-size: 0.82rem;
+		line-height: 1.38;
+		opacity: 0.82;
 	}
 	.audit-step-hero {
 		max-width: 48rem;
@@ -146,14 +162,14 @@ const seo = {
 	}
 	.audit-step-note {
 		max-width: 48rem;
-		margin: 0 auto 1.25rem;
-		padding: 0.75rem 1rem;
+		margin: 0 auto 1rem;
+		padding: 0.55rem 0.75rem;
 		border-radius: 0.7rem;
 		border: 1px solid rgba(176, 186, 204, 0.28);
 		background: rgba(255, 255, 255, 0.03);
-		font-size: 0.88rem;
-		line-height: 1.5;
-		opacity: 0.86;
+		font-size: 0.82rem;
+		line-height: 1.42;
+		opacity: 0.82;
 	}
 	.audit-step-ctas {
 		display: flex;
