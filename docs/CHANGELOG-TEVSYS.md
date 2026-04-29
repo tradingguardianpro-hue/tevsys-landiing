@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/empezar` — checklist de cuatro a **tres pasos** (copy preciso) (29 abr 2026, copy)
+
+**Archivo:** `src/pages/auditoria-ia/empezar.astro`.
+
+---
+
 ## `/auditoria-ia` — bloque academias: banda + superficie (ritmo como En dos pasos; acento ámbar) (29 abr 2026, UX)
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
