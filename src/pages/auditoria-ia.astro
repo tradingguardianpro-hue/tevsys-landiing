@@ -60,20 +60,20 @@ const seo = {
 		<hr class="audit-section-divider audit-section-divider--pack" aria-hidden="true" />
 
 		<div
-			id="que-debes-enviar"
-			class="audit-pack-anchor-wrap audit-pack--preview"
+			class="audit-page-act-two"
 			role="region"
-			aria-label="Resumen en dos pasos: qué deberás enviar"
+			aria-label="Resumen de envío, qué recibes, academias y preguntas frecuentes"
 		>
+		<div id="que-debes-enviar" class="audit-pack-anchor-wrap audit-pack--preview">
 			<p class="audit-pack-chapter-kicker" id="fase-dos-pasos-envio">
 				<span class="audit-pack-chapter-kicker__lead">En dos pasos</span>
 				<span class="audit-pack-chapter-kicker__sep" aria-hidden="true"> · </span>
-				<span class="audit-pack-chapter-kicker__trail">mismo tema que el botón de arriba: qué deberás enviar</span>
+				<span class="audit-pack-chapter-kicker__trail">mismo tema que el botón del hero — aquí solo el resumen</span>
 			</p>
 			<section class="audit-pack audit-pack--compact" aria-labelledby="fase-dos-pasos-envio">
 				<div class="audit-pack-compact-surface">
 					<div class="audit-pack-compact-copy">
-						<h2>En el futuro: qué deberás enviar</h2>
+						<h2>Qué reunir (vista previa)</h2>
 						<ul class="audit-pack-tight" aria-label="Requisitos esenciales">
 							<li><strong>Archivos arrastrables.</strong></li>
 							<li><strong>Periodo</strong> a auditar (fechas claras).</li>
@@ -130,6 +130,7 @@ const seo = {
 				<p>Recomendaciones operativas no personalizadas para mejorar ejecución y disciplina; no son asesoramiento financiero.</p>
 			</details>
 		</section>
+		</div>
 
 		<section class="audit-closing">
 			<p>Cuando abramos el servicio, aquí tendrás el punto de partida para enviar tu evidencia y recibir el informe.</p>
@@ -592,8 +593,68 @@ const seo = {
 	}
 	.audit-section-divider--pack {
 		margin-top: clamp(2.75rem, 8vw, 4.25rem);
-		margin-bottom: clamp(2rem, 5.5vw, 3.5rem);
+		margin-bottom: clamp(2.25rem, 6vw, 3.75rem);
 		max-width: min(44rem, 92vw);
+	}
+	@keyframes audit-act-two-sheen {
+		0% {
+			background-position: 0% 42%;
+		}
+		100% {
+			background-position: 100% 58%;
+		}
+	}
+	/* Tramo 2 (pack → FAQ): “suelo” distinto + bruma muy lenta (respeta reduced-motion) */
+	.audit-page-act-two {
+		position: relative;
+		isolation: isolate;
+		overflow: clip;
+		margin-top: clamp(0.65rem, 2.2vw, 1.5rem);
+		padding: clamp(0.45rem, 1.8vw, 1.1rem) clamp(0.45rem, 2vw, 1rem) clamp(2.75rem, 7.5vw, 4.5rem);
+		border-radius: 0 0 1.2rem 1.2rem;
+		background: linear-gradient(
+			180deg,
+			rgba(16, 24, 38, 0.58) 0%,
+			rgba(9, 14, 22, 0.48) 45%,
+			rgba(7, 10, 16, 0.42) 100%
+		);
+		box-shadow:
+			inset 0 1px 0 rgba(100, 196, 255, 0.1),
+			0 24px 56px -40px rgba(0, 0, 0, 0.45);
+	}
+	.audit-page-act-two > * {
+		position: relative;
+		z-index: 1;
+	}
+	.audit-page-act-two::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+		background: linear-gradient(
+			118deg,
+			transparent 0%,
+			rgba(100, 196, 255, 0.07) 24%,
+			rgba(245, 176, 65, 0.034) 50%,
+			rgba(100, 196, 255, 0.078) 76%,
+			transparent 100%
+		);
+		background-size: 240% 240%;
+		background-position: 0% 50%;
+		animation: audit-act-two-sheen 52s ease-in-out infinite alternate;
+		opacity: 0.72;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.audit-page-act-two::before {
+			animation: none;
+			opacity: 0.5;
+			background-position: 38% 48%;
+		}
+	}
+	.audit-page-act-two .audit-pack-anchor-wrap.audit-pack--preview {
+		margin-top: clamp(0.25rem, 1.2vw, 0.85rem);
 	}
 	.audit-pack-anchor-wrap:target .audit-pack-compact-surface {
 		animation: audit-chapter-reveal 0.52s ease-out 0.08s both;

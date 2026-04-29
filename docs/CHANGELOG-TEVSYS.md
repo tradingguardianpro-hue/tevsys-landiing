@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — acto II: región pack→FAQ, sheen lento + H2 sin repetir hero (29 abr 2026, UX + copy)
+
+- Contenedor **`audit-page-act-two`**: desde **`#que-debes-enviar`** hasta **FAQ**; fondo distinto + **`::before`** gradiente con animación **~52s** alternate; **`prefers-reduced-motion`** la fija.
+- **H2** del embed: **«Qué reunir (vista previa)»** (ya no repite «En el futuro…»). Kicker: *mismo tema que el botón del hero — aquí solo el resumen*.
+- **HR** previo con un poco más de margen inferior.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — kicker envío: “En dos pasos” + puente al hero; más aire en viñetas (29 abr 2026, copy + UX)
 
 - Sustituye **Siguiente · vista previa del envío** por frase que conecta con el CTA del hero (**En dos pasos** + tramo explicativo); tipografía **sin** all-caps de etiqueta.
