@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — «Tu dictamen de ejecución»: copy DeepSeek+Claude + escaneo + Te llevas (29 abr 2026, copy + UX)
+
+- Sustituye **Qué recibes** por título **Tu dictamen de ejecución**, lead con **protocolo de trazabilidad**, lista **escaneable** (título + micro) y bloque **Te llevas** (micro-checklist).
+- Quita **accionable** / viñetas antiguas / cierre “no con teoría”.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — pack: «En dos pasos» h2 + tarjeta «Resumen» y viñetas (29 abr 2026, copy + UX)
 
 - Sustituye kicker largo por **`h2` «En dos pasos»** (tamaño jerárquico + subrayado bicolor como otras secciones).

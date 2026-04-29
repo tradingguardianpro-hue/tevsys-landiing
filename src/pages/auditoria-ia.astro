@@ -63,7 +63,7 @@ const seo = {
 			id="que-debes-enviar"
 			class="audit-page-act-two"
 			role="region"
-			aria-label="Resumen de envío, qué recibes, academias y preguntas frecuentes"
+			aria-label="Resumen de envío, dictamen de ejecución, academias y preguntas frecuentes"
 		>
 		<div class="audit-pack-anchor-wrap audit-pack--preview">
 			<h2 class="audit-pack-phase-title" id="fase-dos-pasos-envio">En dos pasos</h2>
@@ -87,14 +87,39 @@ const seo = {
 		</div>
 
 		<section class="audit-output">
-			<h2>Qué recibes</h2>
-			<p class="audit-output-lead">Un informe claro, accionable y fácil de revisar.</p>
-			<ul class="audit-output-list">
-				<li>Resumen del periodo auditado con foco en ejecución y control.</li>
-				<li>Hallazgos clave con evidencia trazable (logs + informe MT5 del mismo periodo).</li>
-				<li>Recomendaciones concretas para corregir desvíos y reforzar disciplina operativa.</li>
+			<h2>Tu dictamen de ejecución</h2>
+			<p class="audit-output-lead">
+				No es análisis de mercado. Es la verificación de tus reglas contra los hechos, bajo protocolo de trazabilidad.
+			</p>
+			<ul class="audit-output-scanlist">
+				<li>
+					<strong class="audit-output-scanlist__t">Síntesis del periodo</strong>
+					<span class="audit-output-scanlist__d">
+						Qué ocurrió en ejecución y control, con el hilo de evidencia trazado.
+					</span>
+				</li>
+				<li>
+					<strong class="audit-output-scanlist__t">Evidencia cruzada</strong>
+					<span class="audit-output-scanlist__d">
+						Hallazgos clave con logs, cierres e informe MT5 del mismo periodo. Con trazabilidad, sin narrativa de
+						trading.
+					</span>
+				</li>
+				<li>
+					<strong class="audit-output-scanlist__t">Prioridades de ajuste práctico</strong>
+					<span class="audit-output-scanlist__d">
+						Dónde se rompe la coherencia entre reglas y ejecución, y qué revisar primero. Sin orientación de inversión.
+					</span>
+				</li>
 			</ul>
-			<p class="audit-impact">Sales con próximos pasos concretos, no con teoría.</p>
+			<div class="audit-output-exit" aria-label="Qué te llevas">
+				<p class="audit-output-exit__lead">Te llevas:</p>
+				<ul class="audit-output-exit__list">
+					<li>Un veredicto claro sobre coherencia y evidencia.</li>
+					<li>Una lista corta de comprobaciones y prioridades.</li>
+					<li>Las piezas de evidencia para que lo verifiques por tu cuenta.</li>
+				</ul>
+			</div>
 		</section>
 
 		<section class="audit-academy">
@@ -682,18 +707,80 @@ const seo = {
 			0 0 0 1px rgba(176, 186, 204, 0.1) inset;
 	}
 	.audit-output-lead {
-		margin: 0 0 0.52rem;
-		opacity: 0.95;
+		margin: 0 0 0.62rem;
+		max-width: 44rem;
+		opacity: 0.93;
 		font-weight: 600;
+		font-size: clamp(0.86rem, 1.55vw, 0.95rem);
+		line-height: 1.52;
 	}
-	.audit-output-list {
-		margin: 0.15rem 0 0.7rem;
-		padding-left: 1.1rem;
-		line-height: 1.58;
-		opacity: 0.94;
+	.audit-output-scanlist {
+		list-style: none;
+		margin: 0.2rem 0 0.55rem;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(0.65rem, 2vw, 0.95rem);
 	}
-	.audit-output-list li::marker {
-		color: rgba(100, 196, 255, 0.92);
+	.audit-output-scanlist > li {
+		margin: 0;
+		padding: 0.58rem 0.65rem 0.62rem 0.78rem;
+		border-left: 2px solid rgba(100, 196, 255, 0.48);
+		border-radius: 0.4rem;
+		background: linear-gradient(90deg, rgba(100, 196, 255, 0.055) 0%, rgba(100, 196, 255, 0.02) 100%);
+	}
+	.audit-output-scanlist__t {
+		display: block;
+		font-size: clamp(0.9rem, 1.65vw, 0.98rem);
+		font-weight: 700;
+		color: rgba(236, 244, 255, 0.99);
+		margin-bottom: 0.28rem;
+		letter-spacing: -0.01em;
+	}
+	.audit-output-scanlist__d {
+		display: block;
+		font-size: clamp(0.8rem, 1.45vw, 0.88rem);
+		line-height: 1.5;
+		opacity: 0.87;
+		font-weight: 500;
+	}
+	.audit-output-exit {
+		margin-top: 0.55rem;
+		padding: 0.72rem 0.55rem 0.55rem;
+		border-radius: 0.55rem;
+		border: 1px solid rgba(100, 196, 255, 0.16);
+		background: rgba(6, 10, 16, 0.35);
+	}
+	.audit-output-exit__lead {
+		margin: 0 0 0.42rem;
+		font-size: 0.88rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		opacity: 0.96;
+		color: rgba(220, 235, 255, 0.98);
+	}
+	.audit-output-exit__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.audit-output-exit__list li {
+		position: relative;
+		padding-left: 1.05rem;
+		margin-bottom: 0.38rem;
+		font-size: clamp(0.8rem, 1.45vw, 0.87rem);
+		line-height: 1.46;
+		opacity: 0.9;
+	}
+	.audit-output-exit__list li:last-child {
+		margin-bottom: 0;
+	}
+	.audit-output-exit__list li::before {
+		content: '·';
+		position: absolute;
+		left: 0.2rem;
+		font-weight: 800;
+		color: rgba(100, 196, 255, 0.88);
 	}
 	.audit-academy {
 		max-width: 52rem;
@@ -709,10 +796,6 @@ const seo = {
 	}
 	.audit-academy ul li::marker {
 		color: rgba(100, 196, 255, 0.9);
-	}
-	.audit-impact {
-		margin: 0;
-		font-weight: 600;
 	}
 	.audit-faq details {
 		border: 1px solid rgba(100, 196, 255, 0.2);
