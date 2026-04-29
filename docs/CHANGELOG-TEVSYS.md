@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/empezar` — franja identidad/ID antes de los tres pasos de material (opción A) (29 abr 2026, copy + UX)
+
+**Archivo:** `src/pages/auditoria-ia/empezar.astro`.
+
+---
+
 ## `/auditoria-ia/empezar` — checklist de cuatro a **tres pasos** (copy preciso) (29 abr 2026, copy)
 
 **Archivo:** `src/pages/auditoria-ia/empezar.astro`.
