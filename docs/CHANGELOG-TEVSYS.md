@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — teaser «Auditoría con IA»: lead con precisión de cierre (29 abr 2026, copy)
+
+- **Lead** (`index.astro`): alineación con el hero — `precisión` → **precisión de cierre** (mismo hilo: ejecución verificable, no “precisión” genérica).
+
+**Archivo:** `src/pages/index.astro`.
+
+---
+
 ## `/auditoria-ia/pack` — opción “Auditoría completa” + hint de foco (27 abr 2026, producto)
 
 - **Select `audit-focus`:** nueva opción `completo` — *Auditoría completa (todos los pilares)*; texto de ayuda bajo el campo: foco = énfasis en el informe, no pack distinto; sin asesoramiento personal.
