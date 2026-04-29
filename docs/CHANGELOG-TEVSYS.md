@@ -4,12 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## `/auditoria-ia` — bloque ancla “En el futuro…” recortado + estilo compacto (29 abr 2026, copy)
+## `/auditoria-ia` + `/auditoria-ia/empezar` — copy mínimo (29 abr 2026, segunda pasada)
 
-- **#que-debes-enviar:** menos texto; 3 viñetas atajo + CTA; sin duplicar listado técnico del pack (empezar/pack).
-- **Clases:** `audit-pack--compact`, `audit-pack-tight`, etc.
+- **#que-debes-enviar:** 2 viñetas (**Archivos arrastrables** · **Periodo** a auditar) + micro “Canal de envío…”.
+- **empezar:** “Cuatro cosas” + “Esto es lo mínimo.” + 4 líneas; CTA **Comprobar en tu equipo**; nota canal / **ID** / elegibilidad.
 
-**Archivo:** `src/pages/auditoria-ia.astro`.
+**Archivos:** `src/pages/auditoria-ia.astro`, `src/pages/auditoria-ia/empezar.astro`.
 
 ---
 
