@@ -1,5 +1,5 @@
 export default {
-  title: "tevsys — Pioneros en disciplina automatizada verificada y gestión de riesgo · MT5",
+  title: "tevsys — Disciplina verificada, precisión de cierre y gestión de riesgo · MT5",
   description: "Disciplina en el trading automatizada. Plataforma para MetaTrader 5: límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 76 operativas con evidencia verificable. Para traders, prop firms y auditorías.",
   url: "https://www.tevsys.io",
   name: "tevsys",

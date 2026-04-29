@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## SEO pestaña (`<title>`): sin «Pioneros»; alineado a mensaje actual (29 abr 2026)
+
+- **`settings.js` → `title`:** de *Pioneros en disciplina…* a **disciplina verificada + precisión de cierre + gestión de riesgo · MT5** (misma línea argumental que home, sin superlativo difícil de sustentar).
+
+**Archivo:** `src/config/settings.js`.
+
+---
+
 ## Home — teaser «Auditoría con IA»: lead con precisión de cierre (29 abr 2026, copy)
 
 - **Lead** (`index.astro`): alineación con el hero — `precisión` → **precisión de cierre** (mismo hilo: ejecución verificable, no “precisión” genérica).
