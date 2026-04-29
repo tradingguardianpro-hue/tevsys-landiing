@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — dictamen: límite inversión pasa a cuarta viñeta «Te llevas» (29 abr 2026, copy)
+
+- Micro *Qué mirar primero…* cierra en precisión/límites; **Te llevas** suma viñeta **No es orientación de inversión:** …
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — dictamen: micro «Qué mirar primero…» orden material → coherencia → precisión (29 abr 2026, copy)
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
