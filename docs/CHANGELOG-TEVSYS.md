@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia/empezar` — CTA principal «Valida tu ID y tus archivos aquí» (prominente) + Volver a Auditoría IA (29 abr 2026, copy + UX)
+
+**Archivo:** `src/pages/auditoria-ia/empezar.astro`.
+
+- Sustituye al anterior «Comprobar en tu equipo»; destino sigue siendo **`/auditoria-ia/pack`**.
+
+---
+
 ## `/auditoria-ia/empezar` — viñeta 1: arrastre en web + aclaración sin subida a servidores (29 abr 2026, copy)
 
 **Archivo:** `src/pages/auditoria-ia/empezar.astro`.
