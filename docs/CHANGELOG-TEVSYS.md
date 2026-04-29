@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — dictamen: micros scanlist + «Te llevas» (orden, material completo, prioridades) (29 abr 2026, copy)
+
+- **Qué pasó en el periodo:** foco en orden de hechos y evidencia trazable.
+- **Qué revisar primero:** *si el material enviado es completo* (sustituye *pack lo sostiene* en copy público).
+- **Te llevas:** segunda viñeta = prioridades de revisión centradas en coherencia reglas–ejecución.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — dictamen: solo marca TEVSYS en cian en el lead (29 abr 2026, copy + UX)
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
