@@ -4,6 +4,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — `plans-section`: banda de lectura detrás de Essential / Advanced / Pro (29 abr 2026, UX)
+
+- Fondo más profundo, padding, radio, borde cian suave e `inset` ligero; móvil con padding ajustado.
+
+**Archivo:** `src/pages/index.astro`.
+
+---
+
+## `/auditoria-ia` — dictamen: título «Qué mirar primero en el informe» (29 abr 2026, copy)
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — dictamen: micro «Qué revisar primero» (coherencia, reglas, ejecución) (29 abr 2026, copy)
 
 **Archivo:** `src/pages/auditoria-ia.astro`.
