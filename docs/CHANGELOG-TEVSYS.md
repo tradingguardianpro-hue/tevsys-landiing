@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — ancla #que-debes-enviar al inicio del tramo 2 + scroll seco (29 abr 2026, UX)
+
+- **`id`** pasa al contenedor **`audit-page-act-two`** (inicio del bloque pack→FAQ); se quita el **`scroll-margin-top`** grande de la tarjeta interna (impedía “comerse” *Cómo funciona*).
+- **`scroll-behavior: auto`** en la micro para salto **seco** al ancla; **`scroll-margin-top`** mínimo en el tramo 2.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — CTA hero secundario acortado (29 abr 2026, copy)
 
 - Texto del botón: **«¿Qué deberás enviar?»** (sustituye *En el futuro: qué deberás enviar*; el kicker *próximamente* ya da contexto temporal).

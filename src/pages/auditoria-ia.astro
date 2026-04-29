@@ -60,11 +60,12 @@ const seo = {
 		<hr class="audit-section-divider audit-section-divider--pack" aria-hidden="true" />
 
 		<div
+			id="que-debes-enviar"
 			class="audit-page-act-two"
 			role="region"
 			aria-label="Resumen de envío, qué recibes, academias y preguntas frecuentes"
 		>
-		<div id="que-debes-enviar" class="audit-pack-anchor-wrap audit-pack--preview">
+		<div class="audit-pack-anchor-wrap audit-pack--preview">
 			<p class="audit-pack-chapter-kicker" id="fase-dos-pasos-envio">
 				<span class="audit-pack-chapter-kicker__lead">En dos pasos</span>
 				<span class="audit-pack-chapter-kicker__sep" aria-hidden="true"> · </span>
@@ -410,7 +411,6 @@ const seo = {
 		margin-top: clamp(1.75rem, 6vw, 3rem);
 		margin-bottom: clamp(1.35rem, 3.5vw, 2.25rem);
 		padding: clamp(2.75rem, 16vh, 7.5rem) clamp(0.85rem, 2.5vw, 1.35rem) clamp(1.35rem, 3.5vw, 2rem);
-		scroll-margin-top: min(72vh, 28rem);
 		border-radius: 1rem;
 		background: linear-gradient(
 			168deg,
@@ -474,12 +474,12 @@ const seo = {
 			transform: translateY(0);
 		}
 	}
-	.audit-pack-anchor-wrap:target .audit-pack-chapter-kicker {
+	#que-debes-enviar:target .audit-pack-chapter-kicker {
 		animation: audit-chapter-reveal 0.52s ease-out both;
 	}
 	@media (prefers-reduced-motion: reduce) {
-		.audit-pack-anchor-wrap:target .audit-pack-chapter-kicker,
-		.audit-pack-anchor-wrap:target .audit-pack-compact-surface {
+		#que-debes-enviar:target .audit-pack-chapter-kicker,
+		#que-debes-enviar:target .audit-pack-compact-surface {
 			animation: none;
 		}
 	}
@@ -605,10 +605,12 @@ const seo = {
 		}
 	}
 	/* Tramo 2 (pack → FAQ): “suelo” distinto + bruma muy lenta (respeta reduced-motion) */
+	/* #que-debes-enviar: ancla aquí para que el scroll “corte” tras Cómo funciona (scroll-margin mínimo) */
 	.audit-page-act-two {
 		position: relative;
 		isolation: isolate;
 		overflow: clip;
+		scroll-margin-top: clamp(0.25rem, 1.2vh, 0.65rem);
 		margin-top: clamp(0.65rem, 2.2vw, 1.5rem);
 		padding: clamp(0.45rem, 1.8vw, 1.1rem) clamp(0.45rem, 2vw, 1rem) clamp(2.75rem, 7.5vw, 4.5rem);
 		border-radius: 0 0 1.2rem 1.2rem;
@@ -656,7 +658,7 @@ const seo = {
 	.audit-page-act-two .audit-pack-anchor-wrap.audit-pack--preview {
 		margin-top: clamp(0.25rem, 1.2vw, 0.85rem);
 	}
-	.audit-pack-anchor-wrap:target .audit-pack-compact-surface {
+	#que-debes-enviar:target .audit-pack-compact-surface {
 		animation: audit-chapter-reveal 0.52s ease-out 0.08s both;
 		border-left-color: rgba(165, 220, 255, 0.85);
 		border-color: rgba(100, 196, 255, 0.22);
@@ -783,8 +785,9 @@ const seo = {
 		}
 	}
 	:global(html:has(.audit-page-anchor-flow)) {
-		scroll-behavior: smooth;
-		scroll-padding-top: 0.65rem;
+		/* Salto seco al #que-debes-enviar: sensación “mitad y mitad” de micropágina */
+		scroll-behavior: auto;
+		scroll-padding-top: 0.35rem;
 	}
 	@media (prefers-reduced-motion: reduce) {
 		:global(html:has(.audit-page-anchor-flow)) {
