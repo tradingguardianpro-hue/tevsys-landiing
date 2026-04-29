@@ -153,6 +153,9 @@ const seo = {
 	.audit-page-band-motion__inner {
 		position: relative;
 		z-index: 1;
+		font-family: var(--theme-font-family-sans, 'Inter', system-ui, sans-serif);
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
 	}
 	.audit-hero,
 	.audit-dual,
@@ -604,25 +607,43 @@ const seo = {
 			background-position: 100% 58%;
 		}
 	}
-	/* Tramo 2 (pack → FAQ): “suelo” distinto + bruma muy lenta (respeta reduced-motion) */
-	/* #que-debes-enviar: ancla aquí para que el scroll “corte” tras Cómo funciona (scroll-margin mínimo) */
+	/* Tramo 2 (pack → FAQ): “ventana” azulada + bruma; tipografía = misma pila que el resto del sitio */
+	/* #que-debes-enviar: ancla aquí (scroll-margin mínimo) */
 	.audit-page-act-two {
 		position: relative;
 		isolation: isolate;
 		overflow: clip;
+		font-family: var(--theme-font-family-sans, 'Inter', system-ui, sans-serif);
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
 		scroll-margin-top: clamp(0.25rem, 1.2vh, 0.65rem);
 		margin-top: clamp(0.65rem, 2.2vw, 1.5rem);
-		padding: clamp(0.45rem, 1.8vw, 1.1rem) clamp(0.45rem, 2vw, 1rem) clamp(2.75rem, 7.5vw, 4.5rem);
-		border-radius: 0 0 1.2rem 1.2rem;
+		padding: clamp(0.55rem, 2vw, 1.15rem) clamp(0.65rem, 2.4vw, 1.15rem) clamp(2.75rem, 7.5vw, 4.5rem);
+		border-radius: 1.05rem;
+		border: 1px solid rgba(100, 196, 255, 0.26);
 		background: linear-gradient(
 			180deg,
-			rgba(16, 24, 38, 0.58) 0%,
-			rgba(9, 14, 22, 0.48) 45%,
-			rgba(7, 10, 16, 0.42) 100%
+			rgba(18, 28, 44, 0.62) 0%,
+			rgba(10, 16, 26, 0.52) 45%,
+			rgba(8, 12, 20, 0.46) 100%
 		);
 		box-shadow:
-			inset 0 1px 0 rgba(100, 196, 255, 0.1),
-			0 24px 56px -40px rgba(0, 0, 0, 0.45);
+			inset 0 1px 0 rgba(120, 210, 255, 0.12),
+			inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+			0 0 0 1px rgba(0, 0, 0, 0.25),
+			0 28px 64px -36px rgba(0, 0, 0, 0.5),
+			0 0 80px -28px rgba(100, 196, 255, 0.12);
+		transition: border-color 0.45s ease, box-shadow 0.45s ease;
+	}
+	#que-debes-enviar:target {
+		border-color: rgba(130, 215, 255, 0.48);
+		box-shadow:
+			inset 0 1px 0 rgba(160, 220, 255, 0.2),
+			inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+			0 0 0 1px rgba(100, 196, 255, 0.32),
+			0 0 0 2px rgba(100, 196, 255, 0.12),
+			0 32px 72px -32px rgba(0, 0, 0, 0.52),
+			0 0 100px -24px rgba(100, 196, 255, 0.22);
 	}
 	.audit-page-act-two > * {
 		position: relative;
@@ -638,15 +659,15 @@ const seo = {
 		background: linear-gradient(
 			118deg,
 			transparent 0%,
-			rgba(100, 196, 255, 0.07) 24%,
-			rgba(245, 176, 65, 0.034) 50%,
-			rgba(100, 196, 255, 0.078) 76%,
+			rgba(100, 196, 255, 0.095) 24%,
+			rgba(245, 176, 65, 0.042) 50%,
+			rgba(100, 196, 255, 0.1) 76%,
 			transparent 100%
 		);
 		background-size: 240% 240%;
 		background-position: 0% 50%;
 		animation: audit-act-two-sheen 52s ease-in-out infinite alternate;
-		opacity: 0.72;
+		opacity: 0.82;
 	}
 	@media (prefers-reduced-motion: reduce) {
 		.audit-page-act-two::before {
@@ -785,8 +806,8 @@ const seo = {
 		}
 	}
 	:global(html:has(.audit-page-anchor-flow)) {
-		/* Salto seco al #que-debes-enviar: sensación “mitad y mitad” de micropágina */
-		scroll-behavior: auto;
+		/* Scroll suave al ancla; el “marco” azul del tramo 2 marca la llegada */
+		scroll-behavior: smooth;
 		scroll-padding-top: 0.35rem;
 	}
 	@media (prefers-reduced-motion: reduce) {

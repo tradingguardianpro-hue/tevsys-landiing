@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/auditoria-ia` — scroll suave otra vez + marco azul tramo 2 + tipografía explícita (29 abr 2026, UX)
+
+- **`scroll-behavior: smooth`** de vuelta en la micro; **`prefers-reduced-motion`** sigue forzando salto seco.
+- **`audit-page-act-two`:** borde redondeado completo, **marco** azul + halo exterior; **`#que-debes-enviar:target`** refuerza borde/sombra en **toda** la región (pack → FAQ); bruma **`::before`** un poco más presente.
+- **`font-family: var(--theme-font-family-sans)`** en **`audit-page-band-motion__inner`** y en **`audit-page-act-two`** + antialiasing, para alinear render con el resto de la web.
+
+**Archivo:** `src/pages/auditoria-ia.astro`.
+
+---
+
 ## `/auditoria-ia` — ancla #que-debes-enviar al inicio del tramo 2 + scroll seco (29 abr 2026, UX)
 
 - **`id`** pasa al contenedor **`audit-page-act-two`** (inicio del bloque pack→FAQ); se quita el **`scroll-margin-top`** grande de la tarjeta interna (impedía “comerse” *Cómo funciona*).
