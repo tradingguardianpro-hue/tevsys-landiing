@@ -4,6 +4,19 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home (`Elige tu cuenta`) + `/features/sml` — manifiesto visible y primera poda de densidad (30 abr 2026, copy)
+
+**Archivos:** `src/pages/index.astro`, `src/pages/features/sml.astro`.
+
+- En **home**, bajo `Elige tu cuenta`, se sustituye el subtítulo por el manifiesto corto:
+  - *No vendemos señales. Vendemos ejecución disciplinada, precisión verificable de cierre en MT5, evidencia real y control bajo presión.*
+- En **SML**, poda inicial de texto:
+  - se compacta el bloque central (se elimina duplicidad entre “evidencia” y “qué comprobar”),
+  - se mantiene foco en 4.79 y 4.81 + estado de validación final,
+  - copy más directo, menos redundante, sin perder trazabilidad.
+
+---
+
 ## `/features/sml` — narrativa sin encasillar + evidencia 4.79/4.81 + fase final explícita (30 abr 2026, copy producto)
 
 **Archivo:** `src/pages/features/sml.astro`.
