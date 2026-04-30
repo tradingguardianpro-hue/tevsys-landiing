@@ -71,6 +71,39 @@ const seo = {
 			</p>
 		</section>
 
+		<section class="feature-sml-proof" aria-labelledby="sml-proof-title">
+			<div class="feature-sml-panel__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2 id="sml-proof-title">Flujo real 4.81 (antes y después)</h2>
+			</div>
+			<div class="sml-proof-grid">
+				<figure class="sml-proof-card">
+					<img
+						src="/images/evidence/sml-481-step-01-activacion.png"
+						alt="Antes de activar SML: modal de confirmación y panel con límite ampliado visible."
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption><strong>Paso 1 — Activación:</strong> se ve el límite ampliado (`-1,50% -> -1,61%`) antes de ejecutar.</figcaption>
+				</figure>
+				<figure class="sml-proof-card">
+					<img
+						src="/images/evidence/sml-481-step-02-cierre.png"
+						alt="Resultado final con SML activo: STOP por pérdida diaria alcanzada."
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption><strong>Paso 2 — Cierre final:</strong> STOP ejecutado con SML activo y cuenta protegida.</figcaption>
+				</figure>
+			</div>
+			<p class="sml-proof-note">
+				<strong>¿Por qué `-1,61%` y `-1,58%` no coinciden exactamente?</strong> El `-1,61%` es el umbral que activa la protección ampliada. El `-1,58%` es el resultado final que queda tras ejecutar el cierre en mercado real.
+			</p>
+			<p class="sml-proof-tech">
+				Si quieres validar el disparo técnico, añadiremos aquí una captura del log interno con el momento exacto de activación y cierre.
+			</p>
+		</section>
+
 		<section class="feature-cta">
 			<h2>¿Quieres validar SML para Advanced/Pro?</h2>
 			<p>Te mostramos el estado de validación y los escenarios que puedes contrastar con tus límites reales (Advanced/Pro, lista de espera).</p>
@@ -199,7 +232,8 @@ const seo = {
 		font-size: 0.95rem;
 	}
 	.feature-demo h2,
-	.feature-cta h2 {
+	.feature-cta h2,
+	.feature-sml-proof h2 {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
 	}
@@ -258,6 +292,47 @@ const seo = {
 		opacity: 0.88;
 		line-height: 1.5;
 	}
+	.feature-sml-proof {
+		margin: var(--section-margin) auto;
+	}
+	.sml-proof-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.9rem;
+	}
+	.sml-proof-card {
+		margin: 0;
+		padding: 0.7rem;
+		border-radius: var(--theme-shape-radius);
+		background: var(--theme-surface-1);
+		border: 1px solid rgba(245, 176, 65, 0.2);
+	}
+	.sml-proof-card img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0.35rem;
+	}
+	.sml-proof-card figcaption {
+		margin-top: 0.55rem;
+		font-size: 0.9rem;
+		line-height: 1.45;
+		opacity: 0.9;
+	}
+	.sml-proof-note {
+		margin: 0.95rem 0 0;
+		padding: 0.8rem 0.95rem;
+		border-radius: var(--theme-shape-radius);
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		background: rgba(245, 176, 65, 0.06);
+		line-height: 1.5;
+	}
+	.sml-proof-tech {
+		margin: 0.65rem 0 0;
+		opacity: 0.82;
+		font-size: 0.92rem;
+		line-height: 1.45;
+	}
 	.feature-cta {
 		background: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
@@ -268,5 +343,10 @@ const seo = {
 	.feature-cta p {
 		margin: 0 0 0.9rem;
 		line-height: 1.5;
+	}
+	@media (max-width: 900px) {
+		.sml-proof-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
