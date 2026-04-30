@@ -7,6 +7,51 @@ const seo = {
 	description:
 		'Cómo funciona tevsys en 3 pasos: defines reglas, el sistema protege en tiempo real y tú validas con evidencia.',
 };
+
+const FEATURE_ROUTES = [
+	{
+		title: 'Configurar límites en minutos',
+		description: 'Límites, panel y primer uso de tevsys Essential.',
+		href: '/configuracion',
+		cta: 'Ir a configuración',
+	},
+	{
+		title: 'Ver cómo protege en tiempo real',
+		description: 'Precisión de cierre, HyperClose y respuesta ante bloqueo.',
+		href: '/features/hyperclose',
+		cta: 'Ver protección',
+	},
+	{
+		title: 'Validar evidencia sin opiniones',
+		description: 'Casos documentados en vídeo + trazabilidad MT5.',
+		href: '/videos-cierre-youtube',
+		cta: 'Ver vídeos reales',
+	},
+];
+
+const HOW_VIDEOS = [
+	{
+		title: 'Configuración básica (Essential)',
+		description: 'Instalas demo, defines límites y dejas el panel listo para operar.',
+		embed: 'https://drive.google.com/file/d/1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg/preview',
+		href: '/configuracion',
+		cta: 'Abrir guía completa',
+	},
+	{
+		title: 'Presentación tevsys (3:00)',
+		description: 'Qué es y cómo encaja en un gráfico real sin señales ni humo.',
+		embed: 'https://www.youtube-nocookie.com/embed/Kz21Hm_ukZ0',
+		href: 'https://youtu.be/Kz21Hm_ukZ0',
+		cta: 'Ver en YouTube',
+	},
+	{
+		title: 'Cierre al límite + evidencia MT5',
+		description: 'Caso corto con cierre documentado y validación en entorno real.',
+		embed: 'https://www.youtube-nocookie.com/embed/QU1hC6SKg10',
+		href: 'https://youtu.be/QU1hC6SKg10',
+		cta: 'Ver en YouTube',
+	},
+];
 ---
 
 <Layout seo={seo}>
@@ -52,20 +97,50 @@ const seo = {
 			</div>
 		</section>
 
-		<section class="how-next" aria-labelledby="how-next-title">
-			<h2 id="how-next-title">Próximos vídeos que vamos a publicar</h2>
-			<ul class="how-next__list">
-				<li>
-					<strong>Panel compactable/expandible</strong> en uso real, para que se vea cómo convive con tu gráfico.
-				</li>
-				<li>
-					<strong>Onboarding desde cero</strong> con los hints en pantalla y recorrido completo del usuario nuevo.
-				</li>
-				<li>
-					<strong>ID visible en panel</strong> y su papel en trazabilidad/auditoría (sin prometer más de lo ya implementado).
-				</li>
-			</ul>
-			<p class="how-next__note">Cuando estén publicados, este bloque tendrá enlaces directos a cada vídeo.</p>
+		<section class="how-jump" aria-labelledby="how-jump-title">
+			<h2 id="how-jump-title">Elige ruta y entra directo</h2>
+			<p class="how-jump__lead">Dos clics y estás en lo que te interesa: configurar, ver protección o validar evidencia.</p>
+			<div class="how-jump__grid">
+				{
+					FEATURE_ROUTES.map((item) => (
+						<article class="how-jump-card">
+							<h3>{item.title}</h3>
+							<p>{item.description}</p>
+							<a href={item.href} class="how-link how-link--pill">{item.cta} →</a>
+						</article>
+					))
+				}
+			</div>
+		</section>
+
+		<section class="how-videos" aria-labelledby="how-videos-title">
+			<h2 id="how-videos-title">Vídeos clave aquí mismo</h2>
+			<p class="how-videos__lead">
+				Para que esta micropágina tenga vida real: ves el flujo directamente y, si quieres, abres el detalle completo.
+			</p>
+			<div class="how-videos__grid">
+				{
+					HOW_VIDEOS.map((video) => (
+						<article class="how-video-card">
+							<div class="how-video-card__media">
+								<iframe
+									src={video.embed}
+									title={video.title}
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+									loading="lazy"
+									referrerpolicy="strict-origin-when-cross-origin"
+								></iframe>
+							</div>
+							<div class="how-video-card__body">
+								<h3>{video.title}</h3>
+								<p>{video.description}</p>
+								<a href={video.href} class="how-link how-link--pill" target={video.href.startsWith('http') ? '_blank' : undefined} rel={video.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{video.cta} →</a>
+							</div>
+						</article>
+					))
+				}
+			</div>
 		</section>
 	</Container>
 </Layout>
@@ -73,7 +148,8 @@ const seo = {
 <style>
 	.how-hero,
 	.how-flow,
-	.how-next {
+	.how-jump,
+	.how-videos {
 		margin: var(--section-margin) auto;
 	}
 	.how-kicker {
@@ -115,7 +191,8 @@ const seo = {
 		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
 	}
 	.how-flow h2,
-	.how-next h2 {
+	.how-jump h2,
+	.how-videos h2 {
 		margin: 0 0 0.75rem;
 		font-size: 1.35rem;
 	}
@@ -152,34 +229,91 @@ const seo = {
 		text-decoration: underline;
 		text-underline-offset: 2px;
 	}
+	.how-link--pill {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.42rem 0.75rem;
+		border-radius: 999px;
+		text-decoration: none;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		background: rgba(245, 176, 65, 0.08);
+		font-weight: 600;
+		transition: background-color 150ms ease, border-color 150ms ease;
+	}
+	.how-link--pill:hover {
+		background: rgba(245, 176, 65, 0.16);
+		border-color: rgba(245, 176, 65, 0.55);
+	}
 	.how-links-inline {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.7rem;
 	}
-	.how-next__list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
+	.how-jump__lead,
+	.how-videos__lead {
+		margin: 0 0 0.85rem;
+		opacity: 0.88;
 	}
-	.how-next__list li {
-		margin-bottom: 0.45rem;
-		line-height: 1.5;
-		padding: 0.42rem 0.6rem 0.42rem 1rem;
-		border-left: 2px solid rgba(245, 176, 65, 0.22);
-		border-radius: 0.35rem;
-		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+	.how-jump__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.85rem;
 	}
-	.how-next__list li:last-child {
-		margin-bottom: 0;
+	.how-jump-card {
+		background: var(--theme-surface-1);
+		border: 1px solid var(--theme-surface-border);
+		border-radius: var(--theme-shape-radius);
+		padding: 1rem;
+		box-shadow: var(--theme-surface-elevated-shadow);
 	}
-	.how-next__note {
-		margin: 0.75rem 0 0;
-		opacity: 0.82;
-		font-size: 0.92rem;
+	.how-jump-card h3 {
+		margin: 0 0 0.5rem;
+		font-size: 1.03rem;
+	}
+	.how-jump-card p {
+		margin: 0 0 0.75rem;
+		line-height: 1.48;
+	}
+	.how-videos__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.9rem;
+	}
+	.how-video-card {
+		background: var(--theme-surface-1);
+		border: 1px solid var(--theme-surface-border);
+		border-radius: var(--theme-shape-radius);
+		box-shadow: var(--theme-surface-elevated-shadow);
+		overflow: hidden;
+	}
+	.how-video-card__media {
+		aspect-ratio: 16 / 9;
+		background: var(--theme-embed-chrome);
+		border-bottom: 1px solid var(--theme-surface-border);
+	}
+	.how-video-card__media iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+	.how-video-card__body {
+		padding: 0.9rem;
+	}
+	.how-video-card__body h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.02rem;
+	}
+	.how-video-card__body p {
+		margin: 0 0 0.72rem;
+		line-height: 1.48;
 	}
 	@media (max-width: 900px) {
 		.how-grid {
+			grid-template-columns: 1fr;
+		}
+		.how-jump__grid,
+		.how-videos__grid {
 			grid-template-columns: 1fr;
 		}
 	}
