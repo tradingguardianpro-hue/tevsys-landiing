@@ -291,9 +291,11 @@ const curatedVideos: {
 		letter-spacing: 0.01em;
 	}
 
+	/* Empuja “segunda parte” bajo el pliegue: primero se ven solo presentación + 2 vídeos (p. ej. zoom ~75 %). */
 	.how-depth {
 		max-width: min(56rem, 100%);
 		padding: 0 0 0.25rem;
+		margin-top: clamp(7rem, 42vh, 46rem);
 	}
 
 	.how-depth__head {
