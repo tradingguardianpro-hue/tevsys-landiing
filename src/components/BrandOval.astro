@@ -11,9 +11,10 @@
     align-items: center;
     gap: 0.4rem;
     padding: 0.35rem 1rem 0.35rem 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.38);
+    /* Hereda tokens del <header> (Header.astro); fallback si la pastilla se usa fuera */
+    border: 1px solid var(--tevsys-header-pill-border, rgba(255, 255, 255, 0.38));
     border-radius: 2.5rem;
-    background: rgba(255, 255, 255, 0.035);
+    background: var(--tevsys-header-pill-surface, rgba(255, 255, 255, 0.035));
     font-family: 'Inter', system-ui, sans-serif;
   }
   .brand-oval__logo {
