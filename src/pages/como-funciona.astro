@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación en dos partes, capas del producto (SML, HyperClose, precisión, observación pasiva), vídeo de configuración e instalación.',
+		'Presentación en dos partes; en vivo, detalle por funcionalidad (SML, evidencia, vídeos, auditoría), configuración e instalación.',
 };
 
 /** Parte 1 + Parte 2 (artículo MQL5 / mismo relato). Sustituir embeds cuando publiquéis el corte nuevo “producto al día”. */
@@ -131,12 +131,12 @@ const curatedVideos: {
 
 		<section class="how-depth" aria-labelledby="how-depth-title">
 			<header class="how-section-head how-depth__head">
-				<p class="how-eyebrow how-eyebrow--center">Capas del producto</p>
-				<h2 id="how-depth-title">Varias capas, misma exigencia</h2>
+				<p class="how-eyebrow how-eyebrow--center how-eyebrow--sentence">De la teoría a la pantalla</p>
+				<h2 id="how-depth-title">Así funciona en vivo</h2>
 				<p class="how-section-sub">
-					Lo de arriba era el trailer en dos cortes. Aquí entra lo que suele disparar preguntas fuertes.
+					Has visto el panel por dentro y un cierre real. Ahora vamos al detalle de cada funcionalidad.
 					<br />
-					<span class="how-section-sub__line2">Un clic, una idea. Tú marcas el ritmo.</span>
+					<span class="how-section-sub__line2">Sin maquetas ni simulaciones: lo que ves es el EA funcionando en directo.</span>
 				</p>
 			</header>
 			<div class="how-depth-grid">
@@ -295,7 +295,7 @@ const curatedVideos: {
 	.how-depth {
 		max-width: min(56rem, 100%);
 		padding: 0 0 0.25rem;
-		margin-top: clamp(7rem, 42vh, 46rem);
+		margin-top: clamp(5.5rem, 34vh, 38rem);
 	}
 
 	.how-depth__head {
@@ -371,6 +371,14 @@ const curatedVideos: {
 
 	.how-eyebrow--center {
 		text-align: center;
+	}
+
+	/* Kicker largo en lectura normal (sin FORZAR MAYÚSCULAS). */
+	.how-eyebrow--sentence {
+		text-transform: none;
+		letter-spacing: 0.04em;
+		font-size: 0.74rem;
+		opacity: 0.72;
 	}
 
 	.how-pair-grid {
