@@ -104,7 +104,7 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
   /* Misma sans que el hero (Inter): superficie de producto coherente */
   header {
     width: 100%;
-    /* Mismos tokens que .brand-oval (logo): familia visual única en la barra */
+    /* Tokens para el logo (BrandOval); el menú va sin borde, solo volumen suave */
     --tevsys-header-pill-border: rgba(255, 255, 255, 0.38);
     --tevsys-header-pill-surface: rgba(255, 255, 255, 0.035);
     /* Barra fina tipo referencia: logo a la izquierda, mucho aire al centro, menú agrupado a la derecha */
@@ -173,27 +173,25 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
     letter-spacing: 0.01em;
     display: inline-block;
     transition:
-      color 150ms ease,
-      background-color 150ms ease,
-      border-color 150ms ease,
-      box-shadow 150ms ease;
+      color 160ms ease,
+      background-color 160ms ease,
+      box-shadow 160ms ease;
   }
-  /* Píldoras nav = mismo tono que el logo (BrandOval) */
+  /* Menú: forma de píldora sin trazo (menos “burbujas”); el ratón sube la luz */
   nav ul li a:not(.nav-link--button) {
-    border: 1px solid var(--tevsys-header-pill-border);
+    border: none;
     border-radius: 2.5rem;
-    background: var(--tevsys-header-pill-surface);
+    background: rgba(255, 255, 255, 0.05);
     padding: 0.32rem 0.78rem;
   }
   nav ul li a:focus-visible {
     outline: 2px solid rgba(168, 174, 190, 0.9);
     outline-offset: 2px;
   }
-  /* Activo: más carga de gris, misma familia de píldora */
+  /* Activo: un peldaño más de gris, sin contorno */
   nav ul li a.nav-link--active:not(.nav-link--button) {
     color: #fff;
-    background: rgba(42, 45, 54, 0.92);
-    border-color: rgba(188, 194, 210, 0.45);
+    background: rgba(48, 52, 62, 0.88);
     box-shadow: none;
   }
   nav ul li a.nav-link--button {
@@ -213,13 +211,12 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
     background: #f8f8f8;
   }
   nav ul li a:not(.nav-link--button):not(.nav-link--active):hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 255, 255, 0.48);
+    background: rgba(255, 255, 255, 0.15);
     color: #fff;
   }
   nav ul li a.nav-link--active:not(.nav-link--button):hover {
-    background: rgba(36, 39, 48, 0.96);
-    border-color: rgba(205, 210, 224, 0.52);
+    background: rgba(64, 68, 82, 0.98);
+    box-shadow: 0 0 32px rgba(160, 168, 190, 0.1);
   }
   @media(max-width: 600px) {
     #menuButton {
