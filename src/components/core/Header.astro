@@ -104,15 +104,16 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
   /* Misma sans que el hero (Inter): superficie de producto coherente */
   header {
     width: 100%;
-    padding: 0.85rem clamp(0.85rem, 2.2vw, 1.35rem);
+    /* Barra fina tipo referencia: logo a la izquierda, mucho aire al centro, menú agrupado a la derecha */
+    padding: 0.52rem clamp(0.75rem, 2vw, 1.25rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Inter', system-ui, -apple-system, var(--theme-font-family-sans);
     font-feature-settings: 'kern' 1;
     -webkit-font-smoothing: antialiased;
-    border-bottom: 1px solid rgba(245, 176, 65, 0.12);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 100%);
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
   header.tevsys-header--home-scanner {
     position: relative;
@@ -158,20 +159,19 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.15rem 0.35rem;
+    gap: 0;
   }
   nav ul li a {
     text-decoration: none;
-    color: inherit;
-    opacity: 0.88;
-    font-size: 1rem;
-    font-weight: 550;
-    letter-spacing: 0.015em;
-    padding: 0.5rem 0.7rem;
-    border-radius: 0.45rem;
+    color: rgba(255, 255, 255, 0.96);
+    opacity: 1;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 0.32rem 0.5rem;
+    border-radius: 0.4rem;
     display: inline-block;
     transition:
-      opacity 150ms ease,
       color 150ms ease,
       background-color 150ms ease,
       box-shadow 150ms ease;
@@ -181,10 +181,9 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
     outline-offset: 2px;
   }
   nav ul li a.nav-link--active:not(.nav-link--button) {
-    opacity: 1;
-    color: rgba(245, 220, 160, 0.98);
-    background: rgba(245, 176, 65, 0.1);
-    box-shadow: inset 0 -2px 0 0 rgba(245, 176, 65, 0.55);
+    color: rgba(255, 248, 220, 1);
+    background: rgba(245, 176, 65, 0.12);
+    box-shadow: inset 0 -1.5px 0 0 rgba(245, 176, 65, 0.5);
   }
   nav ul li a.nav-link--button {
     padding: 0.5rem 1.05rem;
@@ -203,9 +202,8 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
     background: #f8f8f8;
   }
   nav ul li a:not(.nav-link--button):hover {
-    opacity: 1;
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 248, 235, 0.98);
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
   }
   @media(max-width: 600px) {
     #menuButton {
