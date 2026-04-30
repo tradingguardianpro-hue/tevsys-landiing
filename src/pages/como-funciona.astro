@@ -108,7 +108,34 @@ const curatedVideos: {
 			</div>
 		</section>
 
+		<section class="how-side" aria-labelledby="how-side-title">
+			<h2 id="how-side-title">Instalación y guías</h2>
+			<p class="how-side__intro">Mismo enlace que en el pie: un clic y van al <strong>vídeo único</strong> de instalación.</p>
+			<div class="how-side__grid">
+				<article class="how-side-card">
+					<p class="how-eyebrow">Paso 0</p>
+					<h3>Cómo instalar en MT5</h3>
+					<p class="how-side-card__p">Descarga, permisos y carga del EA. Reproductor en la guía oficial (la misma URL que el footer).</p>
+					<a href="/instalacion#instalacion-video" class="how-side-cta">Abrir instalación con vídeo →</a>
+				</article>
+				<article class="how-side-card">
+					<p class="how-eyebrow">Después del gráfico</p>
+					<h3>Configuración esencial y avanzada</h3>
+					<p class="how-side-card__p">
+						<strong>Esencial:</strong> límites y primer uso en vídeo corto.
+						<strong>Avanzado:</strong> seguimos ampliando la guía de entradas en MT5; de momento el puente está en el paso 2 de instalación.
+					</p>
+					<div class="how-side-actions">
+						<a href="/configuracion" class="how-side-cta">Guía esencial (vídeo) →</a>
+						<a href="/instalacion#configuracion" class="how-side-cta how-side-cta--ghost">Paso 2 · instalación →</a>
+					</div>
+				</article>
+			</div>
+		</section>
+
 		<nav class="how-deep" aria-label="Ir a más detalle">
+			<a href="/instalacion#instalacion-video">Instalación</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/configuracion">Configuración</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/videos-cierre-youtube">Todos los vídeos</a>
@@ -124,6 +151,7 @@ const curatedVideos: {
 	.how-hero,
 	.how-spotlight,
 	.how-curated,
+	.how-side,
 	.how-deep {
 		margin: var(--section-margin) auto;
 	}
@@ -266,6 +294,92 @@ const curatedVideos: {
 		padding-bottom: 0.15rem;
 	}
 
+	.how-side {
+		max-width: min(56rem, 100%);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.how-side h2 {
+		margin: 0 0 0.45rem;
+		font-size: clamp(1.12rem, 2.3vw, 1.32rem);
+		text-align: center;
+	}
+
+	.how-side__intro {
+		margin: 0 0 1.1rem;
+		text-align: center;
+		font-size: 0.92rem;
+		line-height: 1.45;
+		opacity: 0.88;
+		max-width: 40rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.how-side__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+	}
+
+	.how-side-card {
+		background: var(--theme-surface-1);
+		border: 1px solid var(--theme-surface-border);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.05rem 1.1rem;
+		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+
+	.how-side-card h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.05rem;
+		line-height: 1.25;
+	}
+
+	.how-side-card__p {
+		margin: 0 0 0.85rem;
+		font-size: 0.9rem;
+		line-height: 1.48;
+		opacity: 0.9;
+	}
+
+	.how-side-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 0.65rem;
+	}
+
+	.how-side-cta {
+		display: inline-flex;
+		align-items: center;
+		font-size: 0.88rem;
+		font-weight: 600;
+		color: #0b0d12;
+		background: #f5b041;
+		text-decoration: none;
+		padding: 0.45rem 0.85rem;
+		border-radius: 999px;
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		transition: background 0.15s ease, transform 0.15s ease;
+	}
+
+	.how-side-cta:hover {
+		background: #f7c050;
+		transform: translateY(-1px);
+	}
+
+	.how-side-cta--ghost {
+		background: rgba(255, 255, 255, 0.06);
+		color: rgba(244, 246, 248, 0.95);
+		border-color: rgba(255, 255, 255, 0.22);
+	}
+
+	.how-side-cta--ghost:hover {
+		background: rgba(255, 255, 255, 0.1);
+		color: #fff;
+	}
+
 	.how-deep {
 		display: flex;
 		flex-wrap: wrap;
@@ -292,5 +406,11 @@ const curatedVideos: {
 	.how-deep__sep {
 		opacity: 0.45;
 		user-select: none;
+	}
+
+	@media (max-width: 900px) {
+		.how-side__grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
