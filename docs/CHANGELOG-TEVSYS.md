@@ -14,6 +14,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
   - se compacta el bloque central (se elimina duplicidad entre “evidencia” y “qué comprobar”),
   - se mantiene foco en 4.79 y 4.81 + estado de validación final,
   - copy más directo, menos redundante, sin perder trazabilidad.
+  - **poda fase 1 (tramo superior):** se elimina línea redundante de “más riesgo por defecto”, se simplifica disponibilidad (`Advanced/Pro en validación`) y se acorta el párrafo técnico bajo “Así se ve hoy en el panel”.
 
 ---
 
