@@ -4,6 +4,24 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Header global + micropágina `/como-funciona` (30 abr 2026, UX + vídeo en dos partes)
+
+**Archivos:** `src/components/core/Header.astro`, `src/components/BrandOval.astro`, `src/pages/como-funciona.astro` (y enlaces previos en `src/config/nav.js` a `/como-funciona`).
+
+### Header (`Header.astro` + `BrandOval.astro`)
+- Menú en forma de **píldora sin borde** visible; **hover** y **página activa** en **grises** (sin ámbar en esos estados).
+- Más **padding vertical** en la barra y en los enlaces para que **respire**; **estado activo** según ruta + `aria-current` donde aplica.
+- Variables **`--tevsys-header-pill-border`** / **`--tevsys-header-pill-surface`** en `<header>`; la pastilla del **logo** las reutiliza con **fallback** si la pastilla se usara fuera del header.
+- Iteración desde versiones con más “burbuja” / más ámbar en nav → cabecera **más sobria y fluida** (feedback fundador + capturas).
+
+### `/como-funciona`
+- Prioridad al **vídeo**; hero con **poco texto**.
+- Bloque **Instalación y guías**: mismo destino que el pie → **`/instalacion#instalacion-video`** + puente a configuración esencial / paso 2.
+- **Presentación en dos partes** (alineado a artículo MQL5 / “ver más casos”): **dos embeds en paralelo** (Parte 1 ~3 min + Parte 2 ~2:22), mismo patrón tipográfico (título + línea + enlace YouTube); en móvil se apilan.
+- Sección **Selección en vídeo** sin duplicar la Parte 2: queda el corte de **configuración** (Drive) u otros cortes futuros.
+
+---
+
 ## Home (`Elige tu cuenta`) + `/features/sml` — manifiesto visible y primera poda de densidad (30 abr 2026, copy)
 
 **Archivos:** `src/pages/index.astro`, `src/pages/features/sml.astro`.
