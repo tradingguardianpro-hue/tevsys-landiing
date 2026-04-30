@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/features/sml` — narrativa sin encasillar + evidencia 4.79/4.81 + fase final explícita (30 abr 2026, copy producto)
+
+**Archivo:** `src/pages/features/sml.astro`.
+
+- Se añade manifiesto de posicionamiento: disciplina + precisión verificable de cierre en MT5 + evidencia real + control bajo presión (sin encasillar tevsys como “solo señales/no señales”).
+- Nueva sección **SML en marcha: evidencia documentada** con referencia operativa a **4.79** (SML activo en ganancia) y **4.81** (cierre en pérdida ampliada con trigger en logs + cierre final coherente).
+- Estado de madurez actualizado a **última fase de validación** con mensaje explícito de honestidad: no vender “100% cerrado” hasta completar escenarios pendientes.
+
+---
+
 ## `settings.js` — `auditPackPreparationVisible: false` (30 abr 2026, producto)
 
 **Archivo:** `src/config/settings.js`.
