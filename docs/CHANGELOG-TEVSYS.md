@@ -9,7 +9,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 **Archivos:** `src/pages/index.astro`, `src/pages/features/sml.astro`.
 
 - En **home**, bajo `Elige tu cuenta`, se sustituye el subtítulo por el manifiesto corto:
-  - *No vendemos señales. Vendemos ejecución disciplinada, precisión verificable de cierre en MT5, evidencia real y control bajo presión.*
+  - *No vendemos señales. Vendemos ejecución disciplinada, alta precisión verificable de cierre en MT5, evidencia real y control bajo presión.*
 - En **SML**, poda inicial de texto:
   - se compacta el bloque central (se elimina duplicidad entre “evidencia” y “qué comprobar”),
   - se mantiene foco en 4.79 y 4.81 + estado de validación final,
@@ -21,7 +21,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Archivo:** `src/pages/features/sml.astro`.
 
-- Se añade manifiesto de posicionamiento: disciplina + precisión verificable de cierre en MT5 + evidencia real + control bajo presión (sin encasillar tevsys como “solo señales/no señales”).
+- Se añade manifiesto de posicionamiento: disciplina + alta precisión verificable de cierre en MT5 + evidencia real + control bajo presión (sin encasillar tevsys como “solo señales/no señales”).
 - Nueva sección **SML en marcha: evidencia documentada** con referencia operativa a **4.79** (SML activo en ganancia) y **4.81** (cierre en pérdida ampliada con trigger en logs + cierre final coherente).
 - Estado de madurez actualizado a **última fase de validación** con mensaje explícito de honestidad: no vender “100% cerrado” hasta completar escenarios pendientes.
 
