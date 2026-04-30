@@ -5,316 +5,292 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Cómo funciona tevsys en 3 pasos: defines reglas, el sistema protege en tiempo real y tú validas con evidencia.',
+		'Vídeo principal y selección corta: presentación en MT5, configuración esencial y caso con evidencia.',
 };
 
-const FEATURE_ROUTES = [
-	{
-		title: 'Configurar límites en minutos',
-		description: 'Límites, panel y primer uso de tevsys Essential.',
-		href: '/configuracion',
-		cta: 'Ir a configuración',
-	},
-	{
-		title: 'Ver cómo protege en tiempo real',
-		description: 'Precisión de cierre, HyperClose y respuesta ante bloqueo.',
-		href: '/features/hyperclose',
-		cta: 'Ver protección',
-	},
-	{
-		title: 'Validar evidencia sin opiniones',
-		description: 'Casos documentados en vídeo + trazabilidad MT5.',
-		href: '/videos-cierre-youtube',
-		cta: 'Ver vídeos reales',
-	},
-];
+/** Vídeo principal: sustituir `embed` cuando tengáis el corte nuevo (estilo artículo MQL5 + features actuales, ~3 min). */
+const spotlightVideo = {
+	title: 'Presentación en el gráfico (~3 min)',
+	blurb: 'EA en MT5 y panel, sin señales. Pronto: mismo enfoque que el artículo MQL5, con las features actuales (incl. arrastrar el EA al gráfico).',
+	embed: 'https://www.youtube-nocookie.com/embed/Kz21Hm_ukZ0',
+	href: 'https://youtu.be/Kz21Hm_ukZ0',
+	cta: 'Abrir en YouTube',
+};
 
-const HOW_VIDEOS = [
+/** Pocos vídeos, mismo tamaño de reproductor que el principal. */
+const curatedVideos: {
+	title: string;
+	blurb: string;
+	embed: string;
+	href: string;
+	cta: string;
+	external?: boolean;
+}[] = [
 	{
-		title: 'Configuración básica (Essential)',
-		description: 'Instalas demo, defines límites y dejas el panel listo para operar.',
+		title: 'Configuración esencial (Essential)',
+		blurb: 'Límites, panel y primer uso tras instalar la demo.',
 		embed: 'https://drive.google.com/file/d/1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg/preview',
 		href: '/configuracion',
-		cta: 'Abrir guía completa',
-	},
-	{
-		title: 'Presentación tevsys (3:00)',
-		description: 'Qué es y cómo encaja en un gráfico real sin señales ni humo.',
-		embed: 'https://www.youtube-nocookie.com/embed/Kz21Hm_ukZ0',
-		href: 'https://youtu.be/Kz21Hm_ukZ0',
-		cta: 'Ver en YouTube',
+		cta: 'Guía paso a paso',
 	},
 	{
 		title: 'Cierre al límite + evidencia MT5',
-		description: 'Caso corto con cierre documentado y validación en entorno real.',
+		blurb: 'Caso corto: límites, cierre y contraste con el terminal.',
 		embed: 'https://www.youtube-nocookie.com/embed/QU1hC6SKg10',
 		href: 'https://youtu.be/QU1hC6SKg10',
-		cta: 'Ver en YouTube',
+		cta: 'Abrir en YouTube',
+		external: true,
 	},
 ];
 ---
 
 <Layout seo={seo}>
 	<Container>
-		<section class="how-hero">
-			<p class="how-kicker">Guía rápida</p>
-			<h1>Cómo funciona <span class="how-accent">tevsys</span> para proteger tu operativa sin perder el control.</h1>
-			<p class="how-hook"><span class="how-dot" aria-hidden="true"></span>Primero defines tus reglas. Después, tevsys las hace cumplir.</p>
-			<p class="how-lead">
-				No vendemos señales ni promesas de beneficio. Te damos <strong>disciplina automatizada</strong>,
-				<strong>protección en tiempo real</strong> y <strong>evidencia verificable</strong> de lo que ocurre en MT5.
-			</p>
+		<section class="how-hero how-hero--tight" aria-labelledby="how-hero-title">
+			<h1 id="how-hero-title">Cómo funciona <span class="how-accent">tevsys</span></h1>
+			<p class="how-hero__one">Vídeo primero. Abajo, dos cortes más si quieres profundizar.</p>
 		</section>
 
-		<section class="how-flow" aria-labelledby="how-flow-title">
-			<h2 id="how-flow-title">El flujo en 3 pasos (sin humo)</h2>
-			<div class="how-grid">
-				<article class="how-card">
-					<p class="how-card__step">Paso 1</p>
-					<h3>Defines tus límites</h3>
-					<p>Configuras pérdidas, ganancias y reglas de bloqueo según tu plan y tu cuenta.</p>
-					<a href="/configuracion" class="how-link">Ver cómo se configura</a>
-				</article>
-				<article class="how-card">
-					<p class="how-card__step">Paso 2</p>
-					<h3>tevsys ejecuta en tiempo real</h3>
-					<p>Cuando hay riesgo o intento de romper reglas, tevsys responde al momento según lo que definiste.</p>
-					<div class="how-links-inline">
-						<a href="/features/precision" class="how-link">Precisión</a>
-						<a href="/features/hyperclose" class="how-link">HyperClose</a>
-						<a href="/features/sml" class="how-link">SML</a>
-					</div>
-				</article>
-				<article class="how-card">
-					<p class="how-card__step">Paso 3</p>
-					<h3>Compruebas con evidencia</h3>
-					<p>Revisas vídeos, historial y datos de MT5 para validar resultados sin depender de opiniones.</p>
-					<div class="how-links-inline">
-						<a href="/features/evidencia" class="how-link">Evidencia</a>
-						<a href="/videos-cierre-youtube" class="how-link">Vídeos</a>
-					</div>
-				</article>
+		<section class="how-spotlight" aria-labelledby="spotlight-title">
+			<header class="how-block-head">
+				<p class="how-eyebrow">Vídeo principal</p>
+				<h2 id="spotlight-title">{spotlightVideo.title}</h2>
+				<p class="how-block-lead">{spotlightVideo.blurb}</p>
+				<a
+					href={spotlightVideo.href}
+					class="how-text-link"
+					target="_blank"
+					rel="noopener noreferrer">{spotlightVideo.cta} →</a>
+			</header>
+			<div class="how-embed how-embed--chrome">
+				<iframe
+					src={spotlightVideo.embed}
+					title={spotlightVideo.title}
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen
+					loading="eager"
+					referrerpolicy="strict-origin-when-cross-origin"
+				></iframe>
 			</div>
 		</section>
 
-		<section class="how-jump" aria-labelledby="how-jump-title">
-			<h2 id="how-jump-title">Elige ruta y entra directo</h2>
-			<p class="how-jump__lead">Dos clics y estás en lo que te interesa: configurar, ver protección o validar evidencia.</p>
-			<div class="how-jump__grid">
+		<section class="how-curated" aria-labelledby="curated-title">
+			<header class="how-section-head">
+				<h2 id="curated-title">Selección en vídeo</h2>
+				<p class="how-section-sub">Mismo reproductor, distinto foco. Un título claro y una línea; el clic abre el detalle si lo necesitas.</p>
+			</header>
+			<div class="how-curated__stack">
 				{
-					FEATURE_ROUTES.map((item) => (
-						<article class="how-jump-card">
-							<h3>{item.title}</h3>
-							<p>{item.description}</p>
-							<a href={item.href} class="how-link how-link--pill">{item.cta} →</a>
-						</article>
-					))
-				}
-			</div>
-		</section>
-
-		<section class="how-videos" aria-labelledby="how-videos-title">
-			<h2 id="how-videos-title">Vídeos clave aquí mismo</h2>
-			<p class="how-videos__lead">
-				Para que esta micropágina tenga vida real: ves el flujo directamente y, si quieres, abres el detalle completo.
-			</p>
-			<div class="how-videos__grid">
-				{
-					HOW_VIDEOS.map((video) => (
-						<article class="how-video-card">
-							<div class="how-video-card__media">
+					curatedVideos.map((v) => (
+						<article class="how-curated-card">
+							<header class="how-block-head how-block-head--compact">
+								<h3>{v.title}</h3>
+								<p class="how-block-lead">{v.blurb}</p>
+								<a
+									href={v.href}
+									class="how-text-link"
+									target={v.external ? '_blank' : undefined}
+									rel={v.external ? 'noopener noreferrer' : undefined}>{v.cta} →</a>
+							</header>
+							<div class="how-embed how-embed--chrome">
 								<iframe
-									src={video.embed}
-									title={video.title}
+									src={v.embed}
+									title={v.title}
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 									allowfullscreen
 									loading="lazy"
 									referrerpolicy="strict-origin-when-cross-origin"
 								></iframe>
 							</div>
-							<div class="how-video-card__body">
-								<h3>{video.title}</h3>
-								<p>{video.description}</p>
-								<a href={video.href} class="how-link how-link--pill" target={video.href.startsWith('http') ? '_blank' : undefined} rel={video.href.startsWith('http') ? 'noopener noreferrer' : undefined}>{video.cta} →</a>
-							</div>
 						</article>
 					))
 				}
 			</div>
 		</section>
+
+		<nav class="how-deep" aria-label="Ir a más detalle">
+			<a href="/configuracion">Configuración</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/videos-cierre-youtube">Todos los vídeos</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/features/evidencia">Evidencia</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/company/contact?flow=demo">Demo</a>
+		</nav>
 	</Container>
 </Layout>
 
 <style>
 	.how-hero,
-	.how-flow,
-	.how-jump,
-	.how-videos {
+	.how-spotlight,
+	.how-curated,
+	.how-deep {
 		margin: var(--section-margin) auto;
 	}
-	.how-kicker {
-		margin: 0 0 0.35rem;
-		opacity: 0.8;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-size: 0.82rem;
+
+	.how-hero--tight {
+		margin-top: calc(var(--section-margin) * 0.65);
+		margin-bottom: 1rem;
+		text-align: center;
+		max-width: 36rem;
+		margin-left: auto;
+		margin-right: auto;
 	}
+
 	.how-hero h1 {
-		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
-		margin: 0 0 0.7rem;
+		font-size: clamp(1.45rem, 3.8vw, 2.1rem);
+		margin: 0 0 0.5rem;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
 	}
+
 	.how-accent {
 		color: #f5b041;
 	}
-	.how-hook {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		font-style: italic;
-		font-weight: 600;
-		opacity: 0.9;
-		margin: 0 0 0.75rem;
-	}
-	.how-dot {
-		width: 0.45rem;
-		height: 0.45rem;
-		border-radius: 50%;
-		background: #f5b041;
-		flex-shrink: 0;
-	}
-	.how-lead {
-		max-width: 74ch;
-		line-height: 1.55;
-		padding: 0.68rem 0.82rem;
-		border-radius: 0.6rem;
-		border: 1px solid rgba(150, 156, 170, 0.34);
-		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
-	}
-	.how-flow h2,
-	.how-jump h2,
-	.how-videos h2 {
-		margin: 0 0 0.75rem;
-		font-size: 1.35rem;
-	}
-	.how-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.85rem;
-	}
-	.how-card {
-		background: var(--theme-surface-1);
-		border: 1px solid var(--theme-surface-border);
-		border-radius: var(--theme-shape-radius);
-		padding: 0.95rem;
-		box-shadow: var(--theme-surface-elevated-shadow);
-	}
-	.how-card__step {
-		margin: 0 0 0.35rem;
-		font-size: 0.8rem;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: #f5b041;
-		opacity: 0.95;
-	}
-	.how-card h3 {
-		margin: 0 0 0.45rem;
-		font-size: 1.05rem;
-	}
-	.how-card p {
-		margin: 0 0 0.6rem;
-		line-height: 1.5;
-	}
-	.how-link {
-		color: #f5b041;
-		text-decoration: underline;
-		text-underline-offset: 2px;
-	}
-	.how-link--pill {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.42rem 0.75rem;
-		border-radius: 999px;
-		text-decoration: none;
-		border: 1px solid rgba(245, 176, 65, 0.35);
-		background: rgba(245, 176, 65, 0.08);
-		font-weight: 600;
-		transition: background-color 150ms ease, border-color 150ms ease;
-	}
-	.how-link--pill:hover {
-		background: rgba(245, 176, 65, 0.16);
-		border-color: rgba(245, 176, 65, 0.55);
-	}
-	.how-links-inline {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.7rem;
-	}
-	.how-jump__lead,
-	.how-videos__lead {
-		margin: 0 0 0.85rem;
+
+	.how-hero__one {
+		margin: 0;
+		font-size: 0.98rem;
+		line-height: 1.45;
 		opacity: 0.88;
 	}
-	.how-jump__grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.85rem;
+
+	.how-spotlight,
+	.how-curated-card {
+		max-width: min(56rem, 100%);
+		margin-left: auto;
+		margin-right: auto;
 	}
-	.how-jump-card {
-		background: var(--theme-surface-1);
-		border: 1px solid var(--theme-surface-border);
+
+	.how-spotlight {
+		padding: 0 0 0.25rem;
+	}
+
+	.how-section-head {
+		text-align: center;
+		max-width: 40rem;
+		margin: 0 auto 1.25rem;
+	}
+
+	.how-section-head h2 {
+		margin: 0 0 0.45rem;
+		font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+		font-weight: 700;
+	}
+
+	.how-section-sub {
+		margin: 0;
+		font-size: 0.92rem;
+		line-height: 1.45;
+		opacity: 0.85;
+	}
+
+	.how-block-head {
+		margin-bottom: 1rem;
+	}
+
+	.how-block-head--compact {
+		margin-bottom: 0.85rem;
+	}
+
+	.how-block-head h2,
+	.how-block-head h3 {
+		margin: 0 0 0.4rem;
+		font-size: clamp(1.12rem, 2.2vw, 1.28rem);
+		line-height: 1.25;
+	}
+
+	.how-block-head h3 {
+		font-size: clamp(1.05rem, 2vw, 1.2rem);
+	}
+
+	.how-eyebrow {
+		margin: 0 0 0.35rem;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		opacity: 0.65;
+	}
+
+	.how-block-lead {
+		margin: 0 0 0.55rem;
+		font-size: 0.94rem;
+		line-height: 1.5;
+		opacity: 0.9;
+		max-width: 52ch;
+	}
+
+	.how-text-link {
+		display: inline-block;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: #f5b041;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(245, 176, 65, 0.45);
+		padding-bottom: 0.06rem;
+		transition: color 0.15s ease, border-color 0.15s ease;
+	}
+
+	.how-text-link:hover {
+		color: #f7c050;
+		border-color: rgba(247, 192, 80, 0.75);
+	}
+
+	.how-embed {
 		border-radius: var(--theme-shape-radius);
-		padding: 1rem;
-		box-shadow: var(--theme-surface-elevated-shadow);
-	}
-	.how-jump-card h3 {
-		margin: 0 0 0.5rem;
-		font-size: 1.03rem;
-	}
-	.how-jump-card p {
-		margin: 0 0 0.75rem;
-		line-height: 1.48;
-	}
-	.how-videos__grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.9rem;
-	}
-	.how-video-card {
-		background: var(--theme-surface-1);
-		border: 1px solid var(--theme-surface-border);
-		border-radius: var(--theme-shape-radius);
-		box-shadow: var(--theme-surface-elevated-shadow);
 		overflow: hidden;
+		width: 100%;
 	}
-	.how-video-card__media {
-		aspect-ratio: 16 / 9;
+
+	.how-embed--chrome {
 		background: var(--theme-embed-chrome);
-		border-bottom: 1px solid var(--theme-surface-border);
+		border: 1px solid var(--theme-embed-chrome-border);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), var(--theme-surface-elevated-shadow);
 	}
-	.how-video-card__media iframe {
+
+	.how-embed iframe {
 		display: block;
 		width: 100%;
-		height: 100%;
+		aspect-ratio: 16 / 9;
 		border: 0;
 	}
-	.how-video-card__body {
-		padding: 0.9rem;
+
+	.how-curated__stack {
+		display: flex;
+		flex-direction: column;
+		gap: 2.25rem;
 	}
-	.how-video-card__body h3 {
-		margin: 0 0 0.45rem;
-		font-size: 1.02rem;
+
+	.how-curated-card {
+		padding-bottom: 0.15rem;
 	}
-	.how-video-card__body p {
-		margin: 0 0 0.72rem;
-		line-height: 1.48;
+
+	.how-deep {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 0.35rem 0.5rem;
+		font-size: 0.88rem;
+		opacity: 0.88;
+		padding: 0.75rem 0 1.5rem;
 	}
-	@media (max-width: 900px) {
-		.how-grid {
-			grid-template-columns: 1fr;
-		}
-		.how-jump__grid,
-		.how-videos__grid {
-			grid-template-columns: 1fr;
-		}
+
+	.how-deep a {
+		color: rgba(244, 246, 248, 0.92);
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+		text-decoration-color: rgba(245, 176, 65, 0.35);
+	}
+
+	.how-deep a:hover {
+		color: #f5b041;
+		text-decoration-color: #f5b041;
+	}
+
+	.how-deep__sep {
+		opacity: 0.45;
+		user-select: none;
 	}
 </style>
