@@ -42,6 +42,13 @@
 		Times, serif;
 	--theme-font-family-sans: 'Lato', -apple-system, BlinkMacSystemFont,
 		sans-serif;
+
+	/* Titular H1 “marca” (fallback si no aplica bloque oscuro) */
+	--tevsys-display-title-font: 'DM Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--tevsys-display-title-weight: 600;
+	--tevsys-display-title-size: clamp(1.55rem, 3.5vw, 2.15rem);
+	--tevsys-display-title-line-height: 1.48;
+	--tevsys-display-title-tracking: -0.03em;
 }
 
 [data-theme='default'] {
@@ -121,6 +128,16 @@
 	*/
 	--theme-font-family-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	--theme-font-family-serif: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+	/*
+	  Titular marca / H1 de sección (misma receta que home `.hero-title`):
+	  DM Sans + mismo clamp que el giro principal — micropáginas y /como-funciona alineados.
+	*/
+	--tevsys-display-title-font: 'DM Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--tevsys-display-title-weight: 600;
+	--tevsys-display-title-size: clamp(1.55rem, 3.5vw, 2.15rem);
+	--tevsys-display-title-line-height: 1.48;
+	--tevsys-display-title-tracking: -0.03em;
 }
 
 [data-theme='earth'] {

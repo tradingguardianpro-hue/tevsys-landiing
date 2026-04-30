@@ -1814,6 +1814,17 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 .feature-hero h1 {
 	margin: 0 0 clamp(1.2rem, 3.2vw, 2rem);
 }
+
+/* Mismo H1 que el giro principal (DM Sans + clamp); vars en :root y en tema oscuro. */
+.feature-hero h1,
+.how-hero h1,
+.hero-title {
+	font-family: var(--tevsys-display-title-font);
+	font-weight: var(--tevsys-display-title-weight);
+	font-size: var(--tevsys-display-title-size);
+	line-height: var(--tevsys-display-title-line-height);
+	letter-spacing: var(--tevsys-display-title-tracking);
+}
 .feature-hero {
 	padding-bottom: clamp(0.75rem, 2.5vw, 1.5rem);
 }

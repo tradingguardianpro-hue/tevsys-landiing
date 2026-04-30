@@ -107,11 +107,11 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
   /* Solo H1: DM Sans (neutra, SaaS; pareja de Inter); resto del bloque sigue en Inter */
   .hero-title {
-    font-family: 'DM Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-weight: 600;
-    font-size: clamp(1.55rem, 3.5vw, 2.15rem);
-    line-height: 1.5;
-    letter-spacing: -0.03em;
+    font-family: var(--tevsys-display-title-font, 'DM Sans', 'Inter', system-ui, sans-serif);
+    font-weight: var(--tevsys-display-title-weight, 600);
+    font-size: var(--tevsys-display-title-size, clamp(1.55rem, 3.5vw, 2.15rem));
+    line-height: var(--tevsys-display-title-line-height, 1.48);
+    letter-spacing: var(--tevsys-display-title-tracking, -0.03em);
     margin: 0;
     max-width: 24em;
     color: #f4f6f8;
