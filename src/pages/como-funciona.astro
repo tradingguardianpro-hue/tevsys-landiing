@@ -1,0 +1,185 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Cómo funciona tevsys | tevsys',
+	description:
+		'Entiende en 3 pasos cómo funciona tevsys en MT5: configuración, protección en tiempo real y evidencia verificable.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="how-hero">
+			<p class="how-kicker">Guía rápida</p>
+			<h1>Cómo funciona <span class="how-accent">tevsys</span> en tu operativa real.</h1>
+			<p class="how-hook"><span class="how-dot" aria-hidden="true"></span>Primero entiendes el flujo. Luego lo compruebas tú.</p>
+			<p class="how-lead">
+				No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
+			</p>
+		</section>
+
+		<section class="how-flow" aria-labelledby="how-flow-title">
+			<h2 id="how-flow-title">El flujo en 3 pasos</h2>
+			<div class="how-grid">
+				<article class="how-card">
+					<p class="how-card__step">Paso 1</p>
+					<h3>Configuras una vez</h3>
+					<p>Defines tus límites y reglas de protección según tu cuenta y forma de operar.</p>
+					<a href="/configuracion" class="how-link">Ver guía de configuración</a>
+				</article>
+				<article class="how-card">
+					<p class="how-card__step">Paso 2</p>
+					<h3>tevsys ejecuta en tiempo real</h3>
+					<p>Si se toca el límite o intentas operar bloqueado, actúa automáticamente según tu configuración.</p>
+					<div class="how-links-inline">
+						<a href="/features/precision" class="how-link">Precisión</a>
+						<a href="/features/hyperclose" class="how-link">HyperClose</a>
+						<a href="/features/sml" class="how-link">SML</a>
+					</div>
+				</article>
+				<article class="how-card">
+					<p class="how-card__step">Paso 3</p>
+					<h3>Lo verificas con evidencia</h3>
+					<p>Vídeo, informe MT5, historial y logs para contrastar lo ocurrido sin depender de opiniones.</p>
+					<div class="how-links-inline">
+						<a href="/features/evidencia" class="how-link">Evidencia</a>
+						<a href="/videos-cierre-youtube" class="how-link">Vídeos</a>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="how-next" aria-labelledby="how-next-title">
+			<h2 id="how-next-title">Próximos vídeos que vamos a publicar</h2>
+			<ul class="how-next__list">
+				<li>
+					<strong>Panel compactable/expandible</strong> en uso real, para que se vea cómo convive con tu gráfico.
+				</li>
+				<li>
+					<strong>Onboarding desde cero</strong> con los hints en pantalla y recorrido completo del usuario nuevo.
+				</li>
+				<li>
+					<strong>ID visible en panel</strong> y su papel en trazabilidad/auditoría (sin prometer más de lo ya implementado).
+				</li>
+			</ul>
+			<p class="how-next__note">Cuando estén publicados, este bloque tendrá enlaces directos a cada vídeo.</p>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.how-hero,
+	.how-flow,
+	.how-next {
+		margin: var(--section-margin) auto;
+	}
+	.how-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.how-hero h1 {
+		font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+		margin: 0 0 0.7rem;
+	}
+	.how-accent {
+		color: #f5b041;
+	}
+	.how-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		margin: 0 0 0.75rem;
+	}
+	.how-dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.how-lead {
+		max-width: 74ch;
+		line-height: 1.55;
+		padding: 0.68rem 0.82rem;
+		border-radius: 0.6rem;
+		border: 1px solid rgba(150, 156, 170, 0.34);
+		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
+	}
+	.how-flow h2,
+	.how-next h2 {
+		margin: 0 0 0.75rem;
+		font-size: 1.35rem;
+	}
+	.how-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.85rem;
+	}
+	.how-card {
+		background: var(--theme-surface-1);
+		border: 1px solid var(--theme-surface-border);
+		border-radius: var(--theme-shape-radius);
+		padding: 0.95rem;
+		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+	.how-card__step {
+		margin: 0 0 0.35rem;
+		font-size: 0.8rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #f5b041;
+		opacity: 0.95;
+	}
+	.how-card h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.05rem;
+	}
+	.how-card p {
+		margin: 0 0 0.6rem;
+		line-height: 1.5;
+	}
+	.how-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.how-links-inline {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.7rem;
+	}
+	.how-next__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.how-next__list li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+	}
+	.how-next__list li:last-child {
+		margin-bottom: 0;
+	}
+	.how-next__note {
+		margin: 0.75rem 0 0;
+		opacity: 0.82;
+		font-size: 0.92rem;
+	}
+	@media (max-width: 900px) {
+		.how-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

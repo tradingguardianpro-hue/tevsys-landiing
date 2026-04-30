@@ -12,6 +12,7 @@ export const footerLists = [
   {
     title: 'Guías',
     items: [
+      { title: 'Cómo funciona', slug: '/como-funciona' },
       { title: 'Cómo instalar', slug: '/instalacion' },
       { title: 'Guía de configuración', slug: '/configuracion' },
       { title: 'Precios', slug: '/precios' },
