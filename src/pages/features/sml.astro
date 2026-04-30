@@ -95,6 +95,15 @@ const seo = {
 					/>
 					<figcaption><strong>Paso 2 — Cierre final:</strong> STOP ejecutado con SML activo y cuenta protegida.</figcaption>
 				</figure>
+				<figure class="sml-proof-card">
+					<img
+						src="/images/evidence/sml-481-step-03-estado-sml-on.png"
+						alt="Estado del panel con SML activo en la línea principal y límites ampliados."
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption><strong>Paso 3 — Estado visible:</strong> panel y línea principal reflejan `SML ON` en el día validado de cierre ampliado.</figcaption>
+				</figure>
 			</div>
 			<p class="sml-proof-note">
 				<strong>¿Por qué `-1,61%` y `-1,58%` no coinciden exactamente?</strong> El `-1,61%` es el umbral que activa la protección ampliada. El `-1,58%` es el resultado final que queda tras ejecutar el cierre en mercado real.
@@ -297,7 +306,7 @@ const seo = {
 	}
 	.sml-proof-grid {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 0.9rem;
 	}
 	.sml-proof-card {
