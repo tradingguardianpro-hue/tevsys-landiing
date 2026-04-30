@@ -1,10 +1,21 @@
 ---
 import { Icon } from 'astro-icon/components'
 const { navData, rightMenu } = Astro.props;
-const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isHome = pathname === '/';
 const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-header--home-scanner' : null].filter(
 	Boolean
 ) as string[];
+
+function navLinkState(slug: string, asButton?: boolean): { className: string; active: boolean } {
+	const parts: string[] = [];
+	if (asButton) parts.push('nav-link--button');
+	const s = (slug || '/').replace(/\/$/, '') || '/';
+	const p = pathname;
+	const active = s === '/' ? p === '/' : p === s || p.startsWith(`${s}/`);
+	if (active) parts.push('nav-link--active');
+	return { className: parts.join(' '), active };
+}
 ---
 
 <script type="module">
@@ -61,13 +72,26 @@ const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-head
   </div>
   <div class="header-nav__container">
     <slot name="nav">
-      {navData && <nav>
-        <ul>
-          {navData.map(navItem => (
-            (<li><a href={navItem.slug} class={navItem.asButton ? 'nav-link--button' : ''}>{navItem.title}</a></li>)
-          ))}
-        </ul>
-      </nav>}
+      {navData && (
+        <nav aria-label="Principal">
+          <ul>
+            {navData.map((navItem) => {
+              const { className, active } = navLinkState(navItem.slug, navItem.asButton);
+              return (
+                <li>
+                  <a
+                    href={navItem.slug}
+                    class={className}
+                    aria-current={active && !navItem.asButton ? 'page' : undefined}
+                  >
+                    {navItem.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
     </slot>
   </div>
   <div class="header-action-item__container">
@@ -80,13 +104,15 @@ const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-head
   /* Misma sans que el hero (Inter): superficie de producto coherente */
   header {
     width: 100%;
-    padding: 0.55rem clamp(0.65rem, 2vw, 1.15rem);
+    padding: 0.85rem clamp(0.85rem, 2.2vw, 1.35rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Inter', system-ui, -apple-system, var(--theme-font-family-sans);
     font-feature-settings: 'kern' 1;
     -webkit-font-smoothing: antialiased;
+    border-bottom: 1px solid rgba(245, 176, 65, 0.12);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 100%);
   }
   header.tevsys-header--home-scanner {
     position: relative;
@@ -130,30 +156,56 @@ const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-head
     padding: 0;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.15rem 0.35rem;
   }
   nav ul li a {
     text-decoration: none;
-    margin-right: 1rem;
     color: inherit;
-    opacity: 0.78;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    transition: opacity linear 150ms;
+    opacity: 0.88;
+    font-size: 1rem;
+    font-weight: 550;
+    letter-spacing: 0.015em;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.45rem;
+    display: inline-block;
+    transition:
+      opacity 150ms ease,
+      color 150ms ease,
+      background-color 150ms ease,
+      box-shadow 150ms ease;
+  }
+  nav ul li a:focus-visible {
+    outline: 2px solid rgba(245, 176, 65, 0.65);
+    outline-offset: 2px;
+  }
+  nav ul li a.nav-link--active:not(.nav-link--button) {
+    opacity: 1;
+    color: rgba(245, 220, 160, 0.98);
+    background: rgba(245, 176, 65, 0.1);
+    box-shadow: inset 0 -2px 0 0 rgba(245, 176, 65, 0.55);
   }
   nav ul li a.nav-link--button {
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1.05rem;
     background: #fff;
     color: #111;
     border-radius: 2rem;
     opacity: 1;
-    font-weight: 500;
+    font-weight: 600;
+    box-shadow: none;
+  }
+  nav ul li a.nav-link--button.nav-link--active {
+    box-shadow: 0 0 0 2px rgba(245, 176, 65, 0.45);
   }
   nav ul li a.nav-link--button:hover {
-    opacity: 0.92;
+    opacity: 0.95;
+    background: #f8f8f8;
   }
-  nav ul li a:hover {
+  nav ul li a:not(.nav-link--button):hover {
     opacity: 1;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 248, 235, 0.98);
   }
   @media(max-width: 600px) {
     #menuButton {
@@ -178,10 +230,15 @@ const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-head
     header[mobile-menu-open] nav ul {
       align-items: center;
       flex-direction: column;
+      gap: 0.35rem;
     }
-     header[mobile-menu-open] nav ul li {
-       font-size: var(--font-size-lg);
-       margin-bottom: 1rem;
-     }
+    header[mobile-menu-open] nav ul li {
+      font-size: var(--font-size-lg);
+      margin-bottom: 0.35rem;
+    }
+    header[mobile-menu-open] nav ul li a {
+      padding: 0.65rem 1rem;
+      font-size: 1.05rem;
+    }
   }
 </style>
