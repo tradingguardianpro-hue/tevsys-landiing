@@ -17,13 +17,13 @@ const seo = {
 				HyperClose <span class="feature-title__accent">no.</span>
 			</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Cierre en milisegundos. Bloqueo hasta la siguiente rotación (diaria o semanal).</p>
-			<p class="feature-manifesto">
-				No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
-			</p>
 			<p class="feature-lead">
 				Cierre inmediato en MT5: intento de operar en bloqueo, ejecución automática y trazabilidad verificable.
 			</p>
 		</section>
+		<p class="feature-manifesto-banner">
+			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
+		</p>
 
 		<section id="hyperclose-demo" class="feature-demo feature-demo--hero">
 			<div class="hyperclose-multichart">
@@ -446,14 +446,14 @@ const seo = {
 		opacity: 0.78;
 		font-weight: 400;
 	}
-	.feature-manifesto {
+	.feature-manifesto-banner {
+		margin: calc(var(--section-margin) * -0.45) 0 calc(var(--section-margin) * 0.65);
 		max-width: 74ch;
 		line-height: 1.55;
-		margin: 0 0 0.75rem;
 		padding: 0.68rem 0.82rem;
 		border-radius: 0.6rem;
-		border: 1px solid rgba(245, 176, 65, 0.35);
-		background: rgba(245, 176, 65, 0.08);
+		border: 1px solid rgba(150, 156, 170, 0.34);
+		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
 	}
 	.feature-lead {
 		max-width: 70ch;

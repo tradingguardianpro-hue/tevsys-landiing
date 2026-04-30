@@ -15,14 +15,14 @@ const seo = {
 			<p class="feature-kicker">Feature de disciplina</p>
 			<h1>SML: <span class="feature-title__accent">protege</span> parte de lo ganado sin frenar tu operativa.</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Actívalo cuando quieras. Decide cuánto ampliar el margen: del <span class="feature-hook__accent">5%</span> al <span class="feature-hook__accent">25%</span> (mínimo <span class="feature-hook__accent">75%</span> protegido).</p>
-			<p class="feature-manifesto">
-				No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
-			</p>
 			<p class="feature-lead">
 				<span class="feature-title__accent">Opcional y bajo tu control</span>: convive con límites diarios y semanales; amplías margen solo cuando activas el bonus calculado desde la ganancia de ayer.
 			</p>
 			<p class="feature-availability-note">No está en Essential. Advanced/Pro en validación y lista de espera.</p>
 		</section>
+		<p class="feature-manifesto-banner">
+			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
+		</p>
 		<p class="feature-hook feature-sml-bridge">
 			<span class="feature-hook__dot" aria-hidden="true"></span>
 			<span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span>
@@ -215,14 +215,14 @@ const seo = {
 		margin: 0 0 0.55rem;
 		line-height: 1.5;
 	}
-	.feature-manifesto {
+	.feature-manifesto-banner {
+		margin: calc(var(--section-margin) * -0.45) 0 calc(var(--section-margin) * 0.65);
 		max-width: 74ch;
 		line-height: 1.55;
-		margin: 0 0 0.65rem;
 		padding: 0.68rem 0.82rem;
 		border-radius: 0.6rem;
-		border: 1px solid rgba(245, 176, 65, 0.34);
-		background: rgba(245, 176, 65, 0.08);
+		border: 1px solid rgba(150, 156, 170, 0.34);
+		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
 	}
 	.feature-lead {
 		max-width: 70ch;
