@@ -455,7 +455,7 @@ const curatedVideos: {
 		padding: clamp(1rem, 4vw, 2.25rem) 0 clamp(1.25rem, 4vw, 2rem);
 	}
 
-	/* “De cero a protegido”: profundidad fija (gradiente + viñeta) + barrido gris lento, acotado al bloque (tema oscuro = referencia motion header). */
+	/* “De cero a protegido”: profundidad fija + barrido gris vertical (misma familia que fall/hero 180°, no escáner diagonal del header). */
 	.how-zero-protected--stage {
 		position: relative;
 		overflow: hidden;
@@ -492,41 +492,55 @@ const curatedVideos: {
 
 	@media (prefers-reduced-motion: no-preference) {
 		html[data-theme='dark'] .how-zero-protected__sweep {
-			inset: -28% -12%;
+			inset: auto;
+			top: -28%;
+			bottom: -28%;
+			left: -22%;
+			right: -22%;
+			width: auto;
+			height: auto;
 			background-image: linear-gradient(
-				102deg,
+				180deg,
 				transparent 0%,
-				transparent 40%,
-				rgba(110, 114, 128, 0.055) 47%,
-				rgba(186, 190, 202, 0.095) 50%,
-				rgba(95, 98, 110, 0.048) 53%,
-				transparent 64%,
+				transparent 30%,
+				rgba(110, 114, 128, 0.14) 40%,
+				rgba(186, 190, 202, 0.26) 50%,
+				rgba(95, 98, 110, 0.13) 60%,
+				transparent 72%,
 				transparent 100%
 			);
-			background-size: 235% 130%;
-			background-position: 70% 48%;
+			background-size: 100% 480%;
+			background-position: 50% 5%;
 			background-repeat: no-repeat;
-			opacity: 0.36;
-			animation: how-zero-protected-sweep 54s ease-in-out infinite;
+			opacity: 0.58;
+			will-change: background-position;
+			animation: how-zero-protected-sweep-vertical 44s ease-in-out infinite;
 		}
 
 		html[data-theme='light'] .how-zero-protected__sweep {
-			inset: -22% -10%;
+			inset: auto;
+			top: -24%;
+			bottom: -24%;
+			left: -18%;
+			right: -18%;
+			width: auto;
+			height: auto;
 			background-image: linear-gradient(
-				102deg,
+				180deg,
 				transparent 0%,
-				transparent 41%,
-				rgba(88, 92, 104, 0.035) 48%,
-				rgba(148, 152, 166, 0.065) 50%,
-				rgba(78, 82, 94, 0.03) 53%,
-				transparent 62%,
+				transparent 32%,
+				rgba(88, 92, 104, 0.08) 42%,
+				rgba(148, 152, 166, 0.14) 50%,
+				rgba(78, 82, 94, 0.07) 58%,
+				transparent 70%,
 				transparent 100%
 			);
-			background-size: 220% 120%;
-			background-position: 62% 50%;
+			background-size: 100% 440%;
+			background-position: 50% 8%;
 			background-repeat: no-repeat;
-			opacity: 0.2;
-			animation: how-zero-protected-sweep 58s ease-in-out infinite;
+			opacity: 0.38;
+			will-change: background-position;
+			animation: how-zero-protected-sweep-vertical 50s ease-in-out infinite;
 		}
 	}
 
@@ -541,26 +555,27 @@ const curatedVideos: {
 		}
 	}
 
-	@keyframes how-zero-protected-sweep {
+	/* Solo eje Y: arriba → abajo (legible, alineado con “fall” gris del hero). */
+	@keyframes how-zero-protected-sweep-vertical {
 		0%,
 		100% {
-			background-position: 70% 48%;
+			background-position: 50% 4%;
 			animation-timing-function: ease-in-out;
 		}
-		26% {
-			background-position: 36% 52%;
+		22% {
+			background-position: 50% 38%;
 			animation-timing-function: ease-in-out;
 		}
-		50% {
-			background-position: -6% 46%;
+		48% {
+			background-position: 50% 72%;
 			animation-timing-function: ease-in-out;
 		}
-		72% {
-			background-position: 20% 54%;
+		70% {
+			background-position: 50% 22%;
 			animation-timing-function: ease-in-out;
 		}
-		86% {
-			background-position: 88% 49%;
+		88% {
+			background-position: 50% 88%;
 			animation-timing-function: ease-in-out;
 		}
 	}
