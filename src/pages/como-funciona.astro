@@ -283,7 +283,14 @@ const curatedVideos: {
 													Tu navegador no soporta reproducción de video HTML5.
 												</video>
 											</div>
-										) : null}
+										) : (
+											<div
+												class="how-more-bridge-card__media how-more-bridge-card__media--placeholder"
+												role="status"
+												aria-label="Vídeo en preparación">
+												<span class="how-more-bridge-card__media-hint">Vídeo en preparación</span>
+											</div>
+										)}
 										<a class="how-more-bridge-card__cta" href={card.href}>
 											{card.cta} →
 										</a>
@@ -1077,7 +1084,7 @@ const curatedVideos: {
 	.how-more-bridge__grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 11.25rem), 1fr));
-		gap: clamp(0.85rem, 2.5vw, 1.15rem);
+		gap: clamp(1rem, 2.8vw, 1.35rem);
 	}
 
 	.how-more-bridge-card {
@@ -1085,12 +1092,21 @@ const curatedVideos: {
 		flex-direction: column;
 		align-items: flex-start;
 		min-height: 100%;
-		padding: clamp(0.95rem, 2.5vw, 1.15rem) clamp(0.9rem, 2.2vw, 1.1rem);
+		padding: clamp(1rem, 2.6vw, 1.2rem) clamp(1rem, 2.4vw, 1.15rem) clamp(1rem, 2.6vw, 1.2rem)
+			calc(0.95rem + 5px);
 		box-sizing: border-box;
 		color: inherit;
-		background: rgba(255, 255, 255, 0.04);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: clamp(0.45rem, 1vw, 0.65rem);
+		/* Carril ámbar suave + volumen: guía la vista título → texto → vídeo/CTA sin competir con el stage */
+		background: linear-gradient(
+			165deg,
+			rgba(42, 44, 54, 0.55) 0%,
+			rgba(20, 21, 28, 0.88) 48%,
+			rgba(14, 15, 20, 0.95) 100%
+		);
+		border: 1px solid rgba(255, 255, 255, 0.09);
+		border-left: 3px solid rgba(245, 176, 65, 0.22);
+		border-radius: clamp(0.5rem, 1.1vw, 0.7rem);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 		transition:
 			border-color 0.18s ease,
 			box-shadow 0.18s ease,
@@ -1100,12 +1116,16 @@ const curatedVideos: {
 	html[data-theme='light'] .how-more-bridge-card {
 		background: var(--theme-surface-1);
 		border-color: var(--theme-surface-border);
+		border-left-color: rgba(218, 155, 48, 0.35);
 		box-shadow: var(--theme-surface-elevated-shadow);
 	}
 
 	.how-more-bridge-card:hover {
-		border-color: rgba(245, 176, 65, 0.35);
-		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+		border-color: rgba(255, 255, 255, 0.12);
+		border-left-color: rgba(245, 176, 65, 0.42);
+		box-shadow:
+			0 8px 26px rgba(0, 0, 0, 0.28),
+			inset 0 1px 0 rgba(255, 255, 255, 0.05);
 		transform: translateY(-2px);
 	}
 
@@ -1121,11 +1141,15 @@ const curatedVideos: {
 	}
 
 	.how-more-bridge-card__title {
-		margin: 0 0 0.4rem;
-		font-size: 1.02rem;
+		margin: 0 0 0.45rem;
+		font-size: 1.06rem;
 		font-weight: 700;
-		line-height: 1.25;
-		letter-spacing: -0.015em;
+		line-height: 1.28;
+		letter-spacing: -0.02em;
+	}
+
+	html[data-theme='dark'] .how-more-bridge-card__title {
+		color: rgba(255, 255, 255, 0.97);
 	}
 
 	.how-more-bridge-card__head:hover .how-more-bridge-card__title {
@@ -1137,27 +1161,62 @@ const curatedVideos: {
 	}
 
 	.how-more-bridge-card__blurb {
-		margin: 0 0 0.55rem;
-		font-size: 0.86rem;
-		line-height: 1.45;
-		opacity: 0.88;
+		margin: 0 0 0.6rem;
+		font-size: 0.875rem;
+		line-height: 1.52;
 		flex: 1;
+	}
+
+	html[data-theme='dark'] .how-more-bridge-card__blurb {
+		color: rgba(210, 214, 224, 0.82);
+		opacity: 1;
+	}
+
+	html[data-theme='light'] .how-more-bridge-card__blurb {
+		color: rgba(52, 56, 68, 0.82);
+		opacity: 1;
 	}
 
 	.how-more-bridge-card__media {
 		width: 100%;
-		margin: 0 0 0.55rem;
+		margin: 0 0 0.6rem;
 		border-radius: 0.42rem;
 		overflow: hidden;
-		border: 1px solid rgba(255, 255, 255, 0.12);
+		border: 1px solid rgba(255, 255, 255, 0.11);
 		aspect-ratio: 16 / 9;
 		max-height: 10.5rem;
-		background: rgba(0, 0, 0, 0.35);
+		background: rgba(0, 0, 0, 0.32);
 	}
 
 	html[data-theme='light'] .how-more-bridge-card__media {
 		border-color: rgba(0, 0, 0, 0.12);
 		background: rgba(0, 0, 0, 0.06);
+	}
+
+	.how-more-bridge-card__media--placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(180deg, rgba(32, 34, 42, 0.75) 0%, rgba(12, 13, 18, 0.9) 100%);
+		border-style: dashed;
+		border-color: rgba(245, 176, 65, 0.22);
+	}
+
+	html[data-theme='light'] .how-more-bridge-card__media--placeholder {
+		background: rgba(248, 249, 252, 0.95);
+		border-color: rgba(218, 155, 48, 0.28);
+	}
+
+	.how-more-bridge-card__media-hint {
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgba(245, 176, 65, 0.55);
+	}
+
+	html[data-theme='light'] .how-more-bridge-card__media-hint {
+		color: rgba(180, 125, 40, 0.75);
 	}
 
 	.how-more-bridge-card__media video {
@@ -1169,9 +1228,12 @@ const curatedVideos: {
 
 	.how-more-bridge-card__cta {
 		margin-top: auto;
-		font-size: 0.86rem;
+		padding-top: 0.55rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.07);
+		width: 100%;
+		font-size: 0.84rem;
 		font-weight: 600;
-		color: rgba(200, 204, 214, 0.82);
+		color: rgba(188, 194, 206, 0.88);
 		text-decoration: none;
 	}
 
@@ -1186,6 +1248,7 @@ const curatedVideos: {
 	}
 
 	html[data-theme='light'] .how-more-bridge-card__cta {
+		border-top-color: rgba(0, 0, 0, 0.08);
 		color: rgba(72, 76, 86, 0.75);
 	}
 
