@@ -305,6 +305,20 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Multigráfico** (hook dos líneas entre hero y panel) + **«Qué podrás comprobar»** (rango 5–25% + 75% protegido; DISPONIBLE vs 1‑CLICK; convivencia medible con límites y OFF) + nota validación + CTA lista de espera Advanced/Pro.
 - **CTA:** cuerpo orientado a contrastar escenarios con límites reales. **Meta `description`:** bonus opcional + clic + validación tier.
 - **Asset:** `public/images/evidence/sml-panel-validacion-demo.png` — captura demo fundador (carpeta **evidence**, no `assets/images/features`). Ref. `CHANGELOG-TEVSYS.md` **§16**.
+- **Vídeo “cómo funciona” SML (cuando exista):** **mismo contrato** de marcado y marco visual que Precisión / Evidencia / HyperClose — no `<video>` suelto. Obligatorio seguir la sección **«Convención embeds de vídeo — micropáginas `/features/*`»** justo debajo (incluye variante estilo **NASDAQ** / MT5 claro).
+
+## Convención embeds de vídeo — micropáginas `/features/*` (obligatoria; tema oscuro)
+
+**Para quién:** fundador, IA y quien maquete la web. **Objetivo:** que cualquier vídeo nuevo (hoy o dentro de días/semanas) se vea **igual de definido** que en las micros ya publicadas: marco, fondo del contenedor y coherencia con **`.tevsys-feature-micro-surface`** en `src/styles/global.css` (comentario *Micropáginas /features/* — “mapa” visual*).
+
+### Reglas
+1. **La página ya lleva el envoltorio** `div.tevsys-feature-micro-surface` alrededor del `Container` en **las cuatro** rutas: `/features/precision`, `/features/hyperclose`, `/features/evidencia`, `/features/sml`. No quitarlo al añadir vídeo.
+2. **Demo principal (hero), misma imagen que el resto:** bloque `section` con `class="feature-demo feature-demo--hero"` (más `id` único para anclas) y, dentro, contenedor **`div`** con `class="demo-video demo-video--hero demo-video--hero-elegant"` envolviendo el `<video controls playsinline preload="metadata">`. **Plantilla viva:** copiar el primer bloque demo de `precision.astro` o `hyperclose.astro`.
+3. **Demos secundarios / más estrechos:** `div` con `class="demo-video demo-video--compact"` (+ `id` si hay ancla o script de expansión al reproducir — mismo patrón que Precisión/Evidencia).
+4. **Vídeo con interfaz MT5 clara o gráfico muy claro** (equivalente al caso **NASDAQ** en Precisión): añadir **`demo-video--light`** al `div` del embed (p. ej. `class="demo-video demo-video--compact demo-video--light"`). En tema oscuro el CSS **excluye** `.demo-video--light` del cromado oscuro y mantiene el **marco claro** documentado (`CHANGELOG-TEVSYS.md`, entrada *Precisión — demo-video--light + bloque Nasdaq*). Cualquier micro nueva o SML con grabación “tema claro” debe usar **la misma clase**, no forzar el estilo oscuro.
+5. **SML:** el vídeo explicativo del flujo debe usar **exactamente** las mismas clases que en el punto 2 o 3; así hereda marco, padding 3px y lectura “mapa” sin trabajo extra.
+
+**Referencias código:** `src/styles/global.css` (selectores bajo `.tevsys-feature-micro-surface`); `CHANGELOG-TEVSYS.md` entrada *Micropáginas `/features/*` — lectura “mapa”*.
 
 ### Estado actual navegación y footer (31 Ene 2026)
 - **Nav:** Inicio | Empresas | Contacto. "Acceso" eliminado.
@@ -312,14 +326,14 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Páginas legales:** /company/legal, /company/privacidad, /company/terminos (contenido mínimo, pendiente abogado).
 
 ### Pendiente inmediato
-- SML: vídeo final según guía de producción.
+- SML: vídeo final según guía de producción — **al integrarlo en la micro**, cumplir **«Convención embeds de vídeo — micropáginas `/features/*`»** (misma estructura de clases que Precisión/HyperClose; si la grabación es tema claro, **`demo-video--light`** como Nasdaq).
 
 ---
 
 ## Pendientes para la próxima sesión
 
 1. Vídeo ganancias 100k (+1.111€) como secundario en Evidencia.
-2. Versión final de vídeo para `sml`.
+2. Versión final de vídeo para `sml` — al publicarlo en la micro, **«Convención embeds de vídeo — micropáginas `/features/*`»** (misma estructura que Precisión/HyperClose; **`demo-video--light`** si la grabación es tema claro tipo Nasdaq).
 3. Asesoramiento jurídico para contenido legal definitivo.
 
 ---
@@ -363,7 +377,7 @@ Seguimiento interno activo en:
 
 - **Nota extremos (30 abr 2026):** `feature-extreme-note` — desviación máxima documentada **−0,39%** (`feature-hook__accent` + `feature-extreme-note__pct` para cursiva).
 
-- **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.`
+- **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.` — Cuando SML tenga vídeo, el embed debe seguir **«Convención embeds de vídeo — micropáginas `/features/*`»** en este documento.
 
 - Hook de apertura:
   - `80 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 mar 2026 número; **30 abr 2026** sync web + nota **−0,39%**; fuente MD operativas proyecto TGP §3)*

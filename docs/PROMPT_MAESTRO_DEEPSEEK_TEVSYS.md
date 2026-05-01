@@ -33,6 +33,7 @@
 
 - **Inventario cronológico de todo lo publicable en la web:** **`docs/CHANGELOG-TEVSYS.md`** (desde base Odyssey + Astro hasta APIs, copy, SEO, motion, etc.). Para “qué se hizo y cuándo”, empieza aquí.
 - **Copy y mensaje público alineado con tevsys.io:** **`docs/CONTENIDO_WEB_TEVSYS_LANDING.md`**.
+- **Vídeos en micropáginas `/features/*` (incl. SML cuando exista MP4):** misma estructura de clases que Precisión/HyperClose — leer en **`CONTENIDO_WEB`** la sección **«Convención embeds de vídeo — micropáginas `/features/*`»** (`tevsys-feature-micro-surface` ya en las cuatro páginas; hero = `feature-demo--hero` + `demo-video--hero` + `demo-video--hero-elegant`; secundarios = `demo-video--compact`; grabación **tema claro** tipo Nasdaq = **`demo-video--light`**).
 - **Motion home (tema oscuro, KITT, burbujas, header gris, bienvenida + fase 2):** **`docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md`** + en changelog la sección **«Motion / vida en home»** (incl. **iteración 15–16 abr 2026**: mid-glow **gris** doble animación **92s / 118s** + `::before` (`linear`, márgenes vs centro); **escritorio** perímetro 2×2 con SML/Evidencia; **móvil** keyframes **`*-mobile`** detrás de columna de cards; header/hero móvil afinados — solo `global.css`). Inventario: **`docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`**.
 - **Tracker interno cards/micro-páginas:** `docs/CARDS-NEXT-PHASE.md` §7.
 - **Resumen por archivo (técnico):** `docs/ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
@@ -307,6 +308,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 ### 7.3 SML (`/features/sml`) — En validación
 
 - **Estado:** Fase de validación. Se hace solo desde escritorio. Pendiente sml-demo.mp4.
+- **Cuando exista el MP4:** integrarlo con la **misma convención de embed** que el resto de `/features/*` — `CONTENIDO_WEB` sección **«Convención embeds de vídeo — micropáginas `/features/*`»** (clases `demo-video*`; si la grabación es tema claro, **`demo-video--light`**).
 
 **Copy freeze:**
 - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -314,7 +316,7 @@ Al responder a un lead que vino desde un feature, enviar en el email:
 
 **Limpieza (31 Ene 2026):** Eliminadas 4 secciones proof-detail con placeholders "Captura en preparación" + placeholder de vídeo + sección "Qué puedes comprobar" con enlaces a secciones eliminadas. Resultado: Hero + "Qué podrás comprobar" (3 puntos: config flexible, activación opcional, convivencia con límites) + nota de estado + CTA. Página de ~245 → 148 líneas.
 
-**Pendiente:** sml-demo.mp4.
+**Pendiente:** sml-demo.mp4 — ver convención de embed arriba al colgarlo en `sml.astro`.
 
 ---
 

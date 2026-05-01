@@ -15,6 +15,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Tarjetas / listas:** `feature-proof-detail`, `feature-proof`, galerías, CTA, manifiesto; HyperClose mantiene refuerzo en **`#hyperclose-semaphore`** / **`#hyperclose-off`**.
 - **SML:** `feature-sml-panel`, `feature-sml-proof`, `feature-demo--sml-check`, `sml-proof-card`, imagen panel — mismo criterio de marco legible.
 
+**Handoff vídeo (todas las micros, incl. SML cuando exista):** `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` — sección **«Convención embeds de vídeo — micropáginas `/features/*`»** (hero = `feature-demo--hero` + `demo-video--hero` + `demo-video--hero-elegant`; secundarios = `demo-video--compact`; grabación clara tipo MT5/Nasdaq = **`demo-video--light`**).
+
 ---
 
 ## Header — escáner gris en micros producto (coherencia con home, sin “disco”)
