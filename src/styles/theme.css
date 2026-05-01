@@ -49,6 +49,8 @@
 	--tevsys-display-title-size: clamp(1.55rem, 3.5vw, 2.15rem);
 	--tevsys-display-title-line-height: 1.48;
 	--tevsys-display-title-tracking: -0.03em;
+	--tevsys-display-title-size-feature: clamp(1.95rem, 4.4vw, 2.75rem);
+	--tevsys-display-title-line-height-feature: 1.14;
 }
 
 [data-theme='default'] {
@@ -130,14 +132,15 @@
 	--theme-font-family-serif: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
 	/*
-	  Titular marca / H1 de sección (misma receta que home `.hero-title`):
-	  DM Sans + mismo clamp que el giro principal — micropáginas y /como-funciona alineados.
+	  Titular marca: home + /como-funciona (compacto); micropáginas usan *-feature.
 	*/
 	--tevsys-display-title-font: 'DM Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	--tevsys-display-title-weight: 600;
 	--tevsys-display-title-size: clamp(1.55rem, 3.5vw, 2.15rem);
 	--tevsys-display-title-line-height: 1.48;
 	--tevsys-display-title-tracking: -0.03em;
+	--tevsys-display-title-size-feature: clamp(1.95rem, 4.4vw, 2.75rem);
+	--tevsys-display-title-line-height-feature: 1.14;
 }
 
 [data-theme='earth'] {

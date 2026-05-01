@@ -1811,12 +1811,7 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 /*
   Micro-páginas y guías (section.feature-hero): mismo respiro bajo el título y antes del siguiente bloque.
 */
-.feature-hero h1 {
-	margin: 0 0 clamp(1.2rem, 3.2vw, 2rem);
-}
-
-/* Mismo H1 que el giro principal (DM Sans + clamp); vars en :root y en tema oscuro. */
-.feature-hero h1,
+/* Home + /como-funciona: escala “giro principal”. */
 .how-hero h1,
 .hero-title {
 	font-family: var(--tevsys-display-title-font);
@@ -1824,6 +1819,34 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 	font-size: var(--tevsys-display-title-size);
 	line-height: var(--tevsys-display-title-line-height);
 	letter-spacing: var(--tevsys-display-title-tracking);
+}
+
+/* Micropáginas: DM Sans, escala mayor que home. */
+.feature-hero h1 {
+	margin: 0 0 clamp(1.2rem, 3.2vw, 2rem);
+	font-family: var(--tevsys-display-title-font);
+	font-weight: var(--tevsys-display-title-weight);
+	font-size: var(--tevsys-display-title-size-feature);
+	line-height: var(--tevsys-display-title-line-height-feature);
+	letter-spacing: var(--tevsys-display-title-tracking);
+}
+
+/* Si hay “deck” bajo el H1, el margen lo lleva el deck; el H1 solo separa un pelo del subtítulo. */
+.feature-hero:has(.feature-hero__deck) h1 {
+	margin-bottom: clamp(0.35rem, 1vw, 0.55rem);
+}
+
+/* Línea de apoyo bajo el H1 (Precisión, HyperClose, …): clara jerarquía vs cuerpo. */
+.feature-hero .feature-hero__deck {
+	font-family: var(--tevsys-display-title-font);
+	font-weight: 600;
+	font-size: clamp(1.08rem, 2.35vw, 1.48rem);
+	line-height: 1.32;
+	letter-spacing: -0.025em;
+	margin: 0 0 clamp(1rem, 2.8vw, 1.65rem);
+	max-width: 28ch;
+	color: var(--theme-on-bg, #f4f6f8);
+	opacity: 0.96;
 }
 .feature-hero {
 	padding-bottom: clamp(0.75rem, 2.5vw, 1.5rem);
