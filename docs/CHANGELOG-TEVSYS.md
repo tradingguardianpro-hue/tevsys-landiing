@@ -6,7 +6,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Paquete 1 may 2026 — Motion (entrada + desync), header oval ancho, handoff `/como-funciona`
 
-**Handoff técnico unificado (DeepSeek / continuidad):** `docs/HANDOFF_COMO_FUNCIONA_MOTION_HEADER_1MAY2026.md` — estructura `/como-funciona`, `body.page-como-funciona`, overrides escáner + barridos verticales, variables `--tevsys-home-enter-*`, delays positivos, header borde full width + tokens logo.
+**Handoff técnico unificado (DeepSeek / continuidad):** `docs/HANDOFF_COMO_FUNCIONA_MOTION_HEADER_1MAY2026.md` — estructura `/como-funciona`, `body.page-como-funciona`, overrides escáner + barridos verticales, variables `--tevsys-home-enter-*`, delays positivos, header borde full width + tokens logo. **§6 del handoff:** bloque inferior definitivo (**Siguiente nivel** / **Esto no es todo…**), puente `homeBridgeCards`, lead `how-more-lead`, grid `siguienteNivelClipCards` + placeholders. **§6.7:** pendiente UX transición hacia «Primero · Auditoría». **Copy puente:** kicker pasa a **«FUNCIONALIDADES ÚNICAS»** (sin punto medio, 2 may 2026).
 
 ### Resumen ejecutivo
 - **Home:** ritmos “incomodados” entre capas + **`animation-delay` positivos** escalonados (niebla → hero → header → cards → franja → cola → fundador); fall phase2 con `calc(enter-rise + phase2)`; micros header `delay ~0.85s`.
@@ -21,8 +21,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 **Archivo:** `src/pages/como-funciona.astro`.
 
 ### Contexto y decisión
-- Tras el H2 **«Esto no es todo: más comportamientos en vivo»** hace falta **anclar** al visitante a las mismas **cuatro rutas que la home** (precisión, HyperClose, SML, evidencia) antes del bloque narrativo de auditoría + «FUNCIONALIDADES · ÚNICAS» + clips.
-- H2 **«Esto no es todo…»**: **subrayado ámbar→gris** solo bajo **«más comportamientos en vivo»**. Puente: kicker **FUNCIONALIDADES · ÚNICAS** (misma clase ámbar que auditoría), centrado; eliminada la frase «Lo mismo que en portada…» y el kicker duplicado que había entre auditoría y las tres líneas.
+- Tras el H2 **«Esto no es todo: más comportamientos en vivo»** hace falta **anclar** al visitante a las mismas **cuatro rutas que la home** (precisión, HyperClose, SML, evidencia) antes del bloque narrativo de auditoría + **«FUNCIONALIDADES ÚNICAS»** + clips.
+- H2 **«Esto no es todo…»**: **subrayado ámbar→gris** solo bajo **«más comportamientos en vivo»**. Puente: kicker **FUNCIONALIDADES ÚNICAS** (misma clase ámbar que auditoría; desde 2 may 2026 **sin** punto medio), centrado; eliminada la frase «Lo mismo que en portada…» y el kicker duplicado que había entre auditoría y las tres líneas.
 - **No se elimina** el contenido existente (Primero · Auditoría, tres líneas con subrayado, grid de cuatro placeholders): el puente queda **encima** del bloque `how-more-lead`.
 - La sección **«Enlaces directos en vivo»** (`how-depth`) con HyperClose / evidencia / SML / auditoría **se mantiene** por ahora (sin borrar; posible consolidación cuando el fundador cierre diseño).
 

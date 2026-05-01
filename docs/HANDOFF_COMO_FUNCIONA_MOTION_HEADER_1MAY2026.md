@@ -120,7 +120,58 @@ Documento para continuidad (p. ej. DeepSeek / otra IA): **qué se hizo**, **dón
 
 ---
 
-## 6. Qué no hacer sin releer esto
+## 6. Bloque inferior — «Siguiente nivel» / «Esto no es todo…» (estado definitivo, may 2026)
+
+**Archivo único:** `src/pages/como-funciona.astro` (markup + `<style>` scoped). **Ancla:** `id="mas-comportamientos"` en la `<section>` principal de este bloque.
+
+### 6.1 Contenedor stage (motion)
+
+- **`<section class="how-more how-more--stage">`**
+  - Capas decorativas: **`.how-more__bg`**, **`.how-more__sweep`** (misma familia de barrido vertical que «De cero a protegido», keyframe `how-zero-protected-sweep-vertical`).
+  - Contenido: **`.how-more__inner`** (`z-index` sobre el sweep).
+  - Motion de esta página: **`body.page-como-funciona`** alarga la duración del `.how-more__sweep` y aplica **delay positivo** al cargar (ver §1.4).
+
+### 6.2 Cabecera del bloque (`how-more__head`)
+
+| Elemento | Contenido / criterio |
+|------------|----------------------|
+| **Eyebrow** | Texto fijo: **«Siguiente nivel»** (`.how-eyebrow.how-eyebrow--center`). |
+| **H2** `id="how-more-title"` | **«Esto no es todo:»** + span **«más comportamientos en vivo»** (`.how-more-main-title__accent`). Subrayado marca **solo** bajo el span (pseudo `::after` en CSS). |
+| **Puente** `.how-more-bridge` | **Encima** del bloque narrativo largo (`.how-more-lead`): evita que el visitante “caiga” en auditoría + tres líneas sin pasar antes por las **cuatro rutas home**. |
+
+### 6.3 Puente «FUNCIONALIDADES ÚNICAS» (cuatro cards)
+
+- **Kicker:** `FUNCIONALIDADES ÚNICAS` (**sin** punto medio · — dos palabras juntas; may 2026) — clase compartida con el tono ámbar de auditoría (`.how-more-lead__audit-kicker` + `.how-more-bridge__kicker`).
+- **Datos:** array **`homeBridgeCards`** (título, blurb, `href`, opcional `featureVideoSrc` + `videoLabel`).
+- **Orden:** alineado a la **home** — Precisión, HyperClose, SML, Evidencia.
+- **MP4:** Precisión, HyperClose, Evidencia usan los **mismos** `/videos/features/*.mp4` que las micros; **SML** sin `featureVideoSrc` hasta tener corte (solo texto + CTA).
+- **HTML:** `<article class="how-more-bridge-card">` — título en enlace principal; `<video>` **fuera** del enlace del título (controles válidos); CTA secundario al pie.
+
+### 6.4 Narrativa intermedia (`.how-more-lead`)
+
+- **Bloque auditoría:** kicker **«Primero · Auditoría»**, párrafo honesto (servicio **no en marcha** en apertura pública), nota **«Clip en preparación»**.
+- **Tres líneas con tema + subrayado** (clases `how-more-lead__line--topic-u1` … `u3`): OFF / observación pasiva / retocar con EA vigilando — textos de apoyo con **subrayado** vía `.how-more-lead__topic::after`.
+- **Nota pie:** indica que **abajo** hay cuatro bloques de vídeo (mismo aspecto; primero auditoría).
+
+### 6.5 Grid de cuatro «clips» (`.how-more-grid`)
+
+- **Datos:** array **`siguienteNivelClipCards`** — hoy solo `{ title }[]` (cuatro títulos).
+- **UI:** cada celda **`.how-more-cell.how-more-cell--video`** con placeholder **`.how-embed-placeholder`** y CTA **«Clip en preparación →»** (`.how-more-card__cta--pending`, no enlace hasta haber URL).
+- **Títulos actuales (orden):** 1) Auditoría con evidencia (Fase 1 manual), 2) Observación pasiva, 3) OFF, 4) Retocar ~25–30 s.
+- **Pendiente de producto:** sustituir placeholders por **embeds reales** (~25–30 s) cuando existan; probable ampliación del array con `embed` / `href` (patrón parecido a `presentationParts`).
+
+### 6.6 Lo que viene después en la página (contexto)
+
+- **`how-depth`:** grid de enlaces «Enlaces directos en vivo» (HyperClose, evidencia, SML, auditoría) — **se mantiene**; posible consolidación futura cuando el fundador cierre diseño (ya anotado en CHANGELOG 30 abr).
+
+### 6.7 Pendiente UX (fundador — may 2026)
+
+- **Transición grid puente → bloque «Primero · Auditoría»:** en captura, el salto visual entre la cuadrícula de cuatro cards y el bloque naranja inferior se puede **suavizar** (espaciado, separador, fondo o ritmo tipográfico). **No aplicado aún** — acordado documentar en el pack y retocar en una pasada dedicada cuando se cierren criterios.
+- **SML sin vídeo:** hueco negro hasta tener MP4; con los cuatro vídeos + iconografía/evidencias la sección **leerá** como guía completa (comentario fundador: de momento sirve como guía visual).
+
+---
+
+## 7. Qué no hacer sin releer esto
 
 - No volver a **delays negativos** masivos en intro/carga sin motivo: reintroduce **picos** al entrar.
 - No igualar **duraciones** header vertical-sweep y escáner en **44s** en la misma página sin comprobar fase.
@@ -129,7 +180,7 @@ Documento para continuidad (p. ej. DeepSeek / otra IA): **qué se hizo**, **dón
 
 ---
 
-## 7. Changelog del repo
+## 8. Changelog del repo
 
 - Resumen breve y fecha: **`docs/CHANGELOG-TEVSYS.md`** (entrada superior **1 may 2026** — paquete motion + header + handoff).
 - Este archivo: **`docs/HANDOFF_COMO_FUNCIONA_MOTION_HEADER_1MAY2026.md`**.
