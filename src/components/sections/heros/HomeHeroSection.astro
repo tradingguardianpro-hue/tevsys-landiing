@@ -10,7 +10,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     <div class="hero-section__inner">
       <div class="hero-section__text">
         <h1 class="hero-title">
-          Tú pones los límites. <span class="hero-title__brand">TEVSYS</span> los blinda.
+          Tú pones los límites. <span class="hero-title__brand">TEVSYS</span>{' '}
+          <span class="hero-title__tail">los blinda.</span>
         </h1>
         <p class="hero-microline">
           No damos señales ni promesas de beneficio.
@@ -129,6 +130,11 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     letter-spacing: 0.02em;
     color: #f5b041;
     text-decoration: none;
+  }
+
+  /* Evita salto feo: "los" en una línea y "blinda." sola debajo. */
+  .hero-title__tail {
+    white-space: nowrap;
   }
 
   .hero-microline {
