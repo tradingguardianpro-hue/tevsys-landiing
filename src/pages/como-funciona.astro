@@ -137,8 +137,7 @@ const curatedVideos: {
 			<div class="how-zero-protected__bg" aria-hidden="true"></div>
 			<div class="how-zero-protected__sweep" aria-hidden="true"></div>
 			<div class="how-zero-protected__inner">
-				<div class="how-zero-protected__accent-bar" aria-hidden="true"></div>
-				<header class="how-section-head how-zero-protected__head">
+				<header class="how-section-head">
 					<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
 					<h2 id="how-zero-title">
 						{zeroToProtected.title}
@@ -390,31 +389,6 @@ const curatedVideos: {
 		z-index: 1;
 	}
 
-	/* Acento ámbar a ancho del bloque (no alineado al H2 centrado): arranca desde el borde interior izquierdo. */
-	.how-zero-protected__accent-bar {
-		width: 100%;
-		height: 0.24rem;
-		margin: 0 0 clamp(0.85rem, 2.2vw, 1.2rem);
-		border-radius: 999px;
-		background: linear-gradient(
-			90deg,
-			rgba(245, 176, 65, 0.98) 0%,
-			rgba(245, 176, 65, 0.42) 38%,
-			rgba(245, 176, 65, 0) 92%
-		);
-		box-shadow: 0 0 20px rgba(245, 176, 65, 0.14);
-	}
-
-	html[data-theme='light'] .how-zero-protected__accent-bar {
-		background: linear-gradient(
-			90deg,
-			rgba(218, 155, 48, 0.92) 0%,
-			rgba(245, 176, 65, 0.38) 40%,
-			rgba(245, 176, 65, 0) 92%
-		);
-		box-shadow: 0 0 14px rgba(200, 145, 55, 0.12);
-	}
-
 	html[data-theme='dark'] .how-zero-protected__bg {
 		background:
 			radial-gradient(ellipse 92% 60% at 50% 36%, rgba(38, 42, 52, 0.62) 0%, transparent 58%),
@@ -519,8 +493,36 @@ const curatedVideos: {
 		}
 	}
 
-	.how-zero-protected__head {
+	.how-zero-protected .how-section-head {
 		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
+	}
+
+	/*
+		Subrayado misma familia que auditoría-ia (.audit-hero-accent / h2::after), pero ámbar → gris.
+		Bloque a la izquierda del cabecero (no bajo la «D» del título centrado): ancho limitado + margin-left 0.
+	*/
+	.how-zero-protected .how-section-head h2::after {
+		content: '';
+		display: block;
+		width: min(13rem, 48%);
+		height: 3px;
+		margin: 0.42rem auto 0 0;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+
+	html[data-theme='light'] .how-zero-protected .how-section-head h2::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
 	}
 
 	.how-zero-duration {
