@@ -12,10 +12,9 @@ const seo = {
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de protección</p>
-			<h1>HyperClose: cuando tu disciplina falla,</h1>
-			<p class="feature-hero__deck">
-				HyperClose <span class="feature-title__accent">no.</span>
-			</p>
+			<h1>
+				HyperClose: cuando tu disciplina falla, HyperClose <span class="feature-title__accent">no.</span>
+			</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Cierre en milisegundos. Bloqueo hasta la siguiente rotación (diaria o semanal).</p>
 			<p class="feature-lead">
 				Cierre inmediato en MT5: intento de operar en bloqueo, ejecución automática y trazabilidad verificable.
@@ -402,9 +401,8 @@ const seo = {
 		letter-spacing: 0.08em;
 		font-size: 0.82rem;
 	}
-	.feature-hero h1,
-	.feature-hero .feature-hero__deck {
-		max-width: 26ch;
+	.feature-hero h1 {
+		max-width: min(44ch, 100%);
 	}
 	.feature-title__accent {
 		color: #f5b041;
