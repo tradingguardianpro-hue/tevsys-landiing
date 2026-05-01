@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación en dos partes, recorrido De cero a protegido (vídeo en preparación), cuatro enlaces al detalle en vivo; más vídeo, instalación y guías.',
+		'Presentación, De cero a protegido, comportamientos en vivo, cortos y micros; más vídeo, instalación y guías.',
 };
 
 /** Parte 1 + Parte 2 (artículo MQL5 / mismo relato). Sustituir embeds cuando publiquéis el corte nuevo “producto al día”. */
@@ -60,6 +60,65 @@ const depthLayers: { title: string; blurb: string; href: string; cta: string }[]
 		blurb: 'Preparar archivos en tu equipo, comprobar en el navegador y seguir el criterio público: sin prometer recepción en servidor hasta que sea cierto.',
 		href: '/auditoria-ia/empezar',
 		cta: 'Preparar o empezar',
+	},
+];
+
+/** Tercer bloque: `videoCorto` (embed + hint), `tarjetaMicro` (imagen opcional + CTA), `tarjetaDoble` (micro + clip; reservado). Añadir o quitar entradas sin rediseñar la página. */
+type MoreBehaviorItem =
+	| {
+			kind: 'videoCorto';
+			title: string;
+			playHint: string;
+			embedUrl: string;
+			watchHref?: string;
+	  }
+	| {
+			kind: 'tarjetaMicro';
+			title: string;
+			line1: string;
+			line2: string;
+			href: string;
+			cta: string;
+			imgSrc?: string;
+			imgAlt?: string;
+	  }
+	| {
+			kind: 'tarjetaDoble';
+			title: string;
+			blurb: string;
+			hrefMicro: string;
+			ctaMicro: string;
+			thumbSrc?: string;
+			thumbAlt?: string;
+			watchHref?: string;
+			ctaClip?: string;
+	  };
+
+const moreBehaviorsItems: MoreBehaviorItem[] = [
+	{
+		kind: 'tarjetaMicro',
+		title: 'Días OFF ↔ día operativo',
+		line1: 'Cómo se ve la cuenta cuando el calendario marca OFF frente a un día con protección lista para operar.',
+		line2: 'Capturas y vídeo en la micro de HyperClose (bloque dedicado a día OFF).',
+		href: '/features/hyperclose#hyperclose-off',
+		cta: 'Ver día OFF en HyperClose',
+		imgSrc: '/images/evidence/hyperclose-dias-off-panel-protegido.png',
+		imgAlt: 'Panel tevsys con día OFF y límites bloqueados.',
+	},
+	{
+		kind: 'tarjetaMicro',
+		title: 'Observación pasiva',
+		line1: 'Si ya hay posiciones abiertas, el sistema no “inventa” el día: mide desde el bloqueo con trazas claras.',
+		line2: 'Informes, HTML y galería en la micro de evidencia.',
+		href: '/features/evidencia',
+		cta: 'Ver evidencia',
+	},
+	{
+		kind: 'videoCorto',
+		title: 'Inputs con EA vigilando (~25–30 s)',
+		playHint: 'Qué pasa si tocas F7 con límites bloqueados: modal y aviso en el panel, en segundos.',
+		embedUrl: '',
+		watchHref: '',
 	},
 ];
 
@@ -194,6 +253,82 @@ const curatedVideos: {
 			</div>
 		</section>
 
+		<section class="how-more" id="mas-comportamientos" aria-labelledby="how-more-title">
+			<header class="how-section-head how-more__head">
+				<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
+				<h2 id="how-more-title">Esto no es todo: más comportamientos en vivo</h2>
+				<p class="how-section-sub">
+					Tras lo esencial, el día a día suma matices: de un <strong>día OFF</strong> a un <strong>día operativo</strong> (y al
+					revés), <strong>observación pasiva</strong> cuando ya hay posiciones, y <strong>qué pasa si tocáis inputs</strong> con
+					el EA vigilando. Aquí van cortes breves (~25–30 s) y enlaces a las micros donde lo profundizamos.
+				</p>
+			</header>
+			<div class="how-more-grid">
+				{
+					moreBehaviorsItems.map((item) =>
+						item.kind === 'tarjetaMicro' ? (
+							<a href={item.href} class="how-more-card how-more-card--micro">
+								{item.imgSrc ? (
+									<div class="how-more-card__media">
+										<img src={item.imgSrc} alt={item.imgAlt ?? ''} width={640} height={360} loading="lazy" decoding="async" />
+									</div>
+								) : null}
+								<div class="how-more-card__body">
+									<h3 class="how-more-card__title">{item.title}</h3>
+									<p class="how-more-card__line">{item.line1}</p>
+									<p class="how-more-card__line how-more-card__line--muted">{item.line2}</p>
+									<span class="how-more-card__cta">{item.cta} →</span>
+								</div>
+							</a>
+						) : item.kind === 'videoCorto' ? (
+							<article class="how-more-cell how-more-cell--video">
+								<header class="how-block-head how-block-head--compact">
+									<h3 class="how-more-card__title">{item.title}</h3>
+									<p class="how-block-lead">{item.playHint}</p>
+									{item.watchHref ? (
+										<a href={item.watchHref} class="how-text-link" target="_blank" rel="noopener noreferrer">
+											Abrir en YouTube →
+										</a>
+									) : null}
+								</header>
+								{item.embedUrl ? (
+									<div class="how-embed how-embed--chrome how-more-embed">
+										<iframe
+											src={item.embedUrl}
+											title={item.title}
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+											allowfullscreen
+											loading="lazy"
+											referrerpolicy="strict-origin-when-cross-origin"></iframe>
+									</div>
+								) : (
+									<div class="how-embed how-embed--chrome how-embed-placeholder how-more-embed" role="status">
+										<p class="how-embed-placeholder__title">Clip en preparación</p>
+										<p class="how-embed-placeholder__sub">Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.</p>
+									</div>
+								)}
+							</article>
+						) : item.kind === 'tarjetaDoble' ? (
+							<article class="how-more-card how-more-card--doble">
+								<h3 class="how-more-card__title">{item.title}</h3>
+								<p class="how-more-card__line">{item.blurb}</p>
+								<div class="how-more-doble__actions">
+									<a href={item.hrefMicro} class="how-text-link">
+										{item.ctaMicro} →
+									</a>
+									{item.watchHref && item.ctaClip ? (
+										<a href={item.watchHref} class="how-text-link" target="_blank" rel="noopener noreferrer">
+											{item.ctaClip} →
+										</a>
+									) : null}
+								</div>
+							</article>
+						) : null,
+					)
+				}
+			</div>
+		</section>
+
 		<section class="how-curated" aria-labelledby="curated-title">
 			<header class="how-section-head">
 				<h2 id="curated-title">Más en vídeo</h2>
@@ -277,6 +412,7 @@ const curatedVideos: {
 
 <style>
 	.how-depth,
+	.how-more,
 	.how-curated,
 	.how-side,
 	.how-deep {
@@ -463,6 +599,130 @@ const curatedVideos: {
 		font-size: 0.88rem;
 		font-weight: 600;
 		color: #f5b041;
+	}
+
+	.how-more {
+		max-width: min(56rem, 100%);
+		padding: 0 0 0.25rem;
+	}
+
+	.how-more__head {
+		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
+	}
+
+	.how-more-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
+		gap: clamp(1.15rem, 3vw, 1.75rem);
+		align-items: stretch;
+	}
+
+	.how-more-card {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		box-sizing: border-box;
+		background: var(--theme-surface-1);
+		border: 1px solid var(--theme-surface-border);
+		border-radius: var(--theme-shape-radius);
+		box-shadow: var(--theme-surface-elevated-shadow);
+		overflow: hidden;
+		transition:
+			border-color 0.18s ease,
+			box-shadow 0.18s ease,
+			transform 0.18s ease;
+	}
+
+	.how-more-card:hover {
+		border-color: rgba(245, 176, 65, 0.38);
+		box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+		transform: translateY(-2px);
+	}
+
+	.how-more-card:focus-visible {
+		outline: 2px solid rgba(245, 176, 65, 0.65);
+		outline-offset: 3px;
+	}
+
+	.how-more-card__media {
+		line-height: 0;
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	.how-more-card__media img {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: 11.5rem;
+		object-fit: cover;
+		object-position: center top;
+	}
+
+	.how-more-card__body {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		padding: clamp(1rem, 2.8vw, 1.2rem) clamp(1rem, 2.8vw, 1.25rem);
+		gap: 0.35rem;
+	}
+
+	.how-more-card__title {
+		margin: 0 0 0.35rem;
+		font-size: 1.04rem;
+		font-weight: 700;
+		line-height: 1.25;
+		letter-spacing: -0.015em;
+	}
+
+	.how-more-card__line {
+		margin: 0;
+		font-size: 0.88rem;
+		line-height: 1.48;
+		opacity: 0.9;
+	}
+
+	.how-more-card__line--muted {
+		opacity: 0.78;
+	}
+
+	.how-more-card__cta {
+		margin-top: auto;
+		padding-top: 0.65rem;
+		font-size: 0.88rem;
+		font-weight: 600;
+		color: #f5b041;
+	}
+
+	.how-more-cell--video {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		padding: clamp(1rem, 2.8vw, 1.2rem);
+		box-sizing: border-box;
+		background: var(--theme-surface-1);
+		border: 1px solid var(--theme-surface-border);
+		border-radius: var(--theme-shape-radius);
+		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+
+	.how-more-embed {
+		margin-top: 0.65rem;
+	}
+
+	.how-more-embed .how-embed-placeholder {
+		min-height: auto;
+		aspect-ratio: 16 / 9;
+	}
+
+	.how-more-card--doble {
+		padding: clamp(1rem, 2.8vw, 1.2rem);
+	}
+
+	.how-more-doble__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem 1rem;
+		margin-top: 0.75rem;
 	}
 
 	.how-eyebrow {
