@@ -4,15 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## HyperClose — prueba de lectura “mapa” (solo `/features/hyperclose`, tema oscuro)
+## Micropáginas `/features/*` — lectura “mapa” (tema oscuro, compartido)
 
-**Archivo:** `src/pages/features/hyperclose.astro`.
+**Archivos:** `src/styles/global.css` (bloque **`.tevsys-feature-micro-surface`**); wrappers en `src/pages/features/hyperclose.astro`, `precision.astro`, `evidencia.astro`, `sml.astro`.
 
-- Wrapper **`tevsys-hyperclose-surface`** alrededor del `Container` (no afecta otras micros).
-- Bloque demo principal (`#hyperclose-demo`): panel con borde y fondo muy suave.
-- **`.demo-video`:** degradado gris-azulado, borde más visible, **padding 3px** para que se note marco aunque el `<video>` arranque en negro; refuerzo equivalente en compactos (semáforo / día OFF).
-- **Tarjetas** (`feature-proof-detail`, secciones semáforo/OFF, `feature-proof`, galería, CTA): bordes/fondos un peldaño más legibles; notas (`demo-edit-note`, texto evidencia) con opacidad algo mayor.
-- Se mantiene el resaltado **`:target`** del demo con regla explícita al final del bloque (no lo pisa el panel neutro).
+- **`tevsys-feature-micro-surface`** envuelve el `Container` en **las cuatro** micros de producto.
+- **Bloque hero demo** (`section.feature-demo.feature-demo--hero`): panel neutro **solo si `:not(:target)`** — no interfiere con resaltado ámbar por ancla (`#precision-demo`, `#evidencia-demo`, `#hyperclose-demo`, etc.).
+- **`.demo-video`:** degradado, borde, **padding 3px**; **excluye** `.demo-video--light` (Nasdaq claro en Precisión).
+- **`.demo-video--hero-elegant`** y **`.demo-video--compact`** (sin light): acabado “chrome” un poco más definido.
+- **Tarjetas / listas:** `feature-proof-detail`, `feature-proof`, galerías, CTA, manifiesto; HyperClose mantiene refuerzo en **`#hyperclose-semaphore`** / **`#hyperclose-off`**.
+- **SML:** `feature-sml-panel`, `feature-sml-proof`, `feature-demo--sml-check`, `sml-proof-card`, imagen panel — mismo criterio de marco legible.
 
 ---
 
