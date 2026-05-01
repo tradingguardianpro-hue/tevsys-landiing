@@ -1686,32 +1686,32 @@ const curatedVideos: {
 	}
 
 	/*
-	  Desacoplar motion vs cabecera: ciclos más largos + desfase (misma keyframe que arriba).
+	  Desacoplar motion vs cabecera + entrada suave: delays positivos (evitar fase “rápida” al cargar).
 	  :global(body…) para especificidad sobre el mismo archivo scoped.
 	*/
 	@media (prefers-reduced-motion: no-preference) {
 		:global(html[data-theme='dark'] body.page-como-funciona) .how-zero-protected__sweep {
 			opacity: 0.3;
 			animation-duration: 66s;
-			animation-delay: -8s;
+			animation-delay: 1.65s;
 		}
 
 		:global(html[data-theme='light'] body.page-como-funciona) .how-zero-protected__sweep {
 			opacity: 0.2;
 			animation-duration: 74s;
-			animation-delay: -8s;
+			animation-delay: 1.65s;
 		}
 
 		:global(html[data-theme='dark'] body.page-como-funciona) .how-more__sweep {
 			opacity: 0.26;
 			animation-duration: 82s;
-			animation-delay: -22s;
+			animation-delay: 3.9s;
 		}
 
 		:global(html[data-theme='light'] body.page-como-funciona) .how-more__sweep {
 			opacity: 0.17;
 			animation-duration: 88s;
-			animation-delay: -22s;
+			animation-delay: 3.9s;
 		}
 	}
 </style>

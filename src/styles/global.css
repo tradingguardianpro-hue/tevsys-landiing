@@ -61,9 +61,9 @@ html[data-theme='dark'] body::before {
 	  no buscan sincronía; si coinciden a veces, bien.
 	*/
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
-		/* Ritmo propio; duración + delay “incomodas” vs hero/franja/header para no alinear picos */
+		/* Ritmo propio; primer movimiento casi solo niebla (delay corto positivo). */
 		animation-duration: 26.9s;
-		animation-delay: -5.7s;
+		animation-delay: var(--tevsys-home-enter-body, 0.25s);
 		/* Home: menos halo ámbar arriba (header + hero); menos “discoteca” con el escáner */
 		opacity: 0.66;
 		background-image:
@@ -105,6 +105,17 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) {
 	--tevsys-home-fall-welcome-dur: 18s;
 	--tevsys-home-fall-welcome-breath: 2.1s;
 	--tevsys-home-fall-phase2-delay: calc(var(--tevsys-home-fall-welcome-dur) + var(--tevsys-home-fall-welcome-breath));
+	/*
+	  Entrada al cargar: delays positivos (los negativos metían la animación ya en fase “rápida”).
+	  Orden aproximado: niebla body → hero rise/fall → cabecera → cards → franja inferior → cola/fundador.
+	*/
+	--tevsys-home-enter-body: 0.25s;
+	--tevsys-home-enter-rise: 1.45s;
+	--tevsys-home-enter-header: 2.65s;
+	--tevsys-home-enter-cards: 4.05s;
+	--tevsys-home-enter-lower: 5.45s;
+	--tevsys-home-enter-tail: 6.75s;
+	--tevsys-home-enter-founder: 7.35s;
 }
 
 /*
@@ -151,8 +162,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 
 @media (prefers-reduced-motion: no-preference) {
 	/*
-	  Rise: niebla + dos KITT con duraciones distintas (21–24s) y delays negativos;
-	  tono 31s en pseudos — evita alinear picos con franja inferior (~24s) y niebla body (~27s).
+	  Rise: niebla + dos KITT; delays positivos desde --tevsys-home-enter-rise (tras la niebla body).
 	*/
 	html[data-theme='dark'] .tevsys-home-kitt-rect--rise {
 		background-image: linear-gradient(
@@ -169,7 +179,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		background-repeat: no-repeat;
 		opacity: 0.72;
 		animation: tevsys-top-strip-niebla-only 21.1s ease-in-out infinite alternate;
-		animation-delay: -3.4s;
+		animation-delay: var(--tevsys-home-enter-rise, 1.45s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--rise::before,
@@ -196,7 +206,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		animation:
 			tevsys-top-strip-kitt-only 22.7s ease-in-out infinite alternate,
 			tevsys-hero-kitt-tone-amber 31s linear infinite;
-		animation-delay: -9.8s, 0s;
+		animation-delay: var(--tevsys-home-enter-rise, 1.45s), calc(var(--tevsys-home-enter-rise, 1.45s) + 0.55s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--rise::after {
@@ -213,7 +223,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		animation:
 			tevsys-top-strip-kitt-only 24.4s ease-in-out infinite alternate,
 			tevsys-hero-kitt-tone-gray 31s linear infinite;
-		animation-delay: -16.3s, 0s;
+		animation-delay: calc(var(--tevsys-home-enter-rise, 1.45s) + 0.28s), calc(var(--tevsys-home-enter-rise, 1.45s) + 0.72s);
 	}
 
 	/*
@@ -223,8 +233,9 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
 		background: none;
 		animation:
-			tevsys-home-fall-welcome-fade var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 313s) linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite;
+			tevsys-home-fall-welcome-fade var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out var(--tevsys-home-enter-rise, 1.45s) 1 both,
+			tevsys-home-intro-kitt-cycle-fade var(--tevsys-home-fall-cycle, 313s) linear
+				calc(var(--tevsys-home-enter-rise, 1.45s) + var(--tevsys-home-fall-phase2-delay, 20.1s)) infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before,
@@ -252,10 +263,11 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		);
 		animation:
 			/* ease-in-out: bajada menos agresiva al cargar (ease-out aceleraba demasiado el inicio) */
-			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 313s) linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite,
-			tevsys-home-fall-welcome-gray var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
-			tevsys-hero-kitt-tone-gray 29.3s linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite;
+			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out var(--tevsys-home-enter-rise, 1.45s) 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 313s) linear
+				calc(var(--tevsys-home-enter-rise, 1.45s) + var(--tevsys-home-fall-phase2-delay, 20.1s)) infinite,
+			tevsys-home-fall-welcome-gray var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out var(--tevsys-home-enter-rise, 1.45s) 1 both,
+			tevsys-hero-kitt-tone-gray 29.3s linear calc(var(--tevsys-home-enter-rise, 1.45s) + var(--tevsys-home-fall-phase2-delay, 20.1s)) infinite;
 	}
 
 	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
@@ -270,10 +282,11 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
-			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 313s) linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite,
-			tevsys-home-fall-welcome-amber var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out 0s 1 both,
-			tevsys-hero-kitt-tone-amber 29.3s linear var(--tevsys-home-fall-phase2-delay, 20.1s) infinite;
+			tevsys-home-fall-welcome-pos var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out var(--tevsys-home-enter-rise, 1.45s) 1 both,
+			tevsys-home-intro-kitt-cycle-pos var(--tevsys-home-fall-cycle, 313s) linear
+				calc(var(--tevsys-home-enter-rise, 1.45s) + var(--tevsys-home-fall-phase2-delay, 20.1s)) infinite,
+			tevsys-home-fall-welcome-amber var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out var(--tevsys-home-enter-rise, 1.45s) 1 both,
+			tevsys-hero-kitt-tone-amber 29.3s linear calc(var(--tevsys-home-enter-rise, 1.45s) + var(--tevsys-home-fall-phase2-delay, 20.1s)) infinite;
 	}
 }
 
@@ -333,14 +346,14 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards) #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 		animation-duration: 32.8s;
-		animation-delay: -8.15s;
+		animation-delay: var(--tevsys-home-enter-header, 2.65s);
 	}
 }
 
 @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards) #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 		animation-duration: 31.2s;
-		animation-delay: -10.4s;
+		animation-delay: calc(var(--tevsys-home-enter-header, 2.65s) + 0.2s);
 	}
 }
 
@@ -359,6 +372,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			transparent 100%
 		);
 		animation-duration: 30s;
+		animation-delay: 0.85s;
 	}
 }
 
@@ -377,6 +391,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		background-size: 250% 100%;
 		opacity: 0.7;
 		animation-duration: 29s;
+		animation-delay: 0.85s;
 	}
 }
 
@@ -389,6 +404,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	html[data-theme='dark'] body.page-como-funciona #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
 		opacity: 0.34;
 		animation-duration: 54s;
+		animation-delay: 1.15s;
 		background-image: linear-gradient(
 			102deg,
 			transparent 0%,
@@ -406,6 +422,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	html[data-theme='dark'] body.page-como-funciona #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
 		opacity: 0.38;
 		animation-duration: 52s;
+		animation-delay: 1.15s;
 		background-image: linear-gradient(
 			102deg,
 			transparent 0%,
@@ -794,12 +811,12 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 		  ~75% del tiempo en **márgenes** (fuera del bloque de cards); ~25% vuelta al centro, lento.
 		*/
 		animation: tevsys-home-mid-bubbles-a 96.7s linear infinite;
-		animation-delay: -7.2s;
+		animation-delay: var(--tevsys-home-enter-cards, 4.05s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow::before {
 		animation: tevsys-home-mid-bubbles-b 127s linear infinite;
-		animation-delay: -34.6s;
+		animation-delay: calc(var(--tevsys-home-enter-cards, 4.05s) + 0.95s);
 	}
 }
 
@@ -1197,7 +1214,7 @@ html[data-theme='dark'] .tevsys-home-lower-strip::before {
 	animation:
 		tevsys-home-lower-strip-kitt-pos 23.9s ease-in-out infinite alternate,
 		tevsys-home-lower-kitt-mix-gray 12.1s ease-in-out infinite;
-	animation-delay: -3.6s, -1.9s;
+	animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.4s);
 }
 
 html[data-theme='dark'] .tevsys-home-lower-strip::after {
@@ -1214,13 +1231,13 @@ html[data-theme='dark'] .tevsys-home-lower-strip::after {
 	animation:
 		tevsys-home-lower-strip-kitt-pos 23.9s ease-in-out infinite alternate,
 		tevsys-home-lower-kitt-mix-amber 13.9s ease-in-out infinite;
-	animation-delay: -15.1s, -5.4s;
+	animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 0.75s), calc(var(--tevsys-home-enter-lower, 5.45s) + 1.15s);
 }
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-lower-strip {
 		animation: tevsys-home-lower-strip-fog 28.3s ease-in-out infinite alternate;
-		animation-delay: -6.9s;
+		animation-delay: var(--tevsys-home-enter-lower, 5.45s);
 	}
 }
 
@@ -1411,7 +1428,7 @@ html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 		animation: tevsys-home-tail-bubble-solo 70s linear infinite alternate;
-		animation-delay: -12.4s;
+		animation-delay: var(--tevsys-home-enter-tail, 6.75s);
 	}
 }
 
@@ -1517,7 +1534,7 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-founder-strip {
 		animation: tevsys-home-founder-strip 18.3s ease-in-out infinite alternate;
-		animation-delay: -2.9s;
+		animation-delay: var(--tevsys-home-enter-founder, 7.35s);
 	}
 }
 
@@ -1552,7 +1569,7 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 		animation:
 			tevsys-home-lower-strip-kitt-pos 23.9s ease-in-out infinite alternate,
 			tevsys-home-lower-kitt-mix-gray-desktop 12.1s ease-in-out infinite;
-		animation-delay: -3.6s, -1.9s;
+		animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.4s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-lower-strip::after {
@@ -1569,7 +1586,7 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 		animation:
 			tevsys-home-lower-strip-kitt-pos 23.9s ease-in-out infinite alternate,
 			tevsys-home-lower-kitt-mix-amber-desktop 13.9s ease-in-out infinite;
-		animation-delay: -15.1s, -5.4s;
+		animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 0.75s), calc(var(--tevsys-home-enter-lower, 5.45s) + 1.15s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
@@ -1583,7 +1600,7 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 			transparent 72%
 		);
 		animation: tevsys-home-tail-bubble-solo-desktop 70s linear infinite alternate;
-		animation-delay: -12.4s;
+		animation-delay: var(--tevsys-home-enter-tail, 6.75s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-founder-strip {
@@ -1700,7 +1717,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards)::before {
 		animation-duration: 28.9s;
-		animation-delay: -5.1s;
+		animation-delay: var(--tevsys-home-enter-body, 0.25s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow {
@@ -1756,7 +1773,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 		html[data-theme='dark'] body:has(.tevsys-home-band--cards) #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 			animation-duration: 47s;
-			animation-delay: -12.7s;
+			animation-delay: var(--tevsys-home-enter-header, 2.65s);
 		}
 
 		/* Micros producto en móvil: mismo barrido horizontal fino, ~85 % de la presencia de home */
@@ -1777,6 +1794,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 				transparent 100%
 			);
 			background-size: 278% 100%;
+			animation-delay: 0.85s;
 		}
 
 		/* /como-funciona móvil: escáner más lento y tenue vs barridos verticales de la página */
@@ -1799,7 +1817,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 			/* Menos “segundo rectángulo” junto a la mano en columna estrecha */
 			opacity: 0.44;
 			animation: tevsys-top-strip-niebla-only 24.6s ease-in-out infinite alternate;
-			animation-delay: -4s;
+			animation-delay: var(--tevsys-home-enter-rise, 1.45s);
 		}
 
 		/*
@@ -1808,24 +1826,24 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		*/
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise::before {
 			animation: tevsys-top-strip-kitt-only 27.3s ease-in-out infinite alternate;
-			animation-delay: -11s;
+			animation-delay: calc(var(--tevsys-home-enter-rise, 1.45s) + 0.35s);
 			opacity: 0.4;
 		}
 
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise::after {
 			animation: tevsys-top-strip-kitt-only 29.8s ease-in-out infinite alternate;
-			animation-delay: -18.5s;
+			animation-delay: calc(var(--tevsys-home-enter-rise, 1.45s) + 0.7s);
 			opacity: 0.34;
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
 			animation: tevsys-home-mid-bubbles-a-mobile 95s linear infinite;
-			animation-delay: -6.5s;
+			animation-delay: var(--tevsys-home-enter-cards, 4.05s);
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow::before {
 			animation: tevsys-home-mid-bubbles-b-mobile 126s linear infinite;
-			animation-delay: -37.2s;
+			animation-delay: calc(var(--tevsys-home-enter-cards, 4.05s) + 0.9s);
 		}
 
 		/*
@@ -1849,7 +1867,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 			animation:
 				tevsys-home-lower-strip-kitt-pos-mobile 41.3s linear infinite alternate,
 				tevsys-home-lower-kitt-mix-gray-mobile 19.7s linear infinite;
-			animation-delay: -5.8s, -2.4s;
+			animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.45s);
 		}
 
 		html[data-theme='dark'] .tevsys-home-lower-strip::after {
@@ -1866,7 +1884,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 			animation:
 				tevsys-home-lower-strip-kitt-pos-mobile 41.3s linear infinite alternate,
 				tevsys-home-lower-kitt-mix-amber-mobile 22.4s linear infinite;
-			animation-delay: -17.1s, -7.6s;
+			animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 0.85s), calc(var(--tevsys-home-enter-lower, 5.45s) + 1.25s);
 		}
 	}
 }
