@@ -237,88 +237,92 @@ const curatedVideos: {
 			</div>
 		</section>
 
-		<section class="how-more" id="mas-comportamientos" aria-labelledby="how-more-title">
-			<header class="how-section-head how-more__head">
-				<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
-				<h2 id="how-more-title">Esto no es todo: más comportamientos en vivo</h2>
-				<div class="how-more-lead">
-					<p class="how-more-lead__line">
-						<strong>Cómo te protegemos cuando decides estar OFF</strong> — Mira la rotación automática entre OFF y día operativo.
-					</p>
-					<p class="how-more-lead__line">
-						<strong>Observación pasiva</strong> — Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos:
-						observamos, medimos desde el bloqueo y dejamos trazas que puedes contrastar.
-					</p>
-					<p class="how-more-lead__line">
-						<strong>Retocar lo que ya protegiste</strong> — Si el EA ya está vigilando, el cambio de límites tiene reglas: te
-						mostramos cómo actuamos; tus reglas se cumplen siempre.
-					</p>
-					<p class="how-more-lead__note">Abajo: enlaces a las micros y un corte breve cuando esté publicado.</p>
+		<section class="how-more how-more--stage" id="mas-comportamientos" aria-labelledby="how-more-title">
+			<div class="how-more__bg" aria-hidden="true"></div>
+			<div class="how-more__sweep" aria-hidden="true"></div>
+			<div class="how-more__inner">
+				<header class="how-section-head how-more__head">
+					<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
+					<h2 id="how-more-title">Esto no es todo: más comportamientos en vivo</h2>
+					<div class="how-more-lead">
+						<p class="how-more-lead__line">
+							<strong>Cómo te protegemos cuando decides estar OFF</strong> — Mira la rotación automática entre OFF y día operativo.
+						</p>
+						<p class="how-more-lead__line">
+							<strong>Observación pasiva</strong> — Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos:
+							observamos, medimos desde el bloqueo y dejamos trazas que puedes contrastar.
+						</p>
+						<p class="how-more-lead__line">
+							<strong>Retocar lo que ya protegiste</strong> — Si el EA ya está vigilando, el cambio de límites tiene reglas: te
+							mostramos cómo actuamos; tus reglas se cumplen siempre.
+						</p>
+						<p class="how-more-lead__note">Abajo: enlaces a las micros y un corte breve cuando esté publicado.</p>
+					</div>
+				</header>
+				<div class="how-more-grid">
+					{
+						moreBehaviorsItems.map((item) =>
+							item.kind === 'tarjetaMicro' ? (
+								<a href={item.href} class="how-more-card how-more-card--micro">
+									{item.imgSrc ? (
+										<div class="how-more-card__media">
+											<img src={item.imgSrc} alt={item.imgAlt ?? ''} width={640} height={360} loading="lazy" decoding="async" />
+										</div>
+									) : null}
+									<div class="how-more-card__body">
+										<h3 class="how-more-card__title">{item.title}</h3>
+										<p class="how-more-card__line">{item.line1}</p>
+										<p class="how-more-card__line how-more-card__line--muted">{item.line2}</p>
+										<span class="how-more-card__cta">{item.cta} →</span>
+									</div>
+								</a>
+							) : item.kind === 'videoCorto' ? (
+								<article class="how-more-cell how-more-cell--video">
+									<header class="how-block-head how-block-head--compact">
+										<h3 class="how-more-card__title">{item.title}</h3>
+										<p class="how-block-lead">{item.playHint}</p>
+										{item.watchHref ? (
+											<a href={item.watchHref} class="how-text-link" target="_blank" rel="noopener noreferrer">
+												Abrir en YouTube →
+											</a>
+										) : null}
+									</header>
+									{item.embedUrl ? (
+										<div class="how-embed how-embed--chrome how-more-embed">
+											<iframe
+												src={item.embedUrl}
+												title={item.title}
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+												allowfullscreen
+												loading="lazy"
+												referrerpolicy="strict-origin-when-cross-origin"></iframe>
+										</div>
+									) : (
+										<div class="how-embed how-embed--chrome how-embed-placeholder how-more-embed" role="status">
+											<p class="how-embed-placeholder__title">Clip en preparación</p>
+											<p class="how-embed-placeholder__sub">Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.</p>
+										</div>
+									)}
+								</article>
+							) : item.kind === 'tarjetaDoble' ? (
+								<article class="how-more-card how-more-card--doble">
+									<h3 class="how-more-card__title">{item.title}</h3>
+									<p class="how-more-card__line">{item.blurb}</p>
+									<div class="how-more-doble__actions">
+										<a href={item.hrefMicro} class="how-text-link">
+											{item.ctaMicro} →
+										</a>
+										{item.watchHref && item.ctaClip ? (
+											<a href={item.watchHref} class="how-text-link" target="_blank" rel="noopener noreferrer">
+												{item.ctaClip} →
+											</a>
+										) : null}
+									</div>
+								</article>
+							) : null,
+						)
+					}
 				</div>
-			</header>
-			<div class="how-more-grid">
-				{
-					moreBehaviorsItems.map((item) =>
-						item.kind === 'tarjetaMicro' ? (
-							<a href={item.href} class="how-more-card how-more-card--micro">
-								{item.imgSrc ? (
-									<div class="how-more-card__media">
-										<img src={item.imgSrc} alt={item.imgAlt ?? ''} width={640} height={360} loading="lazy" decoding="async" />
-									</div>
-								) : null}
-								<div class="how-more-card__body">
-									<h3 class="how-more-card__title">{item.title}</h3>
-									<p class="how-more-card__line">{item.line1}</p>
-									<p class="how-more-card__line how-more-card__line--muted">{item.line2}</p>
-									<span class="how-more-card__cta">{item.cta} →</span>
-								</div>
-							</a>
-						) : item.kind === 'videoCorto' ? (
-							<article class="how-more-cell how-more-cell--video">
-								<header class="how-block-head how-block-head--compact">
-									<h3 class="how-more-card__title">{item.title}</h3>
-									<p class="how-block-lead">{item.playHint}</p>
-									{item.watchHref ? (
-										<a href={item.watchHref} class="how-text-link" target="_blank" rel="noopener noreferrer">
-											Abrir en YouTube →
-										</a>
-									) : null}
-								</header>
-								{item.embedUrl ? (
-									<div class="how-embed how-embed--chrome how-more-embed">
-										<iframe
-											src={item.embedUrl}
-											title={item.title}
-											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-											allowfullscreen
-											loading="lazy"
-											referrerpolicy="strict-origin-when-cross-origin"></iframe>
-									</div>
-								) : (
-									<div class="how-embed how-embed--chrome how-embed-placeholder how-more-embed" role="status">
-										<p class="how-embed-placeholder__title">Clip en preparación</p>
-										<p class="how-embed-placeholder__sub">Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.</p>
-									</div>
-								)}
-							</article>
-						) : item.kind === 'tarjetaDoble' ? (
-							<article class="how-more-card how-more-card--doble">
-								<h3 class="how-more-card__title">{item.title}</h3>
-								<p class="how-more-card__line">{item.blurb}</p>
-								<div class="how-more-doble__actions">
-									<a href={item.hrefMicro} class="how-text-link">
-										{item.ctaMicro} →
-									</a>
-									{item.watchHref && item.ctaClip ? (
-										<a href={item.watchHref} class="how-text-link" target="_blank" rel="noopener noreferrer">
-											{item.ctaClip} →
-										</a>
-									) : null}
-								</div>
-							</article>
-						) : null,
-					)
-				}
 			</div>
 		</section>
 
@@ -744,7 +748,109 @@ const curatedVideos: {
 
 	.how-more {
 		max-width: min(56rem, 100%);
-		padding: 0 0 0.25rem;
+	}
+
+	/* “Siguiente nivel”: misma familia que «De cero a protegido» (profundidad + barrido gris vertical), un peldaño más suave. */
+	.how-more.how-more--stage {
+		position: relative;
+		overflow: hidden;
+		border-radius: clamp(0.5rem, 1.2vw, 0.875rem);
+		margin: clamp(2.25rem, 8vh, 5rem) auto clamp(2.5rem, 9vh, 5.5rem);
+		padding: clamp(1rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem) clamp(1.35rem, 4vw, 2.35rem);
+		box-sizing: border-box;
+	}
+
+	.how-more__bg,
+	.how-more__sweep {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	.how-more__inner {
+		position: relative;
+		z-index: 1;
+	}
+
+	html[data-theme='dark'] .how-more__bg {
+		background:
+			radial-gradient(ellipse 92% 58% at 50% 34%, rgba(38, 42, 52, 0.48) 0%, transparent 58%),
+			radial-gradient(ellipse 122% 86% at 50% 106%, rgba(245, 176, 65, 0.03) 0%, transparent 44%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5.5rem) rgba(0, 0, 0, 0.34);
+	}
+
+	html[data-theme='light'] .how-more__bg {
+		background:
+			radial-gradient(ellipse 90% 56% at 50% 36%, rgba(0, 0, 0, 0.038) 0%, transparent 56%),
+			radial-gradient(ellipse 116% 80% at 50% 104%, rgba(200, 145, 55, 0.02) 0%, transparent 42%);
+		box-shadow: inset 0 0 clamp(2.25rem, 8vw, 4.5rem) rgba(0, 0, 0, 0.055);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html[data-theme='dark'] .how-more__sweep {
+			inset: auto;
+			top: -26%;
+			bottom: -26%;
+			left: -20%;
+			right: -20%;
+			width: auto;
+			height: auto;
+			background-image: linear-gradient(
+				180deg,
+				transparent 0%,
+				transparent 31%,
+				rgba(110, 114, 128, 0.1) 41%,
+				rgba(186, 190, 202, 0.18) 50%,
+				rgba(95, 98, 110, 0.1) 59%,
+				transparent 71%,
+				transparent 100%
+			);
+			background-size: 100% 460%;
+			background-position: 50% 6%;
+			background-repeat: no-repeat;
+			opacity: 0.48;
+			will-change: background-position;
+			animation: how-zero-protected-sweep-vertical 52s ease-in-out infinite;
+		}
+
+		html[data-theme='light'] .how-more__sweep {
+			inset: auto;
+			top: -22%;
+			bottom: -22%;
+			left: -16%;
+			right: -16%;
+			width: auto;
+			height: auto;
+			background-image: linear-gradient(
+				180deg,
+				transparent 0%,
+				transparent 33%,
+				rgba(88, 92, 104, 0.06) 43%,
+				rgba(148, 152, 166, 0.11) 50%,
+				rgba(78, 82, 94, 0.055) 57%,
+				transparent 69%,
+				transparent 100%
+			);
+			background-size: 100% 420%;
+			background-position: 50% 9%;
+			background-repeat: no-repeat;
+			opacity: 0.3;
+			will-change: background-position;
+			animation: how-zero-protected-sweep-vertical 56s ease-in-out infinite;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.how-more__sweep {
+			animation: none !important;
+			opacity: 0.09;
+		}
+
+		html[data-theme='light'] .how-more__sweep {
+			opacity: 0.045;
+		}
 	}
 
 	.how-more__head {
