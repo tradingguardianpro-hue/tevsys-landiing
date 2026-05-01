@@ -199,16 +199,20 @@ const curatedVideos: {
 							</p>
 							<p class="how-more-lead__audit-note">Clip en preparación · Misma claridad que el resto de la página.</p>
 						</div>
+						<p id="how-more-follow-title" class="how-more-lead__follow-title">Otras funcionalidades clave</p>
 						<p class="how-more-lead__line">
-							<strong>Cómo te protegemos cuando decides estar OFF</strong> — Mira la rotación automática entre OFF y día operativo.
+							<span class="how-more-lead__topic"><strong>Cómo te protegemos cuando decides estar OFF</strong></span>
+							— Mira la rotación automática entre OFF y día operativo.
 						</p>
 						<p class="how-more-lead__line">
-							<strong>Observación pasiva</strong> — Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos:
-							observamos, medimos desde el bloqueo y dejamos trazas que puedes contrastar.
+							<span class="how-more-lead__topic"><strong>Observación pasiva</strong></span>
+							— Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos: observamos, medimos desde el
+							bloqueo y dejamos trazas que puedes contrastar.
 						</p>
 						<p class="how-more-lead__line">
-							<strong>Retocar lo que ya protegiste</strong> — Si el EA ya está vigilando, el cambio de límites tiene reglas: te
-							mostramos cómo actuamos; tus reglas se cumplen siempre.
+							<span class="how-more-lead__topic"><strong>Retocar lo que ya protegiste</strong></span>
+							— Si el EA ya está vigilando, el cambio de límites tiene reglas: te mostramos cómo actuamos; tus reglas se cumplen
+							siempre.
 						</p>
 						<p class="how-more-lead__note">
 							Abajo: cuatro bloques con el mismo aspecto (el primero, auditoría); clip en preparación en cada uno. Por ahora nada
@@ -883,6 +887,51 @@ const curatedVideos: {
 		opacity: 1;
 	}
 
+	/* Tras el borde inferior del bloque auditoría: puente hacia las tres líneas con subrayado. */
+	.how-more-lead__follow-title {
+		margin: clamp(0.65rem, 2vw, 1rem) auto clamp(0.85rem, 2.5vw, 1.2rem);
+		max-width: 42rem;
+		font-size: clamp(1.02rem, 2.4vw, 1.12rem);
+		font-weight: 700;
+		line-height: 1.3;
+		letter-spacing: -0.02em;
+		color: rgba(244, 246, 248, 0.96);
+	}
+
+	html[data-theme='light'] .how-more-lead__follow-title {
+		color: var(--theme-on-bg, #111);
+	}
+
+	/* Misma familia que «De cero a protegido» (h2::after), más estrecha y fina, bajo cada tema en negrita. */
+	.how-more-lead__topic {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.how-more-lead__topic::after {
+		content: '';
+		display: block;
+		width: min(7.25rem, 100%);
+		height: 2px;
+		margin: 0.26rem 0 0;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+
+	html[data-theme='light'] .how-more-lead__topic::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
+	}
+
 	.how-more-lead__line {
 		margin: 0 0 clamp(0.75rem, 2vw, 1rem);
 		font-size: 0.94rem;
@@ -916,8 +965,17 @@ const curatedVideos: {
 			text-align: center;
 		}
 
+		.how-more-lead__follow-title {
+			text-align: center;
+		}
+
 		.how-more-lead__line {
 			text-align: center;
+		}
+
+		.how-more-lead__topic::after {
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
