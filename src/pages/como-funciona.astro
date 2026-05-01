@@ -335,16 +335,7 @@ const curatedVideos: {
 			</div>
 		</section>
 
-		<section class="how-depth" aria-labelledby="how-depth-title">
-			<header class="how-section-head how-depth__head">
-				<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
-				<h2 id="how-depth-title">Así funciona en vivo</h2>
-				<p class="how-section-sub">
-					Has visto el panel por dentro y un cierre real. Cuatro enlaces directos: lo que suele importar en vivo, sin dispersarte.
-					<br />
-					<span class="how-section-sub__line2">Lista completa de vídeos y demo: abajo y en el pie de página.</span>
-				</p>
-			</header>
+		<section class="how-depth" aria-label="Enlaces directos en vivo">
 			<div class="how-depth-grid">
 				{
 					depthLayers.map((item) => (
@@ -691,10 +682,6 @@ const curatedVideos: {
 		max-width: min(56rem, 100%);
 		padding: clamp(0.5rem, 2vw, 1.25rem) 0 0.35rem;
 		margin-top: clamp(5.25rem, 26vh, 34rem);
-	}
-
-	.how-depth__head {
-		margin-bottom: clamp(2.25rem, 6vw, 3.25rem);
 	}
 
 	.how-depth-grid {
