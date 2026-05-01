@@ -109,18 +109,21 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
 <style>
   /* Misma sans que el hero (Inter): superficie de producto coherente */
   header {
-    /* Barra tipo pastilla (misma familia de radio que BrandOval); borde casi imperceptible, sin relleno */
+    /* Una sola barra a todo el ancho (como antes el layout); borde ovalado muy fino, sin relleno nuevo */
     --tevsys-header-bar-border: rgba(255, 255, 255, 0.09);
     box-sizing: border-box;
-    width: calc(100% - clamp(0.65rem, 2.8vw, 1.85rem));
-    max-width: min(100%, 1400px);
-    margin: 0.42rem auto 0;
+    width: 100%;
+    max-width: none;
+    margin: 0.42rem 0 0;
     border-radius: 2.5rem;
     border: 1px solid var(--tevsys-header-bar-border);
     background: transparent;
-    /* Tokens para el logo (BrandOval); el menú va sin borde, solo volumen suave */
-    --tevsys-header-pill-border: rgba(255, 255, 255, 0.38);
-    --tevsys-header-pill-surface: rgba(255, 255, 255, 0.035);
+    /*
+	  Logo BrandOval: dentro de la barra ya no hace falta otra pastilla fuerte;
+	  baja contraste del trazo/relleno para que no se lean “dos cápsulas”.
+	*/
+    --tevsys-header-pill-border: rgba(255, 255, 255, 0.12);
+    --tevsys-header-pill-surface: transparent;
     /* Barra fina tipo referencia: logo a la izquierda, mucho aire al centro, menú agrupado a la derecha */
     padding: 0.66rem clamp(0.75rem, 2vw, 1.25rem);
     display: flex;
