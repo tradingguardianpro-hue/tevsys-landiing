@@ -71,11 +71,6 @@ const siguienteNivelClipCards: { title: string }[] = [
 	{ title: 'Retocar con el EA vigilando (~25–30 s)' },
 ];
 
-/** Cabecero «De cero…»: subrayado solo bajo el núcleo (ámbar → gris); «De» queda fuera. */
-const zeroTitleMatch = /^De\s+(.+)$/u.exec(zeroToProtected.title);
-const zeroTitlePrefix = zeroTitleMatch ? 'De' : '';
-const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title;
-
 const curatedVideos: {
 	title: string;
 	blurb: string;
@@ -103,7 +98,9 @@ const curatedVideos: {
 		<section class="how-presentation" aria-labelledby="how-presentation-title">
 			<header class="how-section-head">
 				<p class="how-eyebrow how-eyebrow--center">Presentación</p>
-				<h2 id="how-presentation-title">Dos partes, misma historia</h2>
+				<h2 id="how-presentation-title">
+					Dos partes, <span class="how-present-title__accent">misma historia</span>
+				</h2>
 				<p class="how-section-sub">
 					Te enseñamos el producto en marcha y por qué la gente habla de precisión y evidencia.
 					<br />
@@ -118,7 +115,11 @@ const curatedVideos: {
 								<p class="how-eyebrow">{p.partLabel}</p>
 								<h3>{p.title}</h3>
 								<p class="how-block-lead">{p.blurb}</p>
-								<a href={p.href} class="how-text-link" target="_blank" rel="noopener noreferrer">
+								<a
+									href={p.href}
+									class="how-text-link how-text-link--presentation-yt"
+									target="_blank"
+									rel="noopener noreferrer">
 									Abrir en YouTube →
 								</a>
 							</header>
@@ -145,14 +146,7 @@ const curatedVideos: {
 				<header class="how-section-head">
 					<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
 					<h2 id="how-zero-title">
-						{zeroTitlePrefix ? (
-							<>
-								{zeroTitlePrefix}{' '}
-								<span class="how-zero-title__accent">{zeroTitleCore}</span>{' '}
-							</>
-						) : (
-							<span class="how-zero-title__accent">{zeroTitleCore}</span>
-						)}
+						{zeroToProtected.title}{' '}
 						<span class="how-zero-duration">({zeroToProtected.durationLabel})</span>
 					</h2>
 					<p class="how-section-sub">{zeroToProtected.blurb}</p>
@@ -515,39 +509,6 @@ const curatedVideos: {
 		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
 	}
 
-	/*
-		Subrayado: misma historia que auditoría (ámbar de marca → gris), pero solo bajo «cero a protegido»,
-		no bajo «De» ni la duración: el calor arranca donde empieza «cero».
-	*/
-	.how-zero-title__accent {
-		display: inline-block;
-		text-align: left;
-	}
-
-	.how-zero-title__accent::after {
-		content: '';
-		display: block;
-		width: min(13rem, 100%);
-		height: 3px;
-		margin: 0.42rem 0 0;
-		border-radius: 999px;
-		background: linear-gradient(
-			90deg,
-			rgba(245, 176, 65, 0.95) 0%,
-			rgba(148, 154, 168, 0.62) 72%,
-			rgba(110, 116, 128, 0.35) 100%
-		);
-	}
-
-	html[data-theme='light'] .how-zero-title__accent::after {
-		background: linear-gradient(
-			90deg,
-			rgba(218, 155, 48, 0.9) 0%,
-			rgba(120, 125, 138, 0.5) 75%,
-			rgba(90, 95, 108, 0.28) 100%
-		);
-	}
-
 	.how-zero-duration {
 		font-weight: 600;
 		font-size: 0.72em;
@@ -603,6 +564,36 @@ const curatedVideos: {
 	.how-presentation .how-section-head {
 		margin-bottom: clamp(4rem, 14vw, 7.25rem);
 		padding-bottom: 0.35rem;
+	}
+
+	/* Ámbar → gris bajo «misma historia» (misma historia de marca que auditoría; subido desde «De cero…»). */
+	.how-present-title__accent {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.how-present-title__accent::after {
+		content: '';
+		display: block;
+		width: min(13rem, 100%);
+		height: 3px;
+		margin: 0.42rem auto 0;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+
+	html[data-theme='light'] .how-present-title__accent::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
 	}
 
 	.how-section-head h2 {
@@ -1124,6 +1115,27 @@ const curatedVideos: {
 	.how-text-link:hover {
 		color: #f7c050;
 		border-color: rgba(247, 192, 80, 0.75);
+	}
+
+	/* Presentación: enlaces a YouTube visibles pero sin ámbar (frío vs CTA principal). */
+	.how-text-link--presentation-yt {
+		color: rgba(154, 198, 236, 0.96);
+		border-bottom-color: rgba(154, 198, 236, 0.42);
+	}
+
+	.how-text-link--presentation-yt:hover {
+		color: rgba(190, 220, 248, 1);
+		border-bottom-color: rgba(190, 220, 248, 0.65);
+	}
+
+	html[data-theme='light'] .how-text-link--presentation-yt {
+		color: #1d5a92;
+		border-bottom-color: rgba(29, 90, 146, 0.38);
+	}
+
+	html[data-theme='light'] .how-text-link--presentation-yt:hover {
+		color: #164a78;
+		border-bottom-color: rgba(22, 74, 120, 0.55);
 	}
 
 	.how-inline-link {
