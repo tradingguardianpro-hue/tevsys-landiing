@@ -71,6 +71,11 @@ const siguienteNivelClipCards: { title: string }[] = [
 	{ title: 'Retocar con el EA vigilando (~25–30 s)' },
 ];
 
+/** Cabecero «De cero…»: subrayado solo bajo el núcleo (ámbar → gris); «De» queda fuera. */
+const zeroTitleMatch = /^De\s+(.+)$/u.exec(zeroToProtected.title);
+const zeroTitlePrefix = zeroTitleMatch ? 'De' : '';
+const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title;
+
 const curatedVideos: {
 	title: string;
 	blurb: string;
@@ -140,7 +145,14 @@ const curatedVideos: {
 				<header class="how-section-head">
 					<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
 					<h2 id="how-zero-title">
-						{zeroToProtected.title}
+						{zeroTitlePrefix ? (
+							<>
+								{zeroTitlePrefix}{' '}
+								<span class="how-zero-title__accent">{zeroTitleCore}</span>{' '}
+							</>
+						) : (
+							<span class="how-zero-title__accent">{zeroTitleCore}</span>
+						)}
 						<span class="how-zero-duration">({zeroToProtected.durationLabel})</span>
 					</h2>
 					<p class="how-section-sub">{zeroToProtected.blurb}</p>
@@ -504,15 +516,20 @@ const curatedVideos: {
 	}
 
 	/*
-		Subrayado misma familia que auditoría-ia (.audit-hero-accent / h2::after), pero ámbar → gris.
-		Bloque a la izquierda del cabecero (no bajo la «D» del título centrado): ancho limitado + margin-left 0.
+		Subrayado: misma historia que auditoría (ámbar de marca → gris), pero solo bajo «cero a protegido»,
+		no bajo «De» ni la duración: el calor arranca donde empieza «cero».
 	*/
-	.how-zero-protected .how-section-head h2::after {
+	.how-zero-title__accent {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.how-zero-title__accent::after {
 		content: '';
 		display: block;
-		width: min(13rem, 48%);
+		width: min(13rem, 100%);
 		height: 3px;
-		margin: 0.42rem auto 0 0;
+		margin: 0.42rem 0 0;
 		border-radius: 999px;
 		background: linear-gradient(
 			90deg,
@@ -522,7 +539,7 @@ const curatedVideos: {
 		);
 	}
 
-	html[data-theme='light'] .how-zero-protected .how-section-head h2::after {
+	html[data-theme='light'] .how-zero-title__accent::after {
 		background: linear-gradient(
 			90deg,
 			rgba(218, 155, 48, 0.9) 0%,
@@ -894,34 +911,33 @@ const curatedVideos: {
 		margin: clamp(0.75rem, 2.2vw, 1.1rem) 0 clamp(0.65rem, 2vw, 0.95rem);
 	}
 
-	/* Misma familia que «De cero a protegido» (h2::after), más estrecha y fina, bajo cada tema en negrita. */
+	/* Misma historia de marca que arriba (ámbar → gris), más fina; arranca bajo el inicio del tema en negrita. */
 	.how-more-lead__topic {
 		display: inline-block;
 		text-align: left;
 	}
 
-	/* Subrayado distinto a «De cero a protegido»: ámbar hacia la derecha + barra anclada al final del título. */
 	.how-more-lead__topic::after {
 		content: '';
 		display: block;
 		width: min(7.25rem, 100%);
 		height: 2px;
-		margin: 0.26rem 0 0 auto;
+		margin: 0.26rem 0 0;
 		border-radius: 999px;
 		background: linear-gradient(
 			90deg,
-			rgba(110, 116, 128, 0.35) 0%,
-			rgba(148, 154, 168, 0.62) 28%,
-			rgba(245, 176, 65, 0.95) 100%
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
 		);
 	}
 
 	html[data-theme='light'] .how-more-lead__topic::after {
 		background: linear-gradient(
 			90deg,
-			rgba(90, 95, 108, 0.28) 0%,
-			rgba(120, 125, 138, 0.5) 25%,
-			rgba(218, 155, 48, 0.9) 100%
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
 		);
 	}
 
@@ -966,11 +982,6 @@ const curatedVideos: {
 			text-align: center;
 		}
 
-		/* Misma lectura que en móvil: calor a la derecha, alineado al borde derecho del texto en negrita. */
-		.how-more-lead__topic::after {
-			margin-left: auto;
-			margin-right: 0;
-		}
 	}
 
 	.how-more-grid {
