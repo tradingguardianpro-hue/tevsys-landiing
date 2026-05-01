@@ -230,29 +230,6 @@ const curatedVideos: {
 			</div>
 		</section>
 
-		<section class="how-depth" aria-labelledby="how-depth-title">
-			<header class="how-section-head how-depth__head">
-				<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
-				<h2 id="how-depth-title">Así funciona en vivo</h2>
-				<p class="how-section-sub">
-					Has visto el panel por dentro y un cierre real. Cuatro enlaces directos: lo que suele importar en vivo, sin dispersarte.
-					<br />
-					<span class="how-section-sub__line2">Lista completa de vídeos y demo: abajo y en el pie de página.</span>
-				</p>
-			</header>
-			<div class="how-depth-grid">
-				{
-					depthLayers.map((item) => (
-						<a href={item.href} class="how-depth-card">
-							<h3 class="how-depth-card__title">{item.title}</h3>
-							<p class="how-depth-card__blurb">{item.blurb}</p>
-							<span class="how-depth-card__cta">{item.cta} →</span>
-						</a>
-					))
-				}
-			</div>
-		</section>
-
 		<section class="how-more" id="mas-comportamientos" aria-labelledby="how-more-title">
 			<header class="how-section-head how-more__head">
 				<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
@@ -325,6 +302,29 @@ const curatedVideos: {
 							</article>
 						) : null,
 					)
+				}
+			</div>
+		</section>
+
+		<section class="how-depth" aria-labelledby="how-depth-title">
+			<header class="how-section-head how-depth__head">
+				<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
+				<h2 id="how-depth-title">Así funciona en vivo</h2>
+				<p class="how-section-sub">
+					Has visto el panel por dentro y un cierre real. Cuatro enlaces directos: lo que suele importar en vivo, sin dispersarte.
+					<br />
+					<span class="how-section-sub__line2">Lista completa de vídeos y demo: abajo y en el pie de página.</span>
+				</p>
+			</header>
+			<div class="how-depth-grid">
+				{
+					depthLayers.map((item) => (
+						<a href={item.href} class="how-depth-card">
+							<h3 class="how-depth-card__title">{item.title}</h3>
+							<p class="how-depth-card__blurb">{item.blurb}</p>
+							<span class="how-depth-card__cta">{item.cta} →</span>
+						</a>
+					))
 				}
 			</div>
 		</section>
