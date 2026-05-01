@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación, De cero a protegido, comportamientos en vivo, cortos y micros; más vídeo, instalación y guías.',
+		'Presentación, De cero a protegido, Siguiente nivel (clips en preparación), más vídeo, instalación y guías.',
 };
 
 /** Parte 1 + Parte 2 (artículo MQL5 / mismo relato). Sustituir embeds cuando publiquéis el corte nuevo “producto al día”. */
@@ -63,8 +63,9 @@ const depthLayers: { title: string; blurb: string; href: string; cta: string }[]
 	},
 ];
 
-/** «Siguiente nivel»: tres tarjetas idénticas (solo cambia el título); placeholder + pie ámbar; sin enlaces hasta que haya clips. */
+/** «Siguiente nivel»: cuatro tarjetas mismo formato; 1ª = auditoría (clip primero); sin enlaces hasta que haya clips. */
 const siguienteNivelClipCards: { title: string }[] = [
+	{ title: 'Auditoría con evidencia (Fase 1 manual)' },
 	{ title: 'Observación pasiva' },
 	{ title: '¿Cómo te protegemos cuando decides estar OFF?' },
 	{ title: 'Retocar con el EA vigilando (~25–30 s)' },
@@ -190,6 +191,14 @@ const curatedVideos: {
 					<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
 					<h2 id="how-more-title">Esto no es todo: más comportamientos en vivo</h2>
 					<div class="how-more-lead">
+						<div class="how-more-lead__audit">
+							<p class="how-more-lead__audit-kicker">Primero · Auditoría</p>
+							<p class="how-more-lead__audit-line">
+								Disciplina y trazabilidad con evidencia real; <strong>no</strong> es señales ni qué operar. La apertura pública de
+								este servicio <strong>no está en marcha</strong>: lo iremos mostrando aquí y en la micro cuando el producto lo permita.
+							</p>
+							<p class="how-more-lead__audit-note">Clip en preparación · Misma claridad que el resto de la página.</p>
+						</div>
 						<p class="how-more-lead__line">
 							<strong>Cómo te protegemos cuando decides estar OFF</strong> — Mira la rotación automática entre OFF y día operativo.
 						</p>
@@ -202,7 +211,8 @@ const curatedVideos: {
 							mostramos cómo actuamos; tus reglas se cumplen siempre.
 						</p>
 						<p class="how-more-lead__note">
-							Abajo: tres bloques con el mismo aspecto; clip en preparación en cada uno. Por ahora nada enlaza a otras páginas.
+							Abajo: cuatro bloques con el mismo aspecto (el primero, auditoría); clip en preparación en cada uno. Por ahora nada
+							enlaza a otras páginas.
 						</p>
 					</div>
 				</header>
@@ -802,6 +812,49 @@ const curatedVideos: {
 		text-align: left;
 	}
 
+	/* Opción A ajustada: bloque corto de auditoría antes de las tres frases (sin embed). */
+	.how-more-lead__audit {
+		margin: 0 auto clamp(1.1rem, 3vw, 1.5rem);
+		max-width: 42rem;
+		padding-bottom: clamp(0.85rem, 2.5vw, 1.2rem);
+		border-bottom: 1px solid rgba(245, 176, 65, 0.28);
+		text-align: left;
+	}
+
+	.how-more-lead__audit-kicker {
+		margin: 0 0 0.45rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #f5b041;
+	}
+
+	.how-more-lead__audit-line {
+		margin: 0 0 0.45rem;
+		font-size: 0.92rem;
+		line-height: 1.52;
+		opacity: 0.92;
+	}
+
+	.how-more-lead__audit-note {
+		margin: 0;
+		font-size: 0.84rem;
+		line-height: 1.45;
+		font-weight: 600;
+		opacity: 0.78;
+	}
+
+	html[data-theme='dark'] .how-more-lead__audit-line {
+		color: rgba(244, 246, 248, 0.94);
+		opacity: 1;
+	}
+
+	html[data-theme='dark'] .how-more-lead__audit-note {
+		color: rgba(220, 224, 232, 0.88);
+		opacity: 1;
+	}
+
 	.how-more-lead__line {
 		margin: 0 0 clamp(0.75rem, 2vw, 1rem);
 		font-size: 0.94rem;
@@ -828,6 +881,10 @@ const curatedVideos: {
 
 	@media (min-width: 640px) {
 		.how-more-lead {
+			text-align: center;
+		}
+
+		.how-more-lead__audit {
 			text-align: center;
 		}
 
