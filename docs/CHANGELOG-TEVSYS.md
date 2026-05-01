@@ -15,6 +15,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ### Comportamiento
 - Grid de cards **responsive** (`auto-fit`), hover y foco accesible; CTA en gris que **toma ámbar** al hover para no competir con el color del stage hasta interacción.
+- **Dos cards** llevan **vídeo HTML5** pequeño (mismo MP4 que en las micros): **Precisión** (`precision-demo-volatilidad.mp4`) y **HyperClose** (`hyperclose-demo.mp4`). **SML** y **Evidencia** siguen solo con texto + enlace (sin repetir Parte 1 / Parte 2 de la presentación). El `<video>` va **fuera** del enlace principal para HTML válido y controles usables.
 
 ---
 
