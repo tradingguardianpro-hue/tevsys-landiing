@@ -344,7 +344,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 }
 
 @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
-	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
+		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
 		background-image: linear-gradient(
 			102deg,
 			transparent 0%,
@@ -358,6 +358,46 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		background-size: 250% 100%;
 		opacity: 0.7;
 		animation-duration: 29s;
+	}
+}
+
+/*
+  /como-funciona: escáner diagonal (header) + barridos verticales (stages) compartían ritmos
+  cercanos (p. ej. 44s) y se cruzaban. Cabecera más lenta/tenue; stages más largos + desfase
+  (especificidad > estilos scoped del .astro).
+*/
+@media (prefers-reduced-motion: no-preference) {
+	html[data-theme='dark'] body.page-como-funciona #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
+		opacity: 0.34;
+		animation-duration: 54s;
+		background-image: linear-gradient(
+			102deg,
+			transparent 0%,
+			transparent 40%,
+			rgba(110, 114, 128, 0.055) 48%,
+			rgba(186, 190, 202, 0.11) 50%,
+			rgba(95, 98, 110, 0.045) 52%,
+			transparent 70%,
+			transparent 100%
+		);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
+	html[data-theme='dark'] body.page-como-funciona #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
+		opacity: 0.38;
+		animation-duration: 52s;
+		background-image: linear-gradient(
+			102deg,
+			transparent 0%,
+			transparent 39%,
+			rgba(120, 124, 138, 0.075) 47%,
+			rgba(198, 202, 216, 0.14) 50%,
+			rgba(105, 109, 124, 0.06) 53%,
+			transparent 70%,
+			transparent 100%
+		);
+		background-size: 250% 100%;
 	}
 }
 
@@ -1703,6 +1743,22 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 				transparent 100%
 			);
 			background-size: 278% 100%;
+		}
+
+		/* /como-funciona móvil: escáner más lento y tenue vs barridos verticales de la página */
+		html[data-theme='dark'] body.page-como-funciona #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
+			animation-duration: 58s;
+			opacity: 0.36;
+			background-image: linear-gradient(
+				102deg,
+				transparent 0%,
+				transparent 34%,
+				rgba(120, 124, 138, 0.1) 47%,
+				rgba(198, 202, 216, 0.18) 50%,
+				rgba(105, 109, 124, 0.09) 53%,
+				transparent 70%,
+				transparent 100%
+			);
 		}
 
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise {

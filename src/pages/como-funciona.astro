@@ -136,7 +136,7 @@ const curatedVideos: {
 ];
 ---
 
-<Layout seo={seo}>
+<Layout seo={seo} bodyClass="page-como-funciona">
 	<Container>
 		<div class="how-intro-stage how-intro-stage--stage">
 			<div class="how-intro-stage__bg" aria-hidden="true"></div>
@@ -508,20 +508,20 @@ const curatedVideos: {
 		margin-bottom: clamp(1.35rem, 4vw, 2.25rem);
 	}
 
-	/* Halo intro: más arriba (se lee la curva inferior del óvalo) y más apagado que la iteración anterior. */
+	/* Halo intro: muy arriba (se lee el óvalo abajo) y casi imperceptible — sin competir con stages. */
 	html[data-theme='dark'] .how-intro-stage__bg {
 		background:
-			radial-gradient(ellipse 76% 46% at 50% 26%, rgba(245, 176, 65, 0.034) 0%, transparent 54%),
-			radial-gradient(ellipse 94% 58% at 50% 28%, rgba(38, 42, 52, 0.58) 0%, transparent 58%),
-			radial-gradient(ellipse 128% 90% at 50% 118%, rgba(245, 176, 65, 0.018) 0%, transparent 40%);
+			radial-gradient(ellipse 84% 40% at 50% 8%, rgba(245, 176, 65, 0.012) 0%, transparent 45%),
+			radial-gradient(ellipse 98% 50% at 50% 12%, rgba(38, 42, 52, 0.5) 0%, transparent 55%),
+			radial-gradient(ellipse 130% 94% at 50% 132%, rgba(245, 176, 65, 0.006) 0%, transparent 36%);
 		box-shadow: inset 0 0 clamp(3rem, 11vw, 6.5rem) rgba(0, 0, 0, 0.42);
 	}
 
 	html[data-theme='light'] .how-intro-stage__bg {
 		background:
-			radial-gradient(ellipse 72% 44% at 50% 26%, rgba(218, 155, 48, 0.042) 0%, transparent 52%),
-			radial-gradient(ellipse 92% 56% at 50% 30%, rgba(0, 0, 0, 0.038) 0%, transparent 56%),
-			radial-gradient(ellipse 120% 84% at 50% 112%, rgba(200, 145, 55, 0.014) 0%, transparent 40%);
+			radial-gradient(ellipse 80% 38% at 50% 8%, rgba(218, 155, 48, 0.016) 0%, transparent 44%),
+			radial-gradient(ellipse 96% 50% at 50% 13%, rgba(0, 0, 0, 0.032) 0%, transparent 54%),
+			radial-gradient(ellipse 124% 88% at 50% 124%, rgba(200, 145, 55, 0.005) 0%, transparent 36%);
 		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
 	}
 
@@ -1682,6 +1682,36 @@ const curatedVideos: {
 	@media (max-width: 640px) {
 		.how-depth-grid {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	/*
+	  Desacoplar motion vs cabecera: ciclos más largos + desfase (misma keyframe que arriba).
+	  :global(body…) para especificidad sobre el mismo archivo scoped.
+	*/
+	@media (prefers-reduced-motion: no-preference) {
+		:global(html[data-theme='dark'] body.page-como-funciona) .how-zero-protected__sweep {
+			opacity: 0.3;
+			animation-duration: 66s;
+			animation-delay: -8s;
+		}
+
+		:global(html[data-theme='light'] body.page-como-funciona) .how-zero-protected__sweep {
+			opacity: 0.2;
+			animation-duration: 74s;
+			animation-delay: -8s;
+		}
+
+		:global(html[data-theme='dark'] body.page-como-funciona) .how-more__sweep {
+			opacity: 0.26;
+			animation-duration: 82s;
+			animation-delay: -22s;
+		}
+
+		:global(html[data-theme='light'] body.page-como-funciona) .how-more__sweep {
+			opacity: 0.17;
+			animation-duration: 88s;
+			animation-delay: -22s;
 		}
 	}
 </style>

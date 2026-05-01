@@ -7,15 +7,16 @@ import { footerLists, footerSocials } from '../config/footer';
 
 export interface Props {
   seo?: BaseHeadProps;
+  bodyClass?: string;
 }
 
 import { nav } from '../config/nav.js';
 import BrandOval from '../components/BrandOval.astro';
 
-const { seo } = Astro.props as Props;
+const { seo, bodyClass } = Astro.props as Props;
 ---
 
-<Layout seo={seo}>
+<Layout seo={seo} bodyClass={bodyClass}>
   <Header rightMenu navData={nav} slot="header">
     <BrandOval slot="logo" />
   </Header>

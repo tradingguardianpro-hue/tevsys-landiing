@@ -5,16 +5,18 @@ import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 
 export interface Props {
 	seo?: BaseHeadProps;
+	/** Clases opcionales en `<body>` (p. ej. hooks de motion por página). */
+	bodyClass?: string;
 }
 
-const { seo } = Astro.props;
+const { seo, bodyClass } = Astro.props;
 ---
 
 <html lang="en" data-theme="dark">
 	<head>
 		<BaseHead {...seo} />
 	</head>
-	<body>
+	<body class:list={[bodyClass]}>
 		<SkipLink />
     <slot name="announcement-bar" />
 		<slot name="header" />
