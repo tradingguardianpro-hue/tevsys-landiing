@@ -1,6 +1,6 @@
 # Motion home tevsys — Handoff IA → IA (tema oscuro)
 
-**Repo:** `tevsys-landiing` (Astro). **Alcance:** solo **home** (`/`), **tema oscuro** (`html[data-theme='dark']`). **No afecta** al EA MQL5 ni al workspace TGP salvo documentación enlazada.
+**Repo:** `tevsys-landiing` (Astro). **Alcance principal:** **home** (`/`) — niebla, KITT, mid-glow, franjas — **tema oscuro** (`html[data-theme='dark']`). **Header escáner gris (30 abr 2026):** además **`/features/*`**, **`/como-funciona`**, **`/precios`** (§1.1). **No afecta** al EA MQL5; el workspace TGP enlaza esta doc en `CONTENIDO_WEB` §14.
 
 **Objetivo de producto:** “Vida” en la página (sistema activo, premium, calmado) **sin** cine ni estroboscopio. Las animaciones **no comparten reloj**: duraciones y funciones de tiempo distintas a propósito; si en algún instante coinciden, es casualidad.
 
@@ -15,6 +15,20 @@
 | `src/styles/global.css` | Todas las `@keyframes`, duraciones, colores, capas `::before`, clases `.tevsys-home-*`, header escáner. |
 | `src/pages/index.astro` | Marcado: hero stack + dos rectángulos KITT; banda cards + `mid-glow` (capa única en DOM; **segunda burbuja** = `::before` en CSS); banda lower + strip + tail bubble; fundador + strip. |
 | `src/components/core/Header.astro` | Si `pathname === '/'` o micros producto (`/features/*`, `/como-funciona`, `/precios`): clase **`tevsys-header--with-scanner`** en `<header>` + capa **`.tevsys-header-scanner`**. Solo en **`/`** también **`tevsys-header--home-scanner`** (intensidad plena en `global.css`). Estilos locales: `position: relative`, `overflow: hidden` cuando hay escáner. |
+
+### 1.1 Header escáner fuera de home (abr 2026)
+
+**Alcance:** mismas keyframes que la home (`tevsys-header-scanner-sweep` / `…-sweep-mobile`), **solo tema oscuro**. Objetivo: coherencia marca al cambiar de `/` a una feature **sin** igualar el brillo de portada.
+
+| Modo | Selector efectivo (header) | Animación | Duración aprox. | Opacidad capa (orden de magnitud) |
+|------|----------------------------|-----------|-----------------|-------------------------------------|
+| Home escritorio | `.with-scanner.home-scanner` + media ≥769px | `sweep` | **28s** | **~0,78** (+ gradiente reforzado) |
+| Home móvil | `.with-scanner.home-scanner` + ≤768px | `sweep-mobile` | **42s** | **~0,84** |
+| Micro escritorio | `.with-scanner:not(.home-scanner)` + ≥769px | `sweep` | **29s** | **~0,70** |
+| Micro base | `.with-scanner:not(.home-scanner)` | `sweep` | **30s** | **~0,60** |
+| Micro móvil | `.with-scanner:not(.home-scanner)` + ≤768px | `sweep-mobile` | **44s** | **~0,76** |
+
+**Notas:** Primera implementación micro fue demasiado tenue; segunda iteración subió opacidad y stops del gradiente (ver `CHANGELOG-TEVSYS.md` *Header — escáner gris en micros producto*). `prefers-reduced-motion: reduce` anula `.tevsys-header-scanner` en todas las rutas con `with-scanner`.
 
 ---
 

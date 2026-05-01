@@ -4,14 +4,40 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Header — escáner gris en micros producto (misma familia que home, más suave)
+## HyperClose — prueba de lectura “mapa” (solo `/features/hyperclose`, tema oscuro)
 
-**Archivos:** `src/components/core/Header.astro`, `src/styles/global.css`.
+**Archivo:** `src/pages/features/hyperclose.astro`.
 
-- Clase **`tevsys-header--with-scanner`:** se aplica en **`/`**, **`/features/*`**, **`/como-funciona`**, **`/precios`** — se monta la capa **`.tevsys-header-scanner`** (antes solo en home).
-- Clase **`tevsys-header--home-scanner`:** solo en **`/`** — mantiene la **intensidad plena** en escritorio y móvil (gradientes y opacidades anteriores).
-- Rutas **sin** escáner (legal, auditoría, contacto, etc.): sin cambio; header sigue sin capa extra.
-- **`prefers-reduced-motion`:** la capa escáner se anula en cualquier ruta que lleve `with-scanner` (como ya ocurría en home).
+- Wrapper **`tevsys-hyperclose-surface`** alrededor del `Container` (no afecta otras micros).
+- Bloque demo principal (`#hyperclose-demo`): panel con borde y fondo muy suave.
+- **`.demo-video`:** degradado gris-azulado, borde más visible, **padding 3px** para que se note marco aunque el `<video>` arranque en negro; refuerzo equivalente en compactos (semáforo / día OFF).
+- **Tarjetas** (`feature-proof-detail`, secciones semáforo/OFF, `feature-proof`, galería, CTA): bordes/fondos un peldaño más legibles; notas (`demo-edit-note`, texto evidencia) con opacidad algo mayor.
+- Se mantiene el resaltado **`:target`** del demo con regla explícita al final del bloque (no lo pisa el panel neutro).
+
+---
+
+## Header — escáner gris en micros producto (coherencia con home, sin “disco”)
+
+**Archivos:** `src/components/core/Header.astro`, `src/styles/global.css`. **Docs:** `CONTENIDO_WEB_TEVSYS_LANDING.md` (§ Header), `MOTION_HOME_TEVSYS_HANDOFF_IA.md` §1, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` (nota complemento abr 2026).
+
+### Contexto y decisión
+- En **home** el barrido gris del header ya aportaba “instrumento activo”; en **micropáginas** la capa **no existía** (solo se montaba en `/`), de ahí la sensación de cabecera más muerta al saltar de la portada a una feature.
+- Criterio acordado con el fundador: **misma familia visual** en rutas de producto, **menos intensidad** que la home para no competir con lectura (demos, copy denso). Tras un primer despliegue demasiado tenue, se **subió visibilidad** un segundo tramo (opacidad + gradiente + duración), sin igualar el pico de `/`.
+
+### Comportamiento por ruta (`Header.astro`)
+- **`tevsys-header--with-scanner`:** `pathname` en **`/`**, **`/features/*`**, **`/como-funciona`**, **`/precios`** → se renderiza **`<div class="tevsys-header-scanner" aria-hidden="true">`** y el `<header>` lleva `position: relative; overflow: hidden` (estilo local).
+- **`tevsys-header--home-scanner`:** **solo** si `pathname === '/'` — activa en `global.css` el refuerzo de **intensidad plena** (gradiente + opacidad + duraciones ya documentadas para portada).
+- **Resto de rutas** (legal, contacto, auditoría, empresas, instalación, etc.): **sin** capa escáner; sin cambio de comportamiento previo.
+
+### Modelo CSS (`global.css`, tema oscuro)
+- **Base común** (`#odysseyNavHeader.tevsys-header--with-scanner .tevsys-header-scanner`): posicionamiento, `z-index: 0`, animación por defecto **`tevsys-header-scanner-sweep`**; nav y acciones en `z-index: 1`. En **≤768px** y `prefers-reduced-motion: no-preference`, home y micros pasan a variantes con **`tevsys-header-scanner-sweep-mobile`** (duraciones distintas según bloque).
+- **Solo home** (`.with-scanner.home-scanner`): bloque escritorio ≥769px con gradiente reforzado, `opacity: 0.78`, `animation-duration: 28s`; móvil `opacity: 0.84`, animación **42s** — *sin cambio respecto a la iteración 19 abr 2026 en portada*.
+- **Micros producto** (`.with-scanner:not(.home-scanner)`), valores **vigentes tras el segundo ajuste de legibilidad:**
+  - **Base (<769px y regla general):** `opacity: 0.6`, gradiente RGBA intermedio (~102°), `animation-duration: 30s` (`tevsys-header-scanner-sweep`).
+  - **Escritorio ≥769px:** gradiente un peldaño más marcado, `opacity: 0.7`, `animation-duration: 29s`.
+  - **Móvil (≤768px, `prefers-reduced-motion: no-preference`):** `tevsys-header-scanner-sweep-mobile` en **44s**, `opacity: 0.76`, stops del gradiente cercanos al ~85% de la presencia del home en móvil (sin igualar 0.84).
+- **Histórico de tuning:** primera pasada micro (opacidades ~0.44 / 0.52 / 0.58) se consideró **inapreciable**; segunda pasada = valores anteriores.
+- **`prefers-reduced-motion: reduce`:** la capa `.tevsys-header-scanner` queda anulada en cualquier ruta con `with-scanner` (misma política que antes en home).
 
 ---
 

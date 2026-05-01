@@ -40,6 +40,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Docs internos actualizados en este repo
 - `SEO_ANALYTICS_TEVSYS.md`, `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`, `CARDS-NEXT-PHASE.md`, `HOME_HERO_CARDS_ITERACION_ABR2026.md`, `PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md`.
+- **Motion / índice técnico header:** `MOTION_HOME_TEVSYS_HANDOFF_IA.md` §1.1 (tabla home vs micros); `CHANGELOG-TEVSYS.md` (entrada header ampliada); `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md` (bloque *Complemento abr 2026 — header escáner*).
 
 ---
 
@@ -49,7 +50,13 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Tipografía (abr 2026):** **Inter** en barra y pastilla (`Header.astro`, `BrandOval.astro`), alineado al hero.
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
-- **Motion header (abr 2026; ampliado 30 abr 2026):** capa **`tevsys-header-scanner`** — barrido **gris** en **tema oscuro**. En **`/`** (`tevsys-header--home-scanner` + `with-scanner`) intensidad plena (base **29,5s**, escritorio **28s**, móvil barrido fino **42s**). En **`/features/*`**, **`/como-funciona`** y **`/precios`** solo **`tevsys-header--with-scanner`**: **mismo keyframe**, opacidad y gradientes **más bajos** + animación algo **más lenta** (menos competencia con lectura). **Iteración 15–16 abr:** suavizado previo; **19 abr:** intensidad home restaurada. Detalle: `global.css`, `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` (entrada *Header — escáner gris en micros producto*). Detrás de las **4 cards** (solo home): `.tevsys-home-mid-glow` — gris instrumento, animaciones **92s** / **118s**; escritorio perímetro 2×2; móvil keyframes **`*-mobile`**.
+- **Motion header (abr 2026; ampliado 30 abr 2026; afinado legibilidad micros):** capa **`tevsys-header-scanner`** — barrido **gris** en **tema oscuro** (`html[data-theme='dark']`).
+  - **Home `/`:** clases **`tevsys-header--with-scanner`** + **`tevsys-header--home-scanner`**. Intensidad plena: base **29,5s**, escritorio **28s**, móvil **42s** (keyframes `sweep-mobile`), opacidades altas (p. ej. **0,78** escritorio, **0,84** móvil en la capa escáner).
+  - **Micros producto:** **`/features/*`**, **`/como-funciona`**, **`/precios`** — solo **`with-scanner`** (sin `home-scanner`). Mismo **ángulo ~102°** y mismos keyframes que home; **opacidad y alfas del gradiente menores** para no tapar el menú ni fatigar: tras feedback “casi invisible”, valores vigentes ≈ **0,60** (base), **0,70** (≥769px), **0,76** (móvil); duraciones **30s / 29s / 44s** respectivamente — **por debajo** del pico home, **claramente perceptible**.
+  - **Fuera de esas rutas:** sin capa escáner (contacto, legal, auditoría, etc.).
+  - **Accesibilidad:** `prefers-reduced-motion` apaga el escáner donde exista `with-scanner`.
+  - **Referencias técnicas:** `src/components/core/Header.astro`, `src/styles/global.css` (comentarios *Header — escáner gris* y *Micros producto*), `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` (*Header — escáner gris en micros producto*).
+  - **Solo home — cards:** detrás del grid, `.tevsys-home-mid-glow` (gris instrumento, **92s** / **118s**; móvil `*-mobile`).
 
 ---
 

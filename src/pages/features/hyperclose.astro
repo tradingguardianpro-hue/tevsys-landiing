@@ -9,6 +9,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
+	<div class="tevsys-hyperclose-surface">
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de protección</p>
@@ -357,6 +358,7 @@ const seo = {
 			<a href="/company/contact?feature=hyperclose&flow=demo" class="feature-cta__button">Probar HyperClose en demo</a>
 		</section>
 	</Container>
+	</div>
 </Layout>
 
 <script>
@@ -937,5 +939,98 @@ const seo = {
 	.feature-cta p {
 		margin: 0 0 0.9rem;
 		line-height: 1.5;
+	}
+
+	/*
+	 * Prueba (solo esta micro): más “mapa” visual sin subir el brillo a disco.
+	 * Marco fino alrededor del vídeo (padding + fondo del contenedor), tarjetas un poco más legibles.
+	 */
+	.tevsys-hyperclose-surface {
+		isolation: isolate;
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface #hyperclose-demo.feature-demo--hero {
+		padding: clamp(0.65rem, 1.8vw, 1rem);
+		background: rgba(255, 255, 255, 0.035);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: var(--theme-shape-radius);
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .demo-video {
+		padding: 3px;
+		background: linear-gradient(165deg, hsl(220, 11%, 14%) 0%, hsl(222, 14%, 8%) 100%);
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		box-shadow:
+			0 0 0 1px rgba(0, 0, 0, 0.4),
+			0 10px 34px rgba(0, 0, 0, 0.45);
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .demo-video--hero-elegant,
+	html[data-theme='dark'] .tevsys-hyperclose-surface #hyperclose-semaphore .demo-video--compact,
+	html[data-theme='dark'] .tevsys-hyperclose-surface #hyperclose-off .demo-video--compact {
+		background: linear-gradient(165deg, hsl(220, 9%, 19%) 0%, hsl(220, 8%, 14%) 100%);
+		border-color: rgba(255, 255, 255, 0.16);
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.07),
+			0 12px 38px rgba(0, 0, 0, 0.42);
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .feature-proof-detail {
+		border-color: rgba(255, 255, 255, 0.12);
+		background:
+			linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, transparent 55%),
+			var(--theme-surface-1);
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface #hyperclose-semaphore,
+	html[data-theme='dark'] .tevsys-hyperclose-surface #hyperclose-off {
+		border-color: rgba(255, 255, 255, 0.14);
+		background:
+			linear-gradient(155deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.012)),
+			var(--theme-surface-1);
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .feature-proof {
+		padding: 1rem 1.1rem;
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(255, 255, 255, 0.09);
+		border-radius: var(--theme-shape-radius);
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .feature-manifesto-banner {
+		border-color: rgba(180, 186, 200, 0.42);
+		background: linear-gradient(135deg, rgba(95, 102, 118, 0.38), rgba(245, 176, 65, 0.1));
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .feature-cta {
+		border-color: rgba(255, 255, 255, 0.12);
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .demo-edit-note {
+		opacity: 0.84;
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .hyperclose-demo-evidence__text {
+		opacity: 0.96;
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .proof-gallery {
+		border-color: rgba(255, 255, 255, 0.12);
+		background: rgba(255, 255, 255, 0.03);
+	}
+
+	html[data-theme='dark'] .tevsys-hyperclose-surface .proof-gallery__item {
+		background: rgba(255, 255, 255, 0.035);
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+
+	/* Mantener ancla #hyperclose-demo por encima del panel neutro de prueba */
+	html[data-theme='dark'] .tevsys-hyperclose-surface #hyperclose-demo:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		padding: 1rem;
+		border-radius: var(--theme-shape-radius);
 	}
 </style>
