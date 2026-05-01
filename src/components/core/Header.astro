@@ -109,7 +109,15 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
 <style>
   /* Misma sans que el hero (Inter): superficie de producto coherente */
   header {
-    width: 100%;
+    /* Barra tipo pastilla (misma familia de radio que BrandOval); borde casi imperceptible, sin relleno */
+    --tevsys-header-bar-border: rgba(255, 255, 255, 0.09);
+    box-sizing: border-box;
+    width: calc(100% - clamp(0.65rem, 2.8vw, 1.85rem));
+    max-width: min(100%, 1400px);
+    margin: 0.42rem auto 0;
+    border-radius: 2.5rem;
+    border: 1px solid var(--tevsys-header-bar-border);
+    background: transparent;
     /* Tokens para el logo (BrandOval); el menú va sin borde, solo volumen suave */
     --tevsys-header-pill-border: rgba(255, 255, 255, 0.38);
     --tevsys-header-pill-surface: rgba(255, 255, 255, 0.035);
@@ -121,8 +129,10 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
     font-family: 'Inter', system-ui, -apple-system, var(--theme-font-family-sans);
     font-feature-settings: 'kern' 1;
     -webkit-font-smoothing: antialiased;
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  :global(html[data-theme='light']) header {
+    --tevsys-header-bar-border: rgba(15, 18, 28, 0.09);
   }
   header.tevsys-header--with-scanner {
     position: relative;
