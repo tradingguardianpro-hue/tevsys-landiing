@@ -10,10 +10,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     <div class="hero-section__inner">
       <div class="hero-section__text">
         <h1 class="hero-title">
-          Tú pones los límites.{' '}
-          <span class="hero-title__lock">
-            <span class="hero-title__brand">TEVSYS</span>&nbsp;los&nbsp;blinda.
-          </span>
+          Tú pones los límites. <span class="hero-title__brand">TEVSYS</span> los blinda.
         </h1>
         <p class="hero-microline">
           No damos señales ni promesas de beneficio.
@@ -101,28 +98,30 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   }
 
   .hero-section__text {
-    max-width: min(40rem, 100%);
+    max-width: min(52rem, 100%);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-inline: clamp(0.5rem, 2vw, 1rem);
+    box-sizing: border-box;
   }
 
-  /* Solo H1: DM Sans (neutra, SaaS; pareja de Inter); resto del bloque sigue en Inter */
+  /* H1 home: una sola línea, grande; sin max-width que fuerce cortes a mitad de frase. */
   .hero-title {
     font-family: var(--tevsys-display-title-font, 'DM Sans', 'Inter', system-ui, sans-serif);
     font-weight: var(--tevsys-display-title-weight, 600);
-    /* Solo home: H1 más protagonista (no compartir escala con /como-funciona ni micros). */
-    font-size: clamp(1.78rem, 4.15vw, 2.52rem);
-    line-height: var(--tevsys-display-title-line-height, 1.48);
+    font-size: clamp(0.78rem, calc(3.6vw + 0.45rem), 2.55rem);
+    line-height: 1.12;
     letter-spacing: var(--tevsys-display-title-tracking, -0.03em);
     margin: 0;
-    max-width: min(24em, 100%);
+    width: max-content;
+    max-width: 100%;
+    margin-inline: auto;
     color: #f4f6f8;
     text-align: center;
+    white-space: nowrap;
     hyphens: none;
-    overflow-wrap: normal;
-    word-break: normal;
   }
   .hero-title__underline {
     text-decoration: underline;
@@ -135,16 +134,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     letter-spacing: 0.02em;
     color: #f5b041;
     text-decoration: none;
-  }
-
-  /* TEVSYS + "los blinda." como bloque; &nbsp; en HTML evita partir "los | blinda". */
-  .hero-title__lock {
-    white-space: nowrap;
-  }
-  @media (max-width: 380px) {
-    .hero-title__lock {
-      white-space: normal;
-    }
   }
 
   .hero-microline {
@@ -432,11 +421,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       transform: translate3d(0, 0, 0) scale(1.03);
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
-    }
-  }
-  @media (max-width: 420px) {
-    .hero-title {
-      max-width: 100%;
     }
   }
 </style>

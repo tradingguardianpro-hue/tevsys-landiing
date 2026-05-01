@@ -1811,9 +1811,8 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 /*
   Micro-páginas y guías (section.feature-hero): mismo respiro bajo el título y antes del siguiente bloque.
 */
-/* Home + /como-funciona: escala “giro principal”. */
-.how-hero h1,
-.hero-title {
+/* /como-funciona: escala “giro principal”. El H1 del home se define solo en HomeHeroSection (tamaño + una línea). */
+.how-hero h1 {
 	font-family: var(--tevsys-display-title-font);
 	font-weight: var(--tevsys-display-title-weight);
 	font-size: var(--tevsys-display-title-size);
