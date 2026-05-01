@@ -9,7 +9,7 @@ Documento técnico para desarrolladores e ingenieros.
 ### Fuente principal
 - **Archivo:** `src/config/settings.js`
 - **title:** `tevsys — Pioneros en disciplina automatizada verificada y gestión de riesgo · MT5`
-- **description:** `Disciplina en el trading automatizada. Plataforma para MetaTrader 5: límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 71 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
+- **description:** `Disciplina en el trading automatizada. Plataforma para MetaTrader 5: límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 80 operativas con evidencia verificable. Para traders, prop firms y auditorías.`
 
 ### Uso
 - `BaseHead` consume estos valores por defecto.

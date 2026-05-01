@@ -77,7 +77,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto: `Volatilidad • spread • slippage • comisiones` + ámbar **`Ajuste a tiempo real`** + `71 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
+- Texto: `Volatilidad • spread • slippage • comisiones` + ámbar **`Ajuste a tiempo real`** + `80 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`
@@ -216,7 +216,7 @@ Documento de contenido/copy actual para revisión de equipo.
   - Hook: `• Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
 - `Precisión`:
   - Título: `Precisión de cierre: donde configuras, cerramos.`
-  - Hook: `• 71 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - Hook: `• 80 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: incluye escenarios extremos documentados con desviación puntual hasta `~0,39%`.
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -235,7 +235,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Nasdaq (multi‑activo):** bloque de demo **inmediatamente después** de alta volatilidad (narrativa: volatilidad → multi‑activo NASDAQ).
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`); en el flujo de página va **antes** del bloque de logs / “Sin humo” (tras volatilidad y Nasdaq).
 - **Qué puedes comprobar / orden de secciones en página (19 abr 2026):** alta volatilidad → **Nasdaq** → **cuenta pequeña** → **logs / trazabilidad**; lista de anclas y script de expansión de demos alineados con ese orden en `precision.astro`.
-- **71 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
+- **80 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
 ### Estado actual HyperClose (Mar 2026 — actualizado 26 Mar 2026)
@@ -255,7 +255,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Imágenes 4.56:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png`.
 - **Sección "Informe oficial MT5":** acordeón con 5 capturas sin editar (Summary, P&L, Long & Short, Symbols, Risks).
 - **Sección "Historial de transacciones":** acordeón con captura editada (zonas clave en amarillo) + enlace HTML 100k + **párrafo** con enlace al HTML redactado **demo HyperClose** y vuelta a `/features/hyperclose#hyperclose-demo`.
-- **Sección "Auditoría":** **71** operativas documentadas (alineado a hook Precisión / resumen estadístico), incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
+- **Sección "Auditoría":** **80** operativas documentadas (alineado a hook Precisión / resumen estadístico), incluyendo caso extremo 100 lotes (operativa 4.56). Hook "MetaTrader documenta. tevsys ejecuta."
 - **Guía logs + enlace a Precisión:** texto ancla bajo el vídeo → `/features/precision#precision-logs` (bloque “Sin humo / logs”; foco `:target` en sección + contenedor).
 - **Bloque vídeo logs:** hook operativo (localizar/leer registros MT5); vídeo con `playsinline`.
 - **CTA final:** título “¿Quieres validar la evidencia en tu operativa?” + cuerpo en línea con otras micros.
@@ -327,10 +327,10 @@ Seguimiento interno activo en:
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.`
 
 - Hook de apertura:
-  - `71 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
+  - `80 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
 
 - Bloque `Resumen estadístico` (lectura rápida):
-  - `71 operativas documentadas`
+  - `80 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -365,7 +365,7 @@ Seguimiento interno activo en:
 **Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
 
 - KPIs visibles:
-  - `71 operativas documentadas`
+  - `80 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -390,7 +390,7 @@ Seguimiento interno activo en:
 - Sin audio (texto en overlays)
 
 ### Actualización Mar 2026 — Demo y alta volatilidad
-- **26 Mar 2026 (vigente):** Ver **«Estado actual Precisión»** en este mismo documento: demo principal = `evidencia-100k-perdida.mp4` en **hero**; volatilidad y cuenta pequeña en secciones propias; **71** operativas en hook/resumen (sustituye referencias antiguas a **65** donde aún aparezcan); orden de enlaces actualizado. **19 abr 2026:** reordenación de bloques de demo — **Nasdaq tras volatilidad**, **cuenta pequeña antes de logs**. Ref: `CHANGELOG-TEVSYS.md` **§58** y entrada **19 abr 2026**.
+- **26 Mar 2026 (vigente):** Ver **«Estado actual Precisión»** en este mismo documento: demo principal = `evidencia-100k-perdida.mp4` en **hero**; volatilidad y cuenta pequeña en secciones propias; **80** operativas en hook/resumen (sustituye referencias antiguas a **65** donde aún aparezcan); orden de enlaces actualizado. **19 abr 2026:** reordenación de bloques de demo — **Nasdaq tras volatilidad**, **cuenta pequeña antes de logs**. Ref: `CHANGELOG-TEVSYS.md` **§58** y entrada **19 abr 2026**.
 - *Histórico (antes del hero unificado):* Demo principal era `precision-demo.mp4` (1 min 7 s). Volatilidad: `precision-demo-volatilidad.mp4`, 6 overlays (CHANGELOG §28.1).
 
 ### Criterio de publicación (recordatorio)
