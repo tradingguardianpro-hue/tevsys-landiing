@@ -461,6 +461,15 @@ const curatedVideos: {
 		padding: clamp(0.35rem, 1.5vw, 1rem) 0 clamp(2rem, 6vw, 4rem);
 	}
 
+	/* YouTube en Presentación: marco recto (ángulo recto). El motion ovalado / stage redondeado va en bloques `.how-*--stage` más abajo. */
+	.how-presentation .how-embed {
+		border-radius: 0;
+	}
+
+	.how-presentation .how-embed iframe {
+		border-radius: 0;
+	}
+
 	.how-zero-protected {
 		max-width: min(56rem, 100%);
 		margin: clamp(3.75rem, 16vh, 9.5rem) auto clamp(4.25rem, 18vh, 11rem);
