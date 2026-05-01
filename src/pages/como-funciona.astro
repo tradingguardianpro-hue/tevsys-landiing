@@ -63,6 +63,34 @@ const depthLayers: { title: string; blurb: string; href: string; cta: string }[]
 	},
 ];
 
+/** Tras «Esto no es todo…»: mismas cuatro piezas que la home (orden portada), antes del bloque auditoría + clips. */
+const homeBridgeCards: { title: string; blurb: string; href: string; cta: string }[] = [
+	{
+		title: 'Precisión al cierre',
+		blurb: 'Error medio documentado, operativas reales y condiciones de ejecución en MT5.',
+		href: '/features/precision',
+		cta: 'Ir a precisión',
+	},
+	{
+		title: 'HyperClose',
+		blurb: 'Bloqueo bajo presión: intento de operar con límite tocado y registro en vivo.',
+		href: '/features/hyperclose',
+		cta: 'Ir a HyperClose',
+	},
+	{
+		title: 'SML — Smart Money Lock',
+		blurb: 'Capa opcional de riesgo/recompensa y estado visible en panel.',
+		href: '/features/sml',
+		cta: 'Ir a SML',
+	},
+	{
+		title: 'Evidencia verificable',
+		blurb: 'Informes, HTML y trazas para contrastar con lo que muestra el terminal.',
+		href: '/features/evidencia',
+		cta: 'Ir a evidencia',
+	},
+];
+
 /** «Siguiente nivel»: cuatro tarjetas mismo formato; 1ª = auditoría (clip primero); sin enlaces hasta que haya clips. */
 const siguienteNivelClipCards: { title: string }[] = [
 	{ title: 'Auditoría con evidencia (Fase 1 manual)' },
@@ -208,6 +236,37 @@ const curatedVideos: {
 				<header class="how-section-head how-more__head">
 					<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
 					<h2 id="how-more-title">Esto no es todo: más comportamientos en vivo</h2>
+					<div class="how-more-bridge" aria-labelledby="how-more-bridge-title">
+						<div class="how-more-bridge__intro">
+							<div class="how-more-bridge__intro-lead">
+								<p id="how-more-bridge-title" class="how-more-lead__audit-kicker how-more-bridge__kicker">
+									CUATRO PIEZAS · HOME
+								</p>
+								<p class="how-more-bridge__headline">
+									<span class="how-more-bridge__accent">Lo mismo que en portada</span>, otra profundidad
+								</p>
+							</div>
+							<div class="how-more-bridge__intro-rule" aria-hidden="true"></div>
+							<div class="how-more-bridge__intro-copy">
+								<p>
+									Las mismas cuatro rutas que en la home: precisión, HyperClose, SML y evidencia. Desde aquí saltas al detalle
+									de cada micro; debajo seguimos con el hilo de auditoría, los temas en vídeo y las cuatro cajas de clip en
+									preparación — sin quitar nada de lo que ya teníamos.
+								</p>
+							</div>
+						</div>
+						<div class="how-more-bridge__grid">
+							{
+								homeBridgeCards.map((card) => (
+									<a href={card.href} class="how-more-bridge-card">
+										<h3 class="how-more-bridge-card__title">{card.title}</h3>
+										<p class="how-more-bridge-card__blurb">{card.blurb}</p>
+										<span class="how-more-bridge-card__cta">{card.cta} →</span>
+									</a>
+								))
+							}
+						</div>
+					</div>
 					<div class="how-more-lead">
 						<div class="how-more-lead__audit">
 							<p class="how-more-lead__audit-kicker">Primero · Auditoría</p>
@@ -235,8 +294,8 @@ const curatedVideos: {
 							siempre.
 						</p>
 						<p class="how-more-lead__note">
-							Abajo: cuatro bloques con el mismo aspecto (el primero, auditoría); clip en preparación en cada uno. Por ahora nada
-							enlaza a otras páginas.
+							Arriba del bloque de texto: enlaces a las cuatro piezas de la home. Abajo: cuatro bloques de vídeo (mismo aspecto;
+							el primero, auditoría); clip en preparación en cada uno.
 						</p>
 					</div>
 				</header>
@@ -887,6 +946,198 @@ const curatedVideos: {
 
 	.how-more__head {
 		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
+	}
+
+	/* Puente con la home: kicker + frase con subrayado marca + regla + copy; cuatro cards enlazadas. */
+	.how-more-bridge {
+		margin: 0 auto clamp(1.35rem, 4vw, 2rem);
+		max-width: min(48rem, 100%);
+		text-align: left;
+	}
+
+	.how-more-bridge__intro {
+		display: grid;
+		gap: clamp(0.85rem, 2.5vw, 1.25rem);
+		align-items: start;
+		margin-bottom: clamp(1.1rem, 3vw, 1.5rem);
+	}
+
+	@media (min-width: 720px) {
+		.how-more-bridge__intro {
+			grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.15fr);
+			gap: clamp(1rem, 2.8vw, 1.5rem);
+			align-items: stretch;
+		}
+	}
+
+	.how-more-bridge__kicker {
+		margin-bottom: 0.5rem;
+	}
+
+	.how-more-bridge__headline {
+		margin: 0;
+		font-size: clamp(1.02rem, 2.4vw, 1.14rem);
+		font-weight: 700;
+		line-height: 1.35;
+		letter-spacing: -0.02em;
+		color: rgba(244, 246, 248, 0.96);
+	}
+
+	html[data-theme='light'] .how-more-bridge__headline {
+		color: var(--theme-on-bg, #111);
+	}
+
+	.how-more-bridge__accent {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.how-more-bridge__accent::after {
+		content: '';
+		display: block;
+		width: min(10.5rem, 100%);
+		height: 2px;
+		margin: 0.3rem 0 0 0.2rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+
+	html[data-theme='light'] .how-more-bridge__accent::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
+	}
+
+	.how-more-bridge__intro-rule {
+		display: none;
+	}
+
+	@media (min-width: 720px) {
+		.how-more-bridge__intro-rule {
+			display: block;
+			width: 1px;
+			min-height: 100%;
+			margin: 0.15rem 0;
+			border-radius: 999px;
+			background: linear-gradient(
+				180deg,
+				rgba(245, 176, 65, 0.45) 0%,
+				rgba(148, 154, 168, 0.35) 45%,
+				rgba(110, 116, 128, 0.2) 100%
+			);
+		}
+	}
+
+	@media (max-width: 719.98px) {
+		.how-more-bridge__intro-rule {
+			display: block;
+			width: 100%;
+			height: 1px;
+			margin: 0.15rem 0 0.35rem;
+			border-radius: 999px;
+			background: linear-gradient(
+				90deg,
+				rgba(245, 176, 65, 0.35) 0%,
+				rgba(148, 154, 168, 0.28) 50%,
+				rgba(110, 116, 128, 0.12) 100%
+			);
+		}
+	}
+
+	.how-more-bridge__intro-copy p {
+		margin: 0;
+		font-size: 0.92rem;
+		line-height: 1.55;
+		opacity: 0.88;
+	}
+
+	html[data-theme='dark'] .how-more-bridge__intro-copy p {
+		color: rgba(244, 246, 248, 0.94);
+		opacity: 1;
+	}
+
+	.how-more-bridge__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 11.25rem), 1fr));
+		gap: clamp(0.85rem, 2.5vw, 1.15rem);
+	}
+
+	.how-more-bridge-card {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		min-height: 100%;
+		padding: clamp(0.95rem, 2.5vw, 1.15rem) clamp(0.9rem, 2.2vw, 1.1rem);
+		box-sizing: border-box;
+		text-decoration: none;
+		color: inherit;
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: clamp(0.45rem, 1vw, 0.65rem);
+		transition:
+			border-color 0.18s ease,
+			box-shadow 0.18s ease,
+			transform 0.18s ease;
+	}
+
+	html[data-theme='light'] .how-more-bridge-card {
+		background: var(--theme-surface-1);
+		border-color: var(--theme-surface-border);
+		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+
+	.how-more-bridge-card:hover {
+		border-color: rgba(245, 176, 65, 0.35);
+		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+		transform: translateY(-2px);
+	}
+
+	.how-more-bridge-card:focus-visible {
+		outline: 2px solid rgba(245, 176, 65, 0.55);
+		outline-offset: 3px;
+	}
+
+	.how-more-bridge-card__title {
+		margin: 0 0 0.4rem;
+		font-size: 1.02rem;
+		font-weight: 700;
+		line-height: 1.25;
+		letter-spacing: -0.015em;
+	}
+
+	.how-more-bridge-card__blurb {
+		margin: 0 0 0.55rem;
+		font-size: 0.86rem;
+		line-height: 1.45;
+		opacity: 0.88;
+		flex: 1;
+	}
+
+	.how-more-bridge-card__cta {
+		margin-top: auto;
+		font-size: 0.86rem;
+		font-weight: 600;
+		color: rgba(200, 204, 214, 0.82);
+	}
+
+	.how-more-bridge-card:hover .how-more-bridge-card__cta {
+		color: rgba(245, 176, 65, 0.95);
+	}
+
+	html[data-theme='light'] .how-more-bridge-card__cta {
+		color: rgba(72, 76, 86, 0.75);
+	}
+
+	html[data-theme='light'] .how-more-bridge-card:hover .how-more-bridge-card__cta {
+		color: #c98a2e;
 	}
 
 	.how-more-lead {
