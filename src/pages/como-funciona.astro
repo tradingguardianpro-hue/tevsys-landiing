@@ -184,49 +184,53 @@ const curatedVideos: {
 			</div>
 		</section>
 
-		<section class="how-zero-protected" id="de-cero-a-protegido" aria-labelledby="how-zero-title">
-			<header class="how-section-head">
-				<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
-				<h2 id="how-zero-title">
-					{zeroToProtected.title}
-					<span class="how-zero-duration">({zeroToProtected.durationLabel})</span>
-				</h2>
-				<p class="how-section-sub">{zeroToProtected.blurb}</p>
-			</header>
-			<div class="how-zero-protected__frame">
-				{
-					zeroToProtected.embedUrl ? (
-						<>
-							<div class="how-embed how-embed--chrome">
-								<iframe
-									src={zeroToProtected.embedUrl}
-									title={zeroToProtected.title}
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-									allowfullscreen
-									loading="lazy"
-									referrerpolicy="strict-origin-when-cross-origin"></iframe>
-							</div>
-							{zeroToProtected.watchHref ? (
-								<p class="how-zero-watch">
-									<a
-										href={zeroToProtected.watchHref}
-										class="how-text-link"
-										target="_blank"
-										rel="noopener noreferrer">
-										Abrir en YouTube →
-									</a>
+		<section class="how-zero-protected how-zero-protected--stage" id="de-cero-a-protegido" aria-labelledby="how-zero-title">
+			<div class="how-zero-protected__bg" aria-hidden="true"></div>
+			<div class="how-zero-protected__sweep" aria-hidden="true"></div>
+			<div class="how-zero-protected__inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
+					<h2 id="how-zero-title">
+						{zeroToProtected.title}
+						<span class="how-zero-duration">({zeroToProtected.durationLabel})</span>
+					</h2>
+					<p class="how-section-sub">{zeroToProtected.blurb}</p>
+				</header>
+				<div class="how-zero-protected__frame">
+					{
+						zeroToProtected.embedUrl ? (
+							<>
+								<div class="how-embed how-embed--chrome">
+									<iframe
+										src={zeroToProtected.embedUrl}
+										title={zeroToProtected.title}
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen
+										loading="lazy"
+										referrerpolicy="strict-origin-when-cross-origin"></iframe>
+								</div>
+								{zeroToProtected.watchHref ? (
+									<p class="how-zero-watch">
+										<a
+											href={zeroToProtected.watchHref}
+											class="how-text-link"
+											target="_blank"
+											rel="noopener noreferrer">
+											Abrir en YouTube →
+										</a>
+									</p>
+								) : null}
+							</>
+						) : (
+							<div class="how-embed how-embed--chrome how-embed-placeholder" role="status" aria-live="polite">
+								<p class="how-embed-placeholder__title">Vídeo en preparación</p>
+								<p class="how-embed-placeholder__sub">
+									Pronto verás aquí el recorrido completo. Mientras, las dos partes de arriba y la instalación más abajo cubren el arranque.
 								</p>
-							) : null}
-						</>
-					) : (
-						<div class="how-embed how-embed--chrome how-embed-placeholder" role="status" aria-live="polite">
-							<p class="how-embed-placeholder__title">Vídeo en preparación</p>
-							<p class="how-embed-placeholder__sub">
-								Pronto verás aquí el recorrido completo. Mientras, las dos partes de arriba y la instalación más abajo cubren el arranque.
-							</p>
-						</div>
-					)
-				}
+							</div>
+						)
+					}
+				</div>
 			</div>
 		</section>
 
@@ -446,6 +450,116 @@ const curatedVideos: {
 		max-width: min(56rem, 100%);
 		margin: clamp(3.75rem, 16vh, 9.5rem) auto clamp(4.25rem, 18vh, 11rem);
 		padding: clamp(1rem, 4vw, 2.25rem) 0 clamp(1.25rem, 4vw, 2rem);
+	}
+
+	/* “De cero a protegido”: profundidad fija (gradiente + viñeta) + barrido gris lento, acotado al bloque (tema oscuro = referencia motion header). */
+	.how-zero-protected--stage {
+		position: relative;
+		overflow: hidden;
+		border-radius: clamp(0.5rem, 1.2vw, 0.875rem);
+	}
+
+	.how-zero-protected__bg,
+	.how-zero-protected__sweep {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	.how-zero-protected__inner {
+		position: relative;
+		z-index: 1;
+	}
+
+	html[data-theme='dark'] .how-zero-protected__bg {
+		background:
+			radial-gradient(ellipse 92% 60% at 50% 36%, rgba(38, 42, 52, 0.62) 0%, transparent 58%),
+			radial-gradient(ellipse 125% 88% at 50% 108%, rgba(245, 176, 65, 0.038) 0%, transparent 44%);
+		box-shadow: inset 0 0 clamp(3rem, 11vw, 6.5rem) rgba(0, 0, 0, 0.42);
+	}
+
+	html[data-theme='light'] .how-zero-protected__bg {
+		background:
+			radial-gradient(ellipse 90% 58% at 50% 38%, rgba(0, 0, 0, 0.045) 0%, transparent 56%),
+			radial-gradient(ellipse 118% 82% at 50% 105%, rgba(200, 145, 55, 0.025) 0%, transparent 42%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html[data-theme='dark'] .how-zero-protected__sweep {
+			inset: -28% -12%;
+			background-image: linear-gradient(
+				102deg,
+				transparent 0%,
+				transparent 40%,
+				rgba(110, 114, 128, 0.055) 47%,
+				rgba(186, 190, 202, 0.095) 50%,
+				rgba(95, 98, 110, 0.048) 53%,
+				transparent 64%,
+				transparent 100%
+			);
+			background-size: 235% 130%;
+			background-position: 70% 48%;
+			background-repeat: no-repeat;
+			opacity: 0.36;
+			animation: how-zero-protected-sweep 54s ease-in-out infinite;
+		}
+
+		html[data-theme='light'] .how-zero-protected__sweep {
+			inset: -22% -10%;
+			background-image: linear-gradient(
+				102deg,
+				transparent 0%,
+				transparent 41%,
+				rgba(88, 92, 104, 0.035) 48%,
+				rgba(148, 152, 166, 0.065) 50%,
+				rgba(78, 82, 94, 0.03) 53%,
+				transparent 62%,
+				transparent 100%
+			);
+			background-size: 220% 120%;
+			background-position: 62% 50%;
+			background-repeat: no-repeat;
+			opacity: 0.2;
+			animation: how-zero-protected-sweep 58s ease-in-out infinite;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.how-zero-protected__sweep {
+			animation: none !important;
+			opacity: 0.1;
+		}
+
+		html[data-theme='light'] .how-zero-protected__sweep {
+			opacity: 0.05;
+		}
+	}
+
+	@keyframes how-zero-protected-sweep {
+		0%,
+		100% {
+			background-position: 70% 48%;
+			animation-timing-function: ease-in-out;
+		}
+		26% {
+			background-position: 36% 52%;
+			animation-timing-function: ease-in-out;
+		}
+		50% {
+			background-position: -6% 46%;
+			animation-timing-function: ease-in-out;
+		}
+		72% {
+			background-position: 20% 54%;
+			animation-timing-function: ease-in-out;
+		}
+		86% {
+			background-position: 88% 49%;
+			animation-timing-function: ease-in-out;
+		}
 	}
 
 	.how-zero-protected .how-section-head {
