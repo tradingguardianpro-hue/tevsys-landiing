@@ -199,7 +199,9 @@ const curatedVideos: {
 							</p>
 							<p class="how-more-lead__audit-note">Clip en preparación · Misma claridad que el resto de la página.</p>
 						</div>
-						<p id="how-more-follow-title" class="how-more-lead__follow-title">Otras funcionalidades clave</p>
+						<p id="how-more-follow-title" class="how-more-lead__audit-kicker how-more-lead__follow-kicker">
+							FUNCIONALIDADES · ÚNICAS
+						</p>
 						<p class="how-more-lead__line">
 							<span class="how-more-lead__topic"><strong>Cómo te protegemos cuando decides estar OFF</strong></span>
 							— Mira la rotación automática entre OFF y día operativo.
@@ -887,19 +889,9 @@ const curatedVideos: {
 		opacity: 1;
 	}
 
-	/* Tras el borde inferior del bloque auditoría: puente hacia las tres líneas con subrayado. */
-	.how-more-lead__follow-title {
-		margin: clamp(0.65rem, 2vw, 1rem) auto clamp(0.85rem, 2.5vw, 1.2rem);
-		max-width: 42rem;
-		font-size: clamp(1.02rem, 2.4vw, 1.12rem);
-		font-weight: 700;
-		line-height: 1.3;
-		letter-spacing: -0.02em;
-		color: rgba(244, 246, 248, 0.96);
-	}
-
-	html[data-theme='light'] .how-more-lead__follow-title {
-		color: var(--theme-on-bg, #111);
+	/* Tras auditoría: mismo kicker ámbar que «Primero · Auditoría», con aire propio. */
+	.how-more-lead__follow-kicker {
+		margin: clamp(0.75rem, 2.2vw, 1.1rem) 0 clamp(0.65rem, 2vw, 0.95rem);
 	}
 
 	/* Misma familia que «De cero a protegido» (h2::after), más estrecha y fina, bajo cada tema en negrita. */
@@ -908,27 +900,28 @@ const curatedVideos: {
 		text-align: left;
 	}
 
+	/* Subrayado distinto a «De cero a protegido»: ámbar hacia la derecha + barra anclada al final del título. */
 	.how-more-lead__topic::after {
 		content: '';
 		display: block;
 		width: min(7.25rem, 100%);
 		height: 2px;
-		margin: 0.26rem 0 0;
+		margin: 0.26rem 0 0 auto;
 		border-radius: 999px;
 		background: linear-gradient(
 			90deg,
-			rgba(245, 176, 65, 0.95) 0%,
-			rgba(148, 154, 168, 0.62) 72%,
-			rgba(110, 116, 128, 0.35) 100%
+			rgba(110, 116, 128, 0.35) 0%,
+			rgba(148, 154, 168, 0.62) 28%,
+			rgba(245, 176, 65, 0.95) 100%
 		);
 	}
 
 	html[data-theme='light'] .how-more-lead__topic::after {
 		background: linear-gradient(
 			90deg,
-			rgba(218, 155, 48, 0.9) 0%,
-			rgba(120, 125, 138, 0.5) 75%,
-			rgba(90, 95, 108, 0.28) 100%
+			rgba(90, 95, 108, 0.28) 0%,
+			rgba(120, 125, 138, 0.5) 25%,
+			rgba(218, 155, 48, 0.9) 100%
 		);
 	}
 
@@ -965,7 +958,7 @@ const curatedVideos: {
 			text-align: center;
 		}
 
-		.how-more-lead__follow-title {
+		.how-more-lead__follow-kicker {
 			text-align: center;
 		}
 
@@ -973,9 +966,10 @@ const curatedVideos: {
 			text-align: center;
 		}
 
+		/* Misma lectura que en móvil: calor a la derecha, alineado al borde derecho del texto en negrita. */
 		.how-more-lead__topic::after {
 			margin-left: auto;
-			margin-right: auto;
+			margin-right: 0;
 		}
 	}
 
