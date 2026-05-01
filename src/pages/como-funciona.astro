@@ -97,7 +97,7 @@ type MoreBehaviorItem =
 const moreBehaviorsItems: MoreBehaviorItem[] = [
 	{
 		kind: 'tarjetaMicro',
-		title: 'Cómo te protegemos cuando estás OFF',
+		title: 'Cómo te protegemos cuando decides estar OFF',
 		line1:
 			'Un día marcas que no operas: el calendario va a OFF y la cuenta no se comporta igual que en un día operativo con protección lista. Así rotas entre “off” y “en marcha”, sin perder el hilo.',
 		line2: 'En la micro de HyperClose lo vemos en panel, capturas y vídeo (bloque día OFF).',
@@ -110,15 +110,16 @@ const moreBehaviorsItems: MoreBehaviorItem[] = [
 		kind: 'tarjetaMicro',
 		title: 'Observación pasiva',
 		line1:
-			'Un poco más de producto: te protegemos desde cero, pero si ya tenías trades abiertos no improvisamos el día: observamos y medimos desde el bloqueo, con trazas que puedes contrastar.',
+			'Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos: observamos, medimos desde el bloqueo y dejamos trazas que puedes contrastar.',
 		line2: 'Informes, HTML y galería en la micro de evidencia.',
 		href: '/features/evidencia',
 		cta: 'Ver evidencia',
 	},
 	{
 		kind: 'videoCorto',
-		title: 'Inputs con EA vigilando (~25–30 s)',
-		playHint: 'Qué pasa si tocas F7 con límites bloqueados: modal y aviso en el panel, en segundos.',
+		title: 'Retocar con el EA vigilando (~25–30 s)',
+		playHint:
+			'Cambio de límites con el EA vigilando: cómo se ve en la terminal (modal y panel). Clip en preparación.',
 		embedUrl: '',
 		watchHref: '',
 	},
@@ -240,12 +241,20 @@ const curatedVideos: {
 			<header class="how-section-head how-more__head">
 				<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
 				<h2 id="how-more-title">Esto no es todo: más comportamientos en vivo</h2>
-				<p class="how-section-sub">
-					Tras lo esencial, tres cosas en lenguaje llano: <strong>cómo te protegemos cuando dices estar OFF</strong> (y qué
-					cambia frente a un día operativo), <strong>observación pasiva</strong> —un poco más de producto: empezamos desde cero,
-					pero <strong>¿qué pasa si ya tenías trades abiertos?</strong>—, y un <strong>corte breve</strong> si tocas MT5 con el
-					EA vigilando. Enlaces a las micros y clip cuando esté publicado.
-				</p>
+				<div class="how-more-lead">
+					<p class="how-more-lead__line">
+						<strong>Cómo te protegemos cuando decides estar OFF</strong> — Mira la rotación automática entre OFF y día operativo.
+					</p>
+					<p class="how-more-lead__line">
+						<strong>Observación pasiva</strong> — Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos:
+						observamos, medimos desde el bloqueo y dejamos trazas que puedes contrastar.
+					</p>
+					<p class="how-more-lead__line">
+						<strong>Retocar lo que ya protegiste</strong> — Si el EA ya está vigilando, el cambio de límites tiene reglas: te
+						mostramos cómo actuamos; tus reglas se cumplen siempre.
+					</p>
+					<p class="how-more-lead__note">Abajo: enlaces a las micros y un corte breve cuando esté publicado.</p>
+				</div>
 			</header>
 			<div class="how-more-grid">
 				{
@@ -740,6 +749,46 @@ const curatedVideos: {
 
 	.how-more__head {
 		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
+	}
+
+	.how-more-lead {
+		margin: 0 auto;
+		max-width: 42rem;
+		text-align: left;
+	}
+
+	.how-more-lead__line {
+		margin: 0 0 clamp(0.75rem, 2vw, 1rem);
+		font-size: 0.94rem;
+		line-height: 1.55;
+		opacity: 0.9;
+	}
+
+	.how-more-lead__line strong {
+		font-weight: 700;
+		color: rgba(244, 246, 248, 0.98);
+	}
+
+	html[data-theme='light'] .how-more-lead__line strong {
+		color: var(--theme-on-bg, #111);
+	}
+
+	.how-more-lead__note {
+		margin: clamp(0.35rem, 1.5vw, 0.65rem) 0 0;
+		font-size: 0.88rem;
+		line-height: 1.45;
+		opacity: 0.72;
+		text-align: center;
+	}
+
+	@media (min-width: 640px) {
+		.how-more-lead {
+			text-align: center;
+		}
+
+		.how-more-lead__line {
+			text-align: center;
+		}
 	}
 
 	.how-more-grid {
