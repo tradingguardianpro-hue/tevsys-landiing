@@ -146,12 +146,14 @@ Documento para continuidad (p. ej. DeepSeek / otra IA): **qué se hizo**, **dón
 - **Orden:** alineado a la **home** — Precisión, HyperClose, SML, Evidencia.
 - **MP4:** Precisión, HyperClose, Evidencia usan los **mismos** `/videos/features/*.mp4` que las micros; **SML** sin `featureVideoSrc` hasta tener corte (solo texto + CTA).
 - **HTML:** `<article class="how-more-bridge-card">` — título en enlace principal; `<video>` **fuera** del enlace del título (controles válidos); CTA secundario al pie.
+- **Estilo cards (may 2026):** carril ámbar lateral, gradiente de superficie, jerarquía título/blurb/CTA; **SML** sin MP4 → placeholder **«Vídeo en preparación»** (ratio 16:9, borde discontinuo), no hueco vacío.
 
 ### 6.4 Narrativa intermedia (`.how-more-lead`)
 
-- **Bloque auditoría:** kicker **«Primero · Auditoría»**, párrafo honesto (servicio **no en marcha** en apertura pública), nota **«Clip en preparación»**.
+- **Puente previo al lead:** párrafo **`.how-more-audit-bridge`** (una línea: contrastar hechos / cruzar terminal, panel y registro) — **entre** el grid del puente y **`.how-more-lead`**.
+- **Bloque auditoría (capítulo propio):** kicker **«Primero · Auditoría»**; párrafo de apertura **polivalente** (reglas, precisión de cierres, bloqueos, fricción; no solo “disciplina”); **lista** **`.how-more-lead__audit-points`** (triangulación MT5 + panel + logs y focos del pack; ID `TVS-…`; canal: check con ID, valoración, pack, **contratación pública no abierta**, roadmap dropzone/automatización sin fechas); nota clips. Caja con borde/carril ámbar (`.how-more-lead__audit` ampliado en `<style>`). Código inline **`.how-more-lead__code`** para `TVS-…`.
 - **Tres líneas con tema + subrayado** (clases `how-more-lead__line--topic-u1` … `u3`): OFF / observación pasiva / retocar con EA vigilando — textos de apoyo con **subrayado** vía `.how-more-lead__topic::after`.
-- **Nota pie:** indica que **abajo** hay cuatro bloques de vídeo (mismo aspecto; primero auditoría).
+- **Alineación narrativa:** `docs/PROTOCOLO_AUDITORIA_IA_FASE1_MANUAL_ASISTIDA.md` (§0 honesto, §4 triangulación/focos, §5.7 ID).
 
 ### 6.5 Grid de cuatro «clips» (`.how-more-grid`)
 
@@ -164,10 +166,11 @@ Documento para continuidad (p. ej. DeepSeek / otra IA): **qué se hizo**, **dón
 
 - **`how-depth`:** grid de enlaces «Enlaces directos en vivo» (HyperClose, evidencia, SML, auditoría) — **se mantiene**; posible consolidación futura cuando el fundador cierre diseño (ya anotado en CHANGELOG 30 abr).
 
-### 6.7 Pendiente UX (fundador — may 2026)
+### 6.7 Pendiente UX y feedback (fundador — may 2026)
 
-- **Transición grid puente → bloque «Primero · Auditoría»:** en captura, el salto visual entre la cuadrícula de cuatro cards y el bloque naranja inferior se puede **suavizar** (espaciado, separador, fondo o ritmo tipográfico). **No aplicado aún** — acordado documentar en el pack y retocar en una pasada dedicada cuando se cierren criterios.
-- **SML sin vídeo:** hueco negro hasta tener MP4; con los cuatro vídeos + iconografía/evidencias la sección **leerá** como guía completa (comentario fundador: de momento sirve como guía visual).
+- **Transición grid puente → capítulo auditoría:** mitigado con **`.how-more-audit-bridge`** + caja distinta del grid; si tras **feedback** del fundador (sesión cerrada **1 may 2026**, pendiente **mañana**) aún se nota salto, afinar espaciado / ritmo / separador adicional en pasada corta.
+- **SML sin vídeo:** placeholder en card (ver §6.3); sustituir por MP4 cuando exista corte.
+- **Feedback pendiente (post mañana):** microcards puente, copy del capítulo auditoría (tono/longitud), empalme con bloques inferiores, clips cuando haya material — incorporar viñetas en este § o en CHANGELOG según decisión.
 
 ---
 
@@ -184,3 +187,11 @@ Documento para continuidad (p. ej. DeepSeek / otra IA): **qué se hizo**, **dón
 
 - Resumen breve y fecha: **`docs/CHANGELOG-TEVSYS.md`** (entrada superior **1 may 2026** — paquete motion + header + handoff).
 - Este archivo: **`docs/HANDOFF_COMO_FUNCIONA_MOTION_HEADER_1MAY2026.md`**.
+
+---
+
+## 9. Cierre sesión 1 may 2026 — continuidad
+
+- **Estado:** `/como-funciona` (puente cards, capítulo auditoría, puente de una línea) + este handoff **al día**; **pendiente feedback** del fundador (pasada completa **mañana**).
+- **Siguiente:** con tu feedback → ajustes puntuales (copy/CSS/motion si hace falta) → mirada oscuro/claro y `prefers-reduced-motion` → si toca, línea en **CHANGELOG-TEVSYS** + commit `web(tevsys): …`.
+- **Contexto:** repo TGP (EA, SML, zona sagrada) sigue en su propio ritmo; esta web no lo sustituye.
