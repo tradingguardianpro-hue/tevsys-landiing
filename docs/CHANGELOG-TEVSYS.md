@@ -9,13 +9,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 **Archivo:** `src/pages/como-funciona.astro`.
 
 ### Contexto y decisión
-- Tras el H2 **«Esto no es todo: más comportamientos en vivo»** hace falta **anclar** al visitante a las mismas **cuatro tarjetas de la portada** (precisión, HyperClose, SML, evidencia) antes del bloque narrativo de auditoría + «FUNCIONALIDADES · ÚNICAS» + clips.
-- **No se elimina** el contenido existente (Primero · Auditoría, tres líneas con subrayado, grid de cuatro placeholders): se **añade** un bloque intermedio con el **mismo tono** que la zona de funcionalidades únicas: kicker en mayúsculas ámbar, frase con **subrayado ámbar→gris** (asimétrico respecto a otros subrayados de la página), **regla** vertical/horizontal y texto explicativo; debajo **cuatro cards** enlazadas a `/features/precision`, `/features/hyperclose`, `/features/sml`, `/features/evidencia`.
+- Tras el H2 **«Esto no es todo: más comportamientos en vivo»** hace falta **anclar** al visitante a las mismas **cuatro rutas que la home** (precisión, HyperClose, SML, evidencia) antes del bloque narrativo de auditoría + «FUNCIONALIDADES · ÚNICAS» + clips.
+- Cabecero del puente alineado a **«De la teoría a la pantalla»**: `how-eyebrow` centrado (**Cuatro piezas · home**) + frase con **subrayado ámbar→gris** centrado bajo «Lo mismo que en portada»; sin párrafo explicativo largo (solo layout + cards).
+- **No se elimina** el contenido existente (Primero · Auditoría, tres líneas con subrayado, grid de cuatro placeholders): el puente queda **encima** del bloque `how-more-lead`.
 - La sección **«Enlaces directos en vivo»** (`how-depth`) con HyperClose / evidencia / SML / auditoría **se mantiene** por ahora (sin borrar; posible consolidación cuando el fundador cierre diseño).
 
 ### Comportamiento
 - Grid de cards **responsive** (`auto-fit`), hover y foco accesible; CTA en gris que **toma ámbar** al hover para no competir con el color del stage hasta interacción.
-- **Dos cards** llevan **vídeo HTML5** pequeño (mismo MP4 que en las micros): **Precisión** (`precision-demo-volatilidad.mp4`) y **HyperClose** (`hyperclose-demo.mp4`). **SML** y **Evidencia** siguen solo con texto + enlace (sin repetir Parte 1 / Parte 2 de la presentación). El `<video>` va **fuera** del enlace principal para HTML válido y controles usables.
+- **Tres cards** llevan **vídeo HTML5** pequeño (mismo MP4 que en las micros): **Precisión** (`precision-demo-volatilidad.mp4`), **HyperClose** (`hyperclose-demo.mp4`), **Evidencia** (`evidencia-100k-perdida.mp4`, demo 100k ~1 min 41 s). **SML** sigue solo texto + enlace hasta tener corte. El `<video>` va **fuera** del enlace principal para HTML válido y controles usables.
 
 ---
 

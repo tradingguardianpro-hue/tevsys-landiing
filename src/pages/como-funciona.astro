@@ -100,6 +100,8 @@ const homeBridgeCards: {
 		blurb: 'Informes, HTML y trazas para contrastar con lo que muestra el terminal.',
 		href: '/features/evidencia',
 		cta: 'Ir a evidencia',
+		featureVideoSrc: '/videos/features/evidencia-100k-perdida.mp4',
+		videoLabel: 'Demo rápida — cuenta 100k (~1 min 41 s). Mismo archivo que en la micro Evidencia.',
 	},
 ];
 
@@ -249,23 +251,11 @@ const curatedVideos: {
 					<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
 					<h2 id="how-more-title">Esto no es todo: más comportamientos en vivo</h2>
 					<div class="how-more-bridge" aria-labelledby="how-more-bridge-title">
-						<div class="how-more-bridge__intro">
-							<div class="how-more-bridge__intro-lead">
-								<p id="how-more-bridge-title" class="how-more-lead__audit-kicker how-more-bridge__kicker">
-									CUATRO PIEZAS · HOME
-								</p>
-								<p class="how-more-bridge__headline">
-									<span class="how-more-bridge__accent">Lo mismo que en portada</span>, otra profundidad
-								</p>
-							</div>
-							<div class="how-more-bridge__intro-rule" aria-hidden="true"></div>
-							<div class="how-more-bridge__intro-copy">
-								<p>
-									Las mismas cuatro rutas que en la home: precisión, HyperClose, SML y evidencia. Desde aquí saltas al detalle
-									de cada micro; debajo seguimos con el hilo de auditoría, los temas en vídeo y las cuatro cajas de clip en
-									preparación — sin quitar nada de lo que ya teníamos.
-								</p>
-							</div>
+						<div class="how-more-bridge__head-block how-section-head">
+							<p id="how-more-bridge-title" class="how-eyebrow how-eyebrow--center">Cuatro piezas · home</p>
+							<p class="how-more-bridge__headline">
+								<span class="how-more-bridge__accent">Lo mismo que en portada</span>, otra profundidad
+							</p>
 						</div>
 						<div class="how-more-bridge__grid">
 							{
@@ -322,8 +312,7 @@ const curatedVideos: {
 							siempre.
 						</p>
 						<p class="how-more-lead__note">
-							Arriba del bloque de texto: enlaces a las cuatro piezas de la home. Abajo: cuatro bloques de vídeo (mismo aspecto;
-							el primero, auditoría); clip en preparación en cada uno.
+							Abajo: cuatro bloques de vídeo (mismo aspecto; el primero, auditoría); clip en preparación en cada uno.
 						</p>
 					</div>
 				</header>
@@ -976,30 +965,14 @@ const curatedVideos: {
 		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
 	}
 
-	/* Puente con la home: kicker + frase con subrayado marca + regla + copy; cuatro cards enlazadas. */
+	/* Puente con la home: misma filosofía que «De la teoría a la pantalla» (eyebrow centrado + frase + subrayado); cuatro cards. */
 	.how-more-bridge {
 		margin: 0 auto clamp(1.35rem, 4vw, 2rem);
 		max-width: min(48rem, 100%);
-		text-align: left;
 	}
 
-	.how-more-bridge__intro {
-		display: grid;
-		gap: clamp(0.85rem, 2.5vw, 1.25rem);
-		align-items: start;
+	.how-more-bridge__head-block {
 		margin-bottom: clamp(1.1rem, 3vw, 1.5rem);
-	}
-
-	@media (min-width: 720px) {
-		.how-more-bridge__intro {
-			grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.15fr);
-			gap: clamp(1rem, 2.8vw, 1.5rem);
-			align-items: stretch;
-		}
-	}
-
-	.how-more-bridge__kicker {
-		margin-bottom: 0.5rem;
 	}
 
 	.how-more-bridge__headline {
@@ -1008,6 +981,7 @@ const curatedVideos: {
 		font-weight: 700;
 		line-height: 1.35;
 		letter-spacing: -0.02em;
+		text-align: center;
 		color: rgba(244, 246, 248, 0.96);
 	}
 
@@ -1017,7 +991,7 @@ const curatedVideos: {
 
 	.how-more-bridge__accent {
 		display: inline-block;
-		text-align: left;
+		text-align: center;
 	}
 
 	.how-more-bridge__accent::after {
@@ -1025,7 +999,7 @@ const curatedVideos: {
 		display: block;
 		width: min(10.5rem, 100%);
 		height: 2px;
-		margin: 0.3rem 0 0 0.2rem;
+		margin: 0.3rem auto 0;
 		border-radius: 999px;
 		background: linear-gradient(
 			90deg,
@@ -1042,54 +1016,6 @@ const curatedVideos: {
 			rgba(120, 125, 138, 0.5) 75%,
 			rgba(90, 95, 108, 0.28) 100%
 		);
-	}
-
-	.how-more-bridge__intro-rule {
-		display: none;
-	}
-
-	@media (min-width: 720px) {
-		.how-more-bridge__intro-rule {
-			display: block;
-			width: 1px;
-			min-height: 100%;
-			margin: 0.15rem 0;
-			border-radius: 999px;
-			background: linear-gradient(
-				180deg,
-				rgba(245, 176, 65, 0.45) 0%,
-				rgba(148, 154, 168, 0.35) 45%,
-				rgba(110, 116, 128, 0.2) 100%
-			);
-		}
-	}
-
-	@media (max-width: 719.98px) {
-		.how-more-bridge__intro-rule {
-			display: block;
-			width: 100%;
-			height: 1px;
-			margin: 0.15rem 0 0.35rem;
-			border-radius: 999px;
-			background: linear-gradient(
-				90deg,
-				rgba(245, 176, 65, 0.35) 0%,
-				rgba(148, 154, 168, 0.28) 50%,
-				rgba(110, 116, 128, 0.12) 100%
-			);
-		}
-	}
-
-	.how-more-bridge__intro-copy p {
-		margin: 0;
-		font-size: 0.92rem;
-		line-height: 1.55;
-		opacity: 0.88;
-	}
-
-	html[data-theme='dark'] .how-more-bridge__intro-copy p {
-		color: rgba(244, 246, 248, 0.94);
-		opacity: 1;
 	}
 
 	.how-more-bridge__grid {
