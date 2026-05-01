@@ -262,7 +262,7 @@ const curatedVideos: {
 					{
 						moreBehaviorsItems.map((item) =>
 							item.kind === 'tarjetaMicro' ? (
-								<a href={item.href} class="how-more-card how-more-card--micro">
+								<article class="how-more-card how-more-card--micro">
 									{item.imgSrc ? (
 										<div class="how-more-card__media">
 											<img src={item.imgSrc} alt={item.imgAlt ?? ''} width={640} height={360} loading="lazy" decoding="async" />
@@ -272,19 +272,16 @@ const curatedVideos: {
 										<h3 class="how-more-card__title">{item.title}</h3>
 										<p class="how-more-card__line">{item.line1}</p>
 										<p class="how-more-card__line how-more-card__line--muted">{item.line2}</p>
-										<span class="how-more-card__cta">{item.cta} →</span>
+										<a href={item.href} class="how-more-card__cta">
+											{item.cta} →
+										</a>
 									</div>
-								</a>
+								</article>
 							) : item.kind === 'videoCorto' ? (
 								<article class="how-more-cell how-more-cell--video">
 									<header class="how-block-head how-block-head--compact">
 										<h3 class="how-more-card__title">{item.title}</h3>
-										<p class="how-block-lead">{item.playHint}</p>
-										{item.watchHref ? (
-											<a href={item.watchHref} class="how-text-link" target="_blank" rel="noopener noreferrer">
-												Abrir en YouTube →
-											</a>
-										) : null}
+										{item.embedUrl ? <p class="how-block-lead">{item.playHint}</p> : null}
 									</header>
 									{item.embedUrl ? (
 										<div class="how-embed how-embed--chrome how-more-embed">
@@ -302,7 +299,17 @@ const curatedVideos: {
 												<p class="how-embed-placeholder__title">Clip en preparación</p>
 												<p class="how-embed-placeholder__sub">Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.</p>
 											</div>
-											<span class="how-more-card__cta how-more-card__cta--pending">Clip en preparación →</span>
+											{item.watchHref ? (
+												<a
+													href={item.watchHref}
+													class="how-more-card__cta how-more-card__cta--pending"
+													target="_blank"
+													rel="noopener noreferrer">
+													Abrir en YouTube →
+												</a>
+											) : (
+												<span class="how-more-card__cta how-more-card__cta--pending">Clip en preparación →</span>
+											)}
 										</>
 									)}
 								</article>
@@ -996,15 +1003,36 @@ const curatedVideos: {
 			transform 0.18s ease;
 	}
 
-	.how-more-card:hover {
+	.how-more-card--doble:hover {
 		border-color: rgba(245, 176, 65, 0.38);
 		box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 		transform: translateY(-2px);
 	}
 
-	.how-more-card:focus-visible {
+	.how-more-card--micro {
+		cursor: default;
+	}
+
+	.how-more-card--micro:hover {
+		border-color: var(--theme-surface-border);
+		box-shadow: var(--theme-surface-elevated-shadow);
+		transform: none;
+	}
+
+	html[data-theme='dark'] .how-more-card--micro:hover {
+		border-color: rgba(255, 255, 255, 0.12);
+	}
+
+	.how-more-card--micro .how-more-card__cta:focus-visible {
 		outline: 2px solid rgba(245, 176, 65, 0.65);
 		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+
+	.how-more-cell--video .how-more-card__cta--pending:focus-visible {
+		outline: 2px solid rgba(245, 176, 65, 0.65);
+		outline-offset: 3px;
+		border-radius: 0.2rem;
 	}
 
 	.how-more-card__media {
@@ -1054,6 +1082,22 @@ const curatedVideos: {
 		font-size: 0.88rem;
 		font-weight: 600;
 		color: #f5b041;
+		text-decoration: none;
+		text-align: center;
+		align-self: center;
+	}
+
+	a.how-more-card__cta:hover {
+		text-decoration: underline;
+		text-underline-offset: 0.12em;
+	}
+
+	span.how-more-card__cta--pending {
+		cursor: default;
+	}
+
+	span.how-more-card__cta--pending:hover {
+		text-decoration: none;
 	}
 
 	.how-more-cell--video {
@@ -1066,6 +1110,7 @@ const curatedVideos: {
 		border: 1px solid var(--theme-surface-border);
 		border-radius: var(--theme-shape-radius);
 		box-shadow: var(--theme-surface-elevated-shadow);
+		cursor: default;
 	}
 
 	.how-more-embed {
