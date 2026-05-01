@@ -281,7 +281,7 @@ const curatedVideos: {
 	.how-curated,
 	.how-side,
 	.how-deep {
-		margin: var(--section-margin) auto;
+		margin: clamp(2.85rem, 8vw, 5.25rem) auto;
 	}
 
 	.how-hero.how-hero--tight {
@@ -303,18 +303,18 @@ const curatedVideos: {
 
 	.how-presentation {
 		max-width: min(56rem, 100%);
-		margin: 0 auto var(--section-margin);
-		padding: clamp(0.35rem, 1.5vw, 1rem) 0 0.5rem;
+		margin: 0 auto clamp(3.5rem, 12vh, 7rem);
+		padding: clamp(0.35rem, 1.5vw, 1rem) 0 clamp(2rem, 6vw, 4rem);
 	}
 
 	.how-zero-protected {
 		max-width: min(56rem, 100%);
-		margin: 0 auto clamp(2.25rem, 6vw, 3.5rem);
-		padding: clamp(0.25rem, 1.2vw, 0.85rem) 0 0.25rem;
+		margin: clamp(3.75rem, 16vh, 9.5rem) auto clamp(4.25rem, 18vh, 11rem);
+		padding: clamp(1rem, 4vw, 2.25rem) 0 clamp(1.25rem, 4vw, 2rem);
 	}
 
 	.how-zero-protected .how-section-head {
-		margin-bottom: clamp(1.25rem, 4vw, 2rem);
+		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
 	}
 
 	.how-zero-duration {
@@ -370,7 +370,7 @@ const curatedVideos: {
 
 	/* Mucho aire: H1 → bloque “Presentación” y “Contrasta tú mismo” → Parte 1 / 2 */
 	.how-presentation .how-section-head {
-		margin-bottom: clamp(3.5rem, 12vw, 6.25rem);
+		margin-bottom: clamp(4rem, 14vw, 7.25rem);
 		padding-bottom: 0.35rem;
 	}
 
@@ -397,21 +397,21 @@ const curatedVideos: {
 		letter-spacing: 0.01em;
 	}
 
-	/* Separación bajo presentación + 2 vídeos: sigue haciendo falta scroll; algo menos de aire que antes. */
+	/* Separación fuerte respecto a «De cero a protegido»: más scroll, más aire. */
 	.how-depth {
 		max-width: min(56rem, 100%);
-		padding: 0 0 0.25rem;
-		margin-top: clamp(3.5rem, 17vh, 21rem);
+		padding: clamp(0.5rem, 2vw, 1.25rem) 0 0.35rem;
+		margin-top: clamp(5.25rem, 26vh, 34rem);
 	}
 
 	.how-depth__head {
-		margin-bottom: 2rem;
+		margin-bottom: clamp(2.25rem, 6vw, 3.25rem);
 	}
 
 	.how-depth-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 1rem 1.25rem;
+		gap: clamp(1.35rem, 3.5vw, 2rem) clamp(1.25rem, 3vw, 1.65rem);
 	}
 
 	.how-depth-card {
@@ -419,7 +419,7 @@ const curatedVideos: {
 		flex-direction: column;
 		align-items: flex-start;
 		min-height: 100%;
-		padding: 1rem 1.05rem;
+		padding: clamp(1.15rem, 3vw, 1.35rem) clamp(1.1rem, 2.8vw, 1.3rem);
 		box-sizing: border-box;
 		background: var(--theme-surface-1);
 		border: 1px solid var(--theme-surface-border);
@@ -482,9 +482,9 @@ const curatedVideos: {
 	.how-pair-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 2rem 1.5rem;
+		gap: clamp(2.35rem, 6vw, 3.25rem) clamp(1.5rem, 3.5vw, 2rem);
 		align-items: start;
-		padding-top: clamp(0.35rem, 2vw, 1.1rem);
+		padding-top: clamp(0.5rem, 2.5vw, 1.35rem);
 	}
 
 	.how-pair-cell {
@@ -589,10 +589,14 @@ const curatedVideos: {
 		padding-bottom: 0.15rem;
 	}
 
+	.how-curated .how-section-head {
+		margin-bottom: clamp(1.65rem, 5vw, 2.65rem);
+	}
+
 	.how-curated__stack {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: clamp(2.35rem, 6.5vw, 3.5rem);
 	}
 
 	.how-side {
@@ -602,13 +606,13 @@ const curatedVideos: {
 	}
 
 	.how-side h2 {
-		margin: 0 0 0.45rem;
+		margin: 0 0 clamp(0.55rem, 2vw, 0.85rem);
 		font-size: clamp(1.18rem, 2.45vw, 1.4rem);
 		text-align: center;
 	}
 
 	.how-side__intro {
-		margin: 0 0 1.1rem;
+		margin: 0 0 clamp(1.25rem, 3.5vw, 1.65rem);
 		text-align: center;
 		font-size: 0.98rem;
 		line-height: 1.45;
@@ -619,7 +623,7 @@ const curatedVideos: {
 	}
 
 	.how-side__note {
-		margin: -0.35rem auto 1.25rem;
+		margin: -0.2rem auto clamp(1.35rem, 4vw, 1.85rem);
 		text-align: center;
 		font-size: 0.92rem;
 		line-height: 1.5;
@@ -632,14 +636,14 @@ const curatedVideos: {
 	.how-side__grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 1rem;
+		gap: clamp(1.15rem, 3vw, 1.5rem);
 	}
 
 	.how-side-card {
 		background: var(--theme-surface-1);
 		border: 1px solid var(--theme-surface-border);
 		border-radius: var(--theme-shape-radius);
-		padding: 1.05rem 1.1rem;
+		padding: clamp(1.1rem, 2.8vw, 1.35rem) clamp(1.1rem, 2.8vw, 1.35rem);
 		box-shadow: var(--theme-surface-elevated-shadow);
 	}
 
@@ -700,7 +704,7 @@ const curatedVideos: {
 		gap: 0.35rem 0.5rem;
 		font-size: 0.94rem;
 		opacity: 0.88;
-		padding: 0.75rem 0 1.5rem;
+		padding: clamp(1.1rem, 3vw, 1.75rem) 0 clamp(1.5rem, 4vw, 2.25rem);
 	}
 
 	.how-deep a {
