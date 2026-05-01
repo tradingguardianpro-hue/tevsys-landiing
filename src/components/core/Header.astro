@@ -3,9 +3,15 @@ import { Icon } from 'astro-icon/components'
 const { navData, rightMenu } = Astro.props;
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isHome = pathname === '/';
-const headerClasses = [rightMenu ? 'header--right' : null, isHome ? 'tevsys-header--home-scanner' : null].filter(
-	Boolean
-) as string[];
+/** Escáner gris: home a intensidad plena; micros producto más suave vía CSS `:not(.tevsys-header--home-scanner)` */
+const headerScannerSubtle =
+	pathname.startsWith('/features') || pathname === '/como-funciona' || pathname === '/precios';
+const showHeaderScanner = isHome || headerScannerSubtle;
+const headerClasses = [
+	rightMenu ? 'header--right' : null,
+	showHeaderScanner ? 'tevsys-header--with-scanner' : null,
+	isHome ? 'tevsys-header--home-scanner' : null,
+].filter(Boolean) as string[];
 
 function navLinkState(slug: string, asButton?: boolean): { className: string; active: boolean } {
 	const parts: string[] = [];
@@ -55,7 +61,7 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
 </script>  
 
 <header id="odysseyNavHeader" class:list={headerClasses}>
-	{isHome && <div class="tevsys-header-scanner" aria-hidden="true"></div>}
+	{showHeaderScanner && <div class="tevsys-header-scanner" aria-hidden="true"></div>}
   <div class="header-logo-menu__container">
   <button id="menuButton" title="Open Main Menu">
     <span id="menuButtonIconHam">
@@ -118,7 +124,7 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
     background: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
-  header.tevsys-header--home-scanner {
+  header.tevsys-header--with-scanner {
     position: relative;
     overflow: hidden;
   }

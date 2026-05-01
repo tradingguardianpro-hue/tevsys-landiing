@@ -4,6 +4,48 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Header — escáner gris en micros producto (misma familia que home, más suave)
+
+**Archivos:** `src/components/core/Header.astro`, `src/styles/global.css`.
+
+- Clase **`tevsys-header--with-scanner`:** se aplica en **`/`**, **`/features/*`**, **`/como-funciona`**, **`/precios`** — se monta la capa **`.tevsys-header-scanner`** (antes solo en home).
+- Clase **`tevsys-header--home-scanner`:** solo en **`/`** — mantiene la **intensidad plena** en escritorio y móvil (gradientes y opacidades anteriores).
+- Rutas **sin** escáner (legal, auditoría, contacto, etc.): sin cambio; header sigue sin capa extra.
+- **`prefers-reduced-motion`:** la capa escáner se anula en cualquier ruta que lleve `with-scanner` (como ya ocurría en home).
+
+---
+
+## Paquete 30 abr 2026 (II) — Operativas **80**, hero Precisión/HyperClose, nota **−0,39%**, mirrors `docs/`
+
+**Fuente del contador:** `docs/PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (proyecto TGP) — **80** operativas documentadas al cierre de esta sincronización.
+
+### Contador en web y SEO
+- **`src/config/settings.js`:** meta `description` con **80** operativas.
+- **`src/pages/index.astro`:** card Precisión — *80 operativas documentadas en 5 entornos de ejecución.*
+- **`src/pages/features/precision.astro`:** hook hero — *80 operativas documentadas.* + *0,06%* en acento.
+- **`src/pages/features/evidencia.astro`:** bloque auditoría — *Llevamos **80 operativas** documentadas…*
+
+### `/features/precision` — copy y transparencia extrema
+- **H1 (una idea, dos tiempos en pantalla):** `Precisión de cierre.` + `Menos "casi" (accent): más cierre donde toca.`
+- **Hook:** 80 operativas + error medio 0,06% (condiciones normales).
+- **Párrafo bajo hook (`feature-extreme-note`):** situaciones exigentes; **desviación máxima documentada** como **−0,39%** (guión matemático `−`, coma decimal); número con **misma clase de acento que el % del hook** + **cursiva** (`.feature-extreme-note__pct`) para alinear lectura con el hook.
+- **Manifiesto** (`feature-manifesto-banner`): alineado al resto de features (ejecución disciplinada, precisión verificable MT5, evidencia, control bajo presión).
+
+### `/features/hyperclose` — hero (decisión fundador, copy aprobado)
+- **Hook:** `Cierre en milisegundos.` (accent) + `Hasta la siguiente ventana (día o semana), sin atajos.`
+- **Lead (`feature-lead`):** `Operar en bloqueo dispara el cierre al instante; lo que pasa queda trazado para poder comprobarlo.`
+- Sustituye al par anterior orientado a “Cierre inmediato en MT5…” / “Bloqueo hasta la siguiente rotación (diaria o semanal).”
+
+### Documentación espejo en este repo (misma fecha)
+- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` — secciones de copy abiertura / Precisión / Evidencia / SEO alineadas a lo anterior.
+- `docs/SEO_ANALYTICS_TEVSYS.md` — description con **80** operativas.
+- `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`, `docs/CARDS-NEXT-PHASE.md`, `docs/HOME_HERO_CARDS_ITERACION_ABR2026.md`, `docs/PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md` — contador y referencias narrativas.
+
+### Repo TGP (workspace fundador)
+- `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` — bloque **§14** (nuevo) + `settings` snippet y bullets **6** con **80** operativas; puntero a este `CHANGELOG` para poda home/SML y header/`/como-funciona` del **mismo día** (entrada siguiente).
+
+---
+
 ## Header global + micropágina `/como-funciona` (30 abr 2026, UX + vídeo en dos partes)
 
 **Archivos:** `src/components/core/Header.astro`, `src/components/BrandOval.astro`, `src/pages/como-funciona.astro` (y enlaces previos en `src/config/nav.js` a `/como-funciona`).

@@ -16,19 +16,46 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ---
 
+## Paquete 30 abr 2026 — Operativas 80, micros Precisión/HyperClose, mirrors
+
+**Resumen:** Sincronización del contador **80** operativas documentadas (fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3, repo TGP) en SEO, home, Precisión y Evidencia; ajuste de copy y formato en **Precisión** (nota extremos **−0,39%** con acento + cursiva); nuevo hero **HyperClose** (ventana sin atajos + lead de trazabilidad). Detalle técnico y lista de archivos: **`CHANGELOG-TEVSYS.md`** entrada **«Paquete 30 abr 2026 (II)»**.
+
+### Contador y rutas tocadas
+- `src/config/settings.js`, `src/pages/index.astro`, `src/pages/features/precision.astro`, `src/pages/features/evidencia.astro`.
+
+### Micropágina Precisión (`/features/precision`)
+- **H1:** `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
+- **Hook:** 80 operativas + 0,06% error medio (condiciones normales).
+- **Transparencia extrema:** párrafo inmediato bajo intro — desviación máxima documentada **−0,39%** (formato signo + coma; cursiva en el porcentaje, coherente visualmente con el hook).
+- **Manifiesto** bajo hero: misma línea de valor que otras features.
+
+### Micropágina HyperClose (`/features/hyperclose`)
+- **Hook:** `Cierre en milisegundos.` + `Hasta la siguiente ventana (día o semana), sin atajos.`
+- **Lead:** cierre al instante si operas en bloqueo; constancia trazable para comprobar.
+
+### Poda de densidad y otras iteraciones el mismo día
+- **Home** (`index.astro`): manifiesto visible bajo **Elige tu cuenta** (alineado claim producto).
+- **`/features/sml`:** poda de texto (fase 1 tramo superior + redundancias); evidencia 4.81 antes/después — ver **`CHANGELOG-TEVSYS.md`** bloques *Home + SML manifiesto* y *SML narrativa*.
+- **Header + `/como-funciona`:** píldora nav, vídeo en dos partes, enlaces instalación — misma fecha en `CHANGELOG`.
+
+### Docs internos actualizados en este repo
+- `SEO_ANALYTICS_TEVSYS.md`, `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`, `CARDS-NEXT-PHASE.md`, `HOME_HERO_CARDS_ITERACION_ABR2026.md`, `PROMPT_RESUMEN_DEEPSEEK_VIDEOS_PRECISION_HYPERCLOSE.md`.
+
+---
+
 ## Header
 - **Logo:** `tevsys` en óvalo (sin estrella)
 - **Navegación:** Inicio | Empresas | Contacto
 - **Tipografía (abr 2026):** **Inter** en barra y pastilla (`Header.astro`, `BrandOval.astro`), alineado al hero.
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
-- **Motion (abr 2026, solo home + tema oscuro):** capa decorativa `tevsys-header-scanner` — barrido **gris** (resaltado alineado móvil/escritorio donde aplica), sin sincronía con el resto de la portada. **Iteración 15–16 abr 2026:** se bajó intensidad (“menos discoteca”). **19 abr 2026:** **intensidad restaurada** (más opacidad/gradiente y duraciones por breakpoint: base **29,5s**, escritorio **28s**, móvil **23,5s**) — ver `global.css` y `MOTION_HOME_TEVSYS_HANDOFF_IA.md`. Detrás de las **4 cards**: `.tevsys-home-mid-glow` — **gris instrumento**, doble burbuja con animaciones **92s** y **118s** (`::before`; `linear`; mayoría del tiempo en márgenes); **escritorio:** trayectoria tipo **perímetro** del bloque 2×2 (incl. **SML** y **Evidencia**); **móvil (1 columna):** mismas duraciones con keyframes **`*-mobile`** para que el brillo se mueva **detrás de la columna** de cards. Detalle: `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` § Motion, `ARREGLOS_WEB_TEVSYS_TODOS_LOS_ARCHIVOS.md`.
+- **Motion header (abr 2026; ampliado 30 abr 2026):** capa **`tevsys-header-scanner`** — barrido **gris** en **tema oscuro**. En **`/`** (`tevsys-header--home-scanner` + `with-scanner`) intensidad plena (base **29,5s**, escritorio **28s**, móvil barrido fino **42s**). En **`/features/*`**, **`/como-funciona`** y **`/precios`** solo **`tevsys-header--with-scanner`**: **mismo keyframe**, opacidad y gradientes **más bajos** + animación algo **más lenta** (menos competencia con lectura). **Iteración 15–16 abr:** suavizado previo; **19 abr:** intensidad home restaurada. Detalle: `global.css`, `MOTION_HOME_TEVSYS_HANDOFF_IA.md`, `CHANGELOG-TEVSYS.md` (entrada *Header — escáner gris en micros producto*). Detrás de las **4 cards** (solo home): `.tevsys-home-mid-glow` — gris instrumento, animaciones **92s** / **118s**; escritorio perímetro 2×2; móvil keyframes **`*-mobile`**.
 
 ---
 
 ## Hero
 - **H1 (actual, abr 2026):** `Tú pones los límites. TEVSYS los blinda. Disciplina y precisión automatizadas.` — `TEVSYS` en ámbar (`hero-title__brand`, sin subrayado); subrayado solo en “Disciplina y precisión automatizadas” (`hero-title__underline`).
-- **Microfrase de desmarque (22 abr 2026):** `No damos señales. Hacemos que tus reglas se cumplan.` (clase `hero-microline`, entre H1 y contexto).
+- **Microfrase de desmarque (`hero-microline`, vigente en código):** `No damos señales ni promesas de beneficio.` *(Histórico 22 abr: variante «No damos señales. Hacemos que tus reglas se cumplan.» — comprobar `HomeHeroSection.astro` si se restaura.)*
 - **Línea de contexto (debajo H1):** `Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.` (clase `hero-context-line`; **MT5 y cuenta** aquí; el H1 prioriza escaneo en tres tiempos).
 - **Tipografía (19 abr 2026):** **DM Sans** solo en `.hero-title` (H1); resto del bloque hero y header en **Inter**. Carga de fuentes en `BaseHead.astro` (Inter + DM Sans).
 - **Tagline:** `Where precision meets the edge`
@@ -213,11 +240,12 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Copy de apertura por micro-página (actual)
 - `HyperClose`:
   - Título: `HyperClose: cuando tu disciplina falla, HyperClose no.`
-  - Hook: `• Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
+  - Hook: `• Cierre en milisegundos.` + `Hasta la siguiente ventana (día o semana), sin atajos.`
+  - Lead: `Operar en bloqueo dispara el cierre al instante; lo que pasa queda trazado para poder comprobarlo.`
 - `Precisión`:
-  - Título: `Precisión de cierre: donde configuras, cerramos.`
+  - Título: `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
   - Hook: `• 80 operativas documentadas. 0,06% de error medio en condiciones normales.`
-  - Transparencia: incluye escenarios extremos documentados con desviación puntual hasta `~0,39%`.
+  - Transparencia: párrafo bajo intro — desviación máxima documentada **−0,39%** (signo negativo + cursiva en el %, alineado al estilo del hook).
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
   - Hook: `• Actívalo cuando quieras. Decide cuánto ampliar el margen: del 5% al 25% (mínimo 75% protegido).`
@@ -236,11 +264,13 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`); en el flujo de página va **antes** del bloque de logs / “Sin humo” (tras volatilidad y Nasdaq).
 - **Qué puedes comprobar / orden de secciones en página (19 abr 2026):** alta volatilidad → **Nasdaq** → **cuenta pequeña** → **logs / trazabilidad**; lista de anclas y script de expansión de demos alineados con ese orden en `precision.astro`.
 - **80 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
+- **Nota extremos (30 abr 2026):** bajo el hook, párrafo `feature-extreme-note` — desviación máxima documentada **−0,39%** (acento + cursiva en el porcentaje).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
-### Estado actual HyperClose (Mar 2026 — actualizado 26 Mar 2026)
+### Estado actual HyperClose (Mar 2026 — actualizado 26 Mar 2026; hero 30 abr 2026)
 - **Vídeo principal:** `hyperclose-demo.mp4` — metraje objetivo **2:23** (§57.3 overlays 1–11, 13–17). **Export interno** puede llamarse *Video Project 090920*; en repo el binario debe seguir siendo **`hyperclose-demo.mp4`** (ruta fija en `hyperclose.astro`). **8 abr 2026:** reemplazo con reedit **espejo + Manrope**; si el vídeo “desaparece” en web, comprobar que el archivo no se renombró sin tocar Astro — ver `CHANGELOG-TEVSYS.md` **§63**.
 - **YouTube (lista `/videos-cierre-youtube`):** tercera tarjeta reservada para **esta misma demo** (enlace pendiente hasta publicar en canal); **no** confundir con parte 1/2 del artículo Market.
+- **Hero (30 abr 2026):** `Cierre en milisegundos.` + ventana (día o semana) sin atajos; lead de bloqueo + trazabilidad comprobable — `CHANGELOG-TEVSYS.md` *Paquete 30 abr 2026 (II)*.
 - **Página:** h2 con duración; hook **sin** cuenta ni broker; **sin** nota pública de audio bajo el embed.
 - **Acordeón “Compruébalo tú mismo”:** galería **6** capturas (informe MT5 ×5 + historial día MT5); enlace **HTML** `evidencia-hyperclose-demo-historial-transacciones.html`; línea *¿Primera vez con las pestañas?* → Evidencia (demo 100k); nota **MT5 vs HTML** (cierre concreto vs cierres posteriores HyperClose). **PNG:** pendiente en `public/images/evidence/` — ver `CHANGELOG-TEVSYS.md` **§58.2**.
 - **Cierre inmediato y Semáforo:** enlazan a la demo. Acordeón modales 3 niveles.
@@ -324,10 +354,12 @@ Seguimiento interno activo en:
 
 - **H1 (abr 2026, dos líneas):** `Precisión de cierre.` / `Menos "casi": más cierre donde toca.` — comillas tipográficas en pantalla según CSS; acento visual en `casi` (`feature-title__accent`).
 
+- **Nota extremos (30 abr 2026):** `feature-extreme-note` — desviación máxima documentada **−0,39%** (`feature-hook__accent` + `feature-extreme-note__pct` para cursiva).
+
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.`
 
 - Hook de apertura:
-  - `80 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 Mar 2026; fuente MD operativas proyecto TGP)*
+  - `80 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 mar 2026 número; **30 abr 2026** sync web + nota **−0,39%**; fuente MD operativas proyecto TGP §3)*
 
 - Bloque `Resumen estadístico` (lectura rápida):
   - `80 operativas documentadas`

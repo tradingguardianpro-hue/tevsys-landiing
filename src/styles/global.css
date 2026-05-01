@@ -273,9 +273,9 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	}
 }
 
-/* Home — escáner gris en el header (solo /): bucle irregular sin “flash”; intensidad restaurada (zona cards sin KITT → el header aporta vida) */
+/* Header — escáner gris: `tevsys-header--with-scanner` en home + micros producto; `tevsys-header--home-scanner` solo en `/` refuerza intensidad (escritorio/móvil). */
 @media (prefers-reduced-motion: no-preference) {
-	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner .tevsys-header-scanner {
 		position: absolute;
 		inset: 0;
 		z-index: 0;
@@ -297,8 +297,8 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		animation: tevsys-header-scanner-sweep 29.5s infinite;
 	}
 
-	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .header-nav__container,
-	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .header-action-item__container {
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner .header-nav__container,
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner .header-action-item__container {
 		position: relative;
 		z-index: 1;
 	}
@@ -308,7 +308,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
   Escáner header — escritorio: gradiente + tamaño del haz reforzados; duración 28s (móvil usa keyframes aparte).
 */
 @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
-	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 		background-image: linear-gradient(
 			102deg,
 			transparent 0%,
@@ -322,6 +322,42 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		background-size: 250% 100%;
 		opacity: 0.78;
 		animation-duration: 28s;
+	}
+}
+
+/* Micros producto (`with-scanner` sin `home-scanner`): mismo keyframe, haz más tenue y un poco más lento */
+@media (prefers-reduced-motion: no-preference) {
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
+		opacity: 0.44;
+		background-image: linear-gradient(
+			102deg,
+			transparent 0%,
+			transparent 38%,
+			rgba(110, 114, 128, 0.07) 47%,
+			rgba(186, 190, 202, 0.15) 50%,
+			rgba(95, 98, 110, 0.06) 53%,
+			transparent 66%,
+			transparent 100%
+		);
+		animation-duration: 32s;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
+		background-image: linear-gradient(
+			102deg,
+			transparent 0%,
+			transparent 37%,
+			rgba(120, 124, 138, 0.11) 47%,
+			rgba(198, 202, 216, 0.2) 50%,
+			rgba(105, 109, 124, 0.09) 53%,
+			transparent 66%,
+			transparent 100%
+		);
+		background-size: 250% 100%;
+		opacity: 0.52;
+		animation-duration: 30s;
 	}
 }
 
@@ -1548,7 +1584,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		opacity: 0 !important;
 	}
 
-	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
+	html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner .tevsys-header-scanner {
 		animation: none !important;
 		opacity: 0 !important;
 		visibility: hidden !important;
@@ -1629,7 +1665,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	  Hero “rise”: 26s (menos prisa); opacidad baja (~0,44) para que no lea como “segundo marco” junto a la mano.
 	*/
 	@media (prefers-reduced-motion: no-preference) {
-		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--home-scanner .tevsys-header-scanner {
+		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 			/* Más “vida” que 56s, manteniendo keyframes finos + linear (sin trompicones) */
 			animation: tevsys-header-scanner-sweep-mobile 42s linear infinite;
 			transform: translateZ(0);
@@ -1643,6 +1679,26 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 				rgba(120, 124, 138, 0.22) 46%,
 				rgba(198, 202, 216, 0.4) 50%,
 				rgba(105, 109, 124, 0.2) 54%,
+				transparent 68%,
+				transparent 100%
+			);
+			background-size: 278% 100%;
+		}
+
+		/* Micros producto en móvil: mismo barrido horizontal fino, menos brillo que home */
+		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
+			animation: tevsys-header-scanner-sweep-mobile 48s linear infinite;
+			transform: translateZ(0);
+			will-change: background-position;
+			backface-visibility: hidden;
+			opacity: 0.58;
+			background-image: linear-gradient(
+				102deg,
+				transparent 0%,
+				transparent 32%,
+				rgba(120, 124, 138, 0.12) 46%,
+				rgba(198, 202, 216, 0.22) 50%,
+				rgba(105, 109, 124, 0.11) 54%,
 				transparent 68%,
 				transparent 100%
 			);

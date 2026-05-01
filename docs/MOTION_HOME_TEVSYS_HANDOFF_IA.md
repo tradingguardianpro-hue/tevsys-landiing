@@ -14,7 +14,7 @@
 |---------|-----|
 | `src/styles/global.css` | Todas las `@keyframes`, duraciones, colores, capas `::before`, clases `.tevsys-home-*`, header escáner. |
 | `src/pages/index.astro` | Marcado: hero stack + dos rectángulos KITT; banda cards + `mid-glow` (capa única en DOM; **segunda burbuja** = `::before` en CSS); banda lower + strip + tail bubble; fundador + strip. |
-| `src/components/core/Header.astro` | Si `pathname === '/'`: clase `tevsys-header--home-scanner` en `<header>` + `<div class="tevsys-header-scanner" aria-hidden="true">`. Estilos locales mínimos (`position: relative`, `overflow: hidden` en header). |
+| `src/components/core/Header.astro` | Si `pathname === '/'` o micros producto (`/features/*`, `/como-funciona`, `/precios`): clase **`tevsys-header--with-scanner`** en `<header>` + capa **`.tevsys-header-scanner`**. Solo en **`/`** también **`tevsys-header--home-scanner`** (intensidad plena en `global.css`). Estilos locales: `position: relative`, `overflow: hidden` cuando hay escáner. |
 
 ---
 
