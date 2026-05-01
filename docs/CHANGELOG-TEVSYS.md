@@ -4,6 +4,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Paquete 1 may 2026 — Motion (entrada + desync), header oval ancho, handoff `/como-funciona`
+
+**Handoff técnico unificado (DeepSeek / continuidad):** `docs/HANDOFF_COMO_FUNCIONA_MOTION_HEADER_1MAY2026.md` — estructura `/como-funciona`, `body.page-como-funciona`, overrides escáner + barridos verticales, variables `--tevsys-home-enter-*`, delays positivos, header borde full width + tokens logo.
+
+### Resumen ejecutivo
+- **Home:** ritmos “incomodados” entre capas + **`animation-delay` positivos** escalonados (niebla → hero → header → cards → franja → cola → fundador); fall phase2 con `calc(enter-rise + phase2)`; micros header `delay ~0.85s`.
+- **`/como-funciona`:** escáner más lento/tenue vía `body.page-como-funciona` en `global.css`; barridos verticales más largos + delay positivo en `como-funciona.astro`; intro oval **solo halo estático** (sin sweep).
+- **Header:** una barra **`width: 100%`**, `border-radius: 2.5rem`, borde sutil; logo con tokens más suaves para una sola lectura visual.
+- **Layouts:** `bodyClass` opcional en `Base.astro` / `Page.astro` (uso: `page-como-funciona`).
+
+---
+
 ## `/como-funciona` — puente «cuatro piezas home» bajo «Esto no es todo…» (30 abr 2026)
 
 **Archivo:** `src/pages/como-funciona.astro`.

@@ -1,0 +1,135 @@
+# Handoff técnico — `/como-funciona`, motion (home + página) y header (1 may 2026)
+
+Documento para continuidad (p. ej. DeepSeek / otra IA): **qué se hizo**, **dónde está en código**, **criterio de producto** y **cómo no romperlo**.
+
+---
+
+## 1. Micropágina `/como-funciona` (`src/pages/como-funciona.astro`)
+
+### 1.1 Rol de la página
+
+- Recorrido **narrativo + vídeo** (presentación en dos partes YouTube), bloques **De cero a protegido** / **Siguiente nivel**, profundidad (enlaces a features), vídeos curados, etc.
+- Datos de contenido en el frontmatter del `.astro`: `presentationParts`, `zeroToProtected`, `depthLayers`, `homeBridgeCards`, `siguienteNivelClipCards`, `curatedVideos`.
+
+### 1.2 Estructura y decisiones de layout (resumen)
+
+| Bloque | Decisión |
+|--------|----------|
+| **Intro (H1 + Presentación)** | Envuelto en `.how-intro-stage.how-intro-stage--stage` + `.how-intro-stage__bg` + `.how-intro-stage__inner`. **Sin** capa de barrido animado en el intro: solo **halo estático** (radiales + sombra interior) para no competir con el escáner del header ni con los stages inferiores. |
+| **YouTube (Presentación)** | `border-radius: 0` en `.how-presentation .how-embed` (marco recto; coherencia con pedido de “instrumento”, no caja redondeada tipo card). |
+| **«De cero a protegido» / «Siguiente nivel»** | Stages con `__bg` + `__sweep` y keyframe vertical compartido `how-zero-protected-sweep-vertical` (barrido gris vertical, familia home “fall”). |
+| **Puente bajo «Esto no es todo…»** | Cuatro cards alineadas a las **mismas rutas que la home** (`/features/precision`, `hyperclose`, `sml`, `evidencia`), con **MP4** en precisión / HyperClose / evidencia (mismos assets que micros); SML texto hasta tener corte. |
+| **Subrayados marca** | Ámbar → gris; H2 «Esto no es todo…» solo subrayado bajo «más comportamientos en vivo»; criterios similares en otros títulos (ver CHANGELOG y comentarios en el `.astro`). |
+
+### 1.3 `bodyClass="page-como-funciona"`
+
+- `como-funciona.astro` pasa `bodyClass="page-como-funciona"` a `Layout` (`Page.astro` → `Base.astro`).
+- **`Base.astro`:** `<body class:list={[bodyClass]}>` — permite selectores globales `body.page-como-funciona` con **mayor especificidad** que estilos scoped del mismo `.astro` cuando hace falta.
+
+### 1.4 Motion específico de `/como-funciona`
+
+**Problema:** escáner **diagonal** del header (`tevsys-header-scanner-sweep*`) y barridos **verticales** de los stages compartían ritmos cercanos (p. ej. 44s en móvil) → sensación de “cruce” / exceso.
+
+**Solución (dos capas):**
+
+1. **`src/styles/global.css`** — reglas `html[data-theme='dark'] body.page-como-funciona #odysseyNavHeader...`:
+   - Escáner **más lento** y **más tenue** (opacidad, gradiente, `animation-duration` 52–54s escritorio; 58s móvil en bloque dedicado).
+   - **`animation-delay: 1.15s`** en overrides escritorio de esa ruta (entrada menos brusca al cargar).
+
+2. **`como-funciona.astro` (final de `<style>`, `prefers-reduced-motion: no-preference`):** overrides con `:global(html[...] body.page-como-funciona)` sobre `.how-zero-protected__sweep` y `.how-more__sweep`:
+   - **Duraciones** más largas que la base (p. ej. 66s / 82s oscuro; 74s / 88s claro) para **desacoplarse** del header.
+   - **`animation-delay` positivos** (`1.65s` y `3.9s`) en sustitución de delays negativos, para que **no entren en fase rápida** al cargar.
+
+**Por qué parte en el `.astro` scoped:** los keyframes del barrido vertical viven en ese archivo; usar `animation-duration` / `delay` en el mismo bundle mantiene coherencia con el nombre de la animación y gana en cascada frente al bloque base.
+
+### 1.5 Halo del intro (oval)
+
+- Selectores: `html[data-theme='dark|light'] .how-intro-stage__bg`.
+- Ajustes finos iterados: halo **muy arriba** (porcentajes Y bajos en radiales) y **opacidad baja** para leer la **curva inferior del óvalo** sin brillar demasiado.
+- Sin `__sweep` en intro.
+
+---
+
+## 2. Motion global — home (`src/styles/global.css`)
+
+### 2.1 Desincronía entre capas (ritmos “incomodados”)
+
+- Objetivo: evitar que **18s / 18.7s / 23s** coincidan en picos (efecto “todo a la vez”).
+- Se repartieron **duraciones no redondas** (p. ej. niebla body 26.9s, rise 21–24s, franja inferior ~23.9s + mezclas 12.1 / 13.9s, mid-glow 96.7s / 127s, tail 70s, founder 18.3s, ciclos fall `--tevsys-home-fall-cycle: 313s`, intro 307s, etc.).
+- Comentarios en bloque `body:has(.tevsys-home-band--cards)` documentan intención.
+
+### 2.2 Entrada al cargar — delays positivos escalonados (`--tevsys-home-enter-*`)
+
+**Problema:** `animation-delay` **negativos** hacían que al cargar la animación **entrara ya avanzada** en el ciclo (a veces en tramo **rápido**) y todo arrancaba junto.
+
+**Solución:** en `html[data-theme='dark'] body:has(.tevsys-home-band--cards)` se definieron variables:
+
+- `--tevsys-home-enter-body` (~0.25s) — niebla `body::before` home.
+- `--tevsys-home-enter-rise` (~1.45s) — capas rise + bienvenida fall alineada al hero.
+- `--tevsys-home-enter-header` (~2.65s) — escáner header home.
+- `--tevsys-home-enter-cards` (~4.05s) — mid-glow burbujas.
+- `--tevsys-home-enter-lower` (~5.45s) — franja inferior + niebla del strip.
+- `--tevsys-home-enter-tail` (~6.75s) — burbuja cola.
+- `--tevsys-home-enter-founder` (~7.35s) — franja fundador.
+
+**Fall (ciclo largo):** los `animation-delay` / `linear` del ciclo infinito usan `calc(var(--tevsys-home-enter-rise) + var(--tevsys-home-fall-phase2-delay))` para que el **phase2** siga siendo “después de bienvenida + respiro” pero **desplazado** desde el instante de carga.
+
+**Header micros** (`:not(.tevsys-header--home-scanner)`): `animation-delay: 0.85s` (escritorio base + ≥769px) y en móvil en el bloque del sweep-mobile, para que **no dispare** en t=0 al entrar en features / precios / etc.
+
+**Home header** (`body:has(...) .home-scanner .tevsys-header-scanner`): delays basados en `--tevsys-home-enter-header` (escritorio dos breakpoints).
+
+### 2.3 Referencias cruzadas
+
+- Keyframes escáner: `tevsys-header-scanner-sweep`, `tevsys-header-scanner-sweep-mobile`.
+- Documentación previa home: `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md`, entradas **Header** y **Home** en `docs/CHANGELOG-TEVSYS.md`.
+
+---
+
+## 3. Header — borde oval y ancho (`src/components/core/Header.astro`)
+
+### 3.1 Evolución
+
+1. Primera iteración: barra **más estrecha** (`width: calc(100% - …)`, `max-width: 1400px`, centrada) → en pantalla parecía **dos cápsulas** (logo BrandOval fuerte + menú en píldoras) flotando sobre el hero.
+2. Ajuste pedido: **mismo borde sutil** pero **barra a todo el ancho** como antes (`width: 100%`, `max-width: none`, `margin` solo vertical superior).
+3. **Logo:** tokens en el `<header>` para que `BrandOval` herede borde más suave y **fondo transparente** (`--tevsys-header-pill-border` / `--tevsys-header-pill-surface`), integrando el logo en una **sola** lectura de barra.
+
+### 3.2 Detalles técnicos
+
+- `border-radius: 2.5rem` (misma familia que `.brand-oval`).
+- `border: 1px solid var(--tevsys-header-bar-border)`; tema claro: override `:global(html[data-theme='light']) header` con borde oscuro suave.
+- `header.tevsys-header--with-scanner`: `overflow: hidden` — el escáner respeta el radio de la barra.
+
+---
+
+## 4. Layouts — `bodyClass` (`src/layouts/Base.astro`, `Page.astro`)
+
+- Props opcional `bodyClass?: string` en `Base.astro` y `Page.astro`.
+- Uso actual principal: **`page-como-funciona`** desde `como-funciona.astro`.
+- Otras páginas que usan `Page.astro` sin prop: sin clase extra (comportamiento anterior).
+
+---
+
+## 5. Archivos tocados (lista de trabajo)
+
+| Área | Archivo |
+|------|---------|
+| Cómo funciona (markup + CSS página + overrides sweep) | `src/pages/como-funciona.astro` |
+| Home + header + micros + como-funciona header | `src/styles/global.css` |
+| Header UI + tokens logo | `src/components/core/Header.astro` |
+| Body class | `src/layouts/Base.astro`, `src/layouts/Page.astro` |
+
+---
+
+## 6. Qué no hacer sin releer esto
+
+- No volver a **delays negativos** masivos en intro/carga sin motivo: reintroduce **picos** al entrar.
+- No igualar **duraciones** header vertical-sweep y escáner en **44s** en la misma página sin comprobar fase.
+- En `/como-funciona`, no reactivar barrido en **intro stage** sin acordar impacto con header.
+- Tras tocar `Header.astro` / `global.css` motion: validar en **tema oscuro**, **home**, **una micro**, **`/como-funciona`**, **`prefers-reduced-motion: reduce`**.
+
+---
+
+## 7. Changelog del repo
+
+- Resumen breve y fecha: **`docs/CHANGELOG-TEVSYS.md`** (entrada superior **1 may 2026** — paquete motion + header + handoff).
+- Este archivo: **`docs/HANDOFF_COMO_FUNCIONA_MOTION_HEADER_1MAY2026.md`**.
