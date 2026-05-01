@@ -299,14 +299,37 @@ const curatedVideos: {
 							}
 						</div>
 					</div>
+					<p class="how-more-audit-bridge">
+						Cuando lo que importa es contrastar <strong>hechos</strong>, no basta con un clip: hace falta poder{' '}
+						<strong>cruzar</strong> terminal, panel y registro.
+					</p>
 					<div class="how-more-lead">
 						<div class="how-more-lead__audit">
 							<p class="how-more-lead__audit-kicker">Primero · Auditoría</p>
 							<p class="how-more-lead__audit-line">
-								Disciplina y trazabilidad con evidencia real; <strong>no</strong> es señales ni qué operar. La apertura pública de
-								este servicio <strong>no está en marcha</strong>: lo iremos mostrando aquí y en la micro cuando el producto lo permita.
+								Más allá de “solo disciplina”: revisión de <strong>reglas</strong>, <strong>precisión de cierres</strong> frente a lo
+								declarado, bloqueos y fricción operativa — siempre con material verificable. <strong>No</strong> es señales ni qué
+								operar.
 							</p>
-							<p class="how-more-lead__audit-note">Clip en preparación · Misma claridad que el resto de la página.</p>
+							<ul class="how-more-lead__audit-points">
+								<li>
+									<strong>Triangulación</strong> — informe MT5, panel con fecha y hora visibles y logs tevsys del mismo periodo; el
+									foco que declares en el pack ordena el énfasis (completo, precisión, disciplina, bloqueos, SML).
+								</li>
+								<li>
+									<strong>ID por licencia</strong> — código <code class="how-more-lead__code">TVS-…</code> para encajar caso y
+									adjuntos; en el terminal, trazas en audit trail cuando toque.
+								</li>
+								<li>
+									<strong>Canal</strong> — check inicial con ID, valoración de si el envío encaja para auditoría y recepción del
+									pack; hoy la <strong>contratación pública no está abierta</strong> hasta alinear producto y entrega. Recepción
+									formal, dropzone y más automatización van en roadmap: primero manual-asistido, después lo que el backend
+									sostenga sin prometer fechas.
+								</li>
+							</ul>
+							<p class="how-more-lead__audit-note">
+								Abajo, el primer clip resume el tono de esta capa; el resto de vídeos siguen en preparación.
+							</p>
 						</div>
 						<p class="how-more-lead__line how-more-lead__line--topic-u1">
 							<span class="how-more-lead__topic"><strong>Cómo te protegemos cuando decides estar OFF</strong></span>
@@ -1256,19 +1279,52 @@ const curatedVideos: {
 		color: #c98a2e;
 	}
 
+	.how-more-audit-bridge {
+		margin: clamp(0.9rem, 2.6vw, 1.35rem) auto clamp(0.55rem, 1.8vw, 0.85rem);
+		max-width: 36rem;
+		padding-top: clamp(0.75rem, 2vw, 1rem);
+		border-top: 1px solid rgba(255, 255, 255, 0.09);
+		font-size: 0.88rem;
+		line-height: 1.52;
+		text-align: center;
+		color: rgba(210, 214, 224, 0.88);
+	}
+
+	html[data-theme='light'] .how-more-audit-bridge {
+		border-top-color: rgba(0, 0, 0, 0.1);
+		color: rgba(58, 62, 74, 0.9);
+	}
+
 	.how-more-lead {
 		margin: 0 auto;
 		max-width: 42rem;
 		text-align: left;
 	}
 
-	/* Opción A ajustada: bloque corto de auditoría antes de las tres frases (sin embed). */
+	/* Capítulo auditoría: separado del grid de clips; polivalencia + §0 honesto. */
 	.how-more-lead__audit {
-		margin: 0 auto clamp(1.1rem, 3vw, 1.5rem);
+		margin: 0 auto clamp(1.15rem, 3vw, 1.65rem);
 		max-width: 42rem;
-		padding-bottom: clamp(0.85rem, 2.5vw, 1.2rem);
-		border-bottom: 1px solid rgba(245, 176, 65, 0.28);
+		padding: clamp(1rem, 2.8vw, 1.35rem) clamp(1.05rem, 3vw, 1.45rem);
+		padding-bottom: clamp(1rem, 2.6vw, 1.3rem);
+		border-radius: clamp(0.5rem, 1.2vw, 0.7rem);
+		background: linear-gradient(
+			168deg,
+			rgba(245, 176, 65, 0.08) 0%,
+			rgba(26, 28, 36, 0.55) 42%,
+			rgba(16, 17, 22, 0.72) 100%
+		);
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		border-left: 3px solid rgba(245, 176, 65, 0.42);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 		text-align: left;
+	}
+
+	html[data-theme='light'] .how-more-lead__audit {
+		background: linear-gradient(168deg, rgba(255, 250, 240, 0.98) 0%, rgba(252, 249, 242, 0.88) 100%);
+		border-color: rgba(218, 155, 48, 0.26);
+		border-left-color: rgba(218, 155, 48, 0.5);
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
 	}
 
 	.how-more-lead__audit-kicker {
@@ -1287,9 +1343,58 @@ const curatedVideos: {
 		opacity: 0.92;
 	}
 
+	.how-more-lead__audit-points {
+		margin: 0.55rem 0 0.65rem;
+		padding: 0;
+		list-style: none;
+		font-size: 0.86rem;
+		line-height: 1.48;
+	}
+
+	.how-more-lead__audit-points li {
+		position: relative;
+		margin: 0 0 0.55rem;
+		padding-left: 1.05rem;
+		opacity: 0.94;
+	}
+
+	.how-more-lead__audit-points li:last-child {
+		margin-bottom: 0;
+	}
+
+	.how-more-lead__audit-points li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.55em;
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.75);
+	}
+
+	html[data-theme='light'] .how-more-lead__audit-points li::before {
+		background: rgba(200, 140, 45, 0.85);
+	}
+
+	.how-more-lead__code {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+		font-size: 0.82em;
+		font-weight: 600;
+		padding: 0.08em 0.28em;
+		border-radius: 0.2rem;
+		background: rgba(0, 0, 0, 0.2);
+		color: rgba(255, 224, 160, 0.95);
+	}
+
+	html[data-theme='light'] .how-more-lead__code {
+		background: rgba(255, 240, 210, 0.95);
+		color: rgba(120, 82, 28, 0.95);
+	}
+
 	.how-more-lead__audit-note {
-		margin: 0;
-		font-size: 0.84rem;
+		margin: 0.35rem 0 0;
+		font-size: 0.82rem;
 		line-height: 1.45;
 		font-weight: 600;
 		opacity: 0.78;
