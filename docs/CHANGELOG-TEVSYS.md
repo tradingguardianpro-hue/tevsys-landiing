@@ -17,7 +17,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ### Comportamiento
 - Grid de cards **responsive** (`auto-fit`), hover y foco accesible; CTA en gris que **toma ámbar** al hover para no competir con el color del stage hasta interacción.
 - **Presentación:** iframes YouTube con **borde recto** (`border-radius: 0`).
-- **Intro (H1 + Presentación):** envuelto en **`.how-intro-stage--stage`** — mismo **barrido vertical** y fondos que «De cero…» / «Siguiente nivel», con **radio más generoso** (`clamp(1.75rem, 7vw, 3.25rem)`) para lectura “ovalada”; YouTube siguen rectos dentro del stage.
+- **Intro (H1 + Presentación):** envuelto en **`.how-intro-stage--stage`** — **contenedor ovalado** con **halo / radiales estáticos** (sin barrido interior) para no competir con el header; el **motion fuerte** queda en cabecera y en los stages inferiores («De cero…», etc.). Radio `clamp(1.75rem, 7vw, 3.25rem)`; YouTube rectos dentro del stage.
 - **Tres cards** llevan **vídeo HTML5** pequeño (mismo MP4 que en las micros): **Precisión** (`precision-demo-volatilidad.mp4`), **HyperClose** (`hyperclose-demo.mp4`), **Evidencia** (`evidencia-100k-perdida.mp4`, demo 100k ~1 min 41 s). **SML** sigue solo texto + enlace hasta tener corte. El `<video>` va **fuera** del enlace principal para HTML válido y controles usables.
 
 ---
