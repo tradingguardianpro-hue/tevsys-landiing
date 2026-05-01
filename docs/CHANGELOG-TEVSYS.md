@@ -10,7 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ### Contexto y decisión
 - Tras el H2 **«Esto no es todo: más comportamientos en vivo»** hace falta **anclar** al visitante a las mismas **cuatro rutas que la home** (precisión, HyperClose, SML, evidencia) antes del bloque narrativo de auditoría + «FUNCIONALIDADES · ÚNICAS» + clips.
-- Cabecero del puente alineado a **«De la teoría a la pantalla»**: `how-eyebrow` centrado (**Cuatro piezas · home**) + frase con **subrayado ámbar→gris** centrado bajo «Lo mismo que en portada»; sin párrafo explicativo largo (solo layout + cards).
+- H2 **«Esto no es todo…»**: **subrayado ámbar→gris** solo bajo **«más comportamientos en vivo»**. Puente: kicker **FUNCIONALIDADES · ÚNICAS** (misma clase ámbar que auditoría), centrado; eliminada la frase «Lo mismo que en portada…» y el kicker duplicado que había entre auditoría y las tres líneas.
 - **No se elimina** el contenido existente (Primero · Auditoría, tres líneas con subrayado, grid de cuatro placeholders): el puente queda **encima** del bloque `how-more-lead`.
 - La sección **«Enlaces directos en vivo»** (`how-depth`) con HyperClose / evidencia / SML / auditoría **se mantiene** por ahora (sin borrar; posible consolidación cuando el fundador cierre diseño).
 

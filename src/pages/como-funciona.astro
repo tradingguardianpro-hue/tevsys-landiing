@@ -249,12 +249,14 @@ const curatedVideos: {
 			<div class="how-more__inner">
 				<header class="how-section-head how-more__head">
 					<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
-					<h2 id="how-more-title">Esto no es todo: más comportamientos en vivo</h2>
+					<h2 id="how-more-title">
+						Esto no es todo:{' '}
+						<span class="how-more-main-title__accent">más comportamientos en vivo</span>
+					</h2>
 					<div class="how-more-bridge" aria-labelledby="how-more-bridge-title">
-						<div class="how-more-bridge__head-block how-section-head">
-							<p id="how-more-bridge-title" class="how-eyebrow how-eyebrow--center">Cuatro piezas · home</p>
-							<p class="how-more-bridge__headline">
-								<span class="how-more-bridge__accent">Lo mismo que en portada</span>, otra profundidad
+						<div class="how-more-bridge__head-block">
+							<p id="how-more-bridge-title" class="how-more-lead__audit-kicker how-more-bridge__kicker">
+								FUNCIONALIDADES · ÚNICAS
 							</p>
 						</div>
 						<div class="how-more-bridge__grid">
@@ -294,9 +296,6 @@ const curatedVideos: {
 							</p>
 							<p class="how-more-lead__audit-note">Clip en preparación · Misma claridad que el resto de la página.</p>
 						</div>
-						<p id="how-more-follow-title" class="how-more-lead__audit-kicker how-more-lead__follow-kicker">
-							FUNCIONALIDADES · ÚNICAS
-						</p>
 						<p class="how-more-lead__line how-more-lead__line--topic-u1">
 							<span class="how-more-lead__topic"><strong>Cómo te protegemos cuando decides estar OFF</strong></span>
 							— Mira la rotación automática entre OFF y día operativo.
@@ -918,6 +917,36 @@ const curatedVideos: {
 		color: rgba(255, 255, 255, 0.98);
 	}
 
+	/* Subrayado marca solo bajo «más comportamientos en vivo» (H2 centrado). */
+	.how-more--stage .how-more__head h2 .how-more-main-title__accent {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.how-more--stage .how-more__head h2 .how-more-main-title__accent::after {
+		content: '';
+		display: block;
+		width: min(13.5rem, 100%);
+		height: 3px;
+		margin: 0.42rem auto 0;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+
+	html[data-theme='light'] .how-more--stage .how-more__head h2 .how-more-main-title__accent::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
+	}
+
 	html[data-theme='dark'] .how-more-lead__line {
 		color: rgba(244, 246, 248, 0.94);
 		opacity: 1;
@@ -965,7 +994,7 @@ const curatedVideos: {
 		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
 	}
 
-	/* Puente con la home: misma filosofía que «De la teoría a la pantalla» (eyebrow centrado + frase + subrayado); cuatro cards. */
+	/* Puente con la home: kicker ámbar «FUNCIONALIDADES · ÚNICAS» + cuatro cards (el H2 lleva subrayado en «más comportamientos en vivo»). */
 	.how-more-bridge {
 		margin: 0 auto clamp(1.35rem, 4vw, 2rem);
 		max-width: min(48rem, 100%);
@@ -973,49 +1002,12 @@ const curatedVideos: {
 
 	.how-more-bridge__head-block {
 		margin-bottom: clamp(1.1rem, 3vw, 1.5rem);
-	}
-
-	.how-more-bridge__headline {
-		margin: 0;
-		font-size: clamp(1.02rem, 2.4vw, 1.14rem);
-		font-weight: 700;
-		line-height: 1.35;
-		letter-spacing: -0.02em;
 		text-align: center;
-		color: rgba(244, 246, 248, 0.96);
 	}
 
-	html[data-theme='light'] .how-more-bridge__headline {
-		color: var(--theme-on-bg, #111);
-	}
-
-	.how-more-bridge__accent {
+	.how-more-bridge__kicker {
+		margin: 0 auto clamp(0.35rem, 1.5vw, 0.55rem);
 		display: inline-block;
-		text-align: center;
-	}
-
-	.how-more-bridge__accent::after {
-		content: '';
-		display: block;
-		width: min(10.5rem, 100%);
-		height: 2px;
-		margin: 0.3rem auto 0;
-		border-radius: 999px;
-		background: linear-gradient(
-			90deg,
-			rgba(245, 176, 65, 0.95) 0%,
-			rgba(148, 154, 168, 0.62) 72%,
-			rgba(110, 116, 128, 0.35) 100%
-		);
-	}
-
-	html[data-theme='light'] .how-more-bridge__accent::after {
-		background: linear-gradient(
-			90deg,
-			rgba(218, 155, 48, 0.9) 0%,
-			rgba(120, 125, 138, 0.5) 75%,
-			rgba(90, 95, 108, 0.28) 100%
-		);
 	}
 
 	.how-more-bridge__grid {
@@ -1186,11 +1178,6 @@ const curatedVideos: {
 		opacity: 1;
 	}
 
-	/* Tras auditoría: mismo kicker ámbar que «Primero · Auditoría», con aire propio. */
-	.how-more-lead__follow-kicker {
-		margin: clamp(0.75rem, 2.2vw, 1.1rem) 0 clamp(0.65rem, 2vw, 0.95rem);
-	}
-
 	/* Misma historia de marca que arriba (ámbar → gris), más fina; arranca bajo el inicio del tema en negrita. */
 	.how-more-lead__topic {
 		display: inline-block;
@@ -1266,10 +1253,6 @@ const curatedVideos: {
 		}
 
 		.how-more-lead__audit {
-			text-align: center;
-		}
-
-		.how-more-lead__follow-kicker {
 			text-align: center;
 		}
 
