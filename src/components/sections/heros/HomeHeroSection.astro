@@ -10,8 +10,10 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     <div class="hero-section__inner">
       <div class="hero-section__text">
         <h1 class="hero-title">
-          Tú pones los límites. <span class="hero-title__brand">TEVSYS</span>{' '}
-          <span class="hero-title__tail">los blinda.</span>
+          Tú pones los límites.{' '}
+          <span class="hero-title__lock">
+            <span class="hero-title__brand">TEVSYS</span>&nbsp;los&nbsp;blinda.
+          </span>
         </h1>
         <p class="hero-microline">
           No damos señales ni promesas de beneficio.
@@ -115,9 +117,12 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     line-height: var(--tevsys-display-title-line-height, 1.48);
     letter-spacing: var(--tevsys-display-title-tracking, -0.03em);
     margin: 0;
-    max-width: 24em;
+    max-width: min(24em, 100%);
     color: #f4f6f8;
     text-align: center;
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
   }
   .hero-title__underline {
     text-decoration: underline;
@@ -132,9 +137,14 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-decoration: none;
   }
 
-  /* Evita salto feo: "los" en una línea y "blinda." sola debajo. */
-  .hero-title__tail {
+  /* TEVSYS + "los blinda." como bloque; &nbsp; en HTML evita partir "los | blinda". */
+  .hero-title__lock {
     white-space: nowrap;
+  }
+  @media (max-width: 380px) {
+    .hero-title__lock {
+      white-space: normal;
+    }
   }
 
   .hero-microline {
