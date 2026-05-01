@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación en dos partes; en vivo, detalle por funcionalidad (SML, evidencia, vídeos, auditoría), configuración e instalación.',
+		'Presentación en dos partes; cuatro enlaces al detalle en vivo (HyperClose, evidencia MT5, SML, auditoría); vídeos curados, instalación y guías.',
 };
 
 /** Parte 1 + Parte 2 (artículo MQL5 / mismo relato). Sustituir embeds cuando publiquéis el corte nuevo “producto al día”. */
@@ -26,44 +26,31 @@ const presentationParts = [
 	},
 ];
 
-/** Otros cortes (no duplicar Parte 1 / Parte 2). */
-/** Tras el par de presentación: mismas ganas de clic, otras piezas (ampliar cuando tengáis vídeo/micro). */
+/** Cuatro “puertas” tras la presentación: orden ver → comprobar → riesgo avanzado → trazabilidad (lista YouTube y demo en bloques inferiores + nav). */
 const depthLayers: { title: string; blurb: string; href: string; cta: string }[] = [
 	{
-		title: 'Modo observación pasiva',
-		blurb: 'Si ya hay posiciones, no “inventamos” el día: medimos desde el bloqueo con trazas claras.',
+		title: 'HyperClose — bloqueo bajo presión',
+		blurb: 'Límite tocado, intento de operar con bloqueo, semáforos y registro en vivo: sin discursos, con lo que pasa en el gráfico.',
+		href: '/features/hyperclose',
+		cta: 'Ver HyperClose',
+	},
+	{
+		title: 'Evidencia en MT5 — ver y comprobar',
+		blurb: 'Informes, HTML y trazas; observación pasiva si ya hay posiciones. La precisión milimétrica documentada está en su micro dedicada.',
 		href: '/features/evidencia',
 		cta: 'Ver evidencia',
 	},
 	{
 		title: 'Smart Money Lock (SML)',
-		blurb: 'Capa extra de riesgo/recompensa: porcentaje, estado y consecuencias visibles.',
+		blurb: 'Capa extra de riesgo/recompensa: porcentaje, estado en panel y consecuencias visibles.',
 		href: '/features/sml',
 		cta: 'Ver SML',
 	},
 	{
-		title: 'HyperClose',
-		blurb: 'Intento con límite tocado: cierre duro y registro que no depende de discursos.',
-		href: '/features/hyperclose',
-		cta: 'Ver HyperClose',
-	},
-	{
-		title: 'Precisión milimétrica',
-		blurb: 'Operativas documentadas: límite vs cierre, con error en porcentaje.',
-		href: '/features/precision',
-		cta: 'Ver precisión',
-	},
-	{
-		title: 'Más casos en vídeo',
-		blurb: 'Lista curada: presentación, índices, volatilidad, cuenta grande…',
-		href: '/videos-cierre-youtube',
-		cta: 'Abrir lista',
-	},
-	{
-		title: 'Auditoría (pack + ID)',
-		blurb: 'Cuando toque validar contigo: archivos locales, ID y criterio sin humo.',
+		title: 'Auditoría — pack e ID',
+		blurb: 'Preparar archivos en tu equipo, comprobar en el navegador y seguir el criterio público: sin prometer recepción en servidor hasta que sea cierto.',
 		href: '/auditoria-ia/empezar',
-		cta: 'Ir a auditoría',
+		cta: 'Preparar o empezar',
 	},
 ];
 
@@ -134,9 +121,9 @@ const curatedVideos: {
 				<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
 				<h2 id="how-depth-title">Así funciona en vivo</h2>
 				<p class="how-section-sub">
-					Has visto el panel por dentro y un cierre real. Ahora vamos al detalle de cada funcionalidad.
+					Has visto el panel por dentro y un cierre real. Cuatro enlaces directos: lo que suele importar en vivo, sin dispersarte.
 					<br />
-					<span class="how-section-sub__line2">Lo que ves es el EA funcionando en directo.</span>
+					<span class="how-section-sub__line2">Lista completa de vídeos y demo: abajo y en el pie de página.</span>
 				</p>
 			</header>
 			<div class="how-depth-grid">
@@ -155,7 +142,10 @@ const curatedVideos: {
 		<section class="how-curated" aria-labelledby="curated-title">
 			<header class="how-section-head">
 				<h2 id="curated-title">Más en vídeo</h2>
-				<p class="how-section-sub">Un corte extra: configuración esencial en pantalla.</p>
+				<p class="how-section-sub">
+					Cortes curados, alineados con lo que el producto muestra hoy. Para más contexto:
+					<a href="/videos-cierre-youtube" class="how-inline-link">todos los vídeos en YouTube →</a>
+				</p>
 			</header>
 			<div class="how-curated__stack">
 				{
@@ -189,6 +179,9 @@ const curatedVideos: {
 		<section class="how-side" aria-labelledby="how-side-title">
 			<h2 id="how-side-title">Instalación y guías</h2>
 			<p class="how-side__intro">Mismo enlace que en el pie: un clic y van al <strong>vídeo único</strong> de instalación.</p>
+			<p class="how-side__note" id="de-cero-a-protegido">
+				<strong>De cero a protegido</strong> (recorrido largo en un solo vídeo): lo enlazaremos aquí cuando el corte esté listo. Mientras, instalación y configuración cubren el arranque.
+			</p>
 			<div class="how-side__grid">
 				<article class="how-side-card">
 					<p class="how-eyebrow">Paso 0</p>
@@ -219,6 +212,8 @@ const curatedVideos: {
 			<a href="/videos-cierre-youtube">Todos los vídeos</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/features/evidencia">Evidencia</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/features/precision">Precisión</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/company/contact?flow=demo">Demo</a>
 		</nav>
@@ -304,8 +299,8 @@ const curatedVideos: {
 
 	.how-depth-grid {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.85rem 1rem;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem 1.25rem;
 	}
 
 	.how-depth-card {
@@ -444,6 +439,19 @@ const curatedVideos: {
 		border-color: rgba(247, 192, 80, 0.75);
 	}
 
+	.how-inline-link {
+		font-weight: 600;
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+		text-decoration-color: rgba(245, 176, 65, 0.45);
+	}
+
+	.how-inline-link:hover {
+		color: #f7c050;
+		text-decoration-color: rgba(247, 192, 80, 0.85);
+	}
+
 	.how-embed {
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
@@ -497,6 +505,17 @@ const curatedVideos: {
 		max-width: 40rem;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.how-side__note {
+		margin: -0.35rem auto 1.25rem;
+		text-align: center;
+		font-size: 0.92rem;
+		line-height: 1.5;
+		opacity: 0.82;
+		max-width: 42rem;
+		padding: 0 0.5rem;
+		box-sizing: border-box;
 	}
 
 	.how-side__grid {
@@ -595,14 +614,11 @@ const curatedVideos: {
 		.how-side__grid {
 			grid-template-columns: 1fr;
 		}
-		.how-depth-grid {
-			grid-template-columns: 1fr;
-		}
 	}
 
-	@media (min-width: 601px) and (max-width: 900px) {
+	@media (max-width: 640px) {
 		.how-depth-grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
