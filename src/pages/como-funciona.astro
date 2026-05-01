@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación en dos partes; cuatro enlaces al detalle en vivo (HyperClose, evidencia MT5, SML, auditoría); vídeos curados, instalación y guías.',
+		'Presentación en dos partes, recorrido De cero a protegido (vídeo en preparación), cuatro enlaces al detalle en vivo; más vídeo, instalación y guías.',
 };
 
 /** Parte 1 + Parte 2 (artículo MQL5 / mismo relato). Sustituir embeds cuando publiquéis el corte nuevo “producto al día”. */
@@ -25,6 +25,16 @@ const presentationParts = [
 		href: 'https://youtu.be/QU1hC6SKg10',
 	},
 ];
+
+/** Recorrido largo en un solo vídeo: dejar `embedUrl` vacío hasta tener URL YouTube (nocookie/embed). Opcional `watchHref` para “Abrir en YouTube”. */
+const zeroToProtected = {
+	title: 'De cero a protegido',
+	durationLabel: '~X min',
+	blurb:
+		'Desde el gráfico hasta operar con reglas claras: instalación en contexto, panel (compacto / expandido), estados y lo que hace falta para sentirte cubierto. El vídeo se publicará en este bloque.',
+	embedUrl: '',
+	watchHref: '',
+};
 
 /** Cuatro “puertas” tras la presentación: orden ver → comprobar → riesgo avanzado → trazabilidad (lista YouTube y demo en bloques inferiores + nav). */
 const depthLayers: { title: string; blurb: string; href: string; cta: string }[] = [
@@ -116,6 +126,52 @@ const curatedVideos: {
 			</div>
 		</section>
 
+		<section class="how-zero-protected" id="de-cero-a-protegido" aria-labelledby="how-zero-title">
+			<header class="how-section-head">
+				<p class="how-eyebrow how-eyebrow--center">Recorrido completo</p>
+				<h2 id="how-zero-title">
+					{zeroToProtected.title}
+					<span class="how-zero-duration">({zeroToProtected.durationLabel})</span>
+				</h2>
+				<p class="how-section-sub">{zeroToProtected.blurb}</p>
+			</header>
+			<div class="how-zero-protected__frame">
+				{
+					zeroToProtected.embedUrl ? (
+						<>
+							<div class="how-embed how-embed--chrome">
+								<iframe
+									src={zeroToProtected.embedUrl}
+									title={zeroToProtected.title}
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+									loading="lazy"
+									referrerpolicy="strict-origin-when-cross-origin"></iframe>
+							</div>
+							{zeroToProtected.watchHref ? (
+								<p class="how-zero-watch">
+									<a
+										href={zeroToProtected.watchHref}
+										class="how-text-link"
+										target="_blank"
+										rel="noopener noreferrer">
+										Abrir en YouTube →
+									</a>
+								</p>
+							) : null}
+						</>
+					) : (
+						<div class="how-embed how-embed--chrome how-embed-placeholder" role="status" aria-live="polite">
+							<p class="how-embed-placeholder__title">Vídeo en preparación</p>
+							<p class="how-embed-placeholder__sub">
+								Pronto verás aquí el recorrido completo. Mientras, las dos partes de arriba y la instalación más abajo cubren el arranque.
+							</p>
+						</div>
+					)
+				}
+			</div>
+		</section>
+
 		<section class="how-depth" aria-labelledby="how-depth-title">
 			<header class="how-section-head how-depth__head">
 				<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
@@ -179,8 +235,8 @@ const curatedVideos: {
 		<section class="how-side" aria-labelledby="how-side-title">
 			<h2 id="how-side-title">Instalación y guías</h2>
 			<p class="how-side__intro">Mismo enlace que en el pie: un clic y van al <strong>vídeo único</strong> de instalación.</p>
-			<p class="how-side__note" id="de-cero-a-protegido">
-				<strong>De cero a protegido</strong> (recorrido largo en un solo vídeo): lo enlazaremos aquí cuando el corte esté listo. Mientras, instalación y configuración cubren el arranque.
+			<p class="how-side__note">
+				El recorrido largo <a href="#de-cero-a-protegido" class="how-inline-link">De cero a protegido</a> vive más arriba en esta misma página; cuando haya vídeo, se verá en ese bloque.
 			</p>
 			<div class="how-side__grid">
 				<article class="how-side-card">
@@ -249,6 +305,61 @@ const curatedVideos: {
 		max-width: min(56rem, 100%);
 		margin: 0 auto var(--section-margin);
 		padding: clamp(0.35rem, 1.5vw, 1rem) 0 0.5rem;
+	}
+
+	.how-zero-protected {
+		max-width: min(56rem, 100%);
+		margin: 0 auto clamp(2.25rem, 6vw, 3.5rem);
+		padding: clamp(0.25rem, 1.2vw, 0.85rem) 0 0.25rem;
+	}
+
+	.how-zero-protected .how-section-head {
+		margin-bottom: clamp(1.25rem, 4vw, 2rem);
+	}
+
+	.how-zero-duration {
+		font-weight: 600;
+		font-size: 0.72em;
+		color: rgba(244, 246, 248, 0.72);
+		letter-spacing: 0.02em;
+	}
+
+	.how-zero-protected__frame {
+		max-width: min(42rem, 100%);
+		margin: 0 auto;
+	}
+
+	.how-zero-watch {
+		margin: 0.65rem 0 0;
+		text-align: center;
+	}
+
+	.how-embed-placeholder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.65rem;
+		aspect-ratio: 16 / 9;
+		padding: clamp(1rem, 4vw, 2rem);
+		box-sizing: border-box;
+		text-align: center;
+		background: rgba(0, 0, 0, 0.2);
+	}
+
+	.how-embed-placeholder__title {
+		margin: 0;
+		font-size: clamp(1rem, 2.2vw, 1.15rem);
+		font-weight: 700;
+		color: rgba(244, 246, 248, 0.92);
+	}
+
+	.how-embed-placeholder__sub {
+		margin: 0;
+		max-width: 32ch;
+		font-size: 0.94rem;
+		line-height: 1.5;
+		opacity: 0.82;
 	}
 
 	.how-section-head {
