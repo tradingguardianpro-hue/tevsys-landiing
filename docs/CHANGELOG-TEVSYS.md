@@ -4,6 +4,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — «Siguiente nivel» menos sumido + placeholders de clips con guiño vídeo (may 2026)
+
+**Objetivo:** en tema oscuro el stage **`.how-more`** se leía muy cerrado; los cuatro placeholders del grid **sin embed** no tenían el “color” que da el chrome del reproductor.
+
+### `src/pages/como-funciona.astro`
+- **`.how-more__bg` (dark):** radial central algo más claro, lavado ámbar un poco más visible, **menos** vignette interior (`inset`).
+- **Barrido vertical (dark):** override **`page-como-funciona`** sube opacidad del **`.how-more__sweep`** (sigue desacoplado del header por duración/delay).
+- **Tarjetas `.how-more-cell--video` (dark):** superficie y borde un peldaño más legibles + sombra suave.
+- **Placeholders del grid:** clase **`how-embed-placeholder--clip-teaser`** + **`how-clip-teaser__glyph`** (círculo + triángulo genérico, no marca YouTube); gradiente y borde ámbar en dark/light.
+
+---
+
 ## Home — corrección mid-glow **features** vs burbuja **planes** (may 2026)
 
 **Aclaración:** el **pase 1** tocaba **`.tevsys-home-mid-glow`** (detrás de las **cuatro cards de producto** del bloque superior), no las burbujas KITT de la **franja inferior**. El fundador echaba de menos las **dos esferas grises en movimiento**; la molestia era **`.tevsys-home-tail-bubble-solo`** (radial **ámbar** detrás de **«Elige tu cuenta»** / planes).
