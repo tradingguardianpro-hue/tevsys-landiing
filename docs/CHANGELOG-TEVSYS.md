@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — Grid puente 2×2 (orden home) + embeds más altos (may 2026)
+
+- **`how-more-bridge__grid`:** desde **560px** dos columnas fijas (arriba Precisión + HyperClose, abajo SML + Evidencia); debajo, una columna.
+- **`how-more-bridge`:** `max-width` **54rem**; **`how-more-bridge-card__media`** `max-height` con **clamp** más generoso para los MP4.
+
+---
+
 ## `/como-funciona` — Copy puente Siguiente nivel (tono A) + capítulo FUNCIONALIDADES más claro + aire (may 2026)
 
 - Frase bajo H2 «Esto no es todo…»: tono **A** (tú / abajo / auditoría después); sin «portada» ni «vamos por bloques».

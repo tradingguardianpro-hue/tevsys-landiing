@@ -1351,7 +1351,7 @@ const curatedVideos: {
 	/* Puente con la home: grid de cuatro cards; cabecero del capítulo replica patrón Presentación. */
 	.how-more-bridge {
 		margin: 0 auto clamp(1.35rem, 4vw, 2rem);
-		max-width: min(48rem, 100%);
+		max-width: min(54rem, 100%);
 	}
 
 	.how-more-bridge__head-block {
@@ -1364,10 +1364,18 @@ const curatedVideos: {
 		display: inline-block;
 	}
 
+	/* Mismo orden que la home: fila 1 = Precisión + HyperClose, fila 2 = SML + Evidencia (en móvil, una columna). */
 	.how-more-bridge__grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 11.25rem), 1fr));
-		gap: clamp(1rem, 2.8vw, 1.35rem);
+		grid-template-columns: 1fr;
+		gap: clamp(1.05rem, 2.8vw, 1.45rem);
+	}
+
+	@media (min-width: 560px) {
+		.how-more-bridge__grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: clamp(1.15rem, 3vw, 1.65rem);
+		}
 	}
 
 	.how-more-bridge-card {
@@ -1542,7 +1550,7 @@ const curatedVideos: {
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.11);
 		aspect-ratio: 16 / 9;
-		max-height: 10.5rem;
+		max-height: clamp(11.75rem, 24vw, 15.5rem);
 		background: rgba(0, 0, 0, 0.32);
 	}
 
