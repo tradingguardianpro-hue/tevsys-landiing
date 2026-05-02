@@ -347,12 +347,23 @@ const curatedVideos: {
 							Cuando lo que cuenta es que <strong>informe, panel y registros</strong> cuenten la misma historia — con criterio claro y sin
 							humo.
 						</p>
-						<p class="how-section-sub">
-							Triangulación (MT5 + panel + logs), <strong>ID por licencia</strong> y criterio de <strong>canal</strong> — con material
-							verificable y sin prometer lo que aún no está abierto al público.
-							<br />
-							<span class="how-section-sub__line2">No es señales ni qué operar.</span>
-						</p>
+						<div class="how-audit-chapter__pitch" role="region" aria-label="Cómo encaja la auditoría">
+							<p>
+								<strong>Triangulación:</strong> lo que importa es poder cruzar informe MT5, panel y logs de tevsys del mismo periodo,
+								sin mezclar historias distintas.
+							</p>
+							<p>
+								<strong>Tu ID con tevsys:</strong> con tu licencia tendrás un <strong>identificador personal</strong> (código{' '}
+								<code class="how-more-lead__code">TVS-…</code>) para encajar lo que envíes con tu cuenta.
+							</p>
+							<p>
+								<strong>Los packs que nos enviéis:</strong> los revisamos y valoramos si encajan en esta capa de auditoría.{' '}
+								<strong>El canal de recepción público aún no está preparado</strong> — cuando lo esté, lo diremos con claridad.
+							</p>
+							<p class="how-audit-chapter__pitch-closing">
+								<strong>No damos señales para operar</strong> ni os decimos qué operar.
+							</p>
+						</div>
 					</header>
 					<div class="how-audit-chapter__frame">
 						<div
@@ -369,17 +380,16 @@ const curatedVideos: {
 					<div class="how-more-lead__audit">
 						<ul class="how-more-lead__audit-points">
 							<li>
-								<strong>Triangulación</strong> — informe MT5, panel con fecha y hora visibles y logs tevsys del mismo periodo; el foco
-								que declares en el pack ordena el énfasis (completo, precisión, disciplina, bloqueos, SML).
+								<strong>Qué miramos</strong> — informe MT5, panel con fecha y hora visibles y logs tevsys alineados; el foco que
+								marquéis en el pack ordena el énfasis (disciplina, precisión, bloqueos, SML…).
 							</li>
 							<li>
-								<strong>ID por licencia</strong> — código <code class="how-more-lead__code">TVS-…</code> para encajar caso y adjuntos;
-								en el terminal, trazas en audit trail cuando toque.
+								<strong>ID</strong> — el código <code class="how-more-lead__code">TVS-…</code> por licencia; en el terminal, trazas en
+								audit trail cuando toque.
 							</li>
 							<li>
-								<strong>Canal</strong> — check inicial con ID, valoración de si el envío encaja para auditoría y recepción del pack;
-								hoy la <strong>contratación pública no está abierta</strong> hasta alinear producto y entrega. Recepción formal,
-								dropzone y más automatización van en roadmap: primero manual-asistido, después lo que el backend sostenga sin prometer
+								<strong>Canal</strong> — check inicial, valoración del envío y recepción del pack cuando abramos el flujo. Hoy la{' '}
+								<strong>contratación pública no está abierta</strong>; dropzone y más automatización van en roadmap, sin prometer
 								fechas.
 							</li>
 						</ul>
@@ -1303,17 +1313,13 @@ const curatedVideos: {
 
 	html[data-theme='dark'] .how-chapter--audit {
 		border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
-		background: linear-gradient(
-			180deg,
-			rgba(245, 176, 65, 0.055) 0%,
-			rgba(18, 19, 24, 0.35) 38%,
-			transparent 72%
-		);
+		/* Lavado muy suave: sin losa gris; solo un susurro ámbar arriba que se diluye. */
+		background: linear-gradient(180deg, rgba(245, 176, 65, 0.06) 0%, transparent 52%);
 	}
 
 	html[data-theme='light'] .how-chapter--audit {
 		border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
-		background: linear-gradient(180deg, rgba(255, 248, 235, 0.65) 0%, transparent 65%);
+		background: linear-gradient(180deg, rgba(255, 248, 235, 0.42) 0%, transparent 58%);
 	}
 
 	.how-chapter--audit::before {
@@ -1360,6 +1366,45 @@ const curatedVideos: {
 
 	.how-chapter__head--audit h3 {
 		font-size: clamp(1.14rem, 2.55vw, 1.42rem);
+	}
+
+	/* Copy bajo el H3: frases cortas, mismo cuerpo que how-section-sub. */
+	.how-audit-chapter__pitch {
+		margin: 0 auto clamp(0.85rem, 2.5vw, 1.15rem);
+		max-width: 36rem;
+		font-size: 0.94rem;
+		line-height: 1.55;
+		opacity: 0.9;
+		text-align: left;
+	}
+
+	@media (min-width: 640px) {
+		.how-audit-chapter__pitch {
+			text-align: center;
+		}
+	}
+
+	.how-audit-chapter__pitch p {
+		margin: 0 0 clamp(0.5rem, 1.8vw, 0.65rem);
+	}
+
+	.how-audit-chapter__pitch p:last-child {
+		margin-bottom: 0;
+	}
+
+	html[data-theme='dark'] .how-audit-chapter__pitch {
+		color: rgba(220, 224, 232, 0.92);
+	}
+
+	html[data-theme='light'] .how-audit-chapter__pitch {
+		color: rgba(42, 44, 52, 0.92);
+	}
+
+	.how-audit-chapter__pitch-closing {
+		margin-top: clamp(0.35rem, 1.2vw, 0.55rem);
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		opacity: 0.96;
 	}
 
 	.how-audit-chapter__hook {
@@ -1821,30 +1866,27 @@ const curatedVideos: {
 		text-align: left;
 	}
 
-	/* Capítulo auditoría: separado del grid de clips; polivalencia + §0 honesto. */
+	/* Capítulo auditoría: marco ligero (carril ámbar), sin losa gris — el vídeo ya lleva el peso visual. */
 	.how-more-lead__audit {
 		margin: 0 auto clamp(1.15rem, 3vw, 1.65rem);
 		max-width: 42rem;
-		padding: clamp(1rem, 2.8vw, 1.35rem) clamp(1.05rem, 3vw, 1.45rem);
-		padding-bottom: clamp(1rem, 2.6vw, 1.3rem);
+		padding: clamp(0.95rem, 2.5vw, 1.2rem) clamp(1rem, 2.8vw, 1.35rem);
+		padding-bottom: clamp(0.95rem, 2.4vw, 1.15rem);
 		border-radius: clamp(0.5rem, 1.2vw, 0.7rem);
-		background: linear-gradient(
-			168deg,
-			rgba(245, 176, 65, 0.08) 0%,
-			rgba(26, 28, 36, 0.55) 42%,
-			rgba(16, 17, 22, 0.72) 100%
-		);
-		border: 1px solid rgba(245, 176, 65, 0.22);
-		border-left: 3px solid rgba(245, 176, 65, 0.42);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+		background: radial-gradient(ellipse 95% 120% at 0% 0%, rgba(245, 176, 65, 0.09) 0%, transparent 52%),
+			rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(245, 176, 65, 0.2);
+		border-left: 3px solid rgba(245, 176, 65, 0.48);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045);
 		text-align: left;
 	}
 
 	html[data-theme='light'] .how-more-lead__audit {
-		background: linear-gradient(168deg, rgba(255, 250, 240, 0.98) 0%, rgba(252, 249, 242, 0.88) 100%);
-		border-color: rgba(218, 155, 48, 0.26);
-		border-left-color: rgba(218, 155, 48, 0.5);
-		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+		background: radial-gradient(ellipse 90% 100% at 0% 0%, rgba(245, 176, 65, 0.07) 0%, transparent 48%),
+			rgba(255, 255, 255, 0.72);
+		border-color: rgba(218, 155, 48, 0.22);
+		border-left-color: rgba(218, 155, 48, 0.48);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
 	}
 
 	.how-more-lead__audit-kicker {
