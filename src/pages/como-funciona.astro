@@ -111,12 +111,12 @@ const homeBridgeCards: {
 	},
 ];
 
-/** Cortos en preparación: primero los tres comportamientos del día a día; auditoría al final (ya explicada arriba). */
-const siguienteNivelClipCards: { title: string; auditAccent?: boolean }[] = [
-	{ title: '¿Cómo te protegemos cuando decides estar OFF?' },
-	{ title: 'Observación pasiva' },
-	{ title: 'Retocar con el EA vigilando (~25–30 s)' },
-	{ title: 'Auditoría con evidencia (Fase 1 manual)', auditAccent: true },
+/** Cortos en preparación: primero los tres comportamientos del día a día; auditoría al final (ya explicada arriba). `anchorId` = ancla para el índice (añadir filas aquí al publicar más clips). */
+const siguienteNivelClipCards: { title: string; anchorId: string; auditAccent?: boolean }[] = [
+	{ title: '¿Cómo te protegemos cuando decides estar OFF?', anchorId: 'videoclip-off' },
+	{ title: 'Observación pasiva', anchorId: 'videoclip-pasiva' },
+	{ title: 'Retocar con el EA vigilando (~25–30 s)', anchorId: 'videoclip-retocar' },
+	{ title: 'Auditoría con evidencia (Fase 1 manual)', anchorId: 'videoclip-auditoria', auditAccent: true },
 ];
 
 /** Bloque intermedio: mismo peso narrativo que las cuatro piezas; sin repetir el texto largo de auditoría. */
@@ -417,18 +417,34 @@ const curatedVideos: {
 				</section>
 
 				<section class="how-chapter how-chapter--extras" aria-labelledby="how-extras-chapter-title">
-					<header class="how-section-head how-chapter__head">
+					<header class="how-section-head how-chapter__head how-chapter__head--extras">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--sentence-kicker">
 							¿Creías que terminaba ahí?
 						</p>
 						<h3 id="how-extras-chapter-title">
-							Más comportamientos que <span class="how-present-title__accent">ver en corto</span>
+							Todo nuestro comportamiento en <span class="how-present-title__accent">microvídeos</span>
 						</h3>
 						<p class="how-section-sub how-chapter--extras__sub">
-							Cortos de <strong>25–30 segundos</strong>: te lo mostramos en <strong>situaciones reales</strong> del terminal, con{' '}
-							<strong>leyendas breves en pantalla</strong> cuando haga falta aclarar un paso — sin jerga. Es una guía visual para ver cómo
-							actuamos en distintos escenarios; <strong>iremos sumando clips</strong> conforme los publiquemos.
+							Aquí vas a ver, en <strong>clips de unos 25–30 segundos</strong>, <strong>cómo actuamos</strong> en distintos escenarios.
+							<strong>Iremos grabando</strong> conforme los publiquemos.
 						</p>
+						<nav class="how-videoteca-index" aria-labelledby="how-videoteca-index-label">
+							<p id="how-videoteca-index-label" class="how-videoteca-index__label">
+								Índice — salta al clip
+							</p>
+							<ul class="how-videoteca-index__list">
+								{
+									siguienteNivelClipCards.map((clip) => (
+										<li class="how-videoteca-index__item">
+											<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
+												{clip.title}
+											</a>
+										</li>
+									))
+								}
+							</ul>
+							<p class="how-videoteca-index__hint">Lista ampliable: nuevos títulos se añaden aquí cuando subáis cada pieza.</p>
+						</nav>
 					</header>
 					<div class="how-extras-grid">
 						{
@@ -442,23 +458,26 @@ const curatedVideos: {
 					</div>
 				</section>
 
-				<p class="how-more-clips-intro">
-					Cuatro huecos de vídeo (~25–30 s cuando los tengáis): <strong>misma proporción y marco</strong> que las tarjetas de arriba, con una{' '}
-					<strong>firma de color distinta</strong> (plata / violeta suave) para leerlos como “extras de gama”; la última tarjeta mantiene el
-					cian de auditoría.
+				<p class="how-more-clips-intro" id="videoteca-clips">
+					Cuatro huecos (~25–30 s): <strong>misma proporción</strong> que las tarjetas de arriba; <strong>firma plata / violeta</strong> en las
+					tres primeras y <strong>cian</strong> en la de auditoría.
 				</p>
 				<div class="how-more-grid how-more-grid--practical">
 					{
 						siguienteNivelClipCards.map((row) => (
 							<article
+								id={row.anchorId}
 								class:list={[
 									'how-more-cell',
 									'how-more-cell--video',
 									'how-more-cell--practical-clip',
 									row.auditAccent && 'how-more-cell--audit-clip',
-								]}>
+								]}
+								aria-labelledby={`clip-title-${row.anchorId}`}>
 								<header class="how-block-head how-block-head--compact">
-									<h3 class="how-more-card__title">{row.title}</h3>
+									<h3 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
+										{row.title}
+									</h3>
 								</header>
 								<div class="how-practical-card__media">
 									<div
@@ -1513,17 +1532,126 @@ const curatedVideos: {
 		color: #c98a2e;
 	}
 
-	/* Gancho tipo frase (no todo en mayúsculas). */
+	/* Gancho tipo frase (no todo en mayúsculas); centrado como FUNCIONALIDADES ÚNICAS / Primero · Auditoría. */
 	.how-eyebrow--sentence-kicker {
+		display: block;
+		width: 100%;
+		text-align: center;
 		text-transform: none;
 		letter-spacing: 0.02em;
 		font-weight: 700;
 		font-size: clamp(0.84rem, 2.15vw, 0.98rem);
 		line-height: 1.35;
 		opacity: 0.96;
-		max-width: min(26rem, 92vw);
+		max-width: min(28rem, 94vw);
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.how-chapter__head--extras {
+		text-align: center;
+	}
+
+	.how-chapter__head--extras .how-present-title__accent::after {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Índice anclas — columnas; crece al añadir entradas en `siguienteNivelClipCards`. */
+	.how-videoteca-index {
+		margin: clamp(0.85rem, 2.5vw, 1.25rem) auto 0;
+		max-width: min(46rem, 100%);
+		padding: clamp(0.75rem, 2.2vw, 1rem) clamp(0.85rem, 2.5vw, 1.15rem);
+		border-radius: clamp(0.45rem, 1vw, 0.65rem);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(0, 0, 0, 0.18);
+		box-sizing: border-box;
+	}
+
+	html[data-theme='light'] .how-videoteca-index {
+		border-color: rgba(0, 0, 0, 0.1);
+		background: rgba(255, 255, 255, 0.65);
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+	}
+
+	.how-videoteca-index__label {
+		margin: 0 0 0.55rem;
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: rgba(245, 176, 65, 0.88);
+		text-align: center;
+	}
+
+	html[data-theme='light'] .how-videoteca-index__label {
+		color: rgba(190, 130, 42, 0.92);
+	}
+
+	.how-videoteca-index__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		columns: 2;
+		column-gap: clamp(1rem, 3vw, 1.65rem);
+	}
+
+	@media (min-width: 720px) {
+		.how-videoteca-index__list {
+			columns: 3;
+		}
+	}
+
+	.how-videoteca-index__item {
+		break-inside: avoid;
+		margin: 0 0 0.42rem;
+		padding: 0;
+	}
+
+	.how-videoteca-index__link {
+		font-size: 0.86rem;
+		font-weight: 600;
+		line-height: 1.38;
+		text-decoration: none;
+		color: rgba(230, 235, 248, 0.94);
+		border-bottom: 1px solid rgba(100, 196, 255, 0.28);
+		transition: color 0.15s ease, border-color 0.15s ease;
+	}
+
+	.how-videoteca-index__link:hover {
+		color: rgba(245, 176, 65, 0.95);
+		border-bottom-color: rgba(245, 176, 65, 0.45);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__link {
+		color: rgba(38, 44, 58, 0.92);
+		border-bottom-color: rgba(70, 140, 190, 0.35);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__link:hover {
+		color: rgba(190, 125, 38, 0.95);
+		border-bottom-color: rgba(218, 155, 48, 0.5);
+	}
+
+	.how-videoteca-index__hint {
+		margin: clamp(0.55rem, 1.8vw, 0.75rem) 0 0;
+		padding-top: 0.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		font-size: 0.78rem;
+		line-height: 1.42;
+		opacity: 0.72;
+		text-align: center;
+	}
+
+	html[data-theme='light'] .how-videoteca-index__hint {
+		border-top-color: rgba(0, 0, 0, 0.08);
+		color: rgba(72, 76, 88, 0.85);
+		opacity: 1;
+	}
+
+	/* Salto por ancla: no pegar el título bajo el header fijo. */
+	.how-more-cell[id^='videoclip-'] {
+		scroll-margin-top: clamp(4rem, 12vh, 6rem);
 	}
 
 	.how-audit-chapter__frame {
