@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — Copy puente Siguiente nivel (tono A) + capítulo FUNCIONALIDADES más claro + aire (may 2026)
+
+- Frase bajo H2 «Esto no es todo…»: tono **A** (tú / abajo / auditoría después); sin «portada» ni «vamos por bloques».
+- Capítulo **FUNCIONALIDADES ÚNICAS**: H3 **«Las cuatro piezas, un poco más explicadas»**; cuerpo sin «home»; segunda línea aclara **vídeo en tarjeta** vs **enlace a página de producto**.
+- **Espacio** extra bajo la frase puente + `padding-top` en `how-chapter--bridge` para separar visualmente del bloque siguiente.
+
+---
+
 ## `/como-funciona` — Bloques tipo Presentación en Siguiente nivel + capítulo auditoría (may 2026)
 
 - **Patrón:** eyebrow/kicker ámbar (`how-eyebrow--chapter-kicker`) → **H3** con **`how-present-title__accent`** (subrayado) → **`how-section-sub`** (+ segunda línea opcional) → contenido.
