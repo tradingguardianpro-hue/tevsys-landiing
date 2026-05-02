@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — Copy puente FUNCIONALIDADES: «con contexto breve» (may 2026)
+
+- H3 y cuerpo alineados con la realidad: **no** es “más explicado” aquí; **sí** contexto breve + vídeo muestra; **detalle** en micropáginas por enlace.
+
+---
+
 ## `/como-funciona` — Grid puente 2×2 (orden home) + embeds más altos (may 2026)
 
 - **`how-more-bridge__grid`:** desde **560px** dos columnas fijas (arriba Precisión + HyperClose, abajo SML + Evidencia); debajo, una columna.
