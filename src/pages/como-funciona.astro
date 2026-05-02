@@ -268,12 +268,25 @@ const curatedVideos: {
 							<span class="how-more-main-title__accent">más comportamientos en vivo</span>
 						</span>
 					</h2>
-					<div class="how-more-bridge" aria-labelledby="how-more-bridge-title">
-						<div class="how-more-bridge__head-block">
-							<p id="how-more-bridge-title" class="how-more-lead__audit-kicker how-more-bridge__kicker">
-								FUNCIONALIDADES ÚNICAS
-							</p>
-						</div>
+					<p class="how-section-sub how-more__siguiente-aspiration">
+						Vamos por bloques: primero las mismas cuatro piezas que en portada, con contexto; después, si lo que necesitas es{' '}
+						<strong>cruzar</strong> evidencias con criterio claro, el capítulo de auditoría.
+					</p>
+				</header>
+
+				<section class="how-chapter how-chapter--bridge" aria-labelledby="how-bridge-chapter-title">
+					<header class="how-section-head how-chapter__head">
+						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">FUNCIONALIDADES ÚNICAS</p>
+						<h3 id="how-bridge-chapter-title">
+							Cuatro piezas, <span class="how-present-title__accent">una lectura</span>
+						</h3>
+						<p class="how-section-sub">
+							Precisión, HyperClose, SML y evidencia — mismas rutas que desde la home.
+							<br />
+							<span class="how-section-sub__line2">Abajo, el detalle en vídeo o el acceso directo a cada micro.</span>
+						</p>
+					</header>
+					<div class="how-more-bridge">
 						<div class="how-more-bridge__grid">
 							{
 								homeBridgeCards.map((card) => (
@@ -314,57 +327,79 @@ const curatedVideos: {
 							}
 						</div>
 					</div>
-					<p class="how-more-audit-bridge">
-						Cuando lo que importa es contrastar <strong>hechos</strong>, no basta con un clip: hace falta poder{' '}
-						<strong>cruzar</strong> terminal, panel y registro.
-					</p>
-					<div class="how-more-lead">
-						<div class="how-more-lead__audit">
-							<p class="how-more-lead__audit-kicker">Primero · Auditoría</p>
-							<p class="how-more-lead__audit-line">
-								Más allá de “solo disciplina”: revisión de <strong>reglas</strong>, <strong>precisión de cierres</strong> frente a lo
-								declarado, bloqueos y fricción operativa — siempre con material verificable. <strong>No</strong> es señales ni qué
-								operar.
-							</p>
-							<ul class="how-more-lead__audit-points">
-								<li>
-									<strong>Triangulación</strong> — informe MT5, panel con fecha y hora visibles y logs tevsys del mismo periodo; el
-									foco que declares en el pack ordena el énfasis (completo, precisión, disciplina, bloqueos, SML).
-								</li>
-								<li>
-									<strong>ID por licencia</strong> — código <code class="how-more-lead__code">TVS-…</code> para encajar caso y
-									adjuntos; en el terminal, trazas en audit trail cuando toque.
-								</li>
-								<li>
-									<strong>Canal</strong> — check inicial con ID, valoración de si el envío encaja para auditoría y recepción del
-									pack; hoy la <strong>contratación pública no está abierta</strong> hasta alinear producto y entrega. Recepción
-									formal, dropzone y más automatización van en roadmap: primero manual-asistido, después lo que el backend
-									sostenga sin prometer fechas.
-								</li>
-							</ul>
-							<p class="how-more-lead__audit-note">
-								Abajo, el primer clip resume el tono de esta capa; el resto de vídeos siguen en preparación.
+				</section>
+
+				<p class="how-more-audit-bridge">
+					Cuando lo que importa es contrastar <strong>hechos</strong>, no basta con un clip: hace falta poder{' '}
+					<strong>cruzar</strong> terminal, panel y registro. Lo siguiente ordena exactamente eso.
+				</p>
+
+				<section class="how-chapter how-chapter--audit how-audit-chapter" aria-labelledby="how-audit-chapter-title">
+					<header class="how-section-head how-chapter__head">
+						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">Primero · Auditoría</p>
+						<h3 id="how-audit-chapter-title">
+							Hechos que <span class="how-present-title__accent">se pueden cruzar</span>
+						</h3>
+						<p class="how-section-sub">
+							Triangulación (MT5 + panel + logs), <strong>ID por licencia</strong> y criterio de <strong>canal</strong> — con material
+							verificable y sin prometer lo que aún no está abierto al público.
+							<br />
+							<span class="how-section-sub__line2">No es señales ni qué operar.</span>
+						</p>
+					</header>
+					<div class="how-audit-chapter__frame">
+						<div
+							class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--zero-teaser"
+							role="status"
+							aria-live="polite">
+							<span class="how-clip-teaser__glyph how-clip-teaser__glyph--zero" aria-hidden="true"></span>
+							<p class="how-embed-placeholder__title">Vídeo del capítulo en preparación</p>
+							<p class="how-embed-placeholder__sub">
+								Cuando lo tengáis, aquí irá un corte que resume tono y pasos de esta capa.
 							</p>
 						</div>
-						<p class="how-more-lead__line how-more-lead__line--topic-u1">
-							<span class="how-more-lead__topic"><strong>Cómo te protegemos cuando decides estar OFF</strong></span>
-							— Mira la rotación automática entre OFF y día operativo.
-						</p>
-						<p class="how-more-lead__line how-more-lead__line--topic-u2">
-							<span class="how-more-lead__topic"><strong>Observación pasiva</strong></span>
-							— Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos: observamos, medimos desde el
-							bloqueo y dejamos trazas que puedes contrastar.
-						</p>
-						<p class="how-more-lead__line how-more-lead__line--topic-u3">
-							<span class="how-more-lead__topic"><strong>Retocar lo que ya protegiste</strong></span>
-							— Si el EA ya está vigilando, el cambio de límites tiene reglas: te mostramos cómo actuamos; tus reglas se cumplen
-							siempre.
-						</p>
-						<p class="how-more-lead__note">
-							Abajo: cuatro bloques de vídeo (mismo aspecto; el primero, auditoría); clip en preparación en cada uno.
+					</div>
+					<div class="how-more-lead__audit">
+						<ul class="how-more-lead__audit-points">
+							<li>
+								<strong>Triangulación</strong> — informe MT5, panel con fecha y hora visibles y logs tevsys del mismo periodo; el foco
+								que declares en el pack ordena el énfasis (completo, precisión, disciplina, bloqueos, SML).
+							</li>
+							<li>
+								<strong>ID por licencia</strong> — código <code class="how-more-lead__code">TVS-…</code> para encajar caso y adjuntos;
+								en el terminal, trazas en audit trail cuando toque.
+							</li>
+							<li>
+								<strong>Canal</strong> — check inicial con ID, valoración de si el envío encaja para auditoría y recepción del pack;
+								hoy la <strong>contratación pública no está abierta</strong> hasta alinear producto y entrega. Recepción formal,
+								dropzone y más automatización van en roadmap: primero manual-asistido, después lo que el backend sostenga sin prometer
+								fechas.
+							</li>
+						</ul>
+						<p class="how-more-lead__audit-note">
+							Más abajo, el primer clip del grid resume el tono de esta capa; el resto de vídeos siguen en preparación.
 						</p>
 					</div>
-				</header>
+				</section>
+
+				<div class="how-more-lead how-more-lead--topics">
+					<p class="how-more-lead__line how-more-lead__line--topic-u1">
+						<span class="how-more-lead__topic"><strong>Cómo te protegemos cuando decides estar OFF</strong></span>
+						— Mira la rotación automática entre OFF y día operativo.
+					</p>
+					<p class="how-more-lead__line how-more-lead__line--topic-u2">
+						<span class="how-more-lead__topic"><strong>Observación pasiva</strong></span>
+						— Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos: observamos, medimos desde el bloqueo y
+						dejamos trazas que puedes contrastar.
+					</p>
+					<p class="how-more-lead__line how-more-lead__line--topic-u3">
+						<span class="how-more-lead__topic"><strong>Retocar lo que ya protegiste</strong></span>
+						— Si el EA ya está vigilando, el cambio de límites tiene reglas: te mostramos cómo actuamos; tus reglas se cumplen siempre.
+					</p>
+					<p class="how-more-lead__note">
+						Abajo: cuatro bloques de vídeo (mismo aspecto; el primero, auditoría); clip en preparación en cada uno.
+					</p>
+				</div>
 				<div class="how-more-grid">
 					{
 						siguienteNivelClipCards.map((row) => (
@@ -768,8 +803,8 @@ const curatedVideos: {
 		opacity: 0.82;
 	}
 
-	/* «De cero a protegido»: mismo lenguaje que placeholders de clips (sin estar dentro de .how-more). */
-	html[data-theme='dark'] .how-zero-protected .how-embed-placeholder--zero-teaser {
+	/* «De cero a protegido» y capítulo auditoría (misma familia de teaser). */
+	html[data-theme='dark'] :is(.how-zero-protected, .how-audit-chapter) .how-embed-placeholder--zero-teaser {
 		background:
 			radial-gradient(ellipse 85% 70% at 50% 38%, rgba(245, 176, 65, 0.11) 0%, transparent 58%),
 			linear-gradient(155deg, rgba(58, 62, 74, 0.95) 0%, rgba(28, 30, 38, 0.92) 48%, rgba(14, 15, 20, 0.98) 100%);
@@ -780,7 +815,7 @@ const curatedVideos: {
 			0 12px 32px rgba(0, 0, 0, 0.35);
 	}
 
-	html[data-theme='light'] .how-zero-protected .how-embed-placeholder--zero-teaser {
+	html[data-theme='light'] :is(.how-zero-protected, .how-audit-chapter) .how-embed-placeholder--zero-teaser {
 		background:
 			radial-gradient(ellipse 85% 70% at 50% 38%, rgba(245, 176, 65, 0.14) 0%, transparent 55%),
 			linear-gradient(155deg, rgba(252, 250, 246, 0.98) 0%, rgba(236, 238, 244, 0.94) 55%, rgba(228, 231, 238, 1) 100%);
@@ -788,22 +823,22 @@ const curatedVideos: {
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 22px rgba(0, 0, 0, 0.06);
 	}
 
-	html[data-theme='light'] .how-zero-protected .how-embed-placeholder--zero-teaser .how-embed-placeholder__title {
+	html[data-theme='light'] :is(.how-zero-protected, .how-audit-chapter) .how-embed-placeholder--zero-teaser .how-embed-placeholder__title {
 		color: rgba(28, 30, 38, 0.94);
 	}
 
-	html[data-theme='light'] .how-zero-protected .how-embed-placeholder--zero-teaser .how-embed-placeholder__sub {
+	html[data-theme='light'] :is(.how-zero-protected, .how-audit-chapter) .how-embed-placeholder--zero-teaser .how-embed-placeholder__sub {
 		color: rgba(52, 56, 68, 0.88);
 		opacity: 1;
 	}
 
-	.how-zero-protected .how-clip-teaser__glyph--zero {
+	:is(.how-zero-protected, .how-audit-chapter) .how-clip-teaser__glyph--zero {
 		width: 3rem;
 		height: 3rem;
 		margin-bottom: 0.2rem;
 	}
 
-	.how-zero-protected .how-clip-teaser__glyph--zero::after {
+	:is(.how-zero-protected, .how-audit-chapter) .how-clip-teaser__glyph--zero::after {
 		border-width: 8px 0 8px 13px;
 	}
 
@@ -1238,10 +1273,78 @@ const curatedVideos: {
 	}
 
 	.how-more__head {
-		margin-bottom: clamp(1.75rem, 5vw, 2.75rem);
+		margin-bottom: clamp(1rem, 3vw, 1.5rem);
 	}
 
-	/* Puente con la home: kicker ámbar «FUNCIONALIDADES ÚNICAS» (sin punto medio) + cuatro cards (H2: subrayado desde «no es todo:» hasta «…en vivo»). */
+	.how-more__siguiente-aspiration {
+		margin-top: clamp(-0.25rem, -0.8vw, 0);
+		margin-bottom: clamp(1.35rem, 4vw, 2.25rem);
+	}
+
+	.how-chapter--bridge {
+		margin: 0 auto clamp(1.5rem, 4vw, 2.35rem);
+		max-width: min(56rem, 100%);
+	}
+
+	.how-chapter--audit {
+		margin: 0 auto clamp(1.25rem, 4vw, 2rem);
+		max-width: min(56rem, 100%);
+	}
+
+	.how-chapter__head {
+		margin-bottom: clamp(1.15rem, 3.5vw, 1.75rem);
+	}
+
+	.how-chapter__head h3 {
+		margin: 0 0 0.65rem;
+		font-size: clamp(1.05rem, 2.25vw, 1.3rem);
+		font-weight: 700;
+		line-height: 1.28;
+		letter-spacing: -0.015em;
+	}
+
+	html[data-theme='dark'] .how-chapter__head h3 {
+		color: rgba(255, 255, 255, 0.98);
+	}
+
+	/* Subrayado Presentación alineado al centro en capítulos H3. */
+	.how-chapter .how-present-title__accent::after {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	html[data-theme='light'] .how-chapter__head h3 {
+		color: var(--theme-on-bg, #111);
+	}
+
+	.how-more--stage .how-eyebrow--chapter-kicker {
+		color: #f5b041;
+		opacity: 1;
+		letter-spacing: 0.11em;
+	}
+
+	html[data-theme='light'] .how-more--stage .how-eyebrow--chapter-kicker {
+		color: #c98a2e;
+	}
+
+	.how-audit-chapter__frame {
+		max-width: min(42rem, 100%);
+		margin: 0 auto clamp(1rem, 3vw, 1.65rem);
+	}
+
+	.how-more-lead--topics {
+		margin: clamp(1.35rem, 4vw, 2.25rem) auto 0;
+		max-width: 42rem;
+		text-align: left;
+	}
+
+	@media (min-width: 640px) {
+		.how-more-lead--topics {
+			text-align: center;
+		}
+	}
+
+	/* Puente con la home: grid de cuatro cards; cabecero del capítulo replica patrón Presentación. */
 	.how-more-bridge {
 		margin: 0 auto clamp(1.35rem, 4vw, 2rem);
 		max-width: min(48rem, 100%);
@@ -1798,6 +1901,9 @@ const curatedVideos: {
 			text-align: center;
 		}
 
+		.how-more-lead--topics .how-more-lead__line {
+			text-align: center;
+		}
 	}
 
 	.how-more-grid {

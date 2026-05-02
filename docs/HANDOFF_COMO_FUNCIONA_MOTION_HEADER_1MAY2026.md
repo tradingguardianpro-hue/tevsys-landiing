@@ -148,10 +148,13 @@ Documento para continuidad (p. ej. DeepSeek / otra IA): **qué se hizo**, **dón
 - **HTML:** `<article class="how-more-bridge-card">` — título en enlace principal; `<video>` **fuera** del enlace del título (controles válidos); CTA secundario al pie.
 - **Estilo cards (may 2026):** carril ámbar lateral, gradiente de superficie, jerarquía título/blurb/CTA; **SML** sin MP4 → placeholder **«Vídeo en preparación»** (ratio 16:9, borde discontinuo), no hueco vacío.
 
-### 6.4 Narrativa intermedia (`.how-more-lead`)
+### 6.4 Narrativa intermedia y capítulo auditoría (may 2026 — bloques tipo Presentación)
 
-- **Puente previo al lead:** párrafo **`.how-more-audit-bridge`** (una línea: contrastar hechos / cruzar terminal, panel y registro) — **entre** el grid del puente y **`.how-more-lead`**.
-- **Bloque auditoría (capítulo propio):** kicker **«Primero · Auditoría»**; párrafo de apertura **polivalente** (reglas, precisión de cierres, bloqueos, fricción; no solo “disciplina”); **lista** **`.how-more-lead__audit-points`** (triangulación MT5 + panel + logs y focos del pack; ID `TVS-…`; canal: check con ID, valoración, pack, **contratación pública no abierta**, roadmap dropzone/automatización sin fechas); nota clips. Caja con borde/carril ámbar (`.how-more-lead__audit` ampliado en `<style>`). Código inline **`.how-more-lead__code`** para `TVS-…`.
+- **H2 «Siguiente nivel»:** tras el título, **`.how-more__siguiente-aspiration`** (frase puente a bloques siguientes).
+- **`how-chapter--bridge`:** ceño ámbar **FUNCIONALIDADES ÚNICAS** (`how-eyebrow--chapter-kicker`), **H3** «Cuatro piezas, **una lectura**» (`how-present-title__accent`), **`how-section-sub`** (+ línea secundaria); **grid** de cuatro cards (mismo contenido que antes).
+- **Puente:** **`.how-more-audit-bridge`** entre bridge y auditoría (cierre: «Lo siguiente ordena exactamente eso.»).
+- **`how-chapter--audit`:** ceño **Primero · Auditoría**, **H3** «Hechos que **se pueden cruzar**», **`how-section-sub`** (triangulación / ID / canal + honestidad apertura pública + «No es señales…» en segunda línea); **placeholder vídeo** del capítulo (`how-audit-chapter__frame`, mismo teaser que «De cero…»); **lista** **`.how-more-lead__audit-points`** en caja **`.how-more-lead__audit`**; nota al pie clips.
+- **Temas OFF / pasiva / retocar:** **`.how-more-lead--topics`** (fuera del capítulo auditoría), antes del grid de cuatro clips.
 - **Tres líneas con tema + subrayado** (clases `how-more-lead__line--topic-u1` … `u3`): OFF / observación pasiva / retocar con EA vigilando — textos de apoyo con **subrayado** vía `.how-more-lead__topic::after`.
 - **Alineación narrativa:** `docs/PROTOCOLO_AUDITORIA_IA_FASE1_MANUAL_ASISTIDA.md` (§0 honesto, §4 triangulación/focos, §5.7 ID).
 

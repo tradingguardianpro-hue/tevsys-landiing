@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — Bloques tipo Presentación en Siguiente nivel + capítulo auditoría (may 2026)
+
+- **Patrón:** eyebrow/kicker ámbar (`how-eyebrow--chapter-kicker`) → **H3** con **`how-present-title__accent`** (subrayado) → **`how-section-sub`** (+ segunda línea opcional) → contenido.
+- **Siguiente nivel (H2):** párrafo puente **`how-more__siguiente-aspiration`** tras el título principal.
+- **`how-chapter--bridge`:** FUNCIONALIDADES ÚNICAS + grid de cuatro cards (sin cabecero duplicado dentro de `<header>` global incorrecto).
+- **`how-chapter--audit`:** Primero · Auditoría + frase clara + **placeholder vídeo** (`how-embed-placeholder--zero-teaser` compartido con «De cero…» vía `:is(.how-zero-protected, .how-audit-chapter)`).
+- Transición verbal: **`how-more-audit-bridge`** con cierre «Lo siguiente ordena exactamente eso.»; lista detallada solo en caja **`how-more-lead__audit`** (sin párrafo largo duplicado previo).
+
+---
+
 ## `/como-funciona` — Presentación YouTube: borde marca en Parte 1 / Parte 2 (may 2026)
 
 - **`how-presentation .how-embed--chrome`:** `border-color` ámbar + sombra ligera alineada con placeholders de clips (dark/light).
