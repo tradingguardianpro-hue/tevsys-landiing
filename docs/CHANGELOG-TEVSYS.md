@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — Precisión puente: MP4 hero micro + capítulo auditoría reforzado (may 2026)
+
+- **Card Precisión:** `featureVideoSrc` = **`/videos/features/evidencia-100k-perdida.mp4`** (primer embed grande en `/features/precision`), ya no `precision-demo-volatilidad.mp4`.
+- **Auditoría:** más **aire** tras el puente; capítulo con **gradiente** suave + **línea ámbar** superior; kicker y **H3** algo más marcados; **`how-audit-chapter__hook`**; placeholder vídeo con **borde/sombra** más presentes; `how-audit-chapter__frame` más ancho (`46rem`).
+
+---
+
 ## `/como-funciona` — FUNCIONALIDADES: solo lista de nombres (tijera de párrafos) (may 2026)
 
 - Bajo el H3 «Las cuatro piezas, con contexto breve»: una sola línea con **Precisión al cierre**, **HyperClose**, **Smart Money Lock**, **evidencia verificable** (sin repetir «contexto breve» ni vídeo/enlaces).

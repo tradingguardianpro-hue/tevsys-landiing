@@ -80,8 +80,10 @@ const homeBridgeCards: {
 		blurb: 'Error medio documentado, operativas reales y condiciones de ejecución en MT5.',
 		href: '/features/precision',
 		cta: 'Ir a precisión',
-		featureVideoSrc: '/videos/features/precision-demo-volatilidad.mp4',
-		videoLabel: 'Demo en alta volatilidad — mismo archivo que en la micro Precisión.',
+		/** Mismo MP4 que el primer embed grande (hero) en `/features/precision` — Demo rápida cuenta 100k. */
+		featureVideoSrc: '/videos/features/evidencia-100k-perdida.mp4',
+		videoLabel:
+			'Demo rápida — cuenta 100k (~1 min 41 s). Mismo vídeo hero que al abrir la micro Precisión.',
 	},
 	{
 		title: 'HyperClose',
@@ -333,11 +335,17 @@ const curatedVideos: {
 				</p>
 
 				<section class="how-chapter how-chapter--audit how-audit-chapter" aria-labelledby="how-audit-chapter-title">
-					<header class="how-section-head how-chapter__head">
-						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">Primero · Auditoría</p>
+					<header class="how-section-head how-chapter__head how-chapter__head--audit">
+						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--audit-kicker">
+							Primero · Auditoría
+						</p>
 						<h3 id="how-audit-chapter-title">
 							Hechos que <span class="how-present-title__accent">se pueden cruzar</span>
 						</h3>
+						<p class="how-audit-chapter__hook">
+							Cuando lo que cuenta es que <strong>informe, panel y registros</strong> cuenten la misma historia — con criterio claro y sin
+							humo.
+						</p>
 						<p class="how-section-sub">
 							Triangulación (MT5 + panel + logs), <strong>ID por licencia</strong> y criterio de <strong>canal</strong> — con material
 							verificable y sin prometer lo que aún no está abierto al público.
@@ -1286,8 +1294,84 @@ const curatedVideos: {
 	}
 
 	.how-chapter--audit {
-		margin: 0 auto clamp(1.25rem, 4vw, 2rem);
+		position: relative;
+		margin: clamp(1.25rem, 4vw, 2.25rem) auto clamp(1.35rem, 4vw, 2.15rem);
 		max-width: min(56rem, 100%);
+		padding-top: clamp(1.65rem, 5vw, 2.85rem);
+	}
+
+	html[data-theme='dark'] .how-chapter--audit {
+		border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
+		background: linear-gradient(
+			180deg,
+			rgba(245, 176, 65, 0.055) 0%,
+			rgba(18, 19, 24, 0.35) 38%,
+			transparent 72%
+		);
+	}
+
+	html[data-theme='light'] .how-chapter--audit {
+		border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
+		background: linear-gradient(180deg, rgba(255, 248, 235, 0.65) 0%, transparent 65%);
+	}
+
+	.how-chapter--audit::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: min(14rem, 52%);
+		height: 2px;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(245, 176, 65, 0.35) 22%,
+			rgba(245, 176, 65, 0.72) 50%,
+			rgba(245, 176, 65, 0.35) 78%,
+			transparent 100%
+		);
+		pointer-events: none;
+	}
+
+	html[data-theme='light'] .how-chapter--audit::before {
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(218, 155, 48, 0.35) 22%,
+			rgba(218, 155, 48, 0.72) 50%,
+			rgba(218, 155, 48, 0.35) 78%,
+			transparent 100%
+		);
+	}
+
+	.how-more--stage .how-eyebrow--audit-kicker {
+		font-size: clamp(0.78rem, 1.9vw, 0.84rem);
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-shadow: 0 0 28px rgba(245, 176, 65, 0.18);
+	}
+
+	html[data-theme='light'] .how-more--stage .how-eyebrow--audit-kicker {
+		text-shadow: none;
+	}
+
+	.how-chapter__head--audit h3 {
+		font-size: clamp(1.14rem, 2.55vw, 1.42rem);
+	}
+
+	.how-audit-chapter__hook {
+		margin: 0 auto clamp(0.65rem, 2vw, 0.95rem);
+		max-width: 38rem;
+		font-size: clamp(0.96rem, 2.2vw, 1.05rem);
+		line-height: 1.48;
+		font-weight: 600;
+		color: rgba(244, 246, 248, 0.94);
+	}
+
+	html[data-theme='light'] .how-audit-chapter__hook {
+		color: rgba(38, 40, 48, 0.94);
 	}
 
 	.how-chapter__head {
@@ -1327,8 +1411,25 @@ const curatedVideos: {
 	}
 
 	.how-audit-chapter__frame {
-		max-width: min(42rem, 100%);
-		margin: 0 auto clamp(1rem, 3vw, 1.65rem);
+		max-width: min(46rem, 100%);
+		margin: 0 auto clamp(1.15rem, 3.25vw, 1.85rem);
+	}
+
+	html[data-theme='dark'] .how-audit-chapter .how-embed-placeholder--zero-teaser {
+		border-color: rgba(245, 176, 65, 0.32);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.07),
+			0 0 0 1px rgba(0, 0, 0, 0.32),
+			0 14px 38px rgba(0, 0, 0, 0.38),
+			0 0 42px rgba(245, 176, 65, 0.07);
+	}
+
+	html[data-theme='light'] .how-audit-chapter .how-embed-placeholder--zero-teaser {
+		border-color: rgba(218, 155, 48, 0.38);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.92),
+			0 10px 28px rgba(0, 0, 0, 0.08),
+			0 0 36px rgba(245, 176, 65, 0.08);
 	}
 
 	.how-more-lead--topics {
@@ -1696,9 +1797,10 @@ const curatedVideos: {
 	}
 
 	.how-more-audit-bridge {
-		margin: clamp(0.9rem, 2.6vw, 1.35rem) auto clamp(0.55rem, 1.8vw, 0.85rem);
+		margin: clamp(0.9rem, 2.6vw, 1.35rem) auto clamp(1.35rem, 4.5vw, 2.65rem);
 		max-width: 36rem;
 		padding-top: clamp(0.75rem, 2vw, 1rem);
+		padding-bottom: clamp(0.35rem, 1.5vw, 0.65rem);
 		border-top: 1px solid rgba(255, 255, 255, 0.09);
 		font-size: 0.88rem;
 		line-height: 1.52;
