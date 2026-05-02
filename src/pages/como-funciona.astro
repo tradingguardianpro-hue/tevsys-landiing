@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación, De cero a protegido, Siguiente nivel (clips en preparación), más vídeo, instalación y guías.',
+		'Presentación, De cero a protegido, Siguiente nivel (cuatro piezas, microvídeos, auditoría), más vídeo, instalación y guías.',
 };
 
 /** Parte 1 + Parte 2 (artículo MQL5 / mismo relato). Sustituir embeds cuando publiquéis el corte nuevo “producto al día”. */
@@ -277,8 +277,8 @@ const curatedVideos: {
 						</span>
 					</h2>
 					<p class="how-section-sub how-more__siguiente-aspiration">
-						Abajo retoman las cuatro piezas de la entrada de tevsys: un vistazo breve en cada tarjeta y enlace si quieres profundizar. Si lo que
-						te importa es <strong>cruzar</strong> evidencias con criterio claro, después viene el bloque de auditoría.
+						Cuatro piezas con vídeo corto y enlace a cada micro. Debajo, el comportamiento en microclips; más abajo, si buscas contrastar con calma,
+						auditoría.
 					</p>
 				</header>
 
@@ -332,76 +332,6 @@ const curatedVideos: {
 								))
 							}
 						</div>
-					</div>
-				</section>
-
-				<p class="how-more-audit-bridge">
-					Cuando lo que importa es contrastar <strong>hechos</strong>, no basta con un clip: hace falta poder{' '}
-					<strong>cruzar</strong> terminal, panel y registro. Lo siguiente ordena exactamente eso.
-				</p>
-
-				<section class="how-chapter how-chapter--audit how-audit-chapter" aria-labelledby="how-audit-chapter-title">
-					<header class="how-section-head how-chapter__head how-chapter__head--audit">
-						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--audit-kicker">
-							Primero · Auditoría
-						</p>
-						<h3 id="how-audit-chapter-title">
-							Hechos que <span class="how-present-title__accent">se pueden cruzar</span>
-						</h3>
-						<p class="how-audit-chapter__hook">
-							Cuando lo que cuenta es que <strong>informe, panel y registros</strong> cuenten la misma historia — con criterio claro y sin
-							humo.
-						</p>
-						<div class="how-audit-chapter__pitch" role="region" aria-label="Cómo encaja la auditoría">
-							<p>
-								<strong>Triangulación:</strong> lo que importa es poder cruzar informe MT5, panel y logs de tevsys del mismo periodo,
-								sin mezclar historias distintas.
-							</p>
-							<p>
-								<strong>Tu ID con tevsys:</strong> con tu licencia tendrás un <strong>identificador personal</strong> (código{' '}
-								<code class="how-more-lead__code">TVS-…</code>) para encajar lo que envíes con tu cuenta.
-							</p>
-							<p>
-								<strong>Los packs que nos enviéis:</strong> los revisamos y valoramos si encajan en esta capa de auditoría.{' '}
-								<strong>El canal de recepción público aún no está preparado</strong> — cuando lo esté, lo diremos con claridad.
-							</p>
-							<p class="how-audit-chapter__pitch-closing">
-								<strong>No damos señales para operar</strong> ni os decimos qué operar.
-							</p>
-						</div>
-					</header>
-					<div class="how-audit-chapter__frame">
-						<div
-							class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--zero-teaser"
-							role="status"
-							aria-live="polite">
-							<span class="how-clip-teaser__glyph how-clip-teaser__glyph--zero" aria-hidden="true"></span>
-							<p class="how-embed-placeholder__title">Vídeo del capítulo en preparación</p>
-							<p class="how-embed-placeholder__sub">
-								Cuando lo tengáis, aquí irá un corte que resume tono y pasos de esta capa.
-							</p>
-						</div>
-					</div>
-					<div class="how-more-lead__audit">
-						<ul class="how-more-lead__audit-points">
-							<li>
-								<strong>Qué miramos</strong> — informe MT5, panel con fecha y hora visibles y logs tevsys alineados; el foco que
-								marquéis en el pack ordena el énfasis (disciplina, precisión, bloqueos, SML…).
-							</li>
-							<li>
-								<strong>ID</strong> — el código <code class="how-more-lead__code">TVS-…</code> por licencia; en el terminal, trazas en
-								audit trail cuando toque.
-							</li>
-							<li>
-								<strong>Canal</strong> — check inicial, valoración del envío y recepción del pack cuando abramos el flujo. Hoy la{' '}
-								<strong>contratación pública no está abierta</strong>; dropzone y más automatización van en roadmap, sin prometer
-								fechas.
-							</li>
-						</ul>
-						<p class="how-more-lead__audit-note">
-							Más abajo, cortos en preparación: OFF, observación pasiva, retocar con el EA y, al final, un recordatorio breve de esta capa
-							de auditoría.
-						</p>
 					</div>
 				</section>
 
@@ -496,6 +426,49 @@ const curatedVideos: {
 						))
 					}
 				</div>
+
+				<p class="how-more-audit-cut">
+					<span class="how-more-audit-cut__line" aria-hidden="true"></span>
+					<span class="how-more-audit-cut__label">Aquí comienza la fase de auditoría</span>
+				</p>
+
+				<section class="how-chapter how-chapter--audit how-audit-chapter" aria-labelledby="how-audit-chapter-title">
+					<header class="how-section-head how-chapter__head how-chapter__head--audit">
+						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--audit-kicker">
+							Auditoría
+						</p>
+						<h3 id="how-audit-chapter-title">
+							Hechos que <span class="how-present-title__accent">se pueden cruzar</span>
+						</h3>
+						<p class="how-audit-chapter__hook">
+							Que informe, panel y registros cuenten la misma historia: criterio claro y sin humo.
+						</p>
+						<div class="how-audit-chapter__pitch" role="region" aria-label="Cómo encaja la auditoría">
+							<p class="how-audit-chapter__pitch-lead">
+								<strong>Triangulación:</strong> cruzar informe MT5, panel y logs del mismo periodo, sin mezclar fechas ni versiones.
+							</p>
+							<p>
+								Código <code class="how-more-lead__code">TVS-…</code> ligado a tu licencia. Los packs los revisamos cuando encajen en esta
+								capa.
+							</p>
+							<p class="how-audit-chapter__pitch-closing">
+								Canal público de recepción aún no abierto. No damos señales ni qué operar.
+							</p>
+						</div>
+					</header>
+					<div class="how-audit-chapter__frame">
+						<div
+							class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--zero-teaser"
+							role="status"
+							aria-live="polite">
+							<span class="how-clip-teaser__glyph how-clip-teaser__glyph--zero" aria-hidden="true"></span>
+							<p class="how-embed-placeholder__title">Vídeo del capítulo en preparación</p>
+							<p class="how-embed-placeholder__sub">
+								Cuando lo tengáis, aquí irá un corte que resume tono y pasos de esta capa.
+							</p>
+						</div>
+					</div>
+				</section>
 			</div>
 		</section>
 
@@ -1448,11 +1421,24 @@ const curatedVideos: {
 	}
 
 	.how-audit-chapter__pitch p {
-		margin: 0 0 clamp(0.5rem, 1.8vw, 0.65rem);
+		margin: 0 0 clamp(0.85rem, 2.5vw, 1.15rem);
 	}
 
 	.how-audit-chapter__pitch p:last-child {
 		margin-bottom: 0;
+	}
+
+	.how-audit-chapter__pitch-lead {
+		margin-top: clamp(0.25rem, 1vw, 0.45rem);
+	}
+
+	.how-audit-chapter__pitch strong {
+		font-weight: 700;
+		color: rgba(153, 218, 255, 0.96);
+	}
+
+	html[data-theme='light'] .how-audit-chapter__pitch strong {
+		color: rgba(42, 108, 148, 0.94);
 	}
 
 	html[data-theme='dark'] .how-audit-chapter__pitch {
@@ -1471,10 +1457,10 @@ const curatedVideos: {
 	}
 
 	.how-audit-chapter__hook {
-		margin: 0 auto clamp(0.65rem, 2vw, 0.95rem);
+		margin: 0 auto clamp(1rem, 2.8vw, 1.35rem);
 		max-width: 38rem;
 		font-size: clamp(0.96rem, 2.2vw, 1.05rem);
-		line-height: 1.48;
+		line-height: 1.52;
 		font-weight: 600;
 	}
 
@@ -2386,21 +2372,42 @@ const curatedVideos: {
 		color: #c98a2e;
 	}
 
-	.how-more-audit-bridge {
-		margin: clamp(0.85rem, 2.4vw, 1.2rem) auto clamp(1.05rem, 3.5vw, 1.75rem);
-		max-width: 36rem;
-		padding-top: clamp(0.65rem, 1.8vw, 0.9rem);
-		padding-bottom: clamp(0.25rem, 1.2vw, 0.5rem);
-		border-top: 1px solid rgba(255, 255, 255, 0.09);
-		font-size: 0.88rem;
-		line-height: 1.52;
+	/* Corte explícito antes del bloque cian de auditoría (después de microvídeos). */
+	.how-more-audit-cut {
+		margin: clamp(1.85rem, 5.2vw, 2.85rem) auto clamp(1.25rem, 3.8vw, 1.95rem);
+		max-width: min(40rem, 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.7rem;
 		text-align: center;
-		color: rgba(210, 214, 224, 0.88);
 	}
 
-	html[data-theme='light'] .how-more-audit-bridge {
-		border-top-color: rgba(0, 0, 0, 0.1);
-		color: rgba(58, 62, 74, 0.9);
+	.how-more-audit-cut__line {
+		display: block;
+		width: min(14rem, 78%);
+		height: 2px;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(100, 196, 255, 0.35) 22%,
+			rgba(100, 196, 255, 0.65) 50%,
+			rgba(100, 196, 255, 0.35) 78%,
+			transparent 100%
+		);
+	}
+
+	.how-more-audit-cut__label {
+		font-size: clamp(0.72rem, 1.85vw, 0.82rem);
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: rgba(153, 218, 255, 0.94);
+	}
+
+	html[data-theme='light'] .how-more-audit-cut__label {
+		color: rgba(42, 108, 148, 0.94);
 	}
 
 	.how-more-lead {
