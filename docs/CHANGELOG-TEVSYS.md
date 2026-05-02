@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — FUNCIONALIDADES: solo lista de nombres (tijera de párrafos) (may 2026)
+
+- Bajo el H3 «Las cuatro piezas, con contexto breve»: una sola línea con **Precisión al cierre**, **HyperClose**, **Smart Money Lock**, **evidencia verificable** (sin repetir «contexto breve» ni vídeo/enlaces).
+
+---
+
 ## `/como-funciona` — Copy Siguiente nivel + FUNCIONALIDADES: sin contradicción «contexto» (may 2026)
 
 - Frase bajo H2: **vistazo breve** + enlace a profundizar; **sin** «un poco más de contexto» (chocaba con «contexto breve» del H3).
