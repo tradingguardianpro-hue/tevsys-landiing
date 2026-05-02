@@ -13,6 +13,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Barrido vertical (dark):** override **`page-como-funciona`** sube opacidad del **`.how-more__sweep`** (sigue desacoplado del header por duración/delay).
 - **Tarjetas `.how-more-cell--video` (dark):** superficie y borde un peldaño más legibles + sombra suave.
 - **Placeholders del grid:** clase **`how-embed-placeholder--clip-teaser`** + **`how-clip-teaser__glyph`** (círculo + triángulo genérico, no marca YouTube); gradiente y borde ámbar en dark/light.
+- **Puente FUNCIONALIDADES ÚNICAS (cards con MP4):** **`how-bridge-video-mark`** en esquina superior derecha del área vídeo — misma familia visual que el play genérico de los placeholders; **`pointer-events: none`** para no tapar controles nativos del `<video>`.
 
 ---
 

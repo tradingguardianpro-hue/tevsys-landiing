@@ -273,7 +273,7 @@ const curatedVideos: {
 										</a>
 										<p class="how-more-bridge-card__blurb">{card.blurb}</p>
 										{card.featureVideoSrc ? (
-											<div class="how-more-bridge-card__media">
+											<div class="how-more-bridge-card__media how-more-bridge-card__media--with-video">
 												<video
 													controls
 													preload="metadata"
@@ -282,6 +282,7 @@ const curatedVideos: {
 													<source src={card.featureVideoSrc} type="video/mp4" />
 													Tu navegador no soporta reproducción de video HTML5.
 												</video>
+												<span class="how-bridge-video-mark" aria-hidden="true"></span>
 											</div>
 										) : (
 											<div
@@ -1319,6 +1320,52 @@ const curatedVideos: {
 		height: 100%;
 		display: block;
 		object-fit: contain;
+	}
+
+	/* Marca play tevsys (misma familia que clip-teaser); no intercepta clics en controles nativos. */
+	.how-more-bridge-card__media--with-video {
+		position: relative;
+	}
+
+	.how-bridge-video-mark {
+		position: absolute;
+		top: 0.42rem;
+		right: 0.42rem;
+		z-index: 2;
+		width: 2.1rem;
+		height: 2.1rem;
+		flex-shrink: 0;
+		border-radius: 50%;
+		border: 2px solid rgba(245, 176, 65, 0.48);
+		background: rgba(0, 0, 0, 0.42);
+		box-shadow:
+			0 0 22px rgba(245, 176, 65, 0.14),
+			inset 0 1px 0 rgba(255, 255, 255, 0.07);
+		pointer-events: none;
+		opacity: 0.94;
+	}
+
+	.how-bridge-video-mark::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(calc(-50% + 1.5px), -50%);
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 5px 0 5px 9px;
+		border-color: transparent transparent transparent rgba(255, 255, 255, 0.88);
+	}
+
+	html[data-theme='light'] .how-bridge-video-mark {
+		border-color: rgba(218, 155, 48, 0.5);
+		background: rgba(255, 255, 255, 0.72);
+		box-shadow: 0 0 18px rgba(245, 176, 65, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+	}
+
+	html[data-theme='light'] .how-bridge-video-mark::after {
+		border-left-color: rgba(38, 40, 48, 0.85);
 	}
 
 	.how-more-bridge-card__cta {
