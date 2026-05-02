@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — Copy Siguiente nivel + FUNCIONALIDADES: sin contradicción «contexto» (may 2026)
+
+- Frase bajo H2: **vistazo breve** + enlace a profundizar; **sin** «un poco más de contexto» (chocaba con «contexto breve» del H3).
+- Bloque FUNCIONALIDADES: primera línea **sin** repetir «las mismas cuatro al abrir…»; segunda línea acorta «detalle completo» → **«lo extenso»**.
+
+---
+
 ## `/como-funciona` — Copy puente FUNCIONALIDADES: «con contexto breve» (may 2026)
 
 - H3 y cuerpo alineados con la realidad: **no** es “más explicado” aquí; **sí** contexto breve + vídeo muestra; **detalle** en micropáginas por enlace.
