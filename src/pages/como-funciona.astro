@@ -335,6 +335,11 @@ const curatedVideos: {
 					</div>
 				</section>
 
+				<p class="how-more-act-cut">
+					<span class="how-more-act-cut__line" aria-hidden="true"></span>
+					<span class="how-more-act-cut__label">Comportamiento en corto</span>
+				</p>
+
 				<section class="how-chapter how-chapter--extras" aria-labelledby="how-extras-chapter-title">
 					<header class="how-section-head how-chapter__head how-chapter__head--extras">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--sentence-kicker">
@@ -1564,7 +1569,7 @@ const curatedVideos: {
 		width: 100%;
 		padding: clamp(0.85rem, 2.4vw, 1.15rem) clamp(0.95rem, 2.6vw, 1.25rem);
 		border-radius: clamp(0.45rem, 1vw, 0.65rem);
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(245, 176, 65, 0.12);
 		background: rgba(0, 0, 0, 0.18);
 		box-sizing: border-box;
 		position: relative;
@@ -1584,7 +1589,7 @@ const curatedVideos: {
 	}
 
 	html[data-theme='light'] .how-videoteca-index {
-		border-color: rgba(0, 0, 0, 0.1);
+		border-color: rgba(218, 155, 48, 0.22);
 		background: rgba(255, 255, 255, 0.65);
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
 	}
@@ -1814,24 +1819,24 @@ const curatedVideos: {
 		color: rgba(58, 62, 74, 0.88);
 	}
 
-	/* Grid “práctica”: misma geometría de hueco vídeo que el puente (16:9, radios), paleta plata/violeta (no ámbar). */
+	/* Grid “práctica”: misma geometría que el puente; sin max-height + aspect-ratio (evita recortes raros al zoom). */
 	.how-practical-card__media {
 		position: relative;
 		width: 100%;
+		min-width: 0;
 		margin: 0 0 0.6rem;
 		border-radius: 0.42rem;
 		overflow: hidden;
 		aspect-ratio: 16 / 9;
-		max-height: clamp(11.75rem, 24vw, 15.5rem);
 		flex-shrink: 0;
-		border: 1px solid rgba(168, 178, 210, 0.28);
-		background: rgba(10, 12, 20, 0.45);
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		background: rgba(0, 0, 0, 0.32);
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 	}
 
 	html[data-theme='light'] .how-practical-card__media {
-		border-color: rgba(130, 140, 168, 0.32);
-		background: rgba(248, 249, 252, 0.88);
+		border-color: rgba(0, 0, 0, 0.12);
+		background: rgba(0, 0, 0, 0.06);
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
 	}
 
@@ -1854,25 +1859,24 @@ const curatedVideos: {
 		text-align: center;
 	}
 
-	html[data-theme='dark'] .how-more--stage .how-more-cell--practical-clip.how-more-cell--video {
+	/* Microclips (no auditoría): misma familia que tarjetas puente — ámbar como carril, sin “otra marca”. */
+	html[data-theme='dark'] .how-more--stage .how-more-cell--practical-clip.how-more-cell--video:not(.how-more-cell--audit-clip) {
 		background: linear-gradient(
 			165deg,
-			rgba(40, 42, 54, 0.58) 0%,
-			rgba(22, 24, 34, 0.9) 50%,
-			rgba(14, 16, 24, 0.96) 100%
+			rgba(42, 44, 54, 0.55) 0%,
+			rgba(20, 21, 28, 0.88) 48%,
+			rgba(14, 15, 20, 0.95) 100%
 		);
-		border-color: rgba(150, 158, 188, 0.16);
-		border-left: 3px solid rgba(186, 178, 228, 0.42);
-		box-shadow:
-			0 10px 28px rgba(0, 0, 0, 0.24),
-			inset 0 1px 0 rgba(255, 255, 255, 0.04);
+		border-color: rgba(255, 255, 255, 0.09);
+		border-left: 3px solid rgba(245, 176, 65, 0.28);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 	}
 
-	html[data-theme='light'] .how-more--stage .how-more-cell--practical-clip.how-more-cell--video {
-		background: linear-gradient(165deg, rgba(252, 252, 255, 0.98) 0%, rgba(238, 240, 248, 0.96) 55%, rgba(232, 234, 244, 1) 100%);
-		border-color: rgba(120, 128, 155, 0.22);
-		border-left: 3px solid rgba(150, 138, 198, 0.45);
-		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+	html[data-theme='light'] .how-more--stage .how-more-cell--practical-clip.how-more-cell--video:not(.how-more-cell--audit-clip) {
+		background: var(--theme-surface-1);
+		border-color: var(--theme-surface-border);
+		border-left: 3px solid rgba(218, 155, 48, 0.38);
+		box-shadow: var(--theme-surface-elevated-shadow);
 	}
 
 	html[data-theme='dark']
@@ -1880,9 +1884,10 @@ const curatedVideos: {
 		.how-more-cell--practical-clip:not(.how-more-cell--audit-clip)
 		.how-embed-placeholder--clip-teaser {
 		background:
-			radial-gradient(ellipse 88% 72% at 50% 36%, rgba(175, 168, 220, 0.1) 0%, transparent 58%),
-			linear-gradient(155deg, rgba(48, 50, 64, 0.96) 0%, rgba(26, 28, 38, 0.94) 48%, rgba(14, 15, 22, 0.99) 100%);
-		border-color: rgba(168, 178, 210, 0.26);
+			radial-gradient(ellipse 92% 75% at 18% 12%, rgba(245, 176, 65, 0.07) 0%, transparent 52%),
+			radial-gradient(ellipse 70% 55% at 88% 88%, rgba(148, 154, 175, 0.06) 0%, transparent 50%),
+			linear-gradient(155deg, rgba(42, 44, 54, 0.92) 0%, rgba(22, 24, 32, 0.94) 48%, rgba(14, 15, 20, 0.98) 100%);
+		border-color: rgba(245, 176, 65, 0.14);
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 	}
 
@@ -1891,22 +1896,22 @@ const curatedVideos: {
 		.how-more-cell--practical-clip:not(.how-more-cell--audit-clip)
 		.how-embed-placeholder--clip-teaser {
 		background:
-			radial-gradient(ellipse 88% 72% at 50% 36%, rgba(160, 150, 210, 0.12) 0%, transparent 55%),
-			linear-gradient(155deg, rgba(252, 252, 255, 0.99) 0%, rgba(236, 238, 248, 0.96) 52%, rgba(228, 232, 242, 1) 100%);
-		border-color: rgba(130, 138, 175, 0.3);
+			radial-gradient(ellipse 90% 72% at 15% 10%, rgba(218, 155, 48, 0.08) 0%, transparent 50%),
+			linear-gradient(155deg, rgba(252, 252, 255, 0.99) 0%, rgba(245, 246, 250, 0.96) 100%);
+		border-color: rgba(218, 155, 48, 0.22);
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
 	}
 
 	html[data-theme='dark'] .how-more-cell--practical-clip:not(.how-more-cell--audit-clip) .how-clip-teaser__glyph {
-		border-color: rgba(175, 180, 215, 0.48);
-		background: rgba(0, 0, 0, 0.32);
-		box-shadow: 0 0 26px rgba(160, 150, 210, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+		border-color: rgba(245, 176, 65, 0.42);
+		background: rgba(0, 0, 0, 0.38);
+		box-shadow: 0 0 18px rgba(245, 176, 65, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 	}
 
 	html[data-theme='light'] .how-more-cell--practical-clip:not(.how-more-cell--audit-clip) .how-clip-teaser__glyph {
-		border-color: rgba(130, 125, 175, 0.42);
-		background: rgba(255, 255, 255, 0.72);
-		box-shadow: 0 0 18px rgba(150, 140, 200, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+		border-color: rgba(218, 155, 48, 0.48);
+		background: rgba(255, 255, 255, 0.78);
+		box-shadow: 0 0 14px rgba(218, 155, 48, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 	}
 
 	.how-practical-video-mark {
@@ -1917,9 +1922,11 @@ const curatedVideos: {
 		width: 2.1rem;
 		height: 2.1rem;
 		border-radius: 50%;
-		border: 2px solid rgba(175, 180, 215, 0.5);
-		background: rgba(0, 0, 0, 0.38);
-		box-shadow: 0 0 22px rgba(160, 150, 210, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+		border: 2px solid rgba(245, 176, 65, 0.48);
+		background: rgba(0, 0, 0, 0.42);
+		box-shadow:
+			0 0 22px rgba(245, 176, 65, 0.12),
+			inset 0 1px 0 rgba(255, 255, 255, 0.07);
 		pointer-events: none;
 		opacity: 0.94;
 	}
@@ -1937,23 +1944,40 @@ const curatedVideos: {
 		border-color: transparent transparent transparent rgba(255, 255, 255, 0.88);
 	}
 
-	html[data-theme='light'] .how-practical-video-mark {
-		border-color: rgba(125, 120, 168, 0.48);
+	html[data-theme='light'] .how-more-cell--practical-clip:not(.how-more-cell--audit-clip) .how-practical-video-mark {
+		border-color: rgba(218, 155, 48, 0.5);
 		background: rgba(255, 255, 255, 0.78);
-		box-shadow: 0 0 16px rgba(140, 130, 185, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+		box-shadow: 0 0 18px rgba(245, 176, 65, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 	}
 
-	html[data-theme='light'] .how-practical-video-mark::after {
-		border-left-color: rgba(38, 40, 52, 0.85);
+	html[data-theme='light'] .how-more-cell--practical-clip:not(.how-more-cell--audit-clip) .how-practical-video-mark::after {
+		border-left-color: rgba(38, 40, 48, 0.85);
 	}
 
-	/* Última tarjeta = recordatorio auditoría: cian sobre la misma caja “práctica”. */
-	html[data-theme='dark'] .how-more-cell--practical-clip.how-more-cell--audit-clip.how-more-cell--video {
+	html[data-theme='dark'] .how-more-cell--practical-clip:not(.how-more-cell--audit-clip) .how-practical-video-mark::after {
+		border-left-color: rgba(255, 255, 255, 0.88);
+	}
+
+	/* Última tarjeta = puente hacia auditoría: frío contenido, distinta de las tres anteriores (ámbar). */
+	html[data-theme='dark'] .how-more--stage .how-more-cell--practical-clip.how-more-cell--audit-clip.how-more-cell--video {
+		background: linear-gradient(
+			165deg,
+			rgba(38, 44, 56, 0.58) 0%,
+			rgba(22, 26, 36, 0.9) 52%,
+			rgba(14, 17, 26, 0.96) 100%
+		);
+		border-color: rgba(100, 196, 255, 0.14);
 		border-left: 3px solid rgba(100, 196, 255, 0.42);
+		box-shadow:
+			0 10px 28px rgba(0, 0, 0, 0.22),
+			inset 0 1px 0 rgba(255, 255, 255, 0.04);
 	}
 
-	html[data-theme='light'] .how-more-cell--practical-clip.how-more-cell--audit-clip.how-more-cell--video {
+	html[data-theme='light'] .how-more--stage .how-more-cell--practical-clip.how-more-cell--audit-clip.how-more-cell--video {
+		background: linear-gradient(165deg, rgba(248, 251, 255, 0.98) 0%, rgba(236, 242, 252, 0.96) 100%);
+		border-color: rgba(100, 196, 255, 0.22);
 		border-left: 3px solid rgba(70, 155, 205, 0.48);
+		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 	}
 
 	html[data-theme='dark'] .how-more-cell--audit-clip .how-practical-card__media {
@@ -2053,6 +2077,7 @@ const curatedVideos: {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		min-width: 0;
 		min-height: 100%;
 		padding: clamp(1rem, 2.6vw, 1.2rem) clamp(1rem, 2.4vw, 1.15rem) clamp(1rem, 2.6vw, 1.2rem)
 			calc(0.95rem + 5px);
@@ -2216,12 +2241,12 @@ const curatedVideos: {
 
 	.how-more-bridge-card__media {
 		width: 100%;
+		min-width: 0;
 		margin: 0 0 0.6rem;
 		border-radius: 0.42rem;
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.11);
 		aspect-ratio: 16 / 9;
-		max-height: clamp(11.75rem, 24vw, 15.5rem);
 		background: rgba(0, 0, 0, 0.32);
 		flex-shrink: 0;
 	}
@@ -2294,6 +2319,7 @@ const curatedVideos: {
 		height: 100%;
 		display: block;
 		object-fit: contain;
+		background: #0a0c10;
 	}
 
 	/* Marca play tevsys (misma familia que clip-teaser); no intercepta clics en controles nativos. */
@@ -2408,6 +2434,44 @@ const curatedVideos: {
 
 	html[data-theme='light'] .how-more-audit-cut__label {
 		color: rgba(42, 108, 148, 0.94);
+	}
+
+	/* Mismo patrón que el corte de auditoría: marca el acto “microclips” con tono marca (ámbar). */
+	.how-more-act-cut {
+		margin: clamp(1.35rem, 4vw, 2.15rem) auto clamp(0.85rem, 2.6vw, 1.35rem);
+		max-width: min(40rem, 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.65rem;
+		text-align: center;
+	}
+
+	.how-more-act-cut__line {
+		display: block;
+		width: min(14rem, 78%);
+		height: 2px;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(245, 176, 65, 0.28) 22%,
+			rgba(245, 176, 65, 0.52) 50%,
+			rgba(245, 176, 65, 0.28) 78%,
+			transparent 100%
+		);
+	}
+
+	.how-more-act-cut__label {
+		font-size: clamp(0.72rem, 1.85vw, 0.82rem);
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: rgba(245, 196, 128, 0.94);
+	}
+
+	html[data-theme='light'] .how-more-act-cut__label {
+		color: rgba(190, 130, 42, 0.94);
 	}
 
 	.how-more-lead {
@@ -2574,6 +2638,10 @@ const curatedVideos: {
 		align-items: stretch;
 	}
 
+	.how-more-grid--practical > * {
+		min-width: 0;
+	}
+
 	.how-more-card__title {
 		margin: 0 0 0.35rem;
 		font-size: 1.04rem;
@@ -2605,6 +2673,7 @@ const curatedVideos: {
 	.how-more-cell--video {
 		display: flex;
 		flex-direction: column;
+		min-width: 0;
 		min-height: 100%;
 		padding: clamp(1rem, 2.8vw, 1.2rem);
 		box-sizing: border-box;
