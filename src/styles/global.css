@@ -742,18 +742,17 @@ html[data-theme='dark'] .tevsys-home-mid-glow {
 	/* Burbuja 1 — gris ancho (header). Recorrido: tevsys-home-mid-bubbles-a */
 	background-image: radial-gradient(
 		ellipse 64vmin 54vmin at 50% 50%,
-		rgba(200, 204, 218, 0.26) 0%,
-		rgba(148, 152, 168, 0.15) 24%,
-		rgba(98, 102, 116, 0.1) 48%,
-		rgba(48, 50, 58, 0.07) 64%,
+		rgba(200, 204, 218, 0.38) 0%,
+		rgba(148, 152, 168, 0.22) 24%,
+		rgba(98, 102, 116, 0.14) 48%,
+		rgba(48, 50, 58, 0.1) 64%,
 		transparent 82%
 	);
 	background-repeat: no-repeat;
 	background-position: -12% 38%;
 	background-size: 128vmin 106vmin;
 	filter: blur(17px);
-	/* Pase 1 cards: menos “feria”; el barrido sigue pero más contenido */
-	opacity: 0.58;
+	opacity: 0.99;
 }
 
 /* Burbuja 2 — aureola gris; animación distinta y más lenta = asincronía real vs capa principal */
@@ -764,20 +763,18 @@ html[data-theme='dark'] .tevsys-home-mid-glow::before {
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
-	/* Segunda lectura muy suave: se nota la esfera y el movimiento, sin robar foco a las cards */
-	opacity: 0.28;
+	opacity: 0.66;
 	background-image: radial-gradient(
 		ellipse 38vmin 48vmin at 50% 50%,
-		rgba(188, 192, 206, 0.06) 0%,
-		rgba(145, 149, 164, 0.04) 26%,
-		rgba(178, 184, 200, 0.11) 44%,
-		rgba(120, 124, 138, 0.055) 58%,
-		rgba(72, 74, 86, 0.03) 72%,
+		rgba(188, 192, 206, 0.09) 0%,
+		rgba(145, 149, 164, 0.055) 26%,
+		rgba(178, 184, 200, 0.175) 44%,
+		rgba(120, 124, 138, 0.085) 58%,
+		rgba(72, 74, 86, 0.04) 72%,
 		transparent 80%
 	);
 	background-repeat: no-repeat;
-	/* Fija: sin segundo gran tour; solo respira opacidad (animación abajo) */
-	background-position: 52% 52%;
+	background-position: 108% 62%;
 	background-size: 76vmin 82vmin;
 }
 
@@ -786,31 +783,18 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 	z-index: 1;
 }
 
-/*
-  Segunda capa mid-glow: vida mínima sin recorrer el viewport (pase 1 — banda cards).
-*/
-@keyframes tevsys-home-mid-glow-secondary-breathe {
-	0%,
-	100% {
-		opacity: 0.18;
-	}
-	50% {
-		opacity: 0.3;
-	}
-}
-
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-mid-glow {
 		/*
 		  **linear** + muchos pasos cortos = sin acelerones.
-		  Duración ~2,4× más larga que antes: mismo ADN, menos fatiga al hacer scroll.
+		  ~75% del tiempo en **márgenes**; ~25% vuelta al centro detrás de las cuatro cards.
 		*/
-		animation: tevsys-home-mid-bubbles-a 232s linear infinite;
+		animation: tevsys-home-mid-bubbles-a 96.7s linear infinite;
 		animation-delay: var(--tevsys-home-enter-cards, 4.05s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow::before {
-		animation: tevsys-home-mid-glow-secondary-breathe 36s ease-in-out infinite alternate;
+		animation: tevsys-home-mid-bubbles-b 127s linear infinite;
 		animation-delay: calc(var(--tevsys-home-enter-cards, 4.05s) + 0.95s);
 	}
 }
@@ -994,6 +978,159 @@ html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 	96% {
 		background-position: 24% 36%;
 		background-size: 114vmin 104vmin;
+	}
+}
+
+/* Burbuja 2 — otra vuelta por fuera; centro solo ~22–30% del ciclo (restaurado tras confusión pase 1 / planes). */
+@keyframes tevsys-home-mid-bubbles-b {
+	0%,
+	100% {
+		background-position: 108% 52%;
+		background-size: 82vmin 92vmin;
+	}
+	5% {
+		background-position: 92% 28%;
+		background-size: 80vmin 90vmin;
+	}
+	10% {
+		background-position: 68% 14%;
+		background-size: 78vmin 88vmin;
+	}
+	15% {
+		background-position: 38% 12%;
+		background-size: 78vmin 86vmin;
+	}
+	20% {
+		background-position: 8% 22%;
+		background-size: 80vmin 88vmin;
+	}
+	25% {
+		background-position: -16% 42%;
+		background-size: 82vmin 90vmin;
+	}
+	30% {
+		background-position: -22% 64%;
+		background-size: 84vmin 94vmin;
+	}
+	35% {
+		background-position: -8% 82%;
+		background-size: 86vmin 96vmin;
+	}
+	40% {
+		background-position: 22% 92%;
+		background-size: 88vmin 98vmin;
+	}
+	45% {
+		background-position: 55% 94%;
+		background-size: 86vmin 98vmin;
+	}
+	50% {
+		background-position: 88% 86%;
+		background-size: 84vmin 96vmin;
+	}
+	55% {
+		background-position: 112% 68%;
+		background-size: 82vmin 92vmin;
+	}
+	60% {
+		background-position: 118% 44%;
+		background-size: 80vmin 90vmin;
+	}
+	65% {
+		background-position: 102% 24%;
+		background-size: 78vmin 88vmin;
+	}
+	70% {
+		background-position: 78% 18%;
+		background-size: 78vmin 88vmin;
+	}
+	74% {
+		background-position: 58% 28%;
+		background-size: 80vmin 90vmin;
+	}
+	78% {
+		background-position: 50% 48%;
+		background-size: 82vmin 92vmin;
+	}
+	82% {
+		background-position: 46% 56%;
+		background-size: 84vmin 94vmin;
+	}
+	86% {
+		background-position: 52% 52%;
+		background-size: 82vmin 92vmin;
+	}
+	90% {
+		background-position: 72% 44%;
+		background-size: 80vmin 90vmin;
+	}
+	94% {
+		background-position: 92% 48%;
+		background-size: 80vmin 90vmin;
+	}
+	98% {
+		background-position: 104% 50%;
+		background-size: 82vmin 92vmin;
+	}
+}
+
+@keyframes tevsys-home-mid-bubbles-b-mobile {
+	0%,
+	100% {
+		background-position: 96% 46%;
+		background-size: 78vmin 88vmin;
+	}
+	8% {
+		background-position: 88% 22%;
+		background-size: 76vmin 86vmin;
+	}
+	16% {
+		background-position: 62% 10%;
+		background-size: 74vmin 84vmin;
+	}
+	24% {
+		background-position: 28% 14%;
+		background-size: 76vmin 86vmin;
+	}
+	32% {
+		background-position: 4% 36%;
+		background-size: 78vmin 90vmin;
+	}
+	40% {
+		background-position: 2% 68%;
+		background-size: 82vmin 94vmin;
+	}
+	48% {
+		background-position: 18% 88%;
+		background-size: 84vmin 98vmin;
+	}
+	56% {
+		background-position: 72% 90%;
+		background-size: 84vmin 98vmin;
+	}
+	64% {
+		background-position: 96% 72%;
+		background-size: 82vmin 94vmin;
+	}
+	72% {
+		background-position: 92% 38%;
+		background-size: 78vmin 90vmin;
+	}
+	78% {
+		background-position: 58% 52%;
+		background-size: 78vmin 88vmin;
+	}
+	84% {
+		background-position: 44% 62%;
+		background-size: 80vmin 90vmin;
+	}
+	90% {
+		background-position: 52% 48%;
+		background-size: 80vmin 88vmin;
+	}
+	96% {
+		background-position: 78% 40%;
+		background-size: 78vmin 88vmin;
 	}
 }
 
@@ -1330,8 +1467,8 @@ html[data-theme='dark'] .tevsys-home-band--lower > :not(.tevsys-home-lower-strip
 }
 
 /*
-  Burbuja solo en planes + fundador; se desvanece hacia abajo para no competir con el footer
-  (el pie: línea sutil estática, sin animación).
+  Capa ámbar detrás de planes + fundador: fundador la percibía como “sol” molesto.
+  El <div> se mantiene por si en el futuro se reactiva; no pinta ni anima (may 2026).
 */
 html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 	position: absolute;
@@ -1346,27 +1483,13 @@ html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
 	z-index: 0;
 	pointer-events: none;
 	overflow: hidden;
-	opacity: 0.9;
-	background-image: radial-gradient(
-		ellipse 58vmin 50vmin at 50% 50%,
-		rgba(245, 176, 65, 0.26) 0%,
-		rgba(130, 110, 85, 0.12) 34%,
-		rgba(55, 50, 46, 0.08) 52%,
-		transparent 72%
-	);
-	background-repeat: no-repeat;
-	background-size: 95vmin 85vmin;
-	background-position: 12% 45%;
-	filter: blur(24px);
-	-webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 100%);
-	mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 100%);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
-		animation: tevsys-home-tail-bubble-solo 70s linear infinite alternate;
-		animation-delay: var(--tevsys-home-enter-tail, 6.75s);
-	}
+	opacity: 0;
+	visibility: hidden;
+	background: none;
+	filter: none;
+	-webkit-mask-image: none;
+	mask-image: none;
+	animation: none !important;
 }
 
 /* Trayectoria: cruza de izquierda a derecha con ligero zigzag (rebote vía alternate) */
@@ -1508,20 +1631,6 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 		animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 1.9s), calc(var(--tevsys-home-enter-lower, 5.45s) + 2.65s);
 	}
 
-	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
-		opacity: 0.93;
-		filter: blur(22px);
-		background-image: radial-gradient(
-			ellipse 58vmin 50vmin at 50% 50%,
-			rgba(245, 176, 65, 0.3) 0%,
-			rgba(130, 110, 85, 0.14) 34%,
-			rgba(55, 50, 46, 0.1) 52%,
-			transparent 72%
-		);
-		animation: tevsys-home-tail-bubble-solo-desktop 70s linear infinite alternate;
-		animation-delay: var(--tevsys-home-enter-tail, 6.75s);
-	}
-
 	html[data-theme='dark'] .tevsys-home-founder-strip {
 		opacity: 0.86;
 		background-image:
@@ -1641,7 +1750,7 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 
 	html[data-theme='dark'] .tevsys-home-mid-glow {
 		filter: blur(24px);
-		opacity: 0.48;
+		opacity: 0.74;
 	}
 
 	html[data-theme='dark'] .tevsys-home-band--lower {
@@ -1653,8 +1762,10 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 	}
 
 	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
-		opacity: 0.62;
-		filter: blur(30px);
+		opacity: 0;
+		visibility: hidden;
+		filter: none;
+		animation: none !important;
 	}
 
 	html[data-theme='dark'] .tevsys-home-founder-band {
@@ -1765,12 +1876,12 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow {
-			animation: tevsys-home-mid-bubbles-a-mobile 248s linear infinite;
+			animation: tevsys-home-mid-bubbles-a-mobile 95s linear infinite;
 			animation-delay: var(--tevsys-home-enter-cards, 4.05s);
 		}
 
 		html[data-theme='dark'] .tevsys-home-mid-glow::before {
-			animation: tevsys-home-mid-glow-secondary-breathe 34s ease-in-out infinite alternate;
+			animation: tevsys-home-mid-bubbles-b-mobile 126s linear infinite;
 			animation-delay: calc(var(--tevsys-home-enter-cards, 4.05s) + 0.9s);
 		}
 

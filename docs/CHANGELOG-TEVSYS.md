@@ -4,14 +4,26 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Home — pase 1 motion banda **cards** (may 2026, validado fundador)
+## Home — corrección mid-glow **features** vs burbuja **planes** (may 2026)
 
-**Objetivo:** menos fatiga al scroll en la cuadrícula de cuatro cards manteniendo sensación **viva** y **premium** (acordado: no tocar hero + header en este pase).
+**Aclaración:** el **pase 1** tocaba **`.tevsys-home-mid-glow`** (detrás de las **cuatro cards de producto** del bloque superior), no las burbujas KITT de la **franja inferior**. El fundador echaba de menos las **dos esferas grises en movimiento**; la molestia era **`.tevsys-home-tail-bubble-solo`** (radial **ámbar** detrás de **«Elige tu cuenta»** / planes).
 
 ### `src/styles/global.css`
-- **`.tevsys-home-mid-glow`:** gradiente radial principal **más suave**; opacidad del host **~0,58** (antes ~0,99); animación `tevsys-home-mid-bubbles-a` **~232s** (antes ~96,7s). **Móvil (≤768px):** `tevsys-home-mid-bubbles-a-mobile` **~248s** (antes ~95s); opacidad host **~0,48** (antes ~0,74).
-- **`.tevsys-home-mid-glow::before`:** deja de recorrer el viewport (`tevsys-home-mid-bubbles-b` y `tevsys-home-mid-bubbles-b-mobile` **retirados**). Capa fija **~centro** con opacidad base baja y animación **`tevsys-home-mid-glow-secondary-breathe`** (escritorio **~36s** `ease-in-out` `alternate`; móvil **~34s**). Keyframes `tevsys-home-mid-bubbles-b` / `tevsys-home-mid-bubbles-b-mobile` eliminados del CSS (código muerto).
-- **`prefers-reduced-motion: reduce`:** sin cambio de política; mid-glow sigue anulado o estático según reglas existentes.
+- **Mid-glow (`tevsys-home-band--cards`):** restaurado esquema **previo al pase 1**: dos capas con **`tevsys-home-mid-bubbles-a`** / **`…-a-mobile`** y **`tevsys-home-mid-bubbles-b`** / **`…-b-mobile`**; opacidades y gradientes originales (~**0,99** host, **0,66** `::before`); duraciones **~96,7s / 127s** (móvil **~95s / 126s**). Eliminado uso de `tevsys-home-mid-glow-secondary-breathe`.
+- **`tevsys-home-tail-bubble-solo`:** **sin pintado ni animación** (`opacity: 0`, `visibility: hidden`, `animation: none`); el nodo se conserva en `index.astro` por si se reactiva. Escritorio ya no reescribe esta capa.
+
+---
+
+## Home — pase 1 motion banda **cards** (may 2026) — **supersedido en parte**
+
+**Objetivo original:** menos fatiga en la cuadrícula de cuatro cards.
+
+### Estado tras corrección (véase entrada anterior)
+- El **mid-glow** de las cuatro cards **features** volvió al modelo **dos burbujas grises en tour**.
+- Lo que **sigue vigente** del pase 1 es sobre todo **`index.astro`**: hover de **`.tevsys-card`** más sobrio y sin **`card-title-blink`**.
+
+### Histórico (lo que se probó y se revirtió en mid-glow)
+- ~~Mid-glow~~ restaurado; este bloque documenta el experimento de **una sola capa lenta + respiración** en `::before` — **no** aplica en código actual.
 
 ### `src/pages/index.astro` (`.tevsys-card`)
 - Hover: **`translateY(-1px)`** (antes -3px); flecha **`scale(1,06)`** (antes 1,2).
