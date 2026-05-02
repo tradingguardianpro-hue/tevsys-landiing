@@ -4,6 +4,37 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — pase 1 motion banda **cards** (may 2026, validado fundador)
+
+**Objetivo:** menos fatiga al scroll en la cuadrícula de cuatro cards manteniendo sensación **viva** y **premium** (acordado: no tocar hero + header en este pase).
+
+### `src/styles/global.css`
+- **`.tevsys-home-mid-glow`:** gradiente radial principal **más suave**; opacidad del host **~0,58** (antes ~0,99); animación `tevsys-home-mid-bubbles-a` **~232s** (antes ~96,7s). **Móvil (≤768px):** `tevsys-home-mid-bubbles-a-mobile` **~248s** (antes ~95s); opacidad host **~0,48** (antes ~0,74).
+- **`.tevsys-home-mid-glow::before`:** deja de recorrer el viewport (`tevsys-home-mid-bubbles-b` y `tevsys-home-mid-bubbles-b-mobile` **retirados**). Capa fija **~centro** con opacidad base baja y animación **`tevsys-home-mid-glow-secondary-breathe`** (escritorio **~36s** `ease-in-out` `alternate`; móvil **~34s**). Keyframes `tevsys-home-mid-bubbles-b` / `tevsys-home-mid-bubbles-b-mobile` eliminados del CSS (código muerto).
+- **`prefers-reduced-motion: reduce`:** sin cambio de política; mid-glow sigue anulado o estático según reglas existentes.
+
+### `src/pages/index.astro` (`.tevsys-card`)
+- Hover: **`translateY(-1px)`** (antes -3px); flecha **`scale(1,06)`** (antes 1,2).
+- **`.card-title__accent`:** eliminado **`card-title-blink`**; acento ámbar con **transición** al hover; en `reduce` se mantiene salto directo a ámbar.
+
+### Seguimiento
+- Franja inferior + fundador: ver **«Home — pase 2 motion franja IA + fundador»** (entrada siguiente). Opcional: alinear `docs/MOTION_HOME_TEVSYS_HANDOFF_IA.md` con los nuevos nombres de keyframes.
+
+---
+
+## Home — pase 2 motion **franja IA** + **fundador** (may 2026)
+
+**Objetivo:** detrás de «¿Quieres auditar tu operativa con IA?» menos sensación de **latido repetido**; capas **desincronizadas** y trayectos con **paradas** / a veces solo **recorrido parcial**; bloque **fundador** sin barrido.
+
+### `src/styles/global.css`
+- **`tevsys-home-lower-strip` (niebla en host):** `tevsys-home-lower-strip-fog` **~46s** (antes ~28,3s); keyframes con **mesetas** (menos vaivén uniforme).
+- **`::before` / `::after`:** nuevos **`tevsys-home-lower-strip-kitt-pos-wander-a`** y **`…-wander-b`** (distinta geometría temporal); duraciones **desiguales** (~41s / ~49s base; escritorio ~43s / ~51s); **delays** del segundo haz más separados del primero; mezclas gris/ámbar **más lentas** (p. ej. 19s / 24s base; desktop ~18,5s / ~23s).
+- **Móvil (≤768px):** `…-wander-mobile-a` / `…-wander-mobile-b` con **ease-in-out** `alternate` (**~58s / ~68s**) + mix **~31s / ~36s**; delays asíncronos.
+- **Eliminados** keyframes ya sustituidos: `tevsys-home-lower-strip-kitt-pos`, `tevsys-home-lower-strip-kitt-pos-mobile`.
+- **`tevsys-home-founder-strip`:** **sin** `animation`; fondo fijo (`background-position` estático). Eliminado `@keyframes tevsys-home-founder-strip`.
+
+---
+
 ## Paquete 1 may 2026 — Motion (entrada + desync), header oval ancho, handoff `/como-funciona`
 
 **Handoff técnico unificado (DeepSeek / continuidad):** `docs/HANDOFF_COMO_FUNCIONA_MOTION_HEADER_1MAY2026.md` — estructura `/como-funciona`, `body.page-como-funciona`, overrides escáner + barridos verticales, variables `--tevsys-home-enter-*`, delays positivos, header borde full width + tokens logo. **§6 del handoff:** bloque inferior definitivo (**Siguiente nivel** / **Esto no es todo…**), puente `homeBridgeCards`, lead `how-more-lead`, grid `siguienteNivelClipCards` + placeholders. **§6.7:** pendiente UX transición hacia «Primero · Auditoría». **Copy puente:** kicker pasa a **«FUNCIONALIDADES ÚNICAS»** (sin punto medio, 2 may 2026).

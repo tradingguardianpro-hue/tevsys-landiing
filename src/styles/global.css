@@ -506,26 +506,6 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	}
 }
 
-/* Franja inferior — móvil: barrido vertical con pasos intermedios (no -40% → 102% en un solo tramo). */
-@keyframes tevsys-home-lower-strip-kitt-pos-mobile {
-	0%,
-	100% {
-		background-position: 50% -30%;
-	}
-	20% {
-		background-position: 50% 8%;
-	}
-	40% {
-		background-position: 50% 42%;
-	}
-	60% {
-		background-position: 50% 72%;
-	}
-	80% {
-		background-position: 50% 38%;
-	}
-}
-
 /* Bienvenida fall: haz ya visible arriba + descenso (timing ease-out en posición — opción A) */
 @keyframes tevsys-home-fall-welcome-pos {
 	0% {
@@ -1074,9 +1054,9 @@ html[data-theme='dark'] .tevsys-home-lower-strip::before {
 		transparent 100%
 	);
 	animation:
-		tevsys-home-lower-strip-kitt-pos 23.9s ease-in-out infinite alternate,
-		tevsys-home-lower-kitt-mix-gray 12.1s ease-in-out infinite;
-	animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.4s);
+		tevsys-home-lower-strip-kitt-pos-wander-a 41s ease-in-out infinite alternate,
+		tevsys-home-lower-kitt-mix-gray 19s ease-in-out infinite;
+	animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.35s);
 }
 
 html[data-theme='dark'] .tevsys-home-lower-strip::after {
@@ -1091,39 +1071,134 @@ html[data-theme='dark'] .tevsys-home-lower-strip::after {
 		transparent 100%
 	);
 	animation:
-		tevsys-home-lower-strip-kitt-pos 23.9s ease-in-out infinite alternate,
-		tevsys-home-lower-kitt-mix-amber 13.9s ease-in-out infinite;
-	animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 0.75s), calc(var(--tevsys-home-enter-lower, 5.45s) + 1.15s);
+		tevsys-home-lower-strip-kitt-pos-wander-b 49s ease-in-out infinite alternate,
+		tevsys-home-lower-kitt-mix-amber 24s ease-in-out infinite;
+	animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 1.9s), calc(var(--tevsys-home-enter-lower, 5.45s) + 2.65s);
 }
 
 @media (prefers-reduced-motion: no-preference) {
 	html[data-theme='dark'] .tevsys-home-lower-strip {
-		animation: tevsys-home-lower-strip-fog 28.3s ease-in-out infinite alternate;
+		/* Pase 2 home: niebla más pausada (menos “latido” detrás del teaser IA) */
+		animation: tevsys-home-lower-strip-fog 46s ease-in-out infinite alternate;
 		animation-delay: var(--tevsys-home-enter-lower, 5.45s);
 	}
 }
 
 @keyframes tevsys-home-lower-strip-fog {
-	0% {
+	0%,
+	16% {
 		background-position: 50% -5%;
 	}
-	50% {
-		background-position: 50% 6%;
+	54% {
+		background-position: 50% 5%;
 	}
+	72%,
 	100% {
 		background-position: 50% -2%;
 	}
 }
 
-@keyframes tevsys-home-lower-strip-kitt-pos {
-	0% {
+/*
+  Pase 2 — franja inferior (auditar / IA): recorridos con **paradas** y capas **desincronadas**.
+  ::before y ::after usan keyframes distintos + duraciones distintas (véase reglas de animation).
+*/
+@keyframes tevsys-home-lower-strip-kitt-pos-wander-a {
+	0%,
+	100% {
+		background-position: 50% -38%;
+	}
+	14%,
+	22% {
+		background-position: 50% -34%;
+	}
+	38% {
+		background-position: 50% 22%;
+	}
+	48%,
+	60% {
+		background-position: 50% 26%;
+	}
+	74% {
+		background-position: 50% 72%;
+	}
+	84%,
+	93% {
+		background-position: 50% 64%;
+	}
+}
+
+@keyframes tevsys-home-lower-strip-kitt-pos-wander-b {
+	0%,
+	100% {
+		background-position: 50% -36%;
+	}
+	18%,
+	28% {
 		background-position: 50% -40%;
 	}
-	50% {
-		background-position: 50% 102%;
+	42% {
+		background-position: 50% 30%;
 	}
+	52%,
+	65% {
+		background-position: 50% 36%;
+	}
+	78% {
+		background-position: 50% 88%;
+	}
+	88%,
+	96% {
+		background-position: 50% 78%;
+	}
+}
+
+@keyframes tevsys-home-lower-strip-kitt-pos-wander-mobile-a {
+	0%,
 	100% {
+		background-position: 50% -30%;
+	}
+	16%,
+	24% {
+		background-position: 50% -26%;
+	}
+	40% {
+		background-position: 50% 22%;
+	}
+	50%,
+	62% {
+		background-position: 50% 26%;
+	}
+	76% {
+		background-position: 50% 52%;
+	}
+	86%,
+	94% {
+		background-position: 50% 38%;
+	}
+}
+
+@keyframes tevsys-home-lower-strip-kitt-pos-wander-mobile-b {
+	0%,
+	100% {
+		background-position: 50% -28%;
+	}
+	20%,
+	30% {
 		background-position: 50% -32%;
+	}
+	44% {
+		background-position: 50% 26%;
+	}
+	54%,
+	66% {
+		background-position: 50% 30%;
+	}
+	79% {
+		background-position: 50% 62%;
+	}
+	89%,
+	97% {
+		background-position: 50% 44%;
 	}
 }
 
@@ -1389,27 +1464,9 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 			transparent 100%
 		);
 	background-size: 100% 118%, 100% 230%;
+	/* Estático: lectura fundador sin barrido encima (pase 2 home) */
 	background-position: 50% 0%, 50% -34%;
 	background-repeat: no-repeat;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	html[data-theme='dark'] .tevsys-home-founder-strip {
-		animation: tevsys-home-founder-strip 18.3s ease-in-out infinite alternate;
-		animation-delay: var(--tevsys-home-enter-founder, 7.35s);
-	}
-}
-
-@keyframes tevsys-home-founder-strip {
-	0% {
-		background-position: 50% -4%, 50% -38%;
-	}
-	50% {
-		background-position: 50% 5%, 50% 88%;
-	}
-	100% {
-		background-position: 50% -1%, 50% -30%;
-	}
 }
 
 @media (prefers-reduced-motion: no-preference) and (min-width: 769px) {
@@ -1429,9 +1486,9 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-lower-strip-kitt-pos 23.9s ease-in-out infinite alternate,
-			tevsys-home-lower-kitt-mix-gray-desktop 12.1s ease-in-out infinite;
-		animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.4s);
+			tevsys-home-lower-strip-kitt-pos-wander-a 43s ease-in-out infinite alternate,
+			tevsys-home-lower-kitt-mix-gray-desktop 18.5s ease-in-out infinite;
+		animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.35s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-lower-strip::after {
@@ -1446,9 +1503,9 @@ html[data-theme='dark'] .tevsys-home-founder-strip {
 			transparent 100%
 		);
 		animation:
-			tevsys-home-lower-strip-kitt-pos 23.9s ease-in-out infinite alternate,
-			tevsys-home-lower-kitt-mix-amber-desktop 13.9s ease-in-out infinite;
-		animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 0.75s), calc(var(--tevsys-home-enter-lower, 5.45s) + 1.15s);
+			tevsys-home-lower-strip-kitt-pos-wander-b 51s ease-in-out infinite alternate,
+			tevsys-home-lower-kitt-mix-amber-desktop 23s ease-in-out infinite;
+		animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 1.9s), calc(var(--tevsys-home-enter-lower, 5.45s) + 2.65s);
 	}
 
 	html[data-theme='dark'] .tevsys-home-tail-bubble-solo {
@@ -1736,9 +1793,9 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 				transparent 100%
 			);
 			animation:
-				tevsys-home-lower-strip-kitt-pos-mobile 41.3s linear infinite alternate,
-				tevsys-home-lower-kitt-mix-gray-mobile 19.7s linear infinite;
-			animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.45s);
+				tevsys-home-lower-strip-kitt-pos-wander-mobile-a 58s ease-in-out infinite alternate,
+				tevsys-home-lower-kitt-mix-gray-mobile 31s linear infinite;
+			animation-delay: var(--tevsys-home-enter-lower, 5.45s), calc(var(--tevsys-home-enter-lower, 5.45s) + 0.5s);
 		}
 
 		html[data-theme='dark'] .tevsys-home-lower-strip::after {
@@ -1753,9 +1810,9 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 				transparent 100%
 			);
 			animation:
-				tevsys-home-lower-strip-kitt-pos-mobile 41.3s linear infinite alternate,
-				tevsys-home-lower-kitt-mix-amber-mobile 22.4s linear infinite;
-			animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 0.85s), calc(var(--tevsys-home-enter-lower, 5.45s) + 1.25s);
+				tevsys-home-lower-strip-kitt-pos-wander-mobile-b 68s ease-in-out infinite alternate,
+				tevsys-home-lower-kitt-mix-amber-mobile 36s linear infinite;
+			animation-delay: calc(var(--tevsys-home-enter-lower, 5.45s) + 2s), calc(var(--tevsys-home-enter-lower, 5.45s) + 2.85s);
 		}
 	}
 }
