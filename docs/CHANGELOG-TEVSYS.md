@@ -14,6 +14,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Tarjetas `.how-more-cell--video` (dark):** superficie y borde un peldaño más legibles + sombra suave.
 - **Placeholders del grid:** clase **`how-embed-placeholder--clip-teaser`** + **`how-clip-teaser__glyph`** (círculo + triángulo genérico, no marca YouTube); gradiente y borde ámbar en dark/light.
 - **Puente FUNCIONALIDADES ÚNICAS (cards con MP4):** **`how-bridge-video-mark`** en esquina superior derecha del área vídeo — misma familia visual que el play genérico de los placeholders; **`pointer-events: none`** para no tapar controles nativos del `<video>`.
+- **Puente (cuatro cards):** hover un poco más marcado; **carril izquierdo con matiz distinto** por posición (ámbar / frío / violeta suave / menta); tema claro sin pisar el carril al hover.
+- **SML (placeholder):** **`placeholderPulse`** + clase **`how-more-bridge-card__media--placeholder-pulse`** — animación muy suave del borde discontinuo; **`prefers-reduced-motion: reduce`** sin animación.
+- **«De cero a protegido» (sin embed):** **`how-embed-placeholder--zero-teaser`** + **`how-clip-teaser__glyph--zero`** (misma familia que clips).
+- **Contenedor stage «Siguiente nivel»:** contorno + sombra exterior suave (dark/light).
 
 ---
 
