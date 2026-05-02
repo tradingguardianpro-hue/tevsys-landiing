@@ -136,7 +136,7 @@ Documento para continuidad (p. ej. DeepSeek / otra IA): **qué se hizo**, **dón
 | Elemento | Contenido / criterio |
 |------------|----------------------|
 | **Eyebrow** | Texto fijo: **«Siguiente nivel»** (`.how-eyebrow.how-eyebrow--center`). |
-| **H2** `id="how-more-title"` | **«Esto no es todo:»** + span **«más comportamientos en vivo»** (`.how-more-main-title__accent`). Subrayado marca **solo** bajo el span (pseudo `::after` en CSS). |
+| **H2** `id="how-more-title"` | Texto **«Esto»** + span **`.how-more-main-title__underline-anchor`** con **«no es todo:»** + span **«más comportamientos en vivo»** (`.how-more-main-title__accent`). Subrayado marca (`::after` en la **ancla**) de **«no»** hasta el final de **«…en vivo»**. |
 | **Puente** `.how-more-bridge` | **Encima** del bloque narrativo largo (`.how-more-lead`): evita que el visitante “caiga” en auditoría + tres líneas sin pasar antes por las **cuatro rutas home**. |
 
 ### 6.3 Puente «FUNCIONALIDADES ÚNICAS» (cuatro cards)
