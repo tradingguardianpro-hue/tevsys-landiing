@@ -418,12 +418,16 @@ const curatedVideos: {
 
 				<section class="how-chapter how-chapter--extras" aria-labelledby="how-extras-chapter-title">
 					<header class="how-section-head how-chapter__head">
-						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">EN LA PRÁCTICA</p>
+						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--sentence-kicker">
+							¿Creías que terminaba ahí?
+						</p>
 						<h3 id="how-extras-chapter-title">
 							Más comportamientos que <span class="how-present-title__accent">ver en corto</span>
 						</h3>
 						<p class="how-section-sub how-chapter--extras__sub">
-							Tres focos del día a día con tevsys; después tendrás placeholders de vídeo en el mismo formato que arriba.
+							Cortos de <strong>25–30 segundos</strong>: te lo mostramos en <strong>situaciones reales</strong> del terminal, con{' '}
+							<strong>leyendas breves en pantalla</strong> cuando haga falta aclarar un paso — sin jerga. Es una guía visual para ver cómo
+							actuamos en distintos escenarios; <strong>iremos sumando clips</strong> conforme los publiquemos.
 						</p>
 					</header>
 					<div class="how-extras-grid">
@@ -1507,6 +1511,19 @@ const curatedVideos: {
 
 	html[data-theme='light'] .how-more--stage .how-eyebrow--chapter-kicker {
 		color: #c98a2e;
+	}
+
+	/* Gancho tipo frase (no todo en mayúsculas). */
+	.how-eyebrow--sentence-kicker {
+		text-transform: none;
+		letter-spacing: 0.02em;
+		font-weight: 700;
+		font-size: clamp(0.84rem, 2.15vw, 0.98rem);
+		line-height: 1.35;
+		opacity: 0.96;
+		max-width: min(26rem, 92vw);
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.how-audit-chapter__frame {
