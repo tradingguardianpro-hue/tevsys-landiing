@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## `/como-funciona` — Presentación YouTube: borde marca en Parte 1 / Parte 2 (may 2026)
+
+- **`how-presentation .how-embed--chrome`:** `border-color` ámbar + sombra ligera alineada con placeholders de clips (dark/light).
+
+---
+
 ## `/como-funciona` — «Siguiente nivel» menos sumido + placeholders de clips con guiño vídeo (may 2026)
 
 **Objetivo:** en tema oscuro el stage **`.how-more`** se leía muy cerrado; los cuatro placeholders del grid **sin embed** no tenían el “color” que da el chrome del reproductor.
