@@ -111,12 +111,28 @@ const homeBridgeCards: {
 	},
 ];
 
-/** «Siguiente nivel»: cuatro tarjetas mismo formato; 1ª = auditoría (clip primero); sin enlaces hasta que haya clips. */
-const siguienteNivelClipCards: { title: string }[] = [
-	{ title: 'Auditoría con evidencia (Fase 1 manual)' },
-	{ title: 'Observación pasiva' },
+/** Cortos en preparación: primero los tres comportamientos del día a día; auditoría al final (ya explicada arriba). */
+const siguienteNivelClipCards: { title: string; auditAccent?: boolean }[] = [
 	{ title: '¿Cómo te protegemos cuando decides estar OFF?' },
+	{ title: 'Observación pasiva' },
 	{ title: 'Retocar con el EA vigilando (~25–30 s)' },
+	{ title: 'Auditoría con evidencia (Fase 1 manual)', auditAccent: true },
+];
+
+/** Bloque intermedio: mismo peso narrativo que las cuatro piezas; sin repetir el texto largo de auditoría. */
+const extraLiveCards: { title: string; blurb: string }[] = [
+	{
+		title: 'OFF y día operativo',
+		blurb: 'Rotación automática entre OFF y día operativo: ves cómo te protegemos cuando decides no operar.',
+	},
+	{
+		title: 'Observación pasiva',
+		blurb: 'Si ya había operaciones abiertas, no improvisamos: observamos, medimos desde el bloqueo y dejamos trazas que puedes contrastar.',
+	},
+	{
+		title: 'Retocar con el EA vigilando',
+		blurb: 'Cambiar límites con el EA activo tiene reglas claras; te mostramos cómo actuamos sin romper lo que acordaste.',
+	},
 ];
 
 /** «De cero…»: subrayado solo bajo el núcleo (asimétrico respecto a «misma historia» arriba). */
@@ -394,33 +410,42 @@ const curatedVideos: {
 							</li>
 						</ul>
 						<p class="how-more-lead__audit-note">
-							Más abajo, el primer clip del grid resume el tono de esta capa; el resto de vídeos siguen en preparación.
+							Más abajo, cortos en preparación: OFF, observación pasiva, retocar con el EA y, al final, un recordatorio breve de esta capa
+							de auditoría.
 						</p>
 					</div>
 				</section>
 
-				<div class="how-more-lead how-more-lead--topics">
-					<p class="how-more-lead__line how-more-lead__line--topic-u1">
-						<span class="how-more-lead__topic"><strong>Cómo te protegemos cuando decides estar OFF</strong></span>
-						— Mira la rotación automática entre OFF y día operativo.
-					</p>
-					<p class="how-more-lead__line how-more-lead__line--topic-u2">
-						<span class="how-more-lead__topic"><strong>Observación pasiva</strong></span>
-						— Te protegemos desde cero; si ya tenías operaciones abiertas, no improvisamos: observamos, medimos desde el bloqueo y
-						dejamos trazas que puedes contrastar.
-					</p>
-					<p class="how-more-lead__line how-more-lead__line--topic-u3">
-						<span class="how-more-lead__topic"><strong>Retocar lo que ya protegiste</strong></span>
-						— Si el EA ya está vigilando, el cambio de límites tiene reglas: te mostramos cómo actuamos; tus reglas se cumplen siempre.
-					</p>
-					<p class="how-more-lead__note">
-						Abajo: cuatro bloques de vídeo (mismo aspecto; el primero, auditoría); clip en preparación en cada uno.
-					</p>
-				</div>
+				<section class="how-chapter how-chapter--extras" aria-labelledby="how-extras-chapter-title">
+					<header class="how-section-head how-chapter__head">
+						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">EN LA PRÁCTICA</p>
+						<h3 id="how-extras-chapter-title">
+							Más comportamientos que <span class="how-present-title__accent">ver en corto</span>
+						</h3>
+						<p class="how-section-sub how-chapter--extras__sub">
+							Tres focos del día a día con tevsys; después tendrás placeholders de vídeo en el mismo formato que arriba.
+						</p>
+					</header>
+					<div class="how-extras-grid">
+						{
+							extraLiveCards.map((card) => (
+								<article class="how-extra-card">
+									<h4 class="how-extra-card__title">{card.title}</h4>
+									<p class="how-extra-card__blurb">{card.blurb}</p>
+								</article>
+							))
+						}
+					</div>
+				</section>
+
+				<p class="how-more-clips-intro">
+					Cuatro huecos de vídeo (~25–30 s cada uno cuando los tengáis listos): mismos marcos que las tarjetas superiores.
+				</p>
 				<div class="how-more-grid">
 					{
 						siguienteNivelClipCards.map((row) => (
-							<article class="how-more-cell how-more-cell--video">
+							<article
+								class:list={['how-more-cell', 'how-more-cell--video', row.auditAccent && 'how-more-cell--audit-clip']}>
 								<header class="how-block-head how-block-head--compact">
 									<h3 class="how-more-card__title">{row.title}</h3>
 								</header>
@@ -1295,35 +1320,32 @@ const curatedVideos: {
 
 	.how-more__siguiente-aspiration {
 		margin-top: clamp(-0.25rem, -0.8vw, 0);
-		margin-bottom: clamp(2.35rem, 7vw, 3.75rem);
+		margin-bottom: clamp(1.85rem, 5.5vw, 2.85rem);
 	}
 
 	.how-chapter--bridge {
-		margin: clamp(0.35rem, 1.5vw, 0.85rem) auto clamp(1.5rem, 4vw, 2.35rem);
+		margin: clamp(0.35rem, 1.5vw, 0.85rem) auto clamp(1.35rem, 3.8vw, 2.1rem);
 		max-width: min(56rem, 100%);
 		padding-top: clamp(0.35rem, 1.8vw, 0.75rem);
 	}
 
+	/* Auditoría: firma cian como el teaser de portada, pero sin “segundo escenario” — mismo aire que el stage padre. */
 	.how-chapter--audit {
 		position: relative;
-		margin: clamp(1.25rem, 4vw, 2.25rem) auto clamp(1.35rem, 4vw, 2.15rem);
+		margin: clamp(0.75rem, 2.8vw, 1.2rem) auto clamp(1rem, 3.2vw, 1.55rem);
 		max-width: min(56rem, 100%);
-		padding-top: clamp(1.65rem, 5vw, 2.85rem);
+		padding: clamp(1.2rem, 3.8vw, 1.85rem) clamp(0.55rem, 2vw, 0.85rem) clamp(0.85rem, 2.8vw, 1.25rem);
+		border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
+		border: 1px solid rgba(100, 196, 255, 0.2);
+		box-shadow: inset 0 1px 0 rgba(100, 196, 255, 0.06);
 	}
 
-	/* Misma familia que home `audit-teaser-shell` + micro `/auditoria-ia` (cian #64c4ff, base gris azulada). */
 	html[data-theme='dark'] .how-chapter--audit {
-		border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
-		background:
-			radial-gradient(ellipse 100% 58% at 50% 0%, rgba(100, 196, 255, 0.09) 0%, transparent 52%),
-			linear-gradient(180deg, rgba(22, 30, 42, 0.52) 0%, rgba(14, 18, 26, 0.22) 55%, transparent 72%);
+		background: radial-gradient(ellipse 95% 52% at 50% 0%, rgba(100, 196, 255, 0.06) 0%, transparent 48%);
 	}
 
 	html[data-theme='light'] .how-chapter--audit {
-		border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
-		background:
-			radial-gradient(ellipse 100% 52% at 50% 0%, rgba(100, 196, 255, 0.12) 0%, transparent 50%),
-			linear-gradient(180deg, rgba(232, 242, 252, 0.88) 0%, rgba(248, 251, 255, 0.45) 58%, transparent 78%);
+		background: radial-gradient(ellipse 95% 48% at 50% 0%, rgba(100, 196, 255, 0.09) 0%, transparent 46%);
 	}
 
 	.how-chapter--audit::before {
@@ -1499,16 +1521,146 @@ const curatedVideos: {
 			0 0 36px rgba(100, 196, 255, 0.1);
 	}
 
-	.how-more-lead--topics {
-		margin: clamp(1.35rem, 4vw, 2.25rem) auto 0;
-		max-width: 42rem;
-		text-align: left;
+	/* Tres comportamientos extra: misma familia visual que el puente 2×2 (ámbar / tarjetas). */
+	.how-chapter--extras {
+		margin: clamp(0.85rem, 2.8vw, 1.35rem) auto clamp(1rem, 3.2vw, 1.55rem);
+		max-width: min(56rem, 100%);
+		padding-top: clamp(0.15rem, 1vw, 0.45rem);
 	}
 
-	@media (min-width: 640px) {
-		.how-more-lead--topics {
-			text-align: center;
+	.how-chapter--extras__sub {
+		max-width: 38rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.how-extras-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: clamp(0.9rem, 2.6vw, 1.2rem);
+		margin-top: clamp(0.35rem, 1.5vw, 0.65rem);
+	}
+
+	@media (min-width: 680px) {
+		.how-extras-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: clamp(0.95rem, 2.4vw, 1.15rem);
 		}
+	}
+
+	.how-extra-card {
+		padding: clamp(0.95rem, 2.5vw, 1.15rem) clamp(0.95rem, 2.3vw, 1.05rem);
+		border-radius: clamp(0.48rem, 1.05vw, 0.68rem);
+		box-sizing: border-box;
+		border: 1px solid rgba(255, 255, 255, 0.09);
+		border-left: 3px solid rgba(245, 176, 65, 0.28);
+		background: linear-gradient(
+			165deg,
+			rgba(42, 44, 54, 0.52) 0%,
+			rgba(20, 21, 28, 0.86) 48%,
+			rgba(14, 15, 20, 0.94) 100%
+		);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+		transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+	}
+
+	html[data-theme='light'] .how-extra-card {
+		background: var(--theme-surface-1);
+		border-color: var(--theme-surface-border);
+		border-left-color: rgba(218, 155, 48, 0.38);
+		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+
+	.how-extra-card:hover {
+		border-color: rgba(255, 255, 255, 0.13);
+		border-left-color: rgba(245, 176, 65, 0.48);
+		box-shadow:
+			0 10px 28px rgba(0, 0, 0, 0.28),
+			inset 0 1px 0 rgba(255, 255, 255, 0.05);
+		transform: translateY(-2px);
+	}
+
+	html[data-theme='light'] .how-extra-card:hover {
+		border-left-color: rgba(218, 155, 48, 0.55);
+	}
+
+	.how-extra-card__title {
+		margin: 0 0 0.48rem;
+		font-size: clamp(0.98rem, 2.1vw, 1.06rem);
+		font-weight: 700;
+		line-height: 1.28;
+		letter-spacing: -0.02em;
+	}
+
+	html[data-theme='dark'] .how-extra-card__title {
+		color: rgba(255, 255, 255, 0.97);
+	}
+
+	html[data-theme='light'] .how-extra-card__title {
+		color: var(--theme-on-bg, #111);
+	}
+
+	.how-extra-card__blurb {
+		margin: 0;
+		font-size: 0.86rem;
+		line-height: 1.52;
+		opacity: 0.88;
+	}
+
+	html[data-theme='dark'] .how-extra-card__blurb {
+		color: rgba(210, 214, 224, 0.88);
+	}
+
+	html[data-theme='light'] .how-extra-card__blurb {
+		color: rgba(52, 56, 68, 0.88);
+		opacity: 1;
+	}
+
+	.how-more-clips-intro {
+		margin: clamp(0.35rem, 1.5vw, 0.65rem) auto clamp(0.85rem, 2.6vw, 1.25rem);
+		max-width: 40rem;
+		font-size: 0.87rem;
+		line-height: 1.5;
+		text-align: center;
+		opacity: 0.84;
+	}
+
+	html[data-theme='dark'] .how-more-clips-intro {
+		color: rgba(210, 214, 224, 0.88);
+	}
+
+	html[data-theme='light'] .how-more-clips-intro {
+		color: rgba(58, 62, 74, 0.88);
+	}
+
+	/* Último clip del grid = recordatorio auditoría: mismo acento cian que el capítulo, sin repetir copy largo. */
+	html[data-theme='dark'] .how-more-cell--audit-clip {
+		border-left: 3px solid rgba(100, 196, 255, 0.38);
+	}
+
+	html[data-theme='light'] .how-more-cell--audit-clip {
+		border-left: 3px solid rgba(70, 155, 205, 0.45);
+	}
+
+	html[data-theme='dark'] .how-more-cell--audit-clip .how-embed-placeholder--clip-teaser {
+		border-color: rgba(100, 196, 255, 0.26);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.06),
+			0 0 0 1px rgba(0, 0, 0, 0.32),
+			0 12px 32px rgba(0, 0, 0, 0.32),
+			0 0 36px rgba(100, 196, 255, 0.07);
+		background:
+			radial-gradient(ellipse 85% 70% at 50% 38%, rgba(100, 196, 255, 0.1) 0%, transparent 58%),
+			linear-gradient(155deg, rgba(52, 58, 72, 0.96) 0%, rgba(26, 30, 40, 0.93) 48%, rgba(14, 16, 22, 0.98) 100%);
+	}
+
+	html[data-theme='light'] .how-more-cell--audit-clip .how-embed-placeholder--clip-teaser {
+		border-color: rgba(100, 196, 255, 0.32);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 8px 22px rgba(0, 0, 0, 0.06),
+			0 0 28px rgba(100, 196, 255, 0.08);
+		background:
+			radial-gradient(ellipse 85% 70% at 50% 38%, rgba(100, 196, 255, 0.12) 0%, transparent 55%),
+			linear-gradient(155deg, rgba(248, 251, 255, 0.98) 0%, rgba(236, 242, 252, 0.96) 55%, rgba(228, 235, 244, 1) 100%);
 	}
 
 	/* Puente con la home: grid de cuatro cards; cabecero del capítulo replica patrón Presentación. */
@@ -1865,10 +2017,10 @@ const curatedVideos: {
 	}
 
 	.how-more-audit-bridge {
-		margin: clamp(0.9rem, 2.6vw, 1.35rem) auto clamp(1.35rem, 4.5vw, 2.65rem);
+		margin: clamp(0.85rem, 2.4vw, 1.2rem) auto clamp(1.05rem, 3.5vw, 1.75rem);
 		max-width: 36rem;
-		padding-top: clamp(0.75rem, 2vw, 1rem);
-		padding-bottom: clamp(0.35rem, 1.5vw, 0.65rem);
+		padding-top: clamp(0.65rem, 1.8vw, 0.9rem);
+		padding-bottom: clamp(0.25rem, 1.2vw, 0.5rem);
 		border-top: 1px solid rgba(255, 255, 255, 0.09);
 		font-size: 0.88rem;
 		line-height: 1.52;
@@ -2000,51 +2152,6 @@ const curatedVideos: {
 		opacity: 1;
 	}
 
-	/* Misma historia de marca que arriba (ámbar → gris), más fina; arranca bajo el inicio del tema en negrita. */
-	.how-more-lead__topic {
-		display: inline-block;
-		text-align: left;
-	}
-
-	.how-more-lead__topic::after {
-		content: '';
-		display: block;
-		border-radius: 999px;
-		background: linear-gradient(
-			90deg,
-			rgba(245, 176, 65, 0.95) 0%,
-			rgba(148, 154, 168, 0.62) 72%,
-			rgba(110, 116, 128, 0.35) 100%
-		);
-	}
-
-	html[data-theme='light'] .how-more-lead__topic::after {
-		background: linear-gradient(
-			90deg,
-			rgba(218, 155, 48, 0.9) 0%,
-			rgba(120, 125, 138, 0.5) 75%,
-			rgba(90, 95, 108, 0.28) 100%
-		);
-	}
-
-	.how-more-lead__line--topic-u1 .how-more-lead__topic::after {
-		width: min(6.65rem, 100%);
-		height: 2px;
-		margin: 0.2rem 0 0 0.4rem;
-	}
-
-	.how-more-lead__line--topic-u2 .how-more-lead__topic::after {
-		width: min(7.85rem, 100%);
-		height: 2px;
-		margin: 0.32rem auto 0;
-	}
-
-	.how-more-lead__line--topic-u3 .how-more-lead__topic::after {
-		width: min(6.2rem, 100%);
-		height: 2px;
-		margin: 0.26rem 0.5rem 0 auto;
-	}
-
 	.how-more-lead__line {
 		margin: 0 0 clamp(0.75rem, 2vw, 1rem);
 		font-size: 0.94rem;
@@ -2079,10 +2186,6 @@ const curatedVideos: {
 		}
 
 		.how-more-lead__line {
-			text-align: center;
-		}
-
-		.how-more-lead--topics .how-more-lead__line {
 			text-align: center;
 		}
 	}
