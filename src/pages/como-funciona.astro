@@ -1086,9 +1086,10 @@ const curatedVideos: {
 	.how-more--stage .how-more__head h2 .how-more-main-title__accent::after {
 		content: '';
 		display: block;
-		width: min(13.5rem, 100%);
+		width: min(15.25rem, calc(100% + 1.35rem));
 		height: 3px;
-		margin: 0.42rem auto 0;
+		/* Tira el inicio del subrayado hacia la izquierda (hacia «Esto no es todo»), sin centrar bajo solo «más…». */
+		margin: 0.42rem 0 0 clamp(-0.65rem, -3.5vw, -1.35rem);
 		border-radius: 999px;
 		background: linear-gradient(
 			90deg,
