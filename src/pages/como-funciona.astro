@@ -81,7 +81,8 @@ const homeBridgeCards: {
 		href: '/features/precision',
 		cta: 'Ir a precisión',
 		/** Mismo MP4 que el primer embed grande (hero) en `/features/precision` — Demo rápida cuenta 100k. */
-		featureVideoSrc: '/videos/features/evidencia-100k-perdida.mp4',
+		/** `?bridge=…` evita dos `<video>` con el mismo `src` en la misma página (algunos navegadores no pintan/reproducen bien la segunda). */
+		featureVideoSrc: '/videos/features/evidencia-100k-perdida.mp4?bridge=precision',
 		videoLabel:
 			'Demo rápida — cuenta 100k (~1 min 41 s). Mismo vídeo hero que al abrir la micro Precisión.',
 	},
@@ -105,7 +106,7 @@ const homeBridgeCards: {
 		blurb: 'Informes, HTML y trazas para contrastar con lo que muestra el terminal.',
 		href: '/features/evidencia',
 		cta: 'Ir a evidencia',
-		featureVideoSrc: '/videos/features/evidencia-100k-perdida.mp4',
+		featureVideoSrc: '/videos/features/evidencia-100k-perdida.mp4?bridge=evidencia',
 		videoLabel: 'Demo rápida — cuenta 100k (~1 min 41 s). Mismo archivo que en la micro Evidencia.',
 	},
 ];
@@ -1648,6 +1649,7 @@ const curatedVideos: {
 		aspect-ratio: 16 / 9;
 		max-height: clamp(11.75rem, 24vw, 15.5rem);
 		background: rgba(0, 0, 0, 0.32);
+		flex-shrink: 0;
 	}
 
 	html[data-theme='light'] .how-more-bridge-card__media {
