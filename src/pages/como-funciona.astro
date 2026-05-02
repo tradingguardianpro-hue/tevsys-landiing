@@ -119,21 +119,10 @@ const siguienteNivelClipCards: { title: string; anchorId: string; auditAccent?: 
 	{ title: 'Auditoría con evidencia (Fase 1 manual)', anchorId: 'videoclip-auditoria', auditAccent: true },
 ];
 
-/** Bloque intermedio: mismo peso narrativo que las cuatro piezas; sin repetir el texto largo de auditoría. */
-const extraLiveCards: { title: string; blurb: string }[] = [
-	{
-		title: 'OFF y día operativo',
-		blurb: 'Rotación automática entre OFF y día operativo: ves cómo te protegemos cuando decides no operar.',
-	},
-	{
-		title: 'Observación pasiva',
-		blurb: 'Si ya había operaciones abiertas, no improvisamos: observamos, medimos desde el bloqueo y dejamos trazas que puedes contrastar.',
-	},
-	{
-		title: 'Retocar con el EA vigilando',
-		blurb: 'Cambiar límites con el EA activo tiene reglas claras; te mostramos cómo actuamos sin romper lo que acordaste.',
-	},
-];
+/** Primeros N en el índice visible; el resto va tras «Ver más clips» (no alargar scroll hasta el infinito). */
+const VIDEOTECA_INDEX_VISIBLE = 4;
+const videotecaClipsHead = siguienteNivelClipCards.slice(0, VIDEOTECA_INDEX_VISIBLE);
+const videotecaClipsRest = siguienteNivelClipCards.slice(VIDEOTECA_INDEX_VISIBLE);
 
 /** «De cero…»: subrayado solo bajo el núcleo (asimétrico respecto a «misma historia» arriba). */
 const zeroTitleMatch = /^De\s+(.+)$/u.exec(zeroToProtected.title);
@@ -425,16 +414,16 @@ const curatedVideos: {
 							Todo nuestro comportamiento en <span class="how-present-title__accent">microvídeos</span>
 						</h3>
 						<p class="how-section-sub how-chapter--extras__sub">
-							Aquí vas a ver, en <strong>clips de unos 25–30 segundos</strong>, <strong>cómo actuamos</strong> en distintos escenarios.
-							<strong>Iremos grabando</strong> conforme los publiquemos.
+							Aquí vas a ver en un clip unos <strong>25–30 segundos</strong> de <strong>cómo actuamos</strong> en distintos escenarios.
+							<strong>Iremos grabando</strong> conforme los vayamos publicando.
 						</p>
 						<nav class="how-videoteca-index" aria-labelledby="how-videoteca-index-label">
-							<p id="how-videoteca-index-label" class="how-videoteca-index__label">
-								Índice — salta al clip
-							</p>
+							<h4 id="how-videoteca-index-label" class="how-videoteca-index__title">
+								¿Qué quieres ver? — salta al clip
+							</h4>
 							<ul class="how-videoteca-index__list">
 								{
-									siguienteNivelClipCards.map((clip) => (
+									videotecaClipsHead.map((clip) => (
 										<li class="how-videoteca-index__item">
 											<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
 												{clip.title}
@@ -443,24 +432,35 @@ const curatedVideos: {
 									))
 								}
 							</ul>
-							<p class="how-videoteca-index__hint">Lista ampliable: nuevos títulos se añaden aquí cuando subáis cada pieza.</p>
+							{
+								videotecaClipsRest.length > 0 ? (
+									<details class="how-videoteca-index__more">
+										<summary class="how-videoteca-index__summary">Ver más clips</summary>
+										<ul class="how-videoteca-index__list how-videoteca-index__list--more">
+											{
+												videotecaClipsRest.map((clip) => (
+													<li class="how-videoteca-index__item">
+														<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
+															{clip.title}
+														</a>
+													</li>
+												))
+											}
+										</ul>
+									</details>
+								) : null
+							}
+							<p class="how-videoteca-index__hint">
+								Misma idea que «Qué puedes comprobar» en las micropáginas: eliges y bajamos contigo al hueco del vídeo. La lista crece
+								cuando publiquéis cada pieza.
+							</p>
 						</nav>
 					</header>
-					<div class="how-extras-grid">
-						{
-							extraLiveCards.map((card) => (
-								<article class="how-extra-card">
-									<h4 class="how-extra-card__title">{card.title}</h4>
-									<p class="how-extra-card__blurb">{card.blurb}</p>
-								</article>
-							))
-						}
-					</div>
 				</section>
 
 				<p class="how-more-clips-intro" id="videoteca-clips">
-					Cuatro huecos (~25–30 s): <strong>misma proporción</strong> que las tarjetas de arriba; <strong>firma plata / violeta</strong> en las
-					tres primeras y <strong>cian</strong> en la de auditoría.
+					Cuatro huecos (~25–30 s) en rejilla: <strong>firma plata / violeta</strong> en las tres primeras y <strong>cian</strong> en la de
+					auditoría.
 				</p>
 				<div class="how-more-grid how-more-grid--practical">
 					{
@@ -1549,7 +1549,11 @@ const curatedVideos: {
 	}
 
 	.how-chapter__head--extras {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		text-align: center;
+		width: 100%;
 	}
 
 	.how-chapter__head--extras .how-present-title__accent::after {
@@ -1557,15 +1561,40 @@ const curatedVideos: {
 		margin-right: auto;
 	}
 
-	/* Índice anclas — columnas; crece al añadir entradas en `siguienteNivelClipCards`. */
+	/* Gancho «¿Creías…?»: mismo ancho útil que el resto del bloque (evita sensación de descentrado). */
+	.how-chapter__head--extras .how-eyebrow--sentence-kicker {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.how-more--stage .how-chapter__head--extras .how-eyebrow--sentence-kicker.how-eyebrow--chapter-kicker {
+		letter-spacing: 0.02em;
+	}
+
+	/* Índice anclas — lista tipo «Qué puedes comprobar» (micro precisión), tonos grises; columnas al crecer la lista. */
 	.how-videoteca-index {
-		margin: clamp(0.85rem, 2.5vw, 1.25rem) auto 0;
+		margin: clamp(1.35rem, 4vw, 2.35rem) auto 0;
 		max-width: min(46rem, 100%);
-		padding: clamp(0.75rem, 2.2vw, 1rem) clamp(0.85rem, 2.5vw, 1.15rem);
+		width: 100%;
+		padding: clamp(0.85rem, 2.4vw, 1.15rem) clamp(0.95rem, 2.6vw, 1.25rem);
 		border-radius: clamp(0.45rem, 1vw, 0.65rem);
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		background: rgba(0, 0, 0, 0.18);
 		box-sizing: border-box;
+		position: relative;
+		overflow: hidden;
+		text-align: left;
+	}
+
+	.how-videoteca-index::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -8%;
+		width: 38%;
+		height: 100%;
+		pointer-events: none;
+		background: radial-gradient(ellipse at right center, rgba(140, 150, 170, 0.08) 0%, rgba(140, 150, 170, 0.03) 45%, transparent 72%);
 	}
 
 	html[data-theme='light'] .how-videoteca-index {
@@ -1574,18 +1603,22 @@ const curatedVideos: {
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
 	}
 
-	.how-videoteca-index__label {
-		margin: 0 0 0.55rem;
-		font-size: 0.72rem;
+	html[data-theme='light'] .how-videoteca-index::after {
+		background: radial-gradient(ellipse at right center, rgba(90, 98, 118, 0.06) 0%, transparent 70%);
+	}
+
+	.how-videoteca-index__title {
+		margin: 0 0 clamp(0.65rem, 2vw, 0.85rem);
+		font-size: clamp(0.98rem, 2.1vw, 1.06rem);
 		font-weight: 700;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: rgba(245, 176, 65, 0.88);
+		line-height: 1.3;
+		letter-spacing: -0.02em;
+		color: rgba(235, 238, 246, 0.96);
 		text-align: center;
 	}
 
-	html[data-theme='light'] .how-videoteca-index__label {
-		color: rgba(190, 130, 42, 0.92);
+	html[data-theme='light'] .how-videoteca-index__title {
+		color: var(--theme-on-bg, #111);
 	}
 
 	.how-videoteca-index__list {
@@ -1602,40 +1635,126 @@ const curatedVideos: {
 		}
 	}
 
+	.how-videoteca-index__list--more {
+		margin-top: 0.65rem;
+	}
+
 	.how-videoteca-index__item {
 		break-inside: avoid;
-		margin: 0 0 0.42rem;
-		padding: 0;
+		margin: 0 0 0.48rem;
+		padding: 0.42rem 0.55rem 0.42rem 0.85rem;
+		border-left: 2px solid rgba(140, 150, 170, 0.28);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0));
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+		box-sizing: border-box;
+	}
+
+	.how-videoteca-index__item::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(155, 165, 188, 0.82);
+		margin-right: 0.52rem;
+		vertical-align: middle;
+	}
+
+	.how-videoteca-index__item:hover {
+		border-left-color: rgba(170, 180, 200, 0.48);
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0));
+	}
+
+	html[data-theme='light'] .how-videoteca-index__item {
+		border-left-color: rgba(110, 118, 135, 0.35);
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.03), rgba(255, 255, 255, 0));
+	}
+
+	html[data-theme='light'] .how-videoteca-index__item:hover {
+		border-left-color: rgba(90, 98, 118, 0.45);
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.045), rgba(255, 255, 255, 0));
+	}
+
+	html[data-theme='light'] .how-videoteca-index__item::before {
+		background: rgba(95, 105, 125, 0.62);
 	}
 
 	.how-videoteca-index__link {
 		font-size: 0.86rem;
 		font-weight: 600;
-		line-height: 1.38;
-		text-decoration: none;
-		color: rgba(230, 235, 248, 0.94);
-		border-bottom: 1px solid rgba(100, 196, 255, 0.28);
-		transition: color 0.15s ease, border-color 0.15s ease;
+		line-height: 1.42;
+		text-decoration: underline;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2.5px;
+		color: rgba(232, 236, 248, 0.96);
+		transition: color 0.15s ease;
+		vertical-align: middle;
 	}
 
 	.how-videoteca-index__link:hover {
-		color: rgba(245, 176, 65, 0.95);
-		border-bottom-color: rgba(245, 176, 65, 0.45);
+		color: rgba(248, 250, 252, 1);
 	}
 
 	html[data-theme='light'] .how-videoteca-index__link {
-		color: rgba(38, 44, 58, 0.92);
-		border-bottom-color: rgba(70, 140, 190, 0.35);
+		color: rgba(34, 40, 54, 0.94);
 	}
 
 	html[data-theme='light'] .how-videoteca-index__link:hover {
-		color: rgba(190, 125, 38, 0.95);
-		border-bottom-color: rgba(218, 155, 48, 0.5);
+		color: rgba(18, 22, 32, 1);
+	}
+
+	.how-videoteca-index__more {
+		margin-top: 0.55rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.07);
+		padding-top: 0.55rem;
+	}
+
+	html[data-theme='light'] .how-videoteca-index__more {
+		border-top-color: rgba(0, 0, 0, 0.07);
+	}
+
+	.how-videoteca-index__summary {
+		cursor: pointer;
+		font-size: 0.84rem;
+		font-weight: 600;
+		color: rgba(185, 192, 208, 0.92);
+		list-style: none;
+		text-align: center;
+		text-decoration: underline;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2px;
+	}
+
+	.how-videoteca-index__summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.how-videoteca-index__summary::after {
+		content: ' ▾';
+		font-size: 0.72em;
+		opacity: 0.75;
+	}
+
+	.how-videoteca-index__more[open] .how-videoteca-index__summary::after {
+		content: ' ▴';
+	}
+
+	.how-videoteca-index__summary:hover {
+		color: rgba(210, 216, 228, 0.98);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__summary {
+		color: rgba(72, 78, 92, 0.9);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__summary:hover {
+		color: rgba(38, 44, 58, 0.98);
 	}
 
 	.how-videoteca-index__hint {
-		margin: clamp(0.55rem, 1.8vw, 0.75rem) 0 0;
-		padding-top: 0.5rem;
+		margin: clamp(0.65rem, 1.8vw, 0.85rem) 0 0;
+		padding-top: 0.55rem;
 		border-top: 1px solid rgba(255, 255, 255, 0.08);
 		font-size: 0.78rem;
 		line-height: 1.42;
@@ -1689,88 +1808,7 @@ const curatedVideos: {
 		max-width: 38rem;
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	.how-extras-grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: clamp(0.9rem, 2.6vw, 1.2rem);
-		margin-top: clamp(0.35rem, 1.5vw, 0.65rem);
-	}
-
-	@media (min-width: 680px) {
-		.how-extras-grid {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-			gap: clamp(0.95rem, 2.4vw, 1.15rem);
-		}
-	}
-
-	.how-extra-card {
-		padding: clamp(0.95rem, 2.5vw, 1.15rem) clamp(0.95rem, 2.3vw, 1.05rem);
-		border-radius: clamp(0.48rem, 1.05vw, 0.68rem);
-		box-sizing: border-box;
-		border: 1px solid rgba(255, 255, 255, 0.09);
-		border-left: 3px solid rgba(245, 176, 65, 0.28);
-		background: linear-gradient(
-			165deg,
-			rgba(42, 44, 54, 0.52) 0%,
-			rgba(20, 21, 28, 0.86) 48%,
-			rgba(14, 15, 20, 0.94) 100%
-		);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-		transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
-	}
-
-	html[data-theme='light'] .how-extra-card {
-		background: var(--theme-surface-1);
-		border-color: var(--theme-surface-border);
-		border-left-color: rgba(218, 155, 48, 0.38);
-		box-shadow: var(--theme-surface-elevated-shadow);
-	}
-
-	.how-extra-card:hover {
-		border-color: rgba(255, 255, 255, 0.13);
-		border-left-color: rgba(245, 176, 65, 0.48);
-		box-shadow:
-			0 10px 28px rgba(0, 0, 0, 0.28),
-			inset 0 1px 0 rgba(255, 255, 255, 0.05);
-		transform: translateY(-2px);
-	}
-
-	html[data-theme='light'] .how-extra-card:hover {
-		border-left-color: rgba(218, 155, 48, 0.55);
-	}
-
-	.how-extra-card__title {
-		margin: 0 0 0.48rem;
-		font-size: clamp(0.98rem, 2.1vw, 1.06rem);
-		font-weight: 700;
-		line-height: 1.28;
-		letter-spacing: -0.02em;
-	}
-
-	html[data-theme='dark'] .how-extra-card__title {
-		color: rgba(255, 255, 255, 0.97);
-	}
-
-	html[data-theme='light'] .how-extra-card__title {
-		color: var(--theme-on-bg, #111);
-	}
-
-	.how-extra-card__blurb {
-		margin: 0;
-		font-size: 0.86rem;
-		line-height: 1.52;
-		opacity: 0.88;
-	}
-
-	html[data-theme='dark'] .how-extra-card__blurb {
-		color: rgba(210, 214, 224, 0.88);
-	}
-
-	html[data-theme='light'] .how-extra-card__blurb {
-		color: rgba(52, 56, 68, 0.88);
-		opacity: 1;
+		margin-bottom: clamp(0.35rem, 1.5vw, 0.65rem);
 	}
 
 	.how-more-clips-intro {
