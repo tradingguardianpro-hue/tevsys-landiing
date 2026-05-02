@@ -237,6 +237,27 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
     background: rgba(64, 68, 82, 0.98);
     box-shadow: 0 0 32px rgba(160, 168, 190, 0.1);
   }
+  /*
+    En vista estrecha `header--right` usa grid 3 columnas; al ocultar `.header-nav__container`
+    el reparto de columnas puede producir saltos al pintar / hidratar. Flex + min-width:0 evita
+    empujar logo o CTAs fuera de sitio.
+  */
+  @media (max-width: 600px) {
+    header.header--right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .header-logo-menu__container {
+      flex: 1;
+      min-width: 0;
+    }
+    .header-action-item__container {
+      flex-shrink: 0;
+    }
+  }
+
   @media(max-width: 600px) {
     #menuButton {
       display: block;  

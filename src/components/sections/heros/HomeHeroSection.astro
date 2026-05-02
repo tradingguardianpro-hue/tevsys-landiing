@@ -89,6 +89,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     flex-direction: column;
     align-items: center;
     width: 100%;
+    min-width: 0;
     padding: clamp(1.25rem, 4vw, 2.5rem) 1rem 1.5rem;
     box-sizing: border-box;
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -99,6 +100,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
   .hero-section__text {
     max-width: min(52rem, 100%);
+    width: 100%;
+    min-width: 0;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -139,6 +142,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-microline {
     margin: 0.95rem 0 0;
     max-width: min(33rem, 100%);
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 0 0.25rem;
     font-size: clamp(1.02rem, 2.45vw, 1.28rem);
     font-weight: 500;
@@ -156,6 +162,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-context-line {
     margin: 0.92rem 0 0;
     max-width: min(34rem, 100%);
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 0 0.25rem;
     font-size: clamp(0.9375rem, 2.1vw, 1.0625rem);
     font-weight: 500;
@@ -383,6 +392,20 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
     .hero-context-br--mobile {
       display: block;
+    }
+    /*
+      Pantallas muy estrechas: el H1 en una sola línea + flex min-width:auto desbordaba el viewport.
+      Dos líneas equilibradas mantienen jerarquía sin microtipografía ridícula.
+    */
+    .hero-title {
+      white-space: normal;
+      width: 100%;
+      max-width: 100%;
+      text-wrap: balance;
+      font-size: clamp(1.05rem, calc(4.2vw + 0.35rem), 2.55rem);
+      line-height: 1.14;
+      padding-inline: 0.15rem;
+      box-sizing: border-box;
     }
     .hero-cta-row {
       margin-top: clamp(1.5rem, 4vw, 2rem);

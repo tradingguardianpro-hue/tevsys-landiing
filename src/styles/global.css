@@ -1754,8 +1754,8 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 			/* Más “vida” que 56s, manteniendo keyframes finos + linear (sin trompicones) */
 			animation: tevsys-header-scanner-sweep-mobile 42s linear infinite;
+			animation-fill-mode: both;
 			transform: translateZ(0);
-			will-change: background-position;
 			backface-visibility: hidden;
 			opacity: 0.84;
 			background-image: linear-gradient(
@@ -1769,18 +1769,24 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 				transparent 100%
 			);
 			background-size: 278% 100%;
+			/* Coincide con el 0% del keyframe móvil: evita salto al acabar el delay o al arrancar */
+			background-position: 66% 50%;
 		}
 
+		/*
+		  Home: el delay largo de escritorio (2,65s) en móvil se leía como cabecera “congelada”
+		  y luego el primer fotograma del sweep pegaba un tirón visual.
+		*/
 		html[data-theme='dark'] body:has(.tevsys-home-band--cards) #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 			animation-duration: 47s;
-			animation-delay: var(--tevsys-home-enter-header, 2.65s);
+			animation-delay: 0.55s;
 		}
 
 		/* Micros producto en móvil: mismo barrido horizontal fino, ~85 % de la presencia de home */
 		html[data-theme='dark'] #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
 			animation: tevsys-header-scanner-sweep-mobile 44s linear infinite;
+			animation-fill-mode: both;
 			transform: translateZ(0);
-			will-change: background-position;
 			backface-visibility: hidden;
 			opacity: 0.76;
 			background-image: linear-gradient(
@@ -1794,13 +1800,16 @@ html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer {
 				transparent 100%
 			);
 			background-size: 278% 100%;
-			animation-delay: 0.85s;
+			background-position: 66% 50%;
+			animation-delay: 0.35s;
 		}
 
 		/* /como-funciona móvil: escáner más lento y tenue vs barridos verticales de la página */
 		html[data-theme='dark'] body.page-como-funciona #odysseyNavHeader.tevsys-header--with-scanner:not(.tevsys-header--home-scanner) .tevsys-header-scanner {
 			animation-duration: 58s;
+			animation-fill-mode: both;
 			opacity: 0.36;
+			background-position: 66% 50%;
 			background-image: linear-gradient(
 				102deg,
 				transparent 0%,
