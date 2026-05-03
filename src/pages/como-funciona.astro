@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación, De cero a protegido, Siguiente nivel (Precisión y HyperClose en vídeo, microvídeos, auditoría), más vídeo, instalación y guías.',
+		'Presentación, De cero a protegido, Siguiente nivel (cuatro piezas: precisión, HyperClose, SML, evidencia en vídeo o preparación), microvídeos, auditoría, instalación y guías.',
 };
 
 /** Parte 1 + Parte 2 (artículo MQL5 / mismo relato). Sustituir embeds cuando publiquéis el corte nuevo “producto al día”. */
@@ -63,7 +63,7 @@ const depthLayers: { title: string; blurb: string; href: string; cta: string }[]
 	},
 ];
 
-/** Tras «Esto no es todo…»: en la página solo mostramos Precisión + HyperClose con vídeo; el resto enlaza desde home/micros. */
+/** Tras «Esto no es todo…»: mismo puente de cuatro piezas que la home (orden portada). Query distinta en MP4 duplicado para que el navegador pinte bien dos `<video>`. */
 const homeBridgeCards: {
 	title: string;
 	blurb: string;
@@ -110,9 +110,6 @@ const homeBridgeCards: {
 		videoLabel: 'Demo rápida — cuenta 100k (~1 min 41 s). Mismo archivo que en la micro Evidencia.',
 	},
 ];
-
-/** Solo las dos tarjetas con vídeo en esta página (evita segunda fila cortada bajo «De cero…» / encima de microclips). SML y evidencia siguen en home + micropáginas. */
-const homeBridgeCardsEnPagina = homeBridgeCards.slice(0, 2);
 
 /** Cortos en preparación: primero los tres comportamientos del día a día; auditoría al final (ya explicada arriba). `anchorId` = ancla para el índice (añadir filas aquí al publicar más clips). */
 const siguienteNivelClipCards: { title: string; anchorId: string; auditAccent?: boolean }[] = [
@@ -288,16 +285,16 @@ const curatedVideos: {
 					<header class="how-section-head how-chapter__head">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">FUNCIONALIDADES ÚNICAS</p>
 						<h3 id="how-bridge-chapter-title">
-							Precisión y HyperClose, <span class="how-present-title__accent">con contexto breve</span>
+							Las cuatro piezas, <span class="how-present-title__accent">mismo orden que en portada</span>
 						</h3>
 						<p class="how-section-sub">
-							Dos piezas en vídeo aquí. SML y evidencia verificable siguen en la home y en sus micropáginas; más abajo, microclips de otros comportamientos.
+							Mismo orden que en portada: precisión, HyperClose, SML y evidencia. Vídeo donde ya hay corte; en SML el hueco en preparación hasta el clip. Más abajo, microclips de otros comportamientos.
 						</p>
 					</header>
 					<div class="how-more-bridge">
 						<div class="how-more-bridge__grid">
 							{
-								homeBridgeCardsEnPagina.map((card) => (
+								homeBridgeCards.map((card) => (
 									<article class="how-more-bridge-card">
 										<a class="how-more-bridge-card__head" href={card.href}>
 											<h3 class="how-more-bridge-card__title">{card.title}</h3>
@@ -1056,11 +1053,12 @@ const curatedVideos: {
 	/* “Siguiente nivel”: mismo fondo + mismo barrido vertical que «De cero a protegido» (valores alineados). */
 	.how-more.how-more--stage {
 		position: relative;
-		/* visible: el stage no debe recortar filas del puente ni sombras al hacer scroll. */
+		/* visible: dos filas del puente (4 cards) + hover/sombras no deben recortarse. */
 		overflow: visible;
 		border-radius: clamp(0.5rem, 1.2vw, 0.875rem);
 		margin: clamp(2.25rem, 8vh, 5rem) auto clamp(2.5rem, 9vh, 5.5rem);
-		padding: clamp(1rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem) clamp(1.35rem, 4vw, 2.35rem);
+		/* Padding inferior extra: segunda fila del puente y translateY en hover. */
+		padding: clamp(1rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem) clamp(2rem, 5.5vw, 3rem);
 		box-sizing: border-box;
 	}
 
@@ -1088,6 +1086,7 @@ const curatedVideos: {
 	.how-more__inner {
 		position: relative;
 		z-index: 1;
+		overflow: visible;
 	}
 
 	html[data-theme='dark'] .how-more__bg {
@@ -1336,6 +1335,7 @@ const curatedVideos: {
 		margin: clamp(0.35rem, 1.5vw, 0.85rem) auto clamp(1.35rem, 3.8vw, 2.1rem);
 		max-width: min(56rem, 100%);
 		padding-top: clamp(0.35rem, 1.8vw, 0.75rem);
+		overflow: visible;
 	}
 
 	/* Auditoría: firma cian como el teaser de portada, pero sin “segundo escenario” — mismo aire que el stage padre. */
@@ -2098,8 +2098,9 @@ const curatedVideos: {
 
 	/* Puente con la home: grid de cuatro cards; cabecero del capítulo replica patrón Presentación. */
 	.how-more-bridge {
-		margin: 0 auto clamp(1.35rem, 4vw, 2rem);
+		margin: 0 auto clamp(1.75rem, 4.5vw, 2.5rem);
 		max-width: min(54rem, 100%);
+		overflow: visible;
 	}
 
 	.how-more-bridge__head-block {
@@ -2112,7 +2113,7 @@ const curatedVideos: {
 		display: inline-block;
 	}
 
-	/* En esta página solo Precisión + HyperClose (una fila en escritorio; en móvil, columna única). */
+	/* Dos filas en escritorio (2×2); en móvil una columna. */
 	.how-more-bridge__grid {
 		display: grid;
 		grid-template-columns: 1fr;
