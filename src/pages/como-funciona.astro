@@ -1695,7 +1695,9 @@ const curatedVideos: {
 
 	.how-videoteca-index__item--deck {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 0.5rem;
 		min-height: 100%;
 		margin: 0;
 		padding: clamp(0.55rem, 1.8vw, 0.72rem) 0.6rem clamp(0.55rem, 1.8vw, 0.72rem) 0.9rem;
@@ -1710,6 +1712,14 @@ const curatedVideos: {
 		background: rgba(155, 165, 188, 0.82);
 		margin-right: 0.52rem;
 		vertical-align: middle;
+	}
+
+	/* Punto a la altura de la primera línea del enlace (no encima del texto). */
+	.how-videoteca-index__item--deck::before {
+		flex-shrink: 0;
+		margin-right: 0;
+		margin-top: 0.32em;
+		vertical-align: unset;
 	}
 
 	.how-videoteca-index__item:hover {
@@ -1745,8 +1755,8 @@ const curatedVideos: {
 
 	.how-videoteca-index__link--deck {
 		flex: 1;
-		display: flex;
-		align-items: flex-start;
+		min-width: 0;
+		display: block;
 		vertical-align: unset;
 		line-height: 1.38;
 	}
