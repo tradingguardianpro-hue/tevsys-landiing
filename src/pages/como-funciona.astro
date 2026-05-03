@@ -354,35 +354,52 @@ const curatedVideos: {
 							<h4 id="how-videoteca-index-label" class="how-videoteca-index__title">
 								¿Q<span class="how-videoteca-index__title-accent">ué quieres ver? — salta al clip</span>
 							</h4>
-							<ul class="how-videoteca-index__list">
+							<ul class="how-videoteca-index__list how-videoteca-index__list--deck">
 								{
 									videotecaClipsHead.map((clip) => (
-										<li class="how-videoteca-index__item">
-											<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
+										<li class="how-videoteca-index__item how-videoteca-index__item--deck">
+											<a class="how-videoteca-index__link how-videoteca-index__link--deck" href={`#${clip.anchorId}`}>
 												{clip.title}
 											</a>
 										</li>
 									))
 								}
 							</ul>
-							{
-								videotecaClipsRest.length > 0 ? (
-									<details class="how-videoteca-index__more">
-										<summary class="how-videoteca-index__summary">Ver más clips</summary>
-										<ul class="how-videoteca-index__list how-videoteca-index__list--more">
-											{
-												videotecaClipsRest.map((clip) => (
-													<li class="how-videoteca-index__item">
-														<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
-															{clip.title}
-														</a>
-													</li>
-												))
-											}
-										</ul>
-									</details>
-								) : null
-							}
+							<div class="how-videoteca-index__footer">
+								{
+									videotecaClipsRest.length > 0 ? (
+										<details class="how-videoteca-index__more how-videoteca-index__more--panel">
+											<summary class="how-videoteca-index__summary how-videoteca-index__summary--cta">
+												Ver más clips
+											</summary>
+											<p class="how-videoteca-index__more-lead">
+												El resto de enlaces salta al mismo ancla en esta página. Así no llenamos el rectángulo de golpe.
+											</p>
+											<ul class="how-videoteca-index__list how-videoteca-index__list--more">
+												{
+													videotecaClipsRest.map((clip) => (
+														<li class="how-videoteca-index__item">
+															<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
+																{clip.title}
+															</a>
+														</li>
+													))
+												}
+											</ul>
+										</details>
+									) : (
+										<div class="how-videoteca-index__footer-soon">
+											<p class="how-videoteca-index__footer-kicker">Ampliar sin alargar la página</p>
+											<p class="how-videoteca-index__footer-primary">Ver más clips</p>
+											<p class="how-videoteca-index__footer-sub">
+												Cuando haya más de cuatro enlaces en esta página, aparecerán aquí al desplegar. En otros
+												rectángulos del sitio usaremos la misma idea: pocos visibles y el resto detrás de esta
+												misma acción.
+											</p>
+										</div>
+									)
+								}
+							</div>
 						</nav>
 					</header>
 				</section>
@@ -1563,7 +1580,7 @@ const curatedVideos: {
 		margin: clamp(1.35rem, 4vw, 2.35rem) auto 0;
 		max-width: min(46rem, 100%);
 		width: 100%;
-		padding: clamp(0.85rem, 2.4vw, 1.15rem) clamp(0.95rem, 2.6vw, 1.25rem);
+		padding: clamp(0.85rem, 2.4vw, 1.15rem) clamp(0.95rem, 2.6vw, 1.25rem) clamp(1rem, 2.8vw, 1.35rem);
 		border-radius: clamp(0.45rem, 1vw, 0.65rem);
 		border: 1px solid rgba(245, 176, 65, 0.12);
 		background: rgba(0, 0, 0, 0.18);
@@ -1642,29 +1659,46 @@ const curatedVideos: {
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		columns: 2;
-		column-gap: clamp(1rem, 3vw, 1.65rem);
 	}
 
-	@media (min-width: 720px) {
-		.how-videoteca-index__list {
-			columns: 3;
+	/* Cuatro enlaces fijos: 2×2 desde ~520px; una columna en móvil (orden de lectura claro). */
+	.how-videoteca-index__list--deck {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: clamp(0.55rem, 1.8vw, 0.75rem);
+	}
+
+	@media (min-width: 520px) {
+		.how-videoteca-index__list--deck {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: clamp(0.65rem, 2vw, 0.9rem);
 		}
 	}
 
 	.how-videoteca-index__list--more {
-		margin-top: 0.65rem;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.45rem;
+		margin: 0.55rem 0 0;
+		padding: 0;
 	}
 
 	.how-videoteca-index__item {
-		break-inside: avoid;
-		margin: 0 0 0.48rem;
+		margin: 0;
 		padding: 0.42rem 0.55rem 0.42rem 0.85rem;
 		border-left: 2px solid rgba(140, 150, 170, 0.28);
 		border-radius: 0.35rem;
 		background: linear-gradient(90deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0));
 		transition: border-color 0.2s ease, background-color 0.2s ease;
 		box-sizing: border-box;
+	}
+
+	.how-videoteca-index__item--deck {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		margin: 0;
+		padding: clamp(0.55rem, 1.8vw, 0.72rem) 0.6rem clamp(0.55rem, 1.8vw, 0.72rem) 0.9rem;
 	}
 
 	.how-videoteca-index__item::before {
@@ -1709,6 +1743,14 @@ const curatedVideos: {
 		vertical-align: middle;
 	}
 
+	.how-videoteca-index__link--deck {
+		flex: 1;
+		display: flex;
+		align-items: flex-start;
+		vertical-align: unset;
+		line-height: 1.38;
+	}
+
 	.how-videoteca-index__link:hover {
 		color: rgba(248, 250, 252, 1);
 	}
@@ -1731,52 +1773,150 @@ const curatedVideos: {
 		outline-color: rgba(218, 155, 48, 0.75);
 	}
 
-	.how-videoteca-index__more {
-		margin-top: 0.55rem;
-		border-top: 1px solid rgba(255, 255, 255, 0.07);
-		padding-top: 0.55rem;
+	/* Franja inferior fija: siempre se ve la acción «Ver más clips» o el texto prospectivo. */
+	.how-videoteca-index__footer {
+		margin-top: clamp(0.85rem, 2.5vw, 1.15rem);
+		padding-top: clamp(0.75rem, 2.2vw, 1rem);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
-	html[data-theme='light'] .how-videoteca-index__more {
-		border-top-color: rgba(0, 0, 0, 0.07);
+	html[data-theme='light'] .how-videoteca-index__footer {
+		border-top-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.how-videoteca-index__footer-soon {
+		text-align: center;
+		max-width: 26rem;
+		margin: 0 auto;
+	}
+
+	.how-videoteca-index__footer-kicker {
+		margin: 0 0 0.35rem;
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: rgba(245, 176, 65, 0.75);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__footer-kicker {
+		color: rgba(190, 130, 42, 0.88);
+	}
+
+	.how-videoteca-index__footer-primary {
+		margin: 0 0 0.45rem;
+		font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: rgba(248, 250, 252, 0.98);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__footer-primary {
+		color: rgba(22, 26, 38, 0.96);
+	}
+
+	.how-videoteca-index__footer-sub {
+		margin: 0;
+		font-size: 0.8rem;
+		line-height: 1.48;
+		opacity: 0.82;
+		color: rgba(210, 216, 228, 0.92);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__footer-sub {
+		color: rgba(58, 62, 74, 0.88);
+		opacity: 1;
+	}
+
+	.how-videoteca-index__more--panel {
+		margin: 0;
+		border: 0;
+		padding: 0;
+	}
+
+	.how-videoteca-index__more-lead {
+		margin: 0.5rem 0 0;
+		font-size: 0.78rem;
+		line-height: 1.45;
+		text-align: center;
+		opacity: 0.78;
+		color: rgba(200, 206, 220, 0.9);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__more-lead {
+		color: rgba(72, 78, 92, 0.88);
 	}
 
 	.how-videoteca-index__summary {
 		cursor: pointer;
-		font-size: 0.84rem;
-		font-weight: 600;
-		color: rgba(185, 192, 208, 0.92);
 		list-style: none;
-		text-align: center;
-		text-decoration: underline;
-		text-decoration-thickness: 0.06em;
-		text-underline-offset: 2px;
 	}
 
 	.how-videoteca-index__summary::-webkit-details-marker {
 		display: none;
 	}
 
-	.how-videoteca-index__summary::after {
-		content: ' ▾';
-		font-size: 0.72em;
-		opacity: 0.75;
+	.how-videoteca-index__summary::marker {
+		content: '';
 	}
 
-	.how-videoteca-index__more[open] .how-videoteca-index__summary::after {
-		content: ' ▴';
+	.how-videoteca-index__summary--cta {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.35rem;
+		width: 100%;
+		max-width: 20rem;
+		margin: 0 auto;
+		padding: 0.62rem 1rem;
+		font-size: 0.92rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		text-align: center;
+		color: rgba(18, 20, 26, 0.95);
+		text-decoration: none;
+		border-radius: 0.45rem;
+		border: 1px solid rgba(245, 176, 65, 0.45);
+		background: linear-gradient(180deg, rgba(245, 196, 128, 0.95) 0%, rgba(218, 155, 48, 0.88) 100%);
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 6px 18px rgba(0, 0, 0, 0.22);
+		transition:
+			transform 0.15s ease,
+			box-shadow 0.15s ease,
+			filter 0.15s ease;
 	}
 
-	.how-videoteca-index__summary:hover {
-		color: rgba(210, 216, 228, 0.98);
+	.how-videoteca-index__summary--cta::after {
+		content: '▾';
+		font-size: 0.65em;
+		opacity: 0.85;
+		margin-left: 0.15rem;
 	}
 
-	html[data-theme='light'] .how-videoteca-index__summary {
-		color: rgba(72, 78, 92, 0.9);
+	.how-videoteca-index__more--panel[open] .how-videoteca-index__summary--cta::after {
+		content: '▴';
 	}
 
-	html[data-theme='light'] .how-videoteca-index__summary:hover {
-		color: rgba(38, 44, 58, 0.98);
+	.how-videoteca-index__summary--cta:hover {
+		filter: brightness(1.05);
+		transform: translateY(-1px);
+	}
+
+	.how-videoteca-index__summary--cta:focus-visible {
+		outline: 2px solid rgba(245, 176, 65, 0.75);
+		outline-offset: 3px;
+	}
+
+	html[data-theme='light'] .how-videoteca-index__summary--cta {
+		color: rgba(18, 20, 26, 0.95);
+		border-color: rgba(200, 140, 45, 0.55);
+		background: linear-gradient(180deg, rgba(252, 220, 160, 0.98) 0%, rgba(235, 175, 65, 0.92) 100%);
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset, 0 4px 14px rgba(0, 0, 0, 0.08);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.how-videoteca-index__summary--cta:hover {
+			transform: none;
+		}
 	}
 
 	/* Salto por ancla: no pegar el título bajo el header fijo. */
