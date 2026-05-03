@@ -355,7 +355,7 @@ const curatedVideos: {
 						</p>
 						<nav class="how-videoteca-index" aria-labelledby="how-videoteca-index-label">
 							<h4 id="how-videoteca-index-label" class="how-videoteca-index__title">
-								¿Qué quieres ver? — salta al clip
+								¿Q<span class="how-videoteca-index__title-accent">ué quieres ver? — salta al clip</span>
 							</h4>
 							<ul class="how-videoteca-index__list">
 								{
@@ -386,19 +386,11 @@ const curatedVideos: {
 									</details>
 								) : null
 							}
-							<p class="how-videoteca-index__hint">
-								Misma idea que «Qué puedes comprobar» en las micropáginas: eliges y bajamos contigo al hueco del vídeo. La lista crece
-								cuando publiquéis cada pieza.
-							</p>
 						</nav>
 					</header>
 				</section>
 
-				<p class="how-more-clips-intro" id="videoteca-clips">
-					Cuatro huecos (~25–30 s) en rejilla: <strong>firma plata / violeta</strong> en las tres primeras y <strong>cian</strong> en la de
-					auditoría.
-				</p>
-				<div class="how-more-grid how-more-grid--practical">
+				<div class="how-more-grid how-more-grid--practical" id="videoteca-clips">
 					{
 						siguienteNivelClipCards.map((row) => (
 							<article
@@ -1616,6 +1608,36 @@ const curatedVideos: {
 		color: var(--theme-on-bg, #111);
 	}
 
+	/* Barra bajo «ué quieres ver?…» (no bajo «¿Q»), mismo gradiente que `how-present-title__accent`. */
+	.how-videoteca-index__title-accent {
+		display: inline-block;
+		text-align: left;
+	}
+
+	.how-videoteca-index__title-accent::after {
+		content: '';
+		display: block;
+		width: min(22rem, calc(100% - 0.65rem));
+		height: 3px;
+		margin: 0.36rem 0 0 0.65rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+
+	html[data-theme='light'] .how-videoteca-index__title-accent::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
+	}
+
 	.how-videoteca-index__list {
 		margin: 0;
 		padding: 0;
@@ -1757,22 +1779,6 @@ const curatedVideos: {
 		color: rgba(38, 44, 58, 0.98);
 	}
 
-	.how-videoteca-index__hint {
-		margin: clamp(0.65rem, 1.8vw, 0.85rem) 0 0;
-		padding-top: 0.55rem;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-		font-size: 0.78rem;
-		line-height: 1.42;
-		opacity: 0.72;
-		text-align: center;
-	}
-
-	html[data-theme='light'] .how-videoteca-index__hint {
-		border-top-color: rgba(0, 0, 0, 0.08);
-		color: rgba(72, 76, 88, 0.85);
-		opacity: 1;
-	}
-
 	/* Salto por ancla: no pegar el título bajo el header fijo. */
 	.how-more-cell[id^='videoclip-'] {
 		scroll-margin-top: clamp(4rem, 12vh, 6rem);
@@ -1864,23 +1870,6 @@ const curatedVideos: {
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: clamp(0.35rem, 1.5vw, 0.65rem);
-	}
-
-	.how-more-clips-intro {
-		margin: clamp(0.35rem, 1.5vw, 0.65rem) auto clamp(0.85rem, 2.6vw, 1.25rem);
-		max-width: 40rem;
-		font-size: 0.87rem;
-		line-height: 1.5;
-		text-align: center;
-		opacity: 0.84;
-	}
-
-	html[data-theme='dark'] .how-more-clips-intro {
-		color: rgba(210, 214, 224, 0.88);
-	}
-
-	html[data-theme='light'] .how-more-clips-intro {
-		color: rgba(58, 62, 74, 0.88);
 	}
 
 	/* Grid “práctica”: misma geometría que el puente; sin max-height + aspect-ratio (evita recortes raros al zoom). */
