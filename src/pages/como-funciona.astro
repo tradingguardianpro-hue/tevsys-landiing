@@ -460,7 +460,6 @@ const curatedVideos: {
 											</p>
 										</div>
 									)}
-									{!row.videoSrc ? <span class="how-practical-video-mark" aria-hidden="true"></span> : null}
 								</div>
 								<span class:list={['how-more-card__cta', !row.videoSrc && 'how-more-card__cta--pending']}>
 									{row.videoSrc ? `${row.ctaLabel ?? 'Ver clip'} →` : 'Clip en preparación →'}
@@ -511,7 +510,6 @@ const curatedVideos: {
 														</p>
 													</div>
 												)}
-												{!row.videoSrc ? <span class="how-practical-video-mark" aria-hidden="true"></span> : null}
 											</div>
 											<span class:list={['how-more-card__cta', !row.videoSrc && 'how-more-card__cta--pending']}>
 												{row.videoSrc ? `${row.ctaLabel ?? 'Ver clip'} →` : 'Clip en preparación →'}
