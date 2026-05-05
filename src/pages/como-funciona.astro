@@ -133,10 +133,10 @@ const siguienteNivelClipCards: {
 	{ title: 'Auditoría con evidencia (Fase 1 manual)', anchorId: 'videoclip-auditoria', auditAccent: true },
 ];
 
-/** Primeros N en el índice visible; el resto va tras «Ver más clips» (no alargar scroll hasta el infinito). */
-const VIDEOTECA_INDEX_VISIBLE = 4;
-const videotecaClipsHead = siguienteNivelClipCards.slice(0, VIDEOTECA_INDEX_VISIBLE);
-const videotecaClipsRest = siguienteNivelClipCards.slice(VIDEOTECA_INDEX_VISIBLE);
+/** Videoteca escalable: solo 2 clips visibles al cargar; el resto aparece bajo demanda. */
+const VIDEOTECA_VISIBLE_ON_LOAD = 2;
+const videotecaClipsHead = siguienteNivelClipCards.slice(0, VIDEOTECA_VISIBLE_ON_LOAD);
+const videotecaClipsRest = siguienteNivelClipCards.slice(VIDEOTECA_VISIBLE_ON_LOAD);
 
 /** «De cero…»: subrayado solo bajo el núcleo (asimétrico respecto a «misma historia» arriba). */
 const zeroTitleMatch = /^De\s+(.+)$/u.exec(zeroToProtected.title);
@@ -426,7 +426,7 @@ const curatedVideos: {
 
 				<div class="how-more-grid how-more-grid--practical" id="videoteca-clips">
 					{
-						siguienteNivelClipCards.map((row) => (
+						videotecaClipsHead.map((row) => (
 							<article
 								id={row.anchorId}
 								class:list={[
@@ -444,7 +444,7 @@ const curatedVideos: {
 								<div class="how-practical-card__media">
 									{row.videoSrc ? (
 										<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
-											<video controls preload="metadata" playsinline title={row.videoLabel ?? row.title}>
+											<video controls preload="none" playsinline title={row.videoLabel ?? row.title}>
 												<source src={row.videoSrc} type="video/mp4" />
 												Tu navegador no soporta reproducción de video HTML5.
 											</video>
@@ -469,6 +469,60 @@ const curatedVideos: {
 						))
 					}
 				</div>
+				{
+					videotecaClipsRest.length > 0 ? (
+						<details class="how-videoteca-index__more how-videoteca-index__more--panel how-videoteca-clips-more" id="how-videoteca-clips-more">
+							<summary class="how-videoteca-index__summary how-videoteca-index__summary--cta">
+								Ver más clips
+							</summary>
+							<div class="how-more-grid how-more-grid--practical how-more-grid--practical-rest">
+								{
+									videotecaClipsRest.map((row) => (
+										<article
+											id={row.anchorId}
+											class:list={[
+												'how-more-cell',
+												'how-more-cell--video',
+												'how-more-cell--practical-clip',
+												row.auditAccent && 'how-more-cell--audit-clip',
+											]}
+											aria-labelledby={`clip-title-${row.anchorId}`}>
+											<header class="how-block-head how-block-head--compact">
+												<h3 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
+													{row.title}
+												</h3>
+											</header>
+											<div class="how-practical-card__media">
+												{row.videoSrc ? (
+													<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
+														<video controls preload="none" playsinline title={row.videoLabel ?? row.title}>
+															<source src={row.videoSrc} type="video/mp4" />
+															Tu navegador no soporta reproducción de video HTML5.
+														</video>
+													</div>
+												) : (
+													<div
+														class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
+														role="status">
+														<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
+														<p class="how-embed-placeholder__title">Clip en preparación</p>
+														<p class="how-embed-placeholder__sub">
+															Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.
+														</p>
+													</div>
+												)}
+												<span class="how-practical-video-mark" aria-hidden="true"></span>
+											</div>
+											<span class:list={['how-more-card__cta', !row.videoSrc && 'how-more-card__cta--pending']}>
+												{row.videoSrc ? `${row.ctaLabel ?? 'Ver clip'} →` : 'Clip en preparación →'}
+											</span>
+										</article>
+									))
+								}
+							</div>
+						</details>
+					) : null
+				}
 
 				<p class="how-more-audit-cut">
 					<span class="how-more-audit-cut__line" aria-hidden="true"></span>
@@ -609,6 +663,23 @@ const curatedVideos: {
 		</nav>
 	</Container>
 </Layout>
+
+<script is:inline>
+	(() => {
+		const details = document.getElementById('how-videoteca-clips-more');
+		if (!details) return;
+		const openIfNeeded = () => {
+			const hash = window.location.hash;
+			if (!hash || !hash.startsWith('#videoclip-')) return;
+			const target = document.querySelector(hash);
+			if (!target) return;
+			if (!target.closest('#how-videoteca-clips-more')) return;
+			if (!details.open) details.open = true;
+		};
+		openIfNeeded();
+		window.addEventListener('hashchange', openIfNeeded);
+	})();
+</script>
 
 <style>
 	.how-depth,
@@ -2144,6 +2215,14 @@ const curatedVideos: {
 		justify-content: center;
 		min-height: 100%;
 		text-align: center;
+	}
+
+	.how-videoteca-clips-more {
+		margin-top: 0.9rem;
+	}
+
+	.how-more-grid--practical-rest {
+		margin-top: 0.8rem;
 	}
 
 	/* Microclips (no auditoría): misma familia que tarjetas puente — ámbar como carril, sin “otra marca”. */
