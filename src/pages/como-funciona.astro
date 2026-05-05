@@ -111,11 +111,25 @@ const homeBridgeCards: {
 	},
 ];
 
-/** Cortos en preparación: primero los tres comportamientos del día a día; auditoría al final (ya explicada arriba). `anchorId` = ancla para el índice (añadir filas aquí al publicar más clips). */
-const siguienteNivelClipCards: { title: string; anchorId: string; auditAccent?: boolean }[] = [
+/** Microclips: primeros casos operativos + extras detrás de «Ver más clips». */
+const siguienteNivelClipCards: {
+	title: string;
+	anchorId: string;
+	auditAccent?: boolean;
+	videoSrc?: string;
+	videoLabel?: string;
+	ctaLabel?: string;
+}[] = [
 	{ title: '¿Cómo te protegemos cuando decides estar OFF?', anchorId: 'videoclip-off' },
 	{ title: 'Observación pasiva', anchorId: 'videoclip-pasiva' },
 	{ title: 'Intentar cambiar tus límites con tevsys ya protegiéndote', anchorId: 'videoclip-retocar' },
+	{
+		title: 'Preconfig fin de semana: del engranaje gris al lunes con candado',
+		anchorId: 'videoclip-preconfig-fin-semana',
+		videoSrc: '/videos/como-funciona/tevsys-clip-preconfig-fin-semana-linea1-30s.mp4',
+		videoLabel: 'Preconfig fin de semana — clip 30 s',
+		ctaLabel: 'Ver clip',
+	},
 	{ title: 'Auditoría con evidencia (Fase 1 manual)', anchorId: 'videoclip-auditoria', auditAccent: true },
 ];
 
@@ -428,18 +442,29 @@ const curatedVideos: {
 									</h3>
 								</header>
 								<div class="how-practical-card__media">
-									<div
-										class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
-										role="status">
-										<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
-										<p class="how-embed-placeholder__title">Clip en preparación</p>
-										<p class="how-embed-placeholder__sub">
-											Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.
-										</p>
-									</div>
+									{row.videoSrc ? (
+										<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
+											<video controls preload="metadata" playsinline title={row.videoLabel ?? row.title}>
+												<source src={row.videoSrc} type="video/mp4" />
+												Tu navegador no soporta reproducción de video HTML5.
+											</video>
+										</div>
+									) : (
+										<div
+											class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
+											role="status">
+											<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
+											<p class="how-embed-placeholder__title">Clip en preparación</p>
+											<p class="how-embed-placeholder__sub">
+												Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.
+											</p>
+										</div>
+									)}
 									<span class="how-practical-video-mark" aria-hidden="true"></span>
 								</div>
-								<span class="how-more-card__cta how-more-card__cta--pending">Clip en preparación →</span>
+								<span class:list={['how-more-card__cta', !row.videoSrc && 'how-more-card__cta--pending']}>
+									{row.videoSrc ? `${row.ctaLabel ?? 'Ver clip'} →` : 'Clip en preparación →'}
+								</span>
 							</article>
 						))
 					}
@@ -2102,6 +2127,14 @@ const curatedVideos: {
 		border-radius: 0;
 		border: none;
 		box-shadow: none;
+	}
+
+	.how-practical-card__media .how-practical-card__embed video {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		background: #000;
 	}
 
 	.how-practical-card__media .how-practical-card__embed.how-embed-placeholder--clip-teaser {
