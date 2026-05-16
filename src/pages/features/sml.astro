@@ -84,29 +84,29 @@ const seo = {
 				<h2 id="sml-proof-title">Validado al cerrar en pérdida ampliada</h2>
 			</div>
 			<p class="feature-sml-panel__lead">
-				Tras validar cierres con SML en jornadas positivas, documentamos el escenario que más importa al operador: <strong>pérdida diaria con margen ampliado</strong> — límite base, flecha al ampliado, <strong>SML activo</strong>, STOP en gráfico y panel, y cuenta bloqueada hasta fin de sesión.
+				Tras validar cierres con SML en jornadas positivas, documentamos el escenario que más importa al operador: <strong>pérdida diaria con margen ampliado</strong> — primera línea del panel al tocar el techo (<strong>STOP · SML ON</strong>), límites <strong>-0,75% → -0,78%</strong>, <strong>SML ampliado</strong> y cuenta protegida hasta fin de sesión.
 			</p>
 			<p class="proof-gallery__hint">Haz clic en la captura para ampliarla.</p>
-			<figure class="feature-sml-panel__figure feature-sml-panel__figure--wide">
+			<figure class="feature-sml-panel__figure">
 				<a
 					class="proof-gallery__zoom"
 					href="/images/evidence/sml-cierre-perdida-ampliada-validado.png"
 					target="_blank"
 					rel="noopener noreferrer"
-					aria-label="Abrir captura de cierre con SML en pérdida ampliada en tamaño completo"
+					aria-label="Abrir captura del panel tras cierre con SML en pérdida ampliada en tamaño completo"
 				>
 					<img
 						class="feature-sml-panel__img proof-gallery__image"
 						src="/images/evidence/sml-cierre-perdida-ampliada-validado.png"
-						width="1280"
-						height="720"
+						width="314"
+						height="445"
 						loading="lazy"
 						decoding="async"
-						alt="Gráfico y panel tevsys tras el cierre: STOP por pérdida diaria con SML activo, límite ampliado visible y protección hasta fin del día."
+						alt="Panel tevsys tras el cierre: STOP por pérdida diaria con SML activo, límites HOY -0,75% a -0,78%, SML ampliado y protegido hasta fin del día."
 					/>
 				</a>
 				<figcaption class="feature-sml-panel__caption">
-					Captura de <strong>cuenta real</strong> (mayo 2026). Estado tras el cierre automático — no es asesoramiento ni promesa de resultados. La interfaz puede evolucionar mientras cerramos pruebas.
+					Captura de <strong>cuenta real</strong> (mayo 2026), solo panel — sin ruido del gráfico. Estado tras el cierre automático. No es asesoramiento ni promesa de resultados.
 				</figcaption>
 			</figure>
 			<p class="sml-proof-note">
@@ -244,9 +244,8 @@ const seo = {
 	.feature-sml-panel__figure--wide {
 		max-width: min(100%, 64rem);
 	}
-	.feature-sml-panel__figure--wide .proof-gallery__image {
-		/* No escalar por encima del ancho real del PNG (evita “borrosidad” por upscale en página). */
-		max-width: min(100%, 1024px);
+	.feature-sml-panel__figure .proof-gallery__image {
+		max-width: min(100%, 314px);
 		margin-inline: auto;
 	}
 	.feature-sml-proof--demo-flow {
