@@ -5,7 +5,7 @@ import Layout from '../../layouts/Page.astro';
 const seo = {
 	title: 'SML | tevsys',
 	description:
-		'SML (Smart Money Lock): bonus opcional desde la ganancia de ayer para ampliar el margen permitido, solo con tu clic. Advanced/Pro en validación; panel demo documentado.',
+		'SML (Smart Money Lock): bonus opcional desde la ganancia de ayer para ampliar el margen permitido, solo con tu clic. Validación en curso con evidencia en ganancia y en pérdida ampliada (Advanced/Pro).',
 };
 ---
 
@@ -57,57 +57,42 @@ const seo = {
 		<section class="feature-demo feature-demo--sml-check">
 			<h2>SML en marcha: evidencia documentada</h2>
 			<ul class="sml-checklist">
-				<li><strong>Operativa 4.79:</strong> primera validación documentada con SML activo (10%), cierre en ganancia y flujo estable.</li>
-				<li><strong>Operativa 4.81:</strong> validación de cierre en pérdida ampliada con SML activo (límite ampliado, trigger en logs y cierre final coherente).</li>
-				<li>Convivencia medible con límites diarios, semanales y días OFF en la misma cuenta.</li>
+				<li><strong>Cierre con SML en ganancia:</strong> flujo estable con bonus activo y parada al límite pactado — contrastado con panel, informe MT5 y trazas internas.</li>
+				<li><strong>Cierre con SML en pérdida ampliada:</strong> el margen de pérdida del día se amplía solo con SML activo; la protección dispara al superar ese techo ampliado, no en el límite base sin bonus.</li>
+				<li><strong>Misma cuenta, mismas reglas:</strong> convive con límites diarios, semanales y días OFF sin mezclar mensajes en pantalla.</li>
 			</ul>
 			<p class="sml-status">
-				No hablamos en abstracto: estas operativas ya están trazadas con panel, informe MT5 y logs. Iteramos con evidencia real, no con promesas.
+				Esta página recoge <strong>avances que ya podemos enseñar</strong>, no un catálogo interno. El detalle técnico completo queda en documentación de producto, no en números de seguimiento.
 			</p>
 			<p class="sml-status">
-				Seguimos en <strong>última fase de validación</strong>. No vendemos 100% cerrado hasta terminar escenarios pendientes: <strong>solo lo que el build demuestre</strong>.
+				Seguimos en <strong>fase de validación</strong> (Advanced/Pro). No prometemos el 100% de escenarios hasta cerrarlos en terminal: <strong>solo lo que el build demuestre</strong>.
 			</p>
 		</section>
 
 		<section class="feature-sml-proof" aria-labelledby="sml-proof-title">
 			<div class="feature-sml-panel__title">
 				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2 id="sml-proof-title">Flujo real 4.81 (antes y después)</h2>
+				<h2 id="sml-proof-title">Validado al cerrar en pérdida ampliada</h2>
 			</div>
-			<div class="sml-proof-grid">
-				<figure class="sml-proof-card">
-					<img
-						src="/images/evidence/sml-481-step-01-activacion.png"
-						alt="Antes de activar SML: modal de confirmación y panel con límite ampliado visible."
-						loading="lazy"
-						decoding="async"
-					/>
-					<figcaption><strong>Paso 1 — Activación:</strong> se ve el límite ampliado (`-1,50% -> -1,61%`) antes de ejecutar.</figcaption>
-				</figure>
-				<figure class="sml-proof-card">
-					<img
-						src="/images/evidence/sml-481-step-02-cierre.png"
-						alt="Resultado final con SML activo: STOP por pérdida diaria alcanzada."
-						loading="lazy"
-						decoding="async"
-					/>
-					<figcaption><strong>Paso 2 — Cierre final:</strong> STOP ejecutado con SML activo y cuenta protegida.</figcaption>
-				</figure>
-				<figure class="sml-proof-card">
-					<img
-						src="/images/evidence/sml-481-step-03-estado-sml-on.png"
-						alt="Estado del panel con SML activo en la línea principal y límites ampliados."
-						loading="lazy"
-						decoding="async"
-					/>
-					<figcaption><strong>Paso 3 — Estado visible y control:</strong> panel y línea principal reflejan `SML ON`, y el modal muestra que en estado de bloqueo los cambios de inputs quedan protegidos/ignorados.</figcaption>
-				</figure>
-			</div>
-			<p class="sml-proof-note">
-				<strong>¿Por qué `-1,61%` y `-1,58%` no coinciden exactamente?</strong> El `-1,61%` es el umbral que activa la protección ampliada. El `-1,58%` es el resultado final que queda tras ejecutar el cierre en mercado real.
+			<p class="feature-sml-panel__lead">
+				Tras validar cierres con SML en jornadas positivas, documentamos el escenario que más importa al operador: <strong>pérdida diaria con margen ampliado</strong> — límite base, flecha al ampliado, <strong>SML activo</strong>, STOP en gráfico y panel, y cuenta bloqueada hasta fin de sesión.
 			</p>
-			<p class="sml-proof-tech">
-				Si quieres validar el disparo técnico, añadiremos aquí una captura del log interno con el momento exacto de activación y cierre.
+			<figure class="feature-sml-panel__figure feature-sml-panel__figure--wide">
+				<img
+					class="feature-sml-panel__img"
+					src="/images/evidence/sml-cierre-perdida-ampliada-validado.png"
+					width="1280"
+					height="720"
+					loading="lazy"
+					decoding="async"
+					alt="Gráfico y panel tevsys tras el cierre: STOP por pérdida diaria con SML activo, límite ampliado visible y protección hasta fin del día."
+				/>
+				<figcaption class="feature-sml-panel__caption">
+					Captura de <strong>cuenta real</strong> (mayo 2026). Estado tras el cierre automático — no es asesoramiento ni promesa de resultados. La interfaz puede evolucionar mientras cerramos pruebas.
+				</figcaption>
+			</figure>
+			<p class="sml-proof-note">
+				<strong>¿Por qué el porcentaje del STOP y el del día no tienen que coincidir al céntimo?</strong> El sistema corta al tocar el <strong>techo ampliado</strong> en mercado; el resultado del día puede quedar un tick por debajo o por encima — mismo patrón que en el resto de cierres documentados de tevsys.
 			</p>
 		</section>
 
@@ -161,6 +146,9 @@ const seo = {
 		margin: 1rem 0 0;
 		padding: 0;
 		max-width: min(100%, 28rem);
+	}
+	.feature-sml-panel__figure--wide {
+		max-width: min(100%, 52rem);
 	}
 	.feature-sml-panel__img {
 		display: block;
