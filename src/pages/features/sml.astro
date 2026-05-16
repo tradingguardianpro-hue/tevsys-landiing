@@ -114,6 +114,82 @@ const seo = {
 			</p>
 		</section>
 
+		<section class="feature-sml-proof feature-sml-proof--demo-flow" aria-labelledby="sml-demo-flow-title">
+			<div class="feature-sml-panel__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2 id="sml-demo-flow-title">En demo: activación, cierre y estado SML</h2>
+			</div>
+			<p class="feature-sml-panel__lead">
+				Tres momentos del mismo flujo en <strong>cuenta demo</strong> (validación previa): ver el límite ampliado antes de aplicar, el resultado al cerrar y el panel con <strong>SML activo</strong> tras la protección.
+			</p>
+			<p class="proof-gallery__hint">Haz clic en cada captura para verla en tamaño completo.</p>
+			<div class="sml-proof-grid">
+				<figure class="sml-proof-card">
+					<a
+						class="proof-gallery__zoom"
+						href="/images/evidence/sml-481-step-01-activacion.png"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Abrir captura paso 1 activación SML en tamaño completo"
+					>
+						<img
+							class="proof-gallery__image"
+							src="/images/evidence/sml-481-step-01-activacion.png"
+							width="905"
+							height="809"
+							alt="Antes de activar SML: modal de confirmación y panel con límite ampliado visible."
+							loading="lazy"
+							decoding="async"
+						/>
+					</a>
+					<figcaption><strong>Paso 1 — Activación:</strong> límite ampliado visible antes de aplicar el bonus.</figcaption>
+				</figure>
+				<figure class="sml-proof-card">
+					<a
+						class="proof-gallery__zoom"
+						href="/images/evidence/sml-481-step-02-cierre.png"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Abrir captura paso 2 cierre SML en tamaño completo"
+					>
+						<img
+							class="proof-gallery__image"
+							src="/images/evidence/sml-481-step-02-cierre.png"
+							width="424"
+							height="599"
+							alt="Resultado final con SML activo tras el cierre en pérdida ampliada."
+							loading="lazy"
+							decoding="async"
+						/>
+					</a>
+					<figcaption><strong>Paso 2 — Cierre:</strong> resultado del día tras disparar en el techo ampliado.</figcaption>
+				</figure>
+				<figure class="sml-proof-card">
+					<a
+						class="proof-gallery__zoom"
+						href="/images/evidence/sml-481-step-03-estado-sml-on.png"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Abrir captura paso 3 estado SML ON en tamaño completo"
+					>
+						<img
+							class="proof-gallery__image"
+							src="/images/evidence/sml-481-step-03-estado-sml-on.png"
+							width="860"
+							height="738"
+							alt="Panel con SML activo y protección hasta fin de sesión tras el cierre."
+							loading="lazy"
+							decoding="async"
+						/>
+					</a>
+					<figcaption><strong>Paso 3 — Estado SML ON:</strong> cuenta protegida hasta fin de sesión.</figcaption>
+				</figure>
+			</div>
+			<p class="sml-proof-note">
+				En demo, el techo ampliado y el cierre final pueden diferir ligeramente (mismo patrón que en el resto de cierres tevsys a mercado).
+			</p>
+		</section>
+
 		<section class="feature-cta">
 			<h2>¿Quieres validar SML para Advanced/Pro?</h2>
 			<p>Te mostramos el estado de validación y los escenarios que puedes contrastar con tus límites reales (Advanced/Pro, lista de espera).</p>
@@ -166,7 +242,18 @@ const seo = {
 		max-width: min(100%, 28rem);
 	}
 	.feature-sml-panel__figure--wide {
-		max-width: min(100%, 52rem);
+		max-width: min(100%, 64rem);
+	}
+	.feature-sml-panel__figure--wide .proof-gallery__image {
+		/* No escalar por encima del ancho real del PNG (evita “borrosidad” por upscale en página). */
+		max-width: min(100%, 1024px);
+		margin-inline: auto;
+	}
+	.feature-sml-proof--demo-flow {
+		margin-top: clamp(2rem, 5vw, 3.25rem);
+	}
+	.sml-proof-card .proof-gallery__zoom {
+		border-radius: 0.35rem;
 	}
 	.proof-gallery__hint {
 		margin: 0 0 0.65rem;
