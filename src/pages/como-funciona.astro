@@ -14,7 +14,7 @@ const presentationLeadVideo = {
 	partLabel: 'Evidencia',
 	title: 'Nasdaq 100 — sesión real (3:53)',
 	blurb:
-		'Onboarding, límites, operación en apertura Wall Street, cierre al -1 %, HyperClose e informe MT5. Vídeo editado; misma sesión verificable.',
+		'Tu límite, el cierre real, HyperClose y el informe en una sola sesión. Contrástalo en MT5.',
 	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4',
 };
 
@@ -521,17 +521,43 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 <script is:inline>
 	(() => {
 		const details = document.getElementById('how-videoteca-clips-more');
-		if (!details) return;
-		const openIfNeeded = () => {
-			const hash = window.location.hash;
-			if (!hash || !hash.startsWith('#videoclip-')) return;
-			const target = document.querySelector(hash);
-			if (!target) return;
-			if (!target.closest('#how-videoteca-clips-more')) return;
-			if (!details.open) details.open = true;
+		if (details) {
+			const openIfNeeded = () => {
+				const hash = window.location.hash;
+				if (!hash || !hash.startsWith('#videoclip-')) return;
+				const target = document.querySelector(hash);
+				if (!target) return;
+				if (!target.closest('#how-videoteca-clips-more')) return;
+				if (!details.open) details.open = true;
+			};
+			openIfNeeded();
+			window.addEventListener('hashchange', openIfNeeded);
+		}
+
+		const params = new URLSearchParams(window.location.search);
+		if (params.get('play') !== '1') return;
+
+		const video = document.getElementById('evidencia-nasdaq-100-video');
+		const anchor = document.getElementById('evidencia-nasdaq-100');
+		if (!video || !(video instanceof HTMLVideoElement)) return;
+
+		const scrollToEvidence = () => {
+			(anchor || video).scrollIntoView({ behavior: 'smooth', block: 'start' });
 		};
-		openIfNeeded();
-		window.addEventListener('hashchange', openIfNeeded);
+
+		const tryPlay = () => {
+			scrollToEvidence();
+			const p = video.play();
+			if (p && typeof p.catch === 'function') {
+				p.catch(() => {
+					video.muted = true;
+					video.play().catch(() => {});
+				});
+			}
+		};
+
+		if (video.readyState >= 2) tryPlay();
+		else video.addEventListener('loadeddata', tryPlay, { once: true });
 	})();
 </script>
 
