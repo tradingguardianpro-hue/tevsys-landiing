@@ -16,6 +16,7 @@ const presentationLeadVideo = {
 	blurb:
 		'Tu límite, el cierre real, HyperClose y el informe en una sola sesión. Contrástalo en MT5.',
 	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4',
+	youtubeWatch: 'https://youtu.be/4g3xK-gJxH8',
 };
 
 /** Recorrido largo en un solo vídeo: dejar `embedUrl` vacío hasta tener URL YouTube (nocookie/embed). Opcional `watchHref` para “Abrir en YouTube”. */
@@ -136,6 +137,13 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 								<p class="how-eyebrow">{presentationLeadVideo.partLabel}</p>
 								<h3>{presentationLeadVideo.title}</h3>
 								<p class="how-block-lead">{presentationLeadVideo.blurb}</p>
+								<a
+									href={presentationLeadVideo.youtubeWatch}
+									class="how-text-link how-text-link--presentation-yt"
+									target="_blank"
+									rel="noopener noreferrer">
+									Abrir en YouTube →
+								</a>
 							</header>
 							<div class="how-embed how-embed--chrome">
 								<video
