@@ -464,24 +464,42 @@ const seo = {
 		position: relative;
 	}
 	.hyperclose-multichart {
-		margin: 0 0 clamp(1.35rem, 3.6vw, 2.1rem);
+		margin: 0 0 clamp(1rem, 2.8vw, 1.5rem);
 		max-width: 52ch;
+		padding-bottom: clamp(0.6rem, 1.8vw, 0.85rem);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	}
+	html[data-theme='light'] .hyperclose-multichart {
+		border-bottom-color: rgba(0, 0, 0, 0.08);
 	}
 	.hyperclose-multichart__lead {
-		margin: 0 0 0.5rem;
-		align-items: center;
-		gap: 0.35rem;
+		margin: 0 0 0.35rem;
+		align-items: flex-start;
+		gap: 0.4rem;
+		font-size: clamp(0.92rem, 2.1vw, 0.98rem);
+		font-style: normal;
+		font-weight: 500;
+		opacity: 0.82;
+		line-height: 1.45;
 	}
 	.hyperclose-multichart__lead .feature-hook__dot {
-		margin-top: 0;
+		margin-top: 0.32rem;
+		width: 0.35rem;
+		height: 0.35rem;
+		opacity: 0.85;
 	}
 	.hyperclose-multichart__sub {
 		margin: 0;
-		padding-left: calc(0.45rem + 0.5rem);
-		font-style: italic;
-		font-weight: 600;
-		opacity: 0.9;
-		line-height: 1.55;
+		padding-left: calc(0.35rem + 0.4rem);
+		font-size: clamp(0.8rem, 1.85vw, 0.86rem);
+		font-style: normal;
+		font-weight: 400;
+		opacity: 0.62;
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+	}
+	html[data-theme='light'] .hyperclose-multichart__sub {
+		opacity: 0.68;
 	}
 	.feature-demo--hero::before {
 		content: '';
