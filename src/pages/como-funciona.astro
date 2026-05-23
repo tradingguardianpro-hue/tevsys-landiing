@@ -23,23 +23,23 @@ const presentationLeadVideo = {
 const sessionDocumentation = {
 	id: 'documentacion-sesion-nasdaq',
 	timeline:
-		'15:23 ID · 15:26 bloqueo límites · 15:36 cierre precisión · 15:37–15:38 8× HyperClose · 22:09 fin sesión protegida',
+		'15:23 identificación · 15:26 límites activos · 15:36 cierre al límite · 15:37–15:38 ocho bloqueos con HyperClose · 22:09 cuenta protegida',
 	layers: [
 		{
-			title: 'Vídeo editado',
-			text: 'Onboarding, cierre de precisión (-1 015,30 USD, 15,30 USD de desviación), 8 intentos HyperClose e informe MT5 en pantalla.',
+			title: 'Vídeo',
+			text: 'Instalación y puesta en marcha, cierre al límite pactado (-1 015,30 USD; desviación 15,30 USD), ocho intentos bloqueados y resumen de MT5 en pantalla.',
 		},
 		{
-			title: 'Informe oficial MT5',
-			text: 'Historial de operaciones exportado (misma sesión, mismos cierres).',
+			title: 'Informe de MT5',
+			text: 'Historial de operaciones exportado: mismos cierres y misma sesión.',
 		},
 		{
-			title: 'Estado en panel',
-			text: 'STOP -1,18 % y protección activa hasta fin de semana (captura redactada disponible bajo petición).',
+			title: 'Panel en vivo',
+			text: 'STOP diario en -1,18 % y protección hasta el fin de semana (captura redactada si la pides).',
 		},
 		{
-			title: 'Trazabilidad tevsys',
-			text: 'Registro interno y capa cliente: secuencia de bloqueo, cierre al límite y ocho intentos con cierre inmediato.',
+			title: 'Registro tevsys',
+			text: 'Qué ocurrió y en qué orden: bloqueo de límites, cierre al tope y cada intento posterior.',
 		},
 	],
 };
@@ -183,7 +183,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							</div>
 							<p class="how-doc-session-jump">
 								<a href={`#${sessionDocumentation.id}`} class="how-text-link how-doc-session-jump__link">
-									Cómo está documentada esta sesión →
+									Qué documentación hay detrás de este vídeo →
 								</a>
 							</p>
 						</article>
@@ -200,12 +200,12 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 								<span class="how-present-title__accent">Nasdaq 100 · 10 lotes · -1 %</span>
 							</h3>
 							<p class="how-doc-session__edited">
-								El vídeo está editado para ir a lo esencial. Puede haber saltos en el reloj del PC entre
-								planos; es la misma sesión verificable en MT5 y en las trazas del producto.
+								El vídeo va al grano y recorta tiempos muertos. A veces el reloj del PC salta entre planos;
+								es la misma sesión que puedes contrastar en MT5 y con la documentación que ofrecemos.
 							</p>
 						</header>
 						<p class="how-doc-session__timeline" role="doc-subtitle">
-							<span class="how-doc-session__timeline-label">Línea de tiempo ·</span>
+							<span class="how-doc-session__timeline-label">Orden de la sesión ·</span>
 							{sessionDocumentation.timeline}
 						</p>
 						<ul class="how-doc-session__layers">
@@ -220,12 +220,13 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 						</ul>
 						<div class="how-doc-session__foot">
 							<p class="how-doc-session__note">
-								Trazabilidad de producto (identificador de caso <span class="how-doc-session__mono">TVS-…</span>
-								). No es el servicio de auditoría comercial (próximamente): es transparencia con evidencia
-								real en una cuenta demo concreta.
+								Cada caso lleva un código interno (<span class="how-doc-session__mono">TVS-…</span>). No es un
+								servicio de auditoría de pago (próximamente): mostramos con honestidad cómo quedó documentada
+								una sesión real en cuenta demo.
 							</p>
 							<p class="how-doc-session__offer">
-								Dossier ampliado (informe, trazas y captura) — disponible bajo petición para profesionales.
+								¿Necesitas el pack ampliado (informe, registros y captura)? Escríbenos — lo enviamos a
+								profesionales bajo petición.
 							</p>
 							<div class="how-doc-session__actions">
 								<a href="/company/contact?flow=demo" class="how-side-cta">
@@ -693,7 +694,12 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		border: 0;
 		border-radius: 0;
 		object-fit: contain;
-		background: #000;
+		background: #0a0a0a;
+	}
+
+	/* El MP4 es oscuro: marco y contraste suave para que no se pierda en la página. */
+	html[data-theme='dark'] .how-presentation .how-embed video {
+		filter: brightness(1.06) contrast(1.03);
 	}
 
 	.how-doc-session-jump {
@@ -710,16 +716,20 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		max-width: min(46rem, 100%);
 		margin: clamp(1.35rem, 4vw, 2.25rem) auto 0;
 		padding: clamp(1.15rem, 3.5vw, 1.65rem) clamp(1.1rem, 3vw, 1.5rem);
-		border: 1px solid rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(245, 176, 65, 0.14);
 		border-radius: 2px;
-		background: rgba(255, 255, 255, 0.035);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+		background: rgba(255, 255, 255, 0.065);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.06),
+			0 8px 28px rgba(0, 0, 0, 0.22);
 	}
 
 	html[data-theme='light'] .how-doc-session {
-		background: rgba(0, 0, 0, 0.028);
-		border-color: rgba(0, 0, 0, 0.08);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+		background: rgba(0, 0, 0, 0.04);
+		border-color: rgba(218, 155, 48, 0.22);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.65),
+			0 6px 22px rgba(0, 0, 0, 0.06);
 	}
 
 	.how-doc-session__head {
@@ -774,8 +784,13 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	.how-doc-session__layer {
 		margin: 0 0 0.55rem;
-		font-size: 0.9rem;
-		line-height: 1.48;
+		font-size: 0.94rem;
+		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.86);
+	}
+
+	html[data-theme='light'] .how-doc-session__layer {
+		color: rgba(0, 0, 0, 0.82);
 	}
 
 	.how-doc-session__layer:last-child {
@@ -820,19 +835,23 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		margin-top: 0.85rem;
 	}
 
-	/* Misma familia de marco ámbar que clips/placeholders de abajo (YouTube incrustado). */
+	/* Marco ámbar más visible: el MP4 es oscuro y debe leerse como pieza principal. */
 	html[data-theme='dark'] .how-presentation .how-embed--chrome {
-		border-color: rgba(245, 176, 65, 0.24);
+		border-width: 1px;
+		border-color: rgba(245, 176, 65, 0.45);
 		box-shadow:
-			inset 0 1px 0 rgba(255, 255, 255, 0.05),
-			0 0 0 1px rgba(0, 0, 0, 0.28);
+			inset 0 1px 0 rgba(255, 255, 255, 0.08),
+			0 0 0 1px rgba(0, 0, 0, 0.35),
+			0 0 36px rgba(245, 176, 65, 0.14),
+			0 14px 44px rgba(0, 0, 0, 0.5);
 	}
 
 	html[data-theme='light'] .how-presentation .how-embed--chrome {
-		border-color: rgba(218, 155, 48, 0.3);
+		border-color: rgba(218, 155, 48, 0.42);
 		box-shadow:
 			inset 0 1px 0 rgba(255, 255, 255, 0.88),
-			0 4px 18px rgba(0, 0, 0, 0.06);
+			0 0 24px rgba(218, 155, 48, 0.12),
+			0 8px 28px rgba(0, 0, 0, 0.1);
 	}
 
 	.how-intro-stage--stage {
