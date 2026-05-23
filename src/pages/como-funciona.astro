@@ -8,7 +8,7 @@ const seo = {
 		'Presentación, De cero a protegido y Siguiente nivel: precisión, HyperClose, SML y evidencia en vídeo. Cómo funciona tevsys en MT5.',
 };
 
-/** Vídeo inicial (may 2026): evidencia Nasdaq 3:53 — sustituye Parte 1 YouTube. Parte 2 se mantiene. */
+/** Vídeo único de presentación (may 2026): evidencia Nasdaq ~3:53. */
 const presentationLeadVideo = {
 	id: 'evidencia-nasdaq-100',
 	partLabel: 'Evidencia',
@@ -17,16 +17,6 @@ const presentationLeadVideo = {
 		'Onboarding, límites, operación en apertura Wall Street, cierre al -1 %, HyperClose e informe MT5. Vídeo editado; misma sesión verificable.',
 	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4',
 };
-
-const presentationParts = [
-	{
-		partLabel: 'Parte 2',
-		title: 'Cierre al límite y evidencia MT5 (~2:22)',
-		blurb: 'Límite configurado por ti, cierre y contraste en terminal.',
-		embed: 'https://www.youtube-nocookie.com/embed/QU1hC6SKg10',
-		href: 'https://youtu.be/QU1hC6SKg10',
-	},
-];
 
 /** Recorrido largo en un solo vídeo: dejar `embedUrl` vacío hasta tener URL YouTube (nocookie/embed). Opcional `watchHref` para “Abrir en YouTube”. */
 const zeroToProtected = {
@@ -132,7 +122,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					<header class="how-section-head">
 						<p class="how-eyebrow how-eyebrow--center">Presentación</p>
 						<h2 id="how-presentation-title">
-							Dos partes, <span class="how-present-title__accent">misma historia</span>
+							Cuatro minutos de <span class="how-present-title__accent">sesión real en MT5</span>
 						</h2>
 						<p class="how-section-sub">
 							Te enseñamos el producto en marcha y por qué la gente habla de precisión y evidencia.
@@ -140,7 +130,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							<span class="how-section-sub__line2">Contrasta tú mismo.</span>
 						</p>
 					</header>
-					<div class="how-pair-grid">
+					<div class="how-pair-grid how-pair-grid--single">
 						<article class="how-pair-cell" id={presentationLeadVideo.id}>
 							<header class="how-block-head how-block-head--compact">
 								<p class="how-eyebrow">{presentationLeadVideo.partLabel}</p>
@@ -159,34 +149,6 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 								</video>
 							</div>
 						</article>
-						{
-							presentationParts.map((p, i) => (
-								<article class="how-pair-cell">
-									<header class="how-block-head how-block-head--compact">
-										<p class="how-eyebrow">{p.partLabel}</p>
-										<h3>{p.title}</h3>
-										<p class="how-block-lead">{p.blurb}</p>
-										<a
-											href={p.href}
-											class="how-text-link how-text-link--presentation-yt"
-											target="_blank"
-											rel="noopener noreferrer">
-											Abrir en YouTube →
-										</a>
-									</header>
-									<div class="how-embed how-embed--chrome">
-										<iframe
-											src={p.embed}
-											title={p.title}
-											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-											allowfullscreen
-											loading={i === 0 ? 'lazy' : 'lazy'}
-											referrerpolicy="strict-origin-when-cross-origin"
-										></iframe>
-									</div>
-								</article>
-							))
-						}
 					</div>
 				</section>
 			</div>
@@ -2980,6 +2942,12 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		gap: clamp(2.35rem, 6vw, 3.25rem) clamp(1.5rem, 3.5vw, 2rem);
 		align-items: start;
 		padding-top: clamp(0.5rem, 2.5vw, 1.35rem);
+	}
+
+	.how-pair-grid--single {
+		grid-template-columns: minmax(0, 1fr);
+		max-width: min(920px, 100%);
+		margin-inline: auto;
 	}
 
 	.how-pair-cell {
