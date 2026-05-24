@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — h2 sección cards: deslizamiento al límite (may 2026)
+
+- **Título:** `¿Cuánto has perdido por no parar a tiempo — y por deslizamiento al límite?` (sustituye *¿Cuánto dinero has perdido por no parar a tiempo?*).
+- **Archivo:** `src/pages/index.astro` — clase `feature-section__title`; párrafo hook y checklist sin cambio.
+- **Criterio:** unir dolor disciplina (HyperClose) + cierre al límite (precisión) en una sola pregunta; sin mencionar “comisiones” en el h2 (siguen en card 0,06 %).
+
+---
+
 ## `/como-funciona` — Precisión puente: MP4 hero micro + capítulo auditoría reforzado (may 2026)
 
 - **Card Precisión:** `featureVideoSrc` = **`/videos/features/evidencia-100k-perdida.mp4`** (primer embed grande en `/features/precision`), ya no `precision-demo-volatilidad.mp4`.
