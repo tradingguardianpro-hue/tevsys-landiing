@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Contador operativas 87 (4 jun 2026)
+
+- **Fuente:** `docs/PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP) — pareja **4.86** FTMO + **4.87** IC Markets.
+- **Web:** `settings.js` (meta description), `index.astro` (card Precisión), `features/precision.astro` (hook), `features/evidencia.astro` (bloque auditoría); espejo `docs/CONTENIDO_WEB_TEVSYS_LANDING.md`, `docs/SEO_ANALYTICS_TEVSYS.md`, `docs/PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`.
+
+---
+
 ## Home — h2 sección cards: deslizamiento al límite (may 2026)
 
 - **Título:** `¿Cuánto has perdido por no parar a tiempo — y por deslizamiento al límite?` (sustituye *¿Cuánto dinero has perdido por no parar a tiempo?*).

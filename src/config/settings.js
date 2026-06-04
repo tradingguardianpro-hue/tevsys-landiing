@@ -1,6 +1,6 @@
 export default {
   title: "tevsys — Disciplina verificada, precisión de cierre y gestión de riesgo · MT5",
-  description: "Disciplina en el trading automatizada. Plataforma para MetaTrader 5: límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 80 operativas con evidencia verificable. Para traders, prop firms y auditorías.",
+  description: "Disciplina en el trading automatizada. Plataforma para MetaTrader 5: límites de pérdida y ganancia que se cumplen. Cierre preciso documentado. 87 operativas con evidencia verificable. Para traders, prop firms y auditorías.",
   url: "https://www.tevsys.io",
   name: "tevsys",
   enableThemeSwitcher: false,
