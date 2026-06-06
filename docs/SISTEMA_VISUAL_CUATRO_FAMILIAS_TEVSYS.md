@@ -69,7 +69,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | Familia | Estado | Notas |
 |---------|--------|--------|
 | **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS compartido `guia-operativa.css` · cuatro URLs alineadas · avisos cruce debajo del vídeo · sin CTA demo · copy lectura = borrador (revisión fundador pendiente). |
-| **A — Producto** | **Canon cerrado (HyperClose)** | Validado jun 2026. Replicar checklist A en Precisión, SML, Evidencia · cards home. Referencia: `hyperclose.astro` + `global.css`. |
+| **A — Producto** | **Cerrada (canon HyperClose)** | Validado jun 2026 — fundador. Replicar checklist en Precisión, SML, Evidencia · cards home. |
 | **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable en producción; falta **documentar criterio** como C y A (motion, stages — no copiar en guías). |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
 | **Footer** | **Pendiente** | Momento dedicado **antes** de expandir Familia A a todas las cards home. |
@@ -106,7 +106,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 5. CTA demo al final.
 6. **Sin** losas grises bajo cada vídeo secundario; **sin** repetir el hero en párrafos largos.
 
-**Hook demo HyperClose (canon copy):** `15 lotes · GER40 · límite −1 % · desviación 1,31 € · Apertura Wall Street · HyperClose en 3 niveles.` — la cifra va **encima del embed**, no enterrada en acordeón. Caso Nasdaq (+506 USD / pre-market) vive en **Precisión**, no duplicar aquí.
+**Hook demo HyperClose (canon copy):** `15 lotes · GER40 · límite −1 % · desviación 1,31 € · Apertura Wall Street · HyperClose en 3 niveles.` — cifra y «HyperClose en 3 niveles» en **ámbar** (`feature-title__accent`); encima del embed.
 
 **No copiar en:** guías operativas (demasiado marketing).
 
