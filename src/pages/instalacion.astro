@@ -13,6 +13,7 @@ const guiasConfiguracion = [
 		label: 'Essential',
 		title: 'Configuración',
 		href: '/configuracion',
+		primary: true,
 	},
 	{
 		label: 'Advanced / Pro',
@@ -36,7 +37,8 @@ const bloquesLectura = [
 		n: 2,
 		title: 'Prepara MT5',
 		detail:
-			'Herramientas → Opciones → Asesores Expertos: activa trading algorítmico y WebRequest. Añade https://tevsys.io (sin barra final). El vídeo lo muestra paso a paso.',
+			'Herramientas → Opciones → Asesores Expertos: activa trading algorítmico y WebRequest.',
+		urlLine: 'Añade https://tevsys.io en la lista (sin barra final). El vídeo lo muestra paso a paso.',
 	},
 	{
 		n: 3,
@@ -47,78 +49,99 @@ const bloquesLectura = [
 ];
 ---
 
-<Layout seo={seo}>
+<Layout seo={seo} bodyClass="page-guia-instalacion">
 	<Container>
-		<section class="feature-hero">
-			<p class="feature-kicker">Guía de instalación</p>
-			<h1>Cómo instalar tevsys en MT5</h1>
-			<p class="feature-hook">
-				<span class="feature-hook__dot" aria-hidden="true"></span>Vídeo 1:24 — del enlace del email al EA en el gráfico.
-			</p>
-			<p class="feature-lead feature-lead--note">
-				<strong>WebRequest</strong> (<code>https://tevsys.io</code>): recomendable en demo para no repetir el paso al
-				comprar · <strong>obligatorio</strong> con licencia de pago (validación de clave).
-			</p>
-		</section>
+		<div class="guia-instalacion">
+			<section class="feature-hero guia-hero">
+				<p class="guia-eyebrow">Guía de instalación</p>
+				<h1>Cómo instalar tevsys en MT5</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>Vídeo 1:24 — del enlace del email al EA en el gráfico.
+				</p>
+				<p class="guia-note-box">
+					<strong>WebRequest</strong> (<code>https://tevsys.io</code>): recomendable en demo para no repetir el paso al
+					comprar · <strong>obligatorio</strong> con licencia de pago (validación de clave).
+				</p>
+			</section>
 
-		<section id="instalacion-video" class="feature-demo feature-demo--video">
-			<div class="feature-demo__title">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2>Instalación rápida</h2>
-			</div>
-			<div class="demo-video demo-video--instalacion" id="instalacion-demo-container">
-				<video id="instalacion-demo-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/instalacion-demo.mp4?v=20260605webreq" type="video/mp4" />
-					Tu navegador no soporta reproducción de video HTML5.
-				</video>
-			</div>
-		</section>
+			<section id="instalacion-video" class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">Vídeo</p>
+						<h2>Instalación rápida</h2>
+					</header>
+					<div class="guia-embed guia-embed--chrome" id="instalacion-demo-container">
+						<video id="instalacion-demo-video" controls preload="metadata" playsinline>
+							<source src="/videos/features/instalacion-demo.mp4?v=20260605webreq" type="video/mp4" />
+							Tu navegador no soporta reproducción de video HTML5.
+						</video>
+					</div>
+				</div>
+			</section>
 
-		<section class="feature-proof feature-proof--compact">
-			<h2>Si prefieres leer</h2>
-			<p class="instalacion-read-intro">Apoyo al vídeo — tres bloques, mismo orden.</p>
-			<ol class="instalacion-phase-list">
-				{
-					bloquesLectura.map((bloque) => (
-						<li>
-							<div class="instalacion-phase">
-								<span class="instalacion-phase__n">{bloque.n}</span>
-								<div class="instalacion-phase__body">
-									<strong class="instalacion-phase__title">{bloque.title}</strong>
-									<p class="instalacion-phase__detail">{bloque.detail}</p>
-								</div>
-							</div>
-						</li>
-					))
-				}
-			</ol>
-		</section>
+			<section class="guia-read-panel">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Apoyo al vídeo</p>
+					<h2>Si prefieres leer</h2>
+					<p class="guia-section-sub">Tres bloques, mismo orden.</p>
+				</header>
+				<ol class="guia-phase-list">
+					{
+						bloquesLectura.map((bloque) => (
+							<li>
+								<article class="guia-phase-card">
+									<span class="guia-phase-card__n">{bloque.n}</span>
+									<div class="guia-phase-card__body">
+										<h3 class="guia-phase-card__title">{bloque.title}</h3>
+										<p class="guia-phase-card__detail">{bloque.detail}</p>
+										{bloque.urlLine && (
+											<p class="guia-phase-card__url">
+												{bloque.urlLine.split('https://tevsys.io')[0]}
+												<code>https://tevsys.io</code>
+												{bloque.urlLine.split('https://tevsys.io')[1]}
+											</p>
+										)}
+									</div>
+								</article>
+							</li>
+						))
+					}
+				</ol>
+			</section>
 
-		<section id="configuracion" class="feature-demo feature-demo--next">
-			<h2>Siguiente paso — Configuración</h2>
-			<p class="feature-demo-hook">
-				Con el EA en el gráfico verás la bienvenida y el panel. Elige la guía según tu plan y el día:
-			</p>
-			<ul class="guia-fork-list">
-				{
-					guiasConfiguracion.map((guia) => (
-						<li>
-							<a href={guia.href} class="guia-fork-link">
-								<span class="guia-fork-link__label">{guia.label}</span>
-								<span class="guia-fork-link__title">{guia.title}</span>
-								<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
+			<section id="configuracion" class="guia-fork-panel">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Después de instalar</p>
+					<h2>Siguiente paso — Configuración</h2>
+					<p class="guia-section-sub">
+						Con el EA en el gráfico verás la bienvenida y el panel. Elige según tu plan y el día:
+					</p>
+				</header>
+				<ul class="guia-fork-list">
+					{
+						guiasConfiguracion.map((guia) => (
+							<li>
+								<a
+									href={guia.href}
+									class:list={['guia-fork-link', guia.primary && 'guia-fork-link--primary']}
+								>
+									<span class="guia-fork-link__label">{guia.label}</span>
+									<span class="guia-fork-link__title">{guia.title}</span>
+									<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
 
-		<section class="feature-cta">
-			<h2>¿Necesitas la demo?</h2>
-			<p>Rellena el formulario y te enviamos el enlace de descarga + esta guía.</p>
-			<a href="/company/contact?flow=demo" class="feature-cta__button">Solicitar demo</a>
-		</section>
+			<section class="feature-cta guia-cta">
+				<h2>¿Necesitas la demo?</h2>
+				<p>Rellena el formulario y te enviamos el enlace de descarga + esta guía.</p>
+				<a href="/company/contact?flow=demo" class="feature-cta__button">Solicitar demo</a>
+			</section>
+		</div>
 	</Container>
 </Layout>
 
@@ -127,37 +150,57 @@ const bloquesLectura = [
 		const video = document.getElementById('instalacion-demo-video');
 		const container = document.getElementById('instalacion-demo-container');
 		if (!video || !container) return;
-		video.addEventListener('play', () => container.classList.add('demo-video--playing'));
-		video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+		video.addEventListener('play', () => container.classList.add('guia-embed--playing'));
+		video.addEventListener('ended', () => container.classList.remove('guia-embed--playing'));
 	}
 	document.addEventListener('DOMContentLoaded', initDemoExpand);
 </script>
 
 <style>
-	.feature-hero,
-	.feature-demo,
-	.feature-proof,
-	.feature-cta {
+	.guia-instalacion {
+		max-width: min(56rem, 100%);
+		margin-inline: auto;
+	}
+
+	.guia-hero,
+	.guia-video-panel,
+	.guia-read-panel,
+	.guia-fork-panel,
+	.guia-cta {
 		margin: var(--section-margin) auto;
 	}
-	.feature-kicker {
-		margin: 0 0 0.35rem;
-		opacity: 0.8;
+
+	.guia-eyebrow {
+		margin: 0 0 0.45rem;
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-size: 0.82rem;
+		opacity: 0.72;
+		color: rgba(245, 176, 65, 0.92);
 	}
+
+	html[data-theme='dark'] .guia-eyebrow {
+		opacity: 0.88;
+		color: rgba(244, 246, 248, 0.82);
+	}
+
+	.guia-hero h1 {
+		margin: 0 0 0.65rem;
+	}
+
 	.feature-hook {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
 		font-style: italic;
 		font-weight: 600;
-		opacity: 0.9;
+		opacity: 0.92;
 		margin: 0 0 0.85rem;
 		max-width: 52ch;
 		line-height: 1.45;
 	}
+
 	.feature-hook__dot {
 		width: 0.45rem;
 		height: 0.45rem;
@@ -165,143 +208,273 @@ const bloquesLectura = [
 		background: #f5b041;
 		flex-shrink: 0;
 	}
-	.feature-lead--note {
+
+	.guia-note-box {
 		margin: 0;
-		padding: 0.75rem 0.9rem;
-		border-radius: 0.5rem;
-		border: 1px solid rgba(245, 176, 65, 0.35);
-		background: rgba(245, 176, 65, 0.06);
+		padding: 0.75rem 0.95rem;
+		border-radius: 0.55rem;
+		border: 1px solid rgba(245, 176, 65, 0.38);
+		background: rgba(245, 176, 65, 0.08);
 		font-size: 0.98rem;
 		max-width: 70ch;
 		line-height: 1.55;
 	}
-	.feature-lead--note code {
-		background: rgba(0, 0, 0, 0.25);
+
+	html[data-theme='dark'] .guia-note-box {
+		background: rgba(54, 58, 70, 0.55);
+		border-color: rgba(245, 176, 65, 0.42);
+		color: rgba(244, 246, 248, 0.94);
+	}
+
+	.guia-note-box code {
+		background: rgba(0, 0, 0, 0.28);
 		padding: 0.1rem 0.35rem;
 		border-radius: 0.25rem;
 		font-size: 0.88em;
 	}
-	.feature-demo__title {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin: 0 0 0.85rem;
+
+	.guia-section-head {
+		margin-bottom: 1rem;
 	}
-	.feature-demo__title h2 {
+
+	.guia-section-head h2 {
+		margin: 0 0 0.35rem;
+		font-size: clamp(1.2rem, 2.5vw, 1.35rem);
+		line-height: 1.28;
+	}
+
+	html[data-theme='dark'] .guia-section-head h2 {
+		color: rgba(255, 255, 255, 0.98);
+	}
+
+	.guia-section-sub {
 		margin: 0;
-		font-size: 1.35rem;
+		font-size: 0.94rem;
+		line-height: 1.45;
+		opacity: 0.88;
+		max-width: 48ch;
 	}
-	.feature-demo h2,
-	.feature-proof h2,
-	.feature-cta h2 {
-		margin: 0 0 0.75rem;
-		font-size: 1.35rem;
+
+	html[data-theme='dark'] .guia-section-sub {
+		color: rgba(230, 233, 240, 0.88);
+		opacity: 1;
 	}
-	.feature-demo--video {
-		max-width: 640px;
+
+	/* Vídeo: halo estático (inteligencia visual /como-funciona, sin stages ni barridos) */
+	.guia-video-panel {
+		position: relative;
+		padding: clamp(1rem, 3vw, 1.35rem) 0;
 	}
-	.feature-demo-hook {
-		margin: 0 0 0.75rem;
-		opacity: 0.9;
-		max-width: 52ch;
-		line-height: 1.5;
+
+	.guia-video-panel__halo {
+		position: absolute;
+		inset: -0.5rem -1rem;
+		border-radius: clamp(1rem, 3vw, 1.75rem);
+		background: radial-gradient(
+			ellipse 85% 70% at 50% 42%,
+			rgba(245, 176, 65, 0.11) 0%,
+			rgba(245, 176, 65, 0.03) 45%,
+			transparent 72%
+		);
+		pointer-events: none;
 	}
-	.demo-video--instalacion {
-		outline: 1px solid rgba(245, 176, 65, 0.22);
-		outline-offset: 4px;
+
+	.guia-video-panel__inner {
+		position: relative;
+		max-width: min(920px, 100%);
+	}
+
+	.guia-embed {
 		border-radius: var(--theme-shape-radius);
+		overflow: hidden;
+		width: 100%;
+		background: #06080d;
 	}
-	.demo-video--instalacion.demo-video--playing {
+
+	.guia-embed--chrome {
+		background: var(--theme-embed-chrome);
+		border: 1px solid var(--theme-embed-chrome-border);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.06),
+			var(--theme-surface-elevated-shadow);
+	}
+
+	html[data-theme='dark'] .guia-embed--chrome {
+		border-color: rgba(245, 176, 65, 0.42);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.08),
+			0 0 0 1px rgba(0, 0, 0, 0.35),
+			0 0 32px rgba(245, 176, 65, 0.12),
+			0 12px 36px rgba(0, 0, 0, 0.45);
+	}
+
+	.guia-embed--chrome.guia-embed--playing {
 		max-width: none;
 	}
-	.feature-proof--compact {
-		max-width: 44rem;
+
+	.guia-embed video {
+		display: block;
+		width: 100%;
+		vertical-align: top;
 	}
-	.instalacion-read-intro {
-		margin: 0 0 0.85rem;
-		font-size: 0.92rem;
-		opacity: 0.72;
-		line-height: 1.45;
-	}
-	.instalacion-phase-list {
+
+	/* Bloques lectura — tarjetas un peldaño más claras (criterio how-more--stage) */
+	.guia-phase-list {
 		list-style: none;
 		padding: 0;
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: 0.8rem;
 	}
-	.instalacion-phase {
+
+	.guia-phase-card {
 		display: flex;
-		gap: 0.85rem;
+		gap: 0.9rem;
 		align-items: flex-start;
-		padding: 0.85rem 1rem;
-		border-radius: 0.5rem;
+		padding: clamp(0.9rem, 2.5vw, 1.05rem) clamp(1rem, 2.8vw, 1.15rem);
+		border-radius: var(--theme-shape-radius);
 		background: var(--theme-surface-1);
-		border: 1px solid rgba(255, 255, 255, 0.06);
-		border-left: 3px solid rgba(245, 176, 65, 0.45);
+		border: 1px solid var(--theme-surface-border);
+		box-shadow: var(--theme-surface-elevated-shadow);
 	}
-	.instalacion-phase__n {
+
+	html[data-theme='dark'] .guia-phase-card {
+		background: rgba(54, 58, 70, 0.94);
+		border-color: rgba(255, 255, 255, 0.12);
+		box-shadow:
+			0 8px 24px rgba(0, 0, 0, 0.2),
+			inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	}
+
+	.guia-phase-card__n {
 		flex-shrink: 0;
-		width: 1.65rem;
-		height: 1.65rem;
+		width: 1.75rem;
+		height: 1.75rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		border-radius: 50%;
-		background: rgba(245, 176, 65, 0.15);
+		background: rgba(245, 176, 65, 0.18);
 		color: #f5b041;
 		font-weight: 700;
-		font-size: 0.85rem;
+		font-size: 0.88rem;
 	}
-	.instalacion-phase__body {
+
+	.guia-phase-card__body {
 		min-width: 0;
 		flex: 1;
 	}
-	.instalacion-phase__title {
-		display: block;
-		font-size: 1rem;
-		margin-bottom: 0.3rem;
-		line-height: 1.35;
+
+	.guia-phase-card__title {
+		margin: 0 0 0.35rem;
+		font-size: 1.05rem;
+		line-height: 1.3;
+		font-weight: 600;
 	}
-	.instalacion-phase__detail {
+
+	html[data-theme='dark'] .guia-phase-card__title {
+		color: rgba(255, 255, 255, 0.98);
+	}
+
+	.guia-phase-card__detail,
+	.guia-phase-card__url {
 		margin: 0;
-		font-size: 0.92rem;
+		font-size: 0.93rem;
 		line-height: 1.55;
-		opacity: 0.88;
+		opacity: 0.9;
 	}
+
+	html[data-theme='dark'] .guia-phase-card__detail,
+	html[data-theme='dark'] .guia-phase-card__url {
+		color: rgba(244, 246, 248, 0.92);
+		opacity: 1;
+	}
+
+	.guia-phase-card__url {
+		margin-top: 0.45rem;
+	}
+
+	.guia-phase-card__url code {
+		background: rgba(245, 176, 65, 0.12);
+		color: #f5b041;
+		padding: 0.12rem 0.4rem;
+		border-radius: 0.25rem;
+		font-size: 0.9em;
+	}
+
+	/* Fork — enlaces de salida, no otra pila de cajas grises */
+	.guia-fork-panel {
+		padding-top: 0.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+
+	html[data-theme='light'] .guia-fork-panel {
+		border-top-color: rgba(0, 0, 0, 0.08);
+	}
+
 	.guia-fork-list {
 		list-style: none;
 		padding: 0;
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.55rem;
-		max-width: 42rem;
+		gap: 0.5rem;
 	}
+
 	.guia-fork-link {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.35rem 0.65rem;
-		padding: 0.75rem 1rem;
-		border-radius: 0.5rem;
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		background: var(--theme-surface-1);
+		padding: 0.8rem 0.15rem 0.8rem 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 		color: inherit;
 		text-decoration: none;
-		transition: border-color 0.15s ease, color 0.15s ease;
+		transition: color 0.15s ease, border-color 0.15s ease, padding-left 0.15s ease;
 	}
+
+	html[data-theme='light'] .guia-fork-link {
+		border-bottom-color: rgba(0, 0, 0, 0.08);
+	}
+
+	.guia-fork-link:last-child {
+		border-bottom: none;
+	}
+
 	.guia-fork-link:hover {
-		border-color: rgba(245, 176, 65, 0.45);
 		color: #f5b041;
+		padding-left: 0.35rem;
 	}
+
+	.guia-fork-link--primary {
+		padding: 0.85rem 1rem;
+		margin-bottom: 0.35rem;
+		border: 1px solid rgba(245, 176, 65, 0.38);
+		border-radius: 0.55rem;
+		background: rgba(245, 176, 65, 0.06);
+		border-bottom: 1px solid rgba(245, 176, 65, 0.38);
+	}
+
+	html[data-theme='dark'] .guia-fork-link--primary {
+		background: rgba(54, 58, 70, 0.65);
+		border-color: rgba(245, 176, 65, 0.45);
+	}
+
+	.guia-fork-link--primary:hover {
+		padding-left: 1rem;
+		border-color: rgba(245, 176, 65, 0.65);
+	}
+
 	.guia-fork-link__label {
-		font-size: 0.78rem;
-		font-weight: 500;
-		opacity: 0.55;
+		font-size: 0.76rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		opacity: 0.58;
 		flex: 0 0 100%;
 	}
+
 	.guia-fork-link__title {
 		font-weight: 600;
 		font-size: 0.98rem;
@@ -309,31 +482,39 @@ const bloquesLectura = [
 		flex: 1;
 		min-width: 0;
 	}
+
 	.guia-fork-link__arrow {
 		flex-shrink: 0;
-		opacity: 0.55;
-		font-size: 1.1rem;
+		font-size: 1.15rem;
+		color: #f5b041;
+		opacity: 0.75;
+		transition: opacity 0.15s ease, transform 0.15s ease;
 	}
+
 	.guia-fork-link:hover .guia-fork-link__arrow {
 		opacity: 1;
-		color: #f5b041;
+		transform: translateX(2px);
 	}
-	.demo-video {
-		background: #06080d;
-		overflow: hidden;
-	}
-	.demo-video video {
-		display: block;
-		width: 100%;
-	}
-	.feature-cta {
+
+	.guia-cta {
 		background: var(--theme-surface-1);
 		border-radius: var(--theme-shape-radius);
 		padding: 1.2rem;
 		border: 1px solid var(--theme-surface-border);
 		box-shadow: var(--theme-surface-elevated-shadow);
 	}
-	.feature-cta p {
+
+	html[data-theme='dark'] .guia-cta {
+		background: rgba(54, 58, 70, 0.75);
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.guia-cta h2 {
+		margin: 0 0 0.75rem;
+		font-size: 1.35rem;
+	}
+
+	.guia-cta p {
 		margin: 0 0 0.9rem;
 		line-height: 1.5;
 	}
