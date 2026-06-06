@@ -1,0 +1,178 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Configuración fin de semana | tevsys Advanced y Pro',
+	description:
+		'Planifica la semana el sábado o domingo: días ON/OFF, límites y protección programada. El lunes a las 00:00 arranca la protección si guardaste.',
+};
+
+const VIDEO_CACHE_BUST = '20260606';
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="feature-hero">
+			<p class="feature-kicker">Guía fin de semana</p>
+			<h1>Protección programada — configura la semana con calma</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Advanced y Pro · sábado o domingo.</p>
+			<p class="feature-lead">
+				En fin de semana no estás bloqueado: ajustas toda la semana en F7, pulsas <strong>Guardar para el lunes</strong> y confirmas.
+				El <strong>lunes a las 00:00</strong> arranca la protección si guardaste. Puedes reconfigurar las veces que quieras hasta entonces.
+			</p>
+		</section>
+
+		<section id="configuracion-semana-video" class="feature-demo">
+			<h2>Vídeo — Configuración en fin de semana</h2>
+			<p class="config-semana-video-badge" role="status">
+				<span class="config-semana-video-badge__icon" aria-hidden="true">▶</span>
+				<span><strong>Vídeo en esta página</strong> — reproducción bajo este bloque.</span>
+			</p>
+			<p class="feature-demo-hook">2:01 min. Semana L–V, días OFF, guardado programado y reconfiguración.</p>
+			<div class="demo-video demo-video--compact demo-video--config-semana" id="config-semana-demo-container">
+				<video id="config-semana-demo-video" controls preload="metadata">
+					<source
+						src={`/videos/features/configuracion-semana-demo.mp4?v=${VIDEO_CACHE_BUST}`}
+						type="video/mp4"
+					/>
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
+		</section>
+
+		<section class="feature-demo feature-demo--related">
+			<h2>Otras guías</h2>
+			<ul class="config-semana-links">
+				<li><a href="/instalacion">Instalación en MT5</a></li>
+				<li><a href="/configuracion">Configuración Essential (primeros límites)</a></li>
+				<li><a href="/como-funciona#videoclip-preconfig-fin-semana">Clip 30 s — preconfig fin de semana</a></li>
+			</ul>
+		</section>
+
+		<section class="feature-cta">
+			<h2>¿Necesitas demo Advanced o Pro?</h2>
+			<p>Rellena el formulario y te enviamos la demo temporal con clave, instalación y estas guías.</p>
+			<a href="/company/contact?flow=demo" class="feature-cta__button">Solicitar demo</a>
+		</section>
+	</Container>
+</Layout>
+
+<script>
+	function initConfigSemanaDemoExpand() {
+		const video = document.getElementById('config-semana-demo-video');
+		const container = document.getElementById('config-semana-demo-container');
+		if (!video || !container) return;
+		video.addEventListener('play', () => container.classList.add('demo-video--playing'));
+		video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+	}
+	document.addEventListener('DOMContentLoaded', initConfigSemanaDemoExpand);
+</script>
+
+<style>
+	.feature-hero,
+	.feature-demo,
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		margin: 0 0 0.7rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-lead {
+		max-width: 70ch;
+		line-height: 1.55;
+	}
+	.feature-demo h2,
+	.feature-cta h2 {
+		margin: 0 0 0.75rem;
+		font-size: 1.35rem;
+	}
+	.feature-demo-hook {
+		margin: 0 0 0.75rem;
+		opacity: 0.9;
+		font-style: italic;
+	}
+	.config-semana-video-badge {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		margin: 0 0 0.65rem;
+		padding: 0.55rem 0.85rem;
+		border-radius: 0.5rem;
+		border: 1px solid rgba(245, 176, 65, 0.45);
+		background: rgba(245, 176, 65, 0.1);
+		font-size: 0.95rem;
+		line-height: 1.4;
+		max-width: 42rem;
+	}
+	.config-semana-video-badge__icon {
+		color: #f5b041;
+		font-size: 1rem;
+		line-height: 1;
+	}
+	.demo-video {
+		background: #06080d;
+		border-radius: var(--theme-shape-radius);
+		overflow: hidden;
+	}
+	.demo-video--config-semana {
+		outline: 1px solid rgba(245, 176, 65, 0.25);
+		outline-offset: 4px;
+	}
+	.demo-video--compact {
+		max-width: 560px;
+	}
+	.demo-video--compact.demo-video--playing {
+		max-width: none;
+	}
+	.demo-video video {
+		display: block;
+		width: 100%;
+	}
+	.feature-demo--related {
+		max-width: 42rem;
+	}
+	.config-semana-links {
+		margin: 0;
+		padding-left: 1.25rem;
+		line-height: 1.7;
+	}
+	.config-semana-links a {
+		color: #f5b041;
+		text-decoration: underline;
+	}
+	.config-semana-links a:hover {
+		opacity: 0.9;
+	}
+	.feature-cta {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+		border: 1px solid var(--theme-surface-border);
+		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+	.feature-cta p {
+		margin: 0 0 0.9rem;
+		line-height: 1.5;
+	}
+</style>

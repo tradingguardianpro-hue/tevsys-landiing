@@ -15,6 +15,7 @@ export const footerLists = [
       { title: 'Cómo funciona', slug: '/como-funciona' },
       { title: 'Cómo instalar', slug: '/instalacion' },
       { title: 'Guía de configuración', slug: '/configuracion' },
+      { title: 'Configuración fin de semana', slug: '/configuracion-semana' },
       { title: 'Precios', slug: '/precios' },
       { title: 'Vídeos — casos de cierre', slug: '/videos-cierre-youtube' },
     ],
