@@ -5,6 +5,8 @@ export const footerLists = [
     title: 'Navegación',
     items: [
       { title: 'Inicio', slug: '/' },
+      { title: 'Cómo funciona', slug: '/como-funciona' },
+      { title: 'Precios', slug: '/precios' },
       { title: 'Empresas', slug: '/company/empresas' },
       { title: 'Contacto', slug: '/company/contact' },
     ],
@@ -12,13 +14,10 @@ export const footerLists = [
   {
     title: 'Guías',
     items: [
-      { title: 'Cómo funciona', slug: '/como-funciona' },
       { title: 'Cómo instalar', slug: '/instalacion' },
-      { title: 'Configuración al instalar', slug: '/configuracion-al-instalar' },
-      { title: 'Configuración fin de semana', slug: '/configuracion-fin-de-semana' },
-      { title: 'Guía Essential', slug: '/configuracion' },
-      { title: 'Precios', slug: '/precios' },
-      { title: 'Vídeos — casos de cierre', slug: '/videos-cierre-youtube' },
+      { title: 'Essential — configuración', slug: '/configuracion' },
+      { title: 'Advanced/Pro — al instalar (L–V)', slug: '/configuracion-al-instalar' },
+      { title: 'Advanced/Pro — fin de semana (S–D)', slug: '/configuracion-fin-de-semana' },
     ],
   },
   {
@@ -28,6 +27,7 @@ export const footerLists = [
       { title: 'HyperClose', slug: '/features/hyperclose' },
       { title: 'SML', slug: '/features/sml' },
       { title: 'Evidencia', slug: '/features/evidencia' },
+      { title: 'Vídeos — casos de cierre', slug: '/videos-cierre-youtube' },
       { title: 'Noticias y horarios (próximamente)', slug: null },
     ],
   },
