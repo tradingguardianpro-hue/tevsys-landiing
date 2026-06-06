@@ -69,8 +69,8 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | Familia | Estado | Notas |
 |---------|--------|--------|
 | **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS compartido `guia-operativa.css` · cuatro URLs alineadas · avisos cruce debajo del vídeo · sin CTA demo · copy lectura = borrador (revisión fundador pendiente). |
-| **A — Producto** | **Criterio cerrado · replicar** | Canon visual en HyperClose (`--video-slim`, índice gris, poco texto). **Pendiente:** clonar en Precisión, SML, Evidencia · cards home · validación fundador tras padding lateral. |
-| **B — Narrativa** | **Estable** | No rediseñar salvo motion/copy acordado; no copiar estilo en C ni A. |
+| **A — Producto** | **Canon cerrado (HyperClose)** | Validado jun 2026. Replicar checklist A en Precisión, SML, Evidencia · cards home. Referencia: `hyperclose.astro` + `global.css`. |
+| **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable en producción; falta **documentar criterio** como C y A (motion, stages — no copiar en guías). |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
 | **Footer** | **Pendiente** | Momento dedicado **antes** de expandir Familia A a todas las cards home. |
 | **Buscador global** | **Aplazado** | Mail + footer Guías + fork. |
@@ -96,7 +96,17 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 - Hero vídeo: mantiene chrome propio; no apilar manual sobre manual.
 - CTA demo **solo** al final de la micropágina.
 
-**Canon de referencia (jun 2026):** `/features/hyperclose` — primera micropágina donde se cierra el criterio visual A. Replicar en Precisión, SML y Evidencia **sin inventar variantes**.
+**Canon de referencia (jun 2026):** `/features/hyperclose` — micropágina donde se cierra el criterio A (visual + contenido hero).
+
+**Checklist Familia A (replicar en Precisión, SML, Evidencia):**
+1. Hero: título + hook + manifesto (si aplica).
+2. Demo principal: **h2 + hook con cifra clave** (número visible encima del vídeo) + embed + nota editada breve + acordeón evidencia.
+3. Índice «Qué puedes comprobar» (bloque gris redondeado).
+4. Pruebas secundarias: `--video-slim` (título · una línea · vídeo · `<details>` capturas).
+5. CTA demo al final.
+6. **Sin** losas grises bajo cada vídeo secundario; **sin** repetir el hero en párrafos largos.
+
+**Hook demo HyperClose (canon copy):** `15 lotes · GER40 · límite −1 % · desviación 1,31 € · Apertura Wall Street · HyperClose en 3 niveles.` — la cifra va **encima del embed**, no enterrada en acordeón. Caso Nasdaq (+506 USD / pre-market) vive en **Precisión**, no duplicar aquí.
 
 **No copiar en:** guías operativas (demasiado marketing).
 
@@ -166,6 +176,32 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 ---
 
+## Footer — diagnóstico (jun 2026, pendiente decisión)
+
+**Job:** mapa para quien llega sin mail (Guías + Producto + Legal) y refuerzo de contacto. **No** es Familia A/B/C/D; es **capa global** del layout.
+
+**Por qué pesa visualmente (captura fundador):**
+- Tres pisos apilados: marca + contacto → **barra nav con gradiente ámbar** → tres columnas → frase independiente grande → copyright.
+- **Doble navegación** respecto al header (Inicio, Cómo funciona, Precios, Contacto).
+- Títulos largos en Guías Advanced/Pro ocupan mucho ancho.
+- La frase «Made with love…» a ~1,08 rem compite con el contenido de arriba.
+
+**Qué mantener (funcional):**
+- Columna **Guías** (embudo demo / mail).
+- Columna **Producto** (micropáginas).
+- **Legal** obligatorio.
+- Email visible.
+
+**Opciones acordables (sin perder información):**
+1. **Aligerar barra nav inferior:** quitar gradiente/borde ámbar; enlaces más pequeños o fusionar con columnas (Precios/Empresas solo en header).
+2. **Acortar labels Guías:** p. ej. «Config · entre semana (Adv/Pro)» / «Config · fin de semana (Adv/Pro)» — misma URL, menos ruido.
+3. **Frase independiente:** bajar tamaño y opacidad; una sola línea.
+4. **Espaciado vertical:** menos padding entre pisos en páginas largas (micropáginas).
+
+**Decisión:** aplazada a sesión footer dedicada **después** de cerrar doc Familia A y **antes** de clonar A al resto de micropáginas/home.
+
+---
+
 ## Orden de trabajo recomendado (web)
 
 | Prioridad | Tarea | Familia | Estado |
@@ -196,7 +232,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Fecha | Nota |
 |-------|------|
-| 6 jun 2026 | **Familia A — padding `--video-slim`:** aire lateral alineado al índice; quitadas reglas legacy que reintroducían losa en HyperClose. |
+| 6 jun 2026 | **Familia A validada:** checklist canon + hook 1,31 € en demo HyperClose; footer diagnóstico pendiente. |
 | 6 jun 2026 | **Familia A — criterio documentado:** HyperClose = canon de referencia antes de clonar micropáginas. |
 | 6 jun 2026 | **Familia A — HyperClose:** `--video-slim`; semáforo y día OFF sin losa gris; capturas en `<details>`. |
 | 6 jun 2026 | **Familia C — avisos cruce** (finde ↔ entre semana) debajo del embed en las tres guías de config. |
