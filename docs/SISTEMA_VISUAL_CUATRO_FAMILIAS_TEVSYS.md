@@ -98,7 +98,7 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 | Prioridad | Tarea | Familia |
 |-----------|--------|---------|
-| 1 | Pulir `/instalacion` bloques + fork (v4) | C |
+| 1 | ~~Pulir `/instalacion`~~ **CERRADO v5.6** — canon familia C | C |
 | 2 | Replicar plantilla `guia-*` en `/configuracion-fin-de-semana` | C |
 | 3 | Igual en `/configuracion-al-instalar` (vídeo 6.1b-ADV cuando exista) | C |
 | 4 | Opcional: alinear `/configuracion` Essential | C |
@@ -122,4 +122,5 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 | Fecha | Nota |
 |-------|------|
+| 6 jun 2026 | **Familia C cerrada** — canon `/instalacion` v5.6. Clonar guías pendientes. |
 | 6 jun 2026 | v5.3 instalación: apoyo al vídeo editorial sin cajas grises. Familia A: `--feature-micro-radius` en bloques sin vídeo. |
