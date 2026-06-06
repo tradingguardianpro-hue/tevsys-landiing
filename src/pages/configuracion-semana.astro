@@ -14,17 +14,21 @@ const VIDEO_CACHE_BUST = '20260606';
 <Layout seo={seo}>
 	<Container>
 		<section class="feature-hero">
-			<p class="feature-kicker">Guía fin de semana</p>
-			<h1>Protección programada — configura la semana con calma</h1>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Advanced y Pro · sábado o domingo.</p>
+			<p class="feature-kicker">Guía fin de semana — solo sábado o domingo</p>
+			<h1>Protección programada desde el fin de semana</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Advanced y Pro · no es el flujo del día que instalas.</p>
 			<p class="feature-lead">
-				En fin de semana no estás bloqueado: ajustas toda la semana en F7, pulsas <strong>Guardar para el lunes</strong> y confirmas.
-				El <strong>lunes a las 00:00</strong> arranca la protección si guardaste. Puedes reconfigurar las veces que quieras hasta entonces.
+				Este vídeo cubre <strong>configurar la semana el sábado o el domingo</strong>: F7, <strong>Guardar para el lunes</strong>, modal <em>Protección programada</em> y arranque el <strong>lunes a las 00:00</strong> si guardaste.
+				En fin de semana no estás bloqueado; puedes reconfigurar hasta entonces.
+			</p>
+			<p class="feature-lead feature-lead--note">
+				<strong>¿Instalaste un lunes, martes o cualquier día entre semana?</strong> Ese flujo es otro: botón <strong>Bloquear límites</strong>, confirmación irreversible y protección <strong>al momento</strong>.
+				Guía Essential: <a href="/configuracion">configuración rápida</a>. Advanced/Pro entre semana: vídeo B en preparación (mismo criterio que Bloquear límites).
 			</p>
 		</section>
 
 		<section id="configuracion-semana-video" class="feature-demo">
-			<h2>Vídeo — Configuración en fin de semana</h2>
+			<h2>Vídeo — Configuración desde el fin de semana</h2>
 			<p class="config-semana-video-badge" role="status">
 				<span class="config-semana-video-badge__icon" aria-hidden="true">▶</span>
 				<span><strong>Vídeo en esta página</strong> — reproducción bajo este bloque.</span>
@@ -101,6 +105,17 @@ const VIDEO_CACHE_BUST = '20260606';
 	.feature-lead {
 		max-width: 70ch;
 		line-height: 1.55;
+	}
+	.feature-lead--note {
+		margin-top: 0.85rem;
+		padding: 0.75rem 0.9rem;
+		border-radius: 0.5rem;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		background: rgba(245, 176, 65, 0.06);
+		font-size: 0.98rem;
+	}
+	.feature-lead--note a {
+		color: #f5b041;
 	}
 	.feature-demo h2,
 	.feature-cta h2 {
