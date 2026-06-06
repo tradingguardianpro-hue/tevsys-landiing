@@ -2070,17 +2070,49 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 */
 .tevsys-feature-micro-surface {
 	isolation: isolate;
+	--feature-micro-radius: clamp(0.85rem, 1.5vw, 1.15rem);
+}
+
+/* Familia A — bloques sin vídeo: esquinas redondeadas (dark tenía --theme-shape-radius: 0) */
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-manifesto-banner,
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof,
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof-detail:not(:has(.demo-video)),
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-sml-panel,
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-sml-proof,
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-demo--sml-check,
+html[data-theme='dark'] .tevsys-feature-micro-surface .sml-proof-card {
+	border-radius: var(--feature-micro-radius);
+}
+
+html[data-theme='light'] .tevsys-feature-micro-surface .feature-manifesto-banner,
+html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof,
+html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail:not(:has(.demo-video)),
+html[data-theme='light'] .tevsys-feature-micro-surface .feature-sml-panel,
+html[data-theme='light'] .tevsys-feature-micro-surface .feature-sml-proof {
+	border-radius: var(--feature-micro-radius);
+}
+
+/* Secciones con vídeo: contenedor redondeado; el iframe/video mantiene su chrome */
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof-detail:has(.demo-video),
+html[data-theme='dark'] .tevsys-feature-micro-surface section.feature-demo.feature-demo--hero:not(:target) {
+	border-radius: var(--feature-micro-radius);
+}
+
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof,
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof-detail:not(:has(.demo-video)) {
+	margin-top: 1.15rem;
 }
 
 html[data-theme='dark'] .tevsys-feature-micro-surface section.feature-demo.feature-demo--hero:not(:target) {
 	padding: clamp(0.65rem, 1.8vw, 1rem);
 	background: rgba(255, 255, 255, 0.035);
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: var(--theme-shape-radius);
+	border-radius: var(--feature-micro-radius);
 	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
 }
 
 html[data-theme='dark'] .tevsys-feature-micro-surface .demo-video:not(.demo-video--light) {
+	border-radius: clamp(0.55rem, 1vw, 0.75rem);
 	padding: 3px;
 	background: linear-gradient(165deg, hsl(220, 11%, 14%) 0%, hsl(222, 14%, 8%) 100%);
 	border: 1px solid rgba(255, 255, 255, 0.14);
@@ -2117,7 +2149,7 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof {
 	padding: 1rem 1.1rem;
 	background: rgba(255, 255, 255, 0.03);
 	border: 1px solid rgba(255, 255, 255, 0.09);
-	border-radius: var(--theme-shape-radius);
+	border-radius: var(--feature-micro-radius);
 }
 
 html[data-theme='dark'] .tevsys-feature-micro-surface .feature-manifesto-banner {
@@ -2152,7 +2184,7 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-sml-panel,
 html[data-theme='dark'] .tevsys-feature-micro-surface .feature-sml-proof {
 	padding: 1rem 1.1rem;
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: var(--theme-shape-radius);
+	border-radius: var(--feature-micro-radius);
 	background:
 		linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 52%),
 		var(--theme-surface-1);

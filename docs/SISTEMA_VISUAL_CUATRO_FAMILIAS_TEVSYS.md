@@ -22,10 +22,9 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 **Job:** convencer con claims auditables, vídeo + prueba, CTA a demo/precios.
 
 **Visual:**
-- Cards con radio `clamp(0.85rem, 1.5vw, 1.15rem)`.
-- Borde ámbar fino `rgba(245, 176, 65, 0.34)` + gradiente de superficie muy suave.
-- Punto ámbar en hooks (`feature-hook__dot`).
-- Referencia: `index.astro` → `.feature-card__*`.
+- Cards con radio `clamp(0.85rem, 1.5vw, 1.15rem)` — token `--feature-micro-radius` en `.tevsys-feature-micro-surface`.
+- Bloques **sin vídeo** (`feature-proof`, `feature-proof-detail` texto): esquinas redondeadas (jun 2026; dark tenía radio 0 global).
+- Bloques **con vídeo**: contenedor redondeado; marco del reproductor aparte.
 
 **No copiar en:** guías operativas (demasiado marketing).
 
@@ -56,10 +55,10 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 - Hero corto + eyebrow **ámbar** + caja WebRequest (duplicar en bloque MT5 cuando aplique).
 - Vídeo protagonista: `guia-embed--chrome` + halo estático (sin stages).
 - **Regla ámbar (v5):** ámbar solo en **hero + vídeo** (hook, WebRequest, halo, marco). Debajo = **neutro**.
-- Bloques lectura: `guia-phase-card` — panel contenedor sutil + tarjetas en `--theme-surface-1`, borde gris claro, acento izquierdo plateado, badge número cuadrado redondeado; **sin** ámbar.
+- Bloques lectura: lista **editorial** — separadores finos, número ámbar pequeño sin caja; **sin** panel gris ni doble marco (v5.3).
 - Fork: filas neutras; **solo** `--primary` (Essential) con barra izquierda ámbar + fondo cálido suave.
 - **Sin** CTA “¿Necesitas la demo?” en guías (el visitante ya viene del mail o usa footer).
-- Referencia implementación: `src/pages/instalacion.astro` (v5 visual jun 2026).
+- Referencia implementación: `src/pages/instalacion.astro` (v5.3 jun 2026).
 
 **Regla:** todas las guías comparten **mismas clases**; solo cambia copy y vídeo.
 
@@ -123,4 +122,4 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 | Fecha | Nota |
 |-------|------|
-| 6 jun 2026 | v5.2: título fuera del panel; panel + cards más claros; línea plateada superior. |
+| 6 jun 2026 | v5.3 instalación: apoyo al vídeo editorial sin cajas grises. Familia A: `--feature-micro-radius` en bloques sin vídeo. |
