@@ -53,12 +53,13 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 **Job:** llevar de cero a EA en gráfico; vídeo primero, lectura opcional mínima, fork al siguiente paso.
 
 **Visual (plantilla `guia-*`):**
-- Hero corto + eyebrow + caja WebRequest (duplicar en bloque MT5 cuando aplique).
+- Hero corto + eyebrow **ámbar** + caja WebRequest (duplicar en bloque MT5 cuando aplique).
 - Vídeo protagonista: `guia-embed--chrome` + halo estático (sin stages).
-- Bloques lectura: `guia-phase-card` — **misma familia de radio/borde que A**, fondo más sobrio.
-- Fork “Después de instalar”: **tres filas iguales** (`guia-fork-link`); Essential resaltado con `--primary`, no caja vs líneas sueltas.
-- CTA demo al final si aplica.
-- Referencia implementación: `src/pages/instalacion.astro` (v4 visual jun 2026).
+- **Regla ámbar (v5):** ámbar solo en **hero + vídeo** (hook, WebRequest, halo, marco). Debajo = **neutro**.
+- Bloques lectura: `guia-phase-card` — borde gris/blanco tenue, números grises, **sin** borde ámbar.
+- Fork: filas neutras; **solo** `--primary` (Essential) con barra izquierda ámbar + fondo cálido suave.
+- **Sin** CTA “¿Necesitas la demo?” en guías (el visitante ya viene del mail o usa footer).
+- Referencia implementación: `src/pages/instalacion.astro` (v5 visual jun 2026).
 
 **Regla:** todas las guías comparten **mismas clases**; solo cambia copy y vídeo.
 
@@ -122,4 +123,4 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 | Fecha | Nota |
 |-------|------|
-| 6 jun 2026 | Acuerdo fundador + IA: cuatro familias, sin buscador, footer + mail + fork como mapa. Instalación v4 visual (fork unificado). |
+| 6 jun 2026 | v5: ámbar solo hero/vídeo; lectura y fork Advanced neutros; Essential barra izquierda; sin CTA demo. |
