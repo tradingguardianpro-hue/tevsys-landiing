@@ -24,12 +24,8 @@ export const footerColumns = [
       {
         label: 'Advanced / Pro',
         items: [
-          { title: 'Configuración al instalar', slug: '/configuracion-al-instalar', note: 'L–V · al momento' },
-          {
-            title: 'Planificar la semana',
-            slug: '/configuracion-fin-de-semana',
-            note: 'solo finde · lunes 00:00',
-          },
+          { title: 'Configuración al instalar de lunes a viernes', slug: '/configuracion-al-instalar' },
+          { title: 'Planificar la semana en sábado o domingo', slug: '/configuracion-fin-de-semana' },
         ],
       },
     ],

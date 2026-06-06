@@ -60,7 +60,6 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 			footerNav.length > 0 && (
 				<div class="footer-nav-row">
 					<nav class="footer-nav" aria-label="Navegación del sitio">
-						<p class="footer-nav-row__label">Sitio</p>
 						<ul class="footer-nav__list">
 							{footerNav.map((item) => (
 								<li>
@@ -237,21 +236,10 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 	}
 
 	.footer-nav-row .footer-nav {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.65rem 1rem;
+		width: 100%;
 		margin: 0;
 		padding: 0;
 		border: none;
-	}
-
-	.footer-nav-row__label {
-		margin: 0;
-		font-size: 0.78rem;
-		font-weight: 500;
-		opacity: 0.52;
-		flex-shrink: 0;
 	}
 
 	.footer-nav__list {
@@ -260,20 +248,16 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.35rem 0.5rem;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem 1.5rem;
 		line-height: 1.5;
+		width: 100%;
 	}
 
 	.footer-nav__list li {
 		display: inline-flex;
 		align-items: center;
-	}
-
-	.footer-nav__list li:not(:last-child)::after {
-		content: '·';
-		margin-left: 0.5rem;
-		opacity: 0.45;
-		pointer-events: none;
 	}
 
 	.footer-nav__list a {
@@ -420,20 +404,11 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 			padding: 1.5rem 0 1rem;
 		}
 
-		.footer-nav-row .footer-nav {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 0.5rem;
-		}
-
 		.footer-nav__list {
 			flex-direction: column;
 			align-items: flex-start;
+			justify-content: flex-start;
 			gap: 0.4rem;
-		}
-
-		.footer-nav__list li:not(:last-child)::after {
-			content: none;
 		}
 	}
 </style>
