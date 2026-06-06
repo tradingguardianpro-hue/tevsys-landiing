@@ -26,10 +26,24 @@ const guiasConfiguracion = [
 	},
 ];
 
-const otrasGuias = [
-	{ title: 'Guía Essential — configuración', href: '/configuracion' },
-	{ title: 'Configuración al instalar (L–V)', href: '/configuracion-al-instalar' },
-	{ title: 'Planificar la semana (S–D)', href: '/configuracion-fin-de-semana' },
+const bloquesLectura = [
+	{
+		n: 1,
+		title: 'Descarga',
+		detail: 'Abre el enlace del email y descarga el archivo. Luego abre MetaTrader 5.',
+	},
+	{
+		n: 2,
+		title: 'Prepara MT5',
+		detail:
+			'Herramientas → Opciones → Asesores Expertos: activa trading algorítmico y WebRequest. Añade https://tevsys.io (sin barra final). El vídeo lo muestra paso a paso.',
+	},
+	{
+		n: 3,
+		title: 'Instala y carga',
+		detail:
+			'Archivo → Abrir carpeta de datos → MQL5 → Experts. Copia el .ex5 del email, actualiza la lista en Navegador (Ctrl+N) y arrastra tevsys al gráfico.',
+	},
 ];
 ---
 
@@ -39,11 +53,7 @@ const otrasGuias = [
 			<p class="feature-kicker">Guía de instalación</p>
 			<h1>Cómo instalar tevsys en MT5</h1>
 			<p class="feature-hook">
-				<span class="feature-hook__dot" aria-hidden="true"></span>Cuenta nueva, desde cero. Vídeo paso a paso.
-			</p>
-			<p class="feature-lead">
-				Descarga el archivo desde el enlace del email, prepara MT5 y sigue el vídeo o los pasos de abajo.
-				Cuando el EA esté en el gráfico, pasa a la guía de configuración que corresponda a tu plan y al día.
+				<span class="feature-hook__dot" aria-hidden="true"></span>Vídeo 1:24 — del enlace del email al EA en el gráfico.
 			</p>
 			<p class="feature-lead feature-lead--note">
 				<strong>WebRequest</strong> (<code>https://tevsys.io</code>): recomendable en demo para no repetir el paso al
@@ -51,112 +61,44 @@ const otrasGuias = [
 			</p>
 		</section>
 
-		<section id="instalacion-video" class="feature-demo">
-			<h2>Vídeo — Instalación rápida</h2>
-			<p class="instalacion-video-badge" role="status">
-				<span class="instalacion-video-badge__icon" aria-hidden="true">▶</span>
-				<span><strong>Vídeo en esta página</strong> — reproducción bajo este bloque.</span>
-			</p>
-			<p class="feature-demo-hook">1:24 min · trading algorítmico, WebRequest y carga del EA.</p>
-			<div class="demo-video demo-video--compact demo-video--instalacion" id="instalacion-demo-container">
-				<video id="instalacion-demo-video" controls preload="metadata">
+		<section id="instalacion-video" class="feature-demo feature-demo--video">
+			<div class="feature-demo__title">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				<h2>Instalación rápida</h2>
+			</div>
+			<div class="demo-video demo-video--instalacion" id="instalacion-demo-container">
+				<video id="instalacion-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/instalacion-demo.mp4?v=20260605webreq" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
 		</section>
 
-		<section class="feature-proof">
-			<h2>Pasos resumidos</h2>
-			<p class="instalacion-steps-intro">
-				Orden recomendado. Los pasos 3 y 4 preparan MT5; luego copias el archivo y cargas el EA.
-			</p>
-			<ol class="instalacion-step-list">
-				<li>
-					<div class="instalacion-step">
-						<span class="instalacion-step__n">1</span>
-						<div class="instalacion-step__body">
-							<strong class="instalacion-step__title">Descarga</strong>
-							<p class="instalacion-step__detail">Usa el enlace que te enviamos por email.</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="instalacion-step">
-						<span class="instalacion-step__n">2</span>
-						<div class="instalacion-step__body">
-							<strong class="instalacion-step__title">Abre MetaTrader 5</strong>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="instalacion-step">
-						<span class="instalacion-step__n">3</span>
-						<div class="instalacion-step__body">
-							<strong class="instalacion-step__title">Trading algorítmico (siempre encendido)</strong>
-							<p class="instalacion-step__detail">
-								Herramientas → Opciones → <strong>Asesores Expertos</strong> → marca <em>Permitir operar algorítmico</em>.
-							</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="instalacion-step">
-						<span class="instalacion-step__n">4</span>
-						<div class="instalacion-step__body">
-							<strong class="instalacion-step__title">WebRequest + dominio tevsys</strong>
-							<p class="instalacion-step__detail">
-								Misma pestaña <strong>Asesores Expertos</strong>: activa <em>Permitir WebRequest</em> y añade
-								<code>https://tevsys.io</code> (sin barra final). El vídeo muestra este paso en detalle.
-							</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="instalacion-step">
-						<span class="instalacion-step__n">5</span>
-						<div class="instalacion-step__body">
-							<strong class="instalacion-step__title">Carpeta del EA</strong>
-							<p class="instalacion-step__detail">Archivo → Abrir carpeta de datos → <code>MQL5</code> → <code>Experts</code>.</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="instalacion-step">
-						<span class="instalacion-step__n">6</span>
-						<div class="instalacion-step__body">
-							<strong class="instalacion-step__title">Copia el .ex5</strong>
-							<p class="instalacion-step__detail">Arrastra el <code>.ex5</code> que te enviamos por email a la carpeta Experts.</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="instalacion-step">
-						<span class="instalacion-step__n">7</span>
-						<div class="instalacion-step__body">
-							<strong class="instalacion-step__title">Actualiza la lista en MT5</strong>
-							<p class="instalacion-step__detail">Navegador (Ctrl+N) → clic derecho en Experts → Actualizar.</p>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="instalacion-step">
-						<span class="instalacion-step__n">8</span>
-						<div class="instalacion-step__body">
-							<strong class="instalacion-step__title">Carga en el gráfico</strong>
-							<p class="instalacion-step__detail">Arrastra tevsys al gráfico o doble clic sobre el EA.</p>
-						</div>
-					</div>
-				</li>
+		<section class="feature-proof feature-proof--compact">
+			<h2>Si prefieres leer</h2>
+			<p class="instalacion-read-intro">Apoyo al vídeo — tres bloques, mismo orden.</p>
+			<ol class="instalacion-phase-list">
+				{
+					bloquesLectura.map((bloque) => (
+						<li>
+							<div class="instalacion-phase">
+								<span class="instalacion-phase__n">{bloque.n}</span>
+								<div class="instalacion-phase__body">
+									<strong class="instalacion-phase__title">{bloque.title}</strong>
+									<p class="instalacion-phase__detail">{bloque.detail}</p>
+								</div>
+							</div>
+						</li>
+					))
+				}
 			</ol>
-			<p class="instalacion-note">
-				Tras cargar el EA: bienvenida, onboarding y panel listo para configurar.
-			</p>
 		</section>
 
 		<section id="configuracion" class="feature-demo feature-demo--next">
 			<h2>Siguiente paso — Configuración</h2>
-			<p class="feature-demo-hook">El EA ya está en el gráfico. Elige según tu plan y el día:</p>
+			<p class="feature-demo-hook">
+				Con el EA en el gráfico verás la bienvenida y el panel. Elige la guía según tu plan y el día:
+			</p>
 			<ul class="guia-fork-list">
 				{
 					guiasConfiguracion.map((guia) => (
@@ -166,19 +108,6 @@ const otrasGuias = [
 								<span class="guia-fork-link__title">{guia.title}</span>
 								<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
 							</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
-
-		<section class="feature-demo feature-demo--related">
-			<h2>Otras guías</h2>
-			<ul class="guia-related-links">
-				{
-					otrasGuias.map((guia) => (
-						<li>
-							<a href={guia.href}>{guia.title}</a>
 						</li>
 					))
 				}
@@ -225,7 +154,9 @@ const otrasGuias = [
 		font-style: italic;
 		font-weight: 600;
 		opacity: 0.9;
-		margin: 0 0 0.7rem;
+		margin: 0 0 0.85rem;
+		max-width: 52ch;
+		line-height: 1.45;
 	}
 	.feature-hook__dot {
 		width: 0.45rem;
@@ -234,18 +165,15 @@ const otrasGuias = [
 		background: #f5b041;
 		flex-shrink: 0;
 	}
-	.feature-lead {
-		max-width: 70ch;
-		line-height: 1.55;
-	}
 	.feature-lead--note {
-		margin-top: 0.85rem;
+		margin: 0;
 		padding: 0.75rem 0.9rem;
 		border-radius: 0.5rem;
 		border: 1px solid rgba(245, 176, 65, 0.35);
 		background: rgba(245, 176, 65, 0.06);
 		font-size: 0.98rem;
 		max-width: 70ch;
+		line-height: 1.55;
 	}
 	.feature-lead--note code {
 		background: rgba(0, 0, 0, 0.25);
@@ -253,104 +181,94 @@ const otrasGuias = [
 		border-radius: 0.25rem;
 		font-size: 0.88em;
 	}
+	.feature-demo__title {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0 0 0.85rem;
+	}
+	.feature-demo__title h2 {
+		margin: 0;
+		font-size: 1.35rem;
+	}
 	.feature-demo h2,
 	.feature-proof h2,
 	.feature-cta h2 {
 		margin: 0 0 0.75rem;
 		font-size: 1.35rem;
 	}
+	.feature-demo--video {
+		max-width: 640px;
+	}
 	.feature-demo-hook {
 		margin: 0 0 0.75rem;
 		opacity: 0.9;
-		font-style: italic;
-	}
-	.instalacion-video-badge {
-		display: flex;
-		align-items: center;
-		gap: 0.6rem;
-		margin: 0 0 0.65rem;
-		padding: 0.55rem 0.85rem;
-		border-radius: 0.5rem;
-		border: 1px solid rgba(245, 176, 65, 0.45);
-		background: rgba(245, 176, 65, 0.1);
-		font-size: 0.95rem;
-		line-height: 1.4;
-		max-width: 42rem;
-	}
-	.instalacion-video-badge__icon {
-		color: #f5b041;
-		font-size: 1rem;
-		line-height: 1;
-	}
-	.demo-video--instalacion {
-		outline: 1px solid rgba(245, 176, 65, 0.25);
-		outline-offset: 4px;
-	}
-	.instalacion-steps-intro {
-		margin: 0 0 1rem;
 		max-width: 52ch;
 		line-height: 1.5;
-		opacity: 0.88;
-		font-size: 0.98rem;
 	}
-	.instalacion-step-list {
+	.demo-video--instalacion {
+		outline: 1px solid rgba(245, 176, 65, 0.22);
+		outline-offset: 4px;
+		border-radius: var(--theme-shape-radius);
+	}
+	.demo-video--instalacion.demo-video--playing {
+		max-width: none;
+	}
+	.feature-proof--compact {
+		max-width: 44rem;
+	}
+	.instalacion-read-intro {
+		margin: 0 0 0.85rem;
+		font-size: 0.92rem;
+		opacity: 0.72;
+		line-height: 1.45;
+	}
+	.instalacion-phase-list {
 		list-style: none;
 		padding: 0;
-		margin: 0 0 1rem;
+		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.65rem;
-		max-width: 40rem;
-	}
-	.instalacion-step {
-		display: flex;
 		gap: 0.75rem;
+	}
+	.instalacion-phase {
+		display: flex;
+		gap: 0.85rem;
 		align-items: flex-start;
-		padding: 0.65rem 0.85rem;
+		padding: 0.85rem 1rem;
 		border-radius: 0.5rem;
 		background: var(--theme-surface-1);
 		border: 1px solid rgba(255, 255, 255, 0.06);
+		border-left: 3px solid rgba(245, 176, 65, 0.45);
 	}
-	.instalacion-step__n {
+	.instalacion-phase__n {
 		flex-shrink: 0;
-		width: 1.75rem;
-		height: 1.75rem;
+		width: 1.65rem;
+		height: 1.65rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 0.35rem;
-		background: rgba(245, 176, 65, 0.2);
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.15);
 		color: #f5b041;
 		font-weight: 700;
-		font-size: 0.9rem;
+		font-size: 0.85rem;
 	}
-	.instalacion-step__body {
+	.instalacion-phase__body {
 		min-width: 0;
 		flex: 1;
 	}
-	.instalacion-step__title {
+	.instalacion-phase__title {
 		display: block;
 		font-size: 1rem;
-		margin-bottom: 0.25rem;
+		margin-bottom: 0.3rem;
 		line-height: 1.35;
 	}
-	.instalacion-step__detail {
+	.instalacion-phase__detail {
 		margin: 0;
 		font-size: 0.92rem;
 		line-height: 1.55;
 		opacity: 0.88;
-	}
-	.instalacion-step-list code {
-		background: rgba(0, 0, 0, 0.25);
-		padding: 0.12rem 0.4rem;
-		border-radius: 0.25rem;
-		font-size: 0.88em;
-	}
-	.instalacion-note {
-		opacity: 0.9;
-		font-style: italic;
-		font-size: 0.95rem;
-		max-width: 52ch;
 	}
 	.guia-fork-list {
 		list-style: none;
@@ -400,28 +318,9 @@ const otrasGuias = [
 		opacity: 1;
 		color: #f5b041;
 	}
-	.feature-demo--related {
-		max-width: 42rem;
-	}
-	.guia-related-links {
-		margin: 0;
-		padding-left: 1.25rem;
-		line-height: 1.7;
-	}
-	.guia-related-links a {
-		color: #f5b041;
-		text-decoration: underline;
-	}
 	.demo-video {
 		background: #06080d;
-		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
-	}
-	.demo-video--compact {
-		max-width: 560px;
-	}
-	.demo-video--compact.demo-video--playing {
-		max-width: none;
 	}
 	.demo-video video {
 		display: block;
