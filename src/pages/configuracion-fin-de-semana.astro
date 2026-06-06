@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Configuración fin de semana | tevsys Advanced y Pro',
 	description:
-		'Planifica la semana el sábado o domingo: días ON/OFF, límites y protección programada. El lunes a las 00:00 arranca la protección si guardaste.',
+		'Solo sábado o domingo: planifica la semana, Guardar para el lunes y protección programada. El lunes a las 00:00 arranca si guardaste.',
 };
 
 const VIDEO_CACHE_BUST = '20260606';
@@ -15,27 +15,27 @@ const VIDEO_CACHE_BUST = '20260606';
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Guía fin de semana — solo sábado o domingo</p>
-			<h1>Protección programada desde el fin de semana</h1>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Advanced y Pro · no es el flujo del día que instalas.</p>
+			<h1>Configuración desde el fin de semana</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Advanced y Pro · protección programada.</p>
 			<p class="feature-lead">
 				Este vídeo cubre <strong>configurar la semana el sábado o el domingo</strong>: F7, <strong>Guardar para el lunes</strong>, modal <em>Protección programada</em> y arranque el <strong>lunes a las 00:00</strong> si guardaste.
 				En fin de semana no estás bloqueado; puedes reconfigurar hasta entonces.
 			</p>
 			<p class="feature-lead feature-lead--note">
-				<strong>¿Instalaste un lunes, martes o cualquier día entre semana?</strong> Ese flujo es otro: botón <strong>Bloquear límites</strong>, confirmación irreversible y protección <strong>al momento</strong>.
-				Guía Essential: <a href="/configuracion">configuración rápida</a>. Advanced/Pro entre semana: vídeo B en preparación (mismo criterio que Bloquear límites).
+				<strong>¿Instalaste entre semana (lunes–viernes)?</strong> Usa la guía
+				<a href="/configuracion-al-instalar">configuración al instalar</a> — botón <strong>Bloquear límites</strong> y protección al momento.
 			</p>
 		</section>
 
-		<section id="configuracion-semana-video" class="feature-demo">
+		<section id="configuracion-fin-de-semana-video" class="feature-demo">
 			<h2>Vídeo — Configuración desde el fin de semana</h2>
-			<p class="config-semana-video-badge" role="status">
-				<span class="config-semana-video-badge__icon" aria-hidden="true">▶</span>
+			<p class="config-finde-video-badge" role="status">
+				<span class="config-finde-video-badge__icon" aria-hidden="true">▶</span>
 				<span><strong>Vídeo en esta página</strong> — reproducción bajo este bloque.</span>
 			</p>
 			<p class="feature-demo-hook">2:01 min. Semana L–V, días OFF, guardado programado y reconfiguración.</p>
-			<div class="demo-video demo-video--compact demo-video--config-semana" id="config-semana-demo-container">
-				<video id="config-semana-demo-video" controls preload="metadata">
+			<div class="demo-video demo-video--compact demo-video--config-finde" id="config-finde-demo-container">
+				<video id="config-finde-demo-video" controls preload="metadata">
 					<source
 						src={`/videos/features/configuracion-semana-demo.mp4?v=${VIDEO_CACHE_BUST}`}
 						type="video/mp4"
@@ -47,9 +47,9 @@ const VIDEO_CACHE_BUST = '20260606';
 
 		<section class="feature-demo feature-demo--related">
 			<h2>Otras guías</h2>
-			<ul class="config-semana-links">
+			<ul class="config-finde-links">
 				<li><a href="/instalacion">Instalación en MT5</a></li>
-				<li><a href="/configuracion">Configuración Essential (primeros límites)</a></li>
+				<li><a href="/configuracion-al-instalar">Configuración al instalar (entre semana)</a></li>
 				<li><a href="/como-funciona#videoclip-preconfig-fin-semana">Clip 30 s — preconfig fin de semana</a></li>
 			</ul>
 		</section>
@@ -63,14 +63,14 @@ const VIDEO_CACHE_BUST = '20260606';
 </Layout>
 
 <script>
-	function initConfigSemanaDemoExpand() {
-		const video = document.getElementById('config-semana-demo-video');
-		const container = document.getElementById('config-semana-demo-container');
+	function initConfigFindeDemoExpand() {
+		const video = document.getElementById('config-finde-demo-video');
+		const container = document.getElementById('config-finde-demo-container');
 		if (!video || !container) return;
 		video.addEventListener('play', () => container.classList.add('demo-video--playing'));
 		video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
 	}
-	document.addEventListener('DOMContentLoaded', initConfigSemanaDemoExpand);
+	document.addEventListener('DOMContentLoaded', initConfigFindeDemoExpand);
 </script>
 
 <style>
@@ -127,7 +127,7 @@ const VIDEO_CACHE_BUST = '20260606';
 		opacity: 0.9;
 		font-style: italic;
 	}
-	.config-semana-video-badge {
+	.config-finde-video-badge {
 		display: flex;
 		align-items: center;
 		gap: 0.6rem;
@@ -140,7 +140,7 @@ const VIDEO_CACHE_BUST = '20260606';
 		line-height: 1.4;
 		max-width: 42rem;
 	}
-	.config-semana-video-badge__icon {
+	.config-finde-video-badge__icon {
 		color: #f5b041;
 		font-size: 1rem;
 		line-height: 1;
@@ -150,7 +150,7 @@ const VIDEO_CACHE_BUST = '20260606';
 		border-radius: var(--theme-shape-radius);
 		overflow: hidden;
 	}
-	.demo-video--config-semana {
+	.demo-video--config-finde {
 		outline: 1px solid rgba(245, 176, 65, 0.25);
 		outline-offset: 4px;
 	}
@@ -167,16 +167,16 @@ const VIDEO_CACHE_BUST = '20260606';
 	.feature-demo--related {
 		max-width: 42rem;
 	}
-	.config-semana-links {
+	.config-finde-links {
 		margin: 0;
 		padding-left: 1.25rem;
 		line-height: 1.7;
 	}
-	.config-semana-links a {
+	.config-finde-links a {
 		color: #f5b041;
 		text-decoration: underline;
 	}
-	.config-semana-links a:hover {
+	.config-finde-links a:hover {
 		opacity: 0.9;
 	}
 	.feature-cta {

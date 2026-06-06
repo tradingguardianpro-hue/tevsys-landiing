@@ -11,5 +11,6 @@ export default defineConfig({
   integrations: [sitemap(), mdx(), lit(), icon()], // Add renderers to the config
   redirects: {
     '/que-es': '/', // La home ya explica qué es tevsys
+    '/configuracion-semana': '/configuracion-fin-de-semana',
   },
 });

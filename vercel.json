@@ -15,6 +15,11 @@
       "source": "/que-es",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/configuracion-semana",
+      "destination": "/configuracion-fin-de-semana",
+      "permanent": true
     }
   ]
 }

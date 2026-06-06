@@ -1,0 +1,156 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+
+const seo = {
+	title: 'Configuración al instalar | tevsys Advanced y Pro',
+	description:
+		'Tras cargar el EA entre semana (lunes–viernes): F7, Bloquear límites y protección inmediata. Demo avanzada y licencias Advanced/Pro.',
+};
+---
+
+<Layout seo={seo}>
+	<Container>
+		<section class="feature-hero">
+			<p class="feature-kicker">Guía al instalar — entre semana</p>
+			<h1>Configuración al instalar</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Advanced y Pro · lunes a viernes.</p>
+			<p class="feature-lead">
+				Cuando cargas tevsys un <strong>lunes, martes o cualquier día laboral</strong>, el flujo es: F7 → revisar límites y días ON/OFF → pulsar <strong>Bloquear límites</strong> → confirmar.
+				La protección arranca <strong>al confirmar</strong> (no esperas al lunes).
+			</p>
+			<p class="feature-lead feature-lead--note">
+				<strong>¿Es sábado o domingo?</strong> No uses este flujo — abre
+				<a href="/configuracion-fin-de-semana">configuración fin de semana</a> (<em>Guardar para el lunes</em> · lunes 00:00).
+			</p>
+		</section>
+
+		<section class="feature-demo">
+			<h2>Vídeo guía</h2>
+			<p class="feature-demo-hook">
+				Vídeo paso a paso Advanced/Pro entre semana — <strong>en preparación</strong>. Mientras tanto, resumen abajo.
+			</p>
+		</section>
+
+		<section class="feature-proof">
+			<h2>Pasos resumidos (entre semana)</h2>
+			<ol class="config-instalar-steps">
+				<li>EA ya en el gráfico tras <a href="/instalacion">instalación</a> y clave validada (demo avanzada o licencia).</li>
+				<li>F7 — ajusta límites y días ON/OFF de la semana.</li>
+				<li>Aceptar — revisa el panel.</li>
+				<li>Pulsa <strong>Bloquear límites</strong> → lee el resumen → confirma (acción irreversible hasta el viernes).</li>
+				<li>Panel en estado protegido — candado teal en multigráfico.</li>
+			</ol>
+		</section>
+
+		<section class="feature-demo feature-demo--related">
+			<h2>Otras guías</h2>
+			<ul class="config-instalar-links">
+				<li><a href="/instalacion">Instalación en MT5</a></li>
+				<li><a href="/configuracion-fin-de-semana">Configuración fin de semmana (solo sáb./dom.)</a></li>
+				<li><a href="/configuracion">Guía Essential (demo estándar)</a></li>
+			</ul>
+		</section>
+
+		<section class="feature-cta">
+			<h2>¿Necesitas demo Advanced o Pro?</h2>
+			<p>Rellena el formulario y te enviamos clave, instalación y enlaces a estas guías.</p>
+			<a href="/company/contact?flow=demo" class="feature-cta__button">Solicitar demo</a>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.feature-hero,
+	.feature-demo,
+	.feature-proof,
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		margin: 0 0 0.7rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-lead {
+		max-width: 70ch;
+		line-height: 1.55;
+	}
+	.feature-lead--note {
+		margin-top: 0.85rem;
+		padding: 0.75rem 0.9rem;
+		border-radius: 0.5rem;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		background: rgba(245, 176, 65, 0.06);
+		font-size: 0.98rem;
+	}
+	.feature-lead--note a {
+		color: #f5b041;
+	}
+	.feature-demo h2,
+	.feature-proof h2,
+	.feature-cta h2 {
+		margin: 0 0 0.75rem;
+		font-size: 1.35rem;
+	}
+	.feature-demo-hook {
+		margin: 0;
+		opacity: 0.9;
+		font-style: italic;
+		max-width: 52ch;
+		line-height: 1.5;
+	}
+	.config-instalar-steps {
+		margin: 0;
+		padding-left: 1.25rem;
+		max-width: 52rem;
+		line-height: 1.65;
+	}
+	.config-instalar-steps li + li {
+		margin-top: 0.5rem;
+	}
+	.config-instalar-steps a {
+		color: #f5b041;
+	}
+	.feature-demo--related {
+		max-width: 42rem;
+	}
+	.config-instalar-links {
+		margin: 0;
+		padding-left: 1.25rem;
+		line-height: 1.7;
+	}
+	.config-instalar-links a {
+		color: #f5b041;
+		text-decoration: underline;
+	}
+	.feature-cta {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+		border: 1px solid var(--theme-surface-border);
+		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+	.feature-cta p {
+		margin: 0 0 0.9rem;
+		line-height: 1.5;
+	}
+</style>

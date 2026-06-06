@@ -15,12 +15,16 @@ const VIDEO_LINK_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/view?u
 <Layout seo={seo}>
 	<Container>
 		<section class="feature-hero">
-			<p class="feature-kicker">Guía rápida</p>
+			<p class="feature-kicker">Guía Essential — demo estándar</p>
 			<h1>Guía de configuración — tevsys Essential</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Límites, panel y primer uso.</p>
 			<p class="feature-lead">
-				Tras instalar la demo, configura los límites de pérdida y ganancia. Este vídeo muestra el flujo en fin de semana; entre semana el proceso es similar, solo cambia el día activo.
-				Si usas <strong>Advanced o Pro</strong> y configuras <strong>el sábado o el domingo</strong>, hay una guía aparte: <a href="/configuracion-semana">protección programada desde el fin de semana</a> (no sustituye <em>Bloquear límites</em> entre semana).
+				Tras instalar la demo Essential, configura los límites de pérdida y ganancia. Este vídeo muestra el flujo en fin de semana; entre semana el proceso es similar, solo cambia el día activo.
+			</p>
+			<p class="feature-lead feature-lead--note">
+				<strong>Advanced o Pro:</strong>
+				<a href="/configuracion-al-instalar">configuración al instalar</a> (entre semana) ·
+				<a href="/configuracion-fin-de-semana">configuración fin de semana</a> (solo sáb./dom.).
 			</p>
 		</section>
 
@@ -82,6 +86,17 @@ const VIDEO_LINK_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/view?u
 	.feature-lead {
 		max-width: 70ch;
 		line-height: 1.55;
+	}
+	.feature-lead--note {
+		margin-top: 0.85rem;
+		padding: 0.75rem 0.9rem;
+		border-radius: 0.5rem;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		background: rgba(245, 176, 65, 0.06);
+		font-size: 0.98rem;
+	}
+	.feature-lead--note a {
+		color: #f5b041;
 	}
 	.feature-demo h2,
 	.feature-cta h2 {
