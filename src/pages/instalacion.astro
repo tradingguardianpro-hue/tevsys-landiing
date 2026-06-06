@@ -80,34 +80,36 @@ const bloquesLectura = [
 				</div>
 			</section>
 
-			<section class="guia-read-panel">
+			<section class="guia-read-section">
 				<header class="guia-section-head">
 					<p class="guia-eyebrow">Apoyo al vídeo</p>
 					<h2>Si prefieres leer</h2>
 					<p class="guia-section-sub">Tres bloques, mismo orden.</p>
 				</header>
-				<ol class="guia-phase-list">
-					{
-						bloquesLectura.map((bloque) => (
-							<li>
-								<article class="guia-phase-card">
-									<span class="guia-phase-card__n">{bloque.n}</span>
-									<div class="guia-phase-card__body">
-										<h3 class="guia-phase-card__title">{bloque.title}</h3>
-										<p class="guia-phase-card__detail">{bloque.detail}</p>
-										{bloque.urlLine && (
-											<p class="guia-phase-card__url">
-												{bloque.urlLine.split('https://tevsys.io')[0]}
-												<code>https://tevsys.io</code>
-												{bloque.urlLine.split('https://tevsys.io')[1]}
-											</p>
-										)}
-									</div>
-								</article>
-							</li>
-						))
-					}
-				</ol>
+				<div class="guia-read-panel">
+					<ol class="guia-phase-list">
+						{
+							bloquesLectura.map((bloque) => (
+								<li>
+									<article class="guia-phase-card">
+										<span class="guia-phase-card__n">{bloque.n}</span>
+										<div class="guia-phase-card__body">
+											<h3 class="guia-phase-card__title">{bloque.title}</h3>
+											<p class="guia-phase-card__detail">{bloque.detail}</p>
+											{bloque.urlLine && (
+												<p class="guia-phase-card__url">
+													{bloque.urlLine.split('https://tevsys.io')[0]}
+													<code>https://tevsys.io</code>
+													{bloque.urlLine.split('https://tevsys.io')[1]}
+												</p>
+											)}
+										</div>
+									</article>
+								</li>
+							))
+						}
+					</ol>
+				</div>
 			</section>
 
 			<section id="configuracion" class="guia-fork-panel">
@@ -158,7 +160,7 @@ const bloquesLectura = [
 
 	.guia-hero,
 	.guia-video-panel,
-	.guia-read-panel,
+	.guia-read-section,
 	.guia-fork-panel {
 		margin: var(--section-margin) auto;
 	}
@@ -325,19 +327,63 @@ const bloquesLectura = [
 		vertical-align: top;
 	}
 
-	/* Bloques lectura — superficie elevada neutra (familia C) */
+	/* Bloques lectura — panel protagonista (familia C) */
+	.guia-read-section .guia-section-head {
+		margin-bottom: 1.1rem;
+	}
+
+	.guia-read-section .guia-section-head h2 {
+		font-size: clamp(1.28rem, 2.8vw, 1.45rem);
+	}
+
 	.guia-read-panel {
-		padding: clamp(1rem, 2.8vw, 1.35rem);
-		border-radius: clamp(0.85rem, 1.6vw, 1.1rem);
-		background: rgba(255, 255, 255, 0.018);
-		border: 1px solid rgba(255, 255, 255, 0.07);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+		position: relative;
+		padding: clamp(1.1rem, 3vw, 1.45rem);
+		border-radius: clamp(0.9rem, 1.8vw, 1.15rem);
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.045) 0%,
+			rgba(255, 255, 255, 0.02) 100%
+		);
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.1),
+			0 16px 40px rgba(0, 0, 0, 0.32);
+	}
+
+	.guia-read-panel::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: clamp(1rem, 3vw, 1.45rem);
+		right: clamp(1rem, 3vw, 1.45rem);
+		height: 2px;
+		border-radius: 2px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(210, 218, 228, 0.55) 18%,
+			rgba(210, 218, 228, 0.55) 82%,
+			transparent 100%
+		);
+		pointer-events: none;
 	}
 
 	html[data-theme='light'] .guia-read-panel {
-		background: rgba(0, 0, 0, 0.02);
-		border-color: rgba(0, 0, 0, 0.07);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 251, 0.95) 100%);
+		border-color: rgba(0, 0, 0, 0.11);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 1),
+			0 14px 36px rgba(0, 0, 0, 0.08);
+	}
+
+	html[data-theme='dark'] .guia-read-panel {
+		background: linear-gradient(
+			180deg,
+			hsl(222, 11%, 17%) 0%,
+			hsl(222, 12%, 13%) 100%
+		);
+		border-color: rgba(255, 255, 255, 0.18);
 	}
 
 	.guia-phase-list {
@@ -346,76 +392,75 @@ const bloquesLectura = [
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: 0.85rem;
 	}
 
 	.guia-phase-card {
 		display: flex;
-		gap: 0.95rem;
+		gap: 1rem;
 		align-items: flex-start;
-		padding: clamp(0.95rem, 2.4vw, 1.1rem) clamp(1rem, 2.6vw, 1.15rem);
-		border-radius: clamp(0.8rem, 1.5vw, 1rem);
-		background: var(--theme-surface-1);
-		border: 1px solid rgba(255, 255, 255, 0.14);
-		border-left: 2px solid rgba(200, 208, 218, 0.35);
+		padding: clamp(1rem, 2.6vw, 1.15rem) clamp(1.05rem, 2.8vw, 1.2rem);
+		border-radius: clamp(0.82rem, 1.55vw, 1rem);
+		background: hsl(220, 10%, 22%);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-left: 3px solid rgba(215, 222, 232, 0.55);
 		box-shadow:
-			inset 0 1px 0 rgba(255, 255, 255, 0.07),
-			0 10px 28px rgba(0, 0, 0, 0.22);
+			inset 0 1px 0 rgba(255, 255, 255, 0.1),
+			0 8px 24px rgba(0, 0, 0, 0.2);
 	}
 
 	html[data-theme='light'] .guia-phase-card {
-		background: rgba(255, 255, 255, 0.92);
-		border-color: rgba(0, 0, 0, 0.1);
-		border-left-color: rgba(120, 130, 145, 0.45);
+		background: #ffffff;
+		border-color: rgba(0, 0, 0, 0.12);
+		border-left-color: rgba(100, 112, 128, 0.5);
 		box-shadow:
-			inset 0 1px 0 rgba(255, 255, 255, 0.95),
-			0 8px 22px rgba(0, 0, 0, 0.06);
+			inset 0 1px 0 rgba(255, 255, 255, 1),
+			0 6px 18px rgba(0, 0, 0, 0.07);
 	}
 
 	html[data-theme='dark'] .guia-phase-card {
-		background: hsl(222, 12%, 14%);
-		border-color: rgba(255, 255, 255, 0.13);
-		border-left-color: rgba(190, 198, 210, 0.38);
-		box-shadow:
-			inset 0 1px 0 rgba(255, 255, 255, 0.08),
-			0 0 0 1px rgba(0, 0, 0, 0.35),
-			0 12px 32px rgba(0, 0, 0, 0.28);
+		background: hsl(220, 10%, 22%);
+		border-color: rgba(255, 255, 255, 0.2);
+		border-left-color: rgba(215, 222, 232, 0.55);
 	}
 
 	.guia-phase-card__n {
 		flex-shrink: 0;
-		width: 1.85rem;
-		height: 1.85rem;
+		width: 2rem;
+		height: 2rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 0.45rem;
-		background: rgba(255, 255, 255, 0.06);
-		border: 1px solid rgba(255, 255, 255, 0.18);
-		color: rgba(244, 246, 248, 0.95);
+		border-radius: 0.5rem;
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.28);
+		color: rgba(255, 255, 255, 0.96);
 		font-weight: 700;
-		font-size: 0.84rem;
+		font-size: 0.88rem;
 		font-variant-numeric: tabular-nums;
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.12),
+			0 2px 8px rgba(0, 0, 0, 0.15);
 	}
 
 	html[data-theme='light'] .guia-phase-card__n {
-		background: rgba(0, 0, 0, 0.04);
-		border-color: rgba(0, 0, 0, 0.12);
-		color: rgba(0, 0, 0, 0.78);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+		background: rgba(0, 0, 0, 0.05);
+		border-color: rgba(0, 0, 0, 0.14);
+		color: rgba(0, 0, 0, 0.82);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+	}
+
+	.guia-phase-card__title {
+		margin: 0 0 0.4rem;
+		font-size: 1.08rem;
+		line-height: 1.28;
+		font-weight: 600;
+		letter-spacing: -0.01em;
 	}
 
 	.guia-phase-card__body {
 		min-width: 0;
 		flex: 1;
-	}
-
-	.guia-phase-card__title {
-		margin: 0 0 0.35rem;
-		font-size: 1.05rem;
-		line-height: 1.3;
-		font-weight: 600;
 	}
 
 	html[data-theme='dark'] .guia-phase-card__title {

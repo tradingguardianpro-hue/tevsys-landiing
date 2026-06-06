@@ -123,4 +123,4 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 | Fecha | Nota |
 |-------|------|
-| 6 jun 2026 | v5: ámbar solo hero/vídeo; lectura y fork Advanced neutros; Essential barra izquierda; sin CTA demo. |
+| 6 jun 2026 | v5.2: título fuera del panel; panel + cards más claros; línea plateada superior. |
