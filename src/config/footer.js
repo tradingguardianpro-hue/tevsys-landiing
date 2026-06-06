@@ -38,7 +38,7 @@ export const footerColumns = [
       { title: 'SML', slug: '/features/sml' },
       { title: 'Evidencia', slug: '/features/evidencia' },
       { title: 'Vídeos — casos de cierre', slug: '/videos-cierre-youtube' },
-      { title: 'Noticias y horarios (próximamente)', slug: null },
+      { title: 'Noticias y horarios', slug: null, note: 'próximamente' },
     ],
   },
   {
