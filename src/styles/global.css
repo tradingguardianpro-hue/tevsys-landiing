@@ -2092,8 +2092,8 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-sml-proof {
 	border-radius: var(--feature-micro-radius);
 }
 
-/* Secciones con vídeo: contenedor redondeado; el iframe/video mantiene su chrome */
-html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof-detail:has(.demo-video),
+/* Secciones con vídeo: contenedor redondeado; --video-slim queda sin losa (Familia A) */
+html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof-detail:has(.demo-video):not(.feature-proof-detail--video-slim),
 html[data-theme='dark'] .tevsys-feature-micro-surface section.feature-demo.feature-demo--hero:not(:target) {
 	border-radius: var(--feature-micro-radius);
 }
@@ -2101,6 +2101,36 @@ html[data-theme='dark'] .tevsys-feature-micro-surface section.feature-demo.featu
 html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof,
 html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof-detail:not(:has(.demo-video)) {
 	margin-top: 1.15rem;
+}
+
+/* Familia A — secciones vídeo sin losa gris (--video-slim; canon HyperClose jun 2026) */
+.tevsys-feature-micro-surface .feature-proof-detail--video-slim {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	padding: clamp(1.35rem, 3.5vw, 1.85rem) 0 0;
+	margin-top: clamp(1.35rem, 3.5vw, 1.85rem);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 0;
+}
+html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--video-slim {
+	border-top-color: rgba(0, 0, 0, 0.08);
+}
+.tevsys-feature-micro-surface .feature-proof-detail--video-slim:target {
+	background: transparent;
+	border-top-color: rgba(245, 176, 65, 0.45);
+	box-shadow: none;
+}
+.tevsys-feature-micro-surface .feature-proof-lead {
+	margin: 0 0 0.85rem;
+	font-size: 0.94rem;
+	line-height: 1.5;
+	opacity: 0.88;
+	max-width: 52ch;
+}
+.tevsys-feature-micro-surface .feature-proof-detail--video-slim .demo-video--compact {
+	margin-bottom: 0.65rem;
+	max-width: min(100%, 34rem);
 }
 
 html[data-theme='dark'] .tevsys-feature-micro-surface section.feature-demo.feature-demo--hero:not(:target) {

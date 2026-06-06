@@ -13,6 +13,17 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 ---
 
+## Tarjeta rápida (línea fija — jun 2026)
+
+- **A — Producto** · Home cards + `/features/hyperclose`, `/precision`, `/sml`, `/evidencia` · **Job:** vídeo + mapa de pruebas + CTA demo · **Visual:** `--feature-micro-radius`; bloque índice gris redondeado; secciones vídeo **sin losa** (`--video-slim`); poco texto bajo el embed.
+- **B — Narrativa** · `/como-funciona` + microclips · **Job:** mapa del sistema, escena rica · **Visual:** stages, halos, motion — **no** copiar en guías ni micropáginas A.
+- **C — Guías** · `/instalacion`, `/configuracion`, `/configuracion-al-instalar`, `/configuracion-fin-de-semana` · **Job:** instalar/configurar; vídeo primero, lectura opcional, fork · **Visual:** `guia-operativa.css` v5.6 — ámbar solo hero+vídeo; avisos cruce **debajo del embed**; sin CTA demo.
+- **D — Editorial** · Teaser home + `/auditoria-ia` · **Job:** futuro / roadmap aparte del producto · **Visual:** shell editorial propio — **no** homogeneizar con A ni C.
+
+**Orden de cierre acordado (jun 2026):** C ✅ → A (HyperClose → Precisión → SML → Evidencia) → footer → home cards aligeradas.
+
+---
+
 ## Las cuatro familias
 
 ### A — Producto / venta (home, micropáginas de producto)
@@ -23,8 +34,9 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 **Visual:**
 - Cards con radio `clamp(0.85rem, 1.5vw, 1.15rem)` — token `--feature-micro-radius` en `.tevsys-feature-micro-surface`.
-- Bloques **sin vídeo** (`feature-proof`, `feature-proof-detail` texto): esquinas redondeadas (jun 2026; dark tenía radio 0 global).
-- Bloques **con vídeo**: contenedor redondeado; marco del reproductor aparte.
+- Bloques **sin vídeo** (`feature-proof`, índice «Qué puedes comprobar»): esquinas redondeadas.
+- Secciones **con vídeo secundario:** clase `feature-proof-detail--video-slim` — **sin losa gris**; título + una línea + vídeo + enlace/capturas en `<details>`.
+- Hero vídeo: mantiene chrome propio; no apilar manual sobre manual.
 
 **No copiar en:** guías operativas (demasiado marketing).
 

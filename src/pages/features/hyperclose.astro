@@ -226,11 +226,10 @@ const seo = {
 			</ul>
 		</section>
 
-		<section id="hyperclose-semaphore" class="feature-proof-detail feature-proof-detail--protocol">
+		<section id="hyperclose-semaphore" class="feature-proof-detail feature-proof-detail--video-slim">
 			<h3>Semáforo de responsabilidad</h3>
-			<p class="feature-proof-subtitle">Tres niveles de aviso por reiteración</p>
-			<p>El sistema escala mensajes educativos y de responsabilidad según la repetición del intento.</p>
-			<p class="feature-demo-hook">Los 3 niveles — mismo metraje que la demo principal (2:23).</p>
+			<p class="feature-proof-subtitle">Tres niveles de aviso si repites el intento</p>
+			<p class="feature-proof-lead">Mismo metraje que la demo principal (2:23).</p>
 			<div class="demo-video demo-video--compact" id="hyperclose-semaphore-container">
 				<video id="hyperclose-semaphore-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
@@ -271,17 +270,10 @@ const seo = {
 			</details>
 		</section>
 
-		<section id="hyperclose-off" class="feature-proof-detail feature-proof-detail--protocol">
+		<section id="hyperclose-off" class="feature-proof-detail feature-proof-detail--video-slim">
 			<h3>Rotación automática y día OFF protegido</h3>
-			<p class="feature-proof-subtitle">Cuando cambia el día, tevsys toma el control.</p>
-			<p>De día ON a día OFF: el sistema rota automáticamente, cambia el estado y activa protección con candado verde.</p>
-			<p>Configuras una vez. Si toca día OFF, la protección entra desde el primer tick operativo.</p>
-			<p><strong>Cómo validarlo:</strong> Configura un día como OFF, bloquea límites e intenta operar ese día. Comprueba cierre inmediato y los modales progresivos.</p>
-			<p>
-				<a class="proof-capture-link" href="#hyperclose-off-demo">
-					Ver rotación automática día OFF <span class="proof-link-meta">VIDEO</span>
-				</a>
-			</p>
+			<p class="feature-proof-subtitle">Cuando cambia el día, tevsys toma el control</p>
+			<p class="feature-proof-lead">Día OFF con límites bloqueados: protección y candado verde desde el primer tick operativo.</p>
 			<div id="hyperclose-off-demo" class="demo-video demo-video--compact hyperclose-off-demo" tabindex="-1">
 				<video id="hyperclose-off-demo-video" controls preload="metadata">
 					<source src="/videos/features/tevsys-rotacion-automatica-dia-off.mp4" type="video/mp4" />
@@ -781,56 +773,16 @@ const seo = {
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 	}
-	/* Fase 2 HyperClose: se mantienen en zona agrupada, pero con lectura premium más ligera */
-	#hyperclose-semaphore,
-	#hyperclose-off {
-		background:
-			linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.008)),
-			var(--theme-surface-1);
-		border-color: rgba(255, 255, 255, 0.11);
-		box-shadow:
-			var(--theme-surface-elevated-shadow),
-			0 0 0 1px rgba(255, 255, 255, 0.02);
+	.feature-proof-detail--video-slim:target {
+		background: transparent;
+		border-top-color: rgba(245, 176, 65, 0.45);
+		box-shadow: none;
 	}
-	#hyperclose-semaphore h3,
-	#hyperclose-off h3 {
-		font-size: 1.08rem;
+	.feature-proof-detail--video-slim .feature-proof-subtitle {
+		margin: -0.1rem 0 0.4rem !important;
 	}
-	#hyperclose-semaphore .feature-proof-subtitle,
-	#hyperclose-off .feature-proof-subtitle {
-		font-size: 0.92rem;
-		opacity: 0.95;
-	}
-	#hyperclose-semaphore p,
-	#hyperclose-off p {
-		max-width: 78ch;
-	}
-	#hyperclose-semaphore p + p,
-	#hyperclose-off p + p {
-		margin-top: 0.48rem;
-	}
-	#hyperclose-semaphore .feature-demo-hook {
-		margin-top: 0.55rem;
-		font-size: 0.86rem;
-		letter-spacing: 0.01em;
-		opacity: 0.82;
-	}
-	#hyperclose-semaphore .demo-video--compact,
-	#hyperclose-off .demo-video--compact {
-		max-width: min(100%, 34rem);
-		background: var(--theme-embed-chrome);
-		border-color: var(--theme-embed-chrome-border);
-		box-shadow:
-			0 0 0 1px rgba(255, 255, 255, 0.05),
-			0 10px 30px rgba(0, 0, 0, 0.28);
-	}
-	#hyperclose-semaphore .proof-accordion,
-	#hyperclose-off .proof-accordion {
-		margin-top: 0.65rem;
-	}
-	#hyperclose-semaphore .proof-capture-link,
-	#hyperclose-off .proof-capture-link {
-		font-weight: 600;
+	.feature-proof-detail--video-slim .proof-accordion {
+		margin-top: 0.35rem;
 	}
 	.proof-capture-link {
 		color: #f5b041;
