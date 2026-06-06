@@ -1,23 +1,33 @@
 export const footerSocials = [];
 
-export const footerLists = [
-  {
-    title: 'Navegación',
-    items: [
-      { title: 'Inicio', slug: '/' },
-      { title: 'Cómo funciona', slug: '/como-funciona' },
-      { title: 'Precios', slug: '/precios' },
-      { title: 'Empresas', slug: '/company/empresas' },
-      { title: 'Contacto', slug: '/company/contact' },
-    ],
-  },
+/** Enlaces principales — fila superior del footer (no mezclar con guías operativas). */
+export const footerNav = [
+  { title: 'Inicio', slug: '/' },
+  { title: 'Cómo funciona', slug: '/como-funciona' },
+  { title: 'Precios', slug: '/precios' },
+  { title: 'Empresas', slug: '/company/empresas' },
+  { title: 'Contacto', slug: '/company/contact' },
+];
+
+/** Columnas inferiores — guías en orden de embudo + producto + legal. */
+export const footerColumns = [
   {
     title: 'Guías',
-    items: [
-      { title: 'Cómo instalar', slug: '/instalacion' },
-      { title: 'Essential — configuración', slug: '/configuracion' },
-      { title: 'Advanced/Pro — al instalar (L–V)', slug: '/configuracion-al-instalar' },
-      { title: 'Advanced/Pro — fin de semana (S–D)', slug: '/configuracion-fin-de-semana' },
+    groups: [
+      {
+        items: [{ title: 'Cómo instalar', slug: '/instalacion' }],
+      },
+      {
+        label: 'Essential',
+        items: [{ title: 'Configuración', slug: '/configuracion' }],
+      },
+      {
+        label: 'Advanced / Pro',
+        items: [
+          { title: 'Al instalar (L–V)', slug: '/configuracion-al-instalar' },
+          { title: 'Fin de semana (S–D)', slug: '/configuracion-fin-de-semana' },
+        ],
+      },
     ],
   },
   {
@@ -41,3 +51,6 @@ export const footerLists = [
     ],
   },
 ];
+
+/** @deprecated Usar footerNav + footerColumns. Mantener solo por compatibilidad theme-setup. */
+export const footerLists = footerColumns;
