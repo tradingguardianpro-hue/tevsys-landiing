@@ -53,21 +53,25 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 						<span>Barcelona (Spain)</span>
 					</span>
 				</div>
-				{
-					footerNav.length > 0 && (
-						<nav class="footer-nav" aria-label="Navegación del sitio">
-							<ul class="footer-nav__list">
-								{footerNav.map((item) => (
-									<li>
-										<a href={item.slug}>{item.title}</a>
-									</li>
-								))}
-							</ul>
-						</nav>
-					)
-				}
 			</div>
 		</div>
+
+		{
+			footerNav.length > 0 && (
+				<div class="footer-nav-row">
+					<nav class="footer-nav" aria-label="Navegación del sitio">
+						<p class="footer-nav-row__label">Sitio</p>
+						<ul class="footer-nav__list">
+							{footerNav.map((item) => (
+								<li>
+									<a href={item.slug}>{item.title}</a>
+								</li>
+							))}
+						</ul>
+					</nav>
+				</div>
+			)
+		}
 
 		<div class="footer-columns">
 			{
@@ -84,7 +88,12 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 										{group.items.map((item) => (
 											<li>
 												{item.slug ? (
-													<a href={item.slug}>{item.title}</a>
+													<a href={item.slug}>
+														{item.title}
+														{item.note && (
+															<span class="footer-link__hint"> · {item.note}</span>
+														)}
+													</a>
 												) : (
 													<span class="footer-link__disabled">
 														{item.title}
@@ -103,7 +112,12 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 								{column.items.map((item) => (
 									<li>
 										{item.slug ? (
-											<a href={item.slug}>{item.title}</a>
+											<a href={item.slug}>
+												{item.title}
+												{item.note && (
+													<span class="footer-link__hint"> · {item.note}</span>
+												)}
+											</a>
 										) : (
 											<span class="footer-link__disabled">
 												{item.title}
@@ -216,10 +230,28 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 		flex-shrink: 0;
 	}
 
-	.footer-nav {
-		margin-top: 1.1rem;
-		padding-top: 1rem;
-		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	.footer-nav-row {
+		padding: 0.9rem 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		background: rgba(0, 0, 0, 0.14);
+	}
+
+	.footer-nav-row .footer-nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.65rem 1rem;
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+
+	.footer-nav-row__label {
+		margin: 0;
+		font-size: 0.78rem;
+		font-weight: 500;
+		opacity: 0.52;
+		flex-shrink: 0;
 	}
 
 	.footer-nav__list {
@@ -321,6 +353,12 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 		color: #f5b041;
 	}
 
+	.footer-link__hint {
+		opacity: 0.58;
+		font-size: 0.88em;
+		font-weight: 400;
+	}
+
 	.footer-link__disabled {
 		opacity: 0.72;
 		cursor: default;
@@ -380,6 +418,12 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 	@media (max-width: 600px) {
 		.footer-top {
 			padding: 1.5rem 0 1rem;
+		}
+
+		.footer-nav-row .footer-nav {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
 		}
 
 		.footer-nav__list {
