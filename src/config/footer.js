@@ -24,8 +24,8 @@ export const footerColumns = [
       {
         label: 'Advanced / Pro',
         items: [
-          { title: 'Al instalar (L–V)', slug: '/configuracion-al-instalar' },
-          { title: 'Fin de semana (S–D)', slug: '/configuracion-fin-de-semana' },
+          { title: 'Configuración al instalar (L–V)', slug: '/configuracion-al-instalar' },
+          { title: 'Configuración fin de semana (S–D)', slug: '/configuracion-fin-de-semana' },
         ],
       },
     ],
