@@ -94,6 +94,11 @@ html[data-theme='dark'] .guia-page .guia-note-box {
 	text-underline-offset: 2px;
 }
 
+.guia-page .guia-note-box--after-video {
+	margin-top: clamp(0.85rem, 2.2vw, 1.1rem);
+	max-width: none;
+}
+
 .guia-page .guia-section-head {
 	margin-bottom: 1rem;
 }
