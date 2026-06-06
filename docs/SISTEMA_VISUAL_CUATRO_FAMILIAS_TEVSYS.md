@@ -56,7 +56,7 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 - Vídeo protagonista: `guia-embed--chrome` + halo estático (sin stages).
 - **Regla ámbar (v5):** ámbar solo en **hero + vídeo** (hook, WebRequest, halo, marco). Debajo = **neutro**.
 - Bloques lectura: lista **editorial** — separadores finos, número ámbar pequeño sin caja; **sin** panel gris ni doble marco (v5.3).
-- Fork: filas neutras; **solo** `--primary` (Essential) con barra izquierda ámbar + fondo cálido suave.
+- Fork: tres filas **mismo tono**; ámbar solo en **labels** de plan (Essential / Advanced / Pro); hint «Elige tu guía:».
 - **Sin** CTA “¿Necesitas la demo?” en guías (el visitante ya viene del mail o usa footer).
 - Referencia implementación: `src/pages/instalacion.astro` (v5.3 jun 2026).
 
