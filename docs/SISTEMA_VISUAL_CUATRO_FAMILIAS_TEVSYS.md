@@ -56,7 +56,7 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 - Hero corto + eyebrow **ámbar** + caja WebRequest (duplicar en bloque MT5 cuando aplique).
 - Vídeo protagonista: `guia-embed--chrome` + halo estático (sin stages).
 - **Regla ámbar (v5):** ámbar solo en **hero + vídeo** (hook, WebRequest, halo, marco). Debajo = **neutro**.
-- Bloques lectura: `guia-phase-card` — borde gris/blanco tenue, números grises, **sin** borde ámbar.
+- Bloques lectura: `guia-phase-card` — panel contenedor sutil + tarjetas en `--theme-surface-1`, borde gris claro, acento izquierdo plateado, badge número cuadrado redondeado; **sin** ámbar.
 - Fork: filas neutras; **solo** `--primary` (Essential) con barra izquierda ámbar + fondo cálido suave.
 - **Sin** CTA “¿Necesitas la demo?” en guías (el visitante ya viene del mail o usa footer).
 - Referencia implementación: `src/pages/instalacion.astro` (v5 visual jun 2026).
