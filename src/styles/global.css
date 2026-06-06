@@ -2108,7 +2108,7 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof-detail:not(
 	background: transparent;
 	border: none;
 	box-shadow: none;
-	padding: clamp(1.35rem, 3.5vw, 1.85rem) 0 0;
+	padding: clamp(1.35rem, 3.5vw, 1.85rem) clamp(1rem, 3vw, 1.5rem) clamp(0.35rem, 1.2vw, 0.75rem);
 	margin-top: clamp(1.35rem, 3.5vw, 1.85rem);
 	border-top: 1px solid rgba(255, 255, 255, 0.08);
 	border-radius: 0;
@@ -2130,7 +2130,10 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--vi
 }
 .tevsys-feature-micro-surface .feature-proof-detail--video-slim .demo-video--compact {
 	margin-bottom: 0.65rem;
-	max-width: min(100%, 34rem);
+	max-width: min(100%, 36rem);
+}
+.tevsys-feature-micro-surface .feature-proof-detail--video-slim .proof-accordion {
+	padding-inline: 0.05rem;
 }
 
 html[data-theme='dark'] .tevsys-feature-micro-surface section.feature-demo.feature-demo--hero:not(:target) {
@@ -2164,14 +2167,6 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof-detail {
 	border-color: rgba(255, 255, 255, 0.12);
 	background:
 		linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, transparent 55%),
-		var(--theme-surface-1);
-}
-
-html[data-theme='dark'] .tevsys-feature-micro-surface #hyperclose-semaphore,
-html[data-theme='dark'] .tevsys-feature-micro-surface #hyperclose-off {
-	border-color: rgba(255, 255, 255, 0.14);
-	background:
-		linear-gradient(155deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.012)),
 		var(--theme-surface-1);
 }
 

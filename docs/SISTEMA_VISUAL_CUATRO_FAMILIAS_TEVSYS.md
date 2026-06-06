@@ -24,6 +24,63 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 ---
 
+## Qué debe explicar cada familia (contenido, no solo visual)
+
+Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` (repo TGP). Nada prometido que el build o la evidencia no respalden.
+
+### A — Producto
+
+**Al visitante le debe quedar claro:**
+- Qué hace **esta pieza** del sistema (HyperClose, precisión, SML, evidencia) en lenguaje verificable.
+- **Cómo comprobarlo** — vídeo principal + índice «Qué puedes comprobar» + pruebas puntuales (capturas en acordeón si aportan).
+- Dónde pedir **demo** o ver **precios** (CTA al final; no mezclar con guías paso a paso).
+
+**No debe hacer:** manual largo repetido del hero; bloques grises apilados bajo cada vídeo; tono «curso» (eso es C).
+
+### B — Narrativa
+
+**Al visitante le debe quedar claro:**
+- El **mapa completo** del producto: cómo encajan disciplina, límites, cierre, SML, evidencia.
+- Por qué tevsys es **polivalente** (no solo «disciplina») sin humo comercial.
+
+**No debe hacer:** parecer guía de instalación ni ficha Market compacta.
+
+### C — Guías
+
+**Al visitante le debe quedar claro:**
+- **Qué hacer ahora** en MT5 (instalar, configurar entre semana o fin de semana, según plan).
+- **WebRequest** y requisitos técnicos mínimos cuando aplique (instalación).
+- **Siguiente paso** vía fork («Elige tu guía») — no buscador global.
+
+**No debe hacer:** vender demo con CTA grande; ámbar en bloques de lectura; avisos de cruce entre guías en el hero (van **debajo del embed**).
+
+### D — Editorial
+
+**Al visitante le debe quedar claro:**
+- Qué es **roadmap / futuro** (p. ej. auditoría IA) vs lo **disponible hoy**.
+- Honestidad: preparación, no producto cerrado en ficha.
+
+**No debe hacer:** homogeneizarse con cards de producto ni con guías grises.
+
+---
+
+## Estado de cierre (jun 2026)
+
+| Familia | Estado | Notas |
+|---------|--------|--------|
+| **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS compartido `guia-operativa.css` · cuatro URLs alineadas · avisos cruce debajo del vídeo · sin CTA demo · copy lectura = borrador (revisión fundador pendiente). |
+| **A — Producto** | **Criterio cerrado · replicar** | Canon visual en HyperClose (`--video-slim`, índice gris, poco texto). **Pendiente:** clonar en Precisión, SML, Evidencia · cards home · validación fundador tras padding lateral. |
+| **B — Narrativa** | **Estable** | No rediseñar salvo motion/copy acordado; no copiar estilo en C ni A. |
+| **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
+| **Footer** | **Pendiente** | Momento dedicado **antes** de expandir Familia A a todas las cards home. |
+| **Buscador global** | **Aplazado** | Mail + footer Guías + fork. |
+
+**Archivos clave Familia C:** `src/styles/guia-operativa.css` · `src/pages/instalacion.astro` · `configuracion*.astro`.
+
+**Archivos clave Familia A (HyperClose):** `src/pages/features/hyperclose.astro` · `src/styles/global.css` (`--feature-micro-radius`, `.feature-proof-detail--video-slim`).
+
+---
+
 ## Las cuatro familias
 
 ### A — Producto / venta (home, micropáginas de producto)
@@ -34,9 +91,12 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 **Visual:**
 - Cards con radio `clamp(0.85rem, 1.5vw, 1.15rem)` — token `--feature-micro-radius` en `.tevsys-feature-micro-surface`.
-- Bloques **sin vídeo** (`feature-proof`, índice «Qué puedes comprobar»): esquinas redondeadas.
-- Secciones **con vídeo secundario:** clase `feature-proof-detail--video-slim` — **sin losa gris**; título + una línea + vídeo + enlace/capturas en `<details>`.
+- Bloques **sin vídeo** (`feature-proof`, índice «Qué puedes comprobar»): esquinas redondeadas; padding `~1rem 1.1rem`.
+- Secciones **con vídeo secundario:** clase `feature-proof-detail--video-slim` — **sin losa gris**; separador superior fino; **mismo aire lateral** que el índice (`clamp(1rem, 3vw, 1.5rem)`); título + una línea + vídeo + capturas en `<details>`.
 - Hero vídeo: mantiene chrome propio; no apilar manual sobre manual.
+- CTA demo **solo** al final de la micropágina.
+
+**Canon de referencia (jun 2026):** `/features/hyperclose` — primera micropágina donde se cierra el criterio visual A. Replicar en Precisión, SML y Evidencia **sin inventar variantes**.
 
 **No copiar en:** guías operativas (demasiado marketing).
 
@@ -108,14 +168,17 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 ## Orden de trabajo recomendado (web)
 
-| Prioridad | Tarea | Familia |
-|-----------|--------|---------|
-| 1 | ~~Pulir `/instalacion`~~ **CERRADO v5.6** — canon familia C | C |
-| 2 | Replicar plantilla `guia-*` en fin-de-semana y al-instalar | **Hecho jun 2026** — `guia-operativa.css` |
-| 4 | ~~Opcional: alinear `/configuracion` Essential~~ | **Hecho jun 2026** |
-| — | No tocar auditoría salvo copy | D |
-| — | No homogeneizar cómo-funciona | B |
-| — | Buscador global | aplazado |
+| Prioridad | Tarea | Familia | Estado |
+|-----------|--------|---------|--------|
+| 1 | Canon `/instalacion` + replicar en resto guías | C | **Cerrado** v5.6 |
+| 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
+| 3 | HyperClose aligerado (`--video-slim`) | A | **Hecho** jun 2026 — feedback fundador |
+| 4 | Precisión, SML, Evidencia (misma línea A) | A | Pendiente |
+| 5 | Footer columna Guías + revisión navegación | — | Pendiente (momento aparte) |
+| 6 | Cards home (Precisión, HyperClose, SML, Evidencia) aligeradas | A | Después de footer |
+| — | No tocar auditoría salvo copy | D | Estable |
+| — | No homogeneizar cómo-funciona | B | Estable |
+| — | Buscador global | — | Aplazado |
 
 ---
 
@@ -133,5 +196,10 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 | Fecha | Nota |
 |-------|------|
-| 6 jun 2026 | **Familia C cerrada** — canon `/instalacion` v5.6. Clonar guías pendientes. |
+| 6 jun 2026 | **Familia A — padding `--video-slim`:** aire lateral alineado al índice; quitadas reglas legacy que reintroducían losa en HyperClose. |
+| 6 jun 2026 | **Familia A — criterio documentado:** HyperClose = canon de referencia antes de clonar micropáginas. |
+| 6 jun 2026 | **Familia A — HyperClose:** `--video-slim`; semáforo y día OFF sin losa gris; capturas en `<details>`. |
+| 6 jun 2026 | **Familia C — avisos cruce** (finde ↔ entre semana) debajo del embed en las tres guías de config. |
+| 6 jun 2026 | **Familia C cerrada** — canon `/instalacion` v5.6; `guia-operativa.css` en las cuatro guías. |
 | 6 jun 2026 | v5.3 instalación: apoyo al vídeo editorial sin cajas grises. Familia A: `--feature-micro-radius` en bloques sin vídeo. |
+| 6 jun 2026 | Doc inicial + tarjeta rápida A/B/C/D; navegación sin buscador. |
