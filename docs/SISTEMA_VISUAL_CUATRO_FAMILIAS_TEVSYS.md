@@ -58,7 +58,7 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 - Bloques lectura: lista **editorial** — separadores finos, número ámbar pequeño sin caja; **sin** panel gris ni doble marco (v5.3).
 - Fork: tres filas **mismo tono**; ámbar solo en **labels** de plan (Essential / Advanced / Pro); hint «Elige tu guía:».
 - **Sin** CTA “¿Necesitas la demo?” en guías (el visitante ya viene del mail o usa footer).
-- Referencia implementación: `src/pages/instalacion.astro` (v5.3 jun 2026).
+- Referencia implementación: `src/pages/instalacion.astro` · estilos compartidos `src/styles/guia-operativa.css`.
 
 **Regla:** todas las guías comparten **mismas clases**; solo cambia copy y vídeo.
 
@@ -99,9 +99,8 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 | Prioridad | Tarea | Familia |
 |-----------|--------|---------|
 | 1 | ~~Pulir `/instalacion`~~ **CERRADO v5.6** — canon familia C | C |
-| 2 | Replicar plantilla `guia-*` en `/configuracion-fin-de-semana` | C |
-| 3 | Igual en `/configuracion-al-instalar` (vídeo 6.1b-ADV cuando exista) | C |
-| 4 | Opcional: alinear `/configuracion` Essential | C |
+| 2 | Replicar plantilla `guia-*` en fin-de-semana y al-instalar | **Hecho jun 2026** — `guia-operativa.css` |
+| 4 | ~~Opcional: alinear `/configuracion` Essential~~ | **Hecho jun 2026** |
 | — | No tocar auditoría salvo copy | D |
 | — | No homogeneizar cómo-funciona | B |
 | — | Buscador global | aplazado |

@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
+import '../styles/guia-operativa.css';
 
 const seo = {
 	title: 'Guía rápida de configuración | tevsys',
@@ -10,145 +11,129 @@ const seo = {
 const VIDEO_DRIVE_ID = '1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg';
 const VIDEO_EMBED_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/preview`;
 const VIDEO_LINK_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/view?usp=sharing`;
+
+const bloquesLectura = [
+	{
+		n: 1,
+		title: 'Tras instalar',
+		detail: 'Con el EA en el gráfico, abre inputs (F7) para límites de pérdida y ganancia.',
+	},
+	{
+		n: 2,
+		title: 'Fin de semana vs entre semana',
+		detail:
+			'El vídeo muestra el flujo en fin de semana; entre semana es similar — cambia el día activo.',
+	},
+	{
+		n: 3,
+		title: 'Panel',
+		detail: 'Tras configurar verás el panel y el flujo Essential de demo.',
+	},
+];
+
+const otrasGuias = [
+	{
+		label: 'Instalación',
+		title: 'Cómo instalar en MT5',
+		href: '/instalacion',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Configuración al instalar de lunes a viernes',
+		href: '/configuracion-al-instalar',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Planificar la semana en sábado o domingo',
+		href: '/configuracion-fin-de-semana',
+	},
+];
 ---
 
-<Layout seo={seo}>
+<Layout seo={seo} bodyClass="page-guia-config-essential">
 	<Container>
-		<section class="feature-hero">
-			<p class="feature-kicker">Guía Essential — demo estándar</p>
-			<h1>Guía de configuración — tevsys Essential</h1>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Límites, panel y primer uso.</p>
-			<p class="feature-lead">
-				Tras instalar la demo Essential, configura los límites de pérdida y ganancia. Este vídeo muestra el flujo en fin de semana; entre semana el proceso es similar, solo cambia el día activo.
-			</p>
-			<p class="feature-lead feature-lead--note">
-				<strong>Advanced o Pro:</strong>
-				<a href="/configuracion-al-instalar">configuración al instalar</a> (entre semana) ·
-				<a href="/configuracion-fin-de-semana">configuración fin de semana</a> (solo sáb./dom.).
-			</p>
-		</section>
+		<div class="guia-page">
+			<section class="feature-hero guia-hero">
+				<p class="guia-eyebrow">Guía Essential — demo estándar</p>
+				<h1>Configuración — tevsys Essential</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>Vídeo 2:36 — límites, panel y primer uso.
+				</p>
+				<p class="guia-note-box">
+					<strong>Advanced o Pro:</strong>
+					<a href="/configuracion-al-instalar">configuración al instalar</a> (entre semana) ·
+					<a href="/configuracion-fin-de-semana">configuración fin de semana</a> (solo sáb./dom.).
+				</p>
+			</section>
 
-		<section class="feature-demo">
-			<h2>Vídeo — Configuración básica</h2>
-			<p class="feature-demo-hook">2:36 min. Essential, inputs, engranaje y reinicio.</p>
-			<div class="demo-video demo-video--compact demo-video--embed-chrome">
-				<iframe
-					src={VIDEO_EMBED_URL}
-					width="560"
-					height="315"
-					allow="autoplay"
-					allowfullscreen
-					title="Guía rápida de configuración tevsys"
-				></iframe>
-			</div>
-			<p class="configuracion-fallback">
-				Si el vídeo no se reproduce, <a href={VIDEO_LINK_URL} target="_blank" rel="noopener noreferrer">ábrelo directamente</a>.
-			</p>
-		</section>
+			<section id="configuracion-video" class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">Vídeo</p>
+						<h2>Configuración básica</h2>
+					</header>
+					<div class="guia-embed guia-embed--chrome">
+						<iframe
+							src={VIDEO_EMBED_URL}
+							width="560"
+							height="315"
+							allow="autoplay"
+							allowfullscreen
+							title="Guía rápida de configuración tevsys"
+						></iframe>
+					</div>
+					<p class="guia-embed-fallback">
+						Si el vídeo no se reproduce, <a href={VIDEO_LINK_URL} target="_blank" rel="noopener noreferrer">ábrelo directamente</a>.
+					</p>
+				</div>
+			</section>
 
-		<section class="feature-cta">
-			<h2>¿Necesitas la demo?</h2>
-			<p>Rellena el formulario y te enviamos el enlace de descarga + las guías de instalación y configuración.</p>
-			<a href="/company/contact?flow=demo" class="feature-cta__button">Solicitar demo</a>
-		</section>
+			<section class="guia-read-section">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Apoyo al vídeo</p>
+					<h2>Si prefieres leer</h2>
+					<p class="guia-section-sub">Tres bloques, mismo orden.</p>
+				</header>
+				<div class="guia-read-panel">
+					<ol class="guia-phase-list">
+						{
+							bloquesLectura.map((bloque) => (
+								<li>
+									<article class="guia-phase-card">
+										<span class="guia-phase-card__n">{bloque.n}</span>
+										<div class="guia-phase-card__body">
+											<h3 class="guia-phase-card__title">{bloque.title}</h3>
+											<p class="guia-phase-card__detail">{bloque.detail}</p>
+										</div>
+									</article>
+								</li>
+							))
+						}
+					</ol>
+				</div>
+			</section>
+
+			<section class="guia-fork-panel">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Otras guías</p>
+					<h2>Enlaces relacionados</h2>
+					<p class="guia-section-sub guia-fork-hint">Elige tu guía:</p>
+				</header>
+				<ul class="guia-fork-list">
+					{
+						otrasGuias.map((guia) => (
+							<li>
+								<a href={guia.href} class="guia-fork-link">
+									<span class="guia-fork-link__label">{guia.label}</span>
+									<span class="guia-fork-link__title">{guia.title}</span>
+									<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
 	</Container>
 </Layout>
-
-<style>
-	.feature-hero,
-	.feature-demo,
-	.feature-cta {
-		margin: var(--section-margin) auto;
-	}
-	.feature-kicker {
-		margin: 0 0 0.35rem;
-		opacity: 0.8;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-size: 0.82rem;
-	}
-	.feature-hook {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		font-style: italic;
-		font-weight: 600;
-		opacity: 0.9;
-		margin: 0 0 0.7rem;
-	}
-	.feature-hook__dot {
-		width: 0.45rem;
-		height: 0.45rem;
-		border-radius: 50%;
-		background: #f5b041;
-		flex-shrink: 0;
-	}
-	.feature-lead {
-		max-width: 70ch;
-		line-height: 1.55;
-	}
-	.feature-lead--note {
-		margin-top: 0.85rem;
-		padding: 0.75rem 0.9rem;
-		border-radius: 0.5rem;
-		border: 1px solid rgba(245, 176, 65, 0.35);
-		background: rgba(245, 176, 65, 0.06);
-		font-size: 0.98rem;
-	}
-	.feature-lead--note a {
-		color: #f5b041;
-	}
-	.feature-demo h2,
-	.feature-cta h2 {
-		margin: 0 0 0.75rem;
-		font-size: 1.35rem;
-	}
-	.feature-demo-hook {
-		margin: 0 0 0.75rem;
-		opacity: 0.9;
-		font-style: italic;
-	}
-	.demo-video {
-		background: #06080d;
-		border-radius: var(--theme-shape-radius);
-		overflow: hidden;
-	}
-	/* Embed (Drive/YouTube): gris cromado propio; los vídeos MT5 siguen en #06080d en otras páginas */
-	.demo-video--embed-chrome {
-		background: var(--theme-embed-chrome);
-		border: 1px solid var(--theme-embed-chrome-border);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-	}
-	.demo-video--compact {
-		max-width: 560px;
-	}
-	.demo-video iframe {
-		display: block;
-		width: 100%;
-		aspect-ratio: 16 / 9;
-		border: none;
-	}
-	.configuracion-fallback {
-		margin-top: 0.75rem;
-		font-size: 0.9rem;
-		opacity: 0.85;
-	}
-	.configuracion-fallback a {
-		color: #f5b041;
-		text-decoration: underline;
-	}
-	.configuracion-fallback a:hover {
-		opacity: 0.9;
-	}
-	.feature-cta {
-		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
-		padding: 1.2rem;
-		border: 1px solid var(--theme-surface-border);
-		box-shadow: var(--theme-surface-elevated-shadow);
-	}
-	.feature-cta p {
-		margin: 0 0 0.9rem;
-		line-height: 1.5;
-	}
-</style>
