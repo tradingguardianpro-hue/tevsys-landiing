@@ -230,11 +230,15 @@ const seo = {
 			<h3>Semáforo de responsabilidad</h3>
 			<p class="feature-proof-subtitle">Tres niveles de aviso si repites el intento</p>
 			<p class="feature-proof-lead">
-				Ya has alcanzado el límite: a la <strong>derecha</strong> el panel en STOP (−1,02 % en este ejemplo). Si aun así intentas operar, el cierre es inmediato y el modal sube de tono:
-				<strong>1.º semáforo</strong> — sistema bloqueado (informativo);
-				<strong>2.º</strong> — advertencia por reiteración;
-				<strong>3.º</strong> — exención de responsabilidad (último aviso en pantalla).
-				La imagen reúne los tres modales actuales y el panel — misma composición que en MQL5 Market.
+				Ya has alcanzado el límite; el panel queda en STOP. Si aun así intentas operar, el cierre es inmediato y el modal sube de tono:
+			</p>
+			<ul class="hyperclose-semaphore-levels">
+				<li><strong>1.º semáforo</strong> — sistema bloqueado</li>
+				<li><strong>2.º semáforo</strong> — advertencia por reiteración</li>
+				<li><strong>3.º semáforo</strong> — exención de responsabilidad</li>
+			</ul>
+			<p class="feature-proof-lead feature-proof-lead--note">
+				La imagen reúne los tres modales actuales y el panel.
 			</p>
 			<figure class="hyperclose-semaphore-collage">
 				<a
@@ -255,7 +259,7 @@ const seo = {
 					/>
 				</a>
 				<figcaption class="hyperclose-semaphore-collage__caption">
-					Cada intento de operar con límites alcanzados dispara cierre inmediato; el tono del modal sube si repites. Para verlo en movimiento:
+					Para verlo en movimiento:
 					<a class="proof-capture-link" href="#hyperclose-demo">demo principal (2:23)</a>.
 				</figcaption>
 			</figure>
@@ -773,6 +777,20 @@ const seo = {
 	}
 	.feature-proof-detail--video-slim .proof-accordion {
 		margin-top: 0.35rem;
+	}
+	.hyperclose-semaphore-levels {
+		margin: 0 0 0.65rem;
+		padding-left: 1.15rem;
+		font-size: 0.94rem;
+		line-height: 1.55;
+		opacity: 0.92;
+		max-width: 52ch;
+	}
+	.hyperclose-semaphore-levels li + li {
+		margin-top: 0.2rem;
+	}
+	.feature-proof-lead--note {
+		margin-bottom: 0.5rem;
 	}
 	.hyperclose-semaphore-collage {
 		margin: clamp(0.65rem, 1.5vw, 0.95rem) 0 0;
