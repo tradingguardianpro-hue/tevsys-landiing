@@ -25,9 +25,6 @@ const seo = {
 				<a class="audit-cta audit-cta--primary" href="#que-debes-enviar">Qué estamos preparando</a>
 				<a class="audit-cta audit-cta--secondary" href="/company/contact?flow=auditoria-ia">Avísame cuando abra</a>
 			</div>
-			<p class="audit-status-banner" role="note">
-				<strong>Servicio no abierto al público.</strong> La base técnica ya está en producción: logs de sesión, ID de cliente, informe MT5 y cruce de capas como en Evidencia. Estamos preparando la <strong>revisión de disciplina asistida</strong> (Fase 1 manual-asistida); te avisamos cuando abramos contratación.
-			</p>
 		</section>
 
 		<section class="audit-dual">
@@ -165,6 +162,10 @@ const seo = {
 				<p>Recomendaciones operativas no personalizadas para mejorar ejecución y disciplina; no son asesoramiento financiero.</p>
 			</details>
 		</section>
+
+		<p class="audit-status-banner audit-status-banner--foot" role="note">
+			<strong>Servicio no abierto al público.</strong> La base técnica ya está en producción (logs, ID de cliente, informe MT5). Estamos preparando la revisión de disciplina asistida (Fase 1 manual-asistida); te avisamos cuando abramos contratación.
+		</p>
 		</div>
 
 		<section class="audit-closing">
@@ -264,9 +265,24 @@ const seo = {
 		max-width: 52rem;
 		opacity: 0.96;
 	}
+	.audit-status-banner--foot {
+		margin: 1.25rem 0 0;
+		padding: 0.62rem 0.75rem;
+		max-width: 46rem;
+		font-size: 0.84rem;
+		line-height: 1.5;
+		opacity: 0.82;
+		border-color: rgba(100, 196, 255, 0.18);
+		background: rgba(255, 255, 255, 0.02);
+	}
 	html[data-theme='light'] .audit-status-banner {
 		border-color: rgba(0, 120, 180, 0.22);
 		background: rgba(0, 120, 180, 0.06);
+	}
+	html[data-theme='light'] .audit-status-banner--foot {
+		border-color: rgba(0, 0, 0, 0.07);
+		background: rgba(0, 0, 0, 0.025);
+		opacity: 0.88;
 	}
 	.audit-hero h1 {
 		margin: 0 0 0.5rem;
