@@ -68,11 +68,11 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Familia | Estado | Notas |
 |---------|--------|--------|
-| **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS compartido `guia-operativa.css` · cuatro URLs alineadas · avisos cruce debajo del vídeo · sin CTA demo · copy lectura = borrador (revisión fundador pendiente). |
+| **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS `guia-operativa.css` · cuatro URLs · copy lectura fin de semana revisado **7 jun** · vídeo C **2:01** en `/configuracion-fin-de-semana`. |
 | **A — Producto** | **Cerrada (canon HyperClose)** | Validado jun 2026 — fundador. Replicar checklist en Precisión, SML, Evidencia · cards home. |
-| **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable en producción; falta **documentar criterio** como C y A (motion, stages — no copiar en guías). |
+| **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable; videoteca **4 huecos** (MC-CF-019 fuera); criterio microclip vs guía documentado en V12 + catálogo. |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
-| **Footer** | **Hecho** | Rediseño 7 jun 2026 — § Footer implementado |
+| **Footer** | **Cerrado** | Validado fundador **7 jun 2026** — § Footer cerrado |
 | **Buscador global** | **Aplazado** | Mail + footer Guías + fork. |
 
 **Archivos clave Familia C:** `src/styles/guia-operativa.css` · `src/pages/instalacion.astro` · `configuracion*.astro`.
@@ -176,7 +176,26 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 ---
 
-## Footer — implementado (7 jun 2026)
+## Footer — **CERRADO** (7 jun 2026)
+
+**Estado:** validado por fundador; **listo por el momento**. Siguiente frente web: capturas HyperClose día OFF (§ Pendiente evidencia).
+
+**Job:** mapa Guías + Producto + Legal + contacto. Nav principal **solo header** (sin franja ámbar duplicada).
+
+**Estructura final:**
+1. Grid contacto: **tevsys · mail · Barcelona** (móvil apilado).
+2. **Línea única** bajo contacto.
+3. Tres columnas — títulos alineados con icono/logo (cuadrícula 18 px / 24 px + guion ámbar).
+4. Guías: subgrupos + labels cortos Adv/Pro (`Config · al instalar` / `Config · en fin de semana`).
+5. **Made with love…** — separación antes del copyright.
+
+**Archivos:** `Footer.astro` · `footer.js` · `Page.astro` · changelog `docs/CHANGELOG-TEVSYS.md`.
+
+---
+
+## Footer — implementado (7 jun 2026) — histórico intermedio
+
+**Nota:** ver sección **Footer — CERRADO** arriba para estado actual.
 
 **Job:** mapa Guías + Producto + Legal + contacto. Nav principal **solo header** (sin franja ámbar duplicada).
 
@@ -227,7 +246,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 **Recomendación acordada — ir una por una, no expandido masivo hoy:**
 - Cada micropágina tiene **estructura distinta** (Precisión = Nasdaq + stats; SML = paneles propios; Evidencia = muchos bloques informe/logs). Un batch ciego arriesga romper contenido único.
 - Flujo: **clonar checklist A** → deploy → **captura + OK fundador** → siguiente.
-- **Orden sugerido:** 1) **Footer** · 2) **Capturas HyperClose** día OFF (+ valorar semáforo 3 niveles; composito modal+panel, ref. Market) · 3) **Precisión** → SML → Evidencia (checklist A) · 4) cards home.
+- **Orden sugerido:** 1) ~~**Footer**~~ **hecho** · 2) **Capturas HyperClose** día OFF (+ valorar semáforo 3 niveles; composito modal+panel, ref. Market) · 3) **Precisión** → SML → Evidencia (checklist A) · 4) cards home.
 - **Familia B** (`/como-funciona`): sesión aparte — documentar criterio, no mezclar con A.
 - **Familia D / futuro:** sin tocar salvo copy roadmap.
 
@@ -265,8 +284,8 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 1 | Canon `/instalacion` + replicar en resto guías | C | **Cerrado** v5.6 |
 | 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
 | 3 | ~~HyperClose aligerado~~ | A | **Cerrado** — canon jun 2026 |
-| 4 | ~~Footer aligerado~~ | — | **Hecho** 7 jun 2026 |
-| 5 | **HyperClose — capturas día OFF (+ semáforo)** modal+panel | A | **Después footer** — § Pendiente evidencia HyperClose |
+| 4 | ~~Footer aligerado~~ | — | **Cerrado** 7 jun 2026 |
+| 5 | **HyperClose — capturas día OFF (+ semáforo)** modal+panel | A | **Siguiente** — § Pendiente evidencia HyperClose |
 | 6 | Precisión (checklist A + hook cifra) | A | Pendiente |
 | 7 | SML | A | Pendiente |
 | 8 | Evidencia | A | Pendiente |
@@ -274,6 +293,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | — | No tocar auditoría salvo copy | D | Estable |
 | — | No homogeneizar cómo-funciona | B | Estable |
 | — | Buscador global | — | Aplazado |
+| — | **Siguiente web:** capturas HyperClose día OFF | A | Tras footer cerrado |
 
 ---
 
@@ -291,7 +311,10 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Fecha | Nota |
 |-------|------|
-| 7 jun 2026 | **Guía fin de semana — bloques lectura:** lunes a viernes (sin L–V); finde = configuración/reprogramar; lunes 00:00 = protección (no «bloqueado hasta guardar»). |
+| 7 jun 2026 | **Footer cerrado** — validado fundador; alineación grid; build fix; changelog + V12. |
+| 7 jun 2026 | **`/como-funciona`:** MC-CF-019 fuera de microclips; videoteca 4 huecos; título bloque sin cambio. |
+| 7 jun 2026 | **Guía fin de semana:** títulos unificados · copy lectura · espaciado hero→vídeo · bloque PROGRAMADO·LUNES. |
+| 7 jun 2026 | **Guía fin de semana — bloques lectura:** lunes a viernes; finde = configuración/reprogramar; lunes 00:00 = protección (no «bloqueado hasta guardar»). |
 | 6 jun 2026 | **Familia A validada:** checklist canon + hook 1,31 € en demo HyperClose; footer diagnóstico pendiente. |
 | 6 jun 2026 | **Familia A — criterio documentado:** HyperClose = canon de referencia antes de clonar micropáginas. |
 | 6 jun 2026 | **Familia A — HyperClose:** `--video-slim`; semáforo y día OFF sin losa gris; capturas en `<details>`. |

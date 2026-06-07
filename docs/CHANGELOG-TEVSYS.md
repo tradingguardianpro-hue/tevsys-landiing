@@ -2,6 +2,81 @@
 
 Registro completo de cambios aplicados en la landing de tevsys (base Odyssey Theme + Astro).
 
+**Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
+
+---
+
+## Footer — **CERRADO** (validado fundador 7 jun 2026)
+
+- **Estado:** footer dado por **listo por el momento** (captura producción 7 jun).
+- **Job:** mapa Guías + Producto + Legal + contacto; nav principal **solo header** (sin franja ámbar duplicada).
+- **Estructura final:**
+  1. Fila contacto en grid 3 columnas: **tevsys** · **info@tevsys.io** · **Barcelona (Spain)**.
+  2. **Una línea** horizontal bajo contacto (no tres rayas por columna).
+  3. Tres columnas: **Guías** (subgrupos Essential / Advanced·Pro) · **Producto** · **Legal**.
+  4. Títulos `— Guías / Producto / Legal` alineados con icono/logo vía cuadrícula (18 px mail/ubicación · 24 px marca).
+  5. **Made with love…** — mismo tamaño; borde superior + padding antes del copyright.
+- **Labels Guías Adv/Pro:** `Config · al instalar (entre semana)` · `Config · en fin de semana` (enlace a guía C; **no** confundir con microclip).
+- **`footerNav`:** vacío — eliminada navegación duplicada (Inicio, Cómo funciona…).
+- **Iteraciones 6–7 jun:** rediseño compacto → tres columnas verticales apiladas → alineación Producto/Legal → fix build Astro (listas inline en plantilla; markup `<a>` corregido).
+- **Archivos:** `src/components/core/Footer.astro` · `src/config/footer.js` · `src/layouts/Page.astro`.
+- **Commits ref.:** `web(tevsys): footer compacto…` · `footer columnas alineadas…` · `footer alinea producto y legal…` · `fix footer build…`.
+
+---
+
+## `/como-funciona` — microclip fin de semana fuera de videoteca (7 jun 2026)
+
+- **Qué:** retirado de `siguienteNivelClipCards` el hueco **MC-CF-019** (*Preconfig fin de semana: del engranaje gris al lunes con candado*) con MP4 embebido.
+- **Por qué:** no es microclip de **comportamiento** (~30 s); es procedimiento de **Familia C** — el vídeo largo (**2:01**) vive en **`/configuracion-fin-de-semana`**.
+- **Videoteca:** vuelve a **4 huecos** (OFF · observación pasiva · retocar límites protegido · auditoría Fase 1); título bloque **sin cambio** (*Todo nuestro comportamiento en microvídeos* — roadmap de muchos clips).
+- **MP4:** conservado en `public/videos/como-funciona/tevsys-clip-preconfig-fin-semana-linea1-30s.mp4` por si entra en guía C.
+- **Catálogo:** `docs/CATALOGO_MICROCLIPS_TEVSYS.md` (repo TGP) — MC-CF-019 estado `editado`, fuera de rejilla web.
+- **Archivo:** `src/pages/como-funciona.astro`.
+
+---
+
+## Guía `/configuracion-fin-de-semana` — títulos, copy lectura, espaciado (7 jun 2026)
+
+- **Títulos:** h1/h2/SEO **«Configuración en fin de semana»** (unificado).
+- **Bloques «Si prefieres leer»:** finde = **modo configuración** (engranaje); reprogramar vía F7; **protección el lunes 00:00** (no «bloqueado hasta guardar»); entre semana sin abreviatura confusa L–V en copy principal.
+- **Bloque 2 ampliado:** **PROGRAMADO · LUNES** = botón panel; engranaje en color = esquina inferior izquierda del gráfico.
+- **Espaciado:** menos hueco hero → vídeo (`guia-hero` + `guia-video-panel` en `guia-operativa.css`).
+- **Enlaces cruce:** alineados en `configuracion-al-instalar.astro`, `configuracion.astro`, `como-funciona.astro`.
+- **Archivos:** `src/pages/configuracion-fin-de-semana.astro` · `src/styles/guia-operativa.css`.
+
+---
+
+## `/features/hyperclose` — Familia A canon cerrada (6–7 jun 2026)
+
+- **Secciones secundarias:** `--video-slim` (semáforo 3 niveles, día OFF) — sin losa gris; título + línea + vídeo + `<details>` capturas.
+- **Hook demo principal:** `15 lotes · GER40 · límite −1 % · desviación 1,31 € · Apertura Wall Street · HyperClose en 3 niveles` — cifra y «HyperClose en 3 niveles» en **ámbar**.
+- **CSS compartido:** `src/styles/global.css` — `.feature-proof-detail--video-slim`, `--feature-micro-radius`.
+- **Doc:** `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md` § Familia A checklist · handoff micropáginas (Precisión → SML → Evidencia pendiente).
+
+---
+
+## Familia C — guías operativas **cerrada** v5.6 (6 jun 2026)
+
+- **Plantilla canon:** `/instalacion` — hero ámbar acotado · vídeo protagonista · lectura editorial · fork «Elige tu guía» tres filas iguales · labels plan en ámbar · sin CTA demo.
+- **CSS compartido:** `src/styles/guia-operativa.css`.
+- **URLs alineadas:** `/instalacion` · `/configuracion` (Essential) · `/configuracion-al-instalar` (Adv/Pro L–V) · `/configuracion-fin-de-semana` (Adv/Pro finde).
+- **Vídeo C1:** export **2:01** en fin de semana; A1 instalación **1:24** en `/instalacion`.
+- **Doc:** `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md` · `docs/PLAN_VIDEOS_A_B_C_INSTALACION_CONFIG_SEMANA.md` § 6.1c.
+
+---
+
+## Sistema visual — cuatro familias A/B/C/D (6 jun 2026)
+
+- **Doc canon:** `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md` — job por familia; tabla cierre; footer; pendiente capturas HyperClose día OFF; buscador global aplazado.
+- **Familia B (`/como-funciona`):** estable en producción; criterio motion documentado en handoff — **no** copiar estilos en guías C.
+
+---
+
+## Footer — rediseño compacto (inicio 6–7 jun 2026, ver entrada «CERRADO» arriba)
+
+- Primera pasada: contacto horizontal; columnas Guías/Producto/Legal; franja nav luego **eliminada**; `footer.js` con `groups` en Guías y `note: 'próximamente'` en Noticias y horarios.
+- Detalle histórico pre-rediseño: `SISTEMA_VISUAL_*` § Footer diagnóstico histórico.
+
 ---
 
 ## Contador operativas 87 (4 jun 2026)
