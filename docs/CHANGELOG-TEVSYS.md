@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión — Familia A alineada a HyperClose (7 jun 2026)
+
+- **Hero 100k:** hook con **7,20 € (0,0072 %)** en ámbar; nota vídeo editado + enlace **Evidencia verificable** (sin acordeón duplicado).
+- **Secundarios:** `--video-slim` (volatilidad, Nasdaq, cuenta pequeña, logs); eliminado bloque redundante «Aquí se decide el cierre».
+- **Web:** `features/precision.astro`.
+
+---
+
 ## Precisión / Evidencia — demo 100k reexport overlay Wall Street (7 jun 2026)
 
 - **Qué:** sustituido `evidencia-100k-perdida.mp4` — overlay 5 solo «Apertura Wall Street» (sin «alta volatilidad»).

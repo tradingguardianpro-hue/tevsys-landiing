@@ -34,18 +34,24 @@ const seo = {
 				</p>
 				<p class="precision-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
 			</div>
-			<div class="feature-demo__title feature-demo__title--primary-demo">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
-			</div>
-			<p class="feature-demo-hook">100.000€ · 20 lotes · Apertura Wall Street · Error: 0,0072%</p>
+			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
+			<p class="feature-demo-hook">
+				100.000 € · GER40 · 20 lotes · límite −1 % · <strong class="feature-title__accent">desviación 7,20 € (0,0072 %)</strong> · Apertura Wall Street.
+			</p>
 			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="precision-demo-container">
 				<video id="precision-demo-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/evidencia-100k-perdida.mp4?v=20260607wsv2" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
-			<p class="demo-edit-note">Informe oficial MT5 y transacciones descargables de esta operativa: <a class="evidence-link" href="/features/evidencia#evidencia-informe-mt5">Evidencia verificable</a>.</p>
+			<p class="demo-edit-note">
+				<strong>Vídeo editado:</strong> mostramos los momentos clave del cierre. Puede haber un <strong>salto en el reloj</strong> del terminal entre planos. Para contrastar con rigor:
+				<a class="evidence-link" href="/features/evidencia#evidencia-informe-mt5">Evidencia verificable</a> (informe MT5 e historial de esta operativa).
+			</p>
+			<p class="feature-demo-youtube-more">
+				<a href="/videos-cierre-youtube">Ver más casos de cierre</a>
+				<span class="feature-demo-youtube-more__hint"> — lista con enlaces y títulos.</span>
+			</p>
 		</section>
 
 		<section class="feature-proof">
@@ -60,25 +66,11 @@ const seo = {
 			</ul>
 		</section>
 
-		<section id="precision-panel" class="feature-proof-detail">
-			<h3>Aquí se decide el cierre</h3>
-			<p class="feature-proof-subtitle">Cálculo visible en tiempo real</p>
-			<p>Muestra límite, ajuste y resultado final para validar que la ejecución respeta la lógica configurada.</p>
-			<p><strong>Cómo validarlo:</strong> Contrasta límite, ajuste y resultado en el panel durante una ejecución real.</p>
-			<p>
-				<a class="proof-capture-link" href="#precision-demo">
-					Ir a demo del cierre <span class="proof-link-meta">VIDEO</span>
-				</a>
-			</p>
-		</section>
-
-		<section id="precision-volatilidad" class="feature-demo">
-			<div class="feature-demo__title">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2>Demo en alta volatilidad — Cierre en ganancias (1 min 4 s)</h2>
-			</div>
-			<p class="feature-demo-hook">
-				Operativa documentada: límite ±1,50% · cierre en +1,83% · contexto de alta volatilidad geopolítica
+		<section id="precision-volatilidad" class="feature-proof-detail feature-proof-detail--video-slim">
+			<h3>Demo en alta volatilidad</h3>
+			<p class="feature-proof-subtitle">Cierre en ganancias (1 min 4 s)</p>
+			<p class="feature-proof-lead">
+				Límite ±1,50 % · cierre en +1,83 % · contexto de alta volatilidad geopolítica.
 			</p>
 			<div class="demo-video demo-video--compact" id="precision-volatilidad-container">
 				<video id="precision-volatilidad-video" controls preload="metadata" playsinline>
@@ -86,56 +78,47 @@ const seo = {
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
-			<p class="demo-edit-note">
-				En esta grabación el sistema cierra al alcanzar el límite configurado; en escenarios extremos la desviación puede ser mayor que en condiciones normales, pero la protección y el cierre automático se mantienen.
+			<p class="demo-edit-note demo-edit-note--slim">
+				En escenarios extremos la desviación puede ser mayor que en condiciones normales; la protección y el cierre automático se mantienen.
 			</p>
 		</section>
 
-		<section id="precision-nasdaq" class="feature-demo">
-			<div class="feature-demo__title">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2>Demo — Nasdaq · multi‑activo (tema claro) (1 min 47 s)</h2>
-			</div>
-			<p class="feature-demo-hook">NAS100 · cuenta USD · límite +1,00 % · desviación de cierre +1,0121 % exacto · margen de umbral propio en ganancias aplicado de 0,01 %</p>
+		<section id="precision-nasdaq" class="feature-proof-detail feature-proof-detail--video-slim">
+			<h3>Demo — Nasdaq · multi‑activo</h3>
+			<p class="feature-proof-subtitle">Tema claro en MT5 (1 min 47 s)</p>
+			<p class="feature-proof-lead">
+				NAS100 · límite +1,00 % · cierre <strong class="feature-title__accent">+1,0121 %</strong> exacto · margen de umbral +0,01 % en ganancias.
+			</p>
 			<div class="demo-video demo-video--compact demo-video--light" id="precision-nasdaq-container">
 				<video id="precision-nasdaq-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/precision-demo-nasdaq.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
-			<p class="demo-edit-note">
-				Grabación con <strong>gráfico y panel en tema claro</strong> para que se vea que tevsys convive con el estilo visual que elijas en MT5. El marco del reproductor usa fondo claro a propósito, para que no choque con el tema oscuro de la web.
+			<p class="demo-edit-note demo-edit-note--slim">
+				Gráfico y panel en tema claro: tevsys convive con el estilo visual que elijas en MT5.
 			</p>
 		</section>
 
-		<section id="precision-cuenta-pequena" class="feature-demo">
-			<div class="feature-demo__title">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2>Demo en cuenta más pequeña (1 min 13 s)</h2>
-			</div>
-			<p class="feature-demo-hook">Operativa documentada: menor nominal · lotaje relativo alto · mismo criterio: el cierre sigue al límite que ves en panel</p>
+		<section id="precision-cuenta-pequena" class="feature-proof-detail feature-proof-detail--video-slim">
+			<h3>Demo en cuenta más pequeña</h3>
+			<p class="feature-proof-subtitle">Mismo criterio, menor capital (1 min 13 s)</p>
+			<p class="feature-proof-lead">
+				Lotaje relativo alto · el cierre sigue al límite que ves en panel.
+			</p>
 			<div class="demo-video demo-video--compact" id="precision-cuenta-pequena-container">
 				<video id="precision-cuenta-pequena-video" controls preload="metadata" playsinline>
 					<source src="/videos/features/precision-demo.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
-			<p class="demo-edit-note">Misma lógica que en la demo principal; aquí el capital es menor y el impacto por lote se nota más en pantalla.</p>
 		</section>
 
-		<section id="precision-logs" class="feature-demo">
-			<div class="feature-demo__title">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2>Sin humo: todo queda registrado</h2>
-			</div>
-			<p class="feature-demo-hook">Trazabilidad en logs MT5</p>
-			<div class="precision-logs__copy">
-				<p>Cada evento relevante queda registrado para revisión técnica posterior, con fecha y contexto de ejecución.</p>
-				<p><strong>Cómo validarlo:</strong> MT5 &gt; Archivo &gt; Abrir carpeta de datos &gt; MQL5 &gt; Logs.</p>
-			</div>
-			<p class="feature-hook feature-hook--logs-video">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<span>Guía visual — otro vídeo que te interesa</span>
+		<section id="precision-logs" class="feature-proof-detail feature-proof-detail--video-slim">
+			<h3>Sin humo: todo queda registrado</h3>
+			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
+			<p class="feature-proof-lead">
+				Cada evento relevante queda registrado con fecha y contexto. MT5 → Archivo → Abrir carpeta de datos → MQL5 → Logs.
 			</p>
 			<div class="demo-video demo-video--compact" id="precision-logs-container">
 				<video id="precision-logs-video" controls preload="metadata" playsinline>
@@ -362,6 +345,29 @@ const seo = {
 	#precision-demo .feature-demo__title--primary-demo {
 		margin-bottom: 0.75rem;
 	}
+	#precision-demo > h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.35rem;
+	}
+	.feature-demo-youtube-more {
+		margin: 0.55rem 0 0;
+		font-size: 0.92rem;
+		opacity: 0.88;
+	}
+	.feature-demo-youtube-more a {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.feature-demo-youtube-more a:hover {
+		color: #f7c050;
+	}
+	.feature-demo-youtube-more__hint {
+		opacity: 0.72;
+	}
+	.demo-edit-note .evidence-link {
+		font-style: normal;
+	}
 	.feature-demo--hero {
 		position: relative;
 	}
@@ -410,57 +416,52 @@ const seo = {
 	#precision-volatilidad,
 	#precision-cuenta-pequena,
 	#precision-nasdaq,
-	#precision-logs {
-		scroll-margin-top: 5.5rem;
-		border-radius: var(--theme-shape-radius);
-		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-	}
-	#precision-logs .precision-logs__copy {
-		margin: 0 0 0.85rem;
-		max-width: 65ch;
-	}
-	#precision-logs .precision-logs__copy p {
-		margin: 0 0 0.5rem;
-		line-height: 1.5;
-	}
-	#precision-logs .precision-logs__copy p:last-child {
-		margin-bottom: 0;
-	}
-	#precision-logs-container {
+	#precision-logs,
+	#precision-stats {
 		scroll-margin-top: 5.5rem;
 	}
-	#precision-demo:target,
-	#precision-volatilidad:target,
-	#precision-cuenta-pequena:target,
-	#precision-nasdaq:target,
-	#precision-logs:target {
+	#precision-demo:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 		padding: 1rem;
 		border-radius: var(--theme-shape-radius);
 	}
-	#precision-logs:target {
-		scroll-margin-top: 6.2rem;
-		box-shadow:
-			0 0 0 1px rgba(245, 176, 65, 0.35),
-			0 0 28px rgba(245, 176, 65, 0.18);
+	.feature-proof-detail--video-slim {
+		margin-top: clamp(1.25rem, 3vw, 1.75rem);
+		padding-top: clamp(0.85rem, 2vw, 1.1rem);
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		background: transparent;
+		border-radius: 0;
+		box-shadow: none;
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 0;
 	}
-	#precision-logs:target #precision-logs-container {
-		border: 1px solid rgba(245, 176, 65, 0.55);
-		background: rgba(245, 176, 65, 0.08);
-		box-shadow:
-			0 0 0 1px rgba(245, 176, 65, 0.32),
-			0 0 22px rgba(245, 176, 65, 0.2);
-		padding: 0.5rem;
-		border-radius: var(--theme-shape-radius);
+	html[data-theme='light'] .feature-proof-detail--video-slim {
+		border-top-color: rgba(0, 0, 0, 0.08);
 	}
-	#precision-logs-container:target {
-		border: 1px solid rgba(245, 176, 65, 0.55);
-		background: rgba(245, 176, 65, 0.08);
-		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25), 0 0 22px rgba(245, 176, 65, 0.18);
-		padding: 0.5rem;
-		border-radius: var(--theme-shape-radius);
+	.feature-proof-detail--video-slim:target {
+		background: transparent;
+		border-top-color: rgba(245, 176, 65, 0.45);
+		box-shadow: none;
+	}
+	.feature-proof-detail--video-slim .feature-proof-subtitle {
+		margin: -0.1rem 0 0.4rem !important;
+	}
+	.feature-proof-detail--video-slim .feature-proof-lead {
+		margin: 0 0 0.75rem;
+		font-size: 0.94rem;
+		line-height: 1.5;
+		opacity: 0.88;
+		max-width: 52ch;
+	}
+	.feature-proof-detail--video-slim .demo-video--compact {
+		margin-bottom: 0.5rem;
+	}
+	.demo-edit-note--slim {
+		margin-top: 0.45rem;
+		max-width: 52ch;
 	}
 	.feature-demo h2,
 	.feature-proof h2,
