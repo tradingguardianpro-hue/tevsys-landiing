@@ -448,13 +448,10 @@ const seo = {
 		border-radius: 0.2rem;
 	}
 	.feature-proof-detail {
-		background: var(--theme-surface-1);
 		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 		scroll-margin-top: 5.5rem;
-		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-		border: 1px solid var(--theme-surface-border);
-		box-shadow: var(--theme-surface-elevated-shadow);
+		transition: border-color 0.25s ease, background-color 0.25s ease;
 	}
 	.feature-proof-detail h3 {
 		margin: 0 0 0.45rem;
@@ -485,11 +482,10 @@ const seo = {
 		opacity: 0.88;
 		max-width: 52ch;
 	}
-	.feature-proof-detail:target,
 	#sml-panel:target {
-		border-color: rgba(245, 176, 65, 0.55);
-		background: rgba(245, 176, 65, 0.08);
-		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		border-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(255, 255, 255, 0.02));
+		box-shadow: none;
 	}
 	.sml-checklist {
 		margin: 0;

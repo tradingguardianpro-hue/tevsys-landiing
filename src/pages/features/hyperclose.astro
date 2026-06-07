@@ -744,21 +744,10 @@ const seo = {
 	}
 	.feature-proof-detail {
 		margin: 1rem 0 0;
-		background: var(--theme-surface-1);
 		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 		scroll-margin-top: 5.5rem;
-		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-		border: 1px solid var(--theme-surface-border);
-		box-shadow: var(--theme-surface-elevated-shadow);
-	}
-	/* Tarjetas redondas en secciones vídeo (semáforo, día OFF) — mismo criterio que Precisión */
-	.feature-proof-detail.feature-proof-detail--video-slim {
-		background: var(--theme-surface-1);
-		border: 1px solid var(--theme-surface-border);
-		box-shadow: var(--theme-surface-elevated-shadow);
-		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
-		padding: 1rem 1.1rem;
+		transition: border-color 0.25s ease, background-color 0.25s ease;
 	}
 	.feature-proof-detail h3 {
 		margin: 0 0 0.45rem;
@@ -785,12 +774,6 @@ const seo = {
 		font-style: italic;
 		font-weight: 600;
 		opacity: 0.9;
-	}
-	.feature-proof-detail:target,
-	.feature-proof-detail--video-slim:target {
-		border-color: rgba(245, 176, 65, 0.55);
-		background: rgba(245, 176, 65, 0.08);
-		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 	}
 	.feature-proof-detail--video-slim .feature-proof-subtitle {
 		margin: -0.1rem 0 0.4rem !important;

@@ -465,16 +465,6 @@ const seo = {
 	#evidencia-demo.feature-demo--hero::before {
 		display: none;
 	}
-	html[data-theme='dark'] .tevsys-feature-micro-surface--evidencia section#evidencia-demo.feature-demo--hero:not(:target) {
-		background: linear-gradient(148deg, rgba(125, 135, 152, 0.06), rgba(255, 255, 255, 0.018));
-		border: 1px solid rgba(255, 255, 255, 0.075);
-		box-shadow: none;
-	}
-	html[data-theme='light'] .tevsys-feature-micro-surface--evidencia section#evidencia-demo.feature-demo--hero:not(:target) {
-		background: linear-gradient(148deg, rgba(80, 88, 102, 0.045), rgba(0, 0, 0, 0.012));
-		border-color: rgba(0, 0, 0, 0.07);
-		box-shadow: none;
-	}
 	.feature-demo--hero > * {
 		position: relative;
 		z-index: 1;
@@ -627,17 +617,6 @@ const seo = {
 		scroll-margin-top: 5.5rem;
 		transition: border-color 0.25s ease, background-color 0.25s ease;
 	}
-	/* Bloques de prueba (informe, capturas, HTML): aire frío-sutil — distinto del checklist cálido */
-	html[data-theme='dark'] .tevsys-feature-micro-surface--evidencia .feature-proof-detail:not(.feature-proof-detail--familia-a-close) {
-		background: linear-gradient(148deg, rgba(125, 135, 152, 0.07), rgba(255, 255, 255, 0.016));
-		border: 1px solid rgba(255, 255, 255, 0.065);
-		box-shadow: none;
-	}
-	html[data-theme='light'] .tevsys-feature-micro-surface--evidencia .feature-proof-detail:not(.feature-proof-detail--familia-a-close) {
-		background: linear-gradient(148deg, rgba(80, 88, 102, 0.05), rgba(0, 0, 0, 0.015));
-		border: 1px solid rgba(0, 0, 0, 0.07);
-		box-shadow: none;
-	}
 	.feature-proof-detail h3 {
 		margin: 0 0 0.45rem;
 		font-size: 1.05rem;
@@ -658,18 +637,6 @@ const seo = {
 		line-height: 1.5;
 		opacity: 0.88;
 		max-width: 52ch;
-	}
-	.feature-proof-detail.feature-proof-detail--video-slim:not(.feature-proof-detail--familia-a-close) {
-		background: transparent;
-		border: none;
-		box-shadow: none;
-		border-top: 1px solid rgba(255, 255, 255, 0.07);
-		border-radius: 0;
-		padding: clamp(1.15rem, 3vw, 1.55rem) clamp(1rem, 3vw, 1.5rem) clamp(0.35rem, 1.2vw, 0.65rem);
-		margin-top: clamp(1.15rem, 3vw, 1.55rem);
-	}
-	html[data-theme='light'] .feature-proof-detail.feature-proof-detail--video-slim:not(.feature-proof-detail--familia-a-close) {
-		border-top-color: rgba(0, 0, 0, 0.07);
 	}
 	.feature-proof-detail--video-slim .demo-video--compact {
 		margin-bottom: 0.5rem;
@@ -1007,11 +974,6 @@ const seo = {
 		margin: 0;
 		font-size: 0.94rem;
 		line-height: 1.45;
-	}
-	.feature-proof-detail:target:not(.feature-proof-detail--familia-a-close) {
-		border-color: rgba(245, 176, 65, 0.42);
-		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(255, 255, 255, 0.02));
-		box-shadow: none;
 	}
 	.proof-capture-link {
 		color: #f5b041;
