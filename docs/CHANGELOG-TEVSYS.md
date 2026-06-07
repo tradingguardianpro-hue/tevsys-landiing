@@ -6,6 +6,21 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — Familia A en curso (7 jun 2026)
+
+- **Qué:** alinear `/features/evidencia` a HyperClose/Precisión/SML — hook hero 7,20 € ámbar, `--feature-micro-radius`, sección logs `--video-slim`, leads por bloque, orden índice (HTML antes de logs).
+- **Web:** `src/pages/features/evidencia.astro`.
+
+---
+
+## SML micropágina **CERRADA** — Familia A Fase 1 (7 jun 2026)
+
+- **Estado:** validada por fundador; Fase 1 web lista (Fase 2 = vídeo post P12).
+- **Pulido final:** punto ámbar multigráfico alineado (canon Precisión); capturas panel y pérdida ampliada centradas.
+- **Web:** `src/pages/features/sml.astro`.
+
+---
+
 ## SML — Familia A Fase 1 piel web (7 jun 2026)
 
 - **Qué:** `/features/sml` alineada visualmente a HyperClose/Precisión — **sin** tocar EA (SML sigue en validación P12).

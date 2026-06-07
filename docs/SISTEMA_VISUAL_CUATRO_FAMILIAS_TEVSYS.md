@@ -69,7 +69,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | Familia | Estado | Notas |
 |---------|--------|--------|
 | **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS `guia-operativa.css` · cuatro URLs · copy lectura fin de semana revisado **7 jun** · vídeo C **2:01** en `/configuracion-fin-de-semana`. |
-| **A — Producto** | **HyperClose + Precisión cerradas** · **SML Fase 1 web** | SML piel Familia A (7 jun); Fase 2 tras P12 · Evidencia después · cards home. |
+| **A — Producto** | **HyperClose + Precisión + SML Fase 1 cerradas** · **Evidencia en curso** | SML validada 7 jun · Evidencia = siguiente Familia A · cards home. |
 | **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable; videoteca **4 huecos** (MC-CF-019 fuera); criterio microclip vs guía documentado en V12 + catálogo. |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
 | **Footer** | **Cerrado** | Validado fundador **7 jun 2026** — § Footer cerrado |
@@ -250,7 +250,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 **HyperClose + Precisión:** **cerradas** (fundador 7 jun). HyperClose: día OFF copy+acordeón OK; **capturas/collage OFF pendiente** (terminal entre semana).
 
-**En curso:** **`/features/sml`** — **Fase 1 web hecha** (piel Familia A); **Fase 2** tras cierre P12 (vídeo + hooks validados). **Siguiente:** **`/features/evidencia`**.
+**SML:** **Fase 1 cerrada** (fundador 7 jun). **En curso:** **`/features/evidencia`** — Familia A (hook hero, radios, `--video-slim` logs, copy ámbar).
 
 **Referencia:** checklist § Familia A + `hyperclose.astro` + `precision.astro` + `sml.astro`.
 
@@ -303,8 +303,8 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 4 | ~~Footer aligerado~~ | — | **Cerrado** 7 jun 2026 |
 | 5 | HyperClose capturas día OFF + collage | A | Copy OK · **capturas pendiente** |
 | 6 | **Precisión** (checklist A + hook cifra) | A | **En curso** |
-| 7 | SML | A | **Fase 1 web hecha** · Fase 2 post P12 (vídeo) |
-| 8 | Evidencia | A | Pendiente |
+| 7 | SML | A | **Fase 1 cerrada** · Fase 2 post P12 |
+| 8 | Evidencia | A | **En curso** |
 | 9 | Cards home aligeradas | A | Tras micropáginas |
 | — | No tocar auditoría salvo copy | D | Estable |
 | — | No homogeneizar cómo-funciona | B | Estable |
