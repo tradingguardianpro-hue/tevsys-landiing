@@ -2142,6 +2142,12 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--vi
 	margin-bottom: 0.65rem;
 	max-width: min(100%, 36rem);
 }
+/* Bloques prueba con caja carbón — aire antes/después del embed */
+.tevsys-feature-micro-surface .feature-proof-detail:not(.feature-proof-detail--video-slim):not(.feature-proof-detail--familia-a-close) .demo-video--compact {
+	margin-top: clamp(1rem, 2.5vw, 1.35rem);
+	margin-bottom: 0.85rem;
+	max-width: min(100%, 36rem);
+}
 .tevsys-feature-micro-surface .feature-proof-detail--video-slim .proof-accordion {
 	padding-inline: 0.05rem;
 }

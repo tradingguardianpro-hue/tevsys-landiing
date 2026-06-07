@@ -9,7 +9,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-	<div class="tevsys-feature-micro-surface">
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--precision">
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de verificación</p>
@@ -65,7 +65,7 @@ const seo = {
 			</ul>
 		</section>
 
-		<section id="precision-volatilidad" class="feature-proof-detail feature-proof-detail--video-slim">
+		<section id="precision-volatilidad" class="feature-proof-detail">
 			<h3>Demo en alta volatilidad</h3>
 			<p class="feature-proof-subtitle">Cierre en ganancias (1 min 4 s)</p>
 			<p class="feature-proof-lead">
@@ -82,7 +82,7 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="precision-nasdaq" class="feature-proof-detail feature-proof-detail--video-slim">
+		<section id="precision-nasdaq" class="feature-proof-detail">
 			<h3>Demo — Nasdaq · multi‑activo</h3>
 			<p class="feature-proof-subtitle">Tema claro en MT5 (1 min 47 s)</p>
 			<p class="feature-proof-lead">
@@ -194,7 +194,7 @@ const seo = {
 			</div>
 		</section>
 
-		<section id="precision-logs" class="feature-proof-detail feature-proof-detail--video-slim">
+		<section id="precision-logs" class="feature-proof-detail">
 			<h3>Sin humo: todo queda registrado</h3>
 			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
 			<p class="feature-proof-lead">
@@ -389,9 +389,9 @@ const seo = {
 		pointer-events: none;
 		z-index: 0;
 	}
-	/* Primer bloque de demo en precisión: neutralizamos el lavado ámbar del fondo */
+	/* Hero: acabado global (--micro-demo-bg); sin halo ::before */
 	#precision-demo.feature-demo--hero::before {
-		background: linear-gradient(140deg, rgba(155, 162, 175, 0.12), rgba(115, 122, 136, 0.04));
+		display: none;
 	}
 	.feature-demo--hero > * {
 		position: relative;
@@ -435,22 +435,6 @@ const seo = {
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 		padding: 1rem;
 		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
-	}
-	.feature-proof-detail--video-slim {
-		margin-top: clamp(1.25rem, 3vw, 1.75rem);
-	}
-	.feature-proof-detail--video-slim .feature-proof-subtitle {
-		margin: -0.1rem 0 0.4rem !important;
-	}
-	.feature-proof-detail--video-slim .feature-proof-lead {
-		margin: 0 0 0.75rem;
-		font-size: 0.94rem;
-		line-height: 1.5;
-		opacity: 0.88;
-		max-width: 52ch;
-	}
-	.feature-proof-detail--video-slim .demo-video--compact {
-		margin-bottom: 0.5rem;
 	}
 	.feature-proof-detail--cuenta-bundle {
 		margin-top: clamp(1.25rem, 3vw, 1.75rem);
@@ -531,7 +515,6 @@ const seo = {
 		font-style: italic;
 	}
 	.demo-placeholder {
-		background: var(--theme-surface-1);
 		border: 1px solid rgba(245, 176, 65, 0.28);
 		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
@@ -765,7 +748,6 @@ const seo = {
 	}
 	.proof-gallery {
 		margin: 0.75rem 0 0;
-		background: var(--theme-surface-1);
 		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 		border: 1px solid rgba(255, 255, 255, 0.08);

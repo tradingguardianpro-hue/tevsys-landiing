@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión — piel carbón Familia A (8 jun 2026)
+
+- **Qué:** volatilidad, Nasdaq, logs y cuenta pequeña en `feature-proof-detail` carbón; fin `--video-slim`; hero `--micro-demo-bg` sin `::before`; halo solo «Qué puedes comprobar».
+- **Global:** aire en vídeos secundarios dentro de cajas carbón (`global.css`).
+- **Archivos:** `precision.astro` · `global.css`.
+
+---
+
 ## Pasada carbón Familia A + home — cierre validado fundador (8 jun 2026)
 
 **Canon:** `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md` § *Pasada carbón Familia A + home*.
