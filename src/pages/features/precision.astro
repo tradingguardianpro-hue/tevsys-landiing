@@ -60,9 +60,8 @@ const seo = {
 				<li><a class="evidence-link" href="#precision-demo">Cierre visible sobre límite configurado (no estimado).</a></li>
 				<li><a class="evidence-link" href="#precision-volatilidad">Comportamiento en volatilidad alta con resultado documentado.</a></li>
 				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
-				<li><a class="evidence-link" href="#precision-cuenta-pequena">Mismo criterio con cuenta más pequeña.</a></li>
+				<li><a class="evidence-link" href="#precision-cuenta-pequena">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
 				<li><a class="evidence-link" href="#precision-logs">Trazabilidad de eventos en logs auditables.</a></li>
-				<li><a class="evidence-link" href="#precision-stats">Capturas paso a paso de un cierre por pérdida diaria (−1,50 %) (+ PDF resumen).</a></li>
 			</ul>
 		</section>
 
@@ -114,30 +113,13 @@ const seo = {
 			</div>
 		</section>
 
-		<section id="precision-logs" class="feature-proof-detail feature-proof-detail--video-slim">
-			<h3>Sin humo: todo queda registrado</h3>
-			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
-			<p class="feature-proof-lead">
-				Cada evento relevante queda registrado con fecha y contexto. MT5 → Archivo → Abrir carpeta de datos → MQL5 → Logs.
-			</p>
-			<div class="demo-video demo-video--compact" id="precision-logs-container">
-				<video id="precision-logs-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
-					Tu navegador no soporta reproducción de video HTML5.
-				</video>
-			</div>
-		</section>
-
-		<section id="precision-stats" class="feature-proof-detail feature-proof-detail--stats">
+		<section id="precision-stats" class="feature-proof-detail feature-proof-detail--stats feature-proof-detail--stats-after-video">
 			<h3>Lo que dicen los resultados</h3>
-			<p class="feature-proof-subtitle">Cierre por pérdida diaria documentado en capturas</p>
+			<p class="feature-proof-subtitle">Misma sesión que el vídeo — cierre por pérdida diaria</p>
 			<p class="feature-proof-lead feature-proof-lead--stats">
-				Arriba tienes el resumen global (<strong>87 operativas</strong>, error medio <strong>0,06 %</strong> en condiciones normales).
-				Aquí abrimos <strong>otra sesión real</strong> en GER40 (demo Infinox): límite de pérdida <strong>−1,50 %</strong>,
-				cierre contabilizado en <strong>−42,28 €</strong> el <strong>2 mar 2026</strong>.
-				<strong>No</strong> es la misma sesión que el vídeo
-				<a class="evidence-link" href="#precision-volatilidad">Demo en alta volatilidad</a>
-				(esa cierra en <strong>ganancias +1,83 %</strong>, 4 mar 2026).
+				El vídeo de arriba muestra el cierre en acción. Aquí documentamos <strong>esa misma sesión</strong> en GER40 con cuenta demo más pequeña:
+				límite de pérdida <strong>−1,50 %</strong>, cierre contabilizado en <strong>−42,28 €</strong> el <strong>2 mar 2026</strong>.
+				Encaja en el resumen global de <strong>87 operativas</strong> (error medio <strong>0,06 %</strong> en condiciones normales).
 			</p>
 			<details id="precision-49-evidence" class="proof-accordion">
 				<summary class="proof-capture-link">Capturas paso a paso — cierre por pérdida diaria (−1,50 %)</summary>
@@ -209,6 +191,20 @@ const seo = {
 				</a>
 			</p>
 			<p class="proof-note">Publicamos resultados verificables y trazabilidad. La fórmula propietaria no es pública.</p>
+		</section>
+
+		<section id="precision-logs" class="feature-proof-detail feature-proof-detail--video-slim">
+			<h3>Sin humo: todo queda registrado</h3>
+			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
+			<p class="feature-proof-lead">
+				Cada evento relevante queda registrado con fecha y contexto. MT5 → Archivo → Abrir carpeta de datos → MQL5 → Logs.
+			</p>
+			<div class="demo-video demo-video--compact" id="precision-logs-container">
+				<video id="precision-logs-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
 		</section>
 
 		<section class="feature-cta">
@@ -470,6 +466,9 @@ const seo = {
 	}
 	.feature-proof-detail--video-slim .demo-video--compact {
 		margin-bottom: 0.5rem;
+	}
+	#precision-cuenta-pequena + .feature-proof-detail--stats-after-video {
+		margin-top: 0.75rem;
 	}
 	.demo-edit-note--slim {
 		margin-top: 0.45rem;

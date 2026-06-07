@@ -10,7 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 - **Hero 100k:** hook con **7,20 € (0,0072 %)** en ámbar; nota vídeo editado + enlace **Evidencia verificable** (sin acordeón duplicado).
 - **Secundarios:** `--video-slim` (volatilidad, Nasdaq, cuenta pequeña, logs); eliminado bloque redundante «Aquí se decide el cierre».
-- **Stats / galería:** fuera jerga «Operativa 49»; copy describe **cierre por pérdida** (−1,50 % · −42,28 € · 2 mar 2026) — **distinto** del vídeo volatilidad (+1,83 % · 4 mar 2026).
+- **Stats / galería:** debajo del vídeo **cuenta pequeña**; misma sesión (−1,50 % · −42,28 € · 2 mar 2026); **sin nombre de broker** en copy público.
 - **Web:** `features/precision.astro`.
 
 ---
