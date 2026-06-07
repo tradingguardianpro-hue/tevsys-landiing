@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión / Evidencia — demo 100k reexport overlay Wall Street (7 jun 2026)
+
+- **Qué:** sustituido `evidencia-100k-perdida.mp4` — overlay 5 solo «Apertura Wall Street» (sin «alta volatilidad»).
+- **Fuente export:** `Downloads/evidencia 100k perdida wallstreet v2.mp4` (Clipchamp).
+- **Web:** `?v=20260607wsv2` en `precision.astro`, `evidencia.astro`, puentes `como-funciona.astro`.
+
+---
+
 ## HyperClose — semáforo cerrado; día OFF alineado y evidencia pendiente (7 jun 2026)
 
 - **Semáforo:** **cerrado** — copy en lista + collage visible + dos enlaces vídeo (demo 2:23 · Nasdaq ~4 min).

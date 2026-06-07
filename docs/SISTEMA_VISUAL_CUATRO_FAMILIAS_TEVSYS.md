@@ -69,7 +69,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | Familia | Estado | Notas |
 |---------|--------|--------|
 | **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS `guia-operativa.css` · cuatro URLs · copy lectura fin de semana revisado **7 jun** · vídeo C **2:01** en `/configuracion-fin-de-semana`. |
-| **A — Producto** | **Cerrada (canon HyperClose)** | Validado jun 2026 — fundador. Replicar checklist en Precisión, SML, Evidencia · cards home. |
+| **A — Producto** | **HyperClose cerrada** · **Precisión en curso** | HyperClose validado 7 jun · replicar checklist en Precisión → SML → Evidencia · cards home. |
 | **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable; videoteca **4 huecos** (MC-CF-019 fuera); criterio microclip vs guía documentado en V12 + catálogo. |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
 | **Footer** | **Cerrado** | Validado fundador **7 jun 2026** — § Footer cerrado |
@@ -96,7 +96,9 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 - Hero vídeo: mantiene chrome propio; no apilar manual sobre manual.
 - CTA demo **solo** al final de la micropágina.
 
-**Canon de referencia (jun 2026):** `/features/hyperclose` — micropágina donde se cierra el criterio A (visual + contenido hero).
+**Estado:** **cerrada por el fundador (7 jun 2026)** — semáforo + copy + vídeos. **Pendiente aparte:** capturas/collage día OFF (§ Pendiente evidencia).
+
+**Canon de referencia (jun 2026):** `/features/hyperclose` — micropágina donde se cierra el criterio A (visual + contenido hero). **Siguiente clone:** `/features/precision`.
 
 **Checklist Familia A (replicar en Precisión, SML, Evidencia):**
 1. Hero: título + hook + manifesto (si aplica).
@@ -241,16 +243,15 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 ## Próxima sesión — handoff micropáginas Familia A (jun 2026)
 
-**Familia A:** **cerrada** en criterio (canon `/features/hyperclose`). CSS compartido ya en `global.css` (`--feature-micro-radius`, `--video-slim`).
+**HyperClose:** **cerrada** (fundador 7 jun) — semáforo, copy, dos vídeos; día OFF copy+acordeón OK; **capturas/collage OFF pendiente** (terminal entre semana).
 
-**Recomendación acordada — ir una por una, no expandido masivo hoy:**
-- Cada micropágina tiene **estructura distinta** (Precisión = Nasdaq + stats; SML = paneles propios; Evidencia = muchos bloques informe/logs). Un batch ciego arriesga romper contenido único.
-- Flujo: **clonar checklist A** → deploy → **captura + OK fundador** → siguiente.
-- **Orden sugerido:** 1) ~~**Footer**~~ **hecho** · 2) **Capturas HyperClose** día OFF (+ valorar semáforo 3 niveles; composito modal+panel, ref. Market) · 3) **Precisión** → SML → Evidencia (checklist A) · 4) cards home.
-- **Familia B** (`/como-funciona`): sesión aparte — documentar criterio, no mezclar con A.
-- **Familia D / futuro:** sin tocar salvo copy roadmap.
+**En curso:** **`/features/precision`** — checklist A desde `hyperclose.astro`; ir **una por una**, no batch ciego (Nasdaq, stats, volatilidad, logs propios).
 
-**Referencia obligatoria al abrir cada micro:** checklist § Familia A en este doc + `hyperclose.astro`.
+**Vídeo hero Precisión (`evidencia-100k-perdida.mp4`, 1:41):** **mantener de momento.** Error **0,0072 %** (7,20 € / 20 lotes) excelente; velas = volatilidad **normal** (GER40 tarde). **No** vender este hero como «alta volatilidad» — eso es `#precision-volatilidad`. Regrab **Londres / GER40** = opcional futuro si hay misma cadena evidencia (informe MT5 + Evidencia).
+
+**Referencia:** checklist § Familia A + `hyperclose.astro` + `precision.astro`.
+
+**Familia B** (`/como-funciona`): sesión aparte. **Familia D:** sin tocar salvo copy roadmap.
 
 ---
 
@@ -295,10 +296,10 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 |-----------|--------|---------|--------|
 | 1 | Canon `/instalacion` + replicar en resto guías | C | **Cerrado** v5.6 |
 | 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
-| 3 | ~~HyperClose aligerado~~ | A | **Cerrado** — canon jun 2026 |
+| 3 | ~~HyperClose aligerado~~ | A | **Cerrado** 7 jun 2026 |
 | 4 | ~~Footer aligerado~~ | — | **Cerrado** 7 jun 2026 |
-| 5 | **HyperClose — capturas día OFF** modal+panel + collage | A | Semáforo **cerrado** · día OFF copy+acordeón OK · **capturas+collage pendiente** |
-| 6 | Precisión (checklist A + hook cifra) | A | Pendiente |
+| 5 | HyperClose capturas día OFF + collage | A | Copy OK · **capturas pendiente** |
+| 6 | **Precisión** (checklist A + hook cifra) | A | **En curso** |
 | 7 | SML | A | Pendiente |
 | 8 | Evidencia | A | Pendiente |
 | 9 | Cards home aligeradas | A | Tras micropáginas |
