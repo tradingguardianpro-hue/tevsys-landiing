@@ -272,6 +272,20 @@ const seo = {
 				</article>
 			</div>
 
+			<figure class="evidence-brand-strip" aria-hidden="true">
+				<div class="evidence-brand-strip__frame">
+					<img
+						src="/mano%20robotica%20central%20web.png?v=2"
+						alt=""
+						width="1200"
+						height="400"
+						loading="lazy"
+						decoding="async"
+						class="evidence-brand-strip__img"
+					/>
+				</div>
+			</figure>
+
 			<article class="evidence-synthesis">
 				<h4 class="evidence-synthesis__title">Para quién encaja</h4>
 				<div class="evidence-audience-grid">
@@ -310,23 +324,6 @@ const seo = {
 					</a>
 				</p>
 			</article>
-
-			<figure class="evidence-brand-strip">
-				<div class="evidence-brand-strip__frame">
-					<img
-						src="/mano%20robotica%20central%20web.png?v=2"
-						alt=""
-						width="1200"
-						height="400"
-						loading="lazy"
-						decoding="async"
-						class="evidence-brand-strip__img"
-					/>
-				</div>
-				<figcaption class="evidence-brand-strip__caption">
-					Disciplina verificable — la prueba la cruzas tú.
-				</figcaption>
-			</figure>
 		</section>
 
 		<section class="feature-cta">
@@ -805,15 +802,15 @@ const seo = {
 		max-width: 62ch;
 	}
 	.evidence-brand-strip {
-		margin: 0;
+		margin: 0.15rem 0 1rem;
 	}
 	.evidence-brand-strip__frame {
 		position: relative;
 		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.1rem);
 		overflow: hidden;
-		border: 1px solid rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.07);
 		background: #0a0a0a;
-		max-height: 9.5rem;
+		max-height: 7.25rem;
 	}
 	html[data-theme='light'] .evidence-brand-strip__frame {
 		border-color: rgba(0, 0, 0, 0.08);
@@ -822,23 +819,26 @@ const seo = {
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(90deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.12) 45%, rgba(0, 0, 0, 0.35) 100%);
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.08) 0%,
+			rgba(0, 0, 0, 0.28) 100%
+		);
 		pointer-events: none;
 	}
 	.evidence-brand-strip__img {
 		display: block;
 		width: 100%;
-		height: 9.5rem;
+		height: 7.25rem;
 		object-fit: cover;
-		object-position: 58% 42%;
-		filter: grayscale(0.15) contrast(1.03);
+		object-position: 52% 38%;
+		filter: grayscale(0.2) contrast(1.02) brightness(0.92);
+		opacity: 0.88;
 	}
-	.evidence-brand-strip__caption {
-		margin: 0.45rem 0 0;
-		font-size: 0.76rem;
-		line-height: 1.45;
-		opacity: 0.62;
-		text-align: center;
+	@media (max-width: 640px) {
+		.evidence-brand-strip {
+			display: none;
+		}
 	}
 	.audit-card {
 		margin: 0;
