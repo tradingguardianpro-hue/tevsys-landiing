@@ -69,7 +69,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | Familia | Estado | Notas |
 |---------|--------|--------|
 | **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS `guia-operativa.css` · cuatro URLs · copy lectura fin de semana revisado **7 jun** · vídeo C **2:01** en `/configuracion-fin-de-semana`. |
-| **A — Producto** | **HyperClose cerrada** · **Precisión en curso** | HyperClose validado 7 jun · replicar checklist en Precisión → SML → Evidencia · cards home. |
+| **A — Producto** | **HyperClose + Precisión cerradas** · **SML Fase 1 web** | SML piel Familia A (7 jun); Fase 2 tras P12 · Evidencia después · cards home. |
 | **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable; videoteca **4 huecos** (MC-CF-019 fuera); criterio microclip vs guía documentado en V12 + catálogo. |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
 | **Footer** | **Cerrado** | Validado fundador **7 jun 2026** — § Footer cerrado |
@@ -98,9 +98,14 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 **Estado:** **cerrada por el fundador (7 jun 2026)** — semáforo + copy + vídeos. **Pendiente aparte:** capturas/collage día OFF (§ Pendiente evidencia).
 
-**Canon de referencia (jun 2026):** `/features/hyperclose` — micropágina donde se cierra el criterio A (visual + contenido hero). **Siguiente clone:** `/features/precision`.
+**Canon de referencia (jun 2026):** `/features/hyperclose` + **`/features/precision`** (cerradas). **Siguiente clone:** `/features/sml` (visual Familia A; contenido acotado a validación).
 
-**Checklist Familia A (replicar en Precisión, SML, Evidencia):**
+**SML — criterio web mientras validación EA (P12):**
+- **Sí:** misma piel (radios, manifesto, índice «Qué puedes comprobar», tarjetas redondas, CTA); aviso **Advanced/Pro · validación en curso** visible; capturas actuales en `<details>` donde aplique.
+- **No:** prometer catálogo completo de escenarios; hero vídeo hasta grabación; cambios en `SML_Manager.mqh` / EA.
+- **Después de cerrar P12 en terminal:** vídeo(s) `--video-slim`, hooks ámbar con cifras validadas, copy alineado a handoff `SML_ZONA_SAGRADA_VALIDACION_HANDOFF.md`.
+
+**Checklist Familia A (replicar en SML, Evidencia):**
 1. Hero: título + hook + manifesto (si aplica).
 2. Demo principal: **h2 + hook con cifra clave** (número visible encima del vídeo) + embed + nota editada breve + acordeón evidencia.
 3. Índice «Qué puedes comprobar» (bloque gris redondeado).
@@ -243,13 +248,11 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 ## Próxima sesión — handoff micropáginas Familia A (jun 2026)
 
-**HyperClose:** **cerrada** (fundador 7 jun) — semáforo, copy, dos vídeos; día OFF copy+acordeón OK; **capturas/collage OFF pendiente** (terminal entre semana).
+**HyperClose + Precisión:** **cerradas** (fundador 7 jun). HyperClose: día OFF copy+acordeón OK; **capturas/collage OFF pendiente** (terminal entre semana).
 
-**En curso:** **`/features/precision`** — checklist A desde `hyperclose.astro`; ir **una por una**, no batch ciego (Nasdaq, stats, volatilidad, logs propios).
+**En curso:** **`/features/sml`** — **Fase 1 web hecha** (piel Familia A); **Fase 2** tras cierre P12 (vídeo + hooks validados). **Siguiente:** **`/features/evidencia`**.
 
-**Vídeo hero Precisión (`evidencia-100k-perdida.mp4`, 1:41):** **mantener de momento.** Error **0,0072 %** (7,20 € / 20 lotes) excelente; velas = volatilidad **normal** (GER40 tarde). **No** vender este hero como «alta volatilidad» — eso es `#precision-volatilidad`. Regrab **Londres / GER40** = opcional futuro si hay misma cadena evidencia (informe MT5 + Evidencia).
-
-**Referencia:** checklist § Familia A + `hyperclose.astro` + `precision.astro`.
+**Referencia:** checklist § Familia A + `hyperclose.astro` + `precision.astro` + `sml.astro`.
 
 **Familia B** (`/como-funciona`): sesión aparte. **Familia D:** sin tocar salvo copy roadmap.
 
@@ -300,7 +303,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 4 | ~~Footer aligerado~~ | — | **Cerrado** 7 jun 2026 |
 | 5 | HyperClose capturas día OFF + collage | A | Copy OK · **capturas pendiente** |
 | 6 | **Precisión** (checklist A + hook cifra) | A | **En curso** |
-| 7 | SML | A | Pendiente |
+| 7 | SML | A | **Fase 1 web hecha** · Fase 2 post P12 (vídeo) |
 | 8 | Evidencia | A | Pendiente |
 | 9 | Cards home aligeradas | A | Tras micropáginas |
 | — | No tocar auditoría salvo copy | D | Estable |

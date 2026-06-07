@@ -6,6 +6,25 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## SML — Familia A Fase 1 piel web (7 jun 2026)
+
+- **Qué:** `/features/sml` alineada visualmente a HyperClose/Precisión — **sin** tocar EA (SML sigue en validación P12).
+- **Incluye:** bloque demo panel principal; banner validación Advanced/Pro; índice «Qué puedes comprobar»; tarjetas redondas (`--feature-micro-radius`); pérdida ampliada con hook ámbar **−0,75 % → −0,78 %**; flujo demo 3 capturas en acordeón; CTA final.
+- **Honestidad:** mensaje «solo lo que el build demuestre»; sin vídeo hero hasta grabación.
+- **Web:** `src/pages/features/sml.astro` · `SISTEMA_VISUAL_*` § SML.
+
+---
+
+## Precisión micropágina **CERRADA** — Familia A (7 jun 2026)
+
+- **Estado:** validada por fundador; **lista** junto a HyperClose como referencia Familia A cerrada.
+- **Estructura:** hero + manifesto + demo principal 100k + índice «Qué puedes comprobar» + 4 bloques demo (volatilidad · Nasdaq · cuenta pequeña bundle · logs) + CTA.
+- **Visual:** `--feature-micro-radius` en tarjetas y embeds; hooks ámbar por bloque; vídeo Nasdaq con `demo-video--light`.
+- **Pendiente fuera de esta URL:** regrab hero Londres/GER40 = opcional futuro (`SISTEMA_VISUAL_*` § handoff).
+- **Web:** `src/pages/features/precision.astro` · `src/styles/global.css`.
+
+---
+
 ## Precisión — Familia A alineada a HyperClose (7 jun 2026)
 
 - **Hero 100k:** hook con **7,20 € (0,0072 %)** en ámbar; nota vídeo editado + enlace **Evidencia verificable** (sin acordeón duplicado).

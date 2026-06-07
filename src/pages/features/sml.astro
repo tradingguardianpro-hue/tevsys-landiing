@@ -19,27 +19,25 @@ const seo = {
 			<p class="feature-lead">
 				<span class="feature-title__accent">Opcional y bajo tu control</span>: convive con límites diarios y semanales; amplías margen solo cuando activas el bonus calculado desde la ganancia de ayer.
 			</p>
-			<p class="feature-availability-note">No está en Essential. Advanced/Pro en validación y lista de espera.</p>
 		</section>
+
 		<p class="feature-manifesto-banner">
 			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
 		</p>
-		<p class="feature-hook feature-sml-bridge">
-			<span class="feature-hook__dot" aria-hidden="true"></span>
-			<span>Un gráfico para tevsys. Toda tu cuenta, protegida.<br />Los avisos de protección aparecen en todos tus gráficos abiertos.</span>
-		</p>
 
-		<section class="feature-sml-panel" aria-labelledby="sml-panel-heading">
-			<div class="feature-sml-panel__title">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2 id="sml-panel-heading">Así se ve hoy en el panel</h2>
+		<section id="sml-panel" class="feature-demo feature-demo--hero">
+			<div class="sml-multichart">
+				<p class="feature-hook sml-multichart__lead">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					<span>Un gráfico para tevsys. Toda tu cuenta, protegida.</span>
+				</p>
+				<p class="sml-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
 			</div>
-			<p class="feature-sml-panel__lead">
-				Si la ganancia neta de <strong>ayer</strong> supera el umbral mínimo, el EA te ofrece un <strong>bonus</strong>: una parte acotada pasa a ampliar tu <strong>margen de pérdida permitido</strong> en el día. Tú decides si lo aplicas.
+			<h2>Así se ve hoy en el panel</h2>
+			<p class="feature-demo-hook">
+				Ganancia de ayer &gt; umbral · bonus opcional · <strong class="feature-title__accent">SML DISPONIBLE</strong> y <strong class="feature-title__accent">SML 1‑CLICK</strong> en el panel.
 			</p>
-			<p class="feature-sml-panel__detail">En la captura: <strong>SML DISPONIBLE</strong> enseña el bonus antes de tocar nada, y <strong>SML 1‑CLICK</strong> lo aplica con el porcentaje configurado.</p>
-			<p class="proof-gallery__hint">Haz clic en la captura para verla en tamaño completo.</p>
-			<figure class="feature-sml-panel__figure">
+			<figure class="sml-panel-embed">
 				<a
 					class="proof-gallery__zoom"
 					href="/images/evidence/sml-panel-validacion-demo.png"
@@ -48,7 +46,7 @@ const seo = {
 					aria-label="Abrir captura del panel SML en tamaño completo"
 				>
 					<img
-						class="feature-sml-panel__img proof-gallery__image"
+						class="proof-gallery__image"
 						src="/images/evidence/sml-panel-validacion-demo.png"
 						width="520"
 						height="780"
@@ -57,37 +55,44 @@ const seo = {
 						alt="Panel tevsys en cuenta demo: límites, protección activa, botones SML DISPONIBLE y SML 1-CLICK."
 					/>
 				</a>
-				<figcaption class="feature-sml-panel__caption">
-					Cuenta <strong>demo</strong>, entorno de validación (marzo 2026). La interfaz puede cambiar mientras cerramos pruebas. No es asesoramiento ni promesa de resultados.
-				</figcaption>
 			</figure>
+			<p class="demo-edit-note">
+				Cuenta <strong>demo</strong>, entorno de validación (marzo 2026). La interfaz puede cambiar mientras cerramos pruebas. Haz clic en la captura para ampliarla. No es asesoramiento ni promesa de resultados.
+			</p>
 		</section>
 
-		<section class="feature-demo feature-demo--sml-check">
-			<h2>SML en marcha: evidencia documentada</h2>
+		<p class="sml-validation-banner" role="note">
+			<strong>Advanced/Pro · validación en curso.</strong> No está en Essential. Esta página recoge avances que ya podemos enseñar — no un catálogo completo. <strong>Solo lo que el build demuestre</strong> en terminal.
+		</p>
+
+		<section class="feature-proof">
+			<h2>Qué puedes comprobar</h2>
+			<ul>
+				<li><a class="evidence-link" href="#sml-panel">Panel SML: bonus disponible antes de activar (captura demo).</a></li>
+				<li><a class="evidence-link" href="#sml-evidence">Escenarios documentados hasta hoy (ganancia, pérdida ampliada, convivencia con límites).</a></li>
+				<li><a class="evidence-link" href="#sml-perdida-ampliada">Cierre validado en pérdida ampliada (cuenta real, mayo 2026).</a></li>
+				<li><a class="evidence-link" href="#sml-demo-flow">Flujo demo paso a paso — activación, cierre y SML ON.</a></li>
+			</ul>
+		</section>
+
+		<section id="sml-evidence" class="feature-proof-detail">
+			<h3>Lo que ya podemos enseñar</h3>
+			<p class="feature-proof-subtitle">Avances documentados — no catálogo cerrado</p>
 			<ul class="sml-checklist">
 				<li><strong>Cierre con SML en ganancia:</strong> flujo estable con bonus activo y parada al límite pactado — contrastado con panel, informe MT5 y trazas internas.</li>
 				<li><strong>Cierre con SML en pérdida ampliada:</strong> el margen de pérdida del día se amplía solo con SML activo; la protección dispara al superar ese techo ampliado, no en el límite base sin bonus.</li>
 				<li><strong>Misma cuenta, mismas reglas:</strong> convive con límites diarios, semanales y días OFF sin mezclar mensajes en pantalla.</li>
 			</ul>
-			<p class="sml-status">
-				Esta página recoge <strong>avances que ya podemos enseñar</strong>, no un catálogo interno. El detalle técnico completo queda en documentación de producto, no en números de seguimiento.
-			</p>
-			<p class="sml-status">
-				Seguimos en <strong>fase de validación</strong> (Advanced/Pro). No prometemos el 100% de escenarios hasta cerrarlos en terminal: <strong>solo lo que el build demuestre</strong>.
-			</p>
 		</section>
 
-		<section class="feature-sml-proof" aria-labelledby="sml-proof-title">
-			<div class="feature-sml-panel__title">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2 id="sml-proof-title">Validado al cerrar en pérdida ampliada</h2>
-			</div>
-			<p class="feature-sml-panel__lead">
-				Tras validar cierres con SML en jornadas positivas, documentamos el escenario que más importa al operador: <strong>pérdida diaria con margen ampliado</strong> — primera línea del panel al tocar el techo (<strong>STOP · SML ON</strong>), límites <strong>-0,75% → -0,78%</strong>, <strong>SML ampliado</strong> y cuenta protegida hasta fin de sesión.
+		<section id="sml-perdida-ampliada" class="feature-proof-detail">
+			<h3>Validado al cerrar en pérdida ampliada</h3>
+			<p class="feature-proof-subtitle">Cuenta real · mayo 2026</p>
+			<p class="feature-proof-lead">
+				Pérdida diaria con margen ampliado — <strong>STOP · SML ON</strong> · límites <strong class="feature-title__accent">−0,75 % → −0,78 %</strong> · <strong>SML ampliado</strong> y cuenta protegida hasta fin de sesión.
 			</p>
 			<p class="proof-gallery__hint">Haz clic en la captura para ampliarla.</p>
-			<figure class="feature-sml-panel__figure">
+			<figure class="sml-capture-embed">
 				<a
 					class="proof-gallery__zoom"
 					href="/images/evidence/sml-cierre-perdida-ampliada-validado.png"
@@ -96,7 +101,7 @@ const seo = {
 					aria-label="Abrir captura del panel tras cierre con SML en pérdida ampliada en tamaño completo"
 				>
 					<img
-						class="feature-sml-panel__img proof-gallery__image"
+						class="proof-gallery__image"
 						src="/images/evidence/sml-cierre-perdida-ampliada-validado.png"
 						width="314"
 						height="445"
@@ -105,8 +110,8 @@ const seo = {
 						alt="Panel tevsys tras el cierre: STOP por pérdida diaria con SML activo, límites HOY -0,75% a -0,78%, SML ampliado y protegido hasta fin del día."
 					/>
 				</a>
-				<figcaption class="feature-sml-panel__caption">
-					Captura de <strong>cuenta real</strong> (mayo 2026), solo panel — sin ruido del gráfico. Estado tras el cierre automático. No es asesoramiento ni promesa de resultados.
+				<figcaption class="sml-capture-caption">
+					Solo panel — sin ruido del gráfico. Estado tras el cierre automático.
 				</figcaption>
 			</figure>
 			<p class="sml-proof-note">
@@ -114,78 +119,79 @@ const seo = {
 			</p>
 		</section>
 
-		<section class="feature-sml-proof feature-sml-proof--demo-flow" aria-labelledby="sml-demo-flow-title">
-			<div class="feature-sml-panel__title">
-				<span class="feature-hook__dot" aria-hidden="true"></span>
-				<h2 id="sml-demo-flow-title">En demo: activación, cierre y estado SML</h2>
-			</div>
-			<p class="feature-sml-panel__lead">
-				Tres momentos del mismo flujo en <strong>cuenta demo</strong> (validación previa): ver el límite ampliado antes de aplicar, el resultado al cerrar y el panel con <strong>SML activo</strong> tras la protección.
+		<section id="sml-demo-flow" class="feature-proof-detail">
+			<h3>En demo: activación, cierre y estado SML</h3>
+			<p class="feature-proof-subtitle">Tres momentos del mismo flujo (validación previa)</p>
+			<p class="feature-proof-lead">
+				Ver el límite ampliado antes de aplicar, el resultado al cerrar y el panel con <strong>SML activo</strong> tras la protección.
 			</p>
-			<p class="proof-gallery__hint">Haz clic en cada captura para verla en tamaño completo.</p>
-			<div class="sml-proof-grid">
-				<figure class="sml-proof-card">
-					<a
-						class="proof-gallery__zoom"
-						href="/images/evidence/sml-481-step-01-activacion.png"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Abrir captura paso 1 activación SML en tamaño completo"
-					>
-						<img
-							class="proof-gallery__image"
-							src="/images/evidence/sml-481-step-01-activacion.png"
-							width="905"
-							height="809"
-							alt="Antes de activar SML: modal de confirmación y panel con límite ampliado visible."
-							loading="lazy"
-							decoding="async"
-						/>
-					</a>
-					<figcaption><strong>Paso 1 — Activación:</strong> límite ampliado visible antes de aplicar el bonus.</figcaption>
-				</figure>
-				<figure class="sml-proof-card">
-					<a
-						class="proof-gallery__zoom"
-						href="/images/evidence/sml-481-step-02-cierre.png"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Abrir captura paso 2 cierre SML en tamaño completo"
-					>
-						<img
-							class="proof-gallery__image"
-							src="/images/evidence/sml-481-step-02-cierre.png"
-							width="424"
-							height="599"
-							alt="Resultado final con SML activo tras el cierre en pérdida ampliada."
-							loading="lazy"
-							decoding="async"
-						/>
-					</a>
-					<figcaption><strong>Paso 2 — Cierre:</strong> resultado del día tras disparar en el techo ampliado.</figcaption>
-				</figure>
-				<figure class="sml-proof-card">
-					<a
-						class="proof-gallery__zoom"
-						href="/images/evidence/sml-481-step-03-estado-sml-on.png"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Abrir captura paso 3 estado SML ON en tamaño completo"
-					>
-						<img
-							class="proof-gallery__image"
-							src="/images/evidence/sml-481-step-03-estado-sml-on.png"
-							width="860"
-							height="738"
-							alt="Panel con SML activo y protección hasta fin de sesión tras el cierre."
-							loading="lazy"
-							decoding="async"
-						/>
-					</a>
-					<figcaption><strong>Paso 3 — Estado SML ON:</strong> cuenta protegida hasta fin de sesión.</figcaption>
-				</figure>
-			</div>
-			<p class="sml-proof-note">
+			<details id="sml-demo-flow-evidence" class="proof-accordion">
+				<summary class="proof-capture-link">Capturas paso a paso — activación, cierre y SML ON</summary>
+				<p class="proof-gallery__hint">Haz clic en cada captura para verla en tamaño completo.</p>
+				<div class="sml-proof-grid">
+					<figure class="sml-proof-card">
+						<a
+							class="proof-gallery__zoom"
+							href="/images/evidence/sml-481-step-01-activacion.png"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Abrir captura paso 1 activación SML en tamaño completo"
+						>
+							<img
+								class="proof-gallery__image"
+								src="/images/evidence/sml-481-step-01-activacion.png"
+								width="905"
+								height="809"
+								alt="Antes de activar SML: modal de confirmación y panel con límite ampliado visible."
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<figcaption><strong>Paso 1 — Activación:</strong> límite ampliado visible antes de aplicar el bonus.</figcaption>
+					</figure>
+					<figure class="sml-proof-card">
+						<a
+							class="proof-gallery__zoom"
+							href="/images/evidence/sml-481-step-02-cierre.png"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Abrir captura paso 2 cierre SML en tamaño completo"
+						>
+							<img
+								class="proof-gallery__image"
+								src="/images/evidence/sml-481-step-02-cierre.png"
+								width="424"
+								height="599"
+								alt="Resultado final con SML activo tras el cierre en pérdida ampliada."
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<figcaption><strong>Paso 2 — Cierre:</strong> resultado del día tras disparar en el techo ampliado.</figcaption>
+					</figure>
+					<figure class="sml-proof-card">
+						<a
+							class="proof-gallery__zoom"
+							href="/images/evidence/sml-481-step-03-estado-sml-on.png"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Abrir captura paso 3 estado SML ON en tamaño completo"
+						>
+							<img
+								class="proof-gallery__image"
+								src="/images/evidence/sml-481-step-03-estado-sml-on.png"
+								width="860"
+								height="738"
+								alt="Panel con SML activo y protección hasta fin de sesión tras el cierre."
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<figcaption><strong>Paso 3 — Estado SML ON:</strong> cuenta protegida hasta fin de sesión.</figcaption>
+					</figure>
+				</div>
+			</details>
+			<p class="sml-proof-note sml-proof-note--slim">
 				En demo, el techo ampliado y el cierre final pueden diferir ligeramente (mismo patrón que en el resto de cierres tevsys a mercado).
 			</p>
 		</section>
@@ -199,97 +205,25 @@ const seo = {
 	</div>
 </Layout>
 
+<script>
+	const openDemoFlowIfTarget = () => {
+		const hash = window.location.hash;
+		if (hash === '#sml-demo-flow' || hash === '#sml-demo-flow-evidence') {
+			const details = document.getElementById('sml-demo-flow-evidence');
+			if (details && !details.open) details.open = true;
+		}
+	};
+	openDemoFlowIfTarget();
+	window.addEventListener('hashchange', openDemoFlowIfTarget);
+</script>
+
 <style>
 	.feature-hero,
-	.feature-sml-panel,
 	.feature-demo,
+	.feature-proof,
+	.feature-proof-detail,
 	.feature-cta {
 		margin: var(--section-margin) auto;
-	}
-	.feature-sml-panel h2 {
-		margin: 0 0 0.65rem;
-		font-size: 1.35rem;
-	}
-	.feature-sml-panel__title {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin: 0 0 0.65rem;
-	}
-	.feature-sml-panel__title h2 {
-		margin: 0;
-	}
-	.feature-sml-panel__title .feature-hook__dot {
-		margin-top: 0.08rem;
-	}
-	.feature-sml-panel__lead,
-	.feature-sml-panel__detail {
-		max-width: 68ch;
-		line-height: 1.55;
-		margin: 0 0 0.75rem;
-	}
-	.feature-sml-bridge {
-		margin: calc(var(--section-margin) * -0.45) auto calc(var(--section-margin) * 0.7);
-		max-width: 68ch;
-	}
-	.feature-sml-panel__detail {
-		opacity: 0.92;
-		font-size: 0.98rem;
-	}
-	.feature-sml-panel__figure {
-		margin: 1rem 0 0;
-		padding: 0;
-		max-width: min(100%, 28rem);
-	}
-	.feature-sml-panel__figure--wide {
-		max-width: min(100%, 64rem);
-	}
-	.feature-sml-panel__figure .proof-gallery__image {
-		max-width: min(100%, 314px);
-		margin-inline: auto;
-	}
-	.feature-sml-proof--demo-flow {
-		margin-top: clamp(2rem, 5vw, 3.25rem);
-	}
-	.sml-proof-card .proof-gallery__zoom {
-		border-radius: 0.35rem;
-	}
-	.proof-gallery__hint {
-		margin: 0 0 0.65rem;
-		font-size: 0.88rem;
-		opacity: 0.82;
-		line-height: 1.45;
-		max-width: 68ch;
-	}
-	.proof-gallery__zoom {
-		display: block;
-		border-radius: var(--theme-shape-radius);
-		overflow: hidden;
-		cursor: zoom-in;
-	}
-	.proof-gallery__zoom:focus-visible {
-		outline: 2px solid #f5b041;
-		outline-offset: 3px;
-	}
-	.proof-gallery__image {
-		display: block;
-		width: 100%;
-		height: auto;
-	}
-	.feature-sml-panel__img {
-		display: block;
-		width: 100%;
-		height: auto;
-		border-radius: var(--theme-shape-radius);
-		border: 1px solid rgba(245, 176, 65, 0.35);
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-	}
-	.feature-sml-panel__caption {
-		margin-top: 0.65rem;
-		font-size: 0.88rem;
-		line-height: 1.45;
-		opacity: 0.78;
-		max-width: 68ch;
 	}
 	.feature-kicker {
 		margin: 0 0 0.35rem;
@@ -309,8 +243,7 @@ const seo = {
 		font-style: italic;
 		font-weight: 600;
 		opacity: 0.9;
-		margin: 0 0 1rem;
-		padding-right: 0.25rem;
+		margin: 0 0 0.7rem;
 		line-height: 1.45;
 	}
 	.feature-hook__dot {
@@ -324,16 +257,12 @@ const seo = {
 		color: #f5b041;
 		font-weight: 700;
 	}
-	.feature-intro {
-		margin: 0 0 0.55rem;
-		line-height: 1.5;
-	}
 	.feature-manifesto-banner {
 		margin: calc(var(--section-margin) * -0.45) 0 calc(var(--section-margin) * 0.65);
 		max-width: 74ch;
 		line-height: 1.55;
 		padding: 0.68rem 0.82rem;
-		border-radius: 0.6rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		border: 1px solid rgba(150, 156, 170, 0.34);
 		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
 	}
@@ -341,30 +270,94 @@ const seo = {
 		max-width: 70ch;
 		line-height: 1.55;
 	}
-	.feature-extreme-note {
-		max-width: 72ch;
-		line-height: 1.5;
-		opacity: 0.86;
-		margin: 0.35rem 0 0;
+	.feature-demo--hero {
+		position: relative;
 	}
-	.feature-availability-note {
-		max-width: 72ch;
+	.feature-demo--hero::before {
+		content: '';
+		position: absolute;
+		inset: -0.35rem;
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) + 2px);
+		background: linear-gradient(140deg, rgba(155, 162, 175, 0.12), rgba(115, 122, 136, 0.04));
+		pointer-events: none;
+		z-index: 0;
+	}
+	.feature-demo--hero > * {
+		position: relative;
+		z-index: 1;
+	}
+	.sml-multichart {
+		margin: 0 0 clamp(1rem, 2.8vw, 1.5rem);
+		max-width: 52ch;
+		padding-bottom: clamp(0.6rem, 1.8vw, 0.85rem);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	}
+	html[data-theme='light'] .sml-multichart {
+		border-bottom-color: rgba(0, 0, 0, 0.08);
+	}
+	.sml-multichart__lead {
+		margin: 0 0 0.35rem;
+		align-items: flex-start;
+		gap: 0.4rem;
+		font-size: clamp(0.92rem, 2.1vw, 0.98rem);
+	}
+	.sml-multichart__sub {
+		margin: 0;
+		padding-left: calc(0.45rem + 0.4rem);
+		font-size: 0.88rem;
+		opacity: 0.78;
 		line-height: 1.45;
-		opacity: 0.9;
-		margin: 0.45rem 0 0;
-		font-size: 0.95rem;
 	}
 	.feature-demo h2,
-	.feature-cta h2,
-	.feature-sml-proof h2 {
+	.feature-proof h2,
+	.feature-cta h2 {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
 	}
-	.feature-demo--sml-check {
+	.feature-demo-hook {
+		margin: 0 0 0.85rem;
+		max-width: 58ch;
+		line-height: 1.5;
+		font-size: 0.96rem;
+		opacity: 0.92;
+	}
+	.sml-panel-embed,
+	.sml-capture-embed {
+		margin: 0 0 0.75rem;
+		max-width: min(100%, 28rem);
+	}
+	.sml-capture-embed {
+		max-width: min(100%, 20rem);
+	}
+	.sml-panel-embed .proof-gallery__zoom,
+	.sml-capture-embed .proof-gallery__zoom {
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		overflow: hidden;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+	}
+	.demo-edit-note {
+		margin: 0;
+		max-width: 58ch;
+		font-size: 0.88rem;
+		opacity: 0.82;
+		line-height: 1.45;
+	}
+	.sml-validation-banner {
+		margin: calc(var(--section-margin) * 0.5) auto calc(var(--section-margin) * 0.85);
+		max-width: 74ch;
+		padding: 0.85rem 1rem;
+		line-height: 1.5;
+		font-size: 0.94rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		border: 1px solid rgba(245, 176, 65, 0.32);
+		background: rgba(245, 176, 65, 0.07);
+	}
+	.feature-proof {
 		position: relative;
 		overflow: hidden;
 	}
-	.feature-demo--sml-check::after {
+	.feature-proof::after {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -373,6 +366,97 @@ const seo = {
 		height: 100%;
 		pointer-events: none;
 		background: radial-gradient(ellipse at right center, rgba(245, 176, 65, 0.11) 0%, rgba(245, 176, 65, 0.045) 42%, transparent 74%);
+	}
+	.feature-proof ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.feature-proof li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.feature-proof li::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.82);
+		margin-right: 0.55rem;
+		vertical-align: middle;
+	}
+	.feature-proof li:hover {
+		border-left-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
+	}
+	.feature-proof li:last-child {
+		margin-bottom: 0;
+	}
+	.evidence-link {
+		color: #ffffff;
+		text-decoration: underline;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2.5px;
+		transition: color 0.2s ease;
+		cursor: pointer;
+	}
+	.evidence-link:hover {
+		color: #f5b041;
+	}
+	.evidence-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	.feature-proof-detail {
+		background: var(--theme-surface-1);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
+		scroll-margin-top: 5.5rem;
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+		border: 1px solid var(--theme-surface-border);
+		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+	.feature-proof-detail h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.05rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+	}
+	.feature-proof-detail h3::before {
+		content: '';
+		width: 0.42rem;
+		height: 0.42rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-proof-subtitle {
+		margin: -0.1rem 0 0.5rem !important;
+		font-size: 0.94rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+	}
+	.feature-proof-lead {
+		margin: 0 0 0.85rem;
+		font-size: 0.94rem;
+		line-height: 1.5;
+		opacity: 0.88;
+		max-width: 52ch;
+	}
+	.feature-proof-detail:target,
+	#sml-panel:target {
+		border-color: rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 	}
 	.sml-checklist {
 		margin: 0;
@@ -386,7 +470,6 @@ const seo = {
 		border-left: 2px solid rgba(245, 176, 65, 0.22);
 		border-radius: 0.35rem;
 		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
-		transition: border-color 0.2s ease, background-color 0.2s ease;
 	}
 	.sml-checklist li::before {
 		content: '';
@@ -398,43 +481,74 @@ const seo = {
 		margin-right: 0.55rem;
 		vertical-align: middle;
 	}
-	.sml-checklist li:hover {
-		border-left-color: rgba(245, 176, 65, 0.42);
-		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
-	}
 	.sml-checklist li:last-child {
 		margin-bottom: 0;
 	}
-	.sml-status {
-		margin-top: 1rem;
-		padding: 0.85rem 1rem;
-		background: var(--theme-surface-1);
-		border: 1px solid rgba(245, 176, 65, 0.22);
-		border-radius: var(--theme-shape-radius);
-		font-size: 0.95rem;
-		opacity: 0.88;
-		line-height: 1.5;
+	.proof-gallery__hint {
+		margin: 0 0 0.65rem;
+		font-size: 0.88rem;
+		opacity: 0.82;
+		line-height: 1.45;
+		max-width: 68ch;
 	}
-	.feature-sml-proof {
-		margin: var(--section-margin) auto;
+	.proof-gallery__zoom {
+		display: block;
+		cursor: zoom-in;
+	}
+	.proof-gallery__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+	}
+	.proof-gallery__image {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.sml-capture-caption {
+		margin-top: 0.55rem;
+		font-size: 0.88rem;
+		line-height: 1.45;
+		opacity: 0.78;
+	}
+	.proof-accordion {
+		margin-top: 0.35rem;
+	}
+	.proof-accordion summary {
+		list-style: none;
+	}
+	.proof-accordion summary::-webkit-details-marker {
+		display: none;
+	}
+	.proof-capture-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		cursor: pointer;
+	}
+	.proof-capture-link:hover {
+		color: #f7c050;
 	}
 	.sml-proof-grid {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 0.9rem;
+		margin-top: 0.65rem;
 	}
 	.sml-proof-card {
 		margin: 0;
 		padding: 0.7rem;
-		border-radius: var(--theme-shape-radius);
-		background: var(--theme-surface-1);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		background: rgba(255, 255, 255, 0.03);
 		border: 1px solid rgba(245, 176, 65, 0.2);
+	}
+	.sml-proof-card .proof-gallery__zoom {
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.15rem);
+		overflow: hidden;
 	}
 	.sml-proof-card img {
 		display: block;
 		width: 100%;
 		height: auto;
-		border-radius: 0.35rem;
 	}
 	.sml-proof-card figcaption {
 		margin-top: 0.55rem;
@@ -445,20 +559,18 @@ const seo = {
 	.sml-proof-note {
 		margin: 0.95rem 0 0;
 		padding: 0.8rem 0.95rem;
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		border: 1px solid rgba(245, 176, 65, 0.28);
 		background: rgba(245, 176, 65, 0.06);
 		line-height: 1.5;
+		font-size: 0.94rem;
 	}
-	.sml-proof-tech {
-		margin: 0.65rem 0 0;
-		opacity: 0.82;
-		font-size: 0.92rem;
-		line-height: 1.45;
+	.sml-proof-note--slim {
+		margin-top: 0.75rem;
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1.2rem;
 		border: 1px solid var(--theme-surface-border);
 		box-shadow: var(--theme-surface-elevated-shadow);
@@ -466,6 +578,9 @@ const seo = {
 	.feature-cta p {
 		margin: 0 0 0.9rem;
 		line-height: 1.5;
+	}
+	#sml-panel {
+		scroll-margin-top: 5.5rem;
 	}
 	@media (max-width: 900px) {
 		.sml-proof-grid {
