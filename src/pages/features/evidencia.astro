@@ -67,7 +67,7 @@ const seo = {
 					<a class="evidence-link" href="#evidencia-logs">Guía visual de logs MT5 + salto a Precisión para trazabilidad en detalle.</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidence-audit">Auditoría: ejecución certificada por MT5 + decisión de lógica en logs tevsys.</a>
+					<a class="evidence-link" href="#evidence-audit">Qué es tevsys, dos capas de evidencia y 87 operativas documentadas.</a>
 				</li>
 			</ul>
 		</section>
@@ -250,14 +250,25 @@ const seo = {
 		</section>
 
 		<section id="evidence-audit" class="feature-proof-detail feature-proof-detail--audit">
-			<h3>Auditoría: la prueba no es nuestra</h3>
-			<p class="feature-proof-subtitle">MetaTrader documenta · tevsys ejecuta</p>
+			<h3>La evidencia no la escribimos nosotros</h3>
+			<p class="feature-proof-subtitle audit-hook">
+				MT5 deja el resultado oficial. tevsys deja el porqué. Tú cruzas las dos capas y decides si cuadra.
+			</p>
 
 			<div class="audit-cards">
 				<article class="audit-card">
-					<h4 class="audit-card__title">¿Para quién desarrollamos?</h4>
+					<h4 class="audit-card__title">¿Para quién es esto? — Qué hacemos hoy</h4>
 					<p class="audit-card__body">
-						Para ti, que quieres verte con <strong>datos</strong> y no con sensaciones. Para gestoras, prop firms o quien gestione capital ajeno. Y para academias: la disciplina se practica con un sistema que <strong>no permite saltarse la lección</strong>.
+						<strong>tevsys</strong> es una utilidad MT5 para <strong>aplicar las reglas que tú configuras</strong> — límites, protección, cierre al tope — con trazabilidad frente al terminal y a tus propios pactos. <strong>No son señales</strong> ni promesa de rentabilidad.
+					</p>
+					<p class="audit-card__body">
+						Para <strong>ti</strong> si quieres datos, no sensaciones. Para <strong>prop firms, gestoras y academias</strong> si hay que demostrar cumplimiento.
+					</p>
+					<p class="audit-card__body audit-card__body--today">
+						<strong>Hoy, en producción:</strong> precisión de cierre documentada, HyperClose bajo presión, panel y flujos por plan (Essential / Advanced / Pro), multigráfico, días OFF, capital y licencias, y esta capa de evidencia (vídeo, informe MT5, historial, logs).
+					</p>
+					<p class="audit-card__body audit-card__body--roadmap">
+						<strong>En camino (sin prometer lo que el build aún no cierra):</strong> SML (Advanced/Pro, validación en curso), revisión de disciplina asistida (auditoría, roadmap) y noticias/horarios por tier.
 					</p>
 				</article>
 
@@ -290,11 +301,12 @@ const seo = {
 			</div>
 
 			<p class="audit-closing-note">
-				Pensado para quien opera con reglas y quiere que la cuenta las respete.
+				Para quien opera en serio, enseña, audita o gestiona capital ajeno: lo que importa es poder <strong>contrastar</strong> lo pactado con lo que MT5 y los registros de tevsys dejan escrito.
 			</p>
 			<p class="audit-next-link">
 				<a class="proof-capture-link" href="/features/precision#precision-stats">
-					Ver capturas paso a paso del cierre por pérdida diaria — demo cuenta pequeña (Precisión)
+					Otro cierre documentado al detalle (Essential, desviación 0,002 p.p. — capturas + MT5)
+					<span class="proof-link-meta">Precisión</span>
 				</a>
 			</p>
 		</section>
@@ -653,8 +665,13 @@ const seo = {
 		padding-top: 1rem;
 		padding-bottom: 1.25rem;
 	}
-	#evidence-audit .feature-proof-subtitle {
+	#evidence-audit .feature-proof-subtitle.audit-hook {
 		margin: -0.15rem 0 1rem !important;
+		font-style: normal;
+		font-weight: 500;
+		opacity: 0.92;
+		max-width: 58ch;
+		line-height: 1.5;
 	}
 	.audit-cards {
 		display: flex;
@@ -707,6 +724,14 @@ const seo = {
 	}
 	.audit-card__body + .audit-card__body {
 		margin-top: 0.55rem;
+	}
+	.audit-card__body--today,
+	.audit-card__body--roadmap {
+		font-size: 0.91rem;
+		opacity: 0.9;
+	}
+	.audit-card__body--roadmap {
+		opacity: 0.85;
 	}
 	.audit-card__body--stat {
 		font-weight: 500;

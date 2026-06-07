@@ -6,6 +6,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — bloque auditoría copy ampliado (7 jun 2026)
+
+- **Enganche:** «La evidencia no la escribimos nosotros» + cruce MT5/tevsys.
+- **Viñeta 1:** qué somos, hoy en prod, en camino (SML, auditoría, noticias) — sin encasillar.
+- **Cierre:** contrastar lo pactado vs registros; enlace Precisión con motivo (0,002 p.p.).
+- **Web:** `features/evidencia.astro` · `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` § Evidencia.
+
+---
+
 ## Evidencia — Familia A en curso (7 jun 2026)
 
 - **Qué:** alinear `/features/evidencia` a HyperClose/Precisión/SML — hook hero 7,20 € ámbar, `--feature-micro-radius`, sección logs `--video-slim`, leads por bloque, orden índice (HTML antes de logs).
