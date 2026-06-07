@@ -67,7 +67,7 @@ const seo = {
 					<a class="evidence-link" href="#evidencia-logs">Guía visual de logs MT5 + salto a Precisión para trazabilidad en detalle.</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidence-audit">Dos capas MT5/tevsys, 87 operativas y cifras documentadas.</a>
+					<a class="evidence-link" href="#evidence-audit">Para quién encaja, dos capas MT5/tevsys y 87 operativas.</a>
 				</li>
 			</ul>
 		</section>
@@ -272,24 +272,65 @@ const seo = {
 				</article>
 			</div>
 
-			<h4 class="audit-proof-heading">Todo lo de arriba es la prueba.</h4>
-			<p class="audit-card__body">
-				El vídeo, el informe MT5 y las transacciones que acabas de ver son <strong>ejemplos reales</strong>.
-			</p>
-			<p class="audit-card__body audit-card__body--stat">
-				<strong class="feature-title__accent">87 operativas documentadas</strong> con el mismo rigor.<br />
-				Error medio <strong class="feature-title__accent">≈ 0,06 %</strong> · caso extremo: 100 lotes (operativa 4.56).
-			</p>
+			<div class="evidence-closure">
+				<div class="evidence-closure__copy">
+					<article class="evidence-audience-card">
+						<h4 class="evidence-audience-card__title">Para quién encaja</h4>
+						<ul class="evidence-audience-list">
+							<li>
+								<strong>Tú, con reglas claras</strong>
+								<span>Si quieres datos contrastables, no sensaciones.</span>
+							</li>
+							<li>
+								<strong>Cuenta fondeada o challenge</strong>
+								<span>Si necesitas demostrar que cumples lo pactado frente al terminal.</span>
+							</li>
+							<li>
+								<strong>Academia, gestor o auditor</strong>
+								<span>Si hay que enseñar, revisar o explicar cumplimiento con MT5 + logs tevsys.</span>
+							</li>
+						</ul>
+						<p class="evidence-audience-disclaimer">No son señales. No hay promesa de rentabilidad.</p>
+					</article>
 
-			<p class="audit-closing-note">
-				Para quien opera en serio, enseña, audita o gestiona capital ajeno: lo que importa es poder <strong>contrastar lo pactado</strong> con <strong>lo que MT5 y los registros de tevsys dejan escrito</strong>.
-			</p>
-			<p class="audit-next-link">
-				<a class="proof-capture-link" href="/features/precision#precision-stats">
-					Essential · desviación 0,002 p.p. → Precisión
-					<span class="proof-link-meta">Precisión</span>
-				</a>
-			</p>
+					<div class="evidence-stats-band" aria-label="Resumen estadístico documentado">
+						<p class="evidence-stats-band__primary">
+							<strong class="feature-title__accent">87 operativas</strong> documentadas con el mismo rigor
+						</p>
+						<p class="evidence-stats-band__secondary">
+							Error medio <strong class="feature-title__accent">≈ 0,06 %</strong>
+							<span class="evidence-stats-band__sep" aria-hidden="true">·</span>
+							Caso extremo: 100 lotes (operativa 4.56)
+						</p>
+					</div>
+
+					<p class="audit-closing-note">
+						Lo que importa es poder <strong>contrastar lo pactado</strong> con <strong>lo que MT5 y los registros de tevsys dejan escrito</strong>.
+					</p>
+					<p class="audit-next-link">
+						<a class="proof-capture-link" href="/features/precision#precision-stats">
+							Essential · desviación 0,002 p.p. → Precisión
+							<span class="proof-link-meta">Precisión</span>
+						</a>
+					</p>
+				</div>
+				<figure class="evidence-closure__visual">
+					<div class="evidence-closure__visual-frame">
+						<img
+							src="/mano%20robotica%20central%20web.png?v=2"
+							alt=""
+							width="640"
+							height="640"
+							loading="lazy"
+							decoding="async"
+							class="evidence-closure__visual-img"
+						/>
+					</div>
+					<figcaption class="evidence-closure__visual-caption">
+						Disciplina verificable — la marca acompaña; la prueba la cruzas tú.
+					</figcaption>
+				</figure>
+			</div>
 		</section>
 
 		<section class="feature-cta">
@@ -675,23 +716,138 @@ const seo = {
 	.evidence-grid__card {
 		height: 100%;
 	}
-	.audit-proof-heading {
-		margin: 0 0 0.55rem;
-		font-size: 0.92rem;
+	.evidence-closure {
+		display: grid;
+		grid-template-columns: minmax(0, 1.15fr) minmax(11rem, 0.85fr);
+		gap: clamp(1rem, 2.5vw, 1.65rem);
+		align-items: start;
+		margin-top: 0.35rem;
+	}
+	@media (max-width: 820px) {
+		.evidence-closure {
+			grid-template-columns: 1fr;
+		}
+		.evidence-closure__visual {
+			order: -1;
+			max-width: min(16rem, 72%);
+			margin: 0 auto;
+		}
+	}
+	.evidence-audience-card {
+		margin: 0 0 0.85rem;
+		padding: 0.95rem 1.05rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		background:
+			linear-gradient(145deg, rgba(245, 176, 65, 0.07) 0%, transparent 58%),
+			rgba(255, 255, 255, 0.028);
+	}
+	html[data-theme='light'] .evidence-audience-card {
+		border-color: rgba(180, 120, 20, 0.2);
+		background: rgba(245, 176, 65, 0.05);
+	}
+	.evidence-audience-card__title {
+		margin: 0 0 0.65rem;
+		font-size: 1rem;
 		font-weight: 700;
 		color: #f5b041;
-		line-height: 1.35;
+		line-height: 1.3;
 		display: inline-flex;
 		align-items: center;
-		gap: 0.4rem;
+		gap: 0.42rem;
 	}
-	.audit-proof-heading::before {
+	.evidence-audience-card__title::before {
 		content: '';
-		width: 0.34rem;
-		height: 0.34rem;
+		width: 0.38rem;
+		height: 0.38rem;
 		border-radius: 50%;
 		background: #f5b041;
 		flex-shrink: 0;
+	}
+	.evidence-audience-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.55rem;
+	}
+	.evidence-audience-list li {
+		padding-left: 0.85rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.35);
+		line-height: 1.45;
+	}
+	.evidence-audience-list strong {
+		display: block;
+		font-size: 0.94rem;
+		margin-bottom: 0.12rem;
+	}
+	.evidence-audience-list span {
+		display: block;
+		font-size: 0.88rem;
+		opacity: 0.88;
+	}
+	.evidence-audience-disclaimer {
+		margin: 0.75rem 0 0;
+		font-size: 0.84rem;
+		opacity: 0.78;
+		font-style: italic;
+	}
+	.evidence-stats-band {
+		margin: 0 0 0.85rem;
+		padding: 0.72rem 0.88rem;
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.15rem);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		background: rgba(255, 255, 255, 0.02);
+	}
+	html[data-theme='light'] .evidence-stats-band {
+		border-color: rgba(0, 0, 0, 0.07);
+		background: rgba(0, 0, 0, 0.02);
+	}
+	.evidence-stats-band__primary,
+	.evidence-stats-band__secondary {
+		margin: 0;
+		font-size: 0.93rem;
+		line-height: 1.5;
+	}
+	.evidence-stats-band__secondary {
+		margin-top: 0.35rem;
+		font-size: 0.88rem;
+		opacity: 0.9;
+	}
+	.evidence-stats-band__sep {
+		margin: 0 0.35rem;
+		opacity: 0.55;
+	}
+	.evidence-closure__visual {
+		margin: 0;
+		text-align: center;
+	}
+	.evidence-closure__visual-frame {
+		border-radius: clamp(0.85rem, 2vw, 1.15rem);
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #000;
+		box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+	}
+	html[data-theme='light'] .evidence-closure__visual-frame {
+		border-color: rgba(0, 0, 0, 0.08);
+		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+	}
+	.evidence-closure__visual-img {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		filter: contrast(1.04) brightness(1.02);
+	}
+	.evidence-closure__visual-caption {
+		margin: 0.55rem 0 0;
+		font-size: 0.78rem;
+		line-height: 1.45;
+		opacity: 0.72;
+		max-width: 18rem;
+		margin-inline: auto;
 	}
 	.audit-card {
 		margin: 0;
@@ -743,16 +899,14 @@ const seo = {
 		font-weight: 500;
 	}
 	.audit-closing-note {
-		margin: 1rem 0 0;
-		padding: 0.75rem 0.95rem;
-		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
-		border: 1px solid rgba(245, 176, 65, 0.28);
-		background: rgba(245, 176, 65, 0.06);
-		font-style: italic;
-		font-weight: 600;
-		font-size: 0.94rem;
+		margin: 0 0 0.85rem;
+		padding: 0.68rem 0.82rem;
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.12rem);
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		background: rgba(245, 176, 65, 0.05);
+		font-size: 0.92rem;
 		line-height: 1.5;
-		opacity: 0.95;
+		opacity: 0.94;
 		max-width: 68ch;
 	}
 	.audit-next-link {
