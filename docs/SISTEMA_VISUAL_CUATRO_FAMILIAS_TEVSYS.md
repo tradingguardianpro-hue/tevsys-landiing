@@ -69,10 +69,11 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | Familia | Estado | Notas |
 |---------|--------|--------|
 | **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS `guia-operativa.css` · cuatro URLs · copy lectura fin de semana revisado **7 jun** · vídeo C **2:01** en `/configuracion-fin-de-semana`. |
-| **A — Producto** | **HyperClose + Precisión + SML Fase 1 cerradas** · **Evidencia en curso** | SML validada 7 jun · Evidencia = siguiente Familia A · cards home. |
+| **A — Producto** | **HyperClose + Evidencia + home cards/planes cerrados (8 jun)** · **Precisión + SML piel carbón pendiente** | Pasada carbón validada fundador · § Pasada carbón jun 2026. |
 | **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable; videoteca **4 huecos** (MC-CF-019 fuera); criterio microclip vs guía documentado en V12 + catálogo. |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
-| **Footer** | **Cerrado** | Validado fundador **7 jun 2026** — § Footer cerrado |
+| **Footer** | **Cerrado** | Estructura **7 jun** · home integrado **8 jun** (`--theme-bg` + fade) — § Footer + § Pasada carbón |
+| **Home (cards + planes + cita fundador)** | **Cerrado** | Validado fundador **8 jun 2026** — § Pasada carbón jun 2026 |
 | **Buscador global** | **Aplazado** | Mail + footer Guías + fork. |
 
 **Archivos clave Familia C:** `src/styles/guia-operativa.css` · `src/pages/instalacion.astro` · `configuracion*.astro`.
@@ -101,9 +102,12 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 - Hero vídeo: `--micro-demo-bg`; chrome del embed sin cambiar.
 - CTA demo **solo** al final de la micropágina.
 
-**Estado:** **HyperClose + Precisión + SML Fase 1 cerradas (piel)** · **Evidencia + HyperClose re-paso carbón (8 jun 2026)** · cards home alineadas (`hsl(222…)`).
+**Estado (8 jun 2026):**
+- **Piel carbón cerrada:** HyperClose, Evidencia, home (microcards + plan cards + footer integrado).
+- **Pendiente misma piel:** Precisión, SML (sin tocar copy/claims ni EA).
+- **Contenido HyperClose:** capturas día OFF en terminal — copy/collage OK.
 
-**Canon de referencia (jun 2026):** `/features/hyperclose` + **`/features/precision`** (cerradas). **Siguiente clone:** `/features/sml` (visual Familia A; contenido acotado a validación).
+**Canon de referencia (jun 2026):** `/features/hyperclose` + `/features/evidencia` (piel carbón). **Siguiente clone:** `/features/precision` → `/features/sml`.
 
 **SML — criterio web mientras validación EA (P12):**
 - **Sí:** misma piel (radios, manifesto, índice «Qué puedes comprobar», tarjetas redondas, CTA); aviso **Advanced/Pro · validación en curso** visible; capturas actuales en `<details>` donde aplique.
@@ -189,9 +193,50 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 ---
 
-## Footer — **CERRADO** (7 jun 2026)
+## Pasada carbón Familia A + home (8 jun 2026 — validada fundador)
 
-**Estado:** validado por fundador; **listo por el momento**. Siguiente frente web: capturas HyperClose día OFF (§ Pendiente evidencia).
+**Objetivo:** eliminar gris opaco neutro (`--theme-surface-1`, `hsl(0,0%,6%)`) que “aplastaba” bloques y competía con la cita del fundador en home.
+
+**Tokens globales** (`src/styles/global.css`, wrapper `.tevsys-feature-micro-surface`):
+
+| Token | Uso |
+|-------|-----|
+| `--micro-detail-bg` / `--micro-detail-border` | Bloques prueba (informe, semáforo, logs, capturas…) |
+| `--micro-demo-bg` / `--micro-demo-border` | Contenedor vídeo hero al abrir micro |
+| `--micro-close-bg` / `--micro-close-border` | Cierre especial Familia A (solo `#evidence-audit` hoy) |
+
+**Reglas visuales acordadas:**
+- **Halo ámbar:** solo índice «Qué puedes comprobar» (`feature-proof`) + cierre `#evidence-audit` (estilo checklist).
+- **Sin halo** en bloques intermedios (semáforo, logs, día OFF, etc.).
+- Pruebas con vídeo = `feature-proof-detail` + carbón — **no** `--video-slim` gris salvo excepción documentada.
+- Hero vídeo: `--micro-demo-bg`; sin sombra pesada ni `::before` que duplique losa (HyperClose).
+
+**Por página (8 jun):**
+
+| URL | Cambio | Estado piel |
+|-----|--------|-------------|
+| `/features/evidencia` | Wrapper `--evidencia`; logs en caja carbón; `#evidence-audit` `--familia-a-close` + halo | **Cerrada** |
+| `/features/hyperclose` | Wrapper `--hyperclose`; semáforo + día OFF en cajas carbón; más aire vídeo OFF; halo solo checklist | **Cerrada** |
+| `/` home microcards | `.tevsys-card__content` gradiente `hsl(222, 14%, 7%)` → `hsl(222, 12%, 5.5%)` | **Cerrada** |
+| `/` plan cards | Mismo gradiente que microcards (fin `hsl(0,0%,6%)`) | **Cerrada** |
+| `/` footer (solo home) | `--footer-bg: var(--theme-bg)` + fade superior + inset ámbar suave | **Cerrada** |
+| `/features/precision` | Aplicar checklist § A (carbón, aire vídeos, sin halos extra) | **Pendiente** |
+| `/features/sml` | Idem; panels parcialmente en global | **Pendiente** |
+
+**Home — cita fundador + footer (criterio fundador 8 jun):**
+- Antes: footer en negro sólido **absorbía** protagonismo de la frase («Made with love…» / cierre emocional).
+- Ahora: transición `--theme-bg` + fade — la **cita respira**; el footer **sigue siendo claramente footer** (columnas Guías / Producto / Legal) sin competir hacia arriba.
+- Texto del footer **gana presencia legible** al no estar pegado a un bloque negro homogéneo con la zona de cita.
+
+**Archivos tocados:** `global.css` · `evidencia.astro` · `hyperclose.astro` · `index.astro` · `Footer.astro` / `Page.astro` (home).
+
+**Commits sugeridos (orden):** `web(tevsys): unifica tono carbón translúcido micros y cards home` · `web(tevsys): evidencia logs caja carbon` · `web(tevsys): hyperclose familia-a carbon semaforo y aire video off` · `web(tevsys): home plan cards carbon y footer theme-bg integrado` · `docs: canon carbon familia A SISTEMA_VISUAL + V12`.
+
+---
+
+## Footer — **CERRADO** (7 jun estructura · 8 jun home)
+
+**Estado:** validado por fundador; **listo por el momento**. En **home**, integración con `--theme-bg` (8 jun) — ver § Pasada carbón.
 
 **Job:** mapa Guías + Producto + Legal + contacto. Nav principal **solo header** (sin franja ámbar duplicada).
 
@@ -307,11 +352,11 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
 | 3 | ~~HyperClose aligerado~~ | A | **Cerrado** 7 jun 2026 |
 | 4 | ~~Footer aligerado~~ | — | **Cerrado** 7 jun 2026 |
-| 5 | HyperClose capturas día OFF + collage | A | Copy OK · **capturas pendiente** |
-| 6 | **Precisión** (checklist A + hook cifra) | A | **En curso** |
-| 7 | SML | A | **Fase 1 cerrada** · Fase 2 post P12 |
-| 8 | Evidencia | A | **En curso** |
-| 9 | Cards home aligeradas | A | Tras micropáginas |
+| 5 | HyperClose capturas día OFF + collage | A | Copy OK · **capturas pendiente** terminal |
+| 6 | **Precisión** — piel carbón (checklist § Pasada carbón) | A | **Siguiente** |
+| 7 | **SML** — piel carbón (mismo checklist) | A | Tras Precisión · contenido Fase 2 post P12 |
+| 8 | ~~Evidencia piel carbón~~ | A | **Cerrado** 8 jun |
+| 9 | ~~Cards home + planes + footer home~~ | A | **Cerrado** 8 jun |
 | — | No tocar auditoría salvo copy | D | Estable |
 | — | No homogeneizar cómo-funciona | B | Estable |
 | — | Buscador global | — | Aplazado |
@@ -333,6 +378,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Fecha | Nota |
 |-------|------|
+| 8 jun 2026 | **Pasada carbón Familia A + home cerrada** — HyperClose, Evidencia, microcards, plan cards, footer home integrado; cita fundador recupera protagonismo; **siguiente:** Precisión + SML piel. |
 | 7 jun 2026 | **HyperClose semáforo cerrado**; día OFF mismo tono + acordeón sin «5»; collage/capturas OFF **pendiente** terminal. |
 | 7 jun 2026 | **HyperClose semáforo:** collage CAP-06b HECHO visible bajo vídeo (3→2→1 + panel). |
 | 7 jun 2026 | **Footer cerrado** — validado fundador; alineación grid; build fix; changelog + V12. |

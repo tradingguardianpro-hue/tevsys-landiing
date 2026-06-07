@@ -6,10 +6,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Pasada carbón Familia A + home — cierre validado fundador (8 jun 2026)
+
+**Canon:** `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md` § *Pasada carbón Familia A + home*.
+
+- **Micros cerradas (piel):** Evidencia (logs carbón, `#evidence-audit` cierre), HyperClose (semáforo + día OFF carbón, halo solo checklist).
+- **Home:** microcards + plan cards `hsl(222…)`; footer home `--theme-bg` + fade — cita fundador gana protagonismo; footer sigue siendo pie legal claro.
+- **Tokens:** `--micro-detail-*`, `--micro-demo-*`, `--micro-close-*` en `global.css`.
+- **Pendiente:** `/features/precision` y `/features/sml` — misma piel, sin halos extra.
+- **Archivos:** `global.css` · `evidencia.astro` · `hyperclose.astro` · `index.astro` · `Footer.astro` / `Page.astro`.
+
+---
+
 ## Home — plan cards + footer (8 jun 2026)
 
 - **Plan cards:** gradiente `hsl(222…)` alineado a microcards (fin gris neutro `hsl(0,0%,6%)`).
-- **Footer (solo home):** `--theme-bg` + fade superior suave; mantiene rol de cierre legal.
+- **Footer (solo home):** `--theme-bg` + fade superior suave; mantiene rol de cierre legal; **no compite** con frase fundador (validación fundador 8 jun).
 
 ---
 
