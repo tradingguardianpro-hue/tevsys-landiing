@@ -272,20 +272,6 @@ const seo = {
 				</article>
 			</div>
 
-			<figure class="evidence-brand-strip">
-				<div class="evidence-brand-strip__frame">
-					<img
-						src="/mano%20robotica%20central%20web.png?v=2"
-						alt="Mano robótica tevsys con candado — disciplina verificable"
-						width="1200"
-						height="400"
-						loading="lazy"
-						decoding="async"
-						class="evidence-brand-strip__img"
-					/>
-				</div>
-			</figure>
-
 			<article class="evidence-synthesis">
 				<h4 class="evidence-synthesis__title">Para quién encaja</h4>
 				<div class="evidence-audience-grid">
@@ -706,7 +692,7 @@ const seo = {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.75rem;
-		margin: 0.35rem 0 1.35rem;
+		margin: 0.35rem 0 1.15rem;
 	}
 	@media (max-width: 640px) {
 		.evidence-grid {
@@ -718,7 +704,7 @@ const seo = {
 		min-height: 5.5rem;
 	}
 	.evidence-synthesis {
-		margin: 0.25rem 0 0;
+		margin: 0.15rem 0 0;
 		padding: 1rem 1.1rem 1.05rem;
 		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		border: 1px solid rgba(255, 255, 255, 0.09);
@@ -800,30 +786,6 @@ const seo = {
 		line-height: 1.55;
 		opacity: 0.9;
 		max-width: 62ch;
-	}
-	.evidence-brand-strip {
-		margin: 0.65rem 0 1.35rem;
-	}
-	.evidence-brand-strip__frame {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		overflow: hidden;
-		border: none;
-		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.15rem);
-		background: transparent;
-		box-shadow: none;
-		padding: 0.15rem 0;
-	}
-	.evidence-brand-strip__img {
-		display: block;
-		width: 100%;
-		height: auto;
-		max-height: 6.5rem;
-		object-fit: contain;
-		object-position: center center;
-		opacity: 0.78;
-		filter: grayscale(0.12) brightness(0.94);
 	}
 	.audit-card {
 		margin: 0;
