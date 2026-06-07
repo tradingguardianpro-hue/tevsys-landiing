@@ -708,15 +708,53 @@ const seo = {
 	.feature-proof-detail p:first-of-type {
 		margin-top: 0;
 	}
-	/* Familia A cierre — sin losa; brillo global en global.css (--familia-a-close) */
+	/* Cierre Familia A — mismo aire que «Qué puedes comprobar»: fondo oscuro sutil + halo ámbar */
+	html[data-theme='dark'] .tevsys-feature-micro-surface--evidencia #evidence-audit.feature-proof-detail--familia-a-close {
+		position: relative;
+		overflow: hidden;
+		margin-top: clamp(1.35rem, 3.5vw, 1.85rem);
+		padding: 1rem 1.1rem clamp(0.75rem, 1.5vw, 1rem);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		background: rgba(255, 255, 255, 0.024);
+		box-shadow: none;
+	}
+	html[data-theme='light'] .tevsys-feature-micro-surface--evidencia #evidence-audit.feature-proof-detail--familia-a-close {
+		position: relative;
+		overflow: hidden;
+		border: 1px solid rgba(0, 0, 0, 0.08);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		background: rgba(0, 0, 0, 0.022);
+		box-shadow: none;
+	}
+	#evidence-audit.feature-proof-detail--familia-a-close::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -10%;
+		width: 42%;
+		height: 100%;
+		pointer-events: none;
+		background: radial-gradient(
+			ellipse at right center,
+			rgba(245, 176, 65, 0.11) 0%,
+			rgba(245, 176, 65, 0.045) 42%,
+			transparent 74%
+		);
+	}
+	#evidence-audit.feature-proof-detail--familia-a-close > * {
+		position: relative;
+		z-index: 1;
+	}
 	#evidence-audit.feature-proof-detail--audit {
 		padding-bottom: clamp(0.5rem, 1.5vw, 0.85rem);
 	}
 	#evidence-audit.feature-proof-detail--audit h3 {
 		margin-bottom: 0.85rem;
 	}
-	#evidence-audit.feature-proof-detail--audit:target {
-		background: transparent;
+	html[data-theme='dark'] .tevsys-feature-micro-surface--evidencia #evidence-audit.feature-proof-detail--audit:target {
+		border-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.055), rgba(255, 255, 255, 0.022));
 		box-shadow: none;
 	}
 	.evidence-intro {
