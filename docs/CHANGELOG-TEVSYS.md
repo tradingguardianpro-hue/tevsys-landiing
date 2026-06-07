@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Footer — micropáginas alineado a home (8 jun 2026)
+
+- **Qué:** mismo `--theme-bg` + fade + inset ámbar que home en `/features/*` (wrapper `.tevsys-feature-micro-surface`).
+- **Motivo:** el pie seguía en `--theme-surface-1` (gris opaco) fuera de home.
+- **Archivo:** `global.css`.
+
+---
+
 ## Precisión — piel carbón Familia A (8 jun 2026)
 
 - **Qué:** volatilidad, Nasdaq, logs y cuenta pequeña en `feature-proof-detail` carbón; fin `--video-slim`; hero `--micro-demo-bg` sin `::before`; halo solo «Qué puedes comprobar».
@@ -29,7 +37,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## Home — plan cards + footer (8 jun 2026)
 
 - **Plan cards:** gradiente `hsl(222…)` alineado a microcards (fin gris neutro `hsl(0,0%,6%)`).
-- **Footer (solo home):** `--theme-bg` + fade superior suave; mantiene rol de cierre legal; **no compite** con frase fundador (validación fundador 8 jun).
+- **Footer (home + micropáginas Familia A):** `--theme-bg` + fade superior suave; fin losa `--theme-surface-1` en `/features/*`.
 
 ---
 

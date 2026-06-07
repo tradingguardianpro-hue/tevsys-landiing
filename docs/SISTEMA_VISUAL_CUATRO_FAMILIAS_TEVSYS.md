@@ -219,14 +219,15 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | `/features/hyperclose` | Wrapper `--hyperclose`; semáforo + día OFF en cajas carbón; más aire vídeo OFF; halo solo checklist | **Cerrada** |
 | `/` home microcards | `.tevsys-card__content` gradiente `hsl(222, 14%, 7%)` → `hsl(222, 12%, 5.5%)` | **Cerrada** |
 | `/` plan cards | Mismo gradiente que microcards (fin `hsl(0,0%,6%)`) | **Cerrada** |
-| `/` footer (solo home) | `--footer-bg: var(--theme-bg)` + fade superior + inset ámbar suave | **Cerrada** |
+| `/` footer | `--theme-bg` + fade superior + inset ámbar suave | **Cerrada** |
+| `/features/*` footer | Mismo tratamiento que home (Familia A) | **Cerrada** 8 jun |
 | `/features/precision` | Volatilidad, Nasdaq, logs y cuenta pequeña en cajas carbón; hero `--micro-demo-bg`; halo solo checklist | **Cerrada** 8 jun |
 | `/features/sml` | Aplicar checklist § A (carbón, aire vídeos, sin halos extra) | **Pendiente** |
 
-**Home — cita fundador + footer (criterio fundador 8 jun):**
-- Antes: footer en negro sólido **absorbía** protagonismo de la frase («Made with love…» / cierre emocional).
-- Ahora: transición `--theme-bg` + fade — la **cita respira**; el footer **sigue siendo claramente footer** (columnas Guías / Producto / Legal) sin competir hacia arriba.
-- Texto del footer **gana presencia legible** al no estar pegado a un bloque negro homogéneo con la zona de cita.
+**Home + micropáginas Familia A — cita / transición al pie (criterio fundador 8 jun):**
+- Antes: footer en `--theme-surface-1` (losa gris) **absorbía** protagonismo del contenido superior y competía con la cita en home.
+- Ahora: `--theme-bg` + fade — la **cita respira** en home; en micros el pie **continúa el fondo de página** sin bloque gris aparte.
+- El footer **sigue siendo claramente footer** (columnas Guías / Producto / Legal).
 
 **Archivos tocados:** `global.css` · `evidencia.astro` · `hyperclose.astro` · `index.astro` · `Footer.astro` / `Page.astro` (home).
 
@@ -236,7 +237,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 ## Footer — **CERRADO** (7 jun estructura · 8 jun home)
 
-**Estado:** validado por fundador; **listo por el momento**. En **home**, integración con `--theme-bg` (8 jun) — ver § Pasada carbón.
+**Estado:** validado por fundador; **listo por el momento**. Integración `--theme-bg` en **home + micropáginas Familia A** (8 jun) — ver § Pasada carbón.
 
 **Job:** mapa Guías + Producto + Legal + contacto. Nav principal **solo header** (sin franja ámbar duplicada).
 
