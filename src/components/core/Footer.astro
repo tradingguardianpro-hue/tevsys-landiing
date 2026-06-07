@@ -10,61 +10,18 @@ const {
 	copyrightName,
 	background,
 	color,
-	showPlug: showPlug = true,
+	showPlug = true,
 } = Astro.props;
 
 const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 const [colGuias, colProducto, colLegal] = columns;
 
-function renderColumnContent(column) {
-	if (!column) return null;
-	if (column.groups) {
-		return column.groups.map((group) => (
-			<div class="footer-link-group">
-				{group.label && <p class="footer-link-group__label">{group.label}</p>}
-				<ul class="footer-link__list">
-					{group.items.map((item) => (
-						<li>
-							{item.slug ? (
-								<a href={item.slug}>
-									{item.title}
-									{item.note && <span class="footer-link__hint"> · {item.note}</span>}
-								</a>
-							) : (
-								<span class="footer-link__disabled">
-									{item.title}
-									{item.note && <span class="footer-link__note"> ({item.note})</span>}
-								</span>
-							)}
-						</li>
-					))}
-				</ul>
-			</div>
-		));
-	}
-	return (
-		<ul class="footer-link__list">
-			{column.items?.map((item) => (
-				<li>
-					{item.slug ? (
-						<a href={item.slug}>
-							{item.title}
-							{item.note && <span class="footer-link__hint"> · {item.note}</span>}
-						</a>
-					) : (
-						<span class="footer-link__disabled">
-							{item.title}
-							{item.note && <span class="footer-link__note"> ({item.note})</span>}
-						</span>
-					)}
-				</li>
-			))}
-		</ul>
-	);
-}
+const footerStyle = background
+	? `--footer-bg:${background}; --footer-color:${color ?? 'inherit'}`
+	: undefined;
 ---
 
-<footer style={background && `--footer-bg:${background}; --footer-color:${color}`}>
+<footer style={footerStyle}>
 	<Container narrow>
 		<div class="footer-main">
 			<div class="footer-main__row footer-main__row--contact">
@@ -89,37 +46,196 @@ function renderColumnContent(column) {
 
 			<div class="footer-main__row footer-main__row--links">
 				<div class="footer-main__cell">
-					{colGuias && (
-						<div class="footer-list-col">
-							<p class="footer-list-col__title footer-list-col__title--brand">
-								<span class="footer-list-col__mark" aria-hidden="true">—</span>
-								<strong>{colGuias.title}</strong>
-							</p>
-							{renderColumnContent(colGuias)}
-						</div>
-					)}
+					{
+						colGuias && (
+							<div class="footer-list-col">
+								<p class="footer-list-col__title footer-list-col__title--brand">
+									<span class="footer-list-col__mark" aria-hidden="true">—</span>
+									<strong>{colGuias.title}</strong>
+								</p>
+								{
+									colGuias.groups
+										? colGuias.groups.map((group) => (
+												<div class="footer-link-group">
+													{group.label && <p class="footer-link-group__label">{group.label}</p>}
+													<ul class="footer-link__list">
+														{group.items.map((item) => (
+															<li>
+																{item.slug ? (
+																	<a href={item.slug}>
+																		{item.title}
+																		{item.note && (
+																			<span class="footer-link__hint"> · {item.note}</span>
+																		)}
+																	</a>
+																) : (
+																	<span class="footer-link__disabled">
+																		{item.title}
+																		{item.note && (
+																			<span class="footer-link__note"> ({item.note})</span>
+																		)}
+																	</span>
+																)}
+															</li>
+														))}
+													</ul>
+												</div>
+											))
+										: colGuias.items && (
+												<ul class="footer-link__list">
+													{colGuias.items.map((item) => (
+														<li>
+															{item.slug ? (
+																<a href={item.slug}>
+																	{item.title}
+																	{item.note && (
+																		<span class="footer-link__hint"> · {item.note}</span>
+																	)}
+																</a>
+															) : (
+																<span class="footer-link__disabled">
+																	{item.title}
+																	{item.note && (
+																		<span class="footer-link__note"> ({item.note})</span>
+																	)}
+																</span>
+															)}
+														</li>
+													))}
+												</ul>
+											)
+								}
+							</div>
+						)
+					}
 				</div>
 				<div class="footer-main__cell">
-					{colProducto && (
-						<div class="footer-list-col">
-							<p class="footer-list-col__title footer-list-col__title--contact">
-								<span class="footer-list-col__mark" aria-hidden="true">—</span>
-								<strong>{colProducto.title}</strong>
-							</p>
-							{renderColumnContent(colProducto)}
-						</div>
-					)}
+					{
+						colProducto && (
+							<div class="footer-list-col">
+								<p class="footer-list-col__title footer-list-col__title--contact">
+									<span class="footer-list-col__mark" aria-hidden="true">—</span>
+									<strong>{colProducto.title}</strong>
+								</p>
+								{
+									colProducto.groups
+										? colProducto.groups.map((group) => (
+												<div class="footer-link-group">
+													{group.label && <p class="footer-link-group__label">{group.label}</p>}
+													<ul class="footer-link__list">
+														{group.items.map((item) => (
+															<li>
+																{item.slug ? (
+																	<a href={item.slug}>
+																		{item.title}
+																		{item.note && (
+																			<span class="footer-link__hint"> · {item.note}</span>
+																		)}
+																	</a>
+																) : (
+																	<span class="footer-link__disabled">
+																		{item.title}
+																		{item.note && (
+																			<span class="footer-link__note"> ({item.note})</span>
+																		)}
+																	</span>
+																)}
+															</li>
+														))}
+													</ul>
+												</div>
+											))
+										: colProducto.items && (
+												<ul class="footer-link__list">
+													{colProducto.items.map((item) => (
+														<li>
+															{item.slug ? (
+																<a href={item.slug}>
+																	{item.title}
+																	{item.note && (
+																		<span class="footer-link__hint"> · {item.note}</span>
+																	)}
+																</a>
+															) : (
+																<span class="footer-link__disabled">
+																	{item.title}
+																	{item.note && (
+																		<span class="footer-link__note"> ({item.note})</span>
+																	)}
+																</span>
+															)}
+														</li>
+													))}
+												</ul>
+											)
+								}
+							</div>
+						)
+					}
 				</div>
 				<div class="footer-main__cell footer-main__cell--trail">
-					{colLegal && (
-						<div class="footer-list-col">
-							<p class="footer-list-col__title footer-list-col__title--contact">
-								<span class="footer-list-col__mark" aria-hidden="true">—</span>
-								<strong>{colLegal.title}</strong>
-							</p>
-							{renderColumnContent(colLegal)}
-						</div>
-					)}
+					{
+						colLegal && (
+							<div class="footer-list-col">
+								<p class="footer-list-col__title footer-list-col__title--contact">
+									<span class="footer-list-col__mark" aria-hidden="true">—</span>
+									<strong>{colLegal.title}</strong>
+								</p>
+								{
+									colLegal.groups
+										? colLegal.groups.map((group) => (
+												<div class="footer-link-group">
+													{group.label && <p class="footer-link-group__label">{group.label}</p>}
+													<ul class="footer-link__list">
+														{group.items.map((item) => (
+															<li>
+																{item.slug ? (
+																	<a href={item.slug}>
+																		{item.title}
+																		{item.note && (
+																			<span class="footer-link__hint"> · {item.note}</span>
+																		)}
+																	</a>
+																) : (
+																	<span class="footer-link__disabled">
+																		{item.title}
+																		{item.note && (
+																			<span class="footer-link__note"> ({item.note})</span>
+																		)}
+																	</span>
+																)}
+															</li>
+														))}
+													</ul>
+												</div>
+											))
+										: colLegal.items && (
+												<ul class="footer-link__list">
+													{colLegal.items.map((item) => (
+														<li>
+															{item.slug ? (
+																<a href={item.slug}>
+																	{item.title}
+																	{item.note && (
+																		<span class="footer-link__hint"> · {item.note}</span>
+																	)}
+																</a>
+															) : (
+																<span class="footer-link__disabled">
+																	{item.title}
+																	{item.note && (
+																		<span class="footer-link__note"> ({item.note})</span>
+																	)}
+																</span>
+															)}
+														</li>
+													))}
+												</ul>
+											)
+								}
+							</div>
+						)
+					}
 				</div>
 			</div>
 		</div>
@@ -148,13 +264,15 @@ function renderColumnContent(column) {
 			{showPlug && <Plug />}
 			<div class="footer-independiente-wrap">
 				<p class="footer-independiente">
-					<a href="#" class="footer-independiente__link"
-						>❤️ Made with love for trading. — Desarrollado independientemente. Sin inversores. Sin
-						excusas.</a
-					>
+					<a href="#" class="footer-independiente__link">
+						❤️ Made with love for trading. — Desarrollado independientemente. Sin inversores. Sin
+						excusas.
+					</a>
 				</p>
 			</div>
-			<p class="footer-copyright">Copyright &copy; {new Date().getFullYear()} {copyrightName}. Todos los derechos reservados.</p>
+			<p class="footer-copyright">
+				Copyright &copy; {new Date().getFullYear()} {copyrightName}. Todos los derechos reservados.
+			</p>
 		</div>
 	</Container>
 </footer>
@@ -328,7 +446,6 @@ function renderColumnContent(column) {
 		margin-top: 0;
 	}
 
-	/* Guías: labels alineados bajo el título (sin offset de icono) */
 	.footer-main__row--links .footer-main__cell:first-child .footer-link-group__label,
 	.footer-main__row--links .footer-main__cell:first-child .footer-link__list {
 		padding-left: calc(var(--footer-brand-icon) + var(--footer-brand-gap));
