@@ -228,18 +228,23 @@ const seo = {
 
 		<section id="hyperclose-semaphore" class="feature-proof-detail feature-proof-detail--video-slim">
 			<h3>Semáforo de responsabilidad</h3>
-			<p class="feature-proof-subtitle">Tres niveles de aviso si repites el intento</p>
-			<p class="feature-proof-lead">
-				Ya has alcanzado el límite; el panel queda en STOP. Si aun así intentas operar, el cierre es inmediato y el modal sube de tono:
-			</p>
-			<ul class="hyperclose-semaphore-levels">
-				<li><strong>1.º semáforo</strong> — sistema bloqueado</li>
-				<li><strong>2.º semáforo</strong> — advertencia por reiteración</li>
-				<li><strong>3.º semáforo</strong> — exención de responsabilidad</li>
-			</ul>
-			<p class="feature-proof-lead feature-proof-lead--note">
-				La imagen reúne los tres modales actuales y el panel.
-			</p>
+			<div class="hyperclose-semaphore-intro">
+				<p class="feature-proof-subtitle">Tres niveles de aviso si repites el intento</p>
+				<p class="feature-proof-lead hyperclose-semaphore-intro__line">
+					Ya has alcanzado el límite; el panel queda en STOP.
+				</p>
+				<p class="feature-proof-lead hyperclose-semaphore-intro__line">
+					Si aun así intentas operar, el cierre es inmediato y el modal sube de tono:
+				</p>
+				<ul class="hyperclose-semaphore-levels">
+					<li><strong>1.º semáforo</strong> — sistema bloqueado</li>
+					<li><strong>2.º semáforo</strong> — advertencia por reiteración</li>
+					<li><strong>3.º semáforo</strong> — exención de responsabilidad</li>
+				</ul>
+				<p class="feature-proof-lead feature-proof-lead--note">
+					La imagen reúne los tres modales actuales y el panel.
+				</p>
+			</div>
 			<figure class="hyperclose-semaphore-collage">
 				<a
 					class="hyperclose-semaphore-collage__zoom"
@@ -259,8 +264,12 @@ const seo = {
 					/>
 				</a>
 				<figcaption class="hyperclose-semaphore-collage__caption">
-					Para verlo en movimiento:
-					<a class="proof-capture-link" href="#hyperclose-demo">demo principal (2:23)</a>.
+					<span class="hyperclose-semaphore-collage__caption-label">Ver en vídeo:</span>
+					<span class="hyperclose-semaphore-collage__demo-links">
+						<a class="proof-capture-link" href="#hyperclose-demo">Demo HyperClose · 15 lotes y semáforo (2:23)</a>
+						<span class="hyperclose-semaphore-collage__demo-sep" aria-hidden="true">·</span>
+						<a class="proof-capture-link" href="/como-funciona?play=1#evidencia-nasdaq-100">Sesión Nasdaq · evidencia en vivo (~4 min)</a>
+					</span>
 				</figcaption>
 			</figure>
 		</section>
@@ -778,19 +787,33 @@ const seo = {
 	.feature-proof-detail--video-slim .proof-accordion {
 		margin-top: 0.35rem;
 	}
+	.hyperclose-semaphore-intro {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		max-width: 52ch;
+		margin-bottom: 0.15rem;
+	}
+	.hyperclose-semaphore-intro .feature-proof-subtitle {
+		margin: 0 0 0.1rem !important;
+	}
+	.hyperclose-semaphore-intro__line {
+		margin: 0 !important;
+	}
 	.hyperclose-semaphore-levels {
-		margin: 0 0 0.65rem;
+		margin: 0.15rem 0 0.05rem;
 		padding-left: 1.15rem;
 		font-size: 0.94rem;
-		line-height: 1.55;
+		line-height: 1.6;
 		opacity: 0.92;
-		max-width: 52ch;
 	}
 	.hyperclose-semaphore-levels li + li {
-		margin-top: 0.2rem;
+		margin-top: 0.35rem;
 	}
 	.feature-proof-lead--note {
-		margin-bottom: 0.5rem;
+		margin: 0.2rem 0 0 !important;
+		opacity: 0.82;
+		font-size: 0.9rem;
 	}
 	.hyperclose-semaphore-collage {
 		margin: clamp(0.65rem, 1.5vw, 0.95rem) 0 0;
@@ -815,10 +838,24 @@ const seo = {
 		height: auto;
 	}
 	.hyperclose-semaphore-collage__caption {
-		margin: 0.55rem 0 0;
+		margin: 0.65rem 0 0;
 		font-size: 0.92rem;
-		line-height: 1.45;
+		line-height: 1.5;
 		opacity: 0.88;
+	}
+	.hyperclose-semaphore-collage__caption-label {
+		display: block;
+		margin-bottom: 0.35rem;
+	}
+	.hyperclose-semaphore-collage__demo-links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem 0.5rem;
+	}
+	.hyperclose-semaphore-collage__demo-sep {
+		opacity: 0.45;
+		user-select: none;
 	}
 	.proof-capture-link {
 		color: #f5b041;
