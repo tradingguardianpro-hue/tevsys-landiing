@@ -438,22 +438,6 @@ const seo = {
 	}
 	.feature-proof-detail--video-slim {
 		margin-top: clamp(1.25rem, 3vw, 1.75rem);
-		padding-top: clamp(0.85rem, 2vw, 1.1rem);
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-		background: transparent;
-		border-radius: 0;
-		box-shadow: none;
-		padding-left: 0;
-		padding-right: 0;
-		padding-bottom: 0;
-	}
-	html[data-theme='light'] .feature-proof-detail--video-slim {
-		border-top-color: rgba(0, 0, 0, 0.08);
-	}
-	.feature-proof-detail--video-slim:target {
-		background: transparent;
-		border-top-color: rgba(245, 176, 65, 0.45);
-		box-shadow: none;
 	}
 	.feature-proof-detail--video-slim .feature-proof-subtitle {
 		margin: -0.1rem 0 0.4rem !important;
@@ -672,6 +656,14 @@ const seo = {
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 		border: 1px solid var(--theme-surface-border);
 		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+	/* Tarjeta gris redonda en demos secundarios (volatilidad, Nasdaq, logs) — mismo acabado que cuenta pequeña */
+	.feature-proof-detail.feature-proof-detail--video-slim {
+		background: var(--theme-surface-1);
+		border: 1px solid var(--theme-surface-border);
+		box-shadow: var(--theme-surface-elevated-shadow);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
 	}
 	.feature-proof-detail h3 {
 		margin: 0 0 0.45rem;
