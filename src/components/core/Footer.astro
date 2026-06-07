@@ -67,54 +67,54 @@ function renderColumnContent(column) {
 <footer style={background && `--footer-bg:${background}; --footer-color:${color}`}>
 	<Container narrow>
 		<div class="footer-main">
-			<div class="footer-main__col">
-				<div class="footer-main__top">
+			<div class="footer-main__row footer-main__row--contact">
+				<div class="footer-main__cell">
 					<div class="footer-brand__slot">
 						<slot name="logo" />
 					</div>
 				</div>
-				<div class="footer-main__bottom">
+				<div class="footer-main__cell">
+					<a href="mailto:info@tevsys.io" class="footer-contact__item">
+						<img src="/icons/icon-email.svg" alt="" width="18" height="18" />
+						<span>info@tevsys.io</span>
+					</a>
+				</div>
+				<div class="footer-main__cell footer-main__cell--trail">
+					<span class="footer-contact__item footer-contact__item--static">
+						<img src="/icons/icon-location.svg" alt="" width="18" height="18" />
+						<span>Barcelona (Spain)</span>
+					</span>
+				</div>
+			</div>
+
+			<div class="footer-main__row footer-main__row--links">
+				<div class="footer-main__cell">
 					{colGuias && (
 						<div class="footer-list-col">
-							<p class="footer-list-col__title">
+							<p class="footer-list-col__title footer-list-col__title--brand">
+								<span class="footer-list-col__mark" aria-hidden="true">—</span>
 								<strong>{colGuias.title}</strong>
 							</p>
 							{renderColumnContent(colGuias)}
 						</div>
 					)}
 				</div>
-			</div>
-
-			<div class="footer-main__col">
-				<div class="footer-main__top">
-					<a href="mailto:info@tevsys.io" class="footer-contact__item">
-						<img src="/icons/icon-email.svg" alt="" width="18" height="18" />
-						<span>info@tevsys.io</span>
-					</a>
-				</div>
-				<div class="footer-main__bottom">
+				<div class="footer-main__cell">
 					{colProducto && (
 						<div class="footer-list-col">
-							<p class="footer-list-col__title">
+							<p class="footer-list-col__title footer-list-col__title--contact">
+								<span class="footer-list-col__mark" aria-hidden="true">—</span>
 								<strong>{colProducto.title}</strong>
 							</p>
 							{renderColumnContent(colProducto)}
 						</div>
 					)}
 				</div>
-			</div>
-
-			<div class="footer-main__col footer-main__col--trail">
-				<div class="footer-main__top">
-					<span class="footer-contact__item footer-contact__item--static">
-						<img src="/icons/icon-location.svg" alt="" width="18" height="18" />
-						<span>Barcelona (Spain)</span>
-					</span>
-				</div>
-				<div class="footer-main__bottom">
+				<div class="footer-main__cell footer-main__cell--trail">
 					{colLegal && (
 						<div class="footer-list-col">
-							<p class="footer-list-col__title">
+							<p class="footer-list-col__title footer-list-col__title--contact">
+								<span class="footer-list-col__mark" aria-hidden="true">—</span>
 								<strong>{colLegal.title}</strong>
 							</p>
 							{renderColumnContent(colLegal)}
@@ -164,6 +164,10 @@ function renderColumnContent(column) {
 		--footer-bg: var(--theme-primary);
 		--footer-color: var(--theme-on-primary);
 		--footer-col-gap: clamp(2.75rem, 6.5vw, 4.5rem);
+		--footer-icon-slot: 18px;
+		--footer-icon-gap: 0.4rem;
+		--footer-brand-icon: 24px;
+		--footer-brand-gap: 0.5rem;
 		min-height: auto;
 		max-width: 1500px;
 		margin-left: auto;
@@ -175,41 +179,30 @@ function renderColumnContent(column) {
 	}
 
 	.footer-main {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-		column-gap: var(--footer-col-gap);
 		padding-top: clamp(1.25rem, 3vw, 1.65rem);
 	}
 
-	.footer-main__col {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		min-width: 0;
+	.footer-main__row {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+		column-gap: var(--footer-col-gap);
 	}
 
-	.footer-main__col--trail {
-		align-items: flex-start;
-		justify-self: end;
-		width: max-content;
-		max-width: 100%;
-	}
-
-	.footer-main__top {
-		width: 100%;
+	.footer-main__row--contact {
 		padding-bottom: clamp(1rem, 2.5vw, 1.35rem);
 		margin-bottom: clamp(1.25rem, 3vw, 1.65rem);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 	}
 
-	.footer-main__col--trail .footer-main__top,
-	.footer-main__col--trail .footer-main__bottom {
-		width: max-content;
-		max-width: 100%;
+	.footer-main__cell {
+		min-width: 0;
+		justify-self: start;
 	}
 
-	.footer-main__bottom {
-		width: 100%;
+	.footer-main__cell--trail {
+		justify-self: end;
+		width: max-content;
+		max-width: 100%;
 	}
 
 	.footer-brand__slot {
@@ -217,9 +210,10 @@ function renderColumnContent(column) {
 	}
 
 	.footer-brand__slot :global(.footer-brand__name) {
-		display: inline-flex;
+		display: inline-grid;
+		grid-template-columns: var(--footer-brand-icon) minmax(0, auto);
+		column-gap: var(--footer-brand-gap);
 		align-items: center;
-		gap: 0.5rem;
 		font-weight: 600;
 		font-size: 1.15rem;
 		text-decoration: none;
@@ -231,29 +225,37 @@ function renderColumnContent(column) {
 	}
 
 	.footer-brand__slot :global(.footer-brand__logo) {
+		grid-column: 1;
+		width: var(--footer-brand-icon);
+		height: var(--footer-brand-icon);
 		flex-shrink: 0;
 	}
 
-	.footer-socials__list {
-		margin: 0.65rem 0 0;
-		padding: 0;
-		display: flex;
-		list-style: none;
-	}
-
-	.footer-socials__item {
-		margin-right: 0.5rem;
+	.footer-brand__slot :global(.footer-brand__name span) {
+		grid-column: 2;
 	}
 
 	.footer-contact__item {
-		display: inline-flex;
+		display: inline-grid;
+		grid-template-columns: var(--footer-icon-slot) minmax(0, auto);
+		column-gap: var(--footer-icon-gap);
 		align-items: center;
-		gap: 0.4rem;
 		color: inherit;
 		text-decoration: none;
 		font-size: 0.9rem;
 		opacity: 0.9;
 		white-space: nowrap;
+	}
+
+	.footer-contact__item img {
+		grid-column: 1;
+		width: var(--footer-icon-slot);
+		height: var(--footer-icon-slot);
+		opacity: 0.88;
+	}
+
+	.footer-contact__item span {
+		grid-column: 2;
 	}
 
 	.footer-contact__item--static {
@@ -270,24 +272,41 @@ function renderColumnContent(column) {
 		opacity: 0.9;
 	}
 
-	.footer-contact__item img {
-		flex-shrink: 0;
-		opacity: 0.88;
-	}
-
 	.footer-list-col {
 		padding: 0;
 		border: none;
 	}
 
 	.footer-list-col__title {
+		display: inline-grid;
+		align-items: center;
 		margin: 0 0 0.75rem;
 		font-size: 1rem;
+		width: max-content;
+		max-width: 100%;
 	}
 
-	.footer-list-col__title::before {
-		content: '— ';
+	.footer-list-col__title--brand {
+		grid-template-columns: var(--footer-brand-icon) minmax(0, auto);
+		column-gap: var(--footer-brand-gap);
+	}
+
+	.footer-list-col__title--contact {
+		grid-template-columns: var(--footer-icon-slot) minmax(0, auto);
+		column-gap: var(--footer-icon-gap);
+	}
+
+	.footer-list-col__mark {
+		grid-column: 1;
+		justify-self: center;
 		color: #f5b041;
+		font-weight: 600;
+		line-height: 1;
+	}
+
+	.footer-list-col__title strong {
+		grid-column: 2;
+		font-weight: inherit;
 	}
 
 	.footer-link-group + .footer-link-group {
@@ -302,6 +321,38 @@ function renderColumnContent(column) {
 		font-weight: 500;
 		letter-spacing: 0.01em;
 		opacity: 0.52;
+	}
+
+	.footer-link-group:first-of-type .footer-link-group__label,
+	.footer-list-col > .footer-link-group:first-child .footer-link-group__label {
+		margin-top: 0;
+	}
+
+	/* Guías: labels alineados bajo el título (sin offset de icono) */
+	.footer-main__row--links .footer-main__cell:first-child .footer-link-group__label,
+	.footer-main__row--links .footer-main__cell:first-child .footer-link__list {
+		padding-left: calc(var(--footer-brand-icon) + var(--footer-brand-gap));
+	}
+
+	.footer-main__row--links .footer-main__cell:nth-child(2) .footer-link-group__label,
+	.footer-main__row--links .footer-main__cell:nth-child(2) .footer-link__list {
+		padding-left: calc(var(--footer-icon-slot) + var(--footer-icon-gap));
+	}
+
+	.footer-main__row--links .footer-main__cell--trail .footer-link-group__label,
+	.footer-main__row--links .footer-main__cell--trail .footer-link__list {
+		padding-left: calc(var(--footer-icon-slot) + var(--footer-icon-gap));
+	}
+
+	.footer-socials__list {
+		margin: 0.65rem 0 0;
+		padding: 0;
+		display: flex;
+		list-style: none;
+	}
+
+	.footer-socials__item {
+		margin-right: 0.5rem;
 	}
 
 	.footer-link__list {
@@ -346,7 +397,6 @@ function renderColumnContent(column) {
 		display: flex;
 		flex-direction: column;
 		padding-top: clamp(1rem, 2.5vw, 1.35rem);
-		border-top: none;
 	}
 
 	.footer-independiente-wrap {
@@ -381,37 +431,45 @@ function renderColumnContent(column) {
 	}
 
 	@media (max-width: 768px) {
-		.footer-main {
+		.footer-main__row {
 			grid-template-columns: 1fr;
+			row-gap: 0.65rem;
+		}
+
+		.footer-main__row--contact {
+			margin-bottom: 1rem;
+		}
+
+		.footer-main__row--links {
 			row-gap: 0;
 		}
 
-		.footer-main__col,
-		.footer-main__col--trail {
+		.footer-main__cell,
+		.footer-main__cell--trail {
 			justify-self: start;
 			width: 100%;
 			max-width: none;
-			align-items: flex-start;
 		}
 
-		.footer-main__col--trail .footer-main__top,
-		.footer-main__col--trail .footer-main__bottom {
-			width: 100%;
-		}
-
-		.footer-main__col + .footer-main__col {
-			margin-top: 0;
-		}
-
-		.footer-main__bottom {
+		.footer-main__row--links .footer-main__cell {
 			padding-bottom: 1.25rem;
 			margin-bottom: 0.5rem;
 			border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 		}
 
-		.footer-main__col:last-child .footer-main__bottom {
+		.footer-main__row--links .footer-main__cell:last-child {
 			padding-bottom: 0;
 			border-bottom: none;
+		}
+
+		.footer-main__row--links .footer-main__cell .footer-link-group__label,
+		.footer-main__row--links .footer-main__cell .footer-link__list {
+			padding-left: calc(var(--footer-icon-slot) + var(--footer-icon-gap));
+		}
+
+		.footer-main__row--links .footer-main__cell:first-child .footer-link-group__label,
+		.footer-main__row--links .footer-main__cell:first-child .footer-link__list {
+			padding-left: calc(var(--footer-brand-icon) + var(--footer-brand-gap));
 		}
 	}
 
