@@ -15,7 +15,7 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 ## Tarjeta rápida (línea fija — jun 2026)
 
-- **A — Producto** · Home cards + `/features/hyperclose`, `/precision`, `/sml`, `/evidencia` · **Job:** vídeo + mapa de pruebas + CTA demo · **Visual:** `--feature-micro-radius`; bloque índice gris redondeado; secciones vídeo **sin losa** (`--video-slim`); poco texto bajo el embed.
+- **A — Producto** · Home cards + `/features/hyperclose`, `/precision`, `/sml`, `/evidencia` · **Job:** vídeo + mapa de pruebas + CTA demo · **Visual:** `--feature-micro-radius`; índice «Qué puedes comprobar» **cálido + halo**; bloques de prueba **carbón translúcido** (`--micro-detail-*`); demo hero `--micro-demo-*`; **sin** `--theme-surface-1` opaco.
 - **B — Narrativa** · `/como-funciona` + microclips · **Job:** mapa del sistema, escena rica · **Visual:** stages, halos, motion — **no** copiar en guías ni micropáginas A.
 - **C — Guías** · `/instalacion`, `/configuracion`, `/configuracion-al-instalar`, `/configuracion-fin-de-semana` · **Job:** instalar/configurar; vídeo primero, lectura opcional, fork · **Visual:** `guia-operativa.css` v5.6 — ámbar solo hero+vídeo; avisos cruce **debajo del embed**; sin CTA demo.
 - **D — Editorial** · Teaser home + `/auditoria-ia` · **Job:** futuro / roadmap aparte del producto · **Visual:** shell editorial propio — **no** homogeneizar con A ni C.
@@ -91,12 +91,17 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 **Visual:**
 - Cards con radio `clamp(0.85rem, 1.5vw, 1.15rem)` — token `--feature-micro-radius` en `.tevsys-feature-micro-surface`.
-- Bloques **sin vídeo** (`feature-proof`, índice «Qué puedes comprobar»): esquinas redondeadas; padding `~1rem 1.1rem`.
-- Secciones **con vídeo secundario:** clase `feature-proof-detail--video-slim` — **sin losa gris**; separador superior fino; **mismo aire lateral** que el índice (`clamp(1rem, 3vw, 1.5rem)`); título + una línea + vídeo + capturas en `<details>`.
-- Hero vídeo: mantiene chrome propio; no apilar manual sobre manual.
+- **Superficie carbón translúcida (canon jun 2026)** — tokens en `global.css` → `.tevsys-feature-micro-surface`:
+  - `--micro-detail-bg` / `--micro-detail-border` — bloques de prueba redondeados (informe, semáforo, capturas…). Matiz frío, **no** `--theme-surface-1` opaco.
+  - `--micro-demo-bg` / `--micro-demo-border` — contenedor del **vídeo hero** al abrir la micro.
+  - `--micro-close-bg` / `--micro-close-border` — cierre Familia A (solo donde aplique, p. ej. `#evidence-audit`); halo ámbar **solo** en ese cierre y en el índice «Qué puedes comprobar» — **no** en cada bloque intermedio.
+- Bloque **índice** (`feature-proof`, «Qué puedes comprobar»): `rgba(255,255,255,0.03)` + **halo** derecho (único bloque intermedio con halo).
+- Bloques **prueba** (`feature-proof-detail` sin `--video-slim`): `--micro-detail-bg`; esquinas redondeadas; padding `~1rem 1.1rem`.
+- Secciones **solo separador** (p. ej. logs Evidencia): `feature-proof-detail--video-slim` — línea superior fina, sin caja.
+- Hero vídeo: `--micro-demo-bg`; chrome del embed sin cambiar.
 - CTA demo **solo** al final de la micropágina.
 
-**Estado:** **cerrada por el fundador (7 jun 2026)** — semáforo + copy + vídeos. **Pendiente aparte:** capturas/collage día OFF (§ Pendiente evidencia).
+**Estado:** **HyperClose + Precisión + SML Fase 1 cerradas (piel)** · **Evidencia + HyperClose re-paso carbón (8 jun 2026)** · cards home alineadas (`hsl(222…)`).
 
 **Canon de referencia (jun 2026):** `/features/hyperclose` + **`/features/precision`** (cerradas). **Siguiente clone:** `/features/sml` (visual Familia A; contenido acotado a validación).
 
@@ -105,13 +110,14 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 - **No:** prometer catálogo completo de escenarios; hero vídeo hasta grabación; cambios en `SML_Manager.mqh` / EA.
 - **Después de cerrar P12 en terminal:** vídeo(s) `--video-slim`, hooks ámbar con cifras validadas, copy alineado a handoff `SML_ZONA_SAGRADA_VALIDACION_HANDOFF.md`.
 
-**Checklist Familia A (replicar en SML, Evidencia):**
+**Checklist Familia A (replicar en SML, Evidencia, HyperClose):**
 1. Hero: título + hook + manifesto (si aplica).
-2. Demo principal: **h2 + hook con cifra clave** (número visible encima del vídeo) + embed + nota editada breve + acordeón evidencia.
-3. Índice «Qué puedes comprobar» (bloque gris redondeado).
-4. Pruebas secundarias: `--video-slim` (título · una línea · vídeo · `<details>` capturas).
-5. CTA demo al final.
-6. **Sin** losas grises bajo cada vídeo secundario; **sin** repetir el hero en párrafos largos.
+2. Demo principal: **h2 + hook con cifra clave** + embed (`--micro-demo-bg`) + nota editada breve + acordeón evidencia.
+3. Índice «Qué puedes comprobar» (`feature-proof`) — **cálido + halo** (único halo intermedio salvo cierre especial Evidencia).
+4. Pruebas secundarias: `feature-proof-detail` con **`--micro-detail-bg`** (semáforo, capturas, informe…) · título + lead + vídeo/collage + `<details>` si aplica · **sin halo**.
+5. Cierre opcional Familia A (Evidencia): `--micro-close-bg` + halo — **no** obligatorio en todas las micros.
+6. CTA demo al final.
+7. **Prohibido:** `--theme-surface-1` opaco / gris rancio neutro; halos en cada bloque; repetir el hero en párrafos largos.
 
 **Hook demo HyperClose (canon copy):** `15 lotes · GER40 · límite −1 % · desviación 1,31 € · Apertura Wall Street · HyperClose en 3 niveles.` — cifra y «HyperClose en 3 niveles» en **ámbar** (`feature-title__accent`); encima del embed.
 

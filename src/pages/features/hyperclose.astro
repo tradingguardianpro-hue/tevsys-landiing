@@ -9,7 +9,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-	<div class="tevsys-feature-micro-surface">
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--hyperclose">
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de protección</p>
@@ -226,7 +226,7 @@ const seo = {
 			</ul>
 		</section>
 
-		<section id="hyperclose-semaphore" class="feature-proof-detail feature-proof-detail--video-slim">
+		<section id="hyperclose-semaphore" class="feature-proof-detail">
 			<h3>Semáforo de responsabilidad</h3>
 			<div class="hyperclose-semaphore-intro">
 				<p class="feature-proof-subtitle">Tres niveles de aviso si repites el intento</p>
@@ -272,7 +272,7 @@ const seo = {
 		</section>
 
 		<!-- PENDIENTE jun 2026: collage día OFF (mismo criterio que #hyperclose-semaphore) + capturas composito modal+panel regrabadas en terminal (tevsys con día OFF, intento operar); mantener vídeo actual y acordeón de escenarios. -->
-		<section id="hyperclose-off" class="feature-proof-detail feature-proof-detail--video-slim">
+		<section id="hyperclose-off" class="feature-proof-detail">
 			<h3>Rotación automática y día OFF protegido</h3>
 			<div class="hyperclose-semaphore-intro hyperclose-off-intro">
 				<p class="feature-proof-subtitle">Cuando cambia el día, tevsys toma el control</p>
@@ -501,9 +501,9 @@ const seo = {
 		pointer-events: none;
 		z-index: 0;
 	}
-	/* Primer bloque de HyperClose: acabado neutro como en Precisión (sin lavado ámbar dominante) */
+	/* Primer bloque: acabado global (--micro-demo-bg); sin halo ::before */
 	#hyperclose-demo.feature-demo--hero::before {
-		background: linear-gradient(140deg, rgba(155, 162, 175, 0.12), rgba(115, 122, 136, 0.04));
+		display: none;
 	}
 	.feature-demo--hero > * {
 		position: relative;
@@ -611,11 +611,10 @@ const seo = {
 		animation: hyperclose-target-flash 1.35s ease-out 1;
 	}
 	#hyperclose-semaphore:target,
-	#hyperclose-off:has(#hyperclose-off-demo:target) {
-		border-color: rgba(245, 176, 65, 0.45);
-		box-shadow:
-			var(--theme-surface-elevated-shadow),
-			0 0 0 1px rgba(245, 176, 65, 0.22);
+	#hyperclose-off:target {
+		border-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(255, 255, 255, 0.02));
+		box-shadow: none;
 	}
 	@keyframes hyperclose-target-flash {
 		0% {
@@ -775,18 +774,20 @@ const seo = {
 		font-weight: 600;
 		opacity: 0.9;
 	}
-	.feature-proof-detail--video-slim .feature-proof-subtitle {
+	.feature-proof-detail--video-slim .feature-proof-subtitle,
+	#hyperclose-off .feature-proof-subtitle {
 		margin: -0.1rem 0 0.4rem !important;
 	}
+	#hyperclose-off .proof-accordion,
 	.feature-proof-detail--video-slim .proof-accordion {
-		margin-top: 0.35rem;
+		margin-top: 0.65rem;
 	}
 	.hyperclose-semaphore-intro {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
 		max-width: 52ch;
-		margin-bottom: 0.15rem;
+		margin-bottom: 0.35rem;
 	}
 	.hyperclose-semaphore-intro .feature-proof-subtitle {
 		margin: 0 0 0.1rem !important;
@@ -805,9 +806,13 @@ const seo = {
 		margin-top: 0.35rem;
 	}
 	.hyperclose-semaphore-collage {
-		margin: clamp(0.65rem, 1.5vw, 0.95rem) 0 0;
+		margin: clamp(1rem, 2.5vw, 1.35rem) 0 0;
 		padding: 0;
 		border: none;
+	}
+	.hyperclose-off-demo {
+		margin-top: clamp(1.25rem, 3vw, 1.65rem);
+		margin-bottom: 0.85rem;
 	}
 	.hyperclose-semaphore-collage__zoom {
 		display: block;

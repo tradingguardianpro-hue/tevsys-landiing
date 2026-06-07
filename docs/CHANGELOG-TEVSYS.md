@@ -6,6 +6,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia + HyperClose — carbón translúcido Familia A (8 jun 2026)
+
+- **Tokens:** `--micro-detail-*`, `--micro-demo-*`, `--micro-close-*` en `global.css` (`.tevsys-feature-micro-surface`).
+- **Regla:** índice «Qué puedes comprobar» = cálido + halo; bloques prueba = carbón frío sin halo; cierre Evidencia = halo opcional.
+- **HyperClose:** semáforo + día OFF en `feature-proof-detail` (no `--video-slim`); más aire antes del vídeo OFF.
+- **Docs:** `SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md` § Familia A actualizado.
+
+---
+
 ## Evidencia — Familia A cierre sin losa (8 jun 2026)
 
 - **`#evidence-audit`:** clase `--familia-a-close` — fondo transparente, línea superior, brillo ámbar (como checklist); MT5/tevsys en franjas laterales; bloque Pro y «Para quién» sin cajas grises apiladas.
