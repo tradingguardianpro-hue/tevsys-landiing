@@ -6,6 +6,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## HyperClose — collage semáforos visible en micropágina (7 jun 2026)
+
+- **Qué:** captura **CAP-06b** (*hyperclose collage para mql market HECHO.png*) visible **debajo del vídeo** en sección «Semáforo de responsabilidad» — sin abrir acordeón. Orden **3.º → 2.º → 1.º** semáforo + panel STOP (modales actuales).
+- **Fuente:** `C:\Users\Usuario\Desktop\capturas mayo para seguir con mql producto\hyperclose collage para mql market  HECHO.png`
+- **Web:** `public/images/evidence/hyperclose-semaforos-collage-panel-modales.png` · `features/hyperclose.astro`
+- **Acordeón** de 3 modales sueltos se mantiene para ampliar cada nivel.
+
+---
+
 ## Footer — **CERRADO** (validado fundador 7 jun 2026)
 
 - **Estado:** footer dado por **listo por el momento** (captura producción 7 jun).

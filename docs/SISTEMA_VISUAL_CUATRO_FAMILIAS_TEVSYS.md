@@ -285,7 +285,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
 | 3 | ~~HyperClose aligerado~~ | A | **Cerrado** — canon jun 2026 |
 | 4 | ~~Footer aligerado~~ | — | **Cerrado** 7 jun 2026 |
-| 5 | **HyperClose — capturas día OFF (+ semáforo)** modal+panel | A | **Siguiente** — § Pendiente evidencia HyperClose |
+| 5 | **HyperClose — capturas día OFF (+ semáforo)** modal+panel | A | Semáforo **hecho** (collage visible) · día OFF pendiente |
 | 6 | Precisión (checklist A + hook cifra) | A | Pendiente |
 | 7 | SML | A | Pendiente |
 | 8 | Evidencia | A | Pendiente |
@@ -311,6 +311,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Fecha | Nota |
 |-------|------|
+| 7 jun 2026 | **HyperClose semáforo:** collage CAP-06b HECHO visible bajo vídeo (3→2→1 + panel). |
 | 7 jun 2026 | **Footer cerrado** — validado fundador; alineación grid; build fix; changelog + V12. |
 | 7 jun 2026 | **`/como-funciona`:** MC-CF-019 fuera de microclips; videoteca 4 huecos; título bloque sin cambio. |
 | 7 jun 2026 | **Guía fin de semana:** títulos unificados · copy lectura · espaciado hero→vídeo · bloque PROGRAMADO·LUNES. |

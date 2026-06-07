@@ -236,6 +236,28 @@ const seo = {
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
+			<figure class="hyperclose-semaphore-collage">
+				<a
+					class="hyperclose-semaphore-collage__zoom"
+					href="/images/evidence/hyperclose-semaforos-collage-panel-modales.png"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Abrir collage panel STOP y tres semáforos en tamaño completo"
+				>
+					<img
+						class="hyperclose-semaphore-collage__image"
+						src="/images/evidence/hyperclose-semaforos-collage-panel-modales.png"
+						alt="HyperClose: panel en STOP con pérdida diaria alcanzada y tres modales progresivos (3.º exención, 2.º advertencia, 1.º sistema bloqueado) con flechas de semáforo."
+						loading="lazy"
+						width="1920"
+						height="1080"
+						decoding="async"
+					/>
+				</a>
+				<figcaption class="hyperclose-semaphore-collage__caption">
+					Vista de conjunto: panel en STOP y escalada <strong>3.º → 2.º → 1.º semáforo</strong> si repites el intento con límites alcanzados. Misma pieza que en MQL5 Market (modales actuales).
+				</figcaption>
+			</figure>
 			<details class="proof-accordion">
 				<summary class="proof-capture-link">Ver capturas de los 3 modales</summary>
 				<div class="proof-gallery">
@@ -783,6 +805,34 @@ const seo = {
 	}
 	.feature-proof-detail--video-slim .proof-accordion {
 		margin-top: 0.35rem;
+	}
+	.hyperclose-semaphore-collage {
+		margin: clamp(0.85rem, 2vw, 1.15rem) 0 0;
+		padding: 0;
+		border: none;
+	}
+	.hyperclose-semaphore-collage__zoom {
+		display: block;
+		border-radius: clamp(0.45rem, 0.8vw, 0.65rem);
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #0a0a0a;
+		line-height: 0;
+	}
+	.hyperclose-semaphore-collage__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+	}
+	.hyperclose-semaphore-collage__image {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.hyperclose-semaphore-collage__caption {
+		margin: 0.55rem 0 0;
+		font-size: 0.92rem;
+		line-height: 1.45;
+		opacity: 0.88;
 	}
 	.proof-capture-link {
 		color: #f5b041;
