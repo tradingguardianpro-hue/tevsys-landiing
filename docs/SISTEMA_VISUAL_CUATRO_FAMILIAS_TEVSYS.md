@@ -254,7 +254,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Fecha | Nota |
 |-------|------|
-| 7 jun 2026 | **Guía fin de semana:** títulos «en fin de semana»; hero→vídeo menos hueco en `guia-operativa.css` (todas las guías C). |
+| 7 jun 2026 | **Guía fin de semana — bloques lectura:** lunes a viernes (sin L–V); finde = configuración/reprogramar; lunes 00:00 = protección (no «bloqueado hasta guardar»). |
 | 6 jun 2026 | **Familia A validada:** checklist canon + hook 1,31 € en demo HyperClose; footer diagnóstico pendiente. |
 | 6 jun 2026 | **Familia A — criterio documentado:** HyperClose = canon de referencia antes de clonar micropáginas. |
 | 6 jun 2026 | **Familia A — HyperClose:** `--video-slim`; semáforo y día OFF sin losa gris; capturas en `<details>`. |
