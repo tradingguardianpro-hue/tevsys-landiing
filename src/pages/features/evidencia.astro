@@ -272,11 +272,11 @@ const seo = {
 				</article>
 			</div>
 
-			<figure class="evidence-brand-strip" aria-hidden="true">
+			<figure class="evidence-brand-strip">
 				<div class="evidence-brand-strip__frame">
 					<img
 						src="/mano%20robotica%20central%20web.png?v=2"
-						alt=""
+						alt="Mano robótica tevsys con candado — disciplina verificable"
 						width="1200"
 						height="400"
 						loading="lazy"
@@ -684,7 +684,7 @@ const seo = {
 		margin-bottom: 0.85rem;
 	}
 	.evidence-intro {
-		margin: 0 0 1.25rem;
+		margin: 0 0 1.35rem;
 		max-width: 58ch;
 	}
 	.evidence-intro__lead {
@@ -706,7 +706,7 @@ const seo = {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.75rem;
-		margin: 0 0 1rem;
+		margin: 0.35rem 0 1.35rem;
 	}
 	@media (max-width: 640px) {
 		.evidence-grid {
@@ -718,7 +718,7 @@ const seo = {
 		min-height: 5.5rem;
 	}
 	.evidence-synthesis {
-		margin: 0 0 1rem;
+		margin: 0.25rem 0 0;
 		padding: 1rem 1.1rem 1.05rem;
 		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		border: 1px solid rgba(255, 255, 255, 0.09);
@@ -742,7 +742,7 @@ const seo = {
 		gap: 0.65rem;
 		margin-bottom: 0.75rem;
 	}
-	@media (max-width: 720px) {
+	@media (max-width: 580px) {
 		.evidence-audience-grid {
 			grid-template-columns: 1fr;
 		}
@@ -802,43 +802,28 @@ const seo = {
 		max-width: 62ch;
 	}
 	.evidence-brand-strip {
-		margin: 0.15rem 0 1rem;
+		margin: 0.65rem 0 1.35rem;
 	}
 	.evidence-brand-strip__frame {
-		position: relative;
-		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.1rem);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		overflow: hidden;
-		border: 1px solid rgba(255, 255, 255, 0.07);
-		background: #0a0a0a;
-		max-height: 7.25rem;
-	}
-	html[data-theme='light'] .evidence-brand-strip__frame {
-		border-color: rgba(0, 0, 0, 0.08);
-	}
-	.evidence-brand-strip__frame::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			180deg,
-			rgba(0, 0, 0, 0.08) 0%,
-			rgba(0, 0, 0, 0.28) 100%
-		);
-		pointer-events: none;
+		border: none;
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.15rem);
+		background: transparent;
+		box-shadow: none;
+		padding: 0.15rem 0;
 	}
 	.evidence-brand-strip__img {
 		display: block;
 		width: 100%;
-		height: 7.25rem;
-		object-fit: cover;
-		object-position: 52% 38%;
-		filter: grayscale(0.2) contrast(1.02) brightness(0.92);
-		opacity: 0.88;
-	}
-	@media (max-width: 640px) {
-		.evidence-brand-strip {
-			display: none;
-		}
+		height: auto;
+		max-height: 6.5rem;
+		object-fit: contain;
+		object-position: center center;
+		opacity: 0.78;
+		filter: grayscale(0.12) brightness(0.94);
 	}
 	.audit-card {
 		margin: 0;
