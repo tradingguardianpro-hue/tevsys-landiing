@@ -6,6 +6,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia + auditoría — P0 copy honesto (7 jun 2026)
+
+- **Evidencia `#evidence-audit`:** bloque adelgazado — solo prueba (grid MT5/tevsys, 87 ops, 0,06 %, enlace Precisión). Sin manifiesto ni roadmap.
+- **`/auditoria-ia`:** banner «servicio no abierto»; CTAs **Qué estamos preparando** + **Avísame cuando abra** (contacto).
+- **Home:** frase puente en teaser auditoría (hoy cruzas tú / mañana revisión asistida).
+- **Web:** `evidencia.astro` · `auditoria-ia.astro` · `index.astro` · `CONTENIDO_WEB_TEVSYS_LANDING.md`.
+
+---
+
 ## Evidencia — bloque auditoría copy ampliado (7 jun 2026)
 
 - **Enganche:** «La evidencia no la escribimos nosotros» + cruce MT5/tevsys.

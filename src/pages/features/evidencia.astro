@@ -67,7 +67,7 @@ const seo = {
 					<a class="evidence-link" href="#evidencia-logs">Guía visual de logs MT5 + salto a Precisión para trazabilidad en detalle.</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidence-audit">Qué es tevsys, dos capas de evidencia y 87 operativas documentadas.</a>
+					<a class="evidence-link" href="#evidence-audit">Dos capas MT5/tevsys, 87 operativas y cifras documentadas.</a>
 				</li>
 			</ul>
 		</section>
@@ -250,62 +250,43 @@ const seo = {
 		</section>
 
 		<section id="evidence-audit" class="feature-proof-detail feature-proof-detail--audit">
-			<h3>La evidencia no la escribimos nosotros</h3>
+			<h3>Evidencia: dos capas que se cruzan. Una sola conclusión.</h3>
+			<p class="audit-manifesto-lead">La evidencia no la escribimos nosotros.</p>
 			<p class="feature-proof-subtitle audit-hook">
-				MT5 deja el resultado oficial. tevsys deja el porqué. Tú cruzas las dos capas y decides si cuadra.
+				MT5 deja el resultado oficial. tevsys deja el porqué.<br />
+				Tú cruzas las dos capas y decides si cuadra.
 			</p>
 
-			<div class="audit-cards">
-				<article class="audit-card">
-					<h4 class="audit-card__title">¿Para quién es esto? — Qué hacemos hoy</h4>
+			<div class="evidence-grid">
+				<article class="audit-card evidence-grid__card">
+					<h4 class="audit-card__title">MT5 — qué ocurrió</h4>
 					<p class="audit-card__body">
-						<strong>tevsys</strong> es una utilidad MT5 para <strong>aplicar las reglas que tú configuras</strong> — límites, protección, cierre al tope — con trazabilidad frente al terminal y a tus propios pactos. <strong>No son señales</strong> ni promesa de rentabilidad.
-					</p>
-					<p class="audit-card__body">
-						Para <strong>ti</strong> si quieres datos, no sensaciones. Para <strong>prop firms, gestoras y academias</strong> si hay que demostrar cumplimiento.
-					</p>
-					<p class="audit-card__body audit-card__body--today">
-						<strong>Hoy, en producción:</strong> precisión de cierre documentada, HyperClose bajo presión, panel y flujos por plan (Essential / Advanced / Pro), multigráfico, días OFF, capital y licencias, y esta capa de evidencia (vídeo, informe MT5, historial, logs).
-					</p>
-					<p class="audit-card__body audit-card__body--roadmap">
-						<strong>En camino (sin prometer lo que el build aún no cierra):</strong> SML (Advanced/Pro, validación en curso), revisión de disciplina asistida (auditoría, roadmap) y noticias/horarios por tier.
+						Hora, precio, volumen y resultado. Informe oficial, independiente de tevsys.
 					</p>
 				</article>
-
-				<article class="audit-card">
-					<h4 class="audit-card__title">Dos capas de evidencia</h4>
-					<p class="audit-card__lead">
-						Dos fuentes que se cruzan: qué ocurrió en la cuenta (oficial) y por qué actuó tevsys (lógica interna).
-					</p>
-					<ul class="audit-evidence-layers">
-						<li>
-							<strong class="audit-layer__label">MT5 — qué ocurrió</strong>
-							Hora, precio, volumen y resultado. Informe oficial, independiente de tevsys.
-						</li>
-						<li>
-							<strong class="audit-layer__label">tevsys — por qué</strong>
-							Cálculo, límite configurado y decisión de cierre — en logs auditables.
-						</li>
-					</ul>
-				</article>
-
-				<article class="audit-card">
-					<h4 class="audit-card__title">Todo lo de arriba es la prueba</h4>
+				<article class="audit-card evidence-grid__card">
+					<h4 class="audit-card__title">tevsys — por qué</h4>
 					<p class="audit-card__body">
-						El vídeo, el informe MT5 y las transacciones que acabas de ver son <strong>ejemplos reales</strong>.
-					</p>
-					<p class="audit-card__body audit-card__body--stat">
-						Llevamos <strong class="feature-title__accent">87 operativas</strong> documentadas con el mismo rigor, incluido el caso extremo de 100 lotes (operativa 4.56).
+						Cálculo, límite configurado y decisión de cierre. En logs auditables.
 					</p>
 				</article>
 			</div>
 
+			<h4 class="audit-proof-heading">Todo lo de arriba es la prueba.</h4>
+			<p class="audit-card__body">
+				El vídeo, el informe MT5 y las transacciones que acabas de ver son <strong>ejemplos reales</strong>.
+			</p>
+			<p class="audit-card__body audit-card__body--stat">
+				<strong class="feature-title__accent">87 operativas documentadas</strong> con el mismo rigor.<br />
+				Error medio <strong class="feature-title__accent">≈ 0,06 %</strong> · caso extremo: 100 lotes (operativa 4.56).
+			</p>
+
 			<p class="audit-closing-note">
-				Para quien opera en serio, enseña, audita o gestiona capital ajeno: lo que importa es poder <strong>contrastar</strong> lo pactado con lo que MT5 y los registros de tevsys dejan escrito.
+				Para quien opera en serio, enseña, audita o gestiona capital ajeno: lo que importa es poder <strong>contrastar lo pactado</strong> con <strong>lo que MT5 y los registros de tevsys dejan escrito</strong>.
 			</p>
 			<p class="audit-next-link">
 				<a class="proof-capture-link" href="/features/precision#precision-stats">
-					Otro cierre documentado al detalle (Essential, desviación 0,002 p.p. — capturas + MT5)
+					Essential · desviación 0,002 p.p. → Precisión
 					<span class="proof-link-meta">Precisión</span>
 				</a>
 			</p>
@@ -665,19 +646,52 @@ const seo = {
 		padding-top: 1rem;
 		padding-bottom: 1.25rem;
 	}
+	.audit-manifesto-lead {
+		margin: 0.35rem 0 0.5rem;
+		font-size: 1.02rem;
+		font-weight: 700;
+		line-height: 1.45;
+		max-width: 58ch;
+	}
 	#evidence-audit .feature-proof-subtitle.audit-hook {
-		margin: -0.15rem 0 1rem !important;
+		margin: 0 0 1rem !important;
 		font-style: normal;
 		font-weight: 500;
 		opacity: 0.92;
 		max-width: 58ch;
 		line-height: 1.5;
 	}
-	.audit-cards {
-		display: flex;
-		flex-direction: column;
+	.evidence-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.75rem;
-		margin-top: 0.15rem;
+		margin: 0.15rem 0 1rem;
+	}
+	@media (max-width: 640px) {
+		.evidence-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+	.evidence-grid__card {
+		height: 100%;
+	}
+	.audit-proof-heading {
+		margin: 0 0 0.55rem;
+		font-size: 0.92rem;
+		font-weight: 700;
+		color: #f5b041;
+		line-height: 1.35;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+	.audit-proof-heading::before {
+		content: '';
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
 	}
 	.audit-card {
 		margin: 0;
@@ -725,42 +739,8 @@ const seo = {
 	.audit-card__body + .audit-card__body {
 		margin-top: 0.55rem;
 	}
-	.audit-card__body--today,
-	.audit-card__body--roadmap {
-		font-size: 0.91rem;
-		opacity: 0.9;
-	}
-	.audit-card__body--roadmap {
-		opacity: 0.85;
-	}
 	.audit-card__body--stat {
 		font-weight: 500;
-	}
-	.audit-evidence-layers {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	.audit-evidence-layers li {
-		margin-bottom: 0.45rem;
-		padding: 0.48rem 0.65rem 0.48rem 1rem;
-		border-left: 2px solid rgba(245, 176, 65, 0.28);
-		border-radius: 0.35rem;
-		background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent);
-		font-size: 0.93rem;
-		line-height: 1.5;
-		opacity: 0.92;
-	}
-	.audit-evidence-layers li:last-child {
-		margin-bottom: 0;
-	}
-	.audit-layer__label {
-		display: block;
-		color: #f5b041;
-		font-weight: 700;
-		margin-bottom: 0.2rem;
-		font-size: 0.88rem;
-		letter-spacing: 0.01em;
 	}
 	.audit-closing-note {
 		margin: 1rem 0 0;
