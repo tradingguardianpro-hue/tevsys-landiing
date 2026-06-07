@@ -2232,12 +2232,30 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-manifesto-banner 
 	background: linear-gradient(135deg, rgba(95, 102, 118, 0.38), rgba(245, 176, 65, 0.1));
 }
 
+/* CTA final Familia A — opción B: separador ligero hacia footer integrado (jun 2026) */
 .tevsys-feature-micro-surface .feature-cta {
-	border-radius: var(--feature-micro-radius);
+	background: transparent;
+	border: none;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 0;
+	box-shadow: none;
+	padding: clamp(1.35rem, 3.5vw, 1.85rem) 0 clamp(0.5rem, 1.5vw, 0.85rem);
+	margin-top: clamp(1.35rem, 3.5vw, 1.85rem);
 }
 
-html[data-theme='dark'] .tevsys-feature-micro-surface .feature-cta {
-	border-color: rgba(255, 255, 255, 0.12);
+html[data-theme='light'] .tevsys-feature-micro-surface .feature-cta {
+	border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.tevsys-feature-micro-surface .feature-cta h2 {
+	margin: 0 0 0.65rem;
+	font-size: 1.35rem;
+}
+
+.tevsys-feature-micro-surface .feature-cta p {
+	margin: 0 0 0.9rem;
+	line-height: 1.5;
+	max-width: 58ch;
 }
 
 html[data-theme='dark'] .tevsys-feature-micro-surface .demo-edit-note {

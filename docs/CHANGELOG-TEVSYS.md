@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## CTA micropáginas — separador ligero opción B (8 jun 2026)
+
+- **Qué:** fin caja `--theme-surface-1` en `.feature-cta`; línea superior + aire + botón ámbar; transición al footer `--theme-bg`.
+- **Alcance:** HyperClose, Precisión, Evidencia, SML — regla única `global.css`.
+- **Archivos:** `global.css`; retirados estilos locales en las cuatro `.astro`.
+
+---
+
 ## SML — piel carbón Familia A (8 jun 2026)
 
 - **Qué:** hero panel `--micro-demo-bg`; bloques prueba carbón; tarjetas captura vía tokens global; fin overrides locales en `sml-proof-card`.
