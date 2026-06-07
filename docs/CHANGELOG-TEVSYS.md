@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — Familia A cierre sin losa (8 jun 2026)
+
+- **`#evidence-audit`:** clase `--familia-a-close` — fondo transparente, línea superior, brillo ámbar (como checklist); MT5/tevsys en franjas laterales; bloque Pro y «Para quién» sin cajas grises apiladas.
+- **Global:** `global.css` — patrón reutilizable para otras micros Familia A.
+- **Web:** `evidencia.astro` · `global.css`.
+
+---
+
 ## Evidencia + auditoría — P0 copy honesto (7 jun 2026)
 
 - **Evidencia `#evidence-audit`:** bloque adelgazado — solo prueba (grid MT5/tevsys, 87 ops, 0,06 %, enlace Precisión). Sin manifiesto ni roadmap.

@@ -2136,6 +2136,42 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--vi
 	padding-inline: 0.05rem;
 }
 
+/* Familia A — cierre sin losa (piloto Evidencia jun 2026; reutilizable en otras micros) */
+.tevsys-feature-micro-surface .feature-proof-detail--familia-a-close {
+	position: relative;
+	overflow: hidden;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	padding: clamp(1.35rem, 3.5vw, 1.85rem) clamp(1rem, 3vw, 1.5rem) clamp(0.35rem, 1.2vw, 0.75rem);
+	margin-top: clamp(1.35rem, 3.5vw, 1.85rem);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 0;
+}
+html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--familia-a-close {
+	border-top-color: rgba(0, 0, 0, 0.08);
+}
+.tevsys-feature-micro-surface .feature-proof-detail--familia-a-close::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -10%;
+	width: 42%;
+	height: 100%;
+	pointer-events: none;
+	background: radial-gradient(
+		ellipse at right center,
+		rgba(245, 176, 65, 0.11) 0%,
+		rgba(245, 176, 65, 0.045) 42%,
+		transparent 74%
+	);
+}
+.tevsys-feature-micro-surface .feature-proof-detail--familia-a-close:target {
+	background: transparent;
+	border-top-color: rgba(245, 176, 65, 0.45);
+	box-shadow: none;
+}
+
 html[data-theme='dark'] .tevsys-feature-micro-surface section.feature-demo.feature-demo--hero:not(:target) {
 	padding: clamp(0.65rem, 1.8vw, 1rem);
 	background: rgba(255, 255, 255, 0.035);

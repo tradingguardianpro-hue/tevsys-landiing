@@ -249,7 +249,7 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="evidence-audit" class="feature-proof-detail feature-proof-detail--audit">
+		<section id="evidence-audit" class="feature-proof-detail feature-proof-detail--video-slim feature-proof-detail--familia-a-close feature-proof-detail--audit">
 			<h3>Evidencia: dos capas que se cruzan. Una sola conclusión.</h3>
 			<div class="evidence-intro">
 				<p class="evidence-intro__lead">La evidencia no la escribimos nosotros.</p>
@@ -641,7 +641,7 @@ const seo = {
 		opacity: 0.88;
 		max-width: 52ch;
 	}
-	.feature-proof-detail.feature-proof-detail--video-slim {
+	.feature-proof-detail.feature-proof-detail--video-slim:not(.feature-proof-detail--familia-a-close) {
 		background: var(--theme-surface-1);
 		border: 1px solid var(--theme-surface-border);
 		box-shadow: var(--theme-surface-elevated-shadow);
@@ -685,13 +685,16 @@ const seo = {
 	.feature-proof-detail p:first-of-type {
 		margin-top: 0;
 	}
-	/* Auditoría — tarjetas anidadas (Familia A: mismo aire que checklist SML / índice) */
+	/* Familia A cierre — sin losa; brillo global en global.css (--familia-a-close) */
 	#evidence-audit.feature-proof-detail--audit {
-		padding-top: 1.15rem;
-		padding-bottom: 1.35rem;
+		padding-bottom: clamp(0.5rem, 1.5vw, 0.85rem);
 	}
 	#evidence-audit.feature-proof-detail--audit h3 {
 		margin-bottom: 0.85rem;
+	}
+	#evidence-audit.feature-proof-detail--audit:target {
+		background: transparent;
+		box-shadow: none;
 	}
 	.evidence-intro {
 		margin: 0 0 1.35rem;
@@ -715,22 +718,17 @@ const seo = {
 	.evidence-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 0.75rem;
-		margin: 0.35rem 0 1.15rem;
+		gap: 1rem 1.35rem;
+		margin: 0.35rem 0 1.35rem;
 	}
 	.evidence-product-intro {
 		display: flex;
 		align-items: flex-start;
 		gap: clamp(1rem, 2.5vw, 1.5rem);
-		margin: 0 0 1.15rem;
-		padding: 0.85rem 0.95rem;
-		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		background: rgba(255, 255, 255, 0.02);
-	}
-	html[data-theme='light'] .evidence-product-intro {
-		border-color: rgba(0, 0, 0, 0.07);
-		background: rgba(0, 0, 0, 0.02);
+		margin: 0 0 1.35rem;
+		padding: 0;
+		border: none;
+		background: transparent;
 	}
 	@media (max-width: 640px) {
 		.evidence-product-intro {
@@ -811,18 +809,17 @@ const seo = {
 	}
 	.evidence-grid__card {
 		height: 100%;
-		min-height: 5.5rem;
 	}
 	.evidence-synthesis {
-		margin: 0.15rem 0 0;
-		padding: 1rem 1.1rem 1.05rem;
-		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
-		border: 1px solid rgba(255, 255, 255, 0.09);
-		background: rgba(255, 255, 255, 0.025);
+		margin: 0;
+		padding: 1.2rem 0 0;
+		border: none;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 0;
+		background: transparent;
 	}
 	html[data-theme='light'] .evidence-synthesis {
-		border-color: rgba(0, 0, 0, 0.08);
-		background: rgba(0, 0, 0, 0.02);
+		border-top-color: rgba(0, 0, 0, 0.08);
 	}
 	.evidence-synthesis__title {
 		margin: 0 0 0.85rem;
@@ -835,24 +832,38 @@ const seo = {
 	.evidence-audience-grid {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0.65rem;
-		margin-bottom: 0.75rem;
+		gap: 0;
+		margin-bottom: 0.85rem;
 	}
 	@media (max-width: 580px) {
 		.evidence-audience-grid {
 			grid-template-columns: 1fr;
+			gap: 0.65rem;
 		}
 	}
 	.evidence-audience-item {
-		padding: 0.65rem 0.72rem;
-		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.2rem);
-		border: 1px solid rgba(255, 255, 255, 0.07);
-		background: rgba(0, 0, 0, 0.18);
-		min-height: 4.75rem;
+		padding: 0 0.95rem;
+		border: none;
+		border-left: 1px solid rgba(255, 255, 255, 0.1);
+		background: transparent;
+		min-height: 0;
+	}
+	.evidence-audience-item:first-child {
+		padding-left: 0;
+		border-left: none;
+	}
+	@media (max-width: 580px) {
+		.evidence-audience-item {
+			padding: 0.42rem 0 0.42rem 1rem;
+			border-left: 2px solid rgba(245, 176, 65, 0.22);
+			background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent);
+		}
+		.evidence-audience-item:first-child {
+			padding-left: 1rem;
+		}
 	}
 	html[data-theme='light'] .evidence-audience-item {
-		border-color: rgba(0, 0, 0, 0.06);
-		background: rgba(0, 0, 0, 0.03);
+		border-left-color: rgba(0, 0, 0, 0.08);
 	}
 	.evidence-audience-item strong {
 		display: block;
@@ -881,16 +892,19 @@ const seo = {
 	}
 	.audit-card {
 		margin: 0;
-		padding: 0.85rem 1rem;
-		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.12rem);
-		border: 1px solid rgba(255, 255, 255, 0.09);
-		background:
-			linear-gradient(135deg, rgba(245, 176, 65, 0.045) 0%, transparent 55%),
-			rgba(255, 255, 255, 0.025);
+		padding: 0.42rem 0 0.42rem 1rem;
+		border: none;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), transparent);
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.audit-card:hover {
+		border-left-color: rgba(245, 176, 65, 0.38);
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.05), transparent);
 	}
 	html[data-theme='light'] .audit-card {
-		border-color: rgba(0, 0, 0, 0.08);
-		background: rgba(0, 0, 0, 0.02);
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.02), transparent);
 	}
 	.audit-card__title {
 		margin: 0 0 0.55rem;
