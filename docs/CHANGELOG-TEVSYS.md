@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## SML — piel carbón Familia A (8 jun 2026)
+
+- **Qué:** hero panel `--micro-demo-bg`; bloques prueba carbón; tarjetas captura vía tokens global; fin overrides locales en `sml-proof-card`.
+- **Sin tocar:** banner validación Advanced/Pro, copy, CTA final (pendiente § CTA micropáginas).
+- **Archivos:** `sml.astro` · `global.css`.
+
+---
+
 ## Footer — micropáginas alineado a home (8 jun 2026)
 
 - **Qué:** mismo `--theme-bg` + fade + inset ámbar que home en `/features/*` (wrapper `.tevsys-feature-micro-surface`).

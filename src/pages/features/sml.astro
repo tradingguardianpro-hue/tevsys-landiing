@@ -10,7 +10,7 @@ const seo = {
 ---
 
 <Layout seo={seo}>
-	<div class="tevsys-feature-micro-surface">
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--sml">
 	<Container>
 		<section class="feature-hero">
 			<p class="feature-kicker">Feature de disciplina</p>
@@ -278,9 +278,13 @@ const seo = {
 		position: absolute;
 		inset: -0.35rem;
 		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) + 2px);
-		background: linear-gradient(140deg, rgba(155, 162, 175, 0.12), rgba(115, 122, 136, 0.04));
+		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
 		pointer-events: none;
 		z-index: 0;
+	}
+	/* Hero panel: acabado global (--micro-demo-bg); sin halo ::before */
+	#sml-panel.feature-demo--hero::before {
+		display: none;
 	}
 	.feature-demo--hero > * {
 		position: relative;
@@ -561,8 +565,6 @@ const seo = {
 		margin: 0;
 		padding: 0.7rem;
 		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
-		background: rgba(255, 255, 255, 0.03);
-		border: 1px solid rgba(245, 176, 65, 0.2);
 	}
 	.sml-proof-card .proof-gallery__zoom {
 		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.15rem);
@@ -602,7 +604,10 @@ const seo = {
 		margin: 0 0 0.9rem;
 		line-height: 1.5;
 	}
-	#sml-panel {
+	#sml-panel,
+	#sml-evidence,
+	#sml-perdida-ampliada,
+	#sml-demo-flow {
 		scroll-margin-top: 5.5rem;
 	}
 	@media (max-width: 900px) {

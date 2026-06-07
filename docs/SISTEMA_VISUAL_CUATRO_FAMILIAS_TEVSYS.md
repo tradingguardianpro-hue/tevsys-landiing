@@ -69,7 +69,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | Familia | Estado | Notas |
 |---------|--------|--------|
 | **C — Guías** | **Cerrada** | Canon `instalacion.astro` v5.6 · CSS `guia-operativa.css` · cuatro URLs · copy lectura fin de semana revisado **7 jun** · vídeo C **2:01** en `/configuracion-fin-de-semana`. |
-| **A — Producto** | **HyperClose + Evidencia + Precisión + home cerrados (8 jun)** · **SML piel carbón pendiente** | Pasada carbón validada fundador · § Pasada carbón jun 2026. |
+| **A — Producto** | **Familia A piel carbón cerrada (8 jun)** — HyperClose, Evidencia, Precisión, SML + home + footer micros | § Pasada carbón jun 2026. |
 | **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable; videoteca **4 huecos** (MC-CF-019 fuera); criterio microclip vs guía documentado en V12 + catálogo. |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
 | **Footer** | **Cerrado** | Estructura **7 jun** · home integrado **8 jun** (`--theme-bg` + fade) — § Footer + § Pasada carbón |
@@ -103,8 +103,8 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 - CTA demo **solo** al final de la micropágina.
 
 **Estado (8 jun 2026):**
-- **Piel carbón cerrada:** HyperClose, Evidencia, **Precisión**, home (microcards + plan cards + footer integrado).
-- **Pendiente misma piel:** SML (sin tocar copy/claims ni EA).
+- **Piel carbón cerrada:** HyperClose, Evidencia, Precisión, **SML**, home (microcards + plan cards + footer integrado).
+- **Pendiente diseño (propuesta):** bloque CTA final «¿Quieres probar…?» — ver § CTA micropáginas.
 - **Contenido HyperClose:** capturas día OFF en terminal — copy/collage OK.
 
 **Canon de referencia (jun 2026):** `/features/hyperclose` + `/features/evidencia` + **`/features/precision`**. **Siguiente clone:** `/features/sml`.
@@ -222,7 +222,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | `/` footer | `--theme-bg` + fade superior + inset ámbar suave | **Cerrada** |
 | `/features/*` footer | Mismo tratamiento que home (Familia A) | **Cerrada** 8 jun |
 | `/features/precision` | Volatilidad, Nasdaq, logs y cuenta pequeña en cajas carbón; hero `--micro-demo-bg`; halo solo checklist | **Cerrada** 8 jun |
-| `/features/sml` | Aplicar checklist § A (carbón, aire vídeos, sin halos extra) | **Pendiente** |
+| `/features/sml` | Hero panel `--micro-demo-bg`; bloques prueba carbón; tarjetas captura vía global | **Cerrada** 8 jun |
 
 **Home + micropáginas Familia A — cita / transición al pie (criterio fundador 8 jun):**
 - Antes: footer en `--theme-surface-1` (losa gris) **absorbía** protagonismo del contenido superior y competía con la cita en home.
@@ -232,6 +232,28 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 **Archivos tocados:** `global.css` · `evidencia.astro` · `hyperclose.astro` · `index.astro` · `Footer.astro` / `Page.astro` (home).
 
 **Commits sugeridos (orden):** `web(tevsys): unifica tono carbón translúcido micros y cards home` · `web(tevsys): evidencia logs caja carbon` · `web(tevsys): hyperclose familia-a carbon semaforo y aire video off` · `web(tevsys): home plan cards carbon y footer theme-bg integrado` · `docs: canon carbon familia A SISTEMA_VISUAL + V12`.
+
+---
+
+## CTA final micropáginas — pendiente decisión (8 jun 2026)
+
+**Bloque:** `.feature-cta` («¿Quieres probar…?» / «Solicitar revisión SML») — último rectángulo antes del footer integrado.
+
+**Por qué chirría hoy:** los bloques de prueba ya son **carbón translúcido** y el footer va en **`--theme-bg`**; el CTA sigue en **`--theme-surface-1`** (losa más opaca + sombra elevada) → se siente un “tercer piso” gris entre contenido y pie.
+
+**Opciones (elegir una antes de implementar en global.css):**
+
+| Opción | Tratamiento | Pros | Contras |
+|--------|-------------|------|---------|
+| **A — Todo carbón** | Mismo `--micro-detail-bg` que bloques prueba | Unidad Familia A; fin del gris rancio | El CTA pierde énfasis; puede fundirse con el bloque de arriba |
+| **B — Separador ligero** | Sin caja: solo línea superior + padding; botón ámbar | Transición limpia hacia footer; poco ruido | Menos “zona de acción” visible |
+| **C — Carbón + ámbar sutil** | `--micro-detail-bg` + borde/inset ámbar muy tenue (sin halo checklist) | Distingue acción sin losa opaca | Hay que calibrar para no parecer otro halo |
+| **D — Cierre tipo Evidencia** | `--micro-close-bg` + línea superior (como `#evidence-audit`, sin halo extra) | Cierra la página como “epílogo”; coherente con cierre especial | Menos contraste que C; no en todas las micros hay cierre audit |
+| **E — Mantener surface-1** | Dejar como está | Máximo contraste del botón | Sigue chocando con footer integrado |
+
+**Recomendación equipo (jun 2026):** **C** o **B** — el chirrido viene del **surface-1 opaco**, no de falta de carbón en todo. **B** si priorizamos handoff al footer; **C** si el CTA debe seguir leyéndose como “paso siguiente”.
+
+**Implementación cuando haya OK:** una regla en `global.css` bajo `.tevsys-feature-micro-surface .feature-cta` (aplica a las cuatro micros a la vez).
 
 ---
 
@@ -355,7 +377,8 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 4 | ~~Footer aligerado~~ | — | **Cerrado** 7 jun 2026 |
 | 5 | HyperClose capturas día OFF + collage | A | Copy OK · **capturas pendiente** terminal |
 | 6 | ~~**Precisión** — piel carbón~~ | A | **Cerrado** 8 jun |
-| 7 | **SML** — piel carbón (mismo checklist) | A | **Siguiente** · contenido Fase 2 post P12 |
+| 7 | ~~**SML** — piel carbón~~ | A | **Cerrado** 8 jun |
+| 7b | **CTA final** micropáginas (tono vs todo carbón) | A | **Propuesta pendiente** fundador |
 | 8 | ~~Evidencia piel carbón~~ | A | **Cerrado** 8 jun |
 | 9 | ~~Cards home + planes + footer home~~ | A | **Cerrado** 8 jun |
 | — | No tocar auditoría salvo copy | D | Estable |
