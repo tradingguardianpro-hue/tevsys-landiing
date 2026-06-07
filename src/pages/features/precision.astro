@@ -60,7 +60,7 @@ const seo = {
 				<li><a class="evidence-link" href="#precision-demo">Cierre visible sobre límite configurado (no estimado).</a></li>
 				<li><a class="evidence-link" href="#precision-volatilidad">Comportamiento en volatilidad alta con resultado documentado.</a></li>
 				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
-				<li><a class="evidence-link" href="#precision-cuenta-pequena">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
+				<li><a class="evidence-link" href="#precision-stats">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
 				<li><a class="evidence-link" href="#precision-logs">Trazabilidad de eventos en logs auditables.</a></li>
 			</ul>
 		</section>
@@ -69,7 +69,7 @@ const seo = {
 			<h3>Demo en alta volatilidad</h3>
 			<p class="feature-proof-subtitle">Cierre en ganancias (1 min 4 s)</p>
 			<p class="feature-proof-lead">
-				Límite ±1,50 % · cierre en +1,83 % · contexto de alta volatilidad geopolítica.
+				Límite +1,50 % · cierre en +1,83 % · contexto de alta volatilidad geopolítica.
 			</p>
 			<div class="demo-video demo-video--compact" id="precision-volatilidad-container">
 				<video id="precision-volatilidad-video" controls preload="metadata" playsinline>
@@ -99,7 +99,7 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="precision-cuenta-pequena" class="feature-proof-detail feature-proof-detail--video-slim">
+		<section id="precision-cuenta-pequena" class="feature-proof-detail feature-proof-detail--cuenta-bundle">
 			<h3>Demo en cuenta más pequeña</h3>
 			<p class="feature-proof-subtitle">Mismo criterio, menor capital (1 min 13 s)</p>
 			<p class="feature-proof-lead">
@@ -111,86 +111,88 @@ const seo = {
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
-		</section>
+			<p class="demo-edit-note demo-edit-note--slim demo-edit-note--bridge">
+				Vídeo resumido; capturas e informe MT5 justo debajo.
+			</p>
 
-		<section id="precision-stats" class="feature-proof-detail feature-proof-detail--stats feature-proof-detail--stats-after-video">
-			<h3>Lo que dicen los resultados</h3>
-			<p class="feature-proof-subtitle">Misma sesión que el vídeo — cierre por pérdida diaria</p>
-			<p class="feature-proof-lead feature-proof-lead--stats">
-				El vídeo de arriba muestra el cierre en acción. Aquí documentamos <strong>esa misma sesión</strong> en GER40 con cuenta demo más pequeña:
-				límite de pérdida <strong>−1,50 %</strong>, cierre contabilizado en <strong>−42,28 €</strong> el <strong>2 mar 2026</strong>.
-				Encaja en el resumen global de <strong>87 operativas</strong> (error medio <strong>0,06 %</strong> en condiciones normales).
-			</p>
-			<details id="precision-49-evidence" class="proof-accordion">
-				<summary class="proof-capture-link">Capturas paso a paso — cierre por pérdida diaria (−1,50 %)</summary>
-				<div class="proof-gallery">
-					<p class="proof-gallery__intro">
-						<strong>Qué vas a ver:</strong> configuración → protección activa → flotante en positivo y negativo → STOP por pérdida diaria → historial HTML e informe MT5 con <strong>−42,28 €</strong> (datos personales redactados).
-					</p>
-					<p class="proof-gallery__hint">Haz clic en cada captura para verla en tamaño completo.</p>
-					<div class="proof-gallery__grid">
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Paso 1</p>
-							<p class="proof-gallery__title">EA configurado (desbloqueado)</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-01-desbloqueado.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 1 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-01-desbloqueado.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="Sesión 2 mar 2026 GER40: EA configurado antes de activar protección." loading="lazy" width="800" height="600" decoding="async" /></picture>
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Paso 2</p>
-							<p class="proof-gallery__title">Protección activa (bloqueado)</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-02-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 2 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-02-protegido.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="Sesión 2 mar 2026 GER40: EA en modo protegido con bloqueo activo." loading="lazy" width="800" height="600" decoding="async" /></picture>
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Paso 3</p>
-							<p class="proof-gallery__title">Flotante intermedio (positivo)</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 3 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-03-flotante-intermedio-positivo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="Sesión 2 mar 2026 GER40: flotante intermedio en positivo." loading="lazy" width="800" height="600" decoding="async" /></picture>
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Paso 4</p>
-							<p class="proof-gallery__title">Flotante intermedio (negativo)</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 4 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-04-flotante-intermedio-negativo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="Sesión 2 mar 2026 GER40: flotante intermedio en negativo." loading="lazy" width="800" height="600" decoding="async" /></picture>
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Paso 5</p>
-							<p class="proof-gallery__title">STOP por pérdida diaria alcanzada</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-05-stop-final.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 5 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-05-stop-final.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="Sesión 2 mar 2026 GER40: STOP por pérdida diaria −1,50 % y cierre automático." loading="lazy" width="800" height="600" decoding="async" /></picture>
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Validación A</p>
-							<p class="proof-gallery__title">HTML de transacciones</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-06-html-transacciones-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir validación A en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-06-html-transacciones-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="Sesión 2 mar 2026 GER40: transacciones en ReportHistory (redactado)." loading="lazy" width="800" height="600" decoding="async" /></picture>
-							</a>
-						</article>
-						<article class="proof-gallery__item">
-							<p class="proof-gallery__step">Validación B</p>
-							<p class="proof-gallery__title">Resumen oficial MT5</p>
-							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-07-mt5-resumen-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir validación B en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-07-mt5-resumen-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="Sesión 2 mar 2026 GER40: resumen oficial MT5 (redactado)." loading="lazy" width="800" height="600" decoding="async" /></picture>
-							</a>
-						</article>
+			<div id="precision-stats" class="precision-stats-inner">
+				<h4 class="precision-stats-inner__title">Lo que dicen los resultados</h4>
+				<p class="feature-proof-subtitle precision-stats-inner__subtitle">Misma sesión — cierre por pérdida diaria</p>
+				<p class="feature-proof-lead feature-proof-lead--stats">
+					El vídeo de arriba muestra el cierre en acción. Aquí documentamos <strong>esa misma sesión</strong> en GER40 con cuenta demo más pequeña:
+					límite de pérdida <strong>−1,50 %</strong>, cierre contabilizado en <strong>−42,28 €</strong> el <strong>2 mar 2026</strong>.
+				</p>
+				<details id="precision-49-evidence" class="proof-accordion">
+					<summary class="proof-capture-link">Capturas paso a paso — cierre por pérdida diaria (−1,50 %)</summary>
+					<div class="proof-gallery">
+						<p class="proof-gallery__intro">
+							<strong>Qué vas a ver:</strong> configuración → protección activa → flotante en positivo y negativo → STOP por pérdida diaria → historial HTML e informe MT5 con <strong>−42,28 €</strong> (datos personales redactados).
+						</p>
+						<p class="proof-gallery__hint">Haz clic en cada captura para verla en tamaño completo.</p>
+						<div class="proof-gallery__grid">
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Paso 1</p>
+								<p class="proof-gallery__title">EA configurado (desbloqueado)</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-01-desbloqueado.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 1 en tamaño completo">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-01-desbloqueado.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="Sesión 2 mar 2026 GER40: EA configurado antes de activar protección." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Paso 2</p>
+								<p class="proof-gallery__title">Protección activa (bloqueado)</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-02-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 2 en tamaño completo">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-02-protegido.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="Sesión 2 mar 2026 GER40: EA en modo protegido con bloqueo activo." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Paso 3</p>
+								<p class="proof-gallery__title">Flotante intermedio (positivo)</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 3 en tamaño completo">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-03-flotante-intermedio-positivo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="Sesión 2 mar 2026 GER40: flotante intermedio en positivo." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Paso 4</p>
+								<p class="proof-gallery__title">Flotante intermedio (negativo)</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 4 en tamaño completo">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-04-flotante-intermedio-negativo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="Sesión 2 mar 2026 GER40: flotante intermedio en negativo." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Paso 5</p>
+								<p class="proof-gallery__title">STOP por pérdida diaria alcanzada</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-05-stop-final.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 5 en tamaño completo">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-05-stop-final.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="Sesión 2 mar 2026 GER40: STOP por pérdida diaria −1,50 % y cierre automático." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Validación A</p>
+								<p class="proof-gallery__title">HTML de transacciones</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-06-html-transacciones-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir validación A en tamaño completo">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-06-html-transacciones-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="Sesión 2 mar 2026 GER40: transacciones en ReportHistory (redactado)." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Validación B</p>
+								<p class="proof-gallery__title">Resumen oficial MT5</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-07-mt5-resumen-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir validación B en tamaño completo">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-07-mt5-resumen-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="Sesión 2 mar 2026 GER40: resumen oficial MT5 (redactado)." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+						</div>
 					</div>
-				</div>
-			</details>
-			<p class="proof-context-note">En el panel, «Protegido hasta» = protección activa hasta la hora indicada.</p>
-			<p class="proof-links-row">
-				<a class="proof-capture-link" href="/docs/precision-resumen-tecnico-v3-final.pdf" target="_blank" rel="noopener noreferrer">
-					Resumen técnico ampliado <span class="proof-link-meta">PDF</span>
-				</a>
-				<a class="proof-capture-link" href="/features/evidencia#evidencia-informe-mt5">
-					Más operativas en Evidencia verificable
-				</a>
-			</p>
-			<p class="proof-note">Publicamos resultados verificables y trazabilidad. La fórmula propietaria no es pública.</p>
+				</details>
+				<p class="proof-context-note">En el panel, «Protegido hasta» = protección activa hasta la hora indicada.</p>
+				<p class="proof-links-row">
+					<a class="proof-capture-link" href="/docs/precision-resumen-tecnico-v3-final.pdf" target="_blank" rel="noopener noreferrer">
+						Resumen técnico ampliado <span class="proof-link-meta">PDF</span>
+					</a>
+					<a class="proof-capture-link" href="/features/evidencia#evidencia-informe-mt5">
+						Más operativas en Evidencia verificable
+					</a>
+				</p>
+				<p class="proof-note">Publicamos resultados verificables y trazabilidad. La fórmula propietaria no es pública.</p>
+			</div>
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail feature-proof-detail--video-slim">
@@ -467,8 +469,49 @@ const seo = {
 	.feature-proof-detail--video-slim .demo-video--compact {
 		margin-bottom: 0.5rem;
 	}
-	#precision-cuenta-pequena + .feature-proof-detail--stats-after-video {
-		margin-top: 0.75rem;
+	.feature-proof-detail--cuenta-bundle {
+		margin-top: clamp(1.25rem, 3vw, 1.75rem);
+	}
+	.feature-proof-detail--cuenta-bundle .demo-video--compact {
+		margin-bottom: 0.35rem;
+	}
+	.feature-proof-detail--cuenta-bundle .feature-proof-lead {
+		max-width: 52ch;
+		font-size: 0.94rem;
+		opacity: 0.88;
+	}
+	.demo-edit-note--bridge {
+		margin-top: 0.35rem;
+		margin-bottom: 0;
+		opacity: 0.78;
+	}
+	.precision-stats-inner {
+		margin-top: 1rem;
+		padding-top: 1rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		scroll-margin-top: 5.5rem;
+	}
+	html[data-theme='light'] .precision-stats-inner {
+		border-top-color: rgba(0, 0, 0, 0.1);
+	}
+	.precision-stats-inner__title {
+		margin: 0 0 0.35rem;
+		font-size: 1rem;
+		font-weight: 700;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+	.precision-stats-inner__title::before {
+		content: '';
+		width: 0.38rem;
+		height: 0.38rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.precision-stats-inner__subtitle {
+		margin: 0 0 0.45rem !important;
 	}
 	.demo-edit-note--slim {
 		margin-top: 0.45rem;
@@ -699,7 +742,8 @@ const seo = {
 		opacity: 0.78;
 	}
 	.feature-proof-detail:target,
-	#precision-stats:has(#precision-49-evidence:target) {
+	#precision-cuenta-pequena:has(#precision-stats:target),
+	#precision-cuenta-pequena:has(#precision-49-evidence:target) {
 		border-color: rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);

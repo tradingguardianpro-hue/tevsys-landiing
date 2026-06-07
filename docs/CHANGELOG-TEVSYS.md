@@ -9,8 +9,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## Precisión — Familia A alineada a HyperClose (7 jun 2026)
 
 - **Hero 100k:** hook con **7,20 € (0,0072 %)** en ámbar; nota vídeo editado + enlace **Evidencia verificable** (sin acordeón duplicado).
-- **Secundarios:** `--video-slim` (volatilidad, Nasdaq, cuenta pequeña, logs); eliminado bloque redundante «Aquí se decide el cierre».
-- **Stats / galería:** debajo del vídeo **cuenta pequeña**; misma sesión (−1,50 % · −42,28 € · 2 mar 2026); **sin nombre de broker** en copy público.
+- **Secundarios:** `--video-slim` (volatilidad, Nasdaq, logs); eliminado bloque redundante «Aquí se decide el cierre».
+- **Cuenta pequeña + stats:** un solo bloque (`--cuenta-bundle`): vídeo, puente a capturas, resultados (−1,50 % · −42,28 € · 2 mar 2026); índice ancla `#precision-stats` (acordeón auto-open); volatilidad copy **+1,50 %** (no ±); sin broker en copy.
 - **Web:** `features/precision.astro`.
 
 ---
