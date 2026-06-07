@@ -6,6 +6,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — plan cards + footer (8 jun 2026)
+
+- **Plan cards:** gradiente `hsl(222…)` alineado a microcards (fin gris neutro `hsl(0,0%,6%)`).
+- **Footer (solo home):** `--theme-bg` + fade superior suave; mantiene rol de cierre legal.
+
+---
+
 ## Evidencia + HyperClose — carbón translúcido Familia A (8 jun 2026)
 
 - **Tokens:** `--micro-detail-*`, `--micro-demo-*`, `--micro-close-*` en `global.css` (`.tevsys-feature-micro-surface`).
