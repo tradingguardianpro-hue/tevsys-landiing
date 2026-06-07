@@ -384,6 +384,7 @@ const seo = {
 	.feature-hero,
 	.feature-demo,
 	.feature-proof,
+	.feature-proof-detail,
 	.feature-cta {
 		margin: var(--section-margin) auto;
 	}
@@ -441,7 +442,7 @@ const seo = {
 		max-width: 74ch;
 		line-height: 1.55;
 		padding: 0.68rem 0.82rem;
-		border-radius: 0.6rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		border: 1px solid rgba(150, 156, 170, 0.34);
 		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
 	}
@@ -476,6 +477,7 @@ const seo = {
 		width: 0.35rem;
 		height: 0.35rem;
 		opacity: 0.85;
+		flex-shrink: 0;
 	}
 	.hyperclose-multichart__sub {
 		margin: 0;
@@ -494,7 +496,7 @@ const seo = {
 		content: '';
 		position: absolute;
 		inset: -0.35rem;
-		border-radius: calc(var(--theme-shape-radius) + 2px);
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) + 2px);
 		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
 		pointer-events: none;
 		z-index: 0;
@@ -509,13 +511,13 @@ const seo = {
 	}
 	#hyperclose-demo {
 		scroll-margin-top: 5.5rem;
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 	}
 	#hyperclose-semaphore,
 	#hyperclose-off-demo {
 		scroll-margin-top: 5.5rem;
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 	}
 	.demo-video--hero {
@@ -596,7 +598,7 @@ const seo = {
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 		padding: 1rem;
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 	}
 	#hyperclose-off-demo:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
@@ -605,7 +607,7 @@ const seo = {
 			0 0 0 1px rgba(245, 176, 65, 0.42),
 			0 0 26px rgba(245, 176, 65, 0.2);
 		padding: 0.5rem;
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		animation: hyperclose-target-flash 1.35s ease-out 1;
 	}
 	#hyperclose-semaphore:target,
@@ -653,13 +655,13 @@ const seo = {
 	.demo-placeholder {
 		background: var(--theme-surface-1);
 		border: 1px solid rgba(245, 176, 65, 0.28);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 	}
 	.demo-video {
 		background: #06080d;
 		border: 1px solid rgba(245, 176, 65, 0.3);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		overflow: hidden;
 		margin-bottom: 0.75rem;
 	}
@@ -743,12 +745,20 @@ const seo = {
 	.feature-proof-detail {
 		margin: 1rem 0 0;
 		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 		scroll-margin-top: 5.5rem;
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 		border: 1px solid var(--theme-surface-border);
 		box-shadow: var(--theme-surface-elevated-shadow);
+	}
+	/* Tarjetas redondas en secciones vídeo (semáforo, día OFF) — mismo criterio que Precisión */
+	.feature-proof-detail.feature-proof-detail--video-slim {
+		background: var(--theme-surface-1);
+		border: 1px solid var(--theme-surface-border);
+		box-shadow: var(--theme-surface-elevated-shadow);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
 	}
 	.feature-proof-detail h3 {
 		margin: 0 0 0.45rem;
@@ -776,15 +786,11 @@ const seo = {
 		font-weight: 600;
 		opacity: 0.9;
 	}
-	.feature-proof-detail:target {
+	.feature-proof-detail:target,
+	.feature-proof-detail--video-slim:target {
 		border-color: rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
-	}
-	.feature-proof-detail--video-slim:target {
-		background: transparent;
-		border-top-color: rgba(245, 176, 65, 0.45);
-		box-shadow: none;
 	}
 	.feature-proof-detail--video-slim .feature-proof-subtitle {
 		margin: -0.1rem 0 0.4rem !important;
@@ -822,7 +828,7 @@ const seo = {
 	}
 	.hyperclose-semaphore-collage__zoom {
 		display: block;
-		border-radius: clamp(0.45rem, 0.8vw, 0.65rem);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		background: #0a0a0a;
@@ -895,7 +901,7 @@ const seo = {
 	.proof-gallery {
 		margin: 0.75rem 0 0;
 		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 	}
@@ -962,7 +968,7 @@ const seo = {
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1.2rem;
 		border: 1px solid var(--theme-surface-border);
 		box-shadow: var(--theme-surface-elevated-shadow);
