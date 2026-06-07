@@ -213,12 +213,34 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 **Recomendación acordada — ir una por una, no expandido masivo hoy:**
 - Cada micropágina tiene **estructura distinta** (Precisión = Nasdaq + stats; SML = paneles propios; Evidencia = muchos bloques informe/logs). Un batch ciego arriesga romper contenido único.
 - Flujo: **clonar checklist A** → deploy → **captura + OK fundador** → siguiente.
-- **Orden sugerido:** 1) **Precisión** (hook con cifra tipo 4,71 % / +506 USD — mismo patrón que 1,31 €) · 2) **SML** · 3) **Evidencia** (más secciones; pasada más larga).
-- **Cards home:** después de las tres micropáginas (o tras Precisión si queremos validar antes).
+- **Orden sugerido:** 1) **Footer** · 2) **Capturas HyperClose** día OFF (+ valorar semáforo 3 niveles; composito modal+panel, ref. Market) · 3) **Precisión** → SML → Evidencia (checklist A) · 4) cards home.
 - **Familia B** (`/como-funciona`): sesión aparte — documentar criterio, no mezclar con A.
 - **Familia D / futuro:** sin tocar salvo copy roadmap.
 
 **Referencia obligatoria al abrir cada micro:** checklist § Familia A en este doc + `hyperclose.astro`.
+
+---
+
+## Pendiente evidencia — HyperClose día OFF (después del footer, jun 2026)
+
+**Cuándo:** sesión **Familia A** (micropáginas) **después** de aligerar footer — no mezclar con guías C.
+
+**Dónde hoy:** `/features/hyperclose` → sección **Rotación automática y día OFF** → acordeón «5 escenarios día OFF» (`hyperclose-dias-off-modal-00` … `-03` + panel protegido).
+
+**Problema / oportunidad:**
+- Capturas actuales pueden no seguir el criterio **modal + panel al lado** (composito legible), como la buena pieza del **artículo MQL5 Market** (tres semáforos + panel en una captura, explicados).
+- Objetivo web: **una captura diferenciada por escenario**, cada modal **junto al panel** (no solo modal aislado si confunde).
+- Revisar también galería **semáforo responsabilidad** (3 niveles bloqueo) — mismo criterio si aplica.
+
+**Fuentes de referencia:**
+- `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` §4.3 (modal + semáforo; composición Market).
+- `docs/ARTICULO_MQL5_PORTAL_REVISION_POR_TRAMOS_MAY2026.md` §6 inventario capturas (`art-v2-03-*`).
+- Assets actuales: `public/images/evidence/hyperclose-dias-off-*` · `hyperclose-modal-0*`.
+
+**Tareas al abordar:**
+1. Inventariar qué captura sirve tal cual vs hay que rehacer (composito panel+modal).
+2. Sustituir imágenes + webp; ajustar copy `proof-gallery__desc` si hace falta.
+3. Validar en deploy con fundador (misma pasada que checklist A).
 
 ---
 
@@ -229,11 +251,12 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 1 | Canon `/instalacion` + replicar en resto guías | C | **Cerrado** v5.6 |
 | 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
 | 3 | ~~HyperClose aligerado~~ | A | **Cerrado** — canon jun 2026 |
-| 4 | Precisión (checklist A + hook cifra) | A | **Siguiente sesión** — una por una |
-| 5 | SML | A | Pendiente |
-| 6 | Evidencia | A | Pendiente |
-| 7 | Footer aligerado (sin quitar columnas) | — | Sesión dedicada; ver § Footer |
-| 8 | Cards home aligeradas | A | Tras micropáginas o tras Precisión |
+| 4 | Footer aligerado (sin quitar columnas) | — | Sesión dedicada; ver § Footer |
+| 5 | **HyperClose — capturas día OFF (+ semáforo)** modal+panel | A | **Después footer** — § Pendiente evidencia HyperClose |
+| 6 | Precisión (checklist A + hook cifra) | A | Pendiente |
+| 7 | SML | A | Pendiente |
+| 8 | Evidencia | A | Pendiente |
+| 9 | Cards home aligeradas | A | Tras micropáginas |
 | — | No tocar auditoría salvo copy | D | Estable |
 | — | No homogeneizar cómo-funciona | B | Estable |
 | — | Buscador global | — | Aplazado |
