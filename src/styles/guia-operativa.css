@@ -5,11 +5,20 @@
 	margin-inline: auto;
 }
 
-.guia-page .guia-hero,
+.guia-page .guia-hero {
+	margin: var(--section-margin) auto clamp(1rem, 2.8vw, 1.5rem);
+}
+
 .guia-page .guia-video-panel,
 .guia-page .guia-read-section,
 .guia-page .guia-fork-panel {
 	margin: var(--section-margin) auto;
+}
+
+/* Hero → vídeo: menos hueco (fin de semana sin caja WebRequest lo notaba más) */
+.guia-page .guia-hero + .guia-video-panel {
+	margin-top: 0;
+	padding-top: clamp(0.5rem, 1.5vw, 0.75rem);
 }
 
 .guia-page .guia-hero .guia-eyebrow {

@@ -198,7 +198,27 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 3. **Frase independiente:** bajar tamaño y opacidad; una sola línea.
 4. **Espaciado vertical:** menos padding entre pisos en páginas largas (micropáginas).
 
-**Decisión:** aplazada a sesión footer dedicada **después** de cerrar doc Familia A y **antes** de clonar A al resto de micropáginas/home.
+**Decisión:** aplazada a sesión footer dedicada — **no implementar jun 2026 (noche).**
+
+**Opinión IA (validada con criterio fundador):** el footer **cumple su job** (Guías + Producto + Legal + contacto); el problema es **peso visual**, no exceso de enlaces. **Sí conviene aligerar** en la próxima sesión; **no conviene vaciar** columnas ni quitar email. Prioridad sugerida al tocar: (1) barra nav inferior sin gradiente ámbar, (2) acortar títulos Guías Adv/Pro, (3) frase independiente más pequeña. Mantener header como nav principal.
+
+**Implementación:** `Footer.astro` + `footer.js` — una pasada, sin mezclar con micropáginas.
+
+---
+
+## Próxima sesión — handoff micropáginas Familia A (jun 2026)
+
+**Familia A:** **cerrada** en criterio (canon `/features/hyperclose`). CSS compartido ya en `global.css` (`--feature-micro-radius`, `--video-slim`).
+
+**Recomendación acordada — ir una por una, no expandido masivo hoy:**
+- Cada micropágina tiene **estructura distinta** (Precisión = Nasdaq + stats; SML = paneles propios; Evidencia = muchos bloques informe/logs). Un batch ciego arriesga romper contenido único.
+- Flujo: **clonar checklist A** → deploy → **captura + OK fundador** → siguiente.
+- **Orden sugerido:** 1) **Precisión** (hook con cifra tipo 4,71 % / +506 USD — mismo patrón que 1,31 €) · 2) **SML** · 3) **Evidencia** (más secciones; pasada más larga).
+- **Cards home:** después de las tres micropáginas (o tras Precisión si queremos validar antes).
+- **Familia B** (`/como-funciona`): sesión aparte — documentar criterio, no mezclar con A.
+- **Familia D / futuro:** sin tocar salvo copy roadmap.
+
+**Referencia obligatoria al abrir cada micro:** checklist § Familia A en este doc + `hyperclose.astro`.
 
 ---
 
@@ -208,10 +228,12 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 |-----------|--------|---------|--------|
 | 1 | Canon `/instalacion` + replicar en resto guías | C | **Cerrado** v5.6 |
 | 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
-| 3 | HyperClose aligerado (`--video-slim`) | A | **Hecho** jun 2026 — feedback fundador |
-| 4 | Precisión, SML, Evidencia (misma línea A) | A | Pendiente |
-| 5 | Footer columna Guías + revisión navegación | — | Pendiente (momento aparte) |
-| 6 | Cards home (Precisión, HyperClose, SML, Evidencia) aligeradas | A | Después de footer |
+| 3 | ~~HyperClose aligerado~~ | A | **Cerrado** — canon jun 2026 |
+| 4 | Precisión (checklist A + hook cifra) | A | **Siguiente sesión** — una por una |
+| 5 | SML | A | Pendiente |
+| 6 | Evidencia | A | Pendiente |
+| 7 | Footer aligerado (sin quitar columnas) | — | Sesión dedicada; ver § Footer |
+| 8 | Cards home aligeradas | A | Tras micropáginas o tras Precisión |
 | — | No tocar auditoría salvo copy | D | Estable |
 | — | No homogeneizar cómo-funciona | B | Estable |
 | — | Buscador global | — | Aplazado |
@@ -232,6 +254,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Fecha | Nota |
 |-------|------|
+| 7 jun 2026 | **Guía fin de semana:** títulos «en fin de semana»; hero→vídeo menos hueco en `guia-operativa.css` (todas las guías C). |
 | 6 jun 2026 | **Familia A validada:** checklist canon + hook 1,31 € en demo HyperClose; footer diagnóstico pendiente. |
 | 6 jun 2026 | **Familia A — criterio documentado:** HyperClose = canon de referencia antes de clonar micropáginas. |
 | 6 jun 2026 | **Familia A — HyperClose:** `--video-slim`; semáforo y día OFF sin losa gris; capturas en `<details>`. |
