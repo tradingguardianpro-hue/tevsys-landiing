@@ -2138,8 +2138,6 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--vi
 
 /* Familia A — cierre sin losa (piloto Evidencia jun 2026; reutilizable en otras micros) */
 .tevsys-feature-micro-surface .feature-proof-detail--familia-a-close {
-	position: relative;
-	overflow: hidden;
 	background: transparent;
 	border: none;
 	box-shadow: none;
@@ -2150,21 +2148,6 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--vi
 }
 html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--familia-a-close {
 	border-top-color: rgba(0, 0, 0, 0.08);
-}
-.tevsys-feature-micro-surface .feature-proof-detail--familia-a-close::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: -10%;
-	width: 42%;
-	height: 100%;
-	pointer-events: none;
-	background: radial-gradient(
-		ellipse at right center,
-		rgba(245, 176, 65, 0.11) 0%,
-		rgba(245, 176, 65, 0.045) 42%,
-		transparent 74%
-	);
 }
 .tevsys-feature-micro-surface .feature-proof-detail--familia-a-close:target {
 	background: transparent;
