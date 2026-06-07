@@ -10,7 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 - **Hero 100k:** hook con **7,20 € (0,0072 %)** en ámbar; nota vídeo editado + enlace **Evidencia verificable** (sin acordeón duplicado).
 - **Secundarios:** `--video-slim` (volatilidad, Nasdaq, logs); eliminado bloque redundante «Aquí se decide el cierre».
-- **Cuenta pequeña + stats:** un solo bloque (`--cuenta-bundle`); copy de **precisión al límite −1,50 %** (no importe −42,28 € como desviación); índice `#precision-stats`.
+- **Cuenta pequeña + stats:** desviación documentada **0,06 € (0,002 p.p.)** en hook y bloque capturas (misma línea que hero 100k).
 - **Web:** `features/precision.astro`.
 
 ---
