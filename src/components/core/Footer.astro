@@ -20,19 +20,23 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 	<Container narrow>
 		<div class="footer-top">
 			<div class="footer-top__row">
-				<div class="footer-brand__slot">
-					<slot name="logo" />
+				<div class="footer-top__cell footer-top__cell--brand">
+					<div class="footer-brand__slot">
+						<slot name="logo" />
+					</div>
 				</div>
-				<span class="footer-top__sep" aria-hidden="true">·</span>
-				<a href="mailto:info@tevsys.io" class="footer-contact__item">
-					<img src="/icons/icon-email.svg" alt="" width="18" height="18" />
-					<span>info@tevsys.io</span>
-				</a>
-				<span class="footer-top__sep" aria-hidden="true">·</span>
-				<span class="footer-contact__item footer-contact__item--static">
-					<img src="/icons/icon-location.svg" alt="" width="18" height="18" />
-					<span>Barcelona (Spain)</span>
-				</span>
+				<div class="footer-top__cell footer-top__cell--mail">
+					<a href="mailto:info@tevsys.io" class="footer-contact__item">
+						<img src="/icons/icon-email.svg" alt="" width="18" height="18" />
+						<span>info@tevsys.io</span>
+					</a>
+				</div>
+				<div class="footer-top__cell footer-top__cell--location">
+					<span class="footer-contact__item footer-contact__item--static">
+						<img src="/icons/icon-location.svg" alt="" width="18" height="18" />
+						<span>Barcelona (Spain)</span>
+					</span>
+				</div>
 			</div>
 			{
 				footerSocials.length > 0 && (
@@ -152,18 +156,33 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 	}
 
 	.footer-top__row {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 		align-items: center;
-		gap: 0.45rem 0.65rem;
-		row-gap: 0.55rem;
+		gap: clamp(1.75rem, 4vw, 2.75rem);
+		width: 100%;
+	}
+
+	.footer-top__cell {
+		display: flex;
+		align-items: center;
+		min-width: 0;
+	}
+
+	.footer-top__cell--brand {
+		justify-content: flex-start;
+	}
+
+	.footer-top__cell--mail {
+		justify-content: center;
+	}
+
+	.footer-top__cell--location {
+		justify-content: flex-end;
 	}
 
 	.footer-top__sep {
-		opacity: 0.42;
-		font-size: 1.1rem;
-		line-height: 1;
-		user-select: none;
+		display: none;
 	}
 
 	.footer-brand__slot {
@@ -350,6 +369,17 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 	}
 
 	@media (max-width: 768px) {
+		.footer-top__row {
+			grid-template-columns: 1fr;
+			gap: 0.65rem;
+		}
+
+		.footer-top__cell--brand,
+		.footer-top__cell--mail,
+		.footer-top__cell--location {
+			justify-content: flex-start;
+		}
+
 		.footer-columns {
 			grid-template-columns: 1fr;
 			gap: 1.35rem;
@@ -368,16 +398,6 @@ const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 	}
 
 	@media (max-width: 600px) {
-		.footer-top__sep {
-			display: none;
-		}
-
-		.footer-top__row {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 0.5rem;
-		}
-
 		.footer-independiente {
 			text-align: left;
 		}
