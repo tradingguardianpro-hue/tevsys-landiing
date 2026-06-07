@@ -6,6 +6,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## HyperClose — semáforo cerrado; día OFF alineado y evidencia pendiente (7 jun 2026)
+
+- **Semáforo:** **cerrado** — copy en lista + collage visible + dos enlaces vídeo (demo 2:23 · Nasdaq ~4 min).
+- **Día OFF — tono:** mismo criterio que semáforo (intro con aire, `--video-slim`); **acordeón** «Capturas de los escenarios día OFF» (sin contar escenarios en el label).
+- **Pendiente operativo (fundador, entre semana):** regrabar escenarios en terminal (tevsys con día OFF, intento operar); **collage** composito modal+panel actualizado (ref. semáforo CAP-06b); sustituir PNG/webp en galería; **vídeo** `tevsys-rotacion-automatica-dia-off.mp4` se mantiene.
+- **Web:** `features/hyperclose.astro` · comentario `PENDIENTE` en bloque `#hyperclose-off`.
+
+---
+
 ## HyperClose — collage semáforos visible en micropágina (7 jun 2026)
 
 - **Qué:** captura **CAP-06b** (*hyperclose collage para mql market HECHO.png*) en sección «Semáforo de responsabilidad» — **solo collage + explicación** (sin 2.º vídeo duplicado ni acordeón de 3 modales sueltos: eran capturas antiguas y redundantes vs Market).

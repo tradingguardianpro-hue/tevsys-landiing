@@ -254,28 +254,40 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 ---
 
-## Pendiente evidencia — HyperClose día OFF (después del footer, jun 2026)
+## Pendiente evidencia — HyperClose día OFF (jun 2026)
+
+**Estado:** copy y acordeón alineados al **tono semáforo** (7 jun); **capturas y collage pendientes** — sesión terminal entre semana.
+
+**Cuándo:** fundador programa tevsys con **día OFF**, intenta operar y regraba cada escenario.
+
+**Dónde hoy:** `/features/hyperclose` → `#hyperclose-off` → vídeo rotación + acordeón **«Capturas de los escenarios día OFF»** (sin «5» en el label).
+
+**Objetivo (mismo criterio que semáforo):**
+- **Collage** composito modal+panel visible (como CAP-06b en `#hyperclose-semaphore`) — **pendiente** crear y colgar.
+- **Galería** en acordeón: mismas escenas pero **capturas actualizadas** composito modal+panel (sustituir `hyperclose-dias-off-modal-00` … `-03` + panel).
+- **Vídeo** actual se **mantiene**; copy intro ya alineado.
+
+**Semáforo:** **cerrado** (collage + copy + dos enlaces vídeo).
+
+**Fuentes:** comentario HTML en `hyperclose.astro` · `ARTICULO_MQL5_*` §4.3 · assets `public/images/evidence/hyperclose-dias-off-*`.
+
+**Tareas al abordar:**
+1. Terminal: día OFF + bloquear + intentos operar → capturas composito.
+2. Collage día OFF (ref. Market / semáforo web).
+3. Sustituir PNG + webp; validar acordeón en deploy.
+
+---
+
+## Pendiente evidencia — HyperClose día OFF (después del footer, jun 2026) — **supersedido**
+
+<details>
+<summary>Texto histórico (pre 7 jun)</summary>
 
 **Cuándo:** sesión **Familia A** (micropáginas) **después** de aligerar footer — no mezclar con guías C.
 
 **Dónde hoy:** `/features/hyperclose` → sección **Rotación automática y día OFF** → acordeón «5 escenarios día OFF» (`hyperclose-dias-off-modal-00` … `-03` + panel protegido).
 
-**Problema / oportunidad:**
-- Capturas actuales pueden no seguir el criterio **modal + panel al lado** (composito legible), como la buena pieza del **artículo MQL5 Market** (tres semáforos + panel en una captura, explicados).
-- Objetivo web: **una captura diferenciada por escenario**, cada modal **junto al panel** (no solo modal aislado si confunde).
-- Revisar también galería **semáforo responsabilidad** (3 niveles bloqueo) — mismo criterio si aplica.
-
-**Fuentes de referencia:**
-- `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` §4.3 (modal + semáforo; composición Market).
-- `docs/ARTICULO_MQL5_PORTAL_REVISION_POR_TRAMOS_MAY2026.md` §6 inventario capturas (`art-v2-03-*`).
-- Assets actuales: `public/images/evidence/hyperclose-dias-off-*` · `hyperclose-modal-0*`.
-
-**Tareas al abordar:**
-1. Inventariar qué captura sirve tal cual vs hay que rehacer (composito panel+modal).
-2. Sustituir imágenes + webp; ajustar copy `proof-gallery__desc` si hace falta.
-3. Validar en deploy con fundador (misma pasada que checklist A).
-
----
+</details>
 
 ## Orden de trabajo recomendado (web)
 
@@ -285,7 +297,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
 | 3 | ~~HyperClose aligerado~~ | A | **Cerrado** — canon jun 2026 |
 | 4 | ~~Footer aligerado~~ | — | **Cerrado** 7 jun 2026 |
-| 5 | **HyperClose — capturas día OFF (+ semáforo)** modal+panel | A | Semáforo **hecho** (collage visible) · día OFF pendiente |
+| 5 | **HyperClose — capturas día OFF** modal+panel + collage | A | Semáforo **cerrado** · día OFF copy+acordeón OK · **capturas+collage pendiente** |
 | 6 | Precisión (checklist A + hook cifra) | A | Pendiente |
 | 7 | SML | A | Pendiente |
 | 8 | Evidencia | A | Pendiente |
@@ -311,6 +323,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Fecha | Nota |
 |-------|------|
+| 7 jun 2026 | **HyperClose semáforo cerrado**; día OFF mismo tono + acordeón sin «5»; collage/capturas OFF **pendiente** terminal. |
 | 7 jun 2026 | **HyperClose semáforo:** collage CAP-06b HECHO visible bajo vídeo (3→2→1 + panel). |
 | 7 jun 2026 | **Footer cerrado** — validado fundador; alineación grid; build fix; changelog + V12. |
 | 7 jun 2026 | **`/como-funciona`:** MC-CF-019 fuera de microclips; videoteca 4 huecos; título bloque sin cambio. |

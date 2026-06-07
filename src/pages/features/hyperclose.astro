@@ -271,10 +271,18 @@ const seo = {
 			</figure>
 		</section>
 
+		<!-- PENDIENTE jun 2026: collage día OFF (mismo criterio que #hyperclose-semaphore) + capturas composito modal+panel regrabadas en terminal (tevsys con día OFF, intento operar); mantener vídeo actual y acordeón de escenarios. -->
 		<section id="hyperclose-off" class="feature-proof-detail feature-proof-detail--video-slim">
 			<h3>Rotación automática y día OFF protegido</h3>
-			<p class="feature-proof-subtitle">Cuando cambia el día, tevsys toma el control</p>
-			<p class="feature-proof-lead">Día OFF con límites bloqueados: protección y candado verde desde el primer tick operativo.</p>
+			<div class="hyperclose-semaphore-intro hyperclose-off-intro">
+				<p class="feature-proof-subtitle">Cuando cambia el día, tevsys toma el control</p>
+				<p class="feature-proof-lead hyperclose-semaphore-intro__line">
+					Día OFF con límites bloqueados: candado verde y panel protegido desde el primer tick operativo.
+				</p>
+				<p class="feature-proof-lead hyperclose-semaphore-intro__line">
+					Si aun así intentas operar, el cierre es inmediato y el modal sube de tono — la misma lógica que con límites alcanzados.
+				</p>
+			</div>
 			<div id="hyperclose-off-demo" class="demo-video demo-video--compact hyperclose-off-demo" tabindex="-1">
 				<video id="hyperclose-off-demo-video" controls preload="metadata">
 					<source src="/videos/features/tevsys-rotacion-automatica-dia-off.mp4" type="video/mp4" />
@@ -282,9 +290,9 @@ const seo = {
 				</video>
 			</div>
 			<details class="proof-accordion">
-				<summary class="proof-capture-link">Ver capturas de los 5 escenarios día OFF</summary>
+				<summary class="proof-capture-link">Capturas de los escenarios día OFF</summary>
 				<div class="proof-gallery">
-					<p class="proof-gallery__hint">Configuración + panel protegido + los 3 modales al intentar operar. Haz clic en cada captura para verla en tamaño completo.</p>
+					<p class="proof-gallery__hint">Configuración, panel protegido y modales al intentar operar. Haz clic en cada captura para verla en tamaño completo.</p>
 					<div class="proof-gallery__grid">
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Configuración</p>
