@@ -2144,8 +2144,13 @@ html[data-theme='dark'] .tevsys-feature-micro-surface section.feature-demo.featu
 	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
 }
 
+/* Todos los embeds de vídeo en micros — esquinas redondas (incl. MT5 tema claro / Nasdaq) */
+.tevsys-feature-micro-surface .demo-video {
+	border-radius: var(--feature-micro-radius);
+	overflow: hidden;
+}
+
 html[data-theme='dark'] .tevsys-feature-micro-surface .demo-video:not(.demo-video--light) {
-	border-radius: clamp(0.55rem, 1vw, 0.75rem);
 	padding: 3px;
 	background: linear-gradient(165deg, hsl(220, 11%, 14%) 0%, hsl(222, 14%, 8%) 100%);
 	border: 1px solid rgba(255, 255, 255, 0.14);
@@ -2180,6 +2185,10 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof {
 html[data-theme='dark'] .tevsys-feature-micro-surface .feature-manifesto-banner {
 	border-color: rgba(180, 186, 200, 0.42);
 	background: linear-gradient(135deg, rgba(95, 102, 118, 0.38), rgba(245, 176, 65, 0.1));
+}
+
+.tevsys-feature-micro-surface .feature-cta {
+	border-radius: var(--feature-micro-radius);
 }
 
 html[data-theme='dark'] .tevsys-feature-micro-surface .feature-cta {

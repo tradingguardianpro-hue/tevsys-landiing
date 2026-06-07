@@ -384,7 +384,7 @@ const seo = {
 		content: '';
 		position: absolute;
 		inset: -0.35rem;
-		border-radius: calc(var(--theme-shape-radius) + 2px);
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) + 2px);
 		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
 		pointer-events: none;
 		z-index: 0;
@@ -434,7 +434,7 @@ const seo = {
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
 		padding: 1rem;
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 	}
 	.feature-proof-detail--video-slim {
 		margin-top: clamp(1.25rem, 3vw, 1.75rem);
@@ -549,13 +549,13 @@ const seo = {
 	.demo-placeholder {
 		background: var(--theme-surface-1);
 		border: 1px solid rgba(245, 176, 65, 0.28);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 	}
 	.demo-video {
 		background: #06080d;
 		border: 1px solid rgba(245, 176, 65, 0.3);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		overflow: hidden;
 		margin-bottom: 0.75rem;
 	}
@@ -666,7 +666,7 @@ const seo = {
 	.feature-proof-detail {
 		margin: 1rem 0 0;
 		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 		scroll-margin-top: 5.5rem;
 		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
@@ -786,7 +786,7 @@ const seo = {
 	.proof-gallery {
 		margin: 0.75rem 0 0;
 		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1rem 1.1rem;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 	}
@@ -801,7 +801,7 @@ const seo = {
 		display: block;
 		width: 100%;
 		height: auto;
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 	}
 	.proof-gallery__hint {
 		margin: 0 0 0.75rem;
@@ -880,7 +880,7 @@ const seo = {
 	}
 	.feature-cta {
 		background: var(--theme-surface-1);
-		border-radius: var(--theme-shape-radius);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
 		padding: 1.2rem;
 		border: 1px solid var(--theme-surface-border);
 		box-shadow: var(--theme-surface-elevated-shadow);
