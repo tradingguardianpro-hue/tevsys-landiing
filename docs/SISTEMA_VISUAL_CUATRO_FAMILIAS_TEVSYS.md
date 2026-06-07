@@ -72,7 +72,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | **A — Producto** | **Cerrada (canon HyperClose)** | Validado jun 2026 — fundador. Replicar checklist en Precisión, SML, Evidencia · cards home. |
 | **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable en producción; falta **documentar criterio** como C y A (motion, stages — no copiar en guías). |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
-| **Footer** | **Pendiente** | Momento dedicado **antes** de expandir Familia A a todas las cards home. |
+| **Footer** | **Hecho** | Rediseño 7 jun 2026 — § Footer implementado |
 | **Buscador global** | **Aplazado** | Mail + footer Guías + fork. |
 
 **Archivos clave Familia C:** `src/styles/guia-operativa.css` · `src/pages/instalacion.astro` · `configuracion*.astro`.
@@ -176,7 +176,21 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 ---
 
-## Footer — diagnóstico (jun 2026, pendiente decisión)
+## Footer — implementado (7 jun 2026)
+
+**Job:** mapa Guías + Producto + Legal + contacto. Nav principal **solo header** (sin franja ámbar duplicada).
+
+**Estructura:**
+1. Fila compacta: **tevsys · mail · Barcelona** (horizontal; móvil en columna).
+2. Tres columnas con **más gap** y divisores gris fino (no ámbar).
+3. Guías Adv/Pro: labels cortos (`Config · al instalar` / `Config · en fin de semana`).
+4. **Made with love…** — mismo tamaño; **más aire** (borde superior + padding) antes del copyright.
+
+**Archivos:** `Footer.astro` · `footer.js` · `Page.astro`.
+
+---
+
+## Footer — diagnóstico histórico (jun 2026, pre-rediseño)
 
 **Job:** mapa para quien llega sin mail (Guías + Producto + Legal) y refuerzo de contacto. **No** es Familia A/B/C/D; es **capa global** del layout.
 
@@ -251,7 +265,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | 1 | Canon `/instalacion` + replicar en resto guías | C | **Cerrado** v5.6 |
 | 2 | Avisos cruce guías debajo del embed | C | **Hecho** jun 2026 |
 | 3 | ~~HyperClose aligerado~~ | A | **Cerrado** — canon jun 2026 |
-| 4 | Footer aligerado (sin quitar columnas) | — | Sesión dedicada; ver § Footer |
+| 4 | ~~Footer aligerado~~ | — | **Hecho** 7 jun 2026 |
 | 5 | **HyperClose — capturas día OFF (+ semáforo)** modal+panel | A | **Después footer** — § Pendiente evidencia HyperClose |
 | 6 | Precisión (checklist A + hook cifra) | A | Pendiente |
 | 7 | SML | A | Pendiente |

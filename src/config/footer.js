@@ -1,13 +1,7 @@
 export const footerSocials = [];
 
-/** Enlaces principales — fila superior del footer (no mezclar con guías operativas). */
-export const footerNav = [
-  { title: 'Inicio', slug: '/' },
-  { title: 'Cómo funciona', slug: '/como-funciona' },
-  { title: 'Precios', slug: '/precios' },
-  { title: 'Empresas', slug: '/company/empresas' },
-  { title: 'Contacto', slug: '/company/contact' },
-];
+/** @deprecated Nav principal solo en header (jun 2026). Mantener vacío o eliminar en limpieza theme-setup. */
+export const footerNav = [];
 
 /** Columnas inferiores — guías en orden de embudo + producto + legal. */
 export const footerColumns = [
@@ -24,8 +18,8 @@ export const footerColumns = [
       {
         label: 'Advanced / Pro',
         items: [
-          { title: 'Configuración al instalar de lunes a viernes', slug: '/configuracion-al-instalar' },
-          { title: 'Planificar la semana en sábado o domingo', slug: '/configuracion-fin-de-semana' },
+          { title: 'Config · al instalar (entre semana)', slug: '/configuracion-al-instalar' },
+          { title: 'Config · en fin de semana', slug: '/configuracion-fin-de-semana' },
         ],
       },
     ],
