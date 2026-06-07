@@ -230,7 +230,7 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="evidencia-logs" class="feature-proof-detail feature-proof-detail--video-slim">
+		<section id="evidencia-logs" class="feature-proof-detail">
 			<h3>Guía visual de logs</h3>
 			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
 			<p class="feature-proof-lead">
@@ -638,8 +638,9 @@ const seo = {
 		opacity: 0.88;
 		max-width: 52ch;
 	}
-	.feature-proof-detail--video-slim .demo-video--compact {
-		margin-bottom: 0.5rem;
+	#evidencia-logs .demo-video--compact {
+		margin-top: clamp(1.15rem, 2.8vw, 1.45rem);
+		margin-bottom: 0.65rem;
 	}
 	.demo-edit-note--slim {
 		margin-top: 0.45rem;

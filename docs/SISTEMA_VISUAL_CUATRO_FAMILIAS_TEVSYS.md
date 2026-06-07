@@ -97,7 +97,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
   - `--micro-close-bg` / `--micro-close-border` — cierre Familia A (solo donde aplique, p. ej. `#evidence-audit`); halo ámbar **solo** en ese cierre y en el índice «Qué puedes comprobar» — **no** en cada bloque intermedio.
 - Bloque **índice** (`feature-proof`, «Qué puedes comprobar»): `rgba(255,255,255,0.03)` + **halo** derecho (único bloque intermedio con halo).
 - Bloques **prueba** (`feature-proof-detail` sin `--video-slim`): `--micro-detail-bg`; esquinas redondeadas; padding `~1rem 1.1rem`.
-- Secciones **solo separador** (p. ej. logs Evidencia): `feature-proof-detail--video-slim` — línea superior fina, sin caja.
+- Secciones **solo separador** (`--video-slim`): reservado si hace falta un bloque sin caja; **por defecto** pruebas con vídeo = `feature-proof-detail` + `--micro-detail-bg` (p. ej. logs Evidencia, semáforo HyperClose).
 - Hero vídeo: `--micro-demo-bg`; chrome del embed sin cambiar.
 - CTA demo **solo** al final de la micropágina.
 
