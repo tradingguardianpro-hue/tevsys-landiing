@@ -62,7 +62,7 @@ const seo = {
 				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
 				<li><a class="evidence-link" href="#precision-cuenta-pequena">Mismo criterio con cuenta más pequeña.</a></li>
 				<li><a class="evidence-link" href="#precision-logs">Trazabilidad de eventos en logs auditables.</a></li>
-				<li><a class="evidence-link" href="#precision-stats">Resultados con evidencia visual + resumen técnico.</a></li>
+				<li><a class="evidence-link" href="#precision-stats">Capturas paso a paso del caso extremo en volatilidad (+ PDF resumen).</a></li>
 			</ul>
 		</section>
 
@@ -128,73 +128,82 @@ const seo = {
 			</div>
 		</section>
 
-		<section id="precision-stats" class="feature-proof-detail">
+		<section id="precision-stats" class="feature-proof-detail feature-proof-detail--stats">
 			<h3>Lo que dicen los resultados</h3>
-			<p class="feature-proof-subtitle">Resumen técnico de precisión</p>
-			<p>Evidencia visual primero, y lectura técnica después para quien quiera profundizar sin perder contexto.</p>
+			<p class="feature-proof-subtitle">Caso extremo documentado en capturas</p>
+			<p class="feature-proof-lead feature-proof-lead--stats">
+				Arriba tienes el resumen global (<strong>87 operativas</strong>, error medio <strong>0,06 %</strong> en condiciones normales).
+				Aquí abrimos <strong>una sesión concreta</strong> — la misma del vídeo
+				<a class="evidence-link" href="#precision-volatilidad">Demo en alta volatilidad</a>:
+				GER40, límite +1,50 %, cierre en +1,83 % en un día de volatilidad geopolítica extrema (4 mar 2026).
+			</p>
 			<details id="precision-49-evidence" class="proof-accordion">
-				<summary class="proof-capture-link">Ver evidencia operativa (capturas en orden)</summary>
+				<summary class="proof-capture-link">Capturas paso a paso — misma operativa que el vídeo de volatilidad</summary>
 				<div class="proof-gallery">
-					<h3>Operativa 49 — secuencia visual</h3>
+					<p class="proof-gallery__intro">
+						<strong>Qué vas a ver:</strong> configuración → protección activa → flotante en positivo y negativo → STOP al límite → historial HTML e informe MT5 (datos personales redactados).
+					</p>
 					<p class="proof-gallery__hint">Haz clic en cada captura para verla en tamaño completo.</p>
 					<div class="proof-gallery__grid">
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 1</p>
 							<p class="proof-gallery__title">EA configurado (desbloqueado)</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-01-desbloqueado.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 1 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-01-desbloqueado.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="Operativa 49: EA configurado y desbloqueado antes de activar protección." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-01-desbloqueado.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="Caso volatilidad GER40: EA configurado antes de activar protección." loading="lazy" width="800" height="600" decoding="async" /></picture>
 							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 2</p>
 							<p class="proof-gallery__title">Protección activa (bloqueado)</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-02-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 2 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-02-protegido.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="Operativa 49: EA en modo protegido con bloqueo activo." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-02-protegido.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="Caso volatilidad GER40: EA en modo protegido con bloqueo activo." loading="lazy" width="800" height="600" decoding="async" /></picture>
 							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 3</p>
 							<p class="proof-gallery__title">Flotante intermedio (positivo)</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 3 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-03-flotante-intermedio-positivo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="Operativa 49: flotante intermedio en positivo durante ejecución protegida." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-03-flotante-intermedio-positivo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="Caso volatilidad GER40: flotante intermedio en positivo." loading="lazy" width="800" height="600" decoding="async" /></picture>
 							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 4</p>
 							<p class="proof-gallery__title">Flotante intermedio (negativo)</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 4 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-04-flotante-intermedio-negativo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="Operativa 49: flotante intermedio en negativo durante ejecución protegida." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-04-flotante-intermedio-negativo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="Caso volatilidad GER40: flotante intermedio en negativo." loading="lazy" width="800" height="600" decoding="async" /></picture>
 							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Paso 5</p>
 							<p class="proof-gallery__title">STOP y cierre en límite</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-05-stop-final.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura Paso 5 en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-05-stop-final.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="Operativa 49: STOP por límite alcanzado y cierre automático." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-05-stop-final.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="Caso volatilidad GER40: STOP por límite alcanzado y cierre automático." loading="lazy" width="800" height="600" decoding="async" /></picture>
 							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Validación A</p>
 							<p class="proof-gallery__title">HTML de transacciones</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-06-html-transacciones-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir validación A en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-06-html-transacciones-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="Operativa 49: transacciones en ReportHistory con total y balance final." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-06-html-transacciones-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="Caso volatilidad GER40: transacciones en ReportHistory (redactado)." loading="lazy" width="800" height="600" decoding="async" /></picture>
 							</a>
 						</article>
 						<article class="proof-gallery__item">
 							<p class="proof-gallery__step">Validación B</p>
 							<p class="proof-gallery__title">Resumen oficial MT5</p>
 							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-07-mt5-resumen-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir validación B en tamaño completo">
-								<picture><source type="image/webp" srcset="/images/evidence/precision-49-07-mt5-resumen-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="Operativa 49: resumen oficial MT5 con métricas de cierre." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-07-mt5-resumen-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="Caso volatilidad GER40: resumen oficial MT5 (redactado)." loading="lazy" width="800" height="600" decoding="async" /></picture>
 							</a>
 						</article>
 					</div>
 				</div>
 			</details>
-			<p class="proof-context-note">Nota: en este panel, "Bloqueado hasta" equivale a "Protección activa hasta".</p>
-			<p><strong>Cómo validarlo:</strong> Revisa el resumen técnico (PDF) para profundizar.</p>
+			<p class="proof-context-note">En el panel, «Protegido hasta» = protección activa hasta la hora indicada.</p>
 			<p class="proof-links-row">
 				<a class="proof-capture-link" href="/docs/precision-resumen-tecnico-v3-final.pdf" target="_blank" rel="noopener noreferrer">
-					Ver resumen técnico <span class="proof-link-meta">PDF</span>
+					Resumen técnico ampliado <span class="proof-link-meta">PDF</span>
+				</a>
+				<a class="proof-capture-link" href="/features/evidencia#evidencia-informe-mt5">
+					Más operativas en Evidencia verificable
 				</a>
 			</p>
 			<p class="proof-note">Publicamos resultados verificables y trazabilidad. La fórmula propietaria no es pública.</p>
@@ -227,7 +236,8 @@ const seo = {
 		});
 	}
 	function openEvidenceIfTarget() {
-		if (window.location.hash !== '#precision-49-evidence') return;
+		const hash = window.location.hash;
+		if (hash !== '#precision-49-evidence' && hash !== '#precision-stats') return;
 		const details = document.getElementById('precision-49-evidence');
 		if (details && details.tagName === 'DETAILS') details.setAttribute('open', '');
 	}
@@ -659,6 +669,23 @@ const seo = {
 		flex-wrap: wrap;
 		gap: 0.8rem;
 		margin-top: 0.45rem;
+	}
+	.feature-proof-lead--stats {
+		margin: 0 0 0.85rem;
+		max-width: 58ch;
+		line-height: 1.55;
+		font-size: 0.94rem;
+		opacity: 0.9;
+	}
+	.feature-proof-lead--stats .evidence-link {
+		font-style: normal;
+	}
+	.proof-gallery__intro {
+		margin: 0 0 0.55rem;
+		font-size: 0.92rem;
+		line-height: 1.5;
+		opacity: 0.88;
+		max-width: 58ch;
 	}
 	.proof-note {
 		margin-top: 0.55rem !important;
