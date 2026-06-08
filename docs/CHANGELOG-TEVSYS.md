@@ -6,6 +6,30 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+---
+
+## Cierre sesión web — Familia A piel carbón (8 jun 2026, validado fundador)
+
+**Resumen en una frase:** fin del gris opaco; carbón translúcido en producto; home + micros + footer + CTA alineados.
+
+| Área | Qué quedó |
+|------|-----------|
+| **Tokens** | `--micro-detail-*`, `--micro-demo-*`, `--micro-close-*` en `global.css` |
+| **Micros** | HyperClose, Evidencia, Precisión, SML — cajas prueba carbón; halo solo «Qué puedes comprobar» (+ cierre Evidencia) |
+| **Home** | Microcards + plan cards `hsl(222…)`; cita fundador respira |
+| **Footer** | `--theme-bg` + fade en home **y** micropáginas |
+| **CTA final** | Opción **B** — separador ligero; **no** subir línea (decisión fundador) |
+
+**Pendiente (contenido, no piel):** capturas HyperClose día OFF · SML Fase 2 vídeos post P12.
+
+**Commits sugeridos (batch):**
+```
+web(tevsys): pasada carbon familia A micros home footer y cta B
+docs(tevsys): cierra canon visual familia A jun 2026
+```
+
+---
+
 ## CTA micropáginas — separador ligero opción B (8 jun 2026)
 
 - **Qué:** fin caja `--theme-surface-1` en `.feature-cta`; línea superior + aire + botón ámbar; transición al footer `--theme-bg`.
@@ -17,7 +41,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## SML — piel carbón Familia A (8 jun 2026)
 
 - **Qué:** hero panel `--micro-demo-bg`; bloques prueba carbón; tarjetas captura vía tokens global; fin overrides locales en `sml-proof-card`.
-- **Sin tocar:** banner validación Advanced/Pro, copy, CTA final (pendiente § CTA micropáginas).
+- **Sin tocar:** banner validación Advanced/Pro, copy.
 - **Archivos:** `sml.astro` · `global.css`.
 
 ---

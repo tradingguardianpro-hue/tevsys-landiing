@@ -72,7 +72,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 | **A — Producto** | **Familia A piel carbón cerrada (8 jun)** — HyperClose, Evidencia, Precisión, SML + home + footer micros | § Pasada carbón jun 2026. |
 | **B — Narrativa** | **Pendiente definir** | `/como-funciona` estable; videoteca **4 huecos** (MC-CF-019 fuera); criterio microclip vs guía documentado en V12 + catálogo. |
 | **D — Editorial** | **Estable** | Shell propio; solo copy cuando toque roadmap. |
-| **Footer** | **Cerrado** | Estructura **7 jun** · home integrado **8 jun** (`--theme-bg` + fade) — § Footer + § Pasada carbón |
+| **Footer** | **Cerrado** | Estructura **7 jun** · `--theme-bg` home + micros Familia A (**8 jun**) |
 | **Home (cards + planes + cita fundador)** | **Cerrado** | Validado fundador **8 jun 2026** — § Pasada carbón jun 2026 |
 | **Buscador global** | **Aplazado** | Mail + footer Guías + fork. |
 
@@ -102,12 +102,13 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 - Hero vídeo: `--micro-demo-bg`; chrome del embed sin cambiar.
 - CTA demo **solo** al final de la micropágina.
 
-**Estado (8 jun 2026):**
-- **Piel carbón cerrada:** HyperClose, Evidencia, Precisión, **SML**, home (microcards + plan cards + footer integrado).
-- **Pendiente diseño (propuesta):** ~~bloque CTA final~~ **cerrado** — opción B separador ligero (`global.css`).
+**Estado (8 jun 2026):** **Familia A piel visual cerrada** (fundador valida CTA opción B sin retocar línea separadora).
+
+- **Piel carbón cerrada:** HyperClose, Evidencia, Precisión, SML, home (microcards + plan cards + footer integrado).
+- **CTA final:** opción **B** separador ligero — validado fundador; **sin** subir opacidad línea (criterio: caja carbón de arriba ya separa).
 - **Contenido HyperClose:** capturas día OFF en terminal — copy/collage OK.
 
-**Canon de referencia (jun 2026):** `/features/hyperclose` + `/features/evidencia` + **`/features/precision`**. **Siguiente clone:** `/features/sml`.
+**Canon de referencia (jun 2026):** las cuatro micros + home. **Pendiente contenido (no piel):** HyperClose capturas OFF · SML Fase 2 post P12.
 
 **SML — criterio web mientras validación EA (P12):**
 - **Sí:** misma piel (radios, manifesto, índice «Qué puedes comprobar», tarjetas redondas, CTA); aviso **Advanced/Pro · validación en curso** visible; capturas actuales en `<details>` donde aplique.
@@ -120,7 +121,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 3. Índice «Qué puedes comprobar» (`feature-proof`) — **cálido + halo** (único halo intermedio salvo cierre especial Evidencia).
 4. Pruebas secundarias: `feature-proof-detail` con **`--micro-detail-bg`** (semáforo, capturas, informe…) · título + lead + vídeo/collage + `<details>` si aplica · **sin halo**.
 5. Cierre opcional Familia A (Evidencia): `--micro-close-bg` + halo — **no** obligatorio en todas las micros.
-6. CTA demo al final.
+6. **CTA demo** al final: **opción B** — separador ligero (línea superior + aire + botón); **sin** caja `--theme-surface-1`.
 7. **Prohibido:** `--theme-surface-1` opaco / gris rancio neutro; halos en cada bloque; repetir el hero en párrafos largos.
 
 **Hook demo HyperClose (canon copy):** `15 lotes · GER40 · límite −1 % · desviación 1,31 € · Apertura Wall Street · HyperClose en 3 niveles.` — cifra y «HyperClose en 3 niveles» en **ámbar** (`feature-title__accent`); encima del embed.
@@ -390,6 +391,7 @@ Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.m
 
 | Fecha | Nota |
 |-------|------|
+| 8 jun 2026 | **Familia A piel visual cerrada** — carbón 4 micros + home + footer micros + CTA opción B validada; línea separadora CTA **sin retocar** (fundador). |
 | 8 jun 2026 | **Precisión piel carbón cerrada** — volatilidad, Nasdaq, logs y cuenta pequeña en cajas; hero sin ::before; halo solo checklist. |
 | 8 jun 2026 | **Pasada carbón Familia A + home cerrada** — HyperClose, Evidencia, microcards, plan cards, footer home integrado; cita fundador recupera protagonismo; **siguiente:** SML piel. |
 | 7 jun 2026 | **HyperClose semáforo cerrado**; día OFF mismo tono + acordeón sin «5»; collage/capturas OFF **pendiente** terminal. |
