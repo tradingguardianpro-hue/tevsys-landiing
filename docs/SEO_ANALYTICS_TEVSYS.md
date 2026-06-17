@@ -60,6 +60,65 @@ Documento técnico para desarrolladores e ingenieros.
 
 Gratis en plan Hobby.
 
+### 3.1 Tráfico propio — no se puede “reiniciar”; sí limpiar hacia delante (jun 2026)
+
+**Acuerdo fundador (15 jun 2026):** implementar en **próxima sesión web larga** (junto a 4.89 y mejoras). **Prioridad producto > web** hasta ese día; este apartado es el canon operativo.
+
+**No existe** botón en Vercel para **borrar o reiniciar** el histórico en el mismo proyecto (Vercel community — sin ETA para exclusión permanente en dashboard).
+
+**Lectura honesta (may 16 – jun 14):** ~76 visitantes / ~796 page views → **~10 PV/visitante** = revisión propia (PC + móvil). **mql5.com (7)** y **google.com (5)** incluyen probablemente al fundador (Market, pruebas). **Países** (ES ~83 %, US ~12 %, FR ~4 %, CA ~1 %) = volumen bajo; útil como **alerta** para preparar web (copy EN futuro, carga rápida, claims claros), no como KPI de crecimiento.
+
+---
+
+#### Los tres puntos (canon — sesión web)
+
+| # | Qué | Para qué |
+|---|-----|----------|
+| **1** | **Línea base** — métricas interpretables solo desde **16 jun 2026** | Pasado contaminado; no usar top pages / países del mes previo como embudo |
+| **2** | **Opt-out fundador** — `beforeSend` en `Base.astro` + `localStorage va-disable` en PC y móvil | Tus visitas **dejan de contarse** hacia delante |
+| **3** | **QA en preview** — diseño en `*.vercel.app`; `www.tevsys.io` solo tráfico real o con opt-out | Menos ruido mientras revisas |
+
+---
+
+#### Implementación pendiente — opt-out (`Base.astro`)
+
+```js
+import { inject } from '@vercel/analytics';
+
+inject({
+  beforeSend: (event) => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('va-disable')) {
+      return null;
+    }
+    return event;
+  },
+});
+```
+
+**Tras deploy — una vez por navegador del fundador** (consola en `www.tevsys.io`):
+
+```js
+localStorage.setItem('va-disable', '1');
+```
+
+**Reactivar** en ese navegador (prueba): `localStorage.removeItem('va-disable');`
+
+**Validar:** con `va-disable` activo, tus visitas no deben subir visitantes en Vercel; incógnito sin flag sí cuenta.
+
+**Commit:** `web(tevsys): analytics opt-out va-disable para QA fundador`
+
+---
+
+#### Sesión web larga — orden sugerido
+
+1. Analytics opt-out (§3.1) — ~15 min  
+2. Bloque 4.89 Evidencia — `docs/HANDOFF_4.89_CONTENCION_WEB_TEVSYS.md` §13 (capturas fundador)  
+3. Resto de cola web del día  
+
+**Puntero repo TGP:** `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Sesión web larga*.
+
+**No usar** Analytics como KPI comercial hasta varias semanas **post opt-out**.
+
 ---
 
 ## 4. Google Search Console
