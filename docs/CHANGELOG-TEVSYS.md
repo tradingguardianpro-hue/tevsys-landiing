@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — esquema 2j velas + tagline (19 jun 2026)
+
+**Qué:** dos líneas pilares flotantes · acto 2 disclaimer · velas ambient + marquee gris · KITT intacto.
+
+**Commit sugerido:** `web(tevsys): hero 2j pilares flotantes velas tagline edge`
+
+---
+
 ## Hero home — esquema 2g pill fino (19 jun 2026)
 
 **Qué:** pill ancho (`hero-pill-strip`) · 4 pilares una línea desktop · sep gris · disclaimer fuera · móvil wrap sin scroll horizontal.

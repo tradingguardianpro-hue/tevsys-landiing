@@ -2,19 +2,19 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2i** — **una línea flotante** sin marco · Outfit · aire H1↔pilares↔disclaimer.
+**Activo en web:** **esquema 2j** — dos líneas flotantes sin marco · acto 2 disclaimer · velas + tagline gris sobre mano.
 
 ---
 
-## Esquema 2i (activo — 19 jun 2026)
+## Esquema 2j (activo — 19 jun 2026)
 
-- **Sin batch/pill/marco** — `hero-pillars-line` suelta entre H1 y bloque acción.
-- **Una línea** forzada (nowrap + escala tipográfica) · **Inter 500** (no Outfit).
-- **Acto 1:** H1 + línea pilares · **pausa** · **Acto 2:** disclaimer (más presencia) + CTAs.
+- **Acto 1:** H1 + `hero-pillars-float` (2 frases sueltas, sin batch).
+- **Pausa** → **Acto 2:** disclaimer + CTAs (más aire disclaimer↔botones).
+- **Motion nuevo (KITT intacto):** `hero-velas-ambient` + `hero-edge-strip` (marquee gris) antes de la mano.
 
 ---
 
-## Esquema 2h (supersedido — marco dos líneas)
+## Esquema 2i (supersedido — una línea flotante)
 
 ## Esquema 2f (supersedido por 2g — validado fundador 18:30)
 
