@@ -2,18 +2,19 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2d** (`data-hero-layout="scheme-2d"`).
+**Activo en web:** **esquema 2e** — H1 con aire · bloque 2 líneas + disclaimer · aire · CTAs.
 
 ---
 
-## Esquema 2d (activo — 19 jun 2026)
+## Esquema 2e (activo — 19 jun 2026)
 
-- Badge **Where precision meets the edge** **retirado** del DOM (vuelve en **motion** en paso siguiente — **sin tocar KITT** ni `tevsys-home-kitt-rect`).
-- **H1** más grande y más aire bajo las dos líneas del titular.
-- **Pill** cuatro pilares: separadores **gris** (no ámbar); más margen respecto al H1.
-- Orden: H1 → pill → disclaimer → CTAs → mano → TEVS → MT5 abajo.
-
-**Pendiente (siguiente chat):** marquee gris + textura velas detrás de franja mano — capa nueva, `MOTION_HOME` § ampliación.
+- **H1** con `margin-bottom` grande (titular aislado).
+- **Bloque producto** (`hero-product-block`): dos líneas iguales + disclaimer dentro del mismo marco fino (no pill horizontal largo).
+  - L1: Disciplina automatizada · Trazabilidad verificable
+  - L2: Precisión de cierre de operaciones · Protección activa en MT5
+  - Disclaimer debajo, mismo bloque.
+- **Aire** antes de CTAs (`margin-top` ~2–3.35rem).
+- Sin badge tagline (motion pendiente; **KITT intacto**).
 
 ---
 
