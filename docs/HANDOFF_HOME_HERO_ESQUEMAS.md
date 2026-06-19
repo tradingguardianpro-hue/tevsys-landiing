@@ -8,7 +8,9 @@
 
 ## Esquema 2k (activo — 19 jun 2026)
 
-- H1 → **`hero-edge-strip`**: 5 frases en bucle (precisión operativa · disciplina · trazabilidad · MT5 · tagline EN).
+- H1 → **`hero-edge-strip`**: 5 frases en bucle (mayúscula inicial · ~14 px · contraste ~72% · sin minúsculas forzadas).
+- **`hero-disclaimer`:** DM Sans (misma familia que H1), ~15 px, gris claro legible.
+- Espacio H1 → acto 2 reducido (marquee más cerca de disclaimer + CTAs).
 - **TEVS** (`hero-image__brand`) **dentro** de `hero-image__media`, posicionado en la franja negra inferior del PNG (`position: absolute`, opacidad ~0.15–0.17), no en el padding gris del wrapper.
 - Sin velas · KITT intacto.
 

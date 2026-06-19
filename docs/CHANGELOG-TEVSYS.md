@@ -8,6 +8,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — esquema 2k refino marquee + disclaimer (19 jun 2026)
+
+**Qué:** marquee ~14 px, contraste ~72%, mayúscula inicial (sin lowercase forzado) · disclaimer DM Sans alineado al H1 · menos aire entre franja y acto 2 · TEVS overlay franja negra.
+
+**Handoff:** `docs/HANDOFF_HOME_HERO_ESQUEMAS.md`
+
+**Commit sugerido:** `web(tevsys): hero 2k marquee legible disclaimer DM Sans menos hueco`
+
+---
+
 ## Hero home — esquema 2j velas + tagline (19 jun 2026)
 
 **Qué:** dos líneas pilares flotantes · acto 2 disclaimer · velas ambient + marquee gris · KITT intacto.
