@@ -10,7 +10,7 @@
 
 - **Sin batch/pill/marco** — `hero-pillars-line` suelta entre H1 y bloque acción.
 - **Una línea** forzada (nowrap + escala tipográfica) · **Inter 500** (no Outfit).
-- Separación horizontal similar · mucho aire antes de disclaimer+CTAs.
+- **Acto 1:** H1 + línea pilares · **pausa** · **Acto 2:** disclaimer (más presencia) + CTAs.
 
 ---
 
