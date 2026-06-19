@@ -2,6 +2,7 @@
 import { Container } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
+import { Fragment } from 'astro/jsx-runtime';
 
 const heroMarqueePhrases = [
   'Precisión de cierre en tu operativa',
@@ -27,19 +28,12 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
         <div class="hero-edge-strip" aria-label="Capas del producto tevsys">
           <div class="hero-edge-strip__track">
             {heroMarqueeLoop.map((phrase, index) => (
-              <>
-                <span
-                  class:list={[
-                    'hero-edge-strip__phrase',
-                    { 'hero-edge-strip__phrase--en': phrase === 'Where precision meets the edge' },
-                  ]}
-                >
-                  {phrase}
-                </span>
+              <Fragment key={`${phrase}-${index}`}>
+                <span class="hero-edge-strip__phrase">{phrase}</span>
                 {index < heroMarqueeLoop.length - 1 && (
-                  <span class="hero-edge-strip__dot" aria-hidden="true">·</span>
+                  <span class="hero-edge-strip__sep" aria-hidden="true">·</span>
                 )}
-              </>
+              </Fragment>
             ))}
           </div>
         </div>
@@ -184,26 +178,31 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
   .hero-edge-strip__track {
     display: flex;
     align-items: center;
-    gap: clamp(1.75rem, 4vw, 2.75rem);
+    gap: clamp(0.55rem, 1.35vw, 0.95rem) clamp(1.15rem, 2.5vw, 1.85rem);
     width: max-content;
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-size: clamp(0.75rem, 1.15vw, 0.84375rem);
+    font-size: var(--hero-disclaimer-font-size);
     font-weight: 500;
-    letter-spacing: 0.04em;
-    color: rgba(196, 200, 210, 0.68);
+    line-height: 1.4;
+    letter-spacing: 0.015em;
+    color: rgba(244, 246, 248, 0.62);
     white-space: nowrap;
   }
 
-  .hero-edge-strip__phrase--en {
+  .hero-edge-strip__phrase {
+    flex-shrink: 0;
+  }
+
+  .hero-edge-strip__sep {
+    flex-shrink: 0;
+    color: rgba(186, 190, 202, 0.38);
     font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: lowercase;
-    color: rgba(186, 190, 202, 0.58);
+    user-select: none;
   }
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-edge-strip__track {
-      animation: hero-edge-marquee 58s linear infinite;
+      animation: hero-edge-marquee 96s linear infinite;
     }
   }
 
@@ -214,14 +213,6 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
     to {
       transform: translateX(-50%);
     }
-  }
-
-  .hero-edge-strip__dot {
-    flex-shrink: 0;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: rgba(186, 190, 202, 0.35);
   }
 
   .hero-action-block {
@@ -465,8 +456,7 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
     }
 
     .hero-edge-strip__track {
-      font-size: clamp(0.6875rem, 2.35vw, 0.78rem);
-      letter-spacing: 0.085em;
+      gap: 0.45rem clamp(0.85rem, 2.2vw, 1.35rem);
     }
 
     .hero-action-block {
