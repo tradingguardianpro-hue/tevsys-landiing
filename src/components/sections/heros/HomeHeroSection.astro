@@ -5,7 +5,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2c">
+  <section class="hero-section__section" data-hero-layout="scheme-2d">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -34,12 +34,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
           <a href="/como-funciona?play=1#evidencia-nasdaq-100" class="hero-audit-btn">
             Ver evidencia (~4 min)
           </a>
-        </div>
-        <div class="hero-tagline-wrap">
-          <div class="hero-tagline">
-            <span class="hero-tagline__dot"></span>
-            <span class="hero-tagline__text">Where precision meets the edge</span>
-          </div>
         </div>
         {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
       </div>
@@ -123,19 +117,19 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   .hero-title {
     font-family: var(--tevsys-display-title-font, 'DM Sans', 'Inter', system-ui, sans-serif);
     font-weight: var(--tevsys-display-title-weight, 600);
-    font-size: clamp(1.85rem, calc(4.9vw + 0.55rem), 4rem);
-    line-height: 1.08;
+    font-size: clamp(2rem, calc(5.4vw + 0.5rem), 4.35rem);
+    line-height: 1.06;
     letter-spacing: var(--tevsys-display-title-tracking, -0.03em);
     margin: 0;
     width: 100%;
-    max-width: min(40rem, 100%);
+    max-width: min(42rem, 100%);
     margin-inline: auto;
     color: #f4f6f8;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.12em;
+    gap: 0.22em;
     text-wrap: balance;
   }
 
@@ -155,19 +149,19 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 0.35rem 0.45rem;
+    gap: 0.35rem 0.5rem;
     max-width: min(54rem, 100%);
-    margin: clamp(1rem, 3vw, 1.65rem) 0 0;
-    padding: 0.42rem clamp(0.85rem, 2.2vw, 1.35rem);
+    margin: clamp(1.65rem, 4.5vw, 2.75rem) 0 0;
+    padding: 0.48rem clamp(1rem, 2.4vw, 1.5rem);
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.04);
-    font-size: clamp(0.6875rem, 1.35vw, 0.875rem);
+    background: rgba(255, 255, 255, 0.03);
+    font-size: clamp(0.6875rem, 1.32vw, 0.875rem);
     font-weight: 500;
-    line-height: 1.35;
+    line-height: 1.38;
     letter-spacing: -0.01em;
-    color: rgba(244, 246, 248, 0.88);
+    color: rgba(244, 246, 248, 0.84);
     text-align: center;
     white-space: nowrap;
   }
@@ -178,13 +172,13 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
   .hero-pillars__sep {
     flex-shrink: 0;
-    color: rgba(245, 176, 65, 0.75);
-    font-weight: 600;
+    color: rgba(186, 190, 202, 0.55);
+    font-weight: 400;
     user-select: none;
   }
 
   .hero-disclaimer {
-    margin: clamp(0.85rem, 2.4vw, 1.15rem) 0 0;
+    margin: clamp(1rem, 2.8vw, 1.35rem) 0 0;
     max-width: min(32rem, 100%);
     width: 100%;
     padding: 0 0.25rem;
@@ -198,25 +192,17 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-wrap: balance;
   }
 
-  .hero-tagline-wrap {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: clamp(1.1rem, 3vw, 1.5rem);
-    margin-bottom: 0;
-  }
-
-  .hero-download-btn {
-    gap: 0.5rem;
-  }
-
   .hero-cta-row {
-    margin-top: clamp(1.35rem, 3.8vw, 2rem);
+    margin-top: clamp(1.5rem, 4.2vw, 2.35rem);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.7rem;
     flex-wrap: wrap;
+  }
+
+  .hero-download-btn {
+    gap: 0.5rem;
   }
 
   .hero-cta-row .hero-download-btn {
@@ -261,33 +247,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     width: 100%;
   }
 
-  .hero-tagline {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    padding: 0.38rem 0.85rem;
-    margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.03);
-  }
-
-  .hero-tagline__dot {
-    width: 14px;
-    height: 14px;
-    background: #f5b041;
-    border-radius: 50%;
-    flex-shrink: 0;
-    opacity: 0.9;
-  }
-
-  .hero-tagline__text {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    color: rgba(244, 246, 248, 0.78);
-  }
-
   .hero-section__image {
     --hero-image-radius: clamp(1.2rem, 3.2vw, 2rem);
     display: flex;
@@ -296,7 +255,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     justify-content: flex-start;
     flex: 1 1 auto;
     min-height: 0;
-    margin-top: clamp(1.25rem, 3vw, 2rem);
+    margin-top: clamp(1.75rem, 4.5vw, 2.85rem);
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -415,12 +374,14 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
 
     .hero-title {
-      font-size: clamp(1.65rem, calc(5.2vw + 0.4rem), 2.85rem);
-      line-height: 1.1;
+      font-size: clamp(1.85rem, calc(5.5vw + 0.35rem), 3rem);
+      line-height: 1.08;
+      gap: 0.18em;
       padding-inline: 0.15rem;
     }
 
     .hero-pillars {
+      margin-top: clamp(1.35rem, 5vw, 1.85rem);
       flex-wrap: wrap;
       white-space: normal;
       max-width: min(22rem, 94vw);
@@ -437,8 +398,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
     .hero-pillars__item:not(:last-child)::after {
       content: ' ·';
-      color: rgba(245, 176, 65, 0.75);
-      font-weight: 600;
+      color: rgba(186, 190, 202, 0.55);
+      font-weight: 400;
     }
 
     .hero-disclaimer {
@@ -453,6 +414,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
     .hero-section__image {
       flex: 1 1 auto;
+      margin-top: clamp(1.5rem, 5vw, 2.25rem);
     }
 
     .hero-platform-note {

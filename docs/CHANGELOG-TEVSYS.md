@@ -8,7 +8,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Hero home — esquema 2b (19 jun 2026)
+## Hero home — esquema 2d (19 jun 2026)
+
+**Qué:** sin badge tagline · H1 más aire · pill gris · KITT intacto. Tagline motion → paso siguiente.
+
+---
 
 **Qué:** cuatro pilares mismo peso · disclaimer legible · nota MT5 bajo mano/TEVS.
 

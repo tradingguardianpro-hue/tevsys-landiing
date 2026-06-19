@@ -2,17 +2,24 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2c** (`data-hero-layout="scheme-2c"`).
+**Activo en web:** **esquema 2d** (`data-hero-layout="scheme-2d"`).
 
 ---
 
-## Esquema 2c (activo — 19 jun 2026)
+## Esquema 2d (activo — 19 jun 2026)
 
-Pill alargado fino · **cuatro pilares en una línea** (desktop) · separadores ámbar `·`.
+- Badge **Where precision meets the edge** **retirado** del DOM (vuelve en **motion** en paso siguiente — **sin tocar KITT** ni `tevsys-home-kitt-rect`).
+- **H1** más grande y más aire bajo las dos líneas del titular.
+- **Pill** cuatro pilares: separadores **gris** (no ámbar); más margen respecto al H1.
+- Orden: H1 → pill → disclaimer → CTAs → mano → TEVS → MT5 abajo.
 
-Orden: Disciplina automatizada · Precisión de cierre · Trazabilidad verificable · Protección activa en MT5.
+**Pendiente (siguiente chat):** marquee gris + textura velas detrás de franja mano — capa nueva, `MOTION_HOME` § ampliación.
 
-Móvil: pill más compacto, texto envuelve dentro del badge (sin forzar una línea estrecha).
+---
+
+## Esquema 2c (supersedido por 2d)
+
+Pill una línea · badge tagline visible · sep ámbar.
 
 ---
 
