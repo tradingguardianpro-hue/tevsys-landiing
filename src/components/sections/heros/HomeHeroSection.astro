@@ -2,6 +2,15 @@
 import { Container } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
+
+const heroMarqueePhrases = [
+  'Precisión de cierre en tu operativa',
+  'Disciplina automatizada',
+  'Trazabilidad verificable',
+  'Protección activa en MT5',
+  'Where precision meets the edge',
+];
+const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
 ---
 
 <Container>
@@ -17,13 +26,21 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
         </h1>
         <div class="hero-edge-strip" aria-label="Capas del producto tevsys">
           <div class="hero-edge-strip__track">
-            <span class="hero-edge-strip__phrase">Where precision meets the edge</span>
-            <span class="hero-edge-strip__dot" aria-hidden="true"></span>
-            <span class="hero-edge-strip__phrase">precisión · disciplina · trazabilidad verificable</span>
-            <span class="hero-edge-strip__dot" aria-hidden="true"></span>
-            <span class="hero-edge-strip__phrase">Where precision meets the edge</span>
-            <span class="hero-edge-strip__dot" aria-hidden="true"></span>
-            <span class="hero-edge-strip__phrase">precisión · disciplina · trazabilidad verificable</span>
+            {heroMarqueeLoop.map((phrase, index) => (
+              <>
+                <span
+                  class:list={[
+                    'hero-edge-strip__phrase',
+                    { 'hero-edge-strip__phrase--en': phrase === 'Where precision meets the edge' },
+                  ]}
+                >
+                  {phrase}
+                </span>
+                {index < heroMarqueeLoop.length - 1 && (
+                  <span class="hero-edge-strip__dot" aria-hidden="true">·</span>
+                )}
+              </>
+            ))}
           </div>
         </div>
         <div class="hero-action-block">
@@ -171,16 +188,22 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     width: max-content;
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     font-size: clamp(0.75rem, 1.15vw, 0.84375rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(196, 200, 210, 0.68);
+    white-space: nowrap;
+  }
+
+  .hero-edge-strip__phrase--en {
     font-weight: 400;
     letter-spacing: 0.1em;
     text-transform: lowercase;
-    color: rgba(196, 200, 210, 0.62);
-    white-space: nowrap;
+    color: rgba(186, 190, 202, 0.58);
   }
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-edge-strip__track {
-      animation: hero-edge-marquee 44s linear infinite;
+      animation: hero-edge-marquee 58s linear infinite;
     }
   }
 

@@ -8,7 +8,7 @@
 
 ## Esquema 2k (activo — 19 jun 2026)
 
-- H1 → **`hero-edge-strip`** (sustituye cuatro pilares estáticos) → pausa → disclaimer + CTAs → mano.
+- H1 → **`hero-edge-strip`**: 5 frases en bucle (precisión operativa · disciplina · trazabilidad · MT5 · tagline EN).
 - **TEVS** en **`hero-image__wrapper`**, debajo de la foto (negro puro del marco), no sobre el gráfico.
 - Sin velas · KITT intacto.
 
