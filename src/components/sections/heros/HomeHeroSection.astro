@@ -5,7 +5,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2b">
+  <section class="hero-section__section" data-hero-layout="scheme-2c">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -15,11 +15,14 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             <span class="hero-title__brand">TEVSYS</span> los blinda.
           </span>
         </h1>
-        <p class="hero-subline hero-subline--pillar">
-          Disciplina automatizada · Trazabilidad verificable
-        </p>
-        <p class="hero-subline hero-subline--pillar">
-          Precisión de cierre de operaciones · Protección activa en MT5
+        <p class="hero-pillars" aria-label="Capas del producto tevsys">
+          <span class="hero-pillars__item">Disciplina automatizada</span>
+          <span class="hero-pillars__sep" aria-hidden="true">·</span>
+          <span class="hero-pillars__item">Precisión de cierre de operaciones</span>
+          <span class="hero-pillars__sep" aria-hidden="true">·</span>
+          <span class="hero-pillars__item">Trazabilidad verificable</span>
+          <span class="hero-pillars__sep" aria-hidden="true">·</span>
+          <span class="hero-pillars__item">Protección activa en MT5</span>
         </p>
         <p class="hero-disclaimer">
           No damos señales ni promesas de beneficio.
@@ -143,31 +146,41 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-decoration: none;
   }
 
-  .hero-subline {
-    width: 100%;
-    max-width: min(38rem, 100%);
-    margin: 0;
-    padding: 0 0.25rem;
+  .hero-pillars {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem 0.45rem;
+    max-width: min(54rem, 100%);
+    margin: clamp(1rem, 3vw, 1.65rem) 0 0;
+    padding: 0.42rem clamp(0.85rem, 2.2vw, 1.35rem);
     box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    font-size: clamp(0.6875rem, 1.35vw, 0.875rem);
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: rgba(244, 246, 248, 0.88);
     text-align: center;
-    text-wrap: balance;
-    letter-spacing: -0.02em;
+    white-space: nowrap;
   }
 
-  .hero-subline--pillar {
-    margin-top: clamp(0.55rem, 1.8vw, 0.72rem);
-    font-size: clamp(1rem, 2.65vw, 1.55rem);
+  .hero-pillars__item {
+    flex-shrink: 0;
+  }
+
+  .hero-pillars__sep {
+    flex-shrink: 0;
+    color: rgba(245, 176, 65, 0.75);
     font-weight: 600;
-    line-height: 1.38;
-    color: rgba(244, 246, 248, 0.94);
-  }
-
-  .hero-subline--pillar:first-of-type {
-    margin-top: clamp(1.1rem, 3.2vw, 1.85rem);
+    user-select: none;
   }
 
   .hero-disclaimer {
-    margin: clamp(1rem, 2.8vw, 1.35rem) 0 0;
+    margin: clamp(0.85rem, 2.4vw, 1.15rem) 0 0;
     max-width: min(32rem, 100%);
     width: 100%;
     padding: 0 0.25rem;
@@ -398,13 +411,25 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       padding-inline: 0.15rem;
     }
 
-    .hero-subline--pillar {
-      font-size: clamp(0.98rem, 3.2vw, 1.2rem);
+    .hero-pillars {
+      flex-wrap: wrap;
+      white-space: normal;
+      max-width: min(22rem, 94vw);
+      padding: 0.5rem 0.75rem;
+      font-size: clamp(0.6875rem, 2.8vw, 0.8125rem);
       line-height: 1.4;
+      gap: 0.28rem 0.38rem;
+      border-radius: 1.25rem;
     }
 
-    .hero-subline--pillar:first-of-type {
-      margin-top: 1rem;
+    .hero-pillars__sep {
+      display: none;
+    }
+
+    .hero-pillars__item:not(:last-child)::after {
+      content: ' ·';
+      color: rgba(245, 176, 65, 0.75);
+      font-weight: 600;
     }
 
     .hero-disclaimer {

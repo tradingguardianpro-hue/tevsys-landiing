@@ -2,21 +2,23 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2b** (`data-hero-layout="scheme-2b"`).
+**Activo en web:** **esquema 2c** (`data-hero-layout="scheme-2c"`).
 
 ---
 
-## Esquema 2b (activo — 19 jun 2026)
+## Esquema 2c (activo — 19 jun 2026)
 
-Igual que 2, con ajustes fundador:
+Pill alargado fino · **cuatro pilares en una línea** (desktop) · separadores ámbar `·`.
 
-| Cambio | Detalle |
-|--------|---------|
-| Cuatro pilares | Misma tipografía en las dos líneas (`hero-subline--pillar`) |
-| Disclaimer | Un escalón por debajo de pilares, pero **más legible** que 2 inicial |
-| MT5 | *Disponible en MT5…* debajo de la mano, tras *Trading Edge Verification System* |
+Orden: Disciplina automatizada · Precisión de cierre · Trazabilidad verificable · Protección activa en MT5.
 
-**Orden visual:** H1 → 2 líneas pilares → disclaimer → CTAs → tagline → mano → TEVS acronym → nota MT5.
+Móvil: pill más compacto, texto envuelve dentro del badge (sin forzar una línea estrecha).
+
+---
+
+## Esquema 2b (supersedido por 2c)
+
+Dos líneas de pilar mismo peso · nota MT5 bajo mano.
 
 ---
 
