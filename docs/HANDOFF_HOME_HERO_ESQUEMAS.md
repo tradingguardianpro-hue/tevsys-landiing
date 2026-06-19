@@ -9,9 +9,8 @@
 ## Esquema 2i (activo — 19 jun 2026)
 
 - **Sin batch/pill/marco** — `hero-pillars-line` suelta entre H1 y bloque acción.
-- Cuatro ideas · **una línea** (desktop ≥960px) · tipografía **Outfit** (distinta del titular).
-- Mucho **aire** abajo (margin antes de disclaimer+CTAs).
-- Móvil: wrap centrado si no cabe.
+- **Una línea** forzada (nowrap + escala tipográfica) · **Inter 500** (no Outfit).
+- Separación horizontal similar · mucho aire antes de disclaimer+CTAs.
 
 ---
 
