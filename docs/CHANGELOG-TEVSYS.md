@@ -8,6 +8,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — esquema 2g pill fino (19 jun 2026)
+
+**Qué:** pill ancho (`hero-pill-strip`) · 4 pilares una línea desktop · sep gris · disclaimer fuera · móvil wrap sin scroll horizontal.
+
+**Rollback:** `docs/HANDOFF_HOME_HERO_ESQUEMAS.md` (2f = marco dos líneas).
+
+**Commit sugerido:** `web(tevsys): hero 2g pill fino una linea cuatro pilares`
+
+---
+
 ## Hero home — esquema 2d (19 jun 2026)
 
 **Qué:** sin badge tagline · H1 más aire · pill gris · KITT intacto. Tagline motion → paso siguiente.

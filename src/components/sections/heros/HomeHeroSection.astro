@@ -5,7 +5,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2f">
+  <section class="hero-section__section" data-hero-layout="scheme-2g">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -15,14 +15,15 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             <span class="hero-title__brand">TEVSYS</span> los blinda.
           </span>
         </h1>
-        <div class="hero-product-block" aria-label="Capas del producto tevsys">
-          <p class="hero-product-line">
-            Disciplina automatizada · Trazabilidad verificable
-          </p>
-          <p class="hero-product-line">
-            Precisión de cierre de operaciones · Protección activa en MT5
-          </p>
-        </div>
+        <p class="hero-pill-strip" aria-label="Capas del producto tevsys">
+          <span class="hero-pill-strip__item">Disciplina automatizada</span>
+          <span class="hero-pill-strip__sep" aria-hidden="true">·</span>
+          <span class="hero-pill-strip__item">Trazabilidad verificable</span>
+          <span class="hero-pill-strip__sep" aria-hidden="true">·</span>
+          <span class="hero-pill-strip__item">Precisión de cierre de operaciones</span>
+          <span class="hero-pill-strip__sep" aria-hidden="true">·</span>
+          <span class="hero-pill-strip__item">Protección activa en MT5</span>
+        </p>
         <p class="hero-disclaimer">
           No damos señales ni promesas de beneficio.
         </p>
@@ -107,7 +108,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     padding-inline: clamp(0.5rem, 2vw, 1rem);
     box-sizing: border-box;
   }
@@ -143,36 +144,48 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-decoration: none;
   }
 
-  .hero-product-block {
+  .hero-pill-strip {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.38rem;
-    max-width: min(36rem, 100%);
+    justify-content: center;
+    gap: 0.42rem 0.55rem;
     width: 100%;
+    max-width: 100%;
     margin: 0;
-    padding: clamp(0.62rem, 1.6vw, 0.85rem) clamp(1rem, 2.5vw, 1.45rem);
+    padding: 0.38rem clamp(1.1rem, 3vw, 1.65rem);
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 1.35rem;
-    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.022);
+    font-size: clamp(0.6875rem, 1.12vw, 0.8125rem);
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.012em;
+    color: rgba(244, 246, 248, 0.82);
+    text-align: center;
   }
 
-  .hero-product-line {
-    margin: 0;
-    width: 100%;
-    padding: 0 0.15rem;
-    box-sizing: border-box;
-    font-size: clamp(0.8125rem, 1.55vw, 1.0625rem);
-    font-weight: 500;
-    line-height: 1.42;
-    letter-spacing: -0.015em;
-    color: rgba(244, 246, 248, 0.88);
-    text-align: center;
-    text-wrap: balance;
+  @media (min-width: 900px) {
+    .hero-pill-strip {
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+  }
+
+  .hero-pill-strip__item {
+    flex-shrink: 0;
+  }
+
+  .hero-pill-strip__sep {
+    flex-shrink: 0;
+    color: rgba(186, 190, 202, 0.48);
+    font-weight: 400;
+    user-select: none;
   }
 
   .hero-disclaimer {
+    align-self: center;
     margin: clamp(1.15rem, 3.2vw, 1.65rem) 0 clamp(1.35rem, 3.8vw, 2rem);
     max-width: min(28rem, 100%);
     width: 100%;
@@ -189,6 +202,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
   .hero-cta-row {
     margin-top: 0;
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -376,16 +390,16 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       margin-bottom: clamp(1.85rem, 5.5vh, 2.65rem);
     }
 
-    .hero-product-block {
-      max-width: min(21.5rem, 94vw);
-      padding: 0.6rem 0.85rem;
-      gap: 0.38rem;
-      border-radius: 1.15rem;
-    }
-
-    .hero-product-line {
-      font-size: clamp(0.78rem, 2.9vw, 0.9rem);
-      line-height: 1.45;
+    .hero-pill-strip {
+      flex-wrap: wrap;
+      white-space: normal;
+      max-width: min(22rem, 94vw);
+      margin-inline: auto;
+      padding: 0.45rem 0.8rem;
+      font-size: clamp(0.6875rem, 2.75vw, 0.78rem);
+      line-height: 1.4;
+      gap: 0.28rem 0.38rem;
+      border-radius: 1.1rem;
     }
 
     .hero-disclaimer {

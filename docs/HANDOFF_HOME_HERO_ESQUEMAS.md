@@ -2,15 +2,22 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2f** — marco solo 4 pilares · disclaimer fuera entre marco y CTAs.
+**Activo en web:** **esquema 2g** — pill fino ancho · 4 pilares una línea (desktop) · disclaimer fuera.
 
 ---
 
-## Esquema 2f (activo — 19 jun 2026)
+## Esquema 2g (activo — 19 jun 2026)
 
-- **Marco** (`hero-product-block`): solo 2 líneas de pilares.
-- **Disclaimer** fuera, más pequeño, aire arriba/abajo, **entre** marco y botones.
-- H1 con aire · KITT intacto · tagline motion pendiente.
+- Pill **fino** (`hero-pill-strip`), casi ancho completo del hero text.
+- Cuatro pilares en **una línea** (desktop); separadores gris `·`.
+- Disclaimer **fuera**, entre pill y CTAs (hereda 2f).
+- Móvil: wrap dentro del pill fino.
+
+---
+
+## Esquema 2f (supersedido por 2g — validado fundador 18:30)
+
+- Marco dos líneas (`hero-product-block`) · disclaimer fuera entre marco y CTAs.
 
 ---
 
