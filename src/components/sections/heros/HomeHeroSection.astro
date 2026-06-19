@@ -15,15 +15,12 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             <span class="hero-title__brand">TEVSYS</span> los blinda.
           </span>
         </h1>
-        <p class="hero-pill-strip" aria-label="Capas del producto tevsys">
-          <span class="hero-pill-strip__item">Disciplina automatizada</span>
-          <span class="hero-pill-strip__sep" aria-hidden="true">·</span>
-          <span class="hero-pill-strip__item">Trazabilidad verificable</span>
-          <span class="hero-pill-strip__sep" aria-hidden="true">·</span>
-          <span class="hero-pill-strip__item">Precisión de cierre de operaciones</span>
-          <span class="hero-pill-strip__sep" aria-hidden="true">·</span>
-          <span class="hero-pill-strip__item">Protección activa en MT5</span>
-        </p>
+        <div class="hero-product-frame" aria-label="Capas del producto tevsys">
+          <span class="hero-product-frame__item">Disciplina automatizada</span>
+          <span class="hero-product-frame__item">Trazabilidad verificable</span>
+          <span class="hero-product-frame__item">Precisión de cierre de operaciones</span>
+          <span class="hero-product-frame__item">Protección activa en MT5</span>
+        </div>
         <div class="hero-action-block">
           <p class="hero-disclaimer">
             No damos señales ni promesas de beneficio.
@@ -146,48 +143,32 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-decoration: none;
   }
 
-  .hero-pill-strip {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 0.55rem clamp(0.72rem, 1.35vw, 1.05rem);
+  .hero-product-frame {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.65rem, 1.8vw, 0.95rem) clamp(1rem, 2.8vw, 1.75rem);
+    align-self: center;
     width: 100%;
-    max-width: 100%;
+    max-width: min(40rem, 100%);
     margin: 0;
-    padding: 0.5rem clamp(1.25rem, 3.8vw, 2.15rem);
+    padding: clamp(0.9rem, 2.4vw, 1.2rem) clamp(1.15rem, 3.2vw, 1.85rem);
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.022);
-    font-size: clamp(0.71875rem, 1.18vw, 0.84375rem);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.35rem;
+    background: rgba(255, 255, 255, 0.024);
+  }
+
+  .hero-product-frame__item {
+    margin: 0;
+    padding: 0.12rem 0.2rem;
+    box-sizing: border-box;
+    font-size: clamp(0.75rem, 1.22vw, 0.875rem);
     font-weight: 500;
-    line-height: 1.38;
+    line-height: 1.45;
     letter-spacing: -0.008em;
-    color: rgba(244, 246, 248, 0.84);
+    color: rgba(244, 246, 248, 0.86);
     text-align: center;
-  }
-
-  @media (min-width: 900px) {
-    .hero-pill-strip {
-      flex-wrap: nowrap;
-      white-space: nowrap;
-      justify-content: space-evenly;
-      gap: 0.55rem clamp(0.95rem, 1.75vw, 1.45rem);
-      padding-inline: clamp(1.45rem, 4.2vw, 2.35rem);
-    }
-  }
-
-  .hero-pill-strip__item {
-    flex-shrink: 0;
-  }
-
-  .hero-pill-strip__sep {
-    flex-shrink: 0;
-    margin-inline: clamp(0.05rem, 0.35vw, 0.2rem);
-    color: rgba(186, 190, 202, 0.42);
-    font-weight: 400;
-    user-select: none;
+    text-wrap: balance;
   }
 
   .hero-action-block {
@@ -197,7 +178,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     align-self: center;
     width: 100%;
     max-width: min(36rem, 100%);
-    margin-top: clamp(1.85rem, 4.8vh, 2.65rem);
+    margin-top: clamp(2.35rem, 5.8vh, 3.15rem);
     gap: clamp(0.72rem, 2.1vw, 1rem);
   }
 
@@ -406,21 +387,21 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       margin-bottom: clamp(1.85rem, 5.5vh, 2.65rem);
     }
 
-    .hero-pill-strip {
-      flex-wrap: wrap;
-      white-space: normal;
-      justify-content: center;
-      max-width: min(22.5rem, 94vw);
-      margin-inline: auto;
-      padding: 0.52rem 0.95rem;
-      font-size: clamp(0.7rem, 2.75vw, 0.8rem);
-      line-height: 1.45;
-      gap: 0.42rem 0.62rem;
-      border-radius: 1.1rem;
+    .hero-product-frame {
+      grid-template-columns: 1fr;
+      max-width: min(21.5rem, 94vw);
+      gap: 0.58rem;
+      padding: 0.85rem 1rem;
+      border-radius: 1.15rem;
+    }
+
+    .hero-product-frame__item {
+      font-size: clamp(0.78rem, 2.85vw, 0.875rem);
+      line-height: 1.48;
     }
 
     .hero-action-block {
-      margin-top: clamp(1.45rem, 4.5vw, 1.85rem);
+      margin-top: clamp(1.85rem, 5vw, 2.35rem);
       gap: clamp(0.65rem, 3vw, 0.88rem);
     }
 

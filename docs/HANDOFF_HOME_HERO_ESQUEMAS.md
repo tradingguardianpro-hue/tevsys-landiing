@@ -8,10 +8,9 @@
 
 ## Esquema 2g (activo — 19 jun 2026)
 
-- Pill **fino** (`hero-pill-strip`), casi ancho completo del hero text.
-- Cuatro pilares en **una línea** (desktop); separadores gris `·`; **más gap** entre ítems (`space-evenly` desktop).
-- Disclaimer + CTAs en **`hero-action-block`**: más aire **desde** el pill; disclaimer **cerca** de botones.
-- Móvil: wrap dentro del pill fino.
+- Marco **2×2** (`hero-product-frame`): cuatro ideas **dentro** del borde, centradas, sin overflow.
+- Desktop: grid 2 columnas · móvil: cuatro líneas apiladas.
+- Disclaimer + CTAs en **`hero-action-block`**: **más aire** desde el marco; disclaimer cerca de botones.
 
 ---
 
