@@ -9,7 +9,7 @@
 ## Esquema 2k (activo — 19 jun 2026)
 
 - H1 blanco **suave** (`#e8ebf0`, no blanco puro) · TEVSYS ámbar sin tocar.
-- H1 → **`hero-edge-strip`**: 5 frases · ~15 px · contraste ~78% · mayúscula inicial.
+- H1 → **`hero-edge-strip`**: 4 frases ES en bucle · ~15 px · contraste ~78% · mayúscula inicial (sin tagline EN).
 - **`hero-disclaimer`:** DM Sans (misma familia que H1), ~15 px, gris claro legible.
 - Espacio H1 → acto 2 reducido (marquee más cerca de disclaimer + CTAs).
 - **TEVS** (`hero-image__brand`): **debajo** de la foto, en el padding gris del wrapper (no overlay sobre el PNG). Texto fijo **EN:** `Trading Edge Verification System` · `lang="en"` · casi invisible (~20% opacidad).
