@@ -10,7 +10,8 @@
 
 - **Acto 1:** H1 + `hero-pillars-float` (2 frases sueltas, sin batch).
 - **Pausa** → **Acto 2:** disclaimer + CTAs (más aire disclaimer↔botones).
-- **Motion nuevo (KITT intacto):** `hero-velas-ambient` + `hero-edge-strip` (marquee gris) antes de la mano.
+- **Motion:** `hero-edge-strip` (marquee gris) antes de la mano · **sin** capa velas.
+- **TEVS** dentro de la foto (`hero-image__brand` sobre zona negra inferior).
 
 ---
 

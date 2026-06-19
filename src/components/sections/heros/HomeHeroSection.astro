@@ -7,7 +7,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 <Container>
   <section class="hero-section__section" data-hero-layout="scheme-2j">
     <div class="hero-section__glow" aria-hidden="true"></div>
-    <div class="hero-velas-ambient" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
         <h1 class="hero-title">
@@ -56,20 +55,22 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       </div>
       <div class="hero-section__image">
         <div class="hero-image__wrapper">
-          <picture class="hero-image__picture">
-            <img
-              class="hero-image__img"
-              src="/mano%20robotica%20central%20web.png?v=2"
-              alt="tevsys"
-              id="home-hero-image"
-              width="1200"
-              height="800"
-              fetchpriority="high"
-              decoding="async"
-            />
-          </picture>
+          <div class="hero-image__media">
+            <picture class="hero-image__picture">
+              <img
+                class="hero-image__img"
+                src="/mano%20robotica%20central%20web.png?v=2"
+                alt="tevsys"
+                id="home-hero-image"
+                width="1200"
+                height="800"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+            <span class="hero-image__brand">Trading Edge Verification System</span>
+          </div>
         </div>
-        <span class="hero-image__brand">Trading Edge Verification System</span>
         <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
       </div>
     </div>
@@ -98,48 +99,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       radial-gradient(ellipse 88% 78% at 90% 30%, rgba(245, 176, 65, 0.28) 0%, transparent 54%),
       radial-gradient(ellipse 60% 55% at 96% 68%, rgba(255, 210, 120, 0.16) 0%, transparent 50%),
       radial-gradient(ellipse 50% 45% at 78% 45%, rgba(247, 192, 80, 0.1) 0%, transparent 42%);
-  }
-
-  .hero-velas-ambient {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.11;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='100' viewBox='0 0 160 100'%3E%3Cg fill='none' stroke='%237a7e8c' stroke-width='1.1' opacity='0.9'%3E%3Cline x1='18' y1='22' x2='18' y2='72'/%3E%3Crect x='14' y='40' width='8' height='20' fill='%23888c9a' opacity='0.35'/%3E%3Cline x1='48' y1='30' x2='48' y2='68'/%3E%3Crect x='44' y='34' width='8' height='24' fill='%23888c9a' opacity='0.35'/%3E%3Cline x1='78' y1='18' x2='78' y2='76'/%3E%3Crect x='74' y='48' width='8' height='18' fill='%23888c9a' opacity='0.35'/%3E%3Cline x1='108' y1='26' x2='108' y2='70'/%3E%3Crect x='104' y='38' width='8' height='22' fill='%23888c9a' opacity='0.35'/%3E%3Cline x1='138' y1='32' x2='138' y2='66'/%3E%3Crect x='134' y='42' width='8' height='16' fill='%23888c9a' opacity='0.35'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 160px 100px;
-    background-repeat: repeat;
-    mask-image: linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(0, 0, 0, 0.25) 28%,
-      rgba(0, 0, 0, 0.5) 52%,
-      rgba(0, 0, 0, 0.35) 78%,
-      transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(0, 0, 0, 0.25) 28%,
-      rgba(0, 0, 0, 0.5) 52%,
-      rgba(0, 0, 0, 0.35) 78%,
-      transparent 100%
-    );
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-velas-ambient {
-      animation: hero-velas-drift 52s linear infinite;
-    }
-  }
-
-  @keyframes hero-velas-drift {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: 160px 0;
-    }
   }
 
   .hero-section__inner {
@@ -437,21 +396,39 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       inset 0 0 78px 34px rgba(0, 0, 0, 0.08);
   }
 
+  .hero-image__media {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 0;
+  }
+
   .hero-image__picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     width: 100%;
     margin: 0;
   }
 
   .hero-image__brand {
-    margin-top: 0.5rem;
-    font-size: 0.72rem;
+    position: absolute;
+    left: 50%;
+    bottom: clamp(5.5%, 1.8vh, 9%);
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0 0.5rem;
+    max-width: 92%;
+    box-sizing: border-box;
+    font-size: clamp(0.625rem, 1.05vw, 0.72rem);
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.42);
-    letter-spacing: 0.02em;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.46);
+    letter-spacing: 0.04em;
     text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 2;
   }
 
   .hero-image__img,
@@ -563,6 +540,14 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       max-width: 100%;
       font-size: 0.93rem;
       padding: 0.52rem 0.95rem;
+    }
+
+    .hero-image__brand {
+      bottom: clamp(4.5%, 1.4vh, 7.5%);
+      font-size: clamp(0.5625rem, 2.1vw, 0.65rem);
+      letter-spacing: 0.035em;
+      white-space: normal;
+      text-wrap: balance;
     }
 
     .hero-image__wrapper {
