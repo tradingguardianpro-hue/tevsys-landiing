@@ -2,14 +2,36 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2** (`data-hero-layout="scheme-2"` en `<section>`).
+**Activo en web:** **esquema 2b** (`data-hero-layout="scheme-2b"`).
+
+---
+
+## Esquema 2b (activo — 19 jun 2026)
+
+Igual que 2, con ajustes fundador:
+
+| Cambio | Detalle |
+|--------|---------|
+| Cuatro pilares | Misma tipografía en las dos líneas (`hero-subline--pillar`) |
+| Disclaimer | Un escalón por debajo de pilares, pero **más legible** que 2 inicial |
+| MT5 | *Disponible en MT5…* debajo de la mano, tras *Trading Edge Verification System* |
+
+**Orden visual:** H1 → 2 líneas pilares → disclaimer → CTAs → tagline → mano → TEVS acronym → nota MT5.
+
+---
 
 ---
 
 ## Rollback al hero pre-escala (jun 2026)
 
-1. **Git (preferido):** `git log --oneline -- src/components/sections/heros/HomeHeroSection.astro` → checkout del commit anterior a `web(tevsys): hero home esquema 2 escala`.
+1. **Git (preferido):** `git log --oneline -- src/components/sections/heros/HomeHeroSection.astro` → checkout del commit deseado.
 2. **Manual:** restaurar markup/CSS de la sección «Baseline pre-esquema 2» abajo en el mismo `.astro`.
+
+---
+
+## Esquema 2 (supersedido por 2b)
+
+Sublínea primary/secondary distinto peso · nota MT5 en bloque texto.
 
 ---
 
@@ -31,7 +53,7 @@
 
 ---
 
-## Esquema 2 (activo)
+## Esquema 2 (referencia)
 
 **Orden:** H1 dos líneas grande · sublínea fuerte · sublínea apoyo · disclaimer pequeño · CTAs · tagline discreta.
 

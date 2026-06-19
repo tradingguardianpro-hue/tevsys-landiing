@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — esquema 2b (19 jun 2026)
+
+**Qué:** cuatro pilares mismo peso · disclaimer legible · nota MT5 bajo mano/TEVS.
+
+**Rollback:** `docs/HANDOFF_HOME_HERO_ESQUEMAS.md`.
+
+---
+
 ## Hero home — esquema 2 jerarquía (19 jun 2026)
 
 **Qué:** H1 dos líneas (~4rem desktop) · sublíneas disciplina+trazabilidad / precisión+protección · disclaimer pequeño · tagline tras CTAs.

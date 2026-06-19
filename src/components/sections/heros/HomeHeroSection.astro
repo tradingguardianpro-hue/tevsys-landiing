@@ -5,7 +5,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2">
+  <section class="hero-section__section" data-hero-layout="scheme-2b">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -15,10 +15,10 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             <span class="hero-title__brand">TEVSYS</span> los blinda.
           </span>
         </h1>
-        <p class="hero-subline hero-subline--primary">
+        <p class="hero-subline hero-subline--pillar">
           Disciplina automatizada · Trazabilidad verificable
         </p>
-        <p class="hero-subline hero-subline--secondary">
+        <p class="hero-subline hero-subline--pillar">
           Precisión de cierre de operaciones · Protección activa en MT5
         </p>
         <p class="hero-disclaimer">
@@ -38,7 +38,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             <span class="hero-tagline__text">Where precision meets the edge</span>
           </div>
         </div>
-        <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
         {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
       </div>
       <div class="hero-section__image">
@@ -57,6 +56,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
           </picture>
         </div>
         <span class="hero-image__brand">Trading Edge Verification System</span>
+        <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
       </div>
     </div>
   </section>
@@ -154,33 +154,29 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     letter-spacing: -0.02em;
   }
 
-  .hero-subline--primary {
-    margin-top: clamp(1.05rem, 3.2vw, 1.85rem);
-    font-size: clamp(1.05rem, 2.75vw, 1.65rem);
+  .hero-subline--pillar {
+    margin-top: clamp(0.55rem, 1.8vw, 0.72rem);
+    font-size: clamp(1rem, 2.65vw, 1.55rem);
     font-weight: 600;
-    line-height: 1.35;
-    color: rgba(244, 246, 248, 0.96);
+    line-height: 1.38;
+    color: rgba(244, 246, 248, 0.94);
   }
 
-  .hero-subline--secondary {
-    margin-top: clamp(0.5rem, 1.6vw, 0.72rem);
-    font-size: clamp(0.9375rem, 2.15vw, 1.25rem);
-    font-weight: 500;
-    line-height: 1.4;
-    color: rgba(244, 246, 248, 0.82);
+  .hero-subline--pillar:first-of-type {
+    margin-top: clamp(1.1rem, 3.2vw, 1.85rem);
   }
 
   .hero-disclaimer {
-    margin: clamp(0.85rem, 2.4vw, 1.2rem) 0 0;
+    margin: clamp(1rem, 2.8vw, 1.35rem) 0 0;
     max-width: min(32rem, 100%);
     width: 100%;
     padding: 0 0.25rem;
     box-sizing: border-box;
-    font-size: clamp(0.8125rem, 1.75vw, 0.9375rem);
+    font-size: clamp(0.875rem, 1.9vw, 1rem);
     font-weight: 500;
     line-height: 1.42;
     letter-spacing: -0.01em;
-    color: rgba(244, 246, 248, 0.58);
+    color: rgba(244, 246, 248, 0.72);
     text-align: center;
     text-wrap: balance;
   }
@@ -236,12 +232,13 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   }
 
   .hero-platform-note {
-    margin: clamp(0.85rem, 2.5vw, 1.25rem) 0 0;
+    margin: 0.55rem 0 0;
     font-size: 0.8125rem;
     font-weight: 400;
     color: rgba(244, 246, 248, 0.62);
     text-align: center;
     max-width: 28rem;
+    line-height: 1.4;
   }
 
   .hero-tagline {
@@ -401,20 +398,19 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
       padding-inline: 0.15rem;
     }
 
-    .hero-subline--primary {
-      font-size: clamp(1rem, 3.4vw, 1.22rem);
-      line-height: 1.38;
+    .hero-subline--pillar {
+      font-size: clamp(0.98rem, 3.2vw, 1.2rem);
+      line-height: 1.4;
+    }
+
+    .hero-subline--pillar:first-of-type {
       margin-top: 1rem;
     }
 
-    .hero-subline--secondary {
-      font-size: clamp(0.9rem, 2.8vw, 1.05rem);
-      line-height: 1.45;
-    }
-
     .hero-disclaimer {
-      font-size: 0.8125rem;
-      margin-top: 0.9rem;
+      font-size: clamp(0.875rem, 2.6vw, 0.9375rem);
+      margin-top: 1rem;
+      color: rgba(244, 246, 248, 0.7);
     }
 
     .hero-cta-row {
