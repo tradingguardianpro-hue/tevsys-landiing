@@ -2,19 +2,15 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2e** — H1 con aire · bloque 2 líneas + disclaimer · aire · CTAs.
+**Activo en web:** **esquema 2f** — marco solo 4 pilares · disclaimer fuera entre marco y CTAs.
 
 ---
 
-## Esquema 2e (activo — 19 jun 2026)
+## Esquema 2f (activo — 19 jun 2026)
 
-- **H1** con `margin-bottom` grande (titular aislado).
-- **Bloque producto** (`hero-product-block`): dos líneas iguales + disclaimer dentro del mismo marco fino (no pill horizontal largo).
-  - L1: Disciplina automatizada · Trazabilidad verificable
-  - L2: Precisión de cierre de operaciones · Protección activa en MT5
-  - Disclaimer debajo, mismo bloque.
-- **Aire** antes de CTAs (`margin-top` ~2–3.35rem).
-- Sin badge tagline (motion pendiente; **KITT intacto**).
+- **Marco** (`hero-product-block`): solo 2 líneas de pilares.
+- **Disclaimer** fuera, más pequeño, aire arriba/abajo, **entre** marco y botones.
+- H1 con aire · KITT intacto · tagline motion pendiente.
 
 ---
 

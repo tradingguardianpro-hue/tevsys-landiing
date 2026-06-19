@@ -5,7 +5,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2e">
+  <section class="hero-section__section" data-hero-layout="scheme-2f">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -22,10 +22,10 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
           <p class="hero-product-line">
             Precisión de cierre de operaciones · Protección activa en MT5
           </p>
-          <p class="hero-disclaimer">
-            No damos señales ni promesas de beneficio.
-          </p>
         </div>
+        <p class="hero-disclaimer">
+          No damos señales ni promesas de beneficio.
+        </p>
         <div class="hero-cta-row">
           <a href="/company/contact?flow=demo" class="hero-download-btn">
             Descargar demo →
@@ -147,11 +147,11 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.42rem;
+    gap: 0.38rem;
     max-width: min(36rem, 100%);
     width: 100%;
     margin: 0;
-    padding: clamp(0.65rem, 1.8vw, 0.9rem) clamp(1rem, 2.5vw, 1.45rem);
+    padding: clamp(0.62rem, 1.6vw, 0.85rem) clamp(1rem, 2.5vw, 1.45rem);
     box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 1.35rem;
@@ -167,28 +167,28 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     font-weight: 500;
     line-height: 1.42;
     letter-spacing: -0.015em;
-    color: rgba(244, 246, 248, 0.86);
+    color: rgba(244, 246, 248, 0.88);
     text-align: center;
     text-wrap: balance;
   }
 
   .hero-disclaimer {
-    margin: clamp(0.45rem, 1.2vw, 0.65rem) 0 0;
-    max-width: min(30rem, 100%);
+    margin: clamp(1.15rem, 3.2vw, 1.65rem) 0 clamp(1.35rem, 3.8vw, 2rem);
+    max-width: min(28rem, 100%);
     width: 100%;
-    padding: 0 0.15rem;
+    padding: 0 0.25rem;
     box-sizing: border-box;
-    font-size: clamp(0.8125rem, 1.45vw, 0.9375rem);
+    font-size: clamp(0.75rem, 1.25vw, 0.8125rem);
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: -0.01em;
-    color: rgba(244, 246, 248, 0.62);
+    color: rgba(244, 246, 248, 0.58);
     text-align: center;
     text-wrap: balance;
   }
 
   .hero-cta-row {
-    margin-top: clamp(2rem, 5.5vh, 3.35rem);
+    margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -389,8 +389,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
 
     .hero-disclaimer {
-      font-size: clamp(0.78rem, 2.6vw, 0.875rem);
-      margin-top: 0.4rem;
+      font-size: clamp(0.72rem, 2.4vw, 0.8rem);
+      margin: clamp(1rem, 3.5vw, 1.35rem) 0 clamp(1.15rem, 4vw, 1.65rem);
+      color: rgba(244, 246, 248, 0.55);
     }
 
     .hero-section__inner {
@@ -408,7 +409,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
 
     .hero-cta-row {
-      margin-top: clamp(1.65rem, 5vh, 2.35rem);
+      margin-top: 0;
       gap: 0.62rem;
     }
 
