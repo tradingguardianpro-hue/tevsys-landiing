@@ -67,8 +67,8 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
                 decoding="async"
               />
             </picture>
-            <span class="hero-image__brand">Trading Edge Verification System</span>
           </div>
+          <span class="hero-image__brand" lang="en" translate="no">Trading Edge Verification System</span>
         </div>
         <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
       </div>
@@ -322,7 +322,8 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: clamp(0.72rem, 2vw, 0.95rem) clamp(0.95rem, 2.5vw, 1.15rem);
+    padding: clamp(0.72rem, 2vw, 0.95rem) clamp(0.95rem, 2.5vw, 1.15rem)
+      clamp(0.52rem, 1.35vw, 0.72rem);
     position: relative;
     border-radius: var(--hero-image-radius);
     overflow: visible;
@@ -365,7 +366,6 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
   }
 
   .hero-image__media {
-    position: relative;
     display: inline-block;
     width: fit-content;
     max-width: 100%;
@@ -380,23 +380,21 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
   }
 
   .hero-image__brand {
-    position: absolute;
-    left: 50%;
-    bottom: clamp(0.38rem, 0.72vh, 0.58rem);
-    transform: translateX(-50%);
-    margin: 0;
-    padding: 0 0.45rem;
-    max-width: 88%;
+    position: static;
+    transform: none;
+    align-self: center;
+    margin: clamp(0.48rem, 1.15vw, 0.65rem) 0 0;
+    padding: 0 0.35rem;
+    max-width: 100%;
     box-sizing: border-box;
     font-size: clamp(0.5625rem, 0.92vw, 0.625rem);
     font-weight: 400;
-    line-height: 1.3;
-    color: rgba(255, 255, 255, 0.17);
-    letter-spacing: 0.06em;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.05em;
     text-align: center;
     white-space: nowrap;
     pointer-events: none;
-    z-index: 2;
   }
 
   .hero-image__img,
@@ -502,17 +500,17 @@ const heroMarqueeLoop = [...heroMarqueePhrases, ...heroMarqueePhrases];
     }
 
     .hero-image__brand {
-      bottom: clamp(0.32rem, 0.65vh, 0.5rem);
+      margin-top: clamp(0.4rem, 1.6vw, 0.55rem);
       font-size: clamp(0.5rem, 1.85vw, 0.5625rem);
-      letter-spacing: 0.05em;
-      color: rgba(255, 255, 255, 0.15);
+      letter-spacing: 0.045em;
+      color: rgba(255, 255, 255, 0.18);
       white-space: normal;
       text-wrap: balance;
     }
 
     .hero-image__wrapper {
       flex-direction: column;
-      padding: 1.05rem clamp(2rem, 9vw, 2.85rem);
+      padding: 1.05rem clamp(2rem, 9vw, 2.85rem) clamp(0.62rem, 1.8vw, 0.85rem);
       border-radius: var(--hero-image-radius);
       animation: none;
       box-shadow:

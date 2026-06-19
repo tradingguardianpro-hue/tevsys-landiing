@@ -11,7 +11,7 @@
 - H1 → **`hero-edge-strip`**: 5 frases en bucle (mayúscula inicial · ~14 px · contraste ~72% · sin minúsculas forzadas).
 - **`hero-disclaimer`:** DM Sans (misma familia que H1), ~15 px, gris claro legible.
 - Espacio H1 → acto 2 reducido (marquee más cerca de disclaimer + CTAs).
-- **TEVS** (`hero-image__brand`) **dentro** de `hero-image__media`, posicionado en la franja negra inferior del PNG (`position: absolute`, opacidad ~0.15–0.17), no en el padding gris del wrapper.
+- **TEVS** (`hero-image__brand`): **debajo** de la foto, en el padding gris del wrapper (no overlay sobre el PNG). Texto fijo **EN:** `Trading Edge Verification System` · `lang="en"` · casi invisible (~20% opacidad).
 - Sin velas · KITT intacto.
 
 ---
