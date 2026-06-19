@@ -8,6 +8,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cierre SSL apex tevsys.io (19 jun 2026)
+
+**Resumen:** `tevsys.io` sin www dejó de fallar certificado tras añadir el dominio apex en Vercel; DNS en Plesk (ProfesionalHosting) ya apuntaba a Vercel.
+
+| Pieza | Acción |
+|-------|--------|
+| Vercel | Añadir `tevsys.io` al proyecto · redirect 308 → `www` |
+| Plesk | A `@` → `76.76.21.21` · CNAME `www` → `cname.vercel-dns.com` (sin cambios en sesión) |
+| Validación | HTTPS OK en apex y www |
+
+**Canon infra:** `docs/DOMINIO_SSL_TEVSYS.md` · correlato TGP: `HANDOFF_AXIOM_LABS_JUAN_PEREZ.md`.
+
+**Sin cambio de código Astro** en este cierre.
+
+---
+
 ## Cierre sesión web — Familia A piel carbón (8 jun 2026, validado fundador)
 
 **Resumen en una frase:** fin del gris opaco; carbón translúcido en producto; home + micros + footer + CTA alineados.

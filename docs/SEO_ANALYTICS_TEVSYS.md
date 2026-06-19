@@ -1,6 +1,8 @@
-# SEO y Vercel Web Analytics — tevsys
+# SEO, dominio, SSL y Vercel Web Analytics — tevsys
 
 Documento técnico para desarrolladores e ingenieros.
+
+**Dominio / SSL (apex + www, Plesk, Vercel):** `docs/DOMINIO_SSL_TEVSYS.md` — cerrado 19 jun 2026.
 
 ---
 
