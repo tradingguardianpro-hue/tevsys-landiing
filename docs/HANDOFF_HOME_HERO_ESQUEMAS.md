@@ -2,17 +2,20 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2g** — pill fino ancho · 4 pilares una línea (desktop) · disclaimer fuera.
+**Activo en web:** **esquema 2h** — marco **dos líneas** editorial (vuelta desde 2g grid) · disclaimer+CTAs agrupados · más aire marco→acción.
 
 ---
 
-## Esquema 2g (activo — 19 jun 2026)
+## Esquema 2h (activo — 19 jun 2026)
 
-- Marco **2×2** (`hero-product-frame`): cuatro ideas **dentro** del borde, centradas, sin overflow.
-- Desktop: grid 2 columnas · móvil: cuatro líneas apiladas.
-- Disclaimer + CTAs en **`hero-action-block`**: **más aire** desde el marco; disclaimer cerca de botones.
+- Marco redondeado **dos frases** (`hero-product-block`), centrado `fit-content` — no grid 2×2.
+- Línea 1: Disciplina · Trazabilidad · Línea 2: Precisión · Protección MT5.
+- Disclaimer + CTAs en **`hero-action-block`**.
+- **No** pill una línea (overflow) · **no** grid cuadrícula (rechazado fundador).
 
 ---
+
+## Esquema 2g (supersedido — grid 2×2 rechazado)
 
 ## Esquema 2f (supersedido por 2g — validado fundador 18:30)
 
