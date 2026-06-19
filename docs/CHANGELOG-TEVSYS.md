@@ -8,6 +8,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — esquema 2 jerarquía (19 jun 2026)
+
+**Qué:** H1 dos líneas (~4rem desktop) · sublíneas disciplina+trazabilidad / precisión+protección · disclaimer pequeño · tagline tras CTAs.
+
+**Rollback:** `docs/HANDOFF_HOME_HERO_ESQUEMAS.md` (baseline pre-esquema 2).
+
+**Commit sugerido:** `web(tevsys): hero home esquema 2 escala jerarquia`
+
+---
+
 ## Cierre SSL apex tevsys.io (19 jun 2026)
 
 **Resumen:** `tevsys.io` sin www dejó de fallar certificado tras añadir el dominio apex en Vercel; DNS en Plesk (ProfesionalHosting) ya apuntaba a Vercel.
