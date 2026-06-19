@@ -2,20 +2,19 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2j** — dos líneas flotantes sin marco · acto 2 disclaimer · velas + tagline gris sobre mano.
+**Activo en web:** **esquema 2k** — marquee bajo H1 · sin pilares estáticos · TEVS en marco negro bajo foto.
 
 ---
 
-## Esquema 2j (activo — 19 jun 2026)
+## Esquema 2k (activo — 19 jun 2026)
 
-- **Acto 1:** H1 + `hero-pillars-float` (2 frases sueltas, sin batch).
-- **Pausa** → **Acto 2:** disclaimer + CTAs (más aire disclaimer↔botones).
-- **Motion:** `hero-edge-strip` (marquee gris) antes de la mano · **sin** capa velas.
-- **TEVS** dentro de la foto (`hero-image__brand` sobre zona negra inferior).
+- H1 → **`hero-edge-strip`** (sustituye cuatro pilares estáticos) → pausa → disclaimer + CTAs → mano.
+- **TEVS** en **`hero-image__wrapper`**, debajo de la foto (negro puro del marco), no sobre el gráfico.
+- Sin velas · KITT intacto.
 
 ---
 
-## Esquema 2i (supersedido — una línea flotante)
+## Esquema 2j (supersedido — pilares + marquee bajo CTAs)
 
 ## Esquema 2f (supersedido por 2g — validado fundador 18:30)
 

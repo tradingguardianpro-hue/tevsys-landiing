@@ -5,7 +5,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2j">
+  <section class="hero-section__section" data-hero-layout="scheme-2k">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -15,17 +15,16 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             <span class="hero-title__brand">TEVSYS</span> los blinda.
           </span>
         </h1>
-        <div class="hero-pillars-float" aria-label="Capas del producto tevsys">
-          <p class="hero-pillars-row">
-            <span>Disciplina automatizada</span>
-            <span class="hero-pillars-row__sep" aria-hidden="true">·</span>
-            <span>Trazabilidad verificable</span>
-          </p>
-          <p class="hero-pillars-row">
-            <span>Precisión de cierre de operaciones</span>
-            <span class="hero-pillars-row__sep" aria-hidden="true">·</span>
-            <span>Protección activa en MT5</span>
-          </p>
+        <div class="hero-edge-strip" aria-label="Capas del producto tevsys">
+          <div class="hero-edge-strip__track">
+            <span class="hero-edge-strip__phrase">Where precision meets the edge</span>
+            <span class="hero-edge-strip__dot" aria-hidden="true"></span>
+            <span class="hero-edge-strip__phrase">precisión · disciplina · trazabilidad verificable</span>
+            <span class="hero-edge-strip__dot" aria-hidden="true"></span>
+            <span class="hero-edge-strip__phrase">Where precision meets the edge</span>
+            <span class="hero-edge-strip__dot" aria-hidden="true"></span>
+            <span class="hero-edge-strip__phrase">precisión · disciplina · trazabilidad verificable</span>
+          </div>
         </div>
         <div class="hero-action-block">
           <p class="hero-disclaimer">
@@ -42,17 +41,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
         </div>
         {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
       </div>
-      <div class="hero-edge-strip" aria-hidden="true">
-        <div class="hero-edge-strip__track">
-          <span class="hero-edge-strip__phrase">Where precision meets the edge</span>
-          <span class="hero-edge-strip__dot" aria-hidden="true"></span>
-          <span class="hero-edge-strip__phrase">precisión · disciplina · trazabilidad verificable</span>
-          <span class="hero-edge-strip__dot" aria-hidden="true"></span>
-          <span class="hero-edge-strip__phrase">Where precision meets the edge</span>
-          <span class="hero-edge-strip__dot" aria-hidden="true"></span>
-          <span class="hero-edge-strip__phrase">precisión · disciplina · trazabilidad verificable</span>
-        </div>
-      </div>
       <div class="hero-section__image">
         <div class="hero-image__wrapper">
           <div class="hero-image__media">
@@ -68,8 +56,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
                 decoding="async"
               />
             </picture>
-            <span class="hero-image__brand">Trading Edge Verification System</span>
           </div>
+          <span class="hero-image__brand">Trading Edge Verification System</span>
         </div>
         <p class="hero-platform-note">Disponible en MT5 · Próximamente: más plataformas</p>
       </div>
@@ -120,7 +108,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   }
 
   .hero-section__text {
-    --hero-pillars-font-size: clamp(0.8125rem, 1.35vw, 0.9375rem);
     --hero-disclaimer-font-size: clamp(0.8125rem, 0.95vw + 0.2rem, 0.90625rem);
     max-width: min(52rem, 100%);
     width: 100%;
@@ -164,41 +151,54 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     text-decoration: none;
   }
 
-  .hero-pillars-float {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .hero-edge-strip {
+    position: relative;
+    z-index: 1;
     align-self: center;
-    gap: clamp(0.42rem, 1.1vw, 0.58rem);
     width: 100%;
-    max-width: min(40rem, 100%);
+    max-width: min(52rem, 100%);
     margin: 0 auto clamp(4.5rem, 11vh, 6.5rem);
-    padding: 0 clamp(0.25rem, 1vw, 0.5rem);
-    box-sizing: border-box;
+    padding: clamp(0.2rem, 0.8vw, 0.45rem) 0;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
   }
 
-  .hero-pillars-row {
+  .hero-edge-strip__track {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 0.32rem clamp(0.62rem, 1.5vw, 1rem);
-    margin: 0;
-    width: 100%;
+    gap: clamp(1.75rem, 4vw, 2.75rem);
+    width: max-content;
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-size: var(--hero-pillars-font-size);
-    font-weight: 500;
-    line-height: 1.45;
-    letter-spacing: 0.012em;
-    color: rgba(228, 232, 238, 0.84);
-    text-align: center;
-    text-wrap: balance;
+    font-size: clamp(0.75rem, 1.15vw, 0.84375rem);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    color: rgba(196, 200, 210, 0.62);
+    white-space: nowrap;
   }
 
-  .hero-pillars-row__sep {
-    color: rgba(186, 190, 202, 0.38);
-    font-weight: 400;
-    user-select: none;
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-edge-strip__track {
+      animation: hero-edge-marquee 44s linear infinite;
+    }
+  }
+
+  @keyframes hero-edge-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .hero-edge-strip__dot {
+    flex-shrink: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(186, 190, 202, 0.35);
   }
 
   .hero-action-block {
@@ -283,55 +283,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     width: 100%;
   }
 
-  .hero-edge-strip {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: min(52rem, 100%);
-    margin: clamp(0.15rem, 0.8vw, 0.45rem) auto 0;
-    padding: clamp(0.35rem, 1.2vw, 0.55rem) 0;
-    overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  }
-
-  .hero-edge-strip__track {
-    display: flex;
-    align-items: center;
-    gap: clamp(1.75rem, 4vw, 2.75rem);
-    width: max-content;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    font-size: clamp(0.6875rem, 1.05vw, 0.75rem);
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: lowercase;
-    color: rgba(186, 190, 202, 0.55);
-    white-space: nowrap;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-edge-strip__track {
-      animation: hero-edge-marquee 44s linear infinite;
-    }
-  }
-
-  @keyframes hero-edge-marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  .hero-edge-strip__dot {
-    flex-shrink: 0;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: rgba(186, 190, 202, 0.35);
-  }
-
   .hero-section__image {
     --hero-image-radius: clamp(1.2rem, 3.2vw, 2rem);
     display: flex;
@@ -340,7 +291,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     justify-content: flex-start;
     flex: 1 1 auto;
     min-height: 0;
-    margin-top: clamp(0.65rem, 1.8vw, 1.15rem);
+    margin-top: clamp(1.25rem, 3.2vw, 1.75rem);
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -351,10 +302,12 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
   .hero-image__wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0.72rem 0.95rem;
+    padding: clamp(0.72rem, 2vw, 0.95rem) clamp(0.95rem, 2.5vw, 1.15rem)
+      clamp(0.5rem, 1.4vw, 0.72rem);
     position: relative;
     border-radius: var(--hero-image-radius);
     overflow: visible;
@@ -397,7 +350,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   }
 
   .hero-image__media {
-    position: relative;
     display: inline-block;
     width: fit-content;
     max-width: 100%;
@@ -412,23 +364,20 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
   }
 
   .hero-image__brand {
-    position: absolute;
-    left: 50%;
-    bottom: clamp(5.5%, 1.8vh, 9%);
-    transform: translateX(-50%);
-    margin: 0;
-    padding: 0 0.5rem;
-    max-width: 92%;
+    position: static;
+    transform: none;
+    margin: clamp(0.42rem, 1.1vw, 0.58rem) 0 0;
+    padding: 0 0.35rem;
+    max-width: 100%;
     box-sizing: border-box;
     font-size: clamp(0.625rem, 1.05vw, 0.72rem);
     font-weight: 400;
     line-height: 1.35;
-    color: rgba(255, 255, 255, 0.46);
-    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.44);
+    letter-spacing: 0.045em;
     text-align: center;
     white-space: nowrap;
     pointer-events: none;
-    z-index: 2;
   }
 
   .hero-image__img,
@@ -485,17 +434,16 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
 
     .hero-section__text {
-      --hero-pillars-font-size: clamp(0.78rem, 2.65vw, 0.875rem);
       --hero-disclaimer-font-size: clamp(0.75rem, 2.45vw, 0.8125rem);
     }
 
-    .hero-pillars-float {
+    .hero-edge-strip {
       margin-bottom: clamp(3.35rem, 9vw, 4.5rem);
-      gap: 0.45rem;
     }
 
-    .hero-pillars-row {
-      gap: 0.28rem 0.55rem;
+    .hero-edge-strip__track {
+      font-size: clamp(0.6875rem, 2.35vw, 0.78rem);
+      letter-spacing: 0.085em;
     }
 
     .hero-action-block {
@@ -505,15 +453,6 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     .hero-disclaimer {
       margin-bottom: clamp(1.35rem, 4.5vw, 1.85rem);
       color: rgba(244, 246, 248, 0.62);
-    }
-
-    .hero-edge-strip {
-      margin-top: 0.1rem;
-    }
-
-    .hero-edge-strip__track {
-      font-size: clamp(0.625rem, 2.2vw, 0.6875rem);
-      letter-spacing: 0.1em;
     }
 
     .hero-section__inner {
@@ -543,7 +482,7 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
 
     .hero-image__brand {
-      bottom: clamp(4.5%, 1.4vh, 7.5%);
+      margin-top: clamp(0.35rem, 1.8vw, 0.5rem);
       font-size: clamp(0.5625rem, 2.1vw, 0.65rem);
       letter-spacing: 0.035em;
       white-space: normal;
@@ -551,7 +490,8 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
     }
 
     .hero-image__wrapper {
-      padding: 1.05rem clamp(2rem, 9vw, 2.85rem);
+      flex-direction: column;
+      padding: 1.05rem clamp(2rem, 9vw, 2.85rem) clamp(0.65rem, 2vw, 0.85rem);
       border-radius: var(--hero-image-radius);
       animation: none;
       box-shadow:
