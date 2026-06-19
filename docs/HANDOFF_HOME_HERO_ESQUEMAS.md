@@ -2,14 +2,14 @@
 
 **Última actualización:** 19 jun 2026  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2k** — marquee bajo H1 · sin pilares estáticos · TEVS en marco negro bajo foto.
+**Activo en web:** **esquema 2k** — marquee bajo H1 · sin pilares estáticos · TEVS overlay en franja negra de la foto (casi invisible).
 
 ---
 
 ## Esquema 2k (activo — 19 jun 2026)
 
 - H1 → **`hero-edge-strip`**: 5 frases en bucle (precisión operativa · disciplina · trazabilidad · MT5 · tagline EN).
-- **TEVS** en **`hero-image__wrapper`**, debajo de la foto (negro puro del marco), no sobre el gráfico.
+- **TEVS** (`hero-image__brand`) **dentro** de `hero-image__media`, posicionado en la franja negra inferior del PNG (`position: absolute`, opacidad ~0.15–0.17), no en el padding gris del wrapper.
 - Sin velas · KITT intacto.
 
 ---
