@@ -10,7 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Hero home — esquema 2m-E solo JS + slots aleatorios (6 jun 2026)
 
-**Qué:** vacío ~4 s · **batch solo 2 esquinas** (Disciplina + Protección MT5; apagado sincronizado) · fase solo con las 4 frases en slots aleatorios · script 2m-E.
+**Qué:** vacío ~4 s · batch **4** juntas · apagado async **2+1+1** · fase solo 4 frases en slots aleatorios · script 2m-E.
 
 **Commit:** `web(tevsys): hero 2m-e solo js slots aleatorios mas vacio inicial`
 
