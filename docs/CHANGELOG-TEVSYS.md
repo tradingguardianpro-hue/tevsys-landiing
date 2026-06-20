@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — esquema 2m una línea fade (20 jun 2026)
+
+**Qué:** 4 pilares ES en una línea · fade opacidad secuencial (20 s, sin scroll) · separación amplia · halo recortado.
+
+**Commit:** `web(tevsys): hero 2m una linea pilares fade sin scroll`
+
+---
+
 ## Hero home — esquema 2l-B dos líneas fijas (20 jun 2026)
 
 **Qué:** 2 líneas pilares ES sin caja · halo recortado · sustituye 2l-A (descartada).

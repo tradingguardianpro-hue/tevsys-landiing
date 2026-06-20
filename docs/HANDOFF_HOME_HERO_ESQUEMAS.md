@@ -1,30 +1,37 @@
 # Handoff — Hero home · esquemas de jerarquía (jun 2026)
 
-**Última actualización:** 20 jun 2026 — **2l activo** (tira fija)  
+**Última actualización:** 20 jun 2026 — **2m activo** (una línea fade)  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2l-B** — dos líneas fijas · sin caja · halo recortado.
-
-**Cola de prueba (fundador — probar las tres):**
+**Activo en web:** **esquema 2m** — una línea · separación amplia · fade secuencial (sin scroll).
 
 | Id | Nombre | Estado |
 |----|--------|--------|
-| **2l-A** | Tira fija + fondo gris | Descartada fundador |
-| **2l-B** | Dos líneas fijas, sin caja | **Activo ahora** |
+| **2l-A** | Tira fija + fondo gris | Descartada |
+| **2l-B** | Dos líneas fijas | Descartada |
 | **2l-C** | Una frase síntesis | Pendiente |
+| **2m** | Una línea · fade elegante | **Activo ahora** |
 
 **Pendiente (fuera hero):** más aire entre nota MT5 y primer `h2` home (`index.astro`).
 
 ---
 
-## Esquema 2l-B — dos líneas fijas (activo — 20 jun 2026)
+## Esquema 2m — una línea fade (activo — 20 jun 2026)
 
-- **`hero-pillar-lines`** — L1: Precisión · Disciplina · L2: Trazabilidad · MT5.
-- Sin caja gris · mismo halo recortado que 2l-A · sin animación.
-- Clases: `hero-pillar-lines`, `hero-pillar-lines__line`, `hero-pillar-lines__phrase`, `hero-pillar-lines__sep`.
+- **`hero-pillar-fade`** — 4 frases en **una línea** · gap `clamp(1.65rem, 3.8vw, 2.65rem)`.
+- **Animación:** solo opacidad (`0.12 → 0.9`), ciclo 20 s, delay por frase · **sin** `translateX`.
+- Separadores `·` gris fijo · máscara lateral · halo recortado.
+- `prefers-reduced-motion`: opacidad fija ~0.78 en todas.
 
 ---
 
-## Esquema 2l-A — tira fija (descartada fundador — 20 jun 2026)
+## Esquema 2l-B — dos líneas fijas (descartada — 20 jun 2026)
+
+- **`hero-pillar-lines`** — L1: Precisión · Disciplina · L2: Trazabilidad · MT5.
+- Sin caja gris · mismo halo recortado que 2l-A · sin animación.
+
+---
+
+## Esquema 2l-A — tira fija (descartada — 20 jun 2026)
 
 ### Qué cambia respecto a 2k
 
