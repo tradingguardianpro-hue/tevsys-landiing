@@ -1753,8 +1753,12 @@ html[data-theme='dark'] body:has(.tevsys-feature-micro-surface) footer {
 	}
 
 	html[data-theme='dark'] .tevsys-home-mid-glow {
-		filter: blur(24px);
-		opacity: 0.74;
+		filter: blur(22px);
+		opacity: 0.56;
+	}
+
+	html[data-theme='dark'] .tevsys-home-mid-glow::before {
+		opacity: 0.38;
 	}
 
 	html[data-theme='dark'] .tevsys-home-band--lower {
