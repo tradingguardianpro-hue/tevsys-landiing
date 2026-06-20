@@ -44,7 +44,7 @@ import settings from '../config/settings.js';
 						</div>
 						<p class="feature-card__hook">¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.</p>
 						<p><span class="feature-card__value-accent">Ajuste a tiempo real</span>: volatilidad, spread, slippage y comisiones.</p>
-						<p>{settings.documentedOperatives} operativas documentadas en 5 entornos de ejecución.</p>
+						<p><span class="tevsys-meta-label">{settings.documentedOperatives} operativas documentadas</span> en 5 entornos de ejecución.</p>
 					</div>
 				</a>
 				<a href="/features/hyperclose" class="tevsys-card">
@@ -351,13 +351,20 @@ import settings from '../config/settings.js';
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
 		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
 	}
+	/* Etiquetas pequeñas — misma familia que puente hero y capas (IBM Plex Mono). */
+	.tevsys-meta-label {
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+	}
 	.audit-teaser-kicker {
 		margin: 0 0 0.42rem;
-		font-size: 0.78rem;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-weight: 700;
-		color: rgba(245, 176, 65, 0.95);
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+		font-size: clamp(0.72rem, 1.05vw, 0.78rem);
+		text-transform: none;
+		letter-spacing: 0.055em;
+		font-weight: 500;
+		color: rgba(245, 176, 65, 0.92);
 	}
 	.audit-teaser-shell h2 {
 		margin: 0 0 1rem;
@@ -700,10 +707,11 @@ import settings from '../config/settings.js';
 		margin: 0 0 0.45rem;
 		padding: 0.2rem 0.58rem;
 		border-radius: 999px;
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
 		font-size: 0.72rem;
-		font-weight: 700;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
+		font-weight: 500;
+		letter-spacing: 0.045em;
+		text-transform: none;
 		line-height: 1.25;
 	}
 	.plan-card__status--live {
