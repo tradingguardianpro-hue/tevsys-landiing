@@ -39,7 +39,7 @@ import settings from '../config/settings.js';
 					</div>
 					<div class="tevsys-card__content">
 						<div class="tevsys-card__title-row">
-							<h3><span class="card-title__accent">0,06%</span> error medio</h3>
+							<h3 class="tevsys-card__title--accent-line" style="--card-accent-line-w: 4.35rem; --card-accent-line-ml: 2.35rem"><span class="card-title__accent">0,06%</span> error medio</h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
 						<p class="feature-card__hook">¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.</p>
@@ -54,7 +54,7 @@ import settings from '../config/settings.js';
 					</div>
 					<div class="tevsys-card__content">
 						<div class="tevsys-card__title-row">
-							<h3><span class="card-title__accent">HyperClose</span></h3>
+							<h3 class="tevsys-card__title--accent-line" style="--card-accent-line-w: 3.35rem; --card-accent-line-ml: 1.05rem"><span class="card-title__accent">HyperClose</span></h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
 						<p class="feature-card__hook">La diferencia entre querer parar y<span class="feature-card__value-accent feature-card__value-accent--spaced">no poder seguir</span>.</p>
@@ -69,7 +69,7 @@ import settings from '../config/settings.js';
 					</div>
 					<div class="tevsys-card__content">
 						<div class="tevsys-card__title-row">
-							<h3><span class="card-title__accent">SML</span> — Smart Money Lock</h3>
+							<h3 class="tevsys-card__title--accent-line" style="--card-accent-line-w: 3.65rem; --card-accent-line-ml: 0.42rem"><span class="card-title__accent">SML</span> — Smart Money Lock</h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
 						<p class="feature-card__hook">No es obligatorio. Es una recompensa.</p>
@@ -84,7 +84,7 @@ import settings from '../config/settings.js';
 					</div>
 					<div class="tevsys-card__content">
 						<div class="tevsys-card__title-row">
-							<h3><span class="card-title__accent">Evidencia</span> verificable</h3>
+							<h3 class="tevsys-card__title--accent-line" style="--card-accent-line-w: 4.85rem; --card-accent-line-ml: 0.95rem"><span class="card-title__accent">Evidencia</span> verificable</h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
 						<p class="feature-card__hook">No confíes: Comprueba.</p>
@@ -268,6 +268,29 @@ import settings from '../config/settings.js';
 			rgba(218, 155, 48, 0.9) 0%,
 			rgba(120, 125, 138, 0.5) 75%,
 			rgba(90, 95, 108, 0.28) 100%
+		);
+	}
+	/* Subrayado fino parcial en títulos de cards (familia /como-funciona; ancho y offset por card). */
+	.tevsys-card__title-row h3.tevsys-card__title--accent-line::after {
+		content: '';
+		display: block;
+		width: min(var(--card-accent-line-w, 4rem), 58%);
+		height: 2px;
+		margin: 0.3rem 0 0 var(--card-accent-line-ml, 0.72rem);
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.92) 0%,
+			rgba(148, 154, 168, 0.58) 72%,
+			rgba(110, 116, 128, 0.32) 100%
+		);
+	}
+	html[data-theme='light'] .tevsys-card__title-row h3.tevsys-card__title--accent-line::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.88) 0%,
+			rgba(120, 125, 138, 0.48) 75%,
+			rgba(90, 95, 108, 0.26) 100%
 		);
 	}
 	.feature-card__checklist-static {
@@ -516,7 +539,7 @@ import settings from '../config/settings.js';
 		justify-content: space-between;
 		align-items: baseline;
 		gap: 0.75rem;
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.55rem;
 	}
 	.tevsys-card__title-row h3 {
 		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -524,13 +547,9 @@ import settings from '../config/settings.js';
 		flex: 1;
 		min-width: 0;
 		font-weight: 700;
-		letter-spacing: -0.01em;
+		letter-spacing: -0.02em;
 		line-height: 1.3;
-		/* Gris legible vs cuerpo blanco (#f4f6f0 ~94%): familia pilares/MT5, protagonismo por peso 700 */
-		color: rgba(168, 176, 194, 0.96);
-	}
-	.tevsys-card:hover .tevsys-card__title-row h3 {
-		color: rgba(198, 204, 218, 0.98);
+		color: #f4f6f8;
 	}
 	.tevsys-card__saber-mas {
 		flex-shrink: 0;
