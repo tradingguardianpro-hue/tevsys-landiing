@@ -1,29 +1,20 @@
 # Handoff — Hero home · esquemas de jerarquía (jun 2026)
 
-**Última actualización:** 20 jun 2026 — **2m-C activo** (intro 4 visibles)  
+**Última actualización:** 20 jun 2026 — **2m-D activo**  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m-C** — al cargar las **4 frases visibles** ~9 s → desvanecen escalonadas → vuelven juntas (ciclo 48 s).
+**Activo en web:** **esquema 2m-D** — vacío → batch 4 → apagado → solos async → loop (72 s).
 
-| Id | Nombre | Estado |
-|----|--------|--------|
-| **2m-C** | Intro 4 visibles → apagado escalonado | **Activo ahora** |
-| **2m-B** | Rotación una a una | Supersedido |
+## Esquema 2m-D — intro vacío + batch + solos (activo — 20 jun 2026)
 
-**Pendiente (fuera hero):** más aire entre nota MT5 y primer `h2` home (`index.astro`).
+1. **Vacío** al cargar (~2 s).
+2. **Entran las 4** juntas (posiciones batch) · ~9 s lectura.
+3. **Apagan** escalonadas.
+4. **Vuelven una a una** en posiciones **solo** distintas, timing asincrónico.
+5. Pausa → **loop** (otra vez vacío + batch).
 
----
+Posiciones `batch` / `solo` en frontmatter `heroProductPillars`.
 
-## Esquema 2m-C — intro cuatro visibles (activo — 20 jun 2026)
-
-- **Al cargar / reinicio ciclo:** las 4 pilares **visibles a la vez** en el rectángulo.
-- **Precisión** en zona **centro-bajo** (~42% / 24% left).
-- **~9 s** lectura → cada frase se apaga sola (escalonado ~1 s entre ellas).
-- **Pausa** en vacío → **reaparecen juntas** (78–88% del ciclo) · total **48 s**.
-- `prefers-reduced-motion`: las 4 estáticas visibles.
-
----
-
-## Esquema 2m-B — rotación ancho completo (supersedido — 20 jun 2026)
+## Esquema 2m-C — intro cuatro visibles (supersedido)
 
 ## Esquema 2m — una línea fade (supersedido — 20 jun 2026)
 
