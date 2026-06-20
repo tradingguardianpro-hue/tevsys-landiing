@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
+import settings from '../../config/settings.js';
 
 const seo = {
 	title: 'Precisión de cierre | tevsys',
@@ -16,7 +17,7 @@ const seo = {
 			<h1>
 				Precisión de cierre. Menos "<span class="feature-title__accent">casi</span>": más cierre donde toca.
 			</h1>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>87 operativas documentadas. <span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.</p>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>{settings.documentedOperatives} operativas documentadas. <span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.</p>
 			<p class="feature-intro">El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.</p>
 			<p class="feature-extreme-note">
 				También hay pruebas en situaciones muy exigentes: la protección sigue; desviación máxima documentada <span class="feature-hook__accent feature-extreme-note__pct">−0,39%</span>.

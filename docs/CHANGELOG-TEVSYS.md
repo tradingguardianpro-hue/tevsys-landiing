@@ -8,6 +8,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Contador operativas — **95** (20 jun 2026)
+
+**Fuente:** `docs/PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).
+
+**Web:** `src/config/settings.js` → `TEVSYS_DOCUMENTED_OPERATIVES` + `documentedOperatives`; consumido en home card Precisión, hook `/features/precision`, lista `/features/evidencia`, meta `description`.
+
+**Commit:** `web(tevsys): sync contador 95 operativas documentadas`
+
+---
+
 ## Hero home — esquema 2m-E solo JS + slots aleatorios (6 jun 2026)
 
 **Qué:** vacío ~4 s · batch **4** juntas · apagado async **2+1+1** · fase solo 4 frases en slots aleatorios · script 2m-E.

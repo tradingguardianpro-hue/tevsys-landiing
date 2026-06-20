@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
+import settings from '../../config/settings.js';
 
 const seo = {
 	title: 'Evidencia verificable | tevsys',
@@ -295,7 +296,7 @@ const seo = {
 						</p>
 					</div>
 					<ul class="evidence-product-intro__pillars" aria-label="Capas del sistema documentadas">
-						<li>Precisión milimétrica al límite (87 operativas, error medio ≈ 0,06 %)</li>
+						<li>Precisión milimétrica al límite ({settings.documentedOperatives} operativas, error medio ≈ 0,06 %)</li>
 						<li>HyperClose — cierre bajo presión con registro</li>
 						<li>Smart Money Lock — Advanced/Pro (validación en curso)</li>
 						<li>Evidencia cruzada: informe MT5 + logs tevsys</li>
