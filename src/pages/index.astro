@@ -250,9 +250,10 @@ import settings from '../config/settings.js';
 	.tevsys-brand-accent-underline::after {
 		content: '';
 		display: block;
-		width: min(6.25rem, 100%);
+		/* Un poco más ancha que el texto: sobresale a la derecha del «sí» (familia /como-funciona). */
+		width: min(8.35rem, calc(100% + 1.35rem));
 		height: 3px;
-		margin: 0.34rem 0 0 0.1rem;
+		margin: 0.34rem 0 0 0.04rem;
 		border-radius: 999px;
 		background: linear-gradient(
 			90deg,
