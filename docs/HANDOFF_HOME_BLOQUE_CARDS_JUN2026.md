@@ -29,7 +29,7 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + pie cambiaba de regist
    - Offset distinto por card; prueba mono en títulos **revertida**; prueba gris títulos **revertida**.
    - Prueba mono en hooks cards **revertida** (jun 2026).
    - **Opción A respiración (jun 2026):** más aire checklist→grid; padding interno cards; cuerpo más suave; hook mantiene peso. Revertible.
-8. **Auditoría IA** — kicker mono.
+8. **Auditoría IA** — puente `.tevsys-home-cards-audit-bridge`: `Evidencia · Trazabilidad · Verificación`. Kicker caja: `Revisión asistida · próximamente` (mono).
 9. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono.
 10. **Fundador** — firma `— Gabi, fundador de tevsys` en IBM Plex Mono.
 
@@ -65,6 +65,7 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + pie cambiaba de regist
 
 ```text
 .tevsys-home-hero-bridge / __text
+.tevsys-home-cards-audit-bridge
 .tevsys-brand-accent-underline
 .tevsys-meta-label
 .tevsys-card__title--accent-line / --short / --long
