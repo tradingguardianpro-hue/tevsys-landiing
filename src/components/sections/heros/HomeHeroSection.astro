@@ -2,7 +2,6 @@
 import { Container } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
-import { Fragment } from 'astro/jsx-runtime';
 
 const heroProductPillars = [
   'Precisión de cierre en tu operativa',
@@ -14,7 +13,7 @@ const heroPillarFadeCycleSec = 20;
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2m">
+  <section class="hero-section__section" data-hero-layout="scheme-2m-b">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -25,21 +24,16 @@ const heroPillarFadeCycleSec = 20;
           </span>
         </h1>
         <div class="hero-pillar-fade" aria-label="Capas del producto tevsys">
-          <p class="hero-pillar-fade__line">
+          <div class="hero-pillar-fade__stage">
             {heroProductPillars.map((phrase, index) => (
-              <Fragment key={phrase}>
-                {index > 0 && (
-                  <span class="hero-pillar-fade__sep" aria-hidden="true">·</span>
-                )}
-                <span
-                  class="hero-pillar-fade__phrase"
-                  style={`--fade-i: ${index}; --fade-cycle: ${heroPillarFadeCycleSec}s;`}
-                >
-                  {phrase}
-                </span>
-              </Fragment>
+              <p
+                class="hero-pillar-fade__phrase"
+                style={`--fade-i: ${index}; --fade-cycle: ${heroPillarFadeCycleSec}s;`}
+              >
+                {phrase}
+              </p>
             ))}
-          </p>
+          </div>
         </div>
         <div class="hero-action-block">
           <p class="hero-disclaimer">
@@ -169,45 +163,41 @@ const heroPillarFadeCycleSec = 20;
   .hero-pillar-fade {
     position: relative;
     z-index: 1;
-    align-self: center;
+    align-self: stretch;
     width: 100%;
-    max-width: min(52rem, 100%);
-    margin: 0 auto clamp(2.25rem, 5.2vh, 3.25rem);
-    padding: clamp(0.2rem, 0.8vw, 0.45rem) 0;
-    overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    max-width: 100%;
+    margin: 0 0 clamp(2.25rem, 5.2vh, 3.25rem);
+    padding: clamp(0.15rem, 0.5vw, 0.35rem) 0;
+    box-sizing: border-box;
   }
 
-  .hero-pillar-fade__line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 0 clamp(1.65rem, 3.8vw, 2.65rem);
+  .hero-pillar-fade__stage {
+    position: relative;
+    width: 100%;
+    min-height: clamp(2.9em, 5.5vw, 3.2em);
     margin: 0;
-    min-height: 1.55em;
+    padding: 0;
+  }
+
+  .hero-pillar-fade__phrase {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     font-size: clamp(0.875rem, 1.25vw, 0.9375rem);
     font-weight: 400;
     line-height: 1.45;
     letter-spacing: 0.04em;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  .hero-pillar-fade__phrase {
-    flex-shrink: 0;
-    color: rgba(208, 212, 222, 0.95);
-    opacity: 0.14;
-    will-change: opacity;
-  }
-
-  .hero-pillar-fade__sep {
-    flex-shrink: 0;
-    color: rgba(176, 182, 196, 0.38);
-    font-weight: 300;
-    user-select: none;
+    color: rgba(208, 212, 222, 0.92);
+    text-align: left;
+    text-wrap: balance;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    will-change: opacity, visibility;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -219,18 +209,31 @@ const heroPillarFadeCycleSec = 20;
 
   @keyframes hero-pillar-phrase-fade {
     0%,
+    6%,
+    28%,
     100% {
-      opacity: 0.12;
+      opacity: 0;
+      visibility: hidden;
     }
-    8%,
-    18% {
-      opacity: 0.9;
+    12%,
+    21% {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .hero-pillar-fade__stage {
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
     .hero-pillar-fade__phrase {
-      opacity: 0.78;
+      position: static;
+      opacity: 0.82;
+      visibility: visible;
     }
   }
 
@@ -475,14 +478,16 @@ const heroPillarFadeCycleSec = 20;
 
     .hero-pillar-fade {
       margin-bottom: clamp(2rem, 5.5vh, 2.85rem);
-      mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
     }
 
-    .hero-pillar-fade__line {
+    .hero-pillar-fade__stage {
+      min-height: clamp(3.1em, 10vw, 3.6em);
+    }
+
+    .hero-pillar-fade__phrase {
       font-size: clamp(0.8125rem, 2.75vw, 0.875rem);
       letter-spacing: 0.035em;
-      gap: 0 clamp(1.15rem, 3vw, 1.65rem);
+      line-height: 1.5;
     }
 
     .hero-action-block {

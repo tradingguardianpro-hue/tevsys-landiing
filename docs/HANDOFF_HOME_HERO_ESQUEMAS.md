@@ -2,27 +2,27 @@
 
 **Última actualización:** 20 jun 2026 — **2m activo** (una línea fade)  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m** — una línea · separación amplia · fade secuencial (sin scroll).
+**Activo en web:** **esquema 2m-B** — una frase a la vez · ancho completo · alineación izquierda · fade a opacidad 0 (sin rastro).
 
 | Id | Nombre | Estado |
 |----|--------|--------|
-| **2l-A** | Tira fija + fondo gris | Descartada |
-| **2l-B** | Dos líneas fijas | Descartada |
-| **2l-C** | Una frase síntesis | Pendiente |
-| **2m** | Una línea · fade elegante | **Activo ahora** |
+| **2m** | Una línea · fade (4 visibles tenues) | Supersedido |
+| **2m-B** | Rotación ancho completo · fade total | **Activo ahora** |
 
 **Pendiente (fuera hero):** más aire entre nota MT5 y primer `h2` home (`index.astro`).
 
 ---
 
-## Esquema 2m — una línea fade (activo — 20 jun 2026)
+## Esquema 2m-B — rotación ancho completo (activo — 20 jun 2026)
 
-- **`hero-pillar-fade`** — 4 frases en **una línea** · gap `clamp(1.65rem, 3.8vw, 2.65rem)`.
-- **Animación:** solo opacidad (`0.12 → 0.9`), ciclo 20 s, delay por frase · **sin** `translateX`.
-- Separadores `·` gris fijo · máscara lateral · halo recortado.
-- `prefers-reduced-motion`: opacidad fija ~0.78 en todas.
+- **`hero-pillar-fade__stage`** — frases apiladas (`position: absolute`), **una visible** cada ~5 s.
+- **Ancho 100%** del bloque texto · **`text-align: left`** (no centradas).
+- **Fade a 0** + `visibility: hidden` cuando apagadas (sin rastro gris).
+- Sin máscara lateral · sin scroll. Motion fino pendiente fundador.
 
 ---
+
+## Esquema 2m — una línea fade (supersedido — 20 jun 2026)
 
 ## Esquema 2l-B — dos líneas fijas (descartada — 20 jun 2026)
 
