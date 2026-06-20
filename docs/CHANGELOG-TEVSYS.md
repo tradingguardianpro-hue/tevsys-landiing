@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — esquema 2l-B dos líneas fijas (20 jun 2026)
+
+**Qué:** 2 líneas pilares ES sin caja · halo recortado · sustituye 2l-A (descartada).
+
+**Commit:** `web(tevsys): hero 2l-b dos lineas pilares sin caja`
+
+---
+
 ## Hero home — esquema 2l-A tira fija gris + halo recortado (20 jun 2026)
 
 **Qué:** sustituye marquee 2k por `hero-pillar-band` estático (4 pilares ES) · fondo gris carbón · halo ~−32% · sin animación.

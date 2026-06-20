@@ -2,21 +2,29 @@
 
 **Última actualización:** 20 jun 2026 — **2l activo** (tira fija)  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2l** — tira fija 4 pilares ES · fondo gris · halo recortado · sin motion.
+**Activo en web:** **esquema 2l-B** — dos líneas fijas · sin caja · halo recortado.
 
 **Cola de prueba (fundador — probar las tres):**
 
 | Id | Nombre | Estado |
 |----|--------|--------|
-| **2l-A** | Tira fija + fondo gris + halo recortado | **Activo ahora** |
-| **2l-B** | Dos líneas fijas, sin caja | Pendiente |
+| **2l-A** | Tira fija + fondo gris | Descartada fundador |
+| **2l-B** | Dos líneas fijas, sin caja | **Activo ahora** |
 | **2l-C** | Una frase síntesis | Pendiente |
 
 **Pendiente (fuera hero):** más aire entre nota MT5 y primer `h2` home (`index.astro`).
 
 ---
 
-## Esquema 2l-A — tira fija (activo — 20 jun 2026)
+## Esquema 2l-B — dos líneas fijas (activo — 20 jun 2026)
+
+- **`hero-pillar-lines`** — L1: Precisión · Disciplina · L2: Trazabilidad · MT5.
+- Sin caja gris · mismo halo recortado que 2l-A · sin animación.
+- Clases: `hero-pillar-lines`, `hero-pillar-lines__line`, `hero-pillar-lines__phrase`, `hero-pillar-lines__sep`.
+
+---
+
+## Esquema 2l-A — tira fija (descartada fundador — 20 jun 2026)
 
 ### Qué cambia respecto a 2k
 
