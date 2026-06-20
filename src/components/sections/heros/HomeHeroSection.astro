@@ -7,22 +7,22 @@ const heroProductPillars = [
   {
     text: 'Precisión de cierre en tu operativa',
     batch: { top: '42%', left: '24%', right: 'auto', align: 'left', maxW: '52%' },
-    batchMobile: { top: '50%', left: '0', right: 'auto', align: 'left', maxW: '58%' },
+    batchMobile: { top: '52%', left: '0', right: 'auto', align: 'left', maxW: '47%' },
   },
   {
     text: 'Disciplina automatizada',
     batch: { top: '6%', left: '4%', right: 'auto', align: 'left', maxW: '44%' },
-    batchMobile: { top: '0', left: '0', right: 'auto', align: 'left', maxW: '54%' },
+    batchMobile: { top: '0', left: '0', right: 'auto', align: 'left', maxW: '47%' },
   },
   {
     text: 'Trazabilidad verificable',
     batch: { top: '8%', left: 'auto', right: '5%', align: 'right', maxW: '42%' },
-    batchMobile: { top: '0', left: 'auto', right: '0', align: 'right', maxW: '54%' },
+    batchMobile: { top: '0', left: 'auto', right: '0', align: 'right', maxW: '47%' },
   },
   {
     text: 'Protección activa en MT5',
     batch: { top: '58%', left: 'auto', right: '6%', align: 'right', maxW: '48%' },
-    batchMobile: { top: '50%', left: 'auto', right: '0', align: 'right', maxW: '62%' },
+    batchMobile: { top: '52%', left: 'auto', right: '0', align: 'right', maxW: '50%' },
   },
 ];
 ---
@@ -365,7 +365,7 @@ const heroProductPillars = [
   }
 
   .hero-section__text {
-    --hero-disclaimer-font-size: clamp(0.875rem, 1vw + 0.18rem, 0.96875rem);
+    --hero-disclaimer-font-size: clamp(0.9375rem, 1.05vw + 0.28rem, 1.0625rem);
     max-width: min(52rem, 100%);
     width: 100%;
     min-width: 0;
@@ -437,12 +437,14 @@ const heroProductPillars = [
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
     font-size: clamp(0.875rem, 1.25vw, 0.9375rem);
     font-weight: 400;
-    line-height: 1.45;
-    letter-spacing: 0.04em;
-    color: #e0e4ec;
+    line-height: 1.42;
+    letter-spacing: 0.065em;
+    text-transform: none;
+    font-variant-numeric: tabular-nums;
+    color: #e2e6ee;
     text-align: var(--fade-align, left);
     text-wrap: balance;
     opacity: 0;
@@ -485,17 +487,17 @@ const heroProductPillars = [
   }
 
   .hero-disclaimer {
-    margin: 0 0 clamp(1.5rem, 3.8vw, 2.1rem);
-    max-width: min(30rem, 100%);
+    margin: 0 0 clamp(1.65rem, 4vw, 2.25rem);
+    max-width: min(32rem, 100%);
     width: 100%;
     padding: 0 0.35rem;
     box-sizing: border-box;
     font-family: var(--tevsys-display-title-font, 'DM Sans', 'Inter', system-ui, sans-serif);
     font-size: var(--hero-disclaimer-font-size);
-    font-weight: 500;
-    line-height: 1.45;
-    letter-spacing: 0.01em;
-    color: rgba(244, 246, 248, 0.74);
+    font-weight: 600;
+    line-height: 1.42;
+    letter-spacing: 0.018em;
+    color: rgba(244, 246, 248, 0.9);
     text-align: center;
     text-wrap: balance;
   }
@@ -709,31 +711,35 @@ const heroProductPillars = [
     }
 
     .hero-section__text {
-      --hero-disclaimer-font-size: clamp(0.8125rem, 2.65vw, 0.875rem);
+      --hero-disclaimer-font-size: clamp(0.9rem, 3.25vw, 1.0125rem);
     }
 
     .hero-pillar-fade {
       margin-bottom: clamp(0.95rem, 2.5vh, 1.45rem);
+      padding-inline: 0.15rem;
     }
 
     .hero-pillar-fade__stage {
-      min-height: clamp(7.5rem, 34vw, 9.25rem);
+      min-height: clamp(7.75rem, 36vw, 9.5rem);
     }
 
     .hero-pillar-fade__phrase {
-      font-size: clamp(0.75rem, 2.45vw, 0.8125rem);
-      letter-spacing: 0.03em;
-      line-height: 1.35;
+      font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+      font-size: clamp(0.72rem, 2.35vw, 0.8rem);
+      letter-spacing: 0.055em;
+      line-height: 1.32;
       hyphens: auto;
+    }
+
+    .hero-disclaimer {
+      margin-bottom: clamp(1.35rem, 4.2vw, 1.75rem);
+      color: rgba(244, 246, 248, 0.88);
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .hero-action-block {
       gap: 0;
-    }
-
-    .hero-disclaimer {
-      margin-bottom: clamp(1.25rem, 4vw, 1.65rem);
-      color: rgba(244, 246, 248, 0.72);
     }
 
     .hero-section__inner {
