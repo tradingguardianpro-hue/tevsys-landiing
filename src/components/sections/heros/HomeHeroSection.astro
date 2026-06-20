@@ -98,7 +98,7 @@ const heroProductPillars = [
     batchFadeInStaggerMs: 110,
     batchFadeInStaggerMsMobile: 165,
     batchHoldMs: 9000,
-    batchFadePairOffsetMs: 180,
+    batchFadePairOffsetMs: 320,
     batchFadeStepGapMs: 360,
     handoffOverlapMs: 650,
     soloHoldMs: 3200,
@@ -235,9 +235,9 @@ const heroProductPillars = [
   async function fadeOutBatchWithHandoff(phrases) {
     const t = HERO_PILLAR_TIMING;
 
-    const pairA = glowPhrase(phrases[0], false, 1200, HERO_FADE_OUT_EASE);
+    const pairA = glowPhrase(phrases[0], false, 1150, HERO_FADE_OUT_EASE);
     await sleep(t.batchFadePairOffsetMs);
-    const pairB = glowPhrase(phrases[2], false, 1200, HERO_FADE_OUT_EASE);
+    const pairB = glowPhrase(phrases[2], false, 1150, HERO_FADE_OUT_EASE);
     await Promise.all([pairA, pairB]);
     await sleep(t.batchFadeStepGapMs);
 
