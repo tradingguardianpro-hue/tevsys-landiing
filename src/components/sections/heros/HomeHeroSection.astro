@@ -89,6 +89,8 @@ const heroProductPillars = [
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
     emptyMs: 4000,
+    batchFadeInDelayMs: 800,
+    batchFadeInMs: 2400,
     batchHoldMs: 10000,
     batchFadePairOffsetMs: 200,
     batchFadeStepGapMs: 420,
@@ -96,6 +98,9 @@ const heroProductPillars = [
     soloStartGapMs: 900,
     loopPauseMs: 6200,
   };
+
+  const HERO_BATCH_FADE_IN_EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  const HERO_SOLO_FADE_EASE = 'cubic-bezier(0.45, 0, 0.15, 1)';
 
   /* Apagado batch: 2 casi juntas → 1 → la última (índices frontmatter) */
   const HERO_PILLAR_BATCH_FADE_OUT = [
@@ -145,16 +150,44 @@ const heroProductPillars = [
     el.style.opacity = '0';
   }
 
-  async function fadePhrase(el, visible, ms = visible ? 1200 : 1000) {
+  async function fadePhrase(el, visible, ms = visible ? 1200 : 1000, easing = HERO_SOLO_FADE_EASE) {
+    el.style.transition = `opacity ${ms}ms ${easing}, transform ${ms}ms ${easing}, visibility 0s linear`;
     if (visible) {
       el.style.visibility = 'visible';
-      await sleep(20);
+      el.style.transform = 'translateY(0)';
+      await sleep(24);
       el.style.opacity = '1';
     } else {
       el.style.opacity = '0';
     }
     await sleep(ms);
     if (!visible) el.style.visibility = 'hidden';
+  }
+
+  async function fadeBatchInTogether(phrases) {
+    const { batchFadeInMs, batchFadeInDelayMs } = HERO_PILLAR_TIMING;
+
+    phrases.forEach((el) => {
+      el.style.transition = 'none';
+      el.style.opacity = '0';
+      el.style.visibility = 'hidden';
+      el.style.transform = 'translateY(10px)';
+    });
+    await sleep(32);
+
+    phrases.forEach((el) => {
+      el.style.transition = `opacity ${batchFadeInMs}ms ${HERO_BATCH_FADE_IN_EASE}, transform ${batchFadeInMs}ms ${HERO_BATCH_FADE_IN_EASE}, visibility 0s linear`;
+    });
+
+    await sleep(batchFadeInDelayMs);
+
+    phrases.forEach((el) => {
+      el.style.visibility = 'visible';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+
+    await sleep(batchFadeInMs);
   }
 
   async function fadeOutBatchAsync(phrases) {
@@ -180,17 +213,14 @@ const heroProductPillars = [
     phrases.forEach((el, index) => {
       applyPillarSlot(el, heroProductPillars[index].batch);
       el.style.transition = 'none';
+      el.style.transform = 'translateY(10px)';
       setPhraseVisible(el, false);
     });
     await sleep(32);
 
-    phrases.forEach((el) => {
-      el.style.transition = 'opacity 1.15s cubic-bezier(0.45, 0, 0.15, 1), visibility 0s linear';
-    });
-
     await sleep(HERO_PILLAR_TIMING.emptyMs);
 
-    await Promise.all(phrases.map((el) => fadePhrase(el, true, 1150)));
+    await fadeBatchInTogether(phrases);
     await sleep(HERO_PILLAR_TIMING.batchHoldMs);
 
     await fadeOutBatchAsync(phrases);
@@ -364,7 +394,10 @@ const heroProductPillars = [
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 1.1s cubic-bezier(0.45, 0, 0.15, 1);
+    transform: translateY(10px);
+    transition:
+      opacity 1.1s cubic-bezier(0.45, 0, 0.15, 1),
+      transform 1.1s cubic-bezier(0.45, 0, 0.15, 1);
   }
 
   .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
