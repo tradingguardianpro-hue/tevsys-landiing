@@ -8,13 +8,48 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Hero home — esquema 2k refino marquee + disclaimer (19 jun 2026)
+## Hero home — esquema 2l-A tira fija gris + halo recortado (20 jun 2026)
 
-**Qué:** marquee ~14 px, contraste ~72%, mayúscula inicial (sin lowercase forzado) · disclaimer DM Sans alineado al H1 · menos aire entre franja y acto 2 · TEVS overlay franja negra.
+**Qué:** sustituye marquee 2k por `hero-pillar-band` estático (4 pilares ES) · fondo gris carbón · halo ~−32% · sin animación.
+
+**Cola:** 2l-B dos líneas · 2l-C una frase — ver `HANDOFF_HOME_HERO_ESQUEMAS.md`.
+
+**Commit:** `web(tevsys): hero 2l tira fija pilares gris halo recortado`
+
+---
+
+## Hero home — esquema 2k **cerrado** (19 jun 2026, noche)
+
+**Archivo:** `src/components/sections/heros/HomeHeroSection.astro` · `data-hero-layout="scheme-2k"`
+
+**Qué (sesión completa):**
+
+1. **Marquee bajo H1** — 4 frases ES en bucle (precisión · disciplina · trazabilidad · MT5). Sin pilares estáticos 2×2 ni pill overflow.
+2. **Tipografía franja** — ~15 px, contraste ~78%, mayúscula inicial; eliminado `lowercase` forzado.
+3. **Disclaimer** — DM Sans alineado al H1 (~15 px); «No damos señales ni promesas de beneficio».
+4. **Espaciado** — menos hueco entre H1, franja y acto 2 (disclaimer + CTAs).
+5. **H1** — blanco suave `#e8ebf0` (no blanco puro); TEVSYS ámbar intacto.
+6. **TEVS** — `Trading Edge Verification System` debajo de la foto en marco gris; `lang="en"` `translate="no"`; ~20% opacidad. (Probado overlay en PNG → descartado.)
+7. **Tagline EN** — eliminada `Where precision meets the edge` del bucle (home ES).
+
+**No tocado:** KITT / motion (`index.astro`, `global.css`).
+
+**Validación:** fundador — hero listo en este sentido (captura ~22:40).
+
+**Pendiente (fuera hero):** más aire entre `hero-platform-note` y primer `h2` home (`.feature-card__section` en `index.astro`).
 
 **Handoff:** `docs/HANDOFF_HOME_HERO_ESQUEMAS.md`
 
-**Commit sugerido:** `web(tevsys): hero 2k marquee legible disclaimer DM Sans menos hueco`
+**Commits sugeridos (línea única deploy):**
+`web(tevsys): hero 2k cerrado marquee ES disclaimer DM Sans TEVS off-white`
+
+---
+
+## Hero home — esquema 2k refino marquee + disclaimer (19 jun 2026)
+
+**Qué:** iteración intermedia — marquee ~14 px · disclaimer DM Sans · TEVS overlay franja negra (supersedido en misma sesión).
+
+**Handoff:** `docs/HANDOFF_HOME_HERO_ESQUEMAS.md`
 
 ---
 

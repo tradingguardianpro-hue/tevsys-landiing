@@ -1,19 +1,142 @@
 # Handoff — Hero home · esquemas de jerarquía (jun 2026)
 
-**Última actualización:** 19 jun 2026  
+**Última actualización:** 20 jun 2026 — **2l activo** (tira fija)  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2k** — marquee bajo H1 · sin pilares estáticos · TEVS overlay en franja negra de la foto (casi invisible).
+**Activo en web:** **esquema 2l** — tira fija 4 pilares ES · fondo gris · halo recortado · sin motion.
+
+**Cola de prueba (fundador — probar las tres):**
+
+| Id | Nombre | Estado |
+|----|--------|--------|
+| **2l-A** | Tira fija + fondo gris + halo recortado | **Activo ahora** |
+| **2l-B** | Dos líneas fijas, sin caja | Pendiente |
+| **2l-C** | Una frase síntesis | Pendiente |
+
+**Pendiente (fuera hero):** más aire entre nota MT5 y primer `h2` home (`index.astro`).
 
 ---
 
-## Esquema 2k (activo — 19 jun 2026)
+## Esquema 2l-A — tira fija (activo — 20 jun 2026)
 
-- H1 blanco **suave** (`#e8ebf0`, no blanco puro) · TEVSYS ámbar sin tocar.
-- H1 → **`hero-edge-strip`**: 4 frases ES en bucle · ~15 px · contraste ~78% · mayúscula inicial (sin tagline EN).
-- **`hero-disclaimer`:** DM Sans (misma familia que H1), ~15 px, gris claro legible.
-- Espacio H1 → acto 2 reducido (marquee más cerca de disclaimer + CTAs).
-- **TEVS** (`hero-image__brand`): **debajo** de la foto, en el padding gris del wrapper (no overlay sobre el PNG). Texto fijo **EN:** `Trading Edge Verification System` · `lang="en"` · casi invisible (~20% opacidad).
-- Sin velas · KITT intacto.
+### Qué cambia respecto a 2k
+
+- **Sin marquee** — eliminada animación `hero-edge-marquee`, máscara lateral y bucle duplicado.
+- **`hero-pillar-band`** — 4 frases ES fijas, separador `·`, `flex-wrap` en móvil.
+- **Fondo gris carbón** — banda con borde fino + gradiente suave; texto gris claro ~88% opacidad.
+- **Halo** — opacidades ~−32% en `.hero-section__glow` (zona texto más neutra).
+
+### Copy (frontmatter)
+
+```js
+const heroProductPillars = [
+  'Precisión de cierre en tu operativa',
+  'Disciplina automatizada',
+  'Trazabilidad verificable',
+  'Protección activa en MT5',
+];
+```
+
+### Jerarquía
+
+Igual que 2k cerrado: H1 → tira pilares → disclaimer + CTAs → mano + TEVS + MT5.
+
+### Rollback a 2k (marquee)
+
+Restaurar `data-hero-layout="scheme-2k"`, clases `hero-edge-strip` + animación — ver git history del `.astro` o sección 2k abajo.
+
+---
+
+## Esquema 2l-B — dos líneas fijas (pendiente probar)
+
+**Markup objetivo:** sin caja; dos `<p>` centrados mismo peso.
+
+- L1: Precisión de cierre en tu operativa · Disciplina automatizada  
+- L2: Trazabilidad verificable · Protección activa en MT5  
+
+Inter ~15 px · gris claro · halo recortado como 2l-A.
+
+---
+
+## Esquema 2l-C — una frase (pendiente probar)
+
+**Copy único:**  
+*Disciplina automatizada, precisión de cierre, trazabilidad verificable y protección activa en MT5.*
+
+DM Sans o Inter 400 · una línea desktop (balance en móvil) · sin caja · halo recortado.
+
+---
+
+## Esquema 2k — estado cerrado (19 jun 2026, supersedido por 2l)
+
+### Jerarquía (orden fijo)
+
+1. **H1** — Tú pones los límites. / **TEVSYS** los blinda.
+2. **`hero-edge-strip`** — franja en movimiento (4 pilares producto, solo ES).
+3. **Pausa visual** — margen reducido respecto a iteraciones 2j/2g.
+4. **Acto 2** — disclaimer + CTAs.
+5. **Mano robótica** + TEVS discreto + nota MT5.
+
+### Copy marquee (frontmatter)
+
+```js
+const heroMarqueePhrases = [
+  'Precisión de cierre en tu operativa',
+  'Disciplina automatizada',
+  'Trazabilidad verificable',
+  'Protección activa en MT5',
+];
+```
+
+- **Eliminado:** `Where precision meets the edge` (mezcla ES/EN en home ES — fundador jun 2026).
+- **Eliminado:** `text-transform: lowercase` (minúsculas forzadas).
+
+### Tipografía y color
+
+| Elemento | Familia | Tamaño aprox. | Color / notas |
+|----------|---------|---------------|---------------|
+| H1 | DM Sans 600 | clamp 2–4.35rem | `#e8ebf0` (blanco suave, no puro) |
+| TEVSYS | DM Sans 700 | — | `#f5b041` |
+| Marquee | Inter 400 | ~15 px desktop | `rgba(202,206,218,0.78)` · tracking 0.055em |
+| Disclaimer | DM Sans 500 | ~15 px | `rgba(244,246,248,0.74)` |
+| TEVS largo | Inter 400 | ~10 px | EN fijo · `lang="en"` `translate="no"` · ~20% opacidad |
+| Nota MT5 | Inter 400 | 13 px | gris 62% |
+
+### TEVS (`hero-image__brand`)
+
+- **Posición:** debajo del `<picture>`, dentro de `hero-image__wrapper` (padding gris), **no** overlay sobre el PNG.
+- **Texto:** `Trading Edge Verification System` (inglés; evitar traducción automática del navegador).
+- **Historial sesión:** probado overlay en franja negra del asset → fundador: bajar fuera de la foto; versión final en marco gris.
+
+### Espaciado clave (desktop aprox.)
+
+- H1 `margin-bottom`: `clamp(2rem, 5.5vh, 3.65rem)` (antes ~4.25rem max).
+- `hero-edge-strip` `margin-bottom`: `clamp(2.25rem, 5.2vh, 3.25rem)` (antes hueco 6.5rem).
+- `hero-image__brand` `margin-top`: separación extra respecto al borde de la foto.
+
+### Rechazado explícitamente (no reintroducir sin OK)
+
+- Pill una línea / grid 2×2 / marcos batch.
+- Capa velas SVG (`hero-velas-ambient`).
+- Marquee bajo CTAs (2j) como capa principal.
+- Tagline EN en franja de home ES.
+
+### KITT / motion
+
+- **No tocar:** animación KITT y motion global en `index.astro` + `global.css`.
+
+### Validación fundador
+
+- Hero **cerrado en este sentido** (captura ~22:40 jun 2026).
+- Salto hero → bloque *«¿Cuánto has perdido…?»* aceptable; opcional **más aire** vía `index.astro` (siguiente tarea).
+
+### Commits sugeridos (sesión acumulados)
+
+```
+web(tevsys): hero 2k marquee legible disclaimer DM Sans menos hueco
+web(tevsys): hero TEVS debajo foto en inglés sin overlay
+web(tevsys): hero pulido marquee H1 off-white TEVS aire
+web(tevsys): hero marquee solo ES sin tagline edge
+```
 
 ---
 
