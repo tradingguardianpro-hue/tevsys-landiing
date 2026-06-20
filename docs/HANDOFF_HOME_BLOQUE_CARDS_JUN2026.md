@@ -27,7 +27,8 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + pie cambiaba de regist
    - **short** 3.25rem: HyperClose, SML
    - **long** 4rem: Precisión (*error medio*), Evidencia (*verificable*)
    - Offset distinto por card; prueba mono en títulos **revertida**; prueba gris títulos **revertida**.
-   - Prueba mono en hooks cards **revertida** (jun 2026 — pegote visual; ver opciones en handoff).
+   - Prueba mono en hooks cards **revertida** (jun 2026).
+   - **Opción A respiración (jun 2026):** más aire checklist→grid; padding interno cards; cuerpo más suave; hook mantiene peso. Revertible.
 8. **Auditoría IA** — kicker mono.
 9. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono.
 10. **Fundador** — firma `— Gabi, fundador de tevsys` en IBM Plex Mono.

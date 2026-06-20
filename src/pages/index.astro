@@ -232,7 +232,7 @@ import settings from '../config/settings.js';
 		font-weight: 700;
 		letter-spacing: -0.03em;
 		line-height: 1.25;
-		margin: 0 0 1.125rem;
+		margin: 0 0 1.35rem;
 	}
 	.feature-section__hook {
 		font-size: 1rem;
@@ -301,8 +301,8 @@ import settings from '../config/settings.js';
 	}
 	.feature-card__checklist-static {
 		max-width: min(54rem, 100%);
-		padding: clamp(0.85rem, 1.8vw, 1.1rem) clamp(0.95rem, 2vw, 1.25rem);
-		margin: 0 0 0.8rem;
+		padding: clamp(0.95rem, 2vw, 1.2rem) clamp(1rem, 2.1vw, 1.35rem);
+		margin: 0 0 1.15rem;
 		border-radius: var(--feature-card-radius, 0.85rem);
 		background: linear-gradient(165deg, hsl(222, 14%, 7%), hsl(222, 12%, 5.5%));
 		border: 1px solid rgba(255, 255, 255, 0.08);
@@ -349,7 +349,7 @@ import settings from '../config/settings.js';
 		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
 		letter-spacing: 0.055em;
 		color: rgba(228, 232, 240, 0.68);
-		margin: 0.25rem 0 clamp(2rem, 4vw, 2.65rem);
+		margin: 0.35rem 0 clamp(2.75rem, 5.5vw, 3.5rem);
 		line-height: 1.45;
 	}
 	.feature-card__intro-ellos .feature-hook__dot {
@@ -362,8 +362,8 @@ import settings from '../config/settings.js';
 	.feature-card__grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: clamp(1rem, 2.5vw, 1.35rem);
-		margin-top: clamp(0.35rem, 1.2vw, 0.85rem);
+		gap: clamp(1.35rem, 3vw, 1.85rem);
+		margin-top: clamp(0.65rem, 1.8vw, 1.15rem);
 	}
 	.audit-teaser-section {
 		margin: calc(var(--tevsys-lower-strip-h, 180px) * -0.965) auto clamp(2rem, 4vw, 2.75rem);
@@ -500,8 +500,8 @@ import settings from '../config/settings.js';
 	}
 	.tevsys-card__arrow {
 		position: absolute;
-		bottom: 1rem;
-		right: 1rem;
+		bottom: 1.25rem;
+		right: 1.35rem;
 		font-size: 1.25rem;
 		opacity: 0.45;
 		transition: opacity 0.25s ease, color 0.25s ease, transform 0.25s ease;
@@ -540,14 +540,15 @@ import settings from '../config/settings.js';
 		flex: 1;
 		/* Mismo matiz carbón que micros (hsl 222), no gris neutro rancio */
 		background: linear-gradient(165deg, hsl(222, 14%, 7%), hsl(222, 12%, 5.5%));
-		padding: 1.25rem 1.35rem 1.35rem;
+		padding: clamp(1.45rem, 2.4vw, 1.75rem) clamp(1.4rem, 2.2vw, 1.65rem) clamp(1.55rem, 2.5vw, 1.9rem);
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
 	}
 	.tevsys-card__title-row {
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
 		gap: 0.75rem;
-		margin-bottom: 0.55rem;
+		margin-bottom: 0.85rem;
 	}
 	.tevsys-card__title-row h3 {
 		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -579,18 +580,20 @@ import settings from '../config/settings.js';
 		background-color: color-mix(in srgb, currentColor 8%, transparent);
 	}
 	.tevsys-card__content p {
-		margin: 0 0 0.75rem 0;
+		margin: 0 0 0.9rem 0;
 		font-size: 0.9375rem;
-		font-weight: 500;
-		line-height: 1.55;
-		color: rgba(244, 246, 248, 0.94);
+		font-weight: 400;
+		line-height: 1.62;
+		color: rgba(228, 232, 240, 0.84);
 	}
 	.tevsys-card__content p:last-child {
 		margin-bottom: 0;
 	}
 	.tevsys-card__content p.feature-card__hook {
+		margin-bottom: 1rem;
 		font-style: italic;
 		font-weight: 600;
+		line-height: 1.52;
 		color: rgba(244, 246, 248, 0.96);
 		opacity: 1;
 	}
@@ -629,15 +632,16 @@ import settings from '../config/settings.js';
 	.tevsys-card__content .feature-card__evidence-case,
 	.tevsys-card__content .feature-card__evidence-stat,
 	.tevsys-card__content .feature-card__evidence-proofline {
-		margin-bottom: 0.45rem;
-		line-height: 1.45;
+		margin-bottom: 0.55rem;
+		line-height: 1.52;
 	}
 	.tevsys-card__content .feature-card__evidence-case {
-		opacity: 0.95;
+		opacity: 0.9;
 	}
 	.tevsys-card__content .feature-card__evidence-stat {
-		margin-bottom: 0.55rem;
+		margin-bottom: 0.65rem;
 		font-weight: 600;
+		color: rgba(244, 246, 248, 0.92);
 	}
 	.feature-card__evidence-stat-value,
 	.feature-card__value-accent {
@@ -847,7 +851,7 @@ import settings from '../config/settings.js';
 		}
 		.feature-card__grid {
 			grid-template-columns: 1fr;
-			gap: 1.15rem;
+			gap: 1.4rem;
 		}
 		.tevsys-card__image {
 			aspect-ratio: 16 / 9;
