@@ -42,7 +42,7 @@ import settings from '../config/settings.js';
 							<h3 class="tevsys-card__title--accent-line tevsys-card__title--accent-line-long" style="--card-accent-line-ml: 2.35rem"><span class="card-title__accent">0,06%</span> error medio</h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
-						<p class="feature-card__hook">¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.</p>
+						<p class="feature-card__hook tevsys-card__brand-line">¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.</p>
 						<p><span class="feature-card__value-accent">Ajuste a tiempo real</span>: volatilidad, spread, slippage y comisiones.</p>
 						<p>{settings.documentedOperatives} operativas documentadas en 5 entornos de ejecución.</p>
 					</div>
@@ -57,7 +57,7 @@ import settings from '../config/settings.js';
 							<h3 class="tevsys-card__title--accent-line tevsys-card__title--accent-line-short" style="--card-accent-line-ml: 1.05rem"><span class="card-title__accent">HyperClose</span></h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
-						<p class="feature-card__hook">La diferencia entre querer parar y<span class="feature-card__value-accent feature-card__value-accent--spaced">no poder seguir</span>.</p>
+						<p class="feature-card__hook tevsys-card__brand-line">La diferencia entre querer parar y<span class="feature-card__value-accent feature-card__value-accent--spaced">no poder seguir</span>.</p>
 						<p>Si operas bloqueado, HyperClose cierra en milisegundos.</p>
 						<p>Cada intento queda registrado. También en días OFF.</p>
 					</div>
@@ -72,7 +72,7 @@ import settings from '../config/settings.js';
 							<h3 class="tevsys-card__title--accent-line tevsys-card__title--accent-line-short" style="--card-accent-line-ml: 0.42rem"><span class="card-title__accent">SML</span> — Smart Money Lock</h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
-						<p class="feature-card__hook">No es obligatorio. Es una recompensa.</p>
+						<p class="feature-card__hook tevsys-card__brand-line">No es obligatorio. Es una recompensa.</p>
 						<p>Lo activas cuando quieras: amplías margen entre 5 % y 25 % (<span class="feature-card__value-accent">mín. 75 % protegido</span>).</p>
 						<p>Conserva lo ganado y convive con tus límites y días OFF.</p>
 					</div>
@@ -87,7 +87,7 @@ import settings from '../config/settings.js';
 							<h3 class="tevsys-card__title--accent-line tevsys-card__title--accent-line-long" style="--card-accent-line-ml: 2.55rem"><span class="card-title__accent">Evidencia</span> verificable</h3>
 							<span class="tevsys-card__saber-mas">Saber más</span>
 						</div>
-						<p class="feature-card__hook">No confíes: Comprueba.</p>
+						<p class="feature-card__hook tevsys-card__brand-line">No confíes: Comprueba.</p>
 						<p class="feature-card__evidence-case"><strong>Caso real:</strong> 100.000 € · 20 lotes · Apertura Wall Street.</p>
 						<p class="feature-card__evidence-stat">Error al cierre: <span class="feature-card__evidence-stat-value">0,0072 %</span></p>
 						<p class="feature-card__evidence-proofline">Vídeo del cierre, informe MT5 e historial de transacciones.</p>
@@ -593,6 +593,19 @@ import settings from '../config/settings.js';
 		font-weight: 600;
 		color: rgba(244, 246, 248, 0.96);
 		opacity: 1;
+	}
+	/* Hook de marca por card — una línea mono (puente / capas); cuerpo sigue en Inter. Prueba jun 2026. */
+	.tevsys-card__content p.feature-card__hook.tevsys-card__brand-line {
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+		font-style: normal;
+		font-weight: 500;
+		font-size: clamp(0.78rem, 1.08vw, 0.875rem);
+		letter-spacing: 0.045em;
+		line-height: 1.52;
+		color: rgba(232, 236, 244, 0.92);
+	}
+	.tevsys-card__content p.feature-card__hook.tevsys-card__brand-line .feature-card__value-accent {
+		font-weight: 600;
 	}
 	.card-title__accent {
 		font-weight: 700;
