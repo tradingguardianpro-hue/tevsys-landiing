@@ -234,7 +234,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ## Bloque fundador
 - Claim: `tevsys no es el sueño de un inversor. Es la respuesta de un trader.`
 - Cita de Gabi (se mantiene)
-- Firma: `— Gabi, fundador de tevsys`
+- Firma: `— Gabi, fundador de tevsys` — **IBM Plex Mono** (jun 2026, familia puente / labels home)
 
 ---
 

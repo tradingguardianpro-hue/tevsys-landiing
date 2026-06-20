@@ -31,6 +31,7 @@ Orden de scroll:
 8. **Grid 4 cards** — subrayado fino **2px**; **dos anchos fijos** (`short` 3.25rem: HyperClose + SML · `long` 4rem: Precisión + Evidencia); **offset** distinto por card. Títulos Inter blanco.
 9. **Auditoría IA** — kicker en mono (punto 3).
 10. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono (punto 3).
+11. **Fundador** — firma `— Gabi, fundador de tevsys` en **IBM Plex Mono** (familia puente / jun 2026).
 
 ## Cambios por punto (decisiones)
 
