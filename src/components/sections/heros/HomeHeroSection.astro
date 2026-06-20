@@ -7,18 +7,22 @@ const heroProductPillars = [
   {
     text: 'Precisión de cierre en tu operativa',
     batch: { top: '42%', left: '24%', right: 'auto', align: 'left', maxW: '52%' },
+    batchMobile: { top: '50%', left: '0', right: 'auto', align: 'left', maxW: '58%' },
   },
   {
     text: 'Disciplina automatizada',
     batch: { top: '6%', left: '4%', right: 'auto', align: 'left', maxW: '44%' },
+    batchMobile: { top: '0', left: '0', right: 'auto', align: 'left', maxW: '54%' },
   },
   {
     text: 'Trazabilidad verificable',
     batch: { top: '8%', left: 'auto', right: '5%', align: 'right', maxW: '42%' },
+    batchMobile: { top: '0', left: 'auto', right: '0', align: 'right', maxW: '54%' },
   },
   {
     text: 'Protección activa en MT5',
     batch: { top: '58%', left: 'auto', right: '6%', align: 'right', maxW: '48%' },
+    batchMobile: { top: '50%', left: 'auto', right: '0', align: 'right', maxW: '62%' },
   },
 ];
 ---
@@ -89,8 +93,8 @@ const heroProductPillars = [
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
     emptyMs: 2800,
-    batchFadeInDelayMs: 200,
-    batchFadeInMs: 3200,
+    batchFadeInDelayMs: 350,
+    batchFadeInMs: 4600,
     batchHoldMs: 9000,
     batchFadePairOffsetMs: 180,
     batchFadeStepGapMs: 360,
@@ -100,8 +104,10 @@ const heroProductPillars = [
     loopPauseMs: 6200,
   };
 
-  const HERO_BATCH_FADE_IN_EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
-  const HERO_SOLO_FADE_EASE = 'cubic-bezier(0.45, 0, 0.15, 1)';
+  const HERO_GLOW_IN_EASE = 'cubic-bezier(0.33, 0, 0.18, 1)';
+  const HERO_FADE_OUT_EASE = 'cubic-bezier(0.45, 0, 0.15, 1)';
+
+  const HERO_MOBILE_MQ = '(max-width: 768px)';
 
   const HERO_PILLAR_HANDOFF_SLOT = {
     top: '8%',
@@ -109,6 +115,14 @@ const heroProductPillars = [
     right: '5%',
     align: 'right',
     maxW: '44%',
+  };
+
+  const HERO_PILLAR_HANDOFF_SLOT_MOBILE = {
+    top: '2%',
+    left: 'auto',
+    right: '0',
+    align: 'right',
+    maxW: '72%',
   };
 
   const HERO_PILLAR_LAST_BATCH_INDEX = 3;
@@ -123,6 +137,30 @@ const heroProductPillars = [
     { top: '14%', left: '36%', right: 'auto', align: 'left', maxW: '42%' },
     { top: '62%', left: '38%', right: 'auto', align: 'left', maxW: '40%' },
   ];
+
+  const HERO_PILLAR_SOLO_SLOTS_MOBILE = [
+    { top: '2%', left: '0', right: 'auto', align: 'left', maxW: '88%' },
+    { top: '24%', left: 'auto', right: '0', align: 'right', maxW: '86%' },
+    { top: '46%', left: '0', right: 'auto', align: 'left', maxW: '88%' },
+    { top: '68%', left: 'auto', right: '0', align: 'right', maxW: '86%' },
+  ];
+
+  function isMobileHero() {
+    return window.matchMedia(HERO_MOBILE_MQ).matches;
+  }
+
+  function getPillarBatchSlot(index) {
+    const pillar = heroProductPillars[index];
+    return isMobileHero() && pillar.batchMobile ? pillar.batchMobile : pillar.batch;
+  }
+
+  function getHandoffSlot() {
+    return isMobileHero() ? HERO_PILLAR_HANDOFF_SLOT_MOBILE : HERO_PILLAR_HANDOFF_SLOT;
+  }
+
+  function getSoloSlotPool() {
+    return isMobileHero() ? HERO_PILLAR_SOLO_SLOTS_MOBILE : HERO_PILLAR_SOLO_SLOTS;
+  }
 
   function shuffle(list) {
     const copy = [...list];
@@ -149,24 +187,19 @@ const heroProductPillars = [
     el.style.transition = 'none';
     el.style.opacity = '0';
     el.style.visibility = 'hidden';
-    el.style.transform = 'translateY(18px) scale(0.93)';
+    el.style.transform = 'none';
+    el.style.filter = 'none';
   }
 
-  function setPhraseApproachTransform(el, hidden = true) {
-    el.style.transform = hidden ? 'translateY(18px) scale(0.93)' : 'translateY(0) scale(1)';
-  }
-
-  async function fadePhrase(el, visible, ms = visible ? 1200 : 1000, easing = HERO_SOLO_FADE_EASE) {
-    el.style.transition = `opacity ${ms}ms ${easing}, transform ${ms}ms ${easing}, visibility 0s linear`;
+  async function glowPhrase(el, visible, ms, easing = HERO_GLOW_IN_EASE) {
+    el.style.transition = `opacity ${ms}ms ${easing}, visibility 0s linear`;
     if (visible) {
       el.style.visibility = 'visible';
-      setPhraseApproachTransform(el, true);
-      await sleep(24);
+      el.style.opacity = '0';
+      await sleep(20);
       el.style.opacity = '1';
-      setPhraseApproachTransform(el, false);
     } else {
       el.style.opacity = '0';
-      setPhraseApproachTransform(el, true);
     }
     await sleep(ms);
     if (!visible) el.style.visibility = 'hidden';
@@ -178,16 +211,17 @@ const heroProductPillars = [
     phrases.forEach((el) => setPhraseHiddenInstant(el));
     await sleep(32);
 
-    phrases.forEach((el) => {
-      el.style.transition = `opacity ${batchFadeInMs}ms ${HERO_BATCH_FADE_IN_EASE}, transform ${batchFadeInMs}ms ${HERO_BATCH_FADE_IN_EASE}, visibility 0s linear`;
-    });
-
     await sleep(batchFadeInDelayMs);
 
     phrases.forEach((el) => {
+      el.style.transition = `opacity ${batchFadeInMs}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
       el.style.visibility = 'visible';
+      el.style.opacity = '0';
+    });
+    await sleep(24);
+
+    phrases.forEach((el) => {
       el.style.opacity = '1';
-      setPhraseApproachTransform(el, false);
     });
 
     await sleep(batchFadeInMs);
@@ -196,45 +230,45 @@ const heroProductPillars = [
   async function fadeOutBatchWithHandoff(phrases) {
     const t = HERO_PILLAR_TIMING;
 
-    const pairA = fadePhrase(phrases[0], false, 1050);
+    const pairA = glowPhrase(phrases[0], false, 1200, HERO_FADE_OUT_EASE);
     await sleep(t.batchFadePairOffsetMs);
-    const pairB = fadePhrase(phrases[2], false, 1050);
+    const pairB = glowPhrase(phrases[2], false, 1200, HERO_FADE_OUT_EASE);
     await Promise.all([pairA, pairB]);
     await sleep(t.batchFadeStepGapMs);
 
-    await fadePhrase(phrases[1], false, 1050);
+    await glowPhrase(phrases[1], false, 1200, HERO_FADE_OUT_EASE);
     await sleep(320);
 
     const soloOrder = shuffle(phrases.map((_, index) => index));
     const handoffEl = phrases[soloOrder[0]];
     const lastBatchEl = phrases[HERO_PILLAR_LAST_BATCH_INDEX];
-    const handoffInMs = 1800;
+    const handoffInMs = 2200;
 
-    applyPillarSlot(handoffEl, HERO_PILLAR_HANDOFF_SLOT);
+    applyPillarSlot(handoffEl, getHandoffSlot());
     setPhraseHiddenInstant(handoffEl);
     await sleep(32);
 
-    handoffEl.style.transition = `opacity ${handoffInMs}ms ${HERO_BATCH_FADE_IN_EASE}, transform ${handoffInMs}ms ${HERO_BATCH_FADE_IN_EASE}, visibility 0s linear`;
+    handoffEl.style.transition = `opacity ${handoffInMs}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
     handoffEl.style.visibility = 'visible';
+    handoffEl.style.opacity = '0';
     await sleep(24);
     handoffEl.style.opacity = '1';
-    setPhraseApproachTransform(handoffEl, false);
 
     await sleep(t.handoffOverlapMs);
 
-    const lastBatchOut = fadePhrase(lastBatchEl, false, 1100);
+    const lastBatchOut = glowPhrase(lastBatchEl, false, 1200, HERO_FADE_OUT_EASE);
     await sleep(handoffInMs);
     await lastBatchOut;
 
     await sleep(t.soloHoldMs);
-    await fadePhrase(handoffEl, false, 1000);
+    await glowPhrase(handoffEl, false, 1100, HERO_FADE_OUT_EASE);
 
     return soloOrder.slice(1);
   }
 
   async function runHeroPillarCycle(phrases) {
     phrases.forEach((el, index) => {
-      applyPillarSlot(el, heroProductPillars[index].batch);
+      applyPillarSlot(el, getPillarBatchSlot(index));
       setPhraseHiddenInstant(el);
     });
     await sleep(32);
@@ -248,7 +282,7 @@ const heroProductPillars = [
 
     await sleep(500);
 
-    const slots = shuffle(HERO_PILLAR_SOLO_SLOTS).slice(0, remainingSoloIndices.length);
+    const slots = shuffle(getSoloSlotPool()).slice(0, remainingSoloIndices.length);
 
     for (let i = 0; i < remainingSoloIndices.length; i += 1) {
       const el = phrases[remainingSoloIndices[i]];
@@ -256,9 +290,9 @@ const heroProductPillars = [
       applyPillarSlot(el, slot);
       setPhraseHiddenInstant(el);
       await sleep(80);
-      await fadePhrase(el, true, 1400, HERO_BATCH_FADE_IN_EASE);
+      await glowPhrase(el, true, 2200, HERO_GLOW_IN_EASE);
       await sleep(HERO_PILLAR_TIMING.soloHoldMs);
-      await fadePhrase(el, false, 1000);
+      await glowPhrase(el, false, 1100, HERO_FADE_OUT_EASE);
       await sleep(HERO_PILLAR_TIMING.soloStartGapMs);
     }
 
@@ -414,11 +448,8 @@ const heroProductPillars = [
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(18px) scale(0.93);
-    transform-origin: center center;
-    transition:
-      opacity 1.1s cubic-bezier(0.45, 0, 0.15, 1),
-      transform 1.1s cubic-bezier(0.45, 0, 0.15, 1);
+    transform: none;
+    transition: opacity 1.4s cubic-bezier(0.33, 0, 0.18, 1);
   }
 
   .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
@@ -686,14 +717,14 @@ const heroProductPillars = [
     }
 
     .hero-pillar-fade__stage {
-      min-height: clamp(4.5rem, 22vw, 6.25rem);
+      min-height: clamp(7.5rem, 34vw, 9.25rem);
     }
 
     .hero-pillar-fade__phrase {
-      font-size: clamp(0.8125rem, 2.75vw, 0.875rem);
-      letter-spacing: 0.035em;
-      line-height: 1.5;
-      max-width: min(var(--fade-max-w, 100%), 88%) !important;
+      font-size: clamp(0.75rem, 2.45vw, 0.8125rem);
+      letter-spacing: 0.03em;
+      line-height: 1.35;
+      hyphens: auto;
     }
 
     .hero-action-block {
