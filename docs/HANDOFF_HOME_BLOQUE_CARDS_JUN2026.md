@@ -28,7 +28,7 @@ Orden de scroll:
 5. **Hook en caja** — copy + **Nosotros sí.** con `.tevsys-brand-accent-underline` (subrayado ámbar→gris, familia `/como-funciona`; raya **más larga** que el texto, sobresale a la derecha del *sí*).
 6. **Viñetas** — doble trazabilidad + configuras una vez (sin cambio de texto).
 7. **Remate** — `Ellos deslizan. En tevsys cerramos.` (sin subrayado; no compite con *Nosotros sí.*).
-8. **Grid 4 cards** — títulos **Inter bold** (prueba mono revertida jun 2026); cuerpo Inter; operativas frase completa Inter.
+8. **Grid 4 cards** — títulos **Inter bold**, color **`#e2e6ee`** (prueba jun 2026: gris pilares hero, menos blanco puro); cuerpo Inter; operativas frase completa Inter.
 9. **Auditoría IA** — kicker en mono (punto 3).
 10. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono (punto 3).
 
