@@ -7,22 +7,22 @@ const heroProductPillars = [
   {
     text: 'Precisión de cierre en tu operativa',
     batch: { top: '42%', left: '24%', right: 'auto', align: 'left', maxW: '52%' },
-    batchMobile: { top: '52%', left: '0', right: 'auto', align: 'left', maxW: '47%' },
+    batchMobile: { top: '38%', left: '10%', right: 'auto', align: 'left', maxW: '56%' },
   },
   {
     text: 'Disciplina automatizada',
     batch: { top: '6%', left: '4%', right: 'auto', align: 'left', maxW: '44%' },
-    batchMobile: { top: '0', left: '0', right: 'auto', align: 'left', maxW: '47%' },
+    batchMobile: { top: '2%', left: '3%', right: 'auto', align: 'left', maxW: '58%' },
   },
   {
     text: 'Trazabilidad verificable',
     batch: { top: '8%', left: 'auto', right: '5%', align: 'right', maxW: '42%' },
-    batchMobile: { top: '0', left: 'auto', right: '0', align: 'right', maxW: '47%' },
+    batchMobile: { top: '18%', left: 'auto', right: '2%', align: 'right', maxW: '55%' },
   },
   {
     text: 'Protección activa en MT5',
     batch: { top: '58%', left: 'auto', right: '6%', align: 'right', maxW: '48%' },
-    batchMobile: { top: '52%', left: 'auto', right: '0', align: 'right', maxW: '50%' },
+    batchMobile: { top: '54%', left: 'auto', right: '8%', align: 'right', maxW: '57%' },
   },
 ];
 ---
@@ -93,8 +93,10 @@ const heroProductPillars = [
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
     emptyMs: 1800,
-    batchFadeInDelayMs: 350,
-    batchFadeInMs: 4600,
+    batchFadeInDelayMs: 250,
+    batchFadeInMs: 4000,
+    batchFadeInStaggerMs: 110,
+    batchFadeInStaggerMsMobile: 165,
     batchHoldMs: 9000,
     batchFadePairOffsetMs: 180,
     batchFadeStepGapMs: 360,
@@ -139,10 +141,10 @@ const heroProductPillars = [
   ];
 
   const HERO_PILLAR_SOLO_SLOTS_MOBILE = [
-    { top: '2%', left: '0', right: 'auto', align: 'left', maxW: '88%' },
-    { top: '24%', left: 'auto', right: '0', align: 'right', maxW: '86%' },
-    { top: '46%', left: '0', right: 'auto', align: 'left', maxW: '88%' },
-    { top: '68%', left: 'auto', right: '0', align: 'right', maxW: '86%' },
+    { top: '3%', left: '8%', right: 'auto', align: 'left', maxW: '78%' },
+    { top: '24%', left: 'auto', right: '5%', align: 'right', maxW: '74%' },
+    { top: '46%', left: '4%', right: 'auto', align: 'left', maxW: '82%' },
+    { top: '64%', left: 'auto', right: '9%', align: 'right', maxW: '76%' },
   ];
 
   function isMobileHero() {
@@ -206,7 +208,9 @@ const heroProductPillars = [
   }
 
   async function fadeBatchInTogether(phrases) {
-    const { batchFadeInMs, batchFadeInDelayMs } = HERO_PILLAR_TIMING;
+    const { batchFadeInMs, batchFadeInDelayMs, batchFadeInStaggerMs, batchFadeInStaggerMsMobile } =
+      HERO_PILLAR_TIMING;
+    const staggerMs = isMobileHero() ? batchFadeInStaggerMsMobile : batchFadeInStaggerMs;
 
     phrases.forEach((el) => setPhraseHiddenInstant(el));
     await sleep(32);
@@ -220,9 +224,10 @@ const heroProductPillars = [
     });
     await sleep(24);
 
-    phrases.forEach((el) => {
-      el.style.opacity = '1';
-    });
+    for (let i = 0; i < phrases.length; i += 1) {
+      phrases[i].style.opacity = '1';
+      if (i < phrases.length - 1) await sleep(staggerMs);
+    }
 
     await sleep(batchFadeInMs);
   }
@@ -713,7 +718,7 @@ const heroProductPillars = [
     }
 
     .hero-section__text {
-      --hero-disclaimer-font-size: clamp(0.9rem, 3.25vw, 1.0125rem);
+      --hero-disclaimer-font-size: clamp(0.74rem, 2.28vw, 0.8rem);
     }
 
     .hero-pillar-fade {
@@ -722,7 +727,7 @@ const heroProductPillars = [
     }
 
     .hero-pillar-fade__stage {
-      min-height: clamp(7.75rem, 36vw, 9.5rem);
+      min-height: clamp(8.5rem, 40vw, 10.25rem);
     }
 
     .hero-pillar-fade__phrase {
@@ -737,7 +742,10 @@ const heroProductPillars = [
       margin-bottom: clamp(1.35rem, 4.2vw, 1.75rem);
       color: rgba(244, 246, 248, 0.88);
       font-weight: 600;
-      line-height: 1.4;
+      line-height: 1.35;
+      letter-spacing: 0.008em;
+      max-width: 100%;
+      padding-inline: 0.1rem;
     }
 
     .hero-action-block {
