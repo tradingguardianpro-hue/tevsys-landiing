@@ -2,19 +2,16 @@
 
 **Última actualización:** 6 jun 2026 — **2m-E activo**  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m-E** — vacío (~4 s) → batch 4 → apagado escalonado → solos async con **slots aleatorios** (JS) → pausa → loop.
+**Activo en web:** **esquema 2m-E** — vacío (~4 s) → **batch 2 esquinas** → apagado sync → solos 4 async → pausa → loop.
 
 ## Esquema 2m-E — solo phase JS + slots variables (activo — 6 jun 2026)
 
 1. **Vacío** al cargar (~4 s) — tiempo para leer H1 / marca; rectángulo pilares en negro.
-2. **Entran las 4** juntas (posiciones `batch` fijas en frontmatter) · ~10 s lectura.
-3. **Apagan** escalonadas (una a una).
-4. **Vuelven una a una** — orden y **posición distintos cada ciclo** (`HERO_PILLAR_SOLO_SLOTS` barajados; sin sitio fijo por frase).
-5. Pausa (~6,2 s) → **loop**.
+2. **Entran 2 juntas** (esquinas: Disciplina + Protección MT5) · ~10 s lectura · **apagan sincronizadas**.
+3. **Fase solo:** las **4** frases (incl. Precisión y Trazabilidad) una a una, orden y posición aleatorios.
+4. Pausa (~6,2 s) → **loop**.
 
-Timing y slots en `<script define:vars>` del `.astro`. CSS solo transiciones de opacidad; sin `@keyframes` 72 s.
-
-Posiciones `batch` en frontmatter `heroProductPillars`. Fase solo: 8 slots repartidos en el rectángulo H1–disclaimer.
+Timing y slots en `<script define:vars>` del `.astro`. Flag `inBatch` en frontmatter (solo Disciplina + Protección en batch).
 
 ## Esquema 2m-D — intro vacío + batch + solos CSS (supersedido — 6 jun 2026)
 
