@@ -87,19 +87,38 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Sección principal de valor
 
+**Handoff cohesión jun 2026:** `HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`
+
+### Puente hero → bloque (21 jun 2026)
+- **Clase:** `.tevsys-home-hero-bridge` en `index.astro`, entre hero stack y H2.
+- **Copy:** `Precisión · HyperClose · SML · Evidencia` (IBM Plex Mono + hairline).
+- **Por qué:** transición visual entre hero 2m-E y argumento comercial sin reanimar cards.
+
 ### Título
 `¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?`
-- **Jerarquía (Mar 2026):** clamp(1.65rem, 3.5vw, 2rem), font-weight 700 — más prominente que el párrafo
+- **Cambio jun 2026:** sustituye `¿Cuánto has perdido…?` — mismo eje (parar a tiempo + deslizamiento); *dinero* explícito; menos “cifra contable”.
+- **Jerarquía:** clamp(1.65rem, 3.5vw, 2rem), font-weight 700 — Inter.
 
-### Subtítulo (feature-section__hook)
-`Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.`
-- font-size 1rem, opacity 0.92 — claramente secundario
+### Checklist (`.feature-card__checklist-static`)
+- **Visual jun 2026:** losa carbón `hsl(222,…)` como `.tevsys-card__content`; borde fino; sin marco ámbar dominante (iteración abr–jun).
+- **Hook (`.feature-section__hook`):** `Sin excusas. Las buenas intenciones no cierran con alta precisión ni bloquean operaciones. Nosotros sí.`
+- **Acento:** *Nosotros sí.* envuelto en `.tevsys-brand-accent-underline` (subrayado ámbar→gris, patrón `como-funciona.astro`).
+- **Viñetas:** doble trazabilidad MT5 + configuras una vez / días OFF (lista estática, puntos ámbar).
 
-### Línea de trazabilidad (credibilidad)
-`Trazabilidad completa: logs, panel y reporte oficial MT5.`
+### Remate antes del grid
+`Ellos deslizan. En tevsys cerramos.` — cursiva + punto ámbar; **sin** subrayado (no compite con *Nosotros sí.*).
 
-### Línea de apoyo (mecanismo)
-`Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.`
+### Labels mono (`.tevsys-meta-label` · jun 2026)
+- Card Precisión: `{N} operativas documentadas` en mono (`settings.documentedOperatives`).
+- Auditoría IA: kicker `Verificación con IA · próximamente`.
+- Planes: pastillas `Demo activa` / `Lista de espera`.
+
+### Subtítulo (histórico — ya no en home)
+`Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.` — ver checklist arriba (copy actual incluye *alta precisión*).
+
+### Líneas retiradas del bloque principal (referencia)
+- ~~`Trazabilidad completa: logs, panel y reporte oficial MT5.`~~ — sustituido por viñetas checklist.
+- ~~`Configuras una vez. tevsys ejecuta siempre…`~~ — integrado en viñeta 2.
 
 ### Cards (4)
 - **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
@@ -111,7 +130,8 @@ Documento de contenido/copy actual para revisión de equipo.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto: `Volatilidad • spread • slippage • comisiones` + ámbar **`Ajuste a tiempo real`** + `95 operativas documentadas. Validado en 5 entornos de ejecución.` (sync `index.astro`)
+- Texto: `Volatilidad • spread • slippage • comisiones` + ámbar **`Ajuste a tiempo real`** + `{N} operativas documentadas en 5 entornos de ejecución.` (Inter, frase completa — jun 2026 revert split mono)
+- **Títulos cards (prueba jun 2026):** `h3` en IBM Plex Mono — alineado a puente/capas hero; revertible
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`

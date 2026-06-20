@@ -8,6 +8,26 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — cohesión hero → cards (21 jun 2026)
+
+**Handoff completo:** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`  
+**Método:** repo TGP `.cursor/rules/workflow-web-visual-tevsys.mdc`
+
+**Qué (validado fundador, paso a paso):**
+
+1. **Puente** — `.tevsys-home-hero-bridge`: hairline + `Precisión · HyperClose · SML · Evidencia` (IBM Plex Mono).
+2. **Checklist carbón** — `.feature-card__checklist-static` alineado a losa `.tevsys-card__content`. **Toque B** (cajita más clara) **no aplicado** — tono actual OK.
+3. **H2** — `¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?` (sin *cuánto*; *dinero* explícito).
+4. **Acento** — `.tevsys-brand-accent-underline` en *Nosotros sí.* (familia subrayado `/como-funciona`; raya sobresale del *sí*). *Ellos deslizan…* sin subrayado.
+5. **Labels mono** — `.tevsys-meta-label`: kicker auditoría IA; pastillas planes. Operativas en card Precisión: **revertido** a Inter (frase entera).
+6. **Títulos cards (prueba)** — `h3` del grid en IBM Plex Mono.
+
+**Archivo:** `src/pages/index.astro` · copy en `CONTENIDO_WEB_TEVSYS_LANDING.md`.
+
+**Commit sugerido (paquete):** `web(tevsys): cohesión home puente checklist copy y labels mono`
+
+---
+
 ## Contador operativas — **95** (20 jun 2026)
 
 **Fuente:** `docs/PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).

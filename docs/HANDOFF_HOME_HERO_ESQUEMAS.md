@@ -233,5 +233,6 @@ Cambiar `data-hero-layout` + markup según bloques de este MD cuando el fundador
 
 ## Correlato
 
+- **Scroll hero → cards (jun 2026):** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md` — puente, checklist, copy, labels mono (hero 2m-E no tocado).
 - Inspiración escala: [Axiom Labs](https://axiomlabs.es) (estructura, no tono quant).
 - Hub TGP: `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Sesión web larga*.
