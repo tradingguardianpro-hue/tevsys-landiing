@@ -1,18 +1,24 @@
 # Handoff — Hero home · esquemas de jerarquía (jun 2026)
 
-**Última actualización:** 20 jun 2026 — **2m-D activo**  
+**Última actualización:** 6 jun 2026 — **2m-E activo**  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m-D** — vacío → batch 4 → apagado → solos async → loop (72 s).
+**Activo en web:** **esquema 2m-E** — vacío (~5,8 s) → batch 4 → apagado escalonado → solos async con **slots aleatorios** (JS) → pausa → loop.
 
-## Esquema 2m-D — intro vacío + batch + solos (activo — 20 jun 2026)
+## Esquema 2m-E — solo phase JS + slots variables (activo — 6 jun 2026)
 
-1. **Vacío** al cargar (~2 s).
-2. **Entran las 4** juntas (posiciones batch) · ~9 s lectura.
-3. **Apagan** escalonadas.
-4. **Vuelven una a una** en posiciones **solo** distintas, timing asincrónico.
-5. Pausa → **loop** (otra vez vacío + batch).
+1. **Vacío** al cargar (~5,8 s) — rectángulo en negro, sin frases.
+2. **Entran las 4** juntas (posiciones `batch` fijas en frontmatter) · ~10 s lectura.
+3. **Apagan** escalonadas (una a una).
+4. **Vuelven una a una** — orden y **posición distintos cada ciclo** (`HERO_PILLAR_SOLO_SLOTS` barajados; sin sitio fijo por frase).
+5. Pausa (~6,2 s) → **loop**.
 
-Posiciones `batch` / `solo` en frontmatter `heroProductPillars`.
+Timing y slots en `<script define:vars>` del `.astro`. CSS solo transiciones de opacidad; sin `@keyframes` 72 s.
+
+Posiciones `batch` en frontmatter `heroProductPillars`. Fase solo: 8 slots repartidos en el rectángulo H1–disclaimer.
+
+## Esquema 2m-D — intro vacío + batch + solos CSS (supersedido — 6 jun 2026)
+
+Animación CSS 72 s; solos con posición fija por índice — sustituido por 2m-E.
 
 ## Esquema 2m-C — intro cuatro visibles (supersedido)
 
