@@ -28,7 +28,7 @@ Orden de scroll:
 5. **Hook en caja** — copy + **Nosotros sí.** con `.tevsys-brand-accent-underline` (subrayado ámbar→gris, familia `/como-funciona`; raya **más larga** que el texto, sobresale a la derecha del *sí*).
 6. **Viñetas** — doble trazabilidad + configuras una vez (sin cambio de texto).
 7. **Remate** — `Ellos deslizan. En tevsys cerramos.` — **IBM Plex Mono** (prueba jun 2026, familia puente); punto ámbar; sin subrayado.
-8. **Grid 4 cards** — títulos **Inter bold** blanco; **subrayado fino parcial** `.tevsys-card__title--accent-line` (validado jun 2026). Evidencia: raya bajo *verificable* (`ml` ~2.55rem, simétrico a Precisión / *error medio*).
+8. **Grid 4 cards** — subrayado fino **2px**; **dos anchos fijos** (`short` 3.25rem: HyperClose + SML · `long` 4rem: Precisión + Evidencia); **offset** distinto por card. Títulos Inter blanco.
 9. **Auditoría IA** — kicker en mono (punto 3).
 10. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono (punto 3).
 
