@@ -6,50 +6,43 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 const heroProductPillars = [
   {
     text: 'Precisión de cierre en tu operativa',
-    top: '10%',
-    left: '6%',
+    top: '42%',
+    left: '24%',
     right: 'auto',
     align: 'left',
     maxW: '52%',
-    durationOffset: 0,
-    delayOffset: 0,
   },
   {
     text: 'Disciplina automatizada',
-    top: '47%',
-    left: '31%',
+    top: '6%',
+    left: '4%',
     right: 'auto',
     align: 'left',
-    maxW: '40%',
-    durationOffset: 2.6,
-    delayOffset: 0.55,
+    maxW: '44%',
   },
   {
     text: 'Trazabilidad verificable',
-    top: '18%',
+    top: '8%',
     left: 'auto',
-    right: '9%',
+    right: '5%',
     align: 'right',
-    maxW: '43%',
-    durationOffset: 1.3,
-    delayOffset: -0.35,
+    maxW: '42%',
   },
   {
     text: 'Protección activa en MT5',
-    top: '54%',
+    top: '58%',
     left: 'auto',
-    right: '12%',
+    right: '6%',
     align: 'right',
-    maxW: '46%',
-    durationOffset: 3.2,
-    delayOffset: 0.85,
+    maxW: '48%',
   },
 ];
-const heroPillarFadeCycleSec = 32;
+/** Ciclo: todas visibles → desvanecen escalonadas → pausa → vuelven juntas */
+const heroPillarFadeCycleSec = 48;
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2m-b">
+  <section class="hero-section__section" data-hero-layout="scheme-2m-c">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -64,7 +57,7 @@ const heroPillarFadeCycleSec = 32;
             {heroProductPillars.map((pillar, index) => (
               <p
                 class="hero-pillar-fade__phrase"
-                style={`--fade-i: ${index}; --fade-cycle: ${heroPillarFadeCycleSec}s; --fade-top: ${pillar.top}; --fade-left: ${pillar.left}; --fade-right: ${pillar.right}; --fade-align: ${pillar.align}; --fade-max-w: ${pillar.maxW}; --fade-duration-offset: ${pillar.durationOffset}s; --fade-delay-offset: ${pillar.delayOffset}s;`}
+                style={`--fade-top: ${pillar.top}; --fade-left: ${pillar.left}; --fade-right: ${pillar.right}; --fade-align: ${pillar.align}; --fade-max-w: ${pillar.maxW};`}
               >
                 {pillar.text}
               </p>
@@ -233,35 +226,144 @@ const heroPillarFadeCycleSec = 32;
     color: rgba(208, 212, 222, 0.9);
     text-align: var(--fade-align, left);
     text-wrap: balance;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     pointer-events: none;
     will-change: opacity, visibility;
-    transform: translateY(0);
   }
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-pillar-fade__phrase {
-      animation-name: hero-pillar-phrase-fade;
-      animation-duration: calc(var(--fade-cycle, 32s) + var(--fade-duration-offset, 0s));
+      animation-duration: 48s;
       animation-timing-function: cubic-bezier(0.45, 0, 0.15, 1);
       animation-iteration-count: infinite;
-      animation-delay: calc(
-        var(--fade-i, 0) * (var(--fade-cycle, 32s) / 4) + var(--fade-delay-offset, 0s)
-      );
+    }
+
+    .hero-pillar-fade__phrase:nth-child(1) {
+      animation-name: hero-pillar-seq-1;
+    }
+
+    .hero-pillar-fade__phrase:nth-child(2) {
+      animation-name: hero-pillar-seq-2;
+    }
+
+    .hero-pillar-fade__phrase:nth-child(3) {
+      animation-name: hero-pillar-seq-3;
+    }
+
+    .hero-pillar-fade__phrase:nth-child(4) {
+      animation-name: hero-pillar-seq-4;
     }
   }
 
-  @keyframes hero-pillar-phrase-fade {
+  /* ~9 s las cuatro visibles → salida escalonada → pausa → vuelven juntas */
+  @keyframes hero-pillar-seq-1 {
     0%,
-    6%,
-    28%,
-    100% {
+    20% {
+      opacity: 1;
+      visibility: visible;
+    }
+    20%,
+    29% {
       opacity: 0;
       visibility: hidden;
     }
-    11%,
-    23% {
+    29%,
+    78% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    78%,
+    88% {
+      opacity: 1;
+      visibility: visible;
+    }
+    88%,
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes hero-pillar-seq-2 {
+    0%,
+    22% {
+      opacity: 1;
+      visibility: visible;
+    }
+    22%,
+    31% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    31%,
+    78% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    78%,
+    88% {
+      opacity: 1;
+      visibility: visible;
+    }
+    88%,
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes hero-pillar-seq-3 {
+    0%,
+    24% {
+      opacity: 1;
+      visibility: visible;
+    }
+    24%,
+    33% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    33%,
+    78% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    78%,
+    88% {
+      opacity: 1;
+      visibility: visible;
+    }
+    88%,
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes hero-pillar-seq-4 {
+    0%,
+    26% {
+      opacity: 1;
+      visibility: visible;
+    }
+    26%,
+    35% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    35%,
+    78% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    78%,
+    88% {
+      opacity: 1;
+      visibility: visible;
+    }
+    88%,
+    100% {
       opacity: 1;
       visibility: visible;
     }
@@ -537,27 +639,27 @@ const heroPillarFadeCycleSec = 32;
     }
 
     .hero-pillar-fade__phrase:nth-child(1) {
-      --fade-top: 8%;
-      --fade-left: 2%;
+      --fade-top: 40%;
+      --fade-left: 18%;
       --fade-right: auto;
     }
 
     .hero-pillar-fade__phrase:nth-child(2) {
-      --fade-top: 44%;
-      --fade-left: 22%;
+      --fade-top: 4%;
+      --fade-left: 2%;
       --fade-right: auto;
     }
 
     .hero-pillar-fade__phrase:nth-child(3) {
-      --fade-top: 16%;
+      --fade-top: 6%;
       --fade-left: auto;
       --fade-right: 2%;
     }
 
     .hero-pillar-fade__phrase:nth-child(4) {
-      --fade-top: 50%;
+      --fade-top: 56%;
       --fade-left: auto;
-      --fade-right: 4%;
+      --fade-right: 3%;
     }
 
     .hero-action-block {

@@ -1,28 +1,29 @@
 # Handoff — Hero home · esquemas de jerarquía (jun 2026)
 
-**Última actualización:** 20 jun 2026 — **2m activo** (una línea fade)  
+**Última actualización:** 20 jun 2026 — **2m-C activo** (intro 4 visibles)  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m-B** — una frase a la vez · ancho completo · alineación izquierda · fade a opacidad 0 (sin rastro).
+**Activo en web:** **esquema 2m-C** — al cargar las **4 frases visibles** ~9 s → desvanecen escalonadas → vuelven juntas (ciclo 48 s).
 
 | Id | Nombre | Estado |
 |----|--------|--------|
-| **2m** | Una línea · fade (4 visibles tenues) | Supersedido |
-| **2m-B** | Rotación ancho completo · fade total | **Activo ahora** |
+| **2m-C** | Intro 4 visibles → apagado escalonado | **Activo ahora** |
+| **2m-B** | Rotación una a una | Supersedido |
 
 **Pendiente (fuera hero):** más aire entre nota MT5 y primer `h2` home (`index.astro`).
 
 ---
 
-## Esquema 2m-B — rotación ancho completo (activo — 20 jun 2026)
+## Esquema 2m-C — intro cuatro visibles (activo — 20 jun 2026)
 
-- **`hero-pillar-fade__stage`** — rectángulo alto entre H1 y disclaimer (`min-height` ~13vh).
-- **Coordenadas orgánicas** en el rectángulo (no solo esquinas): interior, centro-bajo, solapamiento suave (Disciplina ~47% / Protección ~54%).
-- **Timing asincrónico:** `durationOffset` + `delayOffset` por frase (ciclos ligeramente distintos).
-- **Fade a 0** · ciclo **32 s** · curva `cubic-bezier` más relajada.
-- **Halo** ~−25% adicional vs 2m-A.
-- Sin máscara · sin scroll. Afinar motion: pendiente fundador.
+- **Al cargar / reinicio ciclo:** las 4 pilares **visibles a la vez** en el rectángulo.
+- **Precisión** en zona **centro-bajo** (~42% / 24% left).
+- **~9 s** lectura → cada frase se apaga sola (escalonado ~1 s entre ellas).
+- **Pausa** en vacío → **reaparecen juntas** (78–88% del ciclo) · total **48 s**.
+- `prefers-reduced-motion`: las 4 estáticas visibles.
 
 ---
+
+## Esquema 2m-B — rotación ancho completo (supersedido — 20 jun 2026)
 
 ## Esquema 2m — una línea fade (supersedido — 20 jun 2026)
 
