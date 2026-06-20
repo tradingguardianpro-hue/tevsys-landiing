@@ -21,9 +21,9 @@ import settings from '../config/settings.js';
 				<span class="tevsys-home-hero-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
 			</p>
 		<section class="feature-card__section">
-			<h2 class="feature-section__title">¿Cuánto has perdido por no parar a tiempo — y por deslizamiento al límite?</h2>
+			<h2 class="feature-section__title">¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?</h2>
 			<div class="feature-card__checklist-static">
-				<p class="feature-section__hook">Sin excusas. Las buenas intenciones no cierran con alta precisión ni bloquean operaciones. Nosotros sí.</p>
+				<p class="feature-section__hook">Sin excusas. Las buenas intenciones no cierran con alta precisión ni bloquean operaciones. <span class="tevsys-brand-accent-underline">Nosotros sí.</span></p>
 				<ul class="feature-card__checklist-static-items" aria-label="Checklist resumen de valor">
 					<li>Doble trazabilidad real: lógica interna tevsys + ejecución oficial MT5.</li>
 					<li>Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF.</li>
@@ -239,6 +239,35 @@ import settings from '../config/settings.js';
 		opacity: 0.94;
 		margin: 0 0 0.7rem;
 		line-height: 1.55;
+	}
+	/* Subrayado ámbar → gris (misma familia que /como-funciona). */
+	.tevsys-brand-accent-underline {
+		display: inline-block;
+		font-weight: 600;
+		opacity: 1;
+		color: rgba(244, 246, 248, 0.98);
+	}
+	.tevsys-brand-accent-underline::after {
+		content: '';
+		display: block;
+		width: min(6.25rem, 100%);
+		height: 3px;
+		margin: 0.34rem 0 0 0.1rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+	html[data-theme='light'] .tevsys-brand-accent-underline::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
 	}
 	.feature-card__checklist-static {
 		max-width: min(54rem, 100%);

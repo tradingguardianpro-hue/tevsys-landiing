@@ -88,7 +88,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ## Sección principal de valor
 
 ### Título
-`¿Cuánto has perdido por no parar a tiempo — y por deslizamiento al límite?`
+`¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?`
 - **Jerarquía (Mar 2026):** clamp(1.65rem, 3.5vw, 2rem), font-weight 700 — más prominente que el párrafo
 
 ### Subtítulo (feature-section__hook)
