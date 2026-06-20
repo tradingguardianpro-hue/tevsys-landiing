@@ -2,11 +2,11 @@
 
 **Última actualización:** 6 jun 2026 — **2m-E activo**  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m-E** — vacío (~5,8 s) → batch 4 → apagado escalonado → solos async con **slots aleatorios** (JS) → pausa → loop.
+**Activo en web:** **esquema 2m-E** — vacío (~4 s) → batch 4 → apagado escalonado → solos async con **slots aleatorios** (JS) → pausa → loop.
 
 ## Esquema 2m-E — solo phase JS + slots variables (activo — 6 jun 2026)
 
-1. **Vacío** al cargar (~5,8 s) — rectángulo en negro, sin frases.
+1. **Vacío** al cargar (~4 s) — tiempo para leer H1 / marca; rectángulo pilares en negro.
 2. **Entran las 4** juntas (posiciones `batch` fijas en frontmatter) · ~10 s lectura.
 3. **Apagan** escalonadas (una a una).
 4. **Vuelven una a una** — orden y **posición distintos cada ciclo** (`HERO_PILLAR_SOLO_SLOTS` barajados; sin sitio fijo por frase).

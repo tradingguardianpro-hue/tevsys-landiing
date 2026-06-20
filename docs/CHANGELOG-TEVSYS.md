@@ -10,7 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Hero home — esquema 2m-E solo JS + slots aleatorios (6 jun 2026)
 
-**Qué:** vacío inicial ~5,8 s · batch 4 juntas · apagado escalonado · fase solo con orden y posición **barajados cada ciclo** (8 slots en rectángulo; sin sitio fijo por frase) · script ligero sustituye `@keyframes` 72 s de 2m-D.
+**Qué:** vacío inicial ~4 s (lectura H1) · batch 4 juntas · apagado escalonado · fase solo con orden y posición **barajados cada ciclo** (8 slots en rectángulo; sin sitio fijo por frase) · script ligero sustituye `@keyframes` 72 s de 2m-D.
 
 **Commit:** `web(tevsys): hero 2m-e solo js slots aleatorios mas vacio inicial`
 
