@@ -28,11 +28,9 @@ Orden de scroll:
 5. **Hook en caja** — copy + **Nosotros sí.** con `.tevsys-brand-accent-underline` (subrayado ámbar→gris, familia `/como-funciona`; raya **más larga** que el texto, sobresale a la derecha del *sí*).
 6. **Viñetas** — doble trazabilidad + configuras una vez (sin cambio de texto).
 7. **Remate** — `Ellos deslizan. En tevsys cerramos.` (sin subrayado; no compite con *Nosotros sí.*).
-8. **Grid 4 cards** — sin cambio de copy/arte en esta pasada; móvil carbón reforzado (iteración previa jun 2026).
+8. **Grid 4 cards** — títulos **Inter bold** (prueba mono revertida jun 2026); cuerpo Inter; operativas frase completa Inter.
 9. **Auditoría IA** — kicker en mono (punto 3).
 10. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono (punto 3).
-
----
 
 ## Cambios por punto (decisiones)
 
@@ -69,7 +67,7 @@ Orden de scroll:
 | Dónde | Qué |
 |-------|-----|
 | Card Precisión | ~~`{N} operativas documentadas` en mono~~ **revertido** — frase entera Inter (jun 2026: mitad mono parecía error) |
-| Títulos 4 cards (`h3`) | **Prueba jun 2026** — IBM Plex Mono (0,06% error medio, HyperClose, SML, Evidencia…) |
+| Títulos 4 cards (`h3`) | **Inter bold** (jun 2026) — prueba mono **revertida** (demasiadas voces vs bloque editorial arriba) |
 | `.audit-teaser-kicker` | `Verificación con IA · próximamente` — mono, sin `text-transform: uppercase` |
 | `.plan-card__status` | *Demo activa* / *Lista de espera* — mono dentro de pastillas (colores intactos) |
 
@@ -100,7 +98,7 @@ Orden de scroll:
 
 - **Toque B** checklist más claro — aparcado; reabrir solo con OK fundador
 - Más aire `hero-platform-note` → puente (histórico en `HANDOFF_HOME_HERO_ESQUEMAS.md`)
-- Extender mono a otras micro-labels (*Ajuste a tiempo real*, *Saber más*) — solo si fundador pide tras validar punto 3
+- Extender mono a títulos grid — **probado y revertido** (jun 2026): demasiadas voces; mono queda en puente + labels pequeños
 - **Meet / terceros:** ruta web corta hero → card Evidencia → auditoría — `docs/GUION_LLAMADA_AXIOM_LABS_JUAN_MEET.md` (repo TGP)
 
 ---

@@ -131,7 +131,7 @@ Documento de contenido/copy actual para revisión de equipo.
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
 - Texto: `Volatilidad • spread • slippage • comisiones` + ámbar **`Ajuste a tiempo real`** + `{N} operativas documentadas en 5 entornos de ejecución.` (Inter, frase completa — jun 2026 revert split mono)
-- **Títulos cards (prueba jun 2026):** `h3` en IBM Plex Mono — alineado a puente/capas hero; revertible
+- **Títulos cards (jun 2026):** Inter bold — prueba IBM Plex Mono revertida (acuerdo: mono solo metadatos/puente, no titulares grid).
 
 #### 2) HyperClose
 - Hook: `La diferencia entre querer parar y no poder seguir.`

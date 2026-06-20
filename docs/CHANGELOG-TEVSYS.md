@@ -20,7 +20,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 3. **H2** — `¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?` (sin *cuánto*; *dinero* explícito).
 4. **Acento** — `.tevsys-brand-accent-underline` en *Nosotros sí.* (familia subrayado `/como-funciona`; raya sobresale del *sí*). *Ellos deslizan…* sin subrayado.
 5. **Labels mono** — `.tevsys-meta-label`: kicker auditoría IA; pastillas planes. Operativas en card Precisión: **revertido** a Inter (frase entera).
-6. **Títulos cards (prueba)** — `h3` del grid en IBM Plex Mono.
+6. **Títulos cards** — Inter bold (prueba mono **revertida** jun 2026 — acuerdo fundador + IA: menos voces tipográficas).
 
 **Archivo:** `src/pages/index.astro` · copy en `CONTENIDO_WEB_TEVSYS_LANDING.md`.
 
