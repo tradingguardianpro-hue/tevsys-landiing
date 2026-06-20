@@ -4,12 +4,40 @@ import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
 const heroProductPillars = [
-  'Precisión de cierre en tu operativa',
-  'Disciplina automatizada',
-  'Trazabilidad verificable',
-  'Protección activa en MT5',
+  {
+    text: 'Precisión de cierre en tu operativa',
+    top: '6%',
+    left: '0',
+    right: 'auto',
+    align: 'left',
+    maxW: '62%',
+  },
+  {
+    text: 'Disciplina automatizada',
+    top: '32%',
+    left: 'auto',
+    right: '2%',
+    align: 'right',
+    maxW: '48%',
+  },
+  {
+    text: 'Trazabilidad verificable',
+    top: '54%',
+    left: '8%',
+    right: 'auto',
+    align: 'left',
+    maxW: '52%',
+  },
+  {
+    text: 'Protección activa en MT5',
+    top: '78%',
+    left: 'auto',
+    right: '0',
+    align: 'right',
+    maxW: '56%',
+  },
 ];
-const heroPillarFadeCycleSec = 20;
+const heroPillarFadeCycleSec = 32;
 ---
 
 <Container>
@@ -25,12 +53,12 @@ const heroPillarFadeCycleSec = 20;
         </h1>
         <div class="hero-pillar-fade" aria-label="Capas del producto tevsys">
           <div class="hero-pillar-fade__stage">
-            {heroProductPillars.map((phrase, index) => (
+            {heroProductPillars.map((pillar, index) => (
               <p
                 class="hero-pillar-fade__phrase"
-                style={`--fade-i: ${index}; --fade-cycle: ${heroPillarFadeCycleSec}s;`}
+                style={`--fade-i: ${index}; --fade-cycle: ${heroPillarFadeCycleSec}s; --fade-top: ${pillar.top}; --fade-left: ${pillar.left}; --fade-right: ${pillar.right}; --fade-align: ${pillar.align}; --fade-max-w: ${pillar.maxW};`}
               >
-                {phrase}
+                {pillar.text}
               </p>
             ))}
           </div>
@@ -93,9 +121,9 @@ const heroPillarFadeCycleSec = 20;
     z-index: 0;
     border-radius: inherit;
     background:
-      radial-gradient(ellipse 88% 78% at 90% 30%, rgba(245, 176, 65, 0.19) 0%, transparent 54%),
-      radial-gradient(ellipse 60% 55% at 96% 68%, rgba(255, 210, 120, 0.11) 0%, transparent 50%),
-      radial-gradient(ellipse 50% 45% at 78% 45%, rgba(247, 192, 80, 0.07) 0%, transparent 42%);
+      radial-gradient(ellipse 88% 78% at 90% 30%, rgba(245, 176, 65, 0.14) 0%, transparent 58%),
+      radial-gradient(ellipse 60% 55% at 96% 68%, rgba(255, 210, 120, 0.08) 0%, transparent 52%),
+      radial-gradient(ellipse 50% 45% at 78% 45%, rgba(247, 192, 80, 0.05) 0%, transparent 46%);
   }
 
   .hero-section__inner {
@@ -136,7 +164,7 @@ const heroPillarFadeCycleSec = 20;
     font-size: clamp(2rem, calc(5.4vw + 0.5rem), 4.35rem);
     line-height: 1.06;
     letter-spacing: var(--tevsys-display-title-tracking, -0.03em);
-    margin: 0 0 clamp(2rem, 5.5vh, 3.65rem);
+    margin: 0 0 clamp(1rem, 2.5vh, 1.65rem);
     width: 100%;
     max-width: min(42rem, 100%);
     margin-inline: auto;
@@ -166,23 +194,26 @@ const heroPillarFadeCycleSec = 20;
     align-self: stretch;
     width: 100%;
     max-width: 100%;
-    margin: 0 0 clamp(2.25rem, 5.2vh, 3.25rem);
-    padding: clamp(0.15rem, 0.5vw, 0.35rem) 0;
+    margin: 0 0 clamp(1.15rem, 2.8vh, 1.85rem);
+    padding: 0;
     box-sizing: border-box;
   }
 
   .hero-pillar-fade__stage {
     position: relative;
     width: 100%;
-    min-height: clamp(2.9em, 5.5vw, 3.2em);
+    min-height: clamp(5.25rem, 13.5vh, 7.75rem);
     margin: 0;
     padding: 0;
   }
 
   .hero-pillar-fade__phrase {
     position: absolute;
-    inset: 0 auto auto 0;
-    width: 100%;
+    top: var(--fade-top, 0);
+    left: var(--fade-left, 0);
+    right: var(--fade-right, auto);
+    width: auto;
+    max-width: var(--fade-max-w, 100%);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -191,32 +222,33 @@ const heroPillarFadeCycleSec = 20;
     font-weight: 400;
     line-height: 1.45;
     letter-spacing: 0.04em;
-    color: rgba(208, 212, 222, 0.92);
-    text-align: left;
+    color: rgba(208, 212, 222, 0.9);
+    text-align: var(--fade-align, left);
     text-wrap: balance;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     will-change: opacity, visibility;
+    transform: translateY(0);
   }
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-pillar-fade__phrase {
-      animation: hero-pillar-phrase-fade var(--fade-cycle, 20s) ease-in-out infinite;
-      animation-delay: calc(var(--fade-i, 0) * (var(--fade-cycle, 20s) / 4));
+      animation: hero-pillar-phrase-fade var(--fade-cycle, 32s) cubic-bezier(0.42, 0, 0.2, 1) infinite;
+      animation-delay: calc(var(--fade-i, 0) * (var(--fade-cycle, 32s) / 4));
     }
   }
 
   @keyframes hero-pillar-phrase-fade {
     0%,
-    6%,
-    28%,
+    5%,
+    27%,
     100% {
       opacity: 0;
       visibility: hidden;
     }
-    12%,
-    21% {
+    10%,
+    22% {
       opacity: 1;
       visibility: visible;
     }
@@ -468,7 +500,7 @@ const heroPillarFadeCycleSec = 20;
       line-height: 1.08;
       gap: 0.2em;
       padding-inline: 0.15rem;
-      margin-bottom: clamp(1.65rem, 5vh, 2.35rem);
+      margin-bottom: clamp(0.85rem, 2.5vh, 1.35rem);
       color: #e8ebf0;
     }
 
@@ -477,17 +509,42 @@ const heroPillarFadeCycleSec = 20;
     }
 
     .hero-pillar-fade {
-      margin-bottom: clamp(2rem, 5.5vh, 2.85rem);
+      margin-bottom: clamp(0.95rem, 2.5vh, 1.45rem);
     }
 
     .hero-pillar-fade__stage {
-      min-height: clamp(3.1em, 10vw, 3.6em);
+      min-height: clamp(4.5rem, 22vw, 6.25rem);
     }
 
     .hero-pillar-fade__phrase {
       font-size: clamp(0.8125rem, 2.75vw, 0.875rem);
       letter-spacing: 0.035em;
       line-height: 1.5;
+      max-width: min(var(--fade-max-w, 100%), 88%) !important;
+    }
+
+    .hero-pillar-fade__phrase:nth-child(1) {
+      --fade-top: 4%;
+      --fade-left: 0;
+      --fade-right: auto;
+    }
+
+    .hero-pillar-fade__phrase:nth-child(2) {
+      --fade-top: 30%;
+      --fade-left: auto;
+      --fade-right: 0;
+    }
+
+    .hero-pillar-fade__phrase:nth-child(3) {
+      --fade-top: 56%;
+      --fade-left: 4%;
+      --fade-right: auto;
+    }
+
+    .hero-pillar-fade__phrase:nth-child(4) {
+      --fade-top: 80%;
+      --fade-left: auto;
+      --fade-right: 0;
     }
 
     .hero-action-block {
