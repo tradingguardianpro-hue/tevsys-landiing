@@ -7,30 +7,24 @@ const heroProductPillars = [
   {
     text: 'Precisión de cierre en tu operativa',
     batch: { top: '42%', left: '24%', right: 'auto', align: 'left', maxW: '52%' },
-    solo: { top: '12%', left: '5%', right: 'auto', align: 'left', maxW: '54%' },
   },
   {
     text: 'Disciplina automatizada',
     batch: { top: '6%', left: '4%', right: 'auto', align: 'left', maxW: '44%' },
-    solo: { top: '50%', left: '36%', right: 'auto', align: 'left', maxW: '42%' },
   },
   {
     text: 'Trazabilidad verificable',
     batch: { top: '8%', left: 'auto', right: '5%', align: 'right', maxW: '42%' },
-    solo: { top: '26%', left: 'auto', right: '8%', align: 'right', maxW: '44%' },
   },
   {
     text: 'Protección activa en MT5',
     batch: { top: '58%', left: 'auto', right: '6%', align: 'right', maxW: '48%' },
-    solo: { top: '70%', left: 'auto', right: '4%', align: 'right', maxW: '50%' },
   },
 ];
-/** Vacío → batch 4 → apagado → solos async → pausa → loop (72 s) */
-const heroPillarFadeCycleSec = 72;
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2m-d">
+  <section class="hero-section__section" data-hero-layout="scheme-2m-e">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -41,7 +35,7 @@ const heroPillarFadeCycleSec = 72;
           </span>
         </h1>
         <div class="hero-pillar-fade" aria-label="Capas del producto tevsys">
-          <div class="hero-pillar-fade__stage">
+          <div class="hero-pillar-fade__stage" data-hero-pillar-stage>
             {heroProductPillars.map((pillar) => (
               <p
                 class="hero-pillar-fade__phrase"
@@ -90,6 +84,134 @@ const heroPillarFadeCycleSec = 72;
     </div>
   </section>
 </Container>
+
+<script define:vars={{ heroProductPillars }}>
+  const HERO_PILLAR_TIMING = {
+    emptyMs: 5800,
+    batchHoldMs: 10000,
+    batchStaggerOutMs: 650,
+    soloHoldMs: 3200,
+    soloStartGapMs: 900,
+    loopPauseMs: 6200,
+  };
+
+  const HERO_PILLAR_SOLO_SLOTS = [
+    { top: '8%', left: '3%', right: 'auto', align: 'left', maxW: '54%' },
+    { top: '20%', left: 'auto', right: '7%', align: 'right', maxW: '46%' },
+    { top: '34%', left: '28%', right: 'auto', align: 'left', maxW: '44%' },
+    { top: '48%', left: 'auto', right: '14%', align: 'right', maxW: '48%' },
+    { top: '56%', left: '6%', right: 'auto', align: 'left', maxW: '50%' },
+    { top: '68%', left: 'auto', right: '5%', align: 'right', maxW: '52%' },
+    { top: '14%', left: '36%', right: 'auto', align: 'left', maxW: '42%' },
+    { top: '62%', left: '38%', right: 'auto', align: 'left', maxW: '40%' },
+  ];
+
+  function shuffle(list) {
+    const copy = [...list];
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  function applyPillarSlot(el, slot) {
+    el.style.top = slot.top;
+    el.style.left = slot.left;
+    el.style.right = slot.right;
+    el.style.maxWidth = slot.maxW;
+    el.style.textAlign = slot.align;
+  }
+
+  function setPhraseVisible(el, visible) {
+    if (visible) {
+      el.style.visibility = 'visible';
+      el.style.opacity = '1';
+      return;
+    }
+    el.style.opacity = '0';
+  }
+
+  async function fadePhrase(el, visible, ms = visible ? 1200 : 1000) {
+    if (visible) {
+      el.style.visibility = 'visible';
+      await sleep(20);
+      el.style.opacity = '1';
+    } else {
+      el.style.opacity = '0';
+    }
+    await sleep(ms);
+    if (!visible) el.style.visibility = 'hidden';
+  }
+
+  async function runHeroPillarCycle(phrases) {
+    phrases.forEach((el, index) => {
+      applyPillarSlot(el, heroProductPillars[index].batch);
+      el.style.transition = 'none';
+      setPhraseVisible(el, false);
+    });
+    await sleep(32);
+
+    phrases.forEach((el) => {
+      el.style.transition = 'opacity 1.15s cubic-bezier(0.45, 0, 0.15, 1), visibility 0s linear';
+    });
+
+    await sleep(HERO_PILLAR_TIMING.emptyMs);
+
+    await Promise.all(phrases.map((el) => fadePhrase(el, true, 1150)));
+    await sleep(HERO_PILLAR_TIMING.batchHoldMs);
+
+    for (const el of phrases) {
+      await fadePhrase(el, false, 1000);
+      await sleep(HERO_PILLAR_TIMING.batchStaggerOutMs);
+    }
+
+    await sleep(900);
+
+    const order = shuffle(phrases.map((_, index) => index));
+    const slots = shuffle(HERO_PILLAR_SOLO_SLOTS).slice(0, phrases.length);
+
+    for (let i = 0; i < order.length; i += 1) {
+      const el = phrases[order[i]];
+      const slot = slots[i];
+      applyPillarSlot(el, slot);
+      setPhraseVisible(el, false);
+      await sleep(80);
+      await fadePhrase(el, true, 1200);
+      await sleep(HERO_PILLAR_TIMING.soloHoldMs);
+      await fadePhrase(el, false, 1000);
+      await sleep(HERO_PILLAR_TIMING.soloStartGapMs);
+    }
+
+    await sleep(HERO_PILLAR_TIMING.loopPauseMs);
+  }
+
+  function initHeroPillarFade() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const stage = document.querySelector('[data-hero-pillar-stage]');
+    if (!stage || stage.dataset.heroPillarInit === '1') return;
+
+    const phrases = [...stage.querySelectorAll('.hero-pillar-fade__phrase')];
+    if (phrases.length === 0) return;
+
+    stage.dataset.heroPillarInit = '1';
+    stage.classList.add('hero-pillar-fade__stage--js');
+
+    (async () => {
+      while (stage.isConnected) {
+        await runHeroPillarCycle(phrases);
+      }
+    })();
+  }
+
+  initHeroPillarFade();
+  document.addEventListener('astro:page-load', initHeroPillarFade);
+</script>
 
 <style>
   .hero-section__section {
@@ -217,329 +339,11 @@ const heroPillarFadeCycleSec = 72;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    will-change: opacity, visibility, top, left, right;
+    transition: opacity 1.1s cubic-bezier(0.45, 0, 0.15, 1);
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-pillar-fade__phrase {
-      animation-duration: 72s;
-      animation-timing-function: cubic-bezier(0.45, 0, 0.15, 1);
-      animation-iteration-count: infinite;
-      animation-fill-mode: both;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(1) {
-      animation-name: hero-pillar-seq-1;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(2) {
-      animation-name: hero-pillar-seq-2;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(3) {
-      animation-name: hero-pillar-seq-3;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(4) {
-      animation-name: hero-pillar-seq-4;
-    }
-  }
-
-  /* 0–3% vacío · 3–6% batch entra · 6–19% lectura · 19–30% apagan · 34–60% solos async · loop */
-  @keyframes hero-pillar-seq-1 {
-    0%,
-    3% {
-      opacity: 0;
-      visibility: hidden;
-      top: 42%;
-      left: 24%;
-      right: auto;
-    }
-    3%,
-    6% {
-      opacity: 1;
-      visibility: visible;
-      top: 42%;
-      left: 24%;
-      right: auto;
-    }
-    6%,
-    19% {
-      opacity: 1;
-      visibility: visible;
-      top: 42%;
-      left: 24%;
-      right: auto;
-    }
-    19%,
-    24% {
-      opacity: 0;
-      visibility: hidden;
-      top: 42%;
-      left: 24%;
-      right: auto;
-    }
-    24%,
-    34% {
-      opacity: 0;
-      visibility: hidden;
-      top: 12%;
-      left: 5%;
-      right: auto;
-    }
-    34%,
-    37% {
-      opacity: 1;
-      visibility: visible;
-      top: 12%;
-      left: 5%;
-      right: auto;
-    }
-    37%,
-    42% {
-      opacity: 1;
-      visibility: visible;
-      top: 12%;
-      left: 5%;
-      right: auto;
-    }
-    42%,
-    45% {
-      opacity: 0;
-      visibility: hidden;
-      top: 12%;
-      left: 5%;
-      right: auto;
-    }
-    45%,
-    97% {
-      opacity: 0;
-      visibility: hidden;
-    }
-    97%,
-    100% {
-      opacity: 0;
-      visibility: hidden;
-      top: 42%;
-      left: 24%;
-      right: auto;
-    }
-  }
-
-  @keyframes hero-pillar-seq-2 {
-    0%,
-    3% {
-      opacity: 0;
-      visibility: hidden;
-      top: 6%;
-      left: 4%;
-      right: auto;
-    }
-    3%,
-    21% {
-      opacity: 1;
-      visibility: visible;
-      top: 6%;
-      left: 4%;
-      right: auto;
-    }
-    21%,
-    26% {
-      opacity: 0;
-      visibility: hidden;
-      top: 6%;
-      left: 4%;
-      right: auto;
-    }
-    26%,
-    38% {
-      opacity: 0;
-      visibility: hidden;
-      top: 50%;
-      left: 36%;
-      right: auto;
-    }
-    38%,
-    41% {
-      opacity: 1;
-      visibility: visible;
-      top: 50%;
-      left: 36%;
-      right: auto;
-    }
-    41%,
-    46% {
-      opacity: 1;
-      visibility: visible;
-      top: 50%;
-      left: 36%;
-      right: auto;
-    }
-    46%,
-    49% {
-      opacity: 0;
-      visibility: hidden;
-      top: 50%;
-      left: 36%;
-      right: auto;
-    }
-    49%,
-    97% {
-      opacity: 0;
-      visibility: hidden;
-    }
-    97%,
-    100% {
-      opacity: 0;
-      visibility: hidden;
-      top: 6%;
-      left: 4%;
-      right: auto;
-    }
-  }
-
-  @keyframes hero-pillar-seq-3 {
-    0%,
-    3% {
-      opacity: 0;
-      visibility: hidden;
-      top: 8%;
-      left: auto;
-      right: 5%;
-    }
-    3%,
-    23% {
-      opacity: 1;
-      visibility: visible;
-      top: 8%;
-      left: auto;
-      right: 5%;
-    }
-    23%,
-    28% {
-      opacity: 0;
-      visibility: hidden;
-      top: 8%;
-      left: auto;
-      right: 5%;
-    }
-    28%,
-    43% {
-      opacity: 0;
-      visibility: hidden;
-      top: 26%;
-      left: auto;
-      right: 8%;
-    }
-    43%,
-    46% {
-      opacity: 1;
-      visibility: visible;
-      top: 26%;
-      left: auto;
-      right: 8%;
-    }
-    46%,
-    51% {
-      opacity: 1;
-      visibility: visible;
-      top: 26%;
-      left: auto;
-      right: 8%;
-    }
-    51%,
-    54% {
-      opacity: 0;
-      visibility: hidden;
-      top: 26%;
-      left: auto;
-      right: 8%;
-    }
-    54%,
-    97% {
-      opacity: 0;
-      visibility: hidden;
-    }
-    97%,
-    100% {
-      opacity: 0;
-      visibility: hidden;
-      top: 8%;
-      left: auto;
-      right: 5%;
-    }
-  }
-
-  @keyframes hero-pillar-seq-4 {
-    0%,
-    3% {
-      opacity: 0;
-      visibility: hidden;
-      top: 58%;
-      left: auto;
-      right: 6%;
-    }
-    3%,
-    25% {
-      opacity: 1;
-      visibility: visible;
-      top: 58%;
-      left: auto;
-      right: 6%;
-    }
-    25%,
-    30% {
-      opacity: 0;
-      visibility: hidden;
-      top: 58%;
-      left: auto;
-      right: 6%;
-    }
-    30%,
-    48% {
-      opacity: 0;
-      visibility: hidden;
-      top: 70%;
-      left: auto;
-      right: 4%;
-    }
-    48%,
-    51% {
-      opacity: 1;
-      visibility: visible;
-      top: 70%;
-      left: auto;
-      right: 4%;
-    }
-    51%,
-    56% {
-      opacity: 1;
-      visibility: visible;
-      top: 70%;
-      left: auto;
-      right: 4%;
-    }
-    56%,
-    59% {
-      opacity: 0;
-      visibility: hidden;
-      top: 70%;
-      left: auto;
-      right: 4%;
-    }
-    59%,
-    97% {
-      opacity: 0;
-      visibility: hidden;
-    }
-    97%,
-    100% {
-      opacity: 0;
-      visibility: hidden;
-      top: 58%;
-      left: auto;
-      right: 6%;
-    }
+  .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
+    animation: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -555,6 +359,7 @@ const heroPillarFadeCycleSec = 72;
       opacity: 0.82;
       visibility: visible;
       animation: none;
+      transition: none;
     }
   }
 
@@ -810,30 +615,6 @@ const heroPillarFadeCycleSec = 72;
       letter-spacing: 0.035em;
       line-height: 1.5;
       max-width: min(var(--fade-max-w, 100%), 88%) !important;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(1) {
-      --fade-top: 40%;
-      --fade-left: 18%;
-      --fade-right: auto;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(2) {
-      --fade-top: 4%;
-      --fade-left: 2%;
-      --fade-right: auto;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(3) {
-      --fade-top: 6%;
-      --fade-left: auto;
-      --fade-right: 2%;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(4) {
-      --fade-top: 56%;
-      --fade-left: auto;
-      --fade-right: 3%;
     }
 
     .hero-action-block {
