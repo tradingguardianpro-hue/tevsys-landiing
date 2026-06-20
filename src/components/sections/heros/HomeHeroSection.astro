@@ -324,6 +324,7 @@ const heroProductPillars = [
 
 <style>
   .hero-section__section {
+    --hero-tech-font: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
     margin: var(--section-margin) auto;
     min-height: clamp(88vh, 92vw, calc(100vh - var(--navbar-height)));
     position: relative;
@@ -437,7 +438,7 @@ const heroProductPillars = [
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+    font-family: var(--hero-tech-font);
     font-size: clamp(0.8125rem, 1.15vw, 0.875rem);
     font-weight: 400;
     line-height: 1.38;
@@ -548,12 +549,14 @@ const heroProductPillars = [
     margin: auto 0 0;
     padding-top: clamp(1.35rem, 3.5vh, 2.75rem);
     padding-bottom: clamp(0.25rem, 0.8vh, 0.5rem);
-    font-size: 0.8125rem;
+    font-family: var(--hero-tech-font);
+    font-size: clamp(0.75rem, 1vw, 0.8125rem);
     font-weight: 400;
-    color: rgba(244, 246, 248, 0.62);
+    letter-spacing: 0.024em;
+    color: rgba(244, 246, 248, 0.58);
     text-align: center;
     max-width: 28rem;
-    line-height: 1.4;
+    line-height: 1.45;
     width: 100%;
   }
 
@@ -723,7 +726,7 @@ const heroProductPillars = [
     }
 
     .hero-pillar-fade__phrase {
-      font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+      font-family: var(--hero-tech-font);
       font-size: clamp(0.6875rem, 2.15vw, 0.75rem);
       letter-spacing: 0.022em;
       line-height: 1.34;
