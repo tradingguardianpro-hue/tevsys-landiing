@@ -27,7 +27,7 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + pie cambiaba de regist
    - **short** 3.25rem: HyperClose, SML
    - **long** 4rem: Precisión (*error medio*), Evidencia (*verificable*)
    - Offset distinto por card; prueba mono en títulos **revertida**; prueba gris títulos **revertida**.
-   - **Prueba jun 2026 (noche):** hook de cada card (`.feature-card__hook.tevsys-card__brand-line`) en **IBM Plex Mono** — una línea de marca por card; cuerpo Inter. Revertible.
+   - Prueba mono en hooks cards **revertida** (jun 2026 — pegote visual; ver opciones en handoff).
 8. **Auditoría IA** — kicker mono.
 9. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono.
 10. **Fundador** — firma `— Gabi, fundador de tevsys` en IBM Plex Mono.
@@ -67,7 +67,6 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + pie cambiaba de regist
 .tevsys-brand-accent-underline
 .tevsys-meta-label
 .tevsys-card__title--accent-line / --short / --long
-.tevsys-card__brand-line
 .founder-signature
 .footer-contact__item span
 .footer-copyright
