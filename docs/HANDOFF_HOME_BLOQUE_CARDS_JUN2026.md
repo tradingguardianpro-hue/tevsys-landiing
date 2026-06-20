@@ -27,7 +27,7 @@ Orden de scroll:
 4. **Checklist** — `.feature-card__checklist-static`: losa **carbón** (`hsl(222,…)`) alineada a `.tevsys-card__content`; borde fino blanco + toque ámbar mínimo (no marco ámbar grueso anterior).
 5. **Hook en caja** — copy + **Nosotros sí.** con `.tevsys-brand-accent-underline` (subrayado ámbar→gris, familia `/como-funciona`; raya **más larga** que el texto, sobresale a la derecha del *sí*).
 6. **Viñetas** — doble trazabilidad + configuras una vez (sin cambio de texto).
-7. **Remate** — `Ellos deslizan. En tevsys cerramos.` (sin subrayado; no compite con *Nosotros sí.*).
+7. **Remate** — `Ellos deslizan. En tevsys cerramos.` — **IBM Plex Mono** (prueba jun 2026, familia puente); punto ámbar; sin subrayado.
 8. **Grid 4 cards** — títulos **Inter bold** blanco; **subrayado fino parcial** `.tevsys-card__title--accent-line` (validado jun 2026). Evidencia: raya bajo *verificable* (`ml` ~2.55rem, simétrico a Precisión / *error medio*).
 9. **Auditoría IA** — kicker en mono (punto 3).
 10. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono (punto 3).

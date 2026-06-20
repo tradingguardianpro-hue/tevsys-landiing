@@ -332,15 +332,17 @@ import settings from '../config/settings.js';
 	.feature-card__checklist-static-items li:last-child {
 		margin-bottom: 0;
 	}
-	/* Estilo micropáginas: punto amarillo + texto gris (hereda) */
+	/* Remate antes del grid — mono (familia puente / capas hero). Prueba jun 2026. */
 	.feature-card__intro-ellos {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		font-style: italic;
-		font-weight: 600;
-		opacity: 0.9;
-		font-size: 1.05rem;
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+		font-style: normal;
+		font-weight: 500;
+		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
+		letter-spacing: 0.055em;
+		color: rgba(228, 232, 240, 0.68);
 		margin: 0.25rem 0 clamp(2rem, 4vw, 2.65rem);
 		line-height: 1.45;
 	}
