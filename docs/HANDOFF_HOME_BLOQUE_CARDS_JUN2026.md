@@ -32,6 +32,7 @@ Orden de scroll:
 9. **Auditoría IA** — kicker en mono (punto 3).
 10. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono (punto 3).
 11. **Fundador** — firma `— Gabi, fundador de tevsys` en **IBM Plex Mono** (familia puente / jun 2026).
+12. **Footer** — ubicación `Barcelona (España)` (no *Spain*); mono en contacto **opcional** — ver criterio abajo.
 
 ## Cambios por punto (decisiones)
 
