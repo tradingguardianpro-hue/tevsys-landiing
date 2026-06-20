@@ -340,9 +340,16 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Referencias código:** `src/styles/global.css` (selectores bajo `.tevsys-feature-micro-surface`); `CHANGELOG-TEVSYS.md` entrada *Micropáginas `/features/*` — lectura “mapa”*.
 
-### Estado actual navegación y footer (31 Ene 2026)
+### Footer (jun 2026 — contacto + copyright)
+
+- **Ubicación:** `Barcelona (España)` (alineado legal/privacidad; no *Spain*).
+- **IBM Plex Mono (prueba, revertible):** texto `info@tevsys.io`, ciudad y línea `Copyright © … Todos los derechos reservados.`
+- **Inter sin cambio:** columnas Guías / Producto / Legal, frase *Made with love…*
+- **Código:** `src/components/core/Footer.astro`
+
+### Estado actual navegación y footer (31 Ene 2026 + jun 2026)
 - **Nav:** Inicio | Empresas | Contacto. "Acceso" eliminado.
-- **Footer:** 4 columnas (Brand, Navegación, Producto, Legal). Frase indie más grande. Copyright con "Todos los derechos reservados."
+- **Footer:** grid contacto + 3 columnas enlaces. Frase indie más grande.
 - **Páginas legales:** /company/legal, /company/privacidad, /company/terminos (contenido mínimo, pendiente abogado).
 
 ### Pendiente inmediato

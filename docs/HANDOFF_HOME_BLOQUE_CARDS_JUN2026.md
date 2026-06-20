@@ -1,131 +1,106 @@
-# Handoff — Home bloque hero → cards (cohesión visual · jun 2026)
+# Handoff — Home + cierre visual (cohesión jun 2026)
 
-**Última actualización:** 21 jun 2026  
-**Archivo vivo:** `src/pages/index.astro`  
-**Hero (no tocado en esta pasada):** `src/components/sections/heros/HomeHeroSection.astro` — esquema **2m-E** · ver `HANDOFF_HOME_HERO_ESQUEMAS.md`  
-**Método de trabajo:** repo TGP → `.cursor/rules/workflow-web-visual-tevsys.mdc` (un paso a la vez, validación fundador entre puntos)
-
----
-
-## Contexto y problema
-
-Tras cerrar el **hero 2m-E** (DM Sans + IBM Plex Mono en capas, motion pilares), el scroll a la **sección de valor** (H2 + checklist + 4 cards) cambiaba de **registro visual**: Inter editorial, caja ámbar, salto brusco hero → argumento.
-
-**Objetivo:** unir identidad **sin rehacer la home** — pegamentos visuales + un acento de marca + copy más directo.
-
-**Nota:** el contraste hero/abajo lo planteamos **equipo interno** (no feedback externo de terceros).
+**Última actualización:** 21 jun 2026 (noche — footer copyright mono)  
+**Archivos vivos:** `src/pages/index.astro` · `src/components/core/Footer.astro`  
+**Hero (sin cambios motion):** `HomeHeroSection.astro` — esquema **2m-E** · `HANDOFF_HOME_HERO_ESQUEMAS.md`  
+**Método:** repo TGP → `.cursor/rules/workflow-web-visual-tevsys.mdc`
 
 ---
 
-## Estado actual (validado fundador · jun 2026)
+## Contexto
 
-Orden de scroll:
+Tras cerrar el **hero 2m-E**, el scroll a valor + cards + pie cambiaba de registro visual. Objetivo: **pegamentos + acento de marca + mono solo en metadatos**, sin rehacer la home.
 
-1. **Hero stack** — sin cambios de motion/KITT en esta iteración.
-2. **Puente** — `.tevsys-home-hero-bridge`: hairline + `Precisión · HyperClose · SML · Evidencia` en **IBM Plex Mono**.
+**Nota:** contraste hero/abajo = criterio **equipo interno** (no feedback externo de terceros).
+
+---
+
+## Estado actual — home (validado fundador)
+
+1. **Hero** — motion/KITT intactos (2m-E).
+2. **Puente** — `.tevsys-home-hero-bridge`: hairline + `Precisión · HyperClose · SML · Evidencia` (IBM Plex Mono).
 3. **H2** — `¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?`
-4. **Checklist** — `.feature-card__checklist-static`: losa **carbón** (`hsl(222,…)`) alineada a `.tevsys-card__content`; borde fino blanco + toque ámbar mínimo (no marco ámbar grueso anterior).
-5. **Hook en caja** — copy + **Nosotros sí.** con `.tevsys-brand-accent-underline` (subrayado ámbar→gris, familia `/como-funciona`; raya **más larga** que el texto, sobresale a la derecha del *sí*).
-6. **Viñetas** — doble trazabilidad + configuras una vez (sin cambio de texto).
-7. **Remate** — `Ellos deslizan. En tevsys cerramos.` — **IBM Plex Mono** (prueba jun 2026, familia puente); punto ámbar; sin subrayado.
-8. **Grid 4 cards** — subrayado fino **2px**; **dos anchos fijos** (`short` 3.25rem: HyperClose + SML · `long` 4rem: Precisión + Evidencia); **offset** distinto por card. Títulos Inter blanco.
-9. **Auditoría IA** — kicker en mono (punto 3).
-10. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono (punto 3).
-11. **Fundador** — firma `— Gabi, fundador de tevsys` en **IBM Plex Mono** (familia puente / jun 2026).
-12. **Footer** — `Barcelona (España)`; **prueba jun 2026:** fila contacto `info@tevsys.io` + ciudad en IBM Plex Mono (revertible).
-
-## Cambios por punto (decisiones)
-
-### Punto 1 — Puente bajo hero
-
-| Qué | Por qué |
-|-----|--------|
-| Línea mono + hairline entre hero y H2 | Evita salto “cine → folleto”; enlaza capas animadas con el grid de producto |
-| Clases `tevsys-home-hero-bridge` | Solo en `index.astro`; no toca `HomeHeroSection.astro` |
-
-### Punto 2 — Checklist carbón
-
-| Qué | Por qué |
-|-----|--------|
-| Mismo gradiente carbón que cards | Misma “materia” en el bloque explicativo |
-| **Toque B descartado** (cajita más clara + glow) | Fundador: le gusta el tono actual; no acumular cambios; reapertura opcional si el grid se siente plano |
-
-### Copy + acento — H2 y *Nosotros sí.*
-
-| Decisión | Motivo |
-|----------|--------|
-| H2: *¿Has perdido **dinero**…?* (sin *cuánto*) | Personal y claro; evita sensación “calculadora”; mantiene deslizamiento al límite |
-| Subrayado solo en **Nosotros sí.** | Punchline dentro de la caja; ojo: titular → remate → viñetas |
-| **No** subrayar *En tevsys cerramos.* | Dos acentos seguidos compiten |
-| Subrayado `.tevsys-brand-accent-underline` | Reutiliza filosofía `.how-present-title__accent` (`como-funciona.astro`); **no** clonar capítulo «De cero a protegido» con barrido animado en home |
-
-**Copy checklist (vivo):**
-
-- H2: `¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?`
-- Hook: `Sin excusas. Las buenas intenciones no cierran con alta precisión ni bloquean operaciones. Nosotros sí.`
-
-### Punto 3 — Etiquetas mono (`.tevsys-meta-label`)
-
-| Dónde | Qué |
-|-------|-----|
-| Card Precisión | ~~`{N} operativas documentadas` en mono~~ **revertido** — frase entera Inter (jun 2026: mitad mono parecía error) |
-| Títulos 4 cards (`h3`) | **Inter bold** (jun 2026) — prueba mono **revertida** (demasiadas voces vs bloque editorial arriba) |
-| `.audit-teaser-kicker` | `Verificación con IA · próximamente` — mono, sin `text-transform: uppercase` |
-| `.plan-card__status` | *Demo activa* / *Lista de espera* — mono dentro de pastillas (colores intactos) |
-
-**Por qué:** extender IBM Plex Mono solo a **metadatos**, no a párrafos — coherencia con hero/puente sin “página técnica”.
+4. **Checklist carbón** — `.feature-card__checklist-static`; **toque B** (cajita más clara) **aparcado**.
+5. ***Nosotros sí.*** — `.tevsys-brand-accent-underline` (3px, ámbar→gris; raya sobresale del *sí*).
+6. **Remate** — `Ellos deslizan. En tevsys cerramos.` — IBM Plex Mono; punto ámbar; sin subrayado.
+7. **Grid 4 cards** — títulos **Inter bold** blanco; subrayado fino **2px** (`.tevsys-card__title--accent-line`):
+   - **short** 3.25rem: HyperClose, SML
+   - **long** 4rem: Precisión (*error medio*), Evidencia (*verificable*)
+   - Offset distinto por card; prueba mono en títulos **revertida**; prueba gris títulos **revertida**.
+8. **Auditoría IA** — kicker mono.
+9. **Planes** — pastillas *Demo activa* / *Lista de espera* en mono.
+10. **Fundador** — firma `— Gabi, fundador de tevsys` en IBM Plex Mono.
 
 ---
 
-## Clases CSS nuevas (referencia)
+## Estado actual — footer (prueba jun 2026, revertible)
+
+| Elemento | Tipografía | Copy |
+|----------|------------|------|
+| Fila contacto | **IBM Plex Mono** en texto | `info@tevsys.io` · `Barcelona (España)` (no *Spain*) |
+| Columnas enlaces | Inter (sin cambio) | Guías, producto, legal |
+| Made with love… | Inter (sin cambio) | frase independiente |
+| **Copyright** | **IBM Plex Mono** (prueba) | `Copyright © {año} tevsys. Todos los derechos reservados.` |
+
+**Archivo:** `src/components/core/Footer.astro` — clases `.footer-contact__item span`, `.footer-copyright`.
+
+---
+
+## Decisiones clave (revertidas vs cerradas)
+
+| Tema | Decisión |
+|------|----------|
+| Toque B checklist más claro | Aparcado — tono carbón OK |
+| Mono en títulos 4 cards | **Revertido** — demasiadas voces |
+| Gris en títulos cards | **Revertido** — otro tono de gris competía con arte |
+| Subrayado fino en títulos cards | **Cerrado** — familia `/como-funciona` |
+| Operativas en card Precisión | Frase entera **Inter** (split mono revertido) |
+| Footer mono | Contacto + copyright — **prueba**; revertir si no convence |
+
+---
+
+## Clases CSS (referencia)
 
 ```text
 .tevsys-home-hero-bridge / __text
 .tevsys-brand-accent-underline
 .tevsys-meta-label
+.tevsys-card__title--accent-line / --short / --long
+.founder-signature
+.footer-contact__item span
+.footer-copyright
 ```
 
 ---
 
 ## Qué NO se tocó
 
-- Motion KITT / `tevsys-home-mid-glow` (salvo iteración móvil cards previa)
-- `HomeHeroSection.astro` timing 2m-E
-- Textos e imágenes de las 4 feature cards (salvo span mono en línea operativas)
-- Bloque fundador, CTAs planes, lógica checkout
+- Motion KITT / hero 2m-E
+- Copy e imágenes de las 4 feature cards (salvo estilos título/subrayado)
+- CTAs planes / checkout
+- Claim + blockquote fundador (solo firma)
+- Enlaces del footer (columnas)
 
 ---
 
-## Pendiente / opcional
+## Commits sugeridos
 
-- **Toque B** checklist más claro — aparcado; reabrir solo con OK fundador
-- Más aire `hero-platform-note` → puente (histórico en `HANDOFF_HOME_HERO_ESQUEMAS.md`)
-- Extender mono a títulos grid — **probado y revertido** (jun 2026): demasiadas voces; mono queda en puente + labels pequeños
-- **Meet / terceros:** ruta web corta hero → card Evidencia → auditoría — `docs/GUION_LLAMADA_AXIOM_LABS_JUAN_MEET.md` (repo TGP)
-
----
-
-## Commits sugeridos (línea deploy)
-
-Uno consolidado o varios:
+Paquete recomendado:
 
 ```text
-web(tevsys): frase puente hero a bloque cards en home
-web(tevsys): checklist carbon y titular home Has perdido dinero
-web(tevsys): subrayado Nosotros si familia como-funciona
-web(tevsys): labels mono home auditoria planes operativas
+web(tevsys): cohesión home jun 2026 puente checklist cards fundador footer
 ```
 
-O paquete: `web(tevsys): cohesión home puente checklist copy y labels mono`
+O granular si prefieres historial fino (ver commits parciales en CHANGELOG § Home jun 2026).
 
 ---
 
-## Espejos documentación
+## Espejos
 
 | Repo | Archivo |
 |------|---------|
-| Web | `docs/CHANGELOG-TEVSYS.md` (entrada jun 2026) |
-| Web | `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` § Sección principal de valor |
-| TGP | `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → Ampliaciones |
-| TGP | `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` § 3 |
-| TGP | `.cursor/rules/workflow-web-visual-tevsys.mdc` |
+| Web | `CHANGELOG-TEVSYS.md` § Home jun 2026 |
+| Web | `CONTENIDO_WEB_TEVSYS_LANDING.md` § valor + fundador + footer |
+| TGP | `HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md` (espejo) |
+| TGP | `QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → Ampliaciones |
+| TGP | `workflow-web-visual-tevsys.mdc` |

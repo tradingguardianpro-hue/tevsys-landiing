@@ -8,23 +8,30 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Home — cohesión hero → cards (21 jun 2026)
+## Home + cierre visual — cohesión jun 2026
 
-**Handoff completo:** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`  
+**Handoff:** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`  
 **Método:** repo TGP `.cursor/rules/workflow-web-visual-tevsys.mdc`
 
-**Qué (validado fundador, paso a paso):**
+### Home (`index.astro`)
 
-1. **Puente** — `.tevsys-home-hero-bridge`: hairline + `Precisión · HyperClose · SML · Evidencia` (IBM Plex Mono).
-2. **Checklist carbón** — `.feature-card__checklist-static` alineado a losa `.tevsys-card__content`. **Toque B** (cajita más clara) **no aplicado** — tono actual OK.
-3. **H2** — `¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?` (sin *cuánto*; *dinero* explícito).
-4. **Acento** — `.tevsys-brand-accent-underline` en *Nosotros sí.* (familia subrayado `/como-funciona`; raya sobresale del *sí*). *Ellos deslizan…* sin subrayado.
-5. **Labels mono** — `.tevsys-meta-label`: kicker auditoría IA; pastillas planes. Operativas en card Precisión: **revertido** a Inter (frase entera).
-6. **Títulos cards** — Inter bold (prueba mono **revertida** jun 2026 — acuerdo fundador + IA: menos voces tipográficas).
+1. Puente `.tevsys-home-hero-bridge` — mono + hairline.
+2. Checklist carbón; toque B aparcado.
+3. H2 *¿Has perdido dinero…?*
+4. Subrayado *Nosotros sí.* (`.tevsys-brand-accent-underline`).
+5. *Ellos deslizan…* en mono.
+6. Cards: subrayado títulos 2px (`short` 3.25rem / `long` 4rem); títulos Inter blanco.
+7. Labels mono: auditoría, planes; operativas Inter frase entera.
+8. Firma fundador mono.
 
-**Archivo:** `src/pages/index.astro` · copy en `CONTENIDO_WEB_TEVSYS_LANDING.md`.
+**Revertido en sesión:** mono títulos cards · gris títulos · split mono operativas.
 
-**Commit sugerido (paquete):** `web(tevsys): cohesión home puente checklist copy y labels mono`
+### Footer (`Footer.astro`)
+
+- `Barcelona (España)` (no *Spain*).
+- **Prueba mono:** contacto (`info@` + ciudad) + línea copyright.
+
+**Commit paquete:** `web(tevsys): cohesión home jun 2026 puente checklist cards fundador footer`
 
 ---
 
