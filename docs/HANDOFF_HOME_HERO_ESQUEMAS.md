@@ -16,7 +16,8 @@
 ## Esquema 2m-B — rotación ancho completo (activo — 20 jun 2026)
 
 - **`hero-pillar-fade__stage`** — rectángulo alto entre H1 y disclaimer (`min-height` ~13vh).
-- **Cada frase en un punto distinto** del rectángulo (top/left/right por índice en frontmatter).
+- **Coordenadas orgánicas** en el rectángulo (no solo esquinas): interior, centro-bajo, solapamiento suave (Disciplina ~47% / Protección ~54%).
+- **Timing asincrónico:** `durationOffset` + `delayOffset` por frase (ciclos ligeramente distintos).
 - **Fade a 0** · ciclo **32 s** · curva `cubic-bezier` más relajada.
 - **Halo** ~−25% adicional vs 2m-A.
 - Sin máscara · sin scroll. Afinar motion: pendiente fundador.

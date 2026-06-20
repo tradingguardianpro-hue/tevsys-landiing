@@ -6,35 +6,43 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 const heroProductPillars = [
   {
     text: 'Precisión de cierre en tu operativa',
-    top: '6%',
-    left: '0',
-    right: 'auto',
-    align: 'left',
-    maxW: '62%',
-  },
-  {
-    text: 'Disciplina automatizada',
-    top: '32%',
-    left: 'auto',
-    right: '2%',
-    align: 'right',
-    maxW: '48%',
-  },
-  {
-    text: 'Trazabilidad verificable',
-    top: '54%',
-    left: '8%',
+    top: '10%',
+    left: '6%',
     right: 'auto',
     align: 'left',
     maxW: '52%',
+    durationOffset: 0,
+    delayOffset: 0,
+  },
+  {
+    text: 'Disciplina automatizada',
+    top: '47%',
+    left: '31%',
+    right: 'auto',
+    align: 'left',
+    maxW: '40%',
+    durationOffset: 2.6,
+    delayOffset: 0.55,
+  },
+  {
+    text: 'Trazabilidad verificable',
+    top: '18%',
+    left: 'auto',
+    right: '9%',
+    align: 'right',
+    maxW: '43%',
+    durationOffset: 1.3,
+    delayOffset: -0.35,
   },
   {
     text: 'Protección activa en MT5',
-    top: '78%',
+    top: '54%',
     left: 'auto',
-    right: '0',
+    right: '12%',
     align: 'right',
-    maxW: '56%',
+    maxW: '46%',
+    durationOffset: 3.2,
+    delayOffset: 0.85,
   },
 ];
 const heroPillarFadeCycleSec = 32;
@@ -56,7 +64,7 @@ const heroPillarFadeCycleSec = 32;
             {heroProductPillars.map((pillar, index) => (
               <p
                 class="hero-pillar-fade__phrase"
-                style={`--fade-i: ${index}; --fade-cycle: ${heroPillarFadeCycleSec}s; --fade-top: ${pillar.top}; --fade-left: ${pillar.left}; --fade-right: ${pillar.right}; --fade-align: ${pillar.align}; --fade-max-w: ${pillar.maxW};`}
+                style={`--fade-i: ${index}; --fade-cycle: ${heroPillarFadeCycleSec}s; --fade-top: ${pillar.top}; --fade-left: ${pillar.left}; --fade-right: ${pillar.right}; --fade-align: ${pillar.align}; --fade-max-w: ${pillar.maxW}; --fade-duration-offset: ${pillar.durationOffset}s; --fade-delay-offset: ${pillar.delayOffset}s;`}
               >
                 {pillar.text}
               </p>
@@ -234,21 +242,26 @@ const heroPillarFadeCycleSec = 32;
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-pillar-fade__phrase {
-      animation: hero-pillar-phrase-fade var(--fade-cycle, 32s) cubic-bezier(0.42, 0, 0.2, 1) infinite;
-      animation-delay: calc(var(--fade-i, 0) * (var(--fade-cycle, 32s) / 4));
+      animation-name: hero-pillar-phrase-fade;
+      animation-duration: calc(var(--fade-cycle, 32s) + var(--fade-duration-offset, 0s));
+      animation-timing-function: cubic-bezier(0.45, 0, 0.15, 1);
+      animation-iteration-count: infinite;
+      animation-delay: calc(
+        var(--fade-i, 0) * (var(--fade-cycle, 32s) / 4) + var(--fade-delay-offset, 0s)
+      );
     }
   }
 
   @keyframes hero-pillar-phrase-fade {
     0%,
-    5%,
-    27%,
+    6%,
+    28%,
     100% {
       opacity: 0;
       visibility: hidden;
     }
-    10%,
-    22% {
+    11%,
+    23% {
       opacity: 1;
       visibility: visible;
     }
@@ -524,27 +537,27 @@ const heroPillarFadeCycleSec = 32;
     }
 
     .hero-pillar-fade__phrase:nth-child(1) {
-      --fade-top: 4%;
-      --fade-left: 0;
+      --fade-top: 8%;
+      --fade-left: 2%;
       --fade-right: auto;
     }
 
     .hero-pillar-fade__phrase:nth-child(2) {
-      --fade-top: 30%;
-      --fade-left: auto;
-      --fade-right: 0;
-    }
-
-    .hero-pillar-fade__phrase:nth-child(3) {
-      --fade-top: 56%;
-      --fade-left: 4%;
+      --fade-top: 44%;
+      --fade-left: 22%;
       --fade-right: auto;
     }
 
-    .hero-pillar-fade__phrase:nth-child(4) {
-      --fade-top: 80%;
+    .hero-pillar-fade__phrase:nth-child(3) {
+      --fade-top: 16%;
       --fade-left: auto;
-      --fade-right: 0;
+      --fade-right: 2%;
+    }
+
+    .hero-pillar-fade__phrase:nth-child(4) {
+      --fade-top: 50%;
+      --fade-left: auto;
+      --fade-right: 4%;
     }
 
     .hero-action-block {
