@@ -106,12 +106,23 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Viñetas:** doble trazabilidad MT5 + configuras una vez / días OFF (lista estática, puntos ámbar).
 
 ### Remate antes del grid
-`Ellos deslizan. En tevsys cerramos.` — cursiva + punto ámbar; **sin** subrayado (no compite con *Nosotros sí.*).
+`Ellos deslizan. En tevsys cerramos.` — IBM Plex Mono + punto ámbar (jun 2026).
+
+### Cards — respiración (Opción A · jun 2026)
+- Más aire checklist → grid; padding interno; cuerpo más suave; hook con peso.
+- **Revertido:** mono en hooks de card.
+
+### Puente cards → auditoría IA (jun 2026)
+- **Clase:** `.tevsys-home-cards-audit-bridge` (misma familia que puente hero).
+- **Copy:** `Evidencia · Trazabilidad · Verificación`.
+- **Kicker caja azul:** `Revisión asistida · próximamente` (sustituye `Verificación con IA · próximamente`).
 
 ### Labels mono (`.tevsys-meta-label` · jun 2026)
-- Card Precisión: `{N} operativas documentadas` en mono (`settings.documentedOperatives`).
-- Auditoría IA: kicker `Verificación con IA · próximamente`.
 - Planes: pastillas `Demo activa` / `Lista de espera`.
+- Auditoría: ver kicker arriba.
+
+### Pendiente
+- *(Ninguno en cohesión scroll jun 2026 — validar feedback fundador en planes.)*
 
 ### Subtítulo (histórico — ya no en home)
 `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.` — ver checklist arriba (copy actual incluye *alta precisión*).

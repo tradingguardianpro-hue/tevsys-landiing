@@ -11,27 +11,28 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## Home + cierre visual — cohesión jun 2026
 
 **Handoff:** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`  
-**Método:** repo TGP `.cursor/rules/workflow-web-visual-tevsys.mdc`
+**Método:** repo TGP `.cursor/rules/workflow-web-visual-tevsys.mdc`  
+**Pendiente (chat jun 2026):** transición auditoría → **Planes** — ver handoff § *Siguiente frente*.
 
 ### Home (`index.astro`)
 
-1. Puente `.tevsys-home-hero-bridge` — mono + hairline.
-2. Checklist carbón; toque B aparcado.
-3. H2 *¿Has perdido dinero…?*
-4. Subrayado *Nosotros sí.* (`.tevsys-brand-accent-underline`).
-5. *Ellos deslizan…* en mono.
-6. Cards: subrayado títulos 2px (`short` 3.25rem / `long` 4rem); títulos Inter blanco.
-7. Labels mono: auditoría, planes; operativas Inter frase entera.
+1. Puente hero `.tevsys-home-hero-bridge` — hairline + `Precisión · HyperClose · SML · Evidencia` (IBM Plex Mono).
+2. Checklist carbón; **toque B** aparcado.
+3. H2 *¿Has perdido dinero…?* · subrayado *Nosotros sí.* · remate *Ellos deslizan…* mono.
+4. **Cards:** subrayado títulos 2px; títulos Inter; **Opción A respiración** (aire + cuerpo suave, hook fuerte).
+5. Puente cards→auditoría `.tevsys-home-cards-audit-bridge` — `Evidencia · Trazabilidad · Verificación`.
+6. Caja auditoría: kicker `Revisión asistida · próximamente` (mono); H2 + copy sin cambio sustancial.
+7. Planes: puente `Essential · Advanced · Pro` + respiración plan-cards (A).
 8. Firma fundador mono.
 
-**Revertido en sesión:** mono títulos cards · gris títulos · split mono operativas.
+**Revertido en sesión:** mono hooks cards · mono/gris títulos cards · split mono operativas.
 
 ### Footer (`Footer.astro`)
 
-- `Barcelona (España)` (no *Spain*).
-- **Prueba mono:** contacto (`info@` + ciudad) + línea copyright.
+- `Barcelona (España)`.
+- **Prueba mono:** contacto + copyright.
 
-**Commit paquete:** `web(tevsys): cohesión home jun 2026 puente checklist cards fundador footer`
+**Commit paquete:** `web(tevsys): cohesión home puente auditoría cards respiración A footer`
 
 ---
 

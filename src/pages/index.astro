@@ -119,6 +119,9 @@ import settings from '../config/settings.js';
 			</div>
 		</section>
 		<Container>
+		<p class="tevsys-home-hero-bridge tevsys-home-audit-plans-bridge" aria-label="Planes tevsys: Essential, Advanced y Pro">
+			<span class="tevsys-home-hero-bridge__text">Essential · Advanced · Pro</span>
+		</p>
 		<section class="plans-section">
 			<h2 class="plans-section__title">Elige tu cuenta</h2>
 			<p class="plans-section__subtitle">No vendemos señales. Vendemos ejecución disciplinada, alta precisión verificable de cierre en MT5, evidencia real y control bajo presión.</p>
@@ -369,7 +372,7 @@ import settings from '../config/settings.js';
 		margin-top: clamp(0.65rem, 1.8vw, 1.15rem);
 	}
 	.audit-teaser-section {
-		margin: calc(var(--tevsys-lower-strip-h, 180px) * -0.965) auto clamp(2rem, 4vw, 2.75rem);
+		margin: calc(var(--tevsys-lower-strip-h, 180px) * -0.965) auto clamp(2.35rem, 4.5vw, 3.1rem);
 	}
 	/* Puente cards → auditoría (misma familia que hero → bloque valor). */
 	.tevsys-home-cards-audit-bridge {
@@ -378,6 +381,14 @@ import settings from '../config/settings.js';
 		max-width: min(52rem, 92%);
 		margin: 0 auto;
 		padding: clamp(0.35rem, 1vw, 0.65rem) 0 clamp(1.05rem, 2.2vw, 1.45rem);
+	}
+	/* Puente auditoría → planes + aire antes de banda negra. */
+	.tevsys-home-audit-plans-bridge {
+		position: relative;
+		z-index: 1;
+		max-width: min(52rem, 100%);
+		margin: 0 auto;
+		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(0.95rem, 2vw, 1.35rem);
 	}
 	@media (max-width: 768px) {
 		.audit-teaser-section {
@@ -679,7 +690,7 @@ import settings from '../config/settings.js';
 	.plans-section {
 		/* Mismo negro que el stack del hero (`#000` en tema oscuro); sin cian aquí — reservado al teaser auditoría */
 		--plans-band-bleed: min(1.35rem, 3.2vw);
-		margin: var(--section-margin) calc(-1rem - var(--plans-band-bleed));
+		margin: clamp(0.35rem, 1vw, 0.65rem) calc(-1rem - var(--plans-band-bleed)) var(--section-margin);
 		width: calc(100% + 2rem + 2 * var(--plans-band-bleed));
 		max-width: none;
 		box-sizing: border-box;
@@ -687,7 +698,7 @@ import settings from '../config/settings.js';
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-rendering: optimizeLegibility;
-		padding: clamp(1.25rem, 2.7vw, 1.9rem) clamp(1.15rem, 2.5vw, 1.75rem) clamp(1.4rem, 2.9vw, 2.05rem);
+		padding: clamp(1.45rem, 2.9vw, 2.05rem) clamp(1.25rem, 2.6vw, 1.85rem) clamp(1.55rem, 3vw, 2.25rem);
 		border-radius: clamp(0.85rem, 1.5vw, 1.15rem);
 		background-color: #000;
 		border: 1px solid rgba(255, 255, 255, 0.055);
@@ -703,13 +714,14 @@ import settings from '../config/settings.js';
 	}
 	.plans-section__subtitle {
 		margin-top: 0;
-		margin-bottom: 1.25rem;
-		opacity: 0.85;
+		margin-bottom: clamp(1.35rem, 2.5vw, 1.65rem);
+		line-height: 1.55;
+		opacity: 0.82;
 	}
 	.plans-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: var(--theme-grid-gap);
+		gap: clamp(1.15rem, 2.5vw, 1.5rem);
 	}
 	.plan-card {
 		display: flex;
@@ -743,10 +755,11 @@ import settings from '../config/settings.js';
 		object-fit: contain;
 	}
 	.plan-card__content {
-		padding: 1rem 1.1rem 1.2rem;
+		padding: clamp(1.25rem, 2vw, 1.45rem) clamp(1.15rem, 1.8vw, 1.35rem) clamp(1.35rem, 2.2vw, 1.55rem);
 		display: flex;
 		flex-direction: column;
 		flex: 1;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
 	}
 	.plan-card__status {
 		align-self: flex-start;
@@ -773,21 +786,24 @@ import settings from '../config/settings.js';
 	.plan-card__content h3 {
 		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		font-weight: 700;
-		margin: 0 0 0.45rem;
+		margin: 0 0 0.65rem;
 	}
 	.plan-card__content p {
-		margin: 0 0 0.9rem;
-		line-height: 1.45;
+		margin: 0 0 0.95rem;
+		font-weight: 400;
+		line-height: 1.58;
+		color: rgba(228, 232, 240, 0.84);
 	}
 	.plan-card__bullets--aperitivo {
-		margin: 0 0 0.55rem;
+		margin: 0 0 0.65rem;
 		padding-left: 1.1rem;
-		line-height: 1.45;
-		font-size: 0.88rem;
-		opacity: 0.95;
+		line-height: 1.52;
+		font-size: 0.875rem;
+		opacity: 0.88;
+		color: rgba(228, 232, 240, 0.86);
 	}
 	.plan-card__bullets--aperitivo li {
-		margin-bottom: 0.35rem;
+		margin-bottom: 0.42rem;
 	}
 	.plan-card__bullets--aperitivo li:last-child {
 		margin-bottom: 0;
