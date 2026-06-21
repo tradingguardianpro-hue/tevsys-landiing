@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — puente Trader·fundador hairline (22 jun 2026)
+
+**Qué:** `.tevsys-home-plans-founder-bridge` vuelve **entre** banda planes y `.tevsys-home-founder-band` (fuera del bloque fundador) para que el hairline gris sea visible sobre negro; márgenes alineados a puentes auditoría/planes.  
+**Archivo:** `src/pages/index.astro` · `HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`  
+**Commit:** `web(tevsys): fix hairline puente Trader fundador`
+
+---
+
 ## Home KITT — mezcla 50/50 gris·ámbar (22 jun 2026)
 
 **Qué:** `tevsys-hero-kitt-tone-*` + `tevsys-home-lower-kitt-mix-*` (base, desktop, móvil) — platos simétricos 50% tiempo cada tono (antes ~60/40 ámbar). Resto del motion sin cambio.  
@@ -39,7 +47,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 5. Puente cards→auditoría `.tevsys-home-cards-audit-bridge` — `Evidencia · Trazabilidad · Verificación`.
 6. Caja auditoría: kicker `Revisión asistida · próximamente` (mono); H2 + copy sin cambio sustancial.
 7. Planes: puente `Essential · Advanced · Pro` + respiración plan-cards (A).
-8. Firma fundador mono.
+8. Puente planes→fundador `Trader · fundador` — hairline sobre negro (entre planes y banda fundador).
+9. Firma fundador mono.
 
 **Revertido en sesión:** mono hooks cards · mono/gris títulos cards · split mono operativas.
 

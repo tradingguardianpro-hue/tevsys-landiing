@@ -176,12 +176,12 @@ import settings from '../config/settings.js';
 			</div>
 		</section>
 		</Container>
+		<p class="tevsys-home-hero-bridge tevsys-home-plans-founder-bridge" aria-label="De los planes al mensaje del fundador">
+			<span class="tevsys-home-hero-bridge__text">Trader · fundador</span>
+		</p>
 		<section class="founder-section tevsys-home-founder-band">
 			<div class="tevsys-home-founder-strip" aria-hidden="true"></div>
 			<Container>
-			<p class="tevsys-home-hero-bridge tevsys-home-plans-founder-bridge" aria-label="De los planes al mensaje del fundador">
-				<span class="tevsys-home-hero-bridge__text">Trader · fundador</span>
-			</p>
 			<div class="founder-message">
 				<p class="founder-claim"><span class="founder-tevsys">tevsys</span> no es el sueño de un inversor. Es la respuesta de un trader.</p>
 				<blockquote>
@@ -393,13 +393,13 @@ import settings from '../config/settings.js';
 		margin: 0 auto;
 		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(0.95rem, 2vw, 1.35rem);
 	}
-	/* Puente planes → fundador (dentro de .tevsys-home-founder-band). */
+	/* Puente planes → fundador (entre banda planes y bloque fundador; hairline sobre negro). */
 	.tevsys-home-plans-founder-bridge {
 		position: relative;
-		z-index: 1;
-		max-width: min(40rem, 100%);
-		margin: 0 auto clamp(1.15rem, 2.6vw, 1.65rem);
-		padding: clamp(0.35rem, 1vw, 0.55rem) 0 clamp(0.55rem, 1.3vw, 0.8rem);
+		z-index: 2;
+		max-width: min(52rem, 92%);
+		margin: clamp(1.15rem, 2.8vw, 1.85rem) auto clamp(0.85rem, 2vw, 1.25rem);
+		padding: clamp(0.35rem, 1vw, 0.65rem) 0 clamp(1.05rem, 2.2vw, 1.45rem);
 		text-align: center;
 	}
 	.tevsys-home-plans-founder-bridge::before {

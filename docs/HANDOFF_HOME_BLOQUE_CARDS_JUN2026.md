@@ -41,7 +41,7 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 9. **Puente auditoría** — `.tevsys-home-cards-audit-bridge`: `Evidencia · Trazabilidad · Verificación`.
 10. **Caja auditoría** — kicker `Revisión asistida · próximamente` (antes `Verificación con IA · próximamente`).
 11. **Planes** — puente `.tevsys-home-audit-plans-bridge`: `Essential · Advanced · Pro`; banda `#000`; **Opción A** aire en plan-cards; pastillas estado mono.
-12. **Fundador** — puente `.tevsys-home-plans-founder-bridge` **dentro** de `.tevsys-home-founder-band` (hairline explícita + `Trader · fundador`); firma mono.
+12. **Fundador** — puente `.tevsys-home-plans-founder-bridge` **entre planes y banda fundador** (hairline + `Trader · fundador`); firma mono.
 13. **Hero móvil** — mano robótica centrada dentro del marco redondeado (`HomeHeroSection.astro` ≤768px).
 
 ---
