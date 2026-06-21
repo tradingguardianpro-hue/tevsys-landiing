@@ -1,8 +1,15 @@
 # Handoff — Hero home · esquemas de jerarquía (jun 2026)
 
-**Última actualización:** 6 jun 2026 — **2m-E activo**  
+**Última actualización:** 22 jun 2026 — **2m-E** suavizado (menos cortes bruscos)  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m-E** — vacío (~4 s) → batch **4** → apagado **2+1+1** async → solos 4 → pausa → loop.
+**Activo en web:** **esquema 2m-E** — vacío corto → batch **4** → apagado **2+1+1** → solos 4 → pausa → loop.
+
+### Fix motion 2m-E (22 jun 2026 — fundador OK motion hero)
+
+- Menos hueco vacío entre vueltas (`emptyMs` / `loopPauseMs` reducidos; móvil aparte).
+- **Handoff:** si la 4.ª frase era la de transición, ya no salta de sitio visible — fundido antes de mover.
+- **Solos:** reposicionamiento con fundido si aún se veía la frase (no corte instantáneo).
+- Revertir: restaurar `HERO_PILLAR_TIMING` previo en el `<script>` del `.astro`.
 
 ## Esquema 2m-E — solo phase JS + slots variables (activo — 6 jun 2026)
 
@@ -10,9 +17,9 @@
 2. **Entran las 4** juntas (posiciones batch) · ~10 s lectura.
 3. **Apagan** en oleada **2 → 1 → 1** (Precisión+Trazabilidad casi juntas · Disciplina · Protección al final).
 4. **Fase solo:** las 4 una a una, orden y posición aleatorios.
-5. Pausa (~6,2 s) → **loop**.
+5. Pausa (~2,4 s escritorio / ~2,1 s móvil) → **loop**. *(Histórico 6 jun: ~6,2 s.)*
 
-Timing, `HERO_PILLAR_BATCH_FADE_OUT` y slots en `<script define:vars>` del `.astro`.
+Timing en `<script define:vars>` del `.astro` — ver fix 22 jun arriba.
 
 ## Esquema 2m-D — intro vacío + batch + solos CSS (supersedido — 6 jun 2026)
 

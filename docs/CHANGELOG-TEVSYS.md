@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero 2m-E — suavizado motion pilares (22 jun 2026)
+
+**Qué:** menos vacío entre vueltas; fundido antes de reposicionar frases; fix handoff cuando caía la 4.ª frase; tiempos móvil aparte.  
+**Archivo:** `HomeHeroSection.astro` · `HANDOFF_HOME_HERO_ESQUEMAS.md`  
+**Commit:** `web(tevsys): suaviza motion hero 2m-e pilares menos cortes bruscos`
+
+---
+
 ## Home + cierre visual — cohesión jun 2026
 
 **Handoff:** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`  

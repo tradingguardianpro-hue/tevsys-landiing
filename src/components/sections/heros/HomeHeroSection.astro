@@ -92,7 +92,8 @@ const heroProductPillars = [
 
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
-    emptyMs: 1800,
+    emptyMs: 520,
+    emptyMsMobile: 680,
     batchFadeInDelayMs: 250,
     batchFadeInMs: 4000,
     batchFadeInStaggerMs: 110,
@@ -102,8 +103,12 @@ const heroProductPillars = [
     batchFadeStepGapMs: 360,
     handoffOverlapMs: 650,
     soloHoldMs: 3200,
-    soloStartGapMs: 900,
-    loopPauseMs: 6200,
+    soloStartGapMs: 480,
+    soloRepositionFadeOutMs: 720,
+    soloFadeInMs: 2000,
+    soloFadeInMsMobile: 1850,
+    loopPauseMs: 2400,
+    loopPauseMsMobile: 2100,
   };
 
   const HERO_GLOW_IN_EASE = 'cubic-bezier(0.33, 0, 0.18, 1)';
@@ -149,6 +154,18 @@ const heroProductPillars = [
 
   function isMobileHero() {
     return window.matchMedia(HERO_MOBILE_MQ).matches;
+  }
+
+  function getHeroTiming(key) {
+    const mobile = isMobileHero();
+    if (mobile && `${key}Mobile` in HERO_PILLAR_TIMING) {
+      return HERO_PILLAR_TIMING[`${key}Mobile`];
+    }
+    return HERO_PILLAR_TIMING[key];
+  }
+
+  function isPhraseVisible(el) {
+    return el.style.visibility !== 'hidden' && parseFloat(el.style.opacity || '0') > 0.02;
   }
 
   function getPillarBatchSlot(index) {
@@ -232,6 +249,16 @@ const heroProductPillars = [
     await sleep(batchFadeInMs);
   }
 
+  async function movePhraseToSlot(el, slot, { fadeOutMs = 0 } = {}) {
+    if (fadeOutMs > 0 && isPhraseVisible(el)) {
+      await glowPhrase(el, false, fadeOutMs, HERO_FADE_OUT_EASE);
+    } else {
+      setPhraseHiddenInstant(el);
+    }
+    applyPillarSlot(el, slot);
+    await sleep(36);
+  }
+
   async function fadeOutBatchWithHandoff(phrases) {
     const t = HERO_PILLAR_TIMING;
 
@@ -247,11 +274,17 @@ const heroProductPillars = [
     const soloOrder = shuffle(phrases.map((_, index) => index));
     const handoffEl = phrases[soloOrder[0]];
     const lastBatchEl = phrases[HERO_PILLAR_LAST_BATCH_INDEX];
-    const handoffInMs = 2200;
+    const handoffInMs = getHeroTiming('soloFadeInMs');
 
-    applyPillarSlot(handoffEl, getHandoffSlot());
-    setPhraseHiddenInstant(handoffEl);
-    await sleep(32);
+    if (handoffEl === lastBatchEl) {
+      await movePhraseToSlot(handoffEl, getHandoffSlot(), { fadeOutMs: 980 });
+      await glowPhrase(handoffEl, true, handoffInMs, HERO_GLOW_IN_EASE);
+      await sleep(t.soloHoldMs);
+      await glowPhrase(handoffEl, false, 1050, HERO_FADE_OUT_EASE);
+      return soloOrder.slice(1);
+    }
+
+    await movePhraseToSlot(handoffEl, getHandoffSlot());
 
     handoffEl.style.transition = `opacity ${handoffInMs}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
     handoffEl.style.visibility = 'visible';
@@ -266,42 +299,42 @@ const heroProductPillars = [
     await lastBatchOut;
 
     await sleep(t.soloHoldMs);
-    await glowPhrase(handoffEl, false, 1100, HERO_FADE_OUT_EASE);
+    await glowPhrase(handoffEl, false, 1050, HERO_FADE_OUT_EASE);
 
     return soloOrder.slice(1);
   }
 
   async function runHeroPillarCycle(phrases) {
+    const soloFadeInMs = getHeroTiming('soloFadeInMs');
+
     phrases.forEach((el, index) => {
       applyPillarSlot(el, getPillarBatchSlot(index));
-      setPhraseHiddenInstant(el);
+      if (!isPhraseVisible(el)) setPhraseHiddenInstant(el);
     });
     await sleep(32);
 
-    await sleep(HERO_PILLAR_TIMING.emptyMs);
+    await sleep(getHeroTiming('emptyMs'));
 
     await fadeBatchInTogether(phrases);
     await sleep(HERO_PILLAR_TIMING.batchHoldMs);
 
     const remainingSoloIndices = await fadeOutBatchWithHandoff(phrases);
 
-    await sleep(500);
+    await sleep(380);
 
     const slots = shuffle(getSoloSlotPool()).slice(0, remainingSoloIndices.length);
 
     for (let i = 0; i < remainingSoloIndices.length; i += 1) {
       const el = phrases[remainingSoloIndices[i]];
       const slot = slots[i];
-      applyPillarSlot(el, slot);
-      setPhraseHiddenInstant(el);
-      await sleep(80);
-      await glowPhrase(el, true, 2200, HERO_GLOW_IN_EASE);
+      await movePhraseToSlot(el, slot, { fadeOutMs: HERO_PILLAR_TIMING.soloRepositionFadeOutMs });
+      await glowPhrase(el, true, soloFadeInMs, HERO_GLOW_IN_EASE);
       await sleep(HERO_PILLAR_TIMING.soloHoldMs);
-      await glowPhrase(el, false, 1100, HERO_FADE_OUT_EASE);
+      await glowPhrase(el, false, 1050, HERO_FADE_OUT_EASE);
       await sleep(HERO_PILLAR_TIMING.soloStartGapMs);
     }
 
-    await sleep(HERO_PILLAR_TIMING.loopPauseMs);
+    await sleep(getHeroTiming('loopPauseMs'));
   }
 
   function initHeroPillarFade() {
