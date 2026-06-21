@@ -12,7 +12,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Handoff:** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`  
 **Método:** repo TGP `.cursor/rules/workflow-web-visual-tevsys.mdc`  
-**Pendiente (chat jun 2026):** transición auditoría → **Planes** — ver handoff § *Siguiente frente*.
+**Pendiente (chat jun 2026):** ~~transición auditoría → Planes~~ **cerrada 21 jun noche.**
 
 ### Home (`index.astro`)
 
@@ -32,7 +32,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - `Barcelona (España)`.
 - **Prueba mono:** contacto + copyright.
 
-**Commit paquete:** `web(tevsys): cohesión home puente auditoría cards respiración A footer`
+**Commit paquete sesión:** `web(tevsys): cohesión home puentes cards auditoría planes respiración footer`
 
 ---
 

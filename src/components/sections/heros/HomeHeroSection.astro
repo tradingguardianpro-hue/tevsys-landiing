@@ -789,7 +789,11 @@ const heroProductPillars = [
 
     .hero-image__wrapper {
       flex-direction: column;
-      padding: 1.05rem clamp(2rem, 9vw, 2.85rem) clamp(0.62rem, 1.8vw, 0.85rem);
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: clamp(0.85rem, 2.5vw, 1.05rem) clamp(1.15rem, 4vw, 1.65rem)
+        clamp(0.62rem, 1.8vw, 0.85rem);
       border-radius: var(--hero-image-radius);
       animation: none;
       box-shadow:
@@ -798,19 +802,43 @@ const heroProductPillars = [
         0 22px 56px -28px rgba(0, 0, 0, 0.5);
     }
 
+    .hero-image__media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .hero-image__picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+
     .hero-image__wrapper::after {
       box-shadow:
         inset 0 0 26px 14px rgba(0, 0, 0, 0.11),
         inset 0 0 64px 28px rgba(0, 0, 0, 0.06);
     }
 
+    .hero-image__img,
     .hero-image__wrapper img,
     .hero-section__image img {
-      max-width: min(86vw, 322px);
-      max-height: min(40vh, 330px);
-      transform: translate3d(0, 0, 0) scale(1.03);
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
+      display: block;
+      width: auto;
+      max-width: min(100%, 300px);
+      height: auto;
+      max-height: min(38vh, 300px);
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      object-position: center center;
+      transform: none;
+      border-radius: calc(var(--hero-image-radius) - 0.15rem);
     }
   }
 </style>

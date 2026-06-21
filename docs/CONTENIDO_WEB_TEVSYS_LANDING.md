@@ -121,8 +121,12 @@ Documento de contenido/copy actual para revisión de equipo.
 - Planes: pastillas `Demo activa` / `Lista de espera`.
 - Auditoría: ver kicker arriba.
 
-### Pendiente
-- *(Ninguno en cohesión scroll jun 2026 — validar feedback fundador en planes.)*
+### Puente auditoría → Planes (jun 2026, cerrado)
+- **Clase:** `.tevsys-home-audit-plans-bridge`
+- **Copy:** `Essential · Advanced · Pro` + respiración plan-cards (Opción A).
+
+### Cohesión scroll home
+- **Estado:** cerrada 21 jun noche (fundador OK). Footer mono contacto/copyright = prueba revertible.
 
 ### Subtítulo (histórico — ya no en home)
 `Sin excusas. Las buenas intenciones no cierran ni bloquean operaciones. Nosotros sí.` — ver checklist arriba (copy actual incluye *alta precisión*).

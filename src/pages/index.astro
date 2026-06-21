@@ -176,6 +176,9 @@ import settings from '../config/settings.js';
 			</div>
 		</section>
 		</Container>
+		<p class="tevsys-home-hero-bridge tevsys-home-plans-founder-bridge" aria-label="De los planes al mensaje del fundador">
+			<span class="tevsys-home-hero-bridge__text">Trader · fundador</span>
+		</p>
 		<section class="founder-section tevsys-home-founder-band">
 			<div class="tevsys-home-founder-strip" aria-hidden="true"></div>
 			<Container>
@@ -389,6 +392,14 @@ import settings from '../config/settings.js';
 		max-width: min(52rem, 100%);
 		margin: 0 auto;
 		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(0.95rem, 2vw, 1.35rem);
+	}
+	/* Puente planes → fundador. */
+	.tevsys-home-plans-founder-bridge {
+		position: relative;
+		z-index: 1;
+		max-width: min(52rem, 92%);
+		margin: clamp(0.75rem, 2vw, 1.25rem) auto clamp(0.5rem, 1.4vw, 0.85rem);
+		padding: clamp(0.85rem, 2vw, 1.25rem) 0 clamp(0.75rem, 1.8vw, 1.1rem);
 	}
 	@media (max-width: 768px) {
 		.audit-teaser-section {

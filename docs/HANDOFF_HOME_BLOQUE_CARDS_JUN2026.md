@@ -1,9 +1,10 @@
 # Handoff — Home + cierre visual (cohesión jun 2026)
 
-**Última actualización:** 21 jun 2026 (puente auditoría + respiración cards)  
+**Última actualización:** 22 jun 2026 — puente fundador · copyright Inter · hero móvil mano centrada  
 **Archivos vivos:** `src/pages/index.astro` · `src/components/core/Footer.astro`  
 **Hero (sin cambios motion):** `HomeHeroSection.astro` — esquema **2m-E** · `HANDOFF_HOME_HERO_ESQUEMAS.md`  
-**Método:** repo TGP → `.cursor/rules/workflow-web-visual-tevsys.mdc`
+**Método:** repo TGP → `.cursor/rules/workflow-web-visual-tevsys.mdc`  
+**Retomar mañana:** *«cohesión home jun 2026»* → este MD
 
 ---
 
@@ -22,8 +23,8 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 | Hero → bloque valor | `Precisión · HyperClose · SML · Evidencia` | ✅ Cerrado |
 | Bloque valor → grid cards | checklist + *Ellos deslizan* + **Opción A** aire | ✅ Cerrado |
 | Grid cards → auditoría IA | `Evidencia · Trazabilidad · Verificación` | ✅ Cerrado |
-| Auditoría IA → **Planes** | `Essential · Advanced · Pro` + aire + respiración plan-cards | ✅ Aplicado (feedback fundador pendiente) |
-| Planes → fundador → footer | firma mono; footer contacto/copyright mono | ✅ Parcial (footer prueba) |
+| Auditoría IA → **Planes** | `Essential · Advanced · Pro` + aire + respiración plan-cards | ✅ **Cerrado** (fundador OK 21 jun noche) |
+| Planes → fundador → footer | `Trader · fundador` + firma mono; contacto mono; **copyright Inter** | ✅ Cerrado 22 jun |
 
 ---
 
@@ -40,7 +41,8 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 9. **Puente auditoría** — `.tevsys-home-cards-audit-bridge`: `Evidencia · Trazabilidad · Verificación`.
 10. **Caja auditoría** — kicker `Revisión asistida · próximamente` (antes `Verificación con IA · próximamente`).
 11. **Planes** — puente `.tevsys-home-audit-plans-bridge`: `Essential · Advanced · Pro`; banda `#000`; **Opción A** aire en plan-cards; pastillas estado mono.
-12. **Fundador** — firma mono.
+12. **Fundador** — puente `.tevsys-home-plans-founder-bridge`: `Trader · fundador`; firma mono.
+13. **Hero móvil** — mano robótica centrada dentro del marco redondeado (`HomeHeroSection.astro` ≤768px).
 
 ---
 
@@ -49,7 +51,7 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 | Elemento | Tipografía | Copy |
 |----------|------------|------|
 | Contacto | IBM Plex Mono | `info@tevsys.io` · `Barcelona (España)` |
-| Copyright | IBM Plex Mono | `Copyright © … Todos los derechos reservados.` |
+| Copyright | Inter | sin mono (22 jun) |
 | Columnas / Made with love | Inter | sin cambio |
 
 **Archivo:** `Footer.astro`
@@ -64,26 +66,19 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 | Mono títulos / gris títulos cards | **Revertido** |
 | Opción A respiración cards | **Cerrado** — fundador OK |
 | Puente cards→auditoría | **Cerrado** — fundador OK |
-| Puente auditoría→planes | **Aplicado** — `Essential · Advanced · Pro` + aire plan-cards; feedback pendiente |
-| Footer mono | Prueba revertible |
+| Puente auditoría→planes | **Cerrado** — fundador OK 21 jun noche |
+| Footer mono | Contacto **mono** (prueba); **copyright Inter** (22 jun) |
 
 ---
 
 ## Siguiente frente — transición auditoría → Planes
 
-**Salto actual:** caja azul (Familia auditoría / cian) → banda negra `#000` con `Elige tu cuenta` — cambio de color + tono comercial sin pausa de marca.
+**Estado:** ✅ **Cerrado 21 jun 2026 (noche)** — fundador OK.
 
-**Opciones a valorar (una por paso):**
+- Puente `.tevsys-home-audit-plans-bridge`: `Essential · Advanced · Pro`
+- Aire antes de banda `#000` + respiración plan-cards (familia Opción A)
 
-| Id | Propuesta | Copy puente (ejemplo) | Notas |
-|----|-----------|----------------------|--------|
-| **1** | Puente mono (misma familia) | `Essential · Advanced · Pro` | Espejo de puentes arriba; directo |
-| **2** | Puente narrativo | `Elige tu capa · MT5` | Menos catálogo, más marca |
-| **3** | Puente + **Aire** | cualquiera de 1–2 + más margen antes de banda planes | Sin tocar copy planes |
-| **4** | Kicker mono sobre H2 planes (sin puente) | `Cuentas · límites · MT5` encima de *Elige tu cuenta* | Dentro de banda negra |
-| **5** | Respiración A en plan-cards | — | Si el salto es densidad, no solo puente |
-
-**No repetir:** mono dentro del cuerpo de plan-cards (misma lección que feature cards).
+**Revertible:** footer mono contacto/copyright si no convence en frío.
 
 ---
 
@@ -93,6 +88,7 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 .tevsys-home-hero-bridge / __text
 .tevsys-home-cards-audit-bridge
 .tevsys-home-audit-plans-bridge
+.tevsys-home-plans-founder-bridge
 .tevsys-brand-accent-underline
 .tevsys-card__title--accent-line / --short / --long
 .audit-teaser-kicker
@@ -105,8 +101,16 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 
 ## Commits
 
+Paquete sesión (recomendado si un solo push):
+
 ```text
-web(tevsys): cohesión home puente auditoría cards respiración A footer
+web(tevsys): cohesión home puentes cards auditoría planes respiración footer
+```
+
+Incremental planes (si ya pusheaste antes):
+
+```text
+web(tevsys): puente planes Essential Advanced Pro respiración plan-cards
 ```
 
 ---
