@@ -696,30 +696,34 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 }
 
 /*
-  Hero KITT — tono ~60% ámbar / ~40% gris en tiempo (ciclo propio; sin sincronía con el movimiento).
-  Platos: ~54% ámbar + ~4% vuelta ≈ 58–60% ámbar; ~38% gris + cruces.
+  Hero KITT — tono 50% ámbar / 50% gris en tiempo (22 jun 2026; antes ~60/40).
+  Platos simétricos: primera mitad del ciclo ámbar, segunda mitad gris.
 */
 @keyframes tevsys-hero-kitt-tone-amber {
 	0%,
-	54%,
-	100% {
+	49% {
 		opacity: 1;
 	}
-	58%,
-	96% {
+	51%,
+	99% {
 		opacity: 0.12;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 
 @keyframes tevsys-hero-kitt-tone-gray {
 	0%,
-	54%,
-	100% {
+	49% {
 		opacity: 0.1;
 	}
-	58%,
-	96% {
+	51%,
+	99% {
 		opacity: 1;
+	}
+	100% {
+		opacity: 0.1;
 	}
 }
 
@@ -1341,123 +1345,87 @@ html[data-theme='dark'] .tevsys-home-lower-strip::after {
 
 @keyframes tevsys-home-lower-kitt-mix-gray {
 	0%,
-	100% {
+	49% {
 		opacity: 0.92;
 	}
-	20% {
-		opacity: 0.24;
-	}
-	42% {
-		opacity: 0.88;
-	}
-	64% {
+	51%,
+	99% {
 		opacity: 0.2;
+	}
+	100% {
+		opacity: 0.92;
 	}
 }
 
 @keyframes tevsys-home-lower-kitt-mix-amber {
 	0%,
-	100% {
+	49% {
 		opacity: 0.12;
 	}
-	20% {
-		opacity: 0.78;
-	}
-	42% {
-		opacity: 0.14;
-	}
-	64% {
+	51%,
+	99% {
 		opacity: 0.82;
+	}
+	100% {
+		opacity: 0.12;
 	}
 }
 
 /* Móvil — franja entre valor y «Elige tu cuenta»: misma gama; opacidades más graduales (menos “trozos”). */
 @keyframes tevsys-home-lower-kitt-mix-gray-mobile {
 	0%,
-	100% {
+	49% {
 		opacity: 0.94;
 	}
-	14% {
-		opacity: 0.72;
-	}
-	28% {
-		opacity: 0.4;
-	}
-	42% {
+	51%,
+	99% {
 		opacity: 0.36;
 	}
-	50% {
-		opacity: 0.55;
-	}
-	64% {
-		opacity: 0.9;
-	}
-	78% {
-		opacity: 0.48;
-	}
-	90% {
-		opacity: 0.32;
+	100% {
+		opacity: 0.94;
 	}
 }
 
 @keyframes tevsys-home-lower-kitt-mix-amber-mobile {
 	0%,
-	100% {
+	49% {
 		opacity: 0.24;
 	}
-	14% {
-		opacity: 0.42;
-	}
-	28% {
-		opacity: 0.72;
-	}
-	42% {
+	51%,
+	99% {
 		opacity: 0.88;
 	}
-	50% {
-		opacity: 0.62;
-	}
-	64% {
-		opacity: 0.22;
-	}
-	78% {
-		opacity: 0.58;
-	}
-	90% {
-		opacity: 0.82;
+	100% {
+		opacity: 0.24;
 	}
 }
 
 /* Escritorio ≥769px — misma gama y cadencia; ~medio paso más de presencia que la base (menos que móvil). */
 @keyframes tevsys-home-lower-kitt-mix-gray-desktop {
 	0%,
-	100% {
+	49% {
 		opacity: 0.94;
 	}
-	20% {
-		opacity: 0.28;
-	}
-	42% {
-		opacity: 0.91;
-	}
-	64% {
+	51%,
+	99% {
 		opacity: 0.24;
+	}
+	100% {
+		opacity: 0.94;
 	}
 }
 
 @keyframes tevsys-home-lower-kitt-mix-amber-desktop {
 	0%,
-	100% {
+	49% {
 		opacity: 0.17;
 	}
-	20% {
+	51%,
+	99% {
 		opacity: 0.84;
 	}
-	42% {
+	100% {
 		opacity: 0.17;
-	}
-	64% {
-		opacity: 0.85;
 	}
 }
 
@@ -1868,8 +1836,7 @@ html[data-theme='dark'] body:has(.tevsys-feature-micro-surface) footer {
 		}
 
 		/*
-		  Sin tevsys-hero-kitt-tone-* en móvil: esos keyframes alternan opacidad muy brusca (54→58%)
-		  y con PNG antialiased detrás se lee como parpadeo en la mano.
+		  Sin tevsys-hero-kitt-tone-* en móvil: alternar tono en rise compite con la mano (PNG).
 		*/
 		html[data-theme='dark'] .tevsys-home-kitt-rect--rise::before {
 			animation: tevsys-top-strip-kitt-only 27.3s ease-in-out infinite alternate;

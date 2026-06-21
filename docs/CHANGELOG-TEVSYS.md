@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home KITT — mezcla 50/50 gris·ámbar (22 jun 2026)
+
+**Qué:** `tevsys-hero-kitt-tone-*` + `tevsys-home-lower-kitt-mix-*` (base, desktop, móvil) — platos simétricos 50% tiempo cada tono (antes ~60/40 ámbar). Resto del motion sin cambio.  
+**Archivo:** `src/styles/global.css` · `MOTION_HOME_TEVSYS_HANDOFF_IA.md`  
+**Commit:** `web(tevsys): kitt home mezcla 50-50 gris ambar barridos`
+
+---
+
 ## Hero 2m-E — suavizado motion pilares (22 jun 2026)
 
 **Qué:** menos vacío entre vueltas; fundido antes de reposicionar frases; fix handoff cuando caía la 4.ª frase; tiempos móvil aparte.  
