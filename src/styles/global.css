@@ -1144,6 +1144,7 @@ html[data-theme='dark'] .tevsys-home-band--lower {
 	position: relative;
 	isolation: isolate;
 	padding-top: var(--tevsys-lower-strip-h);
+	padding-bottom: clamp(1.5rem, 3.5vw, 2.75rem);
 }
 
 html[data-theme='dark'] .tevsys-home-lower-strip {
@@ -1522,6 +1523,7 @@ html[data-theme='dark'] .tevsys-home-founder-band {
 	position: relative;
 	isolation: isolate;
 	padding-top: var(--tevsys-founder-strip-h);
+	padding-bottom: clamp(0.75rem, 2vw, 1.35rem);
 }
 
 html[data-theme='dark'] .tevsys-home-founder-strip {

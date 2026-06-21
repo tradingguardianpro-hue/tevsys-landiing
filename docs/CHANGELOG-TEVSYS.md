@@ -10,7 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Home — puente Trader·fundador hairline (22 jun 2026)
 
-**Qué:** `.tevsys-home-plans-founder-bridge` vuelve **entre** banda planes y `.tevsys-home-founder-band` (fuera del bloque fundador) para que el hairline gris sea visible sobre negro; márgenes alineados a puentes auditoría/planes.  
+**Qué:** `.tevsys-home-plans-founder-bridge` vuelve **entre** banda planes y `.tevsys-home-founder-band` (fuera del bloque fundador) para que el hairline gris sea visible sobre negro; márgenes alineados a puentes auditoría/planes. **22 jun tarde:** más aire puente + cola fundador antes del footer (Opción A respiración).  
 **Archivo:** `src/pages/index.astro` · `HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`  
 **Commit:** `web(tevsys): fix hairline puente Trader fundador`
 
