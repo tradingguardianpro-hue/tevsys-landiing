@@ -38,9 +38,9 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 6. **Remate** — `Ellos deslizan. En tevsys cerramos.` — IBM Plex Mono.
 7. **Grid 4 cards** — títulos Inter + subrayado 2px; hooks **Inter cursiva** (mono hooks **revertido**).
 8. **Opción A respiración** — más aire checklist→grid; padding cards; cuerpo suave; hook fuerte.
-9. **Puente auditoría** — `.tevsys-home-cards-audit-bridge`: `Evidencia · Trazabilidad · Verificación`.
+9. **Puente auditoría** — `.tevsys-home-cards-audit-bridge` **entre cards y franja inferior** (hairline + `Evidencia · Trazabilidad · Verificación`).
 10. **Caja auditoría** — kicker `Revisión asistida · próximamente` (antes `Verificación con IA · próximamente`).
-11. **Planes** — puente `.tevsys-home-audit-plans-bridge`: `Essential · Advanced · Pro`; banda `#000`; **Opción A** aire en plan-cards; pastillas estado mono.
+11. **Planes** — puente `.tevsys-home-audit-plans-bridge` **entre auditoría y planes** (hairline + `Essential · Advanced · Pro`); banda `#000`; **Opción A** aire en plan-cards; pastillas estado mono.
 12. **Fundador** — puente `.tevsys-home-plans-founder-bridge` **entre planes y banda fundador** (hairline + `Trader · fundador`); **respiración** puente + cola fundador antes del footer; firma mono.
 13. **Hero móvil** — mano robótica centrada dentro del marco redondeado (`HomeHeroSection.astro` ≤768px).
 
