@@ -1,5 +1,5 @@
 /** Fuente: `docs/PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP). */
-export const TEVSYS_DOCUMENTED_OPERATIVES = 95;
+export const TEVSYS_DOCUMENTED_OPERATIVES = 97;
 
 export default {
   title: "tevsys — Disciplina verificada, precisión de cierre y gestión de riesgo · MT5",

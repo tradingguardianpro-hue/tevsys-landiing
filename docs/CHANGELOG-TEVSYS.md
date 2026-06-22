@@ -8,6 +8,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Contador operativas — **97** (jun 2026)
+
+**Fuente:** `docs/PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).
+
+**Web:** `src/config/settings.js` → `TEVSYS_DOCUMENTED_OPERATIVES` + `documentedOperatives`; consumido en home card Precisión, hook `/features/precision`, lista `/features/evidencia`, meta `description`.
+
+**Docs:** `SEO_ANALYTICS_TEVSYS.md`, `CONTENIDO_WEB_TEVSYS_LANDING.md`, `PROMPT_MAESTRO_*`, `CARDS-NEXT-PHASE.md`.
+
+**Commit:** `web(tevsys): sync contador 97 operativas documentadas`
+
+---
+
 ## Home — puente Trader·fundador hairline (22 jun 2026)
 
 **Qué:** `.tevsys-home-plans-founder-bridge` vuelve **entre** banda planes y `.tevsys-home-founder-band` (fuera del bloque fundador) para que el hairline gris sea visible sobre negro; márgenes alineados a puentes auditoría/planes. **22 jun tarde:** más aire puente + cola fundador antes del footer (Opción A respiración). **Misma pasada:** hairlines cards→auditoría y auditoría→planes (puentes fuera de KITT + `::before` explícito).  
