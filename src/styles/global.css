@@ -1144,6 +1144,12 @@ html[data-theme='dark'] .tevsys-home-band--lower {
 	position: relative;
 	isolation: isolate;
 	padding-top: var(--tevsys-lower-strip-h);
+	padding-bottom: clamp(0.75rem, 2vw, 1.35rem);
+}
+
+/* Cola home (planes + fundador): sin franja KITT superior — el puente audit→planes va fuera, sobre negro */
+html[data-theme='dark'] .tevsys-home-band--lower-tail {
+	padding-top: 0;
 	padding-bottom: clamp(1.5rem, 3.5vw, 2.75rem);
 }
 
