@@ -831,6 +831,9 @@ Para **tercera opinión** (DeepSeek) y continuidad sin perder contexto:
 
 - **Un gráfico para tevsys**, **disciplina sobre toda la cuenta**; trader puede poner **otro EA** (ej. Virtual Trade Path) en **otro gráfico** (MT5: un Expert por ventana).
 - **Frases STOP / avisos** en el flujo donde mira el usuario (validar en demo antes de claims fuertes).
+- **FAQ / auditoría / evidencia (jun 2026 — canon, pendiente publicar):**  
+  > tevsys no solo aplica tus límites: deja **acta** de qué pactaste, qué se cruzó, qué cerró y qué intentaste con la protección activa — evidencia en MT5, no promesa de renta.  
+  **Dónde usar:** FAQ home o `/auditoria-ia`, bloque evidencia, posible acordeón «¿Qué queda en los logs?». **Fuente técnica:** repo TGP `GLOSARIO_EVENTOS_AUDITTRAIL_TEVSYS.md` · build validado lab jun 2026. **No** publicar sin alinear §0 protocolo auditoría.
 - **Vídeo YouTube parte 1** (~3 min, con audio) — **alta capacidad marketing** vs vídeo **mudo** de ficha Market; **pendiente embed** en **www.tevsys.io** (agenda fundador).
 - **Parte 2 artículo (Clipchamp):** overlays **±1,50 %**, **+0,01 % sobre límite HOY en ganancia**, **ingeniería de producto / evita cierres por un solo tic**; **sin** palabra “buffer” en cartel si así se decidió; **negro** + clip mercado cerrado (rotación, HTML).
 - **Decisión STOP/buffer en UX código:** **después** de cerrar vídeo/Market — ver `ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` y `AGENDA_GABI.md`.

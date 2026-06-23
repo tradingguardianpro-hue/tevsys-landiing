@@ -380,6 +380,20 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ---
 
+## Cola copy / FAQ — acta AuditTrail (jun 2026, pendiente publicar)
+
+**Estado:** canon aprobado en producto (build jun 2026, lab Infinox); **no** publicado aún en Astro. Entra en sesión web larga junto a 4.89 y analytics — ver `SEO_ANALYTICS_TEVSYS.md` §3.1 orden sugerido.
+
+**Frase FAQ (pegar tal cual cuando toque):**
+
+> tevsys no solo aplica tus límites: deja **acta** de qué pactaste, qué se cruzó, qué cerró y qué intentaste con la protección activa — evidencia en MT5, no promesa de renta.
+
+**Dónde encaja:** FAQ home · `/auditoria-ia` (acordeón «¿Qué queda en los logs?») · posible viñeta en `/features/evidencia`. **No** prometer portal auditoría comercial abierto.
+
+**Fuente técnica (repo TGP):** `docs/GLOSARIO_EVENTOS_AUDITTRAIL_TEVSYS.md` · `docs/PROTOCOLO_AUDITORIA_IA_FASE1_MANUAL_ASISTIDA.md` §4.4 · `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §21.5.
+
+---
+
 ## Anexo interno de seguimiento
 
 El roadmap de publicación de evidencias ya **no se muestra en la web pública**.

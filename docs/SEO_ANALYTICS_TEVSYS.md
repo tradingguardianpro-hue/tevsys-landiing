@@ -115,7 +115,8 @@ localStorage.setItem('va-disable', '1');
 
 1. Analytics opt-out (§3.1) — ~15 min  
 2. Bloque 4.89 Evidencia — `docs/HANDOFF_4.89_CONTENCION_WEB_TEVSYS.md` §13 (capturas fundador)  
-3. Resto de cola web del día  
+3. **FAQ — acta AuditTrail (jun 2026):** publicar frase canon en `PROMPT_MAESTRO` §21.5 («tevsys no solo aplica tus límites…») — home FAQ, `/auditoria-ia` o `/features/evidencia`; sin prometer portal auditoría abierto.  
+4. Resto de cola web del día  
 
 **Puntero repo TGP:** `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Sesión web larga*.
 
