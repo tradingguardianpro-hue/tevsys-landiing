@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — dos capas al patrón micro + resumen chips (27 jun 2026)
+
+**Qué:** `#evidence-audit` como `feature-proof-detail` (igual que Precisión/HyperClose); sin card puente ni «para quién»; resumen tevsys en chips; índice alineado.
+
+**Commit:** `web(tevsys): evidencia dos capas patrón micro resumen chips`
+
+---
+
 ## Evidencia — informe MT5 dentro del bloque vídeo (27 jun 2026)
 
 **Qué:** `#evidencia-informe-mt5` anidado bajo `#evidencia-demo`; índice acortado; titular puente en dos líneas.

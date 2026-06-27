@@ -108,10 +108,10 @@ const seo = {
 			<h2>Qué puedes comprobar</h2>
 			<ul>
 				<li>
-					<a class="evidence-link" href="#evidence-audit">Para quién encaja tevsys — dos capas MT5 + registros.</a>
+					<a class="evidence-link" href="#evidencia-demo">Demo 100k + informe MT5 de la misma operativa.</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidencia-demo">Demo 100k + informe MT5 de la misma operativa.</a>
+					<a class="evidence-link" href="#evidence-audit">Dos capas: MT5 qué ocurrió · tevsys por qué.</a>
 				</li>
 				<li>
 					<a class="evidence-link" href="#evidencia-contencion-489">Precisión cuando puede, contención bajo estrés: barrido ~111 ms, seis posiciones.</a>
@@ -128,66 +128,45 @@ const seo = {
 			</ul>
 		</section>
 
-		<section id="evidence-audit" class="evidencia-bridge" tabindex="-1">
-			<h2 class="evidencia-bridge__title">
-				<span class="evidencia-bridge__title-line">Dos capas que se cruzan</span>
-				<span class="evidencia-bridge__title-line evidencia-bridge__title-line--sub">Para quién encaja</span>
-			</h2>
-			<div class="evidence-intro">
-				<p class="evidence-intro__lead">La evidencia no la escribimos nosotros.</p>
-				<p class="evidence-intro__line">MT5 deja el resultado oficial. tevsys deja el porqué.</p>
-				<p class="evidence-intro__line">Tú cruzas las dos capas y decides si cuadra.</p>
-			</div>
+		<section id="evidence-audit" class="feature-proof-detail">
+			<h3>Dos capas que se cruzan</h3>
+			<p class="feature-proof-subtitle">MT5 certifica · tevsys documenta</p>
+			<p class="feature-proof-lead">
+				La evidencia no la escribimos nosotros. MT5 deja el resultado oficial; tevsys deja el porqué. Tú cruzas las dos y decides si cuadra.
+			</p>
 
 			<div class="evidence-grid">
 				<article class="audit-card evidence-grid__card">
-					<h3 class="audit-card__title">MT5 — qué ocurrió</h3>
+					<h4 class="audit-card__title">MT5 — qué ocurrió</h4>
 					<p class="audit-card__body">
 						Hora, precio, volumen y resultado. Informe oficial, independiente de tevsys.
 					</p>
 				</article>
 				<article class="audit-card evidence-grid__card">
-					<h3 class="audit-card__title">tevsys — por qué</h3>
+					<h4 class="audit-card__title">tevsys — por qué</h4>
 					<p class="audit-card__body">
 						Cálculo, límite configurado y decisión de cierre. En logs auditables.
 					</p>
 				</article>
 			</div>
 
-			<article class="evidence-synthesis evidencia-bridge__audience">
-				<div class="evidence-audience-grid">
-					<div class="evidence-audience-item">
-						<strong>Tú, con reglas claras</strong>
-						<p>Datos contrastables, no sensaciones.</p>
-					</div>
-					<div class="evidence-audience-item">
-						<strong>Cuenta fondeada o challenge</strong>
-						<p>Demostrar cumplimiento frente al terminal.</p>
-					</div>
-					<div class="evidence-audience-item">
-						<strong>Academia, gestor o auditor</strong>
-						<p>Enseñar o revisar con MT5 + logs tevsys.</p>
-					</div>
-				</div>
-				<p class="evidence-synthesis__disclaimer">No son señales. No hay promesa de rentabilidad.</p>
-				<p class="evidence-synthesis__closing">
-					Lo que importa: <strong>contrastar lo pactado</strong> con <strong>lo que MT5 y los registros de tevsys dejan escrito</strong>.
-				</p>
-			</article>
-
-			<div class="evidencia-bridge__pillars">
-				<p class="evidencia-bridge__pillars-name">tevsys</p>
-				<p class="evidencia-bridge__pillars-lead">
+			<div class="evidencia-tevsys-resumen">
+				<p class="evidencia-tevsys-resumen__name">tevsys</p>
+				<p class="evidencia-tevsys-resumen__tagline">
 					Precisión de cierre · disciplina automatizada · trazabilidad verificable — en MT5, con las reglas que tú configuras.
 				</p>
-				<ul class="evidencia-bridge__pillars-list" aria-label="Capas documentadas hoy">
-					<li>Precisión milimétrica al límite ({settings.documentedOperatives} operativas, error medio ≈ 0,06 %)</li>
-					<li>HyperClose — cierre bajo presión con registro</li>
-					<li>Smart Money Lock — Advanced/Pro (validación en curso)</li>
-					<li>Evidencia cruzada: informe MT5 + logs tevsys</li>
+				<ul class="evidencia-tevsys-resumen__chips" aria-label="Capas documentadas hoy">
+					<li>Precisión al límite · {settings.documentedOperatives} ops · ≈ 0,06 %</li>
+					<li>HyperClose</li>
+					<li>SML · validación en curso</li>
+					<li>Evidencia MT5 + logs</li>
 				</ul>
-				<p class="evidencia-bridge__pillars-more">
-					Multigráfico · días OFF · ID de caso · panel por plan — mismo cuadro, no una sola pieza suelta.
+				<p class="evidencia-tevsys-resumen__note">No son señales. No hay promesa de rentabilidad.</p>
+				<p class="evidencia-tevsys-resumen__link">
+					<a class="proof-capture-link" href="/features/precision#precision-stats">
+						Essential · desviación 0,002 p.p. → Precisión
+						<span class="proof-link-meta">Precisión</span>
+					</a>
 				</p>
 			</div>
 		</section>
@@ -413,19 +392,6 @@ const seo = {
 			<p class="demo-edit-note demo-edit-note--slim">
 				<a class="proof-capture-link" href="/features/precision#precision-logs">
 					Ver precisión de cierre y trazabilidad en detalle <span class="proof-link-meta">Precisión</span>
-				</a>
-			</p>
-		</section>
-
-		<section id="evidencia-cierre" class="evidencia-cierre">
-			<p class="evidencia-cierre__lead">
-				Informes, barridos documentados y logs — para cruzarlos con
-				<a class="evidence-link" href="#evidence-audit">las dos capas</a>.
-			</p>
-			<p class="evidencia-cierre__link">
-				<a class="proof-capture-link" href="/features/precision#precision-stats">
-					Essential · desviación 0,002 p.p. → Precisión
-					<span class="proof-link-meta">Precisión</span>
 				</a>
 			</p>
 		</section>
@@ -922,147 +888,62 @@ const seo = {
 	.evidencia-contencion-cta {
 		margin: 0;
 	}
-	.evidence-intro__contencion {
-		margin: 0.85rem 0 0;
-		max-width: 58ch;
-		font-size: 0.92rem;
-		line-height: 1.52;
-		opacity: 0.88;
-	}
-	.evidence-intro__contencion .evidence-link {
-		font-style: normal;
-		font-weight: 600;
-	}
-	/* Puente arriba — dos capas + para quién (Familia A) */
-	.evidencia-bridge {
-		position: relative;
-		overflow: hidden;
-		margin: calc(var(--section-margin) * 0.85) auto calc(var(--section-margin) * 1.1);
-		padding: clamp(1.15rem, 3vw, 1.55rem);
+	#evidence-audit {
 		scroll-margin-top: clamp(5.5rem, 12vh, 7rem);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
-		background: rgba(255, 255, 255, 0.024);
-		box-shadow: none;
 	}
-	html[data-theme='light'] .evidencia-bridge {
-		border-color: rgba(0, 0, 0, 0.08);
-		background: rgba(0, 0, 0, 0.022);
+	#evidence-audit .evidence-grid {
+		margin-bottom: 0.85rem;
 	}
-	.evidencia-bridge::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: -10%;
-		width: 42%;
-		height: 100%;
-		pointer-events: none;
-		background: radial-gradient(
-			ellipse at right center,
-			rgba(245, 176, 65, 0.11) 0%,
-			rgba(245, 176, 65, 0.045) 42%,
-			transparent 74%
-		);
-	}
-	.evidencia-bridge > * {
-		position: relative;
-		z-index: 1;
-	}
-	.evidencia-bridge:target {
-		border-color: rgba(245, 176, 65, 0.42);
-		background: linear-gradient(148deg, rgba(245, 176, 65, 0.055), rgba(255, 255, 255, 0.022));
-	}
-	html[data-theme='light'] .evidencia-bridge:target {
-		background: linear-gradient(148deg, rgba(245, 176, 65, 0.08), rgba(0, 0, 0, 0.02));
-	}
-	.evidencia-bridge__title {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 0.12rem;
-		margin: 0 0 0.85rem;
-		font-size: clamp(1.12rem, 2.4vw, 1.32rem);
-		font-weight: 700;
-		line-height: 1.34;
-		max-width: none;
-		letter-spacing: -0.015em;
-	}
-	.evidencia-bridge__title-line {
-		display: block;
-	}
-	.evidencia-bridge__title-line--sub {
-		font-size: 0.94em;
-		opacity: 0.88;
-		font-weight: 600;
-	}
-	.evidencia-bridge .evidence-synthesis {
-		padding-top: 0.65rem;
-		margin-top: 0;
+	.evidencia-tevsys-resumen {
+		margin-top: 0.15rem;
+		padding-top: 0.85rem;
 		border-top: 1px solid rgba(255, 255, 255, 0.08);
 	}
-	html[data-theme='light'] .evidencia-bridge .evidence-synthesis {
+	html[data-theme='light'] .evidencia-tevsys-resumen {
 		border-top-color: rgba(0, 0, 0, 0.08);
 	}
-	.evidencia-bridge__audience .evidence-synthesis__title {
-		font-size: 1rem;
-	}
-	.evidencia-bridge__pillars {
-		margin-top: 1.1rem;
-		padding-top: 1rem;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-	}
-	html[data-theme='light'] .evidencia-bridge__pillars {
-		border-top-color: rgba(0, 0, 0, 0.08);
-	}
-	.evidencia-bridge__pillars-name {
-		margin: 0 0 0.35rem;
-		font-size: 1.05rem;
+	.evidencia-tevsys-resumen__name {
+		margin: 0 0 0.25rem;
+		font-size: 0.95rem;
 		font-weight: 700;
 		color: #f5b041;
 		letter-spacing: 0.02em;
 	}
-	.evidencia-bridge__pillars-lead {
+	.evidencia-tevsys-resumen__tagline {
 		margin: 0 0 0.55rem;
-		font-size: 0.92rem;
-		line-height: 1.55;
-		opacity: 0.92;
-		max-width: 58ch;
-	}
-	.evidencia-bridge__pillars-list {
-		margin: 0 0 0.5rem;
-		padding: 0 0 0 1.05rem;
-		font-size: 0.86rem;
-		line-height: 1.52;
-		opacity: 0.9;
-	}
-	.evidencia-bridge__pillars-list li {
-		margin-bottom: 0.28rem;
-	}
-	.evidencia-bridge__pillars-list li:last-child {
-		margin-bottom: 0;
-	}
-	.evidencia-bridge__pillars-more {
-		margin: 0;
-		font-size: 0.8rem;
+		font-size: 0.88rem;
 		line-height: 1.48;
-		opacity: 0.72;
-		font-style: italic;
-		max-width: 54ch;
+		opacity: 0.9;
+		max-width: 52ch;
 	}
-	.evidencia-cierre {
-		margin: clamp(1rem, 2.5vw, 1.35rem) auto calc(var(--section-margin) * 0.65);
-		padding: 0.85rem 0 0;
-		border-top: 1px solid rgba(150, 156, 170, 0.22);
-		max-width: 58ch;
-	}
-	.evidencia-cierre__lead {
+	.evidencia-tevsys-resumen__chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem 0.45rem;
 		margin: 0 0 0.55rem;
-		font-size: 0.9rem;
-		line-height: 1.52;
-		opacity: 0.86;
+		padding: 0;
+		list-style: none;
 	}
-	.evidencia-cierre__link {
+	.evidencia-tevsys-resumen__chips li {
 		margin: 0;
+		padding: 0.28rem 0.55rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.72rem, 1.9vw, 0.8rem);
+		line-height: 1.35;
+		letter-spacing: 0.01em;
+		border-radius: 0.35rem;
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		background: rgba(245, 176, 65, 0.06);
+	}
+	.evidencia-tevsys-resumen__note {
+		margin: 0 0 0.45rem;
+		font-size: 0.8rem;
+		font-style: italic;
+		opacity: 0.72;
+	}
+	.evidencia-tevsys-resumen__link {
+		margin: 0;
+		font-size: 0.94rem;
 	}
 	.feature-proof-detail--contencion:has(#evidencia-contencion-489:target) {
 		outline: 1px solid rgba(245, 176, 65, 0.35);
@@ -1137,33 +1018,11 @@ const seo = {
 	.feature-proof-detail p:first-of-type {
 		margin-top: 0;
 	}
-	.evidence-intro {
-		margin: 0 0 1.35rem;
-		max-width: 58ch;
-	}
-	.evidence-intro__lead {
-		margin: 0 0 0.75rem;
-		font-size: 1.05rem;
-		font-weight: 700;
-		line-height: 1.5;
-	}
-	.evidence-intro__line {
-		margin: 0 0 0.5rem;
-		font-size: 0.96rem;
-		line-height: 1.62;
-		opacity: 0.92;
-	}
-	.evidence-intro__line:last-child {
-		margin-bottom: 0;
-	}
 	.evidence-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 1rem 1.35rem;
 		margin: 0.35rem 0 0.85rem;
-	}
-	.evidencia-bridge .evidence-grid {
-		margin-bottom: 0.35rem;
 	}
 	@media (max-width: 640px) {
 		.evidence-grid {
@@ -1172,86 +1031,6 @@ const seo = {
 	}
 	.evidence-grid__card {
 		height: 100%;
-	}
-	.evidence-synthesis {
-		margin: 0;
-		padding: 1.2rem 0 0;
-		border: none;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 0;
-		background: transparent;
-	}
-	html[data-theme='light'] .evidence-synthesis {
-		border-top-color: rgba(0, 0, 0, 0.08);
-	}
-	.evidence-synthesis__title {
-		margin: 0 0 0.85rem;
-		font-size: 0.98rem;
-		font-weight: 700;
-		line-height: 1.35;
-		color: inherit;
-		opacity: 0.96;
-	}
-	.evidence-audience-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0;
-		margin-bottom: 0.85rem;
-	}
-	@media (max-width: 580px) {
-		.evidence-audience-grid {
-			grid-template-columns: 1fr;
-			gap: 0.65rem;
-		}
-	}
-	.evidence-audience-item {
-		padding: 0 0.95rem;
-		border: none;
-		border-left: 1px solid rgba(255, 255, 255, 0.1);
-		background: transparent;
-		min-height: 0;
-	}
-	.evidence-audience-item:first-child {
-		padding-left: 0;
-		border-left: none;
-	}
-	@media (max-width: 580px) {
-		.evidence-audience-item {
-			padding: 0.42rem 0 0.42rem 1rem;
-			border-left: 2px solid rgba(245, 176, 65, 0.22);
-			background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent);
-		}
-		.evidence-audience-item:first-child {
-			padding-left: 1rem;
-		}
-	}
-	html[data-theme='light'] .evidence-audience-item {
-		border-left-color: rgba(0, 0, 0, 0.08);
-	}
-	.evidence-audience-item strong {
-		display: block;
-		font-size: 0.9rem;
-		margin-bottom: 0.28rem;
-		line-height: 1.35;
-	}
-	.evidence-audience-item p {
-		margin: 0;
-		font-size: 0.84rem;
-		line-height: 1.48;
-		opacity: 0.82;
-	}
-	.evidence-synthesis__disclaimer {
-		margin: 0 0 0.85rem;
-		font-size: 0.82rem;
-		opacity: 0.72;
-		font-style: italic;
-	}
-	.evidence-synthesis__closing {
-		margin: 0 0 0.65rem;
-		font-size: 0.91rem;
-		line-height: 1.55;
-		opacity: 0.9;
-		max-width: 62ch;
 	}
 	.audit-card {
 		margin: 0;
