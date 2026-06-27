@@ -155,11 +155,23 @@ const seo = {
 				<p class="evidencia-tevsys-resumen__tagline">
 					Precisión de cierre · disciplina automatizada · trazabilidad verificable — en MT5, con las reglas que tú configuras.
 				</p>
-				<ul class="evidencia-tevsys-resumen__chips" aria-label="Qué hace tevsys — en corto">
-					<li>Precisión · cierre al límite pactado · {settings.documentedOperatives} ops · ≈ 0,06 %</li>
-					<li>HyperClose · intento en bloqueo → cierre al instante</li>
-					<li>SML · más margen tras día positivo · validación en curso</li>
-					<li>Evidencia · informe MT5 + logs que se cruzan</li>
+				<ul class="evidencia-tevsys-resumen__capas" aria-label="Qué hace tevsys — en corto">
+					<li class="evidencia-tevsys-capas__row">
+						<span class="evidencia-tevsys-capas__label">Precisión</span>
+						<span class="evidencia-tevsys-capas__tip">Cierre al límite pactado · {settings.documentedOperatives} ops · ≈ 0,06 %</span>
+					</li>
+					<li class="evidencia-tevsys-capas__row">
+						<span class="evidencia-tevsys-capas__label">HyperClose</span>
+						<span class="evidencia-tevsys-capas__tip">Cierre al instante si intentas operar bloqueado</span>
+					</li>
+					<li class="evidencia-tevsys-capas__row">
+						<span class="evidencia-tevsys-capas__label">SML</span>
+						<span class="evidencia-tevsys-capas__tip">Más margen tras un día positivo · validación en curso</span>
+					</li>
+					<li class="evidencia-tevsys-capas__row">
+						<span class="evidencia-tevsys-capas__label">Evidencia</span>
+						<span class="evidencia-tevsys-capas__tip">Informe MT5 y logs que se cruzan</span>
+					</li>
 				</ul>
 				<p class="evidencia-tevsys-resumen__link">
 					<a class="proof-capture-link" href="/features/precision#precision-stats">
@@ -926,11 +938,11 @@ const seo = {
 	}
 	.evidencia-tevsys-resumen {
 		margin-top: 0;
-		padding-top: clamp(1.15rem, 3vw, 1.45rem);
+		padding-top: clamp(1.25rem, 3vw, 1.65rem);
 		border-top: 1px solid rgba(255, 255, 255, 0.08);
 		display: flex;
 		flex-direction: column;
-		gap: clamp(0.55rem, 1.5vw, 0.75rem);
+		gap: clamp(0.65rem, 1.8vw, 0.9rem);
 	}
 	html[data-theme='light'] .evidencia-tevsys-resumen {
 		border-top-color: rgba(0, 0, 0, 0.08);
@@ -946,31 +958,51 @@ const seo = {
 		margin: 0;
 		font-size: 0.9rem;
 		line-height: 1.55;
-		opacity: 0.9;
-		max-width: 54ch;
+		opacity: 0.88;
+		max-width: 52ch;
 	}
-	.evidencia-tevsys-resumen__chips {
+	.evidencia-tevsys-resumen__capas {
 		display: flex;
-		flex-wrap: wrap;
-		gap: 0.45rem 0.55rem;
-		margin: 0.15rem 0 0;
+		flex-direction: column;
+		gap: 0.55rem;
+		margin: clamp(0.35rem, 1vw, 0.55rem) 0 0;
 		padding: 0;
 		list-style: none;
+		max-width: min(100%, 56ch);
 	}
-	.evidencia-tevsys-resumen__chips li {
+	.evidencia-tevsys-capas__row {
+		display: grid;
+		grid-template-columns: minmax(5.75rem, 7.25rem) minmax(0, 1fr);
+		gap: 0.35rem clamp(0.85rem, 2.5vw, 1.25rem);
+		align-items: baseline;
+		padding: 0.55rem 0 0.55rem 0.9rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.32);
+	}
+	@media (max-width: 420px) {
+		.evidencia-tevsys-capas__row {
+			grid-template-columns: 1fr;
+			gap: 0.2rem;
+			padding-left: 0.75rem;
+		}
+	}
+	.evidencia-tevsys-capas__label {
 		margin: 0;
-		padding: 0.38rem 0.65rem;
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: clamp(0.72rem, 1.9vw, 0.8rem);
+		font-size: 0.76rem;
+		font-weight: 600;
 		line-height: 1.35;
-		letter-spacing: 0.01em;
-		border-radius: 0.35rem;
-		border: 1px solid rgba(245, 176, 65, 0.28);
-		background: rgba(245, 176, 65, 0.06);
-		max-width: 100%;
+		color: #f5b041;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+	.evidencia-tevsys-capas__tip {
+		margin: 0;
+		font-size: 0.875rem;
+		line-height: 1.48;
+		opacity: 0.9;
 	}
 	.evidencia-tevsys-resumen__link {
-		margin: 0.15rem 0 0;
+		margin: clamp(0.35rem, 1vw, 0.55rem) 0 0;
 		font-size: 0.94rem;
 	}
 	.feature-proof-detail--contencion:has(#evidencia-contencion-489:target) {

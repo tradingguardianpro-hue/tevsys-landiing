@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — resumen tevsys filas label/tip (27 jun 2026)
+
+**Qué:** `#evidence-audit` — sustituidos chips mono rotos por filas label + tip (misma familia que audit-card); mono solo en etiqueta.
+
+**Commit:** `web(tevsys): evidencia resumen capas filas label tip`
+
+---
+
 ## Evidencia — chips resumen tevsys + sin disclaimer (27 jun 2026)
 
 **Qué:** `#evidence-audit` resumen tevsys — chips con tip corto por capa (Precisión, HyperClose, SML, Evidencia); eliminada línea «No son señales…» (redundante con resto web).
