@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — copy columna tevsys dos capas (27 jun 2026)
+
+**Qué:** `#evidence-audit` columna «tevsys — por qué»: límites al bloquear, cruce y cierre — en logs auditables y panel (opción B, alineado AuditTrail Fase 1).
+
+**Commit:** `web(tevsys): evidencia dos capas copy tevsys auditables`
+
+---
+
 ## Evidencia — dos capas al patrón micro + resumen chips (27 jun 2026)
 
 **Qué:** `#evidence-audit` como `feature-proof-detail` (igual que Precisión/HyperClose); sin card puente ni «para quién»; resumen tevsys en chips; índice alineado.
