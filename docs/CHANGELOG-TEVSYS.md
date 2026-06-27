@@ -10,9 +10,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Evidencia — bloque contención v3 tevsys leyó, sin broker, layout capturas (27 jun 2026)
 
-**Qué:** `/features/evidencia#evidencia-contencion-489` — titular «Precisión cuando puede — contención cuando toca — bajo estrés extremo»; «**tevsys** leyó» (no «motor»); KPI sin broker; tres pasos explícitos; panel centrado; sin gráfico M2 latigazo.
+**Qué:** `/features/evidencia#evidencia-contencion-489` — titular «Precisión cuando puede — contención cuando toca — bajo estrés extremo»; bloque **reposicionado** tras informe MT5 (tercer bloque al scroll); marco visual reforzado; grid preparado para captura lateral en pasos; «tevsys leyó»; KPI sin broker; panel centrado.
 
-**Commit:** `web(tevsys): evidencia contencion v3 tevsys leyó sin broker layout capturas`
+**Commit:** `web(tevsys): evidencia contencion v3 reposicion tras informe MT5`
 
 ---
 

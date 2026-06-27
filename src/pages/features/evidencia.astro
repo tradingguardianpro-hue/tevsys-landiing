@@ -59,6 +59,9 @@ const seo = {
 					<a class="evidence-link" href="#evidencia-informe-mt5">Informe oficial MT5 de la misma operativa (verificación independiente).</a>
 				</li>
 				<li>
+					<a class="evidence-link" href="#evidencia-contencion-489">Precisión cuando puede, contención bajo estrés: barrido ~111 ms, seis posiciones.</a>
+				</li>
+				<li>
 					<a class="evidence-link" href="#evidencia-4-56">Caso Essential extremo: 100 lotes, desviación de cierre documentada (+95 €).</a>
 				</li>
 				<li>
@@ -66,9 +69,6 @@ const seo = {
 				</li>
 				<li>
 					<a class="evidence-link" href="#evidencia-logs">Guía visual de logs MT5 + salto a Precisión para trazabilidad en detalle.</a>
-				</li>
-				<li>
-					<a class="evidence-link" href="#evidencia-contencion-489">Precisión cuando puede, contención bajo estrés: barrido ~111 ms, seis posiciones.</a>
 				</li>
 				<li>
 					<a class="evidence-link" href="#evidence-audit">Para quién encaja, qué es tevsys y dos capas MT5/tevsys.</a>
@@ -130,6 +130,85 @@ const seo = {
 					</div>
 				</div>
 			</details>
+		</section>
+
+		<section class="feature-proof-detail feature-proof-detail--contencion">
+			<span id="evidencia-contencion-489" class="evidencia-contencion-anchor" tabindex="-1"></span>
+			<h3>Precisión cuando puede — contención cuando toca — <span class="feature-title__accent">bajo estrés extremo</span></h3>
+			<p class="feature-proof-lead evidencia-contencion-hook">
+				Límite <strong>+0,50 %</strong>. <strong>tevsys</strong> leyó <strong>+0,65 %</strong> en
+				<strong class="feature-title__accent">~111 ms</strong>. El día cerró en
+				<strong class="feature-title__accent">+1,04 %</strong>. Bloqueo automático.
+			</p>
+
+			<p class="evidencia-contencion-kpi" aria-label="Calibre del movimiento documentado">
+				<span class="evidencia-contencion-kpi__ms">111 ms</span>
+				<span class="evidencia-contencion-kpi__sep" aria-hidden="true">·</span>
+				<span>+0,46 p.p. en un tick</span>
+				<span class="evidencia-contencion-kpi__sep" aria-hidden="true">·</span>
+				<span>6×2,5 lotes</span>
+				<span class="evidencia-contencion-kpi__sep" aria-hidden="true">·</span>
+				<span>GER40 · jun 2026</span>
+			</p>
+
+			<figure class="evidencia-contencion-figure evidencia-contencion-figure--panel">
+				<figcaption class="evidencia-contencion-figure__cap">
+					Panel tras el cierre — resultado del día <strong>+1,04 %</strong> y bloqueo hasta rotación.
+				</figcaption>
+				<a
+					class="evidencia-contencion-figure__zoom"
+					href="/images/evidence/evidencia-489-panel-stop.png"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Abrir captura del panel en tamaño completo"
+				>
+					<img
+						class="evidencia-contencion-figure__img"
+						src="/images/evidence/evidencia-489-panel-stop.png"
+						alt="Panel tevsys en STOP: ganancia diaria +1,04 % tras cierre automático multiposición."
+						loading="lazy"
+						width="411"
+						height="697"
+						decoding="async"
+					/>
+				</a>
+			</figure>
+
+			<div class="evidencia-contencion-split" aria-label="Secuencia del episodio">
+				<div class="evidencia-contencion-steps">
+					<article class="evidencia-contencion-step">
+						<p class="evidencia-contencion-step__label">Límite pactado</p>
+						<p class="evidencia-contencion-step__value">+0,50 %</p>
+						<p class="evidencia-contencion-step__detail">Ganancia diaria que configuraste antes de operar.</p>
+					</article>
+					<article class="evidencia-contencion-step evidencia-contencion-step--accent">
+						<p class="evidencia-contencion-step__label">Lectura al disparar</p>
+						<p class="evidencia-contencion-step__value">+0,65 %</p>
+						<p class="evidencia-contencion-step__detail">
+							En <strong>~111 ms</strong> el mercado pasó de +0,19 % a +0,65 % (latigazo hacia máximo Asia).
+							En el <strong>siguiente tick evaluable</strong>, tevsys detecta el cruce y <strong>dispara el cierre</strong>
+							de las seis posiciones. Ese +0,65 % es la lectura de tevsys en ese instante — <em>no</em> es aún el resultado final del día.
+						</p>
+					</article>
+					<article class="evidencia-contencion-step">
+						<p class="evidencia-contencion-step__label">Cierre del día</p>
+						<p class="evidencia-contencion-step__value evidencia-contencion-highlight">+1,04 %</p>
+						<p class="evidencia-contencion-step__detail">
+							Mientras el precio seguía corriendo, las seis órdenes se ejecutan en el mismo segundo.
+							El día cristaliza en <strong>+1,04 %</strong> (panel e informe MT5). Bloqueo hasta rotación.
+						</p>
+					</article>
+				</div>
+			</div>
+
+			<p class="evidencia-contencion-contrast">
+				Mismo día, otra cuenta: cierre ceñido al <strong>+2,50 %</strong>.
+			</p>
+			<p class="evidencia-contencion-cta">
+				<a class="proof-capture-link" href="/company/contact?feature=evidence&flow=demo">
+					¿Quieres el detalle forense? Escríbenos <span class="proof-link-meta">Contacto</span>
+				</a>
+			</p>
 		</section>
 
 		<section id="evidencia-4-56" class="feature-proof-detail">
@@ -253,83 +332,6 @@ const seo = {
 			</p>
 		</section>
 
-		<section class="feature-proof-detail feature-proof-detail--contencion">
-			<span id="evidencia-contencion-489" class="evidencia-contencion-anchor" tabindex="-1"></span>
-			<h3>Precisión cuando puede — contención cuando toca — <span class="feature-title__accent">bajo estrés extremo</span></h3>
-			<p class="feature-proof-lead evidencia-contencion-hook">
-				Límite <strong>+0,50 %</strong>. <strong>tevsys</strong> leyó <strong>+0,65 %</strong> en
-				<strong class="feature-title__accent">~111 ms</strong>. El día cerró en
-				<strong class="feature-title__accent">+1,04 %</strong>. Bloqueo automático.
-			</p>
-
-			<p class="evidencia-contencion-kpi" aria-label="Calibre del movimiento documentado">
-				<span class="evidencia-contencion-kpi__ms">111 ms</span>
-				<span class="evidencia-contencion-kpi__sep" aria-hidden="true">·</span>
-				<span>+0,46 p.p. en un tick</span>
-				<span class="evidencia-contencion-kpi__sep" aria-hidden="true">·</span>
-				<span>6×2,5 lotes</span>
-				<span class="evidencia-contencion-kpi__sep" aria-hidden="true">·</span>
-				<span>GER40 · jun 2026</span>
-			</p>
-
-			<figure class="evidencia-contencion-figure evidencia-contencion-figure--panel">
-				<figcaption class="evidencia-contencion-figure__cap">
-					Panel tras el cierre — resultado del día <strong>+1,04 %</strong> y bloqueo hasta rotación.
-				</figcaption>
-				<a
-					class="evidencia-contencion-figure__zoom"
-					href="/images/evidence/evidencia-489-panel-stop.png"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Abrir captura del panel en tamaño completo"
-				>
-					<img
-						class="evidencia-contencion-figure__img"
-						src="/images/evidence/evidencia-489-panel-stop.png"
-						alt="Panel tevsys en STOP: ganancia diaria +1,04 % tras cierre automático multiposición."
-						loading="lazy"
-						width="411"
-						height="697"
-						decoding="async"
-					/>
-				</a>
-			</figure>
-
-			<div class="evidencia-contencion-steps" aria-label="Qué pasó — tres momentos">
-				<article class="evidencia-contencion-step">
-					<p class="evidencia-contencion-step__label">Límite pactado</p>
-					<p class="evidencia-contencion-step__value">+0,50 %</p>
-					<p class="evidencia-contencion-step__detail">Ganancia diaria que configuraste antes de operar.</p>
-				</article>
-				<article class="evidencia-contencion-step evidencia-contencion-step--accent">
-					<p class="evidencia-contencion-step__label">Lectura al disparar</p>
-					<p class="evidencia-contencion-step__value">+0,65 %</p>
-					<p class="evidencia-contencion-step__detail">
-						En <strong>~111 ms</strong> el mercado pasó de +0,19 % a +0,65 % (latigazo hacia máximo Asia).
-						En el <strong>siguiente tick evaluable</strong>, tevsys detecta el cruce y <strong>dispara el cierre</strong>
-						de las seis posiciones. Ese +0,65 % es la lectura de tevsys en ese instante — <em>no</em> es aún el resultado final del día.
-					</p>
-				</article>
-				<article class="evidencia-contencion-step">
-					<p class="evidencia-contencion-step__label">Cierre del día</p>
-					<p class="evidencia-contencion-step__value evidencia-contencion-highlight">+1,04 %</p>
-					<p class="evidencia-contencion-step__detail">
-						Mientras el precio seguía corriendo, las seis órdenes se ejecutan en el mismo segundo.
-						El día cristaliza en <strong>+1,04 %</strong> (panel e informe MT5). Bloqueo hasta rotación.
-					</p>
-				</article>
-			</div>
-
-			<p class="evidencia-contencion-contrast">
-				Mismo día, otra cuenta: cierre ceñido al <strong>+2,50 %</strong>.
-			</p>
-			<p class="evidencia-contencion-cta">
-				<a class="proof-capture-link" href="/company/contact?feature=evidence&flow=demo">
-					¿Quieres el detalle forense? Escríbenos <span class="proof-link-meta">Contacto</span>
-				</a>
-			</p>
-		</section>
-
 		<section id="evidence-audit" class="feature-proof-detail feature-proof-detail--video-slim feature-proof-detail--familia-a-close feature-proof-detail--audit">
 			<h3>Evidencia: dos capas que se cruzan. Una sola conclusión.</h3>
 			<div class="evidence-intro">
@@ -337,7 +339,7 @@ const seo = {
 				<p class="evidence-intro__line">MT5 deja el resultado oficial. tevsys deja el porqué.</p>
 				<p class="evidence-intro__line">Tú cruzas las dos capas y decides si cuadra.</p>
 				<p class="evidence-intro__contencion">
-					Episodios como el <a class="evidence-link" href="#evidencia-contencion-489">barrido en ~111 ms documentado arriba</a> son los que cruzamos con logs e informe MT5 — sin prometer auditoría comercial ya abierta.
+					Episodios como el <a class="evidence-link" href="#evidencia-contencion-489">barrido en ~111 ms</a> son los que cruzamos con logs e informe MT5 — sin prometer auditoría comercial ya abierta.
 				</p>
 			</div>
 
@@ -732,6 +734,21 @@ const seo = {
 		display: flex;
 		flex-direction: column;
 		gap: clamp(1rem, 2.5vw, 1.35rem);
+		margin-top: calc(var(--section-margin) * 1.35);
+		padding: clamp(1.15rem, 3vw, 1.65rem);
+		border-radius: clamp(0.75rem, 1.5vw, 1rem);
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		background: linear-gradient(165deg, rgba(245, 176, 65, 0.07) 0%, rgba(12, 14, 18, 0.42) 42%);
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+	}
+	html[data-theme='light'] .feature-proof-detail--contencion {
+		border-color: rgba(180, 120, 20, 0.28);
+		background: linear-gradient(165deg, rgba(245, 176, 65, 0.1) 0%, rgba(248, 249, 252, 0.95) 48%);
+	}
+	.feature-proof-detail--contencion h3 {
+		font-size: clamp(1.22rem, 2.8vw, 1.48rem);
+		line-height: 1.28;
+		max-width: 28ch;
 	}
 	.evidencia-contencion-hook {
 		max-width: 58ch;
@@ -793,10 +810,20 @@ const seo = {
 		width: 100%;
 		height: auto;
 	}
+	.evidencia-contencion-split {
+		display: grid;
+		gap: clamp(1rem, 3vw, 1.75rem);
+		align-items: start;
+	}
+	@media (min-width: 56rem) {
+		.evidencia-contencion-split:has(.evidencia-contencion-figure--side) {
+			grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+		}
+	}
 	.evidencia-contencion-steps {
 		display: grid;
 		gap: 0.65rem;
-		max-width: 62ch;
+		max-width: none;
 	}
 	.evidencia-contencion-step {
 		margin: 0;
