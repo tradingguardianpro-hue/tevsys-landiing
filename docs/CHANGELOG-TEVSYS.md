@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — copy Evidencia fila + titular contención (27 jun 2026)
+
+**Qué:** fila Evidencia «máxima transparencia»; bloque contención — *Precisión… trazabilidad siempre* / *tevsys bajo estrés extremo*.
+
+**Commit:** `web(tevsys): evidencia transparencia titular contencion trazabilidad`
+
+---
+
 ## Evidencia — tagline resumen tevsys (27 jun 2026)
 
 **Qué:** `#evidence-audit` bajo «tevsys»: *No te pedimos fe: te enseñamos lo que pasa.*
