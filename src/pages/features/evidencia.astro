@@ -199,6 +199,28 @@ const seo = {
 						</p>
 					</article>
 				</div>
+				<figure class="evidencia-contencion-figure evidencia-contencion-figure--side">
+					<figcaption class="evidencia-contencion-figure__cap">
+						Gráfico M2 — barrido hacia <strong>MAX ASIA</strong> (~111 ms). Anotación para lectura del sweep.
+					</figcaption>
+					<a
+						class="evidencia-contencion-figure__zoom evidencia-contencion-figure__zoom--chart"
+						href="/images/evidence/evidencia-489-sweep-web.png"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Abrir captura del barrido en tamaño completo"
+					>
+						<img
+							class="evidencia-contencion-figure__img evidencia-contencion-figure__img--chart"
+							src="/images/evidence/evidencia-489-sweep-web.png"
+							alt="Gráfico GER40 M2: mecha de barrido de liquidez por encima de MAX ASIA, etiquetada sweep."
+							loading="lazy"
+							width="493"
+							height="256"
+							decoding="async"
+						/>
+					</a>
+				</figure>
 			</div>
 
 			<p class="evidencia-contencion-contrast">
@@ -810,6 +832,24 @@ const seo = {
 		width: 100%;
 		height: auto;
 	}
+	.evidencia-contencion-figure--side {
+		margin: 0;
+	}
+	.evidencia-contencion-figure--side .evidencia-contencion-figure__cap {
+		max-width: none;
+	}
+	.evidencia-contencion-figure__zoom--chart {
+		padding: 0.45rem;
+		background: #0a0d13;
+		border-color: rgba(245, 176, 65, 0.22);
+	}
+	.evidencia-contencion-figure__img--chart {
+		border-radius: 0.35rem;
+		max-height: min(220px, 42vw);
+		object-fit: contain;
+		object-position: center;
+		margin: 0 auto;
+	}
 	.evidencia-contencion-split {
 		display: grid;
 		gap: clamp(1rem, 3vw, 1.75rem);
@@ -818,6 +858,10 @@ const seo = {
 	@media (min-width: 56rem) {
 		.evidencia-contencion-split:has(.evidencia-contencion-figure--side) {
 			grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+		}
+		.evidencia-contencion-figure--side {
+			position: sticky;
+			top: clamp(5.5rem, 12vh, 7rem);
 		}
 	}
 	.evidencia-contencion-steps {
