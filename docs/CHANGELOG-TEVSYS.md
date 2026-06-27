@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — chips resumen tevsys + sin disclaimer (27 jun 2026)
+
+**Qué:** `#evidence-audit` resumen tevsys — chips con tip corto por capa (Precisión, HyperClose, SML, Evidencia); eliminada línea «No son señales…» (redundante con resto web).
+
+**Commit:** `web(tevsys): evidencia resumen chips tip corto sin disclaimer`
+
+---
+
 ## Evidencia — copy columna tevsys dos capas (27 jun 2026)
 
 **Qué:** `#evidence-audit` columna «tevsys — por qué»: límites al bloquear, cruce y cierre — en logs auditables y panel (opción B, alineado AuditTrail Fase 1).
