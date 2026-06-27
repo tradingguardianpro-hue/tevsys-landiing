@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — puente «Para quién encaja» arriba (27 jun 2026)
+
+**Qué:** `#evidence-audit` movido tras índice «Qué puedes comprobar» — dos capas, perfiles, pilares sin escudo Pro; cierre mínimo al final; card técnica final eliminada.
+
+**Commit:** `web(tevsys): evidencia puente para quien encaja arriba`
+
+---
+
 ## Evidencia — bloque contención captura sweep lateral (27 jun 2026)
 
 **Qué:** `evidencia-489-sweep-web.png` al lado de los tres pasos en `#evidencia-contencion-489`; marco oscuro; sticky en desktop.
