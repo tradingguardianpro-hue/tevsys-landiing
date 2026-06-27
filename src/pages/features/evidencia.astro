@@ -185,7 +185,10 @@ const seo = {
 		<section class="feature-proof-detail feature-proof-detail--contencion">
 			<span id="evidencia-contencion-489" class="evidencia-contencion-anchor" tabindex="-1"></span>
 			<h3 class="evidencia-contencion-title">
-				<span class="evidencia-contencion-title__line">Precisión cuando puede — contención cuando toca — trazabilidad siempre</span>
+				<span class="evidencia-contencion-title__line">Precisión cuando puede — contención cuando toca</span>
+				<span class="evidencia-contencion-title__line evidencia-contencion-title__line--trail">
+					trazabilidad <span class="feature-title__accent">siempre</span>
+				</span>
 				<span class="evidencia-contencion-title__line evidencia-contencion-title__line--accent feature-title__accent">tevsys bajo estrés extremo</span>
 			</h3>
 			<p class="feature-proof-lead evidencia-contencion-hook">
@@ -734,13 +737,14 @@ const seo = {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 0.15rem;
+		gap: 0.22rem;
 		margin: 0;
-		max-width: min(100%, 36rem);
-		font-size: clamp(1.12rem, 2.4vw, 1.36rem);
-		line-height: 1.34;
+		max-width: min(100%, 40rem);
+		font-size: clamp(1.12rem, 2.4vw, 1.38rem);
+		line-height: 1.36;
 		font-weight: 700;
 		letter-spacing: -0.015em;
+		text-wrap: balance;
 	}
 	.feature-proof-detail--contencion h3.evidencia-contencion-title::before {
 		display: none;
@@ -748,9 +752,21 @@ const seo = {
 	.evidencia-contencion-title__line {
 		display: block;
 	}
+	.evidencia-contencion-title__line--trail {
+		font-size: 0.97em;
+		letter-spacing: -0.01em;
+		opacity: 0.96;
+	}
 	.evidencia-contencion-title__line--accent {
-		font-size: 0.94em;
-		letter-spacing: 0.01em;
+		margin-top: 0.2rem;
+		padding-top: 0.35rem;
+		font-size: clamp(0.98rem, 2.15vw, 1.12rem);
+		font-weight: 700;
+		letter-spacing: 0.015em;
+		border-top: 1px solid rgba(245, 176, 65, 0.22);
+	}
+	html[data-theme='light'] .evidencia-contencion-title__line--accent {
+		border-top-color: rgba(180, 120, 20, 0.25);
 	}
 	.evidencia-contencion-hook {
 		max-width: 58ch;

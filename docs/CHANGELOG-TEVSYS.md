@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — titular contención tres líneas (27 jun 2026)
+
+**Qué:** bloque contención — titular en 3 líneas (sin corte huérfano); «siempre» en acento; hairline antes de «tevsys bajo estrés extremo».
+
+**Commit:** `web(tevsys): evidencia titular contencion tres lineas`
+
+---
+
 ## Evidencia — copy Evidencia fila + titular contención (27 jun 2026)
 
 **Qué:** fila Evidencia «máxima transparencia»; bloque contención — *Precisión… trazabilidad siempre* / *tevsys bajo estrés extremo*.
