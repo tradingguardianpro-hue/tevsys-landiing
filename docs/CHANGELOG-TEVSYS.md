@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — titular contención estilo home (27 jun 2026)
+
+**Qué:** bloque contención — titular Inter una línea (familia `feature-section__title` home) + puente hairline/mono «tevsys bajo estrés extremo».
+
+**Commit:** `web(tevsys): evidencia titular contencion puente home`
+
+---
+
 ## Evidencia — titular contención tres líneas (27 jun 2026)
 
 **Qué:** bloque contención — titular en 3 líneas (sin corte huérfano); «siempre» en acento; hairline antes de «tevsys bajo estrés extremo».
