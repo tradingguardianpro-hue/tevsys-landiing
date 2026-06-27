@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — informe MT5 dentro del bloque vídeo (27 jun 2026)
+
+**Qué:** `#evidencia-informe-mt5` anidado bajo `#evidencia-demo`; índice acortado; titular puente en dos líneas.
+
+**Commit:** `web(tevsys): evidencia informe MT5 bajo video titular puente`
+
+---
+
 ## Evidencia — puente «Para quién encaja» arriba (27 jun 2026)
 
 **Qué:** `#evidence-audit` movido tras índice «Qué puedes comprobar» — dos capas, perfiles, pilares sin escudo Pro; cierre mínimo al final; card técnica final eliminada.
