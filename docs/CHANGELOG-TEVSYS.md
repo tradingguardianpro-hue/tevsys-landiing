@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — bloque contención v2 copy corto + capturas visibles (28 jun 2026)
+
+**Qué:** `/features/evidencia#evidencia-contencion-489` — propuesta A; sin referencia «4.89» en copy público; KPI **111 ms** mono; panel + gráfico M2 visibles (sin acordeón); sin panorámica; ancla + scroll offset; puente audit sin número interno.
+
+**Commit:** `web(tevsys): evidencia contencion v2 copy corto KPI 111ms capturas visibles`
+
+---
+
 ## Evidencia — bloque contención 4.89 bajo estrés (28 jun 2026)
 
 **Qué:** nuevo bloque `#evidencia-contencion-489` en `/features/evidencia` — caso FTMO GER40 8 jun 2026: tres números separados (+0,50 % / +0,65 % tick / +1,04 % cierre), galería 3 capturas, puente en `#evidence-audit`. Sin tocar hero ni contador 97.
