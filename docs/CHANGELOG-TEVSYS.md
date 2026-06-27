@@ -8,6 +8,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — bloque contención 4.89 bajo estrés (28 jun 2026)
+
+**Qué:** nuevo bloque `#evidencia-contencion-489` en `/features/evidencia` — caso FTMO GER40 8 jun 2026: tres números separados (+0,50 % / +0,65 % tick / +1,04 % cierre), galería 3 capturas, puente en `#evidence-audit`. Sin tocar hero ni contador 97.
+
+**Assets:** `public/images/evidence/evidencia-489-panel-stop.png`, `evidencia-489-sweep-m2.png`, `evidencia-489-panoramica-m2.png`.
+
+**Docs TGP:** `docs/HANDOFF_4.89_CONTENCION_WEB_TEVSYS.md` §8–12 · viñeta V12.
+
+**Commit:** `web(tevsys): evidencia bloque contencion 4.89 bajo estres`
+
+---
+
 ## Contador operativas — **97** (jun 2026)
 
 **Fuente:** `docs/PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).

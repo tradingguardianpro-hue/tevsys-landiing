@@ -68,6 +68,9 @@ const seo = {
 					<a class="evidence-link" href="#evidencia-logs">Guía visual de logs MT5 + salto a Precisión para trazabilidad en detalle.</a>
 				</li>
 				<li>
+					<a class="evidence-link" href="#evidencia-contencion-489">Contención bajo estrés: barrido extremo, seis posiciones, cierre automático y bloqueo (caso 4.89).</a>
+				</li>
+				<li>
 					<a class="evidence-link" href="#evidence-audit">Para quién encaja, qué es tevsys y dos capas MT5/tevsys.</a>
 				</li>
 			</ul>
@@ -250,12 +253,89 @@ const seo = {
 			</p>
 		</section>
 
+		<section id="evidencia-contencion-489" class="feature-proof-detail feature-proof-detail--contencion">
+			<h3>Cuando el mercado no coopera — contención bajo estrés</h3>
+			<p class="feature-proof-subtitle">Caso documentado 4.89 · FTMO · GER40 · 8 jun 2026</p>
+			<p class="feature-proof-lead">
+				El límite se activó en el tick que superó <strong>+0,50 %</strong>. Durante el cierre masivo, el precio siguió corriendo; el beneficio final cristalizó en <strong class="feature-title__accent">+1,04 %</strong>. El sistema bloqueó inmediatamente después.
+			</p>
+			<p class="evidencia-contencion-note">
+				En condiciones normales documentamos cierre ceñido al límite (error medio ≈ 0,06 % en {settings.documentedOperatives} operativas).
+				En estrés extremo — volatilidad, multiposición — el motor dispara, cierra y bloquea; el día puede quedar por encima del % pactado. Lo documentamos con capturas e informe MT5.
+			</p>
+
+			<ul class="evidencia-contencion-numbers" aria-label="Tres números del caso 4.89 — no mezclar">
+				<li>
+					<strong>Límite configurado</strong>
+					<span>+0,50 %</span>
+				</li>
+				<li>
+					<strong>Lectura al disparar (tick del motor)</strong>
+					<span>+0,65 % <em class="evidencia-contencion-em">— no es el cierre del día</em></span>
+				</li>
+				<li>
+					<strong>Resultado cerrado del día (panel STOP + informe MT5)</strong>
+					<span class="evidencia-contencion-highlight">+1,04 %</span>
+				</li>
+			</ul>
+
+			<p class="evidencia-contencion-context">
+				6×2,5 lotes · sweep hacia máximo Asia (~111 ms, +0,46 p.p. en un latigazo) · 164 operaciones en sesión.
+				Mismo día, operativa <strong>4.88</strong> en IC Markets con cierre ceñido al <strong>+2,50 %</strong> — precisión cuando puede; contención cuando toca.
+			</p>
+
+			<details class="proof-accordion">
+				<summary class="proof-capture-link">Ver capturas del caso (3) <span class="proof-link-meta">CAPTURAS</span></summary>
+				<div class="proof-gallery">
+					<p class="proof-gallery__hint">Datos sensibles reducidos donde aplica. Haz clic para ver en tamaño completo.</p>
+					<div class="proof-gallery__grid">
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">1. Panel</p>
+							<p class="proof-gallery__title">STOP +1,04 %</p>
+							<p class="proof-gallery__desc">Estado tras cierre por ganancia diaria y bloqueo hasta rotación.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-489-panel-stop.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura panel STOP 4.89 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-489-panel-stop.png" alt="Caso 4.89: panel tevsys STOP con resultado del día +1,04 %." loading="lazy" width="800" height="600" decoding="async" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">2. Gráfico M2</p>
+							<p class="proof-gallery__title">Latigazo MAX Asia</p>
+							<p class="proof-gallery__desc">Detalle del barrido en milisegundos hacia liquidez de sesión.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-489-sweep-m2.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura gráfico M2 sweep 4.89 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-489-sweep-m2.png" alt="Caso 4.89: gráfico M2 GER40 — sweep hacia máximo Asia." loading="lazy" width="800" height="600" decoding="async" />
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">3. Panorámica</p>
+							<p class="proof-gallery__title">Sesión completa</p>
+							<p class="proof-gallery__desc">Contexto M2: zonas Asia, panel y operativa multiposición.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/evidencia-489-panoramica-m2.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir captura panorámica sesión 4.89 en tamaño completo">
+								<img class="proof-gallery__image" src="/images/evidence/evidencia-489-panoramica-m2.png" alt="Caso 4.89: panorámica M2 con panel STOP y contexto de sesión." loading="lazy" width="800" height="600" decoding="async" />
+							</a>
+						</article>
+					</div>
+				</div>
+			</details>
+
+			<p class="evidencia-contencion-forense">
+				Si necesitas el detalle forense (logs, secuencia de cierres, cruce con el broker), escríbenos o en demo avanzada — reconstruimos el episodio con el mismo método que en nuestros casos documentados.
+			</p>
+			<p class="evidencia-contencion-cta">
+				<a class="proof-capture-link" href="/company/contact?feature=evidence&flow=demo">
+					Solicitar detalle del caso <span class="proof-link-meta">Contacto</span>
+				</a>
+			</p>
+		</section>
+
 		<section id="evidence-audit" class="feature-proof-detail feature-proof-detail--video-slim feature-proof-detail--familia-a-close feature-proof-detail--audit">
 			<h3>Evidencia: dos capas que se cruzan. Una sola conclusión.</h3>
 			<div class="evidence-intro">
 				<p class="evidence-intro__lead">La evidencia no la escribimos nosotros.</p>
 				<p class="evidence-intro__line">MT5 deja el resultado oficial. tevsys deja el porqué.</p>
 				<p class="evidence-intro__line">Tú cruzas las dos capas y decides si cuadra.</p>
+				<p class="evidence-intro__contencion">
+					Casos como el <a class="evidence-link" href="#evidencia-contencion-489">barrido extremo documentado (4.89)</a> son el tipo de episodio que el protocolo de auditoría explica: qué pactaste, qué hizo el motor y qué quedó en log — sin prometer auditoría comercial ya abierta.
+				</p>
 			</div>
 
 			<div class="evidence-grid">
@@ -638,6 +718,82 @@ const seo = {
 		line-height: 1.5;
 		opacity: 0.88;
 		max-width: 52ch;
+	}
+	.evidencia-contencion-note {
+		margin: 0 0 1rem;
+		max-width: 58ch;
+		font-size: 0.92rem;
+		line-height: 1.55;
+		opacity: 0.86;
+	}
+	.evidencia-contencion-numbers {
+		margin: 0 0 1rem;
+		padding: 0.75rem 0.85rem;
+		list-style: none;
+		border-radius: 0.55rem;
+		border: 1px solid rgba(150, 156, 170, 0.32);
+		background: rgba(12, 14, 18, 0.45);
+		display: grid;
+		gap: 0.65rem;
+		max-width: 56ch;
+	}
+	.evidencia-contencion-numbers li {
+		display: grid;
+		gap: 0.15rem;
+		font-size: 0.9rem;
+		line-height: 1.45;
+	}
+	.evidencia-contencion-numbers strong {
+		font-size: 0.82rem;
+		font-weight: 600;
+		opacity: 0.82;
+		text-transform: none;
+		letter-spacing: 0.01em;
+	}
+	.evidencia-contencion-numbers span {
+		font-weight: 600;
+	}
+	.evidencia-contencion-em {
+		font-style: normal;
+		font-weight: 500;
+		opacity: 0.78;
+		font-size: 0.86rem;
+	}
+	.evidencia-contencion-highlight {
+		color: #f5b041;
+	}
+	.evidencia-contencion-context {
+		margin: 0 0 0.85rem;
+		max-width: 58ch;
+		font-size: 0.9rem;
+		line-height: 1.52;
+		opacity: 0.85;
+	}
+	.evidencia-contencion-forense {
+		margin: 0.85rem 0 0.45rem;
+		max-width: 56ch;
+		font-size: 0.9rem;
+		line-height: 1.52;
+		opacity: 0.84;
+	}
+	.evidencia-contencion-cta {
+		margin: 0;
+	}
+	.evidence-intro__contencion {
+		margin: 0.85rem 0 0;
+		max-width: 58ch;
+		font-size: 0.92rem;
+		line-height: 1.52;
+		opacity: 0.88;
+	}
+	.evidence-intro__contencion .evidence-link {
+		font-style: normal;
+		font-weight: 600;
+	}
+	#evidencia-contencion-489:target {
+		outline: 1px solid rgba(245, 176, 65, 0.45);
+		outline-offset: 6px;
+		border-radius: 0.35rem;
 	}
 	#evidencia-logs .demo-video--compact {
 		margin-top: clamp(1.15rem, 2.8vw, 1.45rem);

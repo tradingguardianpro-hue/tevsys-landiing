@@ -14,7 +14,8 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"format": "npx prettier -w .",
-		"image:border": "node scripts/add-border-to-image.js"
+		"image:border": "node scripts/add-border-to-image.js",
+		"license:partner": "node scripts/create-partner-license.js"
 	},
 	"dependencies": {
 		"@upstash/redis": "^1.34.0",
