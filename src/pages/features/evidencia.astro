@@ -134,7 +134,10 @@ const seo = {
 
 		<section class="feature-proof-detail feature-proof-detail--contencion">
 			<span id="evidencia-contencion-489" class="evidencia-contencion-anchor" tabindex="-1"></span>
-			<h3>Precisión cuando puede — contención cuando toca — <span class="feature-title__accent">bajo estrés extremo</span></h3>
+			<h3 class="evidencia-contencion-title">
+				<span class="evidencia-contencion-title__line">Precisión cuando puede — contención cuando toca</span>
+				<span class="evidencia-contencion-title__line evidencia-contencion-title__line--accent feature-title__accent">bajo estrés extremo</span>
+			</h3>
 			<p class="feature-proof-lead evidencia-contencion-hook">
 				Límite <strong>+0,50 %</strong>. <strong>tevsys</strong> leyó <strong>+0,65 %</strong> en
 				<strong class="feature-title__accent">~111 ms</strong>. El día cerró en
@@ -767,10 +770,27 @@ const seo = {
 		border-color: rgba(180, 120, 20, 0.28);
 		background: linear-gradient(165deg, rgba(245, 176, 65, 0.1) 0%, rgba(248, 249, 252, 0.95) 48%);
 	}
-	.feature-proof-detail--contencion h3 {
-		font-size: clamp(1.22rem, 2.8vw, 1.48rem);
-		line-height: 1.28;
-		max-width: 28ch;
+	.feature-proof-detail--contencion h3.evidencia-contencion-title {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.15rem;
+		margin: 0;
+		max-width: min(100%, 36rem);
+		font-size: clamp(1.12rem, 2.4vw, 1.36rem);
+		line-height: 1.34;
+		font-weight: 700;
+		letter-spacing: -0.015em;
+	}
+	.feature-proof-detail--contencion h3.evidencia-contencion-title::before {
+		display: none;
+	}
+	.evidencia-contencion-title__line {
+		display: block;
+	}
+	.evidencia-contencion-title__line--accent {
+		font-size: 0.94em;
+		letter-spacing: 0.01em;
 	}
 	.evidencia-contencion-hook {
 		max-width: 58ch;
