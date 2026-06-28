@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — batch pilares ritmo premium (28 jun 2026)
+
+**Qué:** columna simétrica — entrada **una a una** (más pausa entre líneas); apagado igual de pausado; sin puntos ámbar; hairline más sutil; fase solo más lenta.
+
+**Commit:** `web(tevsys): hero pilares ritmo premium sin puntos ambar`
+
+---
+
 ## Hero home — batch pilares columna simétrica (28 jun 2026)
 
 **Qué:** esquema **2m-E-column** — las 4 frases entran en **columna centrada** (arriba→abajo, stagger + ligero slide); hairline vertical ámbar; punto ámbar por línea al encender; apagado simétrico arriba→abajo; **fase solo** aleatoria igual que antes.

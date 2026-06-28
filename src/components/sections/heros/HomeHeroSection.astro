@@ -72,31 +72,34 @@ const heroProductPillars = [
 
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
-    emptyMs: 520,
-    emptyMsMobile: 680,
-    batchFadeInDelayMs: 250,
-    batchFadeInMs: 3200,
-    batchFadeInStaggerMs: 130,
-    batchFadeInStaggerMsMobile: 175,
-    batchFadeOutMs: 920,
-    batchFadeOutStaggerMs: 115,
-    batchFadeOutStaggerMsMobile: 150,
-    batchHoldMs: 9000,
-    soloHoldMs: 3200,
-    soloStartGapMs: 480,
-    soloRepositionFadeOutMs: 720,
-    soloFadeInMs: 2000,
-    soloFadeInMsMobile: 1850,
-    loopPauseMs: 2400,
-    loopPauseMsMobile: 2100,
+    emptyMs: 900,
+    emptyMsMobile: 1050,
+    batchFadeInDelayMs: 650,
+    batchPhraseFadeInMs: 2400,
+    batchPhraseFadeInMsMobile: 2200,
+    batchPhraseInGapMs: 420,
+    batchPhraseInGapMsMobile: 480,
+    batchPhraseFadeOutMs: 1700,
+    batchPhraseFadeOutMsMobile: 1550,
+    batchPhraseOutGapMs: 360,
+    batchPhraseOutGapMsMobile: 420,
+    batchHoldMs: 10500,
+    soloHoldMs: 4000,
+    soloStartGapMs: 780,
+    soloRepositionFadeOutMs: 920,
+    soloFadeInMs: 2600,
+    soloFadeInMsMobile: 2400,
+    soloFadeOutMs: 1400,
+    loopPauseMs: 3200,
+    loopPauseMsMobile: 2800,
   };
 
-  const HERO_GLOW_IN_EASE = 'cubic-bezier(0.33, 0, 0.18, 1)';
-  const HERO_FADE_OUT_EASE = 'cubic-bezier(0.45, 0, 0.15, 1)';
+  const HERO_GLOW_IN_EASE = 'cubic-bezier(0.22, 0, 0.08, 1)';
+  const HERO_FADE_OUT_EASE = 'cubic-bezier(0.42, 0, 0.18, 1)';
 
   const HERO_MOBILE_MQ = '(max-width: 768px)';
 
-  const HERO_BATCH_ENTER_Y = '0.55rem';
+  const HERO_BATCH_ENTER_Y = '0.3rem';
 
   const HERO_PILLAR_SOLO_SLOTS = [
     { top: '8%', left: '3%', right: 'auto', align: 'left', maxW: '54%' },
@@ -179,7 +182,6 @@ const heroProductPillars = [
     el.style.visibility = 'hidden';
     el.style.transform = 'none';
     el.style.filter = 'none';
-    el.classList.remove('hero-pillar-fade__phrase--batch-live');
   }
 
   async function glowPhrase(el, visible, ms, easing = HERO_GLOW_IN_EASE) {
@@ -197,38 +199,30 @@ const heroProductPillars = [
   }
 
   async function fadeBatchInTogether(phrases) {
-    const { batchFadeInMs, batchFadeInDelayMs, batchFadeInStaggerMs, batchFadeInStaggerMsMobile } =
-      HERO_PILLAR_TIMING;
-    const staggerMs = isMobileHero() ? batchFadeInStaggerMsMobile : batchFadeInStaggerMs;
-    const motionEase = HERO_GLOW_IN_EASE;
+    const phraseFadeMs = getHeroTiming('batchPhraseFadeInMs');
+    const gapMs = getHeroTiming('batchPhraseInGapMs');
+    const { batchFadeInDelayMs } = HERO_PILLAR_TIMING;
 
     phrases.forEach((el) => setPhraseHiddenInstant(el));
     await sleep(32);
     await sleep(batchFadeInDelayMs);
 
-    phrases.forEach((el) => {
-      el.style.transition = `opacity ${batchFadeInMs}ms ${motionEase}, transform ${batchFadeInMs}ms ${motionEase}, visibility 0s linear`;
+    for (let i = 0; i < phrases.length; i += 1) {
+      const el = phrases[i];
+      el.style.transition = `opacity ${phraseFadeMs}ms ${HERO_GLOW_IN_EASE}, transform ${phraseFadeMs}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
       el.style.visibility = 'visible';
       el.style.opacity = '0';
       el.style.transform = `translateY(${HERO_BATCH_ENTER_Y})`;
-    });
-    await sleep(24);
-
-    for (let i = 0; i < phrases.length; i += 1) {
-      phrases[i].style.opacity = '1';
-      phrases[i].style.transform = 'translateY(0)';
-      phrases[i].classList.add('hero-pillar-fade__phrase--batch-live');
-      if (i < phrases.length - 1) await sleep(staggerMs);
+      await sleep(28);
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+      await sleep(phraseFadeMs + (i < phrases.length - 1 ? gapMs : 0));
     }
-
-    await sleep(batchFadeInMs);
   }
 
   async function fadeOutBatchColumn(phrases, stage) {
-    const fadeMs = HERO_PILLAR_TIMING.batchFadeOutMs;
-    const staggerMs = isMobileHero()
-      ? HERO_PILLAR_TIMING.batchFadeOutStaggerMsMobile
-      : HERO_PILLAR_TIMING.batchFadeOutStaggerMs;
+    const fadeMs = getHeroTiming('batchPhraseFadeOutMs');
+    const gapMs = getHeroTiming('batchPhraseOutGapMs');
 
     for (let i = 0; i < phrases.length; i += 1) {
       const el = phrases[i];
@@ -236,18 +230,13 @@ const heroProductPillars = [
 
       el.style.transition = `opacity ${fadeMs}ms ${HERO_FADE_OUT_EASE}, transform ${fadeMs}ms ${HERO_FADE_OUT_EASE}, visibility 0s linear`;
       el.style.opacity = '0';
-      el.style.transform = 'translateY(-0.4rem)';
-      el.classList.remove('hero-pillar-fade__phrase--batch-live');
-
-      await sleep(Math.round(fadeMs * 0.52));
-      if (i < phrases.length - 1) await sleep(staggerMs);
+      el.style.transform = 'translateY(-0.28rem)';
+      await sleep(fadeMs + (i < phrases.length - 1 ? gapMs : 0));
     }
 
-    await sleep(Math.round(fadeMs * 0.48));
     phrases.forEach((el) => {
       el.style.visibility = 'hidden';
       el.style.transform = 'none';
-      el.classList.remove('hero-pillar-fade__phrase--batch-live');
     });
 
     setBatchLayout(stage, false);
@@ -291,7 +280,7 @@ const heroProductPillars = [
       await movePhraseToSlot(el, slot, { fadeOutMs: HERO_PILLAR_TIMING.soloRepositionFadeOutMs });
       await glowPhrase(el, true, soloFadeInMs, HERO_GLOW_IN_EASE);
       await sleep(HERO_PILLAR_TIMING.soloHoldMs);
-      await glowPhrase(el, false, 1050, HERO_FADE_OUT_EASE);
+      await glowPhrase(el, false, HERO_PILLAR_TIMING.soloFadeOutMs, HERO_FADE_OUT_EASE);
       await sleep(HERO_PILLAR_TIMING.soloStartGapMs);
     }
 
@@ -477,13 +466,13 @@ const heroProductPillars = [
     background: linear-gradient(
       180deg,
       transparent 0%,
-      rgba(245, 176, 65, 0.16) 14%,
-      rgba(245, 176, 65, 0.34) 50%,
-      rgba(245, 176, 65, 0.16) 86%,
+      rgba(245, 176, 65, 0.08) 18%,
+      rgba(245, 176, 65, 0.18) 50%,
+      rgba(245, 176, 65, 0.08) 82%,
       transparent 100%
     );
     pointer-events: none;
-    opacity: 0.75;
+    opacity: 0.5;
   }
 
   .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__phrase {
@@ -495,29 +484,8 @@ const heroProductPillars = [
     max-width: min(26rem, 100%);
     text-align: center;
     padding-inline: clamp(0.35rem, 2vw, 0.75rem);
-    color: rgba(228, 232, 240, 0.94);
-    letter-spacing: 0.032em;
-  }
-
-  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__phrase::before {
-    content: '';
-    display: inline-block;
-    width: 0.35rem;
-    height: 0.35rem;
-    margin-right: 0.45rem;
-    border-radius: 50%;
-    background: rgba(245, 176, 65, 0.72);
-    box-shadow: 0 0 10px rgba(245, 176, 65, 0.28);
-    vertical-align: 0.08em;
-    opacity: 0;
-    transform: scale(0.6);
-    transition: opacity 0.55s ease, transform 0.55s ease;
-  }
-
-  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch
-    .hero-pillar-fade__phrase--batch-live::before {
-    opacity: 1;
-    transform: scale(1);
+    color: rgba(228, 232, 240, 0.9);
+    letter-spacing: 0.028em;
   }
 
   @media (prefers-reduced-motion: reduce) {
