@@ -370,7 +370,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Micro Para quién (`/para-quien`) — 28 jun 2026
 
 - **Job:** polivalencia de perfiles sin encasillar; enlaces a micros + empresas + auditoría roadmap.
-- **Hero:** *No es un solo perfil. Es el **cuadro entero** en MT5.* — subrayado ámbar en *cuadro entero*; **3 viñetas** (precisión · freno · qué pasa en la cuenta — trader/gestor/academia).
+- **Hero:** *No es un solo perfil. Es el **cuadro entero** en MT5.* — **cuadro entero** en ámbar (sin subrayado); subrayados solo abajo (*varios perfiles*).
 - **Puente:** mono centrado (misma familia que home): *Precisión · HyperClose · SML · Evidencia*; **más aire** antes de *Cuatro capas*.
 - **Cards 2×2:** carbón + hook + raya bajo título; banda Equipos centrada (sin palabra suelta en ámbar).
 - **Acento:** subrayado gradiente en *cuadro entero* y *varios perfiles* — no encasillar un perfil con color.

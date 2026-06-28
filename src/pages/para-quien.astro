@@ -55,8 +55,7 @@ const corePerfiles = [
 			<section class="feature-hero para-quien-hero">
 				<p class="feature-kicker">Para quién</p>
 				<h1>
-					No es un solo perfil. Es el
-					<span class="tevsys-brand-accent-underline tevsys-brand-accent-underline--cuadro-entero">cuadro entero</span> en MT5.
+					No es un solo perfil. Es el <span class="para-quien-hero__accent">cuadro entero</span> en MT5.
 				</h1>
 				<div class="para-quien-hero__float">
 					<p class="feature-hook para-quien-hero__hook">
@@ -182,10 +181,12 @@ const corePerfiles = [
 	.para-quien-audience li:last-child {
 		margin-bottom: 0;
 	}
-	.tevsys-brand-accent-underline--cuadro-entero::after {
-		/* «cuadro entero» completo; inicio tras la C (familia /como-funciona). */
-		width: calc(100% + 0.85rem);
-		margin: 0.38rem 0 0 0.58rem;
+	.para-quien-hero__accent {
+		color: #f5b041;
+		font-weight: 700;
+	}
+	html[data-theme='light'] .para-quien-hero__accent {
+		color: #b87814;
 	}
 	.tevsys-brand-accent-underline--varios-perfiles::after {
 		width: calc(100% + 0.65rem);
