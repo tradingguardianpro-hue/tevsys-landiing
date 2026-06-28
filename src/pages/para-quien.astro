@@ -129,7 +129,7 @@ const corePerfiles = [
 				— instalación, límites, cierre y evidencia.
 			</p>
 
-			<section class="feature-cta">
+			<section class="feature-cta para-quien-cta">
 				<h2>¿Quieres probarlo en tu operativa?</h2>
 				<p>Te guiamos para validar encaje real — demo Essential o contacto si necesitas Advanced o Pro.</p>
 				<a href="/company/contact?flow=demo" class="feature-cta__button">Probar tevsys en demo</a>
@@ -140,12 +140,17 @@ const corePerfiles = [
 
 <style>
 	.para-quien-hero__float {
-		margin: clamp(1.45rem, 3.8vw, 2.15rem) 0 clamp(1.75rem, 4.5vw, 2.5rem);
+		margin: clamp(1.2rem, 3.2vw, 1.75rem) 0 clamp(1.65rem, 4vw, 2.35rem);
 		padding: clamp(0.35rem, 1vw, 0.55rem) 0;
 		display: flex;
 		flex-direction: column;
 		gap: clamp(1rem, 2.5vw, 1.35rem);
 		max-width: 56ch;
+	}
+	@media (min-width: 960px) {
+		.para-quien-hero__float {
+			margin-top: clamp(1rem, 2.2vw, 1.45rem);
+		}
 	}
 	.para-quien-hero__hook {
 		margin: 0;
@@ -262,7 +267,7 @@ const corePerfiles = [
 		color: rgba(60, 66, 78, 0.72);
 	}
 	.para-quien-profiles {
-		margin: clamp(1.65rem, 4.2vw, 2.35rem) 0 clamp(1.15rem, 3vw, 1.5rem);
+		margin: clamp(1.65rem, 4.2vw, 2.35rem) 0 clamp(2rem, 5vw, 2.85rem);
 		padding-top: clamp(0.35rem, 1vw, 0.55rem);
 	}
 	.para-quien-profiles__title {
@@ -424,15 +429,42 @@ const corePerfiles = [
 		color: #f5b041;
 	}
 	.para-quien-equipos {
-		margin: clamp(1.35rem, 3.2vw, 1.85rem) 0 clamp(1.25rem, 3vw, 1.65rem);
-		padding: clamp(1.45rem, 3.2vw, 2rem) clamp(1.25rem, 3vw, 1.75rem);
+		position: relative;
+		margin: 0 0 clamp(1.5rem, 3.5vw, 2rem);
+		padding: clamp(1.55rem, 3.4vw, 2.1rem) clamp(1.35rem, 3.2vw, 1.85rem);
 		border-radius: var(--feature-micro-radius, 0.85rem);
-		border: 1px solid rgba(245, 176, 65, 0.22);
-		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(12, 14, 18, 0.5));
+		border: 1px solid rgba(245, 176, 65, 0.18);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.05), rgba(12, 14, 18, 0.45));
 		box-shadow:
-			inset 0 1px 0 rgba(255, 255, 255, 0.04),
-			0 0 0 1px rgba(245, 176, 65, 0.05);
+			inset 0 1px 0 rgba(255, 255, 255, 0.03),
+			0 0 0 1px rgba(245, 176, 65, 0.04);
 		text-align: center;
+	}
+	.para-quien-equipos::before {
+		content: '';
+		display: block;
+		width: min(7.5rem, 42vw);
+		height: 1px;
+		margin: 0 auto clamp(0.15rem, 0.5vw, 0.35rem);
+		position: absolute;
+		top: -clamp(1.35rem, 3.2vw, 1.85rem);
+		left: 50%;
+		transform: translateX(-50%);
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(228, 232, 240, 0.28) 50%,
+			transparent 100%
+		);
+		pointer-events: none;
+	}
+	html[data-theme='light'] .para-quien-equipos::before {
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(100, 106, 118, 0.26) 50%,
+			transparent 100%
+		);
 	}
 	html[data-theme='light'] .para-quien-equipos {
 		border-color: rgba(180, 120, 20, 0.22);
@@ -460,9 +492,9 @@ const corePerfiles = [
 	.para-quien-equipos__copy {
 		display: flex;
 		flex-direction: column;
-		gap: clamp(0.65rem, 1.6vw, 0.85rem);
-		margin: 0 auto clamp(1.15rem, 2.6vw, 1.45rem);
-		max-width: 44ch;
+		gap: clamp(0.75rem, 1.8vw, 1rem);
+		margin: 0 auto clamp(1.25rem, 2.8vw, 1.55rem);
+		max-width: 42ch;
 	}
 	.para-quien-equipos__lead {
 		margin: 0;
@@ -503,14 +535,20 @@ const corePerfiles = [
 		opacity: 1;
 	}
 	.para-quien-map-line {
-		margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+		margin: clamp(1.5rem, 3.5vw, 2.1rem) auto clamp(1.35rem, 3.2vw, 1.85rem);
 		max-width: 54ch;
 		font-size: 0.9rem;
 		line-height: 1.55;
 		opacity: 0.88;
 		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
+	}
+	.para-quien-cta.feature-cta {
+		margin-top: clamp(0.5rem, 1.5vw, 1rem);
+		padding-top: clamp(1.25rem, 3vw, 1.75rem);
+		border-top: 1px solid rgba(228, 232, 240, 0.08);
+	}
+	html[data-theme='light'] .para-quien-cta.feature-cta {
+		border-top-color: rgba(60, 66, 78, 0.1);
 	}
 	.feature-cta {
 		margin: var(--section-margin) auto;

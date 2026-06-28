@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Para quién — ritmo vertical equipos + CTA (28 jun 2026)
+
+**Qué:** más aire grid→equipos; hairline capítulo; equipos más legible; CTA separado al pie.
+
+**Commit:** `web(tevsys): para quien ritmo equipos cta cierre`
+
+---
+
 ## Para quién — subrayado cuadro entero + aire hook/viñetas (28 jun 2026)
 
 **Qué:** subrayado ancho offset (no en la C); bloque hook + 3 viñetas con más aire flotante.
