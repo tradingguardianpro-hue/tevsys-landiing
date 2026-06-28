@@ -6,7 +6,7 @@ import settings from '../config/settings.js';
 const seo = {
 	title: 'Para quién | tevsys',
 	description:
-		'Precisión al límite, freno bajo presión, evidencia verificable y capas avanzadas — tevsys encaja en varios perfiles sin ser solo una etiqueta.',
+		'Precisión al límite, freno bajo presión, evidencia verificable — tevsys encaja en traders, academias y gestores que exigen trazabilidad en MT5.',
 };
 
 const corePerfiles = [
@@ -14,29 +14,37 @@ const corePerfiles = [
 		id: 'precision',
 		label: 'Precisión',
 		title: 'Exiges ceñir al límite pactado',
-		body: `Error medio ≈ 0,06 % en condiciones normales · ${settings.documentedOperatives} operativas documentadas.`,
+		hook: 'Cierre preciso cuando el mercado lo permite.',
+		body: `Error medio ≈ 0,06 % · ${settings.documentedOperatives} operativas documentadas en cinco entornos.`,
 		href: '/features/precision',
+		accentLineMl: '0.05rem',
 	},
 	{
 		id: 'hyperclose',
 		label: 'HyperClose',
 		title: 'Necesitas freno cuando la disciplina flaquea',
-		body: 'Cierre al instante si operas bloqueado — con registro de cada intento.',
+		hook: 'Parar de verdad — no solo intentarlo.',
+		body: 'Cierre al instante si operas bloqueado, con registro de cada intento.',
 		href: '/features/hyperclose',
+		accentLineMl: '0.05rem',
 	},
 	{
 		id: 'evidencia',
 		label: 'Evidencia',
 		title: 'Quieres contrastar MT5 y acta tevsys',
+		hook: 'No confíes: comprueba.',
 		body: 'Informe oficial, panel y logs que se cruzan — sin pedirte fe.',
 		href: '/features/evidencia',
+		accentLineMl: '0.05rem',
 	},
 	{
 		id: 'sml',
 		label: 'SML',
 		title: 'Buscas más margen con reglas claras',
-		body: 'Amplía margen tras un día positivo · validación de escenarios en curso.',
+		hook: 'Recompensa opcional tras un día positivo.',
+		body: 'Amplía margen con topes por plan · validación de escenarios en curso.',
 		href: '/features/sml',
+		accentLineMl: '0.05rem',
 	},
 ];
 ---
@@ -47,21 +55,25 @@ const corePerfiles = [
 			<section class="feature-hero para-quien-hero">
 				<p class="feature-kicker">Para quién</p>
 				<h1>
-					No es un solo perfil. Es el <span class="feature-title__accent">cuadro entero</span> en MT5.
+					No es un solo perfil. Es el <span class="tevsys-brand-accent-underline">cuadro entero</span> en MT5.
 				</h1>
 				<p class="feature-hook">
 					<span class="feature-hook__dot" aria-hidden="true"></span>
 					Precisión, freno bajo presión y evidencia que se cruza — con las reglas que tú configuras.
 				</p>
+				<p class="feature-lead para-quien-hero__lead">
+					Desde quien empieza hasta quien exige cierre al milímetro; quien necesita freno, evidencia cruzable,
+					trazabilidad, <span class="feature-title__accent">academias</span> o gestores que auditan — sin encasillarte en una sola etiqueta.
+				</p>
 			</section>
 
-			<p class="para-quien-bridge" aria-label="Capas del producto">
-				<span class="para-quien-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
+			<p class="tevsys-home-hero-bridge para-quien-bridge" aria-label="Capas del producto">
+				<span class="tevsys-home-hero-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
 			</p>
 
 			<section class="para-quien-profiles" aria-labelledby="para-quien-profiles-title">
 				<h2 id="para-quien-profiles-title" class="para-quien-profiles__title">
-					Cuatro capas · varios perfiles
+					Cuatro capas · <span class="feature-title__accent">varios perfiles</span>
 				</h2>
 				<ul class="para-quien-profiles__grid">
 					{
@@ -69,8 +81,16 @@ const corePerfiles = [
 							<li>
 								<a class="para-quien-profile" href={perfil.href}>
 									<span class="para-quien-profile__arrow" aria-hidden="true">→</span>
-									<p class="para-quien-profile__label">{perfil.label}</p>
-									<h3 class="para-quien-profile__title">{perfil.title}</h3>
+									<div class="para-quien-profile__head">
+										<p class="para-quien-profile__label">{perfil.label}</p>
+										<h3
+											class="para-quien-profile__title para-quien-profile__title--accent-line"
+											style={`--card-accent-line-ml: ${perfil.accentLineMl}`}
+										>
+											{perfil.title}
+										</h3>
+									</div>
+									<p class="para-quien-profile__hook">{perfil.hook}</p>
 									<p class="para-quien-profile__body">{perfil.body}</p>
 									<span class="para-quien-profile__cta">Saber más</span>
 								</a>
@@ -81,10 +101,12 @@ const corePerfiles = [
 			</section>
 
 			<section class="para-quien-equipos" aria-labelledby="para-quien-equipos-title">
-				<h2 id="para-quien-equipos-title" class="para-quien-equipos__title">Academia, prop firm o quien te audita</h2>
+				<h2 id="para-quien-equipos-title" class="para-quien-equipos__title">
+					<span class="feature-title__accent">Academias</span>, prop firms y quien te audita
+				</h2>
 				<p class="para-quien-equipos__body">
-					Trazabilidad para revisar ejecución y límites — no auditamos tu estrategia. Instituciones y equipos tienen
-					canal aparte.
+					Trazabilidad para revisar ejecución y límites — no auditamos tu estrategia. Instituciones, gestores externos
+					y equipos tienen canal aparte.
 				</p>
 				<div class="para-quien-equipos__links">
 					<a class="para-quien-equipos__link" href="/company/empresas">Canal empresas</a>
@@ -108,56 +130,93 @@ const corePerfiles = [
 </Layout>
 
 <style>
-	.para-quien-bridge {
-		position: relative;
-		margin: 0;
-		padding: clamp(0.35rem, 1vw, 0.55rem) 0 clamp(1rem, 2.5vw, 1.35rem);
+	.para-quien-hero__lead {
+		max-width: 58ch;
+		line-height: 1.58;
+		opacity: 0.92;
 	}
-	.para-quien-bridge::before {
+	/* Subrayado ámbar → gris (familia home / como-funciona) */
+	.tevsys-brand-accent-underline {
+		display: inline-block;
+		font-weight: 700;
+		color: rgba(244, 246, 248, 0.98);
+	}
+	.tevsys-brand-accent-underline::after {
+		content: '';
+		display: block;
+		width: min(9rem, calc(100% + 0.5rem));
+		height: 3px;
+		margin: 0.34rem 0 0 0.04rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+	html[data-theme='light'] .tevsys-brand-accent-underline::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
+	}
+	/* Puente mono — centrado como home */
+	.para-quien-bridge.tevsys-home-hero-bridge {
+		position: relative;
+		z-index: 1;
+		margin: 0;
+		text-align: center;
+		padding: clamp(0.65rem, 1.8vw, 1rem) 0 clamp(1.15rem, 2.8vw, 1.45rem);
+	}
+	.para-quien-bridge.tevsys-home-hero-bridge::before {
 		content: '';
 		display: block;
 		width: min(7.5rem, 42vw);
 		height: 1px;
-		margin: 0 0 clamp(0.65rem, 1.4vw, 0.8rem);
+		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
 		background: linear-gradient(
 			90deg,
-			rgba(245, 176, 65, 0.55) 0%,
-			rgba(228, 232, 240, 0.36) 55%,
+			transparent 0%,
+			rgba(228, 232, 240, 0.36) 50%,
 			transparent 100%
 		);
 	}
-	html[data-theme='light'] .para-quien-bridge::before {
+	html[data-theme='light'] .para-quien-bridge.tevsys-home-hero-bridge::before {
 		background: linear-gradient(
 			90deg,
-			rgba(180, 120, 20, 0.5) 0%,
-			rgba(100, 106, 118, 0.28) 55%,
+			transparent 0%,
+			rgba(100, 106, 118, 0.32) 50%,
 			transparent 100%
 		);
 	}
-	.para-quien-bridge__text {
-		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	.para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
 		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
 		font-weight: 500;
 		letter-spacing: 0.055em;
 		color: rgba(228, 232, 240, 0.62);
 		line-height: 1.45;
 	}
-	html[data-theme='light'] .para-quien-bridge__text {
+	html[data-theme='light'] .para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
 		color: rgba(60, 66, 78, 0.72);
 	}
 	.para-quien-profiles {
-		margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
+		margin: 0 0 clamp(1.15rem, 3vw, 1.5rem);
 	}
 	.para-quien-profiles__title {
-		margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
-		font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+		margin: 0 0 clamp(0.95rem, 2.2vw, 1.2rem);
+		font-size: clamp(1.08rem, 2.3vw, 1.22rem);
 		font-weight: 700;
 		letter-spacing: -0.02em;
+		text-align: center;
 	}
 	.para-quien-profiles__grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: clamp(0.75rem, 2vw, 1rem);
+		gap: clamp(0.85rem, 2.2vw, 1.15rem);
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -171,39 +230,56 @@ const corePerfiles = [
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 0.4rem;
+		gap: 0.45rem;
 		height: 100%;
-		padding: clamp(0.9rem, 2vw, 1.1rem) clamp(0.95rem, 2vw, 1.15rem);
-		border-left: 2px solid rgba(245, 176, 65, 0.38);
+		padding: clamp(1rem, 2.2vw, 1.2rem) clamp(1rem, 2.2vw, 1.2rem) 1.1rem;
 		border-radius: var(--feature-micro-radius, 0.85rem);
-		background: var(--micro-detail-bg);
-		border-top: 1px solid var(--micro-detail-border);
-		border-right: 1px solid var(--micro-detail-border);
-		border-bottom: 1px solid var(--micro-detail-border);
+		background: linear-gradient(165deg, hsl(222, 14%, 7%), hsl(222, 12%, 5.5%));
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		box-shadow:
+			0 18px 44px -32px rgba(0, 0, 0, 0.55),
+			inset 0 1px 0 rgba(255, 255, 255, 0.05),
+			0 0 0 1px rgba(245, 176, 65, 0.06);
 		color: inherit;
 		text-decoration: none;
 		transition:
-			border-color 180ms ease,
-			box-shadow 180ms ease,
-			transform 180ms ease;
+			border-color 200ms ease,
+			box-shadow 200ms ease,
+			transform 200ms ease;
+	}
+	html[data-theme='light'] .para-quien-profile {
+		background: linear-gradient(165deg, hsl(222, 12%, 96%), hsl(220, 10%, 93%));
+		border-color: rgba(15, 18, 28, 0.08);
+		box-shadow:
+			0 12px 32px -24px rgba(15, 18, 28, 0.2),
+			inset 0 1px 0 rgba(255, 255, 255, 0.85);
 	}
 	.para-quien-profile:hover {
-		border-left-color: rgba(245, 176, 65, 0.62);
-		border-color: rgba(245, 176, 65, 0.28);
-		box-shadow: 0 6px 28px rgba(0, 0, 0, 0.22);
-		transform: translateY(-2px);
+		border-color: rgba(245, 176, 65, 0.38);
+		box-shadow:
+			0 22px 48px -28px rgba(0, 0, 0, 0.62),
+			inset 0 1px 0 rgba(255, 255, 255, 0.07),
+			0 0 0 1px rgba(245, 176, 65, 0.14),
+			0 0 32px rgba(245, 176, 65, 0.08);
+		transform: translateY(-3px);
 	}
 	.para-quien-profile__arrow {
 		position: absolute;
-		right: 0.85rem;
-		bottom: 0.85rem;
-		font-size: 1.05rem;
-		opacity: 0.45;
-		transition: opacity 160ms ease, color 160ms ease;
+		right: 0.9rem;
+		bottom: 0.9rem;
+		font-size: 1.1rem;
+		opacity: 0.4;
+		transition: opacity 160ms ease, color 160ms ease, transform 160ms ease;
 	}
 	.para-quien-profile:hover .para-quien-profile__arrow {
 		opacity: 1;
 		color: #f5b041;
+		transform: translate(2px, -2px);
+	}
+	.para-quien-profile__head {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
 	}
 	.para-quien-profile__label {
 		margin: 0;
@@ -219,24 +295,50 @@ const corePerfiles = [
 	}
 	.para-quien-profile__title {
 		margin: 0;
-		padding-right: 1.5rem;
-		font-size: clamp(0.98rem, 2.1vw, 1.06rem);
+		padding-right: 1.75rem;
+		font-size: clamp(1rem, 2.15vw, 1.08rem);
 		font-weight: 700;
 		line-height: 1.35;
-		letter-spacing: -0.015em;
+		letter-spacing: -0.018em;
+	}
+	.para-quien-profile__title--accent-line::after {
+		content: '';
+		display: block;
+		width: 3.25rem;
+		height: 2px;
+		margin: 0.32rem 0 0 var(--card-accent-line-ml, 0.05rem);
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.92) 0%,
+			rgba(148, 154, 168, 0.58) 72%,
+			rgba(110, 116, 128, 0.32) 100%
+		);
+	}
+	.para-quien-profile__hook {
+		margin: 0;
+		font-size: 0.88rem;
+		font-style: italic;
+		line-height: 1.45;
+		opacity: 0.92;
+		color: rgba(244, 246, 248, 0.94);
+	}
+	html[data-theme='light'] .para-quien-profile__hook {
+		color: rgba(28, 32, 42, 0.88);
 	}
 	.para-quien-profile__body {
 		margin: 0;
 		flex: 1;
-		font-size: 0.875rem;
-		line-height: 1.48;
-		opacity: 0.88;
+		font-size: 0.84rem;
+		line-height: 1.5;
+		opacity: 0.82;
 	}
 	.para-quien-profile__cta {
-		margin-top: 0.25rem;
+		margin-top: 0.15rem;
 		font-size: 0.82rem;
 		font-weight: 600;
-		opacity: 0.72;
+		letter-spacing: 0.02em;
+		opacity: 0.7;
 	}
 	.para-quien-profile:hover .para-quien-profile__cta {
 		opacity: 1;
@@ -244,32 +346,37 @@ const corePerfiles = [
 	}
 	.para-quien-equipos {
 		margin: 0 0 clamp(1.15rem, 3vw, 1.5rem);
-		padding: clamp(0.95rem, 2.2vw, 1.2rem) clamp(1rem, 2.5vw, 1.25rem);
+		padding: clamp(1.05rem, 2.4vw, 1.3rem) clamp(1.1rem, 2.6vw, 1.35rem);
 		border-radius: var(--feature-micro-radius, 0.85rem);
-		border: 1px solid rgba(245, 176, 65, 0.22);
-		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(255, 255, 255, 0.012));
+		border: 1px solid rgba(245, 176, 65, 0.24);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.08), rgba(12, 14, 18, 0.42));
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.04),
+			0 0 0 1px rgba(245, 176, 65, 0.06);
+		text-align: center;
 	}
 	html[data-theme='light'] .para-quien-equipos {
-		border-color: rgba(180, 120, 20, 0.22);
-		background: linear-gradient(148deg, rgba(245, 176, 65, 0.08), rgba(248, 249, 252, 0.95));
+		border-color: rgba(180, 120, 20, 0.24);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.1), rgba(248, 249, 252, 0.98));
 	}
 	.para-quien-equipos__title {
-		margin: 0 0 0.45rem;
-		font-size: clamp(1rem, 2.1vw, 1.08rem);
+		margin: 0 0 0.5rem;
+		font-size: clamp(1.02rem, 2.15vw, 1.12rem);
 		font-weight: 700;
 		letter-spacing: -0.015em;
 	}
 	.para-quien-equipos__body {
-		margin: 0 0 0.75rem;
-		max-width: 58ch;
+		margin: 0 auto 0.85rem;
+		max-width: 52ch;
 		font-size: 0.875rem;
-		line-height: 1.5;
+		line-height: 1.52;
 		opacity: 0.9;
 	}
 	.para-quien-equipos__links {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.65rem 1.25rem;
+		justify-content: center;
+		gap: 0.65rem 1.35rem;
 	}
 	.para-quien-equipos__link {
 		font-size: 0.9rem;
@@ -291,8 +398,18 @@ const corePerfiles = [
 		font-size: 0.9rem;
 		line-height: 1.55;
 		opacity: 0.88;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.feature-cta {
 		margin: var(--section-margin) auto;
+	}
+	.feature-title__accent {
+		color: #f5b041;
+		font-weight: 700;
+	}
+	html[data-theme='light'] .feature-title__accent {
+		color: #b87814;
 	}
 </style>

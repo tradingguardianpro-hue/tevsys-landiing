@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Para quién — puente centrado + cards carbón + subrayado (28 jun 2026)
+
+**Qué:** `/para-quien` — puente mono centrado (home); *cuadro entero* subrayado ámbar; lead polivalencia; cards estilo home (carbón, hook, raya); equipos centrado.
+
+**Commit:** `web(tevsys): para quien puente centrado cards carbón subrayado`
+
+---
+
 ## Para quién — iteración layout 2×2 + equipos (28 jun 2026)
 
 **Qué:** `/para-quien` — hero acortado; grid 2×2 clicables (Saber más + →); banda Equipos; mapa en una línea; sin enlaces duplicados.

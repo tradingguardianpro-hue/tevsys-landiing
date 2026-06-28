@@ -370,7 +370,10 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Micro Para quién (`/para-quien`) — 28 jun 2026
 
 - **Job:** polivalencia de perfiles sin encasillar; enlaces a micros + empresas + auditoría roadmap.
-- **Visual:** Familia A lite (carbón, borde lateral ámbar, puente mono); no duplica bloque quitado de Evidencia.
+- **Hero:** *No es un solo perfil. Es el **cuadro entero** en MT5.* — subrayado ámbar en *cuadro entero*; lead polivalencia (iniciados → cierre preciso → freno → evidencia → academias/gestores).
+- **Puente:** mono centrado (misma familia que home): *Precisión · HyperClose · SML · Evidencia*.
+- **Cards 2×2:** carbón + hook + raya bajo título; banda Equipos centrada con acento en *Academias*.
+- **Visual:** Familia A lite; no duplica bloque quitado de Evidencia.
 
 ### Pendiente inmediato
 - SML: vídeo final según guía de producción — **al integrarlo en la micro**, cumplir **«Convención embeds de vídeo — micropáginas `/features/*`»** (misma estructura de clases que Precisión/HyperClose; si la grabación es tema claro, **`demo-video--light`** como Nasdaq).
