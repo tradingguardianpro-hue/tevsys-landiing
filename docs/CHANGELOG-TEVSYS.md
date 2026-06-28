@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Para quién — micro posicionamiento + nav (28 jun 2026)
+
+**Qué:** nueva `/para-quien` — grid 5 perfiles (Precisión, HyperClose, Evidencia, SML, Equipos) + puente mono; nav header + footer Producto.
+
+**Commit:** `web(tevsys): micro para quien perfiles nav header`
+
+---
+
 ## Evidencia — nota outlier contención 4.89 (28 jun 2026)
 
 **Qué:** `#evidencia-contencion-489` — línea *Caso extremo documentado aparte — no entra en el error medio ≈ 0,06 %* (alineado `PRECISION_*` §3 / §4.89).

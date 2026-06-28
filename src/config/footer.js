@@ -27,6 +27,7 @@ export const footerColumns = [
   {
     title: 'Producto',
     items: [
+      { title: 'Para quién', slug: '/para-quien' },
       { title: 'Precisión', slug: '/features/precision' },
       { title: 'HyperClose', slug: '/features/hyperclose' },
       { title: 'SML', slug: '/features/sml' },

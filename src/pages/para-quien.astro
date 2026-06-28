@@ -1,0 +1,262 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+import settings from '../config/settings.js';
+
+const seo = {
+	title: 'Para quién | tevsys',
+	description:
+		'Precisión al límite, freno bajo presión, evidencia verificable y capas avanzadas — tevsys encaja en varios perfiles sin ser solo una etiqueta.',
+};
+
+const perfiles = [
+	{
+		id: 'precision',
+		label: 'Precisión',
+		title: 'Exiges ceñir al límite pactado',
+		body: `Cierre documentado con error medio ≈ 0,06 % en condiciones normales — ${settings.documentedOperatives} operativas en cinco entornos.`,
+		href: '/features/precision',
+		meta: 'Precisión',
+	},
+	{
+		id: 'hyperclose',
+		label: 'HyperClose',
+		title: 'Necesitas freno cuando la disciplina flaquea',
+		body: 'Si operas bloqueado, cierre al instante — antes del siguiente tick — con registro de cada intento.',
+		href: '/features/hyperclose',
+		meta: 'HyperClose',
+	},
+	{
+		id: 'evidencia',
+		label: 'Evidencia',
+		title: 'Quieres contrastar MT5 y acta tevsys',
+		body: 'Informe oficial, panel y logs que se cruzan. No te pedimos fe: te enseñamos lo que pasa.',
+		href: '/features/evidencia',
+		meta: 'Evidencia',
+	},
+	{
+		id: 'sml',
+		label: 'SML',
+		title: 'Buscas más margen con reglas claras',
+		body: 'Amplía el margen tras un día positivo — opcional, con topes por plan. Validación de escenarios en curso.',
+		href: '/features/sml',
+		meta: 'SML',
+	},
+	{
+		id: 'equipos',
+		label: 'Equipos',
+		title: 'Academia, prop firm o quien te audita',
+		body: 'Trazabilidad para revisar ejecución y límites — no auditamos tu estrategia. Canal empresas aparte si sois institución.',
+		href: '/company/empresas',
+		meta: 'Empresas',
+		secondaryHref: '/auditoria-ia',
+		secondaryMeta: 'Auditoría',
+	},
+];
+---
+
+<Layout seo={seo}>
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--para-quien">
+		<Container>
+			<section class="feature-hero para-quien-hero">
+				<p class="feature-kicker">Para quién</p>
+				<h1>
+					No es un solo perfil. Es <span class="feature-title__accent">disciplina verificable</span> en MT5.
+				</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					Precisión, freno bajo presión, evidencia que se cruza — con las reglas que tú configuras.
+				</p>
+				<p class="feature-lead para-quien-hero__lead">
+					No señales. No promesa de rentabilidad. Varias capas que encajan según lo que exijas de tu operativa.
+				</p>
+			</section>
+
+			<p class="tevsys-home-hero-bridge para-quien-bridge" aria-label="Capas del producto">
+				<span class="tevsys-home-hero-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
+			</p>
+
+			<section class="para-quien-profiles" aria-labelledby="para-quien-profiles-title">
+				<h2 id="para-quien-profiles-title" class="para-quien-profiles__title">¿Te suena alguno?</h2>
+				<ul class="para-quien-profiles__grid">
+					{
+						perfiles.map((perfil) => (
+							<li>
+								<article class="para-quien-profile">
+									<p class="para-quien-profile__label">{perfil.label}</p>
+									<h3 class="para-quien-profile__title">{perfil.title}</h3>
+									<p class="para-quien-profile__body">{perfil.body}</p>
+									<div class="para-quien-profile__links">
+										<a class="para-quien-profile__link proof-capture-link" href={perfil.href}>
+											Ver {perfil.meta}
+											<span class="proof-link-meta">{perfil.meta}</span>
+										</a>
+										{perfil.secondaryHref && (
+											<a
+												class="para-quien-profile__link para-quien-profile__link--secondary"
+												href={perfil.secondaryHref}
+											>
+												{perfil.secondaryMeta}
+											</a>
+										)}
+									</div>
+								</article>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<section class="feature-proof-detail para-quien-map">
+				<h3>Mapa del sistema</h3>
+				<p class="feature-proof-subtitle">Más profundo que un solo titular</p>
+				<p class="feature-proof-lead">
+					Si quieres ver cómo encajan las piezas — instalación, límites, cierre, evidencia — el recorrido completo está en
+					<a class="evidence-link" href="/como-funciona">Cómo funciona</a>.
+				</p>
+			</section>
+
+			<section class="feature-cta">
+				<h2>¿Quieres probarlo en tu operativa?</h2>
+				<p>Te guiamos para validar encaje real — demo Essential o contacto si necesitas Advanced o Pro.</p>
+				<a href="/company/contact?flow=demo" class="feature-cta__button">Probar tevsys en demo</a>
+			</section>
+		</Container>
+	</div>
+</Layout>
+
+<style>
+	.para-quien-hero__lead {
+		max-width: 52ch;
+	}
+	.para-quien-bridge {
+		position: relative;
+		text-align: left;
+		margin: 0;
+		padding: clamp(0.5rem, 1.5vw, 0.85rem) 0 clamp(1rem, 2.5vw, 1.35rem);
+	}
+	.para-quien-bridge::before {
+		content: '';
+		display: block;
+		width: min(7.5rem, 42vw);
+		height: 1px;
+		margin: 0 0 clamp(0.65rem, 1.4vw, 0.8rem);
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.55) 0%,
+			rgba(228, 232, 240, 0.36) 55%,
+			transparent 100%
+		);
+	}
+	html[data-theme='light'] .para-quien-bridge::before {
+		background: linear-gradient(
+			90deg,
+			rgba(180, 120, 20, 0.5) 0%,
+			rgba(100, 106, 118, 0.28) 55%,
+			transparent 100%
+		);
+	}
+	.para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
+		font-weight: 500;
+		letter-spacing: 0.055em;
+		color: rgba(228, 232, 240, 0.62);
+		line-height: 1.45;
+	}
+	html[data-theme='light'] .para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
+		color: rgba(60, 66, 78, 0.72);
+	}
+	.para-quien-profiles {
+		margin: 0 0 clamp(1.5rem, 4vw, 2rem);
+	}
+	.para-quien-profiles__title {
+		margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
+		font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+		font-weight: 700;
+		letter-spacing: -0.02em;
+	}
+	.para-quien-profiles__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr));
+		gap: clamp(0.75rem, 2vw, 1rem);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.para-quien-profile {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+		padding: clamp(0.85rem, 2vw, 1.05rem) clamp(0.9rem, 2vw, 1.1rem);
+		border-left: 2px solid rgba(245, 176, 65, 0.38);
+		border-radius: var(--feature-micro-radius, 0.85rem);
+		background: var(--micro-detail-bg);
+		border-top: 1px solid var(--micro-detail-border);
+		border-right: 1px solid var(--micro-detail-border);
+		border-bottom: 1px solid var(--micro-detail-border);
+		transition:
+			border-color 180ms ease,
+			box-shadow 180ms ease;
+	}
+	.para-quien-profile:hover {
+		border-left-color: rgba(245, 176, 65, 0.62);
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+	}
+	.para-quien-profile__label {
+		margin: 0;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.74rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #f5b041;
+	}
+	html[data-theme='light'] .para-quien-profile__label {
+		color: #b87814;
+	}
+	.para-quien-profile__title {
+		margin: 0;
+		font-size: clamp(0.98rem, 2.1vw, 1.06rem);
+		font-weight: 700;
+		line-height: 1.35;
+		letter-spacing: -0.015em;
+	}
+	.para-quien-profile__body {
+		margin: 0;
+		flex: 1;
+		font-size: 0.875rem;
+		line-height: 1.5;
+		opacity: 0.9;
+	}
+	.para-quien-profile__links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.65rem 1rem;
+		margin-top: 0.35rem;
+	}
+	.para-quien-profile__link {
+		font-size: 0.9rem;
+	}
+	.para-quien-profile__link--secondary {
+		opacity: 0.82;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+	.para-quien-profile__link--secondary:hover {
+		opacity: 1;
+		color: #f5b041;
+	}
+	.para-quien-map {
+		margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+	}
+	.para-quien-map .feature-proof-lead {
+		max-width: 54ch;
+		margin: 0;
+	}
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+</style>

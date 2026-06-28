@@ -46,7 +46,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Header
 - **Logo:** `tevsys` en óvalo (sin estrella)
-- **Navegación:** Inicio | Empresas | Contacto
+- **Navegación:** Inicio · Cómo funciona · **Para quién** · Empresas · Contacto
 - **Tipografía (abr 2026):** **Inter** en barra y pastilla (`Header.astro`, `BrandOval.astro`), alineado al hero.
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
@@ -362,10 +362,15 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Inter sin cambio:** columnas Guías / Producto / Legal, frase *Made with love…*
 - **Código:** `src/components/core/Footer.astro`
 
-### Estado actual navegación y footer (31 Ene 2026 + jun 2026)
-- **Nav:** Inicio | Empresas | Contacto. "Acceso" eliminado.
-- **Footer:** grid contacto + 3 columnas enlaces. Frase indie más grande.
-- **Páginas legales:** /company/legal, /company/privacidad, /company/terminos (contenido mínimo, pendiente abogado).
+### Navegación (31 Ene 2026 + jun 2026)
+
+- **Header:** Inicio · Cómo funciona · **Para quién** · Empresas · Contacto (`nav.js`).
+- **Footer Producto:** Para quién + Precisión · HyperClose · SML · Evidencia · …
+
+### Micro Para quién (`/para-quien`) — 28 jun 2026
+
+- **Job:** polivalencia de perfiles sin encasillar; enlaces a micros + empresas + auditoría roadmap.
+- **Visual:** Familia A lite (carbón, borde lateral ámbar, puente mono); no duplica bloque quitado de Evidencia.
 
 ### Pendiente inmediato
 - SML: vídeo final según guía de producción — **al integrarlo en la micro**, cumplir **«Convención embeds de vídeo — micropáginas `/features/*`»** (misma estructura de clases que Precisión/HyperClose; si la grabación es tema claro, **`demo-video--light`** como Nasdaq).
