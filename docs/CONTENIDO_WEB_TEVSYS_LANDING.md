@@ -380,7 +380,7 @@ Documento de contenido/copy actual para revisión de equipo.
 2. **Bloque flotante** — hook con punto amarillo + **3 viñetas** (iniciados → freno → qué pasa en la cuenta — trader/gestor/academia).
 3. **Puente mono centrado** (familia home): *Precisión · HyperClose · SML · Evidencia* (`tevsys-home-hero-bridge`).
 4. **Cuatro capas · varios perfiles** — H2 con subrayado gradiente **solo** en *varios perfiles* (`tevsys-brand-accent-underline--varios-perfiles`).
-5. **Grid 2×2** en panel carbón — cards clicables (label ámbar, hook cursiva, raya bajo título, cuerpo, «Saber más» + →) → `/features/precision|hyperclose|evidencia|sml`.
+5. **Grid 2×2** en panel carbón — cards clicables (label ámbar, hook cursiva, raya bajo título, cuerpo, «Saber más» + →) → `/features/precision|hyperclose|evidencia|sml`. Card **Precisión** hook: *Ceñido al límite en condiciones normales de mercado.*
 6. **Equipos** — caja solo texto (kicker + título + 2 frases); **hairline + enlaces FUERA** del rectángulo → Canal empresas · Auditoría · próximamente.
 7. **Mapa** — una línea → `/como-funciona`.
 8. **CTA demo** — separador al pie → `/company/contact?flow=demo`.

@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Para quién — hook Precisión card (28 jun 2026)
+
+**Qué:** card Precisión — *Ceñido al límite en condiciones normales de mercado.* (sustituye *Cierre preciso cuando el mercado lo permite*).
+
+**Commit:** `web(tevsys): para quien precision hook condiciones normales`
+
+---
+
 ## Hero home — pilares aparece/desaparece lista → solo (28 jun 2026)
 
 **Qué:** tras la 4.ª frase, pausa ~0,4 s → apagado 1→2→3→4 mismo ritmo que entrada → fase solo async.
