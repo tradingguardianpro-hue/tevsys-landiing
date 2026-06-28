@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — nota outlier contención 4.89 (28 jun 2026)
+
+**Qué:** `#evidencia-contencion-489` — línea *Caso extremo documentado aparte — no entra en el error medio ≈ 0,06 %* (alineado `PRECISION_*` §3 / §4.89).
+
+**Commit:** `web(tevsys): evidencia contencion nota outlier error medio`
+
+---
+
 ## Evidencia — titular contención estilo home (27 jun 2026)
 
 **Qué:** bloque contención — titular Inter una línea (familia `feature-section__title` home) + puente hairline/mono «tevsys bajo estrés extremo».
