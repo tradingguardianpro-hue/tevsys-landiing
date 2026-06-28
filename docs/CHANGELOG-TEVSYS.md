@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Para quién — subrayado cuadro entero + panel cards + equipos aire (28 jun 2026)
+
+**Qué:** subrayado ancho con offset; panel carbón en grid; banda equipos en dos frases + kicker.
+
+**Commit:** `web(tevsys): para quien subrayado panel cards equipos aire`
+
+---
+
 ## Para quién — tres frases + aire + sin ámbar encasillado (28 jun 2026)
 
 **Qué:** hero con 3 viñetas cortas; más margen puente → *Cuatro capas*; acento por subrayado (no palabra ámbar suelta).
