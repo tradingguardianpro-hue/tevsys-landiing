@@ -106,22 +106,27 @@ const corePerfiles = [
 				</div>
 			</section>
 
-			<section class="para-quien-equipos" aria-labelledby="para-quien-equipos-title">
-				<p class="para-quien-equipos__kicker">Equipos e instituciones</p>
-				<h2 id="para-quien-equipos-title" class="para-quien-equipos__title">
-					Academias, prop firms y quien te audita
-				</h2>
-				<div class="para-quien-equipos__copy">
-					<p class="para-quien-equipos__lead">Trazabilidad para revisar ejecución y límites.</p>
-					<p class="para-quien-equipos__note">
-						No auditamos tu estrategia. Instituciones, gestores externos y equipos tienen canal aparte.
-					</p>
-				</div>
-				<div class="para-quien-equipos__links">
+			<div class="para-quien-equipos-block">
+				<section class="para-quien-equipos" aria-labelledby="para-quien-equipos-title">
+					<p class="para-quien-equipos__kicker">Equipos e instituciones</p>
+					<h2 id="para-quien-equipos-title" class="para-quien-equipos__title">
+						Academias, prop firms y quien te audita
+					</h2>
+					<div class="para-quien-equipos__copy">
+						<p class="para-quien-equipos__lead">Trazabilidad para revisar ejecución y límites.</p>
+						<p class="para-quien-equipos__note">
+							No auditamos tu estrategia. Instituciones, gestores externos y equipos tienen canal aparte.
+						</p>
+					</div>
+				</section>
+				<p class="para-quien-equipos-bridge" aria-hidden="true">
+					<span class="para-quien-equipos-bridge__line"></span>
+				</p>
+				<nav class="para-quien-equipos__links" aria-label="Enlaces equipos e instituciones">
 					<a class="para-quien-equipos__link" href="/company/empresas">Canal empresas</a>
 					<a class="para-quien-equipos__link para-quien-equipos__link--muted" href="/auditoria-ia">Auditoría · próximamente</a>
-				</div>
-			</section>
+				</nav>
+			</div>
 
 			<p class="para-quien-map-line">
 				¿Quieres el mapa completo?
@@ -428,11 +433,35 @@ const corePerfiles = [
 		opacity: 1;
 		color: #f5b041;
 	}
-	.para-quien-equipos {
+	.para-quien-equipos-block {
 		position: relative;
 		margin: 0 0 clamp(1.5rem, 3.5vw, 2rem);
-		padding: clamp(1.55rem, 3.4vw, 2.1rem) clamp(1.35rem, 3.2vw, 1.85rem)
-			clamp(1.75rem, 3.8vw, 2.25rem);
+		text-align: center;
+	}
+	.para-quien-equipos-block::before {
+		content: '';
+		display: block;
+		width: min(7.5rem, 42vw);
+		height: 1px;
+		margin: 0 auto clamp(1.35rem, 3.2vw, 1.85rem);
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(228, 232, 240, 0.28) 50%,
+			transparent 100%
+		);
+	}
+	html[data-theme='light'] .para-quien-equipos-block::before {
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(100, 106, 118, 0.26) 50%,
+			transparent 100%
+		);
+	}
+	.para-quien-equipos {
+		margin: 0;
+		padding: clamp(1.55rem, 3.4vw, 2.1rem) clamp(1.35rem, 3.2vw, 1.85rem);
 		border-radius: var(--feature-micro-radius, 0.85rem);
 		border: 1px solid rgba(245, 176, 65, 0.18);
 		background: linear-gradient(148deg, rgba(245, 176, 65, 0.05), rgba(12, 14, 18, 0.45));
@@ -441,35 +470,33 @@ const corePerfiles = [
 			0 0 0 1px rgba(245, 176, 65, 0.04);
 		text-align: center;
 	}
-	.para-quien-equipos::before {
-		content: '';
-		display: block;
-		width: min(7.5rem, 42vw);
-		height: 1px;
-		margin: 0 auto clamp(0.15rem, 0.5vw, 0.35rem);
-		position: absolute;
-		top: -clamp(1.35rem, 3.2vw, 1.85rem);
-		left: 50%;
-		transform: translateX(-50%);
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(228, 232, 240, 0.28) 50%,
-			transparent 100%
-		);
-		pointer-events: none;
-	}
-	html[data-theme='light'] .para-quien-equipos::before {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(100, 106, 118, 0.26) 50%,
-			transparent 100%
-		);
-	}
 	html[data-theme='light'] .para-quien-equipos {
 		border-color: rgba(180, 120, 20, 0.22);
 		background: linear-gradient(148deg, rgba(245, 176, 65, 0.08), rgba(248, 249, 252, 0.98));
+	}
+	.para-quien-equipos-bridge {
+		margin: 0;
+		padding: clamp(0.9rem, 2.2vw, 1.2rem) 0 clamp(0.65rem, 1.6vw, 0.85rem);
+	}
+	.para-quien-equipos-bridge__line {
+		display: block;
+		width: min(9rem, 52vw);
+		height: 1px;
+		margin: 0 auto;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(228, 232, 240, 0.34) 50%,
+			transparent 100%
+		);
+	}
+	html[data-theme='light'] .para-quien-equipos-bridge__line {
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(100, 106, 118, 0.3) 50%,
+			transparent 100%
+		);
 	}
 	.para-quien-equipos__kicker {
 		margin: 0 0 0.55rem;
@@ -494,7 +521,7 @@ const corePerfiles = [
 		display: flex;
 		flex-direction: column;
 		gap: clamp(0.75rem, 1.8vw, 1rem);
-		margin: 0 auto clamp(1.5rem, 3.4vw, 1.85rem);
+		margin: 0 auto;
 		max-width: 42ch;
 	}
 	.para-quien-equipos__lead {
@@ -511,37 +538,12 @@ const corePerfiles = [
 		opacity: 0.78;
 	}
 	.para-quien-equipos__links {
-		position: relative;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 0.75rem 1.5rem;
-		margin-top: clamp(0.35rem, 1vw, 0.55rem);
-		padding-top: clamp(1.15rem, 2.6vw, 1.45rem);
-	}
-	.para-quien-equipos__links::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: min(11rem, 68%);
-		height: 1px;
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(228, 232, 240, 0.32) 50%,
-			transparent 100%
-		);
-		pointer-events: none;
-	}
-	html[data-theme='light'] .para-quien-equipos__links::before {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(100, 106, 118, 0.28) 50%,
-			transparent 100%
-		);
+		margin: 0;
+		padding: 0 0 clamp(0.15rem, 0.5vw, 0.35rem);
 	}
 	.para-quien-equipos__link {
 		font-size: 0.9rem;
