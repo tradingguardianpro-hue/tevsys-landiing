@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Para quién — tres frases + aire + sin ámbar encasillado (28 jun 2026)
+
+**Qué:** hero con 3 viñetas cortas; más margen puente → *Cuatro capas*; acento por subrayado (no palabra ámbar suelta).
+
+**Commit:** `web(tevsys): para quien frases cortas aire separador subrayado`
+
+---
+
 ## Para quién — puente centrado + cards carbón + subrayado (28 jun 2026)
 
 **Qué:** `/para-quien` — puente mono centrado (home); *cuadro entero* subrayado ámbar; lead polivalencia; cards estilo home (carbón, hook, raya); equipos centrado.
