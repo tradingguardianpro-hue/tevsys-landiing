@@ -58,15 +58,17 @@ const corePerfiles = [
 					No es un solo perfil. Es el
 					<span class="tevsys-brand-accent-underline tevsys-brand-accent-underline--cuadro-entero">cuadro entero</span> en MT5.
 				</h1>
-				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>
-					Precisión, freno bajo presión y evidencia que se cruza — con las reglas que tú configuras.
-				</p>
-				<ul class="para-quien-audience" aria-label="Perfiles que encajan">
-					<li>Desde quien empieza hasta quien exige cierre con precisión.</li>
-					<li>Quien necesita freno bajo presión.</li>
-					<li>Quien quiere saber qué pasa en la cuenta — trader, gestor o academia.</li>
-				</ul>
+				<div class="para-quien-hero__float">
+					<p class="feature-hook para-quien-hero__hook">
+						<span class="feature-hook__dot" aria-hidden="true"></span>
+						Precisión, freno bajo presión y evidencia que se cruza — con las reglas que tú configuras.
+					</p>
+					<ul class="para-quien-audience" aria-label="Perfiles que encajan">
+						<li>Desde quien empieza hasta quien exige cierre con precisión.</li>
+						<li>Quien necesita freno bajo presión.</li>
+						<li>Quien quiere saber qué pasa en la cuenta — trader, gestor o academia.</li>
+					</ul>
+				</div>
 			</section>
 
 			<p class="tevsys-home-hero-bridge para-quien-bridge" aria-label="Capas del producto">
@@ -138,18 +140,30 @@ const corePerfiles = [
 </Layout>
 
 <style>
+	.para-quien-hero__float {
+		margin: clamp(1.45rem, 3.8vw, 2.15rem) 0 clamp(1.75rem, 4.5vw, 2.5rem);
+		padding: clamp(0.35rem, 1vw, 0.55rem) 0;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(1rem, 2.5vw, 1.35rem);
+		max-width: 56ch;
+	}
+	.para-quien-hero__hook {
+		margin: 0;
+		line-height: 1.55;
+	}
 	.para-quien-audience {
-		margin: clamp(0.85rem, 2vw, 1.1rem) 0 0;
-		padding: 0;
+		margin: 0;
+		padding: clamp(0.15rem, 0.5vw, 0.35rem) 0 0;
 		list-style: none;
 		max-width: 52ch;
 	}
 	.para-quien-audience li {
 		position: relative;
-		margin: 0 0 0.42rem;
+		margin: 0 0 clamp(0.58rem, 1.4vw, 0.72rem);
 		padding-left: 1.05rem;
 		font-size: clamp(0.86rem, 1.35vw, 0.92rem);
-		line-height: 1.48;
+		line-height: 1.52;
 		opacity: 0.9;
 	}
 	.para-quien-audience li::before {
@@ -169,14 +183,14 @@ const corePerfiles = [
 		margin-bottom: 0;
 	}
 	.tevsys-brand-accent-underline--cuadro-entero::after {
-		/* Ancho ≈ «cuadro entero» + sobresalida derecha; inicio desplazado (familia /como-funciona). */
-		width: min(calc(100% + 1.15rem), 13.5rem);
-		margin: 0.36rem 0 0 0.62rem;
+		/* «cuadro entero» completo; inicio tras la C (familia /como-funciona). */
+		width: calc(100% + 0.85rem);
+		margin: 0.38rem 0 0 0.58rem;
 	}
 	.tevsys-brand-accent-underline--varios-perfiles::after {
-		width: min(calc(100% + 0.85rem), 10.5rem);
+		width: calc(100% + 0.65rem);
 		height: 2px;
-		margin: 0.28rem 0 0 0.48rem;
+		margin: 0.3rem 0 0 0.52rem;
 	}
 	/* Subrayado ámbar → gris (familia home / como-funciona) */
 	.tevsys-brand-accent-underline {

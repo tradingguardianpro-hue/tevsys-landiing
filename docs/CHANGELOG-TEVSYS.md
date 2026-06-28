@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Para quién — subrayado cuadro entero + aire hook/viñetas (28 jun 2026)
+
+**Qué:** subrayado ancho offset (no en la C); bloque hook + 3 viñetas con más aire flotante.
+
+**Commit:** `web(tevsys): para quien subrayado cuadro entero aire hero float`
+
+---
+
 ## Para quién — subrayado cuadro entero + panel cards + equipos aire (28 jun 2026)
 
 **Qué:** subrayado ancho con offset; panel carbón en grid; banda equipos en dos frases + kicker.
