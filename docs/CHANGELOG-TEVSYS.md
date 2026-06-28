@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — altura fija pilares columna (28 jun 2026)
+
+**Qué:** bloque pilares mide altura real de las 4 líneas al cargar y la **bloquea** — no encoge al pasar de lista a fase solo.
+
+**Commit:** `web(tevsys): hero pilares altura fija sin encoger home`
+
+---
+
 ## Hero home — pilares columna: Disciplina primero (28 jun 2026)
 
 **Qué:** orden columna — Disciplina → Precisión → Trazabilidad → MT5 (gancho + respuesta; alineado baseline hero 19 jun).

@@ -137,6 +137,38 @@ const heroProductPillars = [
 
   function setBatchLayout(stage, active) {
     stage.classList.toggle('hero-pillar-fade__stage--batch', active);
+    if (active) stage.classList.remove('hero-pillar-fade__stage--solo');
+  }
+
+  function setSoloLayout(stage, active) {
+    stage.classList.toggle('hero-pillar-fade__stage--solo', active);
+    if (active) stage.classList.remove('hero-pillar-fade__stage--batch');
+  }
+
+  function measureAndLockStageHeight(stage, phrases) {
+    if (stage.dataset.heroPillarHeightLocked === '1') return;
+
+    setBatchLayout(stage, true);
+    prepareAbsolutePhrases(phrases);
+
+    phrases.forEach((el) => {
+      el.style.transition = 'none';
+      el.style.visibility = 'visible';
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+
+    const height = Math.ceil(stage.getBoundingClientRect().height);
+    const lockedHeight = `${height}px`;
+    stage.style.setProperty('--hero-pillar-stage-min', lockedHeight);
+    const wrap = stage.parentElement;
+    if (wrap?.classList.contains('hero-pillar-fade')) {
+      wrap.style.setProperty('--hero-pillar-stage-min', lockedHeight);
+    }
+    stage.classList.add('hero-pillar-fade__stage--height-locked');
+    stage.dataset.heroPillarHeightLocked = '1';
+
+    phrases.forEach((el) => setPhraseHiddenInstant(el));
   }
 
   function prepareAbsolutePhrases(phrases) {
@@ -239,7 +271,7 @@ const heroProductPillars = [
       el.style.transform = 'none';
     });
 
-    setBatchLayout(stage, false);
+    setSoloLayout(stage, true);
     prepareAbsolutePhrases(phrases);
 
     return shuffle(phrases.map((_, index) => index));
@@ -298,6 +330,7 @@ const heroProductPillars = [
 
     stage.dataset.heroPillarInit = '1';
     stage.classList.add('hero-pillar-fade__stage--js');
+    measureAndLockStageHeight(stage, phrases);
 
     (async () => {
       while (stage.isConnected) {
@@ -406,14 +439,20 @@ const heroProductPillars = [
     margin: 0 0 clamp(1.15rem, 2.8vh, 1.85rem);
     padding: 0;
     box-sizing: border-box;
+    min-height: var(--hero-pillar-stage-min, clamp(10rem, 24vh, 12.5rem));
   }
 
   .hero-pillar-fade__stage {
     position: relative;
     width: 100%;
-    min-height: clamp(5.25rem, 13.5vh, 7.75rem);
+    min-height: clamp(10rem, 24vh, 12.5rem);
     margin: 0;
     padding: 0;
+  }
+
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--height-locked,
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--solo {
+    min-height: var(--hero-pillar-stage-min, clamp(10rem, 24vh, 12.5rem));
   }
 
   .hero-pillar-fade__phrase {
@@ -451,8 +490,8 @@ const heroProductPillars = [
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: clamp(0.38rem, 1.15vh, 0.62rem);
-    min-height: clamp(6.75rem, 16.5vh, 9.75rem);
+    gap: clamp(0.42rem, 1.25vh, 0.68rem);
+    min-height: var(--hero-pillar-stage-min, clamp(10rem, 24vh, 12.5rem));
   }
 
   .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch::before {
@@ -749,15 +788,21 @@ const heroProductPillars = [
     .hero-pillar-fade {
       margin-bottom: clamp(0.95rem, 2.5vh, 1.45rem);
       padding-inline: 0.15rem;
+      min-height: var(--hero-pillar-stage-min, clamp(11.5rem, 46vw, 14.5rem));
     }
 
     .hero-pillar-fade__stage {
-      min-height: clamp(7.5rem, 34vw, 10.5rem);
+      min-height: clamp(11.5rem, 46vw, 14.5rem);
+    }
+
+    .hero-pillar-fade__stage--js.hero-pillar-fade__stage--height-locked,
+    .hero-pillar-fade__stage--js.hero-pillar-fade__stage--solo {
+      min-height: var(--hero-pillar-stage-min, clamp(11.5rem, 46vw, 14.5rem));
     }
 
     .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch {
-      min-height: clamp(8.25rem, 38vw, 11rem);
-      gap: clamp(0.32rem, 1.8vw, 0.48rem);
+      min-height: var(--hero-pillar-stage-min, clamp(11.5rem, 46vw, 14.5rem));
+      gap: clamp(0.36rem, 2vw, 0.52rem);
     }
 
     .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__phrase {
