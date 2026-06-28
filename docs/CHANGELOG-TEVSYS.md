@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — pilares columna: Disciplina primero (28 jun 2026)
+
+**Qué:** orden columna — Disciplina → Precisión → Trazabilidad → MT5 (gancho + respuesta; alineado baseline hero 19 jun).
+
+**Commit:** `web(tevsys): hero pilares disciplina primero columna`
+
+---
+
 ## Hero home — batch pilares ritmo premium (28 jun 2026)
 
 **Qué:** columna simétrica — entrada **una a una** (más pausa entre líneas); apagado igual de pausado; sin puntos ámbar; hairline más sutil; fase solo más lenta.
