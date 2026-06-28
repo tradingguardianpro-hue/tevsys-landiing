@@ -71,6 +71,7 @@ const corePerfiles = [
 			</section>
 
 			<p class="tevsys-home-hero-bridge para-quien-bridge" aria-label="Capas del producto">
+				<span class="para-quien-bridge__hairline" aria-hidden="true"></span>
 				<span class="tevsys-home-hero-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
 			</p>
 
@@ -242,26 +243,35 @@ const corePerfiles = [
 		text-align: center;
 		padding: clamp(0.65rem, 1.8vw, 1rem) 0 clamp(0.35rem, 1vw, 0.5rem);
 	}
-	.para-quien-bridge.tevsys-home-hero-bridge::before {
-		content: '';
+	.para-quien-bridge__hairline {
 		display: block;
 		width: min(7.5rem, 42vw);
+		min-height: 1px;
 		height: 1px;
 		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
-		background: linear-gradient(
+		padding: 0;
+		border: 0;
+		background-color: rgba(228, 232, 240, 0.44);
+		-webkit-mask-image: linear-gradient(
 			90deg,
 			transparent 0%,
-			rgba(228, 232, 240, 0.36) 50%,
+			#000 16%,
+			#000 84%,
 			transparent 100%
 		);
+		mask-image: linear-gradient(
+			90deg,
+			transparent 0%,
+			#000 16%,
+			#000 84%,
+			transparent 100%
+		);
+		transform: translateZ(0);
+		flex-shrink: 0;
+		pointer-events: none;
 	}
-	html[data-theme='light'] .para-quien-bridge.tevsys-home-hero-bridge::before {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(100, 106, 118, 0.32) 50%,
-			transparent 100%
-		);
+	html[data-theme='light'] .para-quien-bridge__hairline {
+		background-color: rgba(88, 94, 108, 0.38);
 	}
 	.para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
 		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
@@ -445,22 +455,28 @@ const corePerfiles = [
 		content: '';
 		display: block;
 		width: min(7.5rem, 42vw);
+		min-height: 1px;
 		height: 1px;
 		margin: 0 auto clamp(1.35rem, 3.2vw, 1.85rem);
-		background: linear-gradient(
+		background-color: rgba(228, 232, 240, 0.36);
+		-webkit-mask-image: linear-gradient(
 			90deg,
 			transparent 0%,
-			rgba(228, 232, 240, 0.28) 50%,
+			#000 16%,
+			#000 84%,
 			transparent 100%
 		);
+		mask-image: linear-gradient(
+			90deg,
+			transparent 0%,
+			#000 16%,
+			#000 84%,
+			transparent 100%
+		);
+		transform: translateZ(0);
 	}
 	html[data-theme='light'] .para-quien-equipos-block::before {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(100, 106, 118, 0.26) 50%,
-			transparent 100%
-		);
+		background-color: rgba(88, 94, 108, 0.32);
 	}
 	.para-quien-equipos {
 		margin: 0;
@@ -484,22 +500,28 @@ const corePerfiles = [
 	.para-quien-equipos-bridge__line {
 		display: block;
 		width: min(9rem, 52vw);
+		min-height: 1px;
 		height: 1px;
 		margin: 0 auto;
-		background: linear-gradient(
+		background-color: rgba(228, 232, 240, 0.4);
+		-webkit-mask-image: linear-gradient(
 			90deg,
 			transparent 0%,
-			rgba(228, 232, 240, 0.34) 50%,
+			#000 16%,
+			#000 84%,
 			transparent 100%
 		);
+		mask-image: linear-gradient(
+			90deg,
+			transparent 0%,
+			#000 16%,
+			#000 84%,
+			transparent 100%
+		);
+		transform: translateZ(0);
 	}
 	html[data-theme='light'] .para-quien-equipos-bridge__line {
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(100, 106, 118, 0.3) 50%,
-			transparent 100%
-		);
+		background-color: rgba(88, 94, 108, 0.34);
 	}
 	.para-quien-equipos__kicker {
 		margin: 0 0 0.55rem;
