@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — pilares lista menos pausa antes motion (28 jun 2026)
+
+**Qué:** columna 4 frases — pausa lectura ~4,6 s (antes ~10,5 s); apagado + fase solo arrancan antes de que el usuario baje del hero.
+
+**Commit:** `web(tevsys): hero pilares motion antes menos hold lista`
+
+---
+
 ## Hero home — altura fija pilares columna (28 jun 2026)
 
 **Qué:** bloque pilares mide altura real de las 4 líneas al cargar y la **bloquea** — no encoge al pasar de lista a fase solo.
