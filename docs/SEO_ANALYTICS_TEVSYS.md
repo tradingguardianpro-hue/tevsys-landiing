@@ -64,7 +64,9 @@ Gratis en plan Hobby.
 
 ### 3.1 Tráfico propio — no se puede “reiniciar”; sí limpiar hacia delante (jun 2026)
 
-**Acuerdo fundador (15 jun 2026):** implementar en **próxima sesión web larga** (junto a 4.89 y mejoras). **Prioridad producto > web** hasta ese día; este apartado es el canon operativo.
+**Acuerdo fundador (15 jun 2026):** implementar en **próxima sesión web larga**. **Prioridad producto > web** hasta ese día; este apartado es el canon operativo.
+
+**Actualización 28 jun 2026:** bloque contención `#evidencia-contencion-489` y micro `/para-quien` — **publicados y documentados**. Cola §3.1 pendiente principal: **analytics opt-out** + FAQ acta AuditTrail.
 
 **No existe** botón en Vercel para **borrar o reiniciar** el histórico en el mismo proyecto (Vercel community — sin ETA para exclusión permanente en dashboard).
 
@@ -114,9 +116,10 @@ localStorage.setItem('va-disable', '1');
 #### Sesión web larga — orden sugerido
 
 1. Analytics opt-out (§3.1) — ~15 min  
-2. Bloque 4.89 Evidencia — `docs/HANDOFF_4.89_CONTENCION_WEB_TEVSYS.md` §13 (capturas fundador)  
-3. **FAQ — acta AuditTrail (jun 2026):** publicar frase canon en `PROMPT_MAESTRO` §21.5 («tevsys no solo aplica tus límites…») — home FAQ, `/auditoria-ia` o `/features/evidencia`; sin prometer portal auditoría abierto.  
-4. Resto de cola web del día  
+2. ~~Bloque 4.89 Evidencia~~ — **hecho 28 jun 2026** (`HANDOFF_4.89_*` §13.1)  
+3. ~~Micro `/para-quien`~~ — **hecho 28 jun 2026** (`CONTENIDO_WEB` § *Micro Para quién*)  
+4. **FAQ — acta AuditTrail (jun 2026):** publicar frase canon en `PROMPT_MAESTRO` §21.5 («tevsys no solo aplica tus límites…») — home FAQ, `/auditoria-ia` o `/features/evidencia`; sin prometer portal auditoría abierto.  
+5. Resto de cola web del día  
 
 **Puntero repo TGP:** `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Sesión web larga*.
 

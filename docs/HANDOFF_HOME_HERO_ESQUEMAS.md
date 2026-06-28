@@ -1,10 +1,17 @@
 # Handoff — Hero home · esquemas de jerarquía (jun 2026)
 
-**Última actualización:** 22 jun 2026 — **2m-E** suavizado (menos cortes bruscos)  
+**Última actualización:** 28 jun 2026 — **2m-E-column** (batch simétrico columna)  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m-E** — vacío corto → batch **4** → apagado **2+1+1** → solos 4 → pausa → loop.
+**Activo en web:** **esquema 2m-E-column** — vacío corto → batch **4 en columna centrada** (arriba→abajo) → apagado columna → solos 4 → pausa → loop.
 
-### Fix motion 2m-E (22 jun 2026 — fundador OK motion hero)
+### 2m-E-column — batch simétrico (28 jun 2026 — fundador OK probar)
+
+- **Batch:** columna centrada bajo H1; entrada stagger + `translateY`; hairline vertical ámbar; punto ámbar por línea.
+- **Apagado:** arriba→abajo (espejo de entrada); luego fase **solo** en slots aleatorios (sin cambio de espíritu).
+- **Motivo:** batch en 4 esquinas leía asimétrico al cargar (feedback UX).
+- **Revertir:** `data-hero-layout="scheme-2m-e"` + slots batch en git history.
+
+## Esquema 2m-E — solo phase JS + slots variables (supersedido batch — 28 jun 2026)
 
 - Menos hueco vacío entre vueltas (`emptyMs` / `loopPauseMs` reducidos; móvil aparte).
 - **Handoff:** si la 4.ª frase era la de transición, ya no salta de sitio visible — fundido antes de mover.

@@ -8,6 +8,26 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — batch pilares columna simétrica (28 jun 2026)
+
+**Qué:** esquema **2m-E-column** — las 4 frases entran en **columna centrada** (arriba→abajo, stagger + ligero slide); hairline vertical ámbar; punto ámbar por línea al encender; apagado simétrico arriba→abajo; **fase solo** aleatoria igual que antes.
+
+**Por qué:** feedback UX — batch asimétrico en esquinas no leía bien al cargar.
+
+**Archivo:** `HomeHeroSection.astro` · handoff `HANDOFF_HOME_HERO_ESQUEMAS.md`.
+
+**Commit:** `web(tevsys): hero pilares columna simetrica batch 2m-e-column`
+
+---
+
+## Cierre documentación — `/para-quien` + contención 4.89 (28 jun 2026)
+
+**Qué:** sesión **cerrada** por fundador. Micro `/para-quien` (nav, hero ámbar sin subrayado, grid 2×2, equipos con enlaces fuera de caja, CTA demo). Bloque `#evidencia-contencion-489` en Evidencia (titular home, nota outlier, sin 4.89 público). Docs alineados: `CONTENIDO_WEB_TEVSYS_LANDING.md` · `HANDOFF_4.89_*` §13 · V12 Ampliaciones.
+
+**Commits web (serie):** `web(tevsys): micro para quien …` → `… equipos links fuera caja hairline` · `… evidencia bloque contencion …` · `… evidencia contencion nota outlier …`
+
+---
+
 ## Para quién — ritmo vertical equipos + CTA (28 jun 2026)
 
 **Qué:** más aire grid→equipos; hairline capítulo; equipos más legible; CTA separado al pie.

@@ -367,14 +367,39 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Header:** Inicio · Cómo funciona · **Para quién** · Empresas · Contacto (`nav.js`).
 - **Footer Producto:** Para quién + Precisión · HyperClose · SML · Evidencia · …
 
-### Micro Para quién (`/para-quien`) — 28 jun 2026
+### Micro Para quién (`/para-quien`) — **CERRADO 28 jun 2026**
 
-- **Job:** polivalencia de perfiles sin encasillar; enlaces a micros + empresas + auditoría roadmap.
-- **Hero:** *No es un solo perfil. Es el **cuadro entero** en MT5.* — **cuadro entero** en ámbar (sin subrayado); subrayados solo abajo (*varios perfiles*).
-- **Puente:** mono centrado (misma familia que home): *Precisión · HyperClose · SML · Evidencia*; **más aire** antes de *Cuatro capas*.
-- **Cards 2×2:** carbón + hook + raya bajo título; banda Equipos centrada (sin palabra suelta en ámbar).
-- **Acento:** subrayado gradiente en *cuadro entero* y *varios perfiles* — no encasillar un perfil con color.
-- **Visual:** Familia A lite; no duplica bloque quitado de Evidencia.
+- **Estado:** validado por fundador; **no** reabrir salvo micro-ajuste puntual acordado.
+- **Job:** polivalencia de perfiles sin encasillar; sustituto del bloque «para quién» quitado de `/features/evidencia` (`#evidence-audit` ya no lleva perfiles — viven aquí).
+- **Nav:** header 5 enlaces — Inicio · Cómo funciona · **Para quién** · Empresas · Contacto (`nav.js`); footer Producto incluye Para quién.
+- **Decisión header:** 5 enlaces **OK** — no sobrecarga; **no** dar header distinto a esta micro (misma píldora / escáner que resto producto).
+
+**Estructura (orden vertical):**
+
+1. **Hero** — kicker *Para quién*; H1 *No es un solo perfil. Es el **cuadro entero** en MT5.* — **cuadro entero** en ámbar (`para-quien-hero__accent`), **sin** subrayado en el titular.
+2. **Bloque flotante** — hook con punto amarillo + **3 viñetas** (iniciados → freno → qué pasa en la cuenta — trader/gestor/academia).
+3. **Puente mono centrado** (familia home): *Precisión · HyperClose · SML · Evidencia* (`tevsys-home-hero-bridge`).
+4. **Cuatro capas · varios perfiles** — H2 con subrayado gradiente **solo** en *varios perfiles* (`tevsys-brand-accent-underline--varios-perfiles`).
+5. **Grid 2×2** en panel carbón — cards clicables (label ámbar, hook cursiva, raya bajo título, cuerpo, «Saber más» + →) → `/features/precision|hyperclose|evidencia|sml`.
+6. **Equipos** — caja solo texto (kicker + título + 2 frases); **hairline + enlaces FUERA** del rectángulo → Canal empresas · Auditoría · próximamente.
+7. **Mapa** — una línea → `/como-funciona`.
+8. **CTA demo** — separador al pie → `/company/contact?flow=demo`.
+
+- **Visual:** Familia A lite (`tevsys-feature-micro-surface--para-quien`); padding-top hero para aire bajo header.
+- **Código:** `src/pages/para-quien.astro` · `nav.js` · `footer.js`.
+- **Trazabilidad:** `CHANGELOG-TEVSYS.md` entradas **28 jun 2026** (serie para-quien) + viñeta cierre abajo.
+
+### Evidencia — contención bajo estrés (`#evidencia-contencion-489`) — **CERRADO 28 jun 2026**
+
+- **Estado:** bloque publicado en `/features/evidencia`; forense canónica sin tocar — `docs/HANDOFF_4.89_CONTENCION_WEB_TEVSYS.md` · `PRECISION_*` §4.89 (repo TGP).
+- **Posición:** después de pruebas normales / logs; **antes** del cierre `#evidence-audit` (dos capas MT5/tevsys — **sin** bloque «para quién»; perfiles en `/para-quien`).
+- **Titular:** *Precisión cuando puede — contención cuando toca — trazabilidad siempre* + puente mono *tevsys bajo estrés extremo*.
+- **Copy clave:** límite +0,50 % · lectura disparo +0,65 % (~111 ms) · cierre día +1,04 % · bloqueo automático; KPI 111 ms · +0,46 p.p. · 6×2,5 lotes · GER40 · jun 2026.
+- **Nota outlier (obligatoria):** *Caso extremo documentado aparte — no entra en el error medio ≈ 0,06 %.*
+- **Sin «4.89» en copy público;** contador operativas **no** inflado con este caso.
+- **Assets:** `public/images/evidence/evidencia-489-panel-stop.png` (+ capturas secundarias según bloque); informe MT5 redactado = opcional v2.
+- **Índice «Qué puedes comprobar»:** viñeta contención antes de casos Essential/logs.
+- **Handoff §8 checklist:** implementación marcada; pendientes opcionales — enlace cruzado Precisión, microclip, mail Pro.
 
 ### Pendiente inmediato
 - SML: vídeo final según guía de producción — **al integrarlo en la micro**, cumplir **«Convención embeds de vídeo — micropáginas `/features/*`»** (misma estructura de clases que Precisión/HyperClose; si la grabación es tema claro, **`demo-video--light`** como Nasdaq).
@@ -391,7 +416,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Cola copy / FAQ — acta AuditTrail (jun 2026, pendiente publicar)
 
-**Estado:** canon aprobado en producto (build jun 2026, lab Infinox); **no** publicado aún en Astro. Entra en sesión web larga junto a 4.89 y analytics — ver `SEO_ANALYTICS_TEVSYS.md` §3.1 orden sugerido.
+**Estado:** canon aprobado en producto (build jun 2026, lab Infinox); **no** publicado aún en Astro. Cola **próxima sesión web** junto a analytics opt-out — ver `SEO_ANALYTICS_TEVSYS.md` §3.1. *(Bloque 4.89 contención y micro `/para-quien` — **cerrados 28 jun 2026**.)*
 
 **Frase FAQ (pegar tal cual cuando toque):**
 

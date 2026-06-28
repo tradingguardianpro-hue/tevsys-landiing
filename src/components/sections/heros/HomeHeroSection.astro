@@ -4,31 +4,15 @@ import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 
 const heroProductPillars = [
-  {
-    text: 'Precisión de cierre en tu operativa',
-    batch: { top: '42%', left: '24%', right: 'auto', align: 'left', maxW: '52%' },
-    batchMobile: { top: '38%', left: '10%', right: 'auto', align: 'left', maxW: '56%' },
-  },
-  {
-    text: 'Disciplina automatizada',
-    batch: { top: '6%', left: '4%', right: 'auto', align: 'left', maxW: '44%' },
-    batchMobile: { top: '2%', left: '3%', right: 'auto', align: 'left', maxW: '58%' },
-  },
-  {
-    text: 'Trazabilidad verificable',
-    batch: { top: '8%', left: 'auto', right: '5%', align: 'right', maxW: '42%' },
-    batchMobile: { top: '18%', left: 'auto', right: '2%', align: 'right', maxW: '55%' },
-  },
-  {
-    text: 'Protección activa en MT5',
-    batch: { top: '58%', left: 'auto', right: '6%', align: 'right', maxW: '48%' },
-    batchMobile: { top: '54%', left: 'auto', right: '8%', align: 'right', maxW: '57%' },
-  },
+  'Precisión de cierre en tu operativa',
+  'Disciplina automatizada',
+  'Trazabilidad verificable',
+  'Protección activa en MT5',
 ];
 ---
 
 <Container>
-  <section class="hero-section__section" data-hero-layout="scheme-2m-e">
+  <section class="hero-section__section" data-hero-layout="scheme-2m-e-column">
     <div class="hero-section__glow" aria-hidden="true"></div>
     <div class="hero-section__inner">
       <div class="hero-section__text">
@@ -40,13 +24,9 @@ const heroProductPillars = [
         </h1>
         <div class="hero-pillar-fade" aria-label="Capas del producto tevsys">
           <div class="hero-pillar-fade__stage" data-hero-pillar-stage>
-            {heroProductPillars.map((pillar, index) => (
-              <p
-                class="hero-pillar-fade__phrase"
-                data-hero-pillar-index={index}
-                style={`--fade-top: ${pillar.batch.top}; --fade-left: ${pillar.batch.left}; --fade-right: ${pillar.batch.right}; --fade-align: ${pillar.batch.align}; --fade-max-w: ${pillar.batch.maxW};`}
-              >
-                {pillar.text}
+            {heroProductPillars.map((phrase, index) => (
+              <p class="hero-pillar-fade__phrase" data-hero-pillar-index={index}>
+                {phrase}
               </p>
             ))}
           </div>
@@ -95,13 +75,13 @@ const heroProductPillars = [
     emptyMs: 520,
     emptyMsMobile: 680,
     batchFadeInDelayMs: 250,
-    batchFadeInMs: 4000,
-    batchFadeInStaggerMs: 110,
-    batchFadeInStaggerMsMobile: 165,
+    batchFadeInMs: 3200,
+    batchFadeInStaggerMs: 130,
+    batchFadeInStaggerMsMobile: 175,
+    batchFadeOutMs: 920,
+    batchFadeOutStaggerMs: 115,
+    batchFadeOutStaggerMsMobile: 150,
     batchHoldMs: 9000,
-    batchFadePairOffsetMs: 320,
-    batchFadeStepGapMs: 360,
-    handoffOverlapMs: 650,
     soloHoldMs: 3200,
     soloStartGapMs: 480,
     soloRepositionFadeOutMs: 720,
@@ -116,23 +96,7 @@ const heroProductPillars = [
 
   const HERO_MOBILE_MQ = '(max-width: 768px)';
 
-  const HERO_PILLAR_HANDOFF_SLOT = {
-    top: '8%',
-    left: 'auto',
-    right: '5%',
-    align: 'right',
-    maxW: '44%',
-  };
-
-  const HERO_PILLAR_HANDOFF_SLOT_MOBILE = {
-    top: '2%',
-    left: 'auto',
-    right: '0',
-    align: 'right',
-    maxW: '72%',
-  };
-
-  const HERO_PILLAR_LAST_BATCH_INDEX = 3;
+  const HERO_BATCH_ENTER_Y = '0.55rem';
 
   const HERO_PILLAR_SOLO_SLOTS = [
     { top: '8%', left: '3%', right: 'auto', align: 'left', maxW: '54%' },
@@ -168,13 +132,20 @@ const heroProductPillars = [
     return el.style.visibility !== 'hidden' && parseFloat(el.style.opacity || '0') > 0.02;
   }
 
-  function getPillarBatchSlot(index) {
-    const pillar = heroProductPillars[index];
-    return isMobileHero() && pillar.batchMobile ? pillar.batchMobile : pillar.batch;
+  function setBatchLayout(stage, active) {
+    stage.classList.toggle('hero-pillar-fade__stage--batch', active);
   }
 
-  function getHandoffSlot() {
-    return isMobileHero() ? HERO_PILLAR_HANDOFF_SLOT_MOBILE : HERO_PILLAR_HANDOFF_SLOT;
+  function prepareAbsolutePhrases(phrases) {
+    phrases.forEach((el) => {
+      el.style.position = '';
+      el.style.top = '';
+      el.style.left = '';
+      el.style.right = '';
+      el.style.maxWidth = '';
+      el.style.textAlign = '';
+      el.style.width = '';
+    });
   }
 
   function getSoloSlotPool() {
@@ -208,6 +179,7 @@ const heroProductPillars = [
     el.style.visibility = 'hidden';
     el.style.transform = 'none';
     el.style.filter = 'none';
+    el.classList.remove('hero-pillar-fade__phrase--batch-live');
   }
 
   async function glowPhrase(el, visible, ms, easing = HERO_GLOW_IN_EASE) {
@@ -228,25 +200,60 @@ const heroProductPillars = [
     const { batchFadeInMs, batchFadeInDelayMs, batchFadeInStaggerMs, batchFadeInStaggerMsMobile } =
       HERO_PILLAR_TIMING;
     const staggerMs = isMobileHero() ? batchFadeInStaggerMsMobile : batchFadeInStaggerMs;
+    const motionEase = HERO_GLOW_IN_EASE;
 
     phrases.forEach((el) => setPhraseHiddenInstant(el));
     await sleep(32);
-
     await sleep(batchFadeInDelayMs);
 
     phrases.forEach((el) => {
-      el.style.transition = `opacity ${batchFadeInMs}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
+      el.style.transition = `opacity ${batchFadeInMs}ms ${motionEase}, transform ${batchFadeInMs}ms ${motionEase}, visibility 0s linear`;
       el.style.visibility = 'visible';
       el.style.opacity = '0';
+      el.style.transform = `translateY(${HERO_BATCH_ENTER_Y})`;
     });
     await sleep(24);
 
     for (let i = 0; i < phrases.length; i += 1) {
       phrases[i].style.opacity = '1';
+      phrases[i].style.transform = 'translateY(0)';
+      phrases[i].classList.add('hero-pillar-fade__phrase--batch-live');
       if (i < phrases.length - 1) await sleep(staggerMs);
     }
 
     await sleep(batchFadeInMs);
+  }
+
+  async function fadeOutBatchColumn(phrases, stage) {
+    const fadeMs = HERO_PILLAR_TIMING.batchFadeOutMs;
+    const staggerMs = isMobileHero()
+      ? HERO_PILLAR_TIMING.batchFadeOutStaggerMsMobile
+      : HERO_PILLAR_TIMING.batchFadeOutStaggerMs;
+
+    for (let i = 0; i < phrases.length; i += 1) {
+      const el = phrases[i];
+      if (!isPhraseVisible(el)) continue;
+
+      el.style.transition = `opacity ${fadeMs}ms ${HERO_FADE_OUT_EASE}, transform ${fadeMs}ms ${HERO_FADE_OUT_EASE}, visibility 0s linear`;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(-0.4rem)';
+      el.classList.remove('hero-pillar-fade__phrase--batch-live');
+
+      await sleep(Math.round(fadeMs * 0.52));
+      if (i < phrases.length - 1) await sleep(staggerMs);
+    }
+
+    await sleep(Math.round(fadeMs * 0.48));
+    phrases.forEach((el) => {
+      el.style.visibility = 'hidden';
+      el.style.transform = 'none';
+      el.classList.remove('hero-pillar-fade__phrase--batch-live');
+    });
+
+    setBatchLayout(stage, false);
+    prepareAbsolutePhrases(phrases);
+
+    return shuffle(phrases.map((_, index) => index));
   }
 
   async function movePhraseToSlot(el, slot, { fadeOutMs = 0 } = {}) {
@@ -259,58 +266,12 @@ const heroProductPillars = [
     await sleep(36);
   }
 
-  async function fadeOutBatchWithHandoff(phrases) {
-    const t = HERO_PILLAR_TIMING;
-
-    const pairA = glowPhrase(phrases[0], false, 1150, HERO_FADE_OUT_EASE);
-    await sleep(t.batchFadePairOffsetMs);
-    const pairB = glowPhrase(phrases[2], false, 1150, HERO_FADE_OUT_EASE);
-    await Promise.all([pairA, pairB]);
-    await sleep(t.batchFadeStepGapMs);
-
-    await glowPhrase(phrases[1], false, 1200, HERO_FADE_OUT_EASE);
-    await sleep(320);
-
-    const soloOrder = shuffle(phrases.map((_, index) => index));
-    const handoffEl = phrases[soloOrder[0]];
-    const lastBatchEl = phrases[HERO_PILLAR_LAST_BATCH_INDEX];
-    const handoffInMs = getHeroTiming('soloFadeInMs');
-
-    if (handoffEl === lastBatchEl) {
-      await movePhraseToSlot(handoffEl, getHandoffSlot(), { fadeOutMs: 980 });
-      await glowPhrase(handoffEl, true, handoffInMs, HERO_GLOW_IN_EASE);
-      await sleep(t.soloHoldMs);
-      await glowPhrase(handoffEl, false, 1050, HERO_FADE_OUT_EASE);
-      return soloOrder.slice(1);
-    }
-
-    await movePhraseToSlot(handoffEl, getHandoffSlot());
-
-    handoffEl.style.transition = `opacity ${handoffInMs}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
-    handoffEl.style.visibility = 'visible';
-    handoffEl.style.opacity = '0';
-    await sleep(24);
-    handoffEl.style.opacity = '1';
-
-    await sleep(t.handoffOverlapMs);
-
-    const lastBatchOut = glowPhrase(lastBatchEl, false, 1200, HERO_FADE_OUT_EASE);
-    await sleep(handoffInMs);
-    await lastBatchOut;
-
-    await sleep(t.soloHoldMs);
-    await glowPhrase(handoffEl, false, 1050, HERO_FADE_OUT_EASE);
-
-    return soloOrder.slice(1);
-  }
-
-  async function runHeroPillarCycle(phrases) {
+  async function runHeroPillarCycle(phrases, stage) {
     const soloFadeInMs = getHeroTiming('soloFadeInMs');
 
-    phrases.forEach((el, index) => {
-      applyPillarSlot(el, getPillarBatchSlot(index));
-      if (!isPhraseVisible(el)) setPhraseHiddenInstant(el);
-    });
+    setBatchLayout(stage, true);
+    prepareAbsolutePhrases(phrases);
+    phrases.forEach((el) => setPhraseHiddenInstant(el));
     await sleep(32);
 
     await sleep(getHeroTiming('emptyMs'));
@@ -318,7 +279,7 @@ const heroProductPillars = [
     await fadeBatchInTogether(phrases);
     await sleep(HERO_PILLAR_TIMING.batchHoldMs);
 
-    const remainingSoloIndices = await fadeOutBatchWithHandoff(phrases);
+    const remainingSoloIndices = await fadeOutBatchColumn(phrases, stage);
 
     await sleep(380);
 
@@ -351,7 +312,7 @@ const heroProductPillars = [
 
     (async () => {
       while (stage.isConnected) {
-        await runHeroPillarCycle(phrases);
+        await runHeroPillarCycle(phrases, stage);
       }
     })();
   }
@@ -494,6 +455,69 @@ const heroProductPillars = [
 
   .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
     animation: none;
+  }
+
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.38rem, 1.15vh, 0.62rem);
+    min-height: clamp(6.75rem, 16.5vh, 9.75rem);
+  }
+
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    bottom: 8%;
+    width: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(245, 176, 65, 0.16) 14%,
+      rgba(245, 176, 65, 0.34) 50%,
+      rgba(245, 176, 65, 0.16) 86%,
+      transparent 100%
+    );
+    pointer-events: none;
+    opacity: 0.75;
+  }
+
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__phrase {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: auto;
+    max-width: min(26rem, 100%);
+    text-align: center;
+    padding-inline: clamp(0.35rem, 2vw, 0.75rem);
+    color: rgba(228, 232, 240, 0.94);
+    letter-spacing: 0.032em;
+  }
+
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__phrase::before {
+    content: '';
+    display: inline-block;
+    width: 0.35rem;
+    height: 0.35rem;
+    margin-right: 0.45rem;
+    border-radius: 50%;
+    background: rgba(245, 176, 65, 0.72);
+    box-shadow: 0 0 10px rgba(245, 176, 65, 0.28);
+    vertical-align: 0.08em;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch
+    .hero-pillar-fade__phrase--batch-live::before {
+    opacity: 1;
+    transform: scale(1);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -760,7 +784,17 @@ const heroProductPillars = [
     }
 
     .hero-pillar-fade__stage {
-      min-height: clamp(8.5rem, 40vw, 10.25rem);
+      min-height: clamp(7.5rem, 34vw, 10.5rem);
+    }
+
+    .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch {
+      min-height: clamp(8.25rem, 38vw, 11rem);
+      gap: clamp(0.32rem, 1.8vw, 0.48rem);
+    }
+
+    .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__phrase {
+      max-width: min(22rem, 100%);
+      font-size: clamp(0.6875rem, 2.15vw, 0.75rem);
     }
 
     .hero-pillar-fade__phrase {
