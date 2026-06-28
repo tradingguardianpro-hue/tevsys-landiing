@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Para quién — iteración layout 2×2 + equipos (28 jun 2026)
+
+**Qué:** `/para-quien` — hero acortado; grid 2×2 clicables (Saber más + →); banda Equipos; mapa en una línea; sin enlaces duplicados.
+
+**Commit:** `web(tevsys): para quien layout 2x2 cards clicables equipos`
+
+---
+
 ## Para quién — micro posicionamiento + nav (28 jun 2026)
 
 **Qué:** nueva `/para-quien` — grid 5 perfiles (Precisión, HyperClose, Evidencia, SML, Equipos) + puente mono; nav header + footer Producto.

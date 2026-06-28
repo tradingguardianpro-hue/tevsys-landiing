@@ -9,48 +9,34 @@ const seo = {
 		'Precisión al límite, freno bajo presión, evidencia verificable y capas avanzadas — tevsys encaja en varios perfiles sin ser solo una etiqueta.',
 };
 
-const perfiles = [
+const corePerfiles = [
 	{
 		id: 'precision',
 		label: 'Precisión',
 		title: 'Exiges ceñir al límite pactado',
-		body: `Cierre documentado con error medio ≈ 0,06 % en condiciones normales — ${settings.documentedOperatives} operativas en cinco entornos.`,
+		body: `Error medio ≈ 0,06 % en condiciones normales · ${settings.documentedOperatives} operativas documentadas.`,
 		href: '/features/precision',
-		meta: 'Precisión',
 	},
 	{
 		id: 'hyperclose',
 		label: 'HyperClose',
 		title: 'Necesitas freno cuando la disciplina flaquea',
-		body: 'Si operas bloqueado, cierre al instante — antes del siguiente tick — con registro de cada intento.',
+		body: 'Cierre al instante si operas bloqueado — con registro de cada intento.',
 		href: '/features/hyperclose',
-		meta: 'HyperClose',
 	},
 	{
 		id: 'evidencia',
 		label: 'Evidencia',
 		title: 'Quieres contrastar MT5 y acta tevsys',
-		body: 'Informe oficial, panel y logs que se cruzan. No te pedimos fe: te enseñamos lo que pasa.',
+		body: 'Informe oficial, panel y logs que se cruzan — sin pedirte fe.',
 		href: '/features/evidencia',
-		meta: 'Evidencia',
 	},
 	{
 		id: 'sml',
 		label: 'SML',
 		title: 'Buscas más margen con reglas claras',
-		body: 'Amplía el margen tras un día positivo — opcional, con topes por plan. Validación de escenarios en curso.',
+		body: 'Amplía margen tras un día positivo · validación de escenarios en curso.',
 		href: '/features/sml',
-		meta: 'SML',
-	},
-	{
-		id: 'equipos',
-		label: 'Equipos',
-		title: 'Academia, prop firm o quien te audita',
-		body: 'Trazabilidad para revisar ejecución y límites — no auditamos tu estrategia. Canal empresas aparte si sois institución.',
-		href: '/company/empresas',
-		meta: 'Empresas',
-		secondaryHref: '/auditoria-ia',
-		secondaryMeta: 'Auditoría',
 	},
 ];
 ---
@@ -61,60 +47,56 @@ const perfiles = [
 			<section class="feature-hero para-quien-hero">
 				<p class="feature-kicker">Para quién</p>
 				<h1>
-					No es un solo perfil. Es <span class="feature-title__accent">disciplina verificable</span> en MT5.
+					No es un solo perfil. Es el <span class="feature-title__accent">cuadro entero</span> en MT5.
 				</h1>
 				<p class="feature-hook">
 					<span class="feature-hook__dot" aria-hidden="true"></span>
-					Precisión, freno bajo presión, evidencia que se cruza — con las reglas que tú configuras.
-				</p>
-				<p class="feature-lead para-quien-hero__lead">
-					No señales. No promesa de rentabilidad. Varias capas que encajan según lo que exijas de tu operativa.
+					Precisión, freno bajo presión y evidencia que se cruza — con las reglas que tú configuras.
 				</p>
 			</section>
 
-			<p class="tevsys-home-hero-bridge para-quien-bridge" aria-label="Capas del producto">
-				<span class="tevsys-home-hero-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
+			<p class="para-quien-bridge" aria-label="Capas del producto">
+				<span class="para-quien-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
 			</p>
 
 			<section class="para-quien-profiles" aria-labelledby="para-quien-profiles-title">
-				<h2 id="para-quien-profiles-title" class="para-quien-profiles__title">¿Te suena alguno?</h2>
+				<h2 id="para-quien-profiles-title" class="para-quien-profiles__title">
+					Cuatro capas · varios perfiles
+				</h2>
 				<ul class="para-quien-profiles__grid">
 					{
-						perfiles.map((perfil) => (
+						corePerfiles.map((perfil) => (
 							<li>
-								<article class="para-quien-profile">
+								<a class="para-quien-profile" href={perfil.href}>
+									<span class="para-quien-profile__arrow" aria-hidden="true">→</span>
 									<p class="para-quien-profile__label">{perfil.label}</p>
 									<h3 class="para-quien-profile__title">{perfil.title}</h3>
 									<p class="para-quien-profile__body">{perfil.body}</p>
-									<div class="para-quien-profile__links">
-										<a class="para-quien-profile__link proof-capture-link" href={perfil.href}>
-											Ver {perfil.meta}
-											<span class="proof-link-meta">{perfil.meta}</span>
-										</a>
-										{perfil.secondaryHref && (
-											<a
-												class="para-quien-profile__link para-quien-profile__link--secondary"
-												href={perfil.secondaryHref}
-											>
-												{perfil.secondaryMeta}
-											</a>
-										)}
-									</div>
-								</article>
+									<span class="para-quien-profile__cta">Saber más</span>
+								</a>
 							</li>
 						))
 					}
 				</ul>
 			</section>
 
-			<section class="feature-proof-detail para-quien-map">
-				<h3>Mapa del sistema</h3>
-				<p class="feature-proof-subtitle">Más profundo que un solo titular</p>
-				<p class="feature-proof-lead">
-					Si quieres ver cómo encajan las piezas — instalación, límites, cierre, evidencia — el recorrido completo está en
-					<a class="evidence-link" href="/como-funciona">Cómo funciona</a>.
+			<section class="para-quien-equipos" aria-labelledby="para-quien-equipos-title">
+				<h2 id="para-quien-equipos-title" class="para-quien-equipos__title">Academia, prop firm o quien te audita</h2>
+				<p class="para-quien-equipos__body">
+					Trazabilidad para revisar ejecución y límites — no auditamos tu estrategia. Instituciones y equipos tienen
+					canal aparte.
 				</p>
+				<div class="para-quien-equipos__links">
+					<a class="para-quien-equipos__link" href="/company/empresas">Canal empresas</a>
+					<a class="para-quien-equipos__link para-quien-equipos__link--muted" href="/auditoria-ia">Auditoría · próximamente</a>
+				</div>
 			</section>
+
+			<p class="para-quien-map-line">
+				¿Quieres el mapa completo?
+				<a class="evidence-link" href="/como-funciona">Cómo funciona</a>
+				— instalación, límites, cierre y evidencia.
+			</p>
 
 			<section class="feature-cta">
 				<h2>¿Quieres probarlo en tu operativa?</h2>
@@ -126,14 +108,10 @@ const perfiles = [
 </Layout>
 
 <style>
-	.para-quien-hero__lead {
-		max-width: 52ch;
-	}
 	.para-quien-bridge {
 		position: relative;
-		text-align: left;
 		margin: 0;
-		padding: clamp(0.5rem, 1.5vw, 0.85rem) 0 clamp(1rem, 2.5vw, 1.35rem);
+		padding: clamp(0.35rem, 1vw, 0.55rem) 0 clamp(1rem, 2.5vw, 1.35rem);
 	}
 	.para-quien-bridge::before {
 		content: '';
@@ -156,19 +134,19 @@ const perfiles = [
 			transparent 100%
 		);
 	}
-	.para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
-		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+	.para-quien-bridge__text {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
 		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
 		font-weight: 500;
 		letter-spacing: 0.055em;
 		color: rgba(228, 232, 240, 0.62);
 		line-height: 1.45;
 	}
-	html[data-theme='light'] .para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
+	html[data-theme='light'] .para-quien-bridge__text {
 		color: rgba(60, 66, 78, 0.72);
 	}
 	.para-quien-profiles {
-		margin: 0 0 clamp(1.5rem, 4vw, 2rem);
+		margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
 	}
 	.para-quien-profiles__title {
 		margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
@@ -178,31 +156,54 @@ const perfiles = [
 	}
 	.para-quien-profiles__grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: clamp(0.75rem, 2vw, 1rem);
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
+	@media (max-width: 640px) {
+		.para-quien-profiles__grid {
+			grid-template-columns: 1fr;
+		}
+	}
 	.para-quien-profile {
-		height: 100%;
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 0.45rem;
-		padding: clamp(0.85rem, 2vw, 1.05rem) clamp(0.9rem, 2vw, 1.1rem);
+		gap: 0.4rem;
+		height: 100%;
+		padding: clamp(0.9rem, 2vw, 1.1rem) clamp(0.95rem, 2vw, 1.15rem);
 		border-left: 2px solid rgba(245, 176, 65, 0.38);
 		border-radius: var(--feature-micro-radius, 0.85rem);
 		background: var(--micro-detail-bg);
 		border-top: 1px solid var(--micro-detail-border);
 		border-right: 1px solid var(--micro-detail-border);
 		border-bottom: 1px solid var(--micro-detail-border);
+		color: inherit;
+		text-decoration: none;
 		transition:
 			border-color 180ms ease,
-			box-shadow 180ms ease;
+			box-shadow 180ms ease,
+			transform 180ms ease;
 	}
 	.para-quien-profile:hover {
 		border-left-color: rgba(245, 176, 65, 0.62);
-		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+		border-color: rgba(245, 176, 65, 0.28);
+		box-shadow: 0 6px 28px rgba(0, 0, 0, 0.22);
+		transform: translateY(-2px);
+	}
+	.para-quien-profile__arrow {
+		position: absolute;
+		right: 0.85rem;
+		bottom: 0.85rem;
+		font-size: 1.05rem;
+		opacity: 0.45;
+		transition: opacity 160ms ease, color 160ms ease;
+	}
+	.para-quien-profile:hover .para-quien-profile__arrow {
+		opacity: 1;
+		color: #f5b041;
 	}
 	.para-quien-profile__label {
 		margin: 0;
@@ -218,6 +219,7 @@ const perfiles = [
 	}
 	.para-quien-profile__title {
 		margin: 0;
+		padding-right: 1.5rem;
 		font-size: clamp(0.98rem, 2.1vw, 1.06rem);
 		font-weight: 700;
 		line-height: 1.35;
@@ -227,34 +229,68 @@ const perfiles = [
 		margin: 0;
 		flex: 1;
 		font-size: 0.875rem;
-		line-height: 1.5;
-		opacity: 0.9;
+		line-height: 1.48;
+		opacity: 0.88;
 	}
-	.para-quien-profile__links {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.65rem 1rem;
-		margin-top: 0.35rem;
+	.para-quien-profile__cta {
+		margin-top: 0.25rem;
+		font-size: 0.82rem;
+		font-weight: 600;
+		opacity: 0.72;
 	}
-	.para-quien-profile__link {
-		font-size: 0.9rem;
-	}
-	.para-quien-profile__link--secondary {
-		opacity: 0.82;
-		text-decoration: underline;
-		text-underline-offset: 0.15em;
-	}
-	.para-quien-profile__link--secondary:hover {
+	.para-quien-profile:hover .para-quien-profile__cta {
 		opacity: 1;
 		color: #f5b041;
 	}
-	.para-quien-map {
-		margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+	.para-quien-equipos {
+		margin: 0 0 clamp(1.15rem, 3vw, 1.5rem);
+		padding: clamp(0.95rem, 2.2vw, 1.2rem) clamp(1rem, 2.5vw, 1.25rem);
+		border-radius: var(--feature-micro-radius, 0.85rem);
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(255, 255, 255, 0.012));
 	}
-	.para-quien-map .feature-proof-lead {
+	html[data-theme='light'] .para-quien-equipos {
+		border-color: rgba(180, 120, 20, 0.22);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.08), rgba(248, 249, 252, 0.95));
+	}
+	.para-quien-equipos__title {
+		margin: 0 0 0.45rem;
+		font-size: clamp(1rem, 2.1vw, 1.08rem);
+		font-weight: 700;
+		letter-spacing: -0.015em;
+	}
+	.para-quien-equipos__body {
+		margin: 0 0 0.75rem;
+		max-width: 58ch;
+		font-size: 0.875rem;
+		line-height: 1.5;
+		opacity: 0.9;
+	}
+	.para-quien-equipos__links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem 1.25rem;
+	}
+	.para-quien-equipos__link {
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+	.para-quien-equipos__link--muted {
+		font-weight: 500;
+		opacity: 0.78;
+	}
+	.para-quien-equipos__link:hover {
+		color: #f5b041;
+		opacity: 1;
+	}
+	.para-quien-map-line {
+		margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
 		max-width: 54ch;
-		margin: 0;
+		font-size: 0.9rem;
+		line-height: 1.55;
+		opacity: 0.88;
 	}
 	.feature-cta {
 		margin: var(--section-margin) auto;
