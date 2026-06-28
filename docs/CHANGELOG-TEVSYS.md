@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — pilares aparece/desaparece lista → solo (28 jun 2026)
+
+**Qué:** tras la 4.ª frase, pausa ~0,4 s → apagado 1→2→3→4 mismo ritmo que entrada → fase solo async.
+
+**Commit:** `web(tevsys): hero pilares desaparece secuencial antes solo`
+
+---
+
 ## Hero home — pilares lista menos pausa antes motion (28 jun 2026)
 
 **Qué:** columna 4 frases — pausa lectura ~4,6 s (antes ~10,5 s); apagado + fase solo arrancan antes de que el usuario baje del hero.

@@ -79,12 +79,12 @@ const heroProductPillars = [
     batchPhraseFadeInMsMobile: 2200,
     batchPhraseInGapMs: 340,
     batchPhraseInGapMsMobile: 400,
-    batchPhraseFadeOutMs: 1700,
-    batchPhraseFadeOutMsMobile: 1550,
-    batchPhraseOutGapMs: 360,
-    batchPhraseOutGapMsMobile: 420,
-    batchHoldMs: 3600,
-    batchHoldMsMobile: 4200,
+    batchPhraseFadeOutMs: 2100,
+    batchPhraseFadeOutMsMobile: 1950,
+    batchPhraseOutGapMs: 340,
+    batchPhraseOutGapMsMobile: 400,
+    batchHoldMs: 420,
+    batchHoldMsMobile: 520,
     soloHoldMs: 4000,
     soloStartGapMs: 780,
     soloRepositionFadeOutMs: 920,
@@ -263,7 +263,7 @@ const heroProductPillars = [
 
       el.style.transition = `opacity ${fadeMs}ms ${HERO_FADE_OUT_EASE}, transform ${fadeMs}ms ${HERO_FADE_OUT_EASE}, visibility 0s linear`;
       el.style.opacity = '0';
-      el.style.transform = 'translateY(-0.28rem)';
+      el.style.transform = `translateY(-${HERO_BATCH_ENTER_Y})`;
       await sleep(fadeMs + (i < phrases.length - 1 ? gapMs : 0));
     }
 
@@ -299,11 +299,11 @@ const heroProductPillars = [
     await sleep(getHeroTiming('emptyMs'));
 
     await fadeBatchInTogether(phrases);
-    await sleep(HERO_PILLAR_TIMING.batchHoldMs);
+    await sleep(getHeroTiming('batchHoldMs'));
 
     const remainingSoloIndices = await fadeOutBatchColumn(phrases, stage);
 
-    await sleep(380);
+    await sleep(280);
 
     const slots = shuffle(getSoloSlotPool()).slice(0, remainingSoloIndices.length);
 
