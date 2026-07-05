@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — logo favicon 2 tonos gris + halo nace (5 jul 2026)
+
+**Qué:** vuelve `favicon.png` (chevrones reales, no octágono SVG). Grayscale + lighten = dos grises sin caja negra. Halo doble blur animado. Intro ~5,6 s.
+
+**Commit:** `web(tevsys): hero marca favicon gris halo nace lento`
+
+---
+
 ## Hero home — logo gris elegante + intro lenta (5 jul 2026)
 
 **Qué:** SVG inline 8 chevrones plata (sin PNG/naranja/pegote). Halo gris suave. Intro ~4,8 s entrando, ~3,6 s hold, ~3,2 s saliendo — curva más pausada que frases.

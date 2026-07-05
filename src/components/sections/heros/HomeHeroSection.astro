@@ -26,25 +26,16 @@ const heroProductPillars = [
           <div class="hero-pillar-fade__stage" data-hero-pillar-stage>
             <div class="hero-pillar-fade__mark" data-hero-pillar-mark aria-hidden="true">
               <span class="hero-pillar-fade__mark-glow" aria-hidden="true"></span>
-              <svg
+              <span class="hero-pillar-fade__mark-glow hero-pillar-fade__mark-glow--outer" aria-hidden="true"></span>
+              <img
                 class="hero-pillar-fade__mark-icon"
-                viewBox="0 0 32 32"
+                src="/favicon.png"
+                alt=""
                 width="128"
                 height="128"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <g fill="currentColor">
-                  <path d="M16 16 L16 4 L24.5 7.5 Z" />
-                  <path d="M16 16 L24.5 7.5 L28 16 Z" />
-                  <path d="M16 16 L28 16 L24.5 24.5 Z" />
-                  <path d="M16 16 L24.5 24.5 L16 28 Z" />
-                  <path d="M16 16 L16 28 L7.5 24.5 Z" />
-                  <path d="M16 16 L7.5 24.5 L4 16 Z" />
-                  <path d="M16 16 L4 16 L7.5 7.5 Z" />
-                  <path d="M16 16 L7.5 7.5 L16 4 Z" />
-                </g>
-              </svg>
+                decoding="async"
+                fetchpriority="low"
+              />
             </div>
             {heroProductPillars.map((phrase, index) => (
               <p class="hero-pillar-fade__phrase" data-hero-pillar-index={index}>
@@ -117,12 +108,12 @@ const heroProductPillars = [
     loopPauseMsMobile: 2800,
     introMarkDelayMs: 900,
     introMarkDelayMsMobile: 820,
-    introMarkFadeInMs: 4800,
-    introMarkFadeInMsMobile: 4200,
-    introMarkHoldMs: 3600,
-    introMarkHoldMsMobile: 3200,
-    introMarkFadeOutMs: 3200,
-    introMarkFadeOutMsMobile: 2900,
+    introMarkFadeInMs: 5600,
+    introMarkFadeInMsMobile: 5000,
+    introMarkHoldMs: 4200,
+    introMarkHoldMsMobile: 3800,
+    introMarkFadeOutMs: 3600,
+    introMarkFadeOutMsMobile: 3200,
     introMarkGapBeforeBatchMs: 560,
   };
 
@@ -322,24 +313,47 @@ const heroProductPillars = [
     await sleep(36);
   }
 
-  /** Intro logo: más lento que una frase; nace desde abajo con escala mínima. */
+  /** Intro logo: nace lento; halo blur→nítido en paralelo. */
   async function animateMarkIntro(el, visible, ms) {
     if (!el) return;
+    const glow = el.querySelector('.hero-pillar-fade__mark-glow:not(.hero-pillar-fade__mark-glow--outer)');
+    const glowOuter = el.querySelector('.hero-pillar-fade__mark-glow--outer');
     const base = 'translate(-50%, -50%) scale(1)';
-    const enterFrom = `translate(-50%, calc(-50% + ${HERO_MARK_ENTER_Y})) scale(0.93)`;
-    const exitTo = `translate(-50%, calc(-50% - ${HERO_MARK_ENTER_Y})) scale(0.97)`;
+    const enterFrom = `translate(-50%, calc(-50% + ${HERO_MARK_ENTER_Y})) scale(0.94)`;
+    const exitTo = `translate(-50%, calc(-50% - ${HERO_MARK_ENTER_Y})) scale(0.98)`;
     const ease = visible ? HERO_MARK_INTRO_IN_EASE : HERO_MARK_INTRO_OUT_EASE;
+    const glowEase = ease;
 
     if (visible) {
       setMarkMode(el, 'intro');
+      [glow, glowOuter].forEach((node) => {
+        if (!node) return;
+        node.style.transition = `opacity ${ms}ms ${glowEase}, filter ${ms}ms ${glowEase}`;
+        node.style.opacity = '0';
+        node.style.filter = 'blur(22px)';
+      });
       el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
       el.style.visibility = 'visible';
       el.style.opacity = '0';
       el.style.transform = enterFrom;
-      await sleep(32);
+      await sleep(40);
       el.style.opacity = '1';
       el.style.transform = base;
+      if (glow) {
+        glow.style.opacity = '1';
+        glow.style.filter = 'blur(7px)';
+      }
+      if (glowOuter) {
+        glowOuter.style.opacity = '0.55';
+        glowOuter.style.filter = 'blur(16px)';
+      }
     } else {
+      [glow, glowOuter].forEach((node) => {
+        if (!node) return;
+        node.style.transition = `opacity ${ms}ms ${glowEase}, filter ${ms}ms ${glowEase}`;
+        node.style.opacity = '0';
+        node.style.filter = 'blur(20px)';
+      });
       el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
       el.style.opacity = '0';
       el.style.transform = exitTo;
@@ -351,6 +365,12 @@ const heroProductPillars = [
       el.style.visibility = 'hidden';
       el.style.transform = base;
       setMarkMode(el, null);
+      [glow, glowOuter].forEach((node) => {
+        if (!node) return;
+        node.style.transition = '';
+        node.style.opacity = '';
+        node.style.filter = '';
+      });
     }
   }
 
@@ -617,21 +637,29 @@ const heroProductPillars = [
     top: 50%;
     z-index: 0;
     transform: translate(-50%, -50%);
-    width: clamp(8rem, 28vw, 11rem);
-    height: clamp(8rem, 28vw, 11rem);
+    width: clamp(7rem, 24vw, 10rem);
+    height: clamp(7rem, 24vw, 10rem);
     border-radius: 50%;
     pointer-events: none;
+    opacity: 0;
     background: radial-gradient(
       circle,
-      rgba(196, 204, 216, 0.11) 0%,
-      rgba(196, 204, 216, 0.04) 38%,
-      transparent 66%
+      rgba(214, 220, 230, 0.2) 0%,
+      rgba(180, 190, 204, 0.07) 42%,
+      transparent 68%
     );
-    opacity: 0;
   }
 
-  .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-glow {
-    opacity: 1;
+  .hero-pillar-fade__mark-glow--outer {
+    z-index: -1;
+    width: clamp(9rem, 32vw, 13rem);
+    height: clamp(9rem, 32vw, 13rem);
+    background: radial-gradient(
+      circle,
+      rgba(196, 204, 216, 0.1) 0%,
+      rgba(160, 172, 188, 0.04) 50%,
+      transparent 72%
+    );
   }
 
   .hero-pillar-fade__mark-icon {
@@ -640,20 +668,24 @@ const heroProductPillars = [
     display: block;
     width: clamp(4.5rem, 13vw, 6.25rem);
     height: auto;
-    color: rgba(188, 196, 208, 0.42);
-    filter: drop-shadow(0 0 14px rgba(196, 204, 216, 0.06));
+    background: transparent;
+    border-radius: 0;
+    mix-blend-mode: lighten;
+    filter: grayscale(1) brightness(1.02) contrast(0.9);
+    opacity: 0.38;
   }
 
   .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-icon {
     width: clamp(6.5rem, 22vw, 8.75rem);
-    color: rgba(210, 216, 226, 0.82);
-    filter: drop-shadow(0 0 22px rgba(196, 204, 216, 0.09));
+    opacity: 1;
+    filter: grayscale(1) brightness(1.08) contrast(0.88)
+      drop-shadow(0 0 20px rgba(196, 204, 216, 0.14));
   }
 
   .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-icon {
     width: clamp(4.25rem, 12vw, 5.75rem);
-    color: rgba(176, 184, 196, 0.28);
-    filter: drop-shadow(0 0 10px rgba(196, 204, 216, 0.04));
+    opacity: 0.55;
+    filter: grayscale(1) brightness(0.96) contrast(0.86);
   }
 
   .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
@@ -770,7 +802,8 @@ const heroProductPillars = [
 
     .hero-pillar-fade__mark-icon {
       width: 3rem;
-      color: rgba(188, 196, 208, 0.22);
+      opacity: 0.28;
+      filter: grayscale(1) brightness(0.95) contrast(0.86);
     }
   }
 
@@ -1046,14 +1079,15 @@ const heroProductPillars = [
 
     .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-icon {
       width: clamp(5.75rem, 26vw, 7.5rem);
-      color: rgba(208, 214, 224, 0.78);
-      filter: drop-shadow(0 0 18px rgba(196, 204, 216, 0.08));
+      opacity: 1;
+      filter: grayscale(1) brightness(1.06) contrast(0.88)
+        drop-shadow(0 0 16px rgba(196, 204, 216, 0.12));
     }
 
     .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-icon {
       width: clamp(3.75rem, 18vw, 5rem);
-      color: rgba(176, 184, 196, 0.24);
-      filter: drop-shadow(0 0 8px rgba(196, 204, 216, 0.03));
+      opacity: 0.5;
+      filter: grayscale(1) brightness(0.94) contrast(0.84);
     }
 
     .hero-pillar-fade__phrase {
