@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — pilares fade Opción A anti-encasillamiento (5 jul 2026)
+
+**Qué:** `hero-pillar-fade` bajo H1 — reorden + copy: (1) Precisión de cierre verificable · (2) Disciplina automatizada · (3) Trazabilidad contrastable con MT5 · (4) Protección activa en toda la cuenta. Disciplina pasa a 2.º; precisión/evidencia abre; cuenta completa cierra.
+
+**Commit:** `web(tevsys): hero pilares opcion A precision primero disciplina segundo`
+
+---
+
 ## Para quién — hook Precisión card (28 jun 2026)
 
 **Qué:** card Precisión — *Ceñido al límite en condiciones normales de mercado.* (sustituye *Cierre preciso cuando el mercado lo permite*).

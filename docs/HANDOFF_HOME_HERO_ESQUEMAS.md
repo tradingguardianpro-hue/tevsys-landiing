@@ -6,7 +6,7 @@
 
 ### 2m-E-column — batch simétrico (28 jun 2026 — fundador OK probar)
 
-- **Batch:** columna centrada bajo H1; orden **Disciplina → Precisión → Trazabilidad → MT5**; entrada secuencial premium; hairline vertical sutil (sin puntos ámbar).
+- **Batch:** columna centrada bajo H1; orden **Precisión → Disciplina → Trazabilidad → Cuenta** (anti-encasillamiento — jul 2026); entrada secuencial premium; hairline vertical sutil (sin puntos ámbar).
 - **Apagado:** arriba→abajo (espejo de entrada); luego fase **solo** en slots aleatorios (sin cambio de espíritu).
 - **Motivo:** batch en 4 esquinas leía asimétrico al cargar (feedback UX).
 - **Revertir:** `data-hero-layout="scheme-2m-e"` + slots batch en git history.
@@ -56,10 +56,10 @@ Animación CSS 72 s; solos con posición fija por índice — sustituido por 2m-
 
 ```js
 const heroProductPillars = [
+  'Precisión de cierre verificable',
   'Disciplina automatizada',
-  'Precisión de cierre en tu operativa',
-  'Trazabilidad verificable',
-  'Protección activa en MT5',
+  'Trazabilidad contrastable con MT5',
+  'Protección activa en toda la cuenta',
 ];
 ```
 

@@ -61,9 +61,13 @@ Documento de contenido/copy actual para revisión de equipo.
 ---
 
 ## Hero
-- **H1 (actual, abr 2026):** `Tú pones los límites. TEVSYS los blinda. Disciplina y precisión automatizadas.` — `TEVSYS` en ámbar (`hero-title__brand`, sin subrayado); subrayado solo en “Disciplina y precisión automatizadas” (`hero-title__underline`).
-- **Microfrase de desmarque (`hero-microline`, vigente en código):** `No damos señales ni promesas de beneficio.` *(Histórico 22 abr: variante «No damos señales. Hacemos que tus reglas se cumplan.» — comprobar `HomeHeroSection.astro` si se restaura.)*
-- **Línea de contexto (debajo H1):** `Control de riesgo y límites en tu cuenta MT5 — automatizado y registrado.` (clase `hero-context-line`; **MT5 y cuenta** aquí; el H1 prioriza escaneo en tres tiempos).
+- **H1 (actual, jun 2026):** `Tú pones los límites.` / `TEVSYS los blinda.` — `TEVSYS` en ámbar (`hero-title__brand`).
+- **Pilares fade (`hero-pillar-fade`, bajo H1 — jul 2026):** animación 2m-E-column; orden batch:
+  1. Precisión de cierre verificable
+  2. Disciplina automatizada
+  3. Trazabilidad contrastable con MT5
+  4. Protección activa en toda la cuenta
+- **Microfrase de desmarque (`hero-disclaimer`):** `No damos señales ni promesas de beneficio.`
 - **Tipografía (19 abr 2026):** **DM Sans** solo en `.hero-title` (H1); resto del bloque hero y header en **Inter**. Carga de fuentes en `BaseHead.astro` (Inter + DM Sans).
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo (dot + badge)
@@ -77,11 +81,12 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Reflexión diseño histórica:** `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` (copy anterior); iteración actual: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
 - **Texto bajo imagen:** `Trading Edge Verification System`
 
-### Marco de copy del hero (referencia abr 2026)
-- **Titular (tres tiempos):** ver H1 arriba; MT5 no va en el H1.
-- **Contexto temprano:** línea `hero-context-line` (cuenta MT5, automatizado, registrado).
-- **Deseo / marca:** `Where precision meets the edge`
-- **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTA `Descargar demo →`
+### Marco de copy del hero (referencia jul 2026)
+- **Titular:** ver H1 arriba.
+- **Capas producto:** pilares fade (precisión → disciplina → trazabilidad → cuenta).
+- **Desmarque:** disclaimer sin señales ni promesa de beneficio.
+- **Deseo / marca:** `Where precision meets the edge` (histórico tagline; comprobar si sigue en DOM).
+- **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTAs demo / evidencia.
 
 ---
 
