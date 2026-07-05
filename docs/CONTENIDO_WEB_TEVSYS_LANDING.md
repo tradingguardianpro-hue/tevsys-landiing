@@ -67,7 +67,7 @@ Documento de contenido/copy actual para revisión de equipo.
   2. Disciplina automatizada
   3. Trazabilidad contrastable con MT5
   4. Protección activa en toda la cuenta
-- **Marca hero (jul 2026):** `favicon.png` (igual header), grayscale, intro grande; motion intro→lista sin logo→solo tenue.
+- **Marca hero (jul 2026):** prueba **insinuada** (casi negro) con `favicon.png` + chip redondeado; motion intro→batch oculto→solo tenue. **Pendiente:** asset **solo chevrones sin caja** (fundador) → validar juntos → montar o **quitar logo centro**. Handoff: `HANDOFF_HOME_HERO_ESQUEMAS.md` § *Logo centro*.
 - **Microfrase de desmarque (`hero-disclaimer`):** `No damos señales ni promesas de beneficio.`
 - **Tipografía (19 abr 2026):** **DM Sans** solo en `.hero-title` (H1); resto del bloque hero y header en **Inter**. Carga de fuentes en `BaseHead.astro` (Inter + DM Sans).
 - **Tagline:** `Where precision meets the edge`

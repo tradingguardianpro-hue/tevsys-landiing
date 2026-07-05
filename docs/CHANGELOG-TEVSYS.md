@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — logo insinuado casi negro + handoff asset (5 jul 2026)
+
+**Qué:** última prueba — chevrones casi invisibles, sin halo/sombra chip. Agenda + handoff: asset solo chevrones (Gabi) → validar → montar o quitar.
+
+**Commit:** `web(tevsys): hero marca insinuada agenda asset chevrones`
+
+---
+
 ## Hero home — logo DimGray bordes redondos sin halo gris (5 jul 2026)
 
 **Qué:** quita halo plateado. Chip con `border-radius` (sin esquinas 90°). Tono DimGray. Solo sombra negra muy sutil alrededor.

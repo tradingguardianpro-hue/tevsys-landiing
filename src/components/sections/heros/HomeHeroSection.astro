@@ -609,17 +609,11 @@ const heroProductPillars = [
     line-height: 0;
     border-radius: clamp(1rem, 4vw, 1.35rem);
     overflow: hidden;
-    /* Viñeta negra muy sutil — no toca el gris del icono */
-    box-shadow: 0 0 28px rgba(0, 0, 0, 0.55);
+    box-shadow: none;
   }
 
   .hero-pillar-fade__mark-chip::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+    display: none;
   }
 
   .hero-pillar-fade__mark-icon {
@@ -628,31 +622,31 @@ const heroProductPillars = [
     height: auto;
     background: transparent;
     mix-blend-mode: lighten;
-    /* DimGray ~ #696969 sobre fondo negro */
-    filter: grayscale(1) brightness(0.58) contrast(0.92);
-    opacity: 0.72;
+    /* Casi negro — solo se insinúa sobre #000 */
+    filter: grayscale(1) brightness(0.22) contrast(0.82);
+    opacity: 0.32;
   }
 
   .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-chip {
     border-radius: clamp(1.15rem, 5vw, 1.55rem);
-    box-shadow: 0 0 32px rgba(0, 0, 0, 0.62);
+    box-shadow: none;
   }
 
   .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-icon {
     width: clamp(6.5rem, 22vw, 8.75rem);
-    opacity: 1;
-    filter: grayscale(1) brightness(0.62) contrast(0.9);
+    opacity: 0.38;
+    filter: grayscale(1) brightness(0.26) contrast(0.8);
   }
 
   .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-chip {
     border-radius: clamp(0.85rem, 3.5vw, 1.15rem);
-    box-shadow: 0 0 18px rgba(0, 0, 0, 0.42);
+    box-shadow: none;
   }
 
   .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-icon {
     width: clamp(4.25rem, 12vw, 5.75rem);
-    opacity: 0.55;
-    filter: grayscale(1) brightness(0.54) contrast(0.88);
+    opacity: 0.22;
+    filter: grayscale(1) brightness(0.2) contrast(0.78);
   }
 
   .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
@@ -769,8 +763,8 @@ const heroProductPillars = [
 
     .hero-pillar-fade__mark-icon {
       width: 3rem;
-      opacity: 0.45;
-      filter: grayscale(1) brightness(0.56) contrast(0.88);
+      opacity: 0.2;
+      filter: grayscale(1) brightness(0.2) contrast(0.78);
     }
   }
 
@@ -1046,14 +1040,14 @@ const heroProductPillars = [
 
     .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-icon {
       width: clamp(5.75rem, 26vw, 7.5rem);
-      opacity: 1;
-      filter: grayscale(1) brightness(0.6) contrast(0.9);
+      opacity: 0.34;
+      filter: grayscale(1) brightness(0.24) contrast(0.8);
     }
 
     .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-icon {
       width: clamp(3.75rem, 18vw, 5rem);
-      opacity: 0.5;
-      filter: grayscale(1) brightness(0.52) contrast(0.86);
+      opacity: 0.18;
+      filter: grayscale(1) brightness(0.18) contrast(0.76);
     }
 
     .hero-pillar-fade__phrase {

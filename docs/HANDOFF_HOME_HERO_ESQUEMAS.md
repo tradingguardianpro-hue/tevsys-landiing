@@ -7,7 +7,8 @@
 ### 2m-E-column — batch simétrico (28 jun 2026 — fundador OK probar)
 
 - **Batch:** columna centrada bajo H1; orden **Precisión → Disciplina → Trazabilidad → Cuenta** (anti-encasillamiento — jul 2026); entrada secuencial premium; hairline vertical sutil (sin puntos ámbar).
-- **Marca gris (jul 2026):** `favicon.png` (header) — grayscale, intro más grande; motion intro→batch oculto→solo tenue. Retoque anti-pegatina pendiente.
+- **Marca gris (jul 2026):** prueba **insinuada** (casi negro) — `favicon.png` temporal; intro lenta → batch sin logo → solo tenue.
+- **Pendiente asset:** PNG/SVG **solo 8 chevrones sin caja** (Gabi) → **validar juntos** antes de montar. Si prueba actual no convence → **eliminar logo centro**; retomar con asset limpio o solo H1+header.
 - **Apagado:** arriba→abajo (espejo de entrada); luego fase **solo** en slots aleatorios (sin cambio de espíritu).
 - **Motivo:** batch en 4 esquinas leía asimétrico al cargar (feedback UX).
 - **Revertir:** `data-hero-layout="scheme-2m-e"` + slots batch en git history.
