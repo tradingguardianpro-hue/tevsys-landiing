@@ -25,8 +25,9 @@ const heroProductPillars = [
         <div class="hero-pillar-fade" aria-label="Capas del producto tevsys">
           <div class="hero-pillar-fade__stage" data-hero-pillar-stage>
             <div class="hero-pillar-fade__mark" data-hero-pillar-mark aria-hidden="true">
+              <span class="hero-pillar-fade__mark-glow" aria-hidden="true"></span>
               <img
-                src="/favicon.png"
+                src="/hero-tevsys-mark.svg"
                 alt=""
                 width="128"
                 height="128"
@@ -103,14 +104,13 @@ const heroProductPillars = [
     soloFadeOutMs: 1400,
     loopPauseMs: 3200,
     loopPauseMsMobile: 2800,
-    introMarkHoldMs: 900,
-    introMarkHoldMsMobile: 800,
+    introMarkHoldMs: 2600,
+    introMarkHoldMsMobile: 2400,
     introMarkGapBeforeBatchMs: 480,
   };
 
   const HERO_GLOW_IN_EASE = 'cubic-bezier(0.22, 0, 0.08, 1)';
   const HERO_FADE_OUT_EASE = 'cubic-bezier(0.42, 0, 0.18, 1)';
-  const HERO_MARK_INTRO_BLUR = '5px';
 
   const HERO_MOBILE_MQ = '(max-width: 768px)';
 
@@ -302,38 +302,25 @@ const heroProductPillars = [
     await sleep(36);
   }
 
-  function resetMarkImgInline(el) {
-    const img = el?.querySelector('img');
-    if (!img) return;
-    img.style.transition = '';
-    img.style.filter = '';
-  }
-
-  /** Intro: mismo lenguaje que una frase en batch + blur suave (surgir a la superficie). */
-  async function glowMarkEmergence(el, visible, ms) {
+  /** Misma curva, ms y translateY que una frase del batch (sin capa extra de opacidad en img). */
+  async function animateMarkLikePhrase(el, visible, ms) {
     if (!el) return;
-    const img = el.querySelector('img');
     const base = 'translate(-50%, -50%)';
     const enterFrom = `translate(-50%, calc(-50% + ${HERO_BATCH_ENTER_Y}))`;
     const exitTo = `translate(-50%, calc(-50% - ${HERO_BATCH_ENTER_Y}))`;
-    const imgFilterBase = 'grayscale(1) brightness(0.84) contrast(0.98)';
+    const ease = visible ? HERO_GLOW_IN_EASE : HERO_FADE_OUT_EASE;
 
     if (visible) {
       setMarkMode(el, 'intro');
-      el.style.transition = `opacity ${ms}ms ${HERO_GLOW_IN_EASE}, transform ${ms}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
-      if (img) {
-        img.style.transition = `filter ${ms}ms ${HERO_GLOW_IN_EASE}`;
-        img.style.filter = `${imgFilterBase} blur(${HERO_MARK_INTRO_BLUR})`;
-      }
+      el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
       el.style.visibility = 'visible';
       el.style.opacity = '0';
       el.style.transform = enterFrom;
       await sleep(28);
       el.style.opacity = '1';
       el.style.transform = base;
-      if (img) img.style.filter = `${imgFilterBase} blur(0)`;
     } else {
-      el.style.transition = `opacity ${ms}ms ${HERO_FADE_OUT_EASE}, transform ${ms}ms ${HERO_FADE_OUT_EASE}, visibility 0s linear`;
+      el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
       el.style.opacity = '0';
       el.style.transform = exitTo;
     }
@@ -344,7 +331,6 @@ const heroProductPillars = [
       el.style.visibility = 'hidden';
       el.style.transform = base;
       setMarkMode(el, null);
-      resetMarkImgInline(el);
     }
   }
 
@@ -391,7 +377,6 @@ const heroProductPillars = [
     el.style.visibility = 'hidden';
     el.style.transform = 'translate(-50%, -50%)';
     setMarkMode(el, null);
-    resetMarkImgInline(el);
   }
 
   async function runHeroPillarCycle(phrases, stage, { intro = false } = {}) {
@@ -409,11 +394,12 @@ const heroProductPillars = [
 
     if (intro && mark) {
       stage.classList.add('hero-pillar-fade__stage--intro');
+      await sleep(HERO_PILLAR_TIMING.batchFadeInDelayMs);
       const introInMs = getHeroTiming('batchPhraseFadeInMs');
       const introOutMs = getHeroTiming('batchPhraseFadeOutMs');
-      await glowMarkEmergence(mark, true, introInMs);
+      await animateMarkLikePhrase(mark, true, introInMs);
       await sleep(getHeroTiming('introMarkHoldMs'));
-      await glowMarkEmergence(mark, false, introOutMs);
+      await animateMarkLikePhrase(mark, false, introOutMs);
       stage.classList.remove('hero-pillar-fade__stage--intro');
       await sleep(HERO_PILLAR_TIMING.introMarkGapBeforeBatchMs);
     }
@@ -605,26 +591,51 @@ const heroProductPillars = [
     will-change: opacity, transform;
   }
 
+  .hero-pillar-fade__mark-glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    width: clamp(7.5rem, 26vw, 10.5rem);
+    height: clamp(7.5rem, 26vw, 10.5rem);
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(
+      circle,
+      rgba(245, 176, 65, 0.16) 0%,
+      rgba(245, 176, 65, 0.06) 44%,
+      transparent 72%
+    );
+    opacity: 0;
+  }
+
+  .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-glow {
+    opacity: 1;
+  }
+
   .hero-pillar-fade__mark img {
+    position: relative;
+    z-index: 1;
     display: block;
     width: clamp(4.5rem, 13vw, 6.25rem);
     height: auto;
     background: transparent;
     border-radius: 0;
-    filter: grayscale(1) brightness(0.86) contrast(0.96);
-    opacity: var(--hero-mark-img-opacity, 0.24);
+    opacity: var(--hero-mark-img-opacity, 0.22);
+    filter: drop-shadow(0 0 10px rgba(245, 176, 65, 0.06));
   }
 
   .hero-pillar-fade__mark--intro img {
     width: clamp(6.5rem, 22vw, 8.75rem);
-    opacity: 0.3;
-    filter: grayscale(1) brightness(0.84) contrast(0.98);
+    opacity: 1;
+    filter: drop-shadow(0 0 18px rgba(245, 176, 65, 0.12));
   }
 
   .hero-pillar-fade__mark--solo img {
     width: clamp(4.25rem, 12vw, 5.75rem);
-    opacity: 0.16;
-    filter: grayscale(1) brightness(0.82) contrast(0.94);
+    opacity: 0.18;
+    filter: none;
   }
 
   .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
@@ -1017,14 +1028,14 @@ const heroProductPillars = [
 
     .hero-pillar-fade__mark--intro img {
       width: clamp(5.75rem, 26vw, 7.5rem);
-      opacity: 0.28;
-      filter: grayscale(1) brightness(0.84) contrast(0.96);
+      opacity: 1;
+      filter: drop-shadow(0 0 14px rgba(245, 176, 65, 0.1));
     }
 
     .hero-pillar-fade__mark--solo img {
       width: clamp(3.75rem, 18vw, 5rem);
-      opacity: 0.14;
-      filter: grayscale(1) brightness(0.8) contrast(0.92);
+      opacity: 0.16;
+      filter: none;
     }
 
     .hero-pillar-fade__phrase {

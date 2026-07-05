@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — intro logo = frases + SVG sin pegote (5 jul 2026, tarde)
+
+**Qué:** intro misma pausa (650 ms), ms, easing y translateY que batch; hold ~2,6 s; sin doble opacidad. Asset `hero-tevsys-mark.svg` (8 chevrones, sin caja) + halo ámbar sutil al nacer.
+
+**Commit:** `web(tevsys): hero marca intro frases svg halo`
+
+---
+
 ## Hero home — revert fondo #000 + intro emerge como frases (5 jul 2026)
 
 **Qué:** quita wrapper negro (pegote). Intro logo = mismos ms/easing/Y que frases batch + blur 5px→0 (surgir ligero). Solo sin cambio de secuencia.
