@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — rollback marca favicon.png más grande (5 jul 2026)
+
+**Qué:** vuelve `favicon.png` (mismo que header) en hero mark; tamaño intro/solo subido; grayscale. Motion intro→batch→solo intacto. Retoque pegatina pendiente fundador.
+
+**Commit:** `web(tevsys): hero marca favicon png rollback mas grande`
+
+---
+
 ## Hero home — marca chevrones header (5 jul 2026)
 
 **Qué:** sustituye SVG 12-rayos erróneo por `hero-tevsys-mark.svg` — **8 chevrones** igual que `favicon.png`/header, fondo transparente, tono gris plata.

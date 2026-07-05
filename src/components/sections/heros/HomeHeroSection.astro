@@ -26,10 +26,10 @@ const heroProductPillars = [
           <div class="hero-pillar-fade__stage" data-hero-pillar-stage>
             <div class="hero-pillar-fade__mark" data-hero-pillar-mark aria-hidden="true">
               <img
-                src="/hero-tevsys-mark.svg"
+                src="/favicon.png"
                 alt=""
-                width="96"
-                height="96"
+                width="128"
+                height="128"
                 decoding="async"
                 fetchpriority="low"
               />
@@ -571,20 +571,24 @@ const heroProductPillars = [
 
   .hero-pillar-fade__mark img {
     display: block;
-    width: clamp(3.75rem, 11vw, 5.25rem);
+    width: clamp(4.5rem, 13vw, 6.25rem);
     height: auto;
     background: transparent;
-    opacity: var(--hero-mark-img-opacity, 0.88);
+    border-radius: 0;
+    filter: grayscale(1) brightness(1.12) contrast(0.88);
+    opacity: var(--hero-mark-img-opacity, 0.28);
   }
 
   .hero-pillar-fade__mark--intro img {
-    width: clamp(5rem, 18vw, 6.75rem);
-    opacity: 0.92;
+    width: clamp(6.5rem, 22vw, 8.75rem);
+    opacity: 0.38;
+    filter: grayscale(1) brightness(1.18) contrast(0.9);
   }
 
   .hero-pillar-fade__mark--solo img {
-    width: clamp(3.5rem, 10vw, 4.75rem);
-    opacity: 0.55;
+    width: clamp(4.25rem, 12vw, 5.75rem);
+    opacity: 0.22;
+    filter: grayscale(1) brightness(1.1) contrast(0.85);
   }
 
   .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
@@ -972,17 +976,17 @@ const heroProductPillars = [
     }
 
     .hero-pillar-fade__mark img {
-      width: clamp(3.25rem, 18vw, 4.25rem);
+      width: clamp(4rem, 20vw, 5.5rem);
     }
 
     .hero-pillar-fade__mark--intro img {
-      width: clamp(4.5rem, 22vw, 5.75rem);
-      opacity: 0.88;
+      width: clamp(5.75rem, 26vw, 7.5rem);
+      opacity: 0.34;
     }
 
     .hero-pillar-fade__mark--solo img {
-      width: clamp(3rem, 16vw, 4rem);
-      opacity: 0.5;
+      width: clamp(3.75rem, 18vw, 5rem);
+      opacity: 0.2;
     }
 
     .hero-pillar-fade__phrase {
