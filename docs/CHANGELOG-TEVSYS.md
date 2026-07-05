@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — logo gris elegante + intro lenta (5 jul 2026)
+
+**Qué:** SVG inline 8 chevrones plata (sin PNG/naranja/pegote). Halo gris suave. Intro ~4,8 s entrando, ~3,6 s hold, ~3,2 s saliendo — curva más pausada que frases.
+
+**Commit:** `web(tevsys): hero marca gris inline intro lenta halo`
+
+---
+
 ## Hero home — fix logo roto: vuelve favicon.png + blend (5 jul 2026)
 
 **Qué:** `hero-tevsys-mark.svg` rompía carga (404/prod o XML); hero usa otra vez `favicon.png` (header). `mix-blend-mode: lighten` quita caja negra sin grayscale. Motion intro = frases intacto.
