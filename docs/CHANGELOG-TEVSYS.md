@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — marca smooth + fondo #000 anti-pegatina (5 jul 2026)
+
+**Qué:** intro/solo más lentos y easing más suave; wrapper `.hero-pillar-fade__mark-surface` con `#000` (mismo negro stack hero).
+
+**Commit:** `web(tevsys): hero marca smooth y fondo negro puro`
+
+---
+
 ## Hero home — marca motion difuso + gris más oscuro (5 jul 2026)
 
 **Qué:** logo intro/solo mismo easing que frases (translateY + fade, sin scale); intro 4 s / out 2,4 s; gris más oscuro (brightness ↓). Tamaño sin cambio.

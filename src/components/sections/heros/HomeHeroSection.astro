@@ -25,14 +25,16 @@ const heroProductPillars = [
         <div class="hero-pillar-fade" aria-label="Capas del producto tevsys">
           <div class="hero-pillar-fade__stage" data-hero-pillar-stage>
             <div class="hero-pillar-fade__mark" data-hero-pillar-mark aria-hidden="true">
-              <img
-                src="/favicon.png"
-                alt=""
-                width="128"
-                height="128"
-                decoding="async"
-                fetchpriority="low"
-              />
+              <span class="hero-pillar-fade__mark-surface">
+                <img
+                  src="/favicon.png"
+                  alt=""
+                  width="128"
+                  height="128"
+                  decoding="async"
+                  fetchpriority="low"
+                />
+              </span>
             </div>
             {heroProductPillars.map((phrase, index) => (
               <p class="hero-pillar-fade__phrase" data-hero-pillar-index={index}>
@@ -103,17 +105,22 @@ const heroProductPillars = [
     soloFadeOutMs: 1400,
     loopPauseMs: 3200,
     loopPauseMsMobile: 2800,
-    introMarkFadeInMs: 4000,
-    introMarkFadeInMsMobile: 3600,
-    introMarkHoldMs: 1200,
-    introMarkHoldMsMobile: 1000,
-    introMarkFadeOutMs: 2400,
-    introMarkFadeOutMsMobile: 2200,
-    introMarkGapBeforeBatchMs: 520,
+    introMarkFadeInMs: 5200,
+    introMarkFadeInMsMobile: 4600,
+    introMarkHoldMs: 1400,
+    introMarkHoldMsMobile: 1200,
+    introMarkFadeOutMs: 2800,
+    introMarkFadeOutMsMobile: 2600,
+    introMarkGapBeforeBatchMs: 560,
+    soloMarkFadeInMs: 3200,
+    soloMarkFadeInMsMobile: 2900,
   };
 
   const HERO_GLOW_IN_EASE = 'cubic-bezier(0.22, 0, 0.08, 1)';
   const HERO_FADE_OUT_EASE = 'cubic-bezier(0.42, 0, 0.18, 1)';
+  const HERO_MARK_GLOW_IN_EASE = 'cubic-bezier(0.16, 0, 0.12, 1)';
+  const HERO_MARK_FADE_OUT_EASE = 'cubic-bezier(0.38, 0, 0.16, 1)';
+  const HERO_MARK_ENTER_Y = '0.18rem';
 
   const HERO_MOBILE_MQ = '(max-width: 768px)';
 
@@ -305,19 +312,20 @@ const heroProductPillars = [
     await sleep(36);
   }
 
-  async function glowMarkDiffuse(el, visible, ms, { easing = HERO_GLOW_IN_EASE, mode = null } = {}) {
+  async function glowMarkDiffuse(el, visible, ms, { easing, mode = null } = {}) {
     if (!el) return;
+    const ease = easing || (visible ? HERO_MARK_GLOW_IN_EASE : HERO_MARK_FADE_OUT_EASE);
     if (mode) setMarkMode(el, mode);
     const base = 'translate(-50%, -50%)';
-    const enterFrom = `translate(-50%, calc(-50% + ${HERO_BATCH_ENTER_Y}))`;
-    const exitTo = `translate(-50%, calc(-50% - ${HERO_BATCH_ENTER_Y}))`;
+    const enterFrom = `translate(-50%, calc(-50% + ${HERO_MARK_ENTER_Y}))`;
+    const exitTo = `translate(-50%, calc(-50% - ${HERO_MARK_ENTER_Y}))`;
 
-    el.style.transition = `opacity ${ms}ms ${easing}, visibility 0s linear, transform ${ms}ms ${easing}`;
+    el.style.transition = `opacity ${ms}ms ${ease}, visibility 0s linear, transform ${ms}ms ${ease}`;
     if (visible) {
       el.style.visibility = 'visible';
       el.style.opacity = '0';
       el.style.transform = enterFrom;
-      await sleep(28);
+      await sleep(40);
       el.style.opacity = '1';
       el.style.transform = base;
     } else {
@@ -366,7 +374,7 @@ const heroProductPillars = [
       await glowMarkDiffuse(mark, true, getHeroTiming('introMarkFadeInMs'), { mode: 'intro' });
       await sleep(getHeroTiming('introMarkHoldMs'));
       await glowMarkDiffuse(mark, false, getHeroTiming('introMarkFadeOutMs'), {
-        easing: HERO_FADE_OUT_EASE,
+        easing: HERO_MARK_FADE_OUT_EASE,
         mode: 'intro',
       });
       stage.classList.remove('hero-pillar-fade__stage--intro');
@@ -383,7 +391,7 @@ const heroProductPillars = [
     await sleep(280);
 
     if (mark) {
-      await glowMarkDiffuse(mark, true, soloFadeInMs, { mode: 'solo' });
+      await glowMarkDiffuse(mark, true, getHeroTiming('soloMarkFadeInMs'), { mode: 'solo' });
     }
 
     const slots = shuffle(getSoloSlotPool()).slice(0, remainingSoloIndices.length);
@@ -400,7 +408,7 @@ const heroProductPillars = [
 
     if (mark) {
       await glowMarkDiffuse(mark, false, getHeroTiming('batchPhraseFadeOutMs'), {
-        easing: HERO_FADE_OUT_EASE,
+        easing: HERO_MARK_FADE_OUT_EASE,
         mode: 'solo',
       });
       setMarkMode(mark, null);
@@ -561,6 +569,13 @@ const heroProductPillars = [
     visibility: hidden;
     pointer-events: none;
     will-change: opacity, transform;
+  }
+
+  /* Negro puro stack hero (`global.css` .tevsys-home-hero-stack #000) — prueba anti-pegatina */
+  .hero-pillar-fade__mark-surface {
+    display: block;
+    line-height: 0;
+    background-color: #000;
   }
 
   .hero-pillar-fade__mark img {
