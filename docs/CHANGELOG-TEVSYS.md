@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — fix logo intro oculto por batch CSS (5 jul 2026)
+
+**Qué:** intro ya no corre con clase `--batch` (el `display:none` mataba el logo). Opacidad intro/solo subida. Batch sigue ocultando marca vía visibility, no display.
+
+**Commit:** `web(tevsys): fix hero marca intro visible batch sin display none`
+
+---
+
 ## Hero home — marca hero secuencia intro/batch/solo (5 jul 2026)
 
 **Qué:** fix «pegatina» — SVG transparente `favicon-tevsys-icon.svg` (sin rect PNG). Secuencia: **intro** logo grande lento (solo 1.er ciclo) → sale → **batch lista** sin logo → **solo** logo tenue fijo centro → sale antes del loop. Sin solapamiento frases/lista.
