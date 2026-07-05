@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — logo DimGray bordes redondos sin halo gris (5 jul 2026)
+
+**Qué:** quita halo plateado. Chip con `border-radius` (sin esquinas 90°). Tono DimGray. Solo sombra negra muy sutil alrededor.
+
+**Commit:** `web(tevsys): hero marca dimgray redondo sin halo`
+
+---
+
 ## Hero home — logo favicon 2 tonos gris + halo nace (5 jul 2026)
 
 **Qué:** vuelve `favicon.png` (chevrones reales, no octágono SVG). Grayscale + lighten = dos grises sin caja negra. Halo doble blur animado. Intro ~5,6 s.
