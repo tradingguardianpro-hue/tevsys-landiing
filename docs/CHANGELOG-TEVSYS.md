@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — marca chevrones header (5 jul 2026)
+
+**Qué:** sustituye SVG 12-rayos erróneo por `hero-tevsys-mark.svg` — **8 chevrones** igual que `favicon.png`/header, fondo transparente, tono gris plata.
+
+**Commit:** `web(tevsys): hero marca chevrones header sin fondo`
+
+---
+
 ## Hero home — fix logo intro oculto por batch CSS (5 jul 2026)
 
 **Qué:** intro ya no corre con clase `--batch` (el `display:none` mataba el logo). Opacidad intro/solo subida. Batch sigue ocultando marca vía visibility, no display.
