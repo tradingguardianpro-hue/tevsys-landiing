@@ -67,7 +67,7 @@ Documento de contenido/copy actual para revisión de equipo.
   2. Disciplina automatizada
   3. Trazabilidad contrastable con MT5
   4. Protección activa en toda la cuenta
-- **Marca hero (jul 2026):** icono header (`favicon.png`) centrado en la zona pilares — tono gris (grayscale + opacidad baja); entra/sale con el motion batch/solo.
+- **Marca hero (jul 2026):** icono radial SVG transparente; secuencia intro → batch sin logo → solo tenue → loop.
 - **Microfrase de desmarque (`hero-disclaimer`):** `No damos señales ni promesas de beneficio.`
 - **Tipografía (19 abr 2026):** **DM Sans** solo en `.hero-title` (H1); resto del bloque hero y header en **Inter**. Carga de fuentes en `BaseHead.astro` (Inter + DM Sans).
 - **Tagline:** `Where precision meets the edge`

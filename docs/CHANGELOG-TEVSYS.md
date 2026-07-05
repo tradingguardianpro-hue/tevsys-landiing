@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — marca hero secuencia intro/batch/solo (5 jul 2026)
+
+**Qué:** fix «pegatina» — SVG transparente `favicon-tevsys-icon.svg` (sin rect PNG). Secuencia: **intro** logo grande lento (solo 1.er ciclo) → sale → **batch lista** sin logo → **solo** logo tenue fijo centro → sale antes del loop. Sin solapamiento frases/lista.
+
+**Commit:** `web(tevsys): hero marca intro batch solo sin solapamiento`
+
+---
+
 ## Hero home — marca gris centrada en pilares fade (5 jul 2026)
 
 **Qué:** icono `favicon.png` (mismo que header) centrado en `hero-pillar-fade` — grayscale, baja opacidad; entra/sale con batch y fase solo (mismo easing que frases). Más visible en solo (~22 %) que en columna batch (~14 %).
