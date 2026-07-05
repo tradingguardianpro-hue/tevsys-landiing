@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — fix logo roto: vuelve favicon.png + blend (5 jul 2026)
+
+**Qué:** `hero-tevsys-mark.svg` rompía carga (404/prod o XML); hero usa otra vez `favicon.png` (header). `mix-blend-mode: lighten` quita caja negra sin grayscale. Motion intro = frases intacto.
+
+**Commit:** `web(tevsys): hero marca favicon blend fix roto`
+
+---
+
 ## Hero home — intro logo = frases + SVG sin pegote (5 jul 2026, tarde)
 
 **Qué:** intro misma pausa (650 ms), ms, easing y translateY que batch; hold ~2,6 s; sin doble opacidad. Asset `hero-tevsys-mark.svg` (8 chevrones, sin caja) + halo ámbar sutil al nacer.
