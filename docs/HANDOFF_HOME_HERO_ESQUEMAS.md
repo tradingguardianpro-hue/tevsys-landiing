@@ -7,6 +7,7 @@
 ### 2m-E-column — batch simétrico (28 jun 2026 — fundador OK probar)
 
 - **Batch:** columna centrada bajo H1; orden **Precisión → Disciplina → Trazabilidad → Cuenta** (anti-encasillamiento — jul 2026); entrada secuencial premium; hairline vertical sutil (sin puntos ámbar).
+- **Marca gris (jul 2026):** `favicon.png` centrado en stage — grayscale, opacidad baja; fade sync con batch (entra/sale con columna) y solo (ancla central mientras frases flotan).
 - **Apagado:** arriba→abajo (espejo de entrada); luego fase **solo** en slots aleatorios (sin cambio de espíritu).
 - **Motivo:** batch en 4 esquinas leía asimétrico al cargar (feedback UX).
 - **Revertir:** `data-hero-layout="scheme-2m-e"` + slots batch en git history.

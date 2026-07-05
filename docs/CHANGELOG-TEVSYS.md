@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — marca gris centrada en pilares fade (5 jul 2026)
+
+**Qué:** icono `favicon.png` (mismo que header) centrado en `hero-pillar-fade` — grayscale, baja opacidad; entra/sale con batch y fase solo (mismo easing que frases). Más visible en solo (~22 %) que en columna batch (~14 %).
+
+**Commit:** `web(tevsys): hero marca gris centrada sync pilares fade`
+
+---
+
 ## Hero home — pilares fade Opción A anti-encasillamiento (5 jul 2026)
 
 **Qué:** `hero-pillar-fade` bajo H1 — reorden + copy: (1) Precisión de cierre verificable · (2) Disciplina automatizada · (3) Trazabilidad contrastable con MT5 · (4) Protección activa en toda la cuenta. Disciplina pasa a 2.º; precisión/evidencia abre; cuenta completa cierra.
