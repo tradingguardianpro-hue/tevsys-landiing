@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — elimina logo centro (5 jul 2026)
+
+**Qué:** quitado mark/icono del hero; solo pilares fade. Idea aparcada en agenda + handoff (asset chevrones futuro).
+
+**Commit:** `web(tevsys): hero quita logo centro aparcado`
+
+---
+
 ## Hero home — logo insinuado casi negro + handoff asset (5 jul 2026)
 
 **Qué:** última prueba — chevrones casi invisibles, sin halo/sombra chip. Agenda + handoff: asset solo chevrones (Gabi) → validar → montar o quitar.
