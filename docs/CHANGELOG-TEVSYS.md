@@ -8,6 +8,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero home — marca motion difuso + gris más oscuro (5 jul 2026)
+
+**Qué:** logo intro/solo mismo easing que frases (translateY + fade, sin scale); intro 4 s / out 2,4 s; gris más oscuro (brightness ↓). Tamaño sin cambio.
+
+**Commit:** `web(tevsys): hero marca motion difuso gris oscuro`
+
+---
+
 ## Hero home — rollback marca favicon.png más grande (5 jul 2026)
 
 **Qué:** vuelve `favicon.png` (mismo que header) en hero mark; tamaño intro/solo subido; grayscale. Motion intro→batch→solo intacto. Retoque pegatina pendiente fundador.
