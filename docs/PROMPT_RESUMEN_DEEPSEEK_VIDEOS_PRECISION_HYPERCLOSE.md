@@ -33,7 +33,7 @@ Este documento se mantiene como referencia específica de vídeos Precisión/Hyp
 - `precision-demo.mp4` — cuenta pequeña; sección con título + vídeo visible (compact).
 - `precision-logs-guide.mp4` — Guía logs MT5. SIN audio.
 
-**Copy:** Hook **97 operativas** + 0,06% (fuente MD operativas proyecto TGP §3).
+**Copy:** Hook **101 operativas** + 0,06% (fuente MD operativas proyecto TGP §3).
 
 **Estructura (orden enlaces «Qué puedes comprobar»):** demo 100k → logs → alta volatilidad → cuenta pequeña → **resultados al final**.
 
@@ -113,7 +113,7 @@ Este documento se mantiene como referencia específica de vídeos Precisión/Hyp
 ## 5. Resumen para pegar a DeepSeek
 
 ```
-Estado web tevsys (jun 2026): contador **97** operativas (`settings.js`). Precisión: hero evidencia-100k-perdida.mp4, volatilidad + cuenta pequeña + logs compactos. HyperClose: vídeo 2:23, galería 6 + HTML historial; modales 3 PNG; Día OFF con vídeo + capturas. Evidencia: hero 100k, 4.56, auditoría 97. SML: falta sml-demo. Videos: public/videos/features/. Docs: PROMPT_MAESTRO §7, CONTENIDO_WEB, ARREGLOS_WEB.
+Estado web tevsys (jun 2026): contador **101** operativas (`settings.js`). Precisión: hero evidencia-100k-perdida.mp4, volatilidad + cuenta pequeña + logs compactos. HyperClose: vídeo 2:23, galería 6 + HTML historial; modales 3 PNG; Día OFF con vídeo + capturas. Evidencia: hero 100k, 4.56, auditoría 101. SML: falta sml-demo. Videos: public/videos/features/. Docs: PROMPT_MAESTRO §7, CONTENIDO_WEB, ARREGLOS_WEB.
 
 EA/onboarding: Panel hint arrastre + F7; modales refinados Mar 2026. Resumen: RESUMEN_MODALES_DEFINITIVOS_Y_PENDIENTES.md (repo TGP).
 ```
