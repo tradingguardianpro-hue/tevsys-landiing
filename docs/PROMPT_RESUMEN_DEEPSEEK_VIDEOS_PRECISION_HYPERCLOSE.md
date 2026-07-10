@@ -33,7 +33,7 @@ Este documento se mantiene como referencia específica de vídeos Precisión/Hyp
 - `precision-demo.mp4` — cuenta pequeña; sección con título + vídeo visible (compact).
 - `precision-logs-guide.mp4` — Guía logs MT5. SIN audio.
 
-**Copy:** Hook **101 operativas** + 0,06% (fuente MD operativas proyecto TGP §3).
+**Copy:** Hook **103 operativas** + 0,06% (fuente MD operativas proyecto TGP §3).
 
 **Estructura (orden enlaces «Qué puedes comprobar»):** demo 100k → logs → alta volatilidad → cuenta pequeña → **resultados al final**.
 

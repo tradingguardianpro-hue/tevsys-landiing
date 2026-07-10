@@ -247,7 +247,7 @@ Nota de uso: si no hay instrucción explícita nueva, esta regla se aplica por d
 
 - `precision`
   - Título: `Precisión de cierre: donde configuras, cerramos.`
-  - Hook: `101 operativas documentadas. 0,06% de error medio en condiciones normales.` (fuente `settings.js` · MD precisión §3) *(26 Mar 2026; §58)*
+  - Hook: `103 operativas documentadas. 0,06% de error medio en condiciones normales.` (fuente `settings.js` · MD precisión §3) *(10 Jul 2026; §58)*
 - `hyperclose`
   - Título: `HyperClose: cuando tu disciplina falla, HyperClose no.`
   - Hook: `Cierre en milisegundos. Bloqueo hasta la siguiente rotación.`
@@ -277,7 +277,7 @@ Regla: a partir de este punto solo se cambia copy por bug, inconsistencia o deci
 | Cálculo visible en panel | Demo interna (ancla a video) | Vídeo 20-40s | `precision-demo.mp4` ✅ |
 | Demo alta volatilidad | Acordeón con vídeo | Vídeo con overlays | `precision-demo-volatilidad.mp4` ✅ |
 | Logs auditables | Guía visual en vídeo | Vídeo con overlays (sin audio) | `precision-logs-guide.mp4` ✅ |
-| Resumen estadístico (0,06%) | KPIs + enlace auditoría | 101 operativas documentadas | ✅ |
+| Resumen estadístico (0,06%) | KPIs + enlace auditoría | 103 operativas documentadas | ✅ |
 
 ### 9.2 HyperClose (`/features/hyperclose`)
 

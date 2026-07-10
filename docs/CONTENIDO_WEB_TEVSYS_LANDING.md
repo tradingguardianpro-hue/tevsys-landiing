@@ -25,7 +25,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Micropágina Precisión (`/features/precision`)
 - **H1:** `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
-- **Hook:** 101 operativas + 0,06% error medio (condiciones normales).
+- **Hook:** 103 operativas + 0,06% error medio (condiciones normales).
 - **Transparencia extrema:** párrafo inmediato bajo intro — desviación máxima documentada **−0,39%** (formato signo + coma; cursiva en el porcentaje, coherente visualmente con el hook).
 - **Manifiesto** bajo hero: misma línea de valor que otras features.
 
@@ -292,7 +292,7 @@ Documento de contenido/copy actual para revisión de equipo.
   - Lead: `Operar en bloqueo dispara el cierre al instante; lo que pasa queda trazado para poder comprobarlo.`
 - `Precisión`:
   - Título: `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
-  - Hook: `• 101 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - Hook: `• 103 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: párrafo bajo intro — desviación máxima documentada **−0,39%** (signo negativo + cursiva en el %, alineado al estilo del hook).
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -311,7 +311,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Nasdaq (multi‑activo):** bloque de demo **inmediatamente después** de alta volatilidad (narrativa: volatilidad → multi‑activo NASDAQ).
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`); en el flujo de página va **antes** del bloque de logs / “Sin humo” (tras volatilidad y Nasdaq).
 - **Qué puedes comprobar / orden de secciones en página (19 abr 2026):** alta volatilidad → **Nasdaq** → **cuenta pequeña** → **logs / trazabilidad**; lista de anclas y script de expansión de demos alineados con ese orden en `precision.astro`.
-- **101 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
+- **103 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
 - **Nota extremos (30 abr 2026):** bajo el hook, párrafo `feature-extreme-note` — desviación máxima documentada **−0,39%** (acento + cursiva en el porcentaje).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
@@ -476,10 +476,10 @@ Seguimiento interno activo en:
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.` — Cuando SML tenga vídeo, el embed debe seguir **«Convención embeds de vídeo — micropáginas `/features/*`»** en este documento.
 
 - Hook de apertura:
-  - `101 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 mar 2026 número; **30 abr 2026** sync web + nota **−0,39%**; fuente MD operativas proyecto TGP §3)*
+  - `103 operativas documentadas. 0,06% de error medio en condiciones normales.` *(26 mar 2026 número; **30 abr 2026** sync web + nota **−0,39%**; fuente MD operativas proyecto TGP §3)*
 
 - Bloque `Resumen estadístico` (lectura rápida):
-  - `101 operativas documentadas`
+  - `103 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -514,7 +514,7 @@ Seguimiento interno activo en:
 **Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
 
 - KPIs visibles:
-  - `101 operativas documentadas`
+  - `103 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`

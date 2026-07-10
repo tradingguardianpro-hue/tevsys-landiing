@@ -8,6 +8,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Contador operativas — **103** (10 jul 2026)
+
+**Qué:** sync contador público tras operativas **4.102** (FTMO buffer diamante +0,50 %) + **4.103** (IC buffer diamante +2,50 %) — fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).
+
+**Archivos:** `src/config/settings.js` (`TEVSYS_DOCUMENTED_OPERATIVES`); propagación automática a home, Precisión, Evidencia, Para quién y meta description. Docs espejo: `CONTENIDO_WEB_TEVSYS_LANDING.md`, `SEO_ANALYTICS_TEVSYS.md`, `CARDS-NEXT-PHASE.md`, `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md`.
+
+**Commit:** `web(tevsys): sync contador 103 operativas documentadas`
+
+---
+
 ## Contador operativas — **101** (8 jul 2026)
 
 **Qué:** sync contador público tras operativas **4.100** (FTMO ganancia +0,50 %) + **4.101** (IC ganancia +2,50 %) — fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).
