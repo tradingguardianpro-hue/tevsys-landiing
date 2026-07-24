@@ -26,7 +26,14 @@ const { seo, bodyClass } = Astro.props;
 		<slot name="footer" />
 		<script>
 			import { inject } from '@vercel/analytics';
-			inject();
+			inject({
+				beforeSend: (event) => {
+					if (typeof localStorage !== 'undefined' && localStorage.getItem('va-disable')) {
+						return null;
+					}
+					return event;
+				},
+			});
 		</script>
 	</body>
 </html>

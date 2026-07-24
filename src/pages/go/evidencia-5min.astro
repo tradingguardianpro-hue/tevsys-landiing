@@ -34,7 +34,14 @@
     <p class="sr-only">Redirigiendo a evidencia.</p>
     <script>
       import { inject } from '@vercel/analytics';
-      inject();
+      inject({
+        beforeSend: (event) => {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('va-disable')) {
+            return null;
+          }
+          return event;
+        },
+      });
       // Delay corto para registrar pageview sin mostrar transicion fea.
       window.setTimeout(() => {
         window.location.replace('/como-funciona?play=1#evidencia-nasdaq-100');

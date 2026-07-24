@@ -66,7 +66,9 @@ Gratis en plan Hobby.
 
 **Acuerdo fundador (15 jun 2026):** implementar en **próxima sesión web larga**. **Prioridad producto > web** hasta ese día; este apartado es el canon operativo.
 
-**Actualización 28 jun 2026:** bloque contención `#evidencia-contencion-489` y micro `/para-quien` — **publicados y documentados**. Cola §3.1 pendiente principal: **analytics opt-out** + FAQ acta AuditTrail.
+**Actualización 28 jun 2026:** bloque contención `#evidencia-contencion-489` y micro `/para-quien` — **publicados y documentados**.
+
+**Actualización 24 jul 2026:** **analytics opt-out implementado** (`Base.astro` + `/go/evidencia-5min`). Cola §3.1 restante: FAQ acta AuditTrail.
 
 **No existe** botón en Vercel para **borrar o reiniciar** el histórico en el mismo proyecto (Vercel community — sin ETA para exclusión permanente en dashboard).
 
@@ -79,12 +81,12 @@ Gratis en plan Hobby.
 | # | Qué | Para qué |
 |---|-----|----------|
 | **1** | **Línea base** — métricas interpretables solo desde **16 jun 2026** | Pasado contaminado; no usar top pages / países del mes previo como embudo |
-| **2** | **Opt-out fundador** — `beforeSend` en `Base.astro` + `localStorage va-disable` en PC y móvil | Tus visitas **dejan de contarse** hacia delante |
+| **2** | **Opt-out fundador** — ✅ **24 jul 2026** — `beforeSend` en `Base.astro` (+ redirect evidencia) + `localStorage va-disable` en PC y móvil | Tus visitas **dejan de contarse** hacia delante |
 | **3** | **QA en preview** — diseño en `*.vercel.app`; `www.tevsys.io` solo tráfico real o con opt-out | Menos ruido mientras revisas |
 
 ---
 
-#### Implementación pendiente — opt-out (`Base.astro`)
+#### Opt-out — implementado 24 jul 2026 (`Base.astro` + `/go/evidencia-5min`)
 
 ```js
 import { inject } from '@vercel/analytics';
@@ -115,7 +117,7 @@ localStorage.setItem('va-disable', '1');
 
 #### Sesión web larga — orden sugerido
 
-1. Analytics opt-out (§3.1) — ~15 min  
+1. ~~Analytics opt-out (§3.1)~~ — **hecho 24 jul 2026**  
 2. ~~Bloque 4.89 Evidencia~~ — **hecho 28 jun 2026** (`HANDOFF_4.89_*` §13.1)  
 3. ~~Micro `/para-quien`~~ — **hecho 28 jun 2026** (`CONTENIDO_WEB` § *Micro Para quién*)  
 4. **FAQ — acta AuditTrail (jun 2026):** publicar frase canon en `PROMPT_MAESTRO` §21.5 («tevsys no solo aplica tus límites…») — home FAQ, `/auditoria-ia` o `/features/evidencia`; sin prometer portal auditoría abierto.  

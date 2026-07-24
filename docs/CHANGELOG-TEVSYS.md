@@ -28,6 +28,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Analytics opt-out fundador — va-disable (24 jul 2026)
+
+**Qué:** `beforeSend` en `Base.astro` y `/go/evidencia-5min` — si `localStorage.va-disable` existe, no envía eventos a Vercel Analytics. Canon `SEO_ANALYTICS_TEVSYS.md` §3.1.
+
+**Tras push:** en PC y móvil (consola en www.tevsys.io) → `localStorage.setItem('va-disable', '1');`
+
+**Commit:** `web(tevsys): analytics opt-out va-disable para QA fundador`
+
+---
+
+## Nota roadmap — flujo demo→contacto guiado (10 jul 2026)
+
+**Sin cambio de código.** Idea aparcada: camino obvio en ~60 s para lead externo (p. ej. Juan manda a alguien). Agenda TGP + `CONTENIDO_WEB_TEVSYS_LANDING.md` § *Próximas sesiones web*.
+
+---
+
 ## Hero home — elimina logo centro (5 jul 2026)
 
 **Qué:** quitado mark/icono del hero; solo pilares fade. Idea aparcada en agenda + handoff (asset chevrones futuro).
