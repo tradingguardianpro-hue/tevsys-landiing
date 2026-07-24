@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — intro marca surge lento (24 jul 2026)
+
+**Qué:** primera aparición ~9 s + blur 14px→0 + subida suave (sin susto). Luego jugamos motion.
+
+**Commit:** `web(tevsys): hero marca intro surge lento desde profundidad`
+
+---
+
 ## Home hero — chevrones transparentes (prueba 24 jul 2026)
 
 **Qué:** vuelve marca con `hero-tevsys-chevrons.png` (sin caja). Intro lenta → oculto en lista → tenue en solo. Validar tono/tamaño con fundador.

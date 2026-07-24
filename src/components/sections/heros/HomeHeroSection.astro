@@ -104,26 +104,28 @@ const heroProductPillars = [
     soloFadeOutMs: 1400,
     loopPauseMs: 3200,
     loopPauseMsMobile: 2800,
-    introMarkDelayMs: 900,
-    introMarkDelayMsMobile: 820,
-    introMarkFadeInMs: 4800,
-    introMarkFadeInMsMobile: 4200,
-    introMarkHoldMs: 3200,
-    introMarkHoldMsMobile: 2800,
-    introMarkFadeOutMs: 2800,
-    introMarkFadeOutMsMobile: 2500,
-    introMarkGapBeforeBatchMs: 520,
+    introMarkDelayMs: 1400,
+    introMarkDelayMsMobile: 1200,
+    introMarkFadeInMs: 9000,
+    introMarkFadeInMsMobile: 8000,
+    introMarkHoldMs: 3600,
+    introMarkHoldMsMobile: 3200,
+    introMarkFadeOutMs: 4200,
+    introMarkFadeOutMsMobile: 3800,
+    introMarkGapBeforeBatchMs: 640,
   };
 
   const HERO_GLOW_IN_EASE = 'cubic-bezier(0.22, 0, 0.08, 1)';
   const HERO_FADE_OUT_EASE = 'cubic-bezier(0.42, 0, 0.18, 1)';
-  const HERO_MARK_INTRO_IN_EASE = 'cubic-bezier(0.1, 0, 0.04, 1)';
-  const HERO_MARK_INTRO_OUT_EASE = 'cubic-bezier(0.48, 0, 0.22, 1)';
+  /* Intro marca: mucho tiempo casi invisible → emerge sin golpe (no “susto”). */
+  const HERO_MARK_SURFACE_IN_EASE = 'cubic-bezier(0.45, 0.02, 0.22, 1)';
+  const HERO_MARK_SURFACE_OUT_EASE = 'cubic-bezier(0.4, 0, 0.28, 1)';
 
   const HERO_MOBILE_MQ = '(max-width: 768px)';
 
   const HERO_BATCH_ENTER_Y = '0.3rem';
-  const HERO_MARK_ENTER_Y = '0.32rem';
+  const HERO_MARK_ENTER_Y = '0.85rem';
+  const HERO_MARK_INTRO_BLUR = '14px';
 
   const HERO_PILLAR_SOLO_SLOTS = [
     { top: '8%', left: '3%', right: 'auto', align: 'left', maxW: '54%' },
@@ -320,24 +322,69 @@ const heroProductPillars = [
 
   function setMarkHiddenInstant(el) {
     if (!el) return;
+    const img = el.querySelector('.hero-pillar-fade__mark-icon');
     el.style.transition = 'none';
     el.style.opacity = '0';
     el.style.visibility = 'hidden';
     el.style.transform = 'translate(-50%, -50%) scale(1)';
+    if (img) {
+      img.style.transition = 'none';
+      img.style.filter = '';
+    }
     setMarkMode(el, null);
   }
 
-  /** Intro / solo: chevrones sin caja — nace lento, misma familia que frases. */
-  async function animateMark(el, visible, ms, { mode = null, intro = false } = {}) {
+  /** Solo intro: surge desde abajo + blur → nítido (sin susto). */
+  async function animateMarkSurface(el, visible, ms) {
+    if (!el) return;
+    const img = el.querySelector('.hero-pillar-fade__mark-icon');
+    const ease = visible ? HERO_MARK_SURFACE_IN_EASE : HERO_MARK_SURFACE_OUT_EASE;
+    const base = 'translate(-50%, -50%) scale(1)';
+    const enterFrom = `translate(-50%, calc(-50% + ${HERO_MARK_ENTER_Y})) scale(0.9)`;
+    const exitTo = `translate(-50%, calc(-50% - 0.45rem)) scale(0.97)`;
+
+    setMarkMode(el, 'intro');
+    el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
+    if (img) {
+      img.style.transition = `filter ${ms}ms ${ease}`;
+    }
+
+    if (visible) {
+      el.style.visibility = 'visible';
+      el.style.opacity = '0';
+      el.style.transform = enterFrom;
+      if (img) img.style.filter = `blur(${HERO_MARK_INTRO_BLUR})`;
+      await sleep(48);
+      el.style.opacity = '1';
+      el.style.transform = base;
+      if (img) img.style.filter = 'blur(0)';
+    } else {
+      el.style.opacity = '0';
+      el.style.transform = exitTo;
+      if (img) img.style.filter = `blur(${HERO_MARK_INTRO_BLUR})`;
+    }
+
+    await sleep(ms);
+
+    if (!visible) {
+      el.style.visibility = 'hidden';
+      el.style.transform = base;
+      if (img) {
+        img.style.transition = '';
+        img.style.filter = '';
+      }
+      setMarkMode(el, null);
+    }
+  }
+
+  /** Fase solo: fade corto, sin blur de intro. */
+  async function animateMark(el, visible, ms, { mode = null } = {}) {
     if (!el) return;
     if (mode) setMarkMode(el, mode);
-    const ease = visible
-      ? (intro ? HERO_MARK_INTRO_IN_EASE : HERO_GLOW_IN_EASE)
-      : (intro ? HERO_MARK_INTRO_OUT_EASE : HERO_FADE_OUT_EASE);
-    const y = intro ? HERO_MARK_ENTER_Y : HERO_BATCH_ENTER_Y;
+    const ease = visible ? HERO_GLOW_IN_EASE : HERO_FADE_OUT_EASE;
     const base = 'translate(-50%, -50%) scale(1)';
-    const enterFrom = `translate(-50%, calc(-50% + ${y})) scale(${intro ? 0.96 : 1})`;
-    const exitTo = `translate(-50%, calc(-50% - ${y})) scale(${intro ? 0.98 : 1})`;
+    const enterFrom = `translate(-50%, calc(-50% + ${HERO_BATCH_ENTER_Y})) scale(1)`;
+    const exitTo = `translate(-50%, calc(-50% - ${HERO_BATCH_ENTER_Y})) scale(1)`;
 
     el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
     if (visible) {
@@ -355,7 +402,6 @@ const heroProductPillars = [
     if (!visible) {
       el.style.visibility = 'hidden';
       el.style.transform = base;
-      if (mode === 'intro') setMarkMode(el, null);
     }
   }
 
@@ -375,9 +421,9 @@ const heroProductPillars = [
     if (intro && mark) {
       stage.classList.add('hero-pillar-fade__stage--intro');
       await sleep(getHeroTiming('introMarkDelayMs'));
-      await animateMark(mark, true, getHeroTiming('introMarkFadeInMs'), { mode: 'intro', intro: true });
+      await animateMarkSurface(mark, true, getHeroTiming('introMarkFadeInMs'));
       await sleep(getHeroTiming('introMarkHoldMs'));
-      await animateMark(mark, false, getHeroTiming('introMarkFadeOutMs'), { mode: 'intro', intro: true });
+      await animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs'));
       stage.classList.remove('hero-pillar-fade__stage--intro');
       await sleep(HERO_PILLAR_TIMING.introMarkGapBeforeBatchMs);
     }
