@@ -76,7 +76,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **CTA secundario (22 abr 2026):** `Ver evidencia en 5 minutos` (estilo outline, junto al CTA principal).
 - **Ruta de CTA secundario (22 abr 2026):** `/go/evidencia-5min` → redirige a `/features/hyperclose#hyperclose-demo`.
 - **Medición Vercel free (22 abr 2026):** visitas a `/go/evidencia-5min` se usan como proxy de clics del CTA secundario (sin eventos Pro).
-- **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
+- **Disponibilidad:** `· Disponible en MT5 ·` (sin “más plataformas” — 24 jul 2026)
 - **Stack home (tema oscuro):** fondo **`#000`** en `.tevsys-home-hero-stack` (coherencia con zona imagen cards); capas KITT sin cambio de filosofía.
 - **Imagen:** mano robótica + candado (`mano robotica central web.png`; hero con `?v=2` tras arte velas neutras). Tratamiento CSS: filtros/viñeta/radio imagen; stack home con viñeta y un solo redondeo exterior (`CHANGELOG` + `HOME_HERO_CARDS_ITERACION_ABR2026.md`).
 - **Reflexión diseño histórica:** `REFLEXION_DISENO_HERO_FOOTER_MAR2026.md` (copy anterior); iteración actual: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
@@ -87,7 +87,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Capas producto:** pilares fade (precisión → disciplina → trazabilidad → cuenta).
 - **Desmarque:** disclaimer sin señales ni promesa de beneficio.
 - **Deseo / marca:** `Where precision meets the edge` (histórico tagline; comprobar si sigue en DOM).
-- **Acción:** `Disponible en MT5 · Próximamente: más plataformas` + CTAs demo / evidencia.
+- **Acción:** `· Disponible en MT5 ·` + CTAs demo / evidencia.
 
 ---
 

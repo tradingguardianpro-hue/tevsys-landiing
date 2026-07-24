@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — solo MT5, sin «más plataformas» (24 jul 2026)
+
+**Qué:** nota bajo la mano → `· Disponible en MT5 ·` (misma mono). Quitado “Próximamente: más plataformas” (honestidad de producto).
+
+**Commit:** `web(tevsys): hero disponible MT5 sin mas plataformas`
+
+---
+
 ## Home — puentes/separadores fijos (24 jul 2026)
 
 **Qué:** los 4 separadores mono (Precisión… / Evidencia… / Essential… / Trader…) usan hairline real (no `::before`), fuera de mid-glow; z-index fijo. Ya no “desaparecen” cuando pasa el motion.
