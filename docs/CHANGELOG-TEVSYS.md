@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — frases antes tras logo (24 jul 2026)
+
+**Qué:** menos aire muerto tras desaparición de marca → 1.ª frase (~1 s antes). Evita scroll por vacío. Chevron solo + chips: sin tocar.
+
+**Commit:** `web(tevsys): hero frases antes tras logo intro`
+
+---
+
 ## Home hero — blur salida = blur entrada (24 jul 2026)
 
 **Qué:** desaparición espejo de la aparición (mismo blur 14px + misma curva). Antes del push.

@@ -85,7 +85,8 @@ const heroProductPillars = [
   const HERO_PILLAR_TIMING = {
     emptyMs: 900,
     emptyMsMobile: 1050,
-    batchFadeInDelayMs: 650,
+    /* Tras logo: poco aire — si no, el ojo se va al scroll antes de la 1.ª frase. */
+    batchFadeInDelayMs: 90,
     batchPhraseFadeInMs: 2400,
     batchPhraseFadeInMsMobile: 2200,
     batchPhraseInGapMs: 340,
@@ -112,7 +113,8 @@ const heroProductPillars = [
     introMarkHoldMsMobile: 2000,
     introMarkFadeOutMs: 3000,
     introMarkFadeOutMsMobile: 2700,
-    introMarkGapBeforeBatchMs: 420,
+    /* Era 420: vacío perceptible tras blur de salida. */
+    introMarkGapBeforeBatchMs: 60,
   };
 
   const HERO_GLOW_IN_EASE = 'cubic-bezier(0.22, 0, 0.08, 1)';
