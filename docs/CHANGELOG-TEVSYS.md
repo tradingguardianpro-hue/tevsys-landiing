@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — cita fundador + trazabilidad (24 jul 2026)
+
+**Qué:** cita Gabi añade *saber qué pasaba en mi cuenta* (mantiene fiabilidad y precisión). Sitio: tras planes. `CONTENIDO_WEB`.
+
+**Commit:** `web(tevsys): cita fundador con trazabilidad en cuenta`
+
+---
+
 ## Home hero — solo MT5, sin «más plataformas» (24 jul 2026)
 
 **Qué:** nota bajo la mano → `· Disponible en MT5 ·` (misma mono). Quitado “Próximamente: más plataformas” (honestidad de producto).
