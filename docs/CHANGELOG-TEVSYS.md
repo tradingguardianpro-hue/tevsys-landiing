@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — intro marca timing equilibrio (24 jul 2026)
+
+**Qué:** mantiene blur/elegancia; acorta ciclo (~6,2 s in + hold 2,2 + out 3) para no empujar al scroll antes de los pilares.
+
+**Commit:** `web(tevsys): hero marca intro timing equilibrio scroll`
+
+---
+
 ## Home hero — intro marca surge lento (24 jul 2026)
 
 **Qué:** primera aparición ~9 s + blur 14px→0 + subida suave (sin susto). Luego jugamos motion.
