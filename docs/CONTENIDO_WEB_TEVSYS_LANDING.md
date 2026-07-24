@@ -67,7 +67,7 @@ Documento de contenido/copy actual para revisión de equipo.
   2. Disciplina automatizada
   3. Trazabilidad contrastable con MT5
   4. Protección activa en toda la cuenta
-- **Marca hero (jul 2026):** **sin icono centro** (eliminado 5 jul). Pilares fade intactos. Retomar: asset solo chevrones → validar → sesión web.
+- **Marca hero (jul 2026):** **en prueba** — `hero-tevsys-chevrons.png` (solo chevrones, transparente); intro lenta → oculto en lista → tenue en solo. Validar tono/tamaño.
 - **Microfrase de desmarque (`hero-disclaimer`):** `No damos señales ni promesas de beneficio.`
 - **Tipografía (19 abr 2026):** **DM Sans** solo en `.hero-title` (H1); resto del bloque hero y header en **Inter**. Carga de fuentes en `BaseHead.astro` (Inter + DM Sans).
 - **Tagline:** `Where precision meets the edge`

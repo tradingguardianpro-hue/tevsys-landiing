@@ -24,6 +24,17 @@ const heroProductPillars = [
         </h1>
         <div class="hero-pillar-fade" aria-label="Capas del producto tevsys">
           <div class="hero-pillar-fade__stage" data-hero-pillar-stage>
+            <div class="hero-pillar-fade__mark" data-hero-pillar-mark aria-hidden="true">
+              <img
+                class="hero-pillar-fade__mark-icon"
+                src="/hero-tevsys-chevrons.png"
+                alt=""
+                width="346"
+                height="348"
+                decoding="async"
+                fetchpriority="low"
+              />
+            </div>
             {heroProductPillars.map((phrase, index) => (
               <p class="hero-pillar-fade__phrase" data-hero-pillar-index={index}>
                 {phrase}
@@ -93,14 +104,26 @@ const heroProductPillars = [
     soloFadeOutMs: 1400,
     loopPauseMs: 3200,
     loopPauseMsMobile: 2800,
+    introMarkDelayMs: 900,
+    introMarkDelayMsMobile: 820,
+    introMarkFadeInMs: 4800,
+    introMarkFadeInMsMobile: 4200,
+    introMarkHoldMs: 3200,
+    introMarkHoldMsMobile: 2800,
+    introMarkFadeOutMs: 2800,
+    introMarkFadeOutMsMobile: 2500,
+    introMarkGapBeforeBatchMs: 520,
   };
 
   const HERO_GLOW_IN_EASE = 'cubic-bezier(0.22, 0, 0.08, 1)';
   const HERO_FADE_OUT_EASE = 'cubic-bezier(0.42, 0, 0.18, 1)';
+  const HERO_MARK_INTRO_IN_EASE = 'cubic-bezier(0.1, 0, 0.04, 1)';
+  const HERO_MARK_INTRO_OUT_EASE = 'cubic-bezier(0.48, 0, 0.22, 1)';
 
   const HERO_MOBILE_MQ = '(max-width: 768px)';
 
   const HERO_BATCH_ENTER_Y = '0.3rem';
+  const HERO_MARK_ENTER_Y = '0.32rem';
 
   const HERO_PILLAR_SOLO_SLOTS = [
     { top: '8%', left: '3%', right: 'auto', align: 'left', maxW: '54%' },
@@ -288,24 +311,89 @@ const heroProductPillars = [
     await sleep(36);
   }
 
-  async function runHeroPillarCycle(phrases, stage) {
+  function setMarkMode(el, mode) {
+    if (!el) return;
+    el.classList.remove('hero-pillar-fade__mark--intro', 'hero-pillar-fade__mark--solo');
+    if (mode === 'intro') el.classList.add('hero-pillar-fade__mark--intro');
+    if (mode === 'solo') el.classList.add('hero-pillar-fade__mark--solo');
+  }
+
+  function setMarkHiddenInstant(el) {
+    if (!el) return;
+    el.style.transition = 'none';
+    el.style.opacity = '0';
+    el.style.visibility = 'hidden';
+    el.style.transform = 'translate(-50%, -50%) scale(1)';
+    setMarkMode(el, null);
+  }
+
+  /** Intro / solo: chevrones sin caja — nace lento, misma familia que frases. */
+  async function animateMark(el, visible, ms, { mode = null, intro = false } = {}) {
+    if (!el) return;
+    if (mode) setMarkMode(el, mode);
+    const ease = visible
+      ? (intro ? HERO_MARK_INTRO_IN_EASE : HERO_GLOW_IN_EASE)
+      : (intro ? HERO_MARK_INTRO_OUT_EASE : HERO_FADE_OUT_EASE);
+    const y = intro ? HERO_MARK_ENTER_Y : HERO_BATCH_ENTER_Y;
+    const base = 'translate(-50%, -50%) scale(1)';
+    const enterFrom = `translate(-50%, calc(-50% + ${y})) scale(${intro ? 0.96 : 1})`;
+    const exitTo = `translate(-50%, calc(-50% - ${y})) scale(${intro ? 0.98 : 1})`;
+
+    el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
+    if (visible) {
+      el.style.visibility = 'visible';
+      el.style.opacity = '0';
+      el.style.transform = enterFrom;
+      await sleep(36);
+      el.style.opacity = '1';
+      el.style.transform = base;
+    } else {
+      el.style.opacity = '0';
+      el.style.transform = exitTo;
+    }
+    await sleep(ms);
+    if (!visible) {
+      el.style.visibility = 'hidden';
+      el.style.transform = base;
+      if (mode === 'intro') setMarkMode(el, null);
+    }
+  }
+
+  async function runHeroPillarCycle(phrases, stage, { intro = false } = {}) {
     const soloFadeInMs = getHeroTiming('soloFadeInMs');
+    const mark = stage.querySelector('[data-hero-pillar-mark]');
 
     setSoloLayout(stage, false);
-    stage.classList.remove('hero-pillar-fade__stage--batch');
+    stage.classList.remove('hero-pillar-fade__stage--batch', 'hero-pillar-fade__stage--intro');
     prepareAbsolutePhrases(phrases);
     phrases.forEach((el) => setPhraseHiddenInstant(el));
+    setMarkHiddenInstant(mark);
     await sleep(32);
 
     await sleep(getHeroTiming('emptyMs'));
 
+    if (intro && mark) {
+      stage.classList.add('hero-pillar-fade__stage--intro');
+      await sleep(getHeroTiming('introMarkDelayMs'));
+      await animateMark(mark, true, getHeroTiming('introMarkFadeInMs'), { mode: 'intro', intro: true });
+      await sleep(getHeroTiming('introMarkHoldMs'));
+      await animateMark(mark, false, getHeroTiming('introMarkFadeOutMs'), { mode: 'intro', intro: true });
+      stage.classList.remove('hero-pillar-fade__stage--intro');
+      await sleep(HERO_PILLAR_TIMING.introMarkGapBeforeBatchMs);
+    }
+
     setBatchLayout(stage, true);
+    setMarkHiddenInstant(mark);
     await fadeBatchInTogether(phrases);
     await sleep(getHeroTiming('batchHoldMs'));
 
     const remainingSoloIndices = await fadeOutBatchColumn(phrases, stage);
 
     await sleep(280);
+
+    if (mark) {
+      await animateMark(mark, true, soloFadeInMs, { mode: 'solo' });
+    }
 
     const slots = shuffle(getSoloSlotPool()).slice(0, remainingSoloIndices.length);
 
@@ -317,6 +405,11 @@ const heroProductPillars = [
       await sleep(HERO_PILLAR_TIMING.soloHoldMs);
       await glowPhrase(el, false, HERO_PILLAR_TIMING.soloFadeOutMs, HERO_FADE_OUT_EASE);
       await sleep(HERO_PILLAR_TIMING.soloStartGapMs);
+    }
+
+    if (mark) {
+      await animateMark(mark, false, getHeroTiming('batchPhraseFadeOutMs'), { mode: 'solo' });
+      setMarkMode(mark, null);
     }
 
     await sleep(getHeroTiming('loopPauseMs'));
@@ -331,13 +424,18 @@ const heroProductPillars = [
     const phrases = [...stage.querySelectorAll('.hero-pillar-fade__phrase')];
     if (phrases.length === 0) return;
 
+    const mark = stage.querySelector('[data-hero-pillar-mark]');
+    if (mark) setMarkHiddenInstant(mark);
+
     stage.dataset.heroPillarInit = '1';
     stage.classList.add('hero-pillar-fade__stage--js');
     measureAndLockStageHeight(stage, phrases);
 
     (async () => {
+      let firstCycle = true;
       while (stage.isConnected) {
-        await runHeroPillarCycle(phrases, stage);
+        await runHeroPillarCycle(phrases, stage, { intro: firstCycle });
+        firstCycle = false;
       }
     })();
   }
@@ -453,8 +551,50 @@ const heroProductPillars = [
     padding: 0;
   }
 
+  .hero-pillar-fade__mark {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    will-change: opacity, transform;
+  }
+
+  .hero-pillar-fade__mark-icon {
+    display: block;
+    width: clamp(4.25rem, 12vw, 5.75rem);
+    height: auto;
+    background: transparent;
+    opacity: 0.55;
+  }
+
+  .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-icon {
+    width: clamp(6.25rem, 20vw, 8.25rem);
+    opacity: 0.78;
+  }
+
+  .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-icon {
+    width: clamp(4rem, 11vw, 5.25rem);
+    opacity: 0.32;
+  }
+
   .hero-pillar-fade__stage--js .hero-pillar-fade__phrase {
     z-index: 1;
+  }
+
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__mark {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none;
   }
 
   .hero-pillar-fade__stage--js.hero-pillar-fade__stage--height-locked,
@@ -548,6 +688,10 @@ const heroProductPillars = [
       visibility: visible;
       animation: none;
       transition: none;
+    }
+
+    .hero-pillar-fade__mark {
+      display: none;
     }
   }
 
@@ -815,6 +959,20 @@ const heroProductPillars = [
     .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__phrase {
       max-width: min(22rem, 100%);
       font-size: clamp(0.6875rem, 2.15vw, 0.75rem);
+    }
+
+    .hero-pillar-fade__mark-icon {
+      width: clamp(3.75rem, 18vw, 5rem);
+    }
+
+    .hero-pillar-fade__mark--intro .hero-pillar-fade__mark-icon {
+      width: clamp(5.5rem, 24vw, 7rem);
+      opacity: 0.72;
+    }
+
+    .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-icon {
+      width: clamp(3.5rem, 16vw, 4.75rem);
+      opacity: 0.28;
     }
 
     .hero-pillar-fade__phrase {

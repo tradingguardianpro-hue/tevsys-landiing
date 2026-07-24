@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — chevrones transparentes (prueba 24 jul 2026)
+
+**Qué:** vuelve marca con `hero-tevsys-chevrons.png` (sin caja). Intro lenta → oculto en lista → tenue en solo. Validar tono/tamaño con fundador.
+
+**Commit:** `web(tevsys): hero marca chevrones transparentes prueba`
+
+---
+
 ## Home — cita fundador + trazabilidad (24 jul 2026)
 
 **Qué:** cita Gabi añade *saber qué pasaba en mi cuenta* (mantiene fiabilidad y precisión). Sitio: tras planes. `CONTENIDO_WEB`.
