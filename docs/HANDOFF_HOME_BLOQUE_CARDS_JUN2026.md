@@ -1,10 +1,9 @@
 # Handoff — Home + cierre visual (cohesión jun 2026)
 
-**Última actualización:** 22 jun 2026 — puente fundador · copyright Inter · hero móvil mano centrada  
+**Última actualización:** 24 jul 2026 — puentes/separadores fijos (fuera mid-glow)  
 **Archivos vivos:** `src/pages/index.astro` · `src/components/core/Footer.astro`  
 **Hero (sin cambios motion):** `HomeHeroSection.astro` — esquema **2m-E** · `HANDOFF_HOME_HERO_ESQUEMAS.md`  
 **Método:** repo TGP → `.cursor/rules/workflow-web-visual-tevsys.mdc`  
-**Retomar mañana:** *«cohesión home jun 2026»* → este MD
 
 ---
 
@@ -14,17 +13,19 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 
 **Criterio:** contraste hero/abajo = equipo interno. **Mono dentro de cards = revertido** (pegote); **puentes fuera = OK**.
 
+**24 jul 2026 — bug “separadores que a veces no se ven”:** el puente `Precisión · HyperClose · SML · Evidencia` vivía **dentro** de la banda cards, **detrás/debajo** de las burbujas (`.tevsys-home-mid-glow`). El motion las lavaba. **Fix:** los 4 puentes usan el mismo patrón que `Trader · fundador` — hairline en `<span>` (no `::before`), **fuera** de capas motion, `z-index` fijo.
+
 ---
 
-## Mapa del scroll (estado jun 2026)
+## Mapa del scroll (estado jul 2026)
 
 | Tramo | Puente / gesto | Estado |
 |-------|----------------|--------|
-| Hero → bloque valor | `Precisión · HyperClose · SML · Evidencia` | ✅ Cerrado |
+| Hero → bloque valor | `Precisión · HyperClose · SML · Evidencia` | ✅ Fijo 24 jul (fuera mid-glow) |
 | Bloque valor → grid cards | checklist + *Ellos deslizan* + **Opción A** aire | ✅ Cerrado |
-| Grid cards → auditoría IA | `Evidencia · Trazabilidad · Verificación` | ✅ Cerrado |
-| Auditoría IA → **Planes** | `Essential · Advanced · Pro` + aire + respiración plan-cards | ✅ **Cerrado** (fundador OK 21 jun noche) |
-| Planes → fundador → footer | `Trader · fundador` + firma mono; contacto mono; **copyright Inter** | ✅ Cerrado 22 jun |
+| Grid cards → auditoría IA | `Evidencia · Trazabilidad · Verificación` | ✅ Fijo 24 jul |
+| Auditoría IA → **Planes** | `Essential · Advanced · Pro` | ✅ Fijo 24 jul |
+| Planes → fundador → footer | `Trader · fundador` | ✅ Referencia visual (mismo patrón) |
 
 ---
 

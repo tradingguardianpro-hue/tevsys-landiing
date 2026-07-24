@@ -15,11 +15,12 @@ import settings from '../config/settings.js';
 		</div>
 	</div>
 	<Container>
+		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge" aria-label="Capas del producto: Precisión, HyperClose, SML, Evidencia">
+			<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
+			<span class="tevsys-home-hero-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
+		</p>
 		<div class="tevsys-home-band tevsys-home-band--cards">
 			<div class="tevsys-home-mid-glow" aria-hidden="true"></div>
-			<p class="tevsys-home-hero-bridge" aria-label="Capas del producto: Precisión, HyperClose, SML, Evidencia">
-				<span class="tevsys-home-hero-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
-			</p>
 		<section class="feature-card__section">
 			<h2 class="feature-section__title">¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?</h2>
 			<div class="feature-card__checklist-static">
@@ -99,7 +100,8 @@ import settings from '../config/settings.js';
 		</section>
 		</div>
 	</Container>
-	<p class="tevsys-home-hero-bridge tevsys-home-cards-audit-bridge" aria-label="De evidencia a verificación: trazabilidad y auditoría">
+	<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-cards-audit-bridge" aria-label="De evidencia a verificación: trazabilidad y auditoría">
+		<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
 		<span class="tevsys-home-hero-bridge__text">Evidencia · Trazabilidad · Verificación</span>
 	</p>
 	<div class="tevsys-home-band tevsys-home-band--lower">
@@ -119,7 +121,8 @@ import settings from '../config/settings.js';
 			</div>
 		</section>
 	</div>
-	<p class="tevsys-home-hero-bridge tevsys-home-audit-plans-bridge" aria-label="Planes tevsys: Essential, Advanced y Pro">
+	<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-audit-plans-bridge" aria-label="Planes tevsys: Essential, Advanced y Pro">
+		<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
 		<span class="tevsys-home-hero-bridge__text">Essential · Advanced · Pro</span>
 	</p>
 	<div class="tevsys-home-band tevsys-home-band--lower tevsys-home-band--lower-tail">
@@ -178,7 +181,8 @@ import settings from '../config/settings.js';
 			</div>
 		</section>
 		</Container>
-		<p class="tevsys-home-hero-bridge tevsys-home-plans-founder-bridge" aria-label="De los planes al mensaje del fundador">
+		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-plans-founder-bridge" aria-label="De los planes al mensaje del fundador">
+			<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
 			<span class="tevsys-home-hero-bridge__text">Trader · fundador</span>
 		</p>
 		<section class="founder-section tevsys-home-founder-band">
@@ -198,36 +202,52 @@ import settings from '../config/settings.js';
 </Layout>
 
 <style>
-	.tevsys-home-hero-bridge {
+	/* Puentes de sección — hairline + mono; fuera de capas motion (mid-glow / KITT). */
+	.tevsys-home-hero-bridge,
+	.tevsys-home-section-bridge {
 		position: relative;
-		z-index: 1;
+		z-index: 4;
+		isolation: isolate;
 		margin: 0;
 		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(0.7rem, 1.6vw, 1rem);
 		text-align: center;
+		pointer-events: none;
 	}
-	.tevsys-home-hero-bridge::before {
-		content: '';
+	.tevsys-home-hero-bridge__hairline {
 		display: block;
 		width: min(7.5rem, 42vw);
 		height: 1px;
 		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
+		border: 0;
 		background: linear-gradient(
 			90deg,
 			transparent 0%,
-			rgba(228, 232, 240, 0.36) 50%,
+			rgba(228, 232, 240, 0.48) 50%,
 			transparent 100%
 		);
+		opacity: 1;
+		/* Sin animación — el motion de fondo no debe “comerse” la raya */
+		transform: translateZ(0);
+	}
+	.tevsys-home-hero-bridge::before {
+		content: none;
+		display: none;
 	}
 	.tevsys-home-hero-bridge__text {
+		display: inline-block;
 		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
 		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
 		font-weight: 500;
 		letter-spacing: 0.055em;
-		color: rgba(228, 232, 240, 0.62);
+		color: rgba(228, 232, 240, 0.68);
 		line-height: 1.45;
 	}
 	.tevsys-home-band--cards > .feature-card__section {
 		margin-top: clamp(0.2rem, 0.75vw, 0.45rem);
+	}
+	/* Espacio puente hero→cards (el puente ya no vive dentro de la banda con burbujas). */
+	.tevsys-home-band--cards {
+		margin-top: 0;
 	}
 	.feature-card__section {
 		--feature-card-radius: clamp(0.85rem, 1.5vw, 1.15rem);
@@ -379,71 +399,27 @@ import settings from '../config/settings.js';
 	.audit-teaser-section {
 		margin: calc(var(--tevsys-lower-strip-h, 180px) * -0.965) auto clamp(2.35rem, 4.5vw, 3.1rem);
 	}
-	/* Puente cards → auditoría (entre banda cards y franja inferior; hairline sobre negro). */
-	.tevsys-home-cards-audit-bridge {
-		position: relative;
-		z-index: 2;
-		max-width: min(52rem, 92%);
-		margin: clamp(1.35rem, 3vw, 2.1rem) auto clamp(1rem, 2.4vw, 1.65rem);
-		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(1.05rem, 2.2vw, 1.45rem);
-		text-align: center;
-	}
-	.tevsys-home-cards-audit-bridge::before {
-		content: '';
-		display: block;
-		width: min(7.5rem, 42vw);
-		height: 1px;
-		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(228, 232, 240, 0.36) 50%,
-			transparent 100%
-		);
-	}
-	/* Puente auditoría → planes (entre caja auditoría y banda planes; hairline sobre negro). */
-	.tevsys-home-audit-plans-bridge {
-		position: relative;
-		z-index: 2;
-		max-width: min(52rem, 92%);
-		margin: clamp(1.35rem, 3vw, 2.1rem) auto clamp(1.25rem, 2.8vw, 1.85rem);
-		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(1.15rem, 2.4vw, 1.65rem);
-		text-align: center;
-	}
-	.tevsys-home-audit-plans-bridge::before {
-		content: '';
-		display: block;
-		width: min(7.5rem, 42vw);
-		height: 1px;
-		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(228, 232, 240, 0.36) 50%,
-			transparent 100%
-		);
-	}
-	/* Puente planes → fundador (entre banda planes y bloque fundador; hairline sobre negro). */
+	/* Puentes entre bloques — mismo patrón (hairline fija; z-index por encima de franjas). */
+	.tevsys-home-cards-audit-bridge,
+	.tevsys-home-audit-plans-bridge,
 	.tevsys-home-plans-founder-bridge {
-		position: relative;
-		z-index: 2;
 		max-width: min(52rem, 92%);
-		margin: clamp(1.35rem, 3vw, 2.1rem) auto clamp(1.25rem, 2.8vw, 1.85rem);
-		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(1.15rem, 2.4vw, 1.65rem);
-		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: clamp(1.35rem, 3vw, 2.1rem);
+		margin-bottom: clamp(1rem, 2.4vw, 1.65rem);
+		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(1.05rem, 2.2vw, 1.45rem);
 	}
+	.tevsys-home-audit-plans-bridge,
+	.tevsys-home-plans-founder-bridge {
+		margin-bottom: clamp(1.25rem, 2.8vw, 1.85rem);
+		padding-bottom: clamp(1.15rem, 2.4vw, 1.65rem);
+	}
+	.tevsys-home-cards-audit-bridge::before,
+	.tevsys-home-audit-plans-bridge::before,
 	.tevsys-home-plans-founder-bridge::before {
-		content: '';
-		display: block;
-		width: min(7.5rem, 42vw);
-		height: 1px;
-		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(228, 232, 240, 0.36) 50%,
-			transparent 100%
-		);
+		content: none;
+		display: none;
 	}
 	@media (max-width: 768px) {
 		.audit-teaser-section {

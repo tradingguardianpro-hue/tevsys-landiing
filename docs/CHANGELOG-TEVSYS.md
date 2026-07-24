@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — puentes/separadores fijos (24 jul 2026)
+
+**Qué:** los 4 separadores mono (Precisión… / Evidencia… / Essential… / Trader…) usan hairline real (no `::before`), fuera de mid-glow; z-index fijo. Ya no “desaparecen” cuando pasa el motion.
+
+**Commit:** `web(tevsys): home puentes separadores fijos fuera motion`
+
+---
+
 ## Analytics opt-out fundador — va-disable (24 jul 2026)
 
 **Qué:** `beforeSend` en `Base.astro` y `/go/evidencia-5min` — si `localStorage.va-disable` existe, no envía eventos a Vercel Analytics. Canon `SEO_ANALYTICS_TEVSYS.md` §3.1.
