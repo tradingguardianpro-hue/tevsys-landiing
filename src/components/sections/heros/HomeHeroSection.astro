@@ -85,8 +85,8 @@ const heroProductPillars = [
   const HERO_PILLAR_TIMING = {
     emptyMs: 900,
     emptyMsMobile: 1050,
-    /* Tras logo: poco aire — si no, el ojo se va al scroll antes de la 1.ª frase. */
-    batchFadeInDelayMs: 90,
+    /* Handoff logo→frases: sin aire (el delay lo mata el solape). */
+    batchFadeInDelayMs: 0,
     batchPhraseFadeInMs: 2400,
     batchPhraseFadeInMsMobile: 2200,
     batchPhraseInGapMs: 340,
@@ -109,12 +109,12 @@ const heroProductPillars = [
     introMarkDelayMsMobile: 600,
     introMarkFadeInMs: 6200,
     introMarkFadeInMsMobile: 5600,
-    introMarkHoldMs: 2200,
-    introMarkHoldMsMobile: 2000,
+    /* Tras llegar nítido: 1, 2, 3 → y sale el blur con la 1.ª frase. */
+    introMarkHoldMs: 3000,
+    introMarkHoldMsMobile: 2800,
     introMarkFadeOutMs: 3000,
     introMarkFadeOutMsMobile: 2700,
-    /* Era 420: vacío perceptible tras blur de salida. */
-    introMarkGapBeforeBatchMs: 60,
+    introMarkGapBeforeBatchMs: 0,
   };
 
   const HERO_GLOW_IN_EASE = 'cubic-bezier(0.22, 0, 0.08, 1)';
@@ -422,7 +422,11 @@ const heroProductPillars = [
     const mark = stage.querySelector('[data-hero-pillar-mark]');
 
     setSoloLayout(stage, false);
-    stage.classList.remove('hero-pillar-fade__stage--batch', 'hero-pillar-fade__stage--intro');
+    stage.classList.remove(
+      'hero-pillar-fade__stage--batch',
+      'hero-pillar-fade__stage--intro',
+      'hero-pillar-fade__stage--mark-handoff',
+    );
     prepareAbsolutePhrases(phrases);
     phrases.forEach((el) => setPhraseHiddenInstant(el));
     setMarkHiddenInstant(mark);
@@ -435,14 +439,23 @@ const heroProductPillars = [
       await sleep(getHeroTiming('introMarkDelayMs'));
       await animateMarkSurface(mark, true, getHeroTiming('introMarkFadeInMs'));
       await sleep(getHeroTiming('introMarkHoldMs'));
-      await animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs'));
+
+      /* Sync: blur de salida + 1.ª frase a la vez (sin hueco). */
       stage.classList.remove('hero-pillar-fade__stage--intro');
-      await sleep(HERO_PILLAR_TIMING.introMarkGapBeforeBatchMs);
+      stage.classList.add('hero-pillar-fade__stage--mark-handoff');
+      setBatchLayout(stage, true);
+      const markOut = animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs'));
+      const batchIn = fadeBatchInTogether(phrases);
+      await markOut;
+      stage.classList.remove('hero-pillar-fade__stage--mark-handoff');
+      setMarkHiddenInstant(mark);
+      await batchIn;
+    } else {
+      setBatchLayout(stage, true);
+      setMarkHiddenInstant(mark);
+      await fadeBatchInTogether(phrases);
     }
 
-    setBatchLayout(stage, true);
-    setMarkHiddenInstant(mark);
-    await fadeBatchInTogether(phrases);
     await sleep(getHeroTiming('batchHoldMs'));
 
     const remainingSoloIndices = await fadeOutBatchColumn(phrases, stage);
@@ -649,9 +662,15 @@ const heroProductPillars = [
     z-index: 1;
   }
 
-  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch .hero-pillar-fade__mark {
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--batch:not(.hero-pillar-fade__stage--mark-handoff) .hero-pillar-fade__mark {
     visibility: hidden !important;
     opacity: 0 !important;
+    pointer-events: none;
+  }
+
+  /* Handoff: marca puede seguir su blur mientras nace la 1.ª frase. */
+  .hero-pillar-fade__stage--js.hero-pillar-fade__stage--mark-handoff .hero-pillar-fade__mark {
+    z-index: 0;
     pointer-events: none;
   }
 

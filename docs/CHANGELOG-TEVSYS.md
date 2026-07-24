@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — sync logo→frase (24 jul 2026)
+
+**Qué:** hold nítido ~3 s; al arrancar el blur de salida, 1.ª frase a la vez (sin hueco).
+
+**Commit:** `web(tevsys): hero sync blur salida con primera frase`
+
+---
+
 ## Home hero — frases antes tras logo (24 jul 2026)
 
 **Qué:** menos aire muerto tras desaparición de marca → 1.ª frase (~1 s antes). Evita scroll por vacío. Chevron solo + chips: sin tocar.
