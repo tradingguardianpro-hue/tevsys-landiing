@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — blur salida = blur entrada (24 jul 2026)
+
+**Qué:** desaparición espejo de la aparición (mismo blur 14px + misma curva). Antes del push.
+
+**Commit:** `web(tevsys): hero marca blur salida igual aparicion`
+
+---
+
 ## Home hero — intro marca timing equilibrio (24 jul 2026)
 
 **Qué:** mantiene blur/elegancia; acorta ciclo (~6,2 s in + hold 2,2 + out 3) para no empujar al scroll antes de los pilares.

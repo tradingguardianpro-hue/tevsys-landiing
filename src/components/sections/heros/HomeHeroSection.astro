@@ -119,7 +119,8 @@ const heroProductPillars = [
   const HERO_FADE_OUT_EASE = 'cubic-bezier(0.42, 0, 0.18, 1)';
   /* Intro marca: mucho tiempo casi invisible → emerge sin golpe (no “susto”). */
   const HERO_MARK_SURFACE_IN_EASE = 'cubic-bezier(0.45, 0.02, 0.22, 1)';
-  const HERO_MARK_SURFACE_OUT_EASE = 'cubic-bezier(0.4, 0, 0.28, 1)';
+  /* Misma curva que la aparición — el blur de salida se siente igual de “alma”. */
+  const HERO_MARK_SURFACE_OUT_EASE = 'cubic-bezier(0.45, 0.02, 0.22, 1)';
 
   const HERO_MOBILE_MQ = '(max-width: 768px)';
 
@@ -334,31 +335,40 @@ const heroProductPillars = [
     setMarkMode(el, null);
   }
 
-  /** Solo intro: surge desde abajo + blur → nítido (sin susto). */
+  /** Solo intro: surge / se va con el mismo blur (aparición = desaparición). */
   async function animateMarkSurface(el, visible, ms) {
     if (!el) return;
     const img = el.querySelector('.hero-pillar-fade__mark-icon');
     const ease = visible ? HERO_MARK_SURFACE_IN_EASE : HERO_MARK_SURFACE_OUT_EASE;
     const base = 'translate(-50%, -50%) scale(1)';
     const enterFrom = `translate(-50%, calc(-50% + ${HERO_MARK_ENTER_Y})) scale(0.9)`;
-    const exitTo = `translate(-50%, calc(-50% - 0.45rem)) scale(0.97)`;
+    const exitTo = `translate(-50%, calc(-50% - ${HERO_MARK_ENTER_Y})) scale(0.9)`;
 
     setMarkMode(el, 'intro');
-    el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
-    if (img) {
-      img.style.transition = `filter ${ms}ms ${ease}`;
-    }
 
     if (visible) {
+      el.style.transition = 'none';
+      if (img) img.style.transition = 'none';
       el.style.visibility = 'visible';
       el.style.opacity = '0';
       el.style.transform = enterFrom;
       if (img) img.style.filter = `blur(${HERO_MARK_INTRO_BLUR})`;
       await sleep(48);
+      el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
+      if (img) img.style.transition = `filter ${ms}ms ${ease}`;
       el.style.opacity = '1';
       el.style.transform = base;
       if (img) img.style.filter = 'blur(0)';
     } else {
+      /* Partir nítido → mismo blur de la aparición (espejo). */
+      el.style.transition = 'none';
+      if (img) img.style.transition = 'none';
+      el.style.opacity = '1';
+      el.style.transform = base;
+      if (img) img.style.filter = 'blur(0)';
+      await sleep(48);
+      el.style.transition = `opacity ${ms}ms ${ease}, transform ${ms}ms ${ease}, visibility 0s linear`;
+      if (img) img.style.transition = `filter ${ms}ms ${ease}`;
       el.style.opacity = '0';
       el.style.transform = exitTo;
       if (img) img.style.filter = `blur(${HERO_MARK_INTRO_BLUR})`;
