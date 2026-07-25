@@ -1,6 +1,6 @@
 # Handoff — Home + cierre visual (cohesión jun 2026)
 
-**Última actualización:** 24 jul 2026 — puentes/separadores fijos (fuera mid-glow)  
+**Última actualización:** 25 jul 2026 — puentes con losa opaca (anti mid-glow)  
 **Archivos vivos:** `src/pages/index.astro` · `src/components/core/Footer.astro`  
 **Hero (sin cambios motion):** `HomeHeroSection.astro` — esquema **2m-E** · `HANDOFF_HOME_HERO_ESQUEMAS.md`  
 **Método:** repo TGP → `.cursor/rules/workflow-web-visual-tevsys.mdc`  
@@ -13,7 +13,9 @@ Tras cerrar el **hero 2m-E**, el scroll a valor + cards + auditoría + planes + 
 
 **Criterio:** contraste hero/abajo = equipo interno. **Mono dentro de cards = revertido** (pegote); **puentes fuera = OK**.
 
-**24 jul 2026 — bug “separadores que a veces no se ven”:** el puente `Precisión · HyperClose · SML · Evidencia` vivía **dentro** de la banda cards, **detrás/debajo** de las burbujas (`.tevsys-home-mid-glow`). El motion las lavaba. **Fix:** los 4 puentes usan el mismo patrón que `Trader · fundador` — hairline en `<span>` (no `::before`), **fuera** de capas motion, `z-index` fijo.
+**24 jul 2026 — bug “separadores que a veces no se ven”:** el puente `Precisión · HyperClose · SML · Evidencia` vivía **dentro** de la banda cards, **detrás/debajo** de las burbujas (`.tevsys-home-mid-glow`). El motion las lavaba. **Fix parcial:** hairline en `<span>`, fuera de mid-glow.
+
+**25 jul 2026 — mismo bug tras deploy/reload:** el blur del glow **sigue pintando encima** de una raya de 1px aunque el puente esté “fuera”. **Fix:** cada puente es una **losa opaca** (`background` + `::after` a `100vw`) + hairline más firme + `z-index: 20`. Misma pieza en los 4 (incl. Trader · fundador).
 
 ---
 

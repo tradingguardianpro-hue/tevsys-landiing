@@ -202,19 +202,37 @@ import settings from '../config/settings.js';
 </Layout>
 
 <style>
-	/* Puentes de sección — hairline + mono; fuera de capas motion (mid-glow / KITT). */
+	/* Puentes de sección — losa opaca + hairline; el glow/KITT no puede lavar la raya. */
 	.tevsys-home-hero-bridge,
 	.tevsys-home-section-bridge {
 		position: relative;
-		z-index: 4;
+		z-index: 20;
 		isolation: isolate;
 		margin: 0;
 		padding: clamp(1.15rem, 2.6vw, 1.85rem) 0 clamp(0.7rem, 1.6vw, 1rem);
 		text-align: center;
 		pointer-events: none;
+		/* Fondo sólido = “área propia” del separador (no depende del motion de detrás). */
+		background-color: var(--theme-bg, #0a0a0c);
+	}
+	/* Extiende la losa a todo el ancho del viewport (el puente puede vivir dentro de Container). */
+	.tevsys-home-hero-bridge::after,
+	.tevsys-home-section-bridge::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		width: 100vw;
+		transform: translateX(-50%);
+		background-color: var(--theme-bg, #0a0a0c);
+		z-index: -1;
+		pointer-events: none;
 	}
 	.tevsys-home-hero-bridge__hairline {
 		display: block;
+		position: relative;
+		z-index: 1;
 		width: min(7.5rem, 42vw);
 		height: 1px;
 		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
@@ -222,12 +240,13 @@ import settings from '../config/settings.js';
 		background: linear-gradient(
 			90deg,
 			transparent 0%,
-			rgba(228, 232, 240, 0.48) 50%,
+			rgba(228, 232, 240, 0.62) 50%,
 			transparent 100%
 		);
 		opacity: 1;
-		/* Sin animación — el motion de fondo no debe “comerse” la raya */
+		/* Ancla en capa propia — no se “come” el compositing del blur */
 		transform: translateZ(0);
+		box-shadow: 0 0 0 0.5px rgba(228, 232, 240, 0.12);
 	}
 	.tevsys-home-hero-bridge::before {
 		content: none;
@@ -235,6 +254,8 @@ import settings from '../config/settings.js';
 	}
 	.tevsys-home-hero-bridge__text {
 		display: inline-block;
+		position: relative;
+		z-index: 1;
 		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
 		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
 		font-weight: 500;

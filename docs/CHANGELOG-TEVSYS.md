@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — puentes losa opaca anti-glow (25 jul 2026)
+
+**Qué:** los 4 separadores (Precisión… / Evidencia… / Essential… / Trader…) llevan **losa de fondo** a ancho viewport + hairline más firme. El mid-glow/KITT ya no lava la raya al pasar ni al recargar.
+
+**Commit:** `web(tevsys): home puentes losa opaca anti glow`
+
+---
+
 ## Home hero — arranque marca antes (25 jul 2026)
 
 **Qué:** blur empieza ~0,7 s tras carga (antes ~1,6 s); fade-in 5,2 s (antes 6,2). Misma salida/hold. Alineado a lectura titular ~2–3 s.
