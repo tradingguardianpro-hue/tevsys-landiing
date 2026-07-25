@@ -901,13 +901,14 @@ const heroProductPillars = [
     transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
   }
 
+  /* Casi el tamaño del CTA demo; jerarquía por tono (más suave), no por “miniatura”. */
   .hero-audit-btn--secondary {
-    font-size: 0.78rem;
+    font-size: 1.02rem;
     font-weight: 500;
-    padding: 0.38rem 0.8rem;
-    opacity: 0.58;
-    border-color: rgba(255, 255, 255, 0.1);
-    color: rgba(228, 232, 240, 0.68);
+    padding: 0.66rem 1.4rem;
+    opacity: 0.52;
+    border-color: rgba(255, 255, 255, 0.12);
+    color: rgba(220, 226, 236, 0.72);
   }
 
   .hero-audit-btn:hover {
@@ -917,7 +918,7 @@ const heroProductPillars = [
   }
 
   .hero-audit-btn--secondary:hover {
-    opacity: 0.88;
+    opacity: 0.86;
   }
 
   .hero-platform-note {
@@ -1176,6 +1177,11 @@ const heroProductPillars = [
       max-width: 100%;
       font-size: 0.93rem;
       padding: 0.52rem 0.95rem;
+    }
+
+    .hero-audit-btn--secondary {
+      font-size: 0.93rem;
+      padding: 0.52rem 1.05rem;
     }
 
     .hero-image__brand {
