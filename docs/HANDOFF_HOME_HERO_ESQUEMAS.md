@@ -1,16 +1,43 @@
-# Handoff — Hero home · esquemas de jerarquía (jun 2026)
+# Handoff — Hero home · esquemas de jerarquía (jun–jul 2026)
 
-**Última actualización:** 28 jun 2026 — **2m-E-column** (batch simétrico columna)  
+**Última actualización:** 25 jul 2026 — chevron + motion + anti-disco (validado fundador)  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
-**Activo en web:** **esquema 2m-E-column** — vacío corto → batch **4 en columna centrada** (arriba→abajo) → apagado columna → solos 4 → pausa → loop.
+**Ambiente / header / KITT:** `src/styles/global.css`  
+**Activo en web:** **esquema 2m-E-column** + marca chevron + reinicio suave.
 
-### 2m-E-column — batch simétrico (28 jun 2026 — fundador OK probar)
+---
 
-- **Batch:** columna centrada bajo H1; orden **Precisión → Disciplina → Trazabilidad → Cuenta** (anti-encasillamiento — jul 2026); entrada secuencial premium; hairline vertical sutil (sin puntos ámbar).
-- **Marca hero:** **en prueba 24 jul** — `hero-tevsys-chevrons.png` (solo chevrones, sin caja); intro lenta → batch oculto → solo tenue. Validar tono. Handoff § *Logo centro*.
-- **Apagado:** arriba→abajo (espejo de entrada); luego fase **solo** en slots aleatorios (sin cambio de espíritu).
-- **Motivo:** batch en 4 esquinas leía asimétrico al cargar (feedback UX).
-- **Revertir:** `data-hero-layout="scheme-2m-e"` + slots batch en git history.
+## Checkpoint 25 jul 2026 — marca chevron + ritmo (fundador OK)
+
+### Secuencia (estado vivo)
+
+1. **Intro marca** — `hero-tevsys-chevrons.png` (solo chevrones, transparente). Blur 14px → nítido; misma curva a la salida.
+2. **Hold nítido** ~2,2 s → blur de salida **junto** a la 1.ª frase (handoff).
+3. **Batch** — 4 frases en columna (Precisión → Disciplina → Trazabilidad → Protección).
+4. **Solo** — chevron pequeño centrado; frases en **perímetro** (no pisan el centro); desktop **una línea**.
+5. **Reinicio suave** — bucles siguientes: misma alma blur, tiempos más cortos (`*Soft`). 1.ª carga = intro completo.
+6. **Anti-disco (pareja con cards handoff):**
+   - Header cede intensidad con chevron (`body.tevsys-home-mark-focus`).
+   - Ambiente settle ~26 s (`body.tevsys-home-ambient-settle`).
+   - Picos KITT (fall / lower / tono) más suaves — **validado fundador: “simplemente perfecto”**.
+
+### Timing clave (`HERO_PILLAR_TIMING`)
+
+- Arranque marca ~0,7 s tras ciclo; fade-in ~5,2 s (1.ª) / ~3,4 s (soft).
+- Hold ~2,2 s / ~1,5 s soft; fade-out ~3 s / ~2,4 s soft.
+- Slots solo: `maxW: calc(50% - 3.75rem)` + `white-space: nowrap` (desktop).
+
+### Commits sesión (serie web)
+
+Ver `CHANGELOG-TEVSYS.md` entradas **25 jul 2026** (hero + home ambiente/KITT/puentes).
+
+---
+
+### 2m-E-column — batch simétrico (28 jun 2026 — base)
+
+- **Batch:** columna centrada bajo H1; orden **Precisión → Disciplina → Trazabilidad → Cuenta** (anti-encasillamiento).
+- **Marca hero:** chevrons — ver checkpoint 25 jul arriba.
+- **Apagado:** arriba→abajo; luego fase **solo** (perímetro desde 25 jul).
 
 ## Esquema 2m-E — solo phase JS + slots variables (supersedido batch — 28 jun 2026)
 
@@ -27,7 +54,7 @@
 4. **Fase solo:** las 4 una a una, orden y posición aleatorios.
 5. Pausa (~2,4 s escritorio / ~2,1 s móvil) → **loop**. *(Histórico 6 jun: ~6,2 s.)*
 
-Timing en `<script define:vars>` del `.astro` — ver fix 22 jun arriba.
+Timing en `<script define:vars>` del `.astro` — ver checkpoint 25 jul.
 
 ## Esquema 2m-D — intro vacío + batch + solos CSS (supersedido — 6 jun 2026)
 
@@ -47,136 +74,6 @@ Animación CSS 72 s; solos con posición fija por índice — sustituido por 2m-
 ## Esquema 2l-A — tira fija (descartada — 20 jun 2026)
 
 ### Qué cambia respecto a 2k
-
-- **Sin marquee** — eliminada animación `hero-edge-marquee`, máscara lateral y bucle duplicado.
-- **`hero-pillar-band`** — 4 frases ES fijas, separador `·`, `flex-wrap` en móvil.
-- **Fondo gris carbón** — banda con borde fino + gradiente suave; texto gris claro ~88% opacidad.
-- **Halo** — opacidades ~−32% en `.hero-section__glow` (zona texto más neutra).
-
-### Copy (frontmatter)
-
-```js
-const heroProductPillars = [
-  'Precisión de cierre verificable',
-  'Disciplina automatizada',
-  'Trazabilidad contrastable con MT5',
-  'Protección activa en toda la cuenta',
-];
-```
-
-### Jerarquía
-
-Igual que 2k cerrado: H1 → tira pilares → disclaimer + CTAs → mano + TEVS + MT5.
-
-### Rollback a 2k (marquee)
-
-Restaurar `data-hero-layout="scheme-2k"`, clases `hero-edge-strip` + animación — ver git history del `.astro` o sección 2k abajo.
-
----
-
-## Esquema 2l-B — dos líneas fijas (pendiente probar)
-
-**Markup objetivo:** sin caja; dos `<p>` centrados mismo peso.
-
-- L1: Precisión de cierre en tu operativa · Disciplina automatizada  
-- L2: Trazabilidad verificable · Protección activa en MT5  
-
-Inter ~15 px · gris claro · halo recortado como 2l-A.
-
----
-
-## Esquema 2l-C — una frase (pendiente probar)
-
-**Copy único:**  
-*Disciplina automatizada, precisión de cierre, trazabilidad verificable y protección activa en MT5.*
-
-DM Sans o Inter 400 · una línea desktop (balance en móvil) · sin caja · halo recortado.
-
----
-
-## Esquema 2k — estado cerrado (19 jun 2026, supersedido por 2l)
-
-### Jerarquía (orden fijo)
-
-1. **H1** — Tú pones los límites. / **TEVSYS** los blinda.
-2. **`hero-edge-strip`** — franja en movimiento (4 pilares producto, solo ES).
-3. **Pausa visual** — margen reducido respecto a iteraciones 2j/2g.
-4. **Acto 2** — disclaimer + CTAs.
-5. **Mano robótica** + TEVS discreto + nota MT5.
-
-### Copy marquee (frontmatter)
-
-```js
-const heroMarqueePhrases = [
-  'Disciplina automatizada',
-  'Precisión de cierre en tu operativa',
-  'Trazabilidad verificable',
-  'Protección activa en MT5',
-];
-```
-
-- **Eliminado:** `Where precision meets the edge` (mezcla ES/EN en home ES — fundador jun 2026).
-- **Eliminado:** `text-transform: lowercase` (minúsculas forzadas).
-
-### Tipografía y color
-
-| Elemento | Familia | Tamaño aprox. | Color / notas |
-|----------|---------|---------------|---------------|
-| H1 | DM Sans 600 | clamp 2–4.35rem | `#e8ebf0` (blanco suave, no puro) |
-| TEVSYS | DM Sans 700 | — | `#f5b041` |
-| Marquee | Inter 400 | ~15 px desktop | `rgba(202,206,218,0.78)` · tracking 0.055em |
-| Disclaimer | DM Sans 500 | ~15 px | `rgba(244,246,248,0.74)` |
-| TEVS largo | Inter 400 | ~10 px | EN fijo · `lang="en"` `translate="no"` · ~20% opacidad |
-| Nota MT5 | Inter 400 | 13 px | gris 62% |
-
-### TEVS (`hero-image__brand`)
-
-- **Posición:** debajo del `<picture>`, dentro de `hero-image__wrapper` (padding gris), **no** overlay sobre el PNG.
-- **Texto:** `Trading Edge Verification System` (inglés; evitar traducción automática del navegador).
-- **Historial sesión:** probado overlay en franja negra del asset → fundador: bajar fuera de la foto; versión final en marco gris.
-
-### Espaciado clave (desktop aprox.)
-
-- H1 `margin-bottom`: `clamp(2rem, 5.5vh, 3.65rem)` (antes ~4.25rem max).
-- `hero-edge-strip` `margin-bottom`: `clamp(2.25rem, 5.2vh, 3.25rem)` (antes hueco 6.5rem).
-- `hero-image__brand` `margin-top`: separación extra respecto al borde de la foto.
-
-### Rechazado explícitamente (no reintroducir sin OK)
-
-- Pill una línea / grid 2×2 / marcos batch.
-- Capa velas SVG (`hero-velas-ambient`).
-- Marquee bajo CTAs (2j) como capa principal.
-- Tagline EN en franja de home ES.
-
-### KITT / motion
-
-- **No tocar:** animación KITT y motion global en `index.astro` + `global.css`.
-
-### Validación fundador
-
-- Hero **cerrado en este sentido** (captura ~22:40 jun 2026).
-- Salto hero → bloque *«¿Cuánto has perdido…?»* aceptable; opcional **más aire** vía `index.astro` (siguiente tarea).
-
-### Commits sugeridos (sesión acumulados)
-
-```
-web(tevsys): hero 2k marquee legible disclaimer DM Sans menos hueco
-web(tevsys): hero TEVS debajo foto en inglés sin overlay
-web(tevsys): hero pulido marquee H1 off-white TEVS aire
-web(tevsys): hero marquee solo ES sin tagline edge
-```
-
----
-
-## Esquema 2j (supersedido — pilares + marquee bajo CTAs)
-
-## Esquema 2f (supersedido por 2g — validado fundador 18:30)
-
-- Marco dos líneas (`hero-product-block`) · disclaimer fuera entre marco y CTAs.
-
----
-
-## Esquema 2c (supersedido por 2d)
 
 Pill una línea · badge tagline visible · sep ámbar.
 
@@ -199,7 +96,7 @@ Dos líneas de pilar mismo peso · nota MT5 bajo mano.
 
 ## Esquema 2 (supersedido por 2b)
 
-Sublínea primary/secondary distinto peso · nota MT5 en bloque texto.
+Sublínea primary/secondary distinto peso · nota MT5 bajo mano.
 
 ---
 
@@ -248,6 +145,6 @@ Cambiar `data-hero-layout` + markup según bloques de este MD cuando el fundador
 
 ## Correlato
 
-- **Scroll hero → cards (jun 2026):** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md` — puente, checklist, copy, labels mono (hero 2m-E no tocado).
+- **Scroll hero → cards + anti-disco ambiente:** `docs/HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`
 - Inspiración escala: [Axiom Labs](https://axiomlabs.es) (estructura, no tono quant).
-- Hub TGP: `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Sesión web larga*.
+- Hub TGP: `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Sesión web larga* / Ampliaciones 25 jul.

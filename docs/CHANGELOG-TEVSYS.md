@@ -28,6 +28,37 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión home 25 jul 2026 — chevron + anti-disco (pack cerrado)
+
+**Validado fundador:** KITT picos “simplemente perfecto”; claridad sin disco.
+
+### Hero / chevron
+- Blur entrada = salida; arranque antes; hold ~2,2 s; sync blur→1.ª frase; reinicio suave en bucle.
+- Solo: perímetro, una línea desktop, no pisa centro.
+- Docs: `HANDOFF_HOME_HERO_ESQUEMAS.md` § *Checkpoint 25 jul*.
+
+### Puentes
+- Losa opaca + hairline huso (4 puentes); aire Precisión→H2.
+
+### Anti-disco (`global.css`)
+1. Header cede con chevron (`tevsys-home-mark-focus`).
+2. Settle ambiente ~26 s (`tevsys-home-ambient-settle`).
+3. Picos KITT fall/lower/tono más suaves.
+
+### Commits (copiar / agrupar en Desktop)
+Ver entradas CHANGELOG 25 jul; mensaje pack opcional:
+`web(tevsys): home chevron ritmo anti-disco y puentes 25 jul`
+
+---
+
+## Home — aire puente Precisión→titular (25 jul 2026)
+
+**Qué:** más respiración entre huso/mono y H2 cards (+ un poco bajo «Disponible en MT5»).
+
+**Commit:** `web(tevsys): home aire puente precision a titular`
+
+---
+
 ## Home — KITT pico de barrido más suave (25 jul 2026)
 
 **Qué:** picos de barrido (fall / lower / tono) más tenues; con chevron, KITT cede como el header. Sin rehacer estructura.

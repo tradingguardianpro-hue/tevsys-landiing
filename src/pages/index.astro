@@ -15,7 +15,7 @@ import settings from '../config/settings.js';
 		</div>
 	</div>
 	<Container>
-		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge" aria-label="Capas del producto: Precisión, HyperClose, SML, Evidencia">
+		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-bridge--hero-cards" aria-label="Capas del producto: Precisión, HyperClose, SML, Evidencia">
 			<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
 			<span class="tevsys-home-hero-bridge__text">Precisión · HyperClose · SML · Evidencia</span>
 		</p>
@@ -265,8 +265,17 @@ import settings from '../config/settings.js';
 		color: rgba(228, 232, 240, 0.68);
 		line-height: 1.45;
 	}
+	/* Hero → cards: más aire (antes denso huso + mono + H2). */
+	.tevsys-home-bridge--hero-cards {
+		padding-top: clamp(1.55rem, 3.4vw, 2.35rem);
+		padding-bottom: clamp(1.35rem, 3vw, 2rem);
+	}
 	.tevsys-home-band--cards > .feature-card__section {
-		margin-top: clamp(0.2rem, 0.75vw, 0.45rem);
+		margin-top: clamp(0.55rem, 1.6vw, 1.05rem);
+	}
+	.tevsys-home-band--cards > .feature-card__section .feature-section__title {
+		margin-top: clamp(0.15rem, 0.5vw, 0.35rem);
+		margin-bottom: clamp(1.5rem, 3.2vw, 1.85rem);
 	}
 	/* Espacio puente hero→cards (el puente ya no vive dentro de la banda con burbujas). */
 	.tevsys-home-band--cards {
