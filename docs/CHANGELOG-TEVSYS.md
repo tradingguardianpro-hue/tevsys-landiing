@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — KITT pico de barrido más suave (25 jul 2026)
+
+**Qué:** picos de barrido (fall / lower / tono) más tenues; con chevron, KITT cede como el header. Sin rehacer estructura.
+
+**Commit:** `web(tevsys): home kitt pico barrido mas suave`
+
+---
+
 ## Home — ambiente settle tras bienvenida (25 jul 2026)
 
 **Qué:** paso 2 anti-disco — a ~26 s bajan un poco burbujas/franjas (siguen vivas). Header no se toca. Reversible.
