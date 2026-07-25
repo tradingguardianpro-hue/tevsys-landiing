@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — hold nítido más corto (25 jul 2026)
+
+**Qué:** logo claro ~2,2 s (antes 3) → blur salida + 1.ª frase. Aparición intacta.
+
+**Commit:** `web(tevsys): hero marca hold nitido mas corto`
+
+---
+
 ## Home — puentes losa opaca anti-glow (25 jul 2026)
 
 **Qué:** los 4 separadores (Precisión… / Evidencia… / Essential… / Trader…) llevan **losa de fondo** a ancho viewport + hairline más firme. El mid-glow/KITT ya no lava la raya al pasar ni al recargar.
