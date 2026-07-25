@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Footer — frase Made with love más pequeña (25 jul 2026)
+
+**Qué:** `.footer-independiente` de ~1.08rem → clamp ~0,72–0,81rem + un poco más suave.
+
+**Commit:** `web(tevsys): footer made with love mas pequena`
+
+---
+
 ## Sesión home 25 jul 2026 — chevron + anti-disco (pack cerrado)
 
 **Validado fundador:** KITT picos “simplemente perfecto”; claridad sin disco.
