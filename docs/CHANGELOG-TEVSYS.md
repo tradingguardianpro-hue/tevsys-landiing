@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — solo frase una línea (25 jul 2026)
+
+**Qué:** frases solo en una línea (desktop); maxW hasta borde del chevron; marca solo un poco más pequeña.
+
+**Commit:** `web(tevsys): hero solo frases una linea sin pisar marca`
+
+---
+
 ## Home hero — reinicio suave bucle (25 jul 2026)
 
 **Qué:** tras solo, vuelve chevron grande con blur más corto (soft) → frases. 1.ª carga = intro completo.

@@ -143,23 +143,23 @@ const heroProductPillars = [
   const HERO_MARK_ENTER_Y = '0.85rem';
   const HERO_MARK_INTRO_BLUR = '14px';
 
-  /* Solo: perímetro — nunca el centro (chevron pequeño). */
+  /* Solo: perímetro; maxW hasta el borde del chevron; una sola línea. */
   const HERO_PILLAR_SOLO_SLOTS = [
-    { top: '6%', left: '2%', right: 'auto', align: 'left', maxW: '40%' },
-    { top: '8%', left: 'auto', right: '3%', align: 'right', maxW: '40%' },
-    { top: '28%', left: '2%', right: 'auto', align: 'left', maxW: '38%' },
-    { top: '30%', left: 'auto', right: '3%', align: 'right', maxW: '38%' },
-    { top: '52%', left: '2%', right: 'auto', align: 'left', maxW: '40%' },
-    { top: '54%', left: 'auto', right: '3%', align: 'right', maxW: '40%' },
-    { top: '74%', left: '3%', right: 'auto', align: 'left', maxW: '42%' },
-    { top: '72%', left: 'auto', right: '3%', align: 'right', maxW: '42%' },
+    { top: '6%', left: '1%', right: 'auto', align: 'left', maxW: 'calc(50% - 3.75rem)' },
+    { top: '8%', left: 'auto', right: '1%', align: 'right', maxW: 'calc(50% - 3.75rem)' },
+    { top: '28%', left: '1%', right: 'auto', align: 'left', maxW: 'calc(50% - 3.75rem)' },
+    { top: '30%', left: 'auto', right: '1%', align: 'right', maxW: 'calc(50% - 3.75rem)' },
+    { top: '52%', left: '1%', right: 'auto', align: 'left', maxW: 'calc(50% - 3.75rem)' },
+    { top: '54%', left: 'auto', right: '1%', align: 'right', maxW: 'calc(50% - 3.75rem)' },
+    { top: '74%', left: '1%', right: 'auto', align: 'left', maxW: 'calc(50% - 3.75rem)' },
+    { top: '72%', left: 'auto', right: '1%', align: 'right', maxW: 'calc(50% - 3.75rem)' },
   ];
 
   const HERO_PILLAR_SOLO_SLOTS_MOBILE = [
-    { top: '2%', left: '4%', right: 'auto', align: 'left', maxW: '68%' },
-    { top: '4%', left: 'auto', right: '4%', align: 'right', maxW: '68%' },
-    { top: '58%', left: '4%', right: 'auto', align: 'left', maxW: '70%' },
-    { top: '74%', left: 'auto', right: '4%', align: 'right', maxW: '70%' },
+    { top: '2%', left: '2%', right: 'auto', align: 'left', maxW: 'calc(50% - 2.5rem)' },
+    { top: '4%', left: 'auto', right: '2%', align: 'right', maxW: 'calc(50% - 2.5rem)' },
+    { top: '58%', left: '2%', right: 'auto', align: 'left', maxW: 'calc(50% - 2.5rem)' },
+    { top: '74%', left: 'auto', right: '2%', align: 'right', maxW: 'calc(50% - 2.5rem)' },
   ];
 
   function isMobileHero() {
@@ -678,7 +678,8 @@ const heroProductPillars = [
   }
 
   .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-icon {
-    width: clamp(4rem, 11vw, 5.25rem);
+    /* Un poco más contenido: deja aire a frases en una línea. */
+    width: clamp(3.35rem, 9.5vw, 4.35rem);
     opacity: 0.32;
   }
 
@@ -701,6 +702,14 @@ const heroProductPillars = [
   .hero-pillar-fade__stage--js.hero-pillar-fade__stage--height-locked,
   .hero-pillar-fade__stage--js.hero-pillar-fade__stage--solo {
     min-height: var(--hero-pillar-stage-min, clamp(10rem, 24vh, 12.5rem));
+  }
+
+  /* Solo desktop: una línea; no partir por el hueco del centro. */
+  @media (min-width: 769px) {
+    .hero-pillar-fade__stage--js.hero-pillar-fade__stage--solo .hero-pillar-fade__phrase {
+      white-space: nowrap;
+      text-wrap: nowrap;
+    }
   }
 
   .hero-pillar-fade__phrase {
@@ -1072,7 +1081,7 @@ const heroProductPillars = [
     }
 
     .hero-pillar-fade__mark--solo .hero-pillar-fade__mark-icon {
-      width: clamp(3.5rem, 16vw, 4.75rem);
+      width: clamp(3rem, 14vw, 4rem);
       opacity: 0.28;
     }
 
