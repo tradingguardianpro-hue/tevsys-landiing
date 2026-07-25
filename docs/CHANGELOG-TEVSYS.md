@@ -6,6 +6,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Flujo demo → contacto guiado (~60 s) — **cerrado 25 jul 2026**
+
+**Qué:** un camino obvio para lead frío (referido / academia):
+
+1. **Contacto `?flow=demo`:** título «Solicita tu demo Essential», intro un solo paso + promesa &lt;24 h + guías; **sin tips** laterales; botón «Solicitar demo»; badge claro.
+2. **Home:** CTA demo dominante; evidencia secundaria (más discreta); cards Essential → `?flow=demo`.
+3. **Thank-you `?flow=demo`:** copy post-envío (enlace + guías) + aviso spam explícito.
+
+**Archivos:** `contact.astro`, `ContactForm.astro`, `contact-thank-you.astro`, `HomeHeroSection.astro`, `index.astro` (plans). Docs: este CHANGELOG · `CONTENIDO_WEB` · agenda TGP · V12 Ampliaciones.
+
+**Commit:** `web(tevsys): flujo demo contacto guiado 60s`
+
 ---
 
 ## Contador operativas — **103** (10 jul 2026)
@@ -229,9 +241,9 @@ Ver entradas CHANGELOG 25 jul; mensaje pack opcional:
 
 ---
 
-## Nota roadmap — flujo demo→contacto guiado (10 jul 2026)
+## Nota roadmap — flujo demo→contacto guiado (10 jul 2026) — **supersedido 25 jul**
 
-**Sin cambio de código.** Idea aparcada: camino obvio en ~60 s para lead externo (p. ej. Juan manda a alguien). Agenda TGP + `CONTENIDO_WEB_TEVSYS_LANDING.md` § *Próximas sesiones web*.
+**Cerrado 25 jul 2026.** Ver entrada arriba § *Flujo demo → contacto guiado (~60 s)*.
 
 ---
 

@@ -50,7 +50,7 @@ const heroProductPillars = [
             <a href="/company/contact?flow=demo" class="hero-download-btn">
               Descargar demo →
             </a>
-            <a href="/como-funciona?play=1#evidencia-nasdaq-100" class="hero-audit-btn">
+            <a href="/como-funciona?play=1#evidencia-nasdaq-100" class="hero-audit-btn hero-audit-btn--secondary">
               Ver evidencia (~4 min)
             </a>
           </div>
@@ -877,6 +877,9 @@ const heroProductPillars = [
 
   .hero-cta-row .hero-download-btn {
     margin-top: 0;
+    font-size: 1.12rem;
+    padding: 0.75rem 1.7rem;
+    box-shadow: 0 5px 26px rgba(245, 176, 65, 0.45);
   }
 
   .hero-audit-btn {
@@ -895,13 +898,26 @@ const heroProductPillars = [
     background: rgba(255, 255, 255, 0.03);
     color: rgba(244, 246, 248, 0.94);
     border: 1px solid rgba(255, 255, 255, 0.24);
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .hero-audit-btn--secondary {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.38rem 0.8rem;
+    opacity: 0.58;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(228, 232, 240, 0.68);
   }
 
   .hero-audit-btn:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.36);
     color: #f4f6f8;
+  }
+
+  .hero-audit-btn--secondary:hover {
+    opacity: 0.88;
   }
 
   .hero-platform-note {

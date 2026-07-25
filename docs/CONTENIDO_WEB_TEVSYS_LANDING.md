@@ -93,25 +93,13 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Próximas sesiones web (cola — jul 2026)
 
-*Notas para retomar cuando el fundador abra sesión web; **sin código** hasta entonces.*
+### Flujo demo → contacto guiado — ✅ **cerrado 25 jul 2026**
 
-### Flujo demo → contacto guiado (10 jul 2026)
+**Hecho:** camino único ~60 s — hero CTA demo dominante · contacto `?flow=demo` (sin tips, botón Solicitar demo) · thank-you con guías + spam. Detalle: `CHANGELOG-TEVSYS.md` § *Flujo demo → contacto guiado*.
 
-**Idea (fundador, desde otro chat):**
+### Hero — logo centro — ✅ cerrado 25 jul
 
-> Flujo demo → contacto un poco más guiado para quien llega de fuera (Juan manda a alguien → ¿qué hace en 60 segundos?). La sustancia ya está; a veces falta un solo camino muy obvio.
-
-**Objetivo producto:** quien llega **de fuera** (referido Juan, academia, lead frío) entiende en **~60 segundos** el **único camino** siguiente — demo, contacto o guía — sin perderse entre CTAs equivalentes.
-
-**Ya existe (no rehacer):** CTAs hero (`Descargar demo`, evidencia), `/company/contact?flow=demo`, guías `/instalacion` · `/configuracion` · fin de semana, protocolo mail/Drive (`LINKS_PARA_ENVIAR_DEMO` en repo TGP).
-
-**Posible trabajo en sesión:** auditar home + contacto + post-clic demo; proponer **un hilo visible** (copy + orden + un CTA dominante); validar con fundador antes de codificar.
-
-**Agenda:** `docs/AGENDA_GABI.md` § *Flujo demo → contacto guiado* (repo TGP).
-
-### Hero — logo centro (aparcado 5 jul)
-
-Asset **solo chevrones sin caja** (fundador) → validar juntos → montar o dejar sin icono. Handoff: `HANDOFF_HOME_HERO_ESQUEMAS.md`.
+Ver handoff hero.
 
 ---
 

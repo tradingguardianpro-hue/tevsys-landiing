@@ -18,7 +18,7 @@ const seo = {
 				<p class="contact-thank-you__dev-title">Te añadimos a la lista de espera.</p>
 				<p class="contact-thank-you__dev-text">Mientras tanto, la demo disponible es Essential.</p>
 			</div>
-			<p class="contact-thank-you__note">Revisa tu bandeja de entrada (y la de spam, por si acaso).</p>
+			<p id="thankYouSpamNote" class="contact-thank-you__note">Revisa tu bandeja de entrada (y la de spam, por si acaso).</p>
 			<a href="/" class="contact-thank-you__link">Volver al inicio</a>
 		</section>
 		<script is:inline>
@@ -26,6 +26,7 @@ const seo = {
 				const params = new URLSearchParams(window.location.search);
 				const main = document.getElementById('thankYouMain');
 				const accesoNote = document.getElementById('thankYouAccesoNote');
+				const spamNote = document.getElementById('thankYouSpamNote');
 				const devBlock = document.getElementById('thankYouDevNote');
 				const plan = (params.get('plan') || '').toLowerCase();
 				const flow = params.get('flow') || '';
@@ -43,6 +44,15 @@ const seo = {
 					if (main) {
 						main.textContent =
 							'Hemos recibido tu solicitud. Te escribimos en breve con el siguiente paso: envío del pack de evidencia (guía y requisitos).';
+					}
+				} else if (flow === 'demo') {
+					if (main) {
+						main.textContent =
+							'Hemos recibido tu solicitud de demo Essential. En menos de 24 horas te enviamos el enlace y las guías de instalación y configuración.';
+					}
+					if (spamNote) {
+						spamNote.textContent =
+							'Revisa tu bandeja de entrada y la carpeta de spam: el mail con la demo y las guías llega ahí.';
 					}
 				} else if (plan === 'advanced' || plan === 'pro') {
 					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';

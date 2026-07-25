@@ -126,6 +126,16 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       if (flowInput) flowInput.value = urlFlow;
       if (featureInput) featureInput.value = urlFeature;
 
+      if (urlFlow === 'demo') {
+        const subBtn = document.getElementById('contactSubmitBtn');
+        if (subBtn) subBtn.textContent = 'Solicitar demo';
+        if (badgeNode) {
+          badgeNode.hidden = false;
+          badgeNode.classList.remove('selected-plan-badge--warning');
+          badgeNode.textContent = 'Demo Essential — rellena y te enviamos el acceso y las guías.';
+        }
+      }
+
       /** Solicitud auditoría: quitar miedo y carga; sin capital ni experiencia en este paso. */
       if (urlFlow === 'auditoria-ia') {
         const capWrap = document.getElementById('contactFieldCapital');
@@ -184,14 +194,12 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
         const flowVal = flowInput ? flowInput.value : '';
         if (flowVal === 'lista') {
           badgeNode.textContent = 'Lista de espera — indica tu plan de interés abajo.';
-        } else if (flowVal === 'auditoria-ia') {
-          badgeNode.textContent =
-            'Solicitud de auditoría: sin plan en URL — te guiaremos con el pack (logs, informe, panel).';
+        } else if (flowVal === 'demo') {
+          badgeNode.textContent = 'Demo Essential — rellena y te enviamos el acceso y las guías.';
+        } else if (flowVal === 'acceso') {
+          badgeNode.textContent = 'Rellena el formulario. Te indicaremos el siguiente paso según tu perfil.';
         } else {
-          const isAcceso = flowVal === 'acceso';
-          badgeNode.textContent = isAcceso
-            ? 'Rellena el formulario. Te indicaremos el siguiente paso según tu perfil.'
-            : 'Modo demo: sin plan preseleccionado.';
+          badgeNode.textContent = 'Sin plan preseleccionado.';
         }
       } else {
         badgeNode.classList.add('selected-plan-badge--warning');
@@ -283,6 +291,7 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
       if (flow === 'acceso') q.set('flow', 'acceso');
       if (flow === 'lista') q.set('flow', 'lista');
       if (flow === 'auditoria-ia') q.set('flow', 'auditoria-ia');
+      if (flow === 'demo') q.set('flow', 'demo');
       if (planVal === 'advanced' || planVal === 'pro') q.set('plan', planVal);
       if (flow === 'lista' && planVal === 'ambos') q.set('plan', 'ambos');
       const thankYouUrl = '/company/contact-thank-you' + (q.toString() ? '?' + q.toString() : '');
@@ -312,7 +321,8 @@ const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://
         }
         if (submitBtn) {
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Enviar solicitud';
+          const flowReset = flowInputSubmit ? flowInputSubmit.value : '';
+          submitBtn.textContent = flowReset === 'demo' ? 'Solicitar demo' : 'Enviar solicitud';
         }
       }
     });

@@ -165,27 +165,20 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 		}
 
 		if (flow === 'demo') {
-			if (titleNode) titleNode.textContent = 'Solicita tu demo de tevsys';
-			const demoPromise = ' Te enviaremos la demo y las guías de instalación y configuración.';
-			const selectedSource = sourceMap[feature] || sourceMap[origin];
-			if (selectedSource) {
-				if (introNode) introNode.textContent = selectedSource.intro + demoPromise;
-				setTips(selectedSource.tips[0], selectedSource.tips[1], 'Respuesta en menos de 24h con los siguientes pasos.', empresasTipHtml);
-			} else {
-				if (introNode) {
-					introNode.textContent =
-						'Rellena el formulario.' + demoPromise;
-				}
-				setTips(
-					'Demo orientada a validación real de tu operativa.',
-					'Incluye precisión, HyperClose y días OFF para probar.',
-					'La demo que recibirás es Essential. Advanced y Pro en fase final de desarrollo — lista de espera.',
-					empresasTipHtml
-				);
+			if (titleNode) titleNode.textContent = 'Solicita tu demo Essential';
+			if (introNode) {
+				introNode.textContent =
+					'Un solo paso: rellena el formulario. Te enviamos la demo Essential y las guías de instalación y configuración. Respuesta en menos de 24 horas.';
 			}
+			/* Camino corto: sin tips laterales que compitan con el formulario. */
+			if (tip1) tip1.style.display = 'none';
+			if (tip2) tip2.style.display = 'none';
+			if (tip3) tip3.style.display = 'none';
+			if (tip4) tip4.style.display = 'none';
+			if (tip5) tip5.style.display = 'none';
 			if (imageNode) {
 				setHeroImage('/assets/images/plans/esse-form-v4.png');
-				imageNode.alt = 'Demo de tevsys';
+				imageNode.alt = 'Demo Essential de tevsys';
 			}
 			if (demoBadge) demoBadge.hidden = false;
 			return;
