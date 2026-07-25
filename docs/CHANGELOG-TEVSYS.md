@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — header cede al chevron (25 jul 2026)
+
+**Qué:** paso 1 anti-disco — láser header sigue vivo; baja intensidad mientras chevron intro/solo manda.
+
+**Commit:** `web(tevsys): home header cede intensidad al chevron`
+
+---
+
 ## Home hero — solo frase una línea (25 jul 2026)
 
 **Qué:** frases solo en una línea (desktop); maxW hasta borde del chevron; marca solo un poco más pequeña.

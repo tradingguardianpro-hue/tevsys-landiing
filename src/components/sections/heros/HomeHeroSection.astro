@@ -440,6 +440,10 @@ const heroProductPillars = [
     }
   }
 
+  function setHomeMarkFocus(on) {
+    document.body.classList.toggle('tevsys-home-mark-focus', Boolean(on));
+  }
+
   async function runHeroPillarCycle(phrases, stage, { intro = false, soft = false } = {}) {
     const soloFadeInMs = getHeroTiming('soloFadeInMs');
     const mark = stage.querySelector('[data-hero-pillar-mark]');
@@ -453,11 +457,13 @@ const heroProductPillars = [
     prepareAbsolutePhrases(phrases);
     phrases.forEach((el) => setPhraseHiddenInstant(el));
     setMarkHiddenInstant(mark);
+    setHomeMarkFocus(false);
     await sleep(32);
 
     await sleep(getHeroTiming('emptyMs', { soft }));
 
     if (intro && mark) {
+      setHomeMarkFocus(true);
       stage.classList.add('hero-pillar-fade__stage--intro');
       await sleep(getHeroTiming('introMarkDelayMs', { soft }));
       await animateMarkSurface(mark, true, getHeroTiming('introMarkFadeInMs', { soft }));
@@ -472,6 +478,7 @@ const heroProductPillars = [
       await markOut;
       stage.classList.remove('hero-pillar-fade__stage--mark-handoff');
       setMarkHiddenInstant(mark);
+      setHomeMarkFocus(false);
       await batchIn;
     } else {
       setBatchLayout(stage, true);
@@ -486,6 +493,7 @@ const heroProductPillars = [
     await sleep(280);
 
     if (mark) {
+      setHomeMarkFocus(true);
       await animateMark(mark, true, soloFadeInMs, { mode: 'solo' });
     }
 
@@ -504,6 +512,7 @@ const heroProductPillars = [
     if (mark) {
       await animateMark(mark, false, getHeroTiming('batchPhraseFadeOutMs'), { mode: 'solo' });
       setMarkMode(mark, null);
+      setHomeMarkFocus(false);
     }
 
     await sleep(getHeroTiming('loopPauseMs'));

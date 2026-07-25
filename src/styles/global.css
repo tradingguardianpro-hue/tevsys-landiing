@@ -347,6 +347,17 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards) #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 		animation-duration: 32.8s;
 		animation-delay: var(--tevsys-home-enter-header, 2.65s);
+		transition: opacity 0.9s ease;
+	}
+
+	/*
+	  Paso 1 anti-disco: header sigue vivo, pero cede cuando el chevron (intro/solo) manda.
+	  No se para el láser — solo baja de intensidad.
+	*/
+	html[data-theme='dark'] body.tevsys-home-mark-focus:has(.tevsys-home-band--cards)
+		#odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner
+		.tevsys-header-scanner {
+		opacity: 0.3;
 	}
 }
 
@@ -354,6 +365,12 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	html[data-theme='dark'] body:has(.tevsys-home-band--cards) #odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner .tevsys-header-scanner {
 		animation-duration: 31.2s;
 		animation-delay: calc(var(--tevsys-home-enter-header, 2.65s) + 0.2s);
+	}
+
+	html[data-theme='dark'] body.tevsys-home-mark-focus:has(.tevsys-home-band--cards)
+		#odysseyNavHeader.tevsys-header--with-scanner.tevsys-header--home-scanner
+		.tevsys-header-scanner {
+		opacity: 0.34;
 	}
 }
 
