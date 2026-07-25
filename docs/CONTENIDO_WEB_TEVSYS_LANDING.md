@@ -95,7 +95,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Flujo demo → contacto guiado — ✅ **cerrado 25 jul 2026**
 
-**Hecho:** camino único ~60 s — hero CTA demo dominante · contacto `?flow=demo` (sin tips, botón Solicitar demo) · thank-you con guías + spam. Detalle: `CHANGELOG-TEVSYS.md` § *Flujo demo → contacto guiado*.
+**Hecho:** camino único ~60 s — hero CTAs **mismo tamaño** (evidencia más suave) · contacto `?flow=demo` (sin tips, Solicitar demo) · thank-you con guías + spam. Misma pasada: chevron/anti-disco, opt-out analytics, puentes huso. Detalle: `CHANGELOG-TEVSYS.md` § *Flujo demo → contacto guiado*.
 
 ### Hero — logo centro — ✅ cerrado 25 jul
 
@@ -266,7 +266,7 @@ Ver handoff hero.
 
 ## Bloque fundador
 - Claim: `tevsys no es el sueño de un inversor. Es la respuesta de un trader.`
-- Cita (24 jul 2026): `"Nadie me enseñó a gestionar el riesgo ni la disciplina. Tuve que inventar algo que me obligara a cumplir mis límites con fiabilidad y precisión, y a saber qué pasaba en mi cuenta cuando eso ocurría. tevsys es eso: lo que me faltaba entonces, ahora para todos."`
+- Cita (25 jul 2026): `"Nadie me enseñó a gestionar el riesgo ni la disciplina. Tuve que inventar algo que me obligara a cumplir mis límites con fiabilidad y precisión — y a saber qué pasaba en mi cuenta cuando eso ocurría. tevsys es eso: lo que me faltaba entonces, ahora para todos."`
 - Firma: `— Gabi, fundador de tevsys` — **IBM Plex Mono** (jun 2026, familia puente / labels home)
 - **Sitio:** después de planes · puente `Trader · fundador` · antes del footer (no hero).
 

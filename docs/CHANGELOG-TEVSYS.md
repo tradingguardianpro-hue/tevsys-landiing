@@ -11,12 +11,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 **Qué:** un camino obvio para lead frío (referido / academia):
 
 1. **Contacto `?flow=demo`:** título «Solicita tu demo Essential», intro un solo paso + promesa &lt;24 h + guías; **sin tips** laterales; botón «Solicitar demo»; badge claro.
-2. **Home:** CTA demo dominante; evidencia secundaria (más discreta); cards Essential → `?flow=demo`.
+2. **Home:** CTA demo y «Ver evidencia (~4 min)» **mismo tamaño**; evidencia **más suave** (opacidad ~0,52) — jerarquía por tono, no por miniatura. Cards Essential → `?flow=demo`.
 3. **Thank-you `?flow=demo`:** copy post-envío (enlace + guías) + aviso spam explícito.
 
-**Archivos:** `contact.astro`, `ContactForm.astro`, `contact-thank-you.astro`, `HomeHeroSection.astro`, `index.astro` (plans). Docs: este CHANGELOG · `CONTENIDO_WEB` · agenda TGP · V12 Ampliaciones.
+**También en la misma pasada web (25 jul):** analytics opt-out `va-disable` · puentes home hairline huso · hero chevron (ritmo + anti-disco) · footer «Made with love» más discreto · nota «Disponible en MT5» (sin «próximamente») · **cita fundador** con raya — (ritmo: límites / trazabilidad / cierre tevsys).
 
-**Commit:** `web(tevsys): flujo demo contacto guiado 60s`
+**Archivos:** `contact.astro`, `ContactForm.astro`, `contact-thank-you.astro`, `HomeHeroSection.astro`, `index.astro`, `Footer.astro`, `Base.astro`. Docs: este CHANGELOG · `CONTENIDO_WEB` · agenda TGP · V12 Ampliaciones.
+
+**Commit:** `web(tevsys): flujo demo contacto guiado 60s`  
+*(o series: anti-disco / chevron / CTAs igual tamaño / cita fundador — fundador push GitHub Desktop)*
 
 ---
 
