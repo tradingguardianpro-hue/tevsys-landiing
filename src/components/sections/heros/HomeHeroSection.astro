@@ -86,6 +86,9 @@ const heroProductPillars = [
     /* Arranque antes (25 jul): titular ~2–3 s → blur ya emergiendo (no vacío largo). */
     emptyMs: 400,
     emptyMsMobile: 480,
+    /* Bucles: menos aire muerto antes de la marca. */
+    emptyMsSoft: 220,
+    emptyMsSoftMobile: 260,
     /* Handoff logo→frases: sin aire (el delay lo mata el solape). */
     batchFadeInDelayMs: 0,
     batchPhraseFadeInMs: 2400,
@@ -104,18 +107,26 @@ const heroProductPillars = [
     soloFadeInMs: 2600,
     soloFadeInMsMobile: 2400,
     soloFadeOutMs: 1400,
-    loopPauseMs: 3200,
-    loopPauseMsMobile: 2800,
+    loopPauseMs: 2400,
+    loopPauseMsMobile: 2100,
     introMarkDelayMs: 280,
     introMarkDelayMsMobile: 220,
+    introMarkDelayMsSoft: 120,
+    introMarkDelayMsSoftMobile: 100,
     /* Misma alma blur; un poco menos de tramo casi invisible al inicio. */
     introMarkFadeInMs: 5200,
     introMarkFadeInMsMobile: 4800,
+    introMarkFadeInMsSoft: 3400,
+    introMarkFadeInMsSoftMobile: 3100,
     /* Nítido en pantalla: 2–2,2 s (antes 3) → blur salida + 1.ª frase. */
     introMarkHoldMs: 2200,
     introMarkHoldMsMobile: 2000,
+    introMarkHoldMsSoft: 1500,
+    introMarkHoldMsSoftMobile: 1400,
     introMarkFadeOutMs: 3000,
     introMarkFadeOutMsMobile: 2700,
+    introMarkFadeOutMsSoft: 2400,
+    introMarkFadeOutMsSoftMobile: 2200,
     introMarkGapBeforeBatchMs: 0,
   };
 
@@ -155,8 +166,17 @@ const heroProductPillars = [
     return window.matchMedia(HERO_MOBILE_MQ).matches;
   }
 
-  function getHeroTiming(key) {
+  function getHeroTiming(key, { soft = false } = {}) {
     const mobile = isMobileHero();
+    if (soft) {
+      const softKey = `${key}Soft`;
+      if (mobile && `${softKey}Mobile` in HERO_PILLAR_TIMING) {
+        return HERO_PILLAR_TIMING[`${softKey}Mobile`];
+      }
+      if (softKey in HERO_PILLAR_TIMING) {
+        return HERO_PILLAR_TIMING[softKey];
+      }
+    }
     if (mobile && `${key}Mobile` in HERO_PILLAR_TIMING) {
       return HERO_PILLAR_TIMING[`${key}Mobile`];
     }
@@ -420,7 +440,7 @@ const heroProductPillars = [
     }
   }
 
-  async function runHeroPillarCycle(phrases, stage, { intro = false } = {}) {
+  async function runHeroPillarCycle(phrases, stage, { intro = false, soft = false } = {}) {
     const soloFadeInMs = getHeroTiming('soloFadeInMs');
     const mark = stage.querySelector('[data-hero-pillar-mark]');
 
@@ -435,19 +455,19 @@ const heroProductPillars = [
     setMarkHiddenInstant(mark);
     await sleep(32);
 
-    await sleep(getHeroTiming('emptyMs'));
+    await sleep(getHeroTiming('emptyMs', { soft }));
 
     if (intro && mark) {
       stage.classList.add('hero-pillar-fade__stage--intro');
-      await sleep(getHeroTiming('introMarkDelayMs'));
-      await animateMarkSurface(mark, true, getHeroTiming('introMarkFadeInMs'));
-      await sleep(getHeroTiming('introMarkHoldMs'));
+      await sleep(getHeroTiming('introMarkDelayMs', { soft }));
+      await animateMarkSurface(mark, true, getHeroTiming('introMarkFadeInMs', { soft }));
+      await sleep(getHeroTiming('introMarkHoldMs', { soft }));
 
       /* Sync: blur de salida + 1.ª frase a la vez (sin hueco). */
       stage.classList.remove('hero-pillar-fade__stage--intro');
       stage.classList.add('hero-pillar-fade__stage--mark-handoff');
       setBatchLayout(stage, true);
-      const markOut = animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs'));
+      const markOut = animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs', { soft }));
       const batchIn = fadeBatchInTogether(phrases);
       await markOut;
       stage.classList.remove('hero-pillar-fade__stage--mark-handoff');
@@ -508,7 +528,8 @@ const heroProductPillars = [
     (async () => {
       let firstCycle = true;
       while (stage.isConnected) {
-        await runHeroPillarCycle(phrases, stage, { intro: firstCycle });
+        /* 1.ª vez: intro completo. Bucles: soft (misma alma, más corto). */
+        await runHeroPillarCycle(phrases, stage, { intro: true, soft: !firstCycle });
         firstCycle = false;
       }
     })();

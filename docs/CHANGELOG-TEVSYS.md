@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — reinicio suave bucle (25 jul 2026)
+
+**Qué:** tras solo, vuelve chevron grande con blur más corto (soft) → frases. 1.ª carga = intro completo.
+
+**Commit:** `web(tevsys): hero reinicio suave marca en bucle`
+
+---
+
 ## Home hero — solo sin pisar centro (25 jul 2026)
 
 **Qué:** frases fase solo solo en perímetro; centro reservado al chevron pequeño.
