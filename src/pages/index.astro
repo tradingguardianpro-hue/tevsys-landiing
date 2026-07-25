@@ -233,20 +233,22 @@ import settings from '../config/settings.js';
 		display: block;
 		position: relative;
 		z-index: 1;
-		width: min(7.5rem, 42vw);
-		height: 1px;
+		width: min(8.5rem, 48vw);
+		height: 3px;
 		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
 		border: 0;
-		background: linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(228, 232, 240, 0.62) 50%,
-			transparent 100%
+		border-radius: 999px;
+		/* Huso: más cuerpo en el centro → se afina a las esquinas (no barra plana). */
+		background: radial-gradient(
+			ellipse 58% 100% at 50% 50%,
+			rgba(228, 232, 240, 0.78) 0%,
+			rgba(228, 232, 240, 0.38) 38%,
+			rgba(228, 232, 240, 0.1) 62%,
+			transparent 78%
 		);
 		opacity: 1;
-		/* Ancla en capa propia — no se “come” el compositing del blur */
 		transform: translateZ(0);
-		box-shadow: 0 0 0 0.5px rgba(228, 232, 240, 0.12);
+		box-shadow: none;
 	}
 	.tevsys-home-hero-bridge::before {
 		content: none;

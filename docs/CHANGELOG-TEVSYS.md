@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — hairline huso en puentes (25 jul 2026)
+
+**Qué:** separadores con raya tipo huso (centro más presente → afina a esquinas), no barra plana 1px. Losa opaca se mantiene.
+
+**Commit:** `web(tevsys): home puentes hairline huso centro`
+
+---
+
 ## Home hero — hold nítido más corto (25 jul 2026)
 
 **Qué:** logo claro ~2,2 s (antes 3) → blur salida + 1.ª frase. Aparición intacta.
