@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — arranque marca antes (25 jul 2026)
+
+**Qué:** blur empieza ~0,7 s tras carga (antes ~1,6 s); fade-in 5,2 s (antes 6,2). Misma salida/hold. Alineado a lectura titular ~2–3 s.
+
+**Commit:** `web(tevsys): hero marca arranque antes tras titular`
+
+---
+
 ## Home hero — sync logo→frase (24 jul 2026)
 
 **Qué:** hold nítido ~3 s; al arrancar el blur de salida, 1.ª frase a la vez (sin hueco).

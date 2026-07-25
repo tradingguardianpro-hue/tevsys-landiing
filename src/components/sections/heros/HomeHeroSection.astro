@@ -83,8 +83,9 @@ const heroProductPillars = [
 
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
-    emptyMs: 900,
-    emptyMsMobile: 1050,
+    /* Arranque antes (25 jul): titular ~2–3 s → blur ya emergiendo (no vacío largo). */
+    emptyMs: 400,
+    emptyMsMobile: 480,
     /* Handoff logo→frases: sin aire (el delay lo mata el solape). */
     batchFadeInDelayMs: 0,
     batchPhraseFadeInMs: 2400,
@@ -105,10 +106,11 @@ const heroProductPillars = [
     soloFadeOutMs: 1400,
     loopPauseMs: 3200,
     loopPauseMsMobile: 2800,
-    introMarkDelayMs: 700,
-    introMarkDelayMsMobile: 600,
-    introMarkFadeInMs: 6200,
-    introMarkFadeInMsMobile: 5600,
+    introMarkDelayMs: 280,
+    introMarkDelayMsMobile: 220,
+    /* Misma alma blur; un poco menos de tramo casi invisible al inicio. */
+    introMarkFadeInMs: 5200,
+    introMarkFadeInMsMobile: 4800,
     /* Tras llegar nítido: 1, 2, 3 → y sale el blur con la 1.ª frase. */
     introMarkHoldMs: 3000,
     introMarkHoldMsMobile: 2800,
