@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — solo sin pisar centro (25 jul 2026)
+
+**Qué:** frases fase solo solo en perímetro; centro reservado al chevron pequeño.
+
+**Commit:** `web(tevsys): hero frases solo sin pisar centro marca`
+
+---
+
 ## Home — hairline huso en puentes (25 jul 2026)
 
 **Qué:** separadores con raya tipo huso (centro más presente → afina a esquinas), no barra plana 1px. Losa opaca se mantiene.
