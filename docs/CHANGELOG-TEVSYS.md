@@ -28,6 +28,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — ambiente settle tras bienvenida (25 jul 2026)
+
+**Qué:** paso 2 anti-disco — a ~26 s bajan un poco burbujas/franjas (siguen vivas). Header no se toca. Reversible.
+
+**Commit:** `web(tevsys): home ambiente settle tras bienvenida`
+
+---
+
 ## Home — header cede al chevron (25 jul 2026)
 
 **Qué:** paso 1 anti-disco — láser header sigue vivo; baja intensidad mientras chevron intro/solo manda.

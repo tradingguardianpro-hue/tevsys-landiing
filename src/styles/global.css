@@ -178,6 +178,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		background-position: 50% 0%;
 		background-repeat: no-repeat;
 		opacity: 0.72;
+		transition: opacity 2.2s ease;
 		animation: tevsys-top-strip-niebla-only 21.1s ease-in-out infinite alternate;
 		animation-delay: var(--tevsys-home-enter-rise, 1.45s);
 	}
@@ -774,6 +775,7 @@ html[data-theme='dark'] .tevsys-home-mid-glow {
 	background-size: 128vmin 106vmin;
 	filter: blur(17px);
 	opacity: 0.99;
+	transition: opacity 2.2s ease;
 }
 
 /* Burbuja 2 — aureola gris; animación distinta y más lenta = asincronía real vs capa principal */
@@ -785,6 +787,7 @@ html[data-theme='dark'] .tevsys-home-mid-glow::before {
 	height: 100%;
 	pointer-events: none;
 	opacity: 0.66;
+	transition: opacity 2.2s ease;
 	background-image: radial-gradient(
 		ellipse 38vmin 48vmin at 50% 50%,
 		rgba(188, 192, 206, 0.09) 0%,
@@ -802,6 +805,23 @@ html[data-theme='dark'] .tevsys-home-mid-glow::before {
 html[data-theme='dark'] .tevsys-home-band--cards > .feature-card__section {
 	position: relative;
 	z-index: 1;
+}
+
+/*
+  Paso 2 anti-disco — tras ~26 s en home: ambiente más suave (sigue vivo).
+  REVERTIR: quitar clase `tevsys-home-ambient-settle` + este bloque + initHomeAmbientSettle.
+*/
+html[data-theme='dark'] body.tevsys-home-ambient-settle .tevsys-home-mid-glow {
+	opacity: 0.7;
+}
+html[data-theme='dark'] body.tevsys-home-ambient-settle .tevsys-home-mid-glow::before {
+	opacity: 0.4;
+}
+html[data-theme='dark'] body.tevsys-home-ambient-settle .tevsys-home-lower-strip {
+	opacity: 0.58;
+}
+html[data-theme='dark'] body.tevsys-home-ambient-settle .tevsys-home-kitt-rect--rise {
+	opacity: 0.5;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1181,6 +1201,7 @@ html[data-theme='dark'] .tevsys-home-lower-strip {
 	z-index: 0;
 	overflow: hidden;
 	opacity: 0.82;
+	transition: opacity 2.2s ease;
 	background-image: linear-gradient(
 		188deg,
 		rgba(4, 4, 6, 0.97) 0%,

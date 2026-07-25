@@ -544,8 +544,28 @@ const heroProductPillars = [
     })();
   }
 
+  function initHomeAmbientSettle() {
+    const isHome = Boolean(document.querySelector('.tevsys-home-band--cards'));
+    if (!isHome) {
+      document.body.classList.remove('tevsys-home-ambient-settle');
+      delete document.body.dataset.tevsysAmbientSettleInit;
+      return;
+    }
+    if (document.body.dataset.tevsysAmbientSettleInit === '1') return;
+    document.body.dataset.tevsysAmbientSettleInit = '1';
+    /* ~26 s: bienvenida ya vista; ambiente baja un poco (revertible). */
+    window.setTimeout(() => {
+      if (!document.querySelector('.tevsys-home-band--cards')) return;
+      document.body.classList.add('tevsys-home-ambient-settle');
+    }, 26000);
+  }
+
   initHeroPillarFade();
-  document.addEventListener('astro:page-load', initHeroPillarFade);
+  initHomeAmbientSettle();
+  document.addEventListener('astro:page-load', () => {
+    initHeroPillarFade();
+    initHomeAmbientSettle();
+  });
 </script>
 
 <style>
