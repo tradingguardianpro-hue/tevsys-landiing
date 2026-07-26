@@ -1,9 +1,19 @@
 # Handoff — Hero home · esquemas de jerarquía (jun–jul 2026)
 
-**Última actualización:** 25 jul 2026 — chevron + motion + anti-disco (validado fundador)  
+**Última actualización:** 26 jul 2026 — paso 1 frases primer ciclo más temprano  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
 **Ambiente / header / KITT:** `src/styles/global.css`  
 **Activo en web:** **esquema 2m-E-column** + marca chevron + reinicio suave.
+
+---
+
+## Checkpoint 26 jul 2026 — frases 1.ª vez (paso 1)
+
+**Problema:** scroll típico antes de leer las 4 capas (entrada secuencial lenta).
+
+**Qué:** primer ciclo (`!soft`) — fade ~1,7 s + stagger ~0,7 s (cascada con solape). Bucles: timing anterior. Chevron “antes” = paso 2 pendiente.
+
+**Archivo:** `HomeHeroSection.astro` · `CHANGELOG-TEVSYS.md`.
 
 ---
 

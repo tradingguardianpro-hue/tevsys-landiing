@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero — frases primer ciclo más temprano (26 jul 2026) — **paso 1**
+
+**Qué:** en la **primera** entrada de las 4 capas, cascada con solape (stagger ~0,7 s) + fade un poco más corto (~1,7 s). Mismo carácter; menos espera antes del scroll. Bucles posteriores sin cambio. Chevron salida → paso 2 (pendiente).
+
+**Archivo:** `HomeHeroSection.astro` · handoff hero.
+
+**Commit:** `web(tevsys): hero frases primer ciclo mas temprano`
+
+---
+
 ## Flujo demo → contacto guiado (~60 s) — **cerrado 25 jul 2026**
 
 **Qué:** un camino obvio para lead frío (referido / academia):

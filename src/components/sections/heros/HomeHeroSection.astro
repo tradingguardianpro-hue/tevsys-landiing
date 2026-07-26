@@ -95,6 +95,14 @@ const heroProductPillars = [
     batchPhraseFadeInMsMobile: 2200,
     batchPhraseInGapMs: 340,
     batchPhraseInGapMsMobile: 400,
+    /*
+      Paso 1 (26 jul): primera vez — misma alma, menos espera acumulada.
+      Cascada: la siguiente empieza antes de que acabe el fade de la anterior.
+    */
+    batchPhraseFadeInMsFirst: 1700,
+    batchPhraseFadeInMsFirstMobile: 1550,
+    batchPhraseStaggerMsFirst: 680,
+    batchPhraseStaggerMsFirstMobile: 620,
     batchPhraseFadeOutMs: 2100,
     batchPhraseFadeOutMsMobile: 1950,
     batchPhraseOutGapMs: 340,
@@ -282,9 +290,12 @@ const heroProductPillars = [
     if (!visible) el.style.visibility = 'hidden';
   }
 
-  async function fadeBatchInTogether(phrases) {
-    const phraseFadeMs = getHeroTiming('batchPhraseFadeInMs');
+  async function fadeBatchInTogether(phrases, { brisk = false } = {}) {
+    const phraseFadeMs = brisk
+      ? getHeroTiming('batchPhraseFadeInMsFirst')
+      : getHeroTiming('batchPhraseFadeInMs');
     const gapMs = getHeroTiming('batchPhraseInGapMs');
+    const staggerMs = getHeroTiming('batchPhraseStaggerMsFirst');
     const { batchFadeInDelayMs } = HERO_PILLAR_TIMING;
 
     phrases.forEach((el) => setPhraseHiddenInstant(el));
@@ -300,7 +311,12 @@ const heroProductPillars = [
       await sleep(28);
       el.style.opacity = '1';
       el.style.transform = 'translateY(0)';
-      await sleep(phraseFadeMs + (i < phrases.length - 1 ? gapMs : 0));
+      if (i < phrases.length - 1) {
+        /* Primera vez: solape (stagger). Bucles: espera fade completo + gap. */
+        await sleep(brisk ? staggerMs : phraseFadeMs + gapMs);
+      } else {
+        await sleep(phraseFadeMs);
+      }
     }
   }
 
@@ -474,7 +490,8 @@ const heroProductPillars = [
       stage.classList.add('hero-pillar-fade__stage--mark-handoff');
       setBatchLayout(stage, true);
       const markOut = animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs', { soft }));
-      const batchIn = fadeBatchInTogether(phrases);
+      /* brisk = primer ciclo (!soft): frases legibles antes del scroll típico. */
+      const batchIn = fadeBatchInTogether(phrases, { brisk: !soft });
       await markOut;
       stage.classList.remove('hero-pillar-fade__stage--mark-handoff');
       setMarkHiddenInstant(mark);
@@ -483,7 +500,7 @@ const heroProductPillars = [
     } else {
       setBatchLayout(stage, true);
       setMarkHiddenInstant(mark);
-      await fadeBatchInTogether(phrases);
+      await fadeBatchInTogether(phrases, { brisk: !soft });
     }
 
     await sleep(getHeroTiming('batchHoldMs'));
