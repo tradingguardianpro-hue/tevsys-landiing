@@ -86,23 +86,23 @@ const heroProductPillars = [
     /* Arranque antes (25 jul): titular ~2–3 s → blur ya emergiendo (no vacío largo). */
     emptyMs: 400,
     emptyMsMobile: 480,
-    /* Bucles: menos aire muerto antes de la marca. */
     emptyMsSoft: 220,
     emptyMsSoftMobile: 260,
-    /* Handoff logo→frases: sin aire (el delay lo mata el solape). */
     batchFadeInDelayMs: 0,
     batchPhraseFadeInMs: 2400,
     batchPhraseFadeInMsMobile: 2200,
     batchPhraseInGapMs: 340,
     batchPhraseInGapMsMobile: 400,
     /*
-      Paso 1 (26 jul): primera vez — misma alma, menos espera acumulada.
-      Cascada: la siguiente empieza antes de que acabe el fade de la anterior.
+      Paso 3 (26 jul): 1.ª vez — teatro compartido.
+      Chevron va primero; frases entran a mitad de su aparición (sin susto).
     */
-    batchPhraseFadeInMsFirst: 1700,
-    batchPhraseFadeInMsFirstMobile: 1550,
-    batchPhraseStaggerMsFirst: 680,
-    batchPhraseStaggerMsFirstMobile: 620,
+    introMarkPhraseLeadMs: 2600,
+    introMarkPhraseLeadMsMobile: 2400,
+    batchPhraseFadeInMsFirst: 2200,
+    batchPhraseFadeInMsFirstMobile: 2000,
+    batchPhraseStaggerMsFirst: 1050,
+    batchPhraseStaggerMsFirstMobile: 950,
     batchPhraseFadeOutMs: 2100,
     batchPhraseFadeOutMsMobile: 1950,
     batchPhraseOutGapMs: 340,
@@ -121,14 +121,13 @@ const heroProductPillars = [
     introMarkDelayMsMobile: 220,
     introMarkDelayMsSoft: 120,
     introMarkDelayMsSoftMobile: 100,
-    /* Misma alma blur; un poco menos de tramo casi invisible al inicio. */
     introMarkFadeInMs: 5200,
     introMarkFadeInMsMobile: 4800,
     introMarkFadeInMsSoft: 3400,
     introMarkFadeInMsSoftMobile: 3100,
-    /* Nítido en pantalla: paso 2 (26 jul) ~1,5 s (antes 2,2) → frases antes del scroll típico. */
-    introMarkHoldMs: 1500,
-    introMarkHoldMsMobile: 1350,
+    /* Hold tras nítido (1.ª vez): corto — las frases ya van en paralelo. */
+    introMarkHoldMs: 900,
+    introMarkHoldMsMobile: 800,
     introMarkHoldMsSoft: 1500,
     introMarkHoldMsSoftMobile: 1400,
     introMarkFadeOutMs: 3000,
@@ -290,8 +289,8 @@ const heroProductPillars = [
     if (!visible) el.style.visibility = 'hidden';
   }
 
-  async function fadeBatchInTogether(phrases, { brisk = false } = {}) {
-    const phraseFadeMs = brisk
+  async function fadeBatchInTogether(phrases, { theater = false } = {}) {
+    const phraseFadeMs = theater
       ? getHeroTiming('batchPhraseFadeInMsFirst')
       : getHeroTiming('batchPhraseFadeInMs');
     const gapMs = getHeroTiming('batchPhraseInGapMs');
@@ -312,8 +311,8 @@ const heroProductPillars = [
       el.style.opacity = '1';
       el.style.transform = 'translateY(0)';
       if (i < phrases.length - 1) {
-        /* Primera vez: solape (stagger). Bucles: espera fade completo + gap. */
-        await sleep(brisk ? staggerMs : phraseFadeMs + gapMs);
+        /* Teatro 1.ª vez: solape lento. Bucles: espera fade completo + gap. */
+        await sleep(theater ? staggerMs : phraseFadeMs + gapMs);
       } else {
         await sleep(phraseFadeMs);
       }
@@ -482,25 +481,47 @@ const heroProductPillars = [
       setHomeMarkFocus(true);
       stage.classList.add('hero-pillar-fade__stage--intro');
       await sleep(getHeroTiming('introMarkDelayMs', { soft }));
-      await animateMarkSurface(mark, true, getHeroTiming('introMarkFadeInMs', { soft }));
-      await sleep(getHeroTiming('introMarkHoldMs', { soft }));
 
-      /* Sync: blur de salida + 1.ª frase a la vez (sin hueco). */
-      stage.classList.remove('hero-pillar-fade__stage--intro');
-      stage.classList.add('hero-pillar-fade__stage--mark-handoff');
-      setBatchLayout(stage, true);
-      const markOut = animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs', { soft }));
-      /* brisk = primer ciclo (!soft): frases legibles antes del scroll típico. */
-      const batchIn = fadeBatchInTogether(phrases, { brisk: !soft });
-      await markOut;
-      stage.classList.remove('hero-pillar-fade__stage--mark-handoff');
-      setMarkHiddenInstant(mark);
-      setHomeMarkFocus(false);
-      await batchIn;
+      const fadeInMs = getHeroTiming('introMarkFadeInMs', { soft });
+      const markIn = animateMarkSurface(mark, true, fadeInMs);
+
+      if (!soft) {
+        /*
+          Teatro 1.ª vez: chevron va primero; a ~mitad de aparición
+          entran las frases (más lentas que el “susto” del paso 1).
+        */
+        const phraseLeadMs = Math.min(getHeroTiming('introMarkPhraseLeadMs'), fadeInMs);
+        await sleep(phraseLeadMs);
+        stage.classList.remove('hero-pillar-fade__stage--intro');
+        stage.classList.add('hero-pillar-fade__stage--mark-handoff');
+        setBatchLayout(stage, true);
+        const batchIn = fadeBatchInTogether(phrases, { theater: true });
+        await markIn;
+        await sleep(getHeroTiming('introMarkHoldMs', { soft }));
+        const markOut = animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs', { soft }));
+        await markOut;
+        stage.classList.remove('hero-pillar-fade__stage--mark-handoff');
+        setMarkHiddenInstant(mark);
+        setHomeMarkFocus(false);
+        await batchIn;
+      } else {
+        await markIn;
+        await sleep(getHeroTiming('introMarkHoldMs', { soft }));
+        stage.classList.remove('hero-pillar-fade__stage--intro');
+        stage.classList.add('hero-pillar-fade__stage--mark-handoff');
+        setBatchLayout(stage, true);
+        const markOut = animateMarkSurface(mark, false, getHeroTiming('introMarkFadeOutMs', { soft }));
+        const batchIn = fadeBatchInTogether(phrases);
+        await markOut;
+        stage.classList.remove('hero-pillar-fade__stage--mark-handoff');
+        setMarkHiddenInstant(mark);
+        setHomeMarkFocus(false);
+        await batchIn;
+      }
     } else {
       setBatchLayout(stage, true);
       setMarkHiddenInstant(mark);
-      await fadeBatchInTogether(phrases, { brisk: !soft });
+      await fadeBatchInTogether(phrases);
     }
 
     await sleep(getHeroTiming('batchHoldMs'));

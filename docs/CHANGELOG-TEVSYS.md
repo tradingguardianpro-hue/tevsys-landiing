@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero — teatro compartido chevron + frases (26 jul 2026) — **paso 3**
+
+**Qué:** 1.ª vez — chevron empieza solo; a ~2,6 s (aún emergiendo) entran las 4 capas con cascada más lenta (~2,2 s / stagger ~1 s). Sin el “susto” del paso 1. Bucles soft: flujo anterior (marca completa → frases).
+
+**Commit:** `web(tevsys): hero teatro chevron y frases juntos`
+
+---
+
 ## Hero — chevron hold más corto (26 jul 2026) — **paso 2**
 
 **Qué:** hold nítido del chevron (1.ª vez) **~1,5 s** (antes ~2,2 s). Blur entrada/salida intactos. Con paso 1 (frases) → mensaje de capas antes del scroll típico tras titular + disclaimer.

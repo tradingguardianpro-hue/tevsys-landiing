@@ -1,17 +1,17 @@
 # Handoff — Hero home · esquemas de jerarquía (jun–jul 2026)
 
-**Última actualización:** 26 jul 2026 — paso 1 frases + paso 2 chevron hold  
+**Última actualización:** 26 jul 2026 — paso 3 teatro compartido chevron+frases  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
 **Ambiente / header / KITT:** `src/styles/global.css`  
 **Activo en web:** **esquema 2m-E-column** + marca chevron + reinicio suave.
 
 ---
 
-## Checkpoint 26 jul 2026 — frases 1.ª vez + chevron hold (pasos 1–2)
+## Checkpoint 26 jul 2026 — hero timing (pasos 1–3)
 
-**Paso 1:** primer ciclo — fade ~1,7 s + stagger ~0,7 s (cascada con solape). Bucles: timing anterior.
-
-**Paso 2:** hold nítido chevron 1.ª vez **~1,5 s** (antes ~2,2). Blur entrada/salida sin cambio.
+**Paso 1:** frases más tempranas (quedó “susto” → corregido en 3).  
+**Paso 2:** hold chevron más corto.  
+**Paso 3:** **teatro compartido** — chevron primero; frases a mitad de aparición, cascada más lenta (~2,2 s / ~1 s). Soft loops sin cambio de lógica.
 
 **Archivo:** `HomeHeroSection.astro` · `CHANGELOG-TEVSYS.md`.
 
@@ -19,13 +19,13 @@
 
 ## Checkpoint 25 jul 2026 — marca chevron + ritmo (fundador OK)
 
-### Secuencia (estado vivo)
+### Secuencia (estado vivo — ver también paso 3 arriba)
 
 1. **Intro marca** — `hero-tevsys-chevrons.png` (solo chevrones, transparente). Blur 14px → nítido; misma curva a la salida.
-2. **Hold nítido** ~2,2 s → blur de salida **junto** a la 1.ª frase (handoff).
+2. **1.ª carga (paso 3):** frases entran ~2,6 s tras empezar el chevron (aún emergiendo); hold corto; blur salida.
 3. **Batch** — 4 frases en columna (Precisión → Disciplina → Trazabilidad → Protección).
 4. **Solo** — chevron pequeño centrado; frases en **perímetro** (no pisan el centro); desktop **una línea**.
-5. **Reinicio suave** — bucles siguientes: misma alma blur, tiempos más cortos (`*Soft`). 1.ª carga = intro completo.
+5. **Reinicio suave** — bucles siguientes: misma alma blur, tiempos más cortos (`*Soft`). 1.ª carga = intro teatro compartido.
 6. **Anti-disco (pareja con cards handoff):**
    - Header cede intensidad con chevron (`body.tevsys-home-mark-focus`).
    - Ambiente settle ~26 s (`body.tevsys-home-ambient-settle`).
