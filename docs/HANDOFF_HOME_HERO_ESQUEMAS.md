@@ -9,7 +9,7 @@
 
 ## Checkpoint 26 jul 2026 — hero timing (pasos 1–4)
 
-**Paso 4 (foco ahora):** chevron arranca casi al cargar → visible en movimiento tras ~1,5 s de título; blur salida un poco antes; frases retrasadas para ver el chevron. **Siguiente:** matizar frases.
+**Paso 4 (foco ahora):** ~**0,5 s** de aire al cargar → blur chevron (no al instante). Frases aún retrasadas. **Siguiente:** matizar frases.
 
 **Pasos 1–3:** ver CHANGELOG (teatro / hold / cascada).
 

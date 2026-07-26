@@ -84,11 +84,11 @@ const heroProductPillars = [
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
     /*
-      Paso 4 (26 jul): chevron antes — lees el título ~1,5 s y ya hay movimiento.
-      Frases más tarde en el teatro (matiz frases = siguiente).
+      Paso 4b (26 jul): ~0,5 s de aire al cargar → luego blur chevron.
+      No al instante (0 s); tampoco tarde. Misma alma blur.
     */
-    emptyMs: 180,
-    emptyMsMobile: 220,
+    emptyMs: 420,
+    emptyMsMobile: 480,
     emptyMsSoft: 220,
     emptyMsSoftMobile: 260,
     batchFadeInDelayMs: 0,

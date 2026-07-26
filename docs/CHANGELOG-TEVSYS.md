@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero — chevron a ~0,5 s (26 jul 2026) — **paso 4b**
+
+**Qué:** ~0,5 s de aire al cargar (no al instante) → luego mismo blur del chevron. Frases siguen retrasadas para juzgar la marca.
+
+**Commit:** `web(tevsys): hero chevron arranca a medio segundo`
+
+---
+
 ## Hero — chevron antes tras el título (26 jul 2026) — **paso 4**
 
 **Qué:** menos aire muerto al cargar → lees el título ~1,5 s y el chevron **ya se mueve** (mismo blur). Hold nítido más corto → blur de salida un poco antes. Frases empiezan más tarde (~4 s dentro del fade) para poder juzgar el chevron solo; matiz de frases = siguiente.
