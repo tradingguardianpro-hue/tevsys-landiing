@@ -10,7 +10,7 @@
 ## Checkpoint 26 jul 2026 — hero timing (pasos 1–4)
 
 **Paso 4:** chevron al cargar (probado OK).  
-**Paso 5:** frases patrón **A** — 1+2 juntas → 3 → 4.  
+**Paso 5:** frases — **1+2** → **3+4** (dos parejas).  
 
 **Siguiente:** afinar beats/fade si hace falta.
 

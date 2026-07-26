@@ -96,15 +96,13 @@ const heroProductPillars = [
     batchPhraseFadeInMsMobile: 2200,
     batchPhraseInGapMs: 340,
     batchPhraseInGapMsMobile: 400,
-    /* Frases 1.ª vez (A): dos juntas → 3.ª → 4.ª. */
+    /* Frases 1.ª vez (A): 1+2 juntas → beat → 3+4 juntas. */
     introMarkPhraseLeadMs: 4000,
     introMarkPhraseLeadMsMobile: 3700,
     batchPhraseFadeInMsFirst: 2400,
     batchPhraseFadeInMsFirstMobile: 2200,
-    batchPhrasePairBeatMsFirst: 780,
-    batchPhrasePairBeatMsFirstMobile: 720,
-    batchPhraseSoloBeatMsFirst: 700,
-    batchPhraseSoloBeatMsFirstMobile: 640,
+    batchPhrasePairBeatMsFirst: 900,
+    batchPhrasePairBeatMsFirstMobile: 820,
     batchPhraseFadeOutMs: 2100,
     batchPhraseFadeOutMsMobile: 1950,
     batchPhraseOutGapMs: 340,
@@ -315,14 +313,12 @@ const heroProductPillars = [
     await sleep(batchFadeInDelayMs);
 
     if (theater && phrases.length >= 4) {
-      /* A: 1+2 juntas → beat → 3 → beat → 4. */
+      /* A: 1+2 juntas → beat → 3+4 juntas (mismo peso). */
       const pairBeat = getHeroTiming('batchPhrasePairBeatMsFirst');
-      const soloBeat = getHeroTiming('batchPhraseSoloBeatMsFirst');
       beginPhraseFadeIn(phrases[0], phraseFadeMs);
       beginPhraseFadeIn(phrases[1], phraseFadeMs);
       await sleep(phraseFadeMs + pairBeat);
       beginPhraseFadeIn(phrases[2], phraseFadeMs);
-      await sleep(phraseFadeMs + soloBeat);
       beginPhraseFadeIn(phrases[3], phraseFadeMs);
       await sleep(phraseFadeMs);
       return;
