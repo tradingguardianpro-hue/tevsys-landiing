@@ -96,13 +96,15 @@ const heroProductPillars = [
     batchPhraseFadeInMsMobile: 2200,
     batchPhraseInGapMs: 340,
     batchPhraseInGapMsMobile: 400,
-    /* Frases: aún en cascada lenta, pero empiezan más tarde (chevron solo primero). */
+    /* Frases 1.ª vez (A): dos juntas → 3.ª → 4.ª. */
     introMarkPhraseLeadMs: 4000,
     introMarkPhraseLeadMsMobile: 3700,
-    batchPhraseFadeInMsFirst: 2200,
-    batchPhraseFadeInMsFirstMobile: 2000,
-    batchPhraseStaggerMsFirst: 1050,
-    batchPhraseStaggerMsFirstMobile: 950,
+    batchPhraseFadeInMsFirst: 2400,
+    batchPhraseFadeInMsFirstMobile: 2200,
+    batchPhrasePairBeatMsFirst: 780,
+    batchPhrasePairBeatMsFirstMobile: 720,
+    batchPhraseSoloBeatMsFirst: 700,
+    batchPhraseSoloBeatMsFirstMobile: 640,
     batchPhraseFadeOutMs: 2100,
     batchPhraseFadeOutMsMobile: 1950,
     batchPhraseOutGapMs: 340,
@@ -290,30 +292,48 @@ const heroProductPillars = [
     if (!visible) el.style.visibility = 'hidden';
   }
 
+  function beginPhraseFadeIn(el, phraseFadeMs) {
+    el.style.transition = `opacity ${phraseFadeMs}ms ${HERO_GLOW_IN_EASE}, transform ${phraseFadeMs}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
+    el.style.visibility = 'visible';
+    el.style.opacity = '0';
+    el.style.transform = `translateY(${HERO_BATCH_ENTER_Y})`;
+    requestAnimationFrame(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  }
+
   async function fadeBatchInTogether(phrases, { theater = false } = {}) {
     const phraseFadeMs = theater
       ? getHeroTiming('batchPhraseFadeInMsFirst')
       : getHeroTiming('batchPhraseFadeInMs');
     const gapMs = getHeroTiming('batchPhraseInGapMs');
-    const staggerMs = getHeroTiming('batchPhraseStaggerMsFirst');
     const { batchFadeInDelayMs } = HERO_PILLAR_TIMING;
 
     phrases.forEach((el) => setPhraseHiddenInstant(el));
     await sleep(32);
     await sleep(batchFadeInDelayMs);
 
+    if (theater && phrases.length >= 4) {
+      /* A: 1+2 juntas → beat → 3 → beat → 4. */
+      const pairBeat = getHeroTiming('batchPhrasePairBeatMsFirst');
+      const soloBeat = getHeroTiming('batchPhraseSoloBeatMsFirst');
+      beginPhraseFadeIn(phrases[0], phraseFadeMs);
+      beginPhraseFadeIn(phrases[1], phraseFadeMs);
+      await sleep(phraseFadeMs + pairBeat);
+      beginPhraseFadeIn(phrases[2], phraseFadeMs);
+      await sleep(phraseFadeMs + soloBeat);
+      beginPhraseFadeIn(phrases[3], phraseFadeMs);
+      await sleep(phraseFadeMs);
+      return;
+    }
+
     for (let i = 0; i < phrases.length; i += 1) {
       const el = phrases[i];
-      el.style.transition = `opacity ${phraseFadeMs}ms ${HERO_GLOW_IN_EASE}, transform ${phraseFadeMs}ms ${HERO_GLOW_IN_EASE}, visibility 0s linear`;
-      el.style.visibility = 'visible';
-      el.style.opacity = '0';
-      el.style.transform = `translateY(${HERO_BATCH_ENTER_Y})`;
+      beginPhraseFadeIn(el, phraseFadeMs);
       await sleep(28);
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
       if (i < phrases.length - 1) {
-        /* Teatro 1.ª vez: solape lento. Bucles: espera fade completo + gap. */
-        await sleep(theater ? staggerMs : phraseFadeMs + gapMs);
+        await sleep(phraseFadeMs + gapMs);
       } else {
         await sleep(phraseFadeMs);
       }

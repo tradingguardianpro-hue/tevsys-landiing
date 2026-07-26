@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero — frases patrón A (26 jul 2026) — **paso 5**
+
+**Qué:** 1.ª carga — frases **1+2 juntas** → pausa → **3** → pausa → **4** (fade ~2,4 s). Chevron al cargar intacto. Sin blink/disco.
+
+**Commit:** `web(tevsys): hero frases patron A dos juntas luego 3 y 4`
+
+---
+
 ## Hero — chevron a ~0,5 s (26 jul 2026) — **paso 4b**
 
 **Qué:** ~0,5 s de aire al cargar (no al instante) → luego mismo blur del chevron. Frases siguen retrasadas para juzgar la marca.

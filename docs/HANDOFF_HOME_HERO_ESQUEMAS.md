@@ -9,7 +9,10 @@
 
 ## Checkpoint 26 jul 2026 — hero timing (pasos 1–4)
 
-**Paso 4 (foco ahora):** ~**0,5 s** de aire al cargar → blur chevron (no al instante). Frases aún retrasadas. **Siguiente:** matizar frases.
+**Paso 4:** chevron al cargar (probado OK).  
+**Paso 5:** frases patrón **A** — 1+2 juntas → 3 → 4.  
+
+**Siguiente:** afinar beats/fade si hace falta.
 
 **Pasos 1–3:** ver CHANGELOG (teatro / hold / cascada).
 
