@@ -83,9 +83,12 @@ const heroProductPillars = [
 
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
-    /* Arranque antes (25 jul): titular ~2–3 s → blur ya emergiendo (no vacío largo). */
-    emptyMs: 400,
-    emptyMsMobile: 480,
+    /*
+      Paso 4 (26 jul): chevron antes — lees el título ~1,5 s y ya hay movimiento.
+      Frases más tarde en el teatro (matiz frases = siguiente).
+    */
+    emptyMs: 180,
+    emptyMsMobile: 220,
     emptyMsSoft: 220,
     emptyMsSoftMobile: 260,
     batchFadeInDelayMs: 0,
@@ -93,12 +96,9 @@ const heroProductPillars = [
     batchPhraseFadeInMsMobile: 2200,
     batchPhraseInGapMs: 340,
     batchPhraseInGapMsMobile: 400,
-    /*
-      Paso 3 (26 jul): 1.ª vez — teatro compartido.
-      Chevron va primero; frases entran a mitad de su aparición (sin susto).
-    */
-    introMarkPhraseLeadMs: 2600,
-    introMarkPhraseLeadMsMobile: 2400,
+    /* Frases: aún en cascada lenta, pero empiezan más tarde (chevron solo primero). */
+    introMarkPhraseLeadMs: 4000,
+    introMarkPhraseLeadMsMobile: 3700,
     batchPhraseFadeInMsFirst: 2200,
     batchPhraseFadeInMsFirstMobile: 2000,
     batchPhraseStaggerMsFirst: 1050,
@@ -117,17 +117,18 @@ const heroProductPillars = [
     soloFadeOutMs: 1400,
     loopPauseMs: 2400,
     loopPauseMsMobile: 2100,
-    introMarkDelayMs: 280,
-    introMarkDelayMsMobile: 220,
+    introMarkDelayMs: 80,
+    introMarkDelayMsMobile: 60,
     introMarkDelayMsSoft: 120,
     introMarkDelayMsSoftMobile: 100,
+    /* Misma alma blur; arranca antes en el timeline de página. */
     introMarkFadeInMs: 5200,
     introMarkFadeInMsMobile: 4800,
     introMarkFadeInMsSoft: 3400,
     introMarkFadeInMsSoftMobile: 3100,
-    /* Hold tras nítido (1.ª vez): corto — las frases ya van en paralelo. */
-    introMarkHoldMs: 900,
-    introMarkHoldMsMobile: 800,
+    /* Hold corto → blur salida un poco antes (blur intacto). */
+    introMarkHoldMs: 600,
+    introMarkHoldMsMobile: 550,
     introMarkHoldMsSoft: 1500,
     introMarkHoldMsSoftMobile: 1400,
     introMarkFadeOutMs: 3000,

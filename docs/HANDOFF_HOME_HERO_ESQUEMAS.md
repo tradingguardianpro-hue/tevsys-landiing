@@ -1,19 +1,17 @@
 # Handoff — Hero home · esquemas de jerarquía (jun–jul 2026)
 
-**Última actualización:** 26 jul 2026 — paso 3 teatro compartido chevron+frases  
+**Última actualización:** 26 jul 2026 — paso 4 chevron antes tras título  
 **Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
 **Ambiente / header / KITT:** `src/styles/global.css`  
 **Activo en web:** **esquema 2m-E-column** + marca chevron + reinicio suave.
 
 ---
 
-## Checkpoint 26 jul 2026 — hero timing (pasos 1–3)
+## Checkpoint 26 jul 2026 — hero timing (pasos 1–4)
 
-**Paso 1:** frases más tempranas (quedó “susto” → corregido en 3).  
-**Paso 2:** hold chevron más corto.  
-**Paso 3:** **teatro compartido** — chevron primero; frases a mitad de aparición, cascada más lenta (~2,2 s / ~1 s). Soft loops sin cambio de lógica.
+**Paso 4 (foco ahora):** chevron arranca casi al cargar → visible en movimiento tras ~1,5 s de título; blur salida un poco antes; frases retrasadas para ver el chevron. **Siguiente:** matizar frases.
 
-**Archivo:** `HomeHeroSection.astro` · `CHANGELOG-TEVSYS.md`.
+**Pasos 1–3:** ver CHANGELOG (teatro / hold / cascada).
 
 ---
 
