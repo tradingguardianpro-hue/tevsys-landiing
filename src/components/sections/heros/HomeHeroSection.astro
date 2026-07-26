@@ -84,11 +84,11 @@ const heroProductPillars = [
 <script define:vars={{ heroProductPillars }}>
   const HERO_PILLAR_TIMING = {
     /*
-      Paso 4b (26 jul): ~0,5 s de aire al cargar → luego blur chevron.
-      No al instante (0 s); tampoco tarde. Misma alma blur.
+      Prueba (26 jul): chevron al cargar — protagonista al expandirse.
+      Si no cuadra → revertir a ~0,5 s (emptyMs 420 + delay 80).
     */
-    emptyMs: 420,
-    emptyMsMobile: 480,
+    emptyMs: 0,
+    emptyMsMobile: 40,
     emptyMsSoft: 220,
     emptyMsSoftMobile: 260,
     batchFadeInDelayMs: 0,
@@ -117,8 +117,8 @@ const heroProductPillars = [
     soloFadeOutMs: 1400,
     loopPauseMs: 2400,
     loopPauseMsMobile: 2100,
-    introMarkDelayMs: 80,
-    introMarkDelayMsMobile: 60,
+    introMarkDelayMs: 0,
+    introMarkDelayMsMobile: 0,
     introMarkDelayMsSoft: 120,
     introMarkDelayMsSoftMobile: 100,
     /* Misma alma blur; arranca antes en el timeline de página. */
