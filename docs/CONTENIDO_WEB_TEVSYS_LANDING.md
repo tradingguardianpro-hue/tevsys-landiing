@@ -97,6 +97,10 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Hecho:** camino único ~60 s — hero CTAs **mismo tamaño** (evidencia más suave) · contacto `?flow=demo` (sin tips, Solicitar demo) · thank-you con guías + spam. Misma pasada: chevron/anti-disco, opt-out analytics, puentes huso. Detalle: `CHANGELOG-TEVSYS.md` § *Flujo demo → contacto guiado*.
 
+### Vigilancia / VPS — ✅ **31 jul 2026**
+
+Bloque en `/como-funciona#vigilancia-vps` — VPS = vigilancia casi siempre; sin terminal = hueco; reenganche con mismos %. Criterio V12 **(b)** · dossier §15.
+
 ### Hero — logo centro — ✅ cerrado 25 jul
 
 Ver handoff hero.

@@ -58,6 +58,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Vigilancia / VPS — `/como-funciona#vigilancia-vps` (31 jul 2026)
+
+**Qué:** bloque FAQ con protagonismo (no hero). Criterio TGP V12 **(b)** · dossier §15.
+
+**Copy:** VPS/casa = vigilancia casi todo el tiempo con MT5+tevsys; sin terminal = hueco; al volver = mismos %. Dos tarjetas Con cobertura / Sin cobertura.
+
+**Commit:** `web(tevsys): bloque vigilancia VPS en como-funciona`
+
+---
+
 ## Flujo demo → contacto guiado (~60 s) — **cerrado 25 jul 2026**
 
 **Qué:** un camino obvio para lead frío (referido / academia):
