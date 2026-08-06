@@ -91,7 +91,21 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ---
 
-## Próximas sesiones web (cola — jul 2026)
+## Próximas sesiones web (cola — jul–ago 2026)
+
+### Refresco vídeos — imagen panel (ago 2026) — **APARCADO / oleadas**
+
+**Qué:** el EA en gráfico (panel B&N anti-feria, V12 **o**) **ya no coincide** con muchos MP4 de la web. No es bug de landing: es **deuda de imagen**. Se cierra **por oleadas**, no en un sprint.
+
+**Orden de ataque (cuando el fundador abra sesión):**
+
+1. **SML** — activación + pérdida ampliada (validado) → `/features/sml` + micro si aplica.  
+2. **Microclips** `/como-funciona` — catálogo TGP `CATALOGO_MICROCLIPS_TEVSYS.md`.  
+3. **Guías** instalación / config — `PLAN_VIDEOS_*`.  
+4. **Nasdaq / evidencia larga** — solo si duele mucho en pantalla.
+
+**Canon grabación:** panel **negro** preferido; blanco con borde visible. Agenda TGP § *Refresco vídeos web*.  
+**Bloquea oleadas:** envío Juan (vídeo + `.ex5`) primero.
 
 ### Flujo demo → contacto guiado — ✅ **cerrado 25 jul 2026**
 

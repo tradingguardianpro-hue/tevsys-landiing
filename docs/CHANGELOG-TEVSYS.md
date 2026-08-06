@@ -58,6 +58,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Deuda imagen — vídeos vs panel B&N (6 ago 2026) — **aparcado / oleadas**
+
+**Qué:** panel anti-feria en MT5 (V12 **o**) no coincide con gran parte de los MP4 de la landing. No sprint único. Agenda TGP § *Refresco vídeos web* · `CONTENIDO_WEB_TEVSYS_LANDING.md` § *Refresco vídeos*.
+
+**Oleadas:** SML → microclips `/como-funciona` → guías A/B/C → Nasdaq. **Después** de envío Juan.
+
+---
+
 ## Vigilancia / VPS — `/como-funciona#vigilancia-vps` (31 jul 2026)
 
 **Qué:** bloque FAQ con protagonismo (no hero). Criterio TGP V12 **(b)** · dossier §15.
