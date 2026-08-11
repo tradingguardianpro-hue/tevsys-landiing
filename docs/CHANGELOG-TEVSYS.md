@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Hero — Descargar demo más contenido en móvil (11 ago 2026)
+
+**Qué:** en viewport ≤768px, CTA ámbar «Descargar demo» más pequeño (tipo ~0,9 rem, padding más estrecho, glow más suave). Desktop sin cambio. Jerarquía: menos “cartelón” en móvil frente a «Ver evidencia».
+
+**Commit:** `web(tevsys): hero demo CTA mas contenido en movil`
+
+---
+
 ## Hero — frases patrón A (26 jul 2026) — **paso 5**
 
 **Qué:** 1.ª carga — **1+2 juntas** → pausa → **3+4 juntas** (mismo peso). Fade ~2,4 s. Chevron al cargar intacto.
