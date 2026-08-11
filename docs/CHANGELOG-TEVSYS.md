@@ -8,9 +8,17 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Hero — Descargar demo más contenido en móvil (11 ago 2026)
 
-**Qué:** en viewport ≤768px, CTA ámbar «Descargar demo» más pequeño (tipo ~0,9 rem, padding más estrecho, glow más suave). Desktop sin cambio. Jerarquía: menos “cartelón” en móvil frente a «Ver evidencia».
+**Qué:** en viewport ≤768px, CTA ámbar «Descargar demo» más pequeño (tipo ~0,9 rem, padding más estrecho, glow más suave). Desktop sin cambio. Jerarquía: menos “cartelón” en móvil frente a «Ver evidencia». **Validado fundador.** Docs: CONTENIDO_WEB · PROMPT_MAESTRO §2 · CARDS-NEXT-PHASE · espejo TGP · V12 **(b)**.
+
+**Siguiente P0 imagen:** regrabar Nasdaq ~3:53 (misma estructura/overlays; cara panel nueva) — CONTENIDO_WEB § *Refresco vídeos*.
 
 **Commit:** `web(tevsys): hero demo CTA mas contenido en movil`
+
+---
+
+## Refresco vídeos — Nasdaq P0 (11 ago 2026) — **planificado**
+
+**Qué:** elevar oleada Nasdaq a **primero**. Regrabar `evidencia-nasdaq-100-completa.mp4` + YT con panel/modales actuales; guion = montaje may 2026 (ARTICULO + AGENDA). Al publicar: bump `?v=` + changelog.
 
 ---
 
@@ -66,11 +74,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Deuda imagen — vídeos vs panel B&N (6 ago 2026) — **aparcado / oleadas**
+## Deuda imagen — vídeos vs panel B&N (6 ago 2026) — **EN CURSO (update 11 ago)**
 
 **Qué:** panel anti-feria en MT5 (V12 **o**) no coincide con gran parte de los MP4 de la landing. No sprint único. Agenda TGP § *Refresco vídeos web* · `CONTENIDO_WEB_TEVSYS_LANDING.md` § *Refresco vídeos*.
 
-**Oleadas:** SML → microclips `/como-funciona` → guías A/B/C → Nasdaq. **Después** de envío Juan.
+**Oleadas (11 ago):** **Nasdaq ~3:53 P0** → SML página → microclips → guías. Juan ✅ no bloquea. CTA demo móvil ✅.
 
 ---
 

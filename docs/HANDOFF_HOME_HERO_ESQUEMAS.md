@@ -1,9 +1,17 @@
 # Handoff — Hero home · esquemas de jerarquía (jun–jul 2026)
 
-**Última actualización:** 26 jul 2026 — paso 4 chevron antes tras título  
-**Archivo vivo:** `src/components/sections/heros/HomeHeroSection.astro`  
+**Última actualización:** 11 ago 2026 — CTA «Descargar demo» más contenido en móvil (≤768px)  
+**Archivo vivo:** `src/components/sections/heros\HomeHeroSection.astro`  
 **Ambiente / header / KITT:** `src/styles/global.css`  
 **Activo en web:** **esquema 2m-E-column** + marca chevron + reinicio suave.
+
+---
+
+## Checkpoint 11 ago 2026 — CTA demo móvil
+
+**Qué:** ámbar «Descargar demo» más pequeño/estrecho solo en móvil (validado). Desktop sin cambio.  
+**Docs:** CONTENIDO_WEB · CHANGELOG · V12 **(b)**.  
+**Siguiente imagen:** regrabar Nasdaq ~3:53 (no es cambio Astro hasta publicar MP4).
 
 ---
 

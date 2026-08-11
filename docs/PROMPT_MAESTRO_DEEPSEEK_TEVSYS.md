@@ -99,8 +99,10 @@
 - **H1:** `Tu trading merece más que buenas intenciones`
 - **Interés (2 líneas):** `Plataforma pionera en verificación de disciplina automatizada` / `y gestión de riesgo para mercados financieros.`
 - **Tagline:** `Where precision meets the edge` — punto amarillo `22px` (discreto)
-- **Botón:** `Descargar demo →` — amarillo #f5b041, hover #f7c050
-- **Disponibilidad:** `Disponible en MT5 · Próximamente: más plataformas`
+- **Botón:** `Descargar demo →` — amarillo #f5b041, hover #f7c050 → `/company/contact?flow=demo`
+- **Móvil (11 ago 2026):** CTA demo **más pequeño/estrecho** en ≤768px (menos protagonismo); desktop sin cambio — `HomeHeroSection` / CONTENIDO_WEB / CHANGELOG
+- **CTA secundario vigente:** `Ver evidencia (~4 min)` → Nasdaq en `/como-funciona`
+- **Disponibilidad:** `· Disponible en MT5 ·` (sin “más plataformas”)
 - **Texto bajo imagen:** `Trading Edge Verification System`
 
 ### Imagen y layout

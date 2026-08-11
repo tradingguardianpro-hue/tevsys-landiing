@@ -72,10 +72,11 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Tipografía (19 abr 2026):** **DM Sans** solo en `.hero-title` (H1); resto del bloque hero y header en **Inter**. Carga de fuentes en `BaseHead.astro` (Inter + DM Sans).
 - **Tagline:** `Where precision meets the edge`
 - **Punto de tagline:** amarillo (dot + badge)
-- **Botón:** `Descargar demo →` (ámbar marca)
-- **CTA secundario (22 abr 2026):** `Ver evidencia en 5 minutos` (estilo outline, junto al CTA principal).
-- **Ruta de CTA secundario (22 abr 2026):** `/go/evidencia-5min` → redirige a `/features/hyperclose#hyperclose-demo`.
-- **Medición Vercel free (22 abr 2026):** visitas a `/go/evidencia-5min` se usan como proxy de clics del CTA secundario (sin eventos Pro).
+- **Botón:** `Descargar demo →` (ámbar marca) → `/company/contact?flow=demo`
+- **CTA móvil (11 ago 2026 — ✅):** en ≤768px el ámbar es **más pequeño/estrecho** (menos “cartelón”); desktop sin cambio. `HomeHeroSection.astro` · `CHANGELOG` *Hero — Descargar demo… móvil*.
+- **CTA secundario (jul 2026 vigente):** `Ver evidencia (~4 min)` → `/como-funciona?play=1#evidencia-nasdaq-100` (pieza Nasdaq; no confundir con ruta antigua `/go/evidencia-5min` HyperClose).
+- **Ruta histórica CTA 5 min (22 abr 2026):** `/go/evidencia-5min` → HyperClose (sigue útil analytics / deep links).
+- **Medición Vercel free (22 abr 2026):** visitas a `/go/evidencia-5min` como proxy; el CTA home actual a Nasdaq se mide por pageviews `/como-funciona` + ancla.
 - **Disponibilidad:** `· Disponible en MT5 ·` (sin “más plataformas” — 24 jul 2026)
 - **Stack home (tema oscuro):** fondo **`#000`** en `.tevsys-home-hero-stack` (coherencia con zona imagen cards); capas KITT sin cambio de filosofía.
 - **Imagen:** mano robótica + candado (`mano robotica central web.png`; hero con `?v=2` tras arte velas neutras). Tratamiento CSS: filtros/viñeta/radio imagen; stack home con viñeta y un solo redondeo exterior (`CHANGELOG` + `HOME_HERO_CARDS_ITERACION_ABR2026.md`).
@@ -91,25 +92,35 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ---
 
-## Próximas sesiones web (cola — jul–ago 2026)
+## Próximas sesiones web (cola — ago 2026)
 
-### Refresco vídeos — imagen panel (ago 2026) — **APARCADO / oleadas**
+### Refresco vídeos — imagen panel (ago 2026) — **EN CURSO / oleadas**
 
-**Qué:** el EA en gráfico (panel B&N anti-feria, V12 **o**) **ya no coincide** con muchos MP4 de la web. No es bug de landing: es **deuda de imagen**. Se cierra **por oleadas**, no en un sprint.
+**Qué:** el EA en gráfico (panel B&N anti-feria, V12 **o**, modales ago) **ya no coincide** con muchos MP4 de la web. Deuda de imagen. Se cierra **por oleadas**.
 
-**Orden de ataque (cuando el fundador abra sesión):**
+**P0 siguiente (acordado 11 ago 2026):** **regrabar pieza Nasdaq ~3:53** (presentación `/como-funciona` + YT `2f1rRmqkE1k`).
 
-1. **SML** — activación + pérdida ampliada (validado) → `/features/sml` + micro si aplica.  
-2. **Microclips** `/como-funciona` — catálogo TGP `CATALOGO_MICROCLIPS_TEVSYS.md`.  
-3. **Guías** instalación / config — `PLAN_VIDEOS_*`.  
-4. **Nasdaq / evidencia larga** — solo si duele mucho en pantalla.
+- **Misma estructura** que el export actual: instalar / panel → operación → cierre al límite → HyperClose → modales **nuevos** → evidencia/informe.
+- **Mismo criterio de lotaje y explicación** que el vídeo vigente (no inventar otro guion).
+- **Overlays / montaje / timecodes:** canon en repo TGP — `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` § **Montaje final evidencia Nasdaq (may 2026)** + `docs/AGENDA_GABI.md` § **Vídeo evidencia Nasdaq — edición** (tabla overlays 3:53).
+- **Canon imagen rodaje:** panel **negro** preferido; blanco con borde visible; sin feria de Entradas.
+- Al publicar: sustituir `public/videos/features/evidencia-nasdaq-100-completa.mp4` + bump `?v=` + YT + changelog.
 
-**Canon grabación:** panel **negro** preferido; blanco con borde visible. Agenda TGP § *Refresco vídeos web*.  
-**Bloquea oleadas:** envío Juan (vídeo + `.ex5`) primero.
+**Resto de oleadas (después del Nasdaq o en paralelo si energia):**
+
+1. **SML** — vídeo página `/features/sml` (sigue aparcado por tiempo).  
+2. **Microclips** `/como-funciona` — `CATALOGO_MICROCLIPS_TEVSYS.md`.  
+3. **Guías** instalación / config.
+
+**Juan:** envío UX ✅ (~7 ago) — **no bloquea** oleadas web.
+
+### Hero CTA demo móvil — ✅ **11 ago 2026**
+
+«Descargar demo» menos protagonismo en móvil (≤768px). Desktop intacto.
 
 ### Flujo demo → contacto guiado — ✅ **cerrado 25 jul 2026**
 
-**Hecho:** camino único ~60 s — hero CTAs **mismo tamaño** (evidencia más suave) · contacto `?flow=demo` (sin tips, Solicitar demo) · thank-you con guías + spam. Misma pasada: chevron/anti-disco, opt-out analytics, puentes huso. Detalle: `CHANGELOG-TEVSYS.md` § *Flujo demo → contacto guiado*.
+**Hecho:** camino único ~60 s — hero CTAs **mismo tamaño en desktop** (evidencia más suave) · contacto `?flow=demo` (sin tips, Solicitar demo) · thank-you con guías + spam. Misma pasada: chevron/anti-disco, opt-out analytics, puentes huso. Detalle: `CHANGELOG-TEVSYS.md` § *Flujo demo → contacto guiado*.
 
 ### Vigilancia / VPS — ✅ **31 jul 2026**
 
