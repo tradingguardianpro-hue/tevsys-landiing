@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — cita fundador (12 ago 2026)
+
+**Qué:** raya antes de fiabilidad/precisión/cuenta — más punch en «sabiendo qué pasaba en mi cuenta…».
+
+**Commit:** `web(tevsys): cita fundador con mas punch en cuenta`
+
+---
+
 ## Precisión — volatilidad primero + demo 100k abajo (12 ago 2026)
 
 **Qué:** primer vídeo hero = alta volatilidad; multigráfico arriba igual. Demo 100k pasa a bloque secundario. Índice «Qué puedes comprobar» reordenado.

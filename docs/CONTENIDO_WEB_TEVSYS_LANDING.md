@@ -296,7 +296,7 @@ Ver handoff hero.
 
 ## Bloque fundador
 - Claim: `tevsys no es el sueño de un inversor. Es la respuesta de un trader.`
-- Cita (25 jul 2026): `"Nadie me enseñó a gestionar el riesgo ni la disciplina. Tuve que inventar algo que me obligara a cumplir mis límites con fiabilidad y precisión — y a saber qué pasaba en mi cuenta cuando eso ocurría. tevsys es eso: lo que me faltaba entonces, ahora para todos."`
+- Cita (12 ago 2026): `"Nadie me enseñó a gestionar el riesgo ni la disciplina. Tuve que inventar algo que me obligara a cumplir mis límites — con fiabilidad, con precisión, y sabiendo qué pasaba en mi cuenta cuando eso ocurría. tevsys es eso: lo que me faltaba entonces, ahora para todos."`
 - Firma: `— Gabi, fundador de tevsys` — **IBM Plex Mono** (jun 2026, familia puente / labels home)
 - **Sitio:** después de planes · puente `Trader · fundador` · antes del footer (no hero).
 
