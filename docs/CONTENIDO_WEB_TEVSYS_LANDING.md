@@ -100,11 +100,12 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **P0 siguiente (acordado 11 ago 2026):** **regrabar pieza Nasdaq ~3:53** (presentación `/como-funciona` + YT `2f1rRmqkE1k`).
 
-- **Misma estructura** que el export actual: instalar / panel → operación → cierre al límite → HyperClose → modales **nuevos** → evidencia/informe.
-- **Mismo criterio de lotaje y explicación** que el vídeo vigente (no inventar otro guion).
-- **Overlays / montaje / timecodes:** canon en repo TGP — `docs/ARTICULO_MQL5_SELLER_TEVSYS_DEFINITIVO.md` § **Montaje final evidencia Nasdaq (may 2026)** + `docs/AGENDA_GABI.md` § **Vídeo evidencia Nasdaq — edición** (tabla overlays 3:53).
-- **Canon imagen rodaje:** panel **negro** preferido; blanco con borde visible; sin feria de Entradas.
-- Al publicar: sustituir `public/videos/features/evidencia-nasdaq-100-completa.mp4` + bump `?v=` + YT + changelog.
+- **Flujo = no reabrir** (bueno). Checklist *dónde apretamos* + mejora piel overlays: `AGENDA_GABI.md` § **Regrabación ago 2026**.
+- **Misma estructura / lotaje / textos:** panel → op. → cierre límite → HyperClose → modales nuevos → evidencia.
+- **Overlays Nasdaq 1–fin ✅ (12 ago):** canon serio (explicar, no vender). Tabla completa `AGENDA_GABI` § Nasdaq · ARTICULO Montaje. Siguiente: **grabar** cuando toque.
+- **Apretar solo:** inicio más limpio/actual (A); modales nuevos (B); panel B&N (C); piel overlays (D). **No** recortar HyperClose ni HTML (E).
+- **Canon imagen:** panel negro preferido; blanco con borde; sin feria Entradas.
+- Al publicar: MP4 + `?v=` + YT + changelog.
 
 **Resto de oleadas (después del Nasdaq o en paralelo si energia):**
 
@@ -513,7 +514,7 @@ Seguimiento interno activo en:
 
 - **H1 (abr 2026, dos líneas):** `Precisión de cierre.` / `Menos "casi": más cierre donde toca.` — comillas tipográficas en pantalla según CSS; acento visual en `casi` (`feature-title__accent`).
 
-- **Nota extremos (30 abr 2026):** `feature-extreme-note` — desviación máxima documentada **−0,39%** (`feature-hook__accent` + `feature-extreme-note__pct` para cursiva).
+- **Nota extremos (12 ago 2026):** *También hay casos documentados en condiciones muy exigentes — volatilidad alta, spread o latencia del bróker —: la protección sigue; desviación máxima documentada −0,39%.* Más aire antes del manifiesto. Brief Barmenteros.
 
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.` — Cuando SML tenga vídeo, el embed debe seguir **«Convención embeds de vídeo — micropáginas `/features/*`»** en este documento.
 

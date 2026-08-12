@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión — nota extremos + aire hero (12 ago 2026)
+
+**Qué:** copy extremos → *casos documentados… volatilidad alta, spread o latencia del bróker… −0,39%*. Más aire entre cifras/intro/extremos y el manifiesto (sin margen negativo que pegaba bloques). Brief Barmenteros / evidencia seria.
+
+**Commit:** `web(tevsys): precision nota extremos broker y mas aire`
+
+---
+
 ## Hero — Descargar demo más contenido en móvil (11 ago 2026)
 
 **Qué:** en viewport ≤768px, CTA ámbar «Descargar demo» más pequeño (tipo ~0,9 rem, padding más estrecho, glow más suave). Desktop sin cambio. Jerarquía: menos “cartelón” en móvil frente a «Ver evidencia». **Validado fundador.** Docs: CONTENIDO_WEB · PROMPT_MAESTRO §2 · CARDS-NEXT-PHASE · espejo TGP · V12 **(b)**.
@@ -18,7 +26,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Refresco vídeos — Nasdaq P0 (11 ago 2026) — **planificado**
 
-**Qué:** elevar oleada Nasdaq a **primero**. Regrabar `evidencia-nasdaq-100-completa.mp4` + YT con panel/modales actuales; guion = montaje may 2026 (ARTICULO + AGENDA). Al publicar: bump `?v=` + changelog.
+**Qué:** regrabar `evidencia-nasdaq-100-completa.mp4` + YT. Flujo may 2026 intacto. Overlays: mismos textos, piel más sobria. Apretar A–D; no recortar HyperClose/HTML. Checklist: agenda TGP § *Regrabación ago 2026*. Al publicar: bump `?v=` + changelog.
 
 ---
 
