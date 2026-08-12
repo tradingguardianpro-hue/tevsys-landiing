@@ -8,9 +8,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Home — cita fundador (12 ago 2026)
 
-**Qué:** raya antes de fiabilidad/precisión/cuenta — más punch en «sabiendo qué pasaba en mi cuenta…».
+**Qué:** raya + *sabiendo qué pasaba en mi cuenta* (sin *cuando eso ocurría*). Más punch.
 
-**Commit:** `web(tevsys): cita fundador con mas punch en cuenta`
+**Commit:** `web(tevsys): cita fundador mas corta en cuenta`
 
 ---
 
