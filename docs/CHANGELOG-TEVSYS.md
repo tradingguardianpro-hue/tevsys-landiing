@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión — volatilidad primero + demo 100k abajo (12 ago 2026)
+
+**Qué:** primer vídeo hero = alta volatilidad; multigráfico arriba igual. Demo 100k pasa a bloque secundario. Índice «Qué puedes comprobar» reordenado.
+
+**Commit:** `web(tevsys): precision volatilidad hero y 100k secundario`
+
+---
+
 ## Precisión — nota extremos + aire hero (12 ago 2026)
 
 **Qué:** copy extremos → *casos documentados… volatilidad alta, spread o latencia del bróker… −0,39%*. Más aire entre cifras/intro/extremos y el manifiesto (sin margen negativo que pegaba bloques). Brief Barmenteros / evidencia seria.

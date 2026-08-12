@@ -27,7 +27,7 @@ const seo = {
 			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
 		</p>
 
-		<section id="precision-demo" class="feature-demo feature-demo--hero">
+		<section id="precision-volatilidad" class="feature-demo feature-demo--hero">
 			<div class="precision-multichart">
 				<p class="feature-hook precision-multichart__lead">
 					<span class="feature-hook__dot" aria-hidden="true"></span>
@@ -35,19 +35,18 @@ const seo = {
 				</p>
 				<p class="precision-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
 			</div>
-			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
+			<h2>Demo en alta volatilidad</h2>
 			<p class="feature-demo-hook">
-				100.000 € · GER40 · 20 lotes · límite −1 % · <strong class="feature-title__accent">desviación 7,20 € (0,0072 %)</strong> · Apertura Wall Street.
+				Límite +1,50 % · cierre en +1,83 % · contexto de <strong class="feature-title__accent">alta volatilidad geopolítica</strong> · 1 min 4 s.
 			</p>
-			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="precision-demo-container">
-				<video id="precision-demo-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/evidencia-100k-perdida.mp4?v=20260607wsv2" type="video/mp4" />
+			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="precision-volatilidad-container">
+				<video id="precision-volatilidad-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-demo-volatilidad.mp4" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
 			<p class="demo-edit-note">
-				<strong>Vídeo editado:</strong> mostramos los momentos clave del cierre. Puede haber un <strong>salto en el reloj</strong> del terminal entre planos. Para contrastar con rigor:
-				<a class="evidence-link" href="/features/evidencia#evidencia-informe-mt5">Evidencia verificable</a> (informe MT5 e historial de esta operativa).
+				En escenarios exigentes la desviación puede ser mayor que en condiciones normales; la protección y el cierre automático se mantienen.
 			</p>
 			<p class="feature-demo-youtube-more">
 				<a href="/videos-cierre-youtube">Ver más casos de cierre</a>
@@ -58,28 +57,29 @@ const seo = {
 		<section class="feature-proof">
 			<h2>Qué puedes comprobar</h2>
 			<ul>
-				<li><a class="evidence-link" href="#precision-demo">Cierre visible sobre límite configurado (no estimado).</a></li>
 				<li><a class="evidence-link" href="#precision-volatilidad">Comportamiento en volatilidad alta con resultado documentado.</a></li>
+				<li><a class="evidence-link" href="#precision-demo">Cierre ceñido sobre límite (demo 100k).</a></li>
 				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
 				<li><a class="evidence-link" href="#precision-stats">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
 				<li><a class="evidence-link" href="#precision-logs">Trazabilidad de eventos en logs auditables.</a></li>
 			</ul>
 		</section>
 
-		<section id="precision-volatilidad" class="feature-proof-detail">
-			<h3>Demo en alta volatilidad</h3>
-			<p class="feature-proof-subtitle">Cierre en ganancias (1 min 4 s)</p>
+		<section id="precision-demo" class="feature-proof-detail">
+			<h3>Demo rápida — Cuenta 100k</h3>
+			<p class="feature-proof-subtitle">Cierre ceñido (1 min 41 s)</p>
 			<p class="feature-proof-lead">
-				Límite +1,50 % · cierre en +1,83 % · contexto de <strong class="feature-title__accent">alta volatilidad geopolítica</strong>.
+				100.000 € · GER40 · 20 lotes · límite −1 % · <strong class="feature-title__accent">desviación 7,20 € (0,0072 %)</strong> · Apertura Wall Street.
 			</p>
-			<div class="demo-video demo-video--compact" id="precision-volatilidad-container">
-				<video id="precision-volatilidad-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/precision-demo-volatilidad.mp4" type="video/mp4" />
+			<div class="demo-video demo-video--compact" id="precision-demo-container">
+				<video id="precision-demo-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/evidencia-100k-perdida.mp4?v=20260607wsv2" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
 			<p class="demo-edit-note demo-edit-note--slim">
-				En escenarios extremos la desviación puede ser mayor que en condiciones normales; la protección y el cierre automático se mantienen.
+				<strong>Vídeo editado:</strong> momentos clave del cierre; puede haber un <strong>salto en el reloj</strong> entre planos.
+				<a class="evidence-link" href="/features/evidencia#evidencia-informe-mt5">Evidencia verificable</a> (informe MT5).
 			</p>
 		</section>
 
@@ -220,14 +220,20 @@ const seo = {
 
 <script>
 	function playDemoIfTarget() {
-		if (window.location.hash !== '#precision-demo') return;
-		const video = document.getElementById('precision-demo-video');
+		const hash = window.location.hash;
+		const map = {
+			'#precision-volatilidad': 'precision-volatilidad-video',
+			'#precision-demo': 'precision-demo-video',
+		};
+		const id = map[hash];
+		if (!id) return;
+		const video = document.getElementById(id);
 		if (video) {
 			video.play().catch(() => { /* fallback silencioso si el navegador bloquea autoplay */ });
 		}
 	}
 	function initDemoExpand() {
-		[['precision-demo-video', 'precision-demo-container'], ['precision-volatilidad-video', 'precision-volatilidad-container'], ['precision-nasdaq-video', 'precision-nasdaq-container'], ['precision-cuenta-pequena-video', 'precision-cuenta-pequena-container'], ['precision-logs-video', 'precision-logs-container']].forEach(([vid, ctn]) => {
+		[['precision-volatilidad-video', 'precision-volatilidad-container'], ['precision-demo-video', 'precision-demo-container'], ['precision-nasdaq-video', 'precision-nasdaq-container'], ['precision-cuenta-pequena-video', 'precision-cuenta-pequena-container'], ['precision-logs-video', 'precision-logs-container']].forEach(([vid, ctn]) => {
 			const video = document.getElementById(vid);
 			const container = document.getElementById(ctn);
 			if (!video || !container) return;
@@ -353,10 +359,10 @@ const seo = {
 	html[data-theme='light'] .precision-multichart__sub {
 		opacity: 0.68;
 	}
-	#precision-demo .feature-demo__title--primary-demo {
+	#precision-volatilidad .feature-demo__title--primary-demo {
 		margin-bottom: 0.75rem;
 	}
-	#precision-demo > h2 {
+	#precision-volatilidad > h2 {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
 	}
@@ -392,7 +398,7 @@ const seo = {
 		z-index: 0;
 	}
 	/* Hero: acabado global (--micro-demo-bg); sin halo ::before */
-	#precision-demo.feature-demo--hero::before {
+	#precision-volatilidad.feature-demo--hero::before {
 		display: none;
 	}
 	.feature-demo--hero > * {
@@ -431,7 +437,8 @@ const seo = {
 	#precision-stats {
 		scroll-margin-top: 5.5rem;
 	}
-	#precision-demo:target {
+	#precision-demo:target,
+	#precision-volatilidad:target {
 		border: 1px solid rgba(245, 176, 65, 0.55);
 		background: rgba(245, 176, 65, 0.08);
 		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);

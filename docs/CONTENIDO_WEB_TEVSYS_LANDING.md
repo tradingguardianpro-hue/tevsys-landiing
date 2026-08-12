@@ -348,8 +348,10 @@ Ver handoff hero.
   - Hook demo (20 abr 2026): `Caso real 100k: apertura Wall Street, 20 lotes, cierre automático con desviación documentada (0,0072%).`
   - Soporte: vídeo demo 1 min 41 s (con audio), informe MT5 (5 capturas), HTML transacciones descargable; CTA “validar evidencia en tu operativa”.
 
-### Estado actual Precisión (26 Mar 2026; orden demos 19 abr 2026)
-- **Demo rápida (100k):** `evidencia-100k-perdida.mp4` (1 min 41 s). **Hero** alineado con HyperClose/Evidencia: `.feature-demo--hero` + `.demo-video--hero` (~52rem, halo dorado). Secundarios: `.demo-video--compact` ~31rem + sombra embed.
+### Estado actual Precisión (26 Mar 2026; orden demos **12 ago 2026**)
+- **Hero (12 ago):** alta volatilidad (`precision-demo-volatilidad.mp4`, 1 min 4 s) + lead multigráfico. `.feature-demo--hero` + `.demo-video--hero`.
+- **Demo 100k:** `evidencia-100k-perdida.mp4` (1 min 41 s) — **secundaria** (tras índice). Secundarios: `.demo-video--compact`.
+- **Nota extremos (12 ago):** casos documentados · volatilidad / spread / latencia bróker · máx. **−0,39%**.
 - **Volatilidad:** hook *Operativa documentada:* ±1,50% / +1,83% / contexto volatilidad; nota de pie ajustada (protección vs “misma precisión” genérica).
 - **Nasdaq (multi‑activo):** bloque de demo **inmediatamente después** de alta volatilidad (narrativa: volatilidad → multi‑activo NASDAQ).
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`); en el flujo de página va **antes** del bloque de logs / “Sin humo” (tras volatilidad y Nasdaq).
