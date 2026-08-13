@@ -14,9 +14,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Commit:** `web(tevsys): precision card puente contencion evidencia`
 
-**Fix ancla v5:** bug en la fórmula `prevBottom - headerH` — dejaba *Essential…* visible bajo la nav. Ahora `prevBottom + 12` (fuera del viewport) y ancla al titular.
+**Aura gris (13 ago):** al llegar por ancla, bloque contención con borde/glow gris (no ámbar) + pulso corto `is-hash-arrive` — misma idea `:target` de otras micros.
 
-**Commit:** `web(tevsys): evidencia ancla contencion essential fuera viewport`
+**Commit:** `web(tevsys): evidencia contencion aura gris al anclar`
 
 ---
 
