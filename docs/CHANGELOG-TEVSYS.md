@@ -14,6 +14,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Commit:** `web(tevsys): precision card puente contencion evidencia`
 
+**Fix ancla (misma noche):** `#evidencia-contencion-489` en la `section` del bloque + `scroll-margin-top: 5.5rem` (antes clamp hasta 9rem / 14vh dejaba la card anterior a media pantalla).
+
+**Commit:** `web(tevsys): evidencia ancla contencion scroll mas bajo`
+
 ---
 
 ## Sesión 12 ago 2026 — Roadmap web P0 (resumen docs)
