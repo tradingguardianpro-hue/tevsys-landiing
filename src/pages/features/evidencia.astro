@@ -1324,12 +1324,21 @@ const seo = {
 		if (window.location.hash !== '#evidencia-contencion-489') return;
 		const title = document.getElementById('evidencia-contencion-489');
 		if (!title) return;
-		/* Bloque entero: titular arriba del viewport, justo bajo la nav. */
 		const section = title.closest('.feature-proof-detail--contencion') || title;
 		const header = document.getElementById('odysseyNavHeader');
 		const headerH = header ? Math.ceil(header.getBoundingClientRect().height) : 64;
-		const gap = 10;
-		const top = section.getBoundingClientRect().top + window.scrollY - headerH - gap;
+		const gap = 8;
+		const scrollY = window.scrollY;
+		const sectionTopAbs = section.getBoundingClientRect().top + scrollY;
+		/* Ideal: borde del bloque bajo la nav. */
+		let top = sectionTopAbs - headerH - gap;
+		/* Asegurar que el pie de la sección anterior (Essential → Precisión) quede fuera. */
+		const prev = section.previousElementSibling;
+		if (prev) {
+			const prevBottomAbs = prev.getBoundingClientRect().bottom + scrollY;
+			const clearPrev = prevBottomAbs - headerH + 6;
+			if (clearPrev > top) top = clearPrev;
+		}
 		window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
 	}
 	function scheduleContencionScroll() {

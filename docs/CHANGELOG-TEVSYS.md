@@ -14,9 +14,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Commit:** `web(tevsys): precision card puente contencion evidencia`
 
-**Fix ancla v3 (13 ago noche):** el script usaba `offset = max(88, 8vh)` (dejaba la card anterior a la vista) y CSS `:target` pintaba marco. Ahora: scroll al **bloque** bajo altura real de `#odysseyNavHeader` · sin outline `:target` · `scroll-margin: 0` + JS en DOMContentLoaded/load/rAF.
+**Fix ancla v4:** al llegar por hash, el scroll también **limpia** el pie de la sección anterior (`Essential · desviación…`) para que el titular de contención quede a pantalla completa bajo la nav.
 
-**Commit:** `web(tevsys): evidencia ancla contencion scroll real header`
+**Commit:** `web(tevsys): evidencia ancla contencion limpia essential`
 
 ---
 
