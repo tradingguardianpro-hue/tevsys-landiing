@@ -729,9 +729,9 @@ const seo = {
 		background: linear-gradient(165deg, rgba(245, 176, 65, 0.07) 0%, rgba(12, 14, 18, 0.42) 42%);
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
 	}
-	/* Ancla en el H3: sin tabindex (evita marco blanco :focus del navegador). */
+	/* Ancla en el H3: el scroll fino lo hace el script (header real). */
 	#evidencia-contencion-489 {
-		scroll-margin-top: 4.25rem;
+		scroll-margin-top: 0;
 	}
 	#evidencia-contencion-489:focus,
 	#evidencia-contencion-489:focus-visible {
@@ -1062,10 +1062,10 @@ const seo = {
 		margin: clamp(0.35rem, 1vw, 0.55rem) 0 0;
 		font-size: 0.94rem;
 	}
-	.feature-proof-detail--contencion:has(#evidencia-contencion-489:target) {
-		outline: 1px solid rgba(245, 176, 65, 0.35);
-		outline-offset: 4px;
-		border-radius: 0.35rem;
+	/* Sin outline :target — el marco claro al llegar por ancla no es marca tevsys. */
+	#evidencia-contencion-489:target {
+		outline: none;
+		background: transparent;
 	}
 	#evidencia-logs .demo-video--compact {
 		margin-top: clamp(1.15rem, 2.8vw, 1.45rem);
@@ -1322,11 +1322,22 @@ const seo = {
 	}
 	function scrollContencionAnchor() {
 		if (window.location.hash !== '#evidencia-contencion-489') return;
-		const anchor = document.getElementById('evidencia-contencion-489');
-		if (!anchor) return;
-		const offset = Math.max(88, Math.round(window.innerHeight * 0.08));
-		const top = anchor.getBoundingClientRect().top + window.scrollY - offset;
+		const title = document.getElementById('evidencia-contencion-489');
+		if (!title) return;
+		/* Bloque entero: titular arriba del viewport, justo bajo la nav. */
+		const section = title.closest('.feature-proof-detail--contencion') || title;
+		const header = document.getElementById('odysseyNavHeader');
+		const headerH = header ? Math.ceil(header.getBoundingClientRect().height) : 64;
+		const gap = 10;
+		const top = section.getBoundingClientRect().top + window.scrollY - headerH - gap;
 		window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+	}
+	function scheduleContencionScroll() {
+		scrollContencionAnchor();
+		requestAnimationFrame(() => {
+			scrollContencionAnchor();
+			requestAnimationFrame(scrollContencionAnchor);
+		});
 	}
 	function openAccordionIfTarget() {
 		const hash = window.location.hash;
@@ -1339,10 +1350,11 @@ const seo = {
 	document.addEventListener('DOMContentLoaded', () => {
 		initDemoExpand();
 		openAccordionIfTarget();
-		scrollContencionAnchor();
+		scheduleContencionScroll();
 	});
+	window.addEventListener('load', scheduleContencionScroll);
 	window.addEventListener('hashchange', () => {
 		openAccordionIfTarget();
-		scrollContencionAnchor();
+		scheduleContencionScroll();
 	});
 </script>
