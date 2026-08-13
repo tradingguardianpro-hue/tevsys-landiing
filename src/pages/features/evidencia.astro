@@ -1329,14 +1329,17 @@ const seo = {
 		const headerH = header ? Math.ceil(header.getBoundingClientRect().height) : 64;
 		const gap = 8;
 		const scrollY = window.scrollY;
-		const sectionTopAbs = section.getBoundingClientRect().top + scrollY;
-		/* Ideal: borde del bloque bajo la nav. */
-		let top = sectionTopAbs - headerH - gap;
-		/* Asegurar que el pie de la sección anterior (Essential → Precisión) quede fuera. */
+		const titleTopAbs = title.getBoundingClientRect().top + scrollY;
+		/* Titular bajo la nav. */
+		let top = titleTopAbs - headerH - gap;
+		/*
+		 * Pie anterior (Essential → Precisión): debe quedar POR ENCIMA del viewport,
+		 * no “bajo la nav” (eso lo dejaba visible). Antes: prevBottom - headerH → bug.
+		 */
 		const prev = section.previousElementSibling;
 		if (prev) {
 			const prevBottomAbs = prev.getBoundingClientRect().bottom + scrollY;
-			const clearPrev = prevBottomAbs - headerH + 6;
+			const clearPrev = prevBottomAbs + 12;
 			if (clearPrev > top) top = clearPrev;
 		}
 		window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });

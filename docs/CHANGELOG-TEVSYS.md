@@ -14,9 +14,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Commit:** `web(tevsys): precision card puente contencion evidencia`
 
-**Fix ancla v4:** al llegar por hash, el scroll también **limpia** el pie de la sección anterior (`Essential · desviación…`) para que el titular de contención quede a pantalla completa bajo la nav.
+**Fix ancla v5:** bug en la fórmula `prevBottom - headerH` — dejaba *Essential…* visible bajo la nav. Ahora `prevBottom + 12` (fuera del viewport) y ancla al titular.
 
-**Commit:** `web(tevsys): evidencia ancla contencion limpia essential`
+**Commit:** `web(tevsys): evidencia ancla contencion essential fuera viewport`
 
 ---
 
