@@ -182,9 +182,11 @@ const seo = {
 			</div>
 		</section>
 
-		<section class="feature-proof-detail feature-proof-detail--contencion" id="evidencia-contencion-489" tabindex="-1">
+		<section class="feature-proof-detail feature-proof-detail--contencion">
 			<div class="evidencia-contencion-head">
-				<h3 class="evidencia-contencion-title">Precisión cuando puede — contención cuando toca — trazabilidad siempre</h3>
+				<h3 id="evidencia-contencion-489" class="evidencia-contencion-title">
+					Precisión cuando puede — contención cuando toca — trazabilidad siempre
+				</h3>
 				<p class="evidencia-contencion-bridge" aria-label="Contexto del caso documentado">
 					<span class="evidencia-contencion-bridge__text">tevsys bajo estrés extremo</span>
 				</p>
@@ -714,14 +716,9 @@ const seo = {
 		max-width: 52ch;
 	}
 	.evidencia-contencion-anchor {
-		display: block;
-		height: 0;
-		/* Legacy — id movido a la section; mantener por si queda CSS huérfano */
-		scroll-margin-top: 5.5rem;
+		display: none;
 	}
 	.feature-proof-detail--contencion {
-		/* Bajo sticky header; no tan alto que deje la card anterior a pantalla */
-		scroll-margin-top: 5.5rem;
 		display: flex;
 		flex-direction: column;
 		gap: clamp(1rem, 2.5vw, 1.35rem);
@@ -731,6 +728,14 @@ const seo = {
 		border: 1px solid rgba(245, 176, 65, 0.28);
 		background: linear-gradient(165deg, rgba(245, 176, 65, 0.07) 0%, rgba(12, 14, 18, 0.42) 42%);
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+	}
+	/* Ancla en el H3: sin tabindex (evita marco blanco :focus del navegador). */
+	#evidencia-contencion-489 {
+		scroll-margin-top: 4.25rem;
+	}
+	#evidencia-contencion-489:focus,
+	#evidencia-contencion-489:focus-visible {
+		outline: none;
 	}
 	html[data-theme='light'] .feature-proof-detail--contencion {
 		border-color: rgba(180, 120, 20, 0.28);
