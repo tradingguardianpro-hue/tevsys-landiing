@@ -94,6 +94,21 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ## Próximas sesiones web (cola — ago 2026)
 
+### Sesión 12 ago 2026 — Roadmap P0 imagen ✅ documentada
+
+**Resumen maestro:** `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → **2026-08-12 (web)** · mails `OUTREACH_BARMENTEROS_AGO2026.md`.
+
+| Hecho | Dónde |
+|--------|--------|
+| Overlays Nasdaq 1–fin (canon serio) | AGENDA § Nasdaq · ARTICULO Montaje |
+| Precisión: nota extremos + aire | `/features/precision` |
+| Precisión: volatilidad = hero; 100k abajo | idem |
+| Cita fundador (sin *cuando eso ocurría*) | home |
+| CTA demo móvil | 11 ago · hero |
+| Brief copy post-Barmenteros | OUTREACH § Brief web |
+
+**Pendiente / aparcado:** export Nasdaq cuando haya sesión · collage HyperClose (swap PNG opcional) · SML/microclips/guías oleadas.
+
 ### Refresco vídeos — imagen panel (ago 2026) — **EN CURSO / oleadas**
 
 **Qué:** el EA en gráfico (panel B&N anti-feria, V12 **o**, modales ago) **ya no coincide** con muchos MP4 de la web. Deuda de imagen. Se cierra **por oleadas**.
@@ -517,6 +532,7 @@ Seguimiento interno activo en:
 - **H1 (abr 2026, dos líneas):** `Precisión de cierre.` / `Menos "casi": más cierre donde toca.` — comillas tipográficas en pantalla según CSS; acento visual en `casi` (`feature-title__accent`).
 
 - **Nota extremos (12 ago 2026):** *También hay casos documentados en condiciones muy exigentes — volatilidad alta, spread o latencia del bróker —: la protección sigue; desviación máxima documentada −0,39%.* Más aire antes del manifiesto. Brief Barmenteros.
+- **Card puente contención (13 ago 2026):** bajo extremos — *Caso extremo documentado* · no entra en media 0,06 % · +0,50 / +0,65 / +1,04 · CTA → `/features/evidencia#evidencia-contencion-489`. Índice Precisión + viñeta.
 
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.` — Cuando SML tenga vídeo, el embed debe seguir **«Convención embeds de vídeo — micropáginas `/features/*`»** en este documento.
 

@@ -22,6 +22,21 @@ const seo = {
 			<p class="feature-extreme-note">
 				También hay casos documentados en condiciones muy exigentes — volatilidad alta, spread o latencia del bróker —: la protección sigue; desviación máxima documentada <span class="feature-hook__accent feature-extreme-note__pct">−0,39%</span>.
 			</p>
+			<aside class="precision-contencion-card" aria-label="Caso extremo de contención">
+				<p class="precision-contencion-card__eyebrow">Caso extremo documentado</p>
+				<p class="precision-contencion-card__lead">
+					No forma parte del error medio ≈ <span class="feature-hook__accent">0,06 %</span>.
+					Precisión cuando puede; contención cuando toca. No escondemos este tipo de casos.
+				</p>
+				<p class="precision-contencion-card__body">
+					En un barrido de ~111 ms el mercado se fue; tevsys cerró al siguiente tick evaluable.
+					Límite <strong>+0,50 %</strong> · lectura al disparar <strong>+0,65 %</strong> · día <strong>+1,04 %</strong>.
+					Contención bajo estrés, no precisión de catálogo.
+				</p>
+				<p class="precision-contencion-card__cta">
+					<a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">Ver el caso completo en Evidencia →</a>
+				</p>
+			</aside>
 		</section>
 		<p class="feature-manifesto-banner">
 			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
@@ -58,6 +73,7 @@ const seo = {
 			<h2>Qué puedes comprobar</h2>
 			<ul>
 				<li><a class="evidence-link" href="#precision-volatilidad">Comportamiento en volatilidad alta con resultado documentado.</a></li>
+				<li><a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">Contención bajo estrés (barrido ~111 ms) — caso extremo aparte de la media.</a></li>
 				<li><a class="evidence-link" href="#precision-demo">Cierre ceñido sobre límite (demo 100k).</a></li>
 				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
 				<li><a class="evidence-link" href="#precision-stats">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
@@ -319,6 +335,43 @@ const seo = {
 	/* Mismo criterio que el % del hook: ámbar + cursiva en el número. */
 	.feature-extreme-note__pct {
 		font-style: italic;
+	}
+	/* Puente Precisión → Evidencia contención (Barmenteros / honestidad dos caras). */
+	.precision-contencion-card {
+		max-width: 74ch;
+		margin: clamp(1.1rem, 2.8vw, 1.45rem) 0 0;
+		padding: 0.85rem 0.95rem 0.95rem;
+		border-radius: 0.6rem;
+		border: 1px solid rgba(150, 156, 170, 0.38);
+		background: linear-gradient(145deg, rgba(34, 40, 54, 0.72), rgba(245, 176, 65, 0.07));
+	}
+	html[data-theme='light'] .precision-contencion-card {
+		background: linear-gradient(145deg, rgba(248, 249, 252, 0.95), rgba(245, 176, 65, 0.08));
+		border-color: rgba(0, 0, 0, 0.1);
+	}
+	.precision-contencion-card__eyebrow {
+		margin: 0 0 0.4rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.72rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		opacity: 0.78;
+		color: #f5b041;
+	}
+	.precision-contencion-card__lead {
+		margin: 0 0 0.55rem;
+		line-height: 1.5;
+		font-weight: 600;
+		opacity: 0.95;
+	}
+	.precision-contencion-card__body {
+		margin: 0 0 0.7rem;
+		line-height: 1.55;
+		opacity: 0.86;
+		font-size: 0.95em;
+	}
+	.precision-contencion-card__cta {
+		margin: 0;
 	}
 	/* Contexto multigráfico: secundario respecto al título “Demo rápida” del vídeo */
 	.precision-multichart {

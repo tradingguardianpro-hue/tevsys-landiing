@@ -6,6 +6,31 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión — card puente contención → Evidencia (13 ago 2026)
+
+**Qué:** bajo nota −0,39 % — card *Caso extremo documentado* (111 ms · +0,50 / +0,65 / +1,04 · no entra en media 0,06 %) + CTA a `#evidencia-contencion-489`. Índice «Qué puedes comprobar» + viñeta contención.
+
+**Por qué:** tip Barmenteros (dos caras en el primer clic de Precisión); bloque forense sigue en Evidencia.
+
+**Commit:** `web(tevsys): precision card puente contencion evidencia`
+
+---
+
+## Sesión 12 ago 2026 — Roadmap web P0 (resumen docs)
+
+**Maestro TGP:** `QUE_CONTIENE` V12 → **2026-08-12 (web)**.  
+**Mails:** `OUTREACH_BARMENTEROS_AGO2026.md` (1–3 + Brief web).  
+**Overlays Nasdaq:** AGENDA TGP § Nasdaq (tabla 1–fin) · ARTICULO Montaje.  
+**Código web:** Precisión (extremos + orden demos) · home cita · CHANGELOG entradas del día.  
+**Aparcado:** collage HyperClose · rodaje Nasdaq (sesión/mercado).
+
+**Commits listos (fundador push):**
+- `web(tevsys): precision nota extremos broker y mas aire`
+- `web(tevsys): precision volatilidad hero y 100k secundario`
+- `web(tevsys): cita fundador mas corta en cuenta`
+
+---
+
 ## Home — cita fundador (12 ago 2026)
 
 **Qué:** raya + *sabiendo qué pasaba en mi cuenta* (sin *cuando eso ocurría*). Más punch.
