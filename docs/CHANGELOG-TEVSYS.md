@@ -14,6 +14,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Commit:** `web(tevsys): home precision card matiz casos extremos`
 
+**Aire flecha (15 ago):** `.tevsys-card__content` — más padding derecha/abajo en las 4 cards para que el `→` no se pegue a la última línea (parecía parte del copy).
+
+**Commit:** `web(tevsys): home cards aire flecha esquina`
+
 ---
 
 ## Precisión — card puente contención → Evidencia (13 ago 2026)
