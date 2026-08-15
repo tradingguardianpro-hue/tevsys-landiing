@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — motion audit IA (lluvia de tokens) (15 ago 2026)
+
+**Qué:** en el teaser «¿Quieres auditar tu operativa con IA?» — capa decorativa de cifras/logs (mono, cian/ámbar suave) que suben/bajan; copy intacto; `prefers-reduced-motion` apaga el loop.
+
+**Commit:** `web(tevsys): home audit teaser motion tokens`
+
+---
+
 ## HyperClose — frase matiz STOP vs límite (15 ago 2026)
 
 **Qué:** bajo el lead del hero — *No es el cierre al llegar al límite: es el freno si, ya en STOP, intentas abrir otra vez.* Aire alineado a Precisión (nota + margen banner).

@@ -108,16 +108,35 @@ import settings from '../config/settings.js';
 		<div class="tevsys-home-lower-strip" aria-hidden="true"></div>
 		<section class="audit-teaser-section" aria-labelledby="audit-teaser-title">
 			<div class="audit-teaser-shell">
-				<p class="audit-teaser-kicker">Revisión asistida · próximamente</p>
-				<h2 id="audit-teaser-title">¿Quieres auditar tu operativa con IA?</h2>
-				<p class="audit-teaser-lead">No auditamos tu estrategia: auditamos ejecución, precisión de cierre, el cumplimiento de límites y la evidencia real.</p>
-				<p class="audit-teaser-bridge">Hoy ya puedes cruzar MT5 y logs tevsys por tu cuenta. Estamos preparando la revisión asistida para quien quiera un dictamen estructurado.</p>
-				<ul class="audit-teaser-points" aria-label="Qué revisamos en auditoría IA">
-					<li>Registros internos de tevsys (estado, bloqueos y eventos clave).</li>
-					<li>Logs de sesión de tevsys + informe oficial MT5 del mismo periodo.</li>
-				</ul>
-				<p class="audit-teaser-note">Pensado para traders, academias y equipos que exigen trazabilidad real en cada decisión.</p>
-				<a href="/auditoria-ia" class="audit-teaser-cta">Próximamente — qué estamos preparando</a>
+				<div class="audit-teaser-rain" aria-hidden="true">
+					<span class="audit-teaser-rain__col" style="--x: 6%; --dur: 18s; --delay: -2s;">
+						0,06%<br />LIMIT<br />MT5<br />STOP<br />+0,50<br />LOG<br />HIT<br />ms
+					</span>
+					<span class="audit-teaser-rain__col" style="--x: 22%; --dur: 22s; --delay: -8s;">
+						CLOSE<br />−1,04<br />DEAL<br />AUDIT<br />OK<br />111<br />DAY<br />0,002
+					</span>
+					<span class="audit-teaser-rain__col" style="--x: 48%; --dur: 16s; --delay: -5s;">
+						TRACE<br />FILL<br />+2,50<br />WEEK<br />EA<br />TICK<br />0,65<br />BIN
+					</span>
+					<span class="audit-teaser-rain__col" style="--x: 72%; --dur: 20s; --delay: -11s;">
+						MT5<br />STOP<br />0,06%<br />CLOSE<br />LOG<br />HIT<br />ms<br />OK
+					</span>
+					<span class="audit-teaser-rain__col" style="--x: 88%; --dur: 24s; --delay: -3s;">
+						LIMIT<br />DEAL<br />AUDIT<br />−0,39<br />DAY<br />FILL<br />TRACE<br />EA
+					</span>
+				</div>
+				<div class="audit-teaser-body">
+					<p class="audit-teaser-kicker">Revisión asistida · próximamente</p>
+					<h2 id="audit-teaser-title">¿Quieres auditar tu operativa con IA?</h2>
+					<p class="audit-teaser-lead">No auditamos tu estrategia: auditamos ejecución, precisión de cierre, el cumplimiento de límites y la evidencia real.</p>
+					<p class="audit-teaser-bridge">Hoy ya puedes cruzar MT5 y logs tevsys por tu cuenta. Estamos preparando la revisión asistida para quien quiera un dictamen estructurado.</p>
+					<ul class="audit-teaser-points" aria-label="Qué revisamos en auditoría IA">
+						<li>Registros internos de tevsys (estado, bloqueos y eventos clave).</li>
+						<li>Logs de sesión de tevsys + informe oficial MT5 del mismo periodo.</li>
+					</ul>
+					<p class="audit-teaser-note">Pensado para traders, academias y equipos que exigen trazabilidad real en cada decisión.</p>
+					<a href="/auditoria-ia" class="audit-teaser-cta">Próximamente — qué estamos preparando</a>
+				</div>
 			</div>
 		</section>
 	</div>
@@ -460,6 +479,9 @@ import settings from '../config/settings.js';
 		}
 	}
 	.audit-teaser-shell {
+		position: relative;
+		overflow: hidden;
+		isolation: isolate;
 		max-width: min(52rem, 92%);
 		margin: 0 auto;
 		padding: clamp(0.95rem, 2.2vw, 1.3rem) clamp(1rem, 2.4vw, 1.5rem);
@@ -467,6 +489,82 @@ import settings from '../config/settings.js';
 		border: 1px solid rgba(100, 196, 255, 0.28);
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
 		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
+	}
+	.audit-teaser-body {
+		position: relative;
+		z-index: 1;
+	}
+	/* Toque estético IA: tokens tipo log (no Matrix verde). Decorativo. */
+	.audit-teaser-rain {
+		pointer-events: none;
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		overflow: hidden;
+		opacity: 0.55;
+		mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+		-webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+	}
+	.audit-teaser-rain__col {
+		position: absolute;
+		top: 0;
+		left: var(--x, 10%);
+		width: max-content;
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+		font-size: clamp(0.62rem, 1.1vw, 0.72rem);
+		font-weight: 500;
+		line-height: 1.85;
+		letter-spacing: 0.04em;
+		color: rgba(140, 190, 220, 0.42);
+		text-shadow: 0 0 12px rgba(100, 196, 255, 0.12);
+		white-space: nowrap;
+		animation: audit-teaser-rain-rise var(--dur, 18s) linear infinite;
+		animation-delay: var(--delay, 0s);
+		will-change: transform, opacity;
+	}
+	.audit-teaser-rain__col:nth-child(even) {
+		color: rgba(200, 170, 120, 0.32);
+		animation-name: audit-teaser-rain-fall;
+	}
+	@keyframes audit-teaser-rain-rise {
+		0% {
+			transform: translate3d(0, 28%, 0);
+			opacity: 0;
+		}
+		12% {
+			opacity: 0.9;
+		}
+		88% {
+			opacity: 0.85;
+		}
+		100% {
+			transform: translate3d(0, -55%, 0);
+			opacity: 0;
+		}
+	}
+	@keyframes audit-teaser-rain-fall {
+		0% {
+			transform: translate3d(0, -40%, 0);
+			opacity: 0;
+		}
+		12% {
+			opacity: 0.85;
+		}
+		88% {
+			opacity: 0.8;
+		}
+		100% {
+			transform: translate3d(0, 45%, 0);
+			opacity: 0;
+		}
+	}
+	@media (max-width: 768px) {
+		.audit-teaser-rain {
+			opacity: 0.38;
+		}
+		.audit-teaser-rain__col:nth-child(n + 4) {
+			display: none;
+		}
 	}
 	/* Etiquetas pequeñas — misma familia que puente hero y capas (IBM Plex Mono). */
 	.tevsys-meta-label {
@@ -701,6 +799,14 @@ import settings from '../config/settings.js';
 		}
 		.tevsys-card:hover .tevsys-card__image img {
 			filter: brightness(0.91) saturate(0.97) contrast(1.04);
+		}
+		.audit-teaser-rain__col {
+			animation: none;
+			opacity: 0.35;
+			transform: none;
+		}
+		.audit-teaser-rain {
+			opacity: 0.22;
 		}
 	}
 	.feature-card__hook {
