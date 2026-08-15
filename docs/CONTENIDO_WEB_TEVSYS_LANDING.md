@@ -31,6 +31,8 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Micropágina HyperClose (`/features/hyperclose`)
 - **Hook:** `Cierre en milisegundos.` + `Hasta la siguiente ventana (día o semana), sin atajos.`
+- **Lead:** operar en bloqueo → cierre al instante + trazabilidad.
+- **Nota matiz (15 ago 2026):** *No es el cierre al llegar al límite: es el freno si, ya en STOP, intentas abrir otra vez.* (aire tipo Precisión `feature-extreme-note`).
 - **Lead:** cierre al instante si operas en bloqueo; constancia trazable para comprobar.
 
 ### Poda de densidad y otras iteraciones el mismo día
@@ -379,6 +381,7 @@ Ver handoff hero.
 - **Vídeo principal:** `hyperclose-demo.mp4` — metraje objetivo **2:23** (§57.3 overlays 1–11, 13–17). **Export interno** puede llamarse *Video Project 090920*; en repo el binario debe seguir siendo **`hyperclose-demo.mp4`** (ruta fija en `hyperclose.astro`). **8 abr 2026:** reemplazo con reedit **espejo + Manrope**; si el vídeo “desaparece” en web, comprobar que el archivo no se renombró sin tocar Astro — ver `CHANGELOG-TEVSYS.md` **§63**.
 - **YouTube (lista `/videos-cierre-youtube`):** tercera tarjeta reservada para **esta misma demo** (enlace pendiente hasta publicar en canal); **no** confundir con parte 1/2 del artículo Market.
 - **Hero (30 abr 2026):** `Cierre en milisegundos.` + ventana (día o semana) sin atajos; lead de bloqueo + trazabilidad comprobable — `CHANGELOG-TEVSYS.md` *Paquete 30 abr 2026 (II)*.
+- **Nota matiz (15 ago 2026):** *No es el cierre al llegar al límite: es el freno si, ya en STOP, intentas abrir otra vez.* Aire alineado a Precisión.
 - **Página:** h2 con duración; hook **sin** cuenta ni broker; **sin** nota pública de audio bajo el embed.
 - **Acordeón “Compruébalo tú mismo”:** galería **6** capturas (informe MT5 ×5 + historial día MT5); enlace **HTML** `evidencia-hyperclose-demo-historial-transacciones.html`; línea *¿Primera vez con las pestañas?* → Evidencia (demo 100k); nota **MT5 vs HTML** (cierre concreto vs cierres posteriores HyperClose). **PNG:** pendiente en `public/images/evidence/` — ver `CHANGELOG-TEVSYS.md` **§58.2**.
 - **Cierre inmediato y Semáforo:** enlazan a la demo. Acordeón modales 3 niveles.

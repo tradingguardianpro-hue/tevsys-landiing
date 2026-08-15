@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## HyperClose — frase matiz STOP vs límite (15 ago 2026)
+
+**Qué:** bajo el lead del hero — *No es el cierre al llegar al límite: es el freno si, ya en STOP, intentas abrir otra vez.* Aire alineado a Precisión (nota + margen banner).
+
+**Commit:** `web(tevsys): hyperclose frase matiz stop vs limite`
+
+---
+
 ## Evidencia — quita línea contraste 4.88 bajo contención (15 ago 2026)
 
 **Qué:** en bloque contención, se elimina *Mismo día, otra cuenta: cierre ceñido al +2,50 %* (pareja 4.88 sin enlace/contexto). Queda el CTA forense → Contacto.
