@@ -531,7 +531,7 @@ Seguimiento interno activo en:
 
 - **H1 (abr 2026, dos líneas):** `Precisión de cierre.` / `Menos "casi": más cierre donde toca.` — comillas tipográficas en pantalla según CSS; acento visual en `casi` (`feature-title__accent`).
 
-- **Nota extremos (12 ago 2026):** *También hay casos documentados en condiciones muy exigentes — volatilidad alta, spread o latencia del bróker —: la protección sigue; desviación máxima documentada −0,39%.* Más aire antes del manifiesto. Brief Barmenteros.
+- **Nota extremos (15 ago 2026 · A):** *También hay extremos documentados (p. ej. desviación máxima −0,39%). Abajo, un caso aparte de la media.* — acorta repetición con la card contención. Brief densidad Precisión.
 - **Card puente contención (13 ago 2026):** bajo extremos — *Caso extremo documentado* · no entra en media 0,06 % · +0,50 / +0,65 / +1,04 · CTA → `/features/evidencia#evidencia-contencion-489`. Índice Precisión + viñeta.
 
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.` — Cuando SML tenga vídeo, el embed debe seguir **«Convención embeds de vídeo — micropáginas `/features/*`»** en este documento.

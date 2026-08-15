@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión — nota −0,39 % acortada (densidad · A) (15 ago 2026)
+
+**Qué:** hero Precisión — nota extremos más corta; el detalle de volatilidad/spread/latencia queda en la card contención + Evidencia. Menos repetición antes del primer vídeo.
+
+**Commit:** `web(tevsys): precision nota extremos mas corta`
+
+---
+
 ## Home — card Precisión 3ª frase · tip Barmenteros (15 ago 2026)
 
 **Qué:** en home, card Precisión — se mantiene título `0,06% error medio` + hook + ajuste a tiempo real; la 3ª frase pasa de «N operativas…» a *También hay casos extremos documentados — fuera de esa media.* Mismo molde de ~3 líneas; el detalle sigue en `/features/precision`.
