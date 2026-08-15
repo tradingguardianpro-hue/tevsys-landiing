@@ -107,25 +107,28 @@ import settings from '../config/settings.js';
 	<div class="tevsys-home-band tevsys-home-band--lower">
 		<div class="tevsys-home-lower-strip" aria-hidden="true"></div>
 		<section class="audit-teaser-section" aria-labelledby="audit-teaser-title">
-			<div class="audit-teaser-shell">
+			<div class="audit-teaser-stage">
 				<div class="audit-teaser-rain" aria-hidden="true">
-					<span class="audit-teaser-rain__col" style="--x: 6%; --dur: 18s; --delay: -2s;">
+					<span class="audit-teaser-rain__col" style="--x: 2%; --dur: 18s; --delay: -2s;">
 						0,06%<br />LIMIT<br />MT5<br />STOP<br />+0,50<br />LOG<br />HIT<br />ms
 					</span>
-					<span class="audit-teaser-rain__col" style="--x: 22%; --dur: 22s; --delay: -8s;">
+					<span class="audit-teaser-rain__col" style="--x: 14%; --dur: 22s; --delay: -8s;">
 						CLOSE<br />−1,04<br />DEAL<br />AUDIT<br />OK<br />111<br />DAY<br />0,002
 					</span>
-					<span class="audit-teaser-rain__col" style="--x: 48%; --dur: 16s; --delay: -5s;">
+					<span class="audit-teaser-rain__col" style="--x: 28%; --dur: 16s; --delay: -5s;">
 						TRACE<br />FILL<br />+2,50<br />WEEK<br />EA<br />TICK<br />0,65<br />BIN
 					</span>
 					<span class="audit-teaser-rain__col" style="--x: 72%; --dur: 20s; --delay: -11s;">
 						MT5<br />STOP<br />0,06%<br />CLOSE<br />LOG<br />HIT<br />ms<br />OK
 					</span>
-					<span class="audit-teaser-rain__col" style="--x: 88%; --dur: 24s; --delay: -3s;">
+					<span class="audit-teaser-rain__col" style="--x: 86%; --dur: 24s; --delay: -3s;">
 						LIMIT<br />DEAL<br />AUDIT<br />−0,39<br />DAY<br />FILL<br />TRACE<br />EA
 					</span>
+					<span class="audit-teaser-rain__col" style="--x: 96%; --dur: 19s; --delay: -7s;">
+						HIT<br />ms<br />CLOSE<br />0,06%<br />STOP<br />MT5<br />LOG<br />OK
+					</span>
 				</div>
-				<div class="audit-teaser-body">
+				<div class="audit-teaser-shell">
 					<p class="audit-teaser-kicker">Revisión asistida · próximamente</p>
 					<h2 id="audit-teaser-title">¿Quieres auditar tu operativa con IA?</h2>
 					<p class="audit-teaser-lead">No auditamos tu estrategia: auditamos ejecución, precisión de cierre, el cumplimiento de límites y la evidencia real.</p>
@@ -478,32 +481,31 @@ import settings from '../config/settings.js';
 			margin-top: calc(var(--tevsys-lower-strip-h, 150px) * -0.975);
 		}
 	}
+	.audit-teaser-stage {
+		position: relative;
+		max-width: min(68rem, 96%);
+		margin: 0 auto;
+		padding: 0 clamp(0.25rem, 1.5vw, 0.75rem);
+	}
 	.audit-teaser-shell {
 		position: relative;
-		overflow: hidden;
-		isolation: isolate;
+		z-index: 1;
 		max-width: min(52rem, 92%);
 		margin: 0 auto;
 		padding: clamp(0.95rem, 2.2vw, 1.3rem) clamp(1rem, 2.4vw, 1.5rem);
 		border-radius: 1rem;
 		border: 1px solid rgba(100, 196, 255, 0.28);
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
+		background: linear-gradient(180deg, rgba(12, 14, 18, 0.92) 0%, rgba(10, 12, 16, 0.94) 100%);
 		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
 	}
-	.audit-teaser-body {
-		position: relative;
-		z-index: 1;
-	}
-	/* Toque estético IA: tokens tipo log (no Matrix verde). Decorativo. */
+	/* Tokens fuera del rectángulo: a los lados del marco (no dentro). */
 	.audit-teaser-rain {
 		pointer-events: none;
 		position: absolute;
-		inset: 0;
+		inset: -0.35rem 0;
 		z-index: 0;
-		overflow: hidden;
-		opacity: 0.55;
-		mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
-		-webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+		overflow: visible;
+		opacity: 0.72;
 	}
 	.audit-teaser-rain__col {
 		position: absolute;
@@ -515,7 +517,7 @@ import settings from '../config/settings.js';
 		font-weight: 500;
 		line-height: 1.85;
 		letter-spacing: 0.04em;
-		color: rgba(140, 190, 220, 0.42);
+		color: rgba(140, 190, 220, 0.48);
 		text-shadow: 0 0 12px rgba(100, 196, 255, 0.12);
 		white-space: nowrap;
 		animation: audit-teaser-rain-rise var(--dur, 18s) linear infinite;
@@ -523,7 +525,7 @@ import settings from '../config/settings.js';
 		will-change: transform, opacity;
 	}
 	.audit-teaser-rain__col:nth-child(even) {
-		color: rgba(200, 170, 120, 0.32);
+		color: rgba(200, 170, 120, 0.38);
 		animation-name: audit-teaser-rain-fall;
 	}
 	@keyframes audit-teaser-rain-rise {
@@ -560,9 +562,11 @@ import settings from '../config/settings.js';
 	}
 	@media (max-width: 768px) {
 		.audit-teaser-rain {
-			opacity: 0.38;
+			opacity: 0.45;
 		}
-		.audit-teaser-rain__col:nth-child(n + 4) {
+		/* En móvil: solo flancos (evitar lluvia bajo el texto) */
+		.audit-teaser-rain__col:nth-child(3),
+		.audit-teaser-rain__col:nth-child(4) {
 			display: none;
 		}
 	}

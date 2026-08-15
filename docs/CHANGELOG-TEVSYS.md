@@ -10,7 +10,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Qué:** en el teaser «¿Quieres auditar tu operativa con IA?» — capa decorativa de cifras/logs (mono, cian/ámbar suave) que suben/bajan; copy intacto; `prefers-reduced-motion` apaga el loop.
 
+**Ajuste:** tokens **fuera** del rectángulo (flancos izq/der), no dentro del marco.
+
 **Commit:** `web(tevsys): home audit teaser motion tokens`
+**Commit ajuste:** `web(tevsys): home audit rain fuera del marco`
 
 ---
 
