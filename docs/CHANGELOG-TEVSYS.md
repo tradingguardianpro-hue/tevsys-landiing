@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — card Precisión 3ª frase · tip Barmenteros (15 ago 2026)
+
+**Qué:** en home, card Precisión — se mantiene título `0,06% error medio` + hook + ajuste a tiempo real; la 3ª frase pasa de «N operativas…» a *También hay casos extremos documentados — fuera de esa media.* Mismo molde de ~3 líneas; el detalle sigue en `/features/precision`.
+
+**Por qué:** tip Barmenteros (no ocultar estrés detrás de la media) sin cargar la card ni alargar el título.
+
+**Commit:** `web(tevsys): home precision card matiz casos extremos`
+
+---
+
 ## Precisión — card puente contención → Evidencia (13 ago 2026)
 
 **Qué:** bajo nota −0,39 % — card *Caso extremo documentado* (111 ms · +0,50 / +0,65 / +1,04 · no entra en media 0,06 %) + CTA a `#evidencia-contencion-489`. Índice «Qué puedes comprobar» + viñeta contención.

@@ -208,7 +208,7 @@ Ver handoff hero.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto: `Volatilidad • spread • slippage • comisiones` + ámbar **`Ajuste a tiempo real`** + `{N} operativas documentadas en 5 entornos de ejecución.` (Inter, frase completa — jun 2026 revert split mono)
+- Texto: ámbar **`Ajuste a tiempo real`**: volatilidad, spread, slippage y comisiones. + 3ª frase (**15 ago 2026 · B**): `También hay casos extremos documentados — fuera de esa media.` (sustituye N operativas en card; el conteo sigue en Precisión / Evidencia).
 - **Títulos cards (jun 2026):** Inter bold — prueba IBM Plex Mono revertida (acuerdo: mono solo metadatos/puente, no titulares grid).
 
 #### 2) HyperClose
