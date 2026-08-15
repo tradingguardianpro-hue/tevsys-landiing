@@ -109,22 +109,22 @@ import settings from '../config/settings.js';
 		<section class="audit-teaser-section" aria-labelledby="audit-teaser-title">
 			<div class="audit-teaser-stage">
 				<div class="audit-teaser-rain" aria-hidden="true">
-					<span class="audit-teaser-rain__col" style="--x: 2%; --dur: 18s; --delay: -2s;">
+					<span class="audit-teaser-rain__col" style="--x: 1%; --dur: 18s; --delay: -2s;">
 						0,06%<br />LIMIT<br />MT5<br />STOP<br />+0,50<br />LOG<br />HIT<br />ms
 					</span>
-					<span class="audit-teaser-rain__col" style="--x: 14%; --dur: 22s; --delay: -8s;">
+					<span class="audit-teaser-rain__col" style="--x: 9%; --dur: 22s; --delay: -8s;">
 						CLOSE<br />−1,04<br />DEAL<br />AUDIT<br />OK<br />111<br />DAY<br />0,002
 					</span>
-					<span class="audit-teaser-rain__col" style="--x: 28%; --dur: 16s; --delay: -5s;">
+					<span class="audit-teaser-rain__col audit-teaser-rain__col--mid" style="--x: 18%; --dur: 16s; --delay: -5s;">
 						TRACE<br />FILL<br />+2,50<br />WEEK<br />EA<br />TICK<br />0,65<br />BIN
 					</span>
-					<span class="audit-teaser-rain__col" style="--x: 72%; --dur: 20s; --delay: -11s;">
+					<span class="audit-teaser-rain__col audit-teaser-rain__col--mid" style="--x: 82%; --dur: 20s; --delay: -11s;">
 						MT5<br />STOP<br />0,06%<br />CLOSE<br />LOG<br />HIT<br />ms<br />OK
 					</span>
-					<span class="audit-teaser-rain__col" style="--x: 86%; --dur: 24s; --delay: -3s;">
+					<span class="audit-teaser-rain__col" style="--x: 91%; --dur: 24s; --delay: -3s;">
 						LIMIT<br />DEAL<br />AUDIT<br />−0,39<br />DAY<br />FILL<br />TRACE<br />EA
 					</span>
-					<span class="audit-teaser-rain__col" style="--x: 96%; --dur: 19s; --delay: -7s;">
+					<span class="audit-teaser-rain__col" style="--x: 98%; --dur: 19s; --delay: -7s;">
 						HIT<br />ms<br />CLOSE<br />0,06%<br />STOP<br />MT5<br />LOG<br />OK
 					</span>
 				</div>
@@ -483,14 +483,15 @@ import settings from '../config/settings.js';
 	}
 	.audit-teaser-stage {
 		position: relative;
-		max-width: min(68rem, 96%);
+		/* Más ancho que el marco: aire real a izq/der para los tokens */
+		max-width: min(72rem, 98%);
 		margin: 0 auto;
-		padding: 0 clamp(0.25rem, 1.5vw, 0.75rem);
+		padding: 0 clamp(0.5rem, 2vw, 1.25rem);
 	}
 	.audit-teaser-shell {
 		position: relative;
 		z-index: 1;
-		max-width: min(52rem, 92%);
+		max-width: min(48rem, 78%);
 		margin: 0 auto;
 		padding: clamp(0.95rem, 2.2vw, 1.3rem) clamp(1rem, 2.4vw, 1.5rem);
 		border-radius: 1rem;
@@ -498,7 +499,7 @@ import settings from '../config/settings.js';
 		background: linear-gradient(180deg, rgba(12, 14, 18, 0.92) 0%, rgba(10, 12, 16, 0.94) 100%);
 		box-shadow: 0 0 0 1px rgba(100, 196, 255, 0.08) inset;
 	}
-	/* Tokens fuera del rectángulo: a los lados del marco (no dentro). */
+	/* Tokens fuera del rectángulo: flancos con hueco respecto al marco. */
 	.audit-teaser-rain {
 		pointer-events: none;
 		position: absolute;
@@ -560,13 +561,23 @@ import settings from '../config/settings.js';
 			opacity: 0;
 		}
 	}
-	@media (max-width: 768px) {
-		.audit-teaser-rain {
-			opacity: 0.45;
+	@media (max-width: 1100px) {
+		.audit-teaser-rain__col--mid {
+			display: none;
 		}
-		/* En móvil: solo flancos (evitar lluvia bajo el texto) */
-		.audit-teaser-rain__col:nth-child(3),
-		.audit-teaser-rain__col:nth-child(4) {
+	}
+	@media (max-width: 900px) {
+		.audit-teaser-shell {
+			max-width: min(52rem, 84%);
+		}
+	}
+	@media (max-width: 768px) {
+		.audit-teaser-shell {
+			max-width: min(52rem, 90%);
+		}
+		/* Opacidad intacta; solo menos columnas en flanco */
+		.audit-teaser-rain__col:nth-child(2),
+		.audit-teaser-rain__col:nth-child(5) {
 			display: none;
 		}
 	}
