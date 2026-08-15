@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Evidencia — quita línea contraste 4.88 bajo contención (15 ago 2026)
+
+**Qué:** en bloque contención, se elimina *Mismo día, otra cuenta: cierre ceñido al +2,50 %* (pareja 4.88 sin enlace/contexto). Queda el CTA forense → Contacto.
+
+**Commit:** `web(tevsys): evidencia quita contraste 488 bajo contencion`
+
+---
+
 ## Precisión — nota −0,39 % acortada (densidad · A) (15 ago 2026)
 
 **Qué:** hero Precisión — nota extremos más corta; el detalle de volatilidad/spread/latencia queda en la card contención + Evidencia. Menos repetición antes del primer vídeo.
