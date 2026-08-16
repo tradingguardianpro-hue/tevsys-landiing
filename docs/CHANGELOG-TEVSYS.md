@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — MC-CF-023 II + canon posters (16 ago 2026)
+
+**Qué:**
+- MP4 **II** (tema oscuro) sustituye el clip inputs+SML; poster mid-clip Inputs −3→−2,5 (frame validado).
+- **Norma canónica posters:** microclips = mid-clip producto + `poster=`; demos largas/hero = mid-momento o marca (no el mismo criterio). Fuente: `docs/CATALOGO_MICROCLIPS_TEVSYS.md` § *Canon — posters web* + regla Cursor `workflow-web-visual-tevsys`.
+
+**Commit:** `web(tevsys): refresh inputs-sml-carry clip and poster`
+
+---
+
 ## Cómo funciona — posters microclips (16 ago 2026)
 
 **Qué:** JPG de frame mid-clip en los 2 MP4 publicados + `poster=` en `<video>` (fin caja gris `preload="none"`). Fallback CSS carbón+acento si un clip futuro va sin poster.
