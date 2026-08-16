@@ -9,7 +9,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## Home + Cómo funciona — microclips visibles (16 ago 2026)
 
 **Qué:**
-- **Home:** bloque mid-page tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / *Clips de ~30 s. Sin rodeos.* → `/como-funciona#mas-comportamientos`.
+- **Home:** bloque mid-page tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / *Clips de ~30 s. Escenario a escenario.* → `/como-funciona#mas-comportamientos`.
 - **`/como-funciona`:** orden Presentación → microclips → puente 4 piezas → De cero a protegido (placeholder abajo) → vigilancia.
 
 **Commit:** `web(tevsys): elevate microclips and mid-home invite`

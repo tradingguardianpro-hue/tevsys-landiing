@@ -77,7 +77,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Botón:** `Descargar demo →` (ámbar marca) → `/company/contact?flow=demo`
 - **CTA móvil (11 ago 2026 — ✅):** en ≤768px el ámbar es **más pequeño/estrecho** (menos “cartelón”); desktop sin cambio. `HomeHeroSection.astro` · `CHANGELOG` *Hero — Descargar demo… móvil*.
 - **CTA secundario (jul 2026 vigente):** `Ver evidencia (~4 min)` → `/como-funciona?play=1#evidencia-nasdaq-100` (pieza Nasdaq; no confundir con ruta antigua `/go/evidencia-5min` HyperClose).
-- **Mid-home microclips (16 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / *Clips de ~30 s. Sin rodeos.* / CTA `Ver microclips →` → `/como-funciona#mas-comportamientos`. Orden en `/como-funciona`: Presentación → microclips → 4 piezas → De cero.
+- **Mid-home microclips (16 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / *Clips de ~30 s. Escenario a escenario.* / CTA `Ver microclips →` → `/como-funciona#mas-comportamientos`. Orden en `/como-funciona`: Presentación → microclips → 4 piezas → De cero.
 - **Ruta histórica CTA 5 min (22 abr 2026):** `/go/evidencia-5min` → HyperClose (sigue útil analytics / deep links).
 - **Medición Vercel free (22 abr 2026):** visitas a `/go/evidencia-5min` como proxy; el CTA home actual a Nasdaq se mide por pageviews `/como-funciona` + ancla.
 - **Disponibilidad:** `· Disponible en MT5 ·` (sin “más plataformas” — 24 jul 2026)
