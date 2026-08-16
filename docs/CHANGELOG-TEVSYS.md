@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — MC-CF-023 inputs+SML carry (16 ago 2026)
+
+**Qué:** microclip ~20 s en rama **Operación en curso** — cambiar % con SML activo en carry → Inputs ignorados. Ancla `#videoclip-inputs-sml-carry`.
+
+**Commit:** `web(tevsys): publish inputs-sml-carry microclip MC-CF-023`
+
+---
+
 ## Home + Cómo funciona — microclips visibles (16 ago 2026)
 
 **Qué:**
