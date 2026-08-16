@@ -100,6 +100,19 @@ import settings from '../config/settings.js';
 		</section>
 		</div>
 	</Container>
+	<section class="tevsys-home-microclips-invite" aria-labelledby="home-microclips-invite-title">
+		<Container>
+			<div class="tevsys-home-microclips-invite__inner">
+				<h2 id="home-microclips-invite-title" class="tevsys-home-microclips-invite__title">
+					¿Quieres ver cómo reacciona en escenarios reales?
+				</h2>
+				<p class="tevsys-home-microclips-invite__lead">Clips de ~30 s. Sin rodeos.</p>
+				<a href="/como-funciona#mas-comportamientos" class="tevsys-home-microclips-invite__cta">
+					Ver microclips →
+				</a>
+			</div>
+		</Container>
+	</section>
 	<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-cards-audit-bridge" aria-label="De evidencia a verificación: trazabilidad y auditoría">
 		<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
 		<span class="tevsys-home-hero-bridge__text">Evidencia · Trazabilidad · Verificación</span>
@@ -453,6 +466,57 @@ import settings from '../config/settings.js';
 	}
 	.audit-teaser-section {
 		margin: calc(var(--tevsys-lower-strip-h, 180px) * -0.965) auto clamp(2.35rem, 4.5vw, 3.1rem);
+	}
+	.tevsys-home-microclips-invite {
+		margin: clamp(0.35rem, 1.5vw, 0.85rem) auto 0;
+		padding: clamp(1.35rem, 3.2vw, 2.1rem) 0 clamp(0.35rem, 1.2vw, 0.75rem);
+		text-align: center;
+	}
+	.tevsys-home-microclips-invite__inner {
+		max-width: min(36rem, 92%);
+		margin: 0 auto;
+	}
+	.tevsys-home-microclips-invite__title {
+		margin: 0 0 0.55rem;
+		font-family: 'DM Sans', system-ui, sans-serif;
+		font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+		font-weight: 650;
+		line-height: 1.28;
+		letter-spacing: -0.02em;
+		color: rgba(236, 240, 246, 0.96);
+	}
+	.tevsys-home-microclips-invite__lead {
+		margin: 0 0 1rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.78rem, 1.5vw, 0.88rem);
+		letter-spacing: 0.02em;
+		color: rgba(180, 190, 205, 0.78);
+	}
+	.tevsys-home-microclips-invite__cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.55rem 1.35rem;
+		border-radius: 2rem;
+		font-family: 'Inter', system-ui, sans-serif;
+		font-size: 0.95rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: #0b0d10;
+		background: #f5b041;
+		border: 1px solid transparent;
+		transition: background 0.2s ease, transform 0.15s ease;
+	}
+	.tevsys-home-microclips-invite__cta:hover {
+		background: #ffc35a;
+	}
+	@media (max-width: 768px) {
+		.tevsys-home-microclips-invite {
+			padding-top: 1.1rem;
+		}
+		.tevsys-home-microclips-invite__title {
+			font-size: 1.15rem;
+		}
 	}
 	/* Puentes entre bloques — mismo patrón (hairline fija; z-index por encima de franjas). */
 	.tevsys-home-cards-audit-bridge,

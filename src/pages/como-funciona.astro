@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación, De cero a protegido y Siguiente nivel: precisión, HyperClose, SML y evidencia en vídeo. Cómo funciona tevsys en MT5.',
+		'Presentación, microclips de comportamiento, piezas del sistema y De cero a protegido. Cómo funciona tevsys en MT5.',
 };
 
 /** Vídeo único de presentación (may 2026): evidencia Nasdaq ~4 min · YT 2f1rRmqkE1k. */
@@ -243,150 +243,33 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			</div>
 		</div>
 
-		<section class="how-zero-protected how-zero-protected--stage" id="de-cero-a-protegido" aria-labelledby="how-zero-title">
-			<div class="how-zero-protected__bg" aria-hidden="true"></div>
-			<div class="how-zero-protected__sweep" aria-hidden="true"></div>
-			<div class="how-zero-protected__inner">
-				<header class="how-section-head">
-					<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
-					<h2 id="how-zero-title">
-						{zeroTitlePrefix ? (
-							<>
-								{zeroTitlePrefix}{' '}
-								<span class="how-zero-title__accent">{zeroTitleCore}</span>{' '}
-							</>
-						) : (
-							<span class="how-zero-title__accent">{zeroTitleCore}</span>
-						)}
-						<span class="how-zero-duration">({zeroToProtected.durationLabel})</span>
-					</h2>
-					<p class="how-section-sub">{zeroToProtected.blurb}</p>
-				</header>
-				<div class="how-zero-protected__frame">
-					{
-						zeroToProtected.embedUrl ? (
-							<>
-								<div class="how-embed how-embed--chrome">
-									<iframe
-										src={zeroToProtected.embedUrl}
-										title={zeroToProtected.title}
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-										allowfullscreen
-										loading="lazy"
-										referrerpolicy="strict-origin-when-cross-origin"></iframe>
-								</div>
-								{zeroToProtected.watchHref ? (
-									<p class="how-zero-watch">
-										<a
-											href={zeroToProtected.watchHref}
-											class="how-text-link"
-											target="_blank"
-											rel="noopener noreferrer">
-											Abrir en YouTube →
-										</a>
-									</p>
-								) : null}
-							</>
-						) : (
-							<div
-								class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--zero-teaser"
-								role="status"
-								aria-live="polite">
-								<span class="how-clip-teaser__glyph how-clip-teaser__glyph--zero" aria-hidden="true"></span>
-								<p class="how-embed-placeholder__title">Vídeo en preparación</p>
-								<p class="how-embed-placeholder__sub">
-									Pronto verás aquí el recorrido completo. Mientras, las dos partes de arriba y la instalación más abajo cubren el arranque.
-								</p>
-							</div>
-						)
-					}
-				</div>
-			</div>
-		</section>
-
-		<section class="how-more how-more--stage" id="mas-comportamientos" aria-labelledby="how-more-title">
+		<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
 			<div class="how-more__bg" aria-hidden="true"></div>
 			<div class="how-more__sweep" aria-hidden="true"></div>
 			<div class="how-more__inner">
 				<header class="how-section-head how-more__head">
 					<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
 					<h2 id="how-more-title">
-						Profundiza en cada{' '}
-						<span class="how-present-title__accent">pieza del sistema</span>
+						Escenarios en <span class="how-present-title__accent">clips cortos</span>
 					</h2>
 					<p class="how-section-sub how-more__siguiente-aspiration">
-						Aquí verás cómo funciona nuestro software en la práctica.
+						Cómo reacciona tevsys en la práctica — ~30 s por escenario. Sin rodeos.
 					</p>
 				</header>
 
-				<section class="how-chapter how-chapter--bridge" aria-labelledby="how-bridge-chapter-title">
-					<header class="how-section-head how-chapter__head">
-						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">FUNCIONALIDADES ÚNICAS</p>
-						<h3 id="how-bridge-chapter-title">
-							Las cuatro piezas, <span class="how-present-title__accent">mismo orden que en portada</span>
-						</h3>
-						<p class="how-section-sub">
-							Mismo orden que en portada: precisión, HyperClose, SML y evidencia. Vídeo donde ya hay corte; en SML el hueco en preparación hasta el clip. Más abajo, microclips de otros comportamientos.
-						</p>
-					</header>
-					<div class="how-more-bridge">
-						<div class="how-more-bridge__grid">
-							{
-								homeBridgeCards.map((card) => (
-									<article class="how-more-bridge-card">
-										<a class="how-more-bridge-card__head" href={card.href}>
-											<h3 class="how-more-bridge-card__title">{card.title}</h3>
-										</a>
-										<p class="how-more-bridge-card__blurb">{card.blurb}</p>
-										{card.featureVideoSrc ? (
-											<div class="how-more-bridge-card__media how-more-bridge-card__media--with-video">
-												<video
-													controls
-													preload="metadata"
-													playsinline
-													title={card.videoLabel ?? card.title}>
-													<source src={card.featureVideoSrc} type="video/mp4" />
-													Tu navegador no soporta reproducción de video HTML5.
-												</video>
-												<span class="how-bridge-video-mark" aria-hidden="true"></span>
-											</div>
-										) : (
-											<div
-												class:list={[
-													'how-more-bridge-card__media',
-													'how-more-bridge-card__media--placeholder',
-													card.placeholderPulse && 'how-more-bridge-card__media--placeholder-pulse',
-												]}
-												role="status"
-												aria-label="Vídeo en preparación">
-												<span class="how-more-bridge-card__media-hint">Vídeo en preparación</span>
-											</div>
-										)}
-										<a class="how-more-bridge-card__cta" href={card.href}>
-											{card.cta} →
-										</a>
-									</article>
-								))
-							}
-						</div>
-					</div>
-				</section>
-
-				<p class="how-more-act-cut">
-					<span class="how-more-act-cut__line" aria-hidden="true"></span>
-					<span class="how-more-act-cut__label">Comportamiento en corto</span>
-				</p>
-
-				<section class="how-chapter how-chapter--extras" aria-labelledby="how-extras-chapter-title">
+				<section
+					class="how-chapter how-chapter--extras"
+					id="mas-comportamientos"
+					aria-labelledby="how-extras-chapter-title">
 					<header class="how-section-head how-chapter__head how-chapter__head--extras">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--sentence-kicker">
-							Muchas más funcionalidades
+							Comportamiento en corto
 						</p>
 						<h3 id="how-extras-chapter-title">
 							Todo nuestro comportamiento en <span class="how-present-title__accent">microvídeos</span>
 						</h3>
 						<p class="how-section-sub how-chapter--extras__sub">
-							Aquí verás cómo reacciona nuestro software en más escenarios con vídeos cortos.
+							Elige un escenario y salta al clip. Finde, OFF, pasiva y más — cuando estén publicados.
 						</p>
 						<p class="how-videoteca-index__hook" id="how-videoteca-hook">
 							Empieza aquí: elige un escenario y te llevamos al clip justo debajo.
@@ -546,6 +429,64 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					) : null
 				}
 
+				<p class="how-more-act-cut">
+					<span class="how-more-act-cut__line" aria-hidden="true"></span>
+					<span class="how-more-act-cut__label">Las cuatro piezas</span>
+				</p>
+
+				<section class="how-chapter how-chapter--bridge" aria-labelledby="how-bridge-chapter-title">
+					<header class="how-section-head how-chapter__head">
+						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">FUNCIONALIDADES ÚNICAS</p>
+						<h3 id="how-bridge-chapter-title">
+							Profundiza en cada <span class="how-present-title__accent">pieza del sistema</span>
+						</h3>
+						<p class="how-section-sub">
+							Mismo orden que en portada: precisión, HyperClose, SML y evidencia. Vídeo donde ya hay corte; en SML el hueco en preparación hasta el clip.
+						</p>
+					</header>
+					<div class="how-more-bridge">
+						<div class="how-more-bridge__grid">
+							{
+								homeBridgeCards.map((card) => (
+									<article class="how-more-bridge-card">
+										<a class="how-more-bridge-card__head" href={card.href}>
+											<h3 class="how-more-bridge-card__title">{card.title}</h3>
+										</a>
+										<p class="how-more-bridge-card__blurb">{card.blurb}</p>
+										{card.featureVideoSrc ? (
+											<div class="how-more-bridge-card__media how-more-bridge-card__media--with-video">
+												<video
+													controls
+													preload="metadata"
+													playsinline
+													title={card.videoLabel ?? card.title}>
+													<source src={card.featureVideoSrc} type="video/mp4" />
+													Tu navegador no soporta reproducción de video HTML5.
+												</video>
+												<span class="how-bridge-video-mark" aria-hidden="true"></span>
+											</div>
+										) : (
+											<div
+												class:list={[
+													'how-more-bridge-card__media',
+													'how-more-bridge-card__media--placeholder',
+													card.placeholderPulse && 'how-more-bridge-card__media--placeholder-pulse',
+												]}
+												role="status"
+												aria-label="Vídeo en preparación">
+												<span class="how-more-bridge-card__media-hint">Vídeo en preparación</span>
+											</div>
+										)}
+										<a class="how-more-bridge-card__cta" href={card.href}>
+											{card.cta} →
+										</a>
+									</article>
+								))
+							}
+						</div>
+					</div>
+				</section>
+
 				<p class="how-more-audit-cut">
 					<span class="how-more-audit-cut__line" aria-hidden="true"></span>
 					<span class="how-more-audit-cut__label">Aquí comienza la fase de auditoría</span>
@@ -588,6 +529,67 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 						</div>
 					</div>
 				</section>
+			</div>
+		</section>
+
+		<section class="how-zero-protected how-zero-protected--stage" id="de-cero-a-protegido" aria-labelledby="how-zero-title">
+			<div class="how-zero-protected__bg" aria-hidden="true"></div>
+			<div class="how-zero-protected__sweep" aria-hidden="true"></div>
+			<div class="how-zero-protected__inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">De la teoría a la pantalla</p>
+					<h2 id="how-zero-title">
+						{zeroTitlePrefix ? (
+							<>
+								{zeroTitlePrefix}{' '}
+								<span class="how-zero-title__accent">{zeroTitleCore}</span>{' '}
+							</>
+						) : (
+							<span class="how-zero-title__accent">{zeroTitleCore}</span>
+						)}
+						<span class="how-zero-duration">({zeroToProtected.durationLabel})</span>
+					</h2>
+					<p class="how-section-sub">{zeroToProtected.blurb}</p>
+				</header>
+				<div class="how-zero-protected__frame">
+					{
+						zeroToProtected.embedUrl ? (
+							<>
+								<div class="how-embed how-embed--chrome">
+									<iframe
+										src={zeroToProtected.embedUrl}
+										title={zeroToProtected.title}
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen
+										loading="lazy"
+										referrerpolicy="strict-origin-when-cross-origin"></iframe>
+								</div>
+								{zeroToProtected.watchHref ? (
+									<p class="how-zero-watch">
+										<a
+											href={zeroToProtected.watchHref}
+											class="how-text-link"
+											target="_blank"
+											rel="noopener noreferrer">
+											Abrir en YouTube →
+										</a>
+									</p>
+								) : null}
+							</>
+						) : (
+							<div
+								class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--zero-teaser"
+								role="status"
+								aria-live="polite">
+								<span class="how-clip-teaser__glyph how-clip-teaser__glyph--zero" aria-hidden="true"></span>
+								<p class="how-embed-placeholder__title">Vídeo en preparación</p>
+								<p class="how-embed-placeholder__sub">
+									Pronto el recorrido completo de instalación a protegido. Mientras, la sesión de arriba y los microclips cubren el arranque.
+								</p>
+							</div>
+						)
+					}
+				</div>
 			</div>
 		</section>
 

@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home + Cómo funciona — microclips visibles (16 ago 2026)
+
+**Qué:**
+- **Home:** bloque mid-page tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / *Clips de ~30 s. Sin rodeos.* → `/como-funciona#mas-comportamientos`.
+- **`/como-funciona`:** orden Presentación → microclips → puente 4 piezas → De cero a protegido (placeholder abajo) → vigilancia.
+
+**Commit:** `web(tevsys): elevate microclips and mid-home invite`
+
+---
+
 ## Cómo funciona — microclip PROGRAMADO · LUNES (MC-CF-021) (16 ago 2026)
 
 **Qué:** primera tarjeta con vídeo real en la rejilla de microclips — *Fin de semana: deja la protección lista para el lunes* (`#videoclip-programado-lunes`). MP4: `public/videos/como-funciona/tevsys-mc-programado-lunes-30s.mp4`.
