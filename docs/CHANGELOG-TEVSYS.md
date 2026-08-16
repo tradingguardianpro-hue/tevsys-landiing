@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — microclip PROGRAMADO · LUNES (MC-CF-021) (16 ago 2026)
+
+**Qué:** primera tarjeta con vídeo real en la rejilla de microclips — *Fin de semana: deja la protección lista para el lunes* (`#videoclip-programado-lunes`). MP4: `public/videos/como-funciona/tevsys-mc-programado-lunes-30s.mp4`.
+
+**Commit:** `web(tevsys): publish programado lunes microclip on como-funciona`
+
+---
+
 ## Home — motion audit IA (lluvia de tokens) (15 ago 2026)
 
 **Qué:** en el teaser «¿Quieres auditar tu operativa con IA?» — capa decorativa de cifras/logs (mono, cian/ámbar suave) que suben/bajan; copy intacto; `prefers-reduced-motion` apaga el loop.
