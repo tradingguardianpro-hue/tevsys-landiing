@@ -19,12 +19,15 @@ Esta guía está pensada para producir videos con calidad profesional sin fricci
 
 ## Flujo general (resumen rápido)
 
-1. Grabar pantalla (OBS).
+1. Grabar pantalla (OBS / Contour).
 2. Editar video (Clipchamp).
 3. Exportar MP4.
-4. Copiar archivo en `public/videos/features/`.
-5. Commit + push.
-6. Validar en Vercel.
+4. Copiar archivo en `public/videos/features/` (u otra ruta canónica).
+5. **Poster obligatorio (canon ago 2026):** extraer JPG mid-clip (panel/gráfico, no intro negra) → `*-poster.jpg` + `poster=` en el `<video>`. Sin poster = **no cerrado**. Detalle: workspace TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md` § *Canon — posters web*. Tema claro que canta en página oscura → atenuar poster.
+6. Commit + push.
+7. Validar en Vercel.
+
+> **Deuda:** demos con panel/cara antigua (p. ej. Demo rápida Precisión) → regrabar en oleadas; al colgar el remake, **poster nuevo** en el mismo paso.
 
 ---
 

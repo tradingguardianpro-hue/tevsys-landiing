@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Canon — poster obligatorio al colgar vídeos (16 ago 2026)
+
+**Qué:** todo MP4 publicado en web lleva JPG mid-clip (o marca en evidencia larga) + `poster=`. Sin poster = no cerrado. Micropáginas: misma regla; tema claro atenuado si canta. Fuentes: catálogo TGP § posters · `GUIA_PRODUCCION_VIDEOS_MICROPAGINAS` paso 5 · workflow Cursor.
+
+**Commit docs:** `docs(web): require mid-clip posters on all published videos`
+
+---
+
 ## Cómo funciona — MC-CF-023 II + canon posters (16 ago 2026)
 
 **Qué:**
