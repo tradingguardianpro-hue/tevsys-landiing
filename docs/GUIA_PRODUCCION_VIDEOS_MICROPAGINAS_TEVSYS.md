@@ -57,9 +57,12 @@ Ejemplos:
 - `También en días OFF`
 
 Regla:
-- Máximo 4-6 palabras por overlay.
+- Máximo 4-6 palabras por overlay (micros: ≤4 overlays; ver catálogo TGP).
 - Letra clara, sin saturar.
 - Mantener estilo consistente en todos los videos.
+- **Color texto overlay (canon ago 2026):** **`#A8A8A8`** — gris; no blanco. (Histórico jun: `#818080` → migrar al reeditar.)
+
+**Microclips `/como-funciona`:** guion **overlay a overlay** en el repo TGP → `docs/CATALOGO_MICROCLIPS_TEVSYS.md` (no duplicar aquí listas largas). Guías A/B/C: `PLAN_VIDEOS_A_B_C_INSTALACION_CONFIG_SEMANA.md` en TGP.
 
 ### Coherencia crítica overlay <-> CTA web
 
