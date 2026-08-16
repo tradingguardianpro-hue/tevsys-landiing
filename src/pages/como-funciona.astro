@@ -107,6 +107,8 @@ type MicroClipCard = {
 	title: string;
 	anchorId: string;
 	videoSrc?: string;
+	/** Frame JPG — evita caja gris del `<video preload="none">` antes de play. */
+	posterSrc?: string;
 	videoLabel?: string;
 	ctaLabel?: string;
 };
@@ -128,6 +130,7 @@ const microclipBranches: MicroclipBranch[] = [
 				title: 'Fin de semana: deja la protección lista para el lunes',
 				anchorId: 'videoclip-programado-lunes',
 				videoSrc: '/videos/como-funciona/tevsys-mc-programado-lunes-30s.mp4?v=20260816',
+				posterSrc: '/videos/como-funciona/tevsys-mc-programado-lunes-30s-poster.jpg?v=20260816',
 				videoLabel: 'Microclip ~30 s — GUARDAR → PROGRAMADO · LUNES (MC-CF-021)',
 				ctaLabel: 'Ver clip',
 			},
@@ -148,6 +151,7 @@ const microclipBranches: MicroclipBranch[] = [
 				title: 'Cambiar inputs con SML ya activo',
 				anchorId: 'videoclip-inputs-sml-carry',
 				videoSrc: '/videos/como-funciona/tevsys-mc-inputs-sml-carry-30s.mp4?v=20260816',
+				posterSrc: '/videos/como-funciona/tevsys-mc-inputs-sml-carry-30s-poster.jpg?v=20260816',
 				videoLabel: 'Microclip ~20 s — inputs ignorados con SML en carry (MC-CF-023)',
 				ctaLabel: 'Ver clip',
 			},
@@ -318,10 +322,15 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 														{row.title}
 													</h4>
 												</header>
-												<div class="how-practical-card__media">
+												<div class:list={['how-practical-card__media', !row.posterSrc && 'how-practical-card__media--brand-fallback']}>
 													{row.videoSrc ? (
 														<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
-															<video controls preload="none" playsinline title={row.videoLabel ?? row.title}>
+															<video
+																controls
+																preload="none"
+																playsinline
+																poster={row.posterSrc}
+																title={row.videoLabel ?? row.title}>
 																<source src={row.videoSrc} type="video/mp4" />
 																Tu navegador no soporta reproducción de video HTML5.
 															</video>
@@ -2358,10 +2367,23 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 	}
 
+	/* Sin poster: carbón + acento tevsys (no caja gris del navegador). */
+	.how-practical-card__media--brand-fallback {
+		background:
+			radial-gradient(ellipse 70% 55% at 72% 38%, rgba(45, 212, 191, 0.14), transparent 58%),
+			linear-gradient(155deg, hsl(222, 28%, 11%) 0%, hsl(222, 32%, 7%) 55%, hsl(222, 40%, 5%) 100%);
+	}
+
 	html[data-theme='light'] .how-practical-card__media {
 		border-color: rgba(0, 0, 0, 0.12);
 		background: rgba(0, 0, 0, 0.06);
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+	}
+
+	html[data-theme='light'] .how-practical-card__media--brand-fallback {
+		background:
+			radial-gradient(ellipse 70% 55% at 72% 38%, rgba(175, 118, 32, 0.12), transparent 58%),
+			linear-gradient(155deg, hsl(220, 18%, 96%) 0%, hsl(220, 14%, 92%) 100%);
 	}
 
 	.how-practical-card__media .how-practical-card__embed {

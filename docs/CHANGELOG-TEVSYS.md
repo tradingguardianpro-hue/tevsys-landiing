@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — posters microclips (16 ago 2026)
+
+**Qué:** JPG de frame mid-clip en los 2 MP4 publicados + `poster=` en `<video>` (fin caja gris `preload="none"`). Fallback CSS carbón+acento si un clip futuro va sin poster.
+
+**Archivos:** `…-poster.jpg` junto a cada MP4 en `public/videos/como-funciona/`.
+
+**Commit:** `web(tevsys): add microclip video posters and brand fallback`
+
+---
+
 ## Cómo funciona — MC-CF-023 inputs+SML carry (16 ago 2026)
 
 **Qué:** microclip ~20 s en rama **Operación en curso** — cambiar % con SML activo en carry → Inputs ignorados. Ancla `#videoclip-inputs-sml-carry`.
