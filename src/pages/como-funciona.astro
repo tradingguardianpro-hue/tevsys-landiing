@@ -64,6 +64,8 @@ const homeBridgeCards: {
 	cta: string;
 	/** Mismo MP4 que en la micro `/features/*`; omitir = card solo texto (p. ej. SML hasta tener corte). */
 	featureVideoSrc?: string;
+	/** JPG mid-clip (canon posters) — no caja negra en el puente de 4 piezas. */
+	posterSrc?: string;
 	videoLabel?: string;
 	/** Borde placeholder con pulso muy suave (p. ej. SML sin MP4). Respeta prefers-reduced-motion. */
 	placeholderPulse?: boolean;
@@ -76,6 +78,7 @@ const homeBridgeCards: {
 		/** Mismo MP4 que el primer embed grande (hero) en `/features/precision` — Demo rápida cuenta 100k. */
 		/** `?bridge=…` evita dos `<video>` con el mismo `src` en la misma página (algunos navegadores no pintan/reproducen bien la segunda). */
 		featureVideoSrc: '/videos/features/evidencia-100k-perdida.mp4?v=20260607wsv2&bridge=precision',
+		posterSrc: '/videos/features/evidencia-100k-perdida-poster.jpg?v=20260816',
 		videoLabel:
 			'Demo rápida — cuenta 100k (~1 min 41 s). Mismo vídeo hero que al abrir la micro Precisión.',
 	},
@@ -85,6 +88,7 @@ const homeBridgeCards: {
 		href: '/features/hyperclose',
 		cta: 'Ir a HyperClose',
 		featureVideoSrc: '/videos/features/hyperclose-demo.mp4',
+		posterSrc: '/videos/features/hyperclose-demo-poster.jpg?v=20260816',
 		videoLabel: 'Demo HyperClose — mismo archivo que en la micro HyperClose.',
 	},
 	{
@@ -100,6 +104,7 @@ const homeBridgeCards: {
 		href: '/features/evidencia',
 		cta: 'Ir a evidencia',
 		featureVideoSrc: '/videos/features/evidencia-100k-perdida.mp4?v=20260607wsv2&bridge=evidencia',
+		posterSrc: '/videos/features/evidencia-100k-perdida-poster.jpg?v=20260816',
 		videoLabel: 'Demo rápida — cuenta 100k (~1 min 41 s). Mismo archivo que en la micro Evidencia.',
 	},
 ];
@@ -394,6 +399,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 													controls
 													preload="metadata"
 													playsinline
+													poster={card.posterSrc}
 													title={card.videoLabel ?? card.title}>
 													<source src={card.featureVideoSrc} type="video/mp4" />
 													Tu navegador no soporta reproducción de video HTML5.
