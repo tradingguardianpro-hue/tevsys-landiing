@@ -11,6 +11,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 **Qué:**
 - **Home:** bloque mid-page tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / *Clips de ~30 s. Escenario a escenario.* → `/como-funciona#mas-comportamientos`.
 - **`/como-funciona`:** orden Presentación → microclips → puente 4 piezas → De cero a protegido (placeholder abajo) → vigilancia.
+- **Ajuste copy (mismo día):** quitada cabecera duplicada (*Comportamiento en corto* / *microvídeos* / *Empieza aquí*); queda *Siguiente nivel* + índice. Sin *Sin rodeos*.
 
 **Commit:** `web(tevsys): elevate microclips and mid-home invite`
 

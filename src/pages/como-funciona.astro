@@ -258,77 +258,60 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 				</header>
 
 				<section
-					class="how-chapter how-chapter--extras"
+					class="how-chapter how-chapter--extras how-chapter--extras-index-only"
 					id="mas-comportamientos"
-					aria-labelledby="how-extras-chapter-title">
-					<header class="how-section-head how-chapter__head how-chapter__head--extras">
-						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--sentence-kicker">
-							Comportamiento en corto
-						</p>
-						<h3 id="how-extras-chapter-title">
-							Todo nuestro comportamiento en <span class="how-present-title__accent">microvídeos</span>
+					aria-labelledby="how-videoteca-index-label">
+					<nav class="how-videoteca-index" aria-labelledby="how-videoteca-index-label">
+						<h3 id="how-videoteca-index-label" class="how-videoteca-index__title">
+							¿Q<span class="how-videoteca-index__title-accent">ué quieres ver? — salta al clip</span>
 						</h3>
-						<p class="how-section-sub how-chapter--extras__sub">
-							Elige un escenario y salta al clip. Finde, OFF, pasiva y más — cuando estén publicados.
-						</p>
-						<p class="how-videoteca-index__hook" id="how-videoteca-hook">
-							Empieza aquí: elige un escenario y te llevamos al clip justo debajo.
-						</p>
-						<nav
-							class="how-videoteca-index"
-							aria-labelledby="how-videoteca-index-label"
-							aria-describedby="how-videoteca-hook">
-							<h4 id="how-videoteca-index-label" class="how-videoteca-index__title">
-								¿Q<span class="how-videoteca-index__title-accent">ué quieres ver? — salta al clip</span>
-							</h4>
-							<ul class="how-videoteca-index__list how-videoteca-index__list--deck">
-								{
-									videotecaClipsHead.map((clip) => (
-										<li class="how-videoteca-index__item how-videoteca-index__item--deck">
-											<a class="how-videoteca-index__link how-videoteca-index__link--deck" href={`#${clip.anchorId}`}>
-												{clip.title}
-											</a>
-										</li>
-									))
-								}
-							</ul>
-							<div class="how-videoteca-index__footer">
-								{
-									videotecaClipsRest.length > 0 ? (
-										<details class="how-videoteca-index__more how-videoteca-index__more--panel">
-											<summary class="how-videoteca-index__summary how-videoteca-index__summary--cta">
-												Ver más clips
-											</summary>
-											<p class="how-videoteca-index__more-lead">
-												El resto de enlaces salta al mismo ancla en esta página. Así no llenamos el rectángulo de golpe.
-											</p>
-											<ul class="how-videoteca-index__list how-videoteca-index__list--more">
-												{
-													videotecaClipsRest.map((clip) => (
-														<li class="how-videoteca-index__item">
-															<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
-																{clip.title}
-															</a>
-														</li>
-													))
-												}
-											</ul>
-										</details>
-									) : (
-										<div class="how-videoteca-index__footer-soon">
-											<p class="how-videoteca-index__footer-kicker">Ampliar sin alargar la página</p>
-											<p class="how-videoteca-index__footer-primary">Ver más clips</p>
-											<p class="how-videoteca-index__footer-sub">
-												Cuando haya más de cuatro enlaces en esta página, aparecerán aquí al desplegar. En otros
-												rectángulos del sitio usaremos la misma idea: pocos visibles y el resto detrás de esta
-												misma acción.
-											</p>
-										</div>
-									)
-								}
-							</div>
-						</nav>
-					</header>
+						<ul class="how-videoteca-index__list how-videoteca-index__list--deck">
+							{
+								videotecaClipsHead.map((clip) => (
+									<li class="how-videoteca-index__item how-videoteca-index__item--deck">
+										<a class="how-videoteca-index__link how-videoteca-index__link--deck" href={`#${clip.anchorId}`}>
+											{clip.title}
+										</a>
+									</li>
+								))
+							}
+						</ul>
+						<div class="how-videoteca-index__footer">
+							{
+								videotecaClipsRest.length > 0 ? (
+									<details class="how-videoteca-index__more how-videoteca-index__more--panel">
+										<summary class="how-videoteca-index__summary how-videoteca-index__summary--cta">
+											Ver más clips
+										</summary>
+										<p class="how-videoteca-index__more-lead">
+											El resto de enlaces salta al mismo ancla en esta página. Así no llenamos el rectángulo de golpe.
+										</p>
+										<ul class="how-videoteca-index__list how-videoteca-index__list--more">
+											{
+												videotecaClipsRest.map((clip) => (
+													<li class="how-videoteca-index__item">
+														<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
+															{clip.title}
+														</a>
+													</li>
+												))
+											}
+										</ul>
+									</details>
+								) : (
+									<div class="how-videoteca-index__footer-soon">
+										<p class="how-videoteca-index__footer-kicker">Ampliar sin alargar la página</p>
+										<p class="how-videoteca-index__footer-primary">Ver más clips</p>
+										<p class="how-videoteca-index__footer-sub">
+											Cuando haya más de cuatro enlaces en esta página, aparecerán aquí al desplegar. En otros
+											rectángulos del sitio usaremos la misma idea: pocos visibles y el resto detrás de esta
+											misma acción.
+										</p>
+									</div>
+								)
+							}
+						</div>
+					</nav>
 				</section>
 
 				<div class="how-more-grid how-more-grid--practical" id="videoteca-clips">
@@ -2307,6 +2290,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		margin: clamp(0.85rem, 2.8vw, 1.35rem) auto clamp(1rem, 3.2vw, 1.55rem);
 		max-width: min(56rem, 100%);
 		padding-top: clamp(0.15rem, 1vw, 0.45rem);
+	}
+
+	.how-chapter--extras-index-only {
+		margin-top: clamp(0.55rem, 2vw, 1rem);
 	}
 
 	.how-chapter--extras__sub {
