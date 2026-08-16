@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación, microclips de comportamiento, piezas del sistema y De cero a protegido. Cómo funciona tevsys en MT5.',
+		'Presentación, microclips por ramas (preparar / protegido / operación en curso) y piezas del sistema. Cómo funciona tevsys en MT5.',
 };
 
 /** Vídeo único de presentación (may 2026): evidencia Nasdaq ~4 min · YT 2f1rRmqkE1k. */
@@ -102,32 +102,50 @@ const homeBridgeCards: {
 	},
 ];
 
-/** Microclips: primeros casos operativos + extras detrás de «Ver más clips». */
-const siguienteNivelClipCards: {
+/** Microclips — tres ramas (canon 16 ago 2026 · CATALOGO § Tres ramas). */
+type MicroClipCard = {
 	title: string;
 	anchorId: string;
-	auditAccent?: boolean;
 	videoSrc?: string;
 	videoLabel?: string;
 	ctaLabel?: string;
-}[] = [
-	{
-		title: 'Fin de semana: deja la protección lista para el lunes',
-		anchorId: 'videoclip-programado-lunes',
-		videoSrc: '/videos/como-funciona/tevsys-mc-programado-lunes-30s.mp4?v=20260816',
-		videoLabel: 'Microclip ~30 s — GUARDAR → PROGRAMADO · LUNES (MC-CF-021)',
-		ctaLabel: 'Ver clip',
-	},
-	{ title: '¿Cómo te protegemos cuando decides estar OFF?', anchorId: 'videoclip-off' },
-	{ title: 'Observación pasiva', anchorId: 'videoclip-pasiva' },
-	{ title: 'Intentar cambiar tus límites con tevsys ya protegiéndote', anchorId: 'videoclip-retocar' },
-	{ title: 'Auditoría con evidencia (Fase 1 manual)', anchorId: 'videoclip-auditoria', auditAccent: true },
-];
+};
 
-/** Videoteca escalable: solo 2 clips visibles al cargar; el resto aparece bajo demanda. */
-const VIDEOTECA_VISIBLE_ON_LOAD = 2;
-const videotecaClipsHead = siguienteNivelClipCards.slice(0, VIDEOTECA_VISIBLE_ON_LOAD);
-const videotecaClipsRest = siguienteNivelClipCards.slice(VIDEOTECA_VISIBLE_ON_LOAD);
+type MicroclipBranch = {
+	id: string;
+	title: string;
+	announcement: string;
+	clips: MicroClipCard[];
+};
+
+const microclipBranches: MicroclipBranch[] = [
+	{
+		id: 'rama-preparar',
+		title: 'Preparar la protección',
+		announcement: 'Dejas reglas listas. Candado aún no. Clips ~30 s.',
+		clips: [
+			{
+				title: 'Fin de semana: deja la protección lista para el lunes',
+				anchorId: 'videoclip-programado-lunes',
+				videoSrc: '/videos/como-funciona/tevsys-mc-programado-lunes-30s.mp4?v=20260816',
+				videoLabel: 'Microclip ~30 s — GUARDAR → PROGRAMADO · LUNES (MC-CF-021)',
+				ctaLabel: 'Ver clip',
+			},
+		],
+	},
+	{
+		id: 'rama-protegido',
+		title: 'Ya estás protegido',
+		announcement: 'Límites activos. Qué pasa si operas o retocas. Clips ~30 s.',
+		clips: [],
+	},
+	{
+		id: 'rama-operacion',
+		title: 'Operación en curso',
+		announcement: 'Trade abierto y la protección sigue. Clips ~30 s.',
+		clips: [],
+	},
+];
 
 /** «De cero…»: subrayado solo bajo el núcleo (asimétrico respecto a «misma historia» arriba). */
 const zeroTitleMatch = /^De\s+(.+)$/u.exec(zeroToProtected.title);
@@ -257,160 +275,74 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					</p>
 				</header>
 
-				<section
-					class="how-chapter how-chapter--extras how-chapter--extras-index-only"
-					id="mas-comportamientos"
-					aria-labelledby="how-videoteca-index-label">
-					<nav class="how-videoteca-index" aria-labelledby="how-videoteca-index-label">
-						<h3 id="how-videoteca-index-label" class="how-videoteca-index__title">
-							¿Q<span class="how-videoteca-index__title-accent">ué quieres ver? — salta al clip</span>
-						</h3>
-						<ul class="how-videoteca-index__list how-videoteca-index__list--deck">
-							{
-								videotecaClipsHead.map((clip) => (
-									<li class="how-videoteca-index__item how-videoteca-index__item--deck">
-										<a class="how-videoteca-index__link how-videoteca-index__link--deck" href={`#${clip.anchorId}`}>
-											{clip.title}
-										</a>
-									</li>
-								))
-							}
-						</ul>
-						<div class="how-videoteca-index__footer">
-							{
-								videotecaClipsRest.length > 0 ? (
-									<details class="how-videoteca-index__more how-videoteca-index__more--panel">
-										<summary class="how-videoteca-index__summary how-videoteca-index__summary--cta">
-											Ver más clips
-										</summary>
-										<p class="how-videoteca-index__more-lead">
-											El resto de enlaces salta al mismo ancla en esta página. Así no llenamos el rectángulo de golpe.
-										</p>
-										<ul class="how-videoteca-index__list how-videoteca-index__list--more">
-											{
-												videotecaClipsRest.map((clip) => (
-													<li class="how-videoteca-index__item">
-														<a class="how-videoteca-index__link" href={`#${clip.anchorId}`}>
-															{clip.title}
-														</a>
-													</li>
-												))
-											}
-										</ul>
-									</details>
-								) : (
-									<div class="how-videoteca-index__footer-soon">
-										<p class="how-videoteca-index__footer-kicker">Ampliar sin alargar la página</p>
-										<p class="how-videoteca-index__footer-primary">Ver más clips</p>
-										<p class="how-videoteca-index__footer-sub">
-											Cuando haya más de cuatro enlaces en esta página, aparecerán aquí al desplegar. En otros
-											rectángulos del sitio usaremos la misma idea: pocos visibles y el resto detrás de esta
-											misma acción.
-										</p>
-									</div>
-								)
-							}
-						</div>
+				<section class="how-microclip-ramas" id="mas-comportamientos" aria-labelledby="how-more-title">
+					<nav class="how-rama-jump" aria-label="Saltar a una rama de clips">
+						{
+							microclipBranches.map((branch) => (
+								<a class="how-rama-jump__link" href={`#${branch.id}`}>
+									{branch.title}
+								</a>
+							))
+						}
 					</nav>
-				</section>
 
-				<div class="how-more-grid how-more-grid--practical" id="videoteca-clips">
 					{
-						videotecaClipsHead.map((row) => (
-							<article
-								id={row.anchorId}
-								class:list={[
-									'how-more-cell',
-									'how-more-cell--video',
-									'how-more-cell--practical-clip',
-									row.auditAccent && 'how-more-cell--audit-clip',
-								]}
-								aria-labelledby={`clip-title-${row.anchorId}`}>
-								<header class="how-block-head how-block-head--compact">
-									<h3 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
-										{row.title}
+						microclipBranches.map((branch) => (
+							<section class="how-rama" id={branch.id} aria-labelledby={`${branch.id}-title`}>
+								<header class="how-rama__head">
+									<h3 id={`${branch.id}-title`} class="how-rama__title">
+										<span class="how-present-title__accent">{branch.title}</span>
 									</h3>
+									<p class="how-rama__announcement">{branch.announcement}</p>
 								</header>
-								<div class="how-practical-card__media">
-									{row.videoSrc ? (
-										<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
-											<video controls preload="none" playsinline title={row.videoLabel ?? row.title}>
-												<source src={row.videoSrc} type="video/mp4" />
-												Tu navegador no soporta reproducción de video HTML5.
-											</video>
-										</div>
-									) : (
-										<div
-											class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
-											role="status">
-											<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
-											<p class="how-embed-placeholder__title">Clip en preparación</p>
-											<p class="how-embed-placeholder__sub">
-												Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.
-											</p>
-										</div>
-									)}
-								</div>
-								<span class:list={['how-more-card__cta', !row.videoSrc && 'how-more-card__cta--pending']}>
-									{row.videoSrc ? `${row.ctaLabel ?? 'Ver clip'} →` : 'Clip en preparación →'}
-								</span>
-							</article>
+
+								{branch.clips.length > 0 ? (
+									<div
+										class="how-more-grid how-more-grid--practical how-rama__grid"
+										id={`${branch.id}-clips`}>
+										{branch.clips.map((row) => (
+											<article
+												id={row.anchorId}
+												class:list={['how-more-cell', 'how-more-cell--video', 'how-more-cell--practical-clip']}
+												aria-labelledby={`clip-title-${row.anchorId}`}>
+												<header class="how-block-head how-block-head--compact">
+													<h4 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
+														{row.title}
+													</h4>
+												</header>
+												<div class="how-practical-card__media">
+													{row.videoSrc ? (
+														<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
+															<video controls preload="none" playsinline title={row.videoLabel ?? row.title}>
+																<source src={row.videoSrc} type="video/mp4" />
+																Tu navegador no soporta reproducción de video HTML5.
+															</video>
+														</div>
+													) : (
+														<div
+															class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
+															role="status">
+															<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
+															<p class="how-embed-placeholder__title">Clip en preparación</p>
+															<p class="how-embed-placeholder__sub">
+																Aquí irá el corte de ~25–30 s cuando esté listo para publicar.
+															</p>
+														</div>
+													)}
+												</div>
+												<span class:list={['how-more-card__cta', !row.videoSrc && 'how-more-card__cta--pending']}>
+													{row.videoSrc ? `${row.ctaLabel ?? 'Ver clip'} →` : 'Clip en preparación →'}
+												</span>
+											</article>
+										))}
+									</div>
+								) : (
+									<p class="how-rama__soon">Iremos sumando clips aquí.</p>
+								)}
+							</section>
 						))
 					}
-				</div>
-				{
-					videotecaClipsRest.length > 0 ? (
-						<details class="how-videoteca-index__more how-videoteca-index__more--panel how-videoteca-clips-more" id="how-videoteca-clips-more">
-							<summary class="how-videoteca-index__summary how-videoteca-index__summary--cta">
-								Ver más clips
-							</summary>
-							<div class="how-more-grid how-more-grid--practical how-more-grid--practical-rest">
-								{
-									videotecaClipsRest.map((row) => (
-										<article
-											id={row.anchorId}
-											class:list={[
-												'how-more-cell',
-												'how-more-cell--video',
-												'how-more-cell--practical-clip',
-												row.auditAccent && 'how-more-cell--audit-clip',
-											]}
-											aria-labelledby={`clip-title-${row.anchorId}`}>
-											<header class="how-block-head how-block-head--compact">
-												<h3 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
-													{row.title}
-												</h3>
-											</header>
-											<div class="how-practical-card__media">
-												{row.videoSrc ? (
-													<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
-														<video controls preload="none" playsinline title={row.videoLabel ?? row.title}>
-															<source src={row.videoSrc} type="video/mp4" />
-															Tu navegador no soporta reproducción de video HTML5.
-														</video>
-													</div>
-												) : (
-													<div
-														class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
-														role="status">
-														<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
-														<p class="how-embed-placeholder__title">Clip en preparación</p>
-														<p class="how-embed-placeholder__sub">
-															Aquí irá el corte de ~25–30 s cuando lo tengáis listo para publicar.
-														</p>
-													</div>
-												)}
-											</div>
-											<span class:list={['how-more-card__cta', !row.videoSrc && 'how-more-card__cta--pending']}>
-												{row.videoSrc ? `${row.ctaLabel ?? 'Ver clip'} →` : 'Clip en preparación →'}
-											</span>
-										</article>
-									))
-								}
-							</div>
-						</details>
-					) : null
-				}
+				</section>
 
 				<p class="how-more-act-cut">
 					<span class="how-more-act-cut__line" aria-hidden="true"></span>
@@ -639,20 +571,6 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 <script is:inline>
 	(() => {
-		const details = document.getElementById('how-videoteca-clips-more');
-		if (details) {
-			const openIfNeeded = () => {
-				const hash = window.location.hash;
-				if (!hash || !hash.startsWith('#videoclip-')) return;
-				const target = document.querySelector(hash);
-				if (!target) return;
-				if (!target.closest('#how-videoteca-clips-more')) return;
-				if (!details.open) details.open = true;
-			};
-			openIfNeeded();
-			window.addEventListener('hashchange', openIfNeeded);
-		}
-
 		const params = new URLSearchParams(window.location.search);
 		if (params.get('play') !== '1') return;
 
@@ -2294,6 +2212,102 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	.how-chapter--extras-index-only {
 		margin-top: clamp(0.55rem, 2vw, 1rem);
+	}
+
+	/* Tres ramas microclips (16 ago 2026) */
+	.how-microclip-ramas {
+		max-width: min(56rem, 100%);
+		margin: clamp(0.75rem, 2.4vw, 1.35rem) auto clamp(1.25rem, 3.5vw, 2rem);
+	}
+
+	.how-rama-jump {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.45rem 0.85rem;
+		margin: 0 0 clamp(1.25rem, 3vw, 1.85rem);
+		padding: 0 0.35rem;
+	}
+
+	.how-rama-jump__link {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.72rem, 1.5vw, 0.8rem);
+		letter-spacing: 0.02em;
+		text-decoration: none;
+		color: rgba(245, 176, 65, 0.88);
+		border-bottom: 1px solid rgba(245, 176, 65, 0.35);
+		padding-bottom: 0.1rem;
+		transition: color 0.15s ease, border-color 0.15s ease;
+	}
+
+	.how-rama-jump__link:hover {
+		color: #f5b041;
+		border-color: rgba(245, 176, 65, 0.7);
+	}
+
+	html[data-theme='light'] .how-rama-jump__link {
+		color: rgba(175, 118, 32, 0.95);
+		border-color: rgba(175, 118, 32, 0.4);
+	}
+
+	.how-rama {
+		margin: 0 0 clamp(1.65rem, 4vw, 2.45rem);
+		padding: clamp(0.85rem, 2.2vw, 1.25rem) clamp(0.65rem, 2vw, 1rem);
+		border-radius: 0.65rem;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		background: rgba(0, 0, 0, 0.18);
+	}
+
+	html[data-theme='light'] .how-rama {
+		border-color: var(--theme-surface-border);
+		background: var(--theme-surface-1);
+	}
+
+	.how-rama:last-child {
+		margin-bottom: 0.35rem;
+	}
+
+	.how-rama__head {
+		text-align: center;
+		margin: 0 0 clamp(0.85rem, 2.2vw, 1.25rem);
+	}
+
+	.how-rama__title .how-present-title__accent::after {
+		left: 0;
+		width: min(100%, 11.5rem);
+	}
+
+	html[data-theme='light'] .how-rama__title {
+		color: inherit;
+	}
+
+	.how-rama__announcement {
+		margin: 0 auto;
+		max-width: 34rem;
+		font-size: clamp(0.88rem, 1.8vw, 0.98rem);
+		line-height: 1.45;
+		color: rgba(180, 190, 205, 0.82);
+	}
+
+	html[data-theme='light'] .how-rama__announcement {
+		color: rgba(60, 70, 85, 0.88);
+	}
+
+	.how-rama__grid {
+		margin: 0;
+	}
+
+	.how-rama__soon {
+		margin: 0;
+		text-align: center;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.78rem, 1.6vw, 0.88rem);
+		letter-spacing: 0.03em;
+		color: rgba(160, 170, 185, 0.72);
+	}
+
+	html[data-theme='light'] .how-rama__soon {
+		color: rgba(90, 100, 115, 0.8);
 	}
 
 	.how-chapter--extras__sub {

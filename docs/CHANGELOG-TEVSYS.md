@@ -12,8 +12,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Home:** bloque mid-page tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / *Clips de ~30 s. Escenario a escenario.* → `/como-funciona#mas-comportamientos`.
 - **`/como-funciona`:** orden Presentación → microclips → puente 4 piezas → De cero a protegido (placeholder abajo) → vigilancia.
 - **Ajuste copy (mismo día):** quitada cabecera duplicada (*Comportamiento en corto* / *microvídeos* / *Empieza aquí*); queda *Siguiente nivel* + índice. Sin *Sin rodeos*.
+- **Tres ramas (mismo día):** Preparar la protección · Ya estás protegido · Operación en curso. Anuncios canónicos. Rama 1 con MC-CF-021; 2 y 3 *Iremos sumando clips aquí* (sin placeholders huecos).
 
-**Commit:** `web(tevsys): elevate microclips and mid-home invite`
+**Commit:** `web(tevsys): elevate microclips and mid-home invite`  
+**Commit ramas:** `web(tevsys): structure como-funciona microclips into three branches`
 
 ---
 
