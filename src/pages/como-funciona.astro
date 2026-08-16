@@ -17,6 +17,8 @@ const presentationLeadVideo = {
 		'Tu límite, el cierre real, HyperClose y el informe en una sola sesión. Contrástalo en MT5.',
 	/** MP4 en `public/videos/features/evidencia-nasdaq-100-completa.mp4` — mismo export que YouTube (may 2026 typo overlay corregido). */
 	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20260528okk',
+	/** Prueba: poster marca = chevrons grises home (`hero-tevsys-chevrons.png`) + tevsys minúsculas; más pequeño que hero. */
+	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-brand.jpg?v=20260816d',
 	youtubeWatch: 'https://youtu.be/2f1rRmqkE1k',
 };
 
@@ -207,6 +209,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 									controls
 									preload="metadata"
 									playsinline
+									poster={presentationLeadVideo.posterSrc}
 									title={presentationLeadVideo.title}>
 									<source src={presentationLeadVideo.videoSrc} type="video/mp4" />
 									Tu navegador no soporta reproducción de video HTML5.
