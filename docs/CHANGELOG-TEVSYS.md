@@ -6,6 +6,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — MC-CF-001 día OFF + overlays de los 3 microclips (17 ago 2026)
+
+**Qué:**
+- Rama **Ya estás protegido** deja de estar vacía: clip **día OFF + intento de operar** (~22 s). Ancla `#videoclip-off`.
+- MP4 `tevsys-mc-dia-off-30s.mp4` (**II**, 17 ago 22:28) + poster mid-clip (modal 1 teal + panel, ~9,2 s) + `poster=` + `?v=20260817b`.
+- **Overlays publicados (los 3 clips de `/como-funciona`):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`; espejo corto en `CONTENIDO_WEB_TEVSYS_LANDING.md` y `GUIA_PRODUCCION_VIDEOS_MICROPAGINAS_TEVSYS.md`.
+  - **MC-CF-021** (rama 1): `¿Cómo dejas la protección lista para el lunes?` · `➜ GUARDAR PARA EL LUNES` · `➜ Confirma tus límites` · `➜ PROGRAMADO · LUNES — queda fijado` + `🡰 El engranaje pasa a teal`
+  - **MC-CF-001** (rama 2, **II**): `¿Qué pasa si operas un día que marcaste OFF?` · `DÍA OFF · PROTEGIDO` · `Cada intento se cierra al instante y queda trazado.` · `Tres avisos. El flotante queda como prueba` *(export sin `➜`)*
+  - **MC-CF-023** (rama 3): `¿Qué pasa si cambias un límite ya protegido (con SML activo)?` · `➜ Panel: SML ACTIVO` · `➜ Inputs: −3 % → −2,5 %` · `➜ Inputs ignorados — el panel muestra lo pactado`
+
+**Commit:** `web(tevsys): publish dia-off microclip on como-funciona`
+
+---
+
 ## Canon — poster obligatorio al colgar vídeos (16 ago 2026)
 
 **Qué:** todo MP4 publicado en web lleva JPG mid-clip (o marca en evidencia larga) + `poster=`. Sin poster = no cerrado. Micropáginas: misma regla; tema claro atenuado si canta. Fuentes: catálogo TGP § posters · `GUIA_PRODUCCION_VIDEOS_MICROPAGINAS` paso 5 · workflow Cursor.

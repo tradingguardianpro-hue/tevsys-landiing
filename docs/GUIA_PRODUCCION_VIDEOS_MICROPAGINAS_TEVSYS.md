@@ -65,7 +65,27 @@ Regla:
 - Mantener estilo consistente en todos los videos.
 - **Color texto overlay (canon ago 2026):** **`#A8A8A8`** — gris; no blanco. (Histórico jun: `#818080` → migrar al reeditar.)
 
-**Microclips `/como-funciona`:** guion **overlay a overlay** en el repo TGP → `docs/CATALOGO_MICROCLIPS_TEVSYS.md` (no duplicar aquí listas largas). Guías A/B/C: `PLAN_VIDEOS_A_B_C_INSTALACION_CONFIG_SEMANA.md` en TGP.
+**Microclips `/como-funciona`:** guion **overlay a overlay** (fuente canónica) en el repo TGP → `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. Guías A/B/C: `PLAN_VIDEOS_A_B_C_INSTALACION_CONFIG_SEMANA.md` en TGP.
+
+**Publicados (17 ago 2026) — no improvisar texto al reeditar:**
+
+- **MC-CF-021** · `#videoclip-programado-lunes` · rama Preparar · `tevsys-mc-programado-lunes-30s.mp4`
+  1. `¿Cómo dejas la protección lista para el lunes?`
+  2. `➜ GUARDAR PARA EL LUNES`
+  3. `➜ Confirma tus límites`
+  4. `➜ PROGRAMADO · LUNES — queda fijado` + `🡰 El engranaje pasa a teal`
+- **MC-CF-001** · `#videoclip-off` · rama Ya estás protegido · `tevsys-mc-dia-off-30s.mp4` (~22 s)
+  1. `¿Qué pasa si operas un día que marcaste OFF?`
+  2. `DÍA OFF · PROTEGIDO` *(guion: con `➜`; export 17 ago sin flecha)*
+  3. `Cada intento se cierra al instante y queda trazado.`
+  4. `Tres avisos. El flotante queda como prueba`
+- **MC-CF-023** · `#videoclip-inputs-sml-carry` · rama Operación en curso · `tevsys-mc-inputs-sml-carry-30s.mp4`
+  1. `¿Qué pasa si cambias un límite ya protegido (con SML activo)?`
+  2. `➜ Panel: SML ACTIVO`
+  3. `➜ Inputs: −3 % → −2,5 %`
+  4. `➜ Inputs ignorados — el panel muestra lo pactado`
+
+Color overlays: **`#A8A8A8`**. Poster obligatorio al colgar (paso 5).
 
 ### Coherencia crítica overlay <-> CTA web
 

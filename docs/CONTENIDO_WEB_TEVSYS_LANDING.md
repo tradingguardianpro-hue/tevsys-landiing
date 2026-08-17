@@ -79,6 +79,11 @@ Documento de contenido/copy actual para revisión de equipo.
 - **CTA secundario (jul 2026 vigente):** `Ver evidencia (~4 min)` → `/como-funciona?play=1#evidencia-nasdaq-100` (pieza Nasdaq; no confundir con ruta antigua `/go/evidencia-5min` HyperClose).
 - **Mid-home microclips (16 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / *Clips de ~30 s. Escenario a escenario.* / CTA `Ver microclips →` → `/como-funciona#mas-comportamientos`.
 - **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
+- **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:
+  - **MC-CF-021** `#videoclip-programado-lunes` (rama 1): `¿Cómo dejas la protección lista para el lunes?` · `➜ GUARDAR PARA EL LUNES` · `➜ Confirma tus límites` · `➜ PROGRAMADO · LUNES — queda fijado` + `🡰 El engranaje pasa a teal`
+  - **MC-CF-001** `#videoclip-off` (rama 2, ~22 s, **II**): `¿Qué pasa si operas un día que marcaste OFF?` · `DÍA OFF · PROTEGIDO` · `Cada intento se cierra al instante y queda trazado.` · `Tres avisos. El flotante queda como prueba` *(export sin `➜`)*
+  - **MC-CF-023** `#videoclip-inputs-sml-carry` (rama 3): `¿Qué pasa si cambias un límite ya protegido (con SML activo)?` · `➜ Panel: SML ACTIVO` · `➜ Inputs: −3 % → −2,5 %` · `➜ Inputs ignorados — el panel muestra lo pactado`
+  Archivos: `public/videos/como-funciona/tevsys-mc-*-30s.mp4` + `*-poster.jpg`. Commit: `web(tevsys): publish dia-off microclip on como-funciona`.
 - **Ruta histórica CTA 5 min (22 abr 2026):** `/go/evidencia-5min` → HyperClose (sigue útil analytics / deep links).
 - **Medición Vercel free (22 abr 2026):** visitas a `/go/evidencia-5min` como proxy; el CTA home actual a Nasdaq se mide por pageviews `/como-funciona` + ancla.
 - **Disponibilidad:** `· Disponible en MT5 ·` (sin “más plataformas” — 24 jul 2026)
