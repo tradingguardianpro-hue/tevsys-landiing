@@ -87,6 +87,8 @@ Regla:
 
 Color overlays: **`#A8A8A8`**. Poster obligatorio al colgar (paso 5).
 
+**Cola 17 ago:** Nasdaq ~3:53 = P0 si hay sesión (no reabrir overlays). Siguiente micro por rama: 020 / 003 / 022. Detalle: catálogo TGP § *Cola 17 ago*.
+
 ### Coherencia crítica overlay <-> CTA web
 
 Si el cierre del video usa un mensaje tipo `Probar X en demo`, el botón real de la micro-página debe usar el mismo texto o una variante mínima equivalente.

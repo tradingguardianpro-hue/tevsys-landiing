@@ -84,6 +84,7 @@ Documento de contenido/copy actual para revisión de equipo.
   - **MC-CF-001** `#videoclip-off` (rama 2, ~22 s, **II**): `¿Qué pasa si operas un día que marcaste OFF?` · `DÍA OFF · PROTEGIDO` · `Cada intento se cierra al instante y queda trazado.` · `Tres avisos. El flotante queda como prueba` *(export sin `➜`)*
   - **MC-CF-023** `#videoclip-inputs-sml-carry` (rama 3): `¿Qué pasa si cambias un límite ya protegido (con SML activo)?` · `➜ Panel: SML ACTIVO` · `➜ Inputs: −3 % → −2,5 %` · `➜ Inputs ignorados — el panel muestra lo pactado`
   Archivos: `public/videos/como-funciona/tevsys-mc-*-30s.mp4` + `*-poster.jpg`. Commit: `web(tevsys): publish dia-off microclip on como-funciona`.
+- **Cola 17 ago (noche):** Nasdaq ~3:53 = P0 si hay sesión (overlays no reabrir; colgar y retocar). Micros: no muchos. Siguiente por rama = **020 / 003 / 022**. Fuente: catálogo TGP § *Cola 17 ago* · V12 **(videoCola)**.
 - **Ruta histórica CTA 5 min (22 abr 2026):** `/go/evidencia-5min` → HyperClose (sigue útil analytics / deep links).
 - **Medición Vercel free (22 abr 2026):** visitas a `/go/evidencia-5min` como proxy; el CTA home actual a Nasdaq se mide por pageviews `/como-funciona` + ancla.
 - **Disponibilidad:** `· Disponible en MT5 ·` (sin “más plataformas” — 24 jul 2026)
@@ -117,6 +118,8 @@ Documento de contenido/copy actual para revisión de equipo.
 | Brief copy post-Barmenteros | OUTREACH § Brief web |
 
 **Pendiente / aparcado:** export Nasdaq cuando haya sesión · collage HyperClose (swap PNG opcional) · SML/microclips/guías oleadas.
+
+**Cola 17 ago (noche) — V12 (videoCola):** Nasdaq primero si hay sesión; no reabrir overlays. Micros siguientes (no muchos): 020 · 003 · 022. Cada rama ya tiene 1 clip (021 / 001 / 023).
 
 ### Refresco vídeos — imagen panel (ago 2026) — **EN CURSO / oleadas**
 

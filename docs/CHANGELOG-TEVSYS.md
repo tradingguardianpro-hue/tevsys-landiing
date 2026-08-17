@@ -18,6 +18,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Commit:** `web(tevsys): publish dia-off microclip on como-funciona`
 
+**Cola (misma noche, no es código):** Nasdaq P0 si sesión; siguiente micro por rama 020 / 003 / 022. Craft 001: `#A8A8A8`, overlay 1 boom a propósito. V12 **(videoCola)** · catálogo § *Cola 17 ago*.
+
 ---
 
 ## Canon — poster obligatorio al colgar vídeos (16 ago 2026)
