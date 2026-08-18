@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — MC-CF-025 límite + HyperClose (18 ago 2026)
+
+**Qué:** segundo clip en rama **Ya estás protegido**. Límite de **ganancia** del día (+1,53 % vs +1,50 %) → STOP → HyperClose 1–2–3. Ancla `#videoclip-limite-hyperclose`. MP4 ~34,5 s + poster modal 1 teal. `?v=20260818`. **No** es el clip OFF (001).
+
+**Overlays export:** pregunta · `➜ Límite de ganancia alcanzado` · `🡰 STOP` · `Intentas abrir otra vez` · en semáforo `Los siguientes intentos quedan trazados.`
+
+**Commit:** `web(tevsys): publish limite-hyperclose microclip on como-funciona`
+
+---
+
 ## Cómo funciona — MC-CF-001 día OFF + overlays de los 3 microclips (17 ago 2026)
 
 **Qué:**

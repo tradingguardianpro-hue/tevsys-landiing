@@ -79,6 +79,11 @@ Regla:
   2. `DÍA OFF · PROTEGIDO` *(guion: con `➜`; export 17 ago sin flecha)*
   3. `Cada intento se cierra al instante y queda trazado.`
   4. `Tres avisos. El flotante queda como prueba`
+- **MC-CF-025** · `#videoclip-limite-hyperclose` · rama Ya estás protegido · `tevsys-mc-limite-hyperclose-30s.mp4` (~34,5 s)
+  1. `¿Qué pasa si insistes después de alcanzar tu límite?`
+  2. `➜ Límite de ganancia alcanzado`
+  3. `🡰 STOP`
+  4. `Intentas abrir otra vez` → en semáforo `Los siguientes intentos quedan trazados.`
 - **MC-CF-023** · `#videoclip-inputs-sml-carry` · rama Operación en curso · `tevsys-mc-inputs-sml-carry-30s.mp4`
   1. `¿Qué pasa si cambias un límite ya protegido (con SML activo)?`
   2. `➜ Panel: SML ACTIVO`
