@@ -83,7 +83,7 @@ Regla:
   1. `¿Qué pasa si insistes después de alcanzar tu límite?`
   2. `➜ Límite de ganancia alcanzado`
   3. `🡰 STOP`
-  4. `Intentas abrir otra vez` → en semáforo `Los siguientes intentos quedan trazados.`
+  4. `Intentas abrir otra vez` (**typewriter cierra la frase**) → en semáforo `Los siguientes intentos quedan trazados.`
 - **MC-CF-023** · `#videoclip-inputs-sml-carry` · rama Operación en curso · `tevsys-mc-inputs-sml-carry-30s.mp4`
   1. `¿Qué pasa si cambias un límite ya protegido (con SML activo)?`
   2. `➜ Panel: SML ACTIVO`

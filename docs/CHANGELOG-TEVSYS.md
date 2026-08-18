@@ -6,11 +6,25 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Prompt DeepSeek — catch-up 18 ago 2026
+
+**Qué:** `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` **§0.1b + §22** (estado vivo panel/web/micros; el resto del maestro = historia abr). Pegable al socio. Espejo TGP `PROMPT_DEEPSEEK_SESION_VISUAL_*`. V12 **(ds18)**.
+
+---
+
+## Cómo funciona — 3.er microclip: criterio, sin código (18 ago 2026)
+
+**Qué:** no se reserva tarjeta ni “clip en preparación” en rama 2 (ya hay dos MP4). Cuando exista el tercero: misma ficha, dos columnas, el nuevo abajo a la izquierda. No tres reproductores en una fila.
+
+**Dónde:** catálogo TGP § *Rejilla — 3.er clip* · V12 **(ramaGrid)**.
+
+---
+
 ## Cómo funciona — MC-CF-025 límite + HyperClose (18 ago 2026)
 
 **Qué:** segundo clip en rama **Ya estás protegido**. Límite de **ganancia** del día (+1,53 % vs +1,50 %) → STOP → HyperClose 1–2–3. Ancla `#videoclip-limite-hyperclose`. MP4 ~34,5 s + poster modal 1 teal. `?v=20260818`. **No** es el clip OFF (001).
 
-**Overlays export:** pregunta · `➜ Límite de ganancia alcanzado` · `🡰 STOP` · `Intentas abrir otra vez` · en semáforo `Los siguientes intentos quedan trazados.`
+**Overlays export:** pregunta · `➜ Límite de ganancia alcanzado` · `🡰 STOP` · `Intentas abrir otra vez` (**typewriter cierra la frase; no recortado** — validado fundador 18 ago) · en semáforo `Los siguientes intentos quedan trazados.`
 
 **Commit:** `web(tevsys): publish limite-hyperclose microclip on como-funciona`
 
