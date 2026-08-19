@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — MC-CF-002 empezar de cero · pasiva (19 ago 2026)
+
+**Qué:** primer clip en rama **Operación en curso** (antes del SML carry). Trade abierta sin configurar → pasiva → rechazo al bloquear → cierre/ancla. Ancla `#videoclip-pasiva`. MP4 ~36 s + poster (panel pasivo + overlay 2). `?v=20260819`. Acta lab AT **#6263243**.
+
+**Dónde:** `como-funciona.astro` rama 3 · catálogo TGP MC-CF-002 · V12 **(mcPasiva)**. Bloque protagonista *Desde cero* = paso B pendiente.
+
+---
+
 ## Prompt DeepSeek — catch-up 18 ago 2026
 
 **Qué:** `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` **§0.1b + §22** (estado vivo panel/web/micros; el resto del maestro = historia abr). Pegable al socio. Espejo TGP `PROMPT_DEEPSEEK_SESION_VISUAL_*`. V12 **(ds18)**.
