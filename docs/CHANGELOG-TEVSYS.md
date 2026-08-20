@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — MC-CF-021 II reconfigurar (20 ago 2026)
+
+**Qué:** remake `tevsys-mc-programado-lunes-30s-II.mp4` (~30,0 s) · overlay cierre *Puedes reconfigurar las veces que necesites* · poster frame ~27 s (panel PROGRAMADO + frase). Ancla `#videoclip-programado-lunes` · `?v=20260820`.
+
+**Commit:** `web(tevsys): refresh programado lunes microclip with reconfig overlay`
+
+---
+
 ## Cómo funciona — Puesta en marcha antes de las 4 piezas (20 ago 2026)
 
 **Qué:** leyenda *Instalar y fijar límites* sale del hueco entre Desde cero y clips; ahora **después de microclips**, justo **antes de Las cuatro piezas**, con panel suave (un poco más de presencia, no hero).
