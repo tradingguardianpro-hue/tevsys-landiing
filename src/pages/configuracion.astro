@@ -5,7 +5,19 @@ import '../styles/guia-operativa.css';
 
 const seo = {
 	title: 'Guía rápida de configuración | tevsys',
-	description: 'Configura los límites y el panel de tevsys Essential. Vídeo paso a paso en fin de semana. Entre semana el flujo es similar.',
+	description:
+		'Configura los límites de tevsys: vídeo en un minuto (inputs → protección) y guía Essential más larga.',
+};
+
+/** Pieza corta MC-CF-026 — casa canónica (20 ago 2026). */
+const configurarLimites1min = {
+	id: 'configurar-limites',
+	title: 'Cómo configurar tus límites en un minuto',
+	blurb: 'De los inputs al candado: día a día, ON u OFF, tope semanal y activar protección.',
+	durationLabel: '~1:15',
+	videoSrc: '/videos/como-funciona/tevsys-configurar-limites-1min.mp4?v=20260820c',
+	posterSrc: '/videos/como-funciona/tevsys-configurar-limites-1min-poster.jpg?v=20260820c',
+	videoLabel: 'Guía ~1:15 — configurar límites y activar protección (MC-CF-026)',
 };
 
 const VIDEO_DRIVE_ID = '1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg';
@@ -22,7 +34,7 @@ const bloquesLectura = [
 		n: 2,
 		title: 'Fin de semana vs entre semana',
 		detail:
-			'El vídeo muestra el flujo en fin de semana; entre semana es similar — cambia el día activo.',
+			'El vídeo largo muestra el flujo en fin de semana; entre semana es similar — cambia el día activo.',
 	},
 	{
 		n: 3,
@@ -57,8 +69,39 @@ const otrasGuias = [
 				<p class="guia-eyebrow">Guía Essential — demo estándar</p>
 				<h1>Configuración — tevsys Essential</h1>
 				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>Vídeo 2:36 — límites, panel y primer uso.
+					<span class="feature-hook__dot" aria-hidden="true"></span>Primero el minuto rápido; abajo el recorrido más largo.
 				</p>
+			</section>
+
+			<section id={configurarLimites1min.id} class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">En un minuto</p>
+						<h2>{configurarLimites1min.title}</h2>
+						<p class="guia-section-sub">
+							{configurarLimites1min.blurb}
+							{' '}
+							<span class="guia-duration">({configurarLimites1min.durationLabel})</span>
+						</p>
+					</header>
+					<div class="guia-embed guia-embed--chrome">
+						<video
+							id="configurar-limites-video"
+							controls
+							preload="metadata"
+							playsinline
+							poster={configurarLimites1min.posterSrc}
+							title={configurarLimites1min.videoLabel}>
+							<source src={configurarLimites1min.videoSrc} type="video/mp4" />
+							Tu navegador no soporta reproducción de video HTML5.
+						</video>
+					</div>
+					<p class="guia-note-box guia-note-box--after-video">
+						<strong>También en Cómo funciona:</strong>
+						enlace suave bajo <a href="/como-funciona#rama-preparar">Preparar la protección</a>.
+					</p>
+				</div>
 			</section>
 
 			<section id="configuracion-video" class="guia-video-panel">
@@ -66,7 +109,7 @@ const otrasGuias = [
 				<div class="guia-video-panel__inner">
 					<header class="guia-section-head">
 						<p class="guia-eyebrow">Vídeo</p>
-						<h2>Configuración básica</h2>
+						<h2>Configuración básica (recorrido largo)</h2>
 					</header>
 					<div class="guia-embed guia-embed--chrome">
 						<iframe
@@ -80,11 +123,6 @@ const otrasGuias = [
 					</div>
 					<p class="guia-embed-fallback">
 						Si el vídeo no se reproduce, <a href={VIDEO_LINK_URL} target="_blank" rel="noopener noreferrer">ábrelo directamente</a>.
-					</p>
-					<p class="guia-note-box guia-note-box--after-video">
-						<strong>En un minuto:</strong>
-						<a href="/como-funciona#configurar-limites">cómo configurar tus límites</a>
-						(inputs → Config ok → protección).
 					</p>
 					<p class="guia-note-box guia-note-box--after-video">
 						<strong>Advanced o Pro:</strong>
@@ -123,7 +161,6 @@ const otrasGuias = [
 				<header class="guia-section-head">
 					<p class="guia-eyebrow">Otras guías</p>
 					<h2>Enlaces relacionados</h2>
-					<p class="guia-section-sub guia-fork-hint">Elige tu guía:</p>
 				</header>
 				<ul class="guia-fork-list">
 					{

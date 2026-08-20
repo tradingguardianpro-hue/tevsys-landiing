@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona / Configuración — configurar-límites demovido (20 ago 2026 noche)
+
+**Qué:** quitado el bloque protagonista `#configurar-limites` de `/como-funciona` (competía con *Desde cero*). Casa del MP4: `/configuracion#configurar-limites`. En Cómo funciona: solo invite bajo **Preparar la protección**. MP4 reexport + poster `?v=20260820c` (overlay candado).
+
+**Dónde:** `como-funciona.astro` · `configuracion.astro` · assets · V12 **(cfg1minHome)**.
+
+**Commit:** `web(tevsys): move configurar-limites-1min to configuracion page`
+
+---
+
 ## Cómo funciona — «Configurar límites en un minuto» publicada (20 ago 2026 · MC-CF-026)
 
 **Qué:** bloque `#configurar-limites` entre *Desde cero* y *Siguiente nivel* (clips). MP4 ~1:15 + poster (panel protegido + frase de cierre). Enlace suave desde `/configuracion`. No entra en rejilla de micros.

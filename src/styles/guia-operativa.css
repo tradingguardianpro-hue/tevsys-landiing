@@ -465,3 +465,16 @@ html[data-theme='light'] .guia-page .guia-fork-link__arrow {
 .guia-page .guia-fork-link:hover .guia-fork-link__arrow {
 	transform: translateX(2px);
 }
+
+.guia-page .guia-embed video {
+	aspect-ratio: 16 / 9;
+	height: auto;
+	object-fit: contain;
+	background: #0a0a0a;
+}
+
+.guia-page .guia-duration {
+	opacity: 0.75;
+	font-weight: 500;
+}
+
