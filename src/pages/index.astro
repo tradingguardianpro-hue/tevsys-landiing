@@ -106,7 +106,9 @@ import settings from '../config/settings.js';
 				<h2 id="home-microclips-invite-title" class="tevsys-home-microclips-invite__title">
 					¿Quieres ver cómo reacciona en escenarios reales?
 				</h2>
-				<p class="tevsys-home-microclips-invite__lead">Clips de ~30 s. Escenario a escenario.</p>
+				<p class="tevsys-home-microclips-invite__lead">
+					Clips de ~30 s · y la guía <a href="/como-funciona#desde-cero">Desde cero</a> si cargas con operación abierta.
+				</p>
 				<a href="/como-funciona#mas-comportamientos" class="tevsys-home-microclips-invite__cta">
 					Ver microclips →
 				</a>
@@ -491,6 +493,15 @@ import settings from '../config/settings.js';
 		font-size: clamp(0.78rem, 1.5vw, 0.88rem);
 		letter-spacing: 0.02em;
 		color: rgba(180, 190, 205, 0.78);
+	}
+	.tevsys-home-microclips-invite__lead a {
+		color: rgba(245, 176, 65, 0.92);
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+		text-decoration-thickness: 1px;
+	}
+	.tevsys-home-microclips-invite__lead a:hover {
+		color: #ffc35a;
 	}
 	.tevsys-home-microclips-invite__cta {
 		display: inline-flex;

@@ -6,11 +6,21 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — guía Desde cero · MC-CF-002-G (20 ago 2026)
+
+**Qué:** bloque protagonista `#desde-cero` entre Nasdaq y las tres ramas. Guía ~57 s (observación pasiva + empezar de cero). MP4 + poster modal teal. Micro rama `#videoclip-pasiva` se mantiene. Home: mención suave en invite microclips (sin embed).
+
+**Dónde:** `como-funciona.astro` · `index.astro` invite · `public/videos/como-funciona/tevsys-guia-desde-cero.*` · catálogo TGP MC-CF-002-G · V12 **(desdeCeroPub)**.
+
+**Commit:** `web(tevsys): publish desde-cero guide on como-funciona`
+
+---
+
 ## Cómo funciona — MC-CF-002 empezar de cero · pasiva (19 ago 2026)
 
 **Qué:** primer clip en rama **Operación en curso** (antes del SML carry). Trade abierta sin configurar → pasiva → rechazo al bloquear → cierre/ancla. Ancla `#videoclip-pasiva`. MP4 ~36 s + poster (panel pasivo + overlay 2). `?v=20260819`. Acta lab AT **#6263243**.
 
-**Dónde:** `como-funciona.astro` rama 3 · catálogo TGP MC-CF-002 · V12 **(mcPasiva)**. Bloque protagonista *Desde cero* = paso B pendiente.
+**Dónde:** `como-funciona.astro` rama 3 · catálogo TGP MC-CF-002 · V12 **(mcPasiva)**. Bloque protagonista *Desde cero* = paso B → **publicado 20 ago** (`#desde-cero`, MC-CF-002-G).
 
 ---
 

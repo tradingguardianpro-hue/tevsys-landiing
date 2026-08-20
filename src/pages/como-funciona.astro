@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Presentación, microclips por ramas (preparar / protegido / operación en curso) y piezas del sistema. Cómo funciona tevsys en MT5.',
+		'Evidencia Nasdaq, guía Desde cero (observación pasiva) y microclips por ramas. Cómo funciona tevsys en MT5.',
 };
 
 /** Vídeo único de presentación (may 2026): evidencia Nasdaq ~4 min · YT 2f1rRmqkE1k. */
@@ -20,6 +20,22 @@ const presentationLeadVideo = {
 	/** Prueba: poster marca = chevrons grises home (`hero-tevsys-chevrons.png`) + tevsys minúsculas; más pequeño que hero. */
 	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-brand.jpg?v=20260816f',
 	youtubeWatch: 'https://youtu.be/2f1rRmqkE1k',
+};
+
+/** Guía política «Desde cero» + observación pasiva (20 ago 2026 · MC-CF-002-G). No sustituye micro rama `#videoclip-pasiva`. */
+const desdeCeroGuide = {
+	id: 'desde-cero',
+	eyebrow: 'Política de producto',
+	title: 'Desde cero, siempre',
+	titleAccent: 'cero',
+	blurb:
+		'Si cargas tevsys con operaciones abiertas, no protegemos encima. Entras en observación pasiva: te avisamos, no intervenimos; al cerrar, anclamos de cero.',
+	durationLabel: '~57 s',
+	videoSrc: '/videos/como-funciona/tevsys-guia-desde-cero.mp4?v=20260820',
+	posterSrc: '/videos/como-funciona/tevsys-guia-desde-cero-poster.jpg?v=20260820',
+	videoLabel: 'Guía ~57 s — observación pasiva y empezar de cero (MC-CF-002-G)',
+	microHref: '#videoclip-pasiva',
+	microLabel: 'Versión corta en clips → Operación en curso',
 };
 
 /** Transparencia sesión Nasdaq (may 2026) — público; pack completo en repo interno. */
@@ -305,6 +321,39 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 				</section>
 			</div>
 		</div>
+
+		<section class="how-desde-cero how-desde-cero--stage" id={desdeCeroGuide.id} aria-labelledby="how-desde-cero-title">
+			<div class="how-desde-cero__bg" aria-hidden="true"></div>
+			<div class="how-desde-cero__inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">{desdeCeroGuide.eyebrow}</p>
+					<h2 id="how-desde-cero-title">
+						Desde <span class="how-present-title__accent">{desdeCeroGuide.titleAccent}</span>, siempre
+						<span class="how-zero-duration"> ({desdeCeroGuide.durationLabel})</span>
+					</h2>
+					<p class="how-section-sub">{desdeCeroGuide.blurb}</p>
+				</header>
+				<article class="how-pair-cell how-desde-cero__cell">
+					<div class="how-embed how-embed--chrome">
+						<video
+							id="desde-cero-video"
+							controls
+							preload="metadata"
+							playsinline
+							poster={desdeCeroGuide.posterSrc}
+							title={desdeCeroGuide.videoLabel}>
+							<source src={desdeCeroGuide.videoSrc} type="video/mp4" />
+							Tu navegador no soporta reproducción de video HTML5.
+						</video>
+					</div>
+					<p class="how-desde-cero__bridge">
+						<a href={desdeCeroGuide.microHref} class="how-text-link">
+							{desdeCeroGuide.microLabel} →
+						</a>
+					</p>
+				</article>
+			</div>
+		</section>
 
 		<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
 			<div class="how-more__bg" aria-hidden="true"></div>
@@ -1280,6 +1329,45 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		font-size: 0.88rem;
 		font-weight: 600;
 		color: #f5b041;
+	}
+
+	/* Bloque guía Desde cero (20 ago 2026 · MC-CF-002-G) — entre Nasdaq y ramas. */
+	.how-desde-cero.how-desde-cero--stage {
+		position: relative;
+		overflow: visible;
+		max-width: min(56rem, 100%);
+		margin: clamp(1.75rem, 6vh, 3.5rem) auto clamp(1.5rem, 5vh, 3rem);
+		padding: clamp(1rem, 3.5vw, 1.75rem) clamp(0.75rem, 2.5vw, 1rem) clamp(1.25rem, 3.5vw, 2rem);
+		border-radius: clamp(0.5rem, 1.2vw, 0.875rem);
+		box-sizing: border-box;
+	}
+
+	html[data-theme='dark'] .how-desde-cero.how-desde-cero--stage {
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.055),
+			0 18px 48px rgba(0, 0, 0, 0.35);
+		background: linear-gradient(165deg, hsl(222 18% 9%) 0%, hsl(222 22% 6%) 55%, hsl(222 28% 4%) 100%);
+	}
+
+	html[data-theme='light'] .how-desde-cero.how-desde-cero--stage {
+		box-shadow: 0 0 0 1px rgba(15, 20, 30, 0.08), 0 12px 32px rgba(15, 20, 30, 0.08);
+		background: linear-gradient(165deg, #f7f5f1 0%, #efece6 100%);
+	}
+
+	.how-desde-cero__inner {
+		position: relative;
+		z-index: 1;
+		max-width: min(48rem, 100%);
+		margin: 0 auto;
+	}
+
+	.how-desde-cero__cell {
+		margin-top: clamp(0.85rem, 2.5vw, 1.25rem);
+	}
+
+	.how-desde-cero__bridge {
+		margin: 0.85rem 0 0;
+		text-align: center;
 	}
 
 	.how-more {
