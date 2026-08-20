@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — Desde cero: lead copy (20 ago 2026)
+
+**Qué:** lead bajo *Desde cero, siempre* → *Si cargas tevsys con operaciones ya abiertas, no activamos la protección. Entras en observación pasiva: te avisamos y no intervenimos. Cuando las cierras, empezamos de cero.*
+
+**Dónde:** `como-funciona.astro` · CONTENIDO_WEB.
+
+**Commit:** `web(tevsys): clarify desde-cero lead copy`
+
+---
+
 ## Cómo funciona — Desde cero: eyebrow Condición innegociable (20 ago 2026)
 
 **Qué:** eyebrow del bloque `#desde-cero` de *Política de producto* → **Condición innegociable**. Título y lead intactos.
