@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — Desde cero: eyebrow Condición innegociable (20 ago 2026)
+
+**Qué:** eyebrow del bloque `#desde-cero` de *Política de producto* → **Condición innegociable**. Título y lead intactos.
+
+**Dónde:** `como-funciona.astro` · V12 **(desdeCeroEyebrow)**.
+
+**Commit:** `web(tevsys): rename desde-cero eyebrow to condicion innegociable`
+
+---
+
 ## Cómo funciona — Desde cero: fix recorte + poster + sin puente (20 ago 2026)
 
 **Qué:** el MP4 estaba entero (1920×1080); en web se **recortaba** porque el bloque `#desde-cero` no tenía las mismas reglas de `<video>` que Nasdaq (`width` + `object-fit: contain` + `aspect-ratio`). Poster nuevo sin cartela inferior cortada. Eliminado enlace “Versión corta en clips”.
