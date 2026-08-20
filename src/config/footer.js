@@ -13,7 +13,10 @@ export const footerColumns = [
       },
       {
         label: 'Essential',
-        items: [{ title: 'Configuración', slug: '/configuracion' }],
+        items: [
+          { title: 'Configuración', slug: '/configuracion' },
+          { title: 'Configurar límites (~1 min)', slug: '/configuracion#configurar-limites' },
+        ],
       },
       {
         label: 'Advanced / Pro',

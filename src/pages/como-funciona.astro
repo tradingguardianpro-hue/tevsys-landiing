@@ -137,26 +137,15 @@ type MicroClipCard = {
 type MicroclipBranch = {
 	id: string;
 	title: string;
-	announcement: string;
+	/** Anuncio de rama; vacío si el título del clip ya lo dice (evita eco). */
+	announcement?: string;
 	clips: MicroClipCard[];
-};
-
-/** Leyenda puesta en marcha (no microclips) — entre Desde cero y clips ~30 s. */
-const puestaEnMarchaLegend = {
-	id: 'puesta-en-marcha',
-	eyebrow: 'Puesta en marcha',
-	lead: 'Instalar y fijar límites',
-	links: [
-		{ href: '/configuracion#configurar-limites', label: 'Cómo configurar tus límites en un minuto' },
-		{ href: '/instalacion', label: 'Cómo instalar' },
-	],
 };
 
 const microclipBranches: MicroclipBranch[] = [
 	{
 		id: 'rama-preparar',
 		title: 'Preparar la protección',
-		announcement: 'Fin de semana: deja la protección lista para el lunes.',
 		clips: [
 			{
 				title: 'Fin de semana: deja la protección lista para el lunes',
@@ -391,7 +380,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 									<h3 id={`${branch.id}-title`} class="how-rama__title">
 										<span class="how-present-title__accent">{branch.title}</span>
 									</h3>
-									<p class="how-rama__announcement">{branch.announcement}</p>
+									{branch.announcement ? (
+										<p class="how-rama__announcement">{branch.announcement}</p>
+									) : null}
 								</header>
 
 								{branch.clips.length > 0 ? (
@@ -445,32 +436,6 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							</section>
 						))
 					}
-				</section>
-
-				<section
-					class="how-puesta-marcha how-puesta-marcha--panel"
-					id={puestaEnMarchaLegend.id}
-					aria-labelledby="how-puesta-marcha-title">
-					<header class="how-section-head">
-						<p class="how-eyebrow how-eyebrow--center">{puestaEnMarchaLegend.eyebrow}</p>
-						<h2 id="how-puesta-marcha-title" class="how-puesta-marcha__lead">
-							{puestaEnMarchaLegend.lead}
-						</h2>
-					</header>
-					<ul class="how-puesta-marcha__links">
-						{
-							puestaEnMarchaLegend.links.map((link) => (
-								<li>
-									<a href={link.href}>
-										{link.label}
-										<span class="how-puesta-marcha__arrow" aria-hidden="true">
-											→
-										</span>
-									</a>
-								</li>
-							))
-						}
-					</ul>
 				</section>
 
 				<p class="how-more-act-cut">
@@ -1414,64 +1379,6 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	html[data-theme='dark'] .how-desde-cero .how-embed video {
 		filter: brightness(1.06) contrast(1.03);
-	}
-
-	.how-puesta-marcha {
-		max-width: min(42rem, 100%);
-		margin: clamp(1.75rem, 5vh, 2.75rem) auto clamp(1.25rem, 3.5vh, 2rem);
-		padding: clamp(1rem, 3vw, 1.35rem) clamp(1rem, 3vw, 1.5rem);
-		text-align: center;
-		box-sizing: border-box;
-		border-radius: clamp(0.45rem, 1vw, 0.75rem);
-	}
-
-	.how-puesta-marcha--panel {
-		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
-		background: linear-gradient(165deg, hsl(222 16% 11%) 0%, hsl(222 20% 7%) 100%);
-	}
-
-	html[data-theme='light'] .how-puesta-marcha--panel {
-		box-shadow: 0 0 0 1px rgba(15, 20, 30, 0.08);
-		background: linear-gradient(165deg, #f7f5f1 0%, #efece6 100%);
-	}
-
-	.how-puesta-marcha__lead {
-		margin: 0.35rem 0 0;
-		font-size: clamp(1.2rem, 2.7vw, 1.42rem);
-		font-weight: 600;
-		letter-spacing: -0.01em;
-		line-height: 1.35;
-	}
-
-	.how-puesta-marcha__links {
-		list-style: none;
-		margin: clamp(0.95rem, 2.4vw, 1.25rem) 0 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.6rem;
-	}
-
-	.how-puesta-marcha__links a {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		color: inherit;
-		text-decoration: underline;
-		text-underline-offset: 0.18em;
-		font-size: 0.98rem;
-		line-height: 1.4;
-		opacity: 0.94;
-	}
-
-	.how-puesta-marcha__links a:hover {
-		opacity: 1;
-	}
-
-	.how-puesta-marcha__arrow {
-		text-decoration: none;
-		opacity: 0.75;
 	}
 
 	.how-more {

@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — opción 2: sin bloque Puesta en marcha (21 ago 2026)
+
+**Qué:** quitado `#puesta-en-marcha` de Cómo funciona (interrumpía clips → 4 piezas). Casa: `/configuracion#configurar-limites` + footer Guías *Configurar límites (~1 min)*. Rama Preparar: sin eco del título del clip encima del vídeo.
+
+**Commit:** `web(tevsys): remove puesta-en-marcha block; fix preparar title echo`
+
+---
+
 ## Cómo funciona — MC-CF-021 II reconfigurar (20 ago 2026)
 
 **Qué:** remake `tevsys-mc-programado-lunes-30s-II.mp4` (~30,0 s) · overlay cierre *Puedes reconfigurar las veces que necesites* · poster frame ~27 s (panel PROGRAMADO + frase). Ancla `#videoclip-programado-lunes` · `?v=20260820`.
