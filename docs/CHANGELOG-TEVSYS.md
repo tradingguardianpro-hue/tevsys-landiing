@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — chevron intro un poco más pequeño (20 ago 2026)
+
+**Qué:** en la carga del hero (chevron que sale y acompaña las 4 frases), tamaño intro ~12–15 % menor en desktop y móvil. Solo fase `--intro`; solo/batch sin cambio. Motion/KITT intactos.
+
+**Dónde:** `HomeHeroSection.astro` · `.hero-pillar-fade__mark--intro .hero-pillar-fade__mark-icon`.
+
+**Commit:** `web(tevsys): shrink home hero intro chevron slightly`
+
+---
+
 ## Cómo funciona — guía Desde cero · MC-CF-002-G (20 ago 2026)
 
 **Qué:** bloque protagonista `#desde-cero` entre Nasdaq y las tres ramas. Guía ~57 s (observación pasiva + empezar de cero). MP4 + poster modal teal. Micro rama `#videoclip-pasiva` se mantiene. Home: mención suave en invite microclips (sin embed).
