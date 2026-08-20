@@ -78,7 +78,8 @@ Documento de contenido/copy actual para revisión de equipo.
 - **CTA móvil (11 ago 2026 — ✅):** en ≤768px el ámbar es **más pequeño/estrecho** (menos “cartelón”); desktop sin cambio. `HomeHeroSection.astro` · `CHANGELOG` *Hero — Descargar demo… móvil*.
 - **CTA secundario (jul 2026 vigente):** `Ver evidencia (~4 min)` → `/como-funciona?play=1#evidencia-nasdaq-100` (pieza Nasdaq; no confundir con ruta antigua `/go/evidencia-5min` HyperClose).
 - **Mid-home microclips (16 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / lead con enlace a `#desde-cero` + CTA `Ver microclips →` → `/como-funciona#mas-comportamientos` (**20 ago:** mención suave guía Desde cero).
-- **Guía Desde cero (20 ago 2026):** `/como-funciona#desde-cero` · ~57 s · `tevsys-guia-desde-cero.mp4` · observación pasiva + empezar de cero · micro rama `#videoclip-pasiva` se mantiene. Commit: `web(tevsys): publish desde-cero guide on como-funciona`.
+- **Guía Desde cero (20 ago 2026):** `/como-funciona#desde-cero` · ~57 s · `tevsys-guia-desde-cero.mp4` · observación pasiva + empezar de cero · micro rama `#videoclip-pasiva` se mantiene. **Fix mismo día:** CSS sin recorte · poster sin cartela · sin puente “versión corta”. `?v=20260820b`.
+- **i18n ES|EN (20 ago, pendiente):** oleada 1 home + Cómo funciona + contacto; selector header; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:
   - **MC-CF-021** `#videoclip-programado-lunes` (rama 1): `¿Cómo dejas la protección lista para el lunes?` · `➜ GUARDAR PARA EL LUNES` · `➜ Confirma tus límites` · `➜ PROGRAMADO · LUNES — queda fijado` + `🡰 El engranaje pasa a teal`

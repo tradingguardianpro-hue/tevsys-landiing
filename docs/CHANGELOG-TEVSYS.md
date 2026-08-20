@@ -6,6 +6,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — Desde cero: fix recorte + poster + sin puente (20 ago 2026)
+
+**Qué:** el MP4 estaba entero (1920×1080); en web se **recortaba** porque el bloque `#desde-cero` no tenía las mismas reglas de `<video>` que Nasdaq (`width` + `object-fit: contain` + `aspect-ratio`). Poster nuevo sin cartela inferior cortada. Eliminado enlace “Versión corta en clips”.
+
+**Dónde:** `como-funciona.astro` · `tevsys-guia-desde-cero-poster.jpg` · `?v=20260820b` · V12 **(desdeCeroFix)**.
+
+**Commit:** `web(tevsys): fix desde-cero video crop and poster`
+
+---
+
+## Web — i18n ES|EN apuntado (20 ago 2026)
+
+**Qué:** frente pendiente paso a paso (selector header; oleada 1 home + cómo-funciona + contacto). Agenda TGP + V12 **(i18nWeb)**. No implementar en esta pasada.
+
+---
+
 ## Home — chevron intro un poco más pequeño (20 ago 2026)
 
 **Qué:** en la carga del hero (chevron que sale y acompaña las 4 frases), tamaño intro ~12–15 % menor en desktop y móvil. Solo fase `--intro`; solo/batch sin cambio. Motion/KITT intactos.
