@@ -6,6 +6,32 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — «Configurar límites en un minuto» publicada (20 ago 2026 · MC-CF-026)
+
+**Qué:** bloque `#configurar-limites` entre *Desde cero* y *Siguiente nivel* (clips). MP4 ~1:15 + poster (panel protegido + frase de cierre). Enlace suave desde `/configuracion`. No entra en rejilla de micros.
+
+**Dónde:** `como-funciona.astro` · `configuracion.astro` · `public/videos/como-funciona/tevsys-configurar-limites-1min.*` · `?v=20260820` · catálogo TGP MC-CF-026 · V12 **(cfg1minPub)**.
+
+**Commit:** `web(tevsys): publish configurar-limites-1min on como-funciona`
+
+---
+
+## Prompt DeepSeek — §22b catch-up web 19–20 ago (20 ago 2026)
+
+**Qué:** maestro `PROMPT_MAESTRO_DEEPSEEK_TEVSYS.md` §0.1b + **§22b** (pegable). Espejo TGP. Hueco bug panel dígito → ampliar cuando cierre el otro chat.
+
+**Commit:** `web(tevsys): add DeepSeek catch-up 22b for como-funciona week`
+
+---
+
+## Cómo funciona — «Configurar límites en un minuto» (20 ago 2026 · guion → **publicado**)
+
+**Qué:** pieza ~1:15 (MC-CF-026), no micro. Bloque `#configurar-limites` publicado · espejo `/configuracion`. Ver entrada *publicada* arriba.
+
+**Commit:** `web(tevsys): publish configurar-limites-1min on como-funciona`
+
+---
+
 ## Cómo funciona — Desde cero: lead copy (20 ago 2026)
 
 **Qué:** lead bajo *Desde cero, siempre* → *Si cargas tevsys con operaciones ya abiertas, no activamos la protección. Entras en observación pasiva: te avisamos y no intervenimos. Cuando las cierras, empezamos de cero.*

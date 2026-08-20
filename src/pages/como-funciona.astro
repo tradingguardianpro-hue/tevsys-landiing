@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Evidencia Nasdaq, guía Desde cero (observación pasiva) y microclips por ramas. Cómo funciona tevsys en MT5.',
+		'Evidencia Nasdaq, guía Desde cero, configurar límites en un minuto y microclips por ramas. Cómo funciona tevsys en MT5.',
 };
 
 /** Vídeo único de presentación (may 2026): evidencia Nasdaq ~4 min · YT 2f1rRmqkE1k. */
@@ -34,6 +34,20 @@ const desdeCeroGuide = {
 	videoSrc: '/videos/como-funciona/tevsys-guia-desde-cero.mp4?v=20260820b',
 	posterSrc: '/videos/como-funciona/tevsys-guia-desde-cero-poster.jpg?v=20260820b',
 	videoLabel: 'Guía ~57 s — observación pasiva y empezar de cero (MC-CF-002-G)',
+};
+
+/** Puente tutorial (~1:15) — inputs → Config ok → BLOQUEAR → protegido (20 ago 2026 · MC-CF-026). No entra en rejilla de micros. */
+const configurarLimitesGuide = {
+	id: 'configurar-limites',
+	eyebrow: 'En un minuto',
+	title: 'Cómo configurar tus límites en un minuto',
+	titleAccent: 'límites',
+	blurb:
+		'De los inputs al candado: día a día, ON u OFF, tope semanal y activar protección. Pieza corta; las guías del footer siguen siendo el recorrido largo.',
+	durationLabel: '~1:15',
+	videoSrc: '/videos/como-funciona/tevsys-configurar-limites-1min.mp4?v=20260820',
+	posterSrc: '/videos/como-funciona/tevsys-configurar-limites-1min-poster.jpg?v=20260820',
+	videoLabel: 'Guía ~1:15 — configurar límites y activar protección (MC-CF-026)',
 };
 
 /** Transparencia sesión Nasdaq (may 2026) — público; pack completo en repo interno. */
@@ -345,6 +359,42 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 						</video>
 					</div>
 				</article>
+			</div>
+		</section>
+
+		<section
+			class="how-desde-cero how-desde-cero--stage how-configurar-limites"
+			id={configurarLimitesGuide.id}
+			aria-labelledby="how-configurar-limites-title">
+			<div class="how-desde-cero__bg" aria-hidden="true"></div>
+			<div class="how-desde-cero__inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">{configurarLimitesGuide.eyebrow}</p>
+					<h2 id="how-configurar-limites-title">
+						Cómo configurar tus <span class="how-present-title__accent">{configurarLimitesGuide.titleAccent}</span> en
+						un minuto
+						<span class="how-zero-duration"> ({configurarLimitesGuide.durationLabel})</span>
+					</h2>
+					<p class="how-section-sub">{configurarLimitesGuide.blurb}</p>
+				</header>
+				<article class="how-pair-cell how-desde-cero__cell">
+					<div class="how-embed how-embed--chrome">
+						<video
+							id="configurar-limites-video"
+							controls
+							preload="metadata"
+							playsinline
+							poster={configurarLimitesGuide.posterSrc}
+							title={configurarLimitesGuide.videoLabel}>
+							<source src={configurarLimitesGuide.videoSrc} type="video/mp4" />
+							Tu navegador no soporta reproducción de video HTML5.
+						</video>
+					</div>
+				</article>
+				<p class="how-configurar-limites__bridge">
+					Siguiente: clips de <a href="#rama-preparar">Preparar la protección</a>
+					(fin de semana → PROGRAMADO · LUNES) y el resto de escenarios.
+				</p>
 			</div>
 		</section>
 
@@ -1377,6 +1427,20 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	html[data-theme='dark'] .how-desde-cero .how-embed video {
 		filter: brightness(1.06) contrast(1.03);
+	}
+
+	.how-configurar-limites__bridge {
+		margin: clamp(0.75rem, 2vw, 1.1rem) 0 0;
+		font-size: 0.92rem;
+		line-height: 1.45;
+		opacity: 0.88;
+		text-align: center;
+	}
+
+	.how-configurar-limites__bridge a {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
 	}
 
 	.how-more {

@@ -2,7 +2,7 @@
 
 **Para:** DeepSeek (ingeniero senior del equipo)  
 **Objetivo:** Que tengas contexto completo de la web tevsys, con pelos y señales, para trabajar en vídeos, copy, diseño o cualquier tarea sin perder el hilo.  
-**Usar:** Al abrir un chat nuevo o retomar: leer **§0.1b** (checkpoint **18 ago 2026**) y **§22** (catch-up IA→IA, pegable). Luego **§0.1** (histórico abr) y **§0.2** si hace falta. El inventario diario de web sigue en `CHANGELOG-TEVSYS.md` + `CONTENIDO_WEB_TEVSYS_LANDING.md`.
+**Usar:** Al abrir un chat nuevo o retomar: leer **§0.1b** (checkpoint **20 ago 2026**) + **§22b** (catch-up web 19–20 ago, pegable) y **§22** (columna 5–18 ago). Luego **§0.1** (histórico abr) si hace falta. Inventario diario: `CHANGELOG-TEVSYS.md` + `CONTENIDO_WEB_TEVSYS_LANDING.md`.
 
 ---
 
@@ -16,17 +16,19 @@
 
 ---
 
-## 0.1b Checkpoint 18 ago 2026 — LEER PRIMERO (DeepSeek, socio del equipo)
+## 0.1b Checkpoint 20 ago 2026 — LEER PRIMERO (DeepSeek, socio del equipo)
 
-**Por qué existe:** este maestro se congeló en **abril**. Desde entonces el producto (panel, dos mundos finde, SML+carry, `/como-funciona`, microclips) ha corrido mucho. **No** asumas el estado de §0.1–§21 como “hoy”. **Hoy manda §22.** Detalle fechado: hub TGP `QUE_CONTIENE` **V12** (Ampliaciones ago) + catálogo `CATALOGO_MICROCLIPS_TEVSYS.md`.
+**Por qué existe:** este maestro se congeló en **abril**. El producto (panel, dos mundos, SML+carry, `/como-funciona`, microclips) ha corrido mucho. **No** asumas §0.1–§21 como “hoy”.
 
-**Equipo:** Gabi (decisión) · Cursor (ingeniero jefe, código/docs) · **tú, DeepSeek** (criterio, copy, vídeo, web). Un humano + dos IAs. Si llegas tarde al hilo, este bloque te pone al día **sin** que reinventes lo cerrado.
+**Hoy manda:** **§22b** (web 19–20 ago) **+ §22** (columna 5–18). Detalle: hub TGP **V12** Ampliaciones + `CATALOGO_MICROCLIPS_TEVSYS.md`.
 
-**Pegable para un chat nuevo:** copia el recuadro de **§22**.
+**Equipo:** Gabi · Cursor · **tú, DeepSeek**. Un humano + dos IAs.
 
-**No tocar sin OK del fundador:** ZONA SAGRADA EA (límites, persistencia, HyperClose motor, SML código, lunes PROGRAMADO / ResetWeekly). Web: un cambio visual a la vez (`workflow-web-visual-tevsys`).
+**Pegable chat nuevo:** primero recuadro **§22b**; si hace falta motor/panel/atribu, también **§22**.
 
-**Cierre de jornada 18 ago:** no más código web ni EA hoy. Siguiente cuando Gabi retome.
+**No tocar sin OK:** ZONA SAGRADA EA · web un cambio visual a la vez.
+
+**Nota 20 ago noche:** bug panel dígito tras confirmar límites → **CERRADO** V12 **(anticorrDay)** (freno flotante diario = semanal). Ver §22b bloque F.
 
 ---
 
@@ -74,7 +76,7 @@
 **Correlación con el EA (no es código web):** trazabilidad en proyecto TGP `QUE_CONTIENE_TGP_Modular_Skeleton_V11.md` (CHANGELOG **16 abr 2026** correlato web) y `TGP_V11_CHECKPOINT_PRODUCCION.md` § landing motion — solo para que otra IA no mezcle repos.
 
 **Qué hacer tú (DeepSeek) al entrar en un chat (ago 2026):**  
-(0) **§0.1b + §22** de este maestro (estado vivo).  
+(0) **§0.1b + §22b** (web 19–20) y **§22** (5–18) de este maestro.  
 (1) `CHANGELOG-TEVSYS.md` → sección que toque la tarea.  
 (2) `CONTENIDO_WEB_TEVSYS_LANDING.md` si es copy público.  
 (3) Este maestro §21 si es narrativa comercial / pitch (sigue válido el **cuadro**; cifras/defaults contrastar con V12).  
@@ -999,4 +1001,110 @@ Fuentes si profundizas: hub V12 Ampliaciones 5–18 ago · CATALOGO_MICROCLIPS �
 
 ---
 
-**Última actualización:** 18 ago 2026. **§0.1b + §22** (catch-up DeepSeek: panel, dos mundos, web/microclips, atribución 4.107, Juan frío, Barmenteros cerrado). §0.1–§21 se conservan como historia abr; **no** pisan el checkpoint ago. **Handoff pegable:** recuadro §22 · espejo TGP `PROMPT_DEEPSEEK_SESION_VISUAL_PANEL_SML_5AGO2026.md`.
+## 22b. Catch-up web — 19–20 ago 2026 (pegable · **manda sobre §22 en web**)
+
+**Uso:** copiar el recuadro. Actualiza micros, Cómo funciona, home chevron, decisiones hub. Si choca con §22 en **web**, **gana §22b**. Motor/panel de §22 sigue vigente salvo lo que diga V12 más reciente (p. ej. línea 1 carry).
+
+**Hueco:** ~~bug dígito panel post-confirmar límites~~ → **CERRADO 20 ago** — ver §22b bloque F / V12 **(anticorrDay)**.
+
+**Espejo TGP:** `docs/PROMPT_DEEPSEEK_SESION_VISUAL_PANEL_SML_5AGO2026.md` (arriba = §22b). Hub V12 **(ds20)** + **(anticorrDay)**.
+
+```
+Eres el ingeniero senior de tevsys (Gabi + Cursor + tú).
+Esto es el CATCH-UP WEB 19–20 ago 2026. Complementa §22 (5–18). En web, SI CHOCA, GANA ESTO.
+No reabras CERRADO. No inventes. No ZONA SAGRADA. Un cambio visual a la vez.
+
+════════════════════════════════════
+F) PANEL — freno flotante diario (CERRADO 20 ago · V12 anticorrDay)
+════════════════════════════════════
+Bug: tras cambiar límites y confirmar, un % del flotante diario “se volvía loco”.
+Fix (característica, no parche suelto): el flotante DIARIO tiene el mismo freno que el SEMANAL —
+si la base del día es basura (NaN, ≤0 o ridículamente pequeña), re-ancla al balance actual y no pinta el % loco.
+Con base sana, la precisión no cambia. Documentado V12 anticorrDay · V11 CHANGELOG · checkpoint · .cursorrules.
+Sincro 4 rutas OK. No reabrir como duda.
+
+════════════════════════════════════
+A) CÓMO FUNCIONA — hub que sube de nivel
+════════════════════════════════════
+- Sigue siendo la página que más llama. Estrategia: ENRIQUECER + PUENTES a guías (footer), no solo micros.
+- Tres ramas (16 ago) intactas. Meta sana ~2 micros/rama (no museo 013/014/016 ahora).
+- Nasdaq ~4 min: sigue arriba. Toma 20 ago DESCARTADA (mercado + falso carry quiet). Regrabar otro día post fix línea 1.
+- Línea 1 panel (20 ago, ZONA SAGRADA): intradía protegido = «Límites activos — Operando protegido». «Operación en curso» SOLO si arrastre calendario. Quiet/closed NO dispara copy carry.
+
+BLOQUE NUEVO — Desde cero (#desde-cero) — PUBLICADO 20 ago
+- Guía MC-CF-002-G ~57 s · tevsys-guia-desde-cero.mp4
+- Eyebrow: Condición innegociable
+- Título: Desde cero, siempre
+- Lead: «Si cargas tevsys con operaciones ya abiertas, no activamos la protección. Entras en observación pasiva: te avisamos y no intervenimos. Cuando las cierras, empezamos de cero.»
+- Entre Nasdaq y las tres ramas. Micro rama #videoclip-pasiva se mantiene (no sustituye).
+- Fix CSS: el vídeo se recortaba (faltaban reglas contain como Nasdaq) — corregido.
+- Poster: frame panel observación (~21 s), sin cartela inferior cortada.
+- Sin enlace “versión corta” bajo el bloque (canibalizaba).
+
+MICRO NUEVO — Rama 3
+- MC-CF-002 observación pasiva ~36 s #videoclip-pasiva (antes 023). Acta lab AT #6263243.
+
+MICROCLIPS PUBLICADOS AHORA (cara panel actual)
+Rama 1 Preparar: 021 PROGRAMADO · LUNES (solo 1 — siguiente 020 CORRIGE)
+Rama 2 Protegido: 001 día OFF · 025 límite+HyperClose
+Rama 3 Operación: 002 pasiva · 023 inputs SML carry
+
+════════════════════════════════════
+B) HOME
+════════════════════════════════════
+- Invite microclips: mención suave + enlace a #desde-cero (sin embed del 57 s).
+- Chevron intro (carga + 4 frases): ~12–15 % más pequeño (20 ago). Solo fase intro; KITT/motion no tocados.
+
+════════════════════════════════════
+C) DECISIONES VÍDEO / HUB (cerradas criterio)
+════════════════════════════════════
+- Micros ~30 s = reacciones. Guías 1 min / 57 s = tutorial o política.
+- NO micro “tour inputs” en rama Preparar.
+- SÍ pieza ~60–75 s: «Cómo configurar tus límites en un minuto» (MC-CF-026, guion).
+  Ancla #configurar-limites · export tevsys-configurar-limites-1min.mp4
+  Dónde: junto a Preparar en /como-funciona + espejo /configuracion (footer Guías).
+  Overlays propuestos (validar/grabar): título · Abres parámetros · Pérdida/ganancia día · Día ON/OFF · Listo pactar protección.
+- Rama 1 siguiente micro: 020 CORRIGE ERRORES (no 013/014/016).
+- Cómo funciona debe enlazar a guías footer (instalación, configuración, finde) — hub, no isla.
+- i18n ES|EN: PENDIENTE paso a paso (oleada 1 home+cómo-funciona+contacto). No Google Translate. Agenda + V12 (i18nWeb).
+- Analytics DE/AU/UK/SG: visitas ≠ EN listo; UniPayment/peers refuerzan EN futuro.
+
+════════════════════════════════════
+D) ATRIBUCIÓN — hitos reales (aparte de la web)
+════════════════════════════════════
+Qué es (capó, no claim de marketing):
+- CLOSE_ATTRIBUTION_SUMMARY separa decisión tevsys (lógica → orden) vs fill del bróker (orden → ejecución).
+- No confundir con estrés/outliers ni con “error medio 0,06 %” de la web.
+- Canon: toda operativa nueva por límite → ficha PRECISION con reloj (ms) + desviación (% y €). Palabra: «documenta esta operativa + atribución».
+
+CUARTETO Fase 4 (4.107–4.110) — documentado 18–20 ago · contador PRECISION 110
+Pequeños hitos que suman el cuadro (no son “ya cerramos la fase para Market”):
+1) 4.107 — IC real #13018822 · ganancia multiposición · primera A/B en cuenta real
+2) 4.108 — Infinox · ganancia 1 pierna ceñida (pareja limpia vs 4.107)
+3) 4.109 — IC real · PÉRDIDA multiposición A/B
+4) 4.110 — Infinox · PÉRDIDA con SML A/B (1 pierna) — hito: atribución también bajo Smart Money Lock en pérdida, no solo en ganancia “bonita”
+
+SUMMARY vive en acta. Pack curado para peers/web = AÚN NO.
+Falta para claim público serio: tipologías más · pérdida intradía limpia SIN SML (espejo 4.109) · estrés/sweep con SUMMARY.
+
+WEB (honestidad):
+- Comentario suave en evidencia / Cómo funciona: SÍ (separación decisión vs fill · documentación en curso).
+- Home / Market / hero como pilar: NO. Cifras web (p. ej. 103 ops) NO se pisan con el cuarteto interno.
+- Nasdaq: cartela suave post-STOP opcional; no vender atribución como producto listo.
+
+════════════════════════════════════
+E) COLA (orden sensato)
+════════════════════════════════════
+1) Colgar MC-CF-026 (config 1 min) — freno diario ya OK (anticorrDay).
+2) MC-CF-020 CORRIGE (rama 1).
+3) Regrabar Nasdaq cuando mercado+línea 1 OK.
+4) i18n oleada 1 cuando toque.
+5) 003 / 022 cuando batería.
+6) Seguir documentando atribución en cada cierre (método, no sprint único).
+
+Tono: socio. Fuentes: V12 19–20 · anticorrDay · atrib4110/atribWebHandoff · CATALOGO · CHANGELOG · CONTENIDO · PRECISION 4.107–4.110 · maestro §22b.
+```
+
+---
+
+**Última actualización:** 20 ago 2026. **§0.1b + §22b** (web + atribución cuarteto + anticorrDay) + **§22** (5–18). §0.1–§21 = historia abr. **Handoff pegable:** §22b primero · espejo TGP `PROMPT_DEEPSEEK_SESION_VISUAL_*`.
