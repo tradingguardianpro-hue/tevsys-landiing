@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — Puesta en marcha visible de nuevo (21 ago 2026)
+
+**Qué:** corregido exceso de esconder el minuto de límites. Vuelve `#puesta-en-marcha` tras *Desde cero* / antes de clips · panel · enlace primario *Cómo configurar tus límites en un minuto* → `/configuracion#configurar-limites` (ahí está el MP4). Footer Guías se mantiene.
+
+**Commit:** `web(tevsys): restore puesta-en-marcha invite before microclips`
+
+---
+
 ## Cómo funciona — opción 2: sin bloque Puesta en marcha (21 ago 2026)
 
 **Qué:** quitado `#puesta-en-marcha` de Cómo funciona (interrumpía clips → 4 piezas). Casa: `/configuracion#configurar-limites` + footer Guías *Configurar límites (~1 min)*. Rama Preparar: sin eco del título del clip encima del vídeo.

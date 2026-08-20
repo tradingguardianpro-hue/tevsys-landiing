@@ -142,6 +142,17 @@ type MicroclipBranch = {
 	clips: MicroClipCard[];
 };
 
+/** Leyenda visible: instalar + minuto de límites (alta intención de clic). Casa del MP4 = /configuracion. */
+const puestaEnMarchaLegend = {
+	id: 'puesta-en-marcha',
+	eyebrow: 'Puesta en marcha',
+	lead: 'Instalar y fijar límites',
+	links: [
+		{ href: '/configuracion#configurar-limites', label: 'Cómo configurar tus límites en un minuto' },
+		{ href: '/instalacion', label: 'Cómo instalar' },
+	],
+};
+
 const microclipBranches: MicroclipBranch[] = [
 	{
 		id: 'rama-preparar',
@@ -346,6 +357,32 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					</div>
 				</article>
 			</div>
+		</section>
+
+		<section
+			class="how-puesta-marcha how-puesta-marcha--panel"
+			id={puestaEnMarchaLegend.id}
+			aria-labelledby="how-puesta-marcha-title">
+			<header class="how-section-head">
+				<p class="how-eyebrow how-eyebrow--center">{puestaEnMarchaLegend.eyebrow}</p>
+				<h2 id="how-puesta-marcha-title" class="how-puesta-marcha__lead">
+					{puestaEnMarchaLegend.lead}
+				</h2>
+			</header>
+			<ul class="how-puesta-marcha__links">
+				{
+					puestaEnMarchaLegend.links.map((link) => (
+						<li>
+							<a class:list={[link.href.includes('configurar-limites') && 'how-puesta-marcha__link--primary']} href={link.href}>
+								{link.label}
+								<span class="how-puesta-marcha__arrow" aria-hidden="true">
+									→
+								</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
 		</section>
 
 		<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
@@ -1379,6 +1416,71 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	html[data-theme='dark'] .how-desde-cero .how-embed video {
 		filter: brightness(1.06) contrast(1.03);
+	}
+
+	/* Puesta en marcha: visible tras Desde cero, antes de clips (no embebe el MP4; enlace a /configuracion). */
+	.how-puesta-marcha {
+		max-width: min(42rem, 100%);
+		margin: clamp(1.75rem, 5vh, 2.75rem) auto clamp(1.25rem, 3.5vh, 2rem);
+		padding: clamp(1.1rem, 3.2vw, 1.5rem) clamp(1rem, 3vw, 1.5rem);
+		text-align: center;
+		box-sizing: border-box;
+		border-radius: clamp(0.45rem, 1vw, 0.75rem);
+	}
+
+	.how-puesta-marcha--panel {
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07);
+		background: linear-gradient(165deg, hsl(222 16% 11%) 0%, hsl(222 20% 7%) 100%);
+	}
+
+	html[data-theme='light'] .how-puesta-marcha--panel {
+		box-shadow: 0 0 0 1px rgba(15, 20, 30, 0.08);
+		background: linear-gradient(165deg, #f7f5f1 0%, #efece6 100%);
+	}
+
+	.how-puesta-marcha__lead {
+		margin: 0.35rem 0 0;
+		font-size: clamp(1.22rem, 2.8vw, 1.45rem);
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		line-height: 1.35;
+	}
+
+	.how-puesta-marcha__links {
+		list-style: none;
+		margin: clamp(1rem, 2.5vw, 1.35rem) 0 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.65rem;
+	}
+
+	.how-puesta-marcha__links a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+		font-size: 1rem;
+		line-height: 1.4;
+		opacity: 0.94;
+	}
+
+	.how-puesta-marcha__link--primary {
+		font-weight: 600;
+		font-size: 1.05rem;
+		opacity: 1;
+	}
+
+	.how-puesta-marcha__links a:hover {
+		opacity: 1;
+	}
+
+	.how-puesta-marcha__arrow {
+		text-decoration: none;
+		opacity: 0.75;
 	}
 
 	.how-more {
