@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — Puesta en marcha antes de las 4 piezas (20 ago 2026)
+
+**Qué:** leyenda *Instalar y fijar límites* sale del hueco entre Desde cero y clips; ahora **después de microclips**, justo **antes de Las cuatro piezas**, con panel suave (un poco más de presencia, no hero).
+
+**Commit:** `web(tevsys): move puesta-en-marcha before four feature cards`
+
+---
+
 ## Cómo funciona — leyenda Puesta en marcha (20 ago 2026)
 
 **Qué:** entre *Desde cero* y *Siguiente nivel*: eyebrow *Puesta en marcha* · lead **Instalar y fijar límites** · enlaces a `/configuracion#configurar-limites` e `/instalacion`. Rama Preparar: anuncio solo del clip (sin “candado” ni “~30 s” mezclado con el minuto).
