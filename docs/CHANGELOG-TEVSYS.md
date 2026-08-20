@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — leyenda Puesta en marcha (20 ago 2026)
+
+**Qué:** entre *Desde cero* y *Siguiente nivel*: eyebrow *Puesta en marcha* · lead **Instalar y fijar límites** · enlaces a `/configuracion#configurar-limites` e `/instalacion`. Rama Preparar: anuncio solo del clip (sin “candado” ni “~30 s” mezclado con el minuto).
+
+**Commit:** `web(tevsys): add puesta-en-marcha legend on como-funciona`
+
+---
+
 ## Cómo funciona / Configuración — configurar-límites demovido (20 ago 2026 noche)
 
 **Qué:** quitado el bloque protagonista `#configurar-limites` de `/como-funciona` (competía con *Desde cero*). Casa del MP4: `/configuracion#configurar-limites`. En Cómo funciona: solo invite bajo **Preparar la protección**. MP4 reexport + poster `?v=20260820c` (overlay candado).

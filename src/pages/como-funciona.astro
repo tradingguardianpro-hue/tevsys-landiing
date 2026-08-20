@@ -138,19 +138,25 @@ type MicroclipBranch = {
 	id: string;
 	title: string;
 	announcement: string;
-	/** Frase puente bajo el anuncio (p. ej. tutorial límites → /configuracion). */
-	inviteHref?: string;
-	inviteLabel?: string;
 	clips: MicroClipCard[];
+};
+
+/** Leyenda puesta en marcha (no microclips) — entre Desde cero y clips ~30 s. */
+const puestaEnMarchaLegend = {
+	id: 'puesta-en-marcha',
+	eyebrow: 'Puesta en marcha',
+	lead: 'Instalar y fijar límites',
+	links: [
+		{ href: '/configuracion#configurar-limites', label: 'Cómo configurar tus límites en un minuto' },
+		{ href: '/instalacion', label: 'Cómo instalar' },
+	],
 };
 
 const microclipBranches: MicroclipBranch[] = [
 	{
 		id: 'rama-preparar',
 		title: 'Preparar la protección',
-		announcement: 'Dejas reglas listas. Candado aún no. Clips ~30 s.',
-		inviteHref: '/configuracion#configurar-limites',
-		inviteLabel: 'Cómo configurar tus límites en un minuto →',
+		announcement: 'Fin de semana: deja la protección lista para el lunes.',
 		clips: [
 			{
 				title: 'Fin de semana: deja la protección lista para el lunes',
@@ -353,6 +359,32 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			</div>
 		</section>
 
+		<section
+			class="how-puesta-marcha"
+			id={puestaEnMarchaLegend.id}
+			aria-labelledby="how-puesta-marcha-title">
+			<header class="how-section-head">
+				<p class="how-eyebrow how-eyebrow--center">{puestaEnMarchaLegend.eyebrow}</p>
+				<h2 id="how-puesta-marcha-title" class="how-puesta-marcha__lead">
+					{puestaEnMarchaLegend.lead}
+				</h2>
+			</header>
+			<ul class="how-puesta-marcha__links">
+				{
+					puestaEnMarchaLegend.links.map((link) => (
+						<li>
+							<a href={link.href}>
+								{link.label}
+								<span class="how-puesta-marcha__arrow" aria-hidden="true">
+									→
+								</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+
 		<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
 			<div class="how-more__bg" aria-hidden="true"></div>
 			<div class="how-more__sweep" aria-hidden="true"></div>
@@ -386,11 +418,6 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 										<span class="how-present-title__accent">{branch.title}</span>
 									</h3>
 									<p class="how-rama__announcement">{branch.announcement}</p>
-									{branch.inviteHref && branch.inviteLabel ? (
-										<p class="how-rama__invite">
-											<a href={branch.inviteHref}>{branch.inviteLabel}</a>
-										</p>
-									) : null}
 								</header>
 
 								{branch.clips.length > 0 ? (
@@ -1389,21 +1416,51 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		filter: brightness(1.06) contrast(1.03);
 	}
 
-	.how-rama__invite {
-		margin: 0.55rem 0 0;
-		font-size: 0.92rem;
-		line-height: 1.4;
-		opacity: 0.9;
+	.how-puesta-marcha {
+		max-width: min(40rem, 100%);
+		margin: clamp(1.25rem, 4vh, 2.25rem) auto clamp(0.75rem, 2.5vh, 1.5rem);
+		padding: 0 clamp(0.75rem, 2.5vw, 1rem);
+		text-align: center;
+		box-sizing: border-box;
 	}
 
-	.how-rama__invite a {
+	.how-puesta-marcha__lead {
+		margin: 0.35rem 0 0;
+		font-size: clamp(1.15rem, 2.6vw, 1.35rem);
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		line-height: 1.35;
+	}
+
+	.how-puesta-marcha__links {
+		list-style: none;
+		margin: clamp(0.85rem, 2.2vw, 1.15rem) 0 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.55rem;
+	}
+
+	.how-puesta-marcha__links a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
 		color: inherit;
 		text-decoration: underline;
-		text-underline-offset: 0.15em;
+		text-underline-offset: 0.18em;
+		font-size: 0.95rem;
+		line-height: 1.4;
+		opacity: 0.92;
 	}
 
-	.how-rama__invite a:hover {
+	.how-puesta-marcha__links a:hover {
 		opacity: 1;
+	}
+
+	.how-puesta-marcha__arrow {
+		text-decoration: none;
+		opacity: 0.75;
 	}
 
 	.how-more {
