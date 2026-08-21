@@ -158,6 +158,22 @@ const puestaEnMarchaLegend = {
 	],
 };
 
+/**
+ * Emoción / identidad UI — tras las 4 piezas, antes del corte de auditoría.
+ * Misma cáscara que Puesta en marcha. MP4 pendiente de rodaje (21 ago).
+ */
+const comoSeSienteLegend = {
+	id: 'como-se-siente',
+	eyebrow: 'Cómo se siente',
+	leadBefore: 'Mimetiza tu ',
+	leadAccent: 'panel',
+	ctaLabel: 'Ver el panel mimetizado',
+	durationLabel: '~20–25 s',
+	videoSrc: '' as string,
+	posterSrc: '' as string,
+	videoLabel: 'Microclip — panel mimetizado al proteger (~20–25 s)',
+};
+
 const microclipBranches: MicroclipBranch[] = [
 	{
 		id: 'rama-preparar',
@@ -552,6 +568,72 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							}
 						</div>
 					</div>
+				</section>
+
+				<section
+					class="how-puesta-marcha how-puesta-marcha--panel how-puesta-marcha--siente"
+					id={comoSeSienteLegend.id}
+					aria-labelledby="how-como-se-siente-title">
+					<header class="how-section-head">
+						<p class="how-eyebrow how-eyebrow--center">{comoSeSienteLegend.eyebrow}</p>
+						<h2 id="how-como-se-siente-title" class="how-puesta-marcha__lead">
+							{comoSeSienteLegend.leadBefore}
+							<span class="how-present-title__accent how-puesta-marcha__accent"
+								>{comoSeSienteLegend.leadAccent}</span
+							>
+						</h2>
+					</header>
+					<ul class="how-puesta-marcha__links">
+						<li>
+							{
+								comoSeSienteLegend.videoSrc ? (
+									<a
+										class="how-puesta-marcha__link how-puesta-marcha__link--primary"
+										href="#panel-mimetizado">
+										{comoSeSienteLegend.ctaLabel}
+										<span class="how-puesta-marcha__duration">({comoSeSienteLegend.durationLabel})</span>
+										<span class="how-puesta-marcha__arrow" aria-hidden="true">
+											→
+										</span>
+									</a>
+								) : (
+									<span
+										class="how-puesta-marcha__link how-puesta-marcha__link--primary how-puesta-marcha__link--pending"
+										role="status">
+										{comoSeSienteLegend.ctaLabel}
+										<span class="how-puesta-marcha__duration">({comoSeSienteLegend.durationLabel})</span>
+										<span class="how-puesta-marcha__arrow" aria-hidden="true">
+											→
+										</span>
+									</span>
+								)
+							}
+						</li>
+					</ul>
+					{
+						comoSeSienteLegend.videoSrc ? (
+							<div class="how-embed how-embed--chrome how-siente-embed" id="panel-mimetizado">
+								<video
+									controls
+									preload="metadata"
+									playsinline
+									poster={comoSeSienteLegend.posterSrc}
+									title={comoSeSienteLegend.videoLabel}>
+									<source src={comoSeSienteLegend.videoSrc} type="video/mp4" />
+									Tu navegador no soporta reproducción de video HTML5.
+								</video>
+							</div>
+						) : (
+							<div
+								class="how-siente-placeholder"
+								id="panel-mimetizado"
+								role="status"
+								aria-label="Vídeo del panel mimetizado en preparación">
+								<span class="how-siente-placeholder__hint">Vídeo en preparación</span>
+								<span class="how-siente-placeholder__sub">Cuando esté listo, irá aquí (~20–25 s)</span>
+							</div>
+						)
+					}
 				</section>
 
 				<p class="how-more-audit-cut">
@@ -1537,6 +1619,79 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	.how-puesta-marcha__link--secondary .how-puesta-marcha__arrow {
 		opacity: 0.55;
+	}
+
+	.how-puesta-marcha__duration {
+		font-weight: 500;
+		opacity: 0.72;
+		font-size: 0.92em;
+	}
+
+	/* Cómo se siente — tras 4 piezas / antes auditoría (misma cáscara, hueco vídeo). */
+	.how-puesta-marcha--siente {
+		max-width: min(46rem, 100%);
+		margin: clamp(1.5rem, 4vh, 2.35rem) auto clamp(1.35rem, 3.5vh, 2.1rem);
+	}
+
+	.how-puesta-marcha__link--pending {
+		cursor: default;
+		opacity: 0.78;
+		pointer-events: none;
+	}
+
+	.how-puesta-marcha__link--pending:hover {
+		color: #f5b041;
+		border-bottom-color: rgba(245, 176, 65, 0.4);
+	}
+
+	html[data-theme='light'] .how-puesta-marcha__link--pending:hover {
+		color: rgba(175, 118, 32, 0.98);
+		border-bottom-color: rgba(175, 118, 32, 0.45);
+	}
+
+	.how-siente-placeholder {
+		margin: clamp(1.05rem, 2.8vw, 1.35rem) auto 0;
+		max-width: min(40rem, 100%);
+		aspect-ratio: 16 / 9;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.35rem;
+		box-sizing: border-box;
+		border-radius: clamp(0.35rem, 0.8vw, 0.55rem);
+		border: 1px dashed rgba(245, 176, 65, 0.28);
+		background: rgba(0, 0, 0, 0.28);
+	}
+
+	html[data-theme='light'] .how-siente-placeholder {
+		border-color: rgba(175, 118, 32, 0.32);
+		background: rgba(255, 255, 255, 0.45);
+	}
+
+	.how-siente-placeholder__hint {
+		font-size: 0.95rem;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		opacity: 0.88;
+	}
+
+	.how-siente-placeholder__sub {
+		font-size: 0.82rem;
+		opacity: 0.62;
+	}
+
+	.how-siente-embed {
+		margin: clamp(1.05rem, 2.8vw, 1.35rem) auto 0;
+		max-width: min(40rem, 100%);
+	}
+
+	.how-siente-embed video {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: clamp(0.35rem, 0.8vw, 0.55rem);
+		background: #0a0a0a;
 	}
 
 	.how-more {

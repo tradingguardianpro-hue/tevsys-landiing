@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — «Cómo se siente / Mimetiza tu panel» (21 ago 2026)
+
+**Qué:** bloque invite (misma cáscara que Puesta en marcha) **después** de las 4 piezas y **antes** del corte de auditoría. Eyebrow *Cómo se siente* · título *Mimetiza tu **panel*** · CTA *Ver el panel mimetizado (~20–25 s)*. Hueco vídeo hasta rodaje; sin música en este micro.
+
+**Commit:** `web(tevsys): add como-se-siente panel mimetic invite before audit`
+
+---
+
 ## Cómo funciona — MC-CF-020 CORRIGE ERRORES (21 ago 2026)
 
 **Qué:** microclip ~30 s en rama **Preparar la protección** junto a 021. Ancla `#videoclip-corrige-errores`. MP4 + poster (botón ámbar CORRIGE). Un error de signos → modal → corrige → Config ok.
