@@ -82,16 +82,18 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Puesta en marcha (21 ago):** `/como-funciona#puesta-en-marcha` · *Instalar y fijar límites* · enlace primario al minuto de config + instalar. Tras Desde cero / antes de clips.
 - **Configurar límites 1 min (20–21 ago):** casa `/configuracion#configurar-limites` · MC-CF-026 · ~1:15 · **Advanced/Pro (semana)** · Essential = guía larga debajo · footer Guías · `?v=20260820c`. Copy página corregido 21 ago.
 - **MC-CF-021 II (20 ago):** PROGRAMADO · LUNES + *Puedes reconfigurar las veces que necesites* · `?v=20260820`.
+- **MC-CF-020 (21 ago):** `#videoclip-corrige-errores` · rama Preparar · ~30 s · CORRIGE ERRORES + modal 1 error · `?v=20260821`.
 - **i18n ES|EN (20 ago, pendiente):** oleada 1 home + Cómo funciona + contacto; selector header; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:
   - **MC-CF-021** `#videoclip-programado-lunes` (rama 1): `¿Cómo dejas la protección lista para el lunes?` · `➜ GUARDAR PARA EL LUNES` · `➜ Confirma tus límites` · `➜ PROGRAMADO · LUNES — queda fijado` + `🡰 El engranaje pasa a teal`
+  - **MC-CF-020** `#videoclip-corrige-errores` (rama 1, 21 ago): `¿Te equivocaste en un límite?` · `➜ CORRIGE ERRORES` · `tevsys te dice qué arreglar` · `Corriges — listo para proteger`
   - **MC-CF-001** `#videoclip-off` (rama 2, ~22 s, **II**): `¿Qué pasa si operas un día que marcaste OFF?` · `DÍA OFF · PROTEGIDO` · `Cada intento se cierra al instante y queda trazado.` · `Tres avisos. El flotante queda como prueba` *(export sin `➜`)*
   - **MC-CF-023** `#videoclip-inputs-sml-carry` (rama 3): `¿Qué pasa si cambias un límite ya protegido (con SML activo)?` · `➜ Panel: SML ACTIVO` · `➜ Inputs: −3 % → −2,5 %` · `➜ Inputs ignorados — el panel muestra lo pactado`
   Archivos: `public/videos/como-funciona/tevsys-mc-*-30s.mp4` + `*-poster.jpg`. Commit: `web(tevsys): publish dia-off microclip on como-funciona`.
 - **MC-CF-025 (18 ago):** `#videoclip-limite-hyperclose` · rama 2 · ~34,5 s · `tevsys-mc-limite-hyperclose-30s.mp4`. Overlays: `¿Qué pasa si insistes después de alcanzar tu límite?` · `➜ Límite de ganancia alcanzado` · `🡰 STOP` · `Intentas abrir otra vez` (**typewriter cierra; no recortado**) · `Los siguientes intentos quedan trazados.` Commit: `web(tevsys): publish limite-hyperclose microclip on como-funciona`.
 - **3.er clip de una rama (18 ago, criterio — sin código):** no reservar hueco ni frase “próximo”. Cuando haya MP4: misma tarjeta, **2 columnas** (tercero abajo-izquierda), no tres reproductores en una fila. Candidato rama 2 = MC-CF-003. Catálogo TGP § *Rejilla — 3.er clip* · V12 **(ramaGrid)**.
-- **Cola 17 ago (noche):** Nasdaq ~3:53 = P0 si hay sesión (overlays no reabrir; colgar y retocar). Micros: no muchos. Siguiente por rama = **020 / 003 / 022**. Fuente: catálogo TGP § *Cola 17 ago* · V12 **(videoCola)**.
+- **Cola 17 ago (noche):** Nasdaq ~3:53 = P0 si hay sesión (overlays no reabrir; colgar y retocar). Micros: no muchos. Siguiente por rama = **003 / 022** (020 ✅). Fuente: catálogo TGP § *Cola 17 ago* · V12 **(videoCola)**.
 - **Ruta histórica CTA 5 min (22 abr 2026):** `/go/evidencia-5min` → HyperClose (sigue útil analytics / deep links).
 - **Medición Vercel free (22 abr 2026):** visitas a `/go/evidencia-5min` como proxy; el CTA home actual a Nasdaq se mide por pageviews `/como-funciona` + ancla.
 - **Disponibilidad:** `· Disponible en MT5 ·` (sin “más plataformas” — 24 jul 2026)

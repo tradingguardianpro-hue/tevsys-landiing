@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — MC-CF-020 CORRIGE ERRORES (21 ago 2026)
+
+**Qué:** microclip ~30 s en rama **Preparar la protección** junto a 021. Ancla `#videoclip-corrige-errores`. MP4 + poster (botón ámbar CORRIGE). Un error de signos → modal → corrige → Config ok.
+
+**Commit:** `web(tevsys): publish corrige-errores microclip on como-funciona`
+
+---
+
 ## Configuración — copy Pro/semana vs Essential (21 ago 2026)
 
 **Qué:** `/configuracion` dejaba de mentir Essential sobre el minuto MC-CF-026 (rodado en **Pro**, semana completa). Hero genérico · bloque `#configurar-limites` = Advanced/Pro · bloque largo = Essential. Lectura alineada.
