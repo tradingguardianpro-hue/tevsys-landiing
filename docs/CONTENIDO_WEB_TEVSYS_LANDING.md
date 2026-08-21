@@ -79,7 +79,9 @@ Documento de contenido/copy actual para revisión de equipo.
 - **CTA secundario (jul 2026 vigente):** `Ver evidencia (~4 min)` → `/como-funciona?play=1#evidencia-nasdaq-100` (pieza Nasdaq; no confundir con ruta antigua `/go/evidencia-5min` HyperClose).
 - **Mid-home microclips (16 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / lead con enlace a `#desde-cero` + CTA `Ver microclips →` → `/como-funciona#mas-comportamientos` (**20 ago:** mención suave guía Desde cero).
 - **Guía Desde cero (20 ago 2026):** `/como-funciona#desde-cero` · eyebrow **Condición innegociable** · título *Desde cero, siempre* · lead *Si cargas tevsys con operaciones ya abiertas… empezamos de cero.* · ~57 s · `tevsys-guia-desde-cero.mp4` · micro `#videoclip-pasiva` se mantiene. `?v=20260820b`.
-- **Configurar límites 1 min (20 ago 2026):** casa `/configuracion#configurar-limites` · MC-CF-026 · ~1:15 · invite en `/como-funciona#rama-preparar`. `?v=20260820c`.
+- **Puesta en marcha (21 ago):** `/como-funciona#puesta-en-marcha` · *Instalar y fijar límites* · enlace primario al minuto de config + instalar. Tras Desde cero / antes de clips.
+- **Configurar límites 1 min (20–21 ago):** casa `/configuracion#configurar-limites` · MC-CF-026 · ~1:15 · footer Guías · `?v=20260820c`. V12 **(cfNoche)**.
+- **MC-CF-021 II (20 ago):** PROGRAMADO · LUNES + *Puedes reconfigurar las veces que necesites* · `?v=20260820`.
 - **i18n ES|EN (20 ago, pendiente):** oleada 1 home + Cómo funciona + contacto; selector header; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:

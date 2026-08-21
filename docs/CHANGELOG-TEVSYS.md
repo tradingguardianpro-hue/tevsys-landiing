@@ -6,6 +6,31 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — Puesta en marcha opción 1 ámbar (21 ago 2026)
+
+**Qué:** `#puesta-en-marcha` — subrayado ámbar→gris en *límites* · enlace del minuto como CTA ámbar (familia *Ver clip*) · *Cómo instalar* más discreto. Sin engranaje / sin feria.
+
+**Commit:** `web(tevsys): polish puesta-en-marcha with amber accent CTA`
+
+---
+
+## Home — 4 frases intro chevron · aparcado (21 ago 2026)
+
+**Qué:** las 4 líneas mono sobre el chevron (antes de diluir) se sienten mucho texto. **No implementar esta noche.** Opciones y criterio: V12 **(hero4)**. Retomar mañana: *«hero 4 frases»*.
+
+---
+
+## Cómo funciona — cierre noche 20–21 ago (consolidado · a falta de ajustes)
+
+**Qué:** guía visual en progreso: *Desde cero* → *Puesta en marcha* (invite al minuto de límites + instalar) → clips tres ramas → 4 piezas. Publicado **MC-CF-026** en `/configuracion#configurar-limites` · **MC-CF-021 II** con overlay reconfigurar. Lección: no esconder el minuto solo en footer. Detalle + pendientes: V12 **(cfNoche)**.
+
+**Commits típicos (push cuando toque):**  
+`web(tevsys): publish configurar-limites-1min on como-funciona` ·  
+`web(tevsys): refresh programado lunes microclip with reconfig overlay` ·  
+`web(tevsys): restore puesta-en-marcha invite before microclips`
+
+---
+
 ## Cómo funciona — Puesta en marcha visible de nuevo (21 ago 2026)
 
 **Qué:** corregido exceso de esconder el minuto de límites. Vuelve `#puesta-en-marcha` tras *Desde cero* / antes de clips · panel · enlace primario *Cómo configurar tus límites en un minuto* → `/configuracion#configurar-limites` (ahí está el MP4). Footer Guías se mantiene.
