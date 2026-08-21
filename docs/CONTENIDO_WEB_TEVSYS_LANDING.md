@@ -83,6 +83,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Configurar límites 1 min (20–21 ago):** casa `/configuracion#configurar-limites` · MC-CF-026 · ~1:15 · **Advanced/Pro (semana)** · Essential = guía larga debajo · footer Guías · `?v=20260820c`. Copy página corregido 21 ago.
 - **MC-CF-021 II (20 ago):** PROGRAMADO · LUNES + *Puedes reconfigurar las veces que necesites* · `?v=20260820`.
 - **MC-CF-020 (21 ago):** `#videoclip-corrige-errores` · rama Preparar · ~30 s · CORRIGE ERRORES + modal 1 error · `?v=20260821`.
+- **Cómo se siente (21 ago):** `#como-se-siente` · tras 4 piezas / antes auditoría · ~**32 s** · `tevsys-mc-panel-mimetizado-30s.mp4` · panel mimetizado + cierre marca · sin música.
 - **i18n ES|EN (20 ago, pendiente):** oleada 1 home + Cómo funciona + contacto; selector header; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:

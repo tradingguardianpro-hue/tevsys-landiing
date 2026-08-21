@@ -8,9 +8,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Cómo funciona — «Cómo se siente / Mimetiza tu panel» (21 ago 2026)
 
-**Qué:** bloque invite (misma cáscara que Puesta en marcha) **después** de las 4 piezas y **antes** del corte de auditoría. Eyebrow *Cómo se siente* · título *Mimetiza tu **panel*** · CTA *Ver el panel mimetizado (~20–25 s)*. Hueco vídeo hasta rodaje; sin música en este micro.
+**Qué:** bloque `#como-se-siente` tras las 4 piezas / antes auditoría. MP4 ~**32 s** `tevsys-mc-panel-mimetizado-30s.mp4` · poster panel mimetizado + **PROTEGIDO** (~25 s, sin cartela a medias). Overlays: *Mimetiza el panel a tu gusto* · *Sin borde · texto más discreto* · *Tres parpadeos — protegido* · cierre `tevsys`. Sin música.
 
-**Commit:** `web(tevsys): add como-se-siente panel mimetic invite before audit`
+**Commit:** `web(tevsys): publish panel-mimetizado clip on como-se-siente`
 
 ---
 
