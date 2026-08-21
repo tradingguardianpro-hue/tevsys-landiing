@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Móvil — menú sin marca encima + Cómo funciona centrado (21 ago 2026)
+
+**Qué:** (1) Hamburguesa: la pastilla *tevsys* quedaba por encima del menú (`z-index`) → se oculta al abrir; menú por encima. (2) CTA Nasdaq / `#evidencia-nasdaq-100`: menos corrimiento a la izquierda (vídeo `height:100%` → 16:9, `overflow-x`, reset scroll horizontal, títulos evidencia centrados).
+
+**Commit:** `web(tevsys): fix mobile nav brand overlap and como-funciona left shift`
+
+---
+
 ## Home hero — CTA secundario = título del vídeo Nasdaq (21 ago 2026)
 
 **Qué:** el secundario ya no dice *Ver evidencia (~4 min)* ni *Cómo funciona*. Mismo título que la pieza en Cómo funciona: **Nasdaq 100 — sesión real (~4 min)** → `/como-funciona?play=1#evidencia-nasdaq-100`. Demo sigue primario.

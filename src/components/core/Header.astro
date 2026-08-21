@@ -261,7 +261,8 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
   @media(max-width: 600px) {
     #menuButton {
       display: block;  
-      z-index: 100;
+      position: relative;
+      z-index: 110;
     }
     .header-nav__container {
       width: 100%;
@@ -273,10 +274,19 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
       justify-content: center;
       position: fixed;
       inset: 0;
-      z-index: 99;
+      z-index: 105;
     }
     header[mobile-menu-open] .header-nav__container {
       display: flex;
+    }
+    /* Con overflow:hidden el fixed del menú puede anclarse mal al header. */
+    header[mobile-menu-open].tevsys-header--with-scanner {
+      overflow: visible;
+    }
+    /* Logo/marca encima del menú (z-index del contenedor): ocultar al abrir. */
+    header[mobile-menu-open] .header-logo__link {
+      visibility: hidden;
+      pointer-events: none;
     }
     header[mobile-menu-open] nav ul {
       align-items: center;

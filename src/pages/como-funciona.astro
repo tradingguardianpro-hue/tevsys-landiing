@@ -812,8 +812,17 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		const anchor = document.getElementById('evidencia-nasdaq-100');
 		if (!video || !(video instanceof HTMLVideoElement)) return;
 
+		const resetHorizontal = () => {
+			window.scrollTo(window.scrollX, window.scrollY);
+			document.documentElement.scrollLeft = 0;
+			document.body.scrollLeft = 0;
+		};
+
 		const scrollToEvidence = () => {
-			(anchor || video).scrollIntoView({ behavior: 'smooth', block: 'start' });
+			(anchor || video).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+			resetHorizontal();
+			requestAnimationFrame(resetHorizontal);
+			setTimeout(resetHorizontal, 320);
 		};
 
 		const tryPlay = () => {
@@ -833,6 +842,17 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 </script>
 
 <style>
+	:global(body.page-como-funciona) {
+		overflow-x: clip;
+	}
+
+	:global(body.page-como-funciona #page),
+	:global(body.page-como-funciona .content__container) {
+		max-width: 100%;
+		box-sizing: border-box;
+		overflow-x: clip;
+	}
+
 	.how-depth,
 	.how-more,
 	.how-curated,
@@ -873,7 +893,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	.how-presentation .how-embed video {
 		display: block;
 		width: 100%;
-		height: 100%;
+		max-width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
 		border: 0;
 		border-radius: 0;
 		object-fit: contain;
@@ -1040,6 +1062,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	.how-intro-stage--stage {
 		position: relative;
 		overflow: hidden;
+		box-sizing: border-box;
+		width: 100%;
 		max-width: min(56rem, 100%);
 		margin: 0 auto clamp(2rem, 7vh, 4rem);
 		border-radius: clamp(1.75rem, 7vw, 3.25rem);
@@ -3745,14 +3769,34 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	.how-pair-cell .how-block-head--compact {
 		margin-bottom: 0;
+		text-align: center;
 	}
 
 	.how-pair-cell .how-block-head--compact .how-eyebrow {
 		margin-bottom: 0.55rem;
+		text-align: center;
 	}
 
 	.how-pair-cell .how-block-head--compact h3 {
 		margin-bottom: 0.5rem;
+		text-align: center;
+	}
+
+	.how-pair-cell .how-block-head--compact .how-block-lead {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.how-pair-cell .how-text-link {
+		display: inline-block;
+	}
+
+	.how-pair-grid--single .how-text-link--presentation-yt {
+		display: block;
+		text-align: center;
+		width: fit-content;
+		margin-inline: auto;
 	}
 
 	.how-pair-cell .how-block-head--compact .how-block-lead {
