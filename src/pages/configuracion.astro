@@ -4,20 +4,22 @@ import Layout from '../layouts/Page.astro';
 import '../styles/guia-operativa.css';
 
 const seo = {
-	title: 'Guía rápida de configuración | tevsys',
+	title: 'Configurar límites | tevsys',
 	description:
-		'Configura los límites de tevsys: vídeo en un minuto (inputs → protección) y guía Essential más larga.',
+		'Configura tus límites en tevsys: minuto rápido Advanced/Pro (toda la semana) y recorrido Essential más largo.',
 };
 
-/** Pieza corta MC-CF-026 — casa canónica (20 ago 2026). */
+/** Pieza corta MC-CF-026 — Pro · semana completa (20–21 ago 2026). */
 const configurarLimites1min = {
 	id: 'configurar-limites',
 	title: 'Cómo configurar tus límites en un minuto',
-	blurb: 'De los inputs al candado: día a día, ON u OFF, tope semanal y activar protección.',
+	eyebrow: 'Advanced / Pro',
+	blurb:
+		'De los inputs al candado: cada día, ON u OFF, tope semanal y activar protección. Rodado en Pro — la semana entera bajo tus reglas.',
 	durationLabel: '~1:15',
 	videoSrc: '/videos/como-funciona/tevsys-configurar-limites-1min.mp4?v=20260820c',
 	posterSrc: '/videos/como-funciona/tevsys-configurar-limites-1min-poster.jpg?v=20260820c',
-	videoLabel: 'Guía ~1:15 — configurar límites y activar protección (MC-CF-026)',
+	videoLabel: 'Guía ~1:15 — configurar límites semana completa · Pro (MC-CF-026)',
 };
 
 const VIDEO_DRIVE_ID = '1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg';
@@ -27,19 +29,19 @@ const VIDEO_LINK_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/view?u
 const bloquesLectura = [
 	{
 		n: 1,
-		title: 'Tras instalar',
-		detail: 'Con el EA en el gráfico, abre inputs (F7) para límites de pérdida y ganancia.',
+		title: 'Inputs (F7)',
+		detail: 'Con el EA en el gráfico, abres parámetros: pérdida y ganancia por día, y en Advanced/Pro también la semana.',
 	},
 	{
 		n: 2,
-		title: 'Fin de semana vs entre semana',
+		title: 'Essential vs semana completa',
 		detail:
-			'El vídeo largo muestra el flujo en fin de semana; entre semana es similar — cambia el día activo.',
+			'Essential se centra en el día. Advanced/Pro permiten ON/OFF y topes de toda la semana — eso es lo que muestra el minuto de arriba.',
 	},
 	{
 		n: 3,
-		title: 'Panel',
-		detail: 'Tras configurar verás el panel y el flujo Essential de demo.',
+		title: 'Activar protección',
+		detail: 'Tras aceptar: Config ok → BLOQUEAR LÍMITES → revisas el resumen → confirmas. Entonces operas protegido.',
 	},
 ];
 
@@ -66,10 +68,11 @@ const otrasGuias = [
 	<Container>
 		<div class="guia-page">
 			<section class="feature-hero guia-hero">
-				<p class="guia-eyebrow">Guía Essential — demo estándar</p>
-				<h1>Configuración — tevsys Essential</h1>
+				<p class="guia-eyebrow">Configuración</p>
+				<h1>Configura tus límites</h1>
 				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>Primero el minuto rápido; abajo el recorrido más largo.
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					Arriba: minuto Advanced/Pro (semana completa). Abajo: recorrido Essential más largo.
 				</p>
 			</section>
 
@@ -77,7 +80,7 @@ const otrasGuias = [
 				<div class="guia-video-panel__halo" aria-hidden="true"></div>
 				<div class="guia-video-panel__inner">
 					<header class="guia-section-head">
-						<p class="guia-eyebrow">En un minuto</p>
+						<p class="guia-eyebrow">{configurarLimites1min.eyebrow}</p>
 						<h2>{configurarLimites1min.title}</h2>
 						<p class="guia-section-sub">
 							{configurarLimites1min.blurb}
@@ -98,9 +101,13 @@ const otrasGuias = [
 						</video>
 					</div>
 					<p class="guia-note-box guia-note-box--after-video">
+						<strong>Essential:</strong> misma idea (límites → protección), con menos opciones de semana.
+						La guía larga está debajo.
+					</p>
+					<p class="guia-note-box guia-note-box--after-video">
 						<strong>También en Cómo funciona:</strong>
 						<a href="/como-funciona#puesta-en-marcha">Puesta en marcha</a>
-						(tras *Desde cero*, antes de los clips).
+						(tras Desde cero, antes de los clips).
 					</p>
 				</div>
 			</section>
@@ -109,8 +116,12 @@ const otrasGuias = [
 				<div class="guia-video-panel__halo" aria-hidden="true"></div>
 				<div class="guia-video-panel__inner">
 					<header class="guia-section-head">
-						<p class="guia-eyebrow">Vídeo</p>
-						<h2>Configuración básica (recorrido largo)</h2>
+						<p class="guia-eyebrow">Essential</p>
+						<h2>Configuración Essential (recorrido largo)</h2>
+						<p class="guia-section-sub">
+							Demo estándar paso a paso. Si buscas planificar la semana en finde o al instalar entre semana, usa las
+							guías Advanced/Pro enlazadas abajo.
+						</p>
 					</header>
 					<div class="guia-embed guia-embed--chrome">
 						<iframe
@@ -119,7 +130,7 @@ const otrasGuias = [
 							height="315"
 							allow="autoplay"
 							allowfullscreen
-							title="Guía rápida de configuración tevsys"
+							title="Guía de configuración tevsys Essential"
 						></iframe>
 					</div>
 					<p class="guia-embed-fallback">
@@ -135,9 +146,9 @@ const otrasGuias = [
 
 			<section class="guia-read-section">
 				<header class="guia-section-head">
-					<p class="guia-eyebrow">Apoyo al vídeo</p>
+					<p class="guia-eyebrow">Apoyo</p>
 					<h2>Si prefieres leer</h2>
-					<p class="guia-section-sub">Tres bloques, mismo orden.</p>
+					<p class="guia-section-sub">Tres ideas, mismo orden que el minuto.</p>
 				</header>
 				<div class="guia-read-panel">
 					<ol class="guia-phase-list">

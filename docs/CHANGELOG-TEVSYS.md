@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Configuración — copy Pro/semana vs Essential (21 ago 2026)
+
+**Qué:** `/configuracion` dejaba de mentir Essential sobre el minuto MC-CF-026 (rodado en **Pro**, semana completa). Hero genérico · bloque `#configurar-limites` = Advanced/Pro · bloque largo = Essential. Lectura alineada.
+
+**Commit:** `web(tevsys): fix configuracion copy for Pro week vs Essential`
+
+---
+
 ## Cómo funciona — Puesta en marcha opción 1 ámbar (21 ago 2026)
 
 **Qué:** `#puesta-en-marcha` — subrayado ámbar→gris en *límites* · enlace del minuto como CTA ámbar (familia *Ver clip*) · *Cómo instalar* más discreto. Sin engranaje / sin feria.
