@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home hero — CTA secundario = título del vídeo Nasdaq (21 ago 2026)
+
+**Qué:** el secundario ya no dice *Ver evidencia (~4 min)* ni *Cómo funciona*. Mismo título que la pieza en Cómo funciona: **Nasdaq 100 — sesión real (~4 min)** → `/como-funciona?play=1#evidencia-nasdaq-100`. Demo sigue primario.
+
+**Commit:** `web(tevsys): align home hero secondary CTA with Nasdaq session title`
+
+---
+
 ## Footer Guías + fin de semana sin MP4 viejo (21 ago 2026)
 
 **Qué:** footer — *Configurar límites (~1 min)* pasa a **Advanced / Pro** (ya no bajo Essential). Essential = solo recorrido largo. Fin de semana: retirado `configuracion-semana-demo.mp4` (panel/música viejos) → hueco marca *tevsys* + «Vídeo en preparación». Mismo patrón en al-instalar. Instalación y minuto en `/configuracion` se mantienen.
