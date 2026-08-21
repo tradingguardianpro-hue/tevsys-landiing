@@ -42,13 +42,18 @@ const otrasGuias = [
 	},
 	{
 		label: 'Advanced / Pro',
+		title: 'Configurar límites (~1 min)',
+		href: '/configuracion#configurar-limites',
+	},
+	{
+		label: 'Advanced / Pro',
 		title: 'Planificar la semana en sábado o domingo',
 		href: '/configuracion-fin-de-semana',
 	},
 	{
 		label: 'Essential',
-		title: 'Configuración',
-		href: '/configuracion',
+		title: 'Configuración (recorrido largo)',
+		href: '/configuracion#configuracion-video',
 	},
 ];
 ---
@@ -71,8 +76,13 @@ const otrasGuias = [
 						<p class="guia-eyebrow">Vídeo</p>
 						<h2>Configuración al instalar</h2>
 					</header>
-					<div class="guia-embed guia-embed--chrome">
-						<p class="guia-embed-pending">Vídeo en preparación — usa los pasos de abajo mientras tanto.</p>
+					<div
+						class="guia-embed guia-embed--chrome guia-embed--pending-brand"
+						role="status"
+						aria-label="Vídeo de configuración al instalar en preparación">
+						<p class="guia-embed-pending__brand" aria-hidden="true">tevsys</p>
+						<p class="guia-embed-pending__title">Vídeo en preparación</p>
+						<p class="guia-embed-pending__sub">Mientras tanto, los pasos de abajo cubren el flujo.</p>
 					</div>
 					<p class="guia-note-box guia-note-box--after-video">
 						<strong>¿Es sábado o domingo?</strong> Usa
@@ -84,7 +94,7 @@ const otrasGuias = [
 
 			<section class="guia-read-section">
 				<header class="guia-section-head">
-					<p class="guia-eyebrow">Apoyo al vídeo</p>
+					<p class="guia-eyebrow">Guía escrita</p>
 					<h2>Si prefieres leer</h2>
 					<p class="guia-section-sub">Cuatro bloques, mismo orden.</p>
 				</header>

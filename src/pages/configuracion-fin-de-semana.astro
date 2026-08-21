@@ -9,8 +9,6 @@ const seo = {
 		'Solo sábado o domingo: planifica lunes a viernes, Guardar para el lunes y protección programada. El lunes a las 00:00 entra la protección si confirmaste.',
 };
 
-const VIDEO_CACHE_BUST = '20260606';
-
 const bloquesLectura = [
 	{
 		n: 1,
@@ -40,13 +38,18 @@ const otrasGuias = [
 	},
 	{
 		label: 'Advanced / Pro',
+		title: 'Configurar límites (~1 min)',
+		href: '/configuracion#configurar-limites',
+	},
+	{
+		label: 'Advanced / Pro',
 		title: 'Configuración al instalar de lunes a viernes',
 		href: '/configuracion-al-instalar',
 	},
 	{
 		label: 'Essential',
-		title: 'Configuración',
-		href: '/configuracion',
+		title: 'Configuración (recorrido largo)',
+		href: '/configuracion#configuracion-video',
 	},
 ];
 ---
@@ -58,7 +61,7 @@ const otrasGuias = [
 				<p class="guia-eyebrow">Guía fin de semana — Advanced / Pro</p>
 				<h1>Configuración en fin de semana</h1>
 				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>Vídeo 2:01 — planifica la semana el sábado o domingo.
+					<span class="feature-hook__dot" aria-hidden="true"></span>Sábado o domingo: planifica la semana y deja PROGRAMADO · LUNES.
 				</p>
 			</section>
 
@@ -69,14 +72,13 @@ const otrasGuias = [
 						<p class="guia-eyebrow">Vídeo</p>
 						<h2>Configuración en fin de semana</h2>
 					</header>
-					<div class="guia-embed guia-embed--chrome" id="config-finde-demo-container">
-						<video id="config-finde-demo-video" controls preload="metadata" playsinline>
-							<source
-								src={`/videos/features/configuracion-semana-demo.mp4?v=${VIDEO_CACHE_BUST}`}
-								type="video/mp4"
-							/>
-							Tu navegador no soporta reproducción de video HTML5.
-						</video>
+					<div
+						class="guia-embed guia-embed--chrome guia-embed--pending-brand"
+						role="status"
+						aria-label="Vídeo de configuración en fin de semana en preparación">
+						<p class="guia-embed-pending__brand" aria-hidden="true">tevsys</p>
+						<p class="guia-embed-pending__title">Vídeo en preparación</p>
+						<p class="guia-embed-pending__sub">Mientras tanto, los pasos de abajo cubren el flujo.</p>
 					</div>
 					<p class="guia-note-box guia-note-box--after-video">
 						<strong>¿Instalaste entre semana (lunes–viernes)?</strong> Usa
@@ -88,7 +90,7 @@ const otrasGuias = [
 
 			<section class="guia-read-section">
 				<header class="guia-section-head">
-					<p class="guia-eyebrow">Apoyo al vídeo</p>
+					<p class="guia-eyebrow">Guía escrita</p>
 					<h2>Si prefieres leer</h2>
 					<p class="guia-section-sub">Tres bloques, mismo orden.</p>
 				</header>
@@ -134,14 +136,3 @@ const otrasGuias = [
 		</div>
 	</Container>
 </Layout>
-
-<script>
-	function initConfigFindeDemoExpand() {
-		const video = document.getElementById('config-finde-demo-video');
-		const container = document.getElementById('config-finde-demo-container');
-		if (!video || !container) return;
-		video.addEventListener('play', () => container.classList.add('guia-embed--playing'));
-		video.addEventListener('ended', () => container.classList.remove('guia-embed--playing'));
-	}
-	document.addEventListener('DOMContentLoaded', initConfigFindeDemoExpand);
-</script>

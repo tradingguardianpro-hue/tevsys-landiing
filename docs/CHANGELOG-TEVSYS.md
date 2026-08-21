@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Footer Guías + fin de semana sin MP4 viejo (21 ago 2026)
+
+**Qué:** footer — *Configurar límites (~1 min)* pasa a **Advanced / Pro** (ya no bajo Essential). Essential = solo recorrido largo. Fin de semana: retirado `configuracion-semana-demo.mp4` (panel/música viejos) → hueco marca *tevsys* + «Vídeo en preparación». Mismo patrón en al-instalar. Instalación y minuto en `/configuracion` se mantienen.
+
+**Commit:** `web(tevsys): fix footer guides tiers and retire stale weekend demo`
+
+---
+
 ## Cómo funciona — «Cómo se siente / Mimetiza tu panel» (21 ago 2026)
 
 **Qué:** bloque `#como-se-siente` tras las 4 piezas / antes auditoría. MP4 ~**32 s** `tevsys-mc-panel-mimetizado-30s.mp4` · poster panel mimetizado + **PROTEGIDO** (~25 s, sin cartela a medias). Overlays: *Mimetiza el panel a tu gusto* · *Sin borde · texto más discreto* · *Tres parpadeos — protegido* · cierre `tevsys`. Sin música.

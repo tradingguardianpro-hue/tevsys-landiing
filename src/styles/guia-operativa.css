@@ -207,6 +207,53 @@ html[data-theme='dark'] .guia-page .guia-embed--chrome {
 	opacity: 0.88;
 }
 
+/* Hueco vídeo: marca + copy (no negro plano ni MP4 obsoleto). */
+.guia-page .guia-embed--pending-brand {
+	aspect-ratio: 16 / 9;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem;
+	box-sizing: border-box;
+	padding: clamp(1.25rem, 4vw, 2rem);
+	background: linear-gradient(165deg, hsl(222 16% 14%) 0%, hsl(222 22% 8%) 55%, hsl(222 18% 6%) 100%);
+}
+
+html[data-theme='light'] .guia-page .guia-embed--pending-brand {
+	background: linear-gradient(165deg, #f4f2ed 0%, #ebe7e0 55%, #e4dfd6 100%);
+}
+
+.guia-page .guia-embed-pending__brand {
+	margin: 0 0 0.35rem;
+	font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	color: rgba(245, 176, 65, 0.72);
+}
+
+html[data-theme='light'] .guia-page .guia-embed-pending__brand {
+	color: rgba(175, 118, 32, 0.78);
+}
+
+.guia-page .guia-embed-pending__title {
+	margin: 0;
+	font-size: clamp(0.98rem, 2.2vw, 1.08rem);
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	opacity: 0.92;
+}
+
+.guia-page .guia-embed-pending__sub {
+	margin: 0;
+	max-width: 28rem;
+	font-size: 0.88rem;
+	line-height: 1.45;
+	opacity: 0.62;
+	text-align: center;
+}
+
 .guia-page .guia-embed-fallback {
 	margin: 0.75rem 0 0;
 	font-size: 0.9rem;
