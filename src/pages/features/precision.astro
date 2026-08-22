@@ -17,30 +17,49 @@ const seo = {
 			<h1>
 				Precisión de cierre. Menos "<span class="feature-title__accent">casi</span>": más cierre donde toca.
 			</h1>
-			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>{settings.documentedOperatives} operativas documentadas. <span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.</p>
-			<p class="precision-attribution-note">
-				En cierres recientes también registramos <strong>atribución tevsys vs ejecución</strong> en MT5.
-				<a class="evidence-link" href="/como-funciona#documentacion-sesion-nasdaq">Ver ejemplo (Nasdaq) en Cómo funciona →</a>
+			<p class="feature-intro precision-hero-lead">
+				El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.
 			</p>
-			<p class="feature-intro">El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.</p>
-			<p class="feature-extreme-note">
-				También hay extremos documentados (p. ej. desviación máxima <span class="feature-hook__accent feature-extreme-note__pct">−0,39%</span>). Abajo, un caso aparte de la media.
-			</p>
-			<aside class="precision-contencion-card" aria-label="Caso extremo de contención">
-				<p class="precision-contencion-card__eyebrow">Caso extremo documentado</p>
-				<p class="precision-contencion-card__lead">
-					No forma parte del error medio ≈ <span class="feature-hook__accent">0,06 %</span>.
-					Precisión cuando puede; contención cuando toca. No escondemos este tipo de casos.
+
+			<div class="precision-hero-evidence">
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					{settings.documentedOperatives} operativas documentadas.{' '}
+					<span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.
 				</p>
-				<p class="precision-contencion-card__body">
-					En un barrido de ~111 ms el mercado se fue; tevsys cerró al siguiente tick evaluable.
-					Límite <strong>+0,50 %</strong> · lectura al disparar <strong>+0,65 %</strong> · día <strong>+1,04 %</strong>.
-					Contención bajo estrés, no precisión de catálogo.
+				<p class="precision-attribution-note">
+					En cierres recientes también registramos <strong>atribución tevsys vs ejecución</strong> en MT5.{' '}
+					<a class="evidence-link" href="/como-funciona#documentacion-sesion-nasdaq">
+						Ver ejemplo (Nasdaq) en Cómo funciona →
+					</a>
 				</p>
-				<p class="precision-contencion-card__cta">
-					<a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">Ver el caso completo en Evidencia →</a>
+			</div>
+
+			<div class="precision-hero-honesty">
+				<p class="feature-extreme-note">
+					También hay extremos documentados (p. ej. desviación máxima{' '}
+					<span class="feature-hook__accent feature-extreme-note__pct">−0,39%</span>). Abajo, un caso aparte de
+					la media.
 				</p>
-			</aside>
+				<aside class="precision-contencion-card" aria-label="Caso extremo de contención">
+					<p class="precision-contencion-card__eyebrow">Caso extremo documentado</p>
+					<p class="precision-contencion-card__lead">
+						No forma parte del error medio ≈ <span class="feature-hook__accent">0,06 %</span>.
+						Precisión cuando puede; contención cuando toca. No escondemos este tipo de casos.
+					</p>
+					<p class="precision-contencion-card__body">
+						En un barrido de ~111 ms el mercado se fue; tevsys cerró al siguiente tick evaluable.
+						Límite <strong>+0,50 %</strong> · lectura al disparar <strong>+0,65 %</strong> · día{' '}
+						<strong>+1,04 %</strong>.
+						Contención bajo estrés, no precisión de catálogo.
+					</p>
+					<p class="precision-contencion-card__cta">
+						<a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">
+							Ver el caso completo en Evidencia →
+						</a>
+					</p>
+				</aside>
+			</div>
 		</section>
 		<p class="feature-manifesto-banner">
 			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
@@ -299,9 +318,45 @@ const seo = {
 		font-weight: 700;
 	}
 	.feature-intro {
-		margin: 0 0 0.85rem;
-		line-height: 1.5;
+		margin: 0;
+		line-height: 1.55;
 	}
+
+	.precision-hero-lead {
+		max-width: 42ch;
+		margin: clamp(0.65rem, 2vw, 0.85rem) 0 clamp(1.35rem, 3.5vw, 1.75rem);
+		font-size: clamp(1.02rem, 1.35vw, 1.12rem);
+		opacity: 0.92;
+	}
+
+	.precision-hero-evidence {
+		max-width: 72ch;
+		margin: 0 0 clamp(1.5rem, 3.5vw, 2rem);
+		padding: clamp(1rem, 2.5vw, 1.25rem) 0 clamp(1rem, 2.5vw, 1.15rem);
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	html[data-theme='light'] .precision-hero-evidence {
+		border-color: rgba(0, 0, 0, 0.08);
+	}
+
+	.precision-hero-evidence .feature-hook {
+		margin: 0 0 0.85rem;
+	}
+
+	.precision-hero-honesty {
+		max-width: 74ch;
+	}
+
+	.precision-hero-honesty .feature-extreme-note {
+		margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
+	}
+
+	.precision-hero-honesty .precision-contencion-card {
+		margin-top: 0;
+	}
+
 	.feature-hook {
 		display: inline-flex;
 		align-items: center;
@@ -336,20 +391,21 @@ const seo = {
 		max-width: 72ch;
 		line-height: 1.55;
 		opacity: 0.86;
-		margin: 0.55rem 0 0;
+		margin: 0;
 	}
 
 	.precision-attribution-note {
 		max-width: 68ch;
-		margin: 0.85rem 0 0;
+		margin: 0;
 		font-size: 0.92rem;
 		line-height: 1.55;
-		opacity: 0.88;
+		opacity: 0.82;
 	}
 
 	.precision-attribution-note .evidence-link {
-		display: inline-block;
-		margin-top: 0.35rem;
+		display: inline;
+		margin-top: 0;
+		white-space: nowrap;
 	}
 
 	/* Mismo criterio que el % del hook: ámbar + cursiva en el número. */
