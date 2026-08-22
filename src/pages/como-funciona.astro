@@ -316,6 +316,15 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 									Tu navegador no soporta reproducción de video HTML5.
 								</video>
 							</div>
+							<script is:inline>
+								(() => {
+									if (new URLSearchParams(window.location.search).get('play') !== '1') return;
+									const video = document.getElementById('evidencia-nasdaq-100-video');
+									if (!(video instanceof HTMLVideoElement)) return;
+									video.removeAttribute('poster');
+									video.preload = 'auto';
+								})();
+							</script>
 							<p class="how-doc-session-jump">
 								<a href={`#${sessionDocumentation.id}`} class="how-text-link how-doc-session-jump__link">
 									Qué documentación hay detrás de este vídeo →
@@ -841,6 +850,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		const video = document.getElementById('evidencia-nasdaq-100-video');
 		const anchor = document.getElementById('evidencia-nasdaq-100');
 		if (!video || !(video instanceof HTMLVideoElement)) return;
+
+		video.removeAttribute('poster');
+		video.preload = 'auto';
 
 		const resetHorizontal = () => {
 			window.scrollTo(window.scrollX, window.scrollY);
