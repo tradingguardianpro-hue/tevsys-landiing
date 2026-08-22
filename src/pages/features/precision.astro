@@ -323,10 +323,16 @@ const seo = {
 	}
 
 	.precision-hero-lead {
-		max-width: 42ch;
 		margin: clamp(0.65rem, 2vw, 0.85rem) 0 clamp(1.35rem, 3.5vw, 1.75rem);
 		font-size: clamp(1.02rem, 1.35vw, 1.12rem);
 		opacity: 0.92;
+		max-width: none;
+	}
+
+	@media (min-width: 640px) {
+		.precision-hero-lead {
+			white-space: nowrap;
+		}
 	}
 
 	.precision-hero-evidence {
