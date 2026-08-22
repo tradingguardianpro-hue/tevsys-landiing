@@ -38,8 +38,8 @@ const seo = {
 			<div class="precision-hero-honesty">
 				<p class="feature-extreme-note">
 					También hay extremos documentados (p. ej. desviación máxima{' '}
-					<span class="feature-hook__accent feature-extreme-note__pct">−0,39%</span>). Abajo, un caso aparte de
-					la media.
+					<span class="feature-hook__accent feature-extreme-note__pct">−0,39%</span>, alta volatilidad
+					geopolítica).
 				</p>
 				<aside class="precision-contencion-card" aria-label="Caso extremo de contención">
 					<p class="precision-contencion-card__eyebrow">Caso extremo documentado</p>
@@ -432,13 +432,23 @@ const seo = {
 		border-color: rgba(0, 0, 0, 0.1);
 	}
 	.precision-contencion-card__eyebrow {
-		margin: 0 0 0.4rem;
+		display: inline-block;
+		margin: 0 0 0.65rem;
+		padding: 0.32rem 0.65rem;
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: 0.72rem;
-		letter-spacing: 0.04em;
+		font-size: 0.76rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		opacity: 0.78;
 		color: #f5b041;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		border-radius: 999px;
+		background: rgba(245, 176, 65, 0.08);
+	}
+	html[data-theme='light'] .precision-contencion-card__eyebrow {
+		color: #b07818;
+		background: rgba(245, 176, 65, 0.12);
+		border-color: rgba(200, 135, 26, 0.35);
 	}
 	.precision-contencion-card__lead {
 		margin: 0 0 0.55rem;
