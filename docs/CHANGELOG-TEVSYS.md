@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión hero — corrección extremos separados + manifiesto visible (22 ago 2026)
+
+**Commit:** `web(tevsys): split precision geopolitical note from contencion card restore manifesto`
+
+**Qué:** `/features/precision` — −0,39 % geopolítico en línea suelta (vídeo volatilidad) · card contención 489 aparte · manifiesto con caja y tamaño legible (revierte puente atenuado).
+
+---
+
 ## Precisión hero — gramática visual unificada (22 ago 2026)
 
 **Commit:** `web(tevsys): unify precision hero evidence extremes and manifesto bridge`

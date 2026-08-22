@@ -34,29 +34,31 @@ const seo = {
 				</p>
 			</div>
 
-			<div class="precision-hero-honesty">
-				<p class="precision-hero-label">Extremos documentados</p>
-				<p class="precision-hero-extreme">
-					Desviación máxima documentada{' '}
-					<span class="precision-hero-stat__accent">−0,39 %</span> · alta volatilidad geopolítica. No entra
-					en la media ≈ 0,06 %.
+			<p class="precision-hero-geopolitical">
+				También hay extremos documentados (p. ej. desviación máxima{' '}
+				<span class="precision-hero-stat__accent">−0,39 %</span>, alta volatilidad geopolítica).
+			</p>
+
+			<aside class="precision-contencion-card" aria-label="Caso extremo de contención">
+				<p class="precision-contencion-card__eyebrow">Caso extremo documentado</p>
+				<p class="precision-contencion-card__lead">
+					No forma parte del error medio ≈ <span class="precision-hero-stat__accent">0,06 %</span>.
+					Precisión cuando puede; contención cuando toca. No escondemos este tipo de casos.
 				</p>
-				<aside class="precision-contencion-card" aria-label="Caso extremo de contención">
-					<p class="precision-contencion-card__lead">
-						En un barrido de ~111 ms el mercado se fue; tevsys cerró al siguiente tick evaluable.
-						Límite <strong>+0,50 %</strong> · lectura al disparar <strong>+0,65 %</strong> · día{' '}
-						<strong>+1,04 %</strong>.
-						Contención bajo estrés, no precisión de catálogo.
-					</p>
-					<p class="precision-contencion-card__cta">
-						<a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">
-							Ver el caso completo en Evidencia →
-						</a>
-					</p>
-				</aside>
-			</div>
+				<p class="precision-contencion-card__body">
+					En un barrido de ~111 ms el mercado se fue; tevsys cerró al siguiente tick evaluable.
+					Límite <strong>+0,50 %</strong> · lectura al disparar <strong>+0,65 %</strong> · día{' '}
+					<strong>+1,04 %</strong>.
+					Contención bajo estrés, no precisión de catálogo.
+				</p>
+				<p class="precision-contencion-card__cta">
+					<a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">
+						Ver el caso completo en Evidencia →
+					</a>
+				</p>
+			</aside>
 		</section>
-		<p class="feature-manifesto-banner precision-manifesto-bridge">
+		<p class="feature-manifesto-banner">
 			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
 		</p>
 
@@ -384,60 +386,77 @@ const seo = {
 		font-weight: 600;
 	}
 
-	.precision-hero-honesty {
+	.precision-hero-geopolitical {
 		max-width: 72ch;
-		margin: 0 0 clamp(1.1rem, 2.8vw, 1.35rem);
-		padding: clamp(1rem, 2.5vw, 1.2rem) clamp(1.05rem, 2.5vw, 1.25rem);
-		border-radius: 8px;
-		border: 1px solid rgba(255, 255, 255, 0.07);
-		background: rgba(0, 0, 0, 0.12);
-	}
-
-	html[data-theme='light'] .precision-hero-honesty {
-		border-color: rgba(0, 0, 0, 0.08);
-		background: rgba(0, 0, 0, 0.03);
-	}
-
-	.precision-hero-label {
-		margin: 0 0 0.55rem;
-		font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-		font-size: 0.72rem;
-		font-weight: 600;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: rgba(245, 176, 65, 0.85);
-	}
-
-	html[data-theme='light'] .precision-hero-label {
-		color: #b07818;
-	}
-
-	.precision-hero-extreme {
-		margin: 0 0 0.85rem;
-		font-size: 0.94rem;
+		margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
+		font-size: 0.96rem;
 		line-height: 1.55;
 		opacity: 0.88;
 	}
 
-	.precision-manifesto-bridge {
-		margin: clamp(1.25rem, 3vw, 1.65rem) 0 calc(var(--section-margin) * 0.65);
+	.feature-manifesto-banner {
+		margin: clamp(1.35rem, 3.2vw, 2rem) 0 calc(var(--section-margin) * 0.65);
 		max-width: 74ch;
-		padding: 0.85rem 0 0;
-		border: none;
-		border-radius: 0;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-		background: none;
 		line-height: 1.55;
+		font-size: 1rem;
+		padding: 0.75rem 0.9rem;
+		border-radius: 0.6rem;
+		border: 1px solid rgba(150, 156, 170, 0.34);
+		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
+	}
+
+	.precision-contencion-card {
+		max-width: 74ch;
+		margin: 0 0 clamp(1rem, 2.5vw, 1.25rem);
+		padding: 0.85rem 0.95rem 0.95rem;
+		border-radius: 0.6rem;
+		border: 1px solid rgba(150, 156, 170, 0.38);
+		background: linear-gradient(145deg, rgba(34, 40, 54, 0.72), rgba(245, 176, 65, 0.07));
+	}
+
+	html[data-theme='light'] .precision-contencion-card {
+		background: linear-gradient(145deg, rgba(248, 249, 252, 0.95), rgba(245, 176, 65, 0.08));
+		border-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.precision-contencion-card__eyebrow {
+		display: inline-block;
+		margin: 0 0 0.65rem;
+		padding: 0.32rem 0.65rem;
+		font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+		font-size: 0.76rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #f5b041;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		border-radius: 999px;
+		background: rgba(245, 176, 65, 0.08);
+	}
+
+	html[data-theme='light'] .precision-contencion-card__eyebrow {
+		color: #b07818;
+		background: rgba(245, 176, 65, 0.12);
+		border-color: rgba(200, 135, 26, 0.35);
+	}
+
+	.precision-contencion-card__lead {
+		margin: 0 0 0.55rem;
+		line-height: 1.52;
 		font-size: 0.94rem;
+		font-weight: 600;
+		opacity: 0.95;
+	}
+
+	.precision-contencion-card__body {
+		margin: 0 0 0.65rem;
+		line-height: 1.55;
 		opacity: 0.86;
+		font-size: 0.95em;
 	}
 
-	html[data-theme='light'] .precision-manifesto-bridge {
-		border-top-color: rgba(0, 0, 0, 0.08);
-	}
-
-	.precision-hero-honesty .precision-contencion-card {
-		margin-top: 0;
+	.precision-contencion-card__cta {
+		margin: 0;
 	}
 
 	.feature-hook {
@@ -455,42 +474,6 @@ const seo = {
 		border-radius: 50%;
 		background: #f5b041;
 		flex-shrink: 0;
-	}
-
-	.feature-manifesto-banner:not(.precision-manifesto-bridge) {
-		margin: clamp(1.35rem, 3.2vw, 2rem) 0 calc(var(--section-margin) * 0.65);
-		max-width: 74ch;
-		line-height: 1.55;
-		padding: 0.68rem 0.82rem;
-		border-radius: 0.6rem;
-		border: 1px solid rgba(150, 156, 170, 0.34);
-		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
-	}
-
-	.precision-contencion-card {
-		margin: 0;
-		padding: 0.85rem 0 0;
-		border: none;
-		border-radius: 0;
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-		background: none;
-	}
-
-	html[data-theme='light'] .precision-contencion-card {
-		border-top-color: rgba(0, 0, 0, 0.08);
-		background: none;
-	}
-
-	.precision-contencion-card__lead {
-		margin: 0 0 0.55rem;
-		font-size: 0.92rem;
-		line-height: 1.55;
-		font-weight: 500;
-		opacity: 0.9;
-	}
-
-	.precision-contencion-card__cta {
-		margin: 0;
 	}
 
 	/* Contexto multigráfico: secundario respecto al título “Demo rápida” del vídeo */

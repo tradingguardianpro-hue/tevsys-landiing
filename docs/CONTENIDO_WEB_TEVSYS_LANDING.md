@@ -26,9 +26,10 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Micropágina Precisión (`/features/precision`)
 - **H1:** `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
 - **Lead:** *El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.*
-- **Bloque evidencia (22 ago 2026):** caja única — **112 operativas** · 0,06 % error medio · línea atribución + enlace `Ver sesión Nasdaq (~3:35) →` (`?play=1#evidencia-nasdaq-100`). Sin cursiva ni punto amarillo en cifras.
-- **Bloque extremos:** etiqueta mono *Extremos documentados* · −0,39 % + caso contención integrado (sin píldora ni caja duplicada).
-- **Manifiesto puente:** línea de valor sin caja gris — hairline superior antes del primer vídeo.
+- **Bloque evidencia (22 ago 2026):** caja única — **112 operativas** · 0,06 % error medio · línea atribución + enlace Nasdaq. Sin cursiva en cifras.
+- **Nota geopolítica (−0,39 %):** línea suelta bajo evidencia — no mezclar con card contención 489.
+- **Card contención:** píldora *Caso extremo documentado* · barrido ~111 ms · CTA Evidencia.
+- **Manifiesto:** caja visible (misma franja que otras features).
 
 ### Micropágina HyperClose (`/features/hyperclose`)
 - **Hook:** `Cierre en milisegundos.` + `Hasta la siguiente ventana (día o semana), sin atajos.`
@@ -566,8 +567,8 @@ Seguimiento interno activo en:
 
 - **H1 (abr 2026, dos líneas):** `Precisión de cierre.` / `Menos "casi": más cierre donde toca.` — comillas tipográficas en pantalla según CSS; acento visual en `casi` (`feature-title__accent`).
 
-- **Nota extremos (22 ago 2026):** etiqueta *Extremos documentados* · *Desviación máxima documentada −0,39 % · alta volatilidad geopolítica. No entra en la media ≈ 0,06 %.* — caso contención (+0,50 / +0,65 / +1,04) en la misma caja; CTA → `/features/evidencia#evidencia-contencion-489`.
-- **Card puente contención (13 ago 2026 · integrada 22 ago):** ya no lleva píldora ni caja aparte; vive dentro del bloque extremos.
+- **Nota geopolítica (22 ago 2026):** *También hay extremos documentados (p. ej. desviación máxima −0,39 %, alta volatilidad geopolítica).* — línea suelta; enlaza con demo volatilidad hero.
+- **Card contención (13 ago 2026):** píldora *Caso extremo documentado* · no entra en media 0,06 % · +0,50 / +0,65 / +1,04 · CTA → `/features/evidencia#evidencia-contencion-489`.
 
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.` — Cuando SML tenga vídeo, el embed debe seguir **«Convención embeds de vídeo — micropáginas `/features/*`»** en este documento.
 
