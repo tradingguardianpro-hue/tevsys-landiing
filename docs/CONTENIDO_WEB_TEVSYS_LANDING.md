@@ -137,7 +137,15 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Qué:** el EA en gráfico (panel B&N anti-feria, V12 **o**, modales ago) **ya no coincide** con muchos MP4 de la web. Deuda de imagen. Se cierra **por oleadas**.
 
-**P0 siguiente (acordado 11 ago 2026):** **regrabar pieza Nasdaq** — **✅ publicado 22 ago 2026** (`6263709`, ~3:35). Pendiente solo **YT** nuevo (sustituir `2f1rRmqkE1k`).
+**P0 siguiente (acordado 11 ago 2026):** **regrabar pieza Nasdaq** — **✅ web 22 ago 2026** (`6263709`, ~3:35). **⏳ YT:** borrar `2f1rRmqkE1k` · subir nuevo · actualizar URLs — checklist `AGENDA_GABI` § *YouTube — próximo paso*.
+
+### Web Nasdaq #6263709 — estado en pantalla (22 ago · cerrado salvo YT)
+
+- **Presentación:** H2 *Cuatro minutos de sesión real en MT5* · sub *precisión y evidencia* · *Contrasta tú mismo*.
+- **Bloque Evidencia:** título *~3:35* · blurb corto · atribución 1 línea · MP4 `?v=20260822` · poster sesión.
+- **Home CTA:** `?play=1` → sin poster + autoplay · Cómo funciona directo → poster hasta play.
+- **Transparencia:** timeline en pasos · atribución única (píldoras) · 3 fuentes en tarjetas · sin bróker en copy.
+- **YouTube en web:** enlace **aún** `2f1rRmqkE1k` hasta pegar URL nueva.
 
 - **Flujo = no reabrir** (bueno). Checklist *dónde apretamos* + mejora piel overlays: `AGENDA_GABI.md` § **Regrabación ago 2026**.
 - **Misma estructura / lotaje / textos:** panel → op. → cierre límite → HyperClose → modales nuevos → evidencia.

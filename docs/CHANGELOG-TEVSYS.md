@@ -6,6 +6,26 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Transparencia Nasdaq — más aire, menos redundancia (22 ago 2026)
+
+**Commit:** `web(tevsys): lighten Nasdaq transparency block layout and copy`
+
+**Qué:** bloque *Transparencia* en `/como-funciona` — timeline en 4 pasos con aire · atribución en una sola caja (sin capa duplicada) · 3 fuentes en tarjetas (Vídeo / Informe MT5 / Registro) · pie unificado · más padding y respiración visual.
+
+**Dónde:** `como-funciona.astro` (`sessionDocumentation` + estilos `.how-doc-session*`).
+
+---
+
+## YouTube Nasdaq 6263709 — pendiente sustituir `2f1rRmqkE1k` (22 ago 2026)
+
+**Estado:** web MP4 ✅ · enlace YouTube en sitio **aún may** hasta subida nueva.
+
+**Pasos:** subir export 6263709 → copiar URL → borrar/ocultar viejo → actualizar `como-funciona.astro` + `videos-cierre-youtube.astro` (lista completa en TGP `AGENDA_GABI` § *YouTube — próximo paso*).
+
+**Retomar:** *«YouTube Nasdaq»* + URL pegada.
+
+---
+
 ## Nasdaq #6263709 — copy bajo vídeo + atribución (22 ago 2026)
 
 **Commit:** `web(tevsys): add attribution explainer under Nasdaq evidence blurb`
