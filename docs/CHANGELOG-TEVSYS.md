@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión hero — gramática visual unificada (22 ago 2026)
+
+**Commit:** `web(tevsys): unify precision hero evidence extremes and manifesto bridge`
+
+**Qué:** `/features/precision` — dos cajas coherentes (evidencia + extremos) · sin cursiva/punto en 112 ops · etiqueta mono en extremos · manifiesto aligerado (hairline, sin losa) · copy contención condensado.
+
+**Dónde:** `precision.astro` · `CONTENIDO_WEB` § Precisión.
+
+---
+
 ## YouTube Nasdaq 6263709 — URL canónica `sAttywGy0nQ` (22 ago 2026)
 
 **Commit:** `web(tevsys): point Nasdaq evidence YouTube links to sAttywGy0nQ`

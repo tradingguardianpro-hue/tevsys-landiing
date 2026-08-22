@@ -22,32 +22,27 @@ const seo = {
 			</p>
 
 			<div class="precision-hero-evidence">
-				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>
-					{settings.documentedOperatives} operativas documentadas.{' '}
-					<span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.
+				<p class="precision-hero-stat">
+					<strong>{settings.documentedOperatives} operativas documentadas</strong>
+					· error medio <span class="precision-hero-stat__accent">0,06 %</span> en condiciones normales
 				</p>
-				<p class="precision-attribution-note">
-					En cierres recientes también registramos <strong>atribución tevsys vs ejecución</strong> en MT5.{' '}
+				<p class="precision-hero-secondary">
+					En cierres recientes también registramos atribución tevsys vs ejecución en MT5.{' '}
 					<a class="evidence-link" href="/como-funciona?play=1#evidencia-nasdaq-100">
-						Ver sesión Nasdaq (~3:35) en Cómo funciona →
+						Ver sesión Nasdaq (~3:35) →
 					</a>
 				</p>
 			</div>
 
 			<div class="precision-hero-honesty">
-				<p class="feature-extreme-note">
-					También hay extremos documentados (p. ej. desviación máxima{' '}
-					<span class="feature-hook__accent feature-extreme-note__pct">−0,39%</span>, alta volatilidad
-					geopolítica).
+				<p class="precision-hero-label">Extremos documentados</p>
+				<p class="precision-hero-extreme">
+					Desviación máxima documentada{' '}
+					<span class="precision-hero-stat__accent">−0,39 %</span> · alta volatilidad geopolítica. No entra
+					en la media ≈ 0,06 %.
 				</p>
 				<aside class="precision-contencion-card" aria-label="Caso extremo de contención">
-					<p class="precision-contencion-card__eyebrow">Caso extremo documentado</p>
 					<p class="precision-contencion-card__lead">
-						No forma parte del error medio ≈ <span class="feature-hook__accent">0,06 %</span>.
-						Precisión cuando puede; contención cuando toca. No escondemos este tipo de casos.
-					</p>
-					<p class="precision-contencion-card__body">
 						En un barrido de ~111 ms el mercado se fue; tevsys cerró al siguiente tick evaluable.
 						Límite <strong>+0,50 %</strong> · lectura al disparar <strong>+0,65 %</strong> · día{' '}
 						<strong>+1,04 %</strong>.
@@ -61,7 +56,7 @@ const seo = {
 				</aside>
 			</div>
 		</section>
-		<p class="feature-manifesto-banner">
+		<p class="feature-manifesto-banner precision-manifesto-bridge">
 			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
 		</p>
 
@@ -337,26 +332,108 @@ const seo = {
 
 	.precision-hero-evidence {
 		max-width: 72ch;
-		margin: 0 0 clamp(1.5rem, 3.5vw, 2rem);
-		padding: clamp(1rem, 2.5vw, 1.25rem) 0 clamp(1rem, 2.5vw, 1.15rem);
-		border-top: 1px solid rgba(255, 255, 255, 0.08);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		margin: 0 0 clamp(1.35rem, 3.2vw, 1.75rem);
+		padding: clamp(1rem, 2.5vw, 1.2rem) clamp(1.05rem, 2.5vw, 1.25rem);
+		border-radius: 8px;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-left: 3px solid rgba(245, 176, 65, 0.45);
+		background: rgba(255, 255, 255, 0.035);
 	}
 
 	html[data-theme='light'] .precision-hero-evidence {
 		border-color: rgba(0, 0, 0, 0.08);
+		border-left-color: rgba(200, 135, 26, 0.5);
+		background: rgba(0, 0, 0, 0.025);
 	}
 
-	.precision-hero-evidence .feature-hook {
-		margin: 0 0 0.85rem;
+	.precision-hero-stat {
+		margin: 0 0 0.65rem;
+		font-size: 0.96rem;
+		line-height: 1.55;
+		font-weight: 500;
+		font-style: normal;
+		opacity: 0.94;
+	}
+
+	.precision-hero-stat strong {
+		font-weight: 600;
+	}
+
+	.precision-hero-stat__accent,
+	.feature-hook__accent {
+		color: #f5b041;
+		font-weight: 700;
+	}
+
+	html[data-theme='light'] .precision-hero-stat__accent {
+		color: #c8871a;
+	}
+
+	html[data-theme='light'] .feature-hook__accent {
+		color: #c8871a;
+	}
+
+	.precision-hero-secondary {
+		margin: 0;
+		font-size: 0.92rem;
+		line-height: 1.55;
+		opacity: 0.82;
+	}
+
+	.precision-hero-secondary .evidence-link {
+		font-weight: 600;
 	}
 
 	.precision-hero-honesty {
-		max-width: 74ch;
+		max-width: 72ch;
+		margin: 0 0 clamp(1.1rem, 2.8vw, 1.35rem);
+		padding: clamp(1rem, 2.5vw, 1.2rem) clamp(1.05rem, 2.5vw, 1.25rem);
+		border-radius: 8px;
+		border: 1px solid rgba(255, 255, 255, 0.07);
+		background: rgba(0, 0, 0, 0.12);
 	}
 
-	.precision-hero-honesty .feature-extreme-note {
-		margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
+	html[data-theme='light'] .precision-hero-honesty {
+		border-color: rgba(0, 0, 0, 0.08);
+		background: rgba(0, 0, 0, 0.03);
+	}
+
+	.precision-hero-label {
+		margin: 0 0 0.55rem;
+		font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: rgba(245, 176, 65, 0.85);
+	}
+
+	html[data-theme='light'] .precision-hero-label {
+		color: #b07818;
+	}
+
+	.precision-hero-extreme {
+		margin: 0 0 0.85rem;
+		font-size: 0.94rem;
+		line-height: 1.55;
+		opacity: 0.88;
+	}
+
+	.precision-manifesto-bridge {
+		margin: clamp(1.25rem, 3vw, 1.65rem) 0 calc(var(--section-margin) * 0.65);
+		max-width: 74ch;
+		padding: 0.85rem 0 0;
+		border: none;
+		border-radius: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		background: none;
+		line-height: 1.55;
+		font-size: 0.94rem;
+		opacity: 0.86;
+	}
+
+	html[data-theme='light'] .precision-manifesto-bridge {
+		border-top-color: rgba(0, 0, 0, 0.08);
 	}
 
 	.precision-hero-honesty .precision-contencion-card {
@@ -379,12 +456,8 @@ const seo = {
 		background: #f5b041;
 		flex-shrink: 0;
 	}
-	.feature-hook__accent {
-		color: #f5b041;
-		font-weight: 700;
-	}
-	/* Más aire entre bloque de cifras/extremos y el manifiesto (antes margen negativo lo pegaba). */
-	.feature-manifesto-banner {
+
+	.feature-manifesto-banner:not(.precision-manifesto-bridge) {
 		margin: clamp(1.35rem, 3.2vw, 2rem) 0 calc(var(--section-margin) * 0.65);
 		max-width: 74ch;
 		line-height: 1.55;
@@ -393,78 +466,33 @@ const seo = {
 		border: 1px solid rgba(150, 156, 170, 0.34);
 		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
 	}
-	.feature-extreme-note {
-		max-width: 72ch;
-		line-height: 1.55;
-		opacity: 0.86;
-		margin: 0;
-	}
 
-	.precision-attribution-note {
-		max-width: 68ch;
-		margin: 0;
-		font-size: 0.92rem;
-		line-height: 1.55;
-		opacity: 0.82;
-	}
-
-	.precision-attribution-note .evidence-link {
-		display: inline;
-		margin-top: 0;
-		white-space: nowrap;
-	}
-
-	/* Mismo criterio que el % del hook: ámbar + cursiva en el número. */
-	.feature-extreme-note__pct {
-		font-style: italic;
-	}
-	/* Puente Precisión → Evidencia contención (Barmenteros / honestidad dos caras). */
 	.precision-contencion-card {
-		max-width: 74ch;
-		margin: clamp(1.1rem, 2.8vw, 1.45rem) 0 0;
-		padding: 0.85rem 0.95rem 0.95rem;
-		border-radius: 0.6rem;
-		border: 1px solid rgba(150, 156, 170, 0.38);
-		background: linear-gradient(145deg, rgba(34, 40, 54, 0.72), rgba(245, 176, 65, 0.07));
+		margin: 0;
+		padding: 0.85rem 0 0;
+		border: none;
+		border-radius: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		background: none;
 	}
+
 	html[data-theme='light'] .precision-contencion-card {
-		background: linear-gradient(145deg, rgba(248, 249, 252, 0.95), rgba(245, 176, 65, 0.08));
-		border-color: rgba(0, 0, 0, 0.1);
+		border-top-color: rgba(0, 0, 0, 0.08);
+		background: none;
 	}
-	.precision-contencion-card__eyebrow {
-		display: inline-block;
-		margin: 0 0 0.65rem;
-		padding: 0.32rem 0.65rem;
-		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: 0.76rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: #f5b041;
-		border: 1px solid rgba(245, 176, 65, 0.35);
-		border-radius: 999px;
-		background: rgba(245, 176, 65, 0.08);
-	}
-	html[data-theme='light'] .precision-contencion-card__eyebrow {
-		color: #b07818;
-		background: rgba(245, 176, 65, 0.12);
-		border-color: rgba(200, 135, 26, 0.35);
-	}
+
 	.precision-contencion-card__lead {
 		margin: 0 0 0.55rem;
-		line-height: 1.5;
-		font-weight: 600;
-		opacity: 0.95;
-	}
-	.precision-contencion-card__body {
-		margin: 0 0 0.7rem;
+		font-size: 0.92rem;
 		line-height: 1.55;
-		opacity: 0.86;
-		font-size: 0.95em;
+		font-weight: 500;
+		opacity: 0.9;
 	}
+
 	.precision-contencion-card__cta {
 		margin: 0;
 	}
+
 	/* Contexto multigráfico: secundario respecto al título “Demo rápida” del vídeo */
 	.precision-multichart {
 		margin: 0 0 clamp(1rem, 2.8vw, 1.5rem);
