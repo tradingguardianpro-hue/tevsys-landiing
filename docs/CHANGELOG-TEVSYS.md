@@ -6,7 +6,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Nasdaq #6263709 publicado — vídeo + Transparencia + atribución (22 ago 2026)
+## Nasdaq #6263709 — copy bajo vídeo + atribución (22 ago 2026)
+
+**Commit:** `web(tevsys): add attribution explainer under Nasdaq evidence blurb`
+
+**Qué:** blurb corto intacto + párrafo Atribución (sin bróker) · Transparencia sin cambio estructural.
+
+---
 
 **Qué:** regrabación **21–22 ago** colgada en web: `evidencia-nasdaq-100-completa.mp4` (`?v=20260822`) · poster sesión · `/como-funciona` con cifras **−1 001,70 / 1,70 USD / 8 HC / −1 187,20** · bloque **Atribución** (tevsys −1,0017 % · broker 0,00 p.p. · 42 ms). Home: lead + CTA *Nasdaq 100 — sesión real (~3:35)*.
 

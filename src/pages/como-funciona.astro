@@ -15,6 +15,9 @@ const presentationLeadVideo = {
 	title: 'Nasdaq 100 — sesión real (~3:35)',
 	blurb:
 		'Tu límite, el cierre real, HyperClose y el informe en una sola sesión. Contrástalo en MT5.',
+	/** Explicación atribución bajo el título — sin nombre de bróker; cifras sesión 6263709. */
+	attributionBlurb:
+		'Atribución: tevsys decide el cierre; la ejecución en MT5 es otro tramo. En el vídeo, al tocar el −1 %: tevsys −1,0017 % · ejecución 0,00 p.p. · 42 ms (cierre −1 001,70 USD; 1,70 $ sobre 100 000). Los ocho HyperClose y el total del día (−1 187) son capas aparte — Transparencia más abajo.',
 	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20260822',
 	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-6263709.jpg?v=20260822',
 	youtubeWatch: 'https://youtu.be/2f1rRmqkE1k',
@@ -292,6 +295,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 								<p class="how-eyebrow">{presentationLeadVideo.partLabel}</p>
 								<h3>{presentationLeadVideo.title}</h3>
 								<p class="how-block-lead">{presentationLeadVideo.blurb}</p>
+								<p class="how-block-attribution">{presentationLeadVideo.attributionBlurb}</p>
 								<a
 									href={presentationLeadVideo.youtubeWatch}
 									class="how-text-link how-text-link--presentation-yt"
@@ -3869,6 +3873,26 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.how-block-attribution {
+		max-width: min(38rem, 100%);
+		margin: 0 auto 0.65rem;
+		padding: 0.65rem 0.85rem;
+		box-sizing: border-box;
+		text-align: center;
+		font-size: clamp(0.84rem, 1.05vw, 0.92rem);
+		line-height: 1.55;
+		letter-spacing: 0.01em;
+		color: rgba(244, 246, 248, 0.82);
+		border-left: 2px solid rgba(245, 176, 65, 0.4);
+		background: rgba(245, 176, 65, 0.04);
+		border-radius: 0 8px 8px 0;
+	}
+
+	html[data-theme='light'] .how-block-attribution {
+		color: rgba(20, 24, 32, 0.82);
+		background: rgba(245, 176, 65, 0.07);
 	}
 
 	.how-pair-cell .how-text-link {
