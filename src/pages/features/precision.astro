@@ -18,6 +18,10 @@ const seo = {
 				Precisión de cierre. Menos "<span class="feature-title__accent">casi</span>": más cierre donde toca.
 			</h1>
 			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>{settings.documentedOperatives} operativas documentadas. <span class="feature-hook__accent">0,06%</span> de error medio en condiciones normales.</p>
+			<p class="precision-attribution-note">
+				En cierres recientes también registramos <strong>atribución tevsys vs ejecución</strong> en MT5.
+				<a class="evidence-link" href="/como-funciona#documentacion-sesion-nasdaq">Ver ejemplo (Nasdaq) en Cómo funciona →</a>
+			</p>
 			<p class="feature-intro">El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.</p>
 			<p class="feature-extreme-note">
 				También hay extremos documentados (p. ej. desviación máxima <span class="feature-hook__accent feature-extreme-note__pct">−0,39%</span>). Abajo, un caso aparte de la media.
@@ -334,6 +338,20 @@ const seo = {
 		opacity: 0.86;
 		margin: 0.55rem 0 0;
 	}
+
+	.precision-attribution-note {
+		max-width: 68ch;
+		margin: 0.85rem 0 0;
+		font-size: 0.92rem;
+		line-height: 1.55;
+		opacity: 0.88;
+	}
+
+	.precision-attribution-note .evidence-link {
+		display: inline-block;
+		margin-top: 0.35rem;
+	}
+
 	/* Mismo criterio que el % del hook: ámbar + cursiva en el número. */
 	.feature-extreme-note__pct {
 		font-style: italic;

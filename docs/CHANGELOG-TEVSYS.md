@@ -567,6 +567,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+---
+
+## Contador operativas — **112** (22 ago 2026)
+
+**Qué:** sync contador público tras operativas **4.107–4.112** (atribución A/B) + **4.112** Nasdaq vídeo web — fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).
+
+**Web:** `settings.js` → Precisión hook, card home Precisión, Evidencia, Para quién, meta description. Micro Precisión: línea atribución → `/como-funciona#documentacion-sesion-nasdaq`.
+
+**Commit:** `web(tevsys): sync contador 112 operativas + precision attribution link`
+
+---
+
 ## Contador operativas — **103** (10 jul 2026)
 
 **Qué:** sync contador público tras operativas **4.102** (FTMO buffer diamante +0,50 %) + **4.103** (IC buffer diamante +2,50 %) — fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).
