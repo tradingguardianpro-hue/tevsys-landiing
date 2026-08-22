@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## YouTube Nasdaq 6263709 — URL canónica `sAttywGy0nQ` (22 ago 2026)
+
+**Commit:** `web(tevsys): point Nasdaq evidence YouTube links to sAttywGy0nQ`
+
+**Qué:** enlace *Abrir en YouTube* en `/como-funciona` + 1.ª tarjeta `/videos-cierre-youtube` → **https://youtu.be/sAttywGy0nQ** (título YT: *Nasdaq 100 — sesión real (~3:35) | tevsys en MT5*). Sustituye `2f1rRmqkE1k` (may · sesión antigua).
+
+**Histórico obsoleto:** `https://youtu.be/2f1rRmqkE1k`
+
+---
+
 ## Transparencia Nasdaq — más aire, menos redundancia (22 ago 2026)
 
 **Commit:** `web(tevsys): lighten Nasdaq transparency block layout and copy`
@@ -16,13 +26,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## YouTube Nasdaq 6263709 — pendiente sustituir `2f1rRmqkE1k` (22 ago 2026)
+## YouTube Nasdaq 6263709 — ~~pendiente~~ sustituido por `sAttywGy0nQ` (22 ago 2026)
 
-**Estado:** web MP4 ✅ · enlace YouTube en sitio **aún may** hasta subida nueva.
+**Estado:** ✅ web enlaces actualizados · vídeo publicado en canal.
 
-**Pasos:** subir export 6263709 → copiar URL → borrar/ocultar viejo → actualizar `como-funciona.astro` + `videos-cierre-youtube.astro` (lista completa en TGP `AGENDA_GABI` § *YouTube — próximo paso*).
-
-**Retomar:** *«YouTube Nasdaq»* + URL pegada.
+**Histórico:** `2f1rRmqkE1k` (may) — sesión antigua; borrar/ocultar en Studio cuando proceda.
 
 ---
 
