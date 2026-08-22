@@ -77,7 +77,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Botón:** `Descargar demo →` (ámbar marca) → `/company/contact?flow=demo`
 - **CTA móvil (11 ago 2026 — ✅):** en ≤768px el ámbar es **más pequeño/estrecho** (menos “cartelón”); desktop sin cambio. `HomeHeroSection.astro` · `CHANGELOG` *Hero — Descargar demo… móvil*.
 - **CTA secundario + lead (22 ago):** botón **`Nasdaq 100 — sesión real (~3:35)`** → `/como-funciona?play=1#evidencia-nasdaq-100` (sin párrafo extra encima del botón). MP4 `?v=20260822` · sesión **6263709** · Transparencia + **Atribución** (sin nombre de bróker).
-- **Presentación `/como-funciona#evidencia-nasdaq-100` (22 ago):** H2/sub original · eyebrow **Evidencia** · blurb corto + **párrafo Atribución** (tevsys / ejecución / cifras; sin bróker) · Transparencia abajo.
+- **Presentación `/como-funciona#evidencia-nasdaq-100` (22 ago):** H2/sub original · **Evidencia** · blurb corto + atribución en una línea (*tevsys −1,0017 % · ejecución 0,00 p.p. · 42 ms*) · detalle en Transparencia abajo.
 - **Mid-home microclips (16 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / lead con enlace a `#desde-cero` + CTA `Ver microclips →` → `/como-funciona#mas-comportamientos` (**20 ago:** mención suave guía Desde cero).
 - **Guía Desde cero (20 ago 2026):** `/como-funciona#desde-cero` · eyebrow **Condición innegociable** · título *Desde cero, siempre* · lead *Si cargas tevsys con operaciones ya abiertas… empezamos de cero.* · ~57 s · `tevsys-guia-desde-cero.mp4` · micro `#videoclip-pasiva` se mantiene. `?v=20260820b`.
 - **Puesta en marcha (21 ago):** `/como-funciona#puesta-en-marcha` · *Instalar y fijar límites* · enlace primario al minuto de config + instalar. Tras Desde cero / antes de clips.
