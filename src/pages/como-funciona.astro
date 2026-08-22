@@ -17,7 +17,7 @@ const presentationLeadVideo = {
 		'Tu límite, el cierre real, HyperClose y el informe en una sola sesión. Contrástalo en MT5.',
 	/** Explicación atribución bajo el título — sin nombre de bróker; cifras sesión 6263709. */
 	attributionBlurb:
-		'Atribución: separamos la decisión de tevsys y la ejecución en MT5. En esta sesión: tevsys −1,0017 % · ejecución 0,00 p.p. · 42 ms.',
+		'Separamos la decisión de tevsys y la ejecución en MT5. En esta sesión: tevsys −1,0017 % · ejecución 0,00 p.p. · 42 ms.',
 	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20260822',
 	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-6263709.jpg?v=20260822',
 	youtubeWatch: 'https://youtu.be/sAttywGy0nQ',
@@ -289,7 +289,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 								<p class="how-eyebrow">{presentationLeadVideo.partLabel}</p>
 								<h3>{presentationLeadVideo.title}</h3>
 								<p class="how-block-lead">{presentationLeadVideo.blurb}</p>
-								<p class="how-block-attribution">{presentationLeadVideo.attributionBlurb}</p>
+								<div class="how-block-attribution-wrap">
+									<span class="how-block-attribution__badge">Atribución</span>
+									<p class="how-block-attribution">{presentationLeadVideo.attributionBlurb}</p>
+								</div>
 								<a
 									href={presentationLeadVideo.youtubeWatch}
 									class="how-text-link how-text-link--presentation-yt"
@@ -3931,26 +3934,59 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
+		margin-bottom: 1.15rem;
+	}
+
+	.how-block-attribution-wrap {
+		max-width: min(38rem, 100%);
+		margin: 0 auto 1.35rem;
+		text-align: center;
+	}
+
+	.how-block-attribution__badge {
+		display: inline-block;
+		margin: 0 0 0.6rem;
+		padding: 0.28rem 0.62rem;
+		font-family: var(--font-mono, ui-monospace, monospace);
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: rgba(244, 246, 248, 0.88);
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+		border-radius: 4px;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+	}
+
+	html[data-theme='light'] .how-block-attribution__badge {
+		color: rgba(28, 32, 40, 0.82);
+		background: rgba(0, 0, 0, 0.05);
+		border-color: rgba(0, 0, 0, 0.12);
+		box-shadow: none;
 	}
 
 	.how-block-attribution {
-		max-width: min(38rem, 100%);
-		margin: 0 auto 0.65rem;
-		padding: 0.65rem 0.85rem;
+		max-width: 100%;
+		margin: 0;
+		padding: 0.95rem 1.1rem 1rem;
 		box-sizing: border-box;
 		text-align: center;
-		font-size: clamp(0.84rem, 1.05vw, 0.92rem);
-		line-height: 1.55;
+		font-size: clamp(0.86rem, 1.05vw, 0.94rem);
+		line-height: 1.58;
 		letter-spacing: 0.01em;
-		color: rgba(244, 246, 248, 0.82);
-		border-left: 2px solid rgba(245, 176, 65, 0.4);
-		background: rgba(245, 176, 65, 0.04);
-		border-radius: 0 8px 8px 0;
+		color: rgba(244, 246, 248, 0.9);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-left: 3px solid rgba(245, 176, 65, 0.55);
+		background: rgba(255, 255, 255, 0.045);
+		border-radius: 8px;
 	}
 
 	html[data-theme='light'] .how-block-attribution {
-		color: rgba(20, 24, 32, 0.82);
-		background: rgba(245, 176, 65, 0.07);
+		color: rgba(20, 24, 32, 0.86);
+		background: rgba(0, 0, 0, 0.03);
+		border-color: rgba(0, 0, 0, 0.08);
+		border-left-color: rgba(200, 135, 26, 0.55);
 	}
 
 	.how-pair-cell .how-text-link {
@@ -3961,15 +3997,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		display: block;
 		text-align: center;
 		width: fit-content;
-		margin-inline: auto;
-	}
-
-	.how-pair-cell .how-block-head--compact .how-block-lead {
-		margin-bottom: 0.6rem;
-	}
-
-	.how-pair-cell .how-text-link {
-		margin-bottom: 1rem;
+		margin: 0.15rem auto 1.5rem;
 	}
 
 	.how-block-head h3 {
