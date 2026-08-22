@@ -5,7 +5,7 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Nasdaq 100 — sesión real (~3:35): precisión, atribución tevsys vs broker, HyperClose e informe MT5. Guías y microclips en tevsys.',
+		'Evidencia Nasdaq, guía Desde cero y microclips. Cómo funciona tevsys en MT5.',
 };
 
 /** Vídeo único de presentación — regrabación 21–22 ago 2026 · cuenta #6263709 · ~3:35. YT pendiente sustituir may. */
@@ -14,7 +14,7 @@ const presentationLeadVideo = {
 	partLabel: 'Evidencia',
 	title: 'Nasdaq 100 — sesión real (~3:35)',
 	blurb:
-		'Panel actual, límite −1 %, cierre −1 001,70 USD, atribución tevsys vs broker, ocho HyperClose e informe HTML — misma sesión ActivTrades demo.',
+		'Tu límite, el cierre real, HyperClose y el informe en una sola sesión. Contrástalo en MT5.',
 	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20260822',
 	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-6263709.jpg?v=20260822',
 	youtubeWatch: 'https://youtu.be/2f1rRmqkE1k',
@@ -37,7 +37,7 @@ const desdeCeroGuide = {
 /** Transparencia sesión Nasdaq #6263709 (21 ago 2026) — público; pack completo en repo interno. */
 const sessionDocumentation = {
 	id: 'documentacion-sesion-nasdaq',
-	sessionRef: '6263709 · 21 ago 2026 · ActivTrades demo · UsaTec · 10 lotes · límite −1 %',
+	sessionRef: '6263709 · 21 ago 2026 · cuenta demo · UsaTec · 10 lotes · límite −1 %',
 	timeline:
 		'15:36 panel y límites · 16:19:13 cierre al −1 % (−1 001,70 USD) · 16:19–16:20 ocho HyperClose · 22:03 informe HTML',
 	attribution: {
@@ -47,7 +47,7 @@ const sessionDocumentation = {
 		ms: '42 ms',
 		deviationUsd: '1,70 USD sobre 100 000',
 		footnote:
-			'tevsys decide el cierre; el fill es mercado y bróker. El primer cierre (−1 001,70) es precisión al límite. Los ocho intentos posteriores son HyperClose. El día completo (−1 187,20) no es la desviación de precisión.',
+			'tevsys decide el cierre; el fill es mercado y ejecución en MT5. El primer cierre (−1 001,70) es precisión al límite. Los ocho intentos posteriores son HyperClose. El día completo (−1 187,20) no es la desviación de precisión.',
 	},
 	layers: [
 		{
@@ -56,7 +56,7 @@ const sessionDocumentation = {
 		},
 		{
 			title: 'Atribución',
-			text: 'En el cierre al límite: tevsys −1,0017 % · broker 0,00 p.p. · 42 ms. Desviación en USD: 1,70 sobre cuenta 100 000. Episode 1787329153156 en registro Client.',
+			text: 'En el cierre al límite: tevsys −1,0017 % · ejecución 0,00 p.p. · 42 ms. Desviación en USD: 1,70 sobre cuenta 100 000. Episode 1787329153156 en registro Client.',
 		},
 		{
 			title: 'Informe de MT5',
@@ -278,10 +278,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					<header class="how-section-head">
 						<p class="how-eyebrow how-eyebrow--center">Presentación</p>
 						<h2 id="how-presentation-title">
-							<span class="how-present-title__accent">Nasdaq 100 — sesión real</span> en MT5
+							Cuatro minutos de <span class="how-present-title__accent">sesión real en MT5</span>
 						</h2>
 						<p class="how-section-sub">
-							Tres minutos y medio: panel actual, precisión al límite, atribución tevsys vs broker, HyperClose e informe.
+							Te enseñamos el producto en marcha y por qué la gente habla de precisión y evidencia.
 							<br />
 							<span class="how-section-sub__line2">Contrasta tú mismo.</span>
 						</p>
@@ -346,7 +346,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							</p>
 							<p class="how-doc-session__attribution-stats">
 								<span class="how-doc-session__attribution-pill">tevsys {sessionDocumentation.attribution.tevsys}</span>
-								<span class="how-doc-session__attribution-pill">broker {sessionDocumentation.attribution.broker}</span>
+								<span class="how-doc-session__attribution-pill">ejecución {sessionDocumentation.attribution.broker}</span>
 								<span class="how-doc-session__attribution-pill">{sessionDocumentation.attribution.ms}</span>
 							</p>
 							<p class="how-doc-session__attribution-foot">
