@@ -6,6 +6,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Nasdaq #6263709 publicado — vídeo + Transparencia + atribución (22 ago 2026)
+
+**Qué:** regrabación **21–22 ago** colgada en web: `evidencia-nasdaq-100-completa.mp4` (`?v=20260822`) · poster sesión · `/como-funciona` con cifras **−1 001,70 / 1,70 USD / 8 HC / −1 187,20** · bloque **Atribución** (tevsys −1,0017 % · broker 0,00 p.p. · 42 ms). Home: lead + CTA *Nasdaq 100 — sesión real (~3:35)*.
+
+**Docs internas:** `AGENDA_GABI` overlays 1–22 + H1–H6 ✅ · V12 **(nasdaqPub)**.
+
+**Pendiente:** YouTube nuevo (enlace may sigue hasta subir).
+
+**Commit:** `web(tevsys): publish Nasdaq 6263709 session video with attribution transparency`
+
+---
+
 ## Móvil — menú sin marca encima + Cómo funciona centrado (21 ago 2026)
 
 **Qué:** (1) Hamburguesa: la pastilla *tevsys* quedaba por encima del menú (`z-index`) → se oculta al abrir; menú por encima. (2) CTA Nasdaq / `#evidencia-nasdaq-100`: menos corrimiento a la izquierda (vídeo `height:100%` → 16:9, `overflow-x`, reset scroll horizontal, títulos evidencia centrados).

@@ -5,20 +5,18 @@ import Layout from '../layouts/Page.astro';
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Evidencia Nasdaq, guía Desde cero (observación pasiva) y microclips por ramas. Cómo funciona tevsys en MT5.',
+		'Nasdaq 100 — sesión real (~3:35): precisión, atribución tevsys vs broker, HyperClose e informe MT5. Guías y microclips en tevsys.',
 };
 
-/** Vídeo único de presentación (may 2026): evidencia Nasdaq ~4 min · YT 2f1rRmqkE1k. */
+/** Vídeo único de presentación — regrabación 21–22 ago 2026 · cuenta #6263709 · ~3:35. YT pendiente sustituir may. */
 const presentationLeadVideo = {
 	id: 'evidencia-nasdaq-100',
 	partLabel: 'Evidencia',
-	title: 'Nasdaq 100 — sesión real (~4 min)',
+	title: 'Nasdaq 100 — sesión real (~3:35)',
 	blurb:
-		'Tu límite, el cierre real, HyperClose y el informe en una sola sesión. Contrástalo en MT5.',
-	/** MP4 en `public/videos/features/evidencia-nasdaq-100-completa.mp4` — mismo export que YouTube (may 2026 typo overlay corregido). */
-	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20260528okk',
-	/** Prueba: poster marca = chevrons grises home (`hero-tevsys-chevrons.png`) + tevsys minúsculas; más pequeño que hero. */
-	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-brand.jpg?v=20260816f',
+		'Panel actual, límite −1 %, cierre −1 001,70 USD, atribución tevsys vs broker, ocho HyperClose e informe HTML — misma sesión ActivTrades demo.',
+	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20260822',
+	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-6263709.jpg?v=20260822',
 	youtubeWatch: 'https://youtu.be/2f1rRmqkE1k',
 };
 
@@ -36,27 +34,41 @@ const desdeCeroGuide = {
 	videoLabel: 'Guía ~57 s — observación pasiva y empezar de cero (MC-CF-002-G)',
 };
 
-/** Transparencia sesión Nasdaq (may 2026) — público; pack completo en repo interno. */
+/** Transparencia sesión Nasdaq #6263709 (21 ago 2026) — público; pack completo en repo interno. */
 const sessionDocumentation = {
 	id: 'documentacion-sesion-nasdaq',
+	sessionRef: '6263709 · 21 ago 2026 · ActivTrades demo · UsaTec · 10 lotes · límite −1 %',
 	timeline:
-		'15:23 identificación · 15:26 límites activos · 15:36 cierre al límite · 15:37–15:38 ocho bloqueos con HyperClose · 22:09 cuenta protegida',
+		'15:36 panel y límites · 16:19:13 cierre al −1 % (−1 001,70 USD) · 16:19–16:20 ocho HyperClose · 22:03 informe HTML',
+	attribution: {
+		headline: 'Atribución en el cierre al límite (no en los ocho HyperClose)',
+		tevsys: '−1,0017 %',
+		broker: '0,00 p.p.',
+		ms: '42 ms',
+		deviationUsd: '1,70 USD sobre 100 000',
+		footnote:
+			'tevsys decide el cierre; el fill es mercado y bróker. El primer cierre (−1 001,70) es precisión al límite. Los ocho intentos posteriores son HyperClose. El día completo (−1 187,20) no es la desviación de precisión.',
+	},
 	layers: [
 		{
 			title: 'Vídeo',
-			text: 'Instalación y puesta en marcha, cierre al límite pactado (-1 015,30 USD; desviación 15,30 USD), ocho intentos bloqueados y resumen de MT5 en pantalla.',
+			text: 'Panel y modales actuales, operación 10 lotes, cierre al límite (−1 001,70 USD; −1,0017 %), bloque atribución en pantalla, ocho HyperClose e informe MT5.',
+		},
+		{
+			title: 'Atribución',
+			text: 'En el cierre al límite: tevsys −1,0017 % · broker 0,00 p.p. · 42 ms. Desviación en USD: 1,70 sobre cuenta 100 000. Episode 1787329153156 en registro Client.',
 		},
 		{
 			title: 'Informe de MT5',
-			text: 'Historial de operaciones exportado: mismos cierres y misma sesión.',
+			text: 'Historial HTML exportado (ReportHistory-6263709): fila 1 = precisión; filas 2–9 = HyperClose; resultados −1 187,20 (−1,19 % día).',
 		},
 		{
 			title: 'Panel en vivo',
-			text: 'STOP diario en -1,18 % y protección hasta el fin de semana (captura redactada si la pides).',
+			text: 'STOP diario en −1,00 % y protección hasta fin de sesión (21/08/2026 23:59 h).',
 		},
 		{
 			title: 'Registro tevsys',
-			text: 'Qué ocurrió y en qué orden: bloqueo de límites, cierre al tope y cada intento posterior.',
+			text: 'Orden verificable: bloqueo de límites, cierre al tope, cada intento HyperClose y export HTML — ID TVS-GPJH-EVY7.',
 		},
 	],
 };
@@ -266,10 +278,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					<header class="how-section-head">
 						<p class="how-eyebrow how-eyebrow--center">Presentación</p>
 						<h2 id="how-presentation-title">
-							Cuatro minutos de <span class="how-present-title__accent">sesión real en MT5</span>
+							<span class="how-present-title__accent">Nasdaq 100 — sesión real</span> en MT5
 						</h2>
 						<p class="how-section-sub">
-							Te enseñamos el producto en marcha y por qué la gente habla de precisión y evidencia.
+							Tres minutos y medio: panel actual, precisión al límite, atribución tevsys vs broker, HyperClose e informe.
 							<br />
 							<span class="how-section-sub__line2">Contrasta tú mismo.</span>
 						</p>
@@ -316,17 +328,31 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							<p class="how-eyebrow how-eyebrow--center">Transparencia</p>
 							<h3 id="how-doc-session-title" class="how-doc-session__title">
 								Cómo está documentada esta sesión —{' '}
-								<span class="how-present-title__accent">Nasdaq 100 · 10 lotes · -1 %</span>
+								<span class="how-present-title__accent">Nasdaq 100 · 10 lotes · −1 % · #6263709</span>
 							</h3>
 							<p class="how-doc-session__edited">
 								El vídeo va al grano y recorta tiempos muertos. A veces el reloj del PC salta entre planos;
-								es la misma sesión que puedes contrastar en MT5 y con la documentación que ofrecemos.
+								es la misma sesión del 21 ago 2026 que puedes contrastar en MT5 y con la documentación que
+								ofrecemos.
 							</p>
 						</header>
 						<p class="how-doc-session__timeline" role="doc-subtitle">
 							<span class="how-doc-session__timeline-label">Orden de la sesión ·</span>
 							{sessionDocumentation.timeline}
 						</p>
+						<div class="how-doc-session__attribution" aria-labelledby="how-doc-attribution-title">
+							<p id="how-doc-attribution-title" class="how-doc-session__attribution-kicker">
+								{sessionDocumentation.attribution.headline}
+							</p>
+							<p class="how-doc-session__attribution-stats">
+								<span class="how-doc-session__attribution-pill">tevsys {sessionDocumentation.attribution.tevsys}</span>
+								<span class="how-doc-session__attribution-pill">broker {sessionDocumentation.attribution.broker}</span>
+								<span class="how-doc-session__attribution-pill">{sessionDocumentation.attribution.ms}</span>
+							</p>
+							<p class="how-doc-session__attribution-foot">
+								{sessionDocumentation.attribution.deviationUsd}. {sessionDocumentation.attribution.footnote}
+							</p>
+						</div>
 						<ul class="how-doc-session__layers">
 							{
 								sessionDocumentation.layers.map((layer) => (
@@ -974,11 +1000,68 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	.how-doc-session__timeline-label {
 		display: block;
 		margin-bottom: 0.2rem;
+		font-family: var(--font-mono, ui-monospace, monospace);
 		font-size: 0.72rem;
 		font-weight: 600;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 		opacity: 0.65;
+	}
+
+	.how-doc-session__attribution {
+		margin: 1.35rem 0 0;
+		padding: 1rem 1.1rem 1.05rem;
+		border-radius: 10px;
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		border-left: 3px solid rgba(245, 176, 65, 0.55);
+		background:
+			linear-gradient(135deg, rgba(245, 176, 65, 0.06) 0%, transparent 55%),
+			rgba(255, 255, 255, 0.02);
+	}
+
+	html[data-theme='light'] .how-doc-session__attribution {
+		background:
+			linear-gradient(135deg, rgba(245, 176, 65, 0.08) 0%, transparent 55%),
+			rgba(0, 0, 0, 0.02);
+		border-color: rgba(180, 120, 20, 0.25);
+	}
+
+	.how-doc-session__attribution-kicker {
+		margin: 0 0 0.65rem;
+		font-size: 0.92rem;
+		font-weight: 600;
+		line-height: 1.45;
+	}
+
+	.how-doc-session__attribution-stats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem 0.55rem;
+		margin: 0 0 0.75rem;
+	}
+
+	.how-doc-session__attribution-pill {
+		display: inline-block;
+		padding: 0.28rem 0.55rem;
+		border-radius: 999px;
+		font-family: var(--font-mono, ui-monospace, monospace);
+		font-size: 0.78rem;
+		letter-spacing: 0.02em;
+		color: #f5b041;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		background: rgba(245, 176, 65, 0.08);
+	}
+
+	html[data-theme='light'] .how-doc-session__attribution-pill {
+		color: #9a6a12;
+		background: rgba(245, 176, 65, 0.12);
+	}
+
+	.how-doc-session__attribution-foot {
+		margin: 0;
+		font-size: 0.86rem;
+		line-height: 1.55;
+		opacity: 0.88;
 	}
 
 	.how-doc-session__layers {

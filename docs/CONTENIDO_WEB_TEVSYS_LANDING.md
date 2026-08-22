@@ -76,7 +76,8 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Punto de tagline:** amarillo (dot + badge)
 - **Botón:** `Descargar demo →` (ámbar marca) → `/company/contact?flow=demo`
 - **CTA móvil (11 ago 2026 — ✅):** en ≤768px el ámbar es **más pequeño/estrecho** (menos “cartelón”); desktop sin cambio. `HomeHeroSection.astro` · `CHANGELOG` *Hero — Descargar demo… móvil*.
-- **CTA secundario (21 ago):** `Nasdaq 100 — sesión real (~4 min)` → `/como-funciona?play=1#evidencia-nasdaq-100` (mismo título que el vídeo de presentación; no confundir con ruta `/go/evidencia-5min`).
+- **CTA secundario + lead (22 ago):** línea **`Nasdaq 100 — sesión real (~3:35)`** (atribución + HyperClose en una frase) + botón mismo título → `/como-funciona?play=1#evidencia-nasdaq-100`. MP4 `evidencia-nasdaq-100-completa.mp4?v=20260822` · sesión **#6263709** · Transparencia con capa **Atribución**.
+- **Presentación `/como-funciona#evidencia-nasdaq-100` (22 ago):** título *Nasdaq 100 — sesión real (~3:35)* · H2 *Nasdaq 100 — sesión real en MT5* · blurb con atribución · bloque Transparencia: timeline 21 ago · capa **Atribución** (tevsys −1,0017 % · broker 0,00 p.p. · 42 ms) · nota legal tres capas (precisión / HC / día). Overlays: `AGENDA_GABI` § *Overlays definitivos 21 ago*.
 - **Mid-home microclips (16 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona en escenarios reales?* / lead con enlace a `#desde-cero` + CTA `Ver microclips →` → `/como-funciona#mas-comportamientos` (**20 ago:** mención suave guía Desde cero).
 - **Guía Desde cero (20 ago 2026):** `/como-funciona#desde-cero` · eyebrow **Condición innegociable** · título *Desde cero, siempre* · lead *Si cargas tevsys con operaciones ya abiertas… empezamos de cero.* · ~57 s · `tevsys-guia-desde-cero.mp4` · micro `#videoclip-pasiva` se mantiene. `?v=20260820b`.
 - **Puesta en marcha (21 ago):** `/como-funciona#puesta-en-marcha` · *Instalar y fijar límites* · enlace primario al minuto de config + instalar. Tras Desde cero / antes de clips.
@@ -136,7 +137,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Qué:** el EA en gráfico (panel B&N anti-feria, V12 **o**, modales ago) **ya no coincide** con muchos MP4 de la web. Deuda de imagen. Se cierra **por oleadas**.
 
-**P0 siguiente (acordado 11 ago 2026):** **regrabar pieza Nasdaq ~3:53** (presentación `/como-funciona` + YT `2f1rRmqkE1k`).
+**P0 siguiente (acordado 11 ago 2026):** **regrabar pieza Nasdaq** — **✅ publicado 22 ago 2026** (`6263709`, ~3:35). Pendiente solo **YT** nuevo (sustituir `2f1rRmqkE1k`).
 
 - **Flujo = no reabrir** (bueno). Checklist *dónde apretamos* + mejora piel overlays: `AGENDA_GABI.md` § **Regrabación ago 2026**.
 - **Misma estructura / lotaje / textos:** panel → op. → cierre límite → HyperClose → modales nuevos → evidencia.
