@@ -404,7 +404,7 @@ Ver handoff hero.
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`); en el flujo de página va **antes** del bloque de logs / “Sin humo” (tras volatilidad y Nasdaq).
 - **Qué puedes comprobar / orden de secciones en página (19 abr 2026):** alta volatilidad → **Nasdaq** → **cuenta pequeña** → **logs / trazabilidad**; lista de anclas y script de expansión de demos alineados con ese orden en `precision.astro`.
 - **112 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
-- **Atribución (22 ago 2026):** una línea bajo el hook → enlace a `/como-funciona#documentacion-sesion-nasdaq` (sin duplicar cifras Nasdaq en hero).
+- **Atribución (22 ago 2026):** una línea bajo el hook → enlace a `/como-funciona?play=1#evidencia-nasdaq-100` (vídeo primero; Transparencia justo debajo en la misma página).
 - **Nota extremos (30 abr 2026):** bajo el hook, párrafo `feature-extreme-note` — desviación máxima documentada **−0,39%** (acento + cursiva en el porcentaje).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
 
