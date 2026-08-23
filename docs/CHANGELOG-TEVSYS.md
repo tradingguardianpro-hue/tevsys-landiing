@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — invite vídeos: puerta a Cómo funciona (23 ago 2026)
+
+**Commit:** `web(tevsys): home video invite as single CTA to como-funciona hub`
+
+**Qué:** mid-home — quita lista de 3 · lead con Nasdaq + clips + guías · CTA *Ver evidencia en vídeo →* → `/como-funciona`.
+
+**Dónde:** `index.astro` · `CONTENIDO_WEB`.
+
+---
+
 ## Home — invite vídeos: lista plana (23 ago 2026)
 
 **Commit:** `web(tevsys): home video invite as equal list not desde-cero spotlight`
