@@ -26,7 +26,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Micropágina Precisión (`/features/precision`)
 - **H1:** `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
 - **Lead:** *El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.*
-- **Bloque evidencia (22 ago 2026):** caja única — **112 operativas** · 0,06 % error medio · línea atribución + enlace Nasdaq. Sin cursiva en cifras.
+- **Bloque evidencia (22 ago 2026):** caja única — **112 operativas** · 0,06 % error medio · línea atribución híbrida (*decisión tevsys vs ejecución bróker · sin mezclar con slippage*) + enlace Nasdaq. Sin cursiva en cifras.
 - **Nota geopolítica (−0,39 %):** línea suelta bajo evidencia — no mezclar con card contención 489.
 - **Card contención:** píldora *Caso extremo documentado* · barrido ~111 ms · CTA Evidencia.
 - **Manifiesto:** caja visible (misma franja que otras features).

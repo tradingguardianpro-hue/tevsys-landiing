@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Precisión — copy atribución híbrida (23 ago 2026)
+
+**Commit:** `web(tevsys): clarify precision attribution decision vs broker fill`
+
+**Qué:** `/features/precision` — *En cada cierre medimos por separado la decisión de tevsys y la ejecución del bróker en MT5 — sin mezclar precisión del producto con slippage de mercado.* + enlace Nasdaq.
+
+---
+
 ## Precisión hero — corrección extremos separados + manifiesto visible (22 ago 2026)
 
 **Commit:** `web(tevsys): split precision geopolitical note from contencion card restore manifesto`
