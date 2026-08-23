@@ -1,0 +1,136 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+import '../styles/guia-operativa.css';
+
+const seo = {
+	title: 'Instalar tevsys desde MetaQuotes Market | Guía rápida',
+	description:
+		'Guía MT5 para compradores Market (~30 s): Navegador → Expert Advisors, trading algorítmico y arrastrar tevsys al gráfico. Sin clave ni WebRequest en el build Market.',
+};
+
+const bloquesLectura = [
+	{
+		n: 1,
+		title: 'Localiza el EA',
+		detail:
+			'Tras comprar o alquilar en MetaQuotes Market, abre Navegador (Ctrl+N) → Asesores Expertos y localiza tevsys (tevsys_Market_Advanced.ex5).',
+	},
+	{
+		n: 2,
+		title: 'Trading algorítmico',
+		detail:
+			'Herramientas → Opciones → Asesores Expertos: activa trading algorítmico y los permisos de trading automático que pida tu bróker.',
+	},
+	{
+		n: 3,
+		title: 'Carga en el gráfico',
+		detail:
+			'Arrastra tevsys al gráfico donde quieras el panel. Un gráfico; la protección actúa según tu configuración a nivel de cuenta.',
+	},
+	{
+		n: 4,
+		title: 'Configura límites',
+		detail:
+			'Sigue el flujo del panel para fijar y confirmar protección. Guía Advanced entre semana en el enlace de abajo.',
+	},
+];
+---
+
+<Layout seo={seo} bodyClass="page-guia-instalacion page-guia-instalacion-market">
+	<Container>
+		<div class="guia-page">
+			<section class="feature-hero guia-hero">
+				<p class="guia-eyebrow">MetaQuotes Market</p>
+				<h1>Instalar tevsys desde Market</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>Vídeo corto — del Navegador al EA en el gráfico.
+				</p>
+				<p class="guia-note-box">
+					Esta guía es para el <strong>build Market</strong> (plan Advanced en el <code>.ex5</code> publicado).
+					<strong>No</strong> hace falta clave de licencia ni WebRequest para validar con tevsys.io.
+					Si compraste por la web con licencia, usa la
+					<a href="/instalacion">guía de instalación con licencia</a>.
+				</p>
+			</section>
+
+			<section id="instalacion-market-video" class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">Vídeo</p>
+						<h2>Instalación Market</h2>
+					</header>
+					<div class="guia-embed guia-embed--chrome" id="instalacion-market-container">
+						<video id="instalacion-market-video" controls preload="metadata" playsinline>
+							<source src="/videos/features/instalacion-market.mp4?v=20260823market" type="video/mp4" />
+							Tu navegador no soporta reproducción de video HTML5.
+						</video>
+					</div>
+					<p class="guia-section-sub" style="margin-top: 1rem;">
+						Si el vídeo aún no carga: sigue los cuatro pasos de abajo; el orden coincide con la grabación.
+					</p>
+				</div>
+			</section>
+
+			<section class="guia-read-section">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Apoyo al vídeo</p>
+					<h2>Cuatro pasos</h2>
+				</header>
+				<div class="guia-read-panel">
+					<ol class="guia-phase-list">
+						{
+							bloquesLectura.map((bloque) => (
+								<li>
+									<article class="guia-phase-card">
+										<span class="guia-phase-card__n">{bloque.n}</span>
+										<div class="guia-phase-card__body">
+											<h3 class="guia-phase-card__title">{bloque.title}</h3>
+											<p class="guia-phase-card__detail">{bloque.detail}</p>
+										</div>
+									</article>
+								</li>
+							))
+						}
+					</ol>
+				</div>
+			</section>
+
+			<section id="configuracion" class="guia-fork-panel">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Después de instalar</p>
+					<h2>Siguiente paso — Configuración</h2>
+					<p class="guia-section-sub guia-fork-hint">Edición Market = plan Advanced:</p>
+				</header>
+				<ul class="guia-fork-list">
+					<li>
+						<a href="/configuracion-al-instalar" class="guia-fork-link">
+							<span class="guia-fork-link__label">Advanced</span>
+							<span class="guia-fork-link__title">Configuración al instalar (lunes a viernes)</span>
+							<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
+						</a>
+					</li>
+					<li>
+						<a href="/configuracion-fin-de-semana" class="guia-fork-link">
+							<span class="guia-fork-link__label">Advanced / Pro</span>
+							<span class="guia-fork-link__title">Planificar la semana en fin de semana</span>
+							<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</Container>
+</Layout>
+
+<script>
+	function initMarketInstallExpand() {
+		const video = document.getElementById('instalacion-market-video');
+		const container = document.getElementById('instalacion-market-container');
+		if (!video || !container) return;
+		video.addEventListener('play', () => container.classList.add('guia-embed--playing'));
+		video.addEventListener('ended', () => container.classList.remove('guia-embed--playing'));
+	}
+	document.addEventListener('DOMContentLoaded', initMarketInstallExpand);
+</script>

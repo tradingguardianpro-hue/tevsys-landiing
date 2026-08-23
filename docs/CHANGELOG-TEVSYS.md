@@ -6,7 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Analytics — proxies Cómo funciona home vs nav (23 ago 2026)
+## Instalación Market — `/instalacion-market` (23 ago 2026)
+
+**Commit:** `web(tevsys): add instalacion-market guide for MetaQuotes buyers`
+
+**Qué:** guía corta Market (Navegador → Experts → algorítmico → arrastrar) · sin WebRequest · fork a configuración Advanced. MP4 pendiente: `instalacion-market.mp4`.
+
+**Docs TGP:** `ARTICULO_MQL5_SELLER` §6 · `PRODUCTO_MQL5` barra + copy Nasdaq YT.
+
+---
+
 
 **Commit:** `web(tevsys): measure como-funciona clicks via go home and nav proxies`
 
