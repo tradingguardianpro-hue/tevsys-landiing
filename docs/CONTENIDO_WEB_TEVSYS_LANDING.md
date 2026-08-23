@@ -11,7 +11,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Sitemap:** `public/sitemap.xml` (estático, 11 URLs). Search Console: sitemap.xml enviado.
 - **Search Console:** Verificación HTML file. Indexación solicitada para home y páginas clave.
 - **Schema:** JSON-LD SoftwareApplication en home.
-- **Vercel Web Analytics:** `@vercel/analytics` en `Base.astro`. Métricas en Vercel dashboard.
+- **Vercel Web Analytics:** `@vercel/analytics` en `Base.astro`. Métricas en Vercel dashboard. Proxies clics Cómo funciona: `/go/como-funciona-home` (mid-home) · `/go/como-funciona-nav` (header) — ver `SEO_ANALYTICS_TEVSYS.md`.
 - **Core Web Vitals:** WebP, lazy load, fetchpriority hero, preload LCP. Doc: `SEO_ANALYTICS_TEVSYS.md`, `PERFORMANCE_IMAGENES_TEVSYS.md`.
 
 ---
@@ -80,7 +80,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **CTA móvil (11 ago 2026 — ✅):** en ≤768px el ámbar es **más pequeño/estrecho** (menos “cartelón”); desktop sin cambio. `HomeHeroSection.astro` · `CHANGELOG` *Hero — Descargar demo… móvil*.
 - **CTA secundario (22 ago):** botón **`Nasdaq 100 — sesión real (~3:35)`** → `?play=1#evidencia-nasdaq-100` — **sin poster** (autoplay); visita directa a Cómo funciona **con poster** hasta play.
 - **Presentación `/como-funciona#evidencia-nasdaq-100` (22 ago):** H2/sub original · **Evidencia** · blurb corto + atribución en una línea (*tevsys −1,0017 % · ejecución 0,00 p.p. · 42 ms*) · detalle en Transparencia abajo.
-- **Mid-home microclips (23 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona…?* · lead: Nasdaq (~3:35) · clips ~30 s · guías Desde cero y puesta en marcha · CTA `Ver cómo funciona →` → `/como-funciona` (puerta al hub; sin lista de enlaces).
+- **Mid-home microclips (23 ago 2026):** tras las 4 cards — *¿Quieres ver cómo reacciona…?* · lead: Nasdaq (~3:35) · clips ~30 s · guías Desde cero y puesta en marcha · CTA `Ver cómo funciona →` → `/go/como-funciona-home` (medición) → `/como-funciona`. Header *Cómo funciona* → `/go/como-funciona-nav`.
 - **Guía Desde cero (20 ago 2026):** `/como-funciona#desde-cero` · eyebrow **Condición innegociable** · título *Desde cero, siempre* · lead *Si cargas tevsys con operaciones ya abiertas… empezamos de cero.* · ~57 s · `tevsys-guia-desde-cero.mp4` · micro `#videoclip-pasiva` se mantiene. `?v=20260820b`.
 - **Puesta en marcha (21 ago):** `/como-funciona#puesta-en-marcha` · *Instalar y fijar límites* · enlace primario al minuto de config + instalar. Tras Desde cero / antes de clips.
 - **Configurar límites 1 min (20–21 ago):** casa `/configuracion#configurar-limites` · MC-CF-026 · ~1:15 · **Advanced/Pro (semana)** · Essential = guía larga debajo · footer Guías (**21 ago:** minuto bajo Adv/Pro, no Essential) · `?v=20260820c`.

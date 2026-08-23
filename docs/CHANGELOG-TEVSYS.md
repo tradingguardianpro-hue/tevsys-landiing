@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Analytics — proxies Cómo funciona home vs nav (23 ago 2026)
+
+**Commit:** `web(tevsys): measure como-funciona clicks via go home and nav proxies`
+
+**Qué:** `/go/como-funciona-home` (CTA mid-home) · `/go/como-funciona-nav` (header) → `/como-funciona`. Misma familia que `/go/evidencia-5min`.
+
+---
+
 ## Home — CTA invite: Ver cómo funciona (23 ago 2026)
 
 **Commit:** `web(tevsys): home video invite CTA to Ver como funciona`

@@ -13,12 +13,13 @@ const headerClasses = [
 	isHome ? 'tevsys-header--home-scanner' : null,
 ].filter(Boolean) as string[];
 
-function navLinkState(slug: string, asButton?: boolean): { className: string; active: boolean } {
+function navLinkState(slug: string, asButton?: boolean, match?: string): { className: string; active: boolean } {
 	const parts: string[] = [];
 	if (asButton) parts.push('nav-link--button');
 	const s = (slug || '/').replace(/\/$/, '') || '/';
+	const m = (match || s).replace(/\/$/, '') || '/';
 	const p = pathname;
-	const active = s === '/' ? p === '/' : p === s || p.startsWith(`${s}/`);
+	const active = m === '/' ? p === '/' : p === m || p.startsWith(`${m}/`);
 	if (active) parts.push('nav-link--active');
 	return { className: parts.join(' '), active };
 }
@@ -82,7 +83,7 @@ function navLinkState(slug: string, asButton?: boolean): { className: string; ac
         <nav aria-label="Principal">
           <ul>
             {navData.map((navItem) => {
-              const { className, active } = navLinkState(navItem.slug, navItem.asButton);
+              const { className, active } = navLinkState(navItem.slug, navItem.asButton, navItem.match);
               return (
                 <li>
                   <a

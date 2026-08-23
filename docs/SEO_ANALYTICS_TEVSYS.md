@@ -113,6 +113,20 @@ localStorage.setItem('va-disable', '1');
 
 **Commit:** `web(tevsys): analytics opt-out va-disable para QA fundador`
 
+### Proxies `/go/` — Cómo funciona home vs nav (23 ago 2026)
+
+Misma idea que `/go/evidencia-5min`: pageview medible en Vercel Hobby + redirect.
+
+| Ruta | Origen | Destino |
+|------|--------|---------|
+| `/go/como-funciona-home` | CTA mid-home *Ver cómo funciona →* | `/como-funciona` |
+| `/go/como-funciona-nav` | Header *Cómo funciona* | `/como-funciona` |
+
+- `noindex` · opt-out `va-disable` · delay ~280 ms.
+- En Analytics: comparar visitas a esas dos rutas (no solo `/como-funciona`).
+
+**Commit:** `web(tevsys): measure como-funciona clicks via go home and nav proxies`
+
 ---
 
 #### Sesión web larga — orden sugerido
