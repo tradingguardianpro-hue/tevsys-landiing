@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — CTA invite: Ver cómo funciona (23 ago 2026)
+
+**Commit:** `web(tevsys): home video invite CTA to Ver como funciona`
+
+**Qué:** botón mid-home → *Ver cómo funciona →* (antes *Ver evidencia en vídeo →*).
+
+---
+
 ## Home — invite vídeos: puerta a Cómo funciona (23 ago 2026)
 
 **Commit:** `web(tevsys): home video invite as single CTA to como-funciona hub`
