@@ -107,11 +107,19 @@ import settings from '../config/settings.js';
 				<h2 id="home-microclips-invite-title" class="tevsys-home-microclips-invite__title">
 					¿Quieres ver cómo reacciona en escenarios reales?
 				</h2>
-				<p class="tevsys-home-microclips-invite__lead">
-					Clips de ~30 s · y la guía <a href="/como-funciona#desde-cero">Desde cero</a> si cargas con operación abierta.
-				</p>
-				<a href="/como-funciona#mas-comportamientos" class="tevsys-home-microclips-invite__cta">
-					Ver microclips →
+				<ul class="tevsys-home-microclips-invite__list" aria-label="Vídeos en Cómo funciona y guías">
+					<li>
+						<a href="/como-funciona#desde-cero">Desde cero</a>
+					</li>
+					<li>
+						<a href="/configuracion#configurar-limites">Configurar límites (~1 min)</a>
+					</li>
+					<li>
+						<a href="/como-funciona#mas-comportamientos">Clips cortos (~30 s)</a>
+					</li>
+				</ul>
+				<a href="/como-funciona" class="tevsys-home-microclips-invite__cta">
+					Ver en Cómo funciona →
 				</a>
 			</div>
 		</Container>
@@ -488,21 +496,39 @@ import settings from '../config/settings.js';
 		letter-spacing: -0.02em;
 		color: rgba(236, 240, 246, 0.96);
 	}
-	.tevsys-home-microclips-invite__lead {
-		margin: 0 0 1rem;
+	.tevsys-home-microclips-invite__list {
+		list-style: none;
+		margin: 0 0 1.05rem;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.45rem 0.85rem;
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
 		font-size: clamp(0.78rem, 1.5vw, 0.88rem);
 		letter-spacing: 0.02em;
 		color: rgba(180, 190, 205, 0.78);
 	}
-	.tevsys-home-microclips-invite__lead a {
-		color: rgba(245, 176, 65, 0.92);
+	.tevsys-home-microclips-invite__list li {
+		margin: 0;
+		padding: 0;
+	}
+	.tevsys-home-microclips-invite__list li:not(:last-child)::after {
+		content: '·';
+		margin-left: 0.85rem;
+		color: rgba(180, 190, 205, 0.45);
+		pointer-events: none;
+	}
+	.tevsys-home-microclips-invite__list a {
+		color: rgba(220, 226, 236, 0.88);
 		text-decoration: underline;
 		text-underline-offset: 0.18em;
 		text-decoration-thickness: 1px;
+		text-decoration-color: rgba(180, 190, 205, 0.35);
 	}
-	.tevsys-home-microclips-invite__lead a:hover {
+	.tevsys-home-microclips-invite__list a:hover {
 		color: #ffc35a;
+		text-decoration-color: rgba(245, 176, 65, 0.55);
 	}
 	.tevsys-home-microclips-invite__cta {
 		display: inline-flex;

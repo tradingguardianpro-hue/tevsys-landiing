@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home — invite vídeos: lista plana (23 ago 2026)
+
+**Commit:** `web(tevsys): home video invite as equal list not desde-cero spotlight`
+
+**Qué:** mid-home — quita protagonismo *Desde cero* · lista Desde cero · Configurar límites (~1 min) · Clips cortos (~30 s) · CTA *Ver en Cómo funciona →*.
+
+**Dónde:** `index.astro` · `CONTENIDO_WEB`.
+
+---
+
 ## Precisión — copy atribución híbrida (23 ago 2026)
 
 **Commit:** `web(tevsys): clarify precision attribution decision vs broker fill`
