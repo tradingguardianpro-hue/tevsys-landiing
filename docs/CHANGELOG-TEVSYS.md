@@ -6,6 +6,29 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 25 ago 2026 — instalación Market + dos puertas (resumen)
+
+**Estado deploy:** código y assets en clon local · **push Vercel pendiente** (sin push, footer/vídeo nuevo no se ven en tevsys.io).
+
+### A) Vídeo `/instalacion-market`
+
+- **Commit:** `web(tevsys): publish Market install video on instalacion-market`
+- **Archivos:** `public/videos/features/instalacion-market.mp4` + `instalacion-market-poster.jpg` · `src/pages/instalacion-market.astro` (`?v=20260825`)
+- **Qué:** ~45 s · Navegador → algo → arrastrar → onboarding Advanced · Inputs sello Market (opción B)
+
+### B) Dos puertas visibles (Market ≠ web+clave)
+
+- **Commit:** `web(tevsys): dual install doors Market vs web license`
+- **Archivos:**
+  - `src/config/footer.js` — *Cómo instalar (web / licencia)* + *Cómo instalar (MetaQuotes Market)*
+  - `src/pages/como-funciona.astro` — Puesta en marcha (3 links) + nav profunda
+  - `src/pages/instalacion.astro` — nota → `/instalacion-market`
+- **Por qué:** antes solo URL directa; al volver al footer «Cómo instalar» se perdía la guía Market
+
+**Docs TGP:** V12 **(sesionWebMarket)** · **(dualInstallDoors)** · **(instalacionMarketVid)** · PRODUCTO § CANON.
+
+---
+
 ## Dos puertas instalación — footer + cómo-funciona (25 ago 2026)
 
 **Commit:** `web(tevsys): dual install doors Market vs web license`

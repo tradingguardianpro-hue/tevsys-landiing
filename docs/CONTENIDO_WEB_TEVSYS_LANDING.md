@@ -4,6 +4,25 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ---
 
+## Instalación — dos canales (25 ago 2026)
+
+**No mezclar:**
+
+| Canal | URL | Vídeo | Clave / WebRequest |
+|-------|-----|-------|--------------------|
+| **MetaQuotes Market** | `/instalacion-market` | `instalacion-market.mp4?v=20260825` (~45 s) | No |
+| **Web / licencia tevsys** | `/instalacion` | `instalacion-demo.mp4` (~1:24) | Sí |
+
+**Dónde se enlaza en la web (código local; push pendiente 25 ago):**
+
+- Footer Guías: *Cómo instalar (web / licencia)* + *Cómo instalar (MetaQuotes Market)*
+- `/como-funciona` → Puesta en marcha + nav al pie
+- Cruzado: cada guía apunta a la otra en la nota del hero
+
+**Ámbar marca (capturas / overlays):** `#F5B041`
+
+---
+
 ## SEO y analytics (Mar 2026)
 - **Meta global:** `src/config/settings.js` — title, description, keyword "disciplina en el trading".
 - **contact.astro:** Título propio ("Contacto y demo | tevsys"); descripción con keywords.
