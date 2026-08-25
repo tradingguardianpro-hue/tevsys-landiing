@@ -6,13 +6,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
-## Instalación Market — `/instalacion-market` (23 ago 2026)
+## Instalación Market — vídeo publicado (25 ago 2026)
 
-**Commit:** `web(tevsys): add instalacion-market guide for MetaQuotes buyers`
+**Commit:** `web(tevsys): publish Market install video on instalacion-market`
 
-**Qué:** guía corta Market (Navegador → Experts → algorítmico → arrastrar) · sin WebRequest · fork a configuración Advanced. MP4 pendiente: `instalacion-market.mp4`.
+**Qué:** MP4 ~45 s + poster · build `tevsys_Market_Advanced` (Inputs sello Advanced, sin desplegable) · `?v=20260825`.
 
-**Docs TGP:** `ARTICULO_MQL5_SELLER` §6 · `PRODUCTO_MQL5` barra + copy Nasdaq YT.
+**Docs TGP:** PROTOCOLO builds (casi sagrada) · regrabación post opción B.
 
 ---
 
