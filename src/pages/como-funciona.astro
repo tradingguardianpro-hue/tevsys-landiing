@@ -163,7 +163,8 @@ const puestaEnMarchaLegend = {
 			label: 'Cómo configurar tus límites en un minuto',
 			primary: true,
 		},
-		{ href: '/instalacion', label: 'Cómo instalar', primary: false },
+		{ href: '/instalacion', label: 'Instalar (web / licencia)', primary: false },
+		{ href: '/instalacion-market', label: 'Instalar desde Market', primary: false },
 	],
 };
 
@@ -829,7 +830,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		</section>
 
 		<nav class="how-deep" aria-label="Ir a más detalle">
-			<a href="/instalacion#instalacion-video">Instalación</a>
+			<a href="/instalacion#instalacion-video">Instalación (web)</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/instalacion-market">Instalación (Market)</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/configuracion-al-instalar">Configuración al instalar</a>
 			<a href="/configuracion-fin-de-semana">Configuración en fin de semana</a>

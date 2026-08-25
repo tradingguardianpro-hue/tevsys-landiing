@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Dos puertas instalación — footer + cómo-funciona (25 ago 2026)
+
+**Commit:** `web(tevsys): dual install doors Market vs web license`
+
+**Qué:** footer Guías + Puesta en marcha + nav profunda `/como-funciona` + nota cruzada en `/instalacion` → enlace visible a `/instalacion-market` (antes solo URL directa).
+
+**Por qué:** comprador Market no encontraba la guía al volver desde footer «Cómo instalar».
+
+---
+
 ## Instalación Market — vídeo publicado (25 ago 2026)
 
 **Commit:** `web(tevsys): publish Market install video on instalacion-market`

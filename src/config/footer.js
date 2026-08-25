@@ -12,7 +12,10 @@ export const footerColumns = [
     title: 'Guías',
     groups: [
       {
-        items: [{ title: 'Cómo instalar', slug: '/instalacion' }],
+        items: [
+          { title: 'Cómo instalar (web / licencia)', slug: '/instalacion' },
+          { title: 'Cómo instalar (MetaQuotes Market)', slug: '/instalacion-market' },
+        ],
       },
       {
         label: 'Essential',
