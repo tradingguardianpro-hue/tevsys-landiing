@@ -1975,8 +1975,8 @@ html[data-theme='dark'] main#content #page {
 	background-color: transparent;
 }
 
-/* Contenido por encima de las capas decorativas */
-html[data-theme='dark'] body > * {
+/* Contenido por encima de las capas decorativas (excluir lightbox evidencia — debe ser position:fixed) */
+html[data-theme='dark'] body > *:not(#tevsys-evidence-lightbox-root) {
 	position: relative;
 	z-index: 1;
 }

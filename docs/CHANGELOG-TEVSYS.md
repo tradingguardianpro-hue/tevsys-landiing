@@ -6,6 +6,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 26 ago 2026 — Fix lightbox bajo footer (position:relative global)
+
+**Bug:** captura ampliada aparecía **debajo del footer** (scroll al final) en lugar de overlay centrado.
+
+**Causa:** `global.css` — `html[data-theme='dark'] body > * { position: relative; z-index: 1 }` pisaba `position: fixed` del lightbox.
+
+**Fix:** excluir `#tevsys-evidence-lightbox-root` + blindaje `!important` en componente.
+
+**Commit:** `fix(tevsys-web): lightbox overlay fixed sobre footer`
+
+---
+
 ## Sesión 26 ago 2026 — Lightbox global capturas evidencia
 
 **Alcance:** overlay único en `Base.astro` — galerías `proof-gallery__zoom`, contención, HyperClose collage, botones caja (`EvidenceImageLightbox`).
