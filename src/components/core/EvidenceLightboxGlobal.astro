@@ -59,7 +59,6 @@
 		position: fixed !important;
 		inset: 0;
 		z-index: 10050 !important;
-	}
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -174,6 +173,7 @@
 			}
 
 			root.hidden = false;
+			document.documentElement.style.overflow = 'hidden';
 			document.body.style.overflow = 'hidden';
 			window.scrollTo(0, 0);
 			const closeBtn = root.querySelector('[data-tevsys-lightbox-close]');
@@ -184,6 +184,7 @@
 			const root = getRoot();
 			if (!(root instanceof HTMLElement) || root.hidden) return;
 			root.hidden = true;
+			document.documentElement.style.overflow = '';
 			document.body.style.overflow = '';
 			if (lastFocus) lastFocus.focus();
 			lastFocus = null;
