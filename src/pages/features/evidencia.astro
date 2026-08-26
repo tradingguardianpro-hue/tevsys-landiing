@@ -22,18 +22,8 @@ const seo = {
 				<span class="feature-title__accent">Doble trazabilidad</span> real: tevsys registra la lógica interna y MT5 certifica la ejecución oficial.
 			</p>
 		</section>
-		<p class="feature-manifesto-banner">
-			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
-		</p>
 
 		<section id="evidencia-demo" class="feature-demo feature-demo--hero">
-			<div class="evidencia-multichart">
-				<p class="feature-hook evidencia-multichart__lead">
-					<span class="feature-hook__dot" aria-hidden="true"></span>
-					<span>Un gráfico para tevsys. Toda tu cuenta, protegida.</span>
-				</p>
-				<p class="evidencia-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
-			</div>
 			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
 			<p class="feature-demo-hook">
 				100.000 € · GER40 · 20 lotes · límite −1 % · <strong class="feature-title__accent">desviación 7,20 € (0,0072 %)</strong> · Apertura Wall Street.
@@ -127,7 +117,7 @@ const seo = {
 					<a class="evidence-link" href="#evidencia-html-transacciones">Historial exportable desde MT5 (posiciones, órdenes, resultado).</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidencia-logs">Guía visual de logs MT5 + salto a Precisión para trazabilidad en detalle.</a>
+					<a class="evidence-link" href="#evidencia-logs">Guía logs MT5 — sesión cuenta pequeña (contexto en Precisión).</a>
 				</li>
 			</ul>
 		</section>
@@ -432,9 +422,13 @@ const seo = {
 
 		<section id="evidencia-logs" class="feature-proof-detail">
 			<h3>Guía visual de logs</h3>
-			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
+			<p class="feature-proof-subtitle">MT5 — carpeta Logs · operativa en Precisión</p>
 			<p class="feature-proof-lead">
-				Cada evento relevante queda registrado con fecha y contexto. MT5 → Archivo → Abrir carpeta de datos → MQL5 → Logs.
+				Dónde abrir en MT5 los logs de la sesión <strong>cuenta más pequeña</strong> (GER40, límite −1,50 %, 2 mar 2026): la misma operativa con vídeo y capturas paso a paso en{' '}
+				<a class="evidence-link" href="/features/precision#precision-cuenta-pequena">Precisión →</a>
+			</p>
+			<p class="demo-edit-note demo-edit-note--slim">
+				Ruta: MT5 → Archivo → Abrir carpeta de datos → MQL5 → Logs. Vídeo con panel anterior — recaptura en curso.
 			</p>
 			<div class="demo-video demo-video--compact" id="evidencia-logs-container">
 				<video id="evidencia-logs-video" controls preload="metadata" playsinline>
@@ -444,7 +438,7 @@ const seo = {
 			</div>
 			<p class="demo-edit-note demo-edit-note--slim">
 				<a class="proof-capture-link" href="/features/precision#precision-logs">
-					Ver precisión de cierre y trazabilidad en detalle <span class="proof-link-meta">Precisión</span>
+					Ver el bloque logs en Precisión (misma sesión, arriba en esa página) <span class="proof-link-meta">Precisión</span>
 				</a>
 			</p>
 		</section>
@@ -497,15 +491,6 @@ const seo = {
 		max-width: 70ch;
 		line-height: 1.55;
 	}
-	.feature-manifesto-banner {
-		margin: calc(var(--section-margin) * -0.45) 0 calc(var(--section-margin) * 0.65);
-		max-width: 74ch;
-		line-height: 1.55;
-		padding: 0.68rem 0.82rem;
-		border-radius: 0.6rem;
-		border: 1px solid rgba(150, 156, 170, 0.34);
-		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
-	}
 	.feature-trace-note {
 		max-width: 72ch;
 		line-height: 1.5;
@@ -526,45 +511,6 @@ const seo = {
 	}
 	.feature-demo--hero {
 		position: relative;
-	}
-	.evidencia-multichart {
-		margin: 0 0 clamp(1rem, 2.8vw, 1.5rem);
-		max-width: 52ch;
-		padding-bottom: clamp(0.6rem, 1.8vw, 0.85rem);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-	}
-	html[data-theme='light'] .evidencia-multichart {
-		border-bottom-color: rgba(0, 0, 0, 0.08);
-	}
-	.evidencia-multichart__lead {
-		margin: 0 0 0.35rem;
-		align-items: flex-start;
-		gap: 0.4rem;
-		font-size: clamp(0.92rem, 2.1vw, 0.98rem);
-		font-style: normal;
-		font-weight: 500;
-		opacity: 0.82;
-		line-height: 1.45;
-	}
-	.evidencia-multichart__lead .feature-hook__dot {
-		margin-top: 0.32rem;
-		width: 0.35rem;
-		height: 0.35rem;
-		opacity: 0.85;
-		flex-shrink: 0;
-	}
-	.evidencia-multichart__sub {
-		margin: 0;
-		padding-left: calc(0.35rem + 0.4rem);
-		font-size: clamp(0.8rem, 1.85vw, 0.86rem);
-		font-style: normal;
-		font-weight: 400;
-		opacity: 0.62;
-		line-height: 1.5;
-		letter-spacing: 0.01em;
-	}
-	html[data-theme='light'] .evidencia-multichart__sub {
-		opacity: 0.68;
 	}
 	.feature-demo--hero::before {
 		content: '';
