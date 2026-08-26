@@ -10,9 +10,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Atribución Nasdaq:** lead día −1,19 % / HyperClose **antes** de pills (frase A, sin props) · pie demo 0,00. `/como-funciona#documentacion-sesion-nasdaq`
 
-**Captura caja:** clic → `/images/evidence/ver-movimiento-caja.html` (visor a ancho completo, PNG 1907×936 `?v=20260826c`) en Cómo funciona + Evidencia.
+**Captura caja:** mismo patrón que galería evidencia — clic abre el PNG directo (`evidencia-movimiento-caja-retiro-800-full.png`, 1907×936). Sin visor HTML (quitado). URL nueva para evitar zoom de Chrome recordado.
 
-**Commit:** `web(tevsys): lead Nasdaq day DD before attribution; cashflow full-size viewer`
+**Commit:** `web(tevsys): lead Nasdaq day DD before attribution; cashflow open full PNG`
 
 ---
 

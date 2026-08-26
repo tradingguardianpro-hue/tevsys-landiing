@@ -483,22 +483,23 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 				</h2>
 			</header>
 			<p class="how-cashflow__body">
-				En tevsys entendemos que el riesgo <strong>depende del capital de la cuenta</strong>. Si retiras o
-				ingresas dinero, el capital ha cambiado — y eso <strong>no es trading</strong>. Por eso la protección se
-				reinicia: no tiene sentido seguir con un pacto de riesgo anclado a un balance que ya no existe.
-				Confirmas el aviso y vuelves a configurar y bloquear límites sobre el <strong>balance actual</strong>. Otro capital
-				exige volver a pactar el riesgo.
+				En tevsys entendemos que el riesgo{' '}
+				<span class="how-cashflow__em">depende del capital de la cuenta</span>. Si retiras o ingresas dinero, el
+				capital ha cambiado — y eso <span class="how-cashflow__em">no es trading</span>. Por eso la protección se
+				reinicia: no tiene sentido seguir con un pacto de riesgo anclado a un balance que ya no existe. Confirmas
+				el aviso y vuelves a configurar y bloquear límites sobre el{' '}
+				<span class="how-cashflow__em">balance actual</span>. Otro capital exige volver a pactar el riesgo.
 			</p>
 			<figure class="how-cashflow__figure">
 				<a
 					class="how-cashflow__zoom"
-					href="/images/evidence/ver-movimiento-caja.html"
+					href="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="Abrir captura de movimiento de caja en tamaño completo">
 					<img
 						class="how-cashflow__img"
-						src="/images/evidence/evidencia-movimiento-caja-retiro-800.png?v=20260826c"
+						src="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
 						alt="Modal tevsys de movimiento de caja — retiro 800 €: protección reiniciada; otro capital exige volver a pactar el riesgo."
 						loading="lazy"
 						width="1907"
@@ -1805,6 +1806,15 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		line-height: 1.55;
 		color: rgba(230, 235, 245, 0.88);
 		text-align: left;
+	}
+
+	.how-cashflow__em {
+		color: #f5b041;
+		font-weight: 600;
+	}
+
+	html[data-theme='light'] .how-cashflow__em {
+		color: rgba(175, 118, 32, 0.98);
 	}
 
 	html[data-theme='light'] .how-cashflow__body {
