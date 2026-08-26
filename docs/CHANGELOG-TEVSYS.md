@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 26 ago 2026 — Mail 10 Barmenteros + zoom captura caja
+
+**Atribución Nasdaq:** lead día −1,19 % / HyperClose **antes** de pills (frase A, sin props) · pie demo 0,00. `/como-funciona#documentacion-sesion-nasdaq`
+
+**Captura caja:** clic → `/images/evidence/ver-movimiento-caja.html` (visor a ancho completo, PNG 1907×936 `?v=20260826c`) en Cómo funciona + Evidencia.
+
+**Commit:** `web(tevsys): lead Nasdaq day DD before attribution; cashflow full-size viewer`
+
+---
+
 ## Sesión 26 ago 2026 — movimiento de caja (capital real) en web
 
 **Commit:** `web(tevsys): publish cashflow risk-reset block on como-funciona and evidencia`
