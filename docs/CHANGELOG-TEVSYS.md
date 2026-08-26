@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 26 ago 2026 — Precisión carril A (poda + logs + recaptura)
+
+**Qué cambia en `/features/precision`:** sin manifiesto duplicado · sin bloque multigráfico · contención = enlace en hero · demo 100k apunta a Evidencia · logs explican «misma sesión de arriba» · aviso panel en recaptura (cuenta pequeña).
+
+**Commit:** `web(tevsys): precision carril A poda copy logs recaptura note`
+
+---
+
 ## Sesión 26 ago 2026 — Fix lightbox bajo footer (position:relative global)
 
 **Bug:** captura ampliada aparecía **debajo del footer** (scroll al final) en lugar de overlay centrado.

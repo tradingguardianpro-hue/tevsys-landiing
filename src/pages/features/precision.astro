@@ -37,40 +37,14 @@ const seo = {
 
 			<p class="precision-hero-geopolitical">
 				También hay extremos documentados (p. ej. desviación máxima{' '}
-				<span class="precision-hero-stat__accent">−0,39 %</span>, alta volatilidad geopolítica).
+				<span class="precision-hero-stat__accent">−0,39 %</span>, alta volatilidad geopolítica).{' '}
+				<a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">
+					Caso contención (~111 ms) en Evidencia →
+				</a>
 			</p>
-
-			<aside class="precision-contencion-card" aria-label="Caso extremo de contención">
-				<p class="precision-contencion-card__eyebrow">Caso extremo documentado</p>
-				<p class="precision-contencion-card__lead">
-					No forma parte del error medio ≈ <span class="precision-hero-stat__accent">0,06 %</span>.
-					Precisión cuando puede; contención cuando toca. No escondemos este tipo de casos.
-				</p>
-				<p class="precision-contencion-card__body">
-					En un barrido de ~111 ms el mercado se fue; tevsys cerró al siguiente tick evaluable.
-					Límite <strong>+0,50 %</strong> · lectura al disparar <strong>+0,65 %</strong> · día{' '}
-					<strong>+1,04 %</strong>.
-					Contención bajo estrés, no precisión de catálogo.
-				</p>
-				<p class="precision-contencion-card__cta">
-					<a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">
-						Ver el caso completo en Evidencia →
-					</a>
-				</p>
-			</aside>
 		</section>
-		<p class="feature-manifesto-banner">
-			No vendemos señales. Vendemos <strong>ejecución disciplinada</strong>, <strong>alta precisión verificable de cierre</strong> en MT5, evidencia real y control bajo presión.
-		</p>
 
 		<section id="precision-volatilidad" class="feature-demo feature-demo--hero">
-			<div class="precision-multichart">
-				<p class="feature-hook precision-multichart__lead">
-					<span class="feature-hook__dot" aria-hidden="true"></span>
-					<span>Un gráfico para tevsys. Toda tu cuenta, protegida.</span>
-				</p>
-				<p class="precision-multichart__sub">Los avisos de protección aparecen en todos tus gráficos abiertos.</p>
-			</div>
 			<h2>Demo en alta volatilidad</h2>
 			<p class="feature-demo-hook">
 				Límite +1,50 % · cierre en +1,83 % · contexto de <strong class="feature-title__accent">alta volatilidad geopolítica</strong> · 1 min 4 s.
@@ -98,7 +72,7 @@ const seo = {
 				<li><a class="evidence-link" href="#precision-demo">Cierre ceñido sobre límite (demo 100k).</a></li>
 				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
 				<li><a class="evidence-link" href="#precision-stats">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
-				<li><a class="evidence-link" href="#precision-logs">Trazabilidad de eventos en logs auditables.</a></li>
+				<li><a class="evidence-link" href="#precision-logs">Trazabilidad en logs MT5 — misma sesión cuenta pequeña (arriba).</a></li>
 			</ul>
 		</section>
 
@@ -107,6 +81,7 @@ const seo = {
 			<p class="feature-proof-subtitle">Cierre ceñido (1 min 41 s)</p>
 			<p class="feature-proof-lead">
 				100.000 € · GER40 · 20 lotes · límite −1 % · <strong class="feature-title__accent">desviación 7,20 € (0,0072 %)</strong> · Apertura Wall Street.
+				<a class="evidence-link" href="/features/evidencia#evidencia-demo"> Informe MT5 de la misma sesión en Evidencia →</a>
 			</p>
 			<div class="demo-video demo-video--compact" id="precision-demo-container">
 				<video id="precision-demo-video" controls preload="metadata" playsinline
@@ -153,6 +128,10 @@ const seo = {
 			</div>
 			<p class="demo-edit-note demo-edit-note--slim demo-edit-note--bridge">
 				Vídeo resumido; capturas e informe MT5 justo debajo.
+			</p>
+			<p class="demo-edit-note demo-edit-note--slim precision-recapture-note" role="note">
+				<strong>Panel en recaptura:</strong> vídeo y capturas de esta sesión (2 mar 2026) muestran el panel anterior.
+				Los cierres documentados siguen siendo válidos; sustituiremos piezas visuales al cerrar la sesión con el build actual.
 			</p>
 
 			<div id="precision-stats" class="precision-stats-inner">
@@ -236,9 +215,14 @@ const seo = {
 
 		<section id="precision-logs" class="feature-proof-detail">
 			<h3>Sin humo: todo queda registrado</h3>
-			<p class="feature-proof-subtitle">Trazabilidad en logs MT5</p>
+			<p class="feature-proof-subtitle">Trazabilidad en logs MT5 — misma operativa de arriba</p>
 			<p class="feature-proof-lead">
-				Cada evento relevante queda registrado con fecha y contexto. MT5 → Archivo → Abrir carpeta de datos → MQL5 → Logs.
+				La guía de abajo enseña <strong>dónde mirar en MT5</strong> los logs de la sesión que acabas de ver: cuenta más pequeña,
+				GER40, límite <strong>−1,50 %</strong>, 2 mar 2026 (vídeo + capturas paso a paso).
+			</p>
+			<p class="demo-edit-note demo-edit-note--slim">
+				Ruta: MT5 → Archivo → Abrir carpeta de datos → MQL5 → Logs.
+				El vídeo usa panel anterior — recaptura en curso; la carpeta y los eventos son los mismos.
 			</p>
 			<div class="demo-video demo-video--compact" id="precision-logs-container">
 				<video id="precision-logs-video" controls preload="metadata" playsinline>
@@ -395,69 +379,13 @@ const seo = {
 		opacity: 0.88;
 	}
 
-	.feature-manifesto-banner {
-		margin: clamp(1.35rem, 3.2vw, 2rem) 0 calc(var(--section-margin) * 0.65);
-		max-width: 74ch;
-		line-height: 1.55;
-		font-size: 1rem;
-		padding: 0.75rem 0.9rem;
-		border-radius: 0.6rem;
-		border: 1px solid rgba(150, 156, 170, 0.34);
-		background: linear-gradient(135deg, rgba(86, 92, 106, 0.3), rgba(245, 176, 65, 0.09));
-	}
-
-	.precision-contencion-card {
-		max-width: 74ch;
-		margin: 0 0 clamp(1rem, 2.5vw, 1.25rem);
-		padding: 0.85rem 0.95rem 0.95rem;
-		border-radius: 0.6rem;
-		border: 1px solid rgba(150, 156, 170, 0.38);
-		background: linear-gradient(145deg, rgba(34, 40, 54, 0.72), rgba(245, 176, 65, 0.07));
-	}
-
-	html[data-theme='light'] .precision-contencion-card {
-		background: linear-gradient(145deg, rgba(248, 249, 252, 0.95), rgba(245, 176, 65, 0.08));
-		border-color: rgba(0, 0, 0, 0.1);
-	}
-
-	.precision-contencion-card__eyebrow {
-		display: inline-block;
-		margin: 0 0 0.65rem;
-		padding: 0.32rem 0.65rem;
-		font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
-		font-size: 0.76rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: #f5b041;
-		border: 1px solid rgba(245, 176, 65, 0.35);
-		border-radius: 999px;
-		background: rgba(245, 176, 65, 0.08);
-	}
-
-	html[data-theme='light'] .precision-contencion-card__eyebrow {
-		color: #b07818;
-		background: rgba(245, 176, 65, 0.12);
-		border-color: rgba(200, 135, 26, 0.35);
-	}
-
-	.precision-contencion-card__lead {
-		margin: 0 0 0.55rem;
-		line-height: 1.52;
-		font-size: 0.94rem;
-		font-weight: 600;
-		opacity: 0.95;
-	}
-
-	.precision-contencion-card__body {
-		margin: 0 0 0.65rem;
-		line-height: 1.55;
-		opacity: 0.86;
-		font-size: 0.95em;
-	}
-
-	.precision-contencion-card__cta {
-		margin: 0;
+	.precision-recapture-note {
+		max-width: 72ch;
+		margin: 0.65rem 0 0;
+		padding: 0.65rem 0.75rem;
+		border-radius: 0.45rem;
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		background: rgba(245, 176, 65, 0.06);
 	}
 
 	.feature-hook {
@@ -477,45 +405,6 @@ const seo = {
 		flex-shrink: 0;
 	}
 
-	/* Contexto multigráfico: secundario respecto al título “Demo rápida” del vídeo */
-	.precision-multichart {
-		margin: 0 0 clamp(1rem, 2.8vw, 1.5rem);
-		max-width: 52ch;
-		padding-bottom: clamp(0.6rem, 1.8vw, 0.85rem);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-	}
-	html[data-theme='light'] .precision-multichart {
-		border-bottom-color: rgba(0, 0, 0, 0.08);
-	}
-	.precision-multichart__lead {
-		margin: 0 0 0.35rem;
-		align-items: flex-start;
-		gap: 0.4rem;
-		font-size: clamp(0.92rem, 2.1vw, 0.98rem);
-		font-style: normal;
-		font-weight: 500;
-		opacity: 0.82;
-		line-height: 1.45;
-	}
-	.precision-multichart__lead .feature-hook__dot {
-		margin-top: 0.32rem;
-		width: 0.35rem;
-		height: 0.35rem;
-		opacity: 0.85;
-	}
-	.precision-multichart__sub {
-		margin: 0;
-		padding-left: calc(0.35rem + 0.4rem);
-		font-size: clamp(0.8rem, 1.85vw, 0.86rem);
-		font-style: normal;
-		font-weight: 400;
-		opacity: 0.62;
-		line-height: 1.5;
-		letter-spacing: 0.01em;
-	}
-	html[data-theme='light'] .precision-multichart__sub {
-		opacity: 0.68;
-	}
 	#precision-volatilidad .feature-demo__title--primary-demo {
 		margin-bottom: 0.75rem;
 	}
