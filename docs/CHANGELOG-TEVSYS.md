@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 27 ago 2026 — Precisión hero 100k (interino)
+
+**Qué cambia:** primer vídeo = demo 100k GER40 (oscuro), no volatilidad. Volatilidad baja al final como extremo. Copy sin «Apertura Wall Street».
+
+**Próximo:** rodaje Londres 100k ±1 % → sustituir MP4 hero (+ bump poster/?v=).
+
+**Commit:** `web(tevsys): precision hero 100k demo reorder`
+
+---
+
 ## Sesión 26 ago 2026 — Evidencia carril A (poda + logs)
 
 **Qué cambia en `/features/evidencia`:** sin manifiesto · sin multigráfico · bloque logs enlazado a sesión cuenta pequeña en Precisión.

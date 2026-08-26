@@ -44,46 +44,12 @@ const seo = {
 			</p>
 		</section>
 
-		<section id="precision-volatilidad" class="feature-demo feature-demo--hero">
-			<h2>Demo en alta volatilidad</h2>
+		<section id="precision-demo" class="feature-demo feature-demo--hero">
+			<h2>Demo rápida — Cuenta 100k</h2>
 			<p class="feature-demo-hook">
-				Límite +1,50 % · cierre en +1,83 % · contexto de <strong class="feature-title__accent">alta volatilidad geopolítica</strong> · 1 min 4 s.
+				100.000 € · GER40 · 20 lotes · límite −1 % · <strong class="feature-title__accent">desviación 7,20 € (0,0072 %)</strong> · 1 min 41 s.
 			</p>
-			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="precision-volatilidad-container">
-				<video id="precision-volatilidad-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/precision-demo-volatilidad.mp4" type="video/mp4" />
-					Tu navegador no soporta reproducción de video HTML5.
-				</video>
-			</div>
-			<p class="demo-edit-note">
-				En escenarios exigentes la desviación puede ser mayor que en condiciones normales; la protección y el cierre automático se mantienen.
-			</p>
-			<p class="feature-demo-youtube-more">
-				<a href="/videos-cierre-youtube">Ver más casos de cierre</a>
-				<span class="feature-demo-youtube-more__hint"> — lista con enlaces y títulos.</span>
-			</p>
-		</section>
-
-		<section class="feature-proof">
-			<h2>Qué puedes comprobar</h2>
-			<ul>
-				<li><a class="evidence-link" href="#precision-volatilidad">Comportamiento en volatilidad alta con resultado documentado.</a></li>
-				<li><a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">Contención bajo estrés (barrido ~111 ms) — caso extremo aparte de la media.</a></li>
-				<li><a class="evidence-link" href="#precision-demo">Cierre ceñido sobre límite (demo 100k).</a></li>
-				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
-				<li><a class="evidence-link" href="#precision-stats">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
-				<li><a class="evidence-link" href="#precision-logs">Trazabilidad en logs MT5 — misma sesión cuenta pequeña (arriba).</a></li>
-			</ul>
-		</section>
-
-		<section id="precision-demo" class="feature-proof-detail">
-			<h3>Demo rápida — Cuenta 100k</h3>
-			<p class="feature-proof-subtitle">Cierre ceñido (1 min 41 s)</p>
-			<p class="feature-proof-lead">
-				100.000 € · GER40 · 20 lotes · límite −1 % · <strong class="feature-title__accent">desviación 7,20 € (0,0072 %)</strong> · Apertura Wall Street.
-				<a class="evidence-link" href="/features/evidencia#evidencia-demo"> Informe MT5 de la misma sesión en Evidencia →</a>
-			</p>
-			<div class="demo-video demo-video--compact" id="precision-demo-container">
+			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="precision-demo-container">
 				<video id="precision-demo-video" controls preload="metadata" playsinline
 					poster="/videos/features/evidencia-100k-perdida-poster.jpg?v=20260816">
 					<source src="/videos/features/evidencia-100k-perdida.mp4?v=20260607wsv2" type="video/mp4" />
@@ -91,9 +57,21 @@ const seo = {
 				</video>
 			</div>
 			<p class="demo-edit-note demo-edit-note--slim">
-				<strong>Vídeo editado:</strong> momentos clave del cierre; puede haber un <strong>salto en el reloj</strong> entre planos.
-				<a class="evidence-link" href="/features/evidencia#evidencia-informe-mt5">Evidencia verificable</a> (informe MT5).
+				<strong>Vídeo editado:</strong> momentos clave del cierre; puede haber un <strong>salto en el reloj</strong> entre planos.{' '}
+				<a class="evidence-link" href="/features/evidencia#evidencia-informe-mt5">Informe MT5 de la misma sesión en Evidencia →</a>
 			</p>
+		</section>
+
+		<section class="feature-proof">
+			<h2>Qué puedes comprobar</h2>
+			<ul>
+				<li><a class="evidence-link" href="#precision-demo">Cierre ceñido sobre límite (demo 100k · GER40).</a></li>
+				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
+				<li><a class="evidence-link" href="#precision-stats">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
+				<li><a class="evidence-link" href="/features/evidencia#evidencia-contencion-489">Contención bajo estrés (barrido ~111 ms) — caso extremo aparte de la media.</a></li>
+				<li><a class="evidence-link" href="#precision-volatilidad">Comportamiento en volatilidad alta — extremo documentado.</a></li>
+				<li><a class="evidence-link" href="#precision-logs">Trazabilidad en logs MT5 — misma sesión cuenta pequeña.</a></li>
+			</ul>
 		</section>
 
 		<section id="precision-nasdaq" class="feature-proof-detail">
@@ -211,6 +189,25 @@ const seo = {
 				</p>
 				<p class="proof-note">Publicamos resultados verificables y trazabilidad. La fórmula propietaria no es pública.</p>
 			</div>
+		</section>
+
+		<section id="precision-volatilidad" class="feature-proof-detail">
+			<h3>Demo en alta volatilidad</h3>
+			<p class="feature-proof-subtitle">Extremo documentado (1 min 4 s)</p>
+			<p class="feature-proof-lead">
+				Límite +1,50 % · cierre +1,83 % · <strong class="feature-title__accent">alta volatilidad geopolítica</strong>.
+				No entra en el error medio ≈ 0,06 % — contención bajo estrés.
+			</p>
+			<div class="demo-video demo-video--compact" id="precision-volatilidad-container">
+				<video id="precision-volatilidad-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-demo-volatilidad.mp4" type="video/mp4" />
+					Tu navegador no soporta reproducción de video HTML5.
+				</video>
+			</div>
+			<p class="demo-edit-note demo-edit-note--slim">
+				En escenarios exigentes la desviación puede ser mayor que en condiciones normales; la protección y el cierre automático se mantienen.{' '}
+				<a class="evidence-link" href="/videos-cierre-youtube">Más casos de cierre →</a>
+			</p>
 		</section>
 
 		<section id="precision-logs" class="feature-proof-detail">
@@ -408,6 +405,7 @@ const seo = {
 	#precision-volatilidad .feature-demo__title--primary-demo {
 		margin-bottom: 0.75rem;
 	}
+	#precision-demo > h2,
 	#precision-volatilidad > h2 {
 		margin: 0 0 0.65rem;
 		font-size: 1.35rem;
@@ -444,7 +442,7 @@ const seo = {
 		z-index: 0;
 	}
 	/* Hero: acabado global (--micro-demo-bg); sin halo ::before */
-	#precision-volatilidad.feature-demo--hero::before {
+	#precision-demo.feature-demo--hero::before {
 		display: none;
 	}
 	.feature-demo--hero > * {
