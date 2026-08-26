@@ -6,6 +6,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 26 ago 2026 — Lightbox captura caja (movimiento de caja)
+
+**Problema:** clic abría PNG en pestaña nueva; había que ampliar manualmente y el zoom del navegador afectaba toda la web.
+
+**Solución:** componente `EvidenceImageLightbox.astro` — clic abre overlay oscuro con la captura a tamaño útil (hasta ~96vw / altura viewport), sin salir de la página. Cerrar: ×, clic fuera o Esc.
+
+**Páginas:** `/como-funciona#movimiento-de-caja` · `/features/evidencia#movimiento-de-caja`
+
+**Commit:** `web(tevsys): lightbox zoom captura movimiento de caja`
+
+---
+
 ## Sesión 26 ago 2026 — Mail 10 Barmenteros + zoom captura caja
 
 **Atribución Nasdaq:** lead día −1,19 % / HyperClose **antes** de pills (frase A, sin props) · pie demo 0,00. `/como-funciona#documentacion-sesion-nasdaq`

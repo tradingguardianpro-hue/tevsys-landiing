@@ -1,0 +1,226 @@
+---
+export interface Props {
+	src: string;
+	alt: string;
+	caption?: string;
+	width?: number;
+	height?: number;
+	figureClass?: string;
+	triggerClass?: string;
+	imgClass?: string;
+	capClass?: string;
+}
+
+const {
+	src,
+	alt,
+	caption,
+	width = 1907,
+	height = 936,
+	figureClass = '',
+	triggerClass = '',
+	imgClass = '',
+	capClass = '',
+} = Astro.props;
+
+const overlayId = `tevsys-lb-${Math.random().toString(36).slice(2, 10)}`;
+---
+
+<figure class:list={['tevsys-evidence-lightbox', figureClass]}>
+	<button
+		type="button"
+		class:list={['tevsys-evidence-lightbox__trigger', triggerClass]}
+		data-tevsys-lightbox-open={overlayId}
+		aria-haspopup="dialog"
+		aria-controls={overlayId}
+		aria-label={`Ampliar captura: ${alt}`}>
+		<img
+			class:list={['tevsys-evidence-lightbox__thumb', imgClass]}
+			src={src}
+			alt=""
+			loading="lazy"
+			width={width}
+			height={height}
+			decoding="async"
+		/>
+	</button>
+	{caption ? <figcaption class:list={['tevsys-evidence-lightbox__cap', capClass]}>{caption}</figcaption> : null}
+</figure>
+
+<div
+	id={overlayId}
+	class="tevsys-evidence-lightbox__overlay"
+	hidden
+	role="dialog"
+	aria-modal="true"
+	aria-label={alt}>
+	<button type="button" class="tevsys-evidence-lightbox__close" data-tevsys-lightbox-close aria-label="Cerrar">
+		×
+	</button>
+	<div class="tevsys-evidence-lightbox__stage">
+		<img class="tevsys-evidence-lightbox__full" src={src} alt={alt} width={width} height={height} />
+	</div>
+	{caption ? <p class="tevsys-evidence-lightbox__overlay-cap">{caption}</p> : null}
+</div>
+
+<style is:global>
+	.tevsys-evidence-lightbox {
+		margin: 0;
+	}
+
+	.tevsys-evidence-lightbox__trigger {
+		display: block;
+		width: 100%;
+		padding: 0;
+		border: none;
+		background: transparent;
+		cursor: zoom-in;
+		text-align: inherit;
+		font: inherit;
+	}
+
+	.tevsys-evidence-lightbox__trigger:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.4rem;
+	}
+
+	.tevsys-evidence-lightbox__thumb {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+
+	.tevsys-evidence-lightbox__cap {
+		margin: 0.55rem 0 0;
+	}
+
+	.tevsys-evidence-lightbox__overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 10050;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		padding: clamp(1rem, 3vw, 2rem);
+		box-sizing: border-box;
+		background: rgba(4, 6, 10, 0.94);
+		backdrop-filter: blur(6px);
+		overflow: auto;
+	}
+
+	.tevsys-evidence-lightbox__overlay[hidden] {
+		display: none !important;
+	}
+
+	.tevsys-evidence-lightbox__close {
+		position: fixed;
+		top: clamp(0.65rem, 2vw, 1rem);
+		right: clamp(0.65rem, 2vw, 1rem);
+		z-index: 10051;
+		width: 2.5rem;
+		height: 2.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.18);
+		border-radius: 999px;
+		background: rgba(12, 16, 24, 0.85);
+		color: rgba(245, 248, 255, 0.95);
+		font-size: 1.45rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.tevsys-evidence-lightbox__close:hover,
+	.tevsys-evidence-lightbox__close:focus-visible {
+		border-color: rgba(245, 176, 65, 0.55);
+		outline: none;
+	}
+
+	.tevsys-evidence-lightbox__stage {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: min(96vw, 1907px);
+		max-height: calc(100vh - 4rem);
+	}
+
+	.tevsys-evidence-lightbox__full {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: calc(100vh - 4rem);
+		object-fit: contain;
+		border-radius: 0.35rem;
+		box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+		cursor: default;
+	}
+
+	.tevsys-evidence-lightbox__overlay-cap {
+		margin: 0;
+		font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+		font-size: 0.72rem;
+		letter-spacing: 0.04em;
+		color: rgba(180, 190, 210, 0.78);
+		text-align: center;
+	}
+</style>
+
+<script is:inline>
+	(() => {
+		if (window.__tevsysEvidenceLightbox) return;
+		window.__tevsysEvidenceLightbox = true;
+
+		/** @type {HTMLElement | null} */
+		let lastFocus = null;
+
+		/** @param {string} id */
+		const open = (id) => {
+			const el = document.getElementById(id);
+			if (!(el instanceof HTMLElement)) return;
+			lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+			el.hidden = false;
+			document.body.style.overflow = 'hidden';
+			const closeBtn = el.querySelector('[data-tevsys-lightbox-close]');
+			if (closeBtn instanceof HTMLElement) closeBtn.focus();
+		};
+
+		/** @param {HTMLElement} el */
+		const close = (el) => {
+			el.hidden = true;
+			document.body.style.overflow = '';
+			if (lastFocus) lastFocus.focus();
+			lastFocus = null;
+		};
+
+		document.addEventListener('click', (e) => {
+			const target = e.target;
+			if (!(target instanceof Element)) return;
+
+			const openBtn = target.closest('[data-tevsys-lightbox-open]');
+			if (openBtn instanceof HTMLElement) {
+				const id = openBtn.getAttribute('data-tevsys-lightbox-open');
+				if (id) open(id);
+				return;
+			}
+
+			if (target.closest('[data-tevsys-lightbox-close]')) {
+				const overlay = target.closest('.tevsys-evidence-lightbox__overlay');
+				if (overlay instanceof HTMLElement) close(overlay);
+				return;
+			}
+
+			if (target.classList.contains('tevsys-evidence-lightbox__overlay')) {
+				close(target);
+			}
+		});
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key !== 'Escape') return;
+			document.querySelectorAll('.tevsys-evidence-lightbox__overlay').forEach((node) => {
+				if (node instanceof HTMLElement && !node.hidden) close(node);
+			});
+		});
+	})();
+</script>

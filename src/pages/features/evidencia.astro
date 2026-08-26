@@ -2,6 +2,7 @@
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
 import settings from '../../config/settings.js';
+import EvidenceImageLightbox from '../../components/core/EvidenceImageLightbox.astro';
 
 const seo = {
 	title: 'Evidencia verificable | tevsys',
@@ -311,26 +312,15 @@ const seo = {
 			<p class="evidencia-cashflow-note">
 				Sin humo: no prometemos rentabilidad; sí una lectura del riesgo alineada con tu cuenta.
 			</p>
-			<figure class="evidencia-cashflow-figure">
-				<a
-					class="evidencia-cashflow-figure__zoom"
-					href="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Abrir captura de movimiento de caja en tamaño completo"
-				>
-					<img
-						class="evidencia-cashflow-figure__img"
-						src="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
-						alt="Modal tevsys de movimiento de caja — retiro 800 €: protección reiniciada; otro capital exige volver a pactar el riesgo."
-						loading="lazy"
-						width="1907"
-						height="936"
-						decoding="async"
-					/>
-				</a>
-				<figcaption class="evidencia-cashflow-figure__cap">Retiro documentado · 800 € · cuenta real</figcaption>
-			</figure>
+			<EvidenceImageLightbox
+				src="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
+				alt="Modal tevsys de movimiento de caja — retiro 800 €: protección reiniciada; otro capital exige volver a pactar el riesgo."
+				caption="Retiro documentado · 800 € · cuenta real"
+				figureClass="evidencia-cashflow-figure"
+				triggerClass="evidencia-cashflow-figure__zoom"
+				imgClass="evidencia-cashflow-figure__img"
+				capClass="evidencia-cashflow-figure__cap"
+			/>
 			<p class="evidencia-contencion-cta">
 				<a class="proof-capture-link" href="/como-funciona#movimiento-de-caja">
 					Cómo se ve en el flujo del producto <span class="proof-link-meta">Cómo funciona</span>

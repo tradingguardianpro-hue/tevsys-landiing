@@ -1,6 +1,7 @@
 ﻿---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
+import EvidenceImageLightbox from '../components/core/EvidenceImageLightbox.astro';
 
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
@@ -490,25 +491,15 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 				el aviso y vuelves a configurar y bloquear límites sobre el{' '}
 				<span class="how-cashflow__em">balance actual</span>. Otro capital exige volver a pactar el riesgo.
 			</p>
-			<figure class="how-cashflow__figure">
-				<a
-					class="how-cashflow__zoom"
-					href="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Abrir captura de movimiento de caja en tamaño completo">
-					<img
-						class="how-cashflow__img"
-						src="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
-						alt="Modal tevsys de movimiento de caja — retiro 800 €: protección reiniciada; otro capital exige volver a pactar el riesgo."
-						loading="lazy"
-						width="1907"
-						height="936"
-						decoding="async"
-					/>
-				</a>
-				<figcaption class="how-cashflow__cap">Retiro documentado · 800 € · cuenta real</figcaption>
-			</figure>
+			<EvidenceImageLightbox
+				src="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
+				alt="Modal tevsys de movimiento de caja — retiro 800 €: protección reiniciada; otro capital exige volver a pactar el riesgo."
+				caption="Retiro documentado · 800 € · cuenta real"
+				figureClass="how-cashflow__figure"
+				triggerClass="how-cashflow__zoom"
+				imgClass="how-cashflow__img"
+				capClass="how-cashflow__cap"
+			/>
 			<p class="how-cashflow__cta">
 				<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href="/features/evidencia#movimiento-de-caja">
 					Caso en Evidencia
