@@ -2,6 +2,7 @@
 import { SkipLink } from '@components/odyssey-theme';
 import BaseHead from '../components/head/BaseHead.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
+import EvidenceLightboxGlobal from '../components/core/EvidenceLightboxGlobal.astro';
 
 export interface Props {
 	seo?: BaseHeadProps;
@@ -24,6 +25,7 @@ const { seo, bodyClass } = Astro.props;
 			<slot />
 		</main>
 		<slot name="footer" />
+		<EvidenceLightboxGlobal />
 		<script>
 			import { inject } from '@vercel/analytics';
 			inject({

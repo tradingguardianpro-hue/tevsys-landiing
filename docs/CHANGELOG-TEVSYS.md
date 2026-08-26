@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 26 ago 2026 — Lightbox global capturas evidencia
+
+**Alcance:** overlay único en `Base.astro` — galerías `proof-gallery__zoom`, contención, HyperClose collage, botones caja (`EvidenceImageLightbox`).
+
+**Comportamiento:** clic → imagen grande in-page · × / Esc / clic fuera · sin pestaña ni zoom del navegador.
+
+**Commit:** `web(tevsys): lightbox global en capturas ampliables`
+
+---
+
 ## Sesión 26 ago 2026 — Lightbox captura caja (movimiento de caja)
 
 **Problema:** clic abría PNG en pestaña nueva; había que ampliar manualmente y el zoom del navegador afectaba toda la web.

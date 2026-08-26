@@ -1,0 +1,238 @@
+---
+/** Overlay único + script para todas las capturas ampliables (galerías, contención, caja). */
+---
+
+<div
+	id="tevsys-evidence-lightbox-root"
+	class="tevsys-evidence-lightbox__overlay"
+	hidden
+	role="dialog"
+	aria-modal="true"
+	aria-label="Captura ampliada">
+	<button type="button" class="tevsys-evidence-lightbox__close" data-tevsys-lightbox-close aria-label="Cerrar">
+		×
+	</button>
+	<div class="tevsys-evidence-lightbox__stage">
+		<img class="tevsys-evidence-lightbox__full" src="" alt="" decoding="async" />
+	</div>
+	<p class="tevsys-evidence-lightbox__overlay-cap" hidden></p>
+</div>
+
+<style is:global>
+	.tevsys-evidence-lightbox {
+		margin: 0;
+	}
+
+	.tevsys-evidence-lightbox__trigger {
+		display: block;
+		width: 100%;
+		padding: 0;
+		border: none;
+		background: transparent;
+		cursor: zoom-in;
+		text-align: inherit;
+		font: inherit;
+	}
+
+	.tevsys-evidence-lightbox__trigger:focus-visible,
+	a.proof-gallery__zoom:focus-visible,
+	a.evidencia-contencion-figure__zoom:focus-visible,
+	a.hyperclose-semaphore-collage__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.4rem;
+	}
+
+	.tevsys-evidence-lightbox__thumb {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+
+	.tevsys-evidence-lightbox__cap {
+		margin: 0.55rem 0 0;
+	}
+
+	.tevsys-evidence-lightbox__overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 10050;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		padding: clamp(1rem, 3vw, 2rem);
+		box-sizing: border-box;
+		background: rgba(4, 6, 10, 0.94);
+		backdrop-filter: blur(6px);
+		overflow: auto;
+	}
+
+	.tevsys-evidence-lightbox__overlay[hidden] {
+		display: none !important;
+	}
+
+	.tevsys-evidence-lightbox__close {
+		position: fixed;
+		top: clamp(0.65rem, 2vw, 1rem);
+		right: clamp(0.65rem, 2vw, 1rem);
+		z-index: 10051;
+		width: 2.5rem;
+		height: 2.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.18);
+		border-radius: 999px;
+		background: rgba(12, 16, 24, 0.85);
+		color: rgba(245, 248, 255, 0.95);
+		font-size: 1.45rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.tevsys-evidence-lightbox__close:hover,
+	.tevsys-evidence-lightbox__close:focus-visible {
+		border-color: rgba(245, 176, 65, 0.55);
+		outline: none;
+	}
+
+	.tevsys-evidence-lightbox__stage {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: min(96vw, 1907px);
+		max-height: calc(100vh - 4rem);
+	}
+
+	.tevsys-evidence-lightbox__full {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: calc(100vh - 4rem);
+		object-fit: contain;
+		border-radius: 0.35rem;
+		box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+		cursor: default;
+	}
+
+	.tevsys-evidence-lightbox__overlay-cap {
+		margin: 0;
+		font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+		font-size: 0.72rem;
+		letter-spacing: 0.04em;
+		color: rgba(180, 190, 210, 0.78);
+		text-align: center;
+	}
+
+	.tevsys-evidence-lightbox__overlay-cap[hidden] {
+		display: none !important;
+	}
+</style>
+
+<script is:inline>
+	(() => {
+		if (window.__tevsysEvidenceLightbox) return;
+		window.__tevsysEvidenceLightbox = true;
+
+		const ZOOM_LINK =
+			'a.proof-gallery__zoom[href], a.evidencia-contencion-figure__zoom[href], a.hyperclose-semaphore-collage__zoom[href]';
+
+		/** @type {HTMLElement | null} */
+		let lastFocus = null;
+
+		/** @returns {HTMLElement | null} */
+		const getRoot = () => document.getElementById('tevsys-evidence-lightbox-root');
+
+		/**
+		 * @param {string} src
+		 * @param {string} alt
+		 * @param {string} [caption]
+		 */
+		const openLightbox = (src, alt, caption) => {
+			const root = getRoot();
+			if (!(root instanceof HTMLElement)) return;
+
+			const img = root.querySelector('.tevsys-evidence-lightbox__full');
+			const cap = root.querySelector('.tevsys-evidence-lightbox__overlay-cap');
+			if (!(img instanceof HTMLImageElement)) return;
+
+			lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+			img.src = src;
+			img.alt = alt;
+			root.setAttribute('aria-label', alt || 'Captura ampliada');
+
+			if (cap instanceof HTMLElement) {
+				if (caption) {
+					cap.textContent = caption;
+					cap.hidden = false;
+				} else {
+					cap.textContent = '';
+					cap.hidden = true;
+				}
+			}
+
+			root.hidden = false;
+			document.body.style.overflow = 'hidden';
+			const closeBtn = root.querySelector('[data-tevsys-lightbox-close]');
+			if (closeBtn instanceof HTMLElement) closeBtn.focus();
+		};
+
+		const closeLightbox = () => {
+			const root = getRoot();
+			if (!(root instanceof HTMLElement) || root.hidden) return;
+			root.hidden = true;
+			document.body.style.overflow = '';
+			if (lastFocus) lastFocus.focus();
+			lastFocus = null;
+		};
+
+		/** @param {Element} el */
+		const readAlt = (el) => {
+			const img = el.querySelector('img');
+			if (img instanceof HTMLImageElement && img.alt) return img.alt;
+			const aria = el.getAttribute('aria-label');
+			if (aria) return aria.replace(/^Abrir captura[^:]*:\s*/i, '').replace(/^Abrir[^:]*:\s*/i, '');
+			return 'Captura ampliada';
+		};
+
+		document.addEventListener('click', (e) => {
+			const target = e.target;
+			if (!(target instanceof Element)) return;
+
+			const trigger = target.closest('[data-tevsys-lightbox-src]');
+			if (trigger instanceof HTMLElement) {
+				e.preventDefault();
+				const src = trigger.getAttribute('data-tevsys-lightbox-src');
+				if (!src) return;
+				const alt = trigger.getAttribute('data-tevsys-lightbox-alt') || readAlt(trigger);
+				const caption = trigger.getAttribute('data-tevsys-lightbox-caption') || '';
+				openLightbox(src, alt, caption);
+				return;
+			}
+
+			const link = target.closest(ZOOM_LINK);
+			if (link instanceof HTMLAnchorElement) {
+				e.preventDefault();
+				const href = link.getAttribute('href');
+				if (!href || href.startsWith('#')) return;
+				openLightbox(href, readAlt(link), '');
+			}
+		});
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key !== 'Escape') return;
+			closeLightbox();
+		});
+
+		document.addEventListener('click', (e) => {
+			const target = e.target;
+			if (!(target instanceof Element)) return;
+			if (target.closest('[data-tevsys-lightbox-close]')) {
+				closeLightbox();
+				return;
+			}
+			const root = getRoot();
+			if (target === root) closeLightbox();
+		});
+	})();
+</script>
