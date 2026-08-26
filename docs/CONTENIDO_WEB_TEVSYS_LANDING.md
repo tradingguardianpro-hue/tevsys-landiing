@@ -522,6 +522,15 @@ Ver handoff hero.
 - **Índice «Qué puedes comprobar»:** viñeta contención antes de casos Essential/logs.
 - **Handoff §8 checklist:** implementación marcada; pendientes opcionales — enlace cruzado Precisión, microclip, mail Pro.
 
+### Evidencia + Cómo funciona — movimiento de caja (`#movimiento-de-caja`) — **26 ago 2026**
+
+- **Titular (cómo-funciona):** *El riesgo se mide sobre el capital real* (accent en *capital real*).
+- **Ceja:** Capital y riesgo · bajo Puesta en marcha.
+- **Evidencia:** tras contención · puente *cuando el capital ya no es el mismo* · H3 *Movimiento de caja — el riesgo se vuelve a pactar*.
+- **Asset:** `public/images/evidence/evidencia-movimiento-caja-retiro-800.png`
+- **Commit:** `web(tevsys): publish cashflow risk-reset block on como-funciona and evidencia`
+- **V12:** **(webCajaCapitalReal)**
+
 ### Pendiente inmediato
 - SML: vídeo final según guía de producción — **al integrarlo en la micro**, cumplir **«Convención embeds de vídeo — micropáginas `/features/*`»** (misma estructura de clases que Precisión/HyperClose; si la grabación es tema claro, **`demo-video--light`** como Nasdaq).
 

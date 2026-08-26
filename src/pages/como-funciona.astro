@@ -466,6 +466,52 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			</ul>
 		</section>
 
+		<section
+			class="how-puesta-marcha how-puesta-marcha--panel how-cashflow"
+			id="movimiento-de-caja"
+			aria-labelledby="how-cashflow-title">
+			<header class="how-section-head">
+				<p class="how-eyebrow how-eyebrow--center">Capital y riesgo</p>
+				<h2 id="how-cashflow-title" class="how-puesta-marcha__lead">
+					El riesgo se mide sobre el
+					{' '}
+					<span class="how-present-title__accent how-puesta-marcha__accent">capital real</span>
+				</h2>
+			</header>
+			<p class="how-cashflow__body">
+				En tevsys entendemos que el riesgo <strong>depende del capital de la cuenta</strong>. Si retiras o
+				ingresas dinero, el capital ha cambiado — y eso <strong>no es trading</strong>. Por eso la protección se
+				reinicia: no tiene sentido seguir con un pacto de riesgo anclado a un balance que ya no existe.
+				Confirmas el aviso y vuelves a bloquear límites sobre el <strong>balance actual</strong>. Otro capital
+				exige volver a pactar el riesgo.
+			</p>
+			<figure class="how-cashflow__figure">
+				<a
+					class="how-cashflow__zoom"
+					href="/images/evidence/evidencia-movimiento-caja-retiro-800.png"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Abrir captura de movimiento de caja en tamaño completo">
+					<img
+						class="how-cashflow__img"
+						src="/images/evidence/evidencia-movimiento-caja-retiro-800.png"
+						alt="Modal tevsys de movimiento de caja — retiro 800 €: protección reiniciada; otro capital exige volver a pactar el riesgo."
+						loading="lazy"
+						width="1024"
+						height="502"
+						decoding="async"
+					/>
+				</a>
+				<figcaption class="how-cashflow__cap">Retiro documentado · 800 € · cuenta real</figcaption>
+			</figure>
+			<p class="how-cashflow__cta">
+				<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href="/features/evidencia#movimiento-de-caja">
+					Caso en Evidencia
+					<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
+				</a>
+			</p>
+		</section>
+
 		<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
 			<div class="how-more__bg" aria-hidden="true"></div>
 			<div class="how-more__sweep" aria-hidden="true"></div>
@@ -838,6 +884,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<a href="/configuracion-fin-de-semana">Configuración en fin de semana</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/videos-cierre-youtube">Todos los vídeos</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/como-funciona#movimiento-de-caja">Capital y riesgo</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/features/evidencia">Evidencia</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
@@ -1726,6 +1774,67 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	.how-puesta-marcha__accent::after {
 		margin-left: 0.15rem;
 		width: min(5.5rem, 100%);
+	}
+
+	/* Capital y riesgo — movimiento de caja (26 ago 2026) */
+	.how-cashflow {
+		max-width: min(48rem, 100%);
+		scroll-margin-top: clamp(5.5rem, 12vh, 7rem);
+	}
+
+	.how-cashflow__body {
+		margin: clamp(0.85rem, 2.2vw, 1.15rem) auto 0;
+		max-width: 38rem;
+		font-size: clamp(0.92rem, 1.85vw, 1.02rem);
+		line-height: 1.55;
+		color: rgba(230, 235, 245, 0.88);
+		text-align: left;
+	}
+
+	html[data-theme='light'] .how-cashflow__body {
+		color: rgba(30, 36, 48, 0.88);
+	}
+
+	.how-cashflow__figure {
+		margin: clamp(1rem, 2.8vw, 1.35rem) 0 0;
+	}
+
+	.how-cashflow__zoom {
+		display: block;
+		border-radius: 0.4rem;
+		overflow: hidden;
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+		transition: box-shadow 0.15s ease;
+	}
+
+	.how-cashflow__zoom:hover,
+	.how-cashflow__zoom:focus-visible {
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45);
+		outline: none;
+	}
+
+	.how-cashflow__img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+
+	.how-cashflow__cap {
+		margin: 0.55rem 0 0;
+		font-family: var(--font-mono, 'IBM Plex Mono', ui-monospace, monospace);
+		font-size: 0.72rem;
+		letter-spacing: 0.04em;
+		color: rgba(180, 190, 210, 0.72);
+		text-align: center;
+	}
+
+	html[data-theme='light'] .how-cashflow__cap {
+		color: rgba(70, 80, 95, 0.75);
+	}
+
+	.how-cashflow__cta {
+		margin: clamp(0.95rem, 2.4vw, 1.25rem) 0 0;
 	}
 
 	.how-puesta-marcha__links {

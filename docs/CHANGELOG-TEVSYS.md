@@ -6,6 +6,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 26 ago 2026 — movimiento de caja (capital real) en web
+
+**Commit:** `web(tevsys): publish cashflow risk-reset block on como-funciona and evidencia`
+
+**Qué verás:**
+- `/como-funciona#movimiento-de-caja` — bajo Puesta en marcha · titular *El riesgo se mide sobre el capital real* · captura retiro 800 € · enlace a Evidencia
+- `/features/evidencia#movimiento-de-caja` — ítem en «Qué puedes comprobar» + bloque tras contención · misma captura · enlace cruzado
+
+**Asset:** `public/images/evidence/evidencia-movimiento-caja-retiro-800.png` (1024×502)
+
+**Qué no tocamos:** hero, KITT, Market DESCR, EA.
+
+**Docs TGP:** V12 **(webCajaCapitalReal)** · CONTENIDO web § movimiento de caja.
+
+---
+
 ## Sesión 25 ago 2026 — instalación Market + dos puertas (resumen)
 
 **Estado deploy:** código y assets en clon local · **push Vercel pendiente** (sin push, footer/vídeo nuevo no se ven en tevsys.io).

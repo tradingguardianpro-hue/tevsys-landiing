@@ -117,6 +117,9 @@ const seo = {
 					<a class="evidence-link" href="#evidencia-contencion-489">Precisión cuando puede, contención bajo estrés: barrido ~111 ms, seis posiciones.</a>
 				</li>
 				<li>
+					<a class="evidence-link" href="#movimiento-de-caja">Capital y riesgo: si el dinero de la cuenta cambia, el pacto se vuelve a firmar.</a>
+				</li>
+				<li>
 					<a class="evidence-link" href="#evidencia-4-56">Caso Essential extremo: 100 lotes, desviación de cierre documentada (+95 €).</a>
 				</li>
 				<li>
@@ -285,6 +288,54 @@ const seo = {
 			<p class="evidencia-contencion-cta">
 				<a class="proof-capture-link" href="/company/contact?feature=evidence&flow=demo">
 					¿Quieres el detalle forense? Escríbenos <span class="proof-link-meta">Contacto</span>
+				</a>
+			</p>
+		</section>
+
+		<section id="movimiento-de-caja" class="feature-proof-detail feature-proof-detail--cashflow">
+			<div class="evidencia-contencion-head">
+				<h3 id="evidencia-movimiento-caja-title" class="evidencia-contencion-title">
+					Movimiento de caja — el riesgo se vuelve a pactar
+				</h3>
+				<p class="evidencia-contencion-bridge" aria-label="Contexto del caso documentado">
+					<span class="evidencia-contencion-bridge__text">cuando el capital ya no es el mismo</span>
+				</p>
+			</div>
+			<p class="feature-proof-lead">
+				El porcentaje que aceptaste solo vale si el capital sobre el que se aplica es el de
+				<strong> ahora</strong>. Un retiro o un ingreso cambia ese suelo sin ser una operación. tevsys lo
+				detecta, reinicia la protección y te pide confirmar: vuelves a pactar el riesgo sobre el balance
+				actual. No es un ajuste silencioso. Es honestidad de medición — el mismo criterio que exige un entorno
+				profesional cuando el capital se mueve.
+			</p>
+			<p class="evidencia-cashflow-note">
+				Sin humo: no prometemos rentabilidad; sí una lectura del riesgo alineada con tu cuenta.
+			</p>
+			<figure class="evidencia-contencion-figure evidencia-contencion-figure--panel evidencia-cashflow-figure">
+				<figcaption class="evidencia-contencion-figure__cap">
+					Retiro documentado · <strong>800 €</strong> · cuenta real
+				</figcaption>
+				<a
+					class="evidencia-contencion-figure__zoom"
+					href="/images/evidence/evidencia-movimiento-caja-retiro-800.png"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Abrir captura de movimiento de caja en tamaño completo"
+				>
+					<img
+						class="evidencia-contencion-figure__img evidencia-cashflow-figure__img"
+						src="/images/evidence/evidencia-movimiento-caja-retiro-800.png"
+						alt="Modal tevsys de movimiento de caja — retiro 800 €: protección reiniciada; otro capital exige volver a pactar el riesgo."
+						loading="lazy"
+						width="1024"
+						height="502"
+						decoding="async"
+					/>
+				</a>
+			</figure>
+			<p class="evidencia-contencion-cta">
+				<a class="proof-capture-link" href="/como-funciona#movimiento-de-caja">
+					Cómo se ve en el flujo del producto <span class="proof-link-meta">Cómo funciona</span>
 				</a>
 			</p>
 		</section>
@@ -944,6 +995,33 @@ const seo = {
 	}
 	.evidencia-contencion-cta {
 		margin: 0;
+	}
+	.feature-proof-detail--cashflow {
+		margin-top: calc(var(--section-margin) * 0.85);
+	}
+	.feature-proof-detail--cashflow #evidencia-movimiento-caja-title {
+		scroll-margin-top: clamp(5.5rem, 12vh, 7rem);
+	}
+	#movimiento-de-caja {
+		scroll-margin-top: clamp(5.5rem, 12vh, 7rem);
+	}
+	.evidencia-cashflow-note {
+		margin: 0.65rem 0 0;
+		font-size: 0.92rem;
+		line-height: 1.5;
+		color: rgba(180, 190, 210, 0.78);
+	}
+	html[data-theme='light'] .evidencia-cashflow-note {
+		color: rgba(70, 80, 95, 0.82);
+	}
+	.evidencia-cashflow-figure {
+		margin-top: 1.15rem;
+		max-width: min(52rem, 100%);
+	}
+	.evidencia-cashflow-figure__img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
 	}
 	#evidence-audit {
 		scroll-margin-top: clamp(5.5rem, 12vh, 7rem);
