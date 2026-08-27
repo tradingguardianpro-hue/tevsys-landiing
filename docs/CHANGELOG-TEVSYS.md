@@ -6,6 +6,22 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 27 ago 2026 — Home: subrayado días OFF
+
+**Qué:** en checklist bajo «Sin excusas…», misma familia `.tevsys-brand-accent-underline` en *días que tú decides estar OFF* (sin competir con *Nosotros sí.*).
+
+**Commit:** `web(tevsys): home underline dias off checklist`
+
+---
+
+## Sesión 27 ago 2026 — Informe MT5: placeholder (sin galería ajena)
+
+**Qué:** bajo el vídeo Londres, quitada galería Wall Street (cifras distintas). Hueco marca **tevsys** + «Capturas … en breve» + meta de la sesión.
+
+**Commit:** `web(tevsys): evidencia informe mt5 placeholder en breve`
+
+---
+
 ## Sesión 27 ago 2026 — Hero 100k GER40 Londres (vídeo + poster)
 
 **Qué cambia:**

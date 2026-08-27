@@ -27,7 +27,7 @@ import settings from '../config/settings.js';
 				<p class="feature-section__hook">Sin excusas. Las buenas intenciones no cierran con alta precisión ni bloquean operaciones. <span class="tevsys-brand-accent-underline">Nosotros sí.</span></p>
 				<ul class="feature-card__checklist-static-items" aria-label="Checklist resumen de valor">
 					<li>Doble trazabilidad real: lógica interna tevsys + ejecución oficial MT5.</li>
-					<li>Configuras una vez. Ejecutamos siempre. Incluso los días que tú decides estar OFF.</li>
+					<li>Configuras una vez. Ejecutamos siempre. Incluso los <span class="tevsys-brand-accent-underline tevsys-brand-accent-underline--dias-off">días que tú decides estar OFF</span>.</li>
 				</ul>
 			</div>
 			<p class="feature-card__intro-ellos"><span class="feature-hook__dot" aria-hidden="true"></span>Ellos deslizan. En tevsys cerramos.</p>
@@ -371,6 +371,11 @@ import settings from '../config/settings.js';
 			rgba(120, 125, 138, 0.5) 75%,
 			rgba(90, 95, 108, 0.28) 100%
 		);
+	}
+	/* Segunda raya del checklist: frase OFF más larga que «Nosotros sí.» */
+	.tevsys-brand-accent-underline--dias-off::after {
+		width: min(100%, calc(100% + 0.35rem));
+		margin-top: 0.28rem;
 	}
 	/* Subrayado fino parcial en títulos de cards (familia /como-funciona; offset por card). */
 	.tevsys-card__title--accent-line-short {
