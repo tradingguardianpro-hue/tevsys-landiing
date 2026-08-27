@@ -6,11 +6,25 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 27 ago 2026 — Hero 100k GER40 Londres (vídeo + poster)
+
+**Qué cambia:**
+- MP4 hero Precisión + Evidencia + puente `/como-funciona`: `evidencia-100k-ger40-londres.mp4` (~1:30) + poster mid `?v=20260827`.
+- Hook: 10 lotes · límite −1 % · desviación **2,28 € (0,0023 %)** · apertura Londres.
+- Línea atribución: tevsys −1,0023 % · ejecución 0,00 p.p. · 34 ms (caja MT5 −1.002,28 €).
+- Informe MT5 en Evidencia: galería Wall Street marcada **histórica**; capturas de esta sesión **pendientes**.
+
+**Archivos:** `precision.astro` · `evidencia.astro` · `como-funciona.astro` · `public/videos/features/evidencia-100k-ger40-londres*`
+
+**Commit:** `web(tevsys): hero 100k GER40 Londres precision evidencia`
+
+---
+
 ## Sesión 27 ago 2026 — Precisión hero 100k (interino)
 
 **Qué cambia:** primer vídeo = demo 100k GER40 (oscuro), no volatilidad. Volatilidad baja al final como extremo. Copy sin «Apertura Wall Street».
 
-**Próximo:** rodaje Londres 100k ±1 % → sustituir MP4 hero (+ bump poster/?v=).
+**Próximo:** ✅ hecho — Londres 100k (entrada arriba).
 
 **Commit:** `web(tevsys): precision hero 100k demo reorder`
 

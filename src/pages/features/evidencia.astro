@@ -24,25 +24,34 @@ const seo = {
 		</section>
 
 		<section id="evidencia-demo" class="feature-demo feature-demo--hero">
-			<h2>Demo rápida — Cuenta 100k (1 min 41 s)</h2>
+			<h2>Demo rápida — Cuenta 100k (~1 min 30 s)</h2>
 			<p class="feature-demo-hook">
-				100.000 € · GER40 · 20 lotes · límite −1 % · <strong class="feature-title__accent">desviación 7,20 € (0,0072 %)</strong> · Apertura Wall Street.
+				100.000 € · GER40 · 10 lotes · límite −1 % · <strong class="feature-title__accent">desviación 2,28 € (0,0023 %)</strong> · apertura Londres.
 			</p>
 			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="evidencia-demo-container">
-				<video id="evidencia-demo-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/evidencia-100k-perdida.mp4?v=20260607wsv2" type="video/mp4" />
+				<video id="evidencia-demo-video" controls preload="metadata" playsinline
+					poster="/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827">
+					<source src="/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827" type="video/mp4" />
 					Tu navegador no soporta reproducción de video HTML5.
 				</video>
 			</div>
+			<p class="feature-demo-attrib">
+				Atribución · tevsys −1,0023 % · ejecución 0,00 p.p. · 34 ms
+			</p>
 			<p class="demo-edit-note">
-				<strong>Vídeo editado:</strong> mostramos los momentos clave del cierre. Puede haber un <strong>salto en el reloj</strong> del terminal entre planos.
+				<strong>Vídeo editado:</strong> momentos clave del cierre; puede haber un <strong>salto en el reloj</strong> entre planos.
+				Cierre en caja MT5: <strong>−1.002,28 €</strong>.
 			</p>
 
 			<div id="evidencia-informe-mt5" class="evidencia-demo-informe">
-				<h3 class="evidencia-demo-informe__title">Informe oficial MT5 — comprueba esta operativa tú mismo</h3>
+				<h3 class="evidencia-demo-informe__title">Informe oficial MT5 — comprueba la operativa tú mismo</h3>
 				<p class="evidencia-demo-informe__subtitle">Generado por MetaTrader 5, no por tevsys</p>
 				<p class="evidencia-demo-informe__lead">
-					Cuenta 100.000 € · 2×10 lotes GER40 · límite −1 % · pérdida documentada <strong class="feature-title__accent">−1.007,20 € (−1,01 %)</strong> · cinco pestañas sin editar.
+					<strong>En actualización:</strong> capturas del informe de la sesión Londres (vídeo de arriba · −1.002,28 €).
+					Mientras tanto, galería histórica de otra sesión 100k GER40 (Wall Street · −1.007,20 €) — misma lógica de verificación, cifras distintas.
+				</p>
+				<p class="evidencia-demo-informe__lead evidencia-demo-informe__lead--hist">
+					Histórico · 100.000 € · 2×10 lotes GER40 · límite −1 % · pérdida documentada <strong class="feature-title__accent">−1.007,20 € (−1,01 %)</strong> · cinco pestañas sin editar.
 				</p>
 				<details class="proof-accordion">
 					<summary class="proof-capture-link">Ver las 5 pestañas del informe</summary>
@@ -555,6 +564,18 @@ const seo = {
 		margin: 0 0 0.75rem;
 		font-style: italic;
 		opacity: 0.9;
+	}
+	.feature-demo-attrib {
+		margin: 0.15rem 0 0.35rem;
+		font-size: 0.92rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		letter-spacing: 0.01em;
+		opacity: 0.88;
+		color: hsl(210, 14%, 72%);
+	}
+	.evidencia-demo-informe__lead--hist {
+		opacity: 0.78;
+		font-size: 0.95em;
 	}
 	.feature-demo h2,
 	.feature-proof h2,

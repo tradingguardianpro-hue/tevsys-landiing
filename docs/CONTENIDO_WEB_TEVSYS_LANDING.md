@@ -416,9 +416,9 @@ Ver handoff hero.
   - Hook demo (20 abr 2026): `Caso real 100k: apertura Wall Street, 20 lotes, cierre automático con desviación documentada (0,0072%).`
   - Soporte: vídeo demo 1 min 41 s (con audio), informe MT5 (5 capturas), HTML transacciones descargable; CTA “validar evidencia en tu operativa”.
 
-### Estado actual Precisión (26 Mar 2026; orden demos **12 ago 2026**)
-- **Hero (12 ago):** alta volatilidad (`precision-demo-volatilidad.mp4`, 1 min 4 s) + lead multigráfico. `.feature-demo--hero` + `.demo-video--hero`.
-- **Demo 100k:** `evidencia-100k-perdida.mp4` (1 min 41 s) — **secundaria** (tras índice). Secundarios: `.demo-video--compact`.
+### Estado actual Precisión (26 Mar 2026; orden demos **12 ago 2026**; hero 100k **27 ago 2026**)
+- **Hero (27 ago):** `evidencia-100k-ger40-londres.mp4` (~1 min 30 s) + poster mid `?v=20260827`. Hook: 100.000 € · GER40 · **10 lotes** · límite −1 % · desviación **2,28 € (0,0023 %)** · apertura Londres. Atribución: tevsys −1,0023 % · ejecución 0,00 p.p. · 34 ms. Caja MT5 −1.002,28 €. Volatilidad = extremo al final.
+- **Histórico:** `evidencia-100k-perdida.mp4` (Wall Street · 20 lotes · 0,0072 %) ya no es hero.
 - **Nota extremos (12 ago):** casos documentados · volatilidad / spread / latencia bróker · máx. **−0,39%**.
 - **Volatilidad:** hook *Operativa documentada:* ±1,50% / +1,83% / contexto volatilidad; nota de pie ajustada (protección vs “misma precisión” genérica).
 - **Nasdaq (multi‑activo):** bloque de demo **inmediatamente después** de alta volatilidad (narrativa: volatilidad → multi‑activo NASDAQ).
@@ -439,10 +439,11 @@ Ver handoff hero.
 - **Cierre inmediato y Semáforo:** enlazan a la demo. Acordeón modales 3 niveles.
 - **Día OFF:** `hyperclose-dias-off-demo.mp4` (51 s) + 5 capturas. **Pendiente agenda:** sustituir captura 1 (día OFF sin protección previa) cuando haya material nuevo.
 
-### Estado actual Evidencia (26 Mar 2026; copy narrativa 20 abr 2026)
-- **Demo rápida:** `evidencia-100k-perdida.mp4` (1 min 41 s, con audio). **Hero** como Precisión/HyperClose. Cuenta 100k nueva, 20 lotes GER40, cierre por límite -1% = -1.007,20€, error 0,0072%. Apertura Wall Street.
+### Estado actual Evidencia (26 Mar 2026; copy narrativa 20 abr 2026; hero 100k **27 ago 2026**)
+- **Demo rápida:** `evidencia-100k-ger40-londres.mp4` (~1 min 30 s). **Hero** como Precisión. 10 lotes GER40 · límite −1 % · desviación **2,28 € (0,0023 %)** · apertura Londres · atribución 34 ms / 0,00 p.p. · caja −1.002,28 €.
+- **Informe MT5:** capturas de **esta** sesión pendientes; galería Wall Street (−1.007,20 €) marcada histórica.
 - **Lead:** doble trazabilidad con acento en **«Doble trazabilidad»** (`feature-title__accent`).
-- **Hook demo:** `Caso real 100k: apertura Wall Street, 20 lotes, cierre automático con desviación documentada (0,0072%).`
+- **Hook demo (histórico copy):** `Caso real 100k: apertura Wall Street…` — sustituido en página por hook Londres (arriba).
 - **"Qué puedes comprobar":** mismos destinos; textos de enlace reorientados a **verificación** (informe MT5 independiente, caso extremo Essential con desviación documentada, export MT5, guía logs + puente a Precisión, auditoría dos capas). Ver `CHANGELOG-TEVSYS.md` **§15**.
 - **Operativa 4.56 — Caso extremo Essential:** Bloque nuevo. Subtítulo: "Nuestra versión Essential. Con el caso más extremo. Evidencia por capturas e informe oficial MT5." 100 lotes GER40, límite +4%, cierre +4.095,10 € (desviación 95 €). Acordeón "Ver capturas (7)": Resumen, P&L, Long & Short, Symbols, Riesgos, Historial, Panel.
 - **Imágenes 4.56:** `evidencia-4.56-01-resumen.png` a `evidencia-4.56-07-panel.png`.
