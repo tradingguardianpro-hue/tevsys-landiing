@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 28 ago 2026 — Informe MT5 Londres (5 capturas)
+
+**Qué:** galería Evidencia sustituida — sesión Infinox #100129406 · −1.002,28 € · PNG en `public/images/evidence/evidencia-100k-informe-*` · `?v=20260828`.
+
+**Commit:** `web(tevsys): evidencia informe mt5 Londres 100129406 gallery`
+
+---
+
 ## Sesión 28 ago 2026 — Home card Evidencia alineada Londres
 
 **Qué:** card Evidencia en `/` — GER40 · 10 lotes · Londres · desviación 2,28 € (0,0023 %).

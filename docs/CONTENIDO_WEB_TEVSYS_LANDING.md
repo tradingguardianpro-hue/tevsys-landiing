@@ -441,7 +441,7 @@ Ver handoff hero.
 
 ### Estado actual Evidencia (26 Mar 2026; copy narrativa 20 abr 2026; hero 100k **27 ago 2026**)
 - **Demo rápida:** `evidencia-100k-ger40-londres.mp4` (~1 min 30 s). **Hero** como Precisión. 10 lotes GER40 · límite −1 % · desviación **2,28 € (0,0023 %)** · apertura Londres · atribución 34 ms / 0,00 p.p. · caja −1.002,28 €.
-- **Informe MT5:** placeholder marca **tevsys** + «Capturas … en breve» (sesión Londres · −1.002,28 €). Galería Wall Street retirada del bloque.
+- **Informe MT5:** galería **5 pestañas** sesión Londres Infinox **#100129406** (−1.002,28 €) — alineada al vídeo hero.
 - **Lead:** doble trazabilidad con acento en **«Doble trazabilidad»** (`feature-title__accent`).
 - **Hook demo (histórico copy):** `Caso real 100k: apertura Wall Street…` — sustituido en página por hook Londres (arriba).
 - **"Qué puedes comprobar":** mismos destinos; textos de enlace reorientados a **verificación** (informe MT5 independiente, caso extremo Essential con desviación documentada, export MT5, guía logs + puente a Precisión, auditoría dos capas). Ver `CHANGELOG-TEVSYS.md` **§15**.
