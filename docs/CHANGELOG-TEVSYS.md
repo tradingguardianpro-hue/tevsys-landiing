@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 28 ago 2026 — Precisión: puente informe 5 pestañas
+
+**Qué:** bajo atribución hero 100k — *Informe MT5 de la misma sesión — 5 pestañas en Evidencia →*.
+
+**Commit:** `web(tevsys): precision link informe mt5 five tabs evidencia`
+
+---
+
 ## Sesión 28 ago 2026 — Informe MT5 Londres (5 capturas)
 
 **Qué:** galería Evidencia sustituida — sesión Infinox #100129406 · −1.002,28 € · PNG en `public/images/evidence/evidencia-100k-informe-*` · `?v=20260828`.
