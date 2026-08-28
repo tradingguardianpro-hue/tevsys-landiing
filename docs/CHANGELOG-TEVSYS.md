@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 28 ago 2026 — Home card Evidencia alineada Londres
+
+**Qué:** card Evidencia en `/` — GER40 · 10 lotes · Londres · desviación 2,28 € (0,0023 %).
+
+**Commit:** `web(tevsys): home evidencia card GER40 Londres copy`
+
+---
+
 ## Sesión 27 ago 2026 — Home: subrayado días OFF
 
 **Qué:** en checklist bajo «Sin excusas…», misma familia `.tevsys-brand-accent-underline` en *días que tú decides estar OFF* (sin competir con *Nosotros sí.*).
