@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Sesión 28 ago 2026 — Informe MT5 Londres capturas HD
+
+**Qué:** sustituidas 5 PNG borrosas por capturas nativas MT5 (Summary · P&L · Long&Short · Symbols · Risks) · `?v=20260828hd`.
+
+**Commit:** `web(tevsys): evidencia informe mt5 Londres HD captures`
+
+---
+
 ## Sesión 28 ago 2026 — Precisión: puente informe 5 pestañas
 
 **Qué:** bajo atribución hero 100k — *Informe MT5 de la misma sesión — 5 pestañas en Evidencia →*.
