@@ -120,11 +120,14 @@ Misma idea que `/go/evidencia-5min`: pageview medible en Vercel Hobby + redirect
 | Ruta | Origen | Destino |
 |------|--------|---------|
 | `/go/como-funciona-home` | CTA mid-home *Ver cómo funciona →* | `/como-funciona` |
-| `/go/como-funciona-operacion` | Chip mid-home *Operación abierta en fin de semana…* | `/como-funciona#rama-operacion` |
+| `/go/como-funciona-operacion` | Atajo mid-home *Operación abierta en fin de semana…* | `/como-funciona#videoclip-finde-operacion` |
+| `/go/como-funciona-pasiva` | Atajo mid-home *Empezar de cero →* | `/como-funciona#desde-cero` |
+| `/go/evidencia-5min` | Atajo mid-home *Sesión Nasdaq →* (también otros) | `/como-funciona?play=1#evidencia-nasdaq-100` |
 | `/go/como-funciona-nav` | Header *Cómo funciona* | `/como-funciona` |
 
 - `noindex` · opt-out `va-disable` · delay ~280 ms.
-- En Analytics: comparar visitas a esas dos rutas (no solo `/como-funciona`).
+- Mid-home 29 ago: **sin pastilla**; tres enlaces mono iguales + CTA ámbar (V12 **midInviteLinks**).
+- En Analytics: comparar visitas a esas rutas (no solo `/como-funciona`).
 
 **Commit:** `web(tevsys): measure como-funciona clicks via go home and nav proxies`
 

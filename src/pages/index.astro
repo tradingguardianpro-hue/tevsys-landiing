@@ -110,10 +110,20 @@ import settings from '../config/settings.js';
 				<p class="tevsys-home-microclips-invite__lead">
 					Sesión Nasdaq real (~3:35) · clips ~30 s por escenario · guías Desde cero y puesta en marcha.
 				</p>
-				<ul class="tevsys-home-microclips-invite__scenarios" aria-label="Escenarios en Cómo funciona">
+				<ul class="tevsys-home-microclips-invite__links" aria-label="Atajos a escenarios">
 					<li>
-						<a href="/go/como-funciona-operacion" class="tevsys-home-microclips-invite__chip">
-							Operación abierta en fin de semana — sigues protegido
+						<a href="/go/como-funciona-operacion" class="tevsys-home-microclips-invite__link">
+							Operación abierta en fin de semana — sigues protegido →
+						</a>
+					</li>
+					<li>
+						<a href="/go/como-funciona-pasiva" class="tevsys-home-microclips-invite__link">
+							Empezar de cero →
+						</a>
+					</li>
+					<li>
+						<a href="/go/evidencia-5min" class="tevsys-home-microclips-invite__link">
+							Sesión Nasdaq →
 						</a>
 					</li>
 				</ul>
@@ -508,34 +518,29 @@ import settings from '../config/settings.js';
 		line-height: 1.55;
 		color: rgba(180, 190, 205, 0.78);
 	}
-	.tevsys-home-microclips-invite__scenarios {
+	.tevsys-home-microclips-invite__links {
 		list-style: none;
-		margin: 0 0 1.05rem;
+		margin: 0 0 1.15rem;
 		padding: 0;
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 0.45rem 0.55rem;
-	}
-	.tevsys-home-microclips-invite__chip {
-		display: inline-flex;
+		flex-direction: column;
 		align-items: center;
-		padding: 0.38rem 0.85rem;
-		border-radius: 999px;
-		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: clamp(0.72rem, 1.35vw, 0.8rem);
-		letter-spacing: 0.01em;
-		line-height: 1.35;
-		text-decoration: none;
-		color: rgba(200, 212, 228, 0.92);
-		background: rgba(255, 255, 255, 0.04);
-		border: 1px solid rgba(120, 160, 180, 0.28);
-		transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+		gap: 0.4rem;
 	}
-	.tevsys-home-microclips-invite__chip:hover {
-		color: rgba(236, 244, 250, 0.98);
-		background: rgba(80, 140, 160, 0.12);
-		border-color: rgba(100, 180, 190, 0.45);
+	.tevsys-home-microclips-invite__link {
+		display: inline;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.74rem, 1.4vw, 0.84rem);
+		letter-spacing: 0.015em;
+		line-height: 1.45;
+		text-decoration: none;
+		color: rgba(180, 190, 205, 0.82);
+		border-bottom: 1px solid transparent;
+		transition: color 0.18s ease, border-color 0.18s ease;
+	}
+	.tevsys-home-microclips-invite__link:hover {
+		color: rgba(220, 230, 240, 0.96);
+		border-bottom-color: rgba(120, 160, 180, 0.45);
 	}
 	.tevsys-home-microclips-invite__cta {
 		display: inline-flex;

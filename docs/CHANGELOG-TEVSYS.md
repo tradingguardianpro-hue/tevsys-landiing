@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Home mid-invite — sin pastilla; 3 enlaces iguales (29 ago 2026 · noche)
+
+**Qué:** quitada la pastilla única. Tres atajos mono al mismo peso (finde · Empezar de cero · Nasdaq) + CTA ámbar *Ver cómo funciona*. Go operacion → `#videoclip-finde-operacion`; nuevo `/go/como-funciona-pasiva` → `#desde-cero`.
+
+**Commit:** `web(tevsys): equal mid-home scenario links without chip`
+
+**Archivos:** `index.astro` · `go/como-funciona-operacion.astro` · `go/como-funciona-pasiva.astro` · `CONTENIDO_WEB` · hub V12 · `SEO_ANALYTICS` · `CHANGELOG`.
+
+---
+
 ## MC-CF-022 → bloque SML activo (29 ago 2026 · noche)
 
 **Qué:** el microclip finde+operación pasa de **Sin SML activo** a **SML activo** (el panel del MP4 enseña SML). Pasiva (002) queda sola en Sin SML. Remake 022 sin SML = pendiente.
