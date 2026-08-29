@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Contador operativas — **114** (29 ago 2026)
+
+**Qué:** sync contador público **112 → 114** tras **4.113–4.114** — fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP).
+
+**Commit:** `web(tevsys): sync contador 114 operativas documentadas`
+
+**Archivos:** `src/config/settings.js` (`TEVSYS_DOCUMENTED_OPERATIVES`); home, Precisión, Evidencia, Para quién, meta description. Docs: `CONTENIDO_WEB_TEVSYS_LANDING.md`, `SEO_ANALYTICS_TEVSYS.md`, `CARDS-NEXT-PHASE.md`.
+
+---
+
 ## Sesión 28 ago 2026 — Informe MT5 Londres capturas HD
 
 **Qué:** sustituidas 5 PNG borrosas por capturas nativas MT5 (Summary · P&L · Long&Short · Symbols · Risks) · `?v=20260828hd`.
