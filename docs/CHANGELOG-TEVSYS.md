@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — cáscara negra acto medio (29 ago 2026 · noche)
+
+**Qué:** mismo “escenario negro” que el tramo de arriba; luz/halo y fichas dentro. Separador *Después de la evidencia* intacto.
+
+**Commit:** `web(tevsys): wrap mid-act in intro-like black shell with inner glow`
+
+**Archivos:** `como-funciona.astro` · hub V12 · `CHANGELOG`.
+
+---
+
 ## Cómo funciona — puente + Desde cero (29 ago 2026 · noche)
 
 **Qué:** separador del acto visible a zoom bajo · ficha Desde cero más viva (clima intro).
