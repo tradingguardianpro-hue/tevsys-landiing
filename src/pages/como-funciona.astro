@@ -151,12 +151,22 @@ type MicroClipCard = {
 	ctaLabel?: string;
 };
 
+type MicroclipGroup = {
+	id: string;
+	/** Etiqueta corta y clara (p. ej. Sin SML activo / SML activo). */
+	title: string;
+	clips: MicroClipCard[];
+};
+
 type MicroclipBranch = {
 	id: string;
 	title: string;
 	/** Anuncio de rama; vacío si el título del clip ya lo dice (evita eco). */
 	announcement?: string;
+	/** Clips planos (ramas 1–2). Si hay `groups`, se ignora en favor de los grupos. */
 	clips: MicroClipCard[];
+	/** Subbloques con etiqueta (rama Operación en curso: Sin SML / SML activo). */
+	groups?: MicroclipGroup[];
 };
 
 /** Leyenda visible: instalar + minuto de límites (alta intención de clic). Casa del MP4 = /configuracion. */
@@ -244,30 +254,43 @@ const microclipBranches: MicroclipBranch[] = [
 		title: 'Operación en curso',
 		announcement:
 			'Trade abierto y la protección sigue — también en fin de semana. Medianoche no te desprotege. Clips ~30 s.',
-		clips: [
+		clips: [],
+		groups: [
 			{
-				title: 'Fin de semana con operación abierta — sigues protegido',
-				anchorId: 'videoclip-finde-operacion',
-				videoSrc: '/videos/como-funciona/tevsys-mc-finde-operacion-protegida-30s.mp4?v=20260829',
-				posterSrc: '/videos/como-funciona/tevsys-mc-finde-operacion-protegida-30s-poster.jpg?v=20260829',
-				videoLabel: 'Microclip ~33 s — fin de semana + operación abierta (MC-CF-022)',
-				ctaLabel: 'Ver clip',
+				id: 'rama-operacion-sin-sml',
+				title: 'Sin SML activo',
+				clips: [
+					{
+						title: 'Fin de semana con operación abierta — sigues protegido',
+						anchorId: 'videoclip-finde-operacion',
+						videoSrc: '/videos/como-funciona/tevsys-mc-finde-operacion-protegida-30s.mp4?v=20260829',
+						posterSrc: '/videos/como-funciona/tevsys-mc-finde-operacion-protegida-30s-poster.jpg?v=20260829',
+						videoLabel: 'Microclip ~33 s — fin de semana + operación abierta (MC-CF-022)',
+						ctaLabel: 'Ver clip',
+					},
+					{
+						title: '¿Llegaste con una operación abierta?',
+						anchorId: 'videoclip-pasiva',
+						videoSrc: '/videos/como-funciona/tevsys-mc-observacion-pasiva-30s.mp4?v=20260819',
+						posterSrc: '/videos/como-funciona/tevsys-mc-observacion-pasiva-30s-poster.jpg?v=20260819',
+						videoLabel: 'Microclip ~36 s — empezar de cero · pasiva (MC-CF-002)',
+						ctaLabel: 'Ver clip',
+					},
+				],
 			},
 			{
-				title: '¿Llegaste con una operación abierta?',
-				anchorId: 'videoclip-pasiva',
-				videoSrc: '/videos/como-funciona/tevsys-mc-observacion-pasiva-30s.mp4?v=20260819',
-				posterSrc: '/videos/como-funciona/tevsys-mc-observacion-pasiva-30s-poster.jpg?v=20260819',
-				videoLabel: 'Microclip ~36 s — empezar de cero · pasiva (MC-CF-002)',
-				ctaLabel: 'Ver clip',
-			},
-			{
-				title: 'Cambiar inputs con SML ya activo (operación en curso)',
-				anchorId: 'videoclip-inputs-sml-carry',
-				videoSrc: '/videos/como-funciona/tevsys-mc-inputs-sml-carry-30s.mp4?v=20260816b',
-				posterSrc: '/videos/como-funciona/tevsys-mc-inputs-sml-carry-30s-poster.jpg?v=20260816b',
-				videoLabel: 'Microclip ~20 s — inputs ignorados con SML en operación en curso (MC-CF-023)',
-				ctaLabel: 'Ver clip',
+				id: 'rama-operacion-sml',
+				title: 'SML activo',
+				clips: [
+					{
+						title: 'Cambiar inputs con SML ya activo',
+						anchorId: 'videoclip-inputs-sml-carry',
+						videoSrc: '/videos/como-funciona/tevsys-mc-inputs-sml-carry-30s.mp4?v=20260816b',
+						posterSrc: '/videos/como-funciona/tevsys-mc-inputs-sml-carry-30s-poster.jpg?v=20260816b',
+						videoLabel: 'Microclip ~20 s — inputs ignorados con SML en operación en curso (MC-CF-023)',
+						ctaLabel: 'Ver clip',
+					},
+				],
 			},
 		],
 	},
@@ -558,67 +581,105 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 									) : null}
 								</header>
 
-								{branch.clips.length > 0 ? (
-									<div
-										class="how-more-grid how-more-grid--practical how-rama__grid"
-										id={`${branch.id}-clips`}>
-										{branch.clips.map((row) => (
-											<article
-												id={row.anchorId}
-												class:list={['how-more-cell', 'how-more-cell--video', 'how-more-cell--practical-clip']}
-												aria-labelledby={`clip-title-${row.anchorId}`}>
-												<header class="how-block-head how-block-head--compact">
-													<h4 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
-														{row.title}
+								{(branch.groups?.length
+									? branch.groups
+									: branch.clips.length
+										? [{ id: `${branch.id}-clips`, title: '', clips: branch.clips }]
+										: []
+								).length > 0 ? (
+									<div class="how-rama__body">
+										{(branch.groups?.length
+											? branch.groups
+											: [{ id: `${branch.id}-clips`, title: '', clips: branch.clips }]
+										).map((group) => (
+											<section
+												class:list={['how-rama__group', !group.title && 'how-rama__group--flat']}
+												id={group.id}
+												aria-labelledby={group.title ? `${group.id}-title` : undefined}>
+												{group.title ? (
+													<h4 class="how-rama__group-title" id={`${group.id}-title`}>
+														{group.title}
 													</h4>
-												</header>
-												<div class:list={['how-practical-card__media', !row.posterSrc && !row.stillSrc && 'how-practical-card__media--brand-fallback']}>
-													{row.videoSrc ? (
-														<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
-															<video
-																controls
-																preload="none"
-																playsinline
-																poster={row.posterSrc}
-																title={row.videoLabel ?? row.title}>
-																<source src={row.videoSrc} type="video/mp4" />
-																Tu navegador no soporta reproducción de video HTML5.
-															</video>
-														</div>
-													) : row.stillSrc ? (
-														<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed how-practical-card__embed--still">
-															<EvidenceImageLightbox
-																src={row.stillSrc}
-																alt={row.stillAlt ?? row.title}
-																caption={row.stillCaption}
-																width={1280}
-																height={720}
-																figureClass="how-rama-still"
-																triggerClass="how-rama-still__zoom"
-																imgClass="how-rama-still__img"
-																capClass="how-rama-still__cap"
-															/>
-														</div>
-													) : (
-														<div
-															class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
-															role="status">
-															<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
-															<p class="how-embed-placeholder__title">Clip en preparación</p>
-															<p class="how-embed-placeholder__sub">
-																Aquí irá el corte de ~25–30 s cuando esté listo para publicar.
-															</p>
-														</div>
-													)}
+												) : null}
+												<div
+													class="how-more-grid how-more-grid--practical how-rama__grid"
+													id={group.title ? `${group.id}-clips` : group.id}>
+													{group.clips.map((row) => (
+														<article
+															id={row.anchorId}
+															class:list={[
+																'how-more-cell',
+																'how-more-cell--video',
+																'how-more-cell--practical-clip',
+															]}
+															aria-labelledby={`clip-title-${row.anchorId}`}>
+															<header class="how-block-head how-block-head--compact">
+																<h4 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
+																	{row.title}
+																</h4>
+															</header>
+															<div
+																class:list={[
+																	'how-practical-card__media',
+																	!row.posterSrc &&
+																		!row.stillSrc &&
+																		'how-practical-card__media--brand-fallback',
+																]}>
+																{row.videoSrc ? (
+																	<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
+																		<video
+																			controls
+																			preload="none"
+																			playsinline
+																			poster={row.posterSrc}
+																			title={row.videoLabel ?? row.title}>
+																			<source src={row.videoSrc} type="video/mp4" />
+																			Tu navegador no soporta reproducción de video HTML5.
+																		</video>
+																	</div>
+																) : row.stillSrc ? (
+																	<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed how-practical-card__embed--still">
+																		<EvidenceImageLightbox
+																			src={row.stillSrc}
+																			alt={row.stillAlt ?? row.title}
+																			caption={row.stillCaption}
+																			width={1280}
+																			height={720}
+																			figureClass="how-rama-still"
+																			triggerClass="how-rama-still__zoom"
+																			imgClass="how-rama-still__img"
+																			capClass="how-rama-still__cap"
+																		/>
+																	</div>
+																) : (
+																	<div
+																		class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
+																		role="status">
+																		<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
+																		<p class="how-embed-placeholder__title">Clip en preparación</p>
+																		<p class="how-embed-placeholder__sub">
+																			Aquí irá el corte de ~25–30 s cuando esté listo para publicar.
+																		</p>
+																	</div>
+																)}
+															</div>
+															<span
+																class:list={[
+																	'how-more-card__cta',
+																	!row.videoSrc &&
+																		!row.stillSrc &&
+																		'how-more-card__cta--pending',
+																]}>
+																{row.videoSrc
+																	? `${row.ctaLabel ?? 'Ver clip'} →`
+																	: row.stillSrc
+																		? `${row.ctaLabel ?? 'Ampliar captura'} →`
+																		: 'Clip en preparación →'}
+															</span>
+														</article>
+													))}
 												</div>
-												<span class:list={['how-more-card__cta', !row.videoSrc && !row.stillSrc && 'how-more-card__cta--pending']}>
-													{row.videoSrc
-														? `${row.ctaLabel ?? 'Ver clip'} →`
-														: row.stillSrc
-															? `${row.ctaLabel ?? 'Ampliar captura'} →`
-															: 'Clip en preparación →'}
-												</span>
-											</article>
+											</section>
 										))}
 									</div>
 								) : (
@@ -3090,6 +3151,38 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	.how-rama__grid {
 		margin: 0;
+	}
+
+	.how-rama__body {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(1.35rem, 3.2vw, 1.85rem);
+	}
+
+	.how-rama__group {
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: transparent;
+	}
+
+	.how-rama__group-title {
+		margin: 0 0 clamp(0.65rem, 1.8vw, 0.95rem);
+		text-align: center;
+		font-family: var(--theme-font-family-mono, 'IBM Plex Mono', ui-monospace, monospace);
+		font-size: clamp(0.78rem, 1.55vw, 0.88rem);
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: rgba(200, 210, 220, 0.88);
+	}
+
+	html[data-theme='light'] .how-rama__group-title {
+		color: rgba(50, 60, 75, 0.9);
+	}
+
+	.how-rama__group .how-more-card__title {
+		font-size: inherit;
 	}
 
 	.how-rama__soon {

@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Rama Operación en curso — Sin SML / SML activo (29 ago 2026)
+
+**Qué:** en `#rama-operacion`, dos subtítulos claros: **Sin SML activo** (022 + 002) y **SML activo** (023). Sin frase explicativa de “capa opcional”.
+
+**Commit:** `web(tevsys): split operacion-en-curso clips by SML status`
+
+**Archivos:** `como-funciona.astro` · `CONTENIDO_WEB` · hub V12 · `CATALOGO` · `CHANGELOG`.
+
+---
+
 ## MC-CF-022 — MP4 fin de semana + operación abierta (29 ago 2026)
 
 **Qué:** still sustituido por microclip ~33 s en `#videoclip-finde-operacion` (rama Operación en curso).
