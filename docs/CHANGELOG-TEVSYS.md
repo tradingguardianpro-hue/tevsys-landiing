@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — intro halo lados (29 ago 2026 · noche)
+
+**Qué:** apagar halo intro por los lados (como Desde cero). Motion cabecera intacto.
+
+**Commit:** `web(tevsys): tighten intro stage halo like desde-cero`
+
+---
+
 ## Cómo funciona — Puesta + Capital actos (29 ago 2026 · noche)
 
 **Qué:** Puesta elevada (negro+halo) dentro post-evidencia; Capital = escenario aparte (misma tónica, otro mensaje).
