@@ -110,6 +110,13 @@ import settings from '../config/settings.js';
 				<p class="tevsys-home-microclips-invite__lead">
 					Sesión Nasdaq real (~3:35) · clips ~30 s por escenario · guías Desde cero y puesta en marcha.
 				</p>
+				<ul class="tevsys-home-microclips-invite__scenarios" aria-label="Escenarios en Cómo funciona">
+					<li>
+						<a href="/go/como-funciona-operacion" class="tevsys-home-microclips-invite__chip">
+							Operación abierta en finde — sigues protegido
+						</a>
+					</li>
+				</ul>
 				<a href="/go/como-funciona-home" class="tevsys-home-microclips-invite__cta">
 					Ver cómo funciona →
 				</a>
@@ -494,12 +501,41 @@ import settings from '../config/settings.js';
 		color: rgba(236, 240, 246, 0.96);
 	}
 	.tevsys-home-microclips-invite__lead {
-		margin: 0 0 1rem;
+		margin: 0 0 0.85rem;
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
 		font-size: clamp(0.78rem, 1.5vw, 0.88rem);
 		letter-spacing: 0.02em;
 		line-height: 1.55;
 		color: rgba(180, 190, 205, 0.78);
+	}
+	.tevsys-home-microclips-invite__scenarios {
+		list-style: none;
+		margin: 0 0 1.05rem;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.45rem 0.55rem;
+	}
+	.tevsys-home-microclips-invite__chip {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.38rem 0.85rem;
+		border-radius: 999px;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.72rem, 1.35vw, 0.8rem);
+		letter-spacing: 0.01em;
+		line-height: 1.35;
+		text-decoration: none;
+		color: rgba(200, 212, 228, 0.92);
+		background: rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(120, 160, 180, 0.28);
+		transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+	}
+	.tevsys-home-microclips-invite__chip:hover {
+		color: rgba(236, 244, 250, 0.98);
+		background: rgba(80, 140, 160, 0.12);
+		border-color: rgba(100, 180, 190, 0.45);
 	}
 	.tevsys-home-microclips-invite__cta {
 		display: inline-flex;
