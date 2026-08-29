@@ -2192,6 +2192,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		line-height: 1.55;
 		color: rgba(230, 235, 245, 0.88);
 		text-align: left;
+		/* Aire antes de la prueba visual — no pegar explicación al frame. */
+		padding-bottom: clamp(0.35rem, 1.2vw, 0.65rem);
 	}
 
 	.how-cashflow__em {
@@ -2208,7 +2210,11 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	.how-cashflow__figure {
-		margin: clamp(1rem, 2.8vw, 1.35rem) 0 0;
+		margin: clamp(1.85rem, 5vw, 2.75rem) 0 0;
+	}
+
+	.how-cashflow.how-cashflow--stage .how-cashflow__figure {
+		margin-top: clamp(2.1rem, 5.5vw, 3.1rem);
 	}
 
 	.how-cashflow__zoom {
