@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — puente + Desde cero (29 ago 2026 · noche)
+
+**Qué:** separador del acto visible a zoom bajo · ficha Desde cero más viva (clima intro).
+
+**Commit:** `web(tevsys): strengthen act cut and lift desde-cero card`
+
+**Archivos:** `como-funciona.astro` · hub V12 · `CHANGELOG`.
+
+---
+
 ## Cómo funciona — 2 actos + luz (29 ago 2026 · noche)
 
 **Qué:** corte tras evidencia · glow en Desde cero→Capital · paneles menos oscuros · clips stage misma familia de luz (sin rediseñar rejilla).

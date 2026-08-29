@@ -448,7 +448,6 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		</div>
 
 		<p class="how-act-cut" role="presentation">
-			<span class="how-act-cut__line" aria-hidden="true"></span>
 			<span class="how-act-cut__label">Después de la evidencia</span>
 			<span class="how-act-cut__line" aria-hidden="true"></span>
 		</p>
@@ -1420,26 +1419,31 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
 	}
 
-	/* Acto C — corte limpio tras evidencia Nasdaq / demo·dossier (29 ago). */
+	/* Acto C — corte tras evidencia (zoom-proof: no pelo de 1px). */
 	.how-act-cut {
-		margin: clamp(0.35rem, 2vw, 0.85rem) auto clamp(1.15rem, 3.5vw, 1.85rem);
-		padding: 0;
-		max-width: min(36rem, 92%);
+		margin: clamp(0.55rem, 2.2vw, 1.1rem) auto clamp(1.35rem, 4vw, 2.1rem);
+		padding: clamp(0.25rem, 1vw, 0.45rem) 0;
+		max-width: min(40rem, 94%);
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		gap: 0.75rem;
+		gap: clamp(0.65rem, 2vw, 0.95rem);
+		text-align: center;
 	}
 
 	.how-act-cut__line {
-		flex: 1 1 auto;
-		height: 1px;
-		max-width: 5.5rem;
+		display: block;
+		width: min(12rem, 72%);
+		height: 2px;
+		flex: 0 0 auto;
+		max-width: none;
 		border-radius: 999px;
 		background: linear-gradient(
 			90deg,
 			transparent 0%,
-			rgba(245, 176, 65, 0.35) 50%,
+			rgba(245, 176, 65, 0.32) 18%,
+			rgba(245, 176, 65, 0.72) 50%,
+			rgba(245, 176, 65, 0.32) 82%,
 			transparent 100%
 		);
 	}
@@ -1447,41 +1451,41 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	.how-act-cut__label {
 		flex: 0 0 auto;
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: clamp(0.68rem, 1.4vw, 0.76rem);
-		font-weight: 600;
-		letter-spacing: 0.08em;
+		font-size: clamp(0.72rem, 1.55vw, 0.82rem);
+		font-weight: 650;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		color: rgba(180, 190, 205, 0.72);
+		color: rgba(210, 218, 230, 0.88);
 	}
 
 	html[data-theme='light'] .how-act-cut__label {
-		color: rgba(70, 80, 95, 0.78);
+		color: rgba(55, 65, 80, 0.88);
 	}
 
-	/* Acto A — zona Desde cero → Capital: mismo “aire” / glow que arriba (no tumba). */
+	/* Acto A — glow bajo el corte (no corta el título del puente). */
 	.how-mid-act {
 		position: relative;
 		isolation: isolate;
 		width: 100%;
 		max-width: min(58rem, 100%);
 		margin: 0 auto clamp(1.25rem, 4vh, 2.25rem);
-		padding: clamp(0.35rem, 1.5vw, 0.75rem) 0 clamp(0.85rem, 2.5vw, 1.35rem);
+		padding: clamp(0.15rem, 1vw, 0.45rem) 0 clamp(0.85rem, 2.5vw, 1.35rem);
 		box-sizing: border-box;
 	}
 
 	.how-mid-act__glow {
 		position: absolute;
-		inset: -2% -4% -4%;
+		inset: 0 -5% -6%;
 		z-index: 0;
 		pointer-events: none;
-		border-radius: clamp(1.25rem, 4vw, 2.5rem);
+		border-radius: clamp(1.5rem, 5vw, 3rem);
 	}
 
 	html[data-theme='dark'] .how-mid-act__glow {
 		background:
-			radial-gradient(ellipse 78% 42% at 50% 12%, rgba(245, 176, 65, 0.045) 0%, transparent 52%),
-			radial-gradient(ellipse 95% 55% at 50% 28%, rgba(72, 82, 104, 0.42) 0%, transparent 58%),
-			radial-gradient(ellipse 110% 70% at 50% 78%, rgba(48, 56, 72, 0.28) 0%, transparent 55%);
+			radial-gradient(ellipse 82% 38% at 50% 8%, rgba(245, 176, 65, 0.055) 0%, transparent 48%),
+			radial-gradient(ellipse 98% 58% at 50% 32%, rgba(78, 90, 112, 0.38) 0%, transparent 60%),
+			radial-gradient(ellipse 115% 72% at 50% 82%, rgba(52, 60, 78, 0.22) 0%, transparent 58%);
 	}
 
 	html[data-theme='light'] .how-mid-act__glow {
@@ -1871,25 +1875,34 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		color: #f5b041;
 	}
 
-	/* Bloque guía Desde cero — mismo panel que Capital / Puesta en marcha (29 ago: un idioma visual). */
+	/* Desde cero — clima cercano al intro Nasdaq (menos losa muda). */
 	.how-desde-cero.how-desde-cero--stage {
 		position: relative;
 		overflow: hidden;
 		max-width: min(56rem, 100%);
-		margin: clamp(1.75rem, 6vh, 3.5rem) auto clamp(1.5rem, 5vh, 3rem);
-		padding: clamp(1.15rem, 3.2vw, 1.55rem) clamp(1rem, 3vw, 1.5rem) clamp(1.25rem, 3.5vw, 2rem);
-		border-radius: clamp(0.45rem, 1vw, 0.75rem);
+		margin: clamp(0.85rem, 3vh, 1.75rem) auto clamp(1.5rem, 5vh, 3rem);
+		padding: clamp(1.25rem, 3.5vw, 1.85rem) clamp(1rem, 3vw, 1.65rem) clamp(1.35rem, 3.8vw, 2.1rem);
+		border-radius: clamp(1rem, 3.2vw, 1.85rem);
 		box-sizing: border-box;
 	}
 
 	html[data-theme='dark'] .how-desde-cero.how-desde-cero--stage {
-		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.09);
-		background: linear-gradient(165deg, hsl(222 15% 14%) 0%, hsl(222 18% 10%) 100%);
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.1),
+			inset 0 1px 0 rgba(255, 255, 255, 0.07),
+			0 0 48px rgba(245, 176, 65, 0.07),
+			0 16px 40px rgba(0, 0, 0, 0.22);
+		background:
+			radial-gradient(ellipse 92% 48% at 50% 0%, rgba(88, 98, 122, 0.42) 0%, transparent 55%),
+			radial-gradient(ellipse 70% 40% at 50% 100%, rgba(245, 176, 65, 0.04) 0%, transparent 50%),
+			linear-gradient(168deg, hsl(222 14% 16%) 0%, hsl(222 17% 11%) 55%, hsl(222 20% 9%) 100%);
 	}
 
 	html[data-theme='light'] .how-desde-cero.how-desde-cero--stage {
-		box-shadow: 0 0 0 1px rgba(15, 20, 30, 0.08);
-		background: linear-gradient(165deg, #f7f5f1 0%, #efece6 100%);
+		box-shadow:
+			0 0 0 1px rgba(15, 20, 30, 0.09),
+			0 12px 32px rgba(15, 20, 30, 0.08);
+		background: linear-gradient(165deg, #f8f6f2 0%, #efece6 100%);
 	}
 
 	.how-desde-cero__inner {
