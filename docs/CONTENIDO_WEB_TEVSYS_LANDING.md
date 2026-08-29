@@ -523,14 +523,15 @@ Ver handoff hero.
 - **Índice «Qué puedes comprobar»:** viñeta contención antes de casos Essential/logs.
 - **Handoff §8 checklist:** implementación marcada; pendientes opcionales — enlace cruzado Precisión, microclip, mail Pro.
 
-### Evidencia + Cómo funciona — movimiento de caja (`#movimiento-de-caja`) — **26 ago 2026**
+### Evidencia + Cómo funciona — movimiento de caja (`#movimiento-de-caja`) — **26 ago 2026** · copy CF **29 ago**
 
 - **Titular (cómo-funciona):** *El riesgo se mide sobre el capital real* (accent en *capital real*).
-- **Ceja:** Capital y riesgo · bajo Puesta en marcha.
+- **Ceja:** Capital y riesgo · acto propio tras Puesta (no pastilla bajo el mismo saco).
+- **Cuerpo CF (29 ago):** dos tiempos — (1) riesgo = capital; retiro/ingreso ≠ trading · (2) protección se reinicia → pactar sobre balance actual. Sin *En tevsys entendemos…*; ancla *Otro capital exige…* queda implícita en el 2.º.
 - **Evidencia:** tras contención · puente *cuando el capital ya no es el mismo* · H3 *Movimiento de caja — el riesgo se vuelve a pactar*.
 - **Asset:** `public/images/evidence/evidencia-movimiento-caja-retiro-800.png`
-- **Commit:** `web(tevsys): publish cashflow risk-reset block on como-funciona and evidencia`
-- **V12:** **(webCajaCapitalReal)**
+- **Commit:** `web(tevsys): split capital risk copy into rule then consequence`
+- **V12:** **(webCajaCapitalReal)** · **(cfCashflowCopy)**
 
 ### Pendiente inmediato
 - SML: vídeo final según guía de producción — **al integrarlo en la micro**, cumplir **«Convención embeds de vídeo — micropáginas `/features/*`»** (misma estructura de clases que Precisión/HyperClose; si la grabación es tema claro, **`demo-video--light`** como Nasdaq).

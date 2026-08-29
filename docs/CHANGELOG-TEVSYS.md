@@ -6,6 +6,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — Capital copy dos tiempos (29 ago 2026 · noche)
+
+**Qué:** cuerpo Capital = regla + consecuencia; mismo mensaje, ritmo legible.
+
+**Commit:** `web(tevsys): split capital risk copy into rule then consequence`
+
+---
+
 ## Cómo funciona — intro halo lados (29 ago 2026 · noche)
 
 **Qué:** apagar halo intro por los lados (como Desde cero). Motion cabecera intacto.

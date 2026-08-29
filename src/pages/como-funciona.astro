@@ -540,12 +540,12 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 				</h2>
 			</header>
 			<p class="how-cashflow__body">
-				En tevsys entendemos que el riesgo{' '}
-				<span class="how-cashflow__em">depende del capital de la cuenta</span>. Si retiras o ingresas dinero, el
-				capital ha cambiado — y eso <span class="how-cashflow__em">no es trading</span>. Por eso la protección se
-				reinicia: no tiene sentido seguir con un pacto de riesgo anclado a un balance que ya no existe. Confirmas
-				el aviso y vuelves a configurar y bloquear límites sobre el{' '}
-				<span class="how-cashflow__em">balance actual</span>. Otro capital exige volver a pactar el riesgo.
+				El riesgo <span class="how-cashflow__em">depende del capital de la cuenta</span>. Si retiras o ingresas dinero, el
+				capital ha cambiado — y eso <span class="how-cashflow__em">no es trading</span>.
+			</p>
+			<p class="how-cashflow__body how-cashflow__body--follow">
+				Por eso la protección se reinicia: no tiene sentido un pacto anclado a un balance que ya no existe. Confirmas el
+				aviso y vuelves a configurar y bloquear límites sobre el <span class="how-cashflow__em">balance actual</span>.
 			</p>
 			<EvidenceImageLightbox
 				src="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
@@ -2192,6 +2192,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		line-height: 1.55;
 		color: rgba(230, 235, 245, 0.88);
 		text-align: left;
+	}
+
+	.how-cashflow__body--follow {
+		margin-top: clamp(0.65rem, 1.8vw, 0.95rem);
 		/* Aire antes de la prueba visual — no pegar explicación al frame. */
 		padding-bottom: clamp(0.35rem, 1.2vw, 0.65rem);
 	}
