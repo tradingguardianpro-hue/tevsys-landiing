@@ -10,9 +10,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Qué:** mismo “escenario negro” que el tramo de arriba; luz/halo y fichas dentro. Separador *Después de la evidencia* intacto.
 
-**Ajuste (feedback):** glow no llega al borde → anillo negro legible; *Desde cero* = negro + **halo gris** (como intro, sin ámbar); paneles = carbón micros.
+**Ajuste (feedback):** glow no llega al borde → anillo negro legible; *Desde cero* = negro + **halo gris** suave (arriba/texto, no destello de losa); sin boost de brillo en el MP4.
 
-**Commit:** `web(tevsys): desde-cero intro-like gray halo instead of slab`
+**Commit:** `web(tevsys): soften desde-cero gray halo and drop video boost`
 
 **Archivos:** `como-funciona.astro` · hub V12 · `CHANGELOG`.
 
