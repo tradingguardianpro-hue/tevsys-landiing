@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — trim evidencia + transparencia (29 ago 2026 · noche)
+
+**Qué:** blurb Nasdaq sin segundo *Contrástalo* · tres cajas Transparencia más cortas · home sin atajo *Sesión Nasdaq* (ya en el lead).
+
+**Commit:** `web(tevsys): trim como-funciona evidence copy and home nasdaq link`
+
+**Archivos:** `como-funciona.astro` · `index.astro` · hub V12 · `CONTENIDO_WEB` · `CHANGELOG`.
+
+---
+
 ## Home mid-invite — sin pastilla; 3 enlaces iguales (29 ago 2026 · noche)
 
 **Qué:** quitada la pastilla única. Tres atajos mono al mismo peso (finde · Empezar de cero · Nasdaq) + CTA ámbar *Ver cómo funciona*. Go operacion → `#videoclip-finde-operacion`; nuevo `/go/como-funciona-pasiva` → `#desde-cero`.
