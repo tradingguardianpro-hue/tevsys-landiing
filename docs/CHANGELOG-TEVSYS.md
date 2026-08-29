@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## MC-CF-022 → bloque SML activo (29 ago 2026 · noche)
+
+**Qué:** el microclip finde+operación pasa de **Sin SML activo** a **SML activo** (el panel del MP4 enseña SML). Pasiva (002) queda sola en Sin SML. Remake 022 sin SML = pendiente.
+
+**Commit:** `web(tevsys): move weekend open-trade clip under SML activo`
+
+**Archivos:** `como-funciona.astro` · `CONTENIDO_WEB` · hub V12 · `CATALOGO` · `CHANGELOG`.
+
+---
+
 ## Rama Operación en curso — Sin SML / SML activo (29 ago 2026)
 
 **Qué:** en `#rama-operacion`, dos subtítulos claros: **Sin SML activo** (022 + 002) y **SML activo** (023). Sin frase explicativa de “capa opcional”.
