@@ -10,7 +10,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Qué:** mismo “escenario negro” que el tramo de arriba; luz/halo y fichas dentro. Separador *Después de la evidencia* intacto.
 
-**Commit:** `web(tevsys): wrap mid-act in intro-like black shell with inner glow`
+**Ajuste (feedback):** glow no llega al borde → anillo negro legible; ficha *Desde cero* / paneles = carbón micros (no pegote Odyssey).
+
+**Commit:** `web(tevsys): tighten mid-act black rim and micro-style cards`
 
 **Archivos:** `como-funciona.astro` · hub V12 · `CHANGELOG`.
 
