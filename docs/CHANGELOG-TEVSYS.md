@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — 2 actos + luz (29 ago 2026 · noche)
+
+**Qué:** corte tras evidencia · glow en Desde cero→Capital · paneles menos oscuros · clips stage misma familia de luz (sin rediseñar rejilla).
+
+**Commit:** `web(tevsys): unify como-funciona mid-act light and clip stage`
+
+**Archivos:** `como-funciona.astro` · hub V12 · `CHANGELOG`.
+
+---
+
 ## Cómo funciona — cajas + barrido sin bleed (29 ago 2026 · noche)
 
 **Qué:** panel Desde cero alineado con Capital · barridos de stages recortados al bloque (sin franja fantasma al scroll).

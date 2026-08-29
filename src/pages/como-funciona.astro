@@ -447,6 +447,15 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			</div>
 		</div>
 
+		<p class="how-act-cut" role="presentation">
+			<span class="how-act-cut__line" aria-hidden="true"></span>
+			<span class="how-act-cut__label">Después de la evidencia</span>
+			<span class="how-act-cut__line" aria-hidden="true"></span>
+		</p>
+
+		<div class="how-mid-act">
+			<div class="how-mid-act__glow" aria-hidden="true"></div>
+			<div class="how-mid-act__inner">
 		<section class="how-desde-cero how-desde-cero--stage" id={desdeCeroGuide.id} aria-labelledby="how-desde-cero-title">
 			<div class="how-desde-cero__inner">
 				<header class="how-section-head">
@@ -542,6 +551,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 				</a>
 			</p>
 		</section>
+			</div>
+		</div>
 
 		<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
 			<div class="how-more__bg" aria-hidden="true"></div>
@@ -1409,6 +1420,87 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
 	}
 
+	/* Acto C — corte limpio tras evidencia Nasdaq / demo·dossier (29 ago). */
+	.how-act-cut {
+		margin: clamp(0.35rem, 2vw, 0.85rem) auto clamp(1.15rem, 3.5vw, 1.85rem);
+		padding: 0;
+		max-width: min(36rem, 92%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+	}
+
+	.how-act-cut__line {
+		flex: 1 1 auto;
+		height: 1px;
+		max-width: 5.5rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(245, 176, 65, 0.35) 50%,
+			transparent 100%
+		);
+	}
+
+	.how-act-cut__label {
+		flex: 0 0 auto;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.68rem, 1.4vw, 0.76rem);
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgba(180, 190, 205, 0.72);
+	}
+
+	html[data-theme='light'] .how-act-cut__label {
+		color: rgba(70, 80, 95, 0.78);
+	}
+
+	/* Acto A — zona Desde cero → Capital: mismo “aire” / glow que arriba (no tumba). */
+	.how-mid-act {
+		position: relative;
+		isolation: isolate;
+		width: 100%;
+		max-width: min(58rem, 100%);
+		margin: 0 auto clamp(1.25rem, 4vh, 2.25rem);
+		padding: clamp(0.35rem, 1.5vw, 0.75rem) 0 clamp(0.85rem, 2.5vw, 1.35rem);
+		box-sizing: border-box;
+	}
+
+	.how-mid-act__glow {
+		position: absolute;
+		inset: -2% -4% -4%;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: clamp(1.25rem, 4vw, 2.5rem);
+	}
+
+	html[data-theme='dark'] .how-mid-act__glow {
+		background:
+			radial-gradient(ellipse 78% 42% at 50% 12%, rgba(245, 176, 65, 0.045) 0%, transparent 52%),
+			radial-gradient(ellipse 95% 55% at 50% 28%, rgba(72, 82, 104, 0.42) 0%, transparent 58%),
+			radial-gradient(ellipse 110% 70% at 50% 78%, rgba(48, 56, 72, 0.28) 0%, transparent 55%);
+	}
+
+	html[data-theme='light'] .how-mid-act__glow {
+		background:
+			radial-gradient(ellipse 80% 40% at 50% 14%, rgba(218, 155, 48, 0.04) 0%, transparent 50%),
+			radial-gradient(ellipse 92% 52% at 50% 40%, rgba(0, 0, 0, 0.03) 0%, transparent 56%);
+	}
+
+	.how-mid-act__inner {
+		position: relative;
+		z-index: 1;
+	}
+
+	.how-mid-act .how-desde-cero,
+	.how-mid-act .how-puesta-marcha {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.how-zero-protected {
 		max-width: min(56rem, 100%);
 		margin: clamp(3.75rem, 16vh, 9.5rem) auto clamp(4.25rem, 18vh, 11rem);
@@ -1791,8 +1883,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	html[data-theme='dark'] .how-desde-cero.how-desde-cero--stage {
-		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07);
-		background: linear-gradient(165deg, hsl(222 16% 11%) 0%, hsl(222 20% 7%) 100%);
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.09);
+		background: linear-gradient(165deg, hsl(222 15% 14%) 0%, hsl(222 18% 10%) 100%);
 	}
 
 	html[data-theme='light'] .how-desde-cero.how-desde-cero--stage {
@@ -1843,8 +1935,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	.how-puesta-marcha--panel {
-		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07);
-		background: linear-gradient(165deg, hsl(222 16% 11%) 0%, hsl(222 20% 7%) 100%);
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.09);
+		background: linear-gradient(165deg, hsl(222 15% 14%) 0%, hsl(222 18% 10%) 100%);
 	}
 
 	html[data-theme='light'] .how-puesta-marcha--panel {
@@ -2094,8 +2186,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	html[data-theme='dark'] .how-more.how-more--stage {
 		box-shadow:
-			0 0 0 1px rgba(255, 255, 255, 0.055),
-			0 22px 52px rgba(0, 0, 0, 0.38);
+			0 0 0 1px rgba(255, 255, 255, 0.08),
+			0 18px 44px rgba(0, 0, 0, 0.28);
+		background: linear-gradient(165deg, hsl(222 14% 12%) 0%, hsl(222 18% 8%) 100%);
 	}
 
 	html[data-theme='light'] .how-more.how-more--stage {
@@ -2121,9 +2214,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	html[data-theme='dark'] .how-more__bg {
 		background:
-			radial-gradient(ellipse 92% 62% at 50% 34%, rgba(52, 56, 68, 0.52) 0%, transparent 56%),
-			radial-gradient(ellipse 125% 88% at 50% 108%, rgba(245, 176, 65, 0.065) 0%, transparent 46%);
-		box-shadow: inset 0 0 clamp(3rem, 11vw, 6.5rem) rgba(0, 0, 0, 0.28);
+			radial-gradient(ellipse 88% 55% at 50% 22%, rgba(245, 176, 65, 0.05) 0%, transparent 52%),
+			radial-gradient(ellipse 92% 62% at 50% 34%, rgba(72, 82, 104, 0.45) 0%, transparent 56%),
+			radial-gradient(ellipse 125% 88% at 50% 108%, rgba(245, 176, 65, 0.04) 0%, transparent 46%);
+		box-shadow: inset 0 0 clamp(3rem, 11vw, 6.5rem) rgba(0, 0, 0, 0.18);
 	}
 
 	html[data-theme='light'] .how-more__bg {
