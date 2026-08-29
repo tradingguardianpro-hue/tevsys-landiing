@@ -6,12 +6,27 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## MC-CF-022 — MP4 fin de semana + operación abierta (29 ago 2026)
+
+**Qué:** still sustituido por microclip ~33 s en `#videoclip-finde-operacion` (rama Operación en curso).
+
+- MP4 + poster (hold overlay 4: *El calendario no te desprotege por ser fin de semana*).
+- Idea: fin de semana + trade abierto → sigues protegido; flecha al BUY; sin “carry” en público.
+- Still #6263709 se conserva en `public/images/…` (archivo).
+
+**Commit:** `web(tevsys): publish weekend open-trade protection microclip`
+
+**Archivos:** `como-funciona.astro` · `tevsys-mc-finde-operacion-protegida-30s.mp4` + `-poster.jpg` · `CATALOGO` · `CONTENIDO_WEB` · hub V12 · `CHANGELOG`.
+
+---
+
 ## Home + Cómo funciona — operación abierta en finde (29 ago 2026)
 
 **Qué:** escenario **operación protegida en fin de semana** visible en home y reforzado en `/como-funciona` rama 3 (sin decir “carry” en público).
 
-- **Home** mid-invite: chip *Operación abierta en finde — sigues protegido* → `/go/como-funciona-operacion` → `#rama-operacion`.
-- **Cómo funciona:** anuncio de rama + **still** MC-CF-022 (`#videoclip-finde-operacion`, captura ActivTrades #6263709 + lightbox) + copy MC-CF-023 sin jerga “carry”.
+- **Home** mid-invite: chip *Operación abierta en fin de semana — sigues protegido* → `/go/como-funciona-operacion` → `#rama-operacion`.
+- MP4 MC-CF-022 + poster; chip home sin *finde* (dice *fin de semana*).
+- **Cómo funciona:** anuncio de rama + **still** MC-CF-022 (`#videoclip-finde-operacion`, captura ActivTrades #6263709 + lightbox) + copy MC-CF-023 sin jerga “carry”. *(Actualizado mismo día: MP4 — entrada arriba.)*
 
 **Commit:** `web(tevsys): surface weekend open-trade protection on home and como-funciona`
 

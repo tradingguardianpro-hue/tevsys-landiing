@@ -120,7 +120,7 @@ Misma idea que `/go/evidencia-5min`: pageview medible en Vercel Hobby + redirect
 | Ruta | Origen | Destino |
 |------|--------|---------|
 | `/go/como-funciona-home` | CTA mid-home *Ver cómo funciona →* | `/como-funciona` |
-| `/go/como-funciona-operacion` | Chip mid-home *Operación abierta en finde…* | `/como-funciona#rama-operacion` |
+| `/go/como-funciona-operacion` | Chip mid-home *Operación abierta en fin de semana…* | `/como-funciona#rama-operacion` |
 | `/go/como-funciona-nav` | Header *Cómo funciona* | `/como-funciona` |
 
 - `noindex` · opt-out `va-disable` · delay ~280 ms.
