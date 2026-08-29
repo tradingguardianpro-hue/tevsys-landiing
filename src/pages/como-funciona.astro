@@ -65,7 +65,7 @@ const sessionDocumentation = {
 		},
 		{
 			title: 'Informe MT5',
-			text: 'HTML: fila 1 precisión · filas 2–9 HyperClose · día −1,19 %.',
+			text: 'Historial MT5: fila 1 precisión · filas 2–9 HyperClose · día −1,19 %.',
 		},
 		{
 			title: 'Registro tevsys',
@@ -448,7 +448,6 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		</div>
 
 		<section class="how-desde-cero how-desde-cero--stage" id={desdeCeroGuide.id} aria-labelledby="how-desde-cero-title">
-			<div class="how-desde-cero__bg" aria-hidden="true"></div>
 			<div class="how-desde-cero__inner">
 				<header class="how-section-head">
 					<p class="how-eyebrow how-eyebrow--center">{desdeCeroGuide.eyebrow}</p>
@@ -1453,11 +1452,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	@media (prefers-reduced-motion: no-preference) {
 		html[data-theme='dark'] .how-zero-protected__sweep {
-			inset: auto;
-			top: -28%;
-			bottom: -28%;
-			left: -22%;
-			right: -22%;
+			inset: 0;
 			width: auto;
 			height: auto;
 			background-image: linear-gradient(
@@ -1479,11 +1474,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		}
 
 		html[data-theme='light'] .how-zero-protected__sweep {
-			inset: auto;
-			top: -24%;
-			bottom: -24%;
-			left: -18%;
-			right: -18%;
+			inset: 0;
 			width: auto;
 			height: auto;
 			background-image: linear-gradient(
@@ -1788,26 +1779,24 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		color: #f5b041;
 	}
 
-	/* Bloque guía Desde cero (20 ago 2026 · MC-CF-002-G) — entre Nasdaq y ramas. */
+	/* Bloque guía Desde cero — mismo panel que Capital / Puesta en marcha (29 ago: un idioma visual). */
 	.how-desde-cero.how-desde-cero--stage {
 		position: relative;
-		overflow: visible;
+		overflow: hidden;
 		max-width: min(56rem, 100%);
 		margin: clamp(1.75rem, 6vh, 3.5rem) auto clamp(1.5rem, 5vh, 3rem);
-		padding: clamp(1rem, 3.5vw, 1.75rem) clamp(0.75rem, 2.5vw, 1rem) clamp(1.25rem, 3.5vw, 2rem);
-		border-radius: clamp(0.5rem, 1.2vw, 0.875rem);
+		padding: clamp(1.15rem, 3.2vw, 1.55rem) clamp(1rem, 3vw, 1.5rem) clamp(1.25rem, 3.5vw, 2rem);
+		border-radius: clamp(0.45rem, 1vw, 0.75rem);
 		box-sizing: border-box;
 	}
 
 	html[data-theme='dark'] .how-desde-cero.how-desde-cero--stage {
-		box-shadow:
-			0 0 0 1px rgba(255, 255, 255, 0.055),
-			0 18px 48px rgba(0, 0, 0, 0.35);
-		background: linear-gradient(165deg, hsl(222 18% 9%) 0%, hsl(222 22% 6%) 55%, hsl(222 28% 4%) 100%);
+		box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07);
+		background: linear-gradient(165deg, hsl(222 16% 11%) 0%, hsl(222 20% 7%) 100%);
 	}
 
 	html[data-theme='light'] .how-desde-cero.how-desde-cero--stage {
-		box-shadow: 0 0 0 1px rgba(15, 20, 30, 0.08), 0 12px 32px rgba(15, 20, 30, 0.08);
+		box-shadow: 0 0 0 1px rgba(15, 20, 30, 0.08);
 		background: linear-gradient(165deg, #f7f5f1 0%, #efece6 100%);
 	}
 
@@ -2091,15 +2080,15 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		max-width: min(56rem, 100%);
 	}
 
-	/* “Siguiente nivel”: mismo fondo + mismo barrido vertical que «De cero a protegido» (valores alineados). */
+	/* “Siguiente nivel”: fondo propio; barrido NO sobresale (29 ago — evitaba 2.º/3.er rectángulo fantasma). */
 	.how-more.how-more--stage {
 		position: relative;
-		/* visible: dos filas del puente (4 cards) + hover/sombras no deben recortarse. */
-		overflow: visible;
+		isolation: isolate;
+		overflow: hidden;
 		border-radius: clamp(0.5rem, 1.2vw, 0.875rem);
 		margin: clamp(2.25rem, 8vh, 5rem) auto clamp(2.5rem, 9vh, 5.5rem);
-		/* Padding inferior extra: segunda fila del puente y translateY en hover. */
-		padding: clamp(1rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem) clamp(2rem, 5.5vw, 3rem);
+		/* Padding inferior extra: segunda fila del puente y translateY en hover (dentro del clip). */
+		padding: clamp(1rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem) clamp(2.35rem, 6vw, 3.35rem);
 		box-sizing: border-box;
 	}
 
@@ -2146,11 +2135,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	@media (prefers-reduced-motion: no-preference) {
 		html[data-theme='dark'] .how-more__sweep {
-			inset: auto;
-			top: -28%;
-			bottom: -28%;
-			left: -22%;
-			right: -22%;
+			inset: 0;
 			width: auto;
 			height: auto;
 			background-image: linear-gradient(
@@ -2172,11 +2157,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		}
 
 		html[data-theme='light'] .how-more__sweep {
-			inset: auto;
-			top: -24%;
-			bottom: -24%;
-			left: -18%;
-			right: -18%;
+			inset: 0;
 			width: auto;
 			height: auto;
 			background-image: linear-gradient(

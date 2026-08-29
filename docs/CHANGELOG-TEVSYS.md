@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — cajas + barrido sin bleed (29 ago 2026 · noche)
+
+**Qué:** panel Desde cero alineado con Capital · barridos de stages recortados al bloque (sin franja fantasma al scroll).
+
+**Commit:** `web(tevsys): contain como-funciona stage sweeps and unify panels`
+
+**Archivos:** `como-funciona.astro` · hub V12 · `CHANGELOG`.
+
+---
+
 ## Cómo funciona — trim evidencia + transparencia (29 ago 2026 · noche)
 
 **Qué:** blurb Nasdaq sin segundo *Contrástalo* · tres cajas Transparencia más cortas · home sin atajo *Sesión Nasdaq* (ya en el lead).
