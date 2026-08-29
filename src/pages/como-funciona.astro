@@ -485,41 +485,52 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		</section>
 
 		<section
-			class="how-puesta-marcha how-puesta-marcha--panel"
+			class="how-puesta-marcha how-puesta-marcha--stage"
 			id={puestaEnMarchaLegend.id}
 			aria-labelledby="how-puesta-marcha-title">
-			<header class="how-section-head">
-				<p class="how-eyebrow how-eyebrow--center">{puestaEnMarchaLegend.eyebrow}</p>
-				<h2 id="how-puesta-marcha-title" class="how-puesta-marcha__lead">
-					{puestaEnMarchaLegend.leadBefore}
-					<span class="how-present-title__accent how-puesta-marcha__accent">{puestaEnMarchaLegend.leadAccent}</span>
-				</h2>
-			</header>
-			<ul class="how-puesta-marcha__links">
-				{
-					puestaEnMarchaLegend.links.map((link) => (
-						<li>
-							<a
-								class:list={[
-									'how-puesta-marcha__link',
-									link.primary ? 'how-puesta-marcha__link--primary' : 'how-puesta-marcha__link--secondary',
-								]}
-								href={link.href}>
-								{link.label}
-								<span class="how-puesta-marcha__arrow" aria-hidden="true">
-									→
-								</span>
-							</a>
-						</li>
-					))
-				}
-			</ul>
+			<div class="how-puesta-marcha__halo" aria-hidden="true"></div>
+			<div class="how-puesta-marcha__stage-inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">{puestaEnMarchaLegend.eyebrow}</p>
+					<h2 id="how-puesta-marcha-title" class="how-puesta-marcha__lead">
+						{puestaEnMarchaLegend.leadBefore}
+						<span class="how-present-title__accent how-puesta-marcha__accent">{puestaEnMarchaLegend.leadAccent}</span>
+					</h2>
+				</header>
+				<ul class="how-puesta-marcha__links">
+					{
+						puestaEnMarchaLegend.links.map((link) => (
+							<li>
+								<a
+									class:list={[
+										'how-puesta-marcha__link',
+										link.primary ? 'how-puesta-marcha__link--primary' : 'how-puesta-marcha__link--secondary',
+									]}
+									href={link.href}>
+									{link.label}
+									<span class="how-puesta-marcha__arrow" aria-hidden="true">
+										→
+									</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
 		</section>
+			</div>
+		</div>
 
+		<div class="how-capital-act how-capital-act--stage">
+			<div class="how-capital-act__shell" aria-hidden="true"></div>
+			<div class="how-capital-act__glow" aria-hidden="true"></div>
+			<div class="how-capital-act__inner">
 		<section
-			class="how-puesta-marcha how-puesta-marcha--panel how-cashflow"
+			class="how-cashflow how-cashflow--stage"
 			id="movimiento-de-caja"
 			aria-labelledby="how-cashflow-title">
+			<div class="how-cashflow__halo" aria-hidden="true"></div>
+			<div class="how-cashflow__stage-inner">
 			<header class="how-section-head">
 				<p class="how-eyebrow how-eyebrow--center">Capital y riesgo</p>
 				<h2 id="how-cashflow-title" class="how-puesta-marcha__lead">
@@ -551,6 +562,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
 				</a>
 			</p>
+			</div>
 		</section>
 			</div>
 		</div>
@@ -1988,10 +2000,51 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		border-radius: clamp(0.45rem, 1vw, 0.75rem);
 	}
 
+	/* Puesta — escenario (negro + halo gris suave); no pastilla/etiqueta. */
+	.how-puesta-marcha.how-puesta-marcha--stage {
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
+		max-width: min(44rem, 100%);
+		margin: clamp(1.1rem, 3.5vh, 2rem) auto clamp(0.85rem, 2.5vh, 1.5rem);
+		padding: clamp(1.35rem, 3.8vw, 1.85rem) clamp(1.1rem, 3.2vw, 1.75rem) clamp(1.45rem, 4vw, 2rem);
+		border-radius: clamp(1.15rem, 3.5vw, 1.85rem);
+		border: none;
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.how-puesta-marcha__halo {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	html[data-theme='dark'] .how-puesta-marcha__halo {
+		background:
+			radial-gradient(ellipse 58% 36% at 50% 12%, rgba(88, 98, 118, 0.2) 0%, transparent 52%),
+			radial-gradient(ellipse 72% 48% at 50% 40%, rgba(40, 46, 60, 0.26) 0%, transparent 58%),
+			linear-gradient(180deg, hsl(222 22% 2.4%) 0%, hsl(222 26% 1.6%) 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.58);
+	}
+
+	html[data-theme='light'] .how-puesta-marcha__halo {
+		background:
+			radial-gradient(ellipse 60% 34% at 50% 14%, rgba(0, 0, 0, 0.028) 0%, transparent 52%),
+			linear-gradient(180deg, #f4f2ed 0%, #ebe8e2 100%);
+		box-shadow: inset 0 0 clamp(2rem, 8vw, 4rem) rgba(0, 0, 0, 0.05);
+	}
+
+	.how-puesta-marcha__stage-inner {
+		position: relative;
+		z-index: 1;
+	}
+
 	.how-puesta-marcha--panel {
 		border: 1px solid rgba(255, 255, 255, 0.065);
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
-		/* Misma familia micros / checklist home — no losa 14–16% Odyssey. */
 		background:
 			linear-gradient(148deg, rgba(125, 135, 152, 0.06), rgba(255, 255, 255, 0.014)),
 			linear-gradient(165deg, hsl(222 14% 7%) 0%, hsl(222 12% 5.2%) 100%);
@@ -2011,15 +2064,124 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		line-height: 1.35;
 	}
 
+	.how-puesta-marcha.how-puesta-marcha--stage .how-puesta-marcha__lead {
+		font-size: clamp(1.28rem, 3vw, 1.55rem);
+	}
+
 	.how-puesta-marcha__accent::after {
 		margin-left: 0.15rem;
 		width: min(5.5rem, 100%);
 	}
 
-	/* Capital y riesgo — movimiento de caja (26 ago 2026) */
+	/* Acto Capital — fuera del mid-act (otro mensaje = otro escenario negro). */
+	.how-capital-act.how-capital-act--stage {
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
+		box-sizing: border-box;
+		width: 100%;
+		max-width: min(56rem, 100%);
+		margin: 0 auto clamp(2rem, 7vh, 4rem);
+		padding: 0;
+		border-radius: clamp(1.75rem, 7vw, 3.25rem);
+	}
+
+	.how-capital-act__shell {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	html[data-theme='dark'] .how-capital-act__shell {
+		background: linear-gradient(180deg, hsl(222 20% 2.2%) 0%, hsl(222 22% 1.5%) 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5.5rem) rgba(0, 0, 0, 0.55);
+	}
+
+	html[data-theme='light'] .how-capital-act__shell {
+		background: linear-gradient(180deg, #f0eee9 0%, #e8e5df 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
+	}
+
+	.how-capital-act__glow {
+		position: absolute;
+		inset: 12% 10% 10%;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: clamp(0.9rem, 2.8vw, 1.65rem);
+	}
+
+	html[data-theme='dark'] .how-capital-act__glow {
+		background:
+			radial-gradient(ellipse 68% 34% at 50% 20%, rgba(70, 80, 100, 0.14) 0%, transparent 55%),
+			radial-gradient(ellipse 74% 42% at 50% 55%, rgba(55, 62, 78, 0.1) 0%, transparent 58%);
+	}
+
+	html[data-theme='light'] .how-capital-act__glow {
+		background:
+			radial-gradient(ellipse 70% 36% at 50% 22%, rgba(0, 0, 0, 0.02) 0%, transparent 55%);
+	}
+
+	.how-capital-act__inner {
+		position: relative;
+		z-index: 1;
+		padding: clamp(0.85rem, 2.8vw, 1.45rem) clamp(0.65rem, 2.2vw, 1.15rem) clamp(1.35rem, 4vw, 2.25rem);
+	}
+
+	/* Capital y riesgo — bloque ancho + halo (familia Desde cero). */
 	.how-cashflow {
 		max-width: min(56rem, 100%);
 		scroll-margin-top: clamp(5.5rem, 12vh, 7rem);
+	}
+
+	.how-cashflow.how-cashflow--stage {
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
+		margin: clamp(0.35rem, 1.5vw, 0.75rem) auto clamp(0.5rem, 2vw, 1rem);
+		padding: clamp(1.35rem, 3.8vw, 2rem) clamp(1rem, 3vw, 1.65rem) clamp(1.45rem, 4vw, 2.15rem);
+		border-radius: clamp(1.35rem, 4.5vw, 2.35rem);
+		text-align: center;
+		box-sizing: border-box;
+		border: none;
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.how-cashflow__halo {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	html[data-theme='dark'] .how-cashflow__halo {
+		background:
+			radial-gradient(ellipse 62% 26% at 50% 8%, rgba(88, 98, 118, 0.2) 0%, transparent 52%),
+			radial-gradient(ellipse 72% 38% at 50% 22%, rgba(42, 48, 62, 0.26) 0%, transparent 58%),
+			radial-gradient(ellipse 88% 40% at 50% 78%, rgba(28, 32, 42, 0.1) 0%, transparent 55%),
+			linear-gradient(180deg, hsl(222 22% 2.4%) 0%, hsl(222 26% 1.6%) 100%);
+		box-shadow: inset 0 0 clamp(3rem, 11vw, 6rem) rgba(0, 0, 0, 0.62);
+	}
+
+	html[data-theme='light'] .how-cashflow__halo {
+		background:
+			radial-gradient(ellipse 60% 26% at 50% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+			linear-gradient(180deg, #f4f2ed 0%, #ebe8e2 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.06);
+	}
+
+	.how-cashflow__stage-inner {
+		position: relative;
+		z-index: 1;
+		max-width: min(48rem, 100%);
+		margin: 0 auto;
+	}
+
+	.how-cashflow.how-cashflow--stage .how-puesta-marcha__lead {
+		font-size: clamp(1.28rem, 3vw, 1.55rem);
 	}
 
 	.how-cashflow__body {

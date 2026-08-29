@@ -6,6 +6,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ---
 
+## Cómo funciona — Puesta + Capital actos (29 ago 2026 · noche)
+
+**Qué:** Puesta elevada (negro+halo) dentro post-evidencia; Capital = escenario aparte (misma tónica, otro mensaje).
+
+**Commit:** `web(tevsys): elevate puesta stage and split capital into own act`
+
+**Archivos:** `como-funciona.astro` · hub V12 · `CHANGELOG`.
+
+---
+
 ## Cómo funciona — cáscara negra acto medio (29 ago 2026 · noche)
 
 **Qué:** mismo “escenario negro” que el tramo de arriba; luz/halo y fichas dentro. Separador *Después de la evidencia* intacto.
