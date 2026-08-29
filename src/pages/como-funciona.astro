@@ -457,6 +457,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<div class="how-mid-act__glow" aria-hidden="true"></div>
 			<div class="how-mid-act__inner">
 		<section class="how-desde-cero how-desde-cero--stage" id={desdeCeroGuide.id} aria-labelledby="how-desde-cero-title">
+			<div class="how-desde-cero__halo" aria-hidden="true"></div>
 			<div class="how-desde-cero__inner">
 				<header class="how-section-head">
 					<p class="how-eyebrow how-eyebrow--center">{desdeCeroGuide.eyebrow}</p>
@@ -1505,9 +1506,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	html[data-theme='dark'] .how-mid-act__glow {
+		/* Luz general suave; el protagonismo del bloque Desde cero es su __halo gris. */
 		background:
-			radial-gradient(ellipse 72% 36% at 50% 18%, rgba(245, 176, 65, 0.055) 0%, transparent 52%),
-			radial-gradient(ellipse 78% 48% at 50% 42%, rgba(70, 80, 100, 0.22) 0%, transparent 58%);
+			radial-gradient(ellipse 68% 32% at 50% 22%, rgba(70, 80, 100, 0.12) 0%, transparent 55%),
+			radial-gradient(ellipse 72% 40% at 50% 58%, rgba(55, 62, 78, 0.1) 0%, transparent 58%);
 	}
 
 	html[data-theme='light'] .how-mid-act__glow {
@@ -1902,31 +1904,45 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		color: #f5b041;
 	}
 
-	/* Desde cero — familia micros (carbón + capa fina), no losa Odyssey hsl(222 16%). */
+	/* Desde cero — misma tónica que intro (negro + halo al texto), halo GRIS (ámbar solo arriba). */
 	.how-desde-cero.how-desde-cero--stage {
 		position: relative;
+		isolation: isolate;
 		overflow: hidden;
 		max-width: min(56rem, 100%);
 		margin: clamp(0.85rem, 3vh, 1.75rem) auto clamp(1.5rem, 5vh, 3rem);
 		padding: clamp(1.25rem, 3.5vw, 1.85rem) clamp(1rem, 3vw, 1.65rem) clamp(1.35rem, 3.8vw, 2.1rem);
-		border-radius: clamp(0.85rem, 1.5vw, 1.15rem);
+		border-radius: clamp(1.35rem, 4.5vw, 2.35rem);
 		box-sizing: border-box;
+		border: none;
+		background: transparent;
+		box-shadow: none;
 	}
 
-	html[data-theme='dark'] .how-desde-cero.how-desde-cero--stage {
-		border: 1px solid rgba(255, 255, 255, 0.07);
-		box-shadow:
-			inset 0 1px 0 rgba(255, 255, 255, 0.04),
-			0 18px 44px -32px rgba(0, 0, 0, 0.55);
+	.how-desde-cero__halo {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	html[data-theme='dark'] .how-desde-cero__halo {
+		/* Geometría tipo intro-stage__bg, sin ámbar: luz gris al centro (título + vídeo). */
 		background:
-			linear-gradient(148deg, rgba(125, 135, 152, 0.07), rgba(255, 255, 255, 0.016)),
-			linear-gradient(165deg, hsl(222 14% 7%) 0%, hsl(222 12% 5%) 100%);
+			radial-gradient(ellipse 88% 42% at 50% 10%, rgba(92, 102, 124, 0.38) 0%, transparent 48%),
+			radial-gradient(ellipse 98% 52% at 50% 28%, rgba(48, 54, 68, 0.45) 0%, transparent 58%),
+			radial-gradient(ellipse 120% 70% at 50% 88%, rgba(36, 40, 52, 0.28) 0%, transparent 52%),
+			linear-gradient(180deg, hsl(222 22% 3.2%) 0%, hsl(222 26% 2%) 100%);
+		box-shadow: inset 0 0 clamp(2.75rem, 10vw, 5.5rem) rgba(0, 0, 0, 0.5);
 	}
 
-	html[data-theme='light'] .how-desde-cero.how-desde-cero--stage {
-		border: 1px solid rgba(15, 20, 30, 0.08);
-		box-shadow: 0 12px 32px rgba(15, 20, 30, 0.08);
-		background: linear-gradient(165deg, #f8f6f2 0%, #efece6 100%);
+	html[data-theme='light'] .how-desde-cero__halo {
+		background:
+			radial-gradient(ellipse 86% 40% at 50% 12%, rgba(0, 0, 0, 0.045) 0%, transparent 50%),
+			radial-gradient(ellipse 96% 50% at 50% 30%, rgba(0, 0, 0, 0.03) 0%, transparent 56%),
+			linear-gradient(180deg, #f6f4ef 0%, #ebe8e2 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.06);
 	}
 
 	.how-desde-cero__inner {
