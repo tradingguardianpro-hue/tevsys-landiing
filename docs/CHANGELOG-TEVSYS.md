@@ -11,11 +11,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 **Qué:** escenario **operación protegida en fin de semana** visible en home y reforzado en `/como-funciona` rama 3 (sin decir “carry” en público).
 
 - **Home** mid-invite: chip *Operación abierta en finde — sigues protegido* → `/go/como-funciona-operacion` → `#rama-operacion`.
-- **Cómo funciona:** anuncio de rama + teaser **MC-CF-022** (`#videoclip-finde-operacion`, clip en preparación) + copy MC-CF-023 sin jerga “carry”.
+- **Cómo funciona:** anuncio de rama + **still** MC-CF-022 (`#videoclip-finde-operacion`, captura ActivTrades #6263709 + lightbox) + copy MC-CF-023 sin jerga “carry”.
 
 **Commit:** `web(tevsys): surface weekend open-trade protection on home and como-funciona`
 
-**Archivos:** `index.astro` · `como-funciona.astro` · `go/como-funciona-operacion.astro` · `CONTENIDO_WEB` · hub V12.
+**Archivos:** `index.astro` · `como-funciona.astro` · `go/como-funciona-operacion.astro` · `public/images/como-funciona/tevsys-finde-operacion-protegida-6263709.png` · `CONTENIDO_WEB` · hub V12.
 
 ---
 

@@ -143,6 +143,10 @@ type MicroClipCard = {
 	videoSrc?: string;
 	/** Frame JPG — evita caja gris del `<video preload="none">` antes de play. */
 	posterSrc?: string;
+	/** Still / captura de escenario (sin MP4) — no fingir vídeo. */
+	stillSrc?: string;
+	stillAlt?: string;
+	stillCaption?: string;
 	videoLabel?: string;
 	ctaLabel?: string;
 };
@@ -244,8 +248,12 @@ const microclipBranches: MicroclipBranch[] = [
 			{
 				title: 'Fin de semana con operación abierta — sigues protegido',
 				anchorId: 'videoclip-finde-operacion',
-				videoLabel: 'Microclip en preparación — finde + operación abierta (MC-CF-022)',
-				ctaLabel: 'Ver clip',
+				stillSrc: '/images/como-funciona/tevsys-finde-operacion-protegida-6263709.png?v=20260829',
+				stillAlt:
+					'tevsys en fin de semana: modal «sigues protegido», panel «Operación en curso» y botón PROTEGIDO — FIN DE SEMANA (cuenta demo ActivTrades #6263709).',
+				stillCaption: 'Captura real · finde + operación abierta · sigues protegido',
+				videoLabel: 'Captura de escenario — finde + operación abierta (MC-CF-022 still)',
+				ctaLabel: 'Ampliar captura',
 			},
 			{
 				title: '¿Llegaste con una operación abierta?',
@@ -566,7 +574,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 														{row.title}
 													</h4>
 												</header>
-												<div class:list={['how-practical-card__media', !row.posterSrc && 'how-practical-card__media--brand-fallback']}>
+												<div class:list={['how-practical-card__media', !row.posterSrc && !row.stillSrc && 'how-practical-card__media--brand-fallback']}>
 													{row.videoSrc ? (
 														<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
 															<video
@@ -578,6 +586,20 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 																<source src={row.videoSrc} type="video/mp4" />
 																Tu navegador no soporta reproducción de video HTML5.
 															</video>
+														</div>
+													) : row.stillSrc ? (
+														<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed how-practical-card__embed--still">
+															<EvidenceImageLightbox
+																src={row.stillSrc}
+																alt={row.stillAlt ?? row.title}
+																caption={row.stillCaption}
+																width={1280}
+																height={720}
+																figureClass="how-rama-still"
+																triggerClass="how-rama-still__zoom"
+																imgClass="how-rama-still__img"
+																capClass="how-rama-still__cap"
+															/>
 														</div>
 													) : (
 														<div
@@ -591,8 +613,12 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 														</div>
 													)}
 												</div>
-												<span class:list={['how-more-card__cta', !row.videoSrc && 'how-more-card__cta--pending']}>
-													{row.videoSrc ? `${row.ctaLabel ?? 'Ver clip'} →` : 'Clip en preparación →'}
+												<span class:list={['how-more-card__cta', !row.videoSrc && !row.stillSrc && 'how-more-card__cta--pending']}>
+													{row.videoSrc
+														? `${row.ctaLabel ?? 'Ver clip'} →`
+														: row.stillSrc
+															? `${row.ctaLabel ?? 'Ampliar captura'} →`
+															: 'Clip en preparación →'}
 												</span>
 											</article>
 										))}
@@ -3079,6 +3105,45 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	html[data-theme='light'] .how-rama__soon {
 		color: rgba(90, 100, 115, 0.8);
+	}
+
+	.how-practical-card__embed--still {
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.how-rama-still {
+		margin: 0;
+		width: 100%;
+	}
+
+	.how-rama-still__zoom {
+		display: block;
+		width: 100%;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		cursor: zoom-in;
+	}
+
+	.how-rama-still__img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		object-position: center top;
+		vertical-align: middle;
+	}
+
+	.how-rama-still__cap {
+		margin: 0.45rem 0.65rem 0.55rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.72rem;
+		letter-spacing: 0.02em;
+		line-height: 1.4;
+		color: rgba(160, 175, 195, 0.78);
+		text-align: left;
 	}
 
 	.how-chapter--extras__sub {
