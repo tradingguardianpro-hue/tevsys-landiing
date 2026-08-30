@@ -6,7 +6,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Cómo funciona — panel mimetizado copy honesta (30 ago 2026)
 
-- **Título:** *Mimetiza tu panel a tu gusto* (no “al proteger”).
+- **Título:** *Mimetiza el panel a tu gusto* (no “al proteger”).
 - **Sub:** *Ajusta borde y colores — o más discreto…* + tres destellos (el “cómo se siente” va aquí, no en el título).
 - **Clip actual:** fondo negro / borde discreto + destellos. **Pendiente:** clip fondo claro (~30 s).
 - **Commit:** `web(tevsys): fix panel mimic copy to match product behavior`
