@@ -4,7 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
-## Cómo funciona — Las cuatro piezas = misma cáscara que Siguiente nivel (30 ago 2026)
+## Cómo funciona — copy cuatro piezas + panel (30 ago 2026)
+
+- **Cuatro piezas:** eyebrow *Las cuatro piezas* · título *Cada capa, con detalle* · sub corto (orden portada). Fuera *FUNCIONALIDADES ÚNICAS* / *Profundiza…* / meta del hueco SML.
+- **Panel:** eyebrow *En el gráfico* · *El panel se mimetiza al proteger*.
+- **Commit:** `web(tevsys): tone four-pieces and panel copy to match upper acts`
 
 - **Qué:** el envoltorio de las 4 cards usa **las mismas clases** que clips (`how-more how-more--stage` + `how-more__shell` / `__glow` / `__inner`) → mismo rectángulo negro + halo.
 - **También:** reparado comentario CSS roto tras el bloque de clips (podía tumbar estilos siguientes).
