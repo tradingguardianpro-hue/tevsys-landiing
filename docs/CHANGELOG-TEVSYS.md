@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## HyperClose — quitar manifiesto «no vendemos señales» (30 ago 2026)
+
+- **Qué:** fuera el banner de pitch en `/features/hyperclose` (duplicado).
+- **Casa canónica:** home — disclaimer corto en hero + frase larga bajo «Elige tu cuenta».
+- **No tocado:** hero home · SML aún tiene el mismo banner (siguiente si quieres).
+- **Commit:** `web(tevsys): remove signals manifesto from HyperClose micro`
+
 ## SML micropágina — captura panel teal (30 ago 2026)
 
 - **Qué:** `sml-panel-validacion-demo.png` — panel teal + velas (composición sobria; NOTICIAS/HORARIOS OFF). `?v=20260830b`.
