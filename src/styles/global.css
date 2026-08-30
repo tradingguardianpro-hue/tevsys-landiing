@@ -1683,9 +1683,10 @@ html[data-theme='dark'] .tevsys-home-founder-band > :not(.tevsys-home-founder-st
 	z-index: 1;
 }
 
-/* Footer integrado con --theme-bg (no losa surface-1): home + micropáginas Familia A */
+/* Footer integrado con --theme-bg (no losa surface-1): home + Familia A + Cómo funciona */
 html[data-theme='dark'] body:has(.tevsys-home-band--cards) footer,
-html[data-theme='dark'] body:has(.tevsys-feature-micro-surface) footer {
+html[data-theme='dark'] body:has(.tevsys-feature-micro-surface) footer,
+html[data-theme='dark'] body.page-como-funciona footer {
 	--footer-bg: var(--theme-bg);
 	background-color: var(--theme-bg);
 	background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0, transparent 3.25rem);

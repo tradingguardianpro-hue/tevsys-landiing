@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — footer = home (negro, no pizarra) (30 ago 2026)
+
+- **Problema:** `/como-funciona` usaba `surface-1` (losa pizarra); home y Familia A ya forzaban `--theme-bg`.
+- **Qué:** `body.page-como-funciona footer` entra en la misma regla de `global.css` (fondo negro + hairline ámbar).
+- **Commit:** `web(tevsys): match como-funciona footer to home black bg`
+
 ## Cómo funciona — panel mimetizado tema claro publicado (30 ago 2026)
 
 - **Qué:** `tevsys-mc-panel-mimetizado-claro-30s.mp4` (~36 s) + poster bajo el clip negro. `#panel-mimetizado-claro`. Caja clara tipo Precisión Nasdaq.
