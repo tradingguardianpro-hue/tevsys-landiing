@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — panel mimetizado copy honesta (30 ago 2026)
+
+- **Título:** *Mimetiza tu panel a tu gusto* (no “al proteger”).
+- **Sub:** *Ajusta borde y colores — o más discreto…* + tres destellos (el “cómo se siente” va aquí, no en el título).
+- **Clip actual:** fondo negro / borde discreto + destellos. **Pendiente:** clip fondo claro (~30 s).
+- **Commit:** `web(tevsys): fix panel mimic copy to match product behavior`
+
 ## Cómo funciona — copy cuatro piezas + panel (30 ago 2026)
 
 - **Cuatro piezas:** eyebrow *Las cuatro piezas* · título *Cada capa, con detalle* · sub corto (orden portada). Fuera *FUNCIONALIDADES ÚNICAS* / *Profundiza…* / meta del hueco SML.

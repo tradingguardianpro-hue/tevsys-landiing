@@ -190,16 +190,22 @@ const puestaEnMarchaLegend = {
  * Emoción / identidad UI — tras las 4 piezas, antes del corte de auditoría.
  * Misma cáscara que Puesta en marcha. Publicado 21 ago (~32 s).
  */
+/**
+ * Panel mimetizado — tras 4 piezas, antes auditoría.
+ * Título = marketing “a tu gusto”; el “cómo se siente” va en el sub (colores/borde + destellos).
+ * Clip actual (~32 s) fondo negro; pendiente clip fondo claro.
+ */
 const comoSeSienteLegend = {
 	id: 'como-se-siente',
-	eyebrow: 'En el gráfico',
-	leadBefore: 'El panel se mimetiza al ',
-	leadAccent: 'proteger',
+	eyebrow: 'Panel',
+	leadBefore: 'Mimetiza tu panel ',
+	leadAccent: 'a tu gusto',
+	blurb: 'Ajusta borde y colores — o más discreto, flotando en el gráfico. Al proteger, tres destellos aunque esté mimetizado.',
 	ctaLabel: 'Ver el panel mimetizado',
 	durationLabel: '~32 s',
 	videoSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-30s.mp4?v=20260821',
 	posterSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-30s-poster.jpg?v=20260821',
-	videoLabel: 'Microclip ~32 s — panel mimetizado al proteger',
+	videoLabel: 'Microclip ~32 s — panel mimetizado y tres destellos al proteger',
 };
 
 const microclipBranches: MicroclipBranch[] = [
@@ -798,6 +804,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 								>{comoSeSienteLegend.leadAccent}</span
 							>
 						</h2>
+						{comoSeSienteLegend.blurb ? (
+							<p class="how-section-sub how-puesta-marcha__siente-blurb">{comoSeSienteLegend.blurb}</p>
+						) : null}
 					</header>
 					<ul class="how-puesta-marcha__links">
 						<li>
@@ -2353,6 +2362,11 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	.how-puesta-marcha--siente {
 		max-width: min(46rem, 100%);
 		margin: clamp(1.5rem, 4vh, 2.35rem) auto clamp(1.35rem, 3.5vh, 2.1rem);
+	}
+
+	.how-puesta-marcha--siente .how-puesta-marcha__siente-blurb {
+		margin: clamp(0.55rem, 1.8vw, 0.85rem) auto 0;
+		max-width: 36rem;
 	}
 
 	.how-puesta-marcha__link--pending {

@@ -102,7 +102,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Mid-home microclips (29 ago noche):** título · lead (incluye Nasdaq) · **2 enlaces mono** (finde · Empezar de cero) · CTA ámbar. Sin pastilla · sin atajo Nasdaq duplicado.
 - **Guía Desde cero (20 ago 2026):** `/como-funciona#desde-cero` · eyebrow **Condición innegociable** · título *Desde cero, siempre* · lead *Si cargas tevsys con operaciones ya abiertas… empezamos de cero.* · ~57 s · `tevsys-guia-desde-cero.mp4` · micro `#videoclip-pasiva` se mantiene. `?v=20260820b`.
 - **Puesta en marcha (21 ago):** `/como-funciona#puesta-en-marcha` · *Instalar y fijar límites* · enlace primario al minuto de config + instalar. Tras Desde cero / antes de clips.
-- **Actos post-Capital (30 ago 2026):** *Siguiente nivel* (cáscara negra) → *Las cuatro piezas* (*Cada capa, con detalle*) → *En el gráfico* / panel mimetizado → auditoría cian.
+- **Actos post-Capital (30 ago 2026):** *Siguiente nivel* (cáscara negra) → *Las cuatro piezas* (*Cada capa, con detalle*) → *Mimetiza tu panel a tu gusto* (borde/discreto + 3 destellos; clip claro pendiente) → auditoría cian.
 - **Configurar límites 1 min (20–21 ago):** casa `/configuracion#configurar-limites` · MC-CF-026 · ~1:15 · **Advanced/Pro (semana)** · Essential = guía larga debajo · footer Guías (**21 ago:** minuto bajo Adv/Pro, no Essential) · `?v=20260820c`.
 - **Fin de semana guía (21 ago):** `/configuracion-fin-de-semana` — MP4 2:01 retirado (cara vieja); hueco *Vídeo en preparación* + pasos escritos.
 - **MC-CF-021 II (20 ago):** PROGRAMADO · LUNES + *Puedes reconfigurar las veces que necesites* · `?v=20260820`.
