@@ -6,8 +6,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## SML micropágina — captura panel teal (30 ago 2026)
 
-- **Qué:** sustituye `sml-panel-validacion-demo.png` (botones SML actuales teal; ya no 1-CLICK lila de marzo). `?v=20260830`.
-- **Nota:** HORARIOS «Error config» visible — temporal hasta foto limpia / vídeo con mercado.
+- **Qué:** `sml-panel-validacion-demo.png` — panel teal + velas (composición sobria; NOTICIAS/HORARIOS OFF). `?v=20260830b`.
 - **Commit:** `web(tevsys): refresh SML panel capture with teal buttons`
 
 ## Redirect `/features/evidence` → evidencia (30 ago 2026)
