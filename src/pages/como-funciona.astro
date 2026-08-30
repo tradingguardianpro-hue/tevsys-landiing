@@ -725,7 +725,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<span class="how-more-act-cut__label">Las cuatro piezas</span>
 		</p>
 
-		<section class="how-chapter how-chapter--bridge" aria-labelledby="how-bridge-chapter-title">
+		<section class="how-chapter how-chapter--bridge how-bridge-chapter--stage" aria-labelledby="how-bridge-chapter-title">
+			<div class="how-bridge-chapter__shell" aria-hidden="true"></div>
+			<div class="how-bridge-chapter__glow" aria-hidden="true"></div>
+			<div class="how-bridge-chapter__inner">
 					<header class="how-section-head how-chapter__head">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">FUNCIONALIDADES ÚNICAS</p>
 						<h3 id="how-bridge-chapter-title">
@@ -777,6 +780,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							}
 						</div>
 					</div>
+			</div>
 				</section>
 
 				<section
@@ -2643,17 +2647,62 @@ Contraste en oscuro: títulos y cuerpo menos “gris sumido”; tarjetas un peld
 	}
 
 	.how-chapter--bridge {
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
+		box-sizing: border-box;
+		width: 100%;
 		margin: clamp(0.85rem, 3vw, 1.65rem) auto clamp(1.65rem, 4.5vw, 2.45rem);
 		max-width: min(56rem, 100%);
-		padding: clamp(0.85rem, 2.5vw, 1.35rem) clamp(0.55rem, 2vw, 0.95rem) clamp(1rem, 3vw, 1.55rem);
-		overflow: visible;
-		border-radius: clamp(1.15rem, 3.5vw, 1.85rem);
+		padding: 0;
+		border-radius: clamp(1.75rem, 7vw, 3.25rem);
 		background: transparent;
+		box-shadow: none;
 	}
 
-	html[data-theme='dark'] .how-chapter--bridge {
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-		background: linear-gradient(180deg, rgba(8, 10, 14, 0.55) 0%, rgba(4, 5, 8, 0.35) 100%);
+	.how-bridge-chapter__shell {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	html[data-theme='dark'] .how-bridge-chapter__shell {
+		background: linear-gradient(180deg, hsl(222 20% 2.2%) 0%, hsl(222 22% 1.5%) 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5.5rem) rgba(0, 0, 0, 0.55);
+	}
+
+	html[data-theme='light'] .how-bridge-chapter__shell {
+		background: linear-gradient(180deg, #f0eee9 0%, #e8e5df 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
+	}
+
+	.how-bridge-chapter__glow {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	html[data-theme='dark'] .how-bridge-chapter__glow {
+		background:
+			radial-gradient(ellipse 62% 26% at 50% 8%, rgba(88, 98, 118, 0.2) 0%, transparent 52%),
+			radial-gradient(ellipse 72% 38% at 50% 20%, rgba(42, 48, 62, 0.26) 0%, transparent 58%),
+			radial-gradient(ellipse 88% 36% at 50% 72%, rgba(28, 32, 42, 0.08) 0%, transparent 55%);
+	}
+
+	html[data-theme='light'] .how-bridge-chapter__glow {
+		background:
+			radial-gradient(ellipse 60% 26% at 50% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+			radial-gradient(ellipse 70% 34% at 50% 22%, rgba(0, 0, 0, 0.02) 0%, transparent 55%);
+	}
+
+	.how-bridge-chapter__inner {
+		position: relative;
+		z-index: 1;
+		padding: clamp(1.1rem, 3.5vw, 1.85rem) clamp(0.75rem, 2.5vw, 1.15rem) clamp(1.45rem, 4vw, 2.15rem);
 	}
 
 	/* Auditoría: acto propio (negro + firma cian) — fuera del stage de clips. */

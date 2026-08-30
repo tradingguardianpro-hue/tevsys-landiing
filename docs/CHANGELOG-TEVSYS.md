@@ -4,12 +4,27 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Las cuatro piezas = cáscara negra (30 ago 2026)
+
+- **Qué:** bloque *Las cuatro piezas* / puente micros → misma familia que clips y Capital (cáscara + halo cabecera).
+- **Commit:** `web(tevsys): elevate four-pieces bridge to black shell act`
+
 ## Cómo funciona — cohesión Siguiente nivel + actos (30 ago 2026)
 
-- **Qué:** *Siguiente nivel* pasa a **cáscara negra** (familia Capital/Puesta); corte *Escenarios en práctica*; saltos de rama más sobrios; **cuatro piezas** y **auditoría** fuera del mega-bloque; auditoría = acto propio negro+cian.
-- **Ajuste:** halo cabecera tipo Capital + saltos separados con **·** (sin subrayar).
-- **Por qué:** vista de pájaro mostraba “otra web” al llegar a clips.
-- **Commit:** `web(tevsys): unify como-funciona clips stage with black shell acts`
+**Problema:** tras Capital/Puesta (cáscara negra + halo), *Siguiente nivel* era otra piel (losa gris-azul, radio chico, barrido) → “otra web” en vista pájaro.
+
+**Hecho (validado fundador — “bastante mejor”):**
+1. Corte *Escenarios en práctica* (ámbar, mismo gesto que *Después de la evidencia*).
+2. *Siguiente nivel* = **cáscara negra + halo cabecera** (familia Capital / Puesta / Desde cero).
+3. Saltos de rama: mono sobrio, separados con **·**, sin subrayar; hover ámbar.
+4. **Las cuatro piezas** y **auditoría** fuera del mega-bloque de clips.
+5. Auditoría = acto propio negro + firma **cian** (distinto a ámbar).
+
+**Siguiente tras clips:** *Las cuatro piezas* → cáscara+halo **hecho** (ver entrada *Las cuatro piezas* arriba). Pendiente feedback + pulir auditoría si hace falta.
+
+**Archivo:** `como-funciona.astro` · V12 **(cfClipsShell)**.
+
+**Commit:** `web(tevsys): unify como-funciona clips stage with black shell acts`
 
 ## Home — subtítulo planes (frase corta desmarque) (30 ago 2026)
 
@@ -26,8 +41,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## HyperClose — quitar manifiesto «no vendemos señales» (30 ago 2026)
 
 - **Qué:** fuera el banner de pitch en `/features/hyperclose` (duplicado).
-- **Casa canónica:** home — disclaimer corto en hero + frase larga bajo «Elige tu cuenta».
-- **No tocado:** hero home · SML aún tiene el mismo banner (siguiente si quieres).
+- **Casa canónica:** home — disclaimer corto en hero + frase bajo «Elige tu cuenta».
 - **Commit:** `web(tevsys): remove signals manifesto from HyperClose micro`
 
 ## SML micropágina — captura panel teal (30 ago 2026)
