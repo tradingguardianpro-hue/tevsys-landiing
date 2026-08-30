@@ -192,8 +192,8 @@ const puestaEnMarchaLegend = {
  */
 /**
  * Panel mimetizado — tras 4 piezas, antes auditoría.
- * Título = marketing “a tu gusto”; el “cómo se siente” va en el sub (colores/borde + destellos).
- * Clip actual (~32 s) fondo negro; pendiente clip fondo claro.
+ * Clip 1 (publicado): fondo negro. Clip 2 (pendiente rodaje): chart + panel tema claro,
+ * estilo web como Precisión Nasdaq (`demo-video--light` / poster soft) — NO entra en rejilla microclips.
  */
 const comoSeSienteLegend = {
 	id: 'como-se-siente',
@@ -206,6 +206,17 @@ const comoSeSienteLegend = {
 	videoSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-30s.mp4?v=20260821',
 	posterSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-30s-poster.jpg?v=20260821',
 	videoLabel: 'Microclip ~32 s — panel mimetizado y tres destellos al proteger',
+	/** Segundo clip bajo el primero — tema claro (rodaje + overlays 2–3 cuando Gabi entregue MP4). */
+	lightClip: {
+		id: 'panel-mimetizado-claro',
+		eyebrow: 'También en tema claro',
+		blurb: 'Mismo panel sobre gráfico claro — quien opera en blanco también lo ve limpio.',
+		ctaLabel: 'Ver en fondo claro',
+		durationLabel: '~30 s',
+		videoSrc: '',
+		posterSrc: '',
+		videoLabel: 'Panel mimetizado en tema claro (en preparación)',
+	},
 };
 
 const microclipBranches: MicroclipBranch[] = [
@@ -862,6 +873,49 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							</div>
 						)
 					}
+
+					<div class="how-siente-light" id={comoSeSienteLegend.lightClip.id}>
+						<p class="how-eyebrow how-eyebrow--center">{comoSeSienteLegend.lightClip.eyebrow}</p>
+						<p class="how-section-sub how-siente-light__blurb">{comoSeSienteLegend.lightClip.blurb}</p>
+						{
+							comoSeSienteLegend.lightClip.videoSrc ? (
+								<>
+									<p class="how-siente-light__cta">
+										<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={`#${comoSeSienteLegend.lightClip.id}`}>
+											{comoSeSienteLegend.lightClip.ctaLabel}
+											<span class="how-puesta-marcha__duration">
+												({comoSeSienteLegend.lightClip.durationLabel})
+											</span>
+											<span class="how-puesta-marcha__arrow" aria-hidden="true">
+												→
+											</span>
+										</a>
+									</p>
+									<div class="how-embed how-embed--chrome how-siente-embed how-siente-embed--light">
+										<video
+											controls
+											preload="metadata"
+											playsinline
+											poster={comoSeSienteLegend.lightClip.posterSrc}
+											title={comoSeSienteLegend.lightClip.videoLabel}>
+											<source src={comoSeSienteLegend.lightClip.videoSrc} type="video/mp4" />
+											Tu navegador no soporta reproducción de video HTML5.
+										</video>
+									</div>
+								</>
+							) : (
+								<div
+									class="how-siente-placeholder how-siente-placeholder--light"
+									role="status"
+									aria-label="Vídeo panel en tema claro en preparación">
+									<span class="how-siente-placeholder__hint">Tema claro — en preparación</span>
+									<span class="how-siente-placeholder__sub">
+										Mismo gesto en gráfico blanco. Cuando el MP4 esté listo, irá aquí.
+									</span>
+								</div>
+							)
+						}
+					</div>
 			</div>
 				</section>
 
@@ -897,18 +951,6 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							</p>
 						</div>
 					</header>
-					<div class="how-audit-chapter__frame">
-						<div
-							class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--zero-teaser"
-							role="status"
-							aria-live="polite">
-							<span class="how-clip-teaser__glyph how-clip-teaser__glyph--zero" aria-hidden="true"></span>
-							<p class="how-embed-placeholder__title">Vídeo del capítulo en preparación</p>
-							<p class="how-embed-placeholder__sub">
-								Cuando lo tengáis, aquí irá un corte que resume tono y pasos de esta capa.
-							</p>
-						</div>
-					</div>
 			</div>
 				</section>
 
@@ -2387,6 +2429,39 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	.how-puesta-marcha--siente .how-siente-placeholder {
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.how-siente-light {
+		margin-top: clamp(1.65rem, 4.5vw, 2.45rem);
+		padding-top: clamp(1.15rem, 3vw, 1.65rem);
+		border-top: 1px solid rgba(255, 255, 255, 0.07);
+	}
+
+	html[data-theme='light'] .how-siente-light {
+		border-top-color: rgba(0, 0, 0, 0.08);
+	}
+
+	.how-siente-light__blurb {
+		margin: 0.45rem auto clamp(0.85rem, 2.2vw, 1.15rem);
+		max-width: 34rem;
+	}
+
+	.how-siente-light__cta {
+		margin: 0 0 clamp(0.75rem, 2vw, 1rem);
+	}
+
+	/* Tema claro en página oscura — misma familia que Precisión Nasdaq (caja clara + no grita). */
+	.how-siente-embed--light {
+		background: linear-gradient(180deg, #eceef2 0%, #e2e5eb 100%);
+		border: 1px solid rgba(245, 176, 65, 0.38);
+		box-shadow:
+			0 0 0 1px rgba(245, 176, 65, 0.2),
+			0 8px 26px rgba(0, 0, 0, 0.22);
+	}
+
+	.how-siente-placeholder--light {
+		border-color: rgba(245, 176, 65, 0.28);
+		background: linear-gradient(180deg, rgba(236, 238, 242, 0.12) 0%, rgba(20, 22, 28, 0.55) 100%);
 	}
 
 	.how-puesta-marcha__link--pending {

@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — auditoría sin hueco vídeo jerga + panel claro pendiente (30 ago 2026)
+
+- **Auditoría:** eliminado placeholder *Vídeo del capítulo en preparación* / *Cuando lo tengáis…* (jerga interna). Queda copy + cáscara cian.
+- **Panel:** bajo el clip negro, bloque **También en tema claro** (`#panel-mimetizado-claro`) — hueco hasta MP4; estilo caja clara tipo Precisión Nasdaq; **no** rejilla microclips.
+- **Overlays (cuando entregues el MP4):** 2–3 frases; pedir *«overlays panel claro»*.
+- **Aparcado:** decisión sobre bloque *De cero a protegido* (¿dejar / quitar / sustituir?).
+- **Commit:** `web(tevsys): drop audit video jargon and stage light panel clip slot`
+
 ## Cómo funciona — panel mimetizado en cáscara negra (30 ago 2026)
 
 - **Qué:** `#como-se-siente` envuelto como clips / cuatro piezas (`how-more--stage` + shell/glow/inner + halo).
