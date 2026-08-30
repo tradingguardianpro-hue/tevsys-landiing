@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — subtítulo planes (frase corta desmarque) (30 ago 2026)
+
+- **Qué:** bajo **Elige tu cuenta** → *No vendemos señales. Vendemos reglas que se ejecutan y se pueden contrastar en MT5.*
+- **Antes:** lista larga (ejecución disciplinada / precisión / evidencia / presión).
+- **Commit:** `web(tevsys): tighten plans subtitle to rules you can verify`
+
 ## SML — quitar manifiesto «no vendemos señales» (30 ago 2026)
 
 - **Qué:** mismo criterio que HyperClose: fuera el banner de pitch en `/features/sml`.

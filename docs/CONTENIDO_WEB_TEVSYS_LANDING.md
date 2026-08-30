@@ -57,7 +57,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Lead:** cierre al instante si operas en bloqueo; constancia trazable para comprobar.
 
 ### Poda de densidad y otras iteraciones el mismo día
-- **Home** (`index.astro`): manifiesto visible bajo **Elige tu cuenta** (alineado claim producto).
+- **Home** (`index.astro`): bajo **Elige tu cuenta** — *No vendemos señales. Vendemos reglas que se ejecutan y se pueden contrastar en MT5.* (30 ago 2026; micros HyperClose/SML sin duplicar).
 - **`/features/sml`:** poda de texto (fase 1 tramo superior + redundancias); evidencia 4.81 antes/después — ver **`CHANGELOG-TEVSYS.md`** bloques *Home + SML manifiesto* y *SML narrativa*.
 - **Header + `/como-funciona`:** píldora nav, vídeo en dos partes, enlaces instalación — misma fecha en `CHANGELOG`.
 
@@ -293,7 +293,7 @@ Ver handoff hero.
 `Elige tu cuenta`
 
 ### Subtítulo
-`Selecciona el plan que mejor encaja contigo. Luego ajustamos contigo los detalles.`
+`No vendemos señales. Vendemos reglas que se ejecutan y se pueden contrastar en MT5.`
 
 ### Planes
 - **Essential:** `Elegir Essential` (formulario). Si `checkoutEssentialReady: true` → `Comprar Essential` + `Probar demo` (Lemon checkout + formulario). Interruptor en `settings.js`.
