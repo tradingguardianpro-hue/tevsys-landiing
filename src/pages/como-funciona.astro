@@ -567,9 +567,14 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			</div>
 		</div>
 
+		<p class="how-act-cut" role="presentation">
+			<span class="how-act-cut__label">Escenarios en práctica</span>
+			<span class="how-act-cut__line" aria-hidden="true"></span>
+		</p>
+
 		<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
-			<div class="how-more__bg" aria-hidden="true"></div>
-			<div class="how-more__sweep" aria-hidden="true"></div>
+			<div class="how-more__shell" aria-hidden="true"></div>
+			<div class="how-more__glow" aria-hidden="true"></div>
 			<div class="how-more__inner">
 				<header class="how-section-head how-more__head">
 					<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
@@ -712,13 +717,15 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 						))
 					}
 				</section>
+			</div>
+		</section>
 
-				<p class="how-more-act-cut">
-					<span class="how-more-act-cut__line" aria-hidden="true"></span>
-					<span class="how-more-act-cut__label">Las cuatro piezas</span>
-				</p>
+		<p class="how-more-act-cut">
+			<span class="how-more-act-cut__line" aria-hidden="true"></span>
+			<span class="how-more-act-cut__label">Las cuatro piezas</span>
+		</p>
 
-				<section class="how-chapter how-chapter--bridge" aria-labelledby="how-bridge-chapter-title">
+		<section class="how-chapter how-chapter--bridge" aria-labelledby="how-bridge-chapter-title">
 					<header class="how-section-head how-chapter__head">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker">FUNCIONALIDADES ÚNICAS</p>
 						<h3 id="how-bridge-chapter-title">
@@ -838,12 +845,15 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					}
 				</section>
 
-				<p class="how-more-audit-cut">
-					<span class="how-more-audit-cut__line" aria-hidden="true"></span>
-					<span class="how-more-audit-cut__label">Aquí comienza la fase de auditoría</span>
-				</p>
+		<p class="how-more-audit-cut">
+			<span class="how-more-audit-cut__line" aria-hidden="true"></span>
+			<span class="how-more-audit-cut__label">Aquí comienza la fase de auditoría</span>
+		</p>
 
-				<section class="how-chapter how-chapter--audit how-audit-chapter" aria-labelledby="how-audit-chapter-title">
+		<section class="how-chapter how-chapter--audit how-audit-chapter how-audit-chapter--stage" aria-labelledby="how-audit-chapter-title">
+			<div class="how-audit-chapter__shell" aria-hidden="true"></div>
+			<div class="how-audit-chapter__glow" aria-hidden="true"></div>
+			<div class="how-audit-chapter__stage-inner">
 					<header class="how-section-head how-chapter__head how-chapter__head--audit">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--audit-kicker">
 							Auditoría
@@ -879,9 +889,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							</p>
 						</div>
 					</div>
-				</section>
 			</div>
-		</section>
+				</section>
 
 		<section class="how-zero-protected how-zero-protected--stage" id="de-cero-a-protegido" aria-labelledby="how-zero-title">
 			<div class="how-zero-protected__bg" aria-hidden="true"></div>
@@ -2404,33 +2413,22 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		max-width: min(56rem, 100%);
 	}
 
-	/* “Siguiente nivel”: fondo propio; barrido NO sobresale (29 ago — evitaba 2.º/3.er rectángulo fantasma). */
+	/* "Siguiente nivel": misma familia negra que Capital/Puesta (30 ago). */
 	.how-more.how-more--stage {
 		position: relative;
 		isolation: isolate;
 		overflow: hidden;
-		border-radius: clamp(0.5rem, 1.2vw, 0.875rem);
-		margin: clamp(2.25rem, 8vh, 5rem) auto clamp(2.5rem, 9vh, 5.5rem);
-		/* Padding inferior extra: segunda fila del puente y translateY en hover (dentro del clip). */
-		padding: clamp(1rem, 4vw, 2rem) clamp(0.75rem, 2.5vw, 1rem) clamp(2.35rem, 6vw, 3.35rem);
 		box-sizing: border-box;
+		width: 100%;
+		max-width: min(56rem, 100%);
+		margin: 0 auto clamp(2.25rem, 8vh, 4.5rem);
+		padding: 0;
+		border-radius: clamp(1.75rem, 7vw, 3.25rem);
+		background: transparent;
+		box-shadow: none;
 	}
 
-	html[data-theme='dark'] .how-more.how-more--stage {
-		box-shadow:
-			0 0 0 1px rgba(255, 255, 255, 0.08),
-			0 18px 44px rgba(0, 0, 0, 0.28);
-		background: linear-gradient(165deg, hsl(222 14% 12%) 0%, hsl(222 18% 8%) 100%);
-	}
-
-	html[data-theme='light'] .how-more.how-more--stage {
-		box-shadow:
-			0 0 0 1px rgba(0, 0, 0, 0.07),
-			0 18px 44px rgba(0, 0, 0, 0.07);
-	}
-
-	.how-more__bg,
-	.how-more__sweep {
+	.how-more__shell {
 		position: absolute;
 		inset: 0;
 		z-index: 0;
@@ -2438,85 +2436,46 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		border-radius: inherit;
 	}
 
+	html[data-theme='dark'] .how-more__shell {
+		background: linear-gradient(180deg, hsl(222 20% 2.2%) 0%, hsl(222 22% 1.5%) 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5.5rem) rgba(0, 0, 0, 0.55);
+	}
+
+	html[data-theme='light'] .how-more__shell {
+		background: linear-gradient(180deg, #f0eee9 0%, #e8e5df 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
+	}
+
+	.how-more__glow {
+		position: absolute;
+		inset: 10% 9% 8%;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: clamp(0.9rem, 2.8vw, 1.65rem);
+	}
+
+	html[data-theme='dark'] .how-more__glow {
+		background:
+			radial-gradient(ellipse 68% 32% at 50% 16%, rgba(70, 80, 100, 0.16) 0%, transparent 55%),
+			radial-gradient(ellipse 74% 40% at 50% 52%, rgba(55, 62, 78, 0.1) 0%, transparent 58%);
+	}
+
+	html[data-theme='light'] .how-more__glow {
+		background: radial-gradient(ellipse 70% 36% at 50% 22%, rgba(0, 0, 0, 0.02) 0%, transparent 55%);
+	}
+
 	.how-more__inner {
 		position: relative;
 		z-index: 1;
 		overflow: visible;
+		padding: clamp(1.1rem, 3.5vw, 1.85rem) clamp(0.75rem, 2.5vw, 1.15rem) clamp(1.65rem, 4.5vw, 2.45rem);
 	}
 
-	html[data-theme='dark'] .how-more__bg {
-		background:
-			radial-gradient(ellipse 88% 55% at 50% 22%, rgba(245, 176, 65, 0.05) 0%, transparent 52%),
-			radial-gradient(ellipse 92% 62% at 50% 34%, rgba(72, 82, 104, 0.45) 0%, transparent 56%),
-			radial-gradient(ellipse 125% 88% at 50% 108%, rgba(245, 176, 65, 0.04) 0%, transparent 46%);
-		box-shadow: inset 0 0 clamp(3rem, 11vw, 6.5rem) rgba(0, 0, 0, 0.18);
+	.how-more__bg,
+	.how-more__sweep {
+		display: none;
 	}
-
-	html[data-theme='light'] .how-more__bg {
-		background:
-			radial-gradient(ellipse 90% 58% at 50% 38%, rgba(0, 0, 0, 0.045) 0%, transparent 56%),
-			radial-gradient(ellipse 118% 82% at 50% 105%, rgba(200, 145, 55, 0.025) 0%, transparent 42%);
-		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		html[data-theme='dark'] .how-more__sweep {
-			inset: 0;
-			width: auto;
-			height: auto;
-			background-image: linear-gradient(
-				180deg,
-				transparent 0%,
-				transparent 30%,
-				rgba(110, 114, 128, 0.14) 40%,
-				rgba(186, 190, 202, 0.26) 50%,
-				rgba(95, 98, 110, 0.13) 60%,
-				transparent 72%,
-				transparent 100%
-			);
-			background-size: 100% 480%;
-			background-position: 50% 5%;
-			background-repeat: no-repeat;
-			opacity: 0.58;
-			will-change: background-position;
-			animation: how-zero-protected-sweep-vertical 44s ease-in-out infinite;
-		}
-
-		html[data-theme='light'] .how-more__sweep {
-			inset: 0;
-			width: auto;
-			height: auto;
-			background-image: linear-gradient(
-				180deg,
-				transparent 0%,
-				transparent 32%,
-				rgba(88, 92, 104, 0.08) 42%,
-				rgba(148, 152, 166, 0.14) 50%,
-				rgba(78, 82, 94, 0.07) 58%,
-				transparent 70%,
-				transparent 100%
-			);
-			background-size: 100% 440%;
-			background-position: 50% 8%;
-			background-repeat: no-repeat;
-			opacity: 0.38;
-			will-change: background-position;
-			animation: how-zero-protected-sweep-vertical 50s ease-in-out infinite;
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.how-more__sweep {
-			animation: none !important;
-			opacity: 0.1;
-		}
-
-		html[data-theme='light'] .how-more__sweep {
-			opacity: 0.05;
-		}
-	}
-
-	/* Contraste en oscuro: títulos y cuerpo menos “gris sumido”; tarjetas un peldaño más claras que el fondo del stage. */
+Contraste en oscuro: títulos y cuerpo menos “gris sumido”; tarjetas un peldaño más claras que el fondo del stage. */
 	html[data-theme='dark'] .how-more--stage .how-eyebrow {
 		opacity: 0.88;
 		color: rgba(244, 246, 248, 0.92);
@@ -2680,29 +2639,74 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	.how-chapter--bridge {
-		margin: clamp(0.35rem, 1.5vw, 0.85rem) auto clamp(1.35rem, 3.8vw, 2.1rem);
+		margin: clamp(0.85rem, 3vw, 1.65rem) auto clamp(1.65rem, 4.5vw, 2.45rem);
 		max-width: min(56rem, 100%);
-		padding-top: clamp(0.35rem, 1.8vw, 0.75rem);
+		padding: clamp(0.85rem, 2.5vw, 1.35rem) clamp(0.55rem, 2vw, 0.95rem) clamp(1rem, 3vw, 1.55rem);
 		overflow: visible;
+		border-radius: clamp(1.15rem, 3.5vw, 1.85rem);
+		background: transparent;
 	}
 
-	/* Auditoría: firma cian como el teaser de portada, pero sin “segundo escenario” — mismo aire que el stage padre. */
+	html[data-theme='dark'] .how-chapter--bridge {
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+		background: linear-gradient(180deg, rgba(8, 10, 14, 0.55) 0%, rgba(4, 5, 8, 0.35) 100%);
+	}
+
+	/* Auditoría: acto propio (negro + firma cian) — fuera del stage de clips. */
 	.how-chapter--audit {
 		position: relative;
-		margin: clamp(0.75rem, 2.8vw, 1.2rem) auto clamp(1rem, 3.2vw, 1.55rem);
+		margin: clamp(0.75rem, 2.8vw, 1.2rem) auto clamp(1.65rem, 4.5vw, 2.35rem);
 		max-width: min(56rem, 100%);
-		padding: clamp(1.2rem, 3.8vw, 1.85rem) clamp(0.55rem, 2vw, 0.85rem) clamp(0.85rem, 2.8vw, 1.25rem);
-		border-radius: clamp(0.5rem, 1.2vw, 0.75rem);
-		border: 1px solid rgba(100, 196, 255, 0.2);
-		box-shadow: inset 0 1px 0 rgba(100, 196, 255, 0.06);
+		padding: 0;
+		border: none;
+		box-shadow: none;
+		background: transparent;
+		border-radius: clamp(1.75rem, 7vw, 3.25rem);
+		overflow: hidden;
+		isolation: isolate;
 	}
 
-	html[data-theme='dark'] .how-chapter--audit {
-		background: radial-gradient(ellipse 95% 52% at 50% 0%, rgba(100, 196, 255, 0.06) 0%, transparent 48%);
+	.how-audit-chapter--stage .how-audit-chapter__shell {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
 	}
 
-	html[data-theme='light'] .how-chapter--audit {
-		background: radial-gradient(ellipse 95% 48% at 50% 0%, rgba(100, 196, 255, 0.09) 0%, transparent 46%);
+	html[data-theme='dark'] .how-audit-chapter--stage .how-audit-chapter__shell {
+		background: linear-gradient(180deg, hsl(210 28% 3.2%) 0%, hsl(215 32% 2%) 100%);
+		box-shadow:
+			inset 0 0 clamp(2.5rem, 9vw, 5.5rem) rgba(0, 0, 0, 0.5),
+			0 0 0 1px rgba(100, 196, 255, 0.14);
+	}
+
+	html[data-theme='light'] .how-audit-chapter--stage .how-audit-chapter__shell {
+		background: linear-gradient(180deg, #eef4f8 0%, #e6eef4 100%);
+		box-shadow:
+			inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.05),
+			0 0 0 1px rgba(70, 150, 200, 0.22);
+	}
+
+	.how-audit-chapter--stage .how-audit-chapter__glow {
+		position: absolute;
+		inset: 10% 10% 12%;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: clamp(0.9rem, 2.8vw, 1.65rem);
+		background:
+			radial-gradient(ellipse 70% 36% at 50% 12%, rgba(100, 196, 255, 0.12) 0%, transparent 55%),
+			radial-gradient(ellipse 78% 44% at 50% 55%, rgba(70, 120, 160, 0.08) 0%, transparent 58%);
+	}
+
+	html[data-theme='light'] .how-audit-chapter--stage .how-audit-chapter__glow {
+		background: radial-gradient(ellipse 70% 36% at 50% 18%, rgba(100, 196, 255, 0.1) 0%, transparent 55%);
+	}
+
+	.how-audit-chapter--stage .how-audit-chapter__stage-inner {
+		position: relative;
+		z-index: 1;
+		padding: clamp(1.2rem, 3.8vw, 1.85rem) clamp(0.65rem, 2.2vw, 1.05rem) clamp(1.15rem, 3.2vw, 1.65rem);
 	}
 
 	.how-chapter--audit::before {
@@ -2713,6 +2717,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		transform: translateX(-50%);
 		width: min(14rem, 52%);
 		height: 2px;
+		z-index: 2;
 		border-radius: 999px;
 		background: linear-gradient(
 			90deg,
@@ -2736,7 +2741,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		);
 	}
 
-	.how-more--stage .how-eyebrow--audit-kicker {
+	.how-eyebrow--audit-kicker {
 		font-size: clamp(0.78rem, 1.9vw, 0.84rem);
 		font-weight: 700;
 		letter-spacing: 0.14em;
@@ -2744,7 +2749,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		text-shadow: 0 0 26px rgba(100, 196, 255, 0.24);
 	}
 
-	html[data-theme='light'] .how-more--stage .how-eyebrow--audit-kicker {
+	html[data-theme='light'] .how-eyebrow--audit-kicker {
 		color: rgba(42, 108, 148, 0.94);
 		text-shadow: none;
 	}
@@ -3387,38 +3392,49 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 0.45rem 0.85rem;
-		margin: 0 0 clamp(1.25rem, 3vw, 1.85rem);
-		padding: 0 0.35rem;
+		gap: 0.55rem 1.1rem;
+		margin: 0 0 clamp(1.35rem, 3.2vw, 2rem);
+		padding: 0.35rem 0.5rem 0.55rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 	}
 
 	.how-rama-jump__link {
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: clamp(0.72rem, 1.5vw, 0.8rem);
-		letter-spacing: 0.02em;
+		font-size: clamp(0.7rem, 1.45vw, 0.78rem);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
 		text-decoration: none;
-		color: rgba(245, 176, 65, 0.88);
-		border-bottom: 1px solid rgba(245, 176, 65, 0.35);
-		padding-bottom: 0.1rem;
+		color: rgba(190, 200, 214, 0.78);
+		border-bottom: 1px solid transparent;
+		padding-bottom: 0.12rem;
 		transition: color 0.15s ease, border-color 0.15s ease;
 	}
 
 	.how-rama-jump__link:hover {
-		color: #f5b041;
-		border-color: rgba(245, 176, 65, 0.7);
+		color: rgba(245, 176, 65, 0.95);
+		border-bottom-color: rgba(245, 176, 65, 0.45);
 	}
 
 	html[data-theme='light'] .how-rama-jump__link {
+		color: rgba(70, 80, 95, 0.82);
+		border-bottom-color: transparent;
+	}
+
+	html[data-theme='light'] .how-rama-jump__link:hover {
 		color: rgba(175, 118, 32, 0.95);
-		border-color: rgba(175, 118, 32, 0.4);
+		border-bottom-color: rgba(175, 118, 32, 0.4);
+	}
+
+	html[data-theme='light'] .how-rama-jump {
+		border-bottom-color: rgba(0, 0, 0, 0.08);
 	}
 
 	.how-rama {
-		margin: 0 0 clamp(1.65rem, 4vw, 2.45rem);
-		padding: clamp(0.85rem, 2.2vw, 1.25rem) clamp(0.65rem, 2vw, 1rem);
-		border-radius: 0.65rem;
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		background: rgba(0, 0, 0, 0.18);
+		margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
+		padding: clamp(0.75rem, 2vw, 1.1rem) clamp(0.55rem, 1.8vw, 0.9rem);
+		border-radius: clamp(0.85rem, 2.2vw, 1.25rem);
+		border: 1px solid rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.28);
 	}
 
 	html[data-theme='light'] .how-rama {
@@ -4219,8 +4235,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	/* Mismo patrón que el corte de auditoría: marca el acto “microclips” con tono marca (ámbar). */
 	.how-more-act-cut {
-		margin: clamp(2.35rem, 7vw, 3.65rem) auto clamp(1.85rem, 5vw, 2.75rem);
-		padding-top: clamp(0.35rem, 1.5vw, 0.65rem);
+		margin: clamp(1.85rem, 6vh, 3.25rem) auto clamp(1.45rem, 4vw, 2.25rem);
+		padding-top: 0;
 		max-width: min(40rem, 100%);
 		display: flex;
 		flex-direction: column;
