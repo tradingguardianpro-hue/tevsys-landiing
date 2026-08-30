@@ -102,12 +102,12 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Mid-home microclips (29 ago noche):** título · lead (incluye Nasdaq) · **2 enlaces mono** (finde · Empezar de cero) · CTA ámbar. Sin pastilla · sin atajo Nasdaq duplicado.
 - **Guía Desde cero (20 ago 2026):** `/como-funciona#desde-cero` · eyebrow **Condición innegociable** · título *Desde cero, siempre* · lead *Si cargas tevsys con operaciones ya abiertas… empezamos de cero.* · ~57 s · `tevsys-guia-desde-cero.mp4` · micro `#videoclip-pasiva` se mantiene. `?v=20260820b`.
 - **Puesta en marcha (21 ago):** `/como-funciona#puesta-en-marcha` · *Instalar y fijar límites* · enlace primario al minuto de config + instalar. Tras Desde cero / antes de clips.
-- **Actos post-Capital (30 ago 2026):** *Siguiente nivel* → *Las cuatro piezas* → *Mimetiza el panel a tu gusto* (clip negro + hueco **tema claro** debajo) → auditoría cian **sin** placeholder de vídeo interno.
+- **Actos post-Capital (30 ago 2026 · noche cerrada):** *Siguiente nivel* (cáscara negra = Capital/Puesta) → *Las cuatro piezas* (*Cada capa, con detalle*) → *Mimetiza el panel a tu gusto* + **También en tema claro** (`#panel-mimetizado-claro`, ~36 s, publicado) → auditoría cian **sin** placeholder de vídeo interno → *De cero a protegido* **aparcado** → Vigilancia → footer **negro como home**. Handoff: `tevsys-landiing/docs/HANDOFF_SESION_COMO_FUNCIONA_30AGO2026.md` · V12 **(cfSesion30ago)**.
 - **Configurar límites 1 min (20–21 ago):** casa `/configuracion#configurar-limites` · MC-CF-026 · ~1:15 · **Advanced/Pro (semana)** · Essential = guía larga debajo · footer Guías (**21 ago:** minuto bajo Adv/Pro, no Essential) · `?v=20260820c`.
 - **Fin de semana guía (21 ago):** `/configuracion-fin-de-semana` — MP4 2:01 retirado (cara vieja); hueco *Vídeo en preparación* + pasos escritos.
 - **MC-CF-021 II (20 ago):** PROGRAMADO · LUNES + *Puedes reconfigurar las veces que necesites* · `?v=20260820`.
 - **MC-CF-020 (21 ago):** `#videoclip-corrige-errores` · rama Preparar · ~30 s · CORRIGE ERRORES + modal 1 error · `?v=20260821`.
-- **Cómo se siente (21 ago · copy 30 ago):** `#como-se-siente` · *En el gráfico* · *El panel se mimetiza al proteger* · ~**32 s**.
+- **Panel / Cómo se siente (30 ago):** `#como-se-siente` · *Panel* · *Mimetiza el panel a tu gusto* · blurb borde/colores + tres destellos · clip negro ~32 s · debajo `#panel-mimetizado-claro` ~36 s (overlays: también en blanco · gráfico claro · panel mimetizado · compacto).
 - **i18n ES|EN (20 ago, pendiente):** oleada 1 home + Cómo funciona + contacto; selector header; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:

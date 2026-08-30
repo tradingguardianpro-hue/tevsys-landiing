@@ -10,6 +10,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Qué:** `body.page-como-funciona footer` entra en la misma regla de `global.css` (fondo negro + hairline ámbar).
 - **Commit:** `web(tevsys): match como-funciona footer to home black bg`
 
+## Sesión Cómo funciona 30 ago — handoff cerrado (noche)
+
+- **Documento:** `docs/HANDOFF_SESION_COMO_FUNCIONA_30AGO2026.md` — orden de página, copy quitado/movido, panel claro, footer, aparcados, puente al barrido (cero código).
+- **Hub TGP:** V12 **(cfSesion30ago)**.
+- **Siguiente (motor):** *Fase D cierre pendiente* — no mezclar con cola web/Market.
+
 ## Cómo funciona — panel mimetizado tema claro publicado (30 ago 2026)
 
 - **Qué:** `tevsys-mc-panel-mimetizado-claro-30s.mp4` (~36 s) + poster bajo el clip negro. `#panel-mimetizado-claro`. Caja clara tipo Precisión Nasdaq.
