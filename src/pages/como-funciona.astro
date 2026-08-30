@@ -2448,20 +2448,24 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	.how-more__glow {
 		position: absolute;
-		inset: 10% 9% 8%;
+		inset: 0;
 		z-index: 0;
 		pointer-events: none;
-		border-radius: clamp(0.9rem, 2.8vw, 1.65rem);
+		border-radius: inherit;
 	}
 
+	/* Halo cabecera — misma familia Capital / Puesta / Desde cero (luz arriba, lados apagados). */
 	html[data-theme='dark'] .how-more__glow {
 		background:
-			radial-gradient(ellipse 68% 32% at 50% 16%, rgba(70, 80, 100, 0.16) 0%, transparent 55%),
-			radial-gradient(ellipse 74% 40% at 50% 52%, rgba(55, 62, 78, 0.1) 0%, transparent 58%);
+			radial-gradient(ellipse 62% 26% at 50% 8%, rgba(88, 98, 118, 0.2) 0%, transparent 52%),
+			radial-gradient(ellipse 72% 38% at 50% 20%, rgba(42, 48, 62, 0.26) 0%, transparent 58%),
+			radial-gradient(ellipse 88% 36% at 50% 72%, rgba(28, 32, 42, 0.08) 0%, transparent 55%);
 	}
 
 	html[data-theme='light'] .how-more__glow {
-		background: radial-gradient(ellipse 70% 36% at 50% 22%, rgba(0, 0, 0, 0.02) 0%, transparent 55%);
+		background:
+			radial-gradient(ellipse 60% 26% at 50% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+			radial-gradient(ellipse 70% 34% at 50% 22%, rgba(0, 0, 0, 0.02) 0%, transparent 55%);
 	}
 
 	.how-more__inner {
@@ -3392,9 +3396,10 @@ Contraste en oscuro: títulos y cuerpo menos “gris sumido”; tarjetas un peld
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 0.55rem 1.1rem;
+		align-items: center;
+		gap: 0.35rem 0;
 		margin: 0 0 clamp(1.35rem, 3.2vw, 2rem);
-		padding: 0.35rem 0.5rem 0.55rem;
+		padding: 0.45rem 0.5rem 0.65rem;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 	}
 
@@ -3404,25 +3409,36 @@ Contraste en oscuro: títulos y cuerpo menos “gris sumido”; tarjetas un peld
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		text-decoration: none;
-		color: rgba(190, 200, 214, 0.78);
-		border-bottom: 1px solid transparent;
-		padding-bottom: 0.12rem;
-		transition: color 0.15s ease, border-color 0.15s ease;
+		color: rgba(210, 218, 230, 0.88);
+		padding: 0.2rem 0.15rem;
+		border-bottom: none;
+		transition: color 0.15s ease;
+	}
+
+	/* Separador · entre ramas (clicables sin subrayar). */
+	.how-rama-jump__link + .how-rama-jump__link::before {
+		content: '·';
+		display: inline-block;
+		margin: 0 0.85rem 0 0.7rem;
+		color: rgba(160, 170, 185, 0.55);
+		font-weight: 400;
+		pointer-events: none;
 	}
 
 	.how-rama-jump__link:hover {
-		color: rgba(245, 176, 65, 0.95);
-		border-bottom-color: rgba(245, 176, 65, 0.45);
+		color: rgba(245, 176, 65, 0.98);
 	}
 
 	html[data-theme='light'] .how-rama-jump__link {
-		color: rgba(70, 80, 95, 0.82);
-		border-bottom-color: transparent;
+		color: rgba(55, 65, 80, 0.9);
+	}
+
+	html[data-theme='light'] .how-rama-jump__link + .how-rama-jump__link::before {
+		color: rgba(100, 110, 125, 0.45);
 	}
 
 	html[data-theme='light'] .how-rama-jump__link:hover {
 		color: rgba(175, 118, 32, 0.95);
-		border-bottom-color: rgba(175, 118, 32, 0.4);
 	}
 
 	html[data-theme='light'] .how-rama-jump {

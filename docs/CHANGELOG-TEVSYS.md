@@ -7,6 +7,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## Cómo funciona — cohesión Siguiente nivel + actos (30 ago 2026)
 
 - **Qué:** *Siguiente nivel* pasa a **cáscara negra** (familia Capital/Puesta); corte *Escenarios en práctica*; saltos de rama más sobrios; **cuatro piezas** y **auditoría** fuera del mega-bloque; auditoría = acto propio negro+cian.
+- **Ajuste:** halo cabecera tipo Capital + saltos separados con **·** (sin subrayar).
 - **Por qué:** vista de pájaro mostraba “otra web” al llegar a clips.
 - **Commit:** `web(tevsys): unify como-funciona clips stage with black shell acts`
 
