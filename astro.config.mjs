@@ -12,5 +12,6 @@ export default defineConfig({
   redirects: {
     '/que-es': '/', // La home ya explica qué es tevsys
     '/configuracion-semana': '/configuracion-fin-de-semana',
+    '/features/evidence': '/features/evidencia', // hub EN Market pegó “evidence”; canónica ES
   },
 });

@@ -20,6 +20,11 @@
       "source": "/configuracion-semana",
       "destination": "/configuracion-fin-de-semana",
       "permanent": true
+    },
+    {
+      "source": "/features/evidence",
+      "destination": "/features/evidencia",
+      "permanent": true
     }
   ]
 }
