@@ -4,11 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
-## Cómo funciona — Las cuatro piezas = cáscara negra (30 ago 2026)
+## Cómo funciona — Las cuatro piezas = misma cáscara que Siguiente nivel (30 ago 2026)
 
-- **Diagnóstico prod:** el deploy tenía el corte *Las cuatro piezas* pero **sin** markup `how-bridge-chapter__shell` / `__inner` (clips sí tenía cáscara). Por eso no se veía el rectángulo.
-- **Fix:** fondo negro + borde sutil en el **propio** `.how-chapter--bridge` + halo en shell + más padding. HTML local ya lleva shell/inner — **hay que pushear este archivo**.
-- **Commit:** `web(tevsys): fix four-pieces black shell visible on section`
+- **Qué:** el envoltorio de las 4 cards usa **las mismas clases** que clips (`how-more how-more--stage` + `how-more__shell` / `__glow` / `__inner`) → mismo rectángulo negro + halo.
+- **También:** reparado comentario CSS roto tras el bloque de clips (podía tumbar estilos siguientes).
+- **Ancla:** `#cuatro-piezas`
+- **Commit:** `web(tevsys): wrap four pieces in same black shell as clips stage`
 
 ## Cómo funciona — cohesión Siguiente nivel + actos (30 ago 2026)
 
