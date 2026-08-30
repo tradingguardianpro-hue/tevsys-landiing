@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — panel mimetizado en cáscara negra (30 ago 2026)
+
+- **Qué:** `#como-se-siente` envuelto como clips / cuatro piezas (`how-more--stage` + shell/glow/inner + halo).
+- **Commit:** `web(tevsys): wrap panel mimic block in black shell stage`
+
 ## Cómo funciona — panel mimetizado copy honesta (30 ago 2026)
 
 - **Título:** *Mimetiza el panel a tu gusto* (no “al proteger”).

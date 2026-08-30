@@ -792,10 +792,13 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			</div>
 				</section>
 
-				<section
-					class="how-puesta-marcha how-puesta-marcha--panel how-puesta-marcha--siente"
-					id={comoSeSienteLegend.id}
-					aria-labelledby="how-como-se-siente-title">
+		<section
+			class="how-more how-more--stage how-puesta-marcha how-puesta-marcha--panel how-puesta-marcha--siente"
+			id={comoSeSienteLegend.id}
+			aria-labelledby="how-como-se-siente-title">
+			<div class="how-more__shell" aria-hidden="true"></div>
+			<div class="how-more__glow" aria-hidden="true"></div>
+			<div class="how-more__inner how-puesta-marcha--siente__inner">
 					<header class="how-section-head">
 						<p class="how-eyebrow how-eyebrow--center">{comoSeSienteLegend.eyebrow}</p>
 						<h2 id="how-como-se-siente-title" class="how-puesta-marcha__lead">
@@ -859,6 +862,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							</div>
 						)
 					}
+			</div>
 				</section>
 
 		<p class="how-more-audit-cut">
@@ -2358,15 +2362,31 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		font-size: 0.92em;
 	}
 
-	/* Cómo se siente — tras 4 piezas / antes auditoría (misma cáscara, hueco vídeo). */
-	.how-puesta-marcha--siente {
+	/* Panel mimetizado — misma cáscara negra que clips / cuatro piezas. */
+	.how-puesta-marcha--siente.how-more--stage {
+		max-width: min(56rem, 100%);
+		margin: clamp(0.85rem, 3vw, 1.65rem) auto clamp(1.65rem, 4.5vw, 2.45rem);
+	}
+
+	.how-puesta-marcha--siente__inner {
 		max-width: min(46rem, 100%);
-		margin: clamp(1.5rem, 4vh, 2.35rem) auto clamp(1.35rem, 3.5vh, 2.1rem);
+		margin: 0 auto;
+		text-align: center;
 	}
 
 	.how-puesta-marcha--siente .how-puesta-marcha__siente-blurb {
 		margin: clamp(0.55rem, 1.8vw, 0.85rem) auto 0;
 		max-width: 36rem;
+	}
+
+	.how-puesta-marcha--siente .how-puesta-marcha__links {
+		justify-content: center;
+	}
+
+	.how-puesta-marcha--siente .how-siente-embed,
+	.how-puesta-marcha--siente .how-siente-placeholder {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.how-puesta-marcha__link--pending {
