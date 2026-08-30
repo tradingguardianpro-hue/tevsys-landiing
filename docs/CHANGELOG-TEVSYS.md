@@ -6,8 +6,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Cómo funciona — Las cuatro piezas = cáscara negra (30 ago 2026)
 
-- **Qué:** bloque *Las cuatro piezas* / puente micros → misma familia que clips y Capital (cáscara + halo cabecera).
-- **Commit:** `web(tevsys): elevate four-pieces bridge to black shell act`
+- **Diagnóstico prod:** el deploy tenía el corte *Las cuatro piezas* pero **sin** markup `how-bridge-chapter__shell` / `__inner` (clips sí tenía cáscara). Por eso no se veía el rectángulo.
+- **Fix:** fondo negro + borde sutil en el **propio** `.how-chapter--bridge` + halo en shell + más padding. HTML local ya lleva shell/inner — **hay que pushear este archivo**.
+- **Commit:** `web(tevsys): fix four-pieces black shell visible on section`
 
 ## Cómo funciona — cohesión Siguiente nivel + actos (30 ago 2026)
 
