@@ -44,6 +44,21 @@ const seo = {
 			</p>
 		</section>
 
+		<section id="precision-residual" class="precision-residual" aria-labelledby="precision-residual-title">
+			<h2 id="precision-residual-title">Cierre al límite y exposición residual</h2>
+			<p>
+				Al cruzar tu límite, tevsys envía el cierre y activa el STOP: quedas protegido y no puedes ampliar el
+				margen de maniobra. En la mayoría de operativas documentadas la cuenta queda sin posiciones abiertas.
+			</p>
+			<p>
+				Si en un caso excepcional siguen abiertas — por la ejecución del bróker, no por tu límite — tevsys
+				reintenta cerrar automáticamente <strong>hasta 45 segundos</strong>, con pausas que van aumentando.
+				Mientras reintenta, no te bombardea con mensajes. Solo si transcurrido ese plazo aún queda exposición,
+				te muestra un aviso en pantalla (<em>Cierre incompleto</em>): qué ha pasado, que el STOP sigue activo y
+				que puedes cerrar a mano si hace falta. Una sola vez; no en bucle.
+			</p>
+		</section>
+
 		<section id="precision-demo" class="feature-demo feature-demo--hero">
 			<h2>Demo rápida — Cuenta 100k</h2>
 			<p class="feature-demo-hook">
@@ -72,6 +87,7 @@ const seo = {
 		<section class="feature-proof">
 			<h2>Qué puedes comprobar</h2>
 			<ul>
+				<li><a class="evidence-link" href="#precision-residual">Exposición residual — reintentos hasta 45 s y aviso único.</a></li>
 				<li><a class="evidence-link" href="#precision-demo">Cierre ceñido sobre límite (demo 100k · GER40).</a></li>
 				<li><a class="evidence-link" href="#precision-nasdaq">Misma lógica en otro activo (NASDAQ).</a></li>
 				<li><a class="evidence-link" href="#precision-stats">Mismo criterio con cuenta más pequeña (+ capturas paso a paso).</a></li>
@@ -381,6 +397,43 @@ const seo = {
 		font-size: 0.96rem;
 		line-height: 1.55;
 		opacity: 0.88;
+	}
+
+	.precision-residual {
+		max-width: 72ch;
+		margin: 0 0 clamp(1.35rem, 3vw, 2rem);
+		padding: clamp(0.85rem, 2vw, 1.15rem) clamp(1rem, 2.5vw, 1.25rem);
+		border-radius: 0.55rem;
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		background: rgba(245, 176, 65, 0.05);
+	}
+
+	html[data-theme='light'] .precision-residual {
+		border-color: rgba(120, 90, 40, 0.2);
+		background: rgba(120, 90, 40, 0.06);
+	}
+
+	.precision-residual h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.12rem;
+		font-weight: 650;
+		line-height: 1.35;
+	}
+
+	.precision-residual p {
+		margin: 0 0 0.75rem;
+		font-size: 0.96rem;
+		line-height: 1.58;
+		opacity: 0.9;
+	}
+
+	.precision-residual p:last-child {
+		margin-bottom: 0;
+	}
+
+	.precision-residual strong {
+		font-weight: 650;
+		color: var(--theme-text, inherit);
 	}
 
 	.precision-recapture-note {

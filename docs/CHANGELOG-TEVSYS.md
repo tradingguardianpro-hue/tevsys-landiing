@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Precisión — bloque exposición residual (1 sep 2026)
+
+- **Qué:** sección `#precision-residual` bajo hero — cierre al límite, reintentos **hasta 45 s** (silencio en UI), aviso único *Cierre incompleto*; sin vídeo (claim honesto gestión del residuo).
+- **Archivo:** `src/pages/features/precision.astro` · enlace en lista *Qué puedes comprobar*.
+- **Handoff motor:** `docs/HANDOFF_CIERRE_PENDIENTE_POST_STOP_30AGO2026.md` §6.
+- **Commit:** `web(tevsys): precision page copy for residual close retries up to 45s`
+
 ## HyperClose — collage semáforos remake (31 ago 2026)
 
 - **Qué:** CAP-06b panel Infinox del día + modales 1·2·3 actuales → web + repo Market.
