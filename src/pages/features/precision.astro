@@ -47,15 +47,22 @@ const seo = {
 		<section id="precision-residual" class="precision-residual" aria-labelledby="precision-residual-title">
 			<h2 id="precision-residual-title">Cierre al límite y exposición residual</h2>
 			<p>
-				Al cruzar tu límite, tevsys envía el cierre y activa el STOP: quedas protegido y no puedes ampliar el
-				margen de maniobra. En la mayoría de operativas documentadas la cuenta queda sin posiciones abiertas.
+				Cuando cruzas tu límite, tevsys activa el cierre y el STOP de inmediato: quedas protegido y no puedes
+				ampliar el margen de maniobra.
 			</p>
 			<p>
-				Si en un caso excepcional siguen abiertas — por la ejecución del bróker, no por tu límite — tevsys
-				reintenta cerrar automáticamente <strong>hasta 45 segundos</strong>, con pausas que van aumentando.
-				Mientras reintenta, no te bombardea con mensajes. Solo si transcurrido ese plazo aún queda exposición,
-				te muestra un aviso en pantalla (<em>Cierre incompleto</em>): qué ha pasado, que el STOP sigue activo y
-				que puedes cerrar a mano si hace falta. Una sola vez; no en bucle.
+				En la mayoría de las operativas documentadas, el cierre se ejecuta y la cuenta queda sin posiciones
+				abiertas.
+			</p>
+			<p>
+				Excepcionalmente, el bróker podría no completar el cierre a la primera. En ese caso, tevsys reintenta
+				de forma automática y acotada durante un máximo de 45 segundos, con pausas progresivas. Mientras tanto,
+				no te satura con mensajes: actúa en silencio.
+			</p>
+			<p>
+				Solo si pasado ese plazo aún queda exposición, verás un único aviso en pantalla: <em>Cierre incompleto</em>.
+				Te explicará qué ha ocurrido, que el STOP sigue activo y que puedes cerrar manualmente si lo consideras.
+				El aviso no se repite en bucle.
 			</p>
 		</section>
 
