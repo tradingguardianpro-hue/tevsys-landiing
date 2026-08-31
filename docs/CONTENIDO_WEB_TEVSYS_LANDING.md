@@ -49,7 +49,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Nota geopolítica (−0,39 %):** línea suelta bajo evidencia — no mezclar con card contención 489.
 - **Card contención:** píldora *Caso extremo documentado* · barrido ~111 ms · CTA Evidencia.
 - **Manifiesto:** caja visible (misma franja que otras features).
-- **Exposición residual (1 sep 2026):** `#precision-residual` bajo hero — STOP · reintentos **hasta 45 s** (silencio) · aviso único *Cierre incompleto*; sin vídeo; claim gestión del residuo (`HANDOFF_CIERRE_PENDIENTE` §6 en repo TGP).
+- **Exposición residual (1 sep 2026):** `#precision-residual` bajo hero — diseño del flujo (STOP · reintentos **máx. 45 s** · aviso único); sin % ni «mayoría»; sin vídeo.
 
 ### Micropágina HyperClose (`/features/hyperclose`)
 - **Hook:** `Cierre en milisegundos.` + `Hasta la siguiente ventana (día o semana), sin atajos.`

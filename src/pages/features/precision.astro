@@ -51,13 +51,9 @@ const seo = {
 				ampliar el margen de maniobra.
 			</p>
 			<p>
-				En la mayoría de las operativas documentadas, el cierre se ejecuta y la cuenta queda sin posiciones
-				abiertas.
-			</p>
-			<p>
-				Excepcionalmente, el bróker podría no completar el cierre a la primera. En ese caso, tevsys reintenta
-				de forma automática y acotada durante un máximo de 45 segundos, con pausas progresivas. Mientras tanto,
-				no te satura con mensajes: actúa en silencio.
+				tevsys envía la orden de cierre para dejar la cuenta sin posiciones abiertas. Si el bróker no la ejecuta
+				a la primera, reintenta de forma automática y acotada durante un máximo de 45 segundos, con pausas
+				progresivas. Mientras tanto, actúa en silencio.
 			</p>
 			<p>
 				Solo si pasado ese plazo aún queda exposición, verás un único aviso en pantalla: <em>Cierre incompleto</em>.

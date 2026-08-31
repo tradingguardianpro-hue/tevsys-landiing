@@ -6,10 +6,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Precisión — bloque exposición residual (1 sep 2026)
 
-- **Qué:** sección `#precision-residual` bajo hero — copy revisado (4 párrafos): STOP inmediato · mayoría operativas sin posiciones · reintentos **máx. 45 s** en silencio · aviso único *Cierre incompleto*.
+- **Qué:** sección `#precision-residual` — **opción A:** flujo de diseño (STOP · orden cierre · reintentos **máx. 45 s** · aviso único); sin «mayoría» ni claim estadístico.
 - **Archivo:** `src/pages/features/precision.astro` · enlace en lista *Qué puedes comprobar*.
 - **Handoff motor:** `docs/HANDOFF_CIERRE_PENDIENTE_POST_STOP_30AGO2026.md` §6.
-- **Commit:** `web(tevsys): refine precision residual close copy (45s, single notice)`
+- **Commit:** `web(tevsys): precision residual copy — design flow not majority claim`
 
 ## HyperClose — collage semáforos remake (31 ago 2026)
 
