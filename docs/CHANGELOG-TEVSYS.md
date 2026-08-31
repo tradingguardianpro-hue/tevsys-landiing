@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## HyperClose — collage semáforos remake (31 ago 2026)
+
+- **Qué:** CAP-06b panel Infinox del día + modales 1·2·3 actuales → web + repo Market.
+- **Archivo web:** `public/images/evidence/hyperclose-semaforos-collage-panel-modales.png`
+- **Seller:** Escritorio / `CAP-06_hyperclose-semaforos_1920x1080.png` (Gabi sube).
+- **Commit:** `web(tevsys): remake HyperClose semaphore collage with current panel`
+
 ## Cómo funciona — footer = home (negro, no pizarra) (30 ago 2026)
 
 - **Problema:** `/como-funciona` usaba `surface-1` (losa pizarra); home y Familia A ya forzaban `--theme-bg`.
