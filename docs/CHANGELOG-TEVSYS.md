@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — sub Presentación sin «la gente habla» (3 sep 2026)
+
+- **Qué:** subhero Presentación → *Te enseñamos el producto en marcha — sesión real, precisión y evidencia para contrastar.* (antes: *…y por qué la gente habla de precisión y evidencia*).
+- **Por qué:** menos marketing social; alineado a sesión real + contrastar.
+- **Archivo:** `src/pages/como-funciona.astro`.
+- **Commit:** `web(tevsys): como-funciona presentation sub — contrast not buzz`
+
 ## Home — card Precisión: medición (no ajuste) (2–3 sep 2026)
 
 - **Qué:** acento card Precisión — de *Ajuste a tiempo real* (volatilidad, spread, slippage, comisiones) a *Medición en tiempo real*: el resultado real de la cuenta — costes incluidos. *(Afinado 3 sep: sin listar spread/swap en home.)*
