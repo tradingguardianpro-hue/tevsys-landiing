@@ -6,7 +6,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Cómo funciona — sub Presentación sin «la gente habla» (3 sep 2026)
 
-- **Qué:** subhero Presentación → *Te enseñamos el producto en marcha — sesión real, precisión y evidencia para contrastar.* (antes: *…y por qué la gente habla de precisión y evidencia*).
+- **Qué:** subhero Presentación → *Te enseñamos el producto en marcha — sesión real, precisión y evidencia.* + línea *Contrasta tú mismo.* (antes: *…y por qué la gente habla…*; sin duplicar «contrastar» arriba).
 - **Por qué:** menos marketing social; alineado a sesión real + contrastar.
 - **Archivo:** `src/pages/como-funciona.astro`.
 - **Commit:** `web(tevsys): como-funciona presentation sub — contrast not buzz`

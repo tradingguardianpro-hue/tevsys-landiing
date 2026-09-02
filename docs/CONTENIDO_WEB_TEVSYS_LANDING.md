@@ -164,7 +164,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 ### Web Nasdaq #6263709 — estado en pantalla (22 ago · cerrado salvo YT)
 
-- **Presentación:** H2 *Cuatro minutos de sesión real en MT5* · sub *Te enseñamos el producto en marcha — sesión real, precisión y evidencia para contrastar.* · *Contrasta tú mismo.* *(3 sep 2026: fuera «por qué la gente habla…».)*
+- **Presentación:** H2 *Cuatro minutos de sesión real en MT5* · sub *Te enseñamos el producto en marcha — sesión real, precisión y evidencia.* · *Contrasta tú mismo.* *(3 sep 2026: fuera «por qué la gente habla…»; sin repetir «contrastar» arriba.)*
 - **Bloque Evidencia:** título *~3:35* · blurb corto · atribución 1 línea · MP4 `?v=20260822` · poster sesión.
 - **Home CTA:** `?play=1` → sin poster + autoplay · Cómo funciona directo → poster hasta play.
 - **Transparencia:** timeline en pasos · atribución única (píldoras) · 3 fuentes en tarjetas · sin bróker en copy.
