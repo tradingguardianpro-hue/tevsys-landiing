@@ -4,10 +4,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
-## Home — card Precisión: medición (no ajuste) (2 sep 2026)
+## Home — card Precisión: medición (no ajuste) (2–3 sep 2026)
 
-- **Qué:** acento card Precisión — de *Ajuste a tiempo real* (volatilidad, spread, slippage, comisiones) a *Medición en tiempo real*: patrimonio de la cuenta — spread, comisiones y swap ya dentro.
-- **Por qué:** PrecisionAdjuster existe pero no se arranca en V11; «ajuste» sugería corrección preventiva del umbral. La precisión real es medición sobre capital + costes ya dentro.
+- **Qué:** acento card Precisión — de *Ajuste a tiempo real* (volatilidad, spread, slippage, comisiones) a *Medición en tiempo real*: el resultado real de la cuenta — costes incluidos. *(Afinado 3 sep: sin listar spread/swap en home.)*
+- **Por qué:** PrecisionAdjuster existe pero no se arranca en V11; «ajuste» sugería corrección preventiva del umbral. La precisión real es medición sobre el resultado de cuenta + costes ya dentro.
 - **Archivo:** `src/pages/index.astro` · espejos `CONTENIDO_WEB_TEVSYS_LANDING.md` (landing + TGP).
 - **No tocado:** EA · `/features/precision` (slippage = atribución) · pack Juan.
 - **Commit:** `web(tevsys): card precision — medicion en tiempo real sobre capital real`

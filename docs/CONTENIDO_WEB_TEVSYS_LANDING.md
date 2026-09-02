@@ -263,7 +263,7 @@ Ver handoff hero.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto (**2 sep 2026):** ámbar **`114 operativas documentadas`** · error medio ≈ 0,06 % en condiciones normales. + **`Medición en tiempo real`**: patrimonio de la cuenta — spread, comisiones y swap ya dentro. + `También hay casos extremos documentados — fuera de esa media.` *(Antes: «Ajuste a tiempo real» + volatilidad/slippage — incorrecto: PrecisionAdjuster no está activo en V11.)*
+- Texto (**3 sep 2026):** ámbar **`114 operativas documentadas`** · error medio ≈ 0,06 % en condiciones normales. + **`Medición en tiempo real`**: el resultado real de la cuenta — costes incluidos. + `También hay casos extremos documentados — fuera de esa media.` *(Antes: «Ajuste…» / listado spread·swap — PrecisionAdjuster no activo; copy afinado 3 sep.)*
 - **Títulos cards (jun 2026):** Inter bold — prueba IBM Plex Mono revertida (acuerdo: mono solo metadatos/puente, no titulares grid).
 
 #### 2) HyperClose
