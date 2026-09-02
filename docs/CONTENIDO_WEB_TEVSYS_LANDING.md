@@ -114,10 +114,10 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:
   - **MC-CF-021** `#videoclip-programado-lunes` (rama 1): `¿Cómo dejas la protección lista para el lunes?` · `➜ GUARDAR PARA EL LUNES` · `➜ Confirma tus límites` · `➜ PROGRAMADO · LUNES — queda fijado` + `🡰 El engranaje pasa a teal`
   - **MC-CF-020** `#videoclip-corrige-errores` (rama 1, 21 ago): `¿Te equivocaste en un límite?` · `➜ CORRIGE ERRORES` · `tevsys te dice qué arreglar` · `Corriges — listo para proteger`
-  - **MC-CF-001** `#videoclip-off` (rama 2, ~22 s, **II**): `¿Qué pasa si operas un día que marcaste OFF?` · `DÍA OFF · PROTEGIDO` · `Cada intento se cierra al instante y queda trazado.` · `Tres avisos. El flotante queda como prueba` *(export sin `➜`)*
+  - **MC-CF-025** `#videoclip-limite-hyperclose` (rama 2, ~34,5 s) · **1.º en web (2 sep):** `¿Qué pasa si insistes después de alcanzar tu límite?` · `➜ Límite de ganancia alcanzado` · `🡰 STOP` · `Intentas abrir otra vez` · `Los siguientes intentos quedan trazados.` Commit: `web(tevsys): publish limite-hyperclose…` · orden: `web(tevsys): put limite-hyperclose before dia-off in rama protegido`.
+  - **MC-CF-001** `#videoclip-off` (rama 2, ~22 s, **II**) · **2.º en web:** `¿Qué pasa si operas un día que marcaste OFF?` · `DÍA OFF · PROTEGIDO` · `Cada intento se cierra al instante y queda trazado.` · `Tres avisos. El flotante queda como prueba` *(export sin `➜`)* · Commit: `web(tevsys): publish dia-off microclip on como-funciona`.
   - **MC-CF-023** `#videoclip-inputs-sml-carry` (rama 3): `¿Qué pasa si cambias un límite ya protegido (con SML activo)?` · `➜ Panel: SML ACTIVO` · `➜ Inputs: −3 % → −2,5 %` · `➜ Inputs ignorados — el panel muestra lo pactado`
-  Archivos: `public/videos/como-funciona/tevsys-mc-*-30s.mp4` + `*-poster.jpg`. Commit: `web(tevsys): publish dia-off microclip on como-funciona`.
-- **MC-CF-025 (18 ago):** `#videoclip-limite-hyperclose` · rama 2 · ~34,5 s · `tevsys-mc-limite-hyperclose-30s.mp4`. Overlays: `¿Qué pasa si insistes después de alcanzar tu límite?` · `➜ Límite de ganancia alcanzado` · `🡰 STOP` · `Intentas abrir otra vez` (**typewriter cierra; no recortado**) · `Los siguientes intentos quedan trazados.` Commit: `web(tevsys): publish limite-hyperclose microclip on como-funciona`.
+  Archivos: `public/videos/como-funciona/tevsys-mc-*-30s.mp4` + `*-poster.jpg`.
 - **3.er clip de una rama (18 ago, criterio — sin código):** no reservar hueco ni frase “próximo”. Cuando haya MP4: misma tarjeta, **2 columnas** (tercero abajo-izquierda), no tres reproductores en una fila. Candidato rama 2 = MC-CF-003. Catálogo TGP § *Rejilla — 3.er clip* · V12 **(ramaGrid)**.
 - **Cola 17 ago (noche):** Nasdaq ~3:53 = P0 si hay sesión (overlays no reabrir; colgar y retocar). Micros: no muchos. Siguiente por rama = **003 / 022** (020 ✅). Fuente: catálogo TGP § *Cola 17 ago* · V12 **(videoCola)**.
 - **Ruta histórica CTA 5 min (22 abr 2026):** `/go/evidencia-5min` → HyperClose (sigue útil analytics / deep links).
@@ -255,7 +255,7 @@ Ver handoff hero.
 
 ### Cards (4)
 - **UX clicable (Mar 2026):** Flecha "→" esquina inferior derecha, hover marcado (borde amarillo, sombra, elevación). Opción C híbrido.
-- **Diseño abr 2026 (confirmado en código):** Inter en la sección; bloque de texto con gris oscuro (~9% luminosidad); zona ilustración con fondo `var(--theme-bg)`; tipografía cuerpo reforzada (peso/color); card 1 puede servirse solo en PNG mientras se regenera WebP. **19 abr 2026:** card 1 (Precisión) — **engranajes + esfera**; **`card-1-input.png?v=8`**; card 2 (HyperClose) — **candado cerrado**; **`card-2-hyperclose.png?v=9`**; **acentos de lectura** `.feature-card__value-accent` (Precisión: **Ajuste a tiempo real**; HyperClose: no poder seguir; SML: mín. 75 % protegido). Detalle: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
+- **Diseño abr 2026 (confirmado en código):** Inter en la sección; bloque de texto con gris oscuro (~9% luminosidad); zona ilustración con fondo `var(--theme-bg)`; tipografía cuerpo reforzada (peso/color); card 1 puede servirse solo en PNG mientras se regenera WebP. **19 abr 2026:** card 1 (Precisión) — **engranajes + esfera**; **`card-1-input.png?v=8`**; card 2 (HyperClose) — **candado cerrado**; **`card-2-hyperclose.png?v=9`**; **acentos de lectura** `.feature-card__value-accent` (Precisión: **Medición en tiempo real** — 2 sep 2026; HyperClose: no poder seguir; SML: mín. 75 % protegido). Detalle: `HOME_HERO_CARDS_ITERACION_ABR2026.md`.
 - **CTAs demo (19 abr 2026):** mismas reglas globales para botones demo en hero, features, precios y planes (Inter, padding, hover) — `global.css`; ver `CHANGELOG-TEVSYS.md`.
 - **Tema oscuro — tipografía global (19 abr 2026):** en `[data-theme='dark']`, cuerpo y títulos de micropáginas usan **Inter** vía `theme.css` (antes Lato + Roboto Serif en variables de tema).
 - **Micropáginas — respiro (19 abr 2026):** espaciado bajo `.feature-hero` unificado en `global.css` (mismo criterio en todas las guías).
@@ -263,7 +263,7 @@ Ver handoff hero.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto (**22 ago 2026):** ámbar **`114 operativas documentadas`** · error medio ≈ 0,06 % en condiciones normales. + **`Ajuste a tiempo real`**: volatilidad, spread, slippage y comisiones. + `También hay casos extremos documentados — fuera de esa media.`
+- Texto (**2 sep 2026):** ámbar **`114 operativas documentadas`** · error medio ≈ 0,06 % en condiciones normales. + **`Medición en tiempo real`**: patrimonio de la cuenta — spread, comisiones y swap ya dentro. + `También hay casos extremos documentados — fuera de esa media.` *(Antes: «Ajuste a tiempo real» + volatilidad/slippage — incorrecto: PrecisionAdjuster no está activo en V11.)*
 - **Títulos cards (jun 2026):** Inter bold — prueba IBM Plex Mono revertida (acuerdo: mono solo metadatos/puente, no titulares grid).
 
 #### 2) HyperClose

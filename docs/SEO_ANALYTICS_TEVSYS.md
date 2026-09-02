@@ -43,11 +43,7 @@ Documento técnico para desarrolladores e ingenieros.
 
 ### Integración
 - **Paquete:** `@vercel/analytics` (dependencia en `package.json`)
-- **Ubicación:** `src/layouts/Base.astro`, script antes de `</body>`:
-  ```js
-  import { inject } from '@vercel/analytics';
-  inject();
-  ```
+- **Ubicación:** `src/layouts/Base.astro` (y rutas `/go/*`), script antes de `</body>` — ver §3.1 opt-out (`beforeSend` + `va-disable`).
 
 ### Activación
 1. Vercel dashboard → proyecto tevsys-landiing
@@ -81,8 +77,18 @@ Gratis en plan Hobby.
 | # | Qué | Para qué |
 |---|-----|----------|
 | **1** | **Línea base** — métricas interpretables solo desde **16 jun 2026** | Pasado contaminado; no usar top pages / países del mes previo como embudo |
-| **2** | **Opt-out fundador** — ✅ **24 jul 2026** — `beforeSend` en `Base.astro` (+ redirect evidencia) + `localStorage va-disable` en PC y móvil | Tus visitas **dejan de contarse** hacia delante |
+| **2** | **Opt-out fundador** — código ✅ **24 jul 2026** · **activación manual** ✅ PC **2 sep 2026** · ☐ móvil (pendiente fundador) | Tus visitas **dejan de contarse** en cada navegador **solo tras** `localStorage va-disable` |
 | **3** | **QA en preview** — diseño en `*.vercel.app`; `www.tevsys.io` solo tráfico real o con opt-out | Menos ruido mientras revisas |
+
+**Línea base interpretación (actualizada 2 sep 2026):**
+
+| Desde | Qué medir |
+|-------|-----------|
+| **16 jun 2026** | No usar embudo del mes previo (histórico muy contaminado por QA fundador). |
+| **2 sep 2026** | **Tráfico externo “limpio” de fundador en PC** — desde activación `va-disable` en ese navegador. Capturas Vercel **anteriores a esta fecha en PC** incluyen visitas del fundador (flag estaba en `null`). |
+| **Por dispositivo** | Móvil / otro navegador: línea base = día en que se active `va-disable` allí. Incógnito **sin** flag siempre cuenta. |
+
+**Retomar:** *«analytics va-disable»* · *«línea base tráfico 2 sep»*.
 
 ---
 
@@ -113,6 +119,82 @@ localStorage.setItem('va-disable', '1');
 
 **Commit:** `web(tevsys): analytics opt-out va-disable para QA fundador`
 
+---
+
+#### Activación confirmada — PC 2 sep 2026 (chat fundador + IA)
+
+**No es filtro por IP.** Vercel Hobby no excluye IPs en dashboard. El mecanismo es **`localStorage` por navegador** (`va-disable`).
+
+**Hecho en sesión 2 sep 2026 (~00:49, PC escritorio, Chrome):**
+
+1. `www.tevsys.io` → F12 → pestaña **Consola**.
+2. Chrome: escribir **`allow pasting`** + Enter (aviso seguridad; obligatorio antes de pegar).
+3. `localStorage.getItem('va-disable')` → **`null`** (el fundador **sí contaba** hasta ese momento en ese navegador).
+4. `localStorage.setItem('va-disable', '1')` → activado.
+5. Verificar: `getItem` → **`1`**.
+
+**Pendiente fundador:** repetir en **móvil** (mismo sitio, misma consola remota o Safari/Chrome en teléfono). Hasta entonces, visitas desde móvil **siguen contando**.
+
+**Comprobar sin consola (opcional):** F12 → **Aplicación** → **Almacenamiento local** → `https://www.tevsys.io` → fila `va-disable` = `1`.
+
+**Reactivar conteo en pruebas (ese navegador):** `localStorage.removeItem('va-disable');`
+
+---
+
+#### Snapshots Vercel — lectura 2 sep 2026 (pre vs post activación PC)
+
+**Importante:** las cifras **no se pueden restar** en Vercel; solo dejan de subir tras `va-disable`. Histórico previo = **mezcla fundador + posible tráfico real + bots**.
+
+**Captura 1 (panel resumido — período corto, pre-activación PC):**
+
+| Ruta / referrer | Visitantes | Nota |
+|-----------------|------------|------|
+| `/` | 25 | |
+| `/como-funciona` | 21 | |
+| `/go/como-funciona-nav` | 13 | Clic menú — típico QA fundador |
+| `/features/precision` | 12 | |
+| `/features/evidencia` | 6 | |
+| `/features/hyperclose` | 5 | |
+| `/instalacion-market` | 4 | |
+| Referrer `mql5.com` | 1 | Fundador o visitante Market — indistinguible |
+| Referrer `vercel.com` | 1 | Probable preview / dashboard |
+
+**Lectura:** **contaminación fundador probable** (flag `null` en PC). Volumen bajo; no usar como KPI de crecimiento.
+
+**Captura 2 (modal detalle — período más largo, mayormente pre-activación PC):**
+
+**Países (visitantes / vistas):**
+
+| País | % | Visitantes | Vistas | Nota |
+|------|---|------------|--------|------|
+| España | 86 % | 89 | ~1,2K | **~13,5 PV/visitante** — patrón revisión intensiva + posible sesiones externas |
+| EE. UU. | 9 % | 9 | 10 | ~1 PV/visitante — bounce o bots |
+| DE, AT, AU, UK, SG | 1 % c/u | 1–2 | 1–4 | Volumen mínimo — bots/VPN/curiosos; no KPI |
+
+**Páginas (visitantes / vistas — extracto):**
+
+| Ruta | Visitantes | Vistas | Nota |
+|------|------------|--------|------|
+| `/` | 90 | 542 | |
+| `/como-funciona` | 56 | 306 | Recorrido producto |
+| `/features/precision` | 28 | 147 | |
+| `/go/como-funciona-nav` | 14 | 53 | Proxy menú |
+| `/features/evidencia` | 13 | 56 | |
+| `/features/hyperclose` | 10 | 31 | |
+| `/para-quien` | 7 | 7 | |
+| `/precios` | 5 | 7 | |
+| `/instalacion-market` | 5 | 7 | |
+| `/empresa/contacto` | 2 | 3 | Posible due diligence externa (fundador casi no entra ahí) |
+
+**Lectura equipo (2 sep 2026):**
+
+- **Sí hubo contaminación fundador** en PC hasta activar `va-disable` (confirmado `null` → `1`).
+- **También hay señal de interés externo posible:** rutas profundas (precisión, evidencia, hyperclose, precios, para-quien, contacto) no explicables solo por un clic rápido.
+- **Países sueltos** con 1 visita = ruido; no interpretar como mercado.
+- **KPI útil hacia delante:** comparar **últimos 7 / 30 días desde 2 sep 2026** (y desde activación móvil cuando exista) — ratio PV/visitante en España debería **bajar** si el fundador deja de ensuciar.
+
+**No usar** Analytics como KPI comercial hasta varias semanas **post opt-out en todos los dispositivos del fundador**.
+
 ### Proxies `/go/` — Cómo funciona home vs nav (23 ago 2026)
 
 Misma idea que `/go/evidencia-5min`: pageview medible en Vercel Hobby + redirect.
@@ -135,7 +217,7 @@ Misma idea que `/go/evidencia-5min`: pageview medible en Vercel Hobby + redirect
 
 #### Sesión web larga — orden sugerido
 
-1. ~~Analytics opt-out (§3.1)~~ — **hecho 24 jul 2026**  
+1. ~~Analytics opt-out código (§3.1)~~ — **24 jul 2026** · ~~activación PC~~ — **2 sep 2026** · ☐ móvil  
 2. ~~Bloque 4.89 Evidencia~~ — **hecho 28 jun 2026** (`HANDOFF_4.89_*` §13.1)  
 3. ~~Micro `/para-quien`~~ — **hecho 28 jun 2026** (`CONTENIDO_WEB` § *Micro Para quién*)  
 4. **FAQ — acta AuditTrail (jun 2026):** publicar frase canon en `PROMPT_MAESTRO` §21.5 («tevsys no solo aplica tus límites…») — home FAQ, `/auditoria-ia` o `/features/evidencia`; sin prometer portal auditoría abierto.  
@@ -143,7 +225,7 @@ Misma idea que `/go/evidencia-5min`: pageview medible en Vercel Hobby + redirect
 
 **Puntero repo TGP:** `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Sesión web larga*.
 
-**No usar** Analytics como KPI comercial hasta varias semanas **post opt-out**.
+**No usar** Analytics como KPI comercial hasta varias semanas **post opt-out en todos los dispositivos del fundador** (ver §3.1 *Activación confirmada*).
 
 ---
 
