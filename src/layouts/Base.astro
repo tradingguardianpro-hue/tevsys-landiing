@@ -8,12 +8,14 @@ export interface Props {
 	seo?: BaseHeadProps;
 	/** Clases opcionales en `<body>` (p. ej. hooks de motion por página). */
 	bodyClass?: string;
+	/** Idioma del documento (`es` | `en` …). */
+	lang?: string;
 }
 
-const { seo, bodyClass } = Astro.props;
+const { seo, bodyClass, lang = 'es' } = Astro.props;
 ---
 
-<html lang="en" data-theme="dark">
+<html lang={lang} data-theme="dark">
 	<head>
 		<BaseHead {...seo} />
 	</head>

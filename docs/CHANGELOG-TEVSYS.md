@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## i18n ES|EN — oleada 1 (3 sep 2026)
+
+- **Qué:** selector **`ES | EN`** en header (extensible); `lang` correcto en HTML; home EN completa `/en/`; contacto EN `/en/company/contact`; cómo funciona EN ligero `/en/como-funciona` (vídeo Nasdaq + nota UI ES). Copy propio, no Google Translate.
+- **Infra:** `src/i18n/locales.js` · `nav.js` · `home.js` · `LanguageSwitcher.astro` · `HomePageView.astro`.
+- **Switch EN** en páginas aún no traducidas → `/en/` (home).
+- **Siguiente oleada:** precios + micros features EN.
+- **Commit:** `web(tevsys): i18n wave1 — ES|EN header home contact how-it-works`
+
 ## Cómo funciona — sub Presentación sin «la gente habla» (3 sep 2026)
 
 - **Qué:** subhero Presentación → *Te enseñamos el producto en marcha — sesión real, precisión y evidencia.* + línea *Contrasta tú mismo.* (antes: *…y por qué la gente habla…*; sin duplicar «contrastar» arriba).

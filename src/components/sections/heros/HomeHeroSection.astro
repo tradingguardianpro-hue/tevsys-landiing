@@ -2,13 +2,12 @@
 import { Container } from '@components/odyssey-theme';
 import settings from '../../../config/settings.js';
 import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
+import { getHomeCopy } from '../../../i18n/home.js';
+import { localizeHref } from '../../../i18n/locales.js';
 
-const heroProductPillars = [
-  'Precisión de cierre verificable',
-  'Disciplina automatizada',
-  'Trazabilidad contrastable con MT5',
-  'Protección activa en toda la cuenta',
-];
+const { locale = 'es' } = Astro.props;
+const h = getHomeCopy(locale).hero;
+const heroProductPillars = h.pillars;
 ---
 
 <Container>
@@ -17,12 +16,12 @@ const heroProductPillars = [
     <div class="hero-section__inner">
       <div class="hero-section__text">
         <h1 class="hero-title">
-          <span class="hero-title__line">Tú pones los límites.</span>
+          <span class="hero-title__line">{h.line1}</span>
           <span class="hero-title__line hero-title__line--accent">
-            <span class="hero-title__brand">TEVSYS</span> los blinda.
+            <span class="hero-title__brand">TEVSYS</span>{h.line2After}
           </span>
         </h1>
-        <div class="hero-pillar-fade" aria-label="Capas del producto tevsys">
+        <div class="hero-pillar-fade" aria-label={h.pillarsAria}>
           <div class="hero-pillar-fade__stage" data-hero-pillar-stage>
             <div class="hero-pillar-fade__mark" data-hero-pillar-mark aria-hidden="true">
               <img
@@ -44,14 +43,14 @@ const heroProductPillars = [
         </div>
         <div class="hero-action-block">
           <p class="hero-disclaimer">
-            No damos señales ni promesas de beneficio.
+            {h.disclaimer}
           </p>
           <div class="hero-cta-row">
-            <a href="/company/contact?flow=demo" class="hero-download-btn">
-              Descargar demo →
+            <a href={localizeHref(h.hrefDemo, locale)} class="hero-download-btn">
+              {h.ctaDemo}
             </a>
-            <a href="/como-funciona?play=1#evidencia-nasdaq-100" class="hero-audit-btn hero-audit-btn--secondary">
-              Nasdaq 100 — sesión real (~3:35)
+            <a href={localizeHref(h.hrefNasdaq, locale)} class="hero-audit-btn hero-audit-btn--secondary">
+              {h.ctaNasdaq}
             </a>
           </div>
         </div>
@@ -75,7 +74,7 @@ const heroProductPillars = [
           </div>
           <span class="hero-image__brand" lang="en" translate="no">Trading Edge Verification System</span>
         </div>
-        <p class="hero-platform-note">· Disponible en MT5 ·</p>
+        <p class="hero-platform-note">{h.platform}</p>
       </div>
     </div>
   </section>

@@ -1,0 +1,66 @@
+---
+import { locales, localeLabels, getLocaleFromUrl, switchLocalePath } from '../i18n/locales.js';
+
+const pathname = Astro.url.pathname;
+const currentLocale = getLocaleFromUrl(Astro.url);
+---
+
+<nav class="tevsys-lang-switch" aria-label={currentLocale === 'en' ? 'Language' : 'Idioma'}>
+	{
+		locales.map((loc, i) => (
+			<>
+				{i > 0 && (
+					<span class="tevsys-lang-switch__sep" aria-hidden="true">
+						|
+					</span>
+				)}
+				{loc === currentLocale ? (
+					<span class="tevsys-lang-switch__current" aria-current="true">
+						{localeLabels[loc]}
+					</span>
+				) : (
+					<a class="tevsys-lang-switch__link" href={switchLocalePath(pathname, loc)} hreflang={loc} lang={loc}>
+						{localeLabels[loc]}
+					</a>
+				)}
+			</>
+		))
+	}
+</nav>
+
+<style>
+	.tevsys-lang-switch {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		margin: 0;
+		padding: 0.2rem 0.15rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.72rem;
+		font-weight: 500;
+		letter-spacing: 0.06em;
+		line-height: 1;
+		white-space: nowrap;
+	}
+	.tevsys-lang-switch__sep {
+		opacity: 0.35;
+		user-select: none;
+	}
+	.tevsys-lang-switch__current {
+		color: hsl(38 92% 55%);
+	}
+	.tevsys-lang-switch__link {
+		color: rgba(255, 255, 255, 0.55);
+		text-decoration: none;
+	}
+	.tevsys-lang-switch__link:hover,
+	.tevsys-lang-switch__link:focus-visible {
+		color: rgba(255, 255, 255, 0.92);
+		outline: none;
+	}
+	@media (max-width: 720px) {
+		.tevsys-lang-switch {
+			font-size: 0.68rem;
+		}
+	}
+</style>

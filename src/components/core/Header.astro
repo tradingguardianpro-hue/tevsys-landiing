@@ -1,11 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components'
-const { navData, rightMenu } = Astro.props;
+import { getLocaleFromUrl, stripLocalePrefix } from '../../i18n/locales.js';
+const { navData, rightMenu, lang: langProp, logoHref = '/' } = Astro.props;
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
-const isHome = pathname === '/';
+const locale = langProp || getLocaleFromUrl(Astro.url);
+const barePath = stripLocalePrefix(pathname);
+const isHome = barePath === '/';
 /** Escáner gris: home a intensidad plena; micros producto más suave vía CSS `:not(.tevsys-header--home-scanner)` */
 const headerScannerSubtle =
-	pathname.startsWith('/features') || pathname === '/como-funciona' || pathname === '/precios';
+	barePath.startsWith('/features') || barePath === '/como-funciona' || barePath === '/precios';
 const showHeaderScanner = isHome || headerScannerSubtle;
 const headerClasses = [
 	rightMenu ? 'header--right' : null,
@@ -19,10 +22,16 @@ function navLinkState(slug: string, asButton?: boolean, match?: string): { class
 	const s = (slug || '/').replace(/\/$/, '') || '/';
 	const m = (match || s).replace(/\/$/, '') || '/';
 	const p = pathname;
-	const active = m === '/' ? p === '/' : p === m || p.startsWith(`${m}/`);
+	const bareM = stripLocalePrefix(m);
+	const active =
+		bareM === '/'
+			? barePath === '/'
+			: barePath === bareM || barePath.startsWith(`${bareM}/`) || p === m || p.startsWith(`${m}/`);
 	if (active) parts.push('nav-link--active');
 	return { className: parts.join(' '), active };
 }
+const navAria = locale === 'en' ? 'Primary' : 'Principal';
+const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
 ---
 
 <script type="module">
@@ -40,7 +49,7 @@ function navLinkState(slug: string, asButton?: boolean, match?: string): { class
     menuButtonIconClose.toggleAttribute('hidden');
     
     if (navHeader.hasAttribute('mobile-menu-open', true)) {
-      menuButton.title = "Open Main Menu"
+      menuButton.title = menuButton.dataset.titleOpen || "Open Main Menu"
       // unlock scroll position
       bodyElement.style.removeProperty('overflow');
       bodyElement.style.removeProperty('position');
@@ -48,7 +57,7 @@ function navLinkState(slug: string, asButton?: boolean, match?: string): { class
       bodyElement.style.removeProperty('width');
       window.scrollTo(0, scrollPosition);
     } else {
-      menuButton.title = "Close Main Menu"
+      menuButton.title = menuButton.dataset.titleClose || "Close Main Menu"
       // lock scroll position
       scrollPosition = window.pageYOffset;
       bodyElement.style.overflow = 'hidden';
@@ -64,7 +73,7 @@ function navLinkState(slug: string, asButton?: boolean, match?: string): { class
 <header id="odysseyNavHeader" class:list={headerClasses}>
 	{showHeaderScanner && <div class="tevsys-header-scanner" aria-hidden="true"></div>}
   <div class="header-logo-menu__container">
-  <button id="menuButton" title="Open Main Menu">
+  <button id="menuButton" title={menuOpenTitle} data-title-open={menuOpenTitle} data-title-close={locale === 'en' ? 'Close main menu' : 'Close Main Menu'}>
     <span id="menuButtonIconHam">
       <Icon name="ic:baseline-menu" width="24px" height="24px" />
     </span>
@@ -72,15 +81,14 @@ function navLinkState(slug: string, asButton?: boolean, match?: string): { class
       <Icon name="ic:baseline-close" width="24px" height="24px" />
     </span>
   </button>
-  <a class="header-logo__link" href="/">
-    <slot name="logo">
-    </slot>
+  <a class="header-logo__link" href={logoHref}>
+    <slot name="logo" />
   </a>
   </div>
   <div class="header-nav__container">
     <slot name="nav">
       {navData && (
-        <nav aria-label="Principal">
+        <nav aria-label={navAria}>
           <ul>
             {navData.map((navItem) => {
               const { className, active } = navLinkState(navItem.slug, navItem.asButton, navItem.match);

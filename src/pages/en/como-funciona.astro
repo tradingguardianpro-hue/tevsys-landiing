@@ -1,0 +1,126 @@
+---
+/**
+ * Oleada 1 EN — Cómo funciona (capa superior).
+ * Vídeos e UI del EA pueden seguir en español; el marco de página está en inglés.
+ */
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+	title: 'How tevsys works | Real MT5 session',
+	description:
+		'Four minutes of a real MT5 session: precision, HyperClose and evidence you can verify. Product demos and scenario clips.',
+};
+---
+
+<Layout seo={seo} lang="en" bodyClass="page-como-funciona">
+	<Container>
+		<section class="en-how-hero">
+			<p class="en-how-eyebrow">Presentation</p>
+			<h1>How <span class="en-how-accent">tevsys</span> works</h1>
+			<h2>Four minutes of a <span class="en-how-accent-line">real MT5 session</span></h2>
+			<p class="en-how-sub">
+				We show the product running — real session, precision and evidence.
+				<br />
+				<span class="en-how-sub2">Verify it yourself.</span>
+			</p>
+			<p class="en-how-note">
+				Demo UI and on-screen overlays may still be in Spanish. English microcopy for deeper pages is rolling out in waves.
+			</p>
+			<div class="en-how-video">
+				<video
+					controls
+					playsinline
+					preload="metadata"
+					poster="/videos/features/evidencia-nasdaq-100-completa-poster-6263709.jpg?v=20260822"
+				>
+					<source src="/videos/features/evidencia-nasdaq-100-completa.mp4?v=20260822" type="video/mp4" />
+				</video>
+			</div>
+			<nav class="en-how-links" aria-label="Next steps">
+				<a href="/en/company/contact?flow=demo">Request demo →</a>
+				<a href="/en/">Back to English home →</a>
+				<a href="/como-funciona">Full Spanish how-it-works page →</a>
+			</nav>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.en-how-hero {
+		padding: 2.5rem 0 4rem;
+		max-width: 52rem;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.en-how-eyebrow {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.75rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.45);
+		margin: 0 0 0.75rem;
+	}
+	.en-how-hero h1 {
+		font-size: clamp(1.8rem, 4vw, 2.6rem);
+		margin: 0 0 0.85rem;
+	}
+	.en-how-hero h2 {
+		font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+		font-weight: 500;
+		color: rgba(255, 255, 255, 0.82);
+		margin: 0 0 1rem;
+	}
+	.en-how-accent {
+		color: hsl(38 92% 55%);
+	}
+	.en-how-accent-line {
+		background-image: linear-gradient(90deg, hsl(38 92% 55%), rgba(160, 160, 168, 0.85));
+		background-repeat: no-repeat;
+		background-size: 100% 0.12em;
+		background-position: 0 100%;
+	}
+	.en-how-sub {
+		color: rgba(255, 255, 255, 0.72);
+		line-height: 1.55;
+		margin: 0 0 0.75rem;
+	}
+	.en-how-sub2 {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.9rem;
+		color: rgba(255, 255, 255, 0.55);
+	}
+	.en-how-note {
+		font-size: 0.85rem;
+		color: rgba(255, 255, 255, 0.42);
+		max-width: 36rem;
+		margin: 0 auto 1.5rem;
+		line-height: 1.45;
+	}
+	.en-how-video {
+		border-radius: 0.75rem;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #000;
+		margin: 0 auto 1.75rem;
+	}
+	.en-how-video video {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.en-how-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.85rem 1.25rem;
+		justify-content: center;
+	}
+	.en-how-links a {
+		color: hsl(38 92% 55%);
+		text-decoration: none;
+		font-size: 0.95rem;
+	}
+	.en-how-links a:hover {
+		text-decoration: underline;
+	}
+</style>

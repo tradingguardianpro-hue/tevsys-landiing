@@ -1,0 +1,136 @@
+---
+import ContactForm from '../../../components/forms/ContactForm.astro';
+import Layout from '../../../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const flowFromUrl = (Astro.url.searchParams.get('flow') || '').toLowerCase();
+const allowNoPlan =
+	flowFromUrl === 'acceso' || flowFromUrl === 'demo' || flowFromUrl === 'lista' || flowFromUrl === 'auditoria-ia';
+
+const seo = {
+	title: 'Contact & demo | tevsys',
+	description:
+		'Request your tevsys Essential demo. Capital protection, automatic limits and millimetric precision for MetaTrader 5. Reply within 24h.',
+};
+const introText = 'Fill in the form and we will tell you the next step for your profile.';
+const tips = [
+	'You configure once. tevsys enforces always — including the days you choose to be OFF.',
+	'Daily limit, millimetric precision and HyperClose included.',
+	'Reply within 24h with next steps.',
+];
+const empresasTipHtml =
+	'<a href="/company/empresas" class="contact-tip__link">Companies or corporate contact</a>';
+---
+
+<Layout
+	seo={seo}
+	lang="en"
+>
+	<Container>
+		<section class="contact-hero__section">
+			<div class="contact-hero__text-section">
+				<h1 id="contactHeroTitle" class="contact-hero__title">Complete your access to tevsys</h1>
+				<p id="contactHeroIntro">{introText}</p>
+				<ul class="contact-hero__tips">
+					{tips.map((tip, idx) => <li id={`contactTip-${idx + 1}`}>{tip}</li>)}
+					<li id="contactTip-4" set:html={empresasTipHtml} />
+					<li id="contactTip-5" class="contact-tip-5" style="display: none;" />
+				</ul>
+				<div class="contact-hero__visual" id="contactHeroVisual">
+					<span id="contactHeroDemoBadge" class="contact-hero__demo-badge" hidden>DEMO</span>
+					<picture>
+						<source type="image/webp" id="contactHeroSource" srcset="/logo-tevsys.webp" />
+						<img
+							id="contactHeroImage"
+							src="/logo-tevsys.png"
+							alt="tevsys"
+							loading="lazy"
+							width="400"
+							height="300"
+							decoding="async"
+						/>
+					</picture>
+				</div>
+				<p id="contactHeroDevNote" class="contact-hero__dev-note" hidden></p>
+			</div>
+			<div class="col-2__container">
+				<ContactForm selectedPlan="" allowNoPlan={allowNoPlan} locale="en" />
+			</div>
+		</section>
+	</Container>
+</Layout>
+
+<script is:inline>
+	(() => {
+		const params = new URLSearchParams(window.location.search);
+		const plan = (params.get('plan') || '').toLowerCase();
+		let flow = (params.get('flow') || '').toLowerCase();
+		if (!flow && !plan && !params.get('feature')) {
+			window.location.replace('/en/company/contact?flow=acceso');
+			return;
+		}
+		const titleNode = document.getElementById('contactHeroTitle');
+		const introNode = document.getElementById('contactHeroIntro');
+		const tip1 = document.getElementById('contactTip-1');
+		const tip2 = document.getElementById('contactTip-2');
+		const tip3 = document.getElementById('contactTip-3');
+		const tip4 = document.getElementById('contactTip-4');
+		const demoBadge = document.getElementById('contactHeroDemoBadge');
+
+		const empresasTipHtml =
+			'<a href="/company/empresas" class="contact-tip__link">Companies or corporate contact</a>';
+
+		if (flow === 'demo' || (!flow && !plan)) {
+			if (titleNode) titleNode.textContent = 'Request your Essential demo';
+			if (introNode)
+				introNode.textContent = 'Tell us a bit about you. We reply within 24h with download steps.';
+			if (tip1) tip1.textContent = 'Essential ready to try. Advanced and Pro — waitlist.';
+			if (tip2) tip2.textContent = 'Reply within 24h. We guide you by profile.';
+			if (tip3)
+				tip3.textContent = 'Precision and HyperClose validated with real trades. OFF days and flexible week setup.';
+			if (tip4) tip4.innerHTML = empresasTipHtml;
+			if (demoBadge) demoBadge.hidden = false;
+		}
+	})();
+</script>
+
+<style>
+	.contact-hero__section {
+		display: grid;
+		gap: 2rem;
+		padding: 2.5rem 0 3.5rem;
+	}
+	@media (min-width: 900px) {
+		.contact-hero__section {
+			grid-template-columns: 1fr 1fr;
+			align-items: start;
+		}
+	}
+	.contact-hero__title {
+		font-size: clamp(1.6rem, 3vw, 2.1rem);
+		margin: 0 0 0.75rem;
+	}
+	.contact-hero__tips {
+		margin: 1rem 0 1.5rem;
+		padding-left: 1.1rem;
+		line-height: 1.55;
+		color: rgba(255, 255, 255, 0.78);
+	}
+	.contact-tip__link {
+		color: hsl(38 92% 55%);
+	}
+	.contact-hero__demo-badge {
+		display: inline-block;
+		margin-bottom: 0.5rem;
+		padding: 0.15rem 0.55rem;
+		border: 1px solid hsl(38 92% 55%);
+		border-radius: 999px;
+		font-size: 0.7rem;
+		letter-spacing: 0.08em;
+		color: hsl(38 92% 55%);
+	}
+	.contact-hero__visual img {
+		max-width: 220px;
+		height: auto;
+	}
+</style>

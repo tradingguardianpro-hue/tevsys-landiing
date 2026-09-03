@@ -1,0 +1,317 @@
+---
+/**
+ * Home completa (ES|EN). Estilos: `src/styles/home-page.css`.
+ * Páginas: `/` y `/en/`.
+ */
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import HomeHeroSection from '../sections/heros/HomeHeroSection.astro';
+import settings from '../../config/settings.js';
+import { getHomeCopy } from '../../i18n/home.js';
+import { localizeHref } from '../../i18n/locales.js';
+import '../../styles/home-page.css';
+
+export interface Props {
+	locale?: string;
+}
+
+const { locale = 'es' } = Astro.props;
+const t = getHomeCopy(locale);
+const n = settings.documentedOperatives;
+const L = (href) => localizeHref(href, locale);
+---
+
+<Layout seo={{ title: t.seoTitle, description: t.seoDescription }} lang={locale}>
+	<div class="tevsys-home-hero-stack">
+		<div class="tevsys-home-kitt-rect tevsys-home-kitt-rect--rise" aria-hidden="true"></div>
+		<div class="tevsys-home-kitt-rect tevsys-home-kitt-rect--fall" aria-hidden="true"></div>
+		<div class="tevsys-home-hero-stack__content">
+			<HomeHeroSection locale={locale} />
+		</div>
+	</div>
+	<Container>
+		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-bridge--hero-cards" aria-label={t.bridgeLayersAria}>
+			<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
+			<span class="tevsys-home-hero-bridge__text">{t.bridgeLayers}</span>
+		</p>
+		<div class="tevsys-home-band tevsys-home-band--cards">
+			<div class="tevsys-home-mid-glow" aria-hidden="true"></div>
+			<section class="feature-card__section">
+				<h2 class="feature-section__title">{t.sectionTitle}</h2>
+				<div class="feature-card__checklist-static">
+					<p class="feature-section__hook">
+						{t.sectionHookBefore}<span class="tevsys-brand-accent-underline">{t.sectionHookAccent}</span>
+					</p>
+					<ul class="feature-card__checklist-static-items" aria-label={t.checklistAria}>
+						<li>{t.checklist1}</li>
+						<li>
+							{t.checklist2Before}<span class="tevsys-brand-accent-underline tevsys-brand-accent-underline--dias-off">{t.checklist2Accent}</span>{t.checklist2After}
+						</li>
+					</ul>
+				</div>
+				<p class="feature-card__intro-ellos"><span class="feature-hook__dot" aria-hidden="true"></span>{t.ellos}</p>
+				<div class="feature-card__grid">
+					<a href={L(t.cardPrecision.href)} class="tevsys-card">
+						<span class="tevsys-card__arrow" aria-hidden="true">→</span>
+						<div class="tevsys-card__image">
+							<img src="/assets/images/home/cards/card-1-input.png?v=8" alt={t.cardPrecision.alt} width="640" height="400" loading="lazy" decoding="async" />
+						</div>
+						<div class="tevsys-card__content">
+							<div class="tevsys-card__title-row">
+								<h3 class="tevsys-card__title--accent-line tevsys-card__title--accent-line-long" style="--card-accent-line-ml: 2.35rem">
+									<span class="card-title__accent">0,06%</span>{t.cardPrecision.titleAfter}
+								</h3>
+								<span class="tevsys-card__saber-mas">{t.saberMas}</span>
+							</div>
+							<p class="feature-card__hook">{t.cardPrecision.hook}</p>
+							<p>
+								<span class="feature-card__value-accent">{t.cardPrecision.ops(n)}</span>{t.cardPrecision.opsRest}
+							</p>
+							<p>
+								<span class="feature-card__value-accent">{t.cardPrecision.measureAccent}</span>{t.cardPrecision.measureRest}
+							</p>
+							<p>{t.cardPrecision.extremes}</p>
+						</div>
+					</a>
+					<a href={L(t.cardHyperclose.href)} class="tevsys-card">
+						<span class="tevsys-card__arrow" aria-hidden="true">→</span>
+						<div class="tevsys-card__image">
+							<img src="/assets/images/home/cards/card-2-hyperclose.png?v=9" alt={t.cardHyperclose.alt} width="640" height="400" loading="lazy" decoding="async" />
+						</div>
+						<div class="tevsys-card__content">
+							<div class="tevsys-card__title-row">
+								<h3 class="tevsys-card__title--accent-line tevsys-card__title--accent-line-short" style="--card-accent-line-ml: 1.05rem">
+									<span class="card-title__accent">HyperClose</span>
+								</h3>
+								<span class="tevsys-card__saber-mas">{t.saberMas}</span>
+							</div>
+							<p class="feature-card__hook">
+								{t.cardHyperclose.hookBefore}<span class="feature-card__value-accent feature-card__value-accent--spaced">{t.cardHyperclose.hookAccent}</span>.
+							</p>
+							<p>{t.cardHyperclose.p1}</p>
+							<p>{t.cardHyperclose.p2}</p>
+						</div>
+					</a>
+					<a href={L(t.cardSml.href)} class="tevsys-card">
+						<span class="tevsys-card__arrow" aria-hidden="true">→</span>
+						<div class="tevsys-card__image">
+							<img src="/assets/images/home/cards/card-3-sml.png?v=10" alt={t.cardSml.alt} width="640" height="400" loading="lazy" decoding="async" />
+						</div>
+						<div class="tevsys-card__content">
+							<div class="tevsys-card__title-row">
+								<h3 class="tevsys-card__title--accent-line tevsys-card__title--accent-line-short" style="--card-accent-line-ml: 0.42rem">
+									<span class="card-title__accent">SML</span>{t.cardSml.titleAfter}
+								</h3>
+								<span class="tevsys-card__saber-mas">{t.saberMas}</span>
+							</div>
+							<p class="feature-card__hook">{t.cardSml.hook}</p>
+							<p>
+								{t.cardSml.p1Before}<span class="feature-card__value-accent">{t.cardSml.p1Accent}</span>{t.cardSml.p1After}
+							</p>
+							<p>{t.cardSml.p2}</p>
+						</div>
+					</a>
+					<a href={L(t.cardEvidence.href)} class="tevsys-card">
+						<span class="tevsys-card__arrow" aria-hidden="true">→</span>
+						<div class="tevsys-card__image">
+							<img src="/assets/images/home/cards/card-4-evidencia.png?v=7" alt={t.cardEvidence.alt} width="640" height="400" loading="lazy" decoding="async" />
+						</div>
+						<div class="tevsys-card__content">
+							<div class="tevsys-card__title-row">
+								<h3 class="tevsys-card__title--accent-line tevsys-card__title--accent-line-long" style="--card-accent-line-ml: 2.55rem">
+									<span class="card-title__accent">{locale === 'en' ? 'Evidence' : 'Evidencia'}</span>{t.cardEvidence.titleAfter}
+								</h3>
+								<span class="tevsys-card__saber-mas">{t.saberMas}</span>
+							</div>
+							<p class="feature-card__hook">{t.cardEvidence.hook}</p>
+							<p class="feature-card__evidence-case">
+								<strong>{t.cardEvidence.caseLine}</strong>{t.cardEvidence.caseBody}
+							</p>
+							<p class="feature-card__evidence-stat">
+								{t.cardEvidence.statBefore}<span class="feature-card__evidence-stat-value">{t.cardEvidence.statValue}</span>
+							</p>
+							<p class="feature-card__evidence-proofline">{t.cardEvidence.proof}</p>
+							<p class="feature-card__evidence-close">{t.cardEvidence.close}</p>
+							<p class="feature-card__whisper">{t.cardEvidence.whisper}</p>
+						</div>
+					</a>
+				</div>
+			</section>
+		</div>
+	</Container>
+	<section class="tevsys-home-microclips-invite" aria-labelledby="home-microclips-invite-title">
+		<Container>
+			<div class="tevsys-home-microclips-invite__inner">
+				<h2 id="home-microclips-invite-title" class="tevsys-home-microclips-invite__title">{t.inviteTitle}</h2>
+				<p class="tevsys-home-microclips-invite__lead">{t.inviteLead}</p>
+				<ul class="tevsys-home-microclips-invite__links" aria-label={t.inviteLinksAria}>
+					<li>
+						<a href={L(t.hrefInviteOp)} class="tevsys-home-microclips-invite__link">{t.inviteLinkOp}</a>
+					</li>
+					<li>
+						<a href={L(t.hrefInviteZero)} class="tevsys-home-microclips-invite__link">{t.inviteLinkZero}</a>
+					</li>
+				</ul>
+				<a href={L(t.hrefInviteCta)} class="tevsys-home-microclips-invite__cta">{t.inviteCta}</a>
+			</div>
+		</Container>
+	</section>
+	<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-cards-audit-bridge" aria-label={t.bridgeAuditAria}>
+		<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
+		<span class="tevsys-home-hero-bridge__text">{t.bridgeAudit}</span>
+	</p>
+	<div class="tevsys-home-band tevsys-home-band--lower">
+		<div class="tevsys-home-lower-strip" aria-hidden="true"></div>
+		<section class="audit-teaser-section" aria-labelledby="audit-teaser-title">
+			<div class="audit-teaser-stage">
+				<div class="audit-teaser-rain" aria-hidden="true">
+					<span class="audit-teaser-rain__col" style="--x: 1%; --dur: 18s; --delay: -2s;">
+						0,06%<br />LIMIT<br />MT5<br />STOP<br />+0,50<br />LOG<br />HIT<br />ms
+					</span>
+					<span class="audit-teaser-rain__col" style="--x: 9%; --dur: 22s; --delay: -8s;">
+						CLOSE<br />−1,04<br />DEAL<br />AUDIT<br />OK<br />111<br />DAY<br />0,002
+					</span>
+					<span class="audit-teaser-rain__col audit-teaser-rain__col--mid" style="--x: 18%; --dur: 16s; --delay: -5s;">
+						TRACE<br />FILL<br />+2,50<br />WEEK<br />EA<br />TICK<br />0,65<br />BIN
+					</span>
+					<span class="audit-teaser-rain__col audit-teaser-rain__col--mid" style="--x: 82%; --dur: 20s; --delay: -11s;">
+						MT5<br />STOP<br />0,06%<br />CLOSE<br />LOG<br />HIT<br />ms<br />OK
+					</span>
+					<span class="audit-teaser-rain__col" style="--x: 91%; --dur: 24s; --delay: -3s;">
+						LIMIT<br />DEAL<br />AUDIT<br />−0,39<br />DAY<br />FILL<br />TRACE<br />EA
+					</span>
+					<span class="audit-teaser-rain__col" style="--x: 98%; --dur: 19s; --delay: -7s;">
+						HIT<br />ms<br />CLOSE<br />0,06%<br />STOP<br />MT5<br />LOG<br />OK
+					</span>
+				</div>
+				<div class="audit-teaser-shell">
+					<p class="audit-teaser-kicker">{t.auditKicker}</p>
+					<h2 id="audit-teaser-title">{t.auditTitle}</h2>
+					<p class="audit-teaser-lead">{t.auditLead}</p>
+					<p class="audit-teaser-bridge">{t.auditBridge}</p>
+					<ul class="audit-teaser-points" aria-label={t.auditPointsAria}>
+						<li>{t.auditLi1}</li>
+						<li>{t.auditLi2}</li>
+					</ul>
+					<p class="audit-teaser-note">{t.auditNote}</p>
+					<a href={L(t.hrefAudit)} class="audit-teaser-cta">{t.auditCta}</a>
+				</div>
+			</div>
+		</section>
+	</div>
+	<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-audit-plans-bridge" aria-label={t.bridgePlansAria}>
+		<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
+		<span class="tevsys-home-hero-bridge__text">{t.bridgePlans}</span>
+	</p>
+	<div class="tevsys-home-band tevsys-home-band--lower tevsys-home-band--lower-tail">
+		<Container>
+			<section class="plans-section">
+				<h2 class="plans-section__title">{t.plansTitle}</h2>
+				<p class="plans-section__subtitle">{t.plansSubtitle}</p>
+				<div class="plans-grid">
+					<article class="plan-card">
+						<div class="plan-card__image">
+							<picture
+								><source type="image/webp" srcset="/assets/images/plans/essential-card.webp" /><img
+									src="/assets/images/plans/essential-card.png"
+									alt="Essential"
+									width="640"
+									height="360"
+									loading="lazy"
+									decoding="async"
+								/></picture
+							>
+						</div>
+						<div class="plan-card__content">
+							<p class="plan-card__status plan-card__status--live">{t.essentialStatus}</p>
+							<h3><span class="card-title__accent">Essential</span></h3>
+							<ul class="plan-card__bullets plan-card__bullets--aperitivo" aria-label={t.essentialBulletsAria}>
+								<li set:html={t.essentialLi1Html} />
+								<li>{t.essentialLi2}</li>
+								<li set:html={t.essentialLi3Html} />
+								<li>{t.essentialLi4}</li>
+								<li>{t.essentialLi5}</li>
+							</ul>
+							<p class="plan-card__aperitivo-footer">
+								{t.essentialFooterBefore}<a href={L(t.hrefPreciosEssential)}>{t.essentialFooterLink}</a>
+							</p>
+							{
+								settings.checkoutEssentialReady ? (
+									<div class="plan-card__cta-row">
+										<a href={L(t.hrefPreciosEssential)} class="plan-card__cta plan-card__cta--primary">
+											{t.essentialBuy}
+										</a>
+										<a href={L(t.hrefContactDemo)} class="plan-card__cta plan-card__cta--secondary">
+											{t.essentialDemo}
+										</a>
+									</div>
+								) : (
+									<a href={L(t.hrefContactDemo)} class="plan-card__cta">
+										{t.essentialDemoOnly}
+									</a>
+								)
+							}
+						</div>
+					</article>
+					<article class="plan-card">
+						<div class="plan-card__image">
+							<picture
+								><source type="image/webp" srcset="/assets/images/plans/advanced-card.webp" /><img
+									src="/assets/images/plans/advanced-card.png"
+									alt="Advanced"
+									width="640"
+									height="360"
+									loading="lazy"
+									decoding="async"
+								/></picture
+							>
+						</div>
+						<div class="plan-card__content">
+							<p class="plan-card__status plan-card__status--waitlist">{t.waitlist}</p>
+							<h3><span class="card-title__accent">Advanced</span></h3>
+							<p>{t.advancedBody}</p>
+							<a href={L(t.hrefContactAdvanced)} class="plan-card__cta">{t.advancedCta}</a>
+						</div>
+					</article>
+					<article class="plan-card">
+						<div class="plan-card__image">
+							<picture
+								><source type="image/webp" srcset="/assets/images/plans/pro-card.webp" /><img
+									src="/assets/images/plans/pro-card.png"
+									alt="Pro"
+									width="640"
+									height="360"
+									loading="lazy"
+									decoding="async"
+								/></picture
+							>
+						</div>
+						<div class="plan-card__content">
+							<p class="plan-card__status plan-card__status--waitlist">{t.waitlist}</p>
+							<h3><span class="card-title__accent">Pro</span></h3>
+							<p>{t.proBody}</p>
+							<a href={L(t.hrefContactPro)} class="plan-card__cta">{t.proCta}</a>
+						</div>
+					</article>
+				</div>
+			</section>
+		</Container>
+		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-plans-founder-bridge" aria-label={t.bridgeFounderAria}>
+			<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>
+			<span class="tevsys-home-hero-bridge__text">{t.bridgeFounder}</span>
+		</p>
+		<section class="founder-section tevsys-home-founder-band">
+			<div class="tevsys-home-founder-strip" aria-hidden="true"></div>
+			<Container>
+				<div class="founder-message">
+					<p class="founder-claim">
+						<span class="founder-tevsys">tevsys</span>{t.founderClaimAfter}
+					</p>
+					<blockquote set:html={t.founderQuote} />
+					<p class="founder-signature">{t.founderSign}</p>
+				</div>
+			</Container>
+		</section>
+		<div class="tevsys-home-tail-bubble-solo" aria-hidden="true"></div>
+	</div>
+</Layout>
