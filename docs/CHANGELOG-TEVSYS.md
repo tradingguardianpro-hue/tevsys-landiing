@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## i18n ES|EN — oleada 2 micros (3 sep 2026)
+
+- **Qué:** EN de Precisión, HyperClose, Evidencia, SML + Precios (capa hero/demo/claims; enlace a página ES completa para galerías largas). `enReady` ampliado.
+- **Rutas:** `/en/features/*` · `/en/precios`.
+- **Commit:** `web(tevsys): i18n wave2 — EN feature micros and pricing`
+
 ## i18n ES|EN — oleada 1 (3 sep 2026)
 
 - **Qué:** selector **`ES | EN`** en header (extensible); `lang` correcto en HTML; home EN completa `/en/`; contacto EN `/en/company/contact`; cómo funciona EN ligero `/en/como-funciona` (vídeo Nasdaq + nota UI ES). Copy propio, no Google Translate.

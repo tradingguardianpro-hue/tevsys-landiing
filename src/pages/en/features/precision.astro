@@ -1,0 +1,109 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+import settings from '../../../config/settings.js';
+
+const seo = {
+	title: 'Closing precision | tevsys',
+	description:
+		'How tevsys keeps validated closing precision on real trades — mean error ≈ 0.06 % in normal conditions.',
+};
+const n = settings.documentedOperatives;
+---
+
+<Layout seo={seo} lang="en">
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--precision">
+		<Container>
+			<section class="feature-hero">
+				<p class="feature-kicker">Verification feature</p>
+				<h1>
+					Closing precision. Less “<span class="feature-title__accent">almost</span>”: more closes where they belong.
+				</h1>
+				<p class="feature-intro precision-hero-lead">
+					The market always finds a way to charge you extra. Until now.
+				</p>
+				<div class="precision-hero-evidence">
+					<p class="precision-hero-stat">
+						<strong>{n} documented trades</strong>
+						· mean error <span class="precision-hero-stat__accent">0.06 %</span> in normal conditions
+					</p>
+					<p class="precision-hero-secondary">
+						On every close we measure tevsys’s decision and the broker’s MT5 execution separately — without mixing product precision with market slippage.{' '}
+						<a class="evidence-link" href="/en/como-funciona?play=1#evidencia-nasdaq-100">See Nasdaq session (~3:35) →</a>
+					</p>
+				</div>
+				<p class="precision-hero-geopolitical">
+					Extremes are documented too (e.g. max deviation{' '}
+					<span class="precision-hero-stat__accent">−0.39 %</span>, high geopolitical volatility).{' '}
+					<a class="evidence-link" href="/en/features/evidencia">Containment case on Evidence →</a>
+				</p>
+			</section>
+
+			<section id="precision-residual" class="feature-proof-detail" aria-labelledby="precision-residual-title">
+				<h2 id="precision-residual-title">Limit hit and residual exposure</h2>
+				<p>
+					When you cross your limit, tevsys triggers the close and STOP immediately: you stay protected and cannot open more trades while STOP is active.
+				</p>
+				<p>
+					tevsys sends the close order to flatten open positions. If the broker does not fill on the first try, it retries automatically for up to 45 seconds, with progressive pauses — silently.
+				</p>
+				<p>
+					Only if exposure remains after that window do you see a single on-screen warning: <em>Incomplete close</em>. It explains what happened, that STOP stays on, and that you can close manually if you choose. It does not loop.
+				</p>
+			</section>
+
+			<section id="precision-demo" class="feature-demo feature-demo--hero">
+				<h2>Quick demo — 100k account</h2>
+				<p class="feature-demo-hook">
+					€100,000 · GER40 · 10 lots · −1 % limit ·{' '}
+					<strong class="feature-title__accent">€2.28 deviation (0.0023 %)</strong> · London open · ~1 min 30 s.
+				</p>
+				<div class="demo-video demo-video--hero demo-video--hero-elegant">
+					<video controls preload="metadata" playsinline poster="/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827">
+						<source src="/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827" type="video/mp4" />
+					</video>
+				</div>
+				<p class="feature-demo-attrib">Attribution · tevsys −1.0023 % · execution 0.00 p.p. · 34 ms</p>
+				<p class="demo-edit-note demo-edit-note--slim">
+					<strong>Edited video:</strong> key close moments; the terminal clock may jump between cuts. MT5 cash close:{' '}
+					<strong>−€1,002.28</strong>.
+				</p>
+			</section>
+
+			<section class="feature-proof">
+				<h2>What you can verify</h2>
+				<ul>
+					<li><a class="evidence-link" href="#precision-residual">Residual exposure — retries up to 45 s and a single warning.</a></li>
+					<li><a class="evidence-link" href="#precision-demo">Close tight to the limit (100k · GER40 demo).</a></li>
+					<li>
+						<a class="evidence-link" href="/en/features/evidencia">MT5 report tabs and downloadable history on Evidence →</a>
+					</li>
+					<li>
+						<a class="evidence-link" href="/features/precision">Full Spanish precision page (more demos &amp; captures) →</a>
+					</li>
+				</ul>
+			</section>
+
+			<p class="en-micro-foot">
+				<a href="/en/company/contact?flow=demo">Request demo →</a>
+				<span aria-hidden="true"> · </span>
+				<a href="/en/">English home →</a>
+			</p>
+		</Container>
+	</div>
+</Layout>
+
+<style>
+	.precision-hero-stat__accent,
+	.feature-title__accent {
+		color: hsl(38 92% 55%);
+	}
+	.en-micro-foot {
+		margin: 2.5rem 0 3rem;
+		text-align: center;
+		font-size: 0.95rem;
+	}
+	.en-micro-foot a {
+		color: hsl(38 92% 55%);
+	}
+</style>

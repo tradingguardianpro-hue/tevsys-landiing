@@ -54,7 +54,16 @@ export function switchLocalePath(pathname, targetLocale) {
 	const bare = stripLocalePrefix(pathname);
 	const barePath = bare.split('?')[0].split('#')[0] || '/';
 	/** Rutas con página EN publicada (oleada 1). Ampliar en oleadas siguientes. */
-	const enReady = new Set(['/', '/como-funciona', '/company/contact']);
+	const enReady = new Set([
+		'/',
+		'/como-funciona',
+		'/company/contact',
+		'/features/precision',
+		'/features/hyperclose',
+		'/features/evidencia',
+		'/features/sml',
+		'/precios',
+	]);
 	if (targetLocale === 'en' && !enReady.has(barePath)) {
 		return '/en/';
 	}

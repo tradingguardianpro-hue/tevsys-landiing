@@ -1,0 +1,120 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+
+const seo = {
+	title: 'SML | tevsys',
+	description:
+		'SML (Smart Money Lock): optional bonus from yesterday’s profit to widen allowed margin — only on your click. Advanced/Pro; validation in progress.',
+};
+---
+
+<Layout seo={seo} lang="en">
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--sml">
+		<Container>
+			<section class="feature-hero">
+				<p class="feature-kicker">Discipline feature</p>
+				<h1>
+					SML: <span class="feature-title__accent">protect</span> part of what you earned without stopping your trading.
+				</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					Turn it on when you want. Choose how much to widen the margin: from{' '}
+					<span class="feature-hook__accent">5%</span> to <span class="feature-hook__accent">25%</span> (minimum{' '}
+					<span class="feature-hook__accent">75%</span> protected).
+				</p>
+				<p class="feature-lead">
+					<span class="feature-title__accent">Optional and under your control</span>: works with daily and weekly limits; you only widen margin when you activate the bonus calculated from yesterday’s profit.
+				</p>
+			</section>
+
+			<section id="sml-panel" class="feature-demo feature-demo--hero">
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					<span>One chart for tevsys. Your whole account, protected.</span>
+				</p>
+				<h2>How it looks on the panel today</h2>
+				<p class="feature-demo-hook">
+					Yesterday’s profit &gt; threshold · optional bonus ·{' '}
+					<strong class="feature-title__accent">SML AVAILABLE</strong> and{' '}
+					<strong class="feature-title__accent">SML 1‑CLICK</strong> on the panel.
+				</p>
+				<figure class="sml-panel-embed">
+					<a
+						class="proof-gallery__zoom"
+						href="/images/evidence/sml-panel-validacion-demo.png?v=20260830b"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Open SML panel capture full size"
+					>
+						<img
+							class="proof-gallery__image"
+							src="/images/evidence/sml-panel-validacion-demo.png?v=20260830b"
+							width="520"
+							height="780"
+							loading="lazy"
+							decoding="async"
+							alt="tevsys panel: limits active, SML AVAILABLE and SML 1-CLICK in teal."
+						/>
+					</a>
+				</figure>
+				<p class="demo-edit-note">
+					<strong>Demo</strong> ActivTrades account (Aug 2026). Current panel over the chart. Click to enlarge. Not advice or a promise of results.
+				</p>
+			</section>
+
+			<p class="sml-validation-banner" role="note">
+				<strong>Advanced/Pro · validation in progress.</strong> Not on Essential. This page shows what we can already demonstrate — not a full catalogue. <strong>Only what the build proves</strong> in the terminal.
+			</p>
+
+			<section class="feature-proof">
+				<h2>What you can verify</h2>
+				<ul>
+					<li><a class="evidence-link" href="#sml-panel">SML panel: bonus available before activation (demo capture).</a></li>
+					<li>Documented closes with SML in profit and with widened loss — detail on the Spanish page.</li>
+					<li>
+						<a class="evidence-link" href="/features/sml">Full Spanish SML page →</a>
+					</li>
+				</ul>
+			</section>
+
+			<p class="en-micro-foot">
+				<a href="/en/company/contact?plan=advanced">Advanced waitlist →</a>
+				<span aria-hidden="true"> · </span>
+				<a href="/en/">English home →</a>
+			</p>
+		</Container>
+	</div>
+</Layout>
+
+<style>
+	.feature-title__accent,
+	.feature-hook__accent {
+		color: hsl(38 92% 55%);
+	}
+	.sml-validation-banner {
+		margin: 1.5rem 0;
+		padding: 1rem 1.15rem;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 0.75rem;
+		background: rgba(255, 255, 255, 0.04);
+		line-height: 1.5;
+		font-size: 0.95rem;
+	}
+	.sml-panel-embed {
+		margin: 1rem auto;
+		max-width: 28rem;
+	}
+	.sml-panel-embed img {
+		width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+	}
+	.en-micro-foot {
+		margin: 2.5rem 0 3rem;
+		text-align: center;
+	}
+	.en-micro-foot a {
+		color: hsl(38 92% 55%);
+	}
+</style>

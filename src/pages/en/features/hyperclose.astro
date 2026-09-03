@@ -1,0 +1,84 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+
+const seo = {
+	title: 'HyperClose | tevsys',
+	description:
+		'HyperClose closes in milliseconds when you try to trade while blocked — including OFF days. Traceable protection.',
+};
+---
+
+<Layout seo={seo} lang="en">
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--hyperclose">
+		<Container>
+			<section class="feature-hero">
+				<p class="feature-kicker">Protection feature</p>
+				<h1>
+					HyperClose: when your discipline fails, HyperClose <span class="feature-title__accent">does not.</span>
+				</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					<span class="feature-title__accent">Closes in milliseconds.</span> Until the next window (day or week), no shortcuts.
+				</p>
+				<p class="feature-lead">
+					Trading while blocked triggers an instant close; what happens is logged so you can verify it.
+				</p>
+				<p class="feature-extreme-note">
+					This is not the close when you hit the limit: it is the brake if, already in STOP, you try to open again.
+				</p>
+			</section>
+
+			<section id="hyperclose-demo" class="feature-demo feature-demo--hero">
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					<span>One chart for tevsys. Your whole account, protected.</span>
+				</p>
+				<p class="feature-lead">Protection notices appear on all your open charts.</p>
+				<h2>Demo — millimetric precision + HyperClose (2:23)</h2>
+				<p class="feature-demo-hook">
+					15 lots · GER40 · −1 % limit · <strong class="feature-title__accent">€1.31 deviation</strong> · Wall Street open ·{' '}
+					<strong class="feature-title__accent">HyperClose in 3 levels</strong>.
+				</p>
+				<div class="demo-video demo-video--hero demo-video--hero-elegant">
+					<video controls preload="metadata" playsinline poster="/videos/features/hyperclose-demo-poster.jpg?v=20260816">
+						<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<p class="demo-edit-note">
+					<strong>Edited video:</strong> the moments that matter (approach to limit, close, lock, HyperClose). The terminal clock may jump between cuts. Rigour comes from the <strong>MT5 report</strong> and history linked on the Spanish page.
+				</p>
+			</section>
+
+			<section class="feature-proof">
+				<h2>What you can verify</h2>
+				<ul>
+					<li><a class="evidence-link" href="#hyperclose-demo">Close + HyperClose traffic-light flow in video.</a></li>
+					<li>Same protection on OFF days (see Spanish page captures / short OFF demo).</li>
+					<li>
+						<a class="evidence-link" href="/features/hyperclose">Full Spanish HyperClose page (MT5 gallery &amp; OFF scenarios) →</a>
+					</li>
+				</ul>
+			</section>
+
+			<p class="en-micro-foot">
+				<a href="/en/company/contact?flow=demo">Request demo →</a>
+				<span aria-hidden="true"> · </span>
+				<a href="/en/">English home →</a>
+			</p>
+		</Container>
+	</div>
+</Layout>
+
+<style>
+	.feature-title__accent {
+		color: hsl(38 92% 55%);
+	}
+	.en-micro-foot {
+		margin: 2.5rem 0 3rem;
+		text-align: center;
+	}
+	.en-micro-foot a {
+		color: hsl(38 92% 55%);
+	}
+</style>

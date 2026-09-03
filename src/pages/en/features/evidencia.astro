@@ -1,0 +1,80 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+import settings from '../../../config/settings.js';
+
+const seo = {
+	title: 'Verifiable evidence | tevsys',
+	description:
+		'MT5 certifies execution; tevsys documents the logic. Demo, official report and exportable history you can check.',
+};
+---
+
+<Layout seo={seo} lang="en">
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--evidencia">
+		<Container>
+			<section class="feature-hero">
+				<p class="feature-kicker">Transparency feature</p>
+				<h1>
+					Verifiable evidence: there is no “<span class="feature-title__accent">we believe</span>” here.
+				</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>What cannot be shown does not count.
+				</p>
+				<p class="feature-lead">
+					<span class="feature-title__accent">Real dual traceability</span>: tevsys records internal logic and MT5 certifies official execution.
+				</p>
+			</section>
+
+			<section id="evidencia-demo" class="feature-demo feature-demo--hero">
+				<h2>Quick demo — 100k account (~1 min 30 s)</h2>
+				<p class="feature-demo-hook">
+					€100,000 · GER40 · 10 lots · −1 % limit ·{' '}
+					<strong class="feature-title__accent">€2.28 deviation (0.0023 %)</strong> · London open.
+				</p>
+				<div class="demo-video demo-video--hero demo-video--hero-elegant">
+					<video controls preload="metadata" playsinline poster="/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827">
+						<source src="/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827" type="video/mp4" />
+					</video>
+				</div>
+				<p class="feature-demo-attrib">Attribution · tevsys −1.0023 % · execution 0.00 p.p. · 34 ms</p>
+				<p class="demo-edit-note">
+					<strong>Edited video:</strong> key close moments; clock may jump between cuts. MT5 cash close:{' '}
+					<strong>−€1,002.28</strong>.
+				</p>
+			</section>
+
+			<section class="feature-proof">
+				<h2>What you can verify</h2>
+				<ul>
+					<li><a class="evidence-link" href="#evidencia-demo">Same session as the video — close and attribution.</a></li>
+					<li>
+						{settings.documentedOperatives} documented trades · mean error ≈ 0.06 % in normal conditions (see Precision).
+					</li>
+					<li>
+						<a class="evidence-link" href="/features/evidencia">Full Spanish Evidence page (5 MT5 tabs, stress case, logs) →</a>
+					</li>
+				</ul>
+			</section>
+
+			<p class="en-micro-foot">
+				<a href="/en/company/contact?flow=demo">Request demo →</a>
+				<span aria-hidden="true"> · </span>
+				<a href="/en/features/precision">Precision →</a>
+			</p>
+		</Container>
+	</div>
+</Layout>
+
+<style>
+	.feature-title__accent {
+		color: hsl(38 92% 55%);
+	}
+	.en-micro-foot {
+		margin: 2.5rem 0 3rem;
+		text-align: center;
+	}
+	.en-micro-foot a {
+		color: hsl(38 92% 55%);
+	}
+</style>

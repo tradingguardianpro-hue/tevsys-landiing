@@ -1,0 +1,173 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+
+const seo = {
+	title: 'Pricing & plans | tevsys',
+	description:
+		'Essential, Advanced, Pro pricing. Launch offer for early adopters. Demo Essential available. Companies for 4+ accounts.',
+};
+
+const plans = [
+	{
+		name: 'Essential',
+		monthly: '€39/mo',
+		yearly: '€390/year',
+		capital: '€30,000',
+		status: 'Demo live',
+		includes: [
+			'1 MT5 account',
+			'One active day, automatic rotation',
+			'Millimetric precision, HyperClose',
+			'OFF days',
+			'News & sessions update (when ready)',
+		],
+	},
+	{
+		name: 'Advanced',
+		monthly: '€79/mo',
+		yearly: '€790/year',
+		capital: '€120,000',
+		status: 'Waitlist',
+		includes: [
+			'Everything in Essential',
+			'Full-week configuration',
+			'Protection from Monday or from install',
+			'Per-day limits, SML',
+		],
+	},
+	{
+		name: 'Pro',
+		monthly: '€149/mo',
+		yearly: '€1,490/year',
+		capital: 'Higher capital',
+		status: 'Waitlist',
+		includes: [
+			'Everything in Advanced',
+			'Drawdown structure for larger capital',
+			'Full week + SML',
+		],
+	},
+];
+---
+
+<Layout seo={seo} lang="en">
+	<Container>
+		<section class="en-pricing">
+			<p class="feature-kicker">Plans</p>
+			<h1>Choose your account</h1>
+			<p class="en-pricing__lead">
+				We do not sell signals. We sell rules that execute and can be verified in MT5.
+			</p>
+			<div class="en-pricing__grid">
+				{
+					plans.map((p) => (
+						<article class="en-pricing__card">
+							<p class="en-pricing__status">{p.status}</p>
+							<h2>
+								<span class="feature-title__accent">{p.name}</span>
+							</h2>
+							<p class="en-pricing__price">
+								{p.monthly} · {p.yearly}
+							</p>
+							<p class="en-pricing__cap">Capital guide: {p.capital}</p>
+							<ul>
+								{p.includes.map((line) => (
+									<li>{line}</li>
+								))}
+							</ul>
+						</article>
+					))
+				}
+			</div>
+			<p class="en-pricing__note">
+				Launch pricing and multi-account / company terms: see the full Spanish pricing page for legal detail, or ask via contact.
+			</p>
+			<p class="en-micro-foot">
+				<a href="/en/company/contact?flow=demo">Essential demo →</a>
+				<span aria-hidden="true"> · </span>
+				<a href="/precios">Full Spanish pricing →</a>
+			</p>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.en-pricing {
+		padding: 2.5rem 0 3.5rem;
+		max-width: 56rem;
+		margin: 0 auto;
+	}
+	.feature-kicker {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.75rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.45);
+	}
+	.en-pricing h1 {
+		font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+		margin: 0.4rem 0 0.75rem;
+	}
+	.en-pricing__lead {
+		color: rgba(255, 255, 255, 0.72);
+		margin-bottom: 2rem;
+	}
+	.en-pricing__grid {
+		display: grid;
+		gap: 1.25rem;
+	}
+	@media (min-width: 900px) {
+		.en-pricing__grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	.en-pricing__card {
+		padding: 1.25rem 1.15rem;
+		border-radius: 0.85rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(255, 255, 255, 0.03);
+	}
+	.en-pricing__status {
+		font-size: 0.75rem;
+		letter-spacing: 0.04em;
+		color: rgba(255, 255, 255, 0.5);
+		margin: 0 0 0.5rem;
+	}
+	.en-pricing__card h2 {
+		margin: 0 0 0.5rem;
+		font-size: 1.25rem;
+	}
+	.feature-title__accent {
+		color: hsl(38 92% 55%);
+	}
+	.en-pricing__price {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.85rem;
+		margin: 0 0 0.35rem;
+	}
+	.en-pricing__cap {
+		font-size: 0.85rem;
+		color: rgba(255, 255, 255, 0.55);
+		margin: 0 0 0.85rem;
+	}
+	.en-pricing__card ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		line-height: 1.5;
+		font-size: 0.9rem;
+		color: rgba(255, 255, 255, 0.78);
+	}
+	.en-pricing__note {
+		margin-top: 1.75rem;
+		font-size: 0.85rem;
+		color: rgba(255, 255, 255, 0.45);
+	}
+	.en-micro-foot {
+		margin: 1.5rem 0 0;
+		text-align: center;
+	}
+	.en-micro-foot a {
+		color: hsl(38 92% 55%);
+	}
+</style>
