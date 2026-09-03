@@ -2,6 +2,7 @@
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
 import settings from '../../../config/settings.js';
+import '../../../styles/feature-micro-en.css';
 
 const seo = {
 	title: 'Closing precision | tevsys',
@@ -39,7 +40,7 @@ const n = settings.documentedOperatives;
 				</p>
 			</section>
 
-			<section id="precision-residual" class="feature-proof-detail" aria-labelledby="precision-residual-title">
+			<section id="precision-residual" class="precision-residual" aria-labelledby="precision-residual-title">
 				<h2 id="precision-residual-title">Limit hit and residual exposure</h2>
 				<p>
 					When you cross your limit, tevsys triggers the close and STOP immediately: you stay protected and cannot open more trades while STOP is active.
@@ -96,14 +97,6 @@ const n = settings.documentedOperatives;
 <style>
 	.precision-hero-stat__accent,
 	.feature-title__accent {
-		color: hsl(38 92% 55%);
-	}
-	.en-micro-foot {
-		margin: 2.5rem 0 3rem;
-		text-align: center;
-		font-size: 0.95rem;
-	}
-	.en-micro-foot a {
 		color: hsl(38 92% 55%);
 	}
 </style>

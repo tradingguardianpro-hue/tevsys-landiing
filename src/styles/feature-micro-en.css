@@ -1,0 +1,83 @@
+/**
+ * Jerarquía tipográfica micros EN (oleada 2).
+ * H1 = DM Sans display (global). H2 de sección = Inter, más pequeño — no clonar el H1.
+ */
+
+.tevsys-feature-micro-surface .feature-demo h2,
+.tevsys-feature-micro-surface .feature-proof h2,
+.tevsys-feature-micro-surface .feature-proof-detail > h2,
+.tevsys-feature-micro-surface .feature-proof-detail > h3 {
+	font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	font-weight: 650;
+	letter-spacing: -0.015em;
+	line-height: 1.35;
+	margin: 0 0 0.65rem;
+}
+
+.tevsys-feature-micro-surface .feature-demo h2,
+.tevsys-feature-micro-surface .feature-proof h2 {
+	font-size: 1.35rem;
+}
+
+.tevsys-feature-micro-surface .feature-proof-detail > h2 {
+	font-size: 1.2rem;
+}
+
+.tevsys-feature-micro-surface .feature-proof-detail > h3 {
+	font-size: 1.12rem;
+	font-weight: 600;
+}
+
+.tevsys-feature-micro-surface .precision-residual {
+	max-width: 72ch;
+	margin: 0 0 clamp(1.35rem, 3vw, 2rem);
+	padding: clamp(0.85rem, 2vw, 1.15rem) clamp(1rem, 2.5vw, 1.25rem);
+	border-radius: 0.55rem;
+	border: 1px solid rgba(245, 176, 65, 0.22);
+	background: rgba(245, 176, 65, 0.05);
+}
+
+.tevsys-feature-micro-surface .precision-residual h2 {
+	margin: 0 0 0.65rem;
+	font-family: 'Inter', system-ui, sans-serif;
+	font-size: 1.12rem;
+	font-weight: 650;
+	line-height: 1.35;
+	letter-spacing: -0.01em;
+}
+
+.tevsys-feature-micro-surface .precision-residual p {
+	margin: 0 0 0.75rem;
+	font-size: 0.96rem;
+	line-height: 1.58;
+	opacity: 0.9;
+}
+
+.tevsys-feature-micro-surface .precision-residual p:last-child {
+	margin-bottom: 0;
+}
+
+.tevsys-feature-micro-surface .feature-demo-hook {
+	margin: 0 0 0.75rem;
+	font-style: italic;
+	opacity: 0.9;
+}
+
+.tevsys-feature-micro-surface .feature-demo-attrib {
+	margin: 0.15rem 0 0.35rem;
+	font-size: 0.92rem;
+	font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	letter-spacing: 0.01em;
+	opacity: 0.88;
+	color: hsl(210, 14%, 72%);
+}
+
+.tevsys-feature-micro-surface .en-micro-foot {
+	margin: 2.5rem 0 3rem;
+	text-align: center;
+	font-size: 0.95rem;
+}
+
+.tevsys-feature-micro-surface .en-micro-foot a {
+	color: hsl(38 92% 55%);
+}
