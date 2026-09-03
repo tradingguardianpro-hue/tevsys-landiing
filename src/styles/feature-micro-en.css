@@ -1,7 +1,77 @@
 /**
- * Jerarquía tipográfica micros EN (oleada 2).
- * H1 = DM Sans display (global). H2 de sección = Inter, más pequeño — no clonar el H1.
+ * Jerarquía + ritmo tipográfico micros EN (oleada 2).
+ * H1 = DM Sans display (global). H2 = Inter más pequeño.
+ * Los márgenes/line-height del hero viven en precision.astro (scoped ES);
+ * aquí se replican para EN — sin ellos el texto se ve “junto”.
  */
+
+/* H1 un poco más abierto en EN (inglés ocupa más en 2 líneas; 1.14 se ve apretado). */
+.tevsys-feature-micro-surface .feature-hero h1 {
+	line-height: 1.32;
+	margin-bottom: clamp(1.15rem, 3vw, 1.75rem);
+}
+
+.tevsys-feature-micro-surface .feature-kicker {
+	margin: 0 0 0.35rem;
+	opacity: 0.8;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.82rem;
+}
+
+.tevsys-feature-micro-surface .feature-intro,
+.tevsys-feature-micro-surface .feature-lead,
+.tevsys-feature-micro-surface .feature-hook,
+.tevsys-feature-micro-surface .feature-extreme-note {
+	line-height: 1.55;
+}
+
+.tevsys-feature-micro-surface .feature-lead,
+.tevsys-feature-micro-surface .feature-extreme-note {
+	margin: 0 0 0.85rem;
+	max-width: 72ch;
+}
+
+.tevsys-feature-micro-surface .precision-hero-lead {
+	margin: clamp(0.65rem, 2vw, 0.85rem) 0 clamp(1.35rem, 3.5vw, 1.75rem);
+	font-size: clamp(1.02rem, 1.35vw, 1.12rem);
+	line-height: 1.55;
+	opacity: 0.92;
+	max-width: none;
+}
+
+.tevsys-feature-micro-surface .precision-hero-evidence {
+	max-width: 72ch;
+	margin: 0 0 clamp(1.35rem, 3.2vw, 1.75rem);
+	padding: clamp(1rem, 2.5vw, 1.2rem) clamp(1.05rem, 2.5vw, 1.25rem);
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-left: 3px solid rgba(245, 176, 65, 0.45);
+	background: rgba(255, 255, 255, 0.035);
+}
+
+.tevsys-feature-micro-surface .precision-hero-stat {
+	margin: 0 0 0.65rem;
+	font-size: 0.96rem;
+	line-height: 1.55;
+	font-weight: 500;
+	opacity: 0.94;
+}
+
+.tevsys-feature-micro-surface .precision-hero-secondary {
+	margin: 0;
+	font-size: 0.92rem;
+	line-height: 1.55;
+	opacity: 0.82;
+}
+
+.tevsys-feature-micro-surface .precision-hero-geopolitical {
+	max-width: 72ch;
+	margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
+	font-size: 0.96rem;
+	line-height: 1.55;
+	opacity: 0.88;
+}
 
 .tevsys-feature-micro-surface .feature-demo h2,
 .tevsys-feature-micro-surface .feature-proof h2,
@@ -57,10 +127,17 @@
 	margin-bottom: 0;
 }
 
+.tevsys-feature-micro-surface .feature-proof p,
+.tevsys-feature-micro-surface .feature-proof li,
+.tevsys-feature-micro-surface .feature-demo p {
+	line-height: 1.55;
+}
+
 .tevsys-feature-micro-surface .feature-demo-hook {
 	margin: 0 0 0.75rem;
 	font-style: italic;
 	opacity: 0.9;
+	line-height: 1.5;
 }
 
 .tevsys-feature-micro-surface .feature-demo-attrib {
@@ -70,6 +147,11 @@
 	letter-spacing: 0.01em;
 	opacity: 0.88;
 	color: hsl(210, 14%, 72%);
+	line-height: 1.45;
+}
+
+.tevsys-feature-micro-surface .demo-edit-note {
+	line-height: 1.55;
 }
 
 .tevsys-feature-micro-surface .en-micro-foot {
