@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## i18n — Cómo funciona EN a paridad de estructura (4 sep 2026)
+
+- **Problema:** `/en/como-funciona` era un stub (solo Nasdaq); faltaban documentación de sesión, desde cero, movimiento de caja, microclips, 4 piezas, panel, auditoría, etc.
+- **Qué:** misma página que ES (vídeos/assets/anchors) con marco EN; UI del EA en vídeo puede seguir en español.
+- **Commit:** `web(tevsys): i18n how-it-works EN full structure parity`
+
 ## i18n ES|EN — oleada 3 (3–4 sep 2026)
 
 - **Qué:** `/en/para-quien` (completo) · `/en/company/empresas` + thank-you · footer EN (labels + enlaces producto EN; guías/legal siguen ES) · `enReady` ampliado.
