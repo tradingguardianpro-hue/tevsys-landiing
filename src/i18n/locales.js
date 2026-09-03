@@ -58,11 +58,14 @@ export function switchLocalePath(pathname, targetLocale) {
 		'/',
 		'/como-funciona',
 		'/company/contact',
+		'/company/empresas',
+		'/company/empresas-thank-you',
 		'/features/precision',
 		'/features/hyperclose',
 		'/features/evidencia',
 		'/features/sml',
 		'/precios',
+		'/para-quien',
 	]);
 	if (targetLocale === 'en' && !enReady.has(barePath)) {
 		return '/en/';

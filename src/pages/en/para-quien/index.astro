@@ -1,0 +1,587 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+import settings from '../../../config/settings.js';
+import '../../../styles/feature-micro-en.css';
+
+const seo = {
+	title: "Who it's for | tevsys",
+	description:
+		'Limit precision, a brake under pressure, verifiable evidence — tevsys fits traders, academies and managers who need MT5 traceability.',
+};
+
+const corePerfiles = [
+	{
+		id: 'precision',
+		label: 'Precision',
+		title: 'You demand closes tight to the agreed limit',
+		hook: 'Tight to the limit in normal market conditions.',
+		body: `Mean error ≈ 0.06 % · ${settings.documentedOperatives} documented trades across five environments.`,
+		href: '/en/features/precision',
+		accentLineMl: '0.05rem',
+	},
+	{
+		id: 'hyperclose',
+		label: 'HyperClose',
+		title: 'You need a hard stop when discipline slips',
+		hook: 'Stop for real — not just try.',
+		body: 'Instant close if you trade while blocked, with a record of every attempt.',
+		href: '/en/features/hyperclose',
+		accentLineMl: '0.05rem',
+	},
+	{
+		id: 'evidencia',
+		label: 'Evidence',
+		title: 'You want to cross-check MT5 and the tevsys record',
+		hook: "Don't trust: verify.",
+		body: 'Official report, panel and logs that line up — no blind faith required.',
+		href: '/en/features/evidencia',
+		accentLineMl: '0.05rem',
+	},
+	{
+		id: 'sml',
+		label: 'SML',
+		title: 'You want more margin with clear rules',
+		hook: 'Optional reward after a positive day.',
+		body: 'Widen margin with plan caps · scenario validation in progress.',
+		href: '/en/features/sml',
+		accentLineMl: '0.05rem',
+	},
+];
+---
+
+<Layout seo={seo} lang="en">
+	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--para-quien">
+		<Container>
+			<section class="feature-hero para-quien-hero">
+				<p class="feature-kicker">Who it's for</p>
+				<h1>
+					Not one profile. The <span class="para-quien-hero__accent">whole picture</span> in MT5.
+				</h1>
+				<div class="para-quien-hero__float">
+					<p class="feature-hook para-quien-hero__hook">
+						<span class="feature-hook__dot" aria-hidden="true"></span>
+						Precision, a brake under pressure and evidence you can cross-check — with the rules you configure.
+					</p>
+					<ul class="para-quien-audience" aria-label="Profiles that fit">
+						<li>From beginners to those who demand precise closes.</li>
+						<li>Anyone who needs a brake under pressure.</li>
+						<li>Anyone who wants to know what happens in the account — trader, manager or academy.</li>
+					</ul>
+				</div>
+			</section>
+
+			<p class="tevsys-home-hero-bridge para-quien-bridge" aria-label="Product layers">
+				<span class="para-quien-bridge__hairline" aria-hidden="true"></span>
+				<span class="tevsys-home-hero-bridge__text">Precision · HyperClose · SML · Evidence</span>
+			</p>
+
+			<section class="para-quien-profiles" aria-labelledby="para-quien-profiles-title">
+				<h2 id="para-quien-profiles-title" class="para-quien-profiles__title">
+					Four layers ·
+					<span class="tevsys-brand-accent-underline tevsys-brand-accent-underline--varios-perfiles"
+						>several profiles</span
+					>
+				</h2>
+				<div class="para-quien-profiles__panel">
+					<ul class="para-quien-profiles__grid">
+						{
+							corePerfiles.map((perfil) => (
+								<li>
+									<a class="para-quien-profile" href={perfil.href}>
+										<span class="para-quien-profile__arrow" aria-hidden="true">
+											→
+										</span>
+										<div class="para-quien-profile__head">
+											<p class="para-quien-profile__label">{perfil.label}</p>
+											<h3
+												class="para-quien-profile__title para-quien-profile__title--accent-line"
+												style={`--card-accent-line-ml: ${perfil.accentLineMl}`}
+											>
+												{perfil.title}
+											</h3>
+										</div>
+										<p class="para-quien-profile__hook">{perfil.hook}</p>
+										<p class="para-quien-profile__body">{perfil.body}</p>
+										<span class="para-quien-profile__cta">Learn more</span>
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</section>
+
+			<div class="para-quien-equipos-block">
+				<section class="para-quien-equipos" aria-labelledby="para-quien-equipos-title">
+					<p class="para-quien-equipos__kicker">Teams & institutions</p>
+					<h2 id="para-quien-equipos-title" class="para-quien-equipos__title">
+						Academies, prop firms and anyone who audits you
+					</h2>
+					<div class="para-quien-equipos__copy">
+						<p class="para-quien-equipos__lead">Traceability to review execution and limits.</p>
+						<p class="para-quien-equipos__note">
+							We do not audit your strategy. Institutions, external managers and teams have a separate channel.
+						</p>
+					</div>
+				</section>
+				<p class="para-quien-equipos-bridge" aria-hidden="true">
+					<span class="para-quien-equipos-bridge__line"></span>
+				</p>
+				<nav class="para-quien-equipos__links" aria-label="Teams and institutions links">
+					<a class="para-quien-equipos__link" href="/en/company/empresas">Companies channel</a>
+					<a class="para-quien-equipos__link para-quien-equipos__link--muted" href="/auditoria-ia"
+						>Audit · coming soon</a
+					>
+				</nav>
+			</div>
+
+			<p class="para-quien-map-line">
+				Want the full map?
+				<a class="evidence-link" href="/en/como-funciona">How it works</a>
+				— install, limits, closes and evidence.
+			</p>
+
+			<section class="feature-cta para-quien-cta">
+				<h2>Want to try it on your trading?</h2>
+				<p>We guide you to validate a real fit — Essential demo or contact if you need Advanced or Pro.</p>
+				<a href="/en/company/contact?flow=demo" class="feature-cta__button">Try tevsys in demo</a>
+			</section>
+		</Container>
+	</div>
+</Layout>
+
+<style>
+	.para-quien-hero {
+		padding-top: clamp(1.15rem, 3vw, 1.75rem);
+	}
+	.para-quien-hero__float {
+		margin: clamp(1.2rem, 3.2vw, 1.75rem) 0 clamp(1.65rem, 4vw, 2.35rem);
+		padding: clamp(0.35rem, 1vw, 0.55rem) 0;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(1rem, 2.5vw, 1.35rem);
+		max-width: 56ch;
+	}
+	@media (min-width: 960px) {
+		.para-quien-hero__float {
+			margin-top: clamp(1rem, 2.2vw, 1.45rem);
+		}
+	}
+	.para-quien-hero__hook {
+		margin: 0;
+		line-height: 1.55;
+	}
+	.para-quien-audience {
+		margin: 0;
+		padding: clamp(0.15rem, 0.5vw, 0.35rem) 0 0;
+		list-style: none;
+		max-width: 52ch;
+	}
+	.para-quien-audience li {
+		position: relative;
+		margin: 0 0 clamp(0.58rem, 1.4vw, 0.72rem);
+		padding-left: 1.05rem;
+		font-size: clamp(0.86rem, 1.35vw, 0.92rem);
+		line-height: 1.52;
+		opacity: 0.9;
+	}
+	.para-quien-audience li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.58em;
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background: rgba(228, 232, 240, 0.38);
+	}
+	html[data-theme='light'] .para-quien-audience li::before {
+		background: rgba(80, 86, 98, 0.35);
+	}
+	.para-quien-audience li:last-child {
+		margin-bottom: 0;
+	}
+	.para-quien-hero__accent {
+		color: #f5b041;
+		font-weight: 700;
+	}
+	html[data-theme='light'] .para-quien-hero__accent {
+		color: #b87814;
+	}
+	.tevsys-brand-accent-underline--varios-perfiles::after {
+		width: calc(100% + 0.65rem);
+		height: 2px;
+		margin: 0.3rem 0 0 0.52rem;
+	}
+	.tevsys-brand-accent-underline {
+		display: inline-block;
+		font-weight: 700;
+		color: rgba(244, 246, 248, 0.98);
+	}
+	.tevsys-brand-accent-underline::after {
+		content: '';
+		display: block;
+		width: min(9rem, calc(100% + 0.5rem));
+		height: 3px;
+		margin: 0.34rem 0 0 0.04rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+	html[data-theme='light'] .tevsys-brand-accent-underline::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
+	}
+	.para-quien-bridge.tevsys-home-hero-bridge {
+		position: relative;
+		z-index: 1;
+		margin: 0;
+		text-align: center;
+		padding: clamp(0.65rem, 1.8vw, 1rem) 0 clamp(0.35rem, 1vw, 0.5rem);
+	}
+	.para-quien-bridge__hairline {
+		display: block;
+		width: min(7.5rem, 42vw);
+		min-height: 1px;
+		height: 1px;
+		margin: 0 auto clamp(0.8rem, 1.5vw, 0.95rem);
+		padding: 0;
+		border: 0;
+		background-color: rgba(228, 232, 240, 0.44);
+		-webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+		mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+		transform: translateZ(0);
+		flex-shrink: 0;
+		pointer-events: none;
+	}
+	html[data-theme='light'] .para-quien-bridge__hairline {
+		background-color: rgba(88, 94, 108, 0.38);
+	}
+	.para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
+		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
+		font-weight: 500;
+		letter-spacing: 0.055em;
+		color: rgba(228, 232, 240, 0.62);
+		line-height: 1.45;
+	}
+	html[data-theme='light'] .para-quien-bridge :global(.tevsys-home-hero-bridge__text) {
+		color: rgba(60, 66, 78, 0.72);
+	}
+	.para-quien-profiles {
+		margin: clamp(1.65rem, 4.2vw, 2.35rem) 0 clamp(2rem, 5vw, 2.85rem);
+		padding-top: clamp(0.35rem, 1vw, 0.55rem);
+	}
+	.para-quien-profiles__title {
+		margin: 0 0 clamp(1.15rem, 2.8vw, 1.45rem);
+		font-size: clamp(1.08rem, 2.3vw, 1.22rem);
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		text-align: center;
+	}
+	.para-quien-profiles__panel {
+		padding: clamp(1rem, 2.4vw, 1.35rem);
+		border-radius: var(--feature-micro-radius, 0.85rem);
+		background: linear-gradient(165deg, hsl(222, 14%, 6.5%), hsl(222, 12%, 4.8%));
+		border: 1px solid rgba(255, 255, 255, 0.07);
+		box-shadow:
+			0 22px 52px -36px rgba(0, 0, 0, 0.62),
+			inset 0 1px 0 rgba(255, 255, 255, 0.04),
+			0 0 0 1px rgba(245, 176, 65, 0.05);
+	}
+	html[data-theme='light'] .para-quien-profiles__panel {
+		background: linear-gradient(165deg, hsl(222, 10%, 97%), hsl(220, 8%, 94%));
+		border-color: rgba(15, 18, 28, 0.07);
+		box-shadow:
+			0 16px 40px -28px rgba(15, 18, 28, 0.18),
+			inset 0 1px 0 rgba(255, 255, 255, 0.9);
+	}
+	.para-quien-profiles__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: clamp(1rem, 2.5vw, 1.35rem);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	@media (max-width: 640px) {
+		.para-quien-profiles__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+	.para-quien-profile {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 0.52rem;
+		height: 100%;
+		padding: clamp(1.1rem, 2.4vw, 1.35rem) clamp(1.05rem, 2.3vw, 1.25rem) 1.15rem;
+		border-radius: calc(var(--feature-micro-radius, 0.85rem) - 0.08rem);
+		background: linear-gradient(162deg, hsl(222, 13%, 8.5%), hsl(222, 11%, 6%));
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-left: 2px solid rgba(245, 176, 65, 0.42);
+		box-shadow:
+			0 20px 48px -30px rgba(0, 0, 0, 0.58),
+			inset 0 1px 0 rgba(255, 255, 255, 0.06),
+			inset 3px 0 12px -8px rgba(245, 176, 65, 0.12);
+		color: inherit;
+		text-decoration: none;
+		transition:
+			border-color 200ms ease,
+			box-shadow 200ms ease,
+			transform 200ms ease;
+	}
+	html[data-theme='light'] .para-quien-profile {
+		background: linear-gradient(162deg, hsl(222, 11%, 98%), hsl(220, 9%, 95%));
+		border-color: rgba(15, 18, 28, 0.09);
+		border-left-color: rgba(184, 120, 20, 0.45);
+		box-shadow:
+			0 14px 36px -26px rgba(15, 18, 28, 0.22),
+			inset 0 1px 0 rgba(255, 255, 255, 0.92);
+	}
+	.para-quien-profile:hover {
+		border-color: rgba(245, 176, 65, 0.42);
+		border-left-color: rgba(245, 176, 65, 0.78);
+		box-shadow:
+			0 22px 48px -28px rgba(0, 0, 0, 0.62),
+			inset 0 1px 0 rgba(255, 255, 255, 0.07),
+			0 0 0 1px rgba(245, 176, 65, 0.14),
+			0 0 32px rgba(245, 176, 65, 0.08);
+		transform: translateY(-3px);
+	}
+	.para-quien-profile__arrow {
+		position: absolute;
+		right: 0.9rem;
+		bottom: 0.9rem;
+		font-size: 1.1rem;
+		opacity: 0.4;
+		transition:
+			opacity 160ms ease,
+			color 160ms ease,
+			transform 160ms ease;
+	}
+	.para-quien-profile:hover .para-quien-profile__arrow {
+		opacity: 1;
+		color: #f5b041;
+		transform: translate(2px, -2px);
+	}
+	.para-quien-profile__head {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+	.para-quien-profile__label {
+		margin: 0;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.74rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #f5b041;
+	}
+	html[data-theme='light'] .para-quien-profile__label {
+		color: #b87814;
+	}
+	.para-quien-profile__title {
+		margin: 0;
+		padding-right: 1.75rem;
+		font-size: clamp(1.02rem, 2.25vw, 1.12rem);
+		font-weight: 700;
+		line-height: 1.35;
+		letter-spacing: -0.018em;
+	}
+	.para-quien-profile__title--accent-line::after {
+		content: '';
+		display: block;
+		width: 3.75rem;
+		height: 2px;
+		margin: 0.36rem 0 0 0.72rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.92) 0%,
+			rgba(148, 154, 168, 0.58) 72%,
+			rgba(110, 116, 128, 0.32) 100%
+		);
+	}
+	.para-quien-profile__hook {
+		margin: 0;
+		font-size: 0.88rem;
+		font-style: italic;
+		line-height: 1.45;
+		opacity: 0.92;
+		color: rgba(244, 246, 248, 0.94);
+	}
+	html[data-theme='light'] .para-quien-profile__hook {
+		color: rgba(28, 32, 42, 0.88);
+	}
+	.para-quien-profile__body {
+		margin: 0;
+		flex: 1;
+		font-size: 0.84rem;
+		line-height: 1.5;
+		opacity: 0.82;
+	}
+	.para-quien-profile__cta {
+		margin-top: 0.15rem;
+		font-size: 0.82rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		opacity: 0.7;
+	}
+	.para-quien-profile:hover .para-quien-profile__cta {
+		opacity: 1;
+		color: #f5b041;
+	}
+	.para-quien-equipos-block {
+		position: relative;
+		margin: 0 0 clamp(1.5rem, 3.5vw, 2rem);
+		text-align: center;
+	}
+	.para-quien-equipos-block::before {
+		content: '';
+		display: block;
+		width: min(7.5rem, 42vw);
+		min-height: 1px;
+		height: 1px;
+		margin: 0 auto clamp(1.35rem, 3.2vw, 1.85rem);
+		background-color: rgba(228, 232, 240, 0.36);
+		-webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+		mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+		transform: translateZ(0);
+	}
+	html[data-theme='light'] .para-quien-equipos-block::before {
+		background-color: rgba(88, 94, 108, 0.32);
+	}
+	.para-quien-equipos {
+		margin: 0;
+		padding: clamp(1.55rem, 3.4vw, 2.1rem) clamp(1.35rem, 3.2vw, 1.85rem);
+		border-radius: var(--feature-micro-radius, 0.85rem);
+		border: 1px solid rgba(245, 176, 65, 0.18);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.05), rgba(12, 14, 18, 0.45));
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.03),
+			0 0 0 1px rgba(245, 176, 65, 0.04);
+		text-align: center;
+	}
+	html[data-theme='light'] .para-quien-equipos {
+		border-color: rgba(180, 120, 20, 0.22);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.08), rgba(248, 249, 252, 0.98));
+	}
+	.para-quien-equipos-bridge {
+		margin: 0;
+		padding: clamp(0.9rem, 2.2vw, 1.2rem) 0 clamp(0.65rem, 1.6vw, 0.85rem);
+	}
+	.para-quien-equipos-bridge__line {
+		display: block;
+		width: min(9rem, 52vw);
+		min-height: 1px;
+		height: 1px;
+		margin: 0 auto;
+		background-color: rgba(228, 232, 240, 0.4);
+		-webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+		mask-image: linear-gradient(90deg, transparent 0%, #000 16%, #000 84%, transparent 100%);
+		transform: translateZ(0);
+	}
+	html[data-theme='light'] .para-quien-equipos-bridge__line {
+		background-color: rgba(88, 94, 108, 0.34);
+	}
+	.para-quien-equipos__kicker {
+		margin: 0 0 0.55rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgba(245, 176, 65, 0.82);
+	}
+	html[data-theme='light'] .para-quien-equipos__kicker {
+		color: rgba(160, 105, 18, 0.88);
+	}
+	.para-quien-equipos__title {
+		margin: 0 0 clamp(1rem, 2.4vw, 1.25rem);
+		font-size: clamp(1.06rem, 2.25vw, 1.18rem);
+		font-weight: 700;
+		letter-spacing: -0.015em;
+		line-height: 1.35;
+	}
+	.para-quien-equipos__copy {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(0.75rem, 1.8vw, 1rem);
+		margin: 0 auto;
+		max-width: 42ch;
+	}
+	.para-quien-equipos__lead {
+		margin: 0;
+		font-size: clamp(0.92rem, 1.5vw, 0.98rem);
+		line-height: 1.55;
+		font-weight: 600;
+		opacity: 0.96;
+	}
+	.para-quien-equipos__note {
+		margin: 0;
+		font-size: clamp(0.86rem, 1.35vw, 0.92rem);
+		line-height: 1.58;
+		opacity: 0.78;
+	}
+	.para-quien-equipos__links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.75rem 1.5rem;
+		margin: 0;
+		padding: 0 0 clamp(0.15rem, 0.5vw, 0.35rem);
+	}
+	.para-quien-equipos__link {
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+	.para-quien-equipos__link--muted {
+		font-weight: 500;
+		opacity: 0.78;
+	}
+	.para-quien-equipos__link:hover {
+		color: #f5b041;
+		opacity: 1;
+	}
+	.para-quien-map-line {
+		margin: clamp(1.5rem, 3.5vw, 2.1rem) auto clamp(1.35rem, 3.2vw, 1.85rem);
+		max-width: 54ch;
+		font-size: 0.9rem;
+		line-height: 1.55;
+		opacity: 0.88;
+		text-align: center;
+	}
+	.para-quien-cta.feature-cta {
+		margin-top: clamp(0.5rem, 1.5vw, 1rem);
+		padding-top: clamp(1.25rem, 3vw, 1.75rem);
+		border-top: 1px solid rgba(228, 232, 240, 0.08);
+	}
+	html[data-theme='light'] .para-quien-cta.feature-cta {
+		border-top-color: rgba(60, 66, 78, 0.1);
+	}
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-hook__dot {
+		display: inline-block;
+		width: 0.45rem;
+		height: 0.45rem;
+		margin-right: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		vertical-align: middle;
+	}
+</style>

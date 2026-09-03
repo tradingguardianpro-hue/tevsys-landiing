@@ -3,7 +3,8 @@ import { Header, Footer } from '@components/odyssey-theme';
 import Layout from './Base.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import settings from '../config/settings';
-import { footerColumns, footerSocials } from '../config/footer';
+import { footerSocials } from '../config/footer';
+import { getFooterColumns } from '../i18n/footer.js';
 import { getNav } from '../i18n/nav.js';
 import { getLocaleFromUrl, localizeHref } from '../i18n/locales.js';
 import BrandOval from '../components/BrandOval.astro';
@@ -20,6 +21,7 @@ const { seo, bodyClass, lang: langProp } = Astro.props as Props;
 const lang = langProp || getLocaleFromUrl(Astro.url);
 const nav = getNav(lang);
 const homeHref = localizeHref('/', lang);
+const footerColumns = getFooterColumns(lang);
 ---
 
 <Layout seo={seo} bodyClass={bodyClass} lang={lang}>
@@ -38,6 +40,7 @@ const homeHref = localizeHref('/', lang);
     footerSocials={footerSocials}
     copyrightName={settings.name}
     showPlug={settings.showPlug}
+    lang={lang}
   >
     <a href={homeHref} slot="logo" class="footer-brand__name">
     <img src="/favicon.png" alt="" width="24" height="24" class="footer-brand__logo" />

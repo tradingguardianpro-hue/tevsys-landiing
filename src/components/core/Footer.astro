@@ -11,10 +11,16 @@ const {
 	background,
 	color,
 	showPlug = true,
+	lang = 'es',
 } = Astro.props;
 
 const columns = footerColumns.length > 0 ? footerColumns : footerLists;
 const [colGuias, colProducto, colLegal] = columns;
+const isEn = lang === 'en';
+const loveLine = isEn
+	? '❤️ Made with love for trading. — Built independently. No investors. No excuses.'
+	: '❤️ Made with love for trading. — Desarrollado independientemente. Sin inversores. Sin excusas.';
+const rightsLine = isEn ? 'All rights reserved.' : 'Todos los derechos reservados.';
 
 const footerStyle = background
 	? `--footer-bg:${background}; --footer-color:${color ?? 'inherit'}`
@@ -265,13 +271,12 @@ const footerStyle = background
 			<div class="footer-independiente-wrap">
 				<p class="footer-independiente">
 					<a href="#" class="footer-independiente__link">
-						❤️ Made with love for trading. — Desarrollado independientemente. Sin inversores. Sin
-						excusas.
+						{loveLine}
 					</a>
 				</p>
 			</div>
 			<p class="footer-copyright">
-				Copyright &copy; {new Date().getFullYear()} {copyrightName}. Todos los derechos reservados.
+				Copyright &copy; {new Date().getFullYear()} {copyrightName}. {rightsLine}
 			</p>
 		</div>
 	</Container>

@@ -1,0 +1,218 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+import { FormInput, FormTextarea } from '@components/odyssey-theme';
+import '../../../styles/feature-micro-en.css';
+
+const seo = {
+	title: 'Companies | tevsys',
+	description:
+		'tevsys for companies: channel in development. Institutional capital, tailored terms. Leave your details and we will notify you when ready.',
+};
+
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xzdjbenk';
+---
+
+<Layout seo={seo} lang="en">
+	<Container>
+		<section class="feature-hero empresas-hero">
+			<p class="feature-kicker">Companies channel</p>
+			<h1>Companies: a different channel, tailored terms.</h1>
+			<p class="feature-hook empresas-feature-hook">
+				<span class="feature-hook__dot" aria-hidden="true"></span>
+				We are building and validating the companies channel.
+			</p>
+			<p class="feature-lead">
+				The capital we protect here is not retail: it needs meetings and a clear offer. We need special terms
+				because scope, conditions and what we can deliver are designed with you.
+			</p>
+			<p class="feature-trace-note">
+				If you are interested, leave your details and we will notify you when this channel is ready.
+			</p>
+		</section>
+
+		<section class="empresas-form-section">
+			<h2>Notify me when you are ready</h2>
+			<form id="empresasForm" class="empresas-form" data-formspree-endpoint={formspreeEndpoint}>
+				<input type="hidden" name="_subject" value="[tevsys Companies] New request" />
+				<input type="hidden" name="Source" value="empresas-en" />
+				<FormInput type="text" label="Company" name="Empresa" placeholder="Company name" required />
+				<FormInput type="email" label="Work email" name="Email" placeholder="you@company.com" required />
+				<FormInput type="text" label="Role (optional)" name="Rol" placeholder="e.g. Risk manager, CTO…" />
+				<FormInput type="text" label="Goal (optional)" name="Objetivo" placeholder="What interests you about tevsys" />
+				<FormTextarea
+					label="Comment (optional)"
+					name="Comentario"
+					placeholder="Anything else you want to tell us…"
+					rows={4}
+				/>
+				<p id="empresasFormMessage" class="empresas-form__message" hidden></p>
+				<button type="submit" class="empresas-form__submit">Send</button>
+			</form>
+			<p class="empresas-form__fallback">
+				Or email us directly: <a href="mailto:info@tevsys.io" class="evidence-link">info@tevsys.io</a>
+			</p>
+		</section>
+	</Container>
+</Layout>
+
+<script is:inline>
+	(() => {
+		const form = document.getElementById('empresasForm');
+		if (!form) return;
+
+		const messageNode = document.getElementById('empresasFormMessage');
+		const thankYouUrl = '/en/company/empresas-thank-you';
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const submitBtn = form.querySelector('button[type="submit"]');
+			const endpoint = form.dataset.formspreeEndpoint;
+			if (!endpoint) return;
+
+			if (submitBtn) {
+				submitBtn.disabled = true;
+				submitBtn.textContent = 'Sending…';
+			}
+			if (messageNode) {
+				messageNode.hidden = true;
+				messageNode.textContent = '';
+			}
+
+			try {
+				const formData = new FormData(form);
+				const response = await fetch(endpoint, {
+					method: 'POST',
+					body: formData,
+					headers: { Accept: 'application/json' },
+				});
+				if (response.ok) {
+					window.location.href = thankYouUrl;
+					return;
+				}
+				throw new Error('Submit failed');
+			} catch (err) {
+				if (messageNode) {
+					messageNode.hidden = false;
+					messageNode.textContent = 'Could not send. Try again or email info@tevsys.io';
+				}
+				if (submitBtn) {
+					submitBtn.disabled = false;
+					submitBtn.textContent = 'Send';
+				}
+			}
+		});
+	})();
+</script>
+
+<style>
+	.empresas-hero {
+		margin-bottom: 2.5rem;
+	}
+	.feature-kicker {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		opacity: 0.8;
+		margin-bottom: 0.5rem;
+	}
+	.empresas-feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		font-size: 1.15rem;
+		opacity: 0.9;
+		margin: 0 0 0.7rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-lead,
+	.feature-trace-note {
+		max-width: 72ch;
+		line-height: 1.55;
+		opacity: 0.9;
+		margin: 0.5rem 0 0;
+	}
+	.empresas-form-section {
+		background: #06080d;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.5rem 1.5rem 1.75rem;
+		max-width: 36rem;
+		margin-bottom: 3rem;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.08);
+	}
+	.empresas-form-section h2 {
+		margin: 0 0 1rem;
+		font-size: 1.2rem;
+		font-weight: 600;
+	}
+	.empresas-form {
+		display: grid;
+		gap: 1rem;
+	}
+	.empresas-form-section :global(.form-field__container input),
+	.empresas-form-section :global(.form-field__container textarea) {
+		background: rgba(255, 255, 255, 0.04);
+		border-color: rgba(245, 176, 65, 0.25);
+		color: var(--theme-on-bg);
+	}
+	.empresas-form-section :global(.form-field__container input:focus),
+	.empresas-form-section :global(.form-field__container textarea:focus) {
+		border-color: rgba(245, 176, 65, 0.6);
+	}
+	.empresas-form-section :global(.form-field__container input::placeholder),
+	.empresas-form-section :global(.form-field__container textarea::placeholder) {
+		opacity: 0.6;
+	}
+	.empresas-form-section :global(.form-field__container label) {
+		color: var(--theme-on-bg);
+	}
+	.empresas-form__message {
+		margin: 0;
+		padding: 0.75rem;
+		border-radius: 0.5rem;
+		background: rgba(245, 176, 65, 0.12);
+		border: 1px solid rgba(245, 176, 65, 0.5);
+		color: var(--theme-on-bg);
+		font-size: 0.95rem;
+	}
+	.empresas-form__submit {
+		background: #f5b041;
+		color: #0a0a0a;
+		border: none;
+		padding: 0.6rem 1.25rem;
+		border-radius: 0.5rem;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background 0.2s ease;
+	}
+	.empresas-form__submit:hover:not(:disabled) {
+		background: #f7c050;
+	}
+	.empresas-form__submit:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+	}
+	.empresas-form__fallback {
+		margin: 1rem 0 0;
+		font-size: 0.95rem;
+		opacity: 0.9;
+	}
+	.evidence-link {
+		color: #ffffff;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.evidence-link:hover {
+		color: #f5b041;
+	}
+</style>

@@ -1,0 +1,51 @@
+---
+import Layout from '../../../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+
+const seo = {
+	title: 'Request received | tevsys Companies',
+	description: 'We received your request. We will notify you when the companies channel is ready.',
+};
+---
+
+<Layout seo={seo} lang="en">
+	<Container>
+		<section class="contact-thank-you">
+			<h1>Thanks for your interest in tevsys</h1>
+			<p>We received your details. We will notify you when the companies channel is ready.</p>
+			<p class="contact-thank-you__note">Check your inbox (and spam, just in case).</p>
+			<a href="/en/" class="contact-thank-you__link">Back to home</a>
+		</section>
+	</Container>
+</Layout>
+
+<style>
+	.contact-thank-you {
+		min-height: 50vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 3rem 1rem;
+	}
+	.contact-thank-you h1 {
+		margin-bottom: 1rem;
+		font-size: 1.75rem;
+	}
+	.contact-thank-you p {
+		margin-bottom: 0.75rem;
+		max-width: 36ch;
+	}
+	.contact-thank-you__note {
+		opacity: 0.75;
+		font-size: 0.95rem;
+	}
+	.contact-thank-you__link {
+		margin-top: 1.5rem;
+		color: #f5b041;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+</style>

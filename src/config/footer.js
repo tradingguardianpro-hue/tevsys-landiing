@@ -4,7 +4,8 @@ export const footerSocials = [];
 export const footerNav = [];
 
 /**
- * Columnas inferiores — guías en orden de embudo + producto + legal.
+ * Columnas ES (fallback / theme-setup).
+ * Canon vivo EN+ES: `src/i18n/footer.js` → getFooterColumns(locale) vía Page.astro.
  * Canon 21 ago: minuto de límites = Advanced/Pro (semana), no Essential.
  */
 export const footerColumns = [

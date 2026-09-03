@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## i18n ES|EN — oleada 3 (3–4 sep 2026)
+
+- **Qué:** `/en/para-quien` (completo) · `/en/company/empresas` + thank-you · footer EN (labels + enlaces producto EN; guías/legal siguen ES) · `enReady` ampliado.
+- **Por qué:** esos dos ítems ya estaban en el nav EN y caían a home.
+- **Commit:** `web(tevsys): i18n wave3 — who-its-for companies footer EN`
+
 ## i18n — ritmo micro EN = ES (3–4 sep 2026)
 
 - **Problema:** en `/en/features/precision` el kicker («Verification feature») arrancaba **más arriba** que en ES; el interlineado seguía distinto tras el primer fix.
