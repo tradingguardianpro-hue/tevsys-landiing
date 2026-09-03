@@ -1,5 +1,5 @@
 ---
-import { locales, localeLabels, getLocaleFromUrl, switchLocalePath } from '../i18n/locales.js';
+import { locales, localeLabels, getLocaleFromUrl, switchLocalePath } from '../../i18n/locales.js';
 
 const pathname = Astro.url.pathname;
 const currentLocale = getLocaleFromUrl(Astro.url);
@@ -8,7 +8,7 @@ const currentLocale = getLocaleFromUrl(Astro.url);
 <nav class="tevsys-lang-switch" aria-label={currentLocale === 'en' ? 'Language' : 'Idioma'}>
 	{
 		locales.map((loc, i) => (
-			<>
+			<span class="tevsys-lang-switch__item">
 				{i > 0 && (
 					<span class="tevsys-lang-switch__sep" aria-hidden="true">
 						|
@@ -23,7 +23,7 @@ const currentLocale = getLocaleFromUrl(Astro.url);
 						{localeLabels[loc]}
 					</a>
 				)}
-			</>
+			</span>
 		))
 	}
 </nav>
@@ -41,6 +41,11 @@ const currentLocale = getLocaleFromUrl(Astro.url);
 		letter-spacing: 0.06em;
 		line-height: 1;
 		white-space: nowrap;
+	}
+	.tevsys-lang-switch__item {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
 	}
 	.tevsys-lang-switch__sep {
 		opacity: 0.35;

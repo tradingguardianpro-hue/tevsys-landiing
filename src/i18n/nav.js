@@ -11,7 +11,7 @@ const navEs = [
 const navEn = [
 	{ title: 'Home', slug: '/' },
 	{ title: 'How it works', slug: '/como-funciona', match: '/como-funciona' },
-	{ title: 'Who it’s for', slug: '/para-quien' },
+	{ title: "Who it's for", slug: '/para-quien' },
 	{ title: 'Companies', slug: '/company/empresas' },
 	{ title: 'Contact', slug: '/company/contact' },
 ];
