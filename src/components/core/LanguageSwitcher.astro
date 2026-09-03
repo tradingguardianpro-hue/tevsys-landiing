@@ -32,39 +32,46 @@ const currentLocale = getLocaleFromUrl(Astro.url);
 	.tevsys-lang-switch {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.35rem;
-		margin: 0;
-		padding: 0.2rem 0.15rem;
+		gap: 0.28rem;
+		margin: 0 0 0 0.85rem;
+		padding: 0.38rem 0.65rem;
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
 		font-size: 0.72rem;
 		font-weight: 500;
 		letter-spacing: 0.06em;
 		line-height: 1;
 		white-space: nowrap;
+		border-radius: 999px;
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		background: rgba(255, 255, 255, 0.07);
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
 	}
 	.tevsys-lang-switch__item {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.35rem;
+		gap: 0.28rem;
 	}
 	.tevsys-lang-switch__sep {
-		opacity: 0.35;
+		opacity: 0.4;
 		user-select: none;
+		color: rgba(255, 255, 255, 0.45);
 	}
 	.tevsys-lang-switch__current {
 		color: hsl(38 92% 55%);
 	}
 	.tevsys-lang-switch__link {
-		color: rgba(255, 255, 255, 0.55);
+		color: rgba(255, 255, 255, 0.58);
 		text-decoration: none;
 	}
 	.tevsys-lang-switch__link:hover,
 	.tevsys-lang-switch__link:focus-visible {
-		color: rgba(255, 255, 255, 0.92);
+		color: rgba(255, 255, 255, 0.95);
 		outline: none;
 	}
 	@media (max-width: 720px) {
 		.tevsys-lang-switch {
+			margin-left: 0.45rem;
+			padding: 0.32rem 0.52rem;
 			font-size: 0.68rem;
 		}
 	}
