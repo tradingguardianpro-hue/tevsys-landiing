@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## i18n — ritmo micro EN = ES (3–4 sep 2026)
+
+- **Problema:** en `/en/features/precision` el kicker («Verification feature») arrancaba **más arriba** que en ES; el interlineado seguía distinto tras el primer fix.
+- **Causa:** el margen de sección del hero (`margin: var(--section-margin)`) vivía solo en `<style>` scoped de las micros ES — EN no lo heredaba. El CSS EN solo tocaba line-height, no la posición vertical del bloque.
+- **Fix:** mismo ritmo en `global.css` (`.tevsys-feature-micro-surface .feature-hero…`) + refuerzo en `feature-micro-en.css`. H1 micro `line-height: 1.32` ES y EN.
+- **Commit:** `web(tevsys): align EN feature micro section margin with ES`
+
 ## i18n ES|EN — oleada 2 micros (3 sep 2026)
 
 - **Qué:** EN de Precisión, HyperClose, Evidencia, SML + Precios (capa hero/demo/claims; enlace a página ES completa para galerías largas). `enReady` ampliado.

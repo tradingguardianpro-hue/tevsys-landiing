@@ -1,11 +1,16 @@
 /**
- * Jerarquía + ritmo tipográfico micros EN (oleada 2).
- * H1 = DM Sans display (global). H2 = Inter más pequeño.
- * Los márgenes/line-height del hero viven en precision.astro (scoped ES);
- * aquí se replican para EN — sin ellos el texto se ve “junto”.
+ * Micros EN — extras (foot, H2 Inter).
+ * Ritmo hero (margen sección + line-height) = global.css → .tevsys-feature-micro-surface
+ * (sep 2026: antes solo scoped en precision.astro ES → EN arrancaba más arriba).
  */
 
-/* H1 un poco más abierto en EN (inglés ocupa más en 2 líneas; 1.14 se ve apretado). */
+.tevsys-feature-micro-surface .feature-hero,
+.tevsys-feature-micro-surface .feature-demo,
+.tevsys-feature-micro-surface .feature-proof,
+.tevsys-feature-micro-surface .feature-cta {
+	margin: var(--section-margin, 3rem) auto;
+}
+
 .tevsys-feature-micro-surface .feature-hero h1 {
 	line-height: 1.32;
 	margin-bottom: clamp(1.15rem, 3vw, 1.75rem);

@@ -2111,6 +2111,116 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 	--micro-close-border: rgba(255, 255, 255, 0.08);
 }
 
+/*
+  Ritmo tipográfico micros — ES + EN (sep 2026).
+  Antes el margen del hero vivía solo en <style> scoped de precision.astro → EN arrancaba más arriba
+  y sin line-height de párrafos. Canon único aquí.
+*/
+.tevsys-feature-micro-surface .feature-hero,
+.tevsys-feature-micro-surface .feature-demo,
+.tevsys-feature-micro-surface .feature-proof,
+.tevsys-feature-micro-surface .feature-cta {
+	margin: var(--section-margin, 3rem) auto;
+}
+
+.tevsys-feature-micro-surface .feature-hero h1 {
+	/* Global feature H1 usaba 1.14 (muy cerrado en 2 líneas). Abrimos ES y EN por igual. */
+	line-height: 1.32;
+}
+
+.tevsys-feature-micro-surface .feature-kicker {
+	margin: 0 0 0.35rem;
+	opacity: 0.8;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.82rem;
+}
+
+.tevsys-feature-micro-surface .feature-intro,
+.tevsys-feature-micro-surface .feature-lead,
+.tevsys-feature-micro-surface .feature-hook,
+.tevsys-feature-micro-surface .feature-extreme-note {
+	line-height: 1.55;
+}
+
+.tevsys-feature-micro-surface .precision-hero-lead {
+	margin: clamp(0.65rem, 2vw, 0.85rem) 0 clamp(1.35rem, 3.5vw, 1.75rem);
+	font-size: clamp(1.02rem, 1.35vw, 1.12rem);
+	line-height: 1.55;
+	opacity: 0.92;
+}
+
+.tevsys-feature-micro-surface .precision-hero-evidence {
+	max-width: 72ch;
+	margin: 0 0 clamp(1.35rem, 3.2vw, 1.75rem);
+	padding: clamp(1rem, 2.5vw, 1.2rem) clamp(1.05rem, 2.5vw, 1.25rem);
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-left: 3px solid rgba(245, 176, 65, 0.45);
+	background: rgba(255, 255, 255, 0.035);
+}
+
+.tevsys-feature-micro-surface .precision-hero-stat {
+	margin: 0 0 0.65rem;
+	font-size: 0.96rem;
+	line-height: 1.55;
+	font-weight: 500;
+	opacity: 0.94;
+}
+
+.tevsys-feature-micro-surface .precision-hero-secondary {
+	margin: 0;
+	font-size: 0.92rem;
+	line-height: 1.55;
+	opacity: 0.82;
+}
+
+.tevsys-feature-micro-surface .precision-hero-geopolitical {
+	max-width: 72ch;
+	margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
+	font-size: 0.96rem;
+	line-height: 1.55;
+	opacity: 0.88;
+}
+
+.tevsys-feature-micro-surface .precision-residual {
+	max-width: 72ch;
+	margin: 0 0 clamp(1.35rem, 3vw, 2rem);
+	padding: clamp(0.85rem, 2vw, 1.15rem) clamp(1rem, 2.5vw, 1.25rem);
+	border-radius: 0.55rem;
+	border: 1px solid rgba(245, 176, 65, 0.22);
+	background: rgba(245, 176, 65, 0.05);
+}
+
+.tevsys-feature-micro-surface .precision-residual h2 {
+	margin: 0 0 0.65rem;
+	font-family: 'Inter', system-ui, sans-serif;
+	font-size: 1.12rem;
+	font-weight: 650;
+	line-height: 1.35;
+}
+
+.tevsys-feature-micro-surface .precision-residual p {
+	margin: 0 0 0.75rem;
+	font-size: 0.96rem;
+	line-height: 1.58;
+	opacity: 0.9;
+}
+
+.tevsys-feature-micro-surface .precision-residual p:last-child {
+	margin-bottom: 0;
+}
+
+.tevsys-feature-micro-surface .feature-demo h2,
+.tevsys-feature-micro-surface .feature-proof h2 {
+	margin: 0 0 0.65rem;
+	font-family: 'Inter', system-ui, sans-serif;
+	font-size: 1.35rem;
+	font-weight: 650;
+	line-height: 1.35;
+	letter-spacing: -0.015em;
+}
+
 /* Familia A — bloques sin vídeo: esquinas redondeadas (dark tenía --theme-shape-radius: 0) */
 html[data-theme='dark'] .tevsys-feature-micro-surface .feature-manifesto-banner,
 html[data-theme='dark'] .tevsys-feature-micro-surface .feature-proof,
