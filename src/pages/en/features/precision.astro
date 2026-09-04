@@ -2,101 +2,970 @@
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
 import settings from '../../../config/settings.js';
-import '../../../styles/feature-micro-en.css';
 
 const seo = {
-	title: 'Closing precision | tevsys',
+	title: 'Close precision | tevsys',
 	description:
-		'How tevsys keeps validated closing precision on real trades — mean error ≈ 0.06 % in normal conditions.',
+		'How tevsys keeps validated close precision on real trades — mean error ≈ 0.06% under normal conditions.',
 };
-const n = settings.documentedOperatives;
 ---
 
 <Layout seo={seo} lang="en">
 	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--precision">
-		<Container>
-			<section class="feature-hero">
-				<p class="feature-kicker">Verification feature</p>
-				<h1>
-					Closing precision. Less “<span class="feature-title__accent">almost</span>”: more closes where they belong.
-				</h1>
-				<p class="feature-intro precision-hero-lead">
-					The market always finds a way to charge you extra. Until now.
-				</p>
-				<div class="precision-hero-evidence">
-					<p class="precision-hero-stat">
-						<strong>{n} documented trades</strong>
-						· mean error <span class="precision-hero-stat__accent">0.06 %</span> in normal conditions
-					</p>
-					<p class="precision-hero-secondary">
-						On every close we measure tevsys’s decision and the broker’s MT5 execution separately — without mixing product precision with market slippage.{' '}
-						<a class="evidence-link" href="/en/como-funciona?play=1#evidencia-nasdaq-100">See Nasdaq session (~3:35) →</a>
-					</p>
-				</div>
-				<p class="precision-hero-geopolitical">
-					Extremes are documented too (e.g. max deviation{' '}
-					<span class="precision-hero-stat__accent">−0.39 %</span>, high geopolitical volatility).{' '}
-					<a class="evidence-link" href="/en/features/evidencia">Containment case on Evidence →</a>
-				</p>
-			</section>
-
-			<section id="precision-residual" class="precision-residual" aria-labelledby="precision-residual-title">
-				<h2 id="precision-residual-title">Limit hit and residual exposure</h2>
-				<p>
-					When you cross your limit, tevsys triggers the close and STOP immediately: you stay protected and cannot open more trades while STOP is active.
-				</p>
-				<p>
-					tevsys sends the close order to flatten open positions. If the broker does not fill on the first try, it retries automatically for up to 45 seconds, with progressive pauses — silently.
-				</p>
-				<p>
-					Only if exposure remains after that window do you see a single on-screen warning: <em>Incomplete close</em>. It explains what happened, that STOP stays on, and that you can close manually if you choose. It does not loop.
-				</p>
-			</section>
-
-			<section id="precision-demo" class="feature-demo feature-demo--hero">
-				<h2>Quick demo — 100k account</h2>
-				<p class="feature-demo-hook">
-					€100,000 · GER40 · 10 lots · −1 % limit ·{' '}
-					<strong class="feature-title__accent">€2.28 deviation (0.0023 %)</strong> · London open · ~1 min 30 s.
-				</p>
-				<div class="demo-video demo-video--hero demo-video--hero-elegant">
-					<video controls preload="metadata" playsinline poster="/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827">
-						<source src="/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827" type="video/mp4" />
-					</video>
-				</div>
-				<p class="feature-demo-attrib">Attribution · tevsys −1.0023 % · execution 0.00 p.p. · 34 ms</p>
-				<p class="demo-edit-note demo-edit-note--slim">
-					<strong>Edited video:</strong> key close moments; the terminal clock may jump between cuts. MT5 cash close:{' '}
-					<strong>−€1,002.28</strong>.
-				</p>
-			</section>
-
-			<section class="feature-proof">
-				<h2>What you can verify</h2>
-				<ul>
-					<li><a class="evidence-link" href="#precision-residual">Residual exposure — retries up to 45 s and a single warning.</a></li>
-					<li><a class="evidence-link" href="#precision-demo">Close tight to the limit (100k · GER40 demo).</a></li>
-					<li>
-						<a class="evidence-link" href="/en/features/evidencia">MT5 report tabs and downloadable history on Evidence →</a>
-					</li>
-					<li>
-						<a class="evidence-link" href="/features/precision">Full Spanish precision page (more demos &amp; captures) →</a>
-					</li>
-				</ul>
-			</section>
-
-			<p class="en-micro-foot">
-				<a href="/en/company/contact?flow=demo">Request demo →</a>
-				<span aria-hidden="true"> · </span>
-				<a href="/en/">English home →</a>
+	<Container>
+		<section class="feature-hero">
+			<p class="feature-kicker">Verification feature</p>
+			<h1>
+				Close precision. Less "<span class="feature-title__accent">almost</span>": more close where it should be.
+			</h1>
+			<p class="feature-intro precision-hero-lead">
+				The market always finds a way to charge you extra. Until now.
 			</p>
-		</Container>
+
+			<div class="precision-hero-evidence">
+				<p class="precision-hero-stat">
+					<strong>{settings.documentedOperatives} documented trades</strong>
+					· mean error <span class="precision-hero-stat__accent">0.06%</span> under normal conditions
+				</p>
+				<p class="precision-hero-secondary">
+					On every close we measure tevsys’s decision and the broker’s MT5 execution separately — without
+					mixing product precision with market slippage.{' '}
+					<a class="evidence-link" href="/en/como-funciona?play=1#evidencia-nasdaq-100">
+						Watch Nasdaq session (~3:35) →
+					</a>
+				</p>
+			</div>
+
+			<p class="precision-hero-geopolitical">
+				Documented extremes exist too (e.g. max deviation{' '}
+				<span class="precision-hero-stat__accent">−0.39%</span>, high geopolitical volatility).{' '}
+				<a class="evidence-link" href="/en/features/evidencia#evidencia-contencion-489">
+					Containment case (~111 ms) in Evidence →
+				</a>
+			</p>
+		</section>
+
+		<section id="precision-residual" class="precision-residual" aria-labelledby="precision-residual-title">
+			<h2 id="precision-residual-title">Close at the limit and residual exposure</h2>
+			<p>
+				When you cross your limit, tevsys triggers the close and STOP immediately: you stay protected and cannot
+				open more trades while STOP is active.
+			</p>
+			<p>
+				tevsys sends the close order to leave the account flat. If the broker does not fill it on the first try,
+				it retries automatically within a bounded window of up to 45 seconds, with progressive pauses. Meanwhile,
+				it works silently.
+			</p>
+			<p>
+				Only if exposure remains after that window will you see a single on-screen notice: <em>Incomplete close</em>.
+				It explains what happened, that STOP remains active, and that you can close manually if you choose.
+				The notice does not loop.
+			</p>
+		</section>
+
+		<section id="precision-demo" class="feature-demo feature-demo--hero">
+			<h2>Quick demo — 100k account</h2>
+			<p class="feature-demo-hook">
+				€100,000 · GER40 · 10 lots · −1% limit · <strong class="feature-title__accent">deviation €2.28 (0.0023%)</strong> · London open · ~1 min 30 s.
+			</p>
+			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="precision-demo-container">
+				<video id="precision-demo-video" controls preload="metadata" playsinline
+					poster="/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827">
+					<source src="/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827" type="video/mp4" />
+					Your browser does not support HTML5 video.
+				</video>
+			</div>
+			<p class="feature-demo-attrib">
+				Attribution · tevsys −1.0023% · execution 0.00 p.p. · 34 ms
+			</p>
+			<p class="demo-edit-note demo-edit-note--slim">
+				On-screen EA UI may still appear in Spanish.
+			</p>
+			<p class="demo-edit-note demo-edit-note--slim demo-edit-note--bridge">
+				MT5 report from the same session —{' '}
+				<a class="evidence-link" href="/en/features/evidencia#evidencia-informe-mt5">5 tabs in Evidence →</a>
+			</p>
+			<p class="demo-edit-note demo-edit-note--slim">
+				<strong>Edited video:</strong> key close moments; there may be a <strong>clock jump</strong> between cuts.
+				MT5 toolbox close: <strong>−€1,002.28</strong>.
+			</p>
+		</section>
+
+		<section class="feature-proof">
+			<h2>What you can verify</h2>
+			<ul>
+				<li><a class="evidence-link" href="#precision-residual">Residual exposure — retries up to 45 s and a single notice.</a></li>
+				<li><a class="evidence-link" href="#precision-demo">Close tight to the limit (100k · GER40 demo).</a></li>
+				<li><a class="evidence-link" href="#precision-nasdaq">Same logic on another instrument (NASDAQ).</a></li>
+				<li><a class="evidence-link" href="#precision-stats">Same standard on a smaller account (+ step-by-step captures).</a></li>
+				<li><a class="evidence-link" href="/en/features/evidencia#evidencia-contencion-489">Containment under stress (~111 ms sweep) — extreme case, separate from the mean.</a></li>
+				<li><a class="evidence-link" href="#precision-volatilidad">Behaviour in high volatility — documented extreme.</a></li>
+				<li><a class="evidence-link" href="#precision-logs">Traceability in MT5 logs — same small-account session.</a></li>
+			</ul>
+		</section>
+
+		<section id="precision-nasdaq" class="feature-proof-detail">
+			<h3>Demo — Nasdaq · multi-asset</h3>
+			<p class="feature-proof-subtitle">Light theme in MT5 (1 min 47 s)</p>
+			<p class="feature-proof-lead">
+				NAS100 · +1.00% limit · close <strong class="feature-title__accent">+1.0121%</strong> exact · +0.01% threshold margin on gains.
+			</p>
+			<div class="demo-video demo-video--compact demo-video--light" id="precision-nasdaq-container">
+				<video id="precision-nasdaq-video" controls preload="metadata" playsinline
+					poster="/videos/features/precision-demo-nasdaq-poster.jpg?v=20260816soft">
+					<source src="/videos/features/precision-demo-nasdaq.mp4" type="video/mp4" />
+					Your browser does not support HTML5 video.
+				</video>
+			</div>
+			<p class="demo-edit-note demo-edit-note--slim">
+				Chart and panel in light theme: tevsys coexists with the visual style you choose in MT5.
+			</p>
+		</section>
+
+		<section id="precision-cuenta-pequena" class="feature-proof-detail feature-proof-detail--cuenta-bundle">
+			<h3>Demo on a smaller account</h3>
+			<p class="feature-proof-subtitle">Same standard, less capital (1 min 13 s)</p>
+			<p class="feature-proof-lead">
+				−1.50% limit · <strong class="feature-title__accent">deviation €0.06 (0.002 p.p.)</strong> · high relative size · 2 Mar 2026.
+			</p>
+			<div class="demo-video demo-video--compact" id="precision-cuenta-pequena-container">
+				<video id="precision-cuenta-pequena-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-demo.mp4" type="video/mp4" />
+					Your browser does not support HTML5 video.
+				</video>
+			</div>
+			<p class="demo-edit-note demo-edit-note--slim demo-edit-note--bridge">
+				Summarised video; captures and MT5 report just below.
+			</p>
+			<p class="demo-edit-note demo-edit-note--slim precision-recapture-note" role="note">
+				<strong>Panel recapture:</strong> video and captures from this session (2 Mar 2026) show the previous panel.
+				Documented closes remain valid; we will replace visual pieces once we re-record with the current build.
+			</p>
+
+			<div id="precision-stats" class="precision-stats-inner">
+				<h4 class="precision-stats-inner__title">What the results show</h4>
+				<p class="feature-proof-subtitle precision-stats-inner__subtitle">Same session — verification in captures</p>
+				<p class="feature-proof-lead feature-proof-lead--stats">
+					Panel, HTML history and MT5 report from the same session (GER40): <strong>−1.50%</strong> limit, aligned close — documented deviation <strong class="feature-title__accent">€0.06 (0.002 p.p.)</strong>.
+				</p>
+				<details id="precision-49-evidence" class="proof-accordion">
+					<summary class="proof-capture-link">Step-by-step captures — close verification</summary>
+					<div class="proof-gallery">
+						<p class="proof-gallery__intro">
+							<strong>What you’ll see:</strong> setup → active protection → floating P&amp;L → STOP → HTML and MT5 report validation (redacted data).
+						</p>
+						<p class="proof-gallery__hint">Click each capture to open it full size.</p>
+						<div class="proof-gallery__grid">
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Step 1</p>
+								<p class="proof-gallery__title">EA configured (unlocked)</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-01-desbloqueado.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 1 capture full size">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-01-desbloqueado.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="2 Mar 2026 GER40 session: EA configured before enabling protection." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Step 2</p>
+								<p class="proof-gallery__title">Protection active (locked)</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-02-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 2 capture full size">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-02-protegido.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="2 Mar 2026 GER40 session: EA in protected mode with lock active." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Step 3</p>
+								<p class="proof-gallery__title">Intermediate floating P&amp;L (positive)</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 3 capture full size">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-03-flotante-intermedio-positivo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="2 Mar 2026 GER40 session: intermediate floating P&amp;L in profit." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Step 4</p>
+								<p class="proof-gallery__title">Intermediate floating P&amp;L (negative)</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 4 capture full size">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-04-flotante-intermedio-negativo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="2 Mar 2026 GER40 session: intermediate floating P&amp;L in loss." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Step 5</p>
+								<p class="proof-gallery__title">STOP — daily loss reached</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-05-stop-final.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 5 capture full size">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-05-stop-final.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="2 Mar 2026 GER40 session: STOP on daily loss −1.50% and automatic close." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Validation A</p>
+								<p class="proof-gallery__title">HTML transaction history</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-06-html-transacciones-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Open Validation A full size">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-06-html-transacciones-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="2 Mar 2026 GER40 session: ReportHistory transactions (redacted)." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Validation B</p>
+								<p class="proof-gallery__title">Official MT5 summary</p>
+								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-07-mt5-resumen-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Open Validation B full size">
+									<picture><source type="image/webp" srcset="/images/evidence/precision-49-07-mt5-resumen-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="2 Mar 2026 GER40 session: official MT5 summary (redacted)." loading="lazy" width="800" height="600" decoding="async" /></picture>
+								</a>
+							</article>
+						</div>
+					</div>
+				</details>
+				<p class="proof-context-note">On the panel, “Protected until” = protection active until the time shown.</p>
+				<p class="proof-links-row">
+					<a class="proof-capture-link" href="/docs/precision-resumen-tecnico-v3-final.pdf" target="_blank" rel="noopener noreferrer">
+						Extended technical summary <span class="proof-link-meta">PDF</span>
+					</a>
+					<a class="proof-capture-link" href="/en/features/evidencia#evidencia-informe-mt5">
+						More trades in Verifiable evidence
+					</a>
+				</p>
+				<p class="proof-note">We publish verifiable results and traceability. The proprietary formula is not public.</p>
+			</div>
+		</section>
+
+		<section id="precision-volatilidad" class="feature-proof-detail">
+			<h3>Demo in high volatility</h3>
+			<p class="feature-proof-subtitle">Documented extreme (1 min 4 s)</p>
+			<p class="feature-proof-lead">
+				+1.50% limit · close +1.83% · <strong class="feature-title__accent">high geopolitical volatility</strong>.
+				Not part of the ≈ 0.06% mean error — containment under stress.
+			</p>
+			<div class="demo-video demo-video--compact" id="precision-volatilidad-container">
+				<video id="precision-volatilidad-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-demo-volatilidad.mp4" type="video/mp4" />
+					Your browser does not support HTML5 video.
+				</video>
+			</div>
+			<p class="demo-edit-note demo-edit-note--slim">
+				In demanding scenarios deviation can be larger than under normal conditions; protection and automatic close still hold.{' '}
+				<a class="evidence-link" href="/videos-cierre-youtube">More close cases →</a>
+			</p>
+		</section>
+
+		<section id="precision-logs" class="feature-proof-detail">
+			<h3>No smoke: everything is logged</h3>
+			<p class="feature-proof-subtitle">Traceability in MT5 logs — same trade as above</p>
+			<p class="feature-proof-lead">
+				The guide below shows <strong>where to look in MT5</strong> for the logs from the session you just saw: smaller account,
+				GER40, <strong>−1.50%</strong> limit, 2 Mar 2026 (video + step-by-step captures).
+			</p>
+			<p class="demo-edit-note demo-edit-note--slim">
+				Path: MT5 → File → Open Data Folder → MQL5 → Logs.
+				The video uses the previous panel — recapture in progress; the folder and events are the same.
+			</p>
+			<div class="demo-video demo-video--compact" id="precision-logs-container">
+				<video id="precision-logs-video" controls preload="metadata" playsinline>
+					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
+					Your browser does not support HTML5 video.
+				</video>
+			</div>
+		</section>
+
+		<section class="feature-cta">
+			<h2>Want to try it on your own trading?</h2>
+			<p>We’ll help you check real fit with your style — no friction, no empty promises.</p>
+			<a href="/en/company/contact?feature=precision&flow=demo" class="feature-cta__button">Try precision in demo</a>
+		</section>
+	</Container>
 	</div>
 </Layout>
 
+<script>
+	function playDemoIfTarget() {
+		const hash = window.location.hash;
+		const map = {
+			'#precision-volatilidad': 'precision-volatilidad-video',
+			'#precision-demo': 'precision-demo-video',
+		};
+		const id = map[hash];
+		if (!id) return;
+		const video = document.getElementById(id);
+		if (video) {
+			video.play().catch(() => { /* silent fallback if the browser blocks autoplay */ });
+		}
+	}
+	function initDemoExpand() {
+		[['precision-volatilidad-video', 'precision-volatilidad-container'], ['precision-demo-video', 'precision-demo-container'], ['precision-nasdaq-video', 'precision-nasdaq-container'], ['precision-cuenta-pequena-video', 'precision-cuenta-pequena-container'], ['precision-logs-video', 'precision-logs-container']].forEach(([vid, ctn]) => {
+			const video = document.getElementById(vid);
+			const container = document.getElementById(ctn);
+			if (!video || !container) return;
+			video.addEventListener('play', () => container.classList.add('demo-video--playing'));
+			video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+		});
+	}
+	function openEvidenceIfTarget() {
+		const hash = window.location.hash;
+		if (hash !== '#precision-49-evidence' && hash !== '#precision-stats') return;
+		const details = document.getElementById('precision-49-evidence');
+		if (details && details.tagName === 'DETAILS') details.setAttribute('open', '');
+	}
+	document.addEventListener('DOMContentLoaded', () => {
+		playDemoIfTarget();
+		initDemoExpand();
+		openEvidenceIfTarget();
+	});
+	window.addEventListener('hashchange', () => {
+		playDemoIfTarget();
+		openEvidenceIfTarget();
+	});
+</script>
+
 <style>
-	.precision-hero-stat__accent,
+	.feature-hero,
+	.feature-demo,
+	.feature-proof,
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
 	.feature-title__accent {
-		color: hsl(38 92% 55%);
+		color: #f5b041;
+		font-weight: 700;
+	}
+	.feature-intro {
+		margin: 0;
+		line-height: 1.55;
+	}
+
+	.precision-hero-lead {
+		margin: clamp(0.65rem, 2vw, 0.85rem) 0 clamp(1.35rem, 3.5vw, 1.75rem);
+		font-size: clamp(1.02rem, 1.35vw, 1.12rem);
+		opacity: 0.92;
+		max-width: none;
+	}
+
+	@media (min-width: 640px) {
+		.precision-hero-lead {
+			white-space: nowrap;
+		}
+	}
+
+	.precision-hero-evidence {
+		max-width: 72ch;
+		margin: 0 0 clamp(1.35rem, 3.2vw, 1.75rem);
+		padding: clamp(1rem, 2.5vw, 1.2rem) clamp(1.05rem, 2.5vw, 1.25rem);
+		border-radius: 8px;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-left: 3px solid rgba(245, 176, 65, 0.45);
+		background: rgba(255, 255, 255, 0.035);
+	}
+
+	html[data-theme='light'] .precision-hero-evidence {
+		border-color: rgba(0, 0, 0, 0.08);
+		border-left-color: rgba(200, 135, 26, 0.5);
+		background: rgba(0, 0, 0, 0.025);
+	}
+
+	.precision-hero-stat {
+		margin: 0 0 0.65rem;
+		font-size: 0.96rem;
+		line-height: 1.55;
+		font-weight: 500;
+		font-style: normal;
+		opacity: 0.94;
+	}
+
+	.precision-hero-stat strong {
+		font-weight: 600;
+	}
+
+	.precision-hero-stat__accent,
+	.feature-hook__accent {
+		color: #f5b041;
+		font-weight: 700;
+	}
+
+	html[data-theme='light'] .precision-hero-stat__accent {
+		color: #c8871a;
+	}
+
+	html[data-theme='light'] .feature-hook__accent {
+		color: #c8871a;
+	}
+
+	.precision-hero-secondary {
+		margin: 0;
+		font-size: 0.92rem;
+		line-height: 1.55;
+		opacity: 0.82;
+	}
+
+	.precision-hero-secondary .evidence-link {
+		font-weight: 600;
+	}
+
+	.precision-hero-geopolitical {
+		max-width: 72ch;
+		margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
+		font-size: 0.96rem;
+		line-height: 1.55;
+		opacity: 0.88;
+	}
+
+	.precision-residual {
+		max-width: 72ch;
+		margin: 0 0 clamp(1.35rem, 3vw, 2rem);
+		padding: clamp(0.85rem, 2vw, 1.15rem) clamp(1rem, 2.5vw, 1.25rem);
+		border-radius: 0.55rem;
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		background: rgba(245, 176, 65, 0.05);
+	}
+
+	html[data-theme='light'] .precision-residual {
+		border-color: rgba(120, 90, 40, 0.2);
+		background: rgba(120, 90, 40, 0.06);
+	}
+
+	.precision-residual h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.12rem;
+		font-weight: 650;
+		line-height: 1.35;
+	}
+
+	.precision-residual p {
+		margin: 0 0 0.75rem;
+		font-size: 0.96rem;
+		line-height: 1.58;
+		opacity: 0.9;
+	}
+
+	.precision-residual p:last-child {
+		margin-bottom: 0;
+	}
+
+	.precision-residual strong {
+		font-weight: 650;
+		color: var(--theme-text, inherit);
+	}
+
+	.precision-recapture-note {
+		max-width: 72ch;
+		margin: 0.65rem 0 0;
+		padding: 0.65rem 0.75rem;
+		border-radius: 0.45rem;
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		background: rgba(245, 176, 65, 0.06);
+	}
+
+	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		margin: 0 0 0.85rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+
+	#precision-volatilidad .feature-demo__title--primary-demo {
+		margin-bottom: 0.75rem;
+	}
+	#precision-demo > h2,
+	#precision-volatilidad > h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.35rem;
+	}
+	.feature-demo-youtube-more {
+		margin: 0.55rem 0 0;
+		font-size: 0.92rem;
+		opacity: 0.88;
+	}
+	.feature-demo-youtube-more a {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.feature-demo-youtube-more a:hover {
+		color: #f7c050;
+	}
+	.feature-demo-youtube-more__hint {
+		opacity: 0.72;
+	}
+	.demo-edit-note .evidence-link {
+		font-style: normal;
+	}
+	.feature-demo--hero {
+		position: relative;
+	}
+	.feature-demo--hero::before {
+		content: '';
+		position: absolute;
+		inset: -0.35rem;
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) + 2px);
+		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
+		pointer-events: none;
+		z-index: 0;
+	}
+	/* Hero: acabado global (--micro-demo-bg); sin halo ::before */
+	#precision-demo.feature-demo--hero::before {
+		display: none;
+	}
+	.feature-demo--hero > * {
+		position: relative;
+		z-index: 1;
+	}
+	.demo-video--hero {
+		max-width: min(100%, 52rem);
+		margin-left: auto;
+		margin-right: auto;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.35), 0 12px 40px rgba(0, 0, 0, 0.35);
+	}
+	/* Primer vídeo (hero): marco gris elegante, sin protagonismo ámbar */
+	.demo-video--hero-elegant {
+		background: var(--theme-embed-chrome);
+		border-color: var(--theme-embed-chrome-border);
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.05),
+			0 12px 36px rgba(0, 0, 0, 0.34);
+	}
+	.demo-video--hero.demo-video--playing {
+		max-width: none;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
+	}
+	.demo-video--hero-elegant.demo-video--playing {
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.08),
+			0 16px 46px rgba(0, 0, 0, 0.4);
+	}
+	#precision-demo,
+	#precision-volatilidad,
+	#precision-cuenta-pequena,
+	#precision-nasdaq,
+	#precision-logs,
+	#precision-stats {
+		scroll-margin-top: 5.5rem;
+	}
+	#precision-demo:target,
+	#precision-volatilidad:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		padding: 1rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+	}
+	.feature-proof-detail--cuenta-bundle {
+		margin-top: clamp(1.25rem, 3vw, 1.75rem);
+	}
+	.feature-proof-detail--cuenta-bundle .demo-video--compact {
+		margin-bottom: 0.35rem;
+	}
+	.feature-proof-detail--cuenta-bundle .feature-proof-lead {
+		max-width: 52ch;
+		font-size: 0.94rem;
+		opacity: 0.88;
+	}
+	.demo-edit-note--bridge {
+		margin-top: 0.35rem;
+		margin-bottom: 0;
+		opacity: 0.78;
+	}
+	.precision-stats-inner {
+		margin-top: 1rem;
+		padding-top: 1rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		scroll-margin-top: 5.5rem;
+	}
+	html[data-theme='light'] .precision-stats-inner {
+		border-top-color: rgba(0, 0, 0, 0.1);
+	}
+	.precision-stats-inner__title {
+		margin: 0 0 0.35rem;
+		font-size: 1rem;
+		font-weight: 700;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+	.precision-stats-inner__title::before {
+		content: '';
+		width: 0.38rem;
+		height: 0.38rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.precision-stats-inner__subtitle {
+		margin: 0 0 0.45rem !important;
+	}
+	.demo-edit-note--slim {
+		margin-top: 0.45rem;
+		max-width: 52ch;
+	}
+	.feature-demo h2,
+	.feature-proof h2,
+	.feature-cta h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.35rem;
+	}
+	.feature-demo__title {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+		margin: 0 0 0.65rem;
+	}
+	.feature-demo__title .feature-hook__dot {
+		margin-top: 0.42rem;
+		flex-shrink: 0;
+	}
+	.feature-demo__title h2 {
+		margin: 0;
+	}
+	.feature-demo-hook {
+		margin: 0 0 0.75rem;
+		font-style: italic;
+		opacity: 0.9;
+	}
+	.feature-demo-attrib {
+		margin: 0.15rem 0 0.35rem;
+		font-size: 0.92rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		letter-spacing: 0.01em;
+		opacity: 0.88;
+		color: hsl(210, 14%, 72%);
+	}
+	.demo-edit-note {
+		margin: 0.5rem 0 0;
+		font-size: 0.88rem;
+		opacity: 0.7;
+		font-style: italic;
+	}
+	.demo-placeholder {
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
+	}
+	.demo-video {
+		background: #06080d;
+		border: 1px solid rgba(245, 176, 65, 0.3);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		overflow: hidden;
+		margin-bottom: 0.75rem;
+	}
+	/* El primer embed debe verse gris elegante, sin borde ámbar */
+	.demo-video.demo-video--hero-elegant {
+		background: var(--theme-embed-chrome);
+		border-color: var(--theme-embed-chrome-border);
+	}
+	/* Vídeos con MT5 tema claro (gráfico + panel blancos): evita “mancha” oscura alrededor del plano en landing oscura */
+	.demo-video--light {
+		background: linear-gradient(180deg, #eceef2 0%, #e2e5eb 100%);
+		border: 1px solid rgba(245, 176, 65, 0.42);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.22), 0 6px 22px rgba(0, 0, 0, 0.2);
+	}
+	.demo-video--light.demo-video--compact {
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.3), 0 8px 26px rgba(0, 0, 0, 0.22);
+	}
+	.demo-video--light.demo-video--compact.demo-video--playing {
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.4), 0 12px 34px rgba(0, 0, 0, 0.28);
+	}
+	.demo-video--compact {
+		max-width: min(100%, 31rem);
+		margin-left: auto;
+		margin-right: auto;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.32), 0 10px 32px rgba(0, 0, 0, 0.3);
+	}
+	.demo-video--compact.demo-video--playing {
+		max-width: none;
+	}
+	.demo-video video {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.demo-placeholder p {
+		margin: 0 0 0.45rem;
+		line-height: 1.5;
+	}
+	.demo-placeholder p:last-child {
+		margin-bottom: 0;
+	}
+	.demo-note {
+		opacity: 0.8;
+		font-size: 0.95rem;
+	}
+	.feature-proof ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.feature-proof li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.feature-proof li::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.82);
+		margin-right: 0.55rem;
+		vertical-align: middle;
+	}
+	.feature-proof li:hover {
+		border-left-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
+	}
+	.feature-proof li:last-child {
+		margin-bottom: 0;
+	}
+	.feature-proof {
+		position: relative;
+		overflow: hidden;
+	}
+	.feature-proof::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -10%;
+		width: 42%;
+		height: 100%;
+		pointer-events: none;
+		background: radial-gradient(ellipse at right center, rgba(245, 176, 65, 0.11) 0%, rgba(245, 176, 65, 0.045) 42%, transparent 74%);
+	}
+	.evidence-link {
+		color: #ffffff;
+		text-decoration: underline;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2.5px;
+		transition: color 0.2s ease;
+		cursor: pointer;
+	}
+	.evidence-link:hover {
+		color: #f5b041;
+	}
+	.evidence-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	.feature-proof-detail {
+		margin: 1rem 0 0;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
+		scroll-margin-top: 5.5rem;
+		transition: border-color 0.25s ease, background-color 0.25s ease;
+	}
+	.feature-proof-detail h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.05rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+	}
+	.feature-proof-detail h3::before {
+		content: '';
+		width: 0.42rem;
+		height: 0.42rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-proof-detail p {
+		margin: 0;
+		line-height: 1.5;
+	}
+	.feature-proof-subtitle {
+		margin: -0.1rem 0 0.5rem !important;
+		font-size: 0.94rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+	}
+	.proof-kpis {
+		margin: 0.55rem 0 0.7rem;
+		padding-left: 1.05rem;
+	}
+	.proof-kpis li {
+		margin: 0 0 0.35rem;
+		line-height: 1.45;
+	}
+	.proof-links-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-top: 0.45rem;
+	}
+	.feature-proof-lead--stats {
+		margin: 0 0 0.85rem;
+		max-width: 58ch;
+		line-height: 1.55;
+		font-size: 0.94rem;
+		opacity: 0.9;
+	}
+	.feature-proof-lead--stats .evidence-link {
+		font-style: normal;
+	}
+	.proof-gallery__intro {
+		margin: 0 0 0.55rem;
+		font-size: 0.92rem;
+		line-height: 1.5;
+		opacity: 0.88;
+		max-width: 58ch;
+	}
+	.proof-note {
+		margin-top: 0.55rem !important;
+		font-size: 0.93rem;
+		opacity: 0.85;
+	}
+	.proof-context-note {
+		margin-top: 0.6rem !important;
+		font-size: 0.9rem;
+		opacity: 0.78;
+	}
+	#precision-cuenta-pequena:has(#precision-stats:target),
+	#precision-cuenta-pequena:has(#precision-49-evidence:target) {
+		border-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(255, 255, 255, 0.02));
+		box-shadow: none;
+	}
+	.proof-capture-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s ease;
+		cursor: pointer;
+	}
+	.proof-capture-link:hover {
+		color: #f7c050;
+	}
+	.proof-capture-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	.proof-link-meta {
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		padding: 0.08rem 0.38rem;
+		border-radius: 999px;
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.12);
+		color: #f7c050;
+		line-height: 1.2;
+	}
+	.proof-accordion {
+		margin: 0.45rem 0 0;
+	}
+	.proof-accordion summary {
+		list-style: none;
+	}
+	.proof-accordion summary::-webkit-details-marker {
+		display: none;
+	}
+	.proof-gallery {
+		margin: 0.75rem 0 0;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+	}
+	.proof-gallery h3 {
+		margin: 0 0 0.7rem;
+		font-size: 1.02rem;
+	}
+	.proof-gallery-video {
+		margin-top: 0.5rem;
+	}
+	.proof-gallery-video video {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+	}
+	.proof-gallery__hint {
+		margin: 0 0 0.75rem;
+		font-size: 0.88rem;
+		opacity: 0.82;
+	}
+	.proof-gallery__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+	.proof-gallery__item {
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 0.6rem;
+		padding: 0.7rem;
+	}
+	.proof-gallery__step {
+		margin: 0 0 0.2rem;
+		font-size: 0.78rem;
+		opacity: 0.8;
+	}
+	.proof-gallery__title {
+		margin: 0 0 0.5rem;
+		font-size: 0.9rem;
+		font-weight: 600;
+		line-height: 1.35;
+	}
+	.proof-gallery__placeholder {
+		min-height: 96px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0.45rem;
+		border: 1px dashed rgba(245, 176, 65, 0.45);
+		background: rgba(245, 176, 65, 0.07);
+		color: rgba(245, 176, 65, 0.95);
+		font-size: 0.82rem;
+		text-align: center;
+		padding: 0.45rem;
+	}
+	.proof-gallery__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0.45rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #0a0d13;
+	}
+	.proof-gallery__zoom {
+		display: block;
+		border-radius: 0.45rem;
+		overflow: hidden;
+		cursor: zoom-in;
+	}
+	.proof-gallery__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+	}
+	@media (max-width: 768px) {
+		.feature-hook {
+			display: block;
+			line-height: 1.45;
+		}
+		.feature-hook__dot {
+			display: inline-block;
+			margin-right: 0.45rem;
+			vertical-align: middle;
+		}
+		.feature-hook__accent {
+			white-space: nowrap;
+		}
+		.proof-gallery__grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

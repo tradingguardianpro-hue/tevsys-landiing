@@ -1,114 +1,594 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
-import '../../../styles/feature-micro-en.css';
 
 const seo = {
 	title: 'SML | tevsys',
 	description:
-		'SML (Smart Money Lock): optional bonus from yesterday’s profit to widen allowed margin — only on your click. Advanced/Pro; validation in progress.',
+		'SML (Smart Money Lock): optional bonus from yesterday’s profit to widen your allowed margin — only with your click. Validation in progress with evidence on profit and widened-loss closes (Advanced/Pro).',
 };
 ---
 
 <Layout seo={seo} lang="en">
 	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--sml">
-		<Container>
-			<section class="feature-hero">
-				<p class="feature-kicker">Discipline feature</p>
-				<h1>
-					SML: <span class="feature-title__accent">protect</span> part of what you earned without stopping your trading.
-				</h1>
-				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>
-					Turn it on when you want. Choose how much to widen the margin: from{' '}
-					<span class="feature-hook__accent">5%</span> to <span class="feature-hook__accent">25%</span> (minimum{' '}
-					<span class="feature-hook__accent">75%</span> protected).
-				</p>
-				<p class="feature-lead">
-					<span class="feature-title__accent">Optional and under your control</span>: works with daily and weekly limits; you only widen margin when you activate the bonus calculated from yesterday’s profit.
-				</p>
-			</section>
+	<Container>
+		<section class="feature-hero">
+			<p class="feature-kicker">Discipline feature</p>
+			<h1>SML: <span class="feature-title__accent">protect</span> part of what you earned without freezing your trading.</h1>
+			<p class="feature-hook"><span class="feature-hook__dot" aria-hidden="true"></span>Turn it on when you want. Choose how much to widen the margin: from <span class="feature-hook__accent">5%</span> to <span class="feature-hook__accent">25%</span> (at least <span class="feature-hook__accent">75%</span> stays protected).</p>
+			<p class="feature-lead">
+				<span class="feature-title__accent">Optional and under your control</span>: it sits alongside daily and weekly limits; you only widen the margin when you activate the bonus calculated from yesterday’s profit.
+			</p>
+		</section>
 
-			<section id="sml-panel" class="feature-demo feature-demo--hero">
-				<p class="feature-hook">
+		<section id="sml-panel" class="feature-demo feature-demo--hero">
+			<div class="sml-multichart">
+				<p class="feature-hook sml-multichart__lead">
 					<span class="feature-hook__dot" aria-hidden="true"></span>
 					<span>One chart for tevsys. Your whole account, protected.</span>
 				</p>
-				<h2>How it looks on the panel today</h2>
-				<p class="feature-demo-hook">
-					Yesterday’s profit &gt; threshold · optional bonus ·{' '}
-					<strong class="feature-title__accent">SML AVAILABLE</strong> and{' '}
-					<strong class="feature-title__accent">SML 1‑CLICK</strong> on the panel.
-				</p>
-				<figure class="sml-panel-embed">
-					<a
-						class="proof-gallery__zoom"
-						href="/images/evidence/sml-panel-validacion-demo.png?v=20260830b"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Open SML panel capture full size"
-					>
-						<img
-							class="proof-gallery__image"
-							src="/images/evidence/sml-panel-validacion-demo.png?v=20260830b"
-							width="520"
-							height="780"
-							loading="lazy"
-							decoding="async"
-							alt="tevsys panel: limits active, SML AVAILABLE and SML 1-CLICK in teal."
-						/>
-					</a>
-				</figure>
-				<p class="demo-edit-note">
-					<strong>Demo</strong> ActivTrades account (Aug 2026). Current panel over the chart. Click to enlarge. Not advice or a promise of results.
-				</p>
-			</section>
-
-			<p class="sml-validation-banner" role="note">
-				<strong>Advanced/Pro · validation in progress.</strong> Not on Essential. This page shows what we can already demonstrate — not a full catalogue. <strong>Only what the build proves</strong> in the terminal.
+				<p class="sml-multichart__sub">Protection notices show on every open chart.</p>
+			</div>
+			<h2>How it looks on the panel today</h2>
+			<p class="feature-demo-hook">
+				Yesterday’s profit &gt; threshold · optional bonus · <strong class="feature-title__accent">SML DISPONIBLE</strong> and <strong class="feature-title__accent">SML 1‑CLICK</strong> on the panel.
 			</p>
-
-			<section class="feature-proof">
-				<h2>What you can verify</h2>
-				<ul>
-					<li><a class="evidence-link" href="#sml-panel">SML panel: bonus available before activation (demo capture).</a></li>
-					<li>Documented closes with SML in profit and with widened loss — detail on the Spanish page.</li>
-					<li>
-						<a class="evidence-link" href="/features/sml">Full Spanish SML page →</a>
-					</li>
-				</ul>
-			</section>
-
-			<p class="en-micro-foot">
-				<a href="/en/company/contact?plan=advanced">Advanced waitlist →</a>
-				<span aria-hidden="true"> · </span>
-				<a href="/en/">English home →</a>
+			<figure class="sml-panel-embed">
+				<a
+					class="proof-gallery__zoom"
+					href="/images/evidence/sml-panel-validacion-demo.png?v=20260830b"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Open full-size SML panel screenshot"
+				>
+					<img
+						class="proof-gallery__image"
+						src="/images/evidence/sml-panel-validacion-demo.png?v=20260830b"
+						width="520"
+						height="780"
+						loading="lazy"
+						decoding="async"
+						alt="tevsys panel on chart: active limits, SML DISPONIBLE and SML 1-CLICK in teal, NOTICIAS and HORARIOS OFF."
+					/>
+				</a>
+			</figure>
+			<p class="demo-edit-note">
+				<strong>Demo</strong> ActivTrades account (Aug 2026). Current panel (SML in teal) on the chart. Click to enlarge. Not advice or a promise of results. On-screen EA UI may still appear in Spanish.
 			</p>
-		</Container>
+		</section>
+
+		<p class="sml-validation-banner" role="note">
+			<strong>Advanced/Pro · validation in progress.</strong> Not available on Essential. This page shows progress we can already demonstrate — not a full catalogue. <strong>Only what the build proves</strong> in the terminal.
+		</p>
+
+		<section class="feature-proof">
+			<h2>What you can verify</h2>
+			<ul>
+				<li><a class="evidence-link" href="#sml-panel">SML panel: bonus available before you activate (demo capture).</a></li>
+				<li><a class="evidence-link" href="#sml-evidence">Scenarios documented so far (profit, widened loss, coexistence with limits).</a></li>
+				<li><a class="evidence-link" href="#sml-perdida-ampliada">Validated close on widened loss (live account, May 2026).</a></li>
+				<li><a class="evidence-link" href="#sml-demo-flow">Step-by-step demo flow — activation, close, and SML ON.</a></li>
+			</ul>
+		</section>
+
+		<section id="sml-evidence" class="feature-proof-detail">
+			<h3>What we can show today</h3>
+			<p class="feature-proof-subtitle">Documented progress — not a closed catalogue</p>
+			<ul class="sml-checklist">
+				<li><strong>Close with SML in profit:</strong> stable flow with active bonus and stop at the agreed limit — checked against panel, MT5 report, and internal traces.</li>
+				<li><strong>Close with SML on widened loss:</strong> the day’s loss margin widens only with SML on; protection fires past that widened ceiling, not at the base limit without bonus.</li>
+				<li><strong>Same account, same rules:</strong> coexists with daily limits, weekly limits, and OFF days without mixed on-screen messages.</li>
+			</ul>
+		</section>
+
+		<section id="sml-perdida-ampliada" class="feature-proof-detail">
+			<h3>Validated on a widened-loss close</h3>
+			<p class="feature-proof-subtitle">Live account · May 2026</p>
+			<p class="feature-proof-lead">
+				Daily loss with widened margin — <strong>STOP · SML ON</strong> · limits <strong class="feature-title__accent">−0.75% → −0.78%</strong> · <strong>SML widened</strong> and account protected until end of session.
+			</p>
+			<p class="proof-gallery__hint">Click the capture to enlarge it.</p>
+			<figure class="sml-capture-embed">
+				<a
+					class="proof-gallery__zoom"
+					href="/images/evidence/sml-cierre-perdida-ampliada-validado.png"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Open full-size panel capture after SML widened-loss close"
+				>
+					<img
+						class="proof-gallery__image"
+						src="/images/evidence/sml-cierre-perdida-ampliada-validado.png"
+						width="314"
+						height="445"
+						loading="lazy"
+						decoding="async"
+						alt="tevsys panel after close: STOP for daily loss with SML active, TODAY limits -0.75% to -0.78%, SML widened and protected until end of day."
+					/>
+				</a>
+				<figcaption class="sml-capture-caption">
+					Panel only — no chart noise. State after the automatic close.
+				</figcaption>
+			</figure>
+			<p class="sml-proof-note">
+				<strong>Why don’t the STOP percent and the day result match to the cent?</strong> The system cuts when it hits the <strong>widened ceiling</strong> in live market; the day’s result can land a tick under or over — same pattern as other documented tevsys closes.
+			</p>
+		</section>
+
+		<section id="sml-demo-flow" class="feature-proof-detail">
+			<h3>In demo: activation, close, and SML state</h3>
+			<p class="feature-proof-subtitle">Three moments of the same flow (prior validation)</p>
+			<p class="feature-proof-lead">
+				See the widened limit before you apply it, the result at close, and the panel with <strong>SML active</strong> after protection.
+			</p>
+			<details id="sml-demo-flow-evidence" class="proof-accordion">
+				<summary class="proof-capture-link">Step-by-step captures — activation, close, and SML ON</summary>
+				<p class="proof-gallery__hint">Click each capture to view it full size.</p>
+				<div class="sml-proof-grid">
+					<figure class="sml-proof-card">
+						<a
+							class="proof-gallery__zoom"
+							href="/images/evidence/sml-481-step-01-activacion.png"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Open full-size step 1 SML activation capture"
+						>
+							<img
+								class="proof-gallery__image"
+								src="/images/evidence/sml-481-step-01-activacion.png"
+								width="905"
+								height="809"
+								alt="Before activating SML: confirmation modal and panel with widened limit visible."
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<figcaption><strong>Step 1 — Activation:</strong> widened limit visible before applying the bonus.</figcaption>
+					</figure>
+					<figure class="sml-proof-card">
+						<a
+							class="proof-gallery__zoom"
+							href="/images/evidence/sml-481-step-02-cierre.png"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Open full-size step 2 SML close capture"
+						>
+							<img
+								class="proof-gallery__image"
+								src="/images/evidence/sml-481-step-02-cierre.png"
+								width="424"
+								height="599"
+								alt="Final result with SML active after the widened-loss close."
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<figcaption><strong>Step 2 — Close:</strong> day result after firing at the widened ceiling.</figcaption>
+					</figure>
+					<figure class="sml-proof-card">
+						<a
+							class="proof-gallery__zoom"
+							href="/images/evidence/sml-481-step-03-estado-sml-on.png"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Open full-size step 3 SML ON state capture"
+						>
+							<img
+								class="proof-gallery__image"
+								src="/images/evidence/sml-481-step-03-estado-sml-on.png"
+								width="860"
+								height="738"
+								alt="Panel with SML active and protection until end of session after the close."
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<figcaption><strong>Step 3 — SML ON state:</strong> account protected until end of session.</figcaption>
+					</figure>
+				</div>
+			</details>
+			<p class="sml-proof-note sml-proof-note--slim">
+				In demo, the widened ceiling and the final close can differ slightly (same pattern as other live-market tevsys closes).
+			</p>
+		</section>
+
+		<section class="feature-cta">
+			<h2>Want to validate SML for Advanced/Pro?</h2>
+			<p>We’ll show validation status and the scenarios you can check against your real limits (Advanced/Pro, waitlist).</p>
+			<a href="/en/company/contact?feature=sml&flow=demo" class="feature-cta__button">Request SML review</a>
+		</section>
+	</Container>
 	</div>
 </Layout>
 
+<script>
+	const openDemoFlowIfTarget = () => {
+		const hash = window.location.hash;
+		if (hash === '#sml-demo-flow' || hash === '#sml-demo-flow-evidence') {
+			const details = document.getElementById('sml-demo-flow-evidence');
+			if (details && !details.open) details.open = true;
+		}
+	};
+	openDemoFlowIfTarget();
+	window.addEventListener('hashchange', openDemoFlowIfTarget);
+</script>
+
 <style>
-	.feature-title__accent,
+	.feature-hero,
+	.feature-demo,
+	.feature-proof,
+	.feature-proof-detail,
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.feature-title__accent {
+		color: #f5b041;
+		font-weight: 700;
+	}
+	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		margin: 0 0 0.7rem;
+		line-height: 1.45;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
 	.feature-hook__accent {
-		color: hsl(38 92% 55%);
+		color: #f5b041;
+		font-weight: 700;
+	}
+	.feature-lead {
+		max-width: 70ch;
+		line-height: 1.55;
+	}
+	.feature-demo--hero {
+		position: relative;
+	}
+	.feature-demo--hero::before {
+		content: '';
+		position: absolute;
+		inset: -0.35rem;
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) + 2px);
+		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
+		pointer-events: none;
+		z-index: 0;
+	}
+	/* Hero panel: acabado global (--micro-demo-bg); sin halo ::before */
+	#sml-panel.feature-demo--hero::before {
+		display: none;
+	}
+	.feature-demo--hero > * {
+		position: relative;
+		z-index: 1;
+	}
+	.sml-multichart {
+		margin: 0 0 clamp(1rem, 2.8vw, 1.5rem);
+		max-width: 52ch;
+		padding-bottom: clamp(0.6rem, 1.8vw, 0.85rem);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	}
+	html[data-theme='light'] .sml-multichart {
+		border-bottom-color: rgba(0, 0, 0, 0.08);
+	}
+	.sml-multichart__lead {
+		margin: 0 0 0.35rem;
+		align-items: flex-start;
+		gap: 0.4rem;
+		font-size: clamp(0.92rem, 2.1vw, 0.98rem);
+		font-style: normal;
+		font-weight: 500;
+		opacity: 0.82;
+		line-height: 1.45;
+	}
+	.sml-multichart__lead .feature-hook__dot {
+		margin-top: 0.32rem;
+		width: 0.35rem;
+		height: 0.35rem;
+		opacity: 0.85;
+		flex-shrink: 0;
+	}
+	.sml-multichart__sub {
+		margin: 0;
+		padding-left: calc(0.35rem + 0.4rem);
+		font-size: clamp(0.8rem, 1.85vw, 0.86rem);
+		font-style: normal;
+		font-weight: 400;
+		opacity: 0.62;
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+	}
+	html[data-theme='light'] .sml-multichart__sub {
+		opacity: 0.68;
+	}
+	.feature-demo h2,
+	.feature-proof h2,
+	.feature-cta h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.35rem;
+	}
+	.feature-demo-hook {
+		margin: 0 0 0.85rem;
+		max-width: 58ch;
+		line-height: 1.5;
+		font-size: 0.96rem;
+		opacity: 0.92;
+	}
+	.sml-panel-embed,
+	.sml-capture-embed {
+		margin: 0 auto 0.75rem;
+		max-width: min(100%, 28rem);
+	}
+	.sml-capture-embed {
+		max-width: min(100%, 20rem);
+	}
+	.sml-panel-embed .proof-gallery__zoom,
+	.sml-capture-embed .proof-gallery__zoom {
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		overflow: hidden;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+	}
+	.sml-panel-embed .proof-gallery__zoom {
+		max-width: min(100%, 18rem);
+		margin-inline: auto;
+	}
+	.sml-capture-embed .proof-gallery__zoom {
+		margin-inline: auto;
+	}
+	.demo-edit-note {
+		margin: 0 auto;
+		max-width: 58ch;
+		font-size: 0.88rem;
+		opacity: 0.82;
+		line-height: 1.45;
+	}
+	.sml-capture-caption {
+		margin-top: 0.55rem;
+		font-size: 0.88rem;
+		line-height: 1.45;
+		opacity: 0.78;
+		text-align: center;
+		max-width: 36ch;
+		margin-inline: auto;
 	}
 	.sml-validation-banner {
-		margin: 1.5rem 0;
-		padding: 1rem 1.15rem;
-		border: 1px solid rgba(255, 255, 255, 0.12);
-		border-radius: 0.75rem;
-		background: rgba(255, 255, 255, 0.04);
+		margin: calc(var(--section-margin) * 0.5) auto calc(var(--section-margin) * 0.85);
+		max-width: 74ch;
+		padding: 0.85rem 1rem;
 		line-height: 1.5;
-		font-size: 0.95rem;
+		font-size: 0.94rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		border: 1px solid rgba(245, 176, 65, 0.32);
+		background: rgba(245, 176, 65, 0.07);
 	}
-	.sml-panel-embed {
-		margin: 1rem auto;
-		max-width: 28rem;
+	.feature-proof {
+		position: relative;
+		overflow: hidden;
 	}
-	.sml-panel-embed img {
+	.feature-proof::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -10%;
+		width: 42%;
+		height: 100%;
+		pointer-events: none;
+		background: radial-gradient(ellipse at right center, rgba(245, 176, 65, 0.11) 0%, rgba(245, 176, 65, 0.045) 42%, transparent 74%);
+	}
+	.feature-proof ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.feature-proof li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.feature-proof li::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.82);
+		margin-right: 0.55rem;
+		vertical-align: middle;
+	}
+	.feature-proof li:hover {
+		border-left-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
+	}
+	.feature-proof li:last-child {
+		margin-bottom: 0;
+	}
+	.evidence-link {
+		color: #ffffff;
+		text-decoration: underline;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2.5px;
+		transition: color 0.2s ease;
+		cursor: pointer;
+	}
+	.evidence-link:hover {
+		color: #f5b041;
+	}
+	.evidence-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	.feature-proof-detail {
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
+		scroll-margin-top: 5.5rem;
+		transition: border-color 0.25s ease, background-color 0.25s ease;
+	}
+	.feature-proof-detail h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.05rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+	}
+	.feature-proof-detail h3::before {
+		content: '';
+		width: 0.42rem;
+		height: 0.42rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-proof-subtitle {
+		margin: -0.1rem 0 0.5rem !important;
+		font-size: 0.94rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+	}
+	.feature-proof-lead {
+		margin: 0 0 0.85rem;
+		font-size: 0.94rem;
+		line-height: 1.5;
+		opacity: 0.88;
+		max-width: 52ch;
+	}
+	#sml-panel:target {
+		border-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(255, 255, 255, 0.02));
+		box-shadow: none;
+	}
+	.sml-checklist {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.sml-checklist li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+	}
+	.sml-checklist li::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.82);
+		margin-right: 0.55rem;
+		vertical-align: middle;
+	}
+	.sml-checklist li:last-child {
+		margin-bottom: 0;
+	}
+	.proof-gallery__hint {
+		margin: 0 0 0.65rem;
+		font-size: 0.88rem;
+		opacity: 0.82;
+		line-height: 1.45;
+		max-width: 68ch;
+	}
+	.proof-gallery__zoom {
+		display: block;
+		cursor: zoom-in;
+	}
+	.proof-gallery__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+	}
+	.proof-gallery__image {
+		display: block;
 		width: 100%;
 		height: auto;
-		border-radius: 0.5rem;
+	}
+	.proof-accordion {
+		margin-top: 0.35rem;
+	}
+	.proof-accordion summary {
+		list-style: none;
+	}
+	.proof-accordion summary::-webkit-details-marker {
+		display: none;
+	}
+	.proof-capture-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		cursor: pointer;
+	}
+	.proof-capture-link:hover {
+		color: #f7c050;
+	}
+	.sml-proof-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.9rem;
+		margin-top: 0.65rem;
+	}
+	.sml-proof-card {
+		margin: 0;
+		padding: 0.7rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+	}
+	.sml-proof-card .proof-gallery__zoom {
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) - 0.15rem);
+		overflow: hidden;
+	}
+	.sml-proof-card img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.sml-proof-card figcaption {
+		margin-top: 0.55rem;
+		font-size: 0.9rem;
+		line-height: 1.45;
+		opacity: 0.9;
+	}
+	.sml-proof-note {
+		margin: 0.95rem 0 0;
+		padding: 0.8rem 0.95rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		background: rgba(245, 176, 65, 0.06);
+		line-height: 1.5;
+		font-size: 0.94rem;
+	}
+	.sml-proof-note--slim {
+		margin-top: 0.75rem;
+	}
+	#sml-panel,
+	#sml-evidence,
+	#sml-perdida-ampliada,
+	#sml-demo-flow {
+		scroll-margin-top: 5.5rem;
+	}
+	@media (max-width: 900px) {
+		.sml-proof-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

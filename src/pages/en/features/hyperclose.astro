@@ -1,78 +1,958 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
-import '../../../styles/feature-micro-en.css';
 
 const seo = {
 	title: 'HyperClose | tevsys',
 	description:
-		'HyperClose closes in milliseconds when you try to trade while blocked — including OFF days. Traceable protection.',
+		'See how HyperClose closes in milliseconds when you try to trade while locked.',
 };
 ---
 
 <Layout seo={seo} lang="en">
 	<div class="tevsys-feature-micro-surface tevsys-feature-micro-surface--hyperclose">
-		<Container>
-			<section class="feature-hero">
-				<p class="feature-kicker">Protection feature</p>
-				<h1>
-					HyperClose: when your discipline fails, HyperClose <span class="feature-title__accent">does not.</span>
-				</h1>
-				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>
-					<span class="feature-title__accent">Closes in milliseconds.</span> Until the next window (day or week), no shortcuts.
-				</p>
-				<p class="feature-lead">
-					Trading while blocked triggers an instant close; what happens is logged so you can verify it.
-				</p>
-				<p class="feature-extreme-note">
-					This is not the close when you hit the limit: it is the brake if, already in STOP, you try to open again.
-				</p>
-			</section>
+	<Container>
+		<section class="feature-hero">
+			<p class="feature-kicker">Protection feature</p>
+			<h1>
+				HyperClose: when your discipline fails, HyperClose <span class="feature-title__accent">doesn’t.</span>
+			</h1>
+			<p class="feature-hook">
+				<span class="feature-hook__dot" aria-hidden="true"></span><span class="feature-title__accent">Close in milliseconds.</span> Until the next window (day or week), no shortcuts.
+			</p>
+			<p class="feature-lead">
+				Trading while locked triggers an instant close; what happens is traced so you can verify it.
+			</p>
+			<p class="feature-extreme-note">
+				This is not the close when you hit your limit — it is the brake if, already in STOP, you try to open again.
+			</p>
+		</section>
 
-			<section id="hyperclose-demo" class="feature-demo feature-demo--hero">
-				<p class="feature-hook">
+		<section id="hyperclose-demo" class="feature-demo feature-demo--hero">
+			<div class="hyperclose-multichart">
+				<p class="feature-hook hyperclose-multichart__lead">
 					<span class="feature-hook__dot" aria-hidden="true"></span>
 					<span>One chart for tevsys. Your whole account, protected.</span>
 				</p>
-				<p class="feature-lead">Protection notices appear on all your open charts.</p>
-				<h2>Demo — millimetric precision + HyperClose (2:23)</h2>
-				<p class="feature-demo-hook">
-					15 lots · GER40 · −1 % limit · <strong class="feature-title__accent">€1.31 deviation</strong> · Wall Street open ·{' '}
-					<strong class="feature-title__accent">HyperClose in 3 levels</strong>.
-				</p>
-				<div class="demo-video demo-video--hero demo-video--hero-elegant">
-					<video controls preload="metadata" playsinline poster="/videos/features/hyperclose-demo-poster.jpg?v=20260816">
-						<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
-					</video>
-				</div>
-				<p class="demo-edit-note">
-					<strong>Edited video:</strong> the moments that matter (approach to limit, close, lock, HyperClose). The terminal clock may jump between cuts. Rigour comes from the <strong>MT5 report</strong> and history linked on the Spanish page.
-				</p>
-			</section>
-
-			<section class="feature-proof">
-				<h2>What you can verify</h2>
-				<ul>
-					<li><a class="evidence-link" href="#hyperclose-demo">Close + HyperClose traffic-light flow in video.</a></li>
-					<li>Same protection on OFF days (see Spanish page captures / short OFF demo).</li>
-					<li>
-						<a class="evidence-link" href="/features/hyperclose">Full Spanish HyperClose page (MT5 gallery &amp; OFF scenarios) →</a>
-					</li>
-				</ul>
-			</section>
-
-			<p class="en-micro-foot">
-				<a href="/en/company/contact?flow=demo">Request demo →</a>
-				<span aria-hidden="true"> · </span>
-				<a href="/en/">English home →</a>
+				<p class="hyperclose-multichart__sub">Protection alerts appear on all your open charts.</p>
+			</div>
+			<h2>Demo — millimetric precision + HyperClose (2:23)</h2>
+			<p class="feature-demo-hook">
+				15 lots · GER40 · −1% limit · <strong class="feature-title__accent">€1.31 deviation</strong> · Wall Street open · <strong class="feature-title__accent">HyperClose in 3 levels</strong>.
 			</p>
-		</Container>
+			<p class="demo-edit-note">On-screen EA UI may still appear in Spanish.</p>
+			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="hyperclose-demo-container">
+				<video id="hyperclose-demo-video" controls preload="metadata" playsinline
+					poster="/videos/features/hyperclose-demo-poster.jpg?v=20260816">
+					<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
+					Your browser does not support HTML5 video.
+				</video>
+			</div>
+			<p class="demo-edit-note">
+				<strong>Edited video:</strong> we show the moments that matter in the flow (approaching the limit, close, lock, HyperClose). You may see a <strong>clock jump</strong> in the terminal between cuts: the original recording was longer. What lets you verify behaviour rigorously is the <strong>MT5 report</strong> and the history/HTML in the accordion below.
+			</p>
+			<p class="feature-demo-youtube-more">
+				<a href="/videos-cierre-youtube">More close cases</a>
+				<span class="feature-demo-youtube-more__hint"> — list with links and titles.</span>
+			</p>
+			<details class="proof-accordion hyperclose-demo-evidence">
+				<summary class="proof-capture-link">Verify it yourself — MT5 report, screenshots and history</summary>
+				<div class="hyperclose-demo-evidence__text">
+					<div class="hyperclose-mt5-captures proof-gallery">
+						<p class="proof-gallery__hint">
+							Official MT5 report (same account as the video). Report period covering the recorded session and, where applicable, later trades. Click to enlarge.
+						</p>
+						<div class="proof-gallery__grid">
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Summary</p>
+								<p class="proof-gallery__title">Overview</p>
+								<p class="proof-gallery__desc">Global view: net profit, balance and ratios for the period selected in MT5.</p>
+								<a
+									class="proof-gallery__zoom"
+									href="/images/evidence/hyperclose-demo-informe-summary.png"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Open Summary screenshot full size"
+								>
+									<img
+										class="proof-gallery__image"
+										src="/images/evidence/hyperclose-demo-informe-summary.png"
+										alt="MT5 HyperClose demo report: Summary tab."
+										loading="lazy"
+										width="1200"
+										height="800"
+										decoding="async"
+									/>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Profit &amp; Loss</p>
+								<p class="proof-gallery__title">Profit and loss</p>
+								<p class="proof-gallery__desc">Gross/net breakdown and time distribution over the period.</p>
+								<a
+									class="proof-gallery__zoom"
+									href="/images/evidence/hyperclose-demo-informe-profit-loss.png"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Open Profit and Loss screenshot full size"
+								>
+									<img
+										class="proof-gallery__image"
+										src="/images/evidence/hyperclose-demo-informe-profit-loss.png"
+										alt="MT5 HyperClose demo report: Profit and Loss tab."
+										loading="lazy"
+										width="1200"
+										height="800"
+										decoding="async"
+									/>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Long &amp; Short</p>
+								<p class="proof-gallery__title">Longs and shorts</p>
+								<p class="proof-gallery__desc">Trade and volume distribution by direction over the period.</p>
+								<a
+									class="proof-gallery__zoom"
+									href="/images/evidence/hyperclose-demo-informe-long-short.png"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Open Long and Short screenshot full size"
+								>
+									<img
+										class="proof-gallery__image"
+										src="/images/evidence/hyperclose-demo-informe-long-short.png"
+										alt="MT5 HyperClose demo report: Long and Short tab."
+										loading="lazy"
+										width="1200"
+										height="800"
+										decoding="async"
+									/>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Symbols</p>
+								<p class="proof-gallery__title">Symbols</p>
+								<p class="proof-gallery__desc">Main instrument (Ger40) and result attributed by symbol.</p>
+								<a
+									class="proof-gallery__zoom"
+									href="/images/evidence/hyperclose-demo-informe-symbols.png"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Open Symbols screenshot full size"
+								>
+									<img
+										class="proof-gallery__image"
+										src="/images/evidence/hyperclose-demo-informe-symbols.png"
+										alt="MT5 HyperClose demo report: Symbols tab."
+										loading="lazy"
+										width="1200"
+										height="800"
+										decoding="async"
+									/>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">Risks</p>
+								<p class="proof-gallery__title">Risks</p>
+								<p class="proof-gallery__desc">Drawdown, best/worst trades and risk metrics for the period.</p>
+								<a
+									class="proof-gallery__zoom"
+									href="/images/evidence/hyperclose-demo-informe-risks.png"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Open Risks screenshot full size"
+								>
+									<img
+										class="proof-gallery__image"
+										src="/images/evidence/hyperclose-demo-informe-risks.png"
+										alt="MT5 HyperClose demo report: Risks tab."
+										loading="lazy"
+										width="1200"
+										height="800"
+										decoding="async"
+									/>
+								</a>
+							</article>
+							<article class="proof-gallery__item">
+								<p class="proof-gallery__step">History</p>
+								<p class="proof-gallery__title">Toolbox — History</p>
+								<p class="proof-gallery__desc">
+									Same-day list: close of the trade in the video and later closes if you tested while locked (e.g. day total −€1,146.40 vs −€1,066.05 in the HTML exported earlier alone).
+								</p>
+								<a
+									class="proof-gallery__zoom"
+									href="/images/evidence/hyperclose-demo-mt5-historial-hoy.png"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Open same-day history screenshot full size"
+								>
+									<img
+										class="proof-gallery__image"
+										src="/images/evidence/hyperclose-demo-mt5-historial-hoy.png"
+										alt="MT5: same-day history in Toolbox, Ger40 trades."
+										loading="lazy"
+										width="1200"
+										height="800"
+										decoding="async"
+									/>
+								</a>
+							</article>
+						</div>
+					</div>
+					<p class="hyperclose-demo-evidence__html-row">
+						<a
+							class="proof-capture-link"
+							href="/docs/evidencia-hyperclose-demo-historial-transacciones.html"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Open HTML history for this demo <span class="proof-link-meta">HTML</span>
+						</a>
+					</p>
+					<p class="demo-edit-note hyperclose-demo-evidence__evidencia-hint">
+						First time with report tabs?
+						<a class="proof-capture-link" href="/en/features/evidencia#evidencia-informe-mt5">Example on another account (100k demo)</a>.
+					</p>
+					<p class="demo-edit-note hyperclose-demo-evidence__mt5-note">
+						<strong>MT5 vs HTML:</strong> the HTML is an export at the <strong>exact close moment</strong> of the trade in the video. MT5 reports and history over a range that covers what came after <strong>also include</strong> the trades that show <strong>how HyperClose closes</strong> when you try to trade while locked.
+					</p>
+				</div>
+			</details>
+		</section>
+
+		<section class="feature-proof">
+			<h2>What you can verify</h2>
+			<ul>
+				<li><a class="evidence-link" href="#hyperclose-demo">Automatic close in milliseconds when you try to trade while locked.</a></li>
+				<li><a class="evidence-link" href="#hyperclose-semaphore">Progressive responsibility semaphore on repeat attempts (3 levels).</a></li>
+				<li><a class="evidence-link" href="#hyperclose-off-demo">Protection on an OFF day with automatic rotation and the same close logic.</a></li>
+			</ul>
+		</section>
+
+		<section id="hyperclose-semaphore" class="feature-proof-detail">
+			<h3>Responsibility semaphore</h3>
+			<div class="hyperclose-semaphore-intro">
+				<p class="feature-proof-subtitle">Three warning levels if you repeat the attempt</p>
+				<p class="feature-proof-lead hyperclose-semaphore-intro__line">
+					You already hit the limit; the panel stays in STOP.
+				</p>
+				<p class="feature-proof-lead hyperclose-semaphore-intro__line">
+					If you still try to trade, the close is immediate and the modal escalates:
+				</p>
+				<ul class="hyperclose-semaphore-levels">
+					<li><strong>1st semaphore</strong> — sistema bloqueado (system locked)</li>
+					<li><strong>2nd semaphore</strong> — advertencia por reiteración (repeat-attempt warning)</li>
+					<li><strong>3rd semaphore</strong> — exención de responsabilidad (liability disclaimer)</li>
+				</ul>
+			</div>
+			<figure class="hyperclose-semaphore-collage">
+				<a
+					class="hyperclose-semaphore-collage__zoom"
+					href="/images/evidence/hyperclose-semaforos-collage-panel-modales.png"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Open STOP panel and three-semaphore collage full size"
+				>
+					<img
+						class="hyperclose-semaphore-collage__image"
+						src="/images/evidence/hyperclose-semaforos-collage-panel-modales.png"
+						alt="HyperClose: panel in STOP and three semaphore modals (1st system locked, 2nd warning, 3rd disclaimer) with arrows marking each level."
+						loading="lazy"
+						width="1920"
+						height="1080"
+						decoding="async"
+					/>
+				</a>
+				<figcaption class="hyperclose-semaphore-collage__caption">
+					<span class="hyperclose-semaphore-collage__caption-label">See in video:</span>
+					<span class="hyperclose-semaphore-collage__demo-links">
+						<a class="proof-capture-link" href="#hyperclose-demo">HyperClose demo · 15 lots and semaphore (2:23)</a>
+						<span class="hyperclose-semaphore-collage__demo-sep" aria-hidden="true">·</span>
+						<a class="proof-capture-link" href="/en/como-funciona?play=1#evidencia-nasdaq-100">Nasdaq 100 — live session (~3:35)</a>
+					</span>
+				</figcaption>
+			</figure>
+		</section>
+
+		<!-- PENDIENTE jun 2026: collage día OFF (mismo criterio que #hyperclose-semaphore) + capturas composito modal+panel regrabadas en terminal (tevsys con día OFF, intento operar); mantener vídeo actual y acordeón de escenarios. -->
+		<section id="hyperclose-off" class="feature-proof-detail">
+			<h3>Automatic rotation and protected OFF day</h3>
+			<div class="hyperclose-semaphore-intro hyperclose-off-intro">
+				<p class="feature-proof-subtitle">When the day changes, tevsys takes control</p>
+				<p class="feature-proof-lead hyperclose-semaphore-intro__line">
+					OFF day with limits locked: green padlock and protected panel from the first live tick.
+				</p>
+				<p class="feature-proof-lead hyperclose-semaphore-intro__line">
+					If you still try to trade, the close is immediate and the modal escalates — the same logic as when limits are hit.
+				</p>
+			</div>
+			<div id="hyperclose-off-demo" class="demo-video demo-video--compact hyperclose-off-demo" tabindex="-1">
+				<video id="hyperclose-off-demo-video" controls preload="metadata">
+					<source src="/videos/features/tevsys-rotacion-automatica-dia-off.mp4" type="video/mp4" />
+					Your browser does not support HTML5 video.
+				</video>
+			</div>
+			<details class="proof-accordion">
+				<summary class="proof-capture-link">Screenshots of OFF-day scenarios</summary>
+				<div class="proof-gallery">
+					<p class="proof-gallery__hint">Setup, protected panel and modals when you try to trade. Click each capture to view full size.</p>
+					<div class="proof-gallery__grid">
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Setup</p>
+							<p class="proof-gallery__title">Protection cannot be activated</p>
+							<p class="proof-gallery__desc">Day set as OFF. If you try to lock limits, the system blocks it. To trade that day, first clear the OFF day in Inputs (F7), then set limits and lock. Without that step, there is no active protection.</p>
+							<p class="proof-gallery__caption">🔓 Grey padlock (lower-left corner of the chart) = no protection. Configure and lock.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-modal-00-config.png" target="_blank" rel="noopener noreferrer" aria-label="Open OFF-day setup modal full size">
+								<picture><source type="image/webp" srcset="/images/evidence/hyperclose-dias-off-modal-00-config.webp" /><img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-modal-00-config.png" alt="OFF-day modal: protection cannot be activated." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Protected panel</p>
+							<p class="proof-gallery__title">OFF day with limits locked</p>
+							<p class="proof-gallery__desc">Day set as OFF and limits previously locked. WEEK padlocks show active protection; the button shows «DÍA OFF · Protegido» (OFF day · Protected). Floating today 0.00% because nothing was traded. If you try to open a trade, the system closes immediately and shows the modals.</p>
+							<p class="proof-gallery__caption">🔒 Green padlock (lower-left corner of the chart) = active protection.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-panel-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Open protected OFF-day panel full size">
+								<picture><source type="image/webp" srcset="/images/evidence/hyperclose-dias-off-panel-protegido.webp" /><img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-panel-protegido.png" alt="OFF-day panel: protected with limits locked." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Level 1</p>
+							<p class="proof-gallery__title">Educational</p>
+							<p class="proof-gallery__desc">First attempt to trade on an OFF day with limits locked. The system closes the trade immediately and shows a reminder: this day is configured as OFF, tevsys protects that decision and closes automatically. Options: wait until tomorrow or reconfigure ON/OFF days over the weekend.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-modal-01.png" target="_blank" rel="noopener noreferrer" aria-label="Open OFF-day level 1 modal full size">
+								<picture><source type="image/webp" srcset="/images/evidence/hyperclose-dias-off-modal-01.webp" /><img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-modal-01.png" alt="OFF-day level 1 modal: educational." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Level 2</p>
+							<p class="proof-gallery__title">Warning</p>
+							<p class="proof-gallery__desc">Second attempt to trade on an OFF day. Stronger tone: commissions and spreads are on you. The system does not take responsibility for losses from repeated attempts. The close remains immediate on every attempt.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-modal-02.png" target="_blank" rel="noopener noreferrer" aria-label="Open OFF-day level 2 modal full size">
+								<picture><source type="image/webp" srcset="/images/evidence/hyperclose-dias-off-modal-02.webp" /><img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-modal-02.png" alt="OFF-day level 2 modal: warning." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Level 3</p>
+							<p class="proof-gallery__title">Final clause</p>
+							<p class="proof-gallery__desc">Third attempt on an OFF day. Liability disclaimer: tevsys is not responsible for commissions, spreads or losses from repeated attempts. Last warning of the day. From the fourth attempt onward, only logs record it — no more popups.</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/hyperclose-dias-off-modal-03.png" target="_blank" rel="noopener noreferrer" aria-label="Open OFF-day level 3 modal full size">
+								<picture><source type="image/webp" srcset="/images/evidence/hyperclose-dias-off-modal-03.webp" /><img class="proof-gallery__image" src="/images/evidence/hyperclose-dias-off-modal-03.png" alt="OFF-day level 3 modal: final clause." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+					</div>
+				</div>
+			</details>
+		</section>
+
+		<section class="feature-cta">
+			<h2>Want to validate HyperClose in your own trading?</h2>
+			<p>We walk through the full protocol in your context and show you the proofs to check it.</p>
+			<a href="/en/company/contact?feature=hyperclose&flow=demo" class="feature-cta__button">Try HyperClose in demo</a>
+		</section>
+	</Container>
 	</div>
 </Layout>
 
+<script>
+	function playDemoIfTarget() {
+		const params = new URLSearchParams(window.location.search);
+		const fromHero = params.get('src') === 'hero';
+		const hash = window.location.hash;
+		if (hash === '#hyperclose-demo') {
+			const video = document.getElementById('hyperclose-demo-video');
+			if (video && !fromHero) video.play().catch(() => {});
+		} else if (hash === '#hyperclose-off-demo') {
+			const video = document.getElementById('hyperclose-off-demo-video');
+			if (video) video.play().catch(() => {});
+		}
+	}
+	function initDemoExpand() {
+		[['hyperclose-demo-video', 'hyperclose-demo-container'], ['hyperclose-off-demo-video', 'hyperclose-off-demo']].forEach(([vidId, ctnId]) => {
+			const video = document.getElementById(vidId);
+			const container = document.getElementById(ctnId);
+			if (video && container) {
+				video.addEventListener('play', () => container.classList.add('demo-video--playing'));
+				video.addEventListener('ended', () => container.classList.remove('demo-video--playing'));
+			}
+		});
+	}
+	document.addEventListener('DOMContentLoaded', () => {
+		playDemoIfTarget();
+		initDemoExpand();
+	});
+	window.addEventListener('hashchange', playDemoIfTarget);
+</script>
+
 <style>
+	.feature-hero,
+	.feature-demo,
+	.feature-proof,
+	.feature-proof-detail,
+	.feature-cta {
+		margin: var(--section-margin) auto;
+	}
+	.feature-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
+	}
+	.feature-hero h1 {
+		max-width: min(44ch, 100%);
+	}
 	.feature-title__accent {
-		color: hsl(38 92% 55%);
+		color: #f5b041;
+		font-weight: 700;
+	}
+	.feature-hook {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+		margin: 0 0 0.7rem;
+	}
+	.feature-hook__dot {
+		width: 0.45rem;
+		height: 0.45rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-demo-youtube-more {
+		margin: 0.85rem 0 0;
+		font-size: 0.95rem;
+		line-height: 1.45;
+		max-width: 60ch;
+	}
+	.feature-demo-youtube-more a {
+		color: #f5b041;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+	.feature-demo-youtube-more a:hover {
+		color: #f7c050;
+	}
+	.feature-demo-youtube-more__hint {
+		opacity: 0.78;
+		font-weight: 400;
+	}
+	.feature-lead {
+		max-width: 70ch;
+		line-height: 1.55;
+		margin: 0 0 0.85rem;
+	}
+	.feature-extreme-note {
+		max-width: 72ch;
+		line-height: 1.55;
+		opacity: 0.86;
+		margin: 0.55rem 0 0;
+	}
+	.feature-demo--hero {
+		position: relative;
+	}
+	.hyperclose-multichart {
+		margin: 0 0 clamp(1rem, 2.8vw, 1.5rem);
+		max-width: 52ch;
+		padding-bottom: clamp(0.6rem, 1.8vw, 0.85rem);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	}
+	html[data-theme='light'] .hyperclose-multichart {
+		border-bottom-color: rgba(0, 0, 0, 0.08);
+	}
+	.hyperclose-multichart__lead {
+		margin: 0 0 0.35rem;
+		align-items: flex-start;
+		gap: 0.4rem;
+		font-size: clamp(0.92rem, 2.1vw, 0.98rem);
+		font-style: normal;
+		font-weight: 500;
+		opacity: 0.82;
+		line-height: 1.45;
+	}
+	.hyperclose-multichart__lead .feature-hook__dot {
+		margin-top: 0.32rem;
+		width: 0.35rem;
+		height: 0.35rem;
+		opacity: 0.85;
+		flex-shrink: 0;
+	}
+	.hyperclose-multichart__sub {
+		margin: 0;
+		padding-left: calc(0.35rem + 0.4rem);
+		font-size: clamp(0.8rem, 1.85vw, 0.86rem);
+		font-style: normal;
+		font-weight: 400;
+		opacity: 0.62;
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+	}
+	html[data-theme='light'] .hyperclose-multichart__sub {
+		opacity: 0.68;
+	}
+	.feature-demo--hero::before {
+		content: '';
+		position: absolute;
+		inset: -0.35rem;
+		border-radius: calc(var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem)) + 2px);
+		background: linear-gradient(135deg, rgba(245, 176, 65, 0.18), rgba(245, 176, 65, 0.04));
+		pointer-events: none;
+		z-index: 0;
+	}
+	/* Primer bloque: acabado global (--micro-demo-bg); sin halo ::before */
+	#hyperclose-demo.feature-demo--hero::before {
+		display: none;
+	}
+	.feature-demo--hero > * {
+		position: relative;
+		z-index: 1;
+	}
+	#hyperclose-demo {
+		scroll-margin-top: 5.5rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+	}
+	#hyperclose-semaphore,
+	#hyperclose-off-demo {
+		scroll-margin-top: 5.5rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+	}
+	.demo-video--hero {
+		max-width: min(100%, 52rem);
+		margin-left: auto;
+		margin-right: auto;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.35), 0 12px 40px rgba(0, 0, 0, 0.35);
+	}
+	.demo-video--hero-elegant {
+		background: var(--theme-embed-chrome);
+		border-color: var(--theme-embed-chrome-border);
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.05),
+			0 12px 36px rgba(0, 0, 0, 0.34);
+	}
+	.demo-video--hero.demo-video--playing {
+		max-width: none;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.45), 0 16px 48px rgba(0, 0, 0, 0.4);
+	}
+	.demo-video--hero-elegant.demo-video--playing {
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.08),
+			0 16px 46px rgba(0, 0, 0, 0.4);
+	}
+	.hyperclose-demo-evidence {
+		margin-top: 0.85rem;
+	}
+	.hyperclose-demo-evidence__text {
+		margin: 0.5rem 0 0;
+		line-height: 1.55;
+		font-size: 0.94rem;
+		opacity: 0.92;
+	}
+	.hyperclose-demo-evidence__text a {
+		color: #f5b041;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.hyperclose-demo-evidence__html-row {
+		margin-top: 0.9rem;
+	}
+	.hyperclose-demo-evidence__evidencia-hint {
+		margin-top: 0.55rem !important;
+		font-size: 0.84rem;
+		opacity: 0.8;
+	}
+	.hyperclose-demo-evidence__mt5-note {
+		margin-top: 0.5rem !important;
+		line-height: 1.45;
+		font-size: 0.82rem;
+		opacity: 0.82;
+	}
+	.hyperclose-mt5-captures {
+		margin-top: 0.35rem;
+	}
+	.hyperclose-mt5-captures .proof-gallery__hint {
+		margin: 0 0 0.65rem;
+		font-size: 0.9rem;
+		opacity: 0.88;
+		line-height: 1.5;
+	}
+	.hyperclose-demo-evidence .proof-link-meta {
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		padding: 0.08rem 0.38rem;
+		border-radius: 999px;
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.12);
+		color: #f7c050;
+		line-height: 1.2;
+	}
+	#hyperclose-demo:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.25);
+		padding: 1rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+	}
+	#hyperclose-off-demo:target {
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.08);
+		box-shadow:
+			0 0 0 1px rgba(245, 176, 65, 0.42),
+			0 0 26px rgba(245, 176, 65, 0.2);
+		padding: 0.5rem;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		animation: hyperclose-target-flash 1.35s ease-out 1;
+	}
+	#hyperclose-semaphore:target,
+	#hyperclose-off:target {
+		border-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(148deg, rgba(245, 176, 65, 0.06), rgba(255, 255, 255, 0.02));
+		box-shadow: none;
+	}
+	@keyframes hyperclose-target-flash {
+		0% {
+			box-shadow:
+				0 0 0 1px rgba(245, 176, 65, 0.58),
+				0 0 34px rgba(245, 176, 65, 0.3);
+		}
+		100% {
+			box-shadow:
+				0 0 0 1px rgba(245, 176, 65, 0.42),
+				0 0 26px rgba(245, 176, 65, 0.2);
+		}
+	}
+	.feature-demo h2,
+	.feature-proof h2,
+	.feature-cta h2 {
+		margin: 0 0 0.65rem;
+		font-size: 1.35rem;
+	}
+	.demo-video--compact {
+		max-width: min(100%, 31rem);
+		margin-left: auto;
+		margin-right: auto;
+		transition: max-width 0.35s ease, box-shadow 0.25s ease;
+		box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.32), 0 10px 32px rgba(0, 0, 0, 0.3);
+	}
+	.demo-video--compact.demo-video--playing {
+		max-width: none;
+	}
+	.demo-edit-note {
+		margin: 0.5rem 0 0;
+		font-size: 0.84rem;
+		opacity: 0.74;
+		line-height: 1.45;
+		max-width: 74ch;
+	}
+	.demo-placeholder {
+		background: var(--theme-surface-1);
+		border: 1px solid rgba(245, 176, 65, 0.28);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
+	}
+	.demo-video {
+		background: #06080d;
+		border: 1px solid rgba(245, 176, 65, 0.3);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		overflow: hidden;
+		margin-bottom: 0.75rem;
+	}
+	.demo-video video {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.demo-placeholder p {
+		margin: 0 0 0.45rem;
+		line-height: 1.5;
+	}
+	.demo-placeholder p:last-child {
+		margin-bottom: 0;
+	}
+	.demo-note {
+		opacity: 0.8;
+		font-size: 0.95rem;
+	}
+	.feature-proof ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.feature-proof li {
+		margin-bottom: 0.45rem;
+		line-height: 1.5;
+		padding: 0.42rem 0.6rem 0.42rem 1rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.22);
+		border-radius: 0.35rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+	}
+	.feature-proof li::before {
+		content: '';
+		display: inline-block;
+		width: 0.34rem;
+		height: 0.34rem;
+		border-radius: 50%;
+		background: rgba(245, 176, 65, 0.82);
+		margin-right: 0.55rem;
+		vertical-align: middle;
+	}
+	.feature-proof li:hover {
+		border-left-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
+	}
+	.feature-proof li:last-child {
+		margin-bottom: 0;
+	}
+	.feature-proof {
+		position: relative;
+		overflow: hidden;
+	}
+	.feature-proof::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: -10%;
+		width: 42%;
+		height: 100%;
+		pointer-events: none;
+		background: radial-gradient(ellipse at right center, rgba(245, 176, 65, 0.11) 0%, rgba(245, 176, 65, 0.045) 42%, transparent 74%);
+	}
+	.evidence-link {
+		color: #ffffff;
+		text-decoration: underline;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2.5px;
+		transition: color 0.2s ease;
+		cursor: pointer;
+	}
+	.evidence-link:hover {
+		color: #f5b041;
+	}
+	.evidence-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	.feature-proof-detail {
+		margin: 1rem 0 0;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
+		scroll-margin-top: 5.5rem;
+		transition: border-color 0.25s ease, background-color 0.25s ease;
+	}
+	.feature-proof-detail h3 {
+		margin: 0 0 0.45rem;
+		font-size: 1.05rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+	}
+	.feature-proof-detail h3::before {
+		content: '';
+		width: 0.42rem;
+		height: 0.42rem;
+		border-radius: 50%;
+		background: #f5b041;
+		flex-shrink: 0;
+	}
+	.feature-proof-detail p {
+		margin: 0;
+		line-height: 1.5;
+	}
+	.feature-proof-subtitle {
+		margin: -0.1rem 0 0.5rem !important;
+		font-size: 0.94rem;
+		font-style: italic;
+		font-weight: 600;
+		opacity: 0.9;
+	}
+	.feature-proof-detail--video-slim .feature-proof-subtitle,
+	#hyperclose-off .feature-proof-subtitle {
+		margin: -0.1rem 0 0.4rem !important;
+	}
+	#hyperclose-off .proof-accordion,
+	.feature-proof-detail--video-slim .proof-accordion {
+		margin-top: 0.65rem;
+	}
+	.hyperclose-semaphore-intro {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		max-width: 52ch;
+		margin-bottom: 0.35rem;
+	}
+	.hyperclose-semaphore-intro .feature-proof-subtitle {
+		margin: 0 0 0.1rem !important;
+	}
+	.hyperclose-semaphore-intro__line {
+		margin: 0 !important;
+	}
+	.hyperclose-semaphore-levels {
+		margin: 0.15rem 0 0.05rem;
+		padding-left: 1.15rem;
+		font-size: 0.94rem;
+		line-height: 1.6;
+		opacity: 0.92;
+	}
+	.hyperclose-semaphore-levels li + li {
+		margin-top: 0.35rem;
+	}
+	.hyperclose-semaphore-collage {
+		margin: clamp(1rem, 2.5vw, 1.35rem) 0 0;
+		padding: 0;
+		border: none;
+	}
+	.hyperclose-off-demo {
+		margin-top: clamp(1.25rem, 3vw, 1.65rem);
+		margin-bottom: 0.85rem;
+	}
+	.hyperclose-semaphore-collage__zoom {
+		display: block;
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #0a0a0a;
+		line-height: 0;
+	}
+	.hyperclose-semaphore-collage__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+	}
+	.hyperclose-semaphore-collage__image {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.hyperclose-semaphore-collage__caption {
+		margin: 0.65rem 0 0;
+		font-size: 0.92rem;
+		line-height: 1.5;
+		opacity: 0.88;
+	}
+	.hyperclose-semaphore-collage__caption-label {
+		display: block;
+		margin-bottom: 0.35rem;
+	}
+	.hyperclose-semaphore-collage__demo-links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem 0.5rem;
+	}
+	.hyperclose-semaphore-collage__demo-sep {
+		opacity: 0.45;
+		user-select: none;
+	}
+	.proof-capture-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: color 0.2s ease;
+	}
+	.proof-capture-link:hover {
+		color: #f7c050;
+	}
+	.proof-capture-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	.proof-link-meta {
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+		padding: 0.08rem 0.38rem;
+		border-radius: 999px;
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		background: rgba(245, 176, 65, 0.12);
+		color: #f7c050;
+		line-height: 1.2;
+	}
+	.proof-accordion {
+		margin: 0.45rem 0 0;
+	}
+	.proof-accordion summary {
+		list-style: none;
+	}
+	.proof-accordion summary::-webkit-details-marker {
+		display: none;
+	}
+	.proof-gallery {
+		margin: 0.75rem 0 0;
+		background: var(--theme-surface-1);
+		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
+		padding: 1rem 1.1rem;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+	}
+	.proof-gallery__hint {
+		margin: 0 0 0.75rem;
+		font-size: 0.88rem;
+		opacity: 0.82;
+	}
+	.proof-gallery__grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.75rem;
+	}
+	.proof-gallery__item {
+		background: rgba(255, 255, 255, 0.02);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 0.6rem;
+		padding: 0.7rem;
+	}
+	.proof-gallery__step {
+		margin: 0 0 0.2rem;
+		font-size: 0.78rem;
+		opacity: 0.8;
+	}
+	.proof-gallery__title {
+		margin: 0 0 0.25rem;
+		font-size: 0.9rem;
+		font-weight: 600;
+		line-height: 1.35;
+	}
+	.proof-gallery__desc {
+		margin: 0 0 0.5rem;
+		font-size: 0.82rem;
+		opacity: 0.88;
+		line-height: 1.4;
+	}
+	.proof-gallery__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 0.45rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: #0a0d13;
+	}
+	.proof-gallery__caption {
+		margin: 2rem 0 2rem;
+		font-size: 0.8rem;
+		opacity: 0.82;
+	}
+	.proof-gallery__zoom {
+		display: block;
+		border-radius: 0.45rem;
+		overflow: hidden;
+		cursor: zoom-in;
+	}
+	.proof-gallery__zoom:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+	}
+	@media (max-width: 768px) {
+		.proof-gallery__grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
