@@ -7,6 +7,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## i18n ES|EN — oleada 5 micros a paridad (4 sep 2026)
 
 - **Qué:** `/en/features/precision|hyperclose|evidencia|sml` dejan de ser capas cortas: misma estructura/galerías/vídeos que ES; copy EN.
+- **Extra follow-up:** `/en/precios` a paridad ES (cifras correctas Pro €119, multi, oferta lanzamiento) — quitado enlace «Full Spanish pricing».
 - **Vídeos:** overlays del EA **sin** re-edición (pueden seguir en español).
 - **Commit:** `web(tevsys): i18n wave5 — feature micros full EN parity`
 
