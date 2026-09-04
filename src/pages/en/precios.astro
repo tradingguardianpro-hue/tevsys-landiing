@@ -1,173 +1,414 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
+import settings from '../../config/settings.js';
 
 const seo = {
 	title: 'Pricing & plans | tevsys',
 	description:
-		'Essential, Advanced, Pro pricing. Launch offer for early adopters. Demo Essential available. Companies for 4+ accounts.',
+		'Essential, Advanced, Pro and Pro Multi (2–3 accounts) pricing. Launch offer for the first 100: year-1 launch price, 6 more months if you renew. 4+ accounts: companies.',
 };
 
-const plans = [
+const planesRetail = [
 	{
-		name: 'Essential',
-		monthly: '€39/mo',
-		yearly: '€390/year',
+		nombre: 'Essential',
+		mensual: '€39/mo',
+		anual: '€390/year',
+		estandar: '€49/mo',
 		capital: '€30,000',
-		status: 'Demo live',
-		includes: [
+		cuentas: null,
+		incluye: [
 			'1 MT5 account',
 			'One active day, automatic rotation',
 			'Millimetric precision, HyperClose',
 			'OFF days',
 			'News & sessions update (when ready)',
 		],
+		badge: 'Launch',
 	},
 	{
-		name: 'Advanced',
-		monthly: '€79/mo',
-		yearly: '€790/year',
+		nombre: 'Advanced',
+		mensual: '€79/mo',
+		anual: '€790/year',
+		estandar: '€99/mo',
 		capital: '€120,000',
-		status: 'Waitlist',
-		includes: [
+		cuentas: null,
+		incluye: [
+			'1 MT5 account',
 			'Everything in Essential',
 			'Full-week configuration',
 			'Protection from Monday or from install',
 			'Per-day limits, SML',
+			'News & sessions update (when ready)',
 		],
+		badge: 'In development — waitlist',
 	},
 	{
-		name: 'Pro',
-		monthly: '€149/mo',
-		yearly: '€1,490/year',
-		capital: 'Higher capital',
-		status: 'Waitlist',
-		includes: [
+		nombre: 'Pro',
+		mensual: '€119/mo',
+		anual: '€1,190/year',
+		estandar: '€149/mo',
+		capital: '€240,000',
+		cuentas: null,
+		incluye: [
+			'1 MT5 account',
 			'Everything in Advanced',
-			'Drawdown structure for larger capital',
-			'Full week + SML',
+			'Automatic drawdown',
+			'Full news & sessions',
+			'News & sessions update (when ready)',
 		],
+		badge: 'In development — waitlist',
+	},
+];
+
+const planesMulti = [
+	{
+		nombre: 'Pro Multi 2',
+		mensual: '€149/mo',
+		anual: '€1,490/year',
+		estandar: '€179/mo',
+		capital: '€120,000 per account',
+		cuentas: '2 MT5 accounts',
+		incluye: [
+			'Everything in Pro',
+			'Funded or own accounts',
+			'News & sessions update (when ready)',
+		],
+		badge: 'In development — waitlist',
+	},
+	{
+		nombre: 'Pro Multi 3',
+		mensual: '€179/mo',
+		anual: '€1,790/year',
+		estandar: '€209/mo',
+		capital: '€120,000 per account',
+		cuentas: '3 MT5 accounts',
+		incluye: [
+			'Everything in Pro',
+			'Funded or own accounts',
+			'News & sessions update (when ready)',
+		],
+		badge: 'In development — waitlist',
 	},
 ];
 ---
 
 <Layout seo={seo} lang="en">
 	<Container>
-		<section class="en-pricing">
-			<p class="feature-kicker">Plans</p>
-			<h1>Choose your account</h1>
-			<p class="en-pricing__lead">
-				We do not sell signals. We sell rules that execute and can be verified in MT5.
+		<section class="precios-hero">
+			<p class="precios-kicker">Plans & pricing</p>
+			<h1>Prices, terms and features by tier</h1>
+			<p class="precios-lead">
+				All plans are subscriptions (monthly or yearly). Launch offer for the first 100: launch price for year one; on renewal, if you stay subscribed, you keep that price for 6 more months (18 months total). From month 18, standard price.
 			</p>
-			<div class="en-pricing__grid">
+		</section>
+
+		<section class="precios-cards-section">
+			<h2 class="precios-cards-title">Launch offer — first 100 customers</h2>
+			<p class="precios-cards-sub">(Launch price year 1; 6 more months if you renew and stay subscribed)</p>
+			<div class="precios-cards-grid precios-cards-grid--retail">
 				{
-					plans.map((p) => (
-						<article class="en-pricing__card">
-							<p class="en-pricing__status">{p.status}</p>
-							<h2>
-								<span class="feature-title__accent">{p.name}</span>
-							</h2>
-							<p class="en-pricing__price">
-								{p.monthly} · {p.yearly}
-							</p>
-							<p class="en-pricing__cap">Capital guide: {p.capital}</p>
-							<ul>
-								{p.includes.map((line) => (
-									<li>{line}</li>
+					planesRetail.map((plan) => (
+						<article class="precios-card" id={plan.nombre.toLowerCase()}>
+							<h3 class="precios-card__name">{plan.nombre}</h3>
+							{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
+							<div class="precios-card__precios">
+								<p class="precios-card__lanzamiento">
+									<span class="precios-card__label">Launch</span> {plan.mensual} · {plan.anual}
+								</p>
+								<p class="precios-card__estandar">
+									<span class="precios-card__label">Standard (from 18 months)</span> {plan.estandar}
+								</p>
+							</div>
+							{plan.cuentas ? (
+								<>
+									<p class="precios-card__capital">
+										<span class="precios-card__label">Accounts</span> {plan.cuentas}
+									</p>
+									<p class="precios-card__capital">
+										<span class="precios-card__label">Max capital per account</span> {plan.capital}
+									</p>
+								</>
+							) : (
+								<p class="precios-card__capital">
+									<span class="precios-card__label">Max capital</span> {plan.capital}
+								</p>
+							)}
+							<ul class="precios-card__incluye">
+								{plan.incluye.map((item) => (
+									<li>{item}</li>
+								))}
+							</ul>
+							{plan.nombre === 'Essential' && settings.checkoutEssentialReady && (
+								<a
+									href={settings.checkoutEssentialUrlMensual}
+									class="precios-card__comprar"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Buy
+								</a>
+							)}
+						</article>
+					))
+				}
+			</div>
+			<div class="precios-cards-grid precios-cards-grid--multi">
+				{
+					planesMulti.map((plan) => (
+						<article class="precios-card">
+							<h3 class="precios-card__name">{plan.nombre}</h3>
+							{plan.badge && <span class="precios-card__badge">{plan.badge}</span>}
+							<div class="precios-card__precios">
+								<p class="precios-card__lanzamiento">
+									<span class="precios-card__label">Launch</span> {plan.mensual} · {plan.anual}
+								</p>
+								<p class="precios-card__estandar">
+									<span class="precios-card__label">Standard (from 18 months)</span> {plan.estandar}
+								</p>
+							</div>
+							{plan.cuentas ? (
+								<>
+									<p class="precios-card__capital">
+										<span class="precios-card__label">Accounts</span> {plan.cuentas}
+									</p>
+									<p class="precios-card__capital">
+										<span class="precios-card__label">Max capital per account</span> {plan.capital}
+									</p>
+								</>
+							) : (
+								<p class="precios-card__capital">
+									<span class="precios-card__label">Max capital</span> {plan.capital}
+								</p>
+							)}
+							<ul class="precios-card__incluye">
+								{plan.incluye.map((item) => (
+									<li>{item}</li>
 								))}
 							</ul>
 						</article>
 					))
 				}
 			</div>
-			<p class="en-pricing__note">
-				Launch pricing and multi-account / company terms: see the full Spanish pricing page for legal detail, or ask via contact.
+			<p class="precios-nota">
+				First 100 customers: launch price year 1; if you renew and stay subscribed, you keep that price for 6 more months. From month 18, standard price.
 			</p>
-			<p class="en-micro-foot">
-				<a href="/en/company/contact?flow=demo">Essential demo →</a>
-				<span aria-hidden="true"> · </span>
-				<a href="/precios">Full Spanish pricing →</a>
+		</section>
+
+		<section class="precios-desc">
+			<p>
+				When we have the updates for your account and Advanced and Pro are ready, we will email you.{' '}
+				<strong>Waitlist open</strong> —{' '}
+				<a href="/en/company/contact?flow=lista" class="precios-desc__link">write to join</a>.
 			</p>
+		</section>
+
+		<section class="precios-empresas">
+			<p>
+				<strong>4+ accounts, academy or corporate capital?</strong> Tailored terms —{' '}
+				<a href="/en/company/empresas">Companies contact</a>.
+			</p>
+		</section>
+
+		<section class="precios-cta">
+			<h2>Want to try first?</h2>
+			<p>Request the demo and try it at your pace. Questions? We are here.</p>
+			<a href="/en/company/contact?flow=demo" class="precios-cta__button">Request demo</a>
 		</section>
 	</Container>
 </Layout>
 
 <style>
-	.en-pricing {
-		padding: 2.5rem 0 3.5rem;
-		max-width: 56rem;
-		margin: 0 auto;
+	.precios-hero,
+	.precios-cards-section,
+	.precios-desc,
+	.precios-empresas,
+	.precios-cta {
+		margin: var(--section-margin) auto;
 	}
-	.feature-kicker {
-		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: 0.75rem;
-		letter-spacing: 0.08em;
+	.precios-kicker {
+		margin: 0 0 0.35rem;
+		opacity: 0.8;
 		text-transform: uppercase;
-		color: rgba(255, 255, 255, 0.45);
+		letter-spacing: 0.08em;
+		font-size: 0.82rem;
 	}
-	.en-pricing h1 {
-		font-size: clamp(1.7rem, 3.5vw, 2.3rem);
-		margin: 0.4rem 0 0.75rem;
+	.precios-hero h1 {
+		margin: 0 0 0.65rem;
+		font-size: clamp(1.6rem, 3.5vw, 2.2rem);
 	}
-	.en-pricing__lead {
-		color: rgba(255, 255, 255, 0.72);
-		margin-bottom: 2rem;
+	.precios-lead {
+		max-width: 60ch;
+		line-height: 1.55;
+		opacity: 0.9;
 	}
-	.en-pricing__grid {
+	.precios-cards-title {
+		margin: 0 0 0.25rem;
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: #f5b041;
+	}
+	.precios-cards-sub {
+		margin: 0 0 1.25rem;
+		font-size: 0.9rem;
+		opacity: 0.85;
+	}
+	.precios-cards-grid {
 		display: grid;
 		gap: 1.25rem;
+		margin-bottom: 1rem;
 	}
-	@media (min-width: 900px) {
-		.en-pricing__grid {
-			grid-template-columns: repeat(3, 1fr);
+	.precios-cards-grid--retail {
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	}
+	.precios-cards-grid--multi {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@media (max-width: 600px) {
+		.precios-cards-grid--multi {
+			grid-template-columns: 1fr;
 		}
 	}
-	.en-pricing__card {
-		padding: 1.25rem 1.15rem;
-		border-radius: 0.85rem;
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		background: rgba(255, 255, 255, 0.03);
+	.precios-card {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.25rem;
+		border: 1px solid var(--theme-surface-2);
+		display: flex;
+		flex-direction: column;
+		scroll-margin-top: 2rem;
 	}
-	.en-pricing__status {
+	.precios-card:hover {
+		border-color: rgba(245, 176, 65, 0.4);
+	}
+	.precios-card:target {
+		border-color: #f5b041;
+		box-shadow:
+			0 0 24px rgba(245, 176, 65, 0.35),
+			0 0 0 1px rgba(245, 176, 65, 0.5);
+	}
+	.precios-card__name {
+		margin: 0 0 0.5rem;
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+	.precios-card__badge {
+		display: inline-block;
+		margin-bottom: 0.75rem;
+		padding: 0.2rem 0.5rem;
 		font-size: 0.75rem;
-		letter-spacing: 0.04em;
-		color: rgba(255, 255, 255, 0.5);
+		background: rgba(245, 176, 65, 0.2);
+		color: #f5b041;
+		border-radius: 0.35rem;
+		align-self: flex-start;
+	}
+	.precios-card__precios {
 		margin: 0 0 0.5rem;
 	}
-	.en-pricing__card h2 {
+	.precios-card__lanzamiento {
+		margin: 0 0 0.25rem;
+		font-size: 1rem;
+		font-weight: 600;
+	}
+	.precios-card__estandar {
+		margin: 0;
+		font-size: 0.88rem;
+		opacity: 0.9;
+	}
+	.precios-card__capital {
+		margin: 0 0 0.75rem;
+		font-size: 0.9rem;
+	}
+	.precios-card__label {
+		display: block;
+		font-size: 0.75rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		margin-bottom: 0.15rem;
+	}
+	.precios-card__incluye {
+		margin: 0;
+		padding-left: 1.25rem;
+		line-height: 1.6;
+		font-size: 0.9rem;
+		opacity: 0.95;
+		flex: 1;
+	}
+	.precios-card__incluye li {
+		margin-bottom: 0.35rem;
+	}
+	.precios-card__comprar {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 1rem;
+		padding: 0.5rem 1rem;
+		border-radius: 1.5rem;
+		background: #f5b041;
+		color: #1a1510;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background 0.2s ease;
+		align-self: flex-start;
+	}
+	.precios-card__comprar:hover {
+		background: #f7c050;
+	}
+	.precios-nota {
+		font-size: 0.88rem;
+		opacity: 0.85;
+		font-style: italic;
+	}
+	.precios-desc {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+	}
+	.precios-desc p {
+		margin: 0 0 0.75rem;
+		line-height: 1.55;
+	}
+	.precios-desc__link {
+		color: #f5b041;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.precios-desc__link:hover {
+		text-decoration: underline;
+	}
+	.precios-desc p:last-child {
+		margin-bottom: 0;
+	}
+	.precios-empresas {
+		background: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+		padding: 1.2rem;
+		border-left: 4px solid rgba(245, 176, 65, 0.6);
+	}
+	.precios-empresas p {
+		margin: 0;
+		line-height: 1.5;
+	}
+	.precios-empresas a {
+		color: #f5b041;
+		font-weight: 600;
+	}
+	.precios-empresas a:hover {
+		text-decoration: underline;
+	}
+	.precios-cta {
+		text-align: center;
+	}
+	.precios-cta h2 {
 		margin: 0 0 0.5rem;
 		font-size: 1.25rem;
 	}
-	.feature-title__accent {
-		color: hsl(38 92% 55%);
-	}
-	.en-pricing__price {
-		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: 0.85rem;
-		margin: 0 0 0.35rem;
-	}
-	.en-pricing__cap {
-		font-size: 0.85rem;
-		color: rgba(255, 255, 255, 0.55);
-		margin: 0 0 0.85rem;
-	}
-	.en-pricing__card ul {
-		margin: 0;
-		padding-left: 1.1rem;
-		line-height: 1.5;
-		font-size: 0.9rem;
-		color: rgba(255, 255, 255, 0.78);
-	}
-	.en-pricing__note {
-		margin-top: 1.75rem;
-		font-size: 0.85rem;
-		color: rgba(255, 255, 255, 0.45);
-	}
-	.en-micro-foot {
-		margin: 1.5rem 0 0;
-		text-align: center;
-	}
-	.en-micro-foot a {
-		color: hsl(38 92% 55%);
+	.precios-cta p {
+		margin: 0 0 1rem;
+		opacity: 0.9;
 	}
 </style>
