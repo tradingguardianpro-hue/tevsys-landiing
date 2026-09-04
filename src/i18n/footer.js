@@ -1,27 +1,7 @@
-import { localizeHref, stripLocalePrefix } from './locales.js';
+import { localizeHref, stripLocalePrefix, enReadyPaths } from './locales.js';
 
-/** Solo estas rutas tienen página EN; el resto del footer sigue en ES (guías/legal). */
-const footerEnReady = new Set([
-	'/',
-	'/para-quien',
-	'/features/precision',
-	'/features/hyperclose',
-	'/features/evidencia',
-	'/features/sml',
-	'/precios',
-	'/como-funciona',
-	'/company/contact',
-	'/company/empresas',
-	'/company/legal',
-	'/company/privacidad',
-	'/company/terminos',
-	'/company/reembolsos',
-	'/instalacion',
-	'/instalacion-market',
-	'/configuracion',
-	'/configuracion-al-instalar',
-	'/configuracion-fin-de-semana',
-]);
+/** Solo estas rutas tienen página EN; el resto del footer sigue en ES (p. ej. vídeos cierre). */
+const footerEnReady = enReadyPaths;
 
 /**
  * @param {string | null} slug
@@ -113,7 +93,7 @@ const footerEn = [
 			{ title: 'HyperClose', slug: '/features/hyperclose' },
 			{ title: 'SML', slug: '/features/sml' },
 			{ title: 'Evidence', slug: '/features/evidencia' },
-			{ title: 'Videos — close cases', slug: '/videos-cierre-youtube' },
+			{ title: 'Videos — close cases', slug: '/features/evidencia' },
 			{ title: 'News & sessions', slug: null, note: 'coming soon' },
 		],
 	},

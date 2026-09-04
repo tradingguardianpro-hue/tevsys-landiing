@@ -45,38 +45,42 @@ export function stripLocalePrefix(pathname) {
 }
 
 /**
+ * Rutas con página EN publicada. Fuente única para switch + localizeHref.
+ * Ampliar al cerrar oleadas i18n.
+ */
+export const enReadyPaths = new Set([
+	'/',
+	'/como-funciona',
+	'/company/contact',
+	'/company/empresas',
+	'/company/empresas-thank-you',
+	'/company/legal',
+	'/company/privacidad',
+	'/company/terminos',
+	'/company/reembolsos',
+	'/features/precision',
+	'/features/hyperclose',
+	'/features/evidencia',
+	'/features/sml',
+	'/precios',
+	'/para-quien',
+	'/instalacion',
+	'/instalacion-market',
+	'/configuracion',
+	'/configuracion-al-instalar',
+	'/configuracion-fin-de-semana',
+]);
+
+/**
  * Pathname en el locale pedido (misma página lógica).
- * Oleada 1: solo un subconjunto tiene EN; el resto del switch EN → `/en/` (home).
+ * Si no hay EN para esa ruta, el switch EN → `/en/` (home).
  * @param {string} pathname path actual (con o sin locale)
  * @param {string} targetLocale
  */
 export function switchLocalePath(pathname, targetLocale) {
 	const bare = stripLocalePrefix(pathname);
 	const barePath = bare.split('?')[0].split('#')[0] || '/';
-	/** Rutas con página EN publicada (oleada 1). Ampliar en oleadas siguientes. */
-	const enReady = new Set([
-		'/',
-		'/como-funciona',
-		'/company/contact',
-		'/company/empresas',
-		'/company/empresas-thank-you',
-		'/company/legal',
-		'/company/privacidad',
-		'/company/terminos',
-		'/company/reembolsos',
-		'/features/precision',
-		'/features/hyperclose',
-		'/features/evidencia',
-		'/features/sml',
-		'/precios',
-		'/para-quien',
-		'/instalacion',
-		'/instalacion-market',
-		'/configuracion',
-		'/configuracion-al-instalar',
-		'/configuracion-fin-de-semana',
-	]);
-	if (targetLocale === 'en' && !enReady.has(barePath)) {
+	if (targetLocale === 'en' && !enReadyPaths.has(barePath)) {
 		return '/en/';
 	}
 	const prefix = localePrefix(targetLocale);
@@ -85,9 +89,9 @@ export function switchLocalePath(pathname, targetLocale) {
 }
 
 /**
- * Prefija un slug interno con el locale (para nav/footer).
- * Slugs `/go/…` de medición: en EN apuntamos a la página real localizada si existe;
- * si no, al equivalente ES (oleadas).
+ * Prefija un slug interno con el locale (para nav/footer/home).
+ * Slugs `/go/…` de medición: en EN apuntamos a la página real localizada.
+ * Si no hay página EN, se deja la URL ES (no inventar `/en/…` 404).
  * @param {string} slug
  * @param {string} locale
  */
@@ -122,10 +126,13 @@ export function localizeHref(slug, locale) {
 		const [path, hash] = dest.split('#');
 		const localized = localizeHref(path, locale);
 		const fromMap = hash ? `${localized}#${hash}` : localized;
-		/* Si el slug original traía ?…, no lo reaplicamos sobre dest mapeado. */
 		return fromMap;
 	}
 	const prefix = localePrefix(locale);
 	if (bare === '/') return `${prefix || '/'}${suffix}`;
+	/* No fabricar /en/ruta si no hay página EN → se queda en ES. */
+	if (locale === 'en' && !enReadyPaths.has(bare)) {
+		return `${bare}${suffix}`;
+	}
 	return `${prefix}${bare}${suffix}`;
 }

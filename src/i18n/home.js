@@ -268,7 +268,7 @@ export const homeCopy = {
 		hrefContactDemo: '/company/contact?flow=demo',
 		hrefContactAdvanced: '/company/contact?plan=advanced',
 		hrefContactPro: '/company/contact?plan=pro',
-		hrefAudit: '/auditoria-ia',
+		hrefAudit: '/company/contact?flow=auditoria-ia',
 		hrefInviteOp: '/go/como-funciona-operacion',
 		hrefInviteZero: '/go/como-funciona-pasiva',
 		hrefInviteCta: '/go/como-funciona-home',
