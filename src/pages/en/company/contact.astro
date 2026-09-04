@@ -22,10 +22,7 @@ const empresasTipHtml =
 	'<a href="/en/company/empresas" class="contact-tip__link">Companies or corporate contact</a>';
 ---
 
-<Layout
-	seo={seo}
-	lang="en"
->
+<Layout seo={seo} lang="en">
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
@@ -69,68 +66,343 @@ const empresasTipHtml =
 			window.location.replace('/en/company/contact?flow=acceso');
 			return;
 		}
+		const feature = (params.get('feature') || '').toLowerCase();
+		const origin = (params.get('origin') || '').toLowerCase();
+
 		const titleNode = document.getElementById('contactHeroTitle');
 		const introNode = document.getElementById('contactHeroIntro');
+		const imageNode = document.getElementById('contactHeroImage');
+		const sourceNode = document.getElementById('contactHeroSource');
+		const setHeroImage = (pngPath) => {
+			if (imageNode) imageNode.src = pngPath;
+			if (sourceNode) sourceNode.srcset = pngPath.replace('.png', '.webp');
+		};
+		const demoBadge = document.getElementById('contactHeroDemoBadge');
+		const devNote = document.getElementById('contactHeroDevNote');
 		const tip1 = document.getElementById('contactTip-1');
 		const tip2 = document.getElementById('contactTip-2');
 		const tip3 = document.getElementById('contactTip-3');
 		const tip4 = document.getElementById('contactTip-4');
-		const demoBadge = document.getElementById('contactHeroDemoBadge');
+		const tip5 = document.getElementById('contactTip-5');
 
 		const empresasTipHtml =
 			'<a href="/en/company/empresas" class="contact-tip__link">Companies or corporate contact</a>';
+		const setTips = (a, b, c, d, e) => {
+			if (tip1) tip1.textContent = a;
+			if (tip2) tip2.textContent = b;
+			if (tip3) tip3.textContent = c;
+			if (tip4) {
+				if (e !== undefined) {
+					tip4.textContent = d;
+					if (tip5) {
+						tip5.style.display = '';
+						tip5.innerHTML = e;
+					}
+				} else {
+					tip4.innerHTML = d;
+					if (tip5) tip5.style.display = 'none';
+				}
+			}
+		};
 
-		if (flow === 'demo' || (!flow && !plan)) {
-			if (titleNode) titleNode.textContent = 'Request your Essential demo';
+		const sourceMap = {
+			precision: {
+				intro:
+					'You already saw closing precision on this page. Fill in the form and we will send deeper links and demo access steps.',
+				tips: [
+					'We show the precision approach with real execution context.',
+					'We answer key questions for your trading style.',
+					'Simple process: we only ask for what we need to reply fast.',
+				],
+			},
+			hyperclose: {
+				intro:
+					'You already saw HyperClose on this page. Fill in the form and we will send deeper links and demo access steps.',
+				tips: [
+					'You will see HyperClose in a real usage scenario.',
+					'We explain what is logged on each attempt and why it matters.',
+					'Clear steps to validate fit with your trading.',
+				],
+			},
+			sml: {
+				intro:
+					'You already saw SML on this page. Fill in the form and we will send deeper links and demo access steps.',
+				tips: [
+					'Practical SML use without unnecessary jargon.',
+					'We help you decide if it fits your profile.',
+					'Fast reply with recommended next steps.',
+				],
+			},
+			evidence: {
+				intro:
+					'You already saw verifiable evidence on this page. Fill in the form and we will send deeper links and demo access steps.',
+				tips: [
+					'Panel, logs and official MT5 report to validate what happens live.',
+					'Everything stays traceable for your own review or an audit.',
+					'Clear process: we check fit and tell you the next step.',
+				],
+			},
+		};
+
+		if (flow === 'lista') {
+			if (titleNode) titleNode.textContent = 'Advanced and Pro waitlist';
 			if (introNode)
-				introNode.textContent = 'Tell us a bit about you. We reply within 24h with download steps.';
-			if (tip1) tip1.textContent = 'Essential ready to try. Advanced and Pro — waitlist.';
-			if (tip2) tip2.textContent = 'Reply within 24h. We guide you by profile.';
-			if (tip3)
-				tip3.textContent = 'Precision and HyperClose validated with real trades. OFF days and flexible week setup.';
-			if (tip4) tip4.innerHTML = empresasTipHtml;
+				introNode.textContent =
+					'Join the waitlist. We will email you when Advanced and Pro are available.';
+			setTips(
+				'Tell us which plan you care about and we add you to the list.',
+				'We will notify you when they are ready — no commitment.',
+				'Meanwhile, the Essential demo is ready to try.',
+				empresasTipHtml
+			);
+			if (imageNode) {
+				setHeroImage('/assets/images/plans/adva-form-v4.png');
+				imageNode.alt = 'Advanced and Pro waitlist';
+			}
+			return;
+		}
+
+		if (flow === 'acceso') {
+			if (titleNode) titleNode.textContent = 'Complete your access to tevsys';
+			if (introNode)
+				introNode.textContent =
+					'Fill in the form and we will tell you the next step for your profile. Essential ready; Advanced and Pro in development.';
+			setTips(
+				'Essential ready to try. Advanced and Pro in development — waitlist.',
+				'Reply within 24h. We guide you by profile.',
+				'Precision and HyperClose validated with real trades. OFF days and flexible week setup.',
+				empresasTipHtml
+			);
+			if (imageNode) {
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
+				imageNode.alt = 'tevsys access';
+			}
 			if (demoBadge) demoBadge.hidden = false;
+			return;
+		}
+
+		if (flow === 'demo') {
+			if (titleNode) titleNode.textContent = 'Request your Essential demo';
+			if (introNode) {
+				introNode.textContent =
+					'One step: fill in the form. We send the Essential demo plus install and setup guides. Reply within 24 hours.';
+			}
+			if (tip1) tip1.style.display = 'none';
+			if (tip2) tip2.style.display = 'none';
+			if (tip3) tip3.style.display = 'none';
+			if (tip4) tip4.style.display = 'none';
+			if (tip5) tip5.style.display = 'none';
+			if (imageNode) {
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
+				imageNode.alt = 'tevsys Essential demo';
+			}
+			if (demoBadge) demoBadge.hidden = false;
+			return;
+		}
+
+		if (flow === 'auditoria-ia') {
+			if (titleNode) titleNode.textContent = 'Request an audit';
+			if (introNode) {
+				introNode.textContent =
+					'Leave your name, email and a contact if you want. We reply with the next step: send the evidence pack (panel, MT5 report, logs) when it is time. We do not promise returns — we review traceability and coherence with how you use tevsys.';
+			}
+			setTips(
+				'Simple step: with your email we open the thread. Pack details live in the guide, not here.',
+				'We will need a clear period and aligned documents — you will see that when preparing the send.',
+				'We reply by email with the next step.',
+				empresasTipHtml
+			);
+			if (imageNode) {
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
+				imageNode.alt = 'tevsys audit';
+			}
+			if (demoBadge) demoBadge.hidden = true;
+			return;
+		}
+
+		const selectedSource = sourceMap[feature] || sourceMap[origin];
+		if (selectedSource && !plan) {
+			if (introNode) introNode.textContent = selectedSource.intro;
+			setTips(selectedSource.tips[0], selectedSource.tips[1], selectedSource.tips[2]);
+		}
+
+		const planMap = {
+			essential: {
+				name: 'Essential',
+				image: '/assets/images/plans/esse-form-v4.png',
+				label: 'ESSENTIAL PROTECTION',
+			},
+			advanced: {
+				name: 'Advanced',
+				image: '/assets/images/plans/adva-form-v4.png',
+				label: 'ADVANCED PROTECTION',
+			},
+			pro: {
+				name: 'Pro',
+				image: '/assets/images/plans/pro-form-v4.png',
+				label: 'PRO PROTECTION',
+			},
+		};
+
+		const selected = planMap[plan];
+		if (!selected) {
+			/* Feature/origin without plan: still show Essential shield like ES acceso feel */
+			if (imageNode && selectedSource) {
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
+				imageNode.alt = 'tevsys';
+			}
+			return;
+		}
+
+		if (imageNode) {
+			setHeroImage(selected.image);
+			imageNode.alt = `${selected.name} plan visual`;
+		}
+		if (demoBadge) demoBadge.hidden = plan !== 'essential';
+		if (devNote) {
+			if (plan === 'advanced') {
+				devNote.textContent = 'Advanced is in development. The demo available now is Essential.';
+				devNote.hidden = false;
+			} else if (plan === 'pro') {
+				devNote.textContent = 'Pro is in development. The demo available now is Essential.';
+				devNote.hidden = false;
+			} else {
+				devNote.hidden = true;
+			}
+		}
+
+		const planTipsMap = {
+			essential: [
+				'You configure once. tevsys enforces always — including the days you choose to be OFF.',
+				'Daily limit, millimetric precision and HyperClose included.',
+				'Reply within 24h with next steps.',
+				empresasTipHtml,
+			],
+			advanced: [
+				'In Advanced you get everything in Essential, plus:',
+				'Configurable week-long protection + SML for advanced trading.',
+				'You can mark OFF days to protect your process.',
+				'Market hours and news (improved): in development.',
+				empresasTipHtml,
+			],
+			pro: [
+				'In Pro you get everything in Advanced, plus:',
+				'For larger capital: drawdown and full structure.',
+				'Market hours and news (with custom events): in development.',
+				empresasTipHtml,
+			],
+		};
+
+		const planTips = planTipsMap[plan];
+		if (planTips) {
+			if (planTips.length === 5) {
+				setTips(planTips[0], planTips[1], planTips[2], planTips[3], planTips[4]);
+			} else {
+				setTips(planTips[0], planTips[1], planTips[2], planTips[3]);
+			}
 		}
 	})();
 </script>
 
 <style>
-	.contact-hero__section {
-		display: grid;
-		gap: 2rem;
-		padding: 2.5rem 0 3.5rem;
+	.contact-hero__title::after {
+		content: '';
+		display: inline-block;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 50%;
+		background: #f5b041;
+		margin-left: 0.4rem;
+		vertical-align: middle;
 	}
-	@media (min-width: 900px) {
-		.contact-hero__section {
-			grid-template-columns: 1fr 1fr;
-			align-items: start;
-		}
+	.contact-hero__section {
+		margin: var(--section-margin) auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		min-height: calc(90vh - var(--navbar-height));
+		gap: 3rem;
+	}
+	.contact-hero__text-section,
+	.col-2__container {
+		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	}
 	.contact-hero__title {
+		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		font-size: clamp(1.6rem, 3vw, 2.1rem);
 		margin: 0 0 0.75rem;
 	}
+	.contact-hero__text-section {
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: var(--theme-surface-1);
+		border-radius: var(--theme-shape-radius);
+	}
+	.col-2__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 	.contact-hero__tips {
-		margin: 1rem 0 1.5rem;
-		padding-left: 1.1rem;
+		padding-left: 1rem;
+		margin-top: 0.5rem;
 		line-height: 1.55;
 		color: rgba(255, 255, 255, 0.78);
 	}
-	.contact-tip__link {
-		color: hsl(38 92% 55%);
+	.contact-hero__tips li {
+		margin-bottom: 0.35rem;
+	}
+	.contact-hero__tips :global(a.contact-tip__link) {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+	.contact-hero__tips :global(a.contact-tip__link:hover) {
+		color: #f5b041;
+	}
+	.contact-hero__visual {
+		position: relative;
+		margin-top: 1rem;
+		width: min(360px, 88%);
+		border-radius: 0.85rem;
+		overflow: hidden;
+		background: #06080d;
+		border: 1px solid rgba(245, 176, 65, 0.3);
 	}
 	.contact-hero__demo-badge {
-		display: inline-block;
-		margin-bottom: 0.5rem;
-		padding: 0.15rem 0.55rem;
-		border: 1px solid hsl(38 92% 55%);
-		border-radius: 999px;
-		font-size: 0.7rem;
+		position: absolute;
+		top: 0.75rem;
+		right: 0.75rem;
+		padding: 0.2rem 0.45rem;
+		font-size: 0.65rem;
+		font-weight: 700;
 		letter-spacing: 0.08em;
-		color: hsl(38 92% 55%);
+		color: rgba(10, 10, 10, 0.9);
+		background: rgba(245, 176, 65, 0.5);
+		border-radius: 0.35rem;
+		z-index: 1;
 	}
 	.contact-hero__visual img {
-		max-width: 220px;
+		display: block;
+		width: 100%;
 		height: auto;
+		object-fit: contain;
+		object-position: center;
+	}
+	.contact-hero__dev-note {
+		margin-top: 1rem;
+		font-style: italic;
+		color: inherit;
+		font-size: inherit;
+		max-width: min(360px, 88%);
+	}
+	@media (max-width: 768px) {
+		.contact-hero__section {
+			grid-template-columns: 1fr;
+		}
+		.contact-hero__visual {
+			width: min(280px, 100%);
+		}
 	}
 </style>

@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Contacto EN — escudo plan (4 sep 2026)
+
+- **Problema:** en `/en/company/contact` el hero dejaba `logo-tevsys` (caja negra); en ES se carga `esse-form-v4` (escudo + nombre).
+- **Causa:** el script EN no hacía `setHeroImage` en flujos acceso/demo/lista/plan.
+- **Fix:** misma lógica de imagen + marco visual que ES.
+- **Commit:** `web(tevsys): fix EN contact hero plan shield image`
+
 ## i18n — Cómo funciona EN a paridad de estructura (4 sep 2026)
 
 - **Problema:** `/en/como-funciona` era un stub (solo Nasdaq); faltaban documentación de sesión, desde cero, movimiento de caja, microclips, 4 piezas, panel, auditoría, etc.
