@@ -1,0 +1,53 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+
+const seo = {
+  title: 'Refund policy | tevsys',
+  description: 'tevsys refund and cancellation policy.',
+};
+---
+
+<Layout seo={seo} lang="en">
+  <TextSection narrow>
+    <h1>Refund policy</h1>
+
+    <h2>Purpose</h2>
+    <p>
+      This policy describes the cancellation and refund conditions applicable to tevsys software licenses.
+    </p>
+
+    <h2>Nature of the product</h2>
+    <p>
+      tevsys is a digital software product (license to use). It is not a financial service or delegated management.
+    </p>
+
+    <h2>Cancellations</h2>
+    <p>
+      For subscription licenses, the user may cancel future renewals at any time. Cancellation prevents later charges, but does not imply an automatic refund of amounts already paid for periods that have started.
+    </p>
+
+    <h2>Refunds</h2>
+    <p>
+      Refund requests are reviewed case by case, considering the reason reported, the license activation status and the time elapsed since purchase.
+    </p>
+    <p>
+      To request a review, write to <a href="mailto:info@tevsys.io">info@tevsys.io</a> with the purchase email and the reason for the request.
+    </p>
+
+    <h2>Document in development</h2>
+    <p>
+      This policy will be expanded and adapted with professional legal advice before the definitive commercial launch.
+    </p>
+
+    <p class="legal-update">Last updated: March 2026</p>
+  </TextSection>
+</Layout>
+
+<style>
+  .legal-update {
+    margin-top: 2rem;
+    font-size: 0.88rem;
+    opacity: 0.7;
+  }
+</style>

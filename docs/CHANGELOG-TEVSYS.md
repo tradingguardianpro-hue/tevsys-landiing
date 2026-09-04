@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## i18n ES|EN — oleada 4 guías + legal (4 sep 2026)
+
+- **Qué:** EN de instalación (web + Market), configuración (Essential / al instalar / finde), legal (aviso, privacidad, términos, reembolsos). Footer + switch `enReady` actualizados.
+- **Vídeos:** mismos MP4; overlays del EA **siguen en español** (sin re-edición). Nota visible en guías con vídeo.
+- **Pendiente (oleada 5):** galerías largas de micros a paridad ES.
+- **Commit:** `web(tevsys): i18n wave4 — guides and legal EN`
+
 ## Contacto EN — escudo plan (4 sep 2026)
 
 - **Problema:** en `/en/company/contact` el hero dejaba `logo-tevsys` (caja negra); en ES se carga `esse-form-v4` (escudo + nombre).

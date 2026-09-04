@@ -1,0 +1,41 @@
+---
+import { TextSection } from '@components/odyssey-theme';
+import Layout from '../../../layouts/Page.astro';
+
+const seo = {
+  title: 'Privacy policy | tevsys',
+  description: 'tevsys privacy policy. Information on personal data processing.',
+};
+---
+
+<Layout seo={seo} lang="en">
+  <TextSection narrow>
+    <h1>Privacy policy</h1>
+
+    <h2>Data controller</h2>
+    <p>tevsys™, based in Barcelona (Spain). Contact: <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+
+    <h2>Data we collect</h2>
+    <p>At present, this website only collects data the user provides voluntarily through the contact form: name, email address and message.</p>
+    <p>We do not use tracking cookies or third-party analytics tools at this stage of the product.</p>
+
+    <h2>Purpose</h2>
+    <p>The data provided is used exclusively to answer enquiries, manage access requests and maintain product-related communication.</p>
+
+    <h2>Retention and rights</h2>
+    <p>Data is retained for as long as a legitimate interest relationship exists. Users may exercise their rights of access, rectification, erasure and portability by writing to <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+
+    <h2>Document in development</h2>
+    <p>This privacy policy will be expanded and adapted to applicable law (GDPR) with professional legal advice before commercial launch. For any enquiry, contact us at <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+
+    <p class="legal-update">Last updated: January 2026</p>
+  </TextSection>
+</Layout>
+
+<style>
+  .legal-update {
+    margin-top: 2rem;
+    font-size: 0.88rem;
+    opacity: 0.7;
+  }
+</style>

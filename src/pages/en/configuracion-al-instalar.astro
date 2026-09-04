@@ -1,0 +1,142 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import '../../styles/guia-operativa.css';
+
+const seo = {
+	title: 'Setup right after installing | tevsys Advanced and Pro',
+	description:
+		'After loading the EA mid-week (Monday–Friday): F7, Bloquear límites and immediate protection. Advanced demo and Advanced/Pro licenses.',
+};
+
+const bloquesLectura = [
+	{
+		n: 1,
+		title: 'Before you start',
+		detail:
+			'EA on the chart after install, with a validated key (advanced demo or license).',
+	},
+	{
+		n: 2,
+		title: 'F7 and limits',
+		detail: 'Open inputs (F7). Adjust limits and ON/OFF days for the week. Accept and check the panel.',
+	},
+	{
+		n: 3,
+		title: 'Bloquear límites (Lock limits)',
+		detail:
+			'Press Bloquear límites → read the summary → confirm. Protection starts on confirm (irreversible until Friday).',
+	},
+	{
+		n: 4,
+		title: 'Protected panel',
+		detail: 'Teal lock on multi-chart — protected state is active.',
+	},
+];
+
+const otrasGuias = [
+	{
+		label: 'Installation',
+		title: 'How to install in MT5',
+		href: '/en/instalacion',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Set your limits (~1 min)',
+		href: '/en/configuracion#configurar-limites',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Plan the week on Saturday or Sunday',
+		href: '/en/configuracion-fin-de-semana',
+	},
+	{
+		label: 'Essential',
+		title: 'Configuration (full walkthrough)',
+		href: '/en/configuracion#configuracion-video',
+	},
+];
+---
+
+<Layout seo={seo} lang="en" bodyClass="page-guia-config-instalar">
+	<Container>
+		<div class="guia-page">
+			<section class="feature-hero guia-hero">
+				<p class="guia-eyebrow">Setup after install — Advanced / Pro</p>
+				<h1>Setup right after installing</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>Weekdays — F7, Bloquear límites (Lock limits), protection right away.
+				</p>
+			</section>
+
+			<section id="configuracion-al-instalar-video" class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">Video</p>
+						<h2>Setup right after installing</h2>
+					</header>
+					<div
+						class="guia-embed guia-embed--chrome guia-embed--pending-brand"
+						role="status"
+						aria-label="Setup-after-install video coming soon">
+						<p class="guia-embed-pending__brand" aria-hidden="true">tevsys</p>
+						<p class="guia-embed-pending__title">Video coming soon</p>
+						<p class="guia-embed-pending__sub">Meanwhile, the steps below cover the flow.</p>
+					</div>
+					<p class="guia-note-box guia-note-box--after-video">
+						<strong>Is it Saturday or Sunday?</strong> Use
+						<a href="/en/configuracion-fin-de-semana">weekend configuration</a> — Guardar para el lunes (Save for Monday),
+						starts Monday at 00:00.
+					</p>
+				</div>
+			</section>
+
+			<section class="guia-read-section">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Written guide</p>
+					<h2>If you prefer to read</h2>
+					<p class="guia-section-sub">Four blocks, same order.</p>
+				</header>
+				<div class="guia-read-panel">
+					<ol class="guia-phase-list">
+						{
+							bloquesLectura.map((bloque) => (
+								<li>
+									<article class="guia-phase-card">
+										<span class="guia-phase-card__n">{bloque.n}</span>
+										<div class="guia-phase-card__body">
+											<h3 class="guia-phase-card__title">{bloque.title}</h3>
+											<p class="guia-phase-card__detail">{bloque.detail}</p>
+										</div>
+									</article>
+								</li>
+							))
+						}
+					</ol>
+				</div>
+			</section>
+
+			<section class="guia-fork-panel">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Other guides</p>
+					<h2>Related links</h2>
+					<p class="guia-section-sub guia-fork-hint">Pick your guide:</p>
+				</header>
+				<ul class="guia-fork-list">
+					{
+						otrasGuias.map((guia) => (
+							<li>
+								<a href={guia.href} class="guia-fork-link">
+									<span class="guia-fork-link__label">{guia.label}</span>
+									<span class="guia-fork-link__title">{guia.title}</span>
+									<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
+	</Container>
+</Layout>

@@ -1,0 +1,138 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import '../../styles/guia-operativa.css';
+
+const seo = {
+	title: 'Weekend configuration | tevsys Advanced and Pro',
+	description:
+		'Saturday or Sunday only: plan Monday–Friday, Guardar para el lunes and scheduled protection. On Monday at 00:00 protection starts if you confirmed.',
+};
+
+const bloquesLectura = [
+	{
+		n: 1,
+		title: 'When to use this guide',
+		detail:
+			'Saturday or Sunday only. Plan the Monday–Friday week: OFF days and limits. On the weekend you are in configuration mode (gear): you can adjust in F7 as many times as you need.',
+	},
+	{
+		n: 2,
+		title: 'Guardar para el lunes (Save for Monday)',
+		detail:
+			'F7 → review limits and OFF days Monday–Friday. On the panel, press Guardar para el lunes and confirm the Protección programada (Scheduled protection) modal. After confirm: the panel button shows PROGRAMADO · LUNES (Scheduled · Monday, grey) and the gear in the lower-left corner of the chart turns colored — the week is scheduled.',
+	},
+	{
+		n: 3,
+		title: 'Monday start',
+		detail:
+			'On Monday at 00:00 protection starts if it was scheduled. Until then you can reconfigure and save again.',
+	},
+];
+
+const otrasGuias = [
+	{
+		label: 'Installation',
+		title: 'How to install in MT5',
+		href: '/en/instalacion',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Set your limits (~1 min)',
+		href: '/en/configuracion#configurar-limites',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Setup right after installing (Monday–Friday)',
+		href: '/en/configuracion-al-instalar',
+	},
+	{
+		label: 'Essential',
+		title: 'Configuration (full walkthrough)',
+		href: '/en/configuracion#configuracion-video',
+	},
+];
+---
+
+<Layout seo={seo} lang="en" bodyClass="page-guia-config-finde">
+	<Container>
+		<div class="guia-page">
+			<section class="feature-hero guia-hero">
+				<p class="guia-eyebrow">Weekend guide — Advanced / Pro</p>
+				<h1>Weekend configuration</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>Saturday or Sunday: plan the week and leave PROGRAMADO · LUNES (Scheduled · Monday).
+				</p>
+			</section>
+
+			<section id="configuracion-fin-de-semana-video" class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">Video</p>
+						<h2>Weekend configuration</h2>
+					</header>
+					<div
+						class="guia-embed guia-embed--chrome guia-embed--pending-brand"
+						role="status"
+						aria-label="Weekend configuration video coming soon">
+						<p class="guia-embed-pending__brand" aria-hidden="true">tevsys</p>
+						<p class="guia-embed-pending__title">Video coming soon</p>
+						<p class="guia-embed-pending__sub">Meanwhile, the steps below cover the flow.</p>
+					</div>
+					<p class="guia-note-box guia-note-box--after-video">
+						<strong>Did you install mid-week (Monday–Friday)?</strong> Use
+						<a href="/en/configuracion-al-instalar">setup right after installing</a> — Bloquear límites (Lock limits) and protection
+						right away.
+					</p>
+				</div>
+			</section>
+
+			<section class="guia-read-section">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Written guide</p>
+					<h2>If you prefer to read</h2>
+					<p class="guia-section-sub">Three blocks, same order.</p>
+				</header>
+				<div class="guia-read-panel">
+					<ol class="guia-phase-list">
+						{
+							bloquesLectura.map((bloque) => (
+								<li>
+									<article class="guia-phase-card">
+										<span class="guia-phase-card__n">{bloque.n}</span>
+										<div class="guia-phase-card__body">
+											<h3 class="guia-phase-card__title">{bloque.title}</h3>
+											<p class="guia-phase-card__detail">{bloque.detail}</p>
+										</div>
+									</article>
+								</li>
+							))
+						}
+					</ol>
+				</div>
+			</section>
+
+			<section class="guia-fork-panel">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Other guides</p>
+					<h2>Related links</h2>
+					<p class="guia-section-sub guia-fork-hint">Pick your guide:</p>
+				</header>
+				<ul class="guia-fork-list">
+					{
+						otrasGuias.map((guia) => (
+							<li>
+								<a href={guia.href} class="guia-fork-link">
+									<span class="guia-fork-link__label">{guia.label}</span>
+									<span class="guia-fork-link__title">{guia.title}</span>
+									<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
+	</Container>
+</Layout>

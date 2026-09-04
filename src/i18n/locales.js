@@ -60,12 +60,21 @@ export function switchLocalePath(pathname, targetLocale) {
 		'/company/contact',
 		'/company/empresas',
 		'/company/empresas-thank-you',
+		'/company/legal',
+		'/company/privacidad',
+		'/company/terminos',
+		'/company/reembolsos',
 		'/features/precision',
 		'/features/hyperclose',
 		'/features/evidencia',
 		'/features/sml',
 		'/precios',
 		'/para-quien',
+		'/instalacion',
+		'/instalacion-market',
+		'/configuracion',
+		'/configuracion-al-instalar',
+		'/configuracion-fin-de-semana',
 	]);
 	if (targetLocale === 'en' && !enReady.has(barePath)) {
 		return '/en/';

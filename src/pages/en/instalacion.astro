@@ -1,0 +1,151 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import '../../styles/guia-operativa.css';
+
+const seo = {
+	title: 'How to install tevsys | Step-by-step guide',
+	description:
+		'MT5 guide (~1 min 24 s): download the demo, enable algo trading, WebRequest for https://tevsys.io, copy the EA to Experts and load it on the chart.',
+};
+
+const guiasConfiguracion = [
+	{
+		label: 'Essential',
+		title: 'Configuration',
+		href: '/en/configuracion',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Setup right after installing (Monday–Friday)',
+		href: '/en/configuracion-al-instalar',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Plan the week on Saturday or Sunday',
+		href: '/en/configuracion-fin-de-semana',
+	},
+];
+
+const bloquesLectura = [
+	{
+		n: 1,
+		title: 'Download',
+		detail: 'Open the link in the email and download the file. Then open MetaTrader 5.',
+	},
+	{
+		n: 2,
+		title: 'Prepare MT5',
+		detail:
+			'Tools → Options → Expert Advisors: enable algorithmic trading and WebRequest.',
+		urlLine: 'Add https://tevsys.io to the list (no trailing slash). The video shows it step by step.',
+	},
+	{
+		n: 3,
+		title: 'Install and load',
+		detail:
+			'File → Open Data Folder → MQL5 → Experts. Copy the .ex5 from the email, refresh the Navigator list (Ctrl+N) and drag tevsys onto the chart.',
+	},
+];
+---
+
+<Layout seo={seo} lang="en" bodyClass="page-guia-instalacion">
+	<Container>
+		<div class="guia-page">
+			<section class="feature-hero guia-hero">
+				<p class="guia-eyebrow">Installation guide</p>
+				<h1>How to install tevsys in MT5</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>Video 1:24 — from the email link to the EA on the chart.
+				</p>
+				<p class="guia-note-box">
+					<strong>WebRequest</strong> (<code>https://tevsys.io</code>): recommended on demo so you don’t repeat the step when
+					you buy · <strong>required</strong> with a paid license (key validation).
+					If you bought on <strong>MetaQuotes Market</strong> (no key), use the
+					<a href="/en/instalacion-market">Market installation guide</a> — different video, no WebRequest.
+				</p>
+			</section>
+
+			<section id="instalacion-video" class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">Video</p>
+						<h2>Quick install</h2>
+						<p class="guia-section-sub">On-screen EA UI may still appear in Spanish.</p>
+					</header>
+					<div class="guia-embed guia-embed--chrome" id="instalacion-demo-container">
+						<video id="instalacion-demo-video" controls preload="metadata" playsinline>
+							<source src="/videos/features/instalacion-demo.mp4?v=20260605webreq" type="video/mp4" />
+							Your browser does not support HTML5 video.
+						</video>
+					</div>
+				</div>
+			</section>
+
+			<section class="guia-read-section">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Video support</p>
+					<h2>If you prefer to read</h2>
+					<p class="guia-section-sub">Three blocks, same order.</p>
+				</header>
+				<div class="guia-read-panel">
+					<ol class="guia-phase-list">
+						{
+							bloquesLectura.map((bloque) => (
+								<li>
+									<article class="guia-phase-card">
+										<span class="guia-phase-card__n">{bloque.n}</span>
+										<div class="guia-phase-card__body">
+											<h3 class="guia-phase-card__title">{bloque.title}</h3>
+											<p class="guia-phase-card__detail">{bloque.detail}</p>
+											{bloque.urlLine && (
+												<p class="guia-phase-card__url">
+													{bloque.urlLine.split('https://tevsys.io')[0]}
+													<code>https://tevsys.io</code>
+													{bloque.urlLine.split('https://tevsys.io')[1]}
+												</p>
+											)}
+										</div>
+									</article>
+								</li>
+							))
+						}
+					</ol>
+				</div>
+			</section>
+
+			<section id="configuracion" class="guia-fork-panel">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">After installing</p>
+					<h2>Next step — Configuration</h2>
+					<p class="guia-section-sub guia-fork-hint">Pick your guide:</p>
+				</header>
+				<ul class="guia-fork-list">
+					{
+						guiasConfiguracion.map((guia) => (
+							<li>
+								<a href={guia.href} class="guia-fork-link">
+									<span class="guia-fork-link__label">{guia.label}</span>
+									<span class="guia-fork-link__title">{guia.title}</span>
+									<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
+	</Container>
+</Layout>
+
+<script>
+	function initDemoExpand() {
+		const video = document.getElementById('instalacion-demo-video');
+		const container = document.getElementById('instalacion-demo-container');
+		if (!video || !container) return;
+		video.addEventListener('play', () => container.classList.add('guia-embed--playing'));
+		video.addEventListener('ended', () => container.classList.remove('guia-embed--playing'));
+	}
+	document.addEventListener('DOMContentLoaded', initDemoExpand);
+</script>

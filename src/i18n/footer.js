@@ -12,6 +12,15 @@ const footerEnReady = new Set([
 	'/como-funciona',
 	'/company/contact',
 	'/company/empresas',
+	'/company/legal',
+	'/company/privacidad',
+	'/company/terminos',
+	'/company/reembolsos',
+	'/instalacion',
+	'/instalacion-market',
+	'/configuracion',
+	'/configuracion-al-instalar',
+	'/configuracion-fin-de-semana',
 ]);
 
 /**

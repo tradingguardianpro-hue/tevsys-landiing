@@ -1,0 +1,196 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../../layouts/Page.astro';
+import '../../styles/guia-operativa.css';
+
+const seo = {
+	title: 'Set your limits | tevsys',
+	description:
+		'Configure your limits in tevsys: a quick Advanced/Pro minute (full week) and a longer Essential walkthrough.',
+};
+
+/** Short piece MC-CF-026 — Pro · full week (20–21 Aug 2026). */
+const configurarLimites1min = {
+	id: 'configurar-limites',
+	title: 'How to set your limits in one minute',
+	eyebrow: 'Advanced / Pro',
+	blurb:
+		'From inputs to the lock: each day ON or OFF, weekly cap, and activate protection. Shot on Pro — the whole week under your rules.',
+	durationLabel: '~1:15',
+	videoSrc: '/videos/como-funciona/tevsys-configurar-limites-1min.mp4?v=20260820c',
+	posterSrc: '/videos/como-funciona/tevsys-configurar-limites-1min-poster.jpg?v=20260820c',
+	videoLabel: 'Guide ~1:15 — set limits for the full week · Pro (MC-CF-026)',
+};
+
+const VIDEO_DRIVE_ID = '1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg';
+const VIDEO_EMBED_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/preview`;
+const VIDEO_LINK_URL = `https://drive.google.com/file/d/${VIDEO_DRIVE_ID}/view?usp=sharing`;
+
+const bloquesLectura = [
+	{
+		n: 1,
+		title: 'Inputs (F7)',
+		detail: 'With the EA on the chart, open parameters: daily loss and profit, and on Advanced/Pro the week as well.',
+	},
+	{
+		n: 2,
+		title: 'Essential vs full week',
+		detail:
+			'Essential focuses on the day. Advanced/Pro allow ON/OFF and caps for the whole week — that is what the minute above shows.',
+	},
+	{
+		n: 3,
+		title: 'Activate protection',
+		detail:
+			'After accepting: Config ok → Bloquear límites (Lock limits) → review the summary → confirm. Then you trade protected.',
+	},
+];
+
+const otrasGuias = [
+	{
+		label: 'Installation',
+		title: 'How to install in MT5',
+		href: '/en/instalacion',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Setup right after installing (Monday–Friday)',
+		href: '/en/configuracion-al-instalar',
+	},
+	{
+		label: 'Advanced / Pro',
+		title: 'Plan the week on Saturday or Sunday',
+		href: '/en/configuracion-fin-de-semana',
+	},
+];
+---
+
+<Layout seo={seo} lang="en" bodyClass="page-guia-config-essential">
+	<Container>
+		<div class="guia-page">
+			<section class="feature-hero guia-hero">
+				<p class="guia-eyebrow">Configuration</p>
+				<h1>Set your limits</h1>
+				<p class="feature-hook">
+					<span class="feature-hook__dot" aria-hidden="true"></span>
+					Above: Advanced/Pro minute (full week). Below: longer Essential walkthrough.
+				</p>
+			</section>
+
+			<section id={configurarLimites1min.id} class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">{configurarLimites1min.eyebrow}</p>
+						<h2>{configurarLimites1min.title}</h2>
+						<p class="guia-section-sub">
+							{configurarLimites1min.blurb}
+							{' '}
+							<span class="guia-duration">({configurarLimites1min.durationLabel})</span>
+						</p>
+						<p class="guia-section-sub">On-screen EA UI may still appear in Spanish.</p>
+					</header>
+					<div class="guia-embed guia-embed--chrome">
+						<video
+							id="configurar-limites-video"
+							controls
+							preload="metadata"
+							playsinline
+							poster={configurarLimites1min.posterSrc}
+							title={configurarLimites1min.videoLabel}>
+							<source src={configurarLimites1min.videoSrc} type="video/mp4" />
+							Your browser does not support HTML5 video.
+						</video>
+					</div>
+					<p class="guia-note-box guia-note-box--after-video">
+						<strong>Essential:</strong> same idea (limits → protection), with fewer week options.
+						The long guide is below.
+					</p>
+					<p class="guia-note-box guia-note-box--after-video">
+						<strong>Also in How it works:</strong>
+						<a href="/en/como-funciona#puesta-en-marcha">Getting started</a>
+						(after From zero, before the clips).
+					</p>
+				</div>
+			</section>
+
+			<section id="configuracion-video" class="guia-video-panel">
+				<div class="guia-video-panel__halo" aria-hidden="true"></div>
+				<div class="guia-video-panel__inner">
+					<header class="guia-section-head">
+						<p class="guia-eyebrow">Essential</p>
+						<h2>Essential configuration (full walkthrough)</h2>
+						<p class="guia-section-sub">
+							Standard demo step by step. If you want to plan the week on the weekend or set up mid-week after install, use the
+							Advanced/Pro guides linked below.
+						</p>
+						<p class="guia-section-sub">On-screen EA UI may still appear in Spanish.</p>
+					</header>
+					<div class="guia-embed guia-embed--chrome">
+						<iframe
+							src={VIDEO_EMBED_URL}
+							width="560"
+							height="315"
+							allow="autoplay"
+							allowfullscreen
+							title="tevsys Essential configuration guide"
+						></iframe>
+					</div>
+					<p class="guia-embed-fallback">
+						If the video does not play, <a href={VIDEO_LINK_URL} target="_blank" rel="noopener noreferrer">open it directly</a>.
+					</p>
+					<p class="guia-note-box guia-note-box--after-video">
+						<strong>Advanced or Pro:</strong>
+						<a href="/en/configuracion-al-instalar">setup right after installing</a> (weekdays) ·
+						<a href="/en/configuracion-fin-de-semana">weekend configuration</a> (Sat. or Sun.).
+					</p>
+				</div>
+			</section>
+
+			<section class="guia-read-section">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Support</p>
+					<h2>If you prefer to read</h2>
+					<p class="guia-section-sub">Three ideas, same order as the minute.</p>
+				</header>
+				<div class="guia-read-panel">
+					<ol class="guia-phase-list">
+						{
+							bloquesLectura.map((bloque) => (
+								<li>
+									<article class="guia-phase-card">
+										<span class="guia-phase-card__n">{bloque.n}</span>
+										<div class="guia-phase-card__body">
+											<h3 class="guia-phase-card__title">{bloque.title}</h3>
+											<p class="guia-phase-card__detail">{bloque.detail}</p>
+										</div>
+									</article>
+								</li>
+							))
+						}
+					</ol>
+				</div>
+			</section>
+
+			<section class="guia-fork-panel">
+				<header class="guia-section-head">
+					<p class="guia-eyebrow">Other guides</p>
+					<h2>Related links</h2>
+				</header>
+				<ul class="guia-fork-list">
+					{
+						otrasGuias.map((guia) => (
+							<li>
+								<a href={guia.href} class="guia-fork-link">
+									<span class="guia-fork-link__label">{guia.label}</span>
+									<span class="guia-fork-link__title">{guia.title}</span>
+									<span class="guia-fork-link__arrow" aria-hidden="true">→</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</div>
+	</Container>
+</Layout>
