@@ -185,8 +185,12 @@ export const homeCopy = {
 		bridgeLayers: 'Precision · HyperClose · SML · Evidence',
 		bridgeLayersAria: 'Product layers: Precision, HyperClose, SML, Evidence',
 		sectionTitle: 'Have you lost money by not stopping in time — and by slippage at the limit?',
+		/* Ancla horaria localizada, no traducida: ES 15:31 (apertura US vista desde Europa),
+		   EN 9:31 a.m. (un minuto despuÃ©s de la campana). Regla para futuros idiomas: la hora
+		   se adapta al mercado del lector; el mecanismo es el mismo â€” un minuto despuÃ©s del
+		   momento crÃ­tico. */
 		sectionHookBefore:
-			'No excuses. Discipline that only lives in your head does not execute at 15:31. ',
+			'No excuses. Discipline that only lives in your head does not execute at 9:31 a.m. ',
 		sectionHookAccent: 'We close, we block — and we leave the record.',
 		/* Checklist bullets retired 5 Sep (echoed definition block). */
 		ellos: 'Others slip. In tevsys, we close.',

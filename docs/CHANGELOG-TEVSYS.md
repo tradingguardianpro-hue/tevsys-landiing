@@ -8,8 +8,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 - **Qué:** `sectionHookBefore` ES|EN deja de enumerar *no cierran con precisión, no bloquean ni dejan acta* → **«Sin excusas. La disciplina que solo existe en tu cabeza no se ejecuta a las 15:31.»** / EN *«…does not execute at 15:31.»*
 - **Por qué:** con la definición de arriba ya explícita (cerrar · bloquear · acta), repetir la tríada tres veces en un scroll restaba fuerza al golpe emocional. La caja se queda con **contraste**, no con capacidades.
+- **Ancla horaria localizada (norma, no traducir):** ES **15:31** (apertura US vista desde Europa) · EN **9:31 a.m.** (un minuto después de la campana). Para futuros idiomas: adaptar la hora al mercado del lector; el mecanismo se mantiene — **hora concreta, un minuto después del momento crítico**. Traducir «15:31» al inglés no dice nada a un lector americano.
 - **Sin tocar:** subrayado *Cerramos, bloqueamos y dejamos constancia.* · línea mono *Ellos deslizan. En tevsys cerramos.*
-- **Commit:** `web(tevsys): drop repeated triad in home pain box`
+- **Commit:** `web(tevsys): drop repeated triad in home pain box with localized time anchor`
 
 ## Portada — pastilla clara REVERTIDA · definición en tres golpes sobre negro (5 sep 2026)
 

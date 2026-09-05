@@ -220,9 +220,11 @@ Ver handoff hero.
 
 ### Checklist (`.feature-card__checklist-static`)
 - **Visual jun 2026:** losa carbón `hsl(222,…)` como `.tevsys-card__content`; borde fino; sin marco ámbar dominante (iteración abr–jun).
-- **Hook (`.feature-section__hook`):** `Sin excusas. Las buenas intenciones no cierran con alta precisión ni bloquean operaciones. Nosotros sí.`
-- **Acento:** *Nosotros sí.* envuelto en `.tevsys-brand-accent-underline` (subrayado ámbar→gris, patrón `como-funciona.astro`).
-- **Viñetas:** doble trazabilidad MT5 + configuras una vez / días OFF (lista estática, puntos ámbar).
+- **Hook (`.feature-section__hook`) — 5 sep 2026:** `Sin excusas. La disciplina que solo existe en tu cabeza no se ejecuta a las 15:31.`
+  - **Ancla horaria localizada, NO traducida:** ES **15:31** (apertura US vista desde Europa) · EN **9:31 a.m.** (un minuto después de la campana). Regla para futuros idiomas: adaptar la hora al mercado del lector; el mecanismo es fijo — **una hora concreta, un minuto después del momento crítico**.
+  - **Histórico:** `…no cierran con precisión, no bloquean ni dejan acta.` retirado — repetía la tríada ya explícita en el bloque definicional de portada.
+- **Acento:** *Cerramos, bloqueamos y dejamos constancia.* envuelto en `.tevsys-brand-accent-underline` (subrayado ámbar→gris, patrón `como-funciona.astro`). EN: *We close, we block — and we leave the record.*
+- **Viñetas:** retiradas 5 sep 2026 (eco del párrafo definicional); queda hook + acento.
 
 ### Remate antes del grid
 `Ellos deslizan. En tevsys cerramos.` — IBM Plex Mono + punto ámbar (jun 2026).
