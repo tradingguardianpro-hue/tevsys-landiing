@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Portada — pastilla clara en definición (opción B · 5 sep 2026)
+
+- **Qué:** el bloque «qué es» va en **panel redondeado gris claro** + texto casi negro (lead / capas más suaves / cierre en negrita). El puente `Precisión · HyperClose · SML · Evidencia` sigue en el negro de la home.
+- **Por qué:** diferencial de lectura sin pasar la home entera a modo claro (opción A aparcada).
+- **Commit:** `web(tevsys): light definition panel on dark home`
+
 ## Portada — 2.º párrafo: límite ≠ HyperClose (5 sep 2026)
 
 - **Qué:** `definitionLayers` aclara secuencia: cierre al alcanzar **tus** límites (precisión) → HyperClose = intento de operar **cuando ya los has alcanzado** → SML → acta. Cierre *No opera por ti…* y caja ámbar **sin tocar**.

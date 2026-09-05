@@ -31,9 +31,11 @@ const L = (href) => localizeHref(href, locale);
 	</div>
 	<Container>
 		<section class="tevsys-home-definition" aria-label={t.definitionAria}>
-			<p class="tevsys-home-definition__lead">{t.definitionLead}</p>
-			<p class="tevsys-home-definition__layers">{t.definitionLayers}</p>
-			<p class="tevsys-home-definition__closing">{t.definitionClosing}</p>
+			<div class="tevsys-home-definition__panel">
+				<p class="tevsys-home-definition__lead">{t.definitionLead}</p>
+				<p class="tevsys-home-definition__layers">{t.definitionLayers}</p>
+				<p class="tevsys-home-definition__closing">{t.definitionClosing}</p>
+			</div>
 		</section>
 		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-bridge--hero-cards" aria-label={t.bridgeLayersAria}>
 			<span class="tevsys-home-hero-bridge__hairline" aria-hidden="true"></span>

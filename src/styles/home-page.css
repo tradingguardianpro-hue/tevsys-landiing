@@ -1,33 +1,42 @@
 ﻿
-	/* QuÃ© es tevsys â€” definiciÃ³n canÃ³nica bajo el hero (losa opaca como los puentes). */
+	/* QuÃ© es tevsys â€” pastilla gris clara (opciÃ³n B · sep 2026): diferencial sobre home negra. */
 	.tevsys-home-definition {
 		position: relative;
 		z-index: 20;
 		isolation: isolate;
 		margin: 0;
-		padding: clamp(1.55rem, 3.4vw, 2.35rem) 0 clamp(0.85rem, 1.8vw, 1.15rem);
-		background-color: var(--theme-bg, #0a0a0c);
+		padding: clamp(1.55rem, 3.4vw, 2.35rem) clamp(0.65rem, 2.5vw, 1.25rem)
+			clamp(0.85rem, 1.8vw, 1.15rem);
+		background-color: transparent;
 	}
-	.tevsys-home-definition::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 50%;
-		width: 100vw;
-		transform: translateX(-50%);
-		background-color: var(--theme-bg, #0a0a0c);
-		z-index: -1;
-		pointer-events: none;
+	.tevsys-home-definition__panel {
+		position: relative;
+		z-index: 1;
+		max-width: min(48rem, 100%);
+		margin: 0 auto;
+		padding: clamp(1.35rem, 3vw, 1.85rem) clamp(1.15rem, 3.2vw, 2rem);
+		box-sizing: border-box;
+		border-radius: clamp(1.15rem, 2.8vw, 1.65rem);
+		background: linear-gradient(
+			165deg,
+			hsl(220, 14%, 94%) 0%,
+			hsl(220, 12%, 90%) 55%,
+			hsl(220, 10%, 88%) 100%
+		);
+		border: 1px solid rgba(255, 255, 255, 0.55);
+		box-shadow:
+			0 22px 48px -28px rgba(0, 0, 0, 0.55),
+			0 0 0 1px rgba(0, 0, 0, 0.06),
+			inset 0 1px 0 rgba(255, 255, 255, 0.75);
 	}
 	.tevsys-home-definition__lead,
 	.tevsys-home-definition__layers,
 	.tevsys-home-definition__closing {
 		position: relative;
 		z-index: 1;
-		max-width: min(46rem, 100%);
-		margin: 0 auto;
-		padding-inline: clamp(0.5rem, 2vw, 1rem);
+		max-width: none;
+		margin: 0;
+		padding-inline: 0;
 		box-sizing: border-box;
 		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		font-size: clamp(0.9375rem, 1.05vw + 0.28rem, 1.0625rem);
@@ -38,22 +47,27 @@
 	}
 	.tevsys-home-definition__lead {
 		font-weight: 400;
-		color: rgba(228, 232, 240, 0.88);
+		color: rgba(18, 20, 26, 0.92);
 	}
-	/* Capas: un tono más apagado — el ojo entra, recorre y aterriza en el cierre. */
+	/* Capas: un tono mÃ¡s suave que el lead; cierre mÃ¡s negro. */
 	.tevsys-home-definition__layers {
 		margin-top: clamp(0.55rem, 1.2vw, 0.75rem);
 		font-weight: 400;
-		color: rgba(228, 232, 240, 0.68);
+		color: rgba(36, 40, 50, 0.78);
 	}
 	.tevsys-home-definition__closing {
 		margin-top: clamp(0.55rem, 1.2vw, 0.75rem);
 		font-weight: 600;
-		color: rgba(240, 243, 248, 0.94);
+		color: rgba(10, 12, 16, 0.96);
 	}
 	@media (max-width: 768px) {
 		.tevsys-home-definition {
-			padding-top: clamp(1.1rem, 3.5vw, 1.6rem);
+			padding-top: clamp(1.15rem, 3.5vw, 1.65rem);
+			padding-inline: clamp(0.55rem, 3vw, 0.85rem);
+		}
+		.tevsys-home-definition__panel {
+			padding: clamp(1.15rem, 3.5vw, 1.45rem) clamp(0.95rem, 3vw, 1.2rem);
+			border-radius: 1.15rem;
 		}
 		.tevsys-home-definition__lead,
 		.tevsys-home-definition__layers,
