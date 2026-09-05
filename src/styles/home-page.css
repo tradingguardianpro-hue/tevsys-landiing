@@ -1,4 +1,58 @@
 ﻿
+	/* QuÃ© es tevsys â€” definiciÃ³n canÃ³nica bajo el hero (losa opaca como los puentes). */
+	.tevsys-home-definition {
+		position: relative;
+		z-index: 20;
+		isolation: isolate;
+		margin: 0;
+		padding: clamp(1.35rem, 3vw, 2.15rem) 0 clamp(0.35rem, 0.9vw, 0.6rem);
+		background-color: var(--theme-bg, #0a0a0c);
+	}
+	.tevsys-home-definition::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		width: 100vw;
+		transform: translateX(-50%);
+		background-color: var(--theme-bg, #0a0a0c);
+		z-index: -1;
+		pointer-events: none;
+	}
+	.tevsys-home-definition__text {
+		position: relative;
+		z-index: 1;
+		max-width: min(46rem, 100%);
+		margin: 0 auto;
+		padding-inline: clamp(0.5rem, 2vw, 1rem);
+		box-sizing: border-box;
+		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+		font-size: clamp(0.9375rem, 1.05vw + 0.28rem, 1.0625rem);
+		font-weight: 400;
+		line-height: 1.62;
+		letter-spacing: 0.004em;
+		color: rgba(228, 232, 240, 0.82);
+		text-align: center;
+		text-wrap: pretty;
+	}
+	.tevsys-home-definition__closing {
+		display: block;
+		margin-top: clamp(0.42rem, 1vw, 0.6rem);
+		font-weight: 600;
+		color: rgba(240, 243, 248, 0.94);
+	}
+	@media (max-width: 768px) {
+		.tevsys-home-definition {
+			padding-top: clamp(1.1rem, 3.5vw, 1.6rem);
+		}
+		.tevsys-home-definition__text {
+			font-size: clamp(0.875rem, 2.6vw, 0.9375rem);
+			line-height: 1.58;
+			text-align: left;
+		}
+	}
+
 	/* Puentes de secciÃ³n â€” losa opaca + hairline; el glow/KITT no puede lavar la raya. */
 	.tevsys-home-hero-bridge,
 	.tevsys-home-section-bridge {

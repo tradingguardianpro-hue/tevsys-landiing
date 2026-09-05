@@ -23,6 +23,12 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
+		/* Definición canónica del producto (sep 2026): los buscadores y asistentes extraían el
+		   «qué es» desde /company/terminos porque la portada abría solo con claim de marca. */
+		definitionLead:
+			'tevsys es una utilidad para MetaTrader 5 de gestión de riesgo y disciplina operativa: tú configuras tus límites diarios y semanales, y el programa los ejecuta — cierra al alcanzar el umbral y bloquea nueva exposición — con trazabilidad contrastable con MT5.',
+		definitionClosing: 'No opera por ti: cumple lo que tú decides.',
+		definitionAria: 'Qué es tevsys',
 		bridgeLayers: 'Precisión · HyperClose · SML · Evidencia',
 		bridgeLayersAria: 'Capas del producto: Precisión, HyperClose, SML, Evidencia',
 		sectionTitle: '¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?',
@@ -159,6 +165,10 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
+		definitionLead:
+			'tevsys is a MetaTrader 5 utility for risk management and trading discipline: you set your daily and weekly limits, and the software enforces them — closing at the threshold and blocking new exposure — with traceability you can check against MT5.',
+		definitionClosing: 'It does not trade for you: it enforces what you decide.',
+		definitionAria: 'What tevsys is',
 		bridgeLayers: 'Precision · HyperClose · SML · Evidence',
 		bridgeLayersAria: 'Product layers: Precision, HyperClose, SML, Evidence',
 		sectionTitle: 'Have you lost money by not stopping in time — and by slippage at the limit?',
