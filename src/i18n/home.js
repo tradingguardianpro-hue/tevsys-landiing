@@ -23,11 +23,13 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
-		/* Definición canónica del producto (sep 2026): los buscadores y asistentes extraían el
-		   «qué es» desde /company/terminos porque la portada abría solo con claim de marca. */
+		/* Definición canónica del producto (sep 2026): tres golpes — qué es · capas · cierre.
+		   Sin «primera del mercado»; cuadro entero sin encasillar en «gestión de riesgo». */
 		definitionLead:
-			'tevsys es una utilidad para MetaTrader 5 de gestión de riesgo y disciplina operativa: tú configuras tus límites diarios y semanales, y el programa los ejecuta — cierra al alcanzar el umbral y bloquea nueva exposición — con trazabilidad contrastable con MT5.',
-		definitionClosing: 'No opera por ti: cumple lo que tú decides.',
+			'tevsys es una utilidad para MetaTrader 5 que hace cumplir tus propias reglas: defines límites diarios y semanales, días OFF y bloqueo, y el programa los ejecuta en toda la cuenta desde un solo gráfico.',
+		definitionLayers:
+			'Cierra al alcanzar el umbral con precisión documentada, bloquea al instante cualquier intento de operar protegido con HyperClose, amplía margen bajo reglas si activas SML, y deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5.',
+		definitionClosing: 'No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.',
 		definitionAria: 'Qué es tevsys',
 		bridgeLayers: 'Precisión · HyperClose · SML · Evidencia',
 		bridgeLayersAria: 'Capas del producto: Precisión, HyperClose, SML, Evidencia',
@@ -166,8 +168,10 @@ export const homeCopy = {
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
 		definitionLead:
-			'tevsys is a MetaTrader 5 utility for risk management and trading discipline: you set your daily and weekly limits, and the software enforces them — closing at the threshold and blocking new exposure — with traceability you can check against MT5.',
-		definitionClosing: 'It does not trade for you: it enforces what you decide.',
+			'tevsys is a MetaTrader 5 utility that enforces your own rules: you set daily and weekly limits, OFF days and locking, and the software applies them across the whole account from a single chart.',
+		definitionLayers:
+			'It closes at the threshold with documented precision, instantly blocks any attempt to trade while protected with HyperClose, widens margin under rules if you enable SML, and logs everything that happens — cross-checkable against official MT5 reports.',
+		definitionClosing: 'It does not trade for you: it enforces what you decide — and proves it, trade by trade.',
 		definitionAria: 'What tevsys is',
 		bridgeLayers: 'Precision · HyperClose · SML · Evidence',
 		bridgeLayersAria: 'Product layers: Precision, HyperClose, SML, Evidence',

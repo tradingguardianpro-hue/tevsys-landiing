@@ -4,17 +4,21 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Portada — definición «cuadro entero» (5 sep 2026 · v2)
+
+- **Qué:** el bloque bajo el hero pasa de una frase «gestión de riesgo» a **tres golpes**: qué es · capas (precisión + HyperClose + SML + acta) · cierre (*no opera por ti — y lo demuestra*). Sin superlativo «primera del mercado».
+- **Jerarquía visual:** la línea de capas va un tono más apagada; el cierre en negrita atrapa el aterrizaje.
+- **Dónde:** `src/i18n/home.js` (`definitionLead` / `definitionLayers` / `definitionClosing`) · `HomePageView.astro` · `home-page.css`.
+- **Commit:** `web(tevsys): expand home product definition beyond risk label`
+
 ## Portada — bloque «Qué es tevsys» bajo el hero (5 sep 2026)
 
 - **Problema:** un asistente IA citó tevsys.io correctamente, pero la **primera** fuente del panel fue `/company/terminos` (y `/en/company/reembolsos`), por delante de la home. Causa: la **definición** del producto («herramienta de gestión de riesgo y disciplina operativa… no opera por ti, no da señales») solo existía en Términos, con estructura ideal para extracción; la portada abría con claim de marca (*Tú pones los límites*).
 - **Qué:** párrafo definicional ES|EN justo **debajo del hero**, encima del puente `Precisión · HyperClose · SML · Evidencia`. Losa opaca (mismo criterio que los puentes) para que el KITT/glow no lo lave.
-- **Copy ES:** *tevsys es una utilidad para MetaTrader 5 de gestión de riesgo y disciplina operativa: tú configuras tus límites diarios y semanales, y el programa los ejecuta — cierra al alcanzar el umbral y bloquea nueva exposición — con trazabilidad contrastable con MT5.* + cierre en negrita *No opera por ti: cumple lo que tú decides.*
-- **Copy EN:** equivalente (`It does not trade for you: it enforces what you decide.`).
-- **Decisión:** **no** se toca el copy legal ni se le pone `noindex` (perjudica confianza y búsquedas «tevsys terms/refunds»). El camino es duplicar la claridad en comercial.
-- **Deliberado:** no repetir *«no damos señales ni promesas de beneficio»* (ya está en el hero, justo encima); sí añadir *no opera por ti*, que es la duda real de quien llega frío.
-- **Dónde:** `src/i18n/home.js` (`definitionLead` / `definitionClosing` / `definitionAria`) · `src/components/pages/HomePageView.astro` · `src/styles/home-page.css` (`.tevsys-home-definition`).
-- **Pendiente (siguientes puntos, uno a uno):** meta description + JSON-LD alineados a esta frase · línea puente al inicio de `precision` / `como-funciona` / `precios` · sitemap con `/en/*` y `reembolsos`.
-- **Commit:** `web(tevsys): define product above the fold on home ES|EN`
+- **Copy ES (v1, supersedida por v2 el mismo día):** *tevsys es una utilidad para MetaTrader 5 de gestión de riesgo…* + *No opera por ti: cumple lo que tú decides.*
+- **Decisión:** **no** se toca el copy legal ni se le pone `noindex`. El camino es duplicar la claridad en comercial.
+- **Pendiente (siguientes puntos, uno a uno):** meta description + JSON-LD · línea puente en micros/precios · sitemap `/en/*` + `reembolsos`.
+- **Commit (v1):** `web(tevsys): define product above the fold on home ES|EN`
 
 ## i18n ES|EN — oleada 5 micros a paridad (4 sep 2026)
 
