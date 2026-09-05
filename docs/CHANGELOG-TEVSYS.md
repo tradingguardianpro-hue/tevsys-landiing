@@ -4,6 +4,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Línea definicional en Precisión · Cómo funciona · Precios (5 sep 2026 — punto 3 del diagnóstico)
+
+- **Por qué:** los enlaces del blog MQL5 aterrizan en estas páginas, **no** en la portada. Hablaban de una capa dando por supuesto qué es tevsys; para un lector nuevo y para extracción por IA no había definición.
+- **Copy (ES):**
+  - **Precisión** (tras el gancho *«El mercado siempre encuentra…»*, que no se toca): `La precisión es una de las capas de tevsys, la utilidad para MetaTrader 5 que hace cumplir tus límites diarios y semanales, en intradía y en swing.`
+  - **Cómo funciona** (bajo el H1): `tevsys es una utilidad para MetaTrader 5 que hace cumplir tus propias reglas —límites diarios y semanales, días OFF y bloqueo— en intradía y en swing. Aquí lo ves funcionando en una sesión real.`
+  - **Precios** (antes del párrafo de suscripciones): `Todos los planes son la misma utilidad para MetaTrader 5 que hace cumplir tus límites en intradía y en swing. Lo que cambia entre planes es el alcance: capital cubierto, días configurables y capas disponibles.`
+- **EN:** equivalentes en las tres páginas `/en/…`.
+- **Forma:** clase compartida `.tevsys-page-definition` en `global.css` (discreta, 62ch, opacidad 0.78) + variante `--centered` para el hero de Cómo funciona (su `max-width` pasa de 32rem a 44rem para que la frase no se parta).
+- **Sin tocar:** gancho de Precisión, vídeo de Cómo funciona, tarjetas de Precios.
+- **Commit:** `web(tevsys): add definition line to precision, how-it-works and pricing`
+
 ## SEO estructural — sitemap generado con filtro + hreflang por página (5 sep 2026)
 
 - **Sitemap — corrección de la corrección (verificado en producción):** `public/sitemap.xml` **no se servía**: `@astrojs/sitemap` genera el mapa en cada build y su salida gana. El archivo estático (15 URLs) llevaba tiempo siendo **letra muerta** → **borrado**. El real tenía **65 URLs** e incluía basura: demos de la plantilla Odyssey (`/theme/*`, `/landing-pages/*`, `/blog/*` con posts de ejemplo), proxies `/go/*` que son **noindex**, páginas `*-thank-you`, `/company/about` sin enlazar y los pasos internos del pack de auditoría. Añadido `filter` en `astro.config.mjs`. Las páginas EN **ya entraban** solas.

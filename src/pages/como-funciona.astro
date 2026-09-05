@@ -327,6 +327,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<div class="how-intro-stage__inner">
 				<section class="how-hero how-hero--tight" aria-labelledby="how-hero-title">
 					<h1 id="how-hero-title">Cómo funciona <span class="how-accent">tevsys</span></h1>
+					<p class="tevsys-page-definition tevsys-page-definition--centered how-hero__definition">
+						tevsys es una utilidad para MetaTrader 5 que hace cumplir tus propias reglas —límites diarios y
+						semanales, días OFF y bloqueo— en intradía y en swing. Aquí lo ves funcionando en una sesión real.
+					</p>
 				</section>
 
 				<section class="how-presentation" aria-labelledby="how-presentation-title">
@@ -1144,7 +1148,13 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	.how-hero.how-hero--tight {
 		margin: calc(var(--section-margin) * 0.65) auto clamp(2.5rem, 8vw, 4.75rem);
 		text-align: center;
-		max-width: 32rem;
+		/* 44rem (antes 32): cabe la línea definicional sin partirse en cinco renglones. */
+		max-width: 44rem;
+	}
+
+	.how-hero__definition {
+		margin-top: clamp(0.85rem, 2vw, 1.15rem);
+		margin-bottom: 0;
 	}
 
 	.how-hero h1 {

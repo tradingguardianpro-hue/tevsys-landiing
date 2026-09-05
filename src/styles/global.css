@@ -2442,3 +2442,22 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-sml-panel__img {
 		0 0 0 1px rgba(255, 255, 255, 0.06),
 		0 10px 32px rgba(0, 0, 0, 0.4);
 }
+
+/*
+  Línea definicional de página (5 sep 2026) — Precisión / Cómo funciona / Precios.
+  Quien llega desde MQL5 aterriza en estas páginas, no en la portada: necesitan decir
+  qué es tevsys en una frase. Tono discreto: contexto, no titular.
+*/
+.tevsys-page-definition {
+	max-width: 62ch;
+	margin: 0 0 clamp(1.1rem, 2.6vw, 1.5rem);
+	font-size: clamp(0.92rem, 1.1vw, 1rem);
+	line-height: 1.6;
+	opacity: 0.78;
+	text-wrap: pretty;
+}
+
+.tevsys-page-definition--centered {
+	margin-inline: auto;
+	text-align: center;
+}
