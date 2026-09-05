@@ -1,5 +1,5 @@
 ﻿
-	/* QuÃ© es tevsys â€” pastilla gris clara (opciÃ³n B · sep 2026): diferencial sobre home negra. */
+	/* QuÃ© es tevsys â€” bloque definicional sobre el negro de la home (sin caja: ver nota abajo). */
 	.tevsys-home-definition {
 		position: relative;
 		z-index: 20;
@@ -7,40 +7,25 @@
 		margin: 0;
 		padding: clamp(1.55rem, 3.4vw, 2.35rem) clamp(0.65rem, 2.5vw, 1.25rem)
 			clamp(0.85rem, 1.8vw, 1.15rem);
-		background-color: var(--theme-bg, #0a0a0c);
+		/* Sin losa propia: el bloque continÃºa el negro de la home (una losa aquÃ­ crea banda visible
+		   contra la viÃ±eta del hero). */
+		background-color: transparent;
 	}
-	/* Losa opaca a todo el viewport: sin ella el KITT del hero se cuela por los lados de la pastilla. */
-	.tevsys-home-definition::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 50%;
-		width: 100vw;
-		transform: translateX(-50%);
-		background-color: var(--theme-bg, #0a0a0c);
-		z-index: -1;
-		pointer-events: none;
-	}
+	/*
+	  5 sep 2026 — pastilla clara RETIRADA: metía un tercer negro/blanco en la home y partía
+	  la página en bandas (hero redondeado → losa → tarjeta clara). Jerarquía por tipografía
+	  y ámbar, no por caja.
+	*/
 	.tevsys-home-definition__panel {
 		position: relative;
 		z-index: 1;
-		max-width: min(54rem, 100%);
+		max-width: min(52rem, 100%);
 		margin: 0 auto;
-		padding: clamp(1.5rem, 3.4vw, 2.15rem) clamp(1.35rem, 4vw, 2.6rem);
+		padding: 0;
 		box-sizing: border-box;
-		border-radius: clamp(1.15rem, 2.8vw, 1.65rem);
-		background: linear-gradient(
-			168deg,
-			hsl(220, 12%, 91%) 0%,
-			hsl(220, 10%, 88%) 58%,
-			hsl(220, 9%, 85%) 100%
-		);
-		border: 1px solid rgba(255, 255, 255, 0.4);
-		box-shadow:
-			0 24px 52px -30px rgba(0, 0, 0, 0.6),
-			0 0 0 1px rgba(0, 0, 0, 0.07),
-			inset 0 1px 0 rgba(255, 255, 255, 0.6);
+		background: none;
+		border: 0;
+		box-shadow: none;
 	}
 	.tevsys-home-definition__lead,
 	.tevsys-home-definition__beats,
@@ -54,59 +39,64 @@
 		font-size: clamp(0.9375rem, 1.05vw + 0.28rem, 1.0625rem);
 		line-height: 1.62;
 		letter-spacing: 0.004em;
-		text-align: left;
+		text-align: center;
 		text-wrap: pretty;
 	}
+	/* Lead: entrada del bloque, un punto por encima del resto. */
 	.tevsys-home-definition__lead {
 		margin-block: 0;
+		max-width: 44rem;
+		font-size: clamp(1rem, 1.15vw + 0.3rem, 1.15rem);
 		font-weight: 400;
-		color: rgba(18, 20, 26, 0.92);
+		color: rgba(232, 236, 244, 0.94);
 	}
 	/* Tres golpes: uno por lÃ­nea, punto Ã¡mbar de marca. Escaneables sueltos, no un muro. */
 	.tevsys-home-definition__beats {
-		margin: clamp(0.95rem, 2vw, 1.3rem) auto;
+		margin: clamp(1.05rem, 2.2vw, 1.45rem) auto;
+		max-width: 42rem;
 		padding: 0;
 		list-style: none;
 		display: grid;
-		gap: clamp(0.45rem, 1vw, 0.6rem);
+		gap: clamp(0.55rem, 1.15vw, 0.75rem);
+		text-align: left;
 	}
 	.tevsys-home-definition__beats li {
 		position: relative;
-		padding-left: 1.15rem;
+		padding-left: 1.35rem;
 		font-weight: 400;
-		color: rgba(30, 34, 43, 0.88);
+		color: rgba(206, 213, 226, 0.86);
 	}
 	.tevsys-home-definition__beats li::before {
 		content: '';
 		position: absolute;
-		left: 0;
-		top: 0.66em;
-		width: 0.36rem;
-		height: 0.36rem;
+		left: 0.1rem;
+		top: 0.62em;
+		width: 0.4rem;
+		height: 0.4rem;
 		border-radius: 999px;
-		background: rgba(199, 132, 22, 0.9);
+		background: rgba(245, 176, 65, 0.85);
+		box-shadow: 0 0 10px rgba(245, 176, 65, 0.35);
 	}
 	.tevsys-home-definition__closing {
 		margin-block: 0;
-		padding-top: clamp(0.7rem, 1.5vw, 0.95rem);
-		border-top: 1px solid rgba(20, 24, 32, 0.12);
+		max-width: 44rem;
 		font-weight: 600;
-		color: rgba(10, 12, 16, 0.96);
+		color: rgba(246, 248, 252, 0.97);
 	}
 	@media (max-width: 768px) {
 		.tevsys-home-definition {
 			padding-top: clamp(1.15rem, 3.5vw, 1.65rem);
 			padding-inline: clamp(0.55rem, 3vw, 0.85rem);
 		}
-		.tevsys-home-definition__panel {
-			padding: clamp(1.2rem, 3.6vw, 1.55rem) clamp(1.05rem, 3.4vw, 1.35rem);
-			border-radius: 1.15rem;
-		}
 		.tevsys-home-definition__lead,
 		.tevsys-home-definition__beats,
 		.tevsys-home-definition__closing {
 			font-size: clamp(0.875rem, 2.6vw, 0.9375rem);
 			line-height: 1.58;
+			text-align: left;
+		}
+		.tevsys-home-definition__lead {
+			font-size: clamp(0.9375rem, 2.8vw, 1rem);
 		}
 	}
 

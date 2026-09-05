@@ -30,9 +30,9 @@ export const homeCopy = {
 		/* Tres golpes separados (5 sep): SML fuera de aquí — «ampliar margen» rema contra el mensaje
 		   de este bloque. SML tiene su propia card y su micro. */
 		definitionBeats: [
-			'Cierra donde dijiste — con precisión documentada.',
-			'Bloquea al instante si insistes cuando ya has alcanzado el límite.',
-			'Deja acta de todo — contrastable con los informes oficiales de MT5.',
+			'Cierra al alcanzar los límites que has configurado, con precisión documentada.',
+			'Bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose.',
+			'Deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5.',
 		],
 		definitionBeatsAria: 'Lo que hace tevsys',
 		definitionClosing: 'No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.',
@@ -173,9 +173,9 @@ export const homeCopy = {
 		definitionLead:
 			'tevsys is a MetaTrader 5 utility that enforces your own rules intraday and on swing: you set daily and weekly limits, OFF days and locking, and they are enforced across the whole account from a single chart.',
 		definitionBeats: [
-			'Closes where you said — with documented precision.',
-			'Blocks instantly if you push once the limit is already reached.',
-			'Leaves a record of everything — cross-checkable against official MT5 reports.',
+			'It closes when you hit the limits you configured, with documented precision.',
+			'It instantly blocks any attempt to trade once those limits are already reached, with HyperClose.',
+			'It leaves a record of everything that happens — cross-checkable against official MT5 reports.',
 		],
 		definitionBeatsAria: 'What tevsys does',
 		definitionClosing: 'It does not trade for you: it enforces what you decide — and proves it, trade by trade.',

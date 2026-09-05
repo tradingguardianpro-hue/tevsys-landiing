@@ -4,13 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
-## Portada — definición en tres golpes, sin SML + losa opaca (5 sep 2026)
+## Portada — pastilla clara REVERTIDA · definición en tres golpes sobre negro (5 sep 2026)
 
-- **Fix visual (bug propio):** la sección de la definición se había quedado **sin fondo opaco** al meter la pastilla → el KITT del hero se colaba por los lados (home «rota»). Restaurada la losa `100vw` (mismo patrón que los puentes).
-- **Copy:** fuera **SML** del bloque definicional — *«amplía margen»* rema contra *«te pongo límites y te los hago cumplir»*; SML mantiene su card y su micro. El muro de cuatro conceptos pasa a **tres líneas sueltas** (`definitionBeats`): cierra donde dijiste · bloquea si insistes · deja acta. Fuera **«el programa»** → sujeto omitido (*«y se ejecutan en toda la cuenta…»*).
-- **Encuadre:** pastilla más ancha (54rem), gris algo más apagado, texto **alineado a la izquierda**, punto ámbar por línea y hairline antes del cierre en negrita.
+- **Marcha atrás (decisión fundador, con criterio compartido):** la **pastilla gris clara** (opción B, mismo día) queda **retirada**. Metía un tercer plano de color en una home negra y partía la página en bandas — hero redondeado con viñeta → losa → tarjeta clara. Se veía **rota**, no «diferencial». La jerarquía de este bloque se hace con **tipografía + ámbar**, no con caja. **No reintroducir** sin acuerdo explícito.
+- **Copy:** vuelve la redacción larga del fundador (tenía más fuerza que la versión corta *«cierra donde dijiste»*), pero **partida en tres líneas** y **sin SML**: *Cierra al alcanzar los límites que has configurado, con precisión documentada* · *Bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose* · *Deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5*. EN equivalente.
+- **Por qué fuera SML aquí:** *«amplía margen»* rema contra *«te pongo límites y te los hago cumplir»*. SML mantiene su card y su micro `/features/sml`.
+- **Lead:** fuera **«el programa»** → *«…días OFF y bloqueo, y **se ejecutan** en toda la cuenta desde un solo gráfico»*.
+- **Forma:** lead centrado un punto mayor · tres líneas alineadas a la izquierda con **punto ámbar** · cierre en negrita centrado · sección **sin losa propia** (una losa aquí crea banda visible contra la viñeta del hero).
 - **Dónde:** `src/i18n/home.js` (`definitionLead` / `definitionBeats` / `definitionClosing`) · `HomePageView.astro` · `home-page.css`.
-- **Commit:** `web(tevsys): three-beat home definition without SML and restore opaque slab`
+- **Commit:** `web(tevsys): revert light definition panel and split home definition in three beats`
 
 ## Portada — pastilla clara en definición (opción B · 5 sep 2026)
 
