@@ -4,13 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
-## SEO estructural — sitemap ES+EN completo + hreflang por página (5 sep 2026)
+## SEO estructural — sitemap generado con filtro + hreflang por página (5 sep 2026)
 
-- **Sitemap (bug):** `public/sitemap.xml` tenía **15 URLs, todas ES** — las **20 páginas EN no estaban ninguna**, justo el destino de los enlaces del blog MQL5 corregidos el 4 sep. También faltaban en ES `/como-funciona`, `/para-quien`, `/instalacion-market`, `/company/reembolsos`. Ahora **19 ES + 19 EN**. Fuera a propósito: `/go/*` (noindex), `*-thank-you`, `/auditoria-ia/*` (roadmap), `/blog`, 404.
+- **Sitemap — corrección de la corrección (verificado en producción):** `public/sitemap.xml` **no se servía**: `@astrojs/sitemap` genera el mapa en cada build y su salida gana. El archivo estático (15 URLs) llevaba tiempo siendo **letra muerta** → **borrado**. El real tenía **65 URLs** e incluía basura: demos de la plantilla Odyssey (`/theme/*`, `/landing-pages/*`, `/blog/*` con posts de ejemplo), proxies `/go/*` que son **noindex**, páginas `*-thank-you`, `/company/about` sin enlazar y los pasos internos del pack de auditoría. Añadido `filter` en `astro.config.mjs`. Las páginas EN **ya entraban** solas.
+- **Efecto:** dejamos de declarar a Google páginas de ejemplo de la plantilla como si fueran contenido de tevsys, y de pedir indexación de URLs marcadas noindex (señal contradictoria).
 - **hreflang (bug peor):** `BaseHead.astro` emitía **siempre** `es → /` · `en → /en/` · `x-default → /` en **todas** las páginas. Es decir, `/features/precision` declaraba como versión inglesa la **portada**: Google no emparejaba ninguna página con su traducción. Ahora se calcula por página desde `enReadyPaths` (fuente única, la misma del selector de idioma); si no hay EN publicado, solo se emite `es` + `x-default`.
-- **Mantenimiento:** al publicar página nueva → añadirla al sitemap **y** a `enReadyPaths` si tiene EN. Nota escrita en la cabecera del propio XML.
-- **Dónde:** `public/sitemap.xml` · `src/components/head/BaseHead.astro` (usa `src/i18n/locales.js`).
-- **Commit:** `web(tevsys): complete ES+EN sitemap and per-page hreflang`
+- **Mantenimiento:** página pública nueva → **no hay que tocar el sitemap** (se genera); si tiene versión EN, añadirla a `enReadyPaths`. Si es paso de flujo o página interna → añadir patrón al `filter`.
+- **Verificado en producción (5 sep, 21:07):** `/features/precision` emite `hreflang="en"` → `/en/features/precision` ✅. Sitemap con filtro pendiente del siguiente deploy.
+- **Páginas demo de la plantilla — BORRADAS (misma noche, OK fundador):** `/blog` + 3 posts de relleno («consider-hybrid-work», «odyssey-theme-officially-released», «remote-work-mental-health») + `/blog/tags/*` · `/theme/*` (4) · `/landing-pages/landing-1|2` · `/company/about` (era *About Odyssey* con Lorem ipsum, accesible en el dominio). **Redirecciones 301 a la home** en `astro.config.mjs` para las URLs ya indexadas (`/company/about` → `/company/empresas`). Componentes `components/blog/*` y `layouts/Post.astro` **se conservan** (no molestan; si algún día hay blog real, están).
+- **Dónde:** `astro.config.mjs` (filtro) · `public/sitemap.xml` **eliminado** · `src/components/head/BaseHead.astro` (usa `src/i18n/locales.js`).
+- **Commit:** `web(tevsys): filter generated sitemap and per-page hreflang`
 
 ## Portada — caja del dolor: fuera la tríada repetida (5 sep 2026)
 
