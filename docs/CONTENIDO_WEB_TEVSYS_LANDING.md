@@ -204,6 +204,31 @@ Ver handoff hero.
 
 ---
 
+## Bloque definicional «Qué es tevsys» — portada, primer scroll (5 sep 2026)
+
+**Dónde:** entre el hero y el puente `Precisión · HyperClose · SML · Evidencia`. `HomePageView.astro` → `.tevsys-home-definition` · copy en `src/i18n/home.js` (`definitionLead` / `definitionBeats` / `definitionClosing`).
+
+**Por qué existe:** los asistentes de búsqueda citaban antes `/company/terminos` que las páginas comerciales — la legal **definía** el producto de forma categórica y la home abría con eslogan. Este bloque pone la definición donde se lee y donde se extrae.
+
+**Copy vivo (ES):**
+
+- **Lead:** `tevsys es una utilidad para MetaTrader 5 que hace cumplir tus propias reglas en intradía y en swing: defines límites diarios y semanales, días OFF y bloqueo, y se ejecutan en toda la cuenta desde un solo gráfico.`
+- **Tres líneas** (lista, puntos ámbar): `Cierra al alcanzar los límites que has configurado, con precisión documentada.` · `Bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose.` · `Deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5.`
+- **Cierre:** `No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.`
+
+**EN:** mismo esqueleto (`intraday and on swing`, tres líneas, `It does not trade for you…`).
+
+**Normas del bloque (no romper sin acuerdo):**
+
+- **Sin SML aquí.** «Amplía margen» rema contra el mensaje de límites que se cumplen. SML vive en su card y en `/features/sml`.
+- **Sin caja clara.** La pastilla gris (opción B, 5 sep) se probó y se retiró: metía un tercer plano de color en la home negra y partía la página en bandas. Jerarquía por **tipografía + ámbar**.
+- **Un solo eje:** lead, lista y cierre alineados a la izquierda sobre la misma vertical; puntos ámbar colgando en el margen.
+- **El cierre es conclusión, no cuarta viñeta:** aire + hairline por encima.
+- **Máximo tres líneas.** Con cuatro conceptos encadenados el lector no retiene ninguno.
+- **`intradía y en swing` es deliberado** (filtro academias swing + SEO); no recortarlo al acortar el lead.
+
+---
+
 ## Sección principal de valor
 
 **Handoff cohesión jun 2026:** `HANDOFF_HOME_BLOQUE_CARDS_JUN2026.md`

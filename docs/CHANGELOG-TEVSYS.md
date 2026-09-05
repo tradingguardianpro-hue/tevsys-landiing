@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## SEO estructural — sitemap ES+EN completo + hreflang por página (5 sep 2026)
+
+- **Sitemap (bug):** `public/sitemap.xml` tenía **15 URLs, todas ES** — las **20 páginas EN no estaban ninguna**, justo el destino de los enlaces del blog MQL5 corregidos el 4 sep. También faltaban en ES `/como-funciona`, `/para-quien`, `/instalacion-market`, `/company/reembolsos`. Ahora **19 ES + 19 EN**. Fuera a propósito: `/go/*` (noindex), `*-thank-you`, `/auditoria-ia/*` (roadmap), `/blog`, 404.
+- **hreflang (bug peor):** `BaseHead.astro` emitía **siempre** `es → /` · `en → /en/` · `x-default → /` en **todas** las páginas. Es decir, `/features/precision` declaraba como versión inglesa la **portada**: Google no emparejaba ninguna página con su traducción. Ahora se calcula por página desde `enReadyPaths` (fuente única, la misma del selector de idioma); si no hay EN publicado, solo se emite `es` + `x-default`.
+- **Mantenimiento:** al publicar página nueva → añadirla al sitemap **y** a `enReadyPaths` si tiene EN. Nota escrita en la cabecera del propio XML.
+- **Dónde:** `public/sitemap.xml` · `src/components/head/BaseHead.astro` (usa `src/i18n/locales.js`).
+- **Commit:** `web(tevsys): complete ES+EN sitemap and per-page hreflang`
+
 ## Portada — caja del dolor: fuera la tríada repetida (5 sep 2026)
 
 - **Qué:** `sectionHookBefore` ES|EN deja de enumerar *no cierran con precisión, no bloquean ni dejan acta* → **«Sin excusas. La disciplina que solo existe en tu cabeza no se ejecuta a las 15:31.»** / EN *«…does not execute at 15:31.»*

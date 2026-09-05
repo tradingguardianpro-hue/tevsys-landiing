@@ -1,6 +1,7 @@
 ---
 import settings from '../../config/settings.js';
 import ThemeProvider from '../theme-switcher/ThemeProvider.astro';
+import { stripLocalePrefix, enReadyPaths } from '../../i18n/locales.js';
 
 import '../../styles/index.css';
 
@@ -15,6 +16,16 @@ const title = Astro.props.title || settings.title;
 const description = Astro.props.description || settings.description;
 const canonicalURL = Astro.props.canonicalURL || new URL(Astro.url.pathname, Astro.site);
 const image = new URL(Astro.props.image || '/mano%20robotica%20central%20web.png', Astro.site);
+
+/*
+  hreflang por página (5 sep 2026). Antes: las tres etiquetas apuntaban SIEMPRE a la portada
+  → Google no emparejaba /features/precision con /en/features/precision (ni ninguna otra).
+  Fuente única de qué existe en EN: `enReadyPaths`.
+*/
+const barePath = stripLocalePrefix(Astro.url.pathname);
+const hasEnglishVersion = enReadyPaths.has(barePath);
+const esAlternate = new URL(barePath === '/' ? '/' : barePath, Astro.site);
+const enAlternate = new URL(barePath === '/' ? '/en/' : `/en${barePath}`, Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -36,9 +47,9 @@ const image = new URL(Astro.props.image || '/mano%20robotica%20central%20web.png
 {(Astro.url.pathname === '/' || Astro.url.pathname === '' || Astro.url.pathname === '/en' || Astro.url.pathname === '/en/') && (
   <link rel="preload" as="image" href="/mano%20robotica%20central%20web.png?v=2" />
 )}
-<link rel="alternate" hreflang="es" href={new URL('/', Astro.site)} />
-<link rel="alternate" hreflang="en" href={new URL('/en/', Astro.site)} />
-<link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+<link rel="alternate" hreflang="es" href={esAlternate} />
+{hasEnglishVersion && <link rel="alternate" hreflang="en" href={enAlternate} />}
+<link rel="alternate" hreflang="x-default" href={esAlternate} />
 <!-- Schema.org JSON-LD (SoftwareApplication) — description = meta de la página (ES|EN). -->
 {Astro.url.pathname === '/' || Astro.url.pathname === '' || Astro.url.pathname === '/en' || Astro.url.pathname === '/en/' ? (
   <script type="application/ld+json" set:html={JSON.stringify({
