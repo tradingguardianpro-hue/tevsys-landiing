@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Portada — 2.º párrafo: límite ≠ HyperClose (5 sep 2026)
+
+- **Qué:** `definitionLayers` aclara secuencia: cierre al alcanzar **tus** límites (precisión) → HyperClose = intento de operar **cuando ya los has alcanzado** → SML → acta. Cierre *No opera por ti…* y caja ámbar **sin tocar**.
+- **Commit:** `web(tevsys): clarify HyperClose vs limit close in home definition`
+
 ## Portada — «intradía y swing» en el párrafo definicional (5 sep 2026)
 
 - **Qué:** en el lead del bloque «qué es» (primer scroll): *…tus propias reglas **en intradía y en swing**:…* / EN *…rules **intraday and on swing**:…*. Meta description ES|EN alineada. Caja ámbar sin cambio (sigue el eslogan cerrar/bloquear/constancia).

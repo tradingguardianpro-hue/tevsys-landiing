@@ -28,7 +28,7 @@ export const homeCopy = {
 		definitionLead:
 			'tevsys es una utilidad para MetaTrader 5 que hace cumplir tus propias reglas en intradía y en swing: defines límites diarios y semanales, días OFF y bloqueo, y el programa los ejecuta en toda la cuenta desde un solo gráfico.',
 		definitionLayers:
-			'Cierra al alcanzar el umbral con precisión documentada, bloquea al instante cualquier intento de operar protegido con HyperClose, amplía margen bajo reglas si activas SML, y deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5.',
+			'Cierra al alcanzar los límites que has configurado, con precisión documentada; bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose; amplía margen bajo reglas si activas SML; y deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5.',
 		definitionClosing: 'No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.',
 		definitionAria: 'Qué es tevsys',
 		bridgeLayers: 'Precisión · HyperClose · SML · Evidencia',
@@ -167,7 +167,7 @@ export const homeCopy = {
 		definitionLead:
 			'tevsys is a MetaTrader 5 utility that enforces your own rules intraday and on swing: you set daily and weekly limits, OFF days and locking, and the software applies them across the whole account from a single chart.',
 		definitionLayers:
-			'It closes at the threshold with documented precision, instantly blocks any attempt to trade while protected with HyperClose, widens margin under rules if you enable SML, and logs everything that happens — cross-checkable against official MT5 reports.',
+			'It closes when you hit the limits you configured, with documented precision; it instantly blocks any attempt to trade once those limits are already reached, with HyperClose; it widens margin under rules if you enable SML; and it leaves a record of everything that happens — cross-checkable against official MT5 reports.',
 		definitionClosing: 'It does not trade for you: it enforces what you decide — and proves it, trade by trade.',
 		definitionAria: 'What tevsys is',
 		bridgeLayers: 'Precision · HyperClose · SML · Evidence',
