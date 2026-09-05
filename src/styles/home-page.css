@@ -19,7 +19,7 @@
 	.tevsys-home-definition__panel {
 		position: relative;
 		z-index: 1;
-		max-width: min(52rem, 100%);
+		max-width: min(56rem, 100%);
 		margin: 0 auto;
 		padding: 0;
 		box-sizing: border-box;
@@ -27,25 +27,29 @@
 		border: 0;
 		box-shadow: none;
 	}
+	/*
+	  Eje Ãºnico: todo alineado a la izquierda sobre la misma vertical. Los puntos Ã¡mbar cuelgan
+	  en el margen (gutter) para que el texto de lead, lista y cierre comparta borde izquierdo.
+	*/
 	.tevsys-home-definition__lead,
 	.tevsys-home-definition__beats,
 	.tevsys-home-definition__closing {
 		position: relative;
 		z-index: 1;
-		max-width: 46rem;
+		max-width: 52rem;
 		margin-inline: auto;
+		padding-inline-start: 1.4rem;
 		box-sizing: border-box;
 		font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		font-size: clamp(0.9375rem, 1.05vw + 0.28rem, 1.0625rem);
 		line-height: 1.62;
 		letter-spacing: 0.004em;
-		text-align: center;
+		text-align: left;
 		text-wrap: pretty;
 	}
 	/* Lead: entrada del bloque, un punto por encima del resto. */
 	.tevsys-home-definition__lead {
 		margin-block: 0;
-		max-width: 44rem;
 		font-size: clamp(1rem, 1.15vw + 0.3rem, 1.15rem);
 		font-weight: 400;
 		color: rgba(232, 236, 244, 0.94);
@@ -53,23 +57,21 @@
 	/* Tres golpes: uno por lÃ­nea, punto Ã¡mbar de marca. Escaneables sueltos, no un muro. */
 	.tevsys-home-definition__beats {
 		margin: clamp(1.05rem, 2.2vw, 1.45rem) auto;
-		max-width: 42rem;
-		padding: 0;
+		padding-block: 0;
+		padding-inline-end: 0;
 		list-style: none;
 		display: grid;
 		gap: clamp(0.55rem, 1.15vw, 0.75rem);
-		text-align: left;
 	}
 	.tevsys-home-definition__beats li {
 		position: relative;
-		padding-left: 1.35rem;
 		font-weight: 400;
 		color: rgba(206, 213, 226, 0.86);
 	}
 	.tevsys-home-definition__beats li::before {
 		content: '';
 		position: absolute;
-		left: 0.1rem;
+		left: -1.25rem;
 		top: 0.62em;
 		width: 0.4rem;
 		height: 0.4rem;
@@ -77,11 +79,26 @@
 		background: rgba(245, 176, 65, 0.85);
 		box-shadow: 0 0 10px rgba(245, 176, 65, 0.35);
 	}
+	/* ConclusiÃ³n, no cuarto punto: aire + hairline por encima. */
 	.tevsys-home-definition__closing {
 		margin-block: 0;
-		max-width: 44rem;
+		padding-top: clamp(0.85rem, 1.8vw, 1.15rem);
 		font-weight: 600;
 		color: rgba(246, 248, 252, 0.97);
+	}
+	.tevsys-home-definition__closing::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 1.4rem;
+		width: min(11rem, 55%);
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			rgba(226, 232, 240, 0.26) 0%,
+			rgba(226, 232, 240, 0.12) 55%,
+			transparent 100%
+		);
 	}
 	@media (max-width: 768px) {
 		.tevsys-home-definition {
@@ -93,7 +110,13 @@
 		.tevsys-home-definition__closing {
 			font-size: clamp(0.875rem, 2.6vw, 0.9375rem);
 			line-height: 1.58;
-			text-align: left;
+			padding-inline-start: 1.15rem;
+		}
+		.tevsys-home-definition__beats li::before {
+			left: -1.05rem;
+		}
+		.tevsys-home-definition__closing::before {
+			left: 1.15rem;
 		}
 		.tevsys-home-definition__lead {
 			font-size: clamp(0.9375rem, 2.8vw, 1rem);

@@ -10,7 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Copy:** vuelve la redacción larga del fundador (tenía más fuerza que la versión corta *«cierra donde dijiste»*), pero **partida en tres líneas** y **sin SML**: *Cierra al alcanzar los límites que has configurado, con precisión documentada* · *Bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose* · *Deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5*. EN equivalente.
 - **Por qué fuera SML aquí:** *«amplía margen»* rema contra *«te pongo límites y te los hago cumplir»*. SML mantiene su card y su micro `/features/sml`.
 - **Lead:** fuera **«el programa»** → *«…días OFF y bloqueo, y **se ejecutan** en toda la cuenta desde un solo gráfico»*.
-- **Forma:** lead centrado un punto mayor · tres líneas alineadas a la izquierda con **punto ámbar** · cierre en negrita centrado · sección **sin losa propia** (una losa aquí crea banda visible contra la viñeta del hero).
+- **Forma (2.ª pasada, feedback fundador):** **un solo eje** — lead, lista y cierre alineados a la izquierda sobre la misma vertical, con los puntos ámbar colgando en el margen · **hairline + aire** sobre *No opera por ti…* para que se lea como conclusión y no como cuarto punto · medida de línea a **52rem** (mata las huérfanas «con HyperClose.» / «de MT5.») · sección **sin losa propia** (una losa aquí crea banda visible contra la viñeta del hero).
 - **Dónde:** `src/i18n/home.js` (`definitionLead` / `definitionBeats` / `definitionClosing`) · `HomePageView.astro` · `home-page.css`.
 - **Commit:** `web(tevsys): revert light definition panel and split home definition in three beats`
 
