@@ -40,8 +40,10 @@ export const homeCopy = {
 		bridgeLayers: 'Precisión · HyperClose · SML · Evidencia',
 		bridgeLayersAria: 'Capas del producto: Precisión, HyperClose, SML, Evidencia',
 		sectionTitle: '¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?',
+		/* 5 sep: fuera la enumeración cerrar/bloquear/acta — ya está dicha arriba en la definición.
+		   Aquí toca el contraste emocional, no repetir capacidades. */
 		sectionHookBefore:
-			'Sin excusas. Las buenas intenciones no cierran con precisión, no bloquean ni dejan acta. ',
+			'Sin excusas. La disciplina que solo existe en tu cabeza no se ejecuta a las 15:31. ',
 		sectionHookAccent: 'Cerramos, bloqueamos y dejamos constancia.',
 		/* Checklist bullets retirados 5 sep (eco del párrafo definicional). Ver V12 homeTransicionDuplicada. */
 		ellos: 'Ellos deslizan. En tevsys cerramos.',
@@ -184,7 +186,7 @@ export const homeCopy = {
 		bridgeLayersAria: 'Product layers: Precision, HyperClose, SML, Evidence',
 		sectionTitle: 'Have you lost money by not stopping in time — and by slippage at the limit?',
 		sectionHookBefore:
-			'No excuses. Good intentions do not close with precision, block, or leave a record. ',
+			'No excuses. Discipline that only lives in your head does not execute at 15:31. ',
 		sectionHookAccent: 'We close, we block — and we leave the record.',
 		/* Checklist bullets retired 5 Sep (echoed definition block). */
 		ellos: 'Others slip. In tevsys, we close.',

@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Portada — caja del dolor: fuera la tríada repetida (5 sep 2026)
+
+- **Qué:** `sectionHookBefore` ES|EN deja de enumerar *no cierran con precisión, no bloquean ni dejan acta* → **«Sin excusas. La disciplina que solo existe en tu cabeza no se ejecuta a las 15:31.»** / EN *«…does not execute at 15:31.»*
+- **Por qué:** con la definición de arriba ya explícita (cerrar · bloquear · acta), repetir la tríada tres veces en un scroll restaba fuerza al golpe emocional. La caja se queda con **contraste**, no con capacidades.
+- **Sin tocar:** subrayado *Cerramos, bloqueamos y dejamos constancia.* · línea mono *Ellos deslizan. En tevsys cerramos.*
+- **Commit:** `web(tevsys): drop repeated triad in home pain box`
+
 ## Portada — pastilla clara REVERTIDA · definición en tres golpes sobre negro (5 sep 2026)
 
 - **Marcha atrás (decisión fundador, con criterio compartido):** la **pastilla gris clara** (opción B, mismo día) queda **retirada**. Metía un tercer plano de color en una home negra y partía la página en bandas — hero redondeado con viñeta → losa → tarjeta clara. Se veía **rota**, no «diferencial». La jerarquía de este bloque se hace con **tipografía + ámbar**, no con caja. **No reintroducir** sin acuerdo explícito.
