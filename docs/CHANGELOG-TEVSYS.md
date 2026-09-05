@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Portada — definición en tres golpes, sin SML + losa opaca (5 sep 2026)
+
+- **Fix visual (bug propio):** la sección de la definición se había quedado **sin fondo opaco** al meter la pastilla → el KITT del hero se colaba por los lados (home «rota»). Restaurada la losa `100vw` (mismo patrón que los puentes).
+- **Copy:** fuera **SML** del bloque definicional — *«amplía margen»* rema contra *«te pongo límites y te los hago cumplir»*; SML mantiene su card y su micro. El muro de cuatro conceptos pasa a **tres líneas sueltas** (`definitionBeats`): cierra donde dijiste · bloquea si insistes · deja acta. Fuera **«el programa»** → sujeto omitido (*«y se ejecutan en toda la cuenta…»*).
+- **Encuadre:** pastilla más ancha (54rem), gris algo más apagado, texto **alineado a la izquierda**, punto ámbar por línea y hairline antes del cierre en negrita.
+- **Dónde:** `src/i18n/home.js` (`definitionLead` / `definitionBeats` / `definitionClosing`) · `HomePageView.astro` · `home-page.css`.
+- **Commit:** `web(tevsys): three-beat home definition without SML and restore opaque slab`
+
 ## Portada — pastilla clara en definición (opción B · 5 sep 2026)
 
 - **Qué:** el bloque «qué es» va en **panel redondeado gris claro** + texto casi negro (lead / capas más suaves / cierre en negrita). El puente `Precisión · HyperClose · SML · Evidencia` sigue en el negro de la home.

@@ -33,7 +33,9 @@ const L = (href) => localizeHref(href, locale);
 		<section class="tevsys-home-definition" aria-label={t.definitionAria}>
 			<div class="tevsys-home-definition__panel">
 				<p class="tevsys-home-definition__lead">{t.definitionLead}</p>
-				<p class="tevsys-home-definition__layers">{t.definitionLayers}</p>
+				<ul class="tevsys-home-definition__beats" aria-label={t.definitionBeatsAria}>
+					{t.definitionBeats.map((beat) => <li>{beat}</li>)}
+				</ul>
 				<p class="tevsys-home-definition__closing">{t.definitionClosing}</p>
 			</div>
 		</section>
