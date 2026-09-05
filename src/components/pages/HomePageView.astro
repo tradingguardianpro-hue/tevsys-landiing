@@ -43,16 +43,10 @@ const L = (href) => localizeHref(href, locale);
 			<div class="tevsys-home-mid-glow" aria-hidden="true"></div>
 			<section class="feature-card__section">
 				<h2 class="feature-section__title">{t.sectionTitle}</h2>
-				<div class="feature-card__checklist-static">
+				<div class="feature-card__checklist-static feature-card__checklist-static--punch">
 					<p class="feature-section__hook">
 						{t.sectionHookBefore}<span class="tevsys-brand-accent-underline">{t.sectionHookAccent}</span>
 					</p>
-					<ul class="feature-card__checklist-static-items" aria-label={t.checklistAria}>
-						<li>{t.checklist1}</li>
-						<li>
-							{t.checklist2Before}<span class="tevsys-brand-accent-underline tevsys-brand-accent-underline--dias-off">{t.checklist2Accent}</span>{t.checklist2After}
-						</li>
-					</ul>
 				</div>
 				<p class="feature-card__intro-ellos"><span class="feature-hook__dot" aria-hidden="true"></span>{t.ellos}</p>
 				<div class="feature-card__grid">

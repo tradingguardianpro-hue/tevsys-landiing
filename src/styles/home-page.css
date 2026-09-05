@@ -161,9 +161,10 @@
 	}
 	.feature-section__hook {
 		font-size: 1rem;
-		opacity: 0.94;
-		margin: 0 0 0.7rem;
+		opacity: 0.96;
+		margin: 0;
 		line-height: 1.55;
+		color: rgba(244, 246, 248, 0.94);
 	}
 	/* Subrayado Ã¡mbar â†’ gris (misma familia que /como-funciona). */
 	.tevsys-brand-accent-underline {
@@ -241,6 +242,51 @@
 			inset 0 1px 0 rgba(255, 255, 255, 0.05),
 			0 0 0 1px rgba(245, 176, 65, 0.06);
 	}
+	/* Golpe emocional sin bullets (5 sep): mÃ¡s Ã¡mbar para no hundirse en el negro. */
+	.feature-card__checklist-static--punch {
+		position: relative;
+		padding: clamp(1.05rem, 2.2vw, 1.35rem) clamp(1.15rem, 2.4vw, 1.55rem);
+		background: linear-gradient(
+			165deg,
+			hsl(222, 16%, 10%) 0%,
+			hsl(222, 14%, 7%) 55%,
+			hsl(222, 18%, 6.5%) 100%
+		);
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		box-shadow:
+			0 18px 44px -32px rgba(0, 0, 0, 0.55),
+			inset 0 1px 0 rgba(255, 255, 255, 0.06),
+			0 0 28px -18px rgba(245, 176, 65, 0.35),
+			0 0 0 1px rgba(245, 176, 65, 0.1);
+	}
+	.feature-card__checklist-static--punch::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 12%;
+		bottom: 12%;
+		width: 3px;
+		border-radius: 0 999px 999px 0;
+		background: linear-gradient(
+			180deg,
+			rgba(245, 176, 65, 0.15) 0%,
+			rgba(245, 176, 65, 0.95) 45%,
+			rgba(245, 176, 65, 0.2) 100%
+		);
+		pointer-events: none;
+	}
+	.feature-card__checklist-static--punch .feature-section__hook {
+		padding-left: 0.35rem;
+	}
+	.feature-card__checklist-static--punch .tevsys-brand-accent-underline::after {
+		height: 3.5px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 1) 0%,
+			rgba(245, 176, 65, 0.55) 55%,
+			rgba(148, 154, 168, 0.45) 100%
+		);
+	}
 	.feature-card__checklist-static-items {
 		margin: 0;
 		padding: 0;
@@ -278,7 +324,7 @@
 		font-weight: 500;
 		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
 		letter-spacing: 0.055em;
-		color: rgba(228, 232, 240, 0.68);
+		color: rgba(228, 232, 240, 0.78);
 		margin: 0.35rem 0 clamp(2.75rem, 5.5vw, 3.5rem);
 		line-height: 1.45;
 	}
@@ -288,6 +334,7 @@
 		border-radius: 50%;
 		background: #f5b041;
 		flex-shrink: 0;
+		box-shadow: 0 0 10px rgba(245, 176, 65, 0.45);
 	}
 	.feature-card__grid {
 		display: grid;
@@ -981,6 +1028,15 @@
 			box-shadow:
 				inset 0 1px 0 rgba(255, 255, 255, 0.06),
 				inset 0 -16px 32px rgba(0, 0, 0, 0.22),
+				0 16px 40px -28px rgba(0, 0, 0, 0.72);
+		}
+		.feature-card__checklist-static--punch {
+			padding: 0.95rem 1rem;
+			background: linear-gradient(180deg, hsl(222, 18%, 13%), hsl(222, 14%, 8%));
+			border: 1px solid rgba(245, 176, 65, 0.28);
+			box-shadow:
+				inset 0 1px 0 rgba(255, 255, 255, 0.07),
+				0 0 22px -14px rgba(245, 176, 65, 0.4),
 				0 16px 40px -28px rgba(0, 0, 0, 0.72);
 		}
 		.feature-card__grid {

@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Portada — caja dolor sin bullets + ámbar (5 sep 2026)
+
+- **Qué:** bajo «¿Has perdido…?» se quitan los 2 bullets (eco del párrafo definicional). Quedan *Sin excusas… **Nosotros sí.*** + *Ellos deslizan…*
+- **Visual:** clase `--punch` — borde/halo ámbar, barra lateral ámbar, subrayado de «Nosotros sí» más vivo, punto ámbar de «Ellos…» con glow. No hundir el tramo en negro plano.
+- **Dónde:** `HomePageView.astro` · `home.js` · `home-page.css`
+- **Commit:** `web(tevsys): slim home pain box keep amber accents`
+- **Siguiente:** SEO punto 2 (meta + JSON-LD)
+
 ## Portada — definición «cuadro entero» (5 sep 2026 · v2)
 
 - **Qué:** el bloque bajo el hero pasa de una frase «gestión de riesgo» a **tres golpes**: qué es · capas (precisión + HyperClose + SML + acta) · cierre (*no opera por ti — y lo demuestra*). Sin superlativo «primera del mercado».

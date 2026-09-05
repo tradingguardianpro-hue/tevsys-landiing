@@ -36,11 +36,7 @@ export const homeCopy = {
 		sectionTitle: '¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?',
 		sectionHookBefore: 'Sin excusas. Las buenas intenciones no cierran con alta precisión ni bloquean operaciones. ',
 		sectionHookAccent: 'Nosotros sí.',
-		checklistAria: 'Checklist resumen de valor',
-		checklist1: 'Doble trazabilidad real: lógica interna tevsys + ejecución oficial MT5.',
-		checklist2Before: 'Configuras una vez. Ejecutamos siempre. Incluso los ',
-		checklist2Accent: 'días que tú decides estar OFF',
-		checklist2After: '.',
+		/* Checklist bullets retirados 5 sep (eco del párrafo definicional). Ver V12 homeTransicionDuplicada. */
 		ellos: 'Ellos deslizan. En tevsys cerramos.',
 		saberMas: 'Saber más',
 		cardPrecision: {
@@ -179,11 +175,7 @@ export const homeCopy = {
 		sectionHookBefore:
 			'No excuses. Good intentions do not close with high precision or block trades. ',
 		sectionHookAccent: 'We do.',
-		checklistAria: 'Value checklist',
-		checklist1: 'Real dual traceability: tevsys internal logic + official MT5 execution.',
-		checklist2Before: 'You configure once. We enforce always. Even on the ',
-		checklist2Accent: 'days you choose to be OFF',
-		checklist2After: '.',
+		/* Checklist bullets retired 5 Sep (echoed definition block). */
 		ellos: 'Others slip. In tevsys, we close.',
 		saberMas: 'Learn more',
 		cardPrecision: {
