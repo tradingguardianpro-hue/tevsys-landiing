@@ -39,7 +39,7 @@ const image = new URL(Astro.props.image || '/mano%20robotica%20central%20web.png
 <link rel="alternate" hreflang="es" href={new URL('/', Astro.site)} />
 <link rel="alternate" hreflang="en" href={new URL('/en/', Astro.site)} />
 <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
-<!-- Schema.org JSON-LD (SoftwareApplication) -->
+<!-- Schema.org JSON-LD (SoftwareApplication) — description = meta de la página (ES|EN). -->
 {Astro.url.pathname === '/' || Astro.url.pathname === '' || Astro.url.pathname === '/en' || Astro.url.pathname === '/en/' ? (
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -47,11 +47,11 @@ const image = new URL(Astro.props.image || '/mano%20robotica%20central%20web.png
     "name": settings.name,
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Windows",
-    "description": settings.description,
-    "url": settings.url,
+    "description": description,
+    "url": Astro.url.pathname.startsWith('/en') ? settings.url + '/en/' : settings.url,
     "offers": {
       "@type": "Offer",
-      "url": settings.url + "/company/contact"
+      "url": (Astro.url.pathname.startsWith('/en') ? settings.url + '/en' : settings.url) + "/company/contact"
     }
   })} />
 ) : null}

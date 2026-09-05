@@ -5,7 +5,7 @@
 		z-index: 20;
 		isolation: isolate;
 		margin: 0;
-		padding: clamp(1.35rem, 3vw, 2.15rem) 0 clamp(0.35rem, 0.9vw, 0.6rem);
+		padding: clamp(1.55rem, 3.4vw, 2.35rem) 0 clamp(0.85rem, 1.8vw, 1.15rem);
 		background-color: var(--theme-bg, #0a0a0c);
 	}
 	.tevsys-home-definition::after {
@@ -127,10 +127,10 @@
 		color: rgba(228, 232, 240, 0.68);
 		line-height: 1.45;
 	}
-	/* Hero â†’ cards: mÃ¡s aire (antes denso huso + mono + H2). */
+	/* Hero → definición → capas: más aire para forzar lectura del «qué es». */
 	.tevsys-home-bridge--hero-cards {
-		padding-top: clamp(1.55rem, 3.4vw, 2.35rem);
-		padding-bottom: clamp(1.35rem, 3vw, 2rem);
+		padding-top: clamp(2.35rem, 5.2vw, 3.65rem);
+		padding-bottom: clamp(2.15rem, 4.8vw, 3.25rem);
 	}
 	.tevsys-home-band--cards > .feature-card__section {
 		margin-top: clamp(0.55rem, 1.6vw, 1.05rem);
@@ -286,6 +286,16 @@
 			rgba(245, 176, 65, 0.55) 55%,
 			rgba(148, 154, 168, 0.45) 100%
 		);
+	}
+	/* Eslogan largo (cerrar / bloquear / constancia): línea propia + raya a ancho de frase. */
+	.feature-card__checklist-static--punch .tevsys-brand-accent-underline--punch-cta {
+		display: block;
+		margin-top: clamp(0.55rem, 1.2vw, 0.75rem);
+		max-width: min(36rem, 100%);
+	}
+	.feature-card__checklist-static--punch .tevsys-brand-accent-underline--punch-cta::after {
+		width: min(100%, calc(100% + 0.5rem));
+		margin-top: 0.32rem;
 	}
 	.feature-card__checklist-static-items {
 		margin: 0;

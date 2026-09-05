@@ -34,8 +34,9 @@ export const homeCopy = {
 		bridgeLayers: 'Precisión · HyperClose · SML · Evidencia',
 		bridgeLayersAria: 'Capas del producto: Precisión, HyperClose, SML, Evidencia',
 		sectionTitle: '¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?',
-		sectionHookBefore: 'Sin excusas. Las buenas intenciones no cierran con alta precisión ni bloquean operaciones. ',
-		sectionHookAccent: 'Nosotros sí.',
+		sectionHookBefore:
+			'Sin excusas. Las buenas intenciones no cierran con precisión, no bloquean ni dejan acta. ',
+		sectionHookAccent: 'Cerramos, bloqueamos y dejamos constancia.',
 		/* Checklist bullets retirados 5 sep (eco del párrafo definicional). Ver V12 homeTransicionDuplicada. */
 		ellos: 'Ellos deslizan. En tevsys cerramos.',
 		saberMas: 'Saber más',
@@ -143,8 +144,8 @@ export const homeCopy = {
 		hrefInviteCta: '/go/como-funciona-home',
 	},
 	en: {
-		seoTitle: 'tevsys — Verified discipline, closing precision and risk control · MT5',
-		seoDescription: `Automated trading discipline for MetaTrader 5: loss and profit limits that are enforced. Documented precise closes. ${settings.documentedOperatives} documented trades with verifiable evidence. For traders, prop firms and audits.`,
+		seoTitle: 'tevsys — Limits that are enforced, with precision and traceability · MT5',
+		seoDescription: `MetaTrader 5 utility that enforces your own rules: daily and weekly limits, documented precision closes, HyperClose, SML and a record you can check against MT5. It does not trade for you. ${settings.documentedOperatives} documented trades.`,
 		hero: {
 			line1: 'You set the limits.',
 			line2Before: '',
@@ -173,8 +174,8 @@ export const homeCopy = {
 		bridgeLayersAria: 'Product layers: Precision, HyperClose, SML, Evidence',
 		sectionTitle: 'Have you lost money by not stopping in time — and by slippage at the limit?',
 		sectionHookBefore:
-			'No excuses. Good intentions do not close with high precision or block trades. ',
-		sectionHookAccent: 'We do.',
+			'No excuses. Good intentions do not close with precision, block, or leave a record. ',
+		sectionHookAccent: 'We close, we block — and we leave the record.',
 		/* Checklist bullets retired 5 Sep (echoed definition block). */
 		ellos: 'Others slip. In tevsys, we close.',
 		saberMas: 'Learn more',

@@ -4,6 +4,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Portada — eslogan cuadro + aire puente + SEO meta/JSON-LD (5 sep 2026)
+
+- **Caja dolor:** *Sin excusas… no cierran con precisión, no bloquean ni dejan acta.* + subrayado **Cerramos, bloqueamos y dejamos constancia.** (EN equivalente). Sin encasillar solo en freno.
+- **Aire:** más padding en definición inferior + puente `Precisión · HyperClose · SML · Evidencia` (pausa de lectura antes del H2 dolor).
+- **SEO punto 2:** `settings.js` title/description alineados al cuadro (no solo «gestión de riesgo») · home EN `seoTitle`/`seoDescription` · JSON-LD home usa la **description de la página** (ES|EN) y URL `/en/` cuando toca.
+- **Dónde:** `home.js` · `HomePageView.astro` · `home-page.css` · `settings.js` · `BaseHead.astro`
+- **Commit:** `web(tevsys): home punch slogan air bridge and SEO definition meta`
+- **Pendiente oleada SEO:** puente 1 línea en micros/precios · sitemap `/en/*` + reembolsos
+
 ## Portada — caja dolor sin bullets + ámbar (5 sep 2026)
 
 - **Qué:** bajo «¿Has perdido…?» se quitan los 2 bullets (eco del párrafo definicional). Quedan *Sin excusas… **Nosotros sí.*** + *Ellos deslizan…*
