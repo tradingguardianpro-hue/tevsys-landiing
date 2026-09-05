@@ -3,7 +3,7 @@ export const TEVSYS_DOCUMENTED_OPERATIVES = 114;
 
 export default {
   title: "tevsys — Límites que se cumplen, con precisión y trazabilidad · MT5",
-  description: `Utilidad para MetaTrader 5 que hace cumplir tus propias reglas: límites diarios y semanales, cierre con precisión documentada, HyperClose, SML y acta contrastable con MT5. No opera por ti: cumple lo que decides. ${TEVSYS_DOCUMENTED_OPERATIVES} operativas documentadas.`,
+  description: `Utilidad para MetaTrader 5 que hace cumplir tus propias reglas en intradía y en swing: límites diarios y semanales, cierre con precisión documentada, HyperClose, SML y acta contrastable con MT5. No opera por ti: cumple lo que decides. ${TEVSYS_DOCUMENTED_OPERATIVES} operativas documentadas.`,
   documentedOperatives: TEVSYS_DOCUMENTED_OPERATIVES,
   url: "https://www.tevsys.io",
   name: "tevsys",

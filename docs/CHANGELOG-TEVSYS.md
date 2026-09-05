@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Portada — «intradía y swing» en el párrafo definicional (5 sep 2026)
+
+- **Qué:** en el lead del bloque «qué es» (primer scroll): *…tus propias reglas **en intradía y en swing**:…* / EN *…rules **intraday and on swing**:…*. Meta description ES|EN alineada. Caja ámbar sin cambio (sigue el eslogan cerrar/bloquear/constancia).
+- **Por qué en el párrafo y no en la caja:** primer scroll + extracto SEO/IA + filtro academia swing; la caja es golpe emocional más abajo.
+- **Commit:** `web(tevsys): name intraday and swing in home definition lead`
+
 ## Portada — eslogan cuadro + aire puente + SEO meta/JSON-LD (5 sep 2026)
 
 - **Caja dolor:** *Sin excusas… no cierran con precisión, no bloquean ni dejan acta.* + subrayado **Cerramos, bloqueamos y dejamos constancia.** (EN equivalente). Sin encasillar solo en freno.
