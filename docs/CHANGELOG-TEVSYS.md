@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## LinkedIn fundador en footer + contacto (6 sep 2026 — punto 1)
+
+- **Qué:** enlace al perfil LinkedIn del fundador en la **fila de contacto del footer** (bajo `info@tevsys.io`, misma familia icono ámbar + mono) y en **contacto ES/EN** (`info@… · Fundador · LinkedIn`). Pestaña nueva. Sin foto en home/hero.
+- **URL canónica:** `settings.founderLinkedInUrl` · icono `/icons/icon-linkedin.svg`.
+- **Qué no:** hero, foto de persona, bloque equipo, socials vacíos genéricos.
+- **Commit:** `web(tevsys): icono LinkedIn footer/contacto al perfil del founder`
+
 ## Línea definicional en Precisión · Cómo funciona · Precios (5 sep 2026 — punto 3 del diagnóstico)
 
 - **Por qué:** los enlaces del blog MQL5 aterrizan en estas páginas, **no** en la portada. Hablaban de una capa dando por supuesto qué es tevsys; para un lector nuevo y para extracción por IA no había definición.

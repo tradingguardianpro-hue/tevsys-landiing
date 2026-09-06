@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import Container from '../core/Container.astro';
 import Plug from './Plug.astro';
+import settings from '../../config/settings.js';
 
 const {
 	footerSocials,
@@ -21,6 +22,9 @@ const loveLine = isEn
 	? '❤️ Made with love for trading. — Built independently. No investors. No excuses.'
 	: '❤️ Made with love for trading. — Desarrollado independientemente. Sin inversores. Sin excusas.';
 const rightsLine = isEn ? 'All rights reserved.' : 'Todos los derechos reservados.';
+const linkedInUrl = settings.founderLinkedInUrl;
+const linkedInLabel = isEn ? settings.founderLinkedInLabelEn : settings.founderLinkedInLabelEs;
+
 
 const footerStyle = background
 	? `--footer-bg:${background}; --footer-color:${color ?? 'inherit'}`
@@ -37,10 +41,22 @@ const footerStyle = background
 					</div>
 				</div>
 				<div class="footer-main__cell">
-					<a href="mailto:info@tevsys.io" class="footer-contact__item">
-						<img src="/icons/icon-email.svg" alt="" width="18" height="18" />
-						<span>info@tevsys.io</span>
-					</a>
+					<div class="footer-contact__stack">
+						<a href="mailto:info@tevsys.io" class="footer-contact__item">
+							<img src="/icons/icon-email.svg" alt="" width="18" height="18" />
+							<span>info@tevsys.io</span>
+						</a>
+						<a
+							href={linkedInUrl}
+							class="footer-contact__item"
+							target="_blank"
+							rel="noopener noreferrer"
+							title={linkedInLabel}
+						>
+							<img src="/icons/icon-linkedin.svg" alt="" width="18" height="18" />
+							<span>{linkedInLabel}</span>
+						</a>
+					</div>
 				</div>
 				<div class="footer-main__cell footer-main__cell--trail">
 					<span class="footer-contact__item footer-contact__item--static">
@@ -356,6 +372,13 @@ const footerStyle = background
 
 	.footer-brand__slot :global(.footer-brand__name span) {
 		grid-column: 2;
+	}
+
+	.footer-contact__stack {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.45rem;
 	}
 
 	.footer-contact__item {

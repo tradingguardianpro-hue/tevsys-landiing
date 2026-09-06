@@ -7,6 +7,11 @@ export default {
   documentedOperatives: TEVSYS_DOCUMENTED_OPERATIVES,
   url: "https://www.tevsys.io",
   name: "tevsys",
+  /** Perfil LinkedIn del fundador (footer + contacto). Sin foto en home. */
+  founderLinkedInUrl: "https://www.linkedin.com/in/gabriel-muela-garc%C3%ADa-020334388",
+  founderLinkedInLabelEs: "Fundador · LinkedIn",
+  founderLinkedInLabelEn: "Founder · LinkedIn",
+
   enableThemeSwitcher: false,
   showPlug: false,
   /** Checkout Essential: true = mostrar Comprar + Probar demo en Essential. false = solo Elegir Essential (formulario). Mar 2026: OFF hasta mail + descarga + flujo listos para venta pública. */
