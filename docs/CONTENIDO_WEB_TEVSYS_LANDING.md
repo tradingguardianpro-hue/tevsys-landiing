@@ -45,7 +45,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ### Micropágina Precisión (`/features/precision`)
 - **H1:** `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
 - **Lead:** *El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.*
-- **Bloque evidencia (22 ago 2026):** caja única — **114 operativas** · 0,06 % error medio · línea atribución híbrida (*decisión tevsys vs ejecución bróker · sin mezclar con slippage*) + enlace Nasdaq. Sin cursiva en cifras.
+- **Bloque evidencia (22 ago 2026):** caja única — **90 operativas** · 0,06 % error medio · línea atribución híbrida (*decisión tevsys vs ejecución bróker · sin mezclar con slippage*) + enlace Nasdaq. Sin cursiva en cifras.
 - **Nota geopolítica (−0,39 %):** línea suelta bajo evidencia — no mezclar con card contención 489.
 - **Card contención:** píldora *Caso extremo documentado* · barrido ~111 ms · CTA Evidencia.
 - **Manifiesto:** caja visible (misma franja que otras features).
@@ -212,11 +212,14 @@ Ver handoff hero.
 
 **Copy vivo (ES):**
 
-- **Lead:** `tevsys es una utilidad para MetaTrader 5 que hace cumplir tus propias reglas en intradía y en swing: defines límites diarios y semanales, días OFF y bloqueo, y se ejecutan en toda la cuenta desde un solo gráfico.`
+- **Lead (6 sep 2026):** `tevsys es una utilidad para MetaTrader 5 que hace cumplir las reglas que el trader configura para su operativa: límites de pérdida y ganancia (día y semana), días OFF y el bloqueo que impide abrir nuevas operaciones cuando el límite ya se ha alcanzado — en intradía y en swing, sobre toda la cuenta y desde un solo gráfico.`
+  - **Norma:** no «reglas numéricas»; no «bloqueo» suelto; no «límites diarios/semanales» sin decir de qué.
 - **Tres líneas** (lista, puntos ámbar): `Cierra al alcanzar los límites que has configurado, con precisión documentada.` · `Bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose.` · `Deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5.`
 - **Cierre:** `No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.`
 
-**EN:** mismo esqueleto (`intraday and on swing`, tres líneas, `It does not trade for you…`).
+**EN:** mismo esqueleto (`loss and profit limits`, lock that blocks new trades once a limit is reached, `intraday and on swing`).
+
+**Contador público (6 sep 2026):** **90** operativas documentadas (`settings.TEVSYS_DOCUMENTED_OPERATIVES`).
 
 **Normas del bloque (no romper sin acuerdo):**
 
@@ -291,7 +294,7 @@ Ver handoff hero.
 
 #### 1) 0,06% error medio
 - Hook (un solo `feature-card__hook`, abr 2026): `¿Has sentido que tu Stop Loss te cerró en otro planeta? — tevsys te lo cuenta todo.`
-- Texto (**3 sep 2026):** ámbar **`114 operativas documentadas`** · error medio ≈ 0,06 % en condiciones normales. + **`Medición en tiempo real`**: el resultado real de la cuenta — costes incluidos. + `También hay casos extremos documentados — fuera de esa media.` *(Antes: «Ajuste…» / listado spread·swap — PrecisionAdjuster no activo; copy afinado 3 sep.)*
+- Texto (**3 sep 2026):** ámbar **`90 operativas documentadas`** · error medio ≈ 0,06 % en condiciones normales. + **`Medición en tiempo real`**: el resultado real de la cuenta — costes incluidos. + `También hay casos extremos documentados — fuera de esa media.` *(Antes: «Ajuste…» / listado spread·swap — PrecisionAdjuster no activo; copy afinado 3 sep.)*
 - **Títulos cards (jun 2026):** Inter bold — prueba IBM Plex Mono revertida (acuerdo: mono solo metadatos/puente, no titulares grid).
 
 #### 2) HyperClose
@@ -433,7 +436,7 @@ Ver handoff hero.
   - Lead: `Operar en bloqueo dispara el cierre al instante; lo que pasa queda trazado para poder comprobarlo.`
 - `Precisión`:
   - Título: `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
-  - Hook: `• 114 operativas documentadas. 0,06% de error medio en condiciones normales.`
+  - Hook: `• 90 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: párrafo bajo intro — desviación máxima documentada **−0,39%** (signo negativo + cursiva en el %, alineado al estilo del hook).
 - `SML`:
   - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
@@ -454,7 +457,7 @@ Ver handoff hero.
 - **Nasdaq (multi‑activo):** bloque de demo **inmediatamente después** de alta volatilidad (narrativa: volatilidad → multi‑activo NASDAQ).
 - **Cuenta pequeña:** sección con **título + vídeo embebido visible** (no solo `<details>`); en el flujo de página va **antes** del bloque de logs / “Sin humo” (tras volatilidad y Nasdaq).
 - **Qué puedes comprobar / orden de secciones en página (19 abr 2026):** alta volatilidad → **Nasdaq** → **cuenta pequeña** → **logs / trazabilidad**; lista de anclas y script de expansión de demos alineados con ese orden en `precision.astro`.
-- **114 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
+- **90 operativas** documentadas (hook; fuente `PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3).
 - **Atribución (22 ago 2026):** una línea bajo el hook → enlace a `/como-funciona?play=1#evidencia-nasdaq-100` (vídeo primero; Transparencia justo debajo en la misma página).
 - **Nota extremos (30 abr 2026):** bajo el hook, párrafo `feature-extreme-note` — desviación máxima documentada **−0,39%** (acento + cursiva en el porcentaje).
 - Primera evidencia y Semáforo enlazan a la misma demo; scroll + resaltado al llegar.
@@ -633,10 +636,10 @@ Seguimiento interno activo en:
 - **Multigráfico (todas las features, abr 2026):** encima del primer bloque demo (primer vídeo o equivalente en SML), bloque con punto amarillo (`feature-hook`), dos líneas: `Un gráfico para tevsys. Toda tu cuenta, protegida.` / `Los avisos de protección aparecen en todos tus gráficos abiertos.` — Cuando SML tenga vídeo, el embed debe seguir **«Convención embeds de vídeo — micropáginas `/features/*`»** en este documento.
 
 - Hook de apertura (bloque evidencia, 22 ago 2026):
-  - `114 operativas documentadas · error medio 0,06 % en condiciones normales` + atribución Nasdaq
+  - `90 operativas documentadas · error medio 0,06 % en condiciones normales` + atribución Nasdaq
 
 - Bloque `Resumen estadístico` (lectura rápida):
-  - `114 operativas documentadas`
+  - `90 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`
@@ -671,7 +674,7 @@ Seguimiento interno activo en:
 **Objetivo de la sección:** lectura rápida + prueba inmediata, sin saturar.
 
 - KPIs visibles:
-  - `114 operativas documentadas`
+  - `90 operativas documentadas`
   - `0,06% de error medio en condiciones normales`
   - `5 brokers validados (real y demo)`
   - `2 casos extremos documentados aparte (0,29% y 0,39%)`

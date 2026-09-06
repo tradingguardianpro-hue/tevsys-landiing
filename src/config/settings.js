@@ -1,9 +1,9 @@
-/** Fuente: `docs/PRECISION_MILIMETRICA_EVIDENCIADA_CON_OPERATIVAS_REALES.md` §3 (repo TGP). */
-export const TEVSYS_DOCUMENTED_OPERATIVES = 114;
+/** Fuente pública canónica (6 sep 2026): ficha / claim web = **90** operativas documentadas. */
+export const TEVSYS_DOCUMENTED_OPERATIVES = 90;
 
 export default {
   title: "tevsys — Límites que se cumplen, con precisión y trazabilidad · MT5",
-  description: `Utilidad para MetaTrader 5 que hace cumplir tus propias reglas en intradía y en swing: límites diarios y semanales, cierre con precisión documentada, HyperClose, SML y acta contrastable con MT5. No opera por ti: cumple lo que decides. ${TEVSYS_DOCUMENTED_OPERATIVES} operativas documentadas.`,
+  description: `Utilidad para MetaTrader 5 que hace cumplir las reglas que el trader configura: límites de pérdida y ganancia (día y semana), días OFF y el bloqueo al alcanzar el límite — en intradía y en swing. Precisión documentada, HyperClose y acta contrastable con MT5. No opera por ti. ${TEVSYS_DOCUMENTED_OPERATIVES} operativas documentadas.`,
   documentedOperatives: TEVSYS_DOCUMENTED_OPERATIVES,
   url: "https://www.tevsys.io",
   name: "tevsys",

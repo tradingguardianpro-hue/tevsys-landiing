@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Copy canónico lead + 90 operativas (6 sep 2026 — punto 2)
+
+- **Lead home ES:** *…reglas que el trader configura para su operativa: límites de pérdida y ganancia (día y semana), días OFF y el bloqueo que impide abrir nuevas operaciones cuando el límite ya se ha alcanzado — en intradía y en swing…* (sin «reglas numéricas»; sin «bloqueo» suelto). EN equivalente. Tres beats + *No opera por ti…* intactos; SML fuera.
+- **Micros alineados:** Precisión / Cómo funciona / Precios ES|EN — «límites de pérdida y ganancia» / lock al alcanzar el límite.
+- **Contador público:** `TEVSYS_DOCUMENTED_OPERATIVES = 90` (antes 114 en settings). Meta ES/EN alineadas.
+- **Docs:** CONTENIDO_WEB (landing + espejo TGP) · V12.
+- **Commit:** `web(tevsys): copy canónico límites/bloqueo + sync 90 operativas`
+
 ## LinkedIn fundador en footer + contacto (6 sep 2026 — punto 1)
 
 - **Qué:** enlace al perfil LinkedIn del fundador en la **fila de contacto del footer** (bajo `info@tevsys.io`, misma familia icono ámbar + mono) y en **contacto ES/EN** (`info@… · Fundador · LinkedIn`). Pestaña nueva. Sin foto en home/hero.
