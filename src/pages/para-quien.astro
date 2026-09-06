@@ -65,8 +65,15 @@ const corePerfiles = [
 					<ul class="para-quien-audience" aria-label="Perfiles que encajan">
 						<li>Desde quien empieza hasta quien exige cierre con precisión.</li>
 						<li>Quien necesita freno bajo presión.</li>
+						<li>Quien deja posiciones de un día a otro y necesita que el pacto no se reinicie a medianoche.</li>
 						<li>Quien quiere saber qué pasa en la cuenta — trader, gestor o academia.</li>
 					</ul>
+					<p class="para-quien-swing-bridge">
+						<a class="evidence-link" href="/como-funciona#rama-operacion"
+							>Operación en curso — sigues protegido</a
+						>
+						— el pacto que sobrevive al calendario.
+					</p>
 				</div>
 			</section>
 
@@ -194,6 +201,15 @@ const corePerfiles = [
 	}
 	.para-quien-audience li:last-child {
 		margin-bottom: 0;
+	}
+	.para-quien-swing-bridge {
+		margin: 0.85rem 0 0;
+		font-size: 0.92rem;
+		line-height: 1.45;
+		color: rgba(180, 190, 205, 0.88);
+	}
+	html[data-theme='light'] .para-quien-swing-bridge {
+		color: rgba(60, 70, 85, 0.9);
 	}
 	.para-quien-hero__accent {
 		color: #f5b041;

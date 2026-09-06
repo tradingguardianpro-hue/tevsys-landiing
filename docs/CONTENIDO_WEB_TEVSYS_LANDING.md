@@ -112,6 +112,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **i18n ES|EN (3 sep 2026 — oleada 1 ✅):** selector header `ES | EN`; `/en/` home; `/en/company/contact`; `/en/como-funciona` ligero. Copy propio. Oleada 2: precios + features. V12 **(i18nWave1)**.
 - **i18n ES|EN (20 ago, plan):** oleadas; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
+- **P13 swing web (6 sep noche):** `#rama-operacion` edge % del pacto + candado + puente VPS · Para quién overnight · home chip *cruza días* · `/go/…-operacion` → `#rama-operacion`. V12 **(p13SwingWeb)**. Pendiente vídeo laborable + caso ★.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:
   - **MC-CF-021** `#videoclip-programado-lunes` (rama 1): `¿Cómo dejas la protección lista para el lunes?` · `➜ GUARDAR PARA EL LUNES` · `➜ Confirma tus límites` · `➜ PROGRAMADO · LUNES — queda fijado` + `🡰 El engranaje pasa a teal`
   - **MC-CF-020** `#videoclip-corrige-errores` (rama 1, 21 ago): `¿Te equivocaste en un límite?` · `➜ CORRIGE ERRORES` · `tevsys te dice qué arreglar` · `Corriges — listo para proteger`

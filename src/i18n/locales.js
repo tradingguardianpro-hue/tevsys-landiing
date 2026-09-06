@@ -118,7 +118,7 @@ export function localizeHref(slug, locale) {
 		const map = {
 			'/go/como-funciona-nav': '/como-funciona',
 			'/go/como-funciona-home': '/como-funciona',
-			'/go/como-funciona-operacion': '/como-funciona#videoclip-finde-operacion',
+			'/go/como-funciona-operacion': '/como-funciona#rama-operacion',
 			'/go/como-funciona-pasiva': '/como-funciona#desde-cero',
 			'/go/evidencia-5min': '/como-funciona#evidencia-nasdaq-100',
 		};

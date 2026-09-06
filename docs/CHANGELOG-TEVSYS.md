@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## P13 — Mundo swing en web (6 sep 2026 noche)
+
+- **Casa:** `/como-funciona#rama-operacion` ES|EN — anuncio *de un día a otro* + bloque edge (% del pacto / no reinicio a medianoche) + línea UI *Operación en curso — sigues protegido* + candado si quitas el EA + puente a `#vigilancia-vps`.
+- **Para quién:** viñeta audiencia swing/overnight + franja → `#rama-operacion` (ES|EN). Sin 5.ª tarjeta.
+- **Home:** chip *Operación abierta que cruza días — sigues protegido* · `/go/como-funciona-operacion` → `#rama-operacion`.
+- **No hecho (a propósito):** caso ★ en Evidencia (sin pack público) · vídeo overnight laborable nuevo · microsite `/features/swing`.
+- **Commit:** `web(tevsys): teach swing overnight edge on how-it-works who-for and home`
+
 ## Copy canónico lead + 90 operativas (6 sep 2026 — punto 2)
 
 - **Lead home ES:** *…reglas que el trader configura para su operativa: límites de pérdida y ganancia (día y semana), días OFF y el bloqueo que impide abrir nuevas operaciones cuando el límite ya se ha alcanzado — en intradía y en swing…* (sin «reglas numéricas»; sin «bloqueo» suelto). EN equivalente. Tres beats + *No opera por ti…* intactos; SML fuera.

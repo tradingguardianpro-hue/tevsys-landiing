@@ -162,11 +162,25 @@ type MicroclipGroup = {
 	clips: MicroClipCard[];
 };
 
+type MicroclipEdge = {
+	/** Edge paragraph (pact that survives the calendar). */
+	body: string;
+	/** Public UI line (e.g. Trade in progress — you stay protected). */
+	screen?: string;
+	/** Lock piece: removing the EA does not wipe the pact. */
+	lockNote?: string;
+	bridgeBefore?: string;
+	bridgeLabel?: string;
+	bridgeHref?: string;
+};
+
 type MicroclipBranch = {
 	id: string;
 	title: string;
 	/** Anuncio de rama; vacío si el título del clip ya lo dice (evita eco). */
 	announcement?: string;
+	/** Teaching block (Trade in progress — swing world). */
+	edge?: MicroclipEdge;
 	/** Clips planos (ramas 1–2). Si hay `groups`, se ignora en favor de los grupos. */
 	clips: MicroClipCard[];
 	/** Subbloques con etiqueta (rama Operación en curso: Sin SML / SML activo). */
@@ -274,7 +288,16 @@ const microclipBranches: MicroclipBranch[] = [
 		id: 'rama-operacion',
 		title: 'Trade in progress',
 		announcement:
-			'Open trade and protection still on — weekends too. Midnight does not drop your lock. Clips ~30 s.',
+			'Open trade and protection still on — across day boundaries, weekends too. Midnight does not drop your lock. Clips ~30 s.',
+		edge: {
+			body: 'When you lock your limits and leave a trade open overnight, tevsys keeps measuring against those same percentages. We do not reset at midnight and orphan the trade.',
+			screen: 'On screen: Trade in progress — you stay protected.',
+			lockNote:
+				'If you remove the EA from the chart, the lock does not wipe: when you return, same pact %.',
+			bridgeBefore: 'If you shut down the PC or close MetaTrader → ',
+			bridgeLabel: 'what watch covers (and what it does not)',
+			bridgeHref: '#vigilancia-vps',
+		},
 		clips: [],
 		groups: [
 			{
@@ -634,6 +657,23 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 									</h3>
 									{branch.announcement ? (
 										<p class="how-rama__announcement">{branch.announcement}</p>
+									) : null}
+									{branch.edge ? (
+										<div class="how-rama__edge">
+											<p class="how-rama__edge-body">{branch.edge.body}</p>
+											{branch.edge.screen ? (
+												<p class="how-rama__edge-screen">{branch.edge.screen}</p>
+											) : null}
+											{branch.edge.lockNote ? (
+												<p class="how-rama__edge-lock">{branch.edge.lockNote}</p>
+											) : null}
+											{branch.edge.bridgeHref && branch.edge.bridgeLabel ? (
+												<p class="how-rama__edge-bridge">
+													{branch.edge.bridgeBefore}
+													<a href={branch.edge.bridgeHref}>{branch.edge.bridgeLabel}</a>.
+												</p>
+											) : null}
+										</div>
 									) : null}
 								</header>
 
@@ -3610,6 +3650,57 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	html[data-theme='light'] .how-rama__announcement {
 		color: rgba(60, 70, 85, 0.88);
+	}
+
+	.how-rama__edge {
+		margin: 0.85rem auto 0;
+		max-width: 40rem;
+		display: grid;
+		gap: 0.55rem;
+		text-align: left;
+	}
+
+	.how-rama__edge-body,
+	.how-rama__edge-screen,
+	.how-rama__edge-lock,
+	.how-rama__edge-bridge {
+		margin: 0;
+		font-size: clamp(0.88rem, 1.8vw, 0.98rem);
+		line-height: 1.55;
+		color: rgba(190, 200, 214, 0.9);
+	}
+
+	.how-rama__edge-screen {
+		color: hsl(38 70% 72%);
+		font-weight: 500;
+	}
+
+	.how-rama__edge-lock {
+		color: rgba(170, 180, 195, 0.88);
+	}
+
+	.how-rama__edge-bridge a {
+		color: hsl(38 85% 62%);
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.how-rama__edge-bridge a:hover {
+		color: hsl(38 90% 70%);
+	}
+
+	html[data-theme='light'] .how-rama__edge-body,
+	html[data-theme='light'] .how-rama__edge-lock,
+	html[data-theme='light'] .how-rama__edge-bridge {
+		color: rgba(50, 60, 75, 0.92);
+	}
+
+	html[data-theme='light'] .how-rama__edge-screen {
+		color: hsl(32 70% 38%);
+	}
+
+	html[data-theme='light'] .how-rama__edge-bridge a {
+		color: hsl(32 85% 36%);
 	}
 
 	.how-rama__grid {

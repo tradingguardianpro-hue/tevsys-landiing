@@ -4,6 +4,8 @@ Documento técnico para desarrolladores e ingenieros.
 
 **Dominio / SSL (apex + www, Plesk, Vercel):** `docs/DOMINIO_SSL_TEVSYS.md` — cerrado 19 jun 2026.
 
+**Auditoría espejo Google/IA (6 sep 2026):** preguntas canónicas + lecturas en hub TGP V12 **(seoAuditoriaBuscadorQ)** · roadmap **(seoRoadmapBuscador6m)**. Q1 archivada: fuentes EN buenas; distorsiones *forense/custodia*; ausentes swing + HyperClose fino + 90 ops.
+
 ---
 
 ## 1. Meta tags (SEO)
