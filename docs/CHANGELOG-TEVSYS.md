@@ -10,6 +10,15 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **No:** copiar definición Gemini · proyecto SSR · meter SML mal en el lead.
 - **Commit:** `web(tevsys): add llms.txt and tighten SoftwareApplication schema for GEO`
 
+## Pack espejo buscador (8 sep 2026 noche)
+
+- **Casa:** `/como-funciona#overnight-faq` + `#faq-espejo` ES|EN (HyperClose≠límite · candado si quitas EA · no señales) · `#vigilancia-vps` (VPS opcional · reenganche = motor de límites, no HyperClose).
+- **Para quién:** viñetas polivalentes; explícito **no MAM/PAMM**.
+- **Evidencia:** fuera “forense” en CTA. Home checklist HyperClose solo si ya protegido.
+- **llms.txt:** mismas distinciones + URLs FAQ.
+- **Commit:** `web(tevsys): pack espejo FAQ HyperClose lock VPS and who-for`
+- **Retomar:** re-preguntar al buscador tras indexar · vídeo P13 laborable.
+
 ## FAQ overnight — % congelados + Essential vs Pro (8 sep 2026)
 
 - **Casa:** `/como-funciona#overnight-faq` ES|EN — dos preguntas indexables (medianoche con trade abierto; Essential ≠ Adv/Pro) + JSON-LD `FAQPage`. Enlace desde edge `#rama-operacion`.

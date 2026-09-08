@@ -120,7 +120,7 @@ export const homeCopy = {
 			'<strong>Disciplina automatizada</strong> y <strong>gestión de riesgo</strong> con los límites que tú configuras.',
 		essentialLi2: 'Cierre de alta precisión · bloqueo hasta rotación.',
 		essentialLi3Html:
-			'<strong>HyperClose</strong> · bloqueado o límite tocado: un intento de operar → cierre inmediato.',
+			'<strong>HyperClose</strong> · ya protegido: un intento de operar → cierre inmediato.',
 		essentialLi4: 'Días OFF y rotación diaria (un día activo).',
 		essentialLi5: 'Noticias y horarios · cuando estén listas.',
 		essentialFooterBefore: 'Demo disponible · detalle y condiciones en ',
@@ -266,7 +266,7 @@ export const homeCopy = {
 			'<strong>Automated discipline</strong> and <strong>risk control</strong> with the limits you set.',
 		essentialLi2: 'High-precision close · lock until rotation.',
 		essentialLi3Html:
-			'<strong>HyperClose</strong> · blocked or limit hit: one attempt to trade → immediate close.',
+			'<strong>HyperClose</strong> · already protected: one attempt to trade → immediate close.',
 		essentialLi4: 'OFF days and daily rotation (one active day).',
 		essentialLi5: 'News and sessions · when ready.',
 		essentialFooterBefore: 'Demo available · details on ',

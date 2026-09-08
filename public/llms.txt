@@ -9,21 +9,26 @@ Public claim: 90 documented operatives · mean close error ~0.06% under normal c
 ## What tevsys does
 - Enforces user-configured daily/weekly loss and gain limits across the account from one chart.
 - Closes exposure when a configured limit is reached (precision documented; decision vs broker fill attributed).
+- HyperClose ≠ close-at-limit: HyperClose is only when protection is already on and a new trade attempt is made (also OFF-day attempts).
 - Locks further trade attempts while protection is active (HyperClose closes unauthorized attempts immediately and records them).
-- Swing / overnight: with an open trade under lock, limits stay those of the pact across day boundaries — we do not reset at midnight and orphan the trade. UI: "Trade in progress — you stay protected".
-- Persistence: lock state survives MT5 restart and EA reinstall; if the terminal is off there is a real watch gap — on return, same pact % and resume/close as needed.
+- Swing / overnight: with an open trade under lock, limits stay those of the pact across day boundaries — we do not reset at midnight and orphan the trade. UI: "Trade in progress — you stay protected". FAQ: /como-funciona#overnight-faq
+- Persistence: lock state survives MT5 restart and EA reinstall; if the terminal is off there is a real watch gap — on return, same pact % and limits-engine close if needed (not HyperClose). FAQ: /como-funciona#faq-espejo
 - Optional SML (Smart Money Lock): tier-gated risk/reward layer under explicit rules — not "protect yesterday's balance" as a slogan; see product docs when enabled.
+- Who it's for: traders (precision or under pressure), overnight/swing, MT5 funding challenges, layer under another EA, academies — not MAM/PAMM software.
 
 ## What tevsys is not
 - Not trading signals or alpha generation.
 - Not MT4 / cTrader (native MT5).
 - Not a prop-firm risk desk or compliance/custody product.
+- Not MAM/PAMM / investor-reporting infrastructure.
 - Not forensic broker auditing; we produce a trader-side trail contrastable with MT5 HTML.
 
 ## Key pages (start here)
 - https://www.tevsys.io/
 - https://www.tevsys.io/como-funciona
 - https://www.tevsys.io/como-funciona#rama-operacion
+- https://www.tevsys.io/como-funciona#overnight-faq
+- https://www.tevsys.io/como-funciona#faq-espejo
 - https://www.tevsys.io/como-funciona#vigilancia-vps
 - https://www.tevsys.io/features/precision
 - https://www.tevsys.io/features/hyperclose

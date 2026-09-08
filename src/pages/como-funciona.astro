@@ -1140,6 +1140,94 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		</section>
 
 		<section
+			class="how-coverage how-coverage--overnight"
+			id="faq-espejo"
+			aria-labelledby="how-faq-espejo-title">
+			<div class="how-coverage__inner">
+				<p class="how-eyebrow how-eyebrow--center how-coverage__eyebrow">Preguntas frecuentes</p>
+				<h2 id="how-faq-espejo-title" class="how-coverage__title">
+					HyperClose, candado y <span class="how-present-title__accent">qué no somos</span>
+				</h2>
+				<div class="how-coverage__answer how-overnight-faq">
+					<article class="how-overnight-faq__item" id="faq-hyperclose">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							¿Qué es HyperClose y en qué se diferencia de cerrar al alcanzar el límite?
+						</h3>
+						<p class="how-coverage__lead">
+							<strong>Cierre al límite:</strong> cuando el resultado toca el % que aceptaste, tevsys cierra lo
+							abierto (motor de límites).
+							<strong> HyperClose:</strong> cuando <strong>ya</strong> hay protección y
+							<strong>intentas abrir de nuevo</strong>, cierra esa entrada nueva al instante y deja registro
+							(semáforo). No es “otro nombre” del stop diario.
+						</p>
+						<p class="how-coverage__closing">
+							Día OFF + intentas operar → misma familia: el intento se cierra; MetaTrader sigue abierto — no
+							“apagamos” el terminal.
+						</p>
+					</article>
+					<article class="how-overnight-faq__item" id="faq-candado-ea">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							Si quito tevsys del gráfico en MT5, ¿se borra la protección o el candado sigue?
+						</h3>
+						<p class="how-coverage__lead">
+							Sin el EA en el gráfico <strong>no hay vigilancia en vivo</strong>. El
+							<strong>candado y los % del pacto siguen guardados</strong>: al volver a cargar tevsys, mismos
+							límites — no un panel «libre». Queda constancia del hueco.
+						</p>
+						<p class="how-coverage__closing">
+							No hace falta “esconder la contraseña del VPS” para que el pacto exista: el estado persiste en
+							tu terminal. El VPS sirve para <strong>vigilancia casi continua</strong>, no para inventar el
+							candado.
+						</p>
+					</article>
+					<article class="how-overnight-faq__item" id="faq-senales">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							¿tevsys da señales de entrada o solo aplica límites?
+						</h3>
+						<p class="how-coverage__lead">
+							<strong>Solo aplica los límites que tú configuras.</strong> No da señales, no predice el
+							mercado y no opera por ti. La estrategia es tuya; tevsys hace cumplir el pacto y deja
+							evidencia contrastable con MT5.
+						</p>
+					</article>
+				</div>
+			</div>
+			<script
+				type="application/ld+json"
+				set:html={JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'FAQPage',
+					mainEntity: [
+						{
+							'@type': 'Question',
+							name: '¿Qué es HyperClose y en qué se diferencia de cerrar al alcanzar el límite?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'Cierre al límite: cuando el resultado toca el porcentaje aceptado, tevsys cierra lo abierto. HyperClose: si ya hay protección e intentas abrir de nuevo, cierra esa entrada nueva al instante y deja registro. No es otro nombre del stop diario. En día OFF, un intento de operar se cierra igual; MetaTrader no se apaga.',
+							},
+						},
+						{
+							'@type': 'Question',
+							name: 'Si quito tevsys del gráfico en MT5, ¿se borra la protección o el candado sigue?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'Sin el EA no hay vigilancia en vivo. El candado y los porcentajes del pacto siguen guardados; al volver a cargar tevsys, mismos límites, no un panel libre. El VPS sirve para vigilancia casi continua, no para crear el candado.',
+							},
+						},
+						{
+							'@type': 'Question',
+							name: '¿tevsys da señales de entrada o solo aplica límites?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'Solo aplica los límites que configuras. No da señales, no predice el mercado y no opera por ti. La estrategia es tuya; tevsys hace cumplir el pacto y deja evidencia contrastable con MT5.',
+							},
+						},
+					],
+				})}
+			/>
+		</section>
+
+		<section
 			class="how-coverage"
 			id="vigilancia-vps"
 			aria-labelledby="how-coverage-title">
@@ -1155,7 +1243,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					<p class="how-coverage__lead">
 						Si MetaTrader y tevsys siguen en marcha — en casa <strong>o en un VPS</strong> — la vigilancia sigue:
 						evaluamos y cerramos al límite cuando el mercado da ticks. En un VPS (o cualquier máquina 24h con MT5
-						abierto) eso es <strong>casi todo el tiempo</strong>: apagas el PC de casa y la capa sigue ahí.
+						abierto) eso es <strong>casi todo el tiempo</strong>: apagas el PC de casa y la capa sigue ahí. El VPS
+						es una <strong>opción</strong> para cobertura continua, no un requisito mágico.
 					</p>
 					<div class="how-coverage__modes" role="list">
 						<article class="how-coverage-mode how-coverage-mode--on" role="listitem">
@@ -1174,8 +1263,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					<p class="how-coverage__closing">
 						El hueco aparece solo cuando <strong>no</strong> hay terminal corriendo (PC y VPS apagados, MT5 cerrado, o
 						tevsys fuera del gráfico). Ahí no hay milagro en la oscuridad. Al volver, se reengancha con los
-						<strong>mismos %</strong> del pacto. El stop del bróker sigue siendo suyo en ese tramo; nosotros retomamos
-						la vigilancia al reenganchar.
+						<strong>mismos %</strong> del pacto; si el mercado ya pasó el tope, el
+						<strong>motor de límites</strong> puede cerrar al primer tick (eso no es HyperClose). El stop del
+						bróker sigue siendo suyo en ese tramo; nosotros retomamos la vigilancia al reenganchar.
 					</p>
 				</div>
 			</div>
@@ -1200,6 +1290,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<a href="/company/contact?flow=demo">Demo</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/como-funciona#overnight-faq">Medianoche / overnight</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/como-funciona#faq-espejo">HyperClose / candado</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/como-funciona#vigilancia-vps">Vigilancia / VPS</a>
 		</nav>

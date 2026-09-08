@@ -1145,6 +1145,93 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		</section>
 
 		<section
+			class="how-coverage how-coverage--overnight"
+			id="faq-espejo"
+			aria-labelledby="how-faq-espejo-title">
+			<div class="how-coverage__inner">
+				<p class="how-eyebrow how-eyebrow--center how-coverage__eyebrow">FAQ</p>
+				<h2 id="how-faq-espejo-title" class="how-coverage__title">
+					HyperClose, lock, and <span class="how-present-title__accent">what we are not</span>
+				</h2>
+				<div class="how-coverage__answer how-overnight-faq">
+					<article class="how-overnight-faq__item" id="faq-hyperclose">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							What is HyperClose and how is it different from closing when the daily limit is hit?
+						</h3>
+						<p class="how-coverage__lead">
+							<strong>Close at the limit:</strong> when the result hits the % you accepted, tevsys closes what
+							is open (limits engine).
+							<strong> HyperClose:</strong> when protection is <strong>already</strong> on and you
+							<strong>try to open again</strong>, it closes that new entry immediately and records it
+							(semaphore). It is not “another name” for the daily stop.
+						</p>
+						<p class="how-coverage__closing">
+							OFF day + you try to trade → same family: the attempt is closed; MetaTrader stays open — we do
+							not “shut down” the terminal.
+						</p>
+					</article>
+					<article class="how-overnight-faq__item" id="faq-candado-ea">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							If I remove tevsys from the MT5 chart, does protection wipe or does the lock persist?
+						</h3>
+						<p class="how-coverage__lead">
+							Without the EA on the chart there is <strong>no live watch</strong>. The
+							<strong>lock and pact % stay stored</strong>: when you load tevsys again, same limits — not a
+							“free” panel. The gap is recorded.
+						</p>
+						<p class="how-coverage__closing">
+							You do not need to “hide the VPS password” for the pact to exist: state persists on your
+							terminal. A VPS is for <strong>near-continuous watch</strong>, not to invent the lock.
+						</p>
+					</article>
+					<article class="how-overnight-faq__item" id="faq-senales">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							Does tevsys give entry signals or only enforce limits?
+						</h3>
+						<p class="how-coverage__lead">
+							<strong>It only enforces the limits you configure.</strong> No signals, no market prediction,
+							and it does not trade for you. The strategy is yours; tevsys enforces the pact and leaves
+							evidence you can cross-check with MT5.
+						</p>
+					</article>
+				</div>
+			</div>
+			<script
+				type="application/ld+json"
+				set:html={JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'FAQPage',
+					mainEntity: [
+						{
+							'@type': 'Question',
+							name: 'What is HyperClose and how is it different from closing when the daily limit is hit?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'Close at the limit: when the result hits the accepted percentage, tevsys closes open exposure. HyperClose: if protection is already on and you try to open again, it closes that new entry immediately and records it. Not another name for the daily stop. On an OFF day, a trade attempt is closed the same way; MetaTrader is not shut down.',
+							},
+						},
+						{
+							'@type': 'Question',
+							name: 'If I remove tevsys from the MT5 chart, does protection wipe or does the lock persist?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'Without the EA there is no live watch. The lock and pact percentages stay stored; when you load tevsys again, same limits, not a free panel. A VPS is for near-continuous watch, not to create the lock.',
+							},
+						},
+						{
+							'@type': 'Question',
+							name: 'Does tevsys give entry signals or only enforce limits?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'It only enforces the limits you configure. No signals, no prediction, and it does not trade for you. The strategy is yours; tevsys enforces the pact and leaves evidence contrastable with MT5.',
+							},
+						},
+					],
+				})}
+			/>
+		</section>
+
+		<section
 			class="how-coverage"
 			id="vigilancia-vps"
 			aria-labelledby="how-coverage-title">
@@ -1161,6 +1248,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 						If MetaTrader and tevsys keep running — at home <strong>or on a VPS</strong> — watch stays on:
 						we evaluate and close at the limit when the market ticks. On a VPS (or any 24h machine with MT5
 						open) that is <strong>almost all the time</strong>: you power off the home PC and the layer is still there.
+						A VPS is an <strong>option</strong> for continuous coverage, not a magic requirement.
 					</p>
 					<div class="how-coverage__modes" role="list">
 						<article class="how-coverage-mode how-coverage-mode--on" role="listitem">
@@ -1179,8 +1267,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 					<p class="how-coverage__closing">
 						The gap appears only when there is <strong>no</strong> terminal running (PC and VPS off, MT5 closed, or
 						tevsys off the chart). No miracle in the dark. When you return, we reattach with the
-						<strong>same %</strong> from the pact. The broker stop remains theirs in that stretch; we resume
-						watch when we reattach.
+						<strong>same %</strong> from the pact; if the market already passed the cap, the
+						<strong>limits engine</strong> may close on the first tick (that is not HyperClose). The broker stop
+						remains theirs in that stretch; we resume watch when we reattach.
 					</p>
 				</div>
 			</div>
@@ -1206,6 +1295,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<a href="/en/company/contact?flow=demo">Demo</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/en/como-funciona#overnight-faq">Midnight / overnight</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/en/como-funciona#faq-espejo">HyperClose / lock</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/en/como-funciona#vigilancia-vps">Watch / VPS</a>
 		</nav>
