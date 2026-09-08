@@ -168,6 +168,9 @@ type MicroclipEdge = {
 	bridgeBefore?: string;
 	bridgeLabel?: string;
 	bridgeHref?: string;
+	faqBefore?: string;
+	faqLabel?: string;
+	faqHref?: string;
 };
 
 type MicroclipBranch = {
@@ -293,6 +296,9 @@ const microclipBranches: MicroclipBranch[] = [
 			bridgeBefore: 'Si apagas el PC o cierras MetaTrader → ',
 			bridgeLabel: 'qué cubre la vigilancia (y qué no)',
 			bridgeHref: '#vigilancia-vps',
+			faqBefore: 'Preguntas frecuentes: ',
+			faqLabel: 'medianoche, límites del día y Essential vs Pro',
+			faqHref: '#overnight-faq',
 		},
 		clips: [],
 		groups: [
@@ -665,6 +671,12 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 												<p class="how-rama__edge-bridge">
 													{branch.edge.bridgeBefore}
 													<a href={branch.edge.bridgeHref}>{branch.edge.bridgeLabel}</a>.
+												</p>
+											) : null}
+											{branch.edge.faqHref && branch.edge.faqLabel ? (
+												<p class="how-rama__edge-bridge how-rama__edge-faq">
+													{branch.edge.faqBefore}
+													<a href={branch.edge.faqHref}>{branch.edge.faqLabel}</a>.
 												</p>
 											) : null}
 										</div>
@@ -1061,6 +1073,73 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		</section>
 
 		<section
+			class="how-coverage how-coverage--overnight"
+			id="overnight-faq"
+			aria-labelledby="how-overnight-faq-title">
+			<div class="how-coverage__inner">
+				<p class="how-eyebrow how-eyebrow--center how-coverage__eyebrow">Swing / overnight</p>
+				<h2 id="how-overnight-faq-title" class="how-coverage__title">
+					Medianoche con operación abierta: <span class="how-present-title__accent">qué hace tevsys</span>
+				</h2>
+				<div class="how-coverage__answer how-overnight-faq">
+					<article class="how-overnight-faq__item">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							Si ya tienes protección y dejas una operación abierta al cruzar medianoche, ¿qué pasa con el
+							límite de pérdida del día?
+						</h3>
+						<p class="how-coverage__lead">
+							Mandan los <strong>porcentajes que aceptaste al proteger</strong>. No empezamos un día nuevo
+							que deje la operación sin red — no reiniciamos el pacto a medianoche y te dejamos huérfano.
+							En pantalla:
+							<strong> Operación en curso — sigues protegido</strong>.
+						</p>
+						<p class="how-coverage__closing">
+							El cierre al límite es el motor de límites (no HyperClose). HyperClose actúa si, ya
+							protegido, intentas abrir operaciones nuevas. El cambio de día que usa tevsys sigue el
+							calendario de tu terminal (hora local del PC), no un “reset” tipo calculadora de prop firm.
+						</p>
+					</article>
+					<article class="how-overnight-faq__item">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							¿Essential se desbloquea a la misma hora que Advanced o Pro?
+						</h3>
+						<p class="how-coverage__lead">
+							<strong>No.</strong> Essential, <strong>sin</strong> operación abierta, puedes reconfigurar a
+							partir de la medianoche local. Si hay operación abierta y protección, el calendario
+							<strong> no te suelta</strong>. Advanced/Pro: el pacto de la semana se mantiene hasta el fin
+							de semana; con operación abierta tampoco se suelta solo porque cambie el día.
+						</p>
+					</article>
+				</div>
+			</div>
+			<script
+				type="application/ld+json"
+				set:html={JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'FAQPage',
+					mainEntity: [
+						{
+							'@type': 'Question',
+							name: 'Si ya tienes protección y dejas una operación abierta al cruzar medianoche, ¿qué pasa con el límite de pérdida del día?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'Mandan los porcentajes que aceptaste al proteger. tevsys no reinicia un día nuevo que deje la operación sin red. En pantalla: Operación en curso — sigues protegido. El cierre al límite es el motor de límites; HyperClose actúa si intentas abrir nuevas operaciones ya protegido. El cambio de día sigue el calendario del terminal (hora local).',
+							},
+						},
+						{
+							'@type': 'Question',
+							name: '¿Essential se desbloquea a la misma hora que Advanced o Pro?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'No. Essential sin operación abierta puede reconfigurarse a partir de la medianoche local; con operación abierta y protección, el calendario no suelta. Advanced/Pro mantienen el pacto semanal hasta el fin de semana; con operación abierta tampoco se sueltan solo porque cambie el día.',
+							},
+						},
+					],
+				})}
+			/>
+		</section>
+
+		<section
 			class="how-coverage"
 			id="vigilancia-vps"
 			aria-labelledby="how-coverage-title">
@@ -1119,6 +1198,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<a href="/features/precision">Precisión</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/company/contact?flow=demo">Demo</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/como-funciona#overnight-faq">Medianoche / overnight</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/como-funciona#vigilancia-vps">Vigilancia / VPS</a>
 		</nav>
@@ -5112,6 +5193,22 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		color: rgba(28, 30, 36, 0.92);
 		background: rgba(255, 255, 255, 0.55);
 		border-left-color: rgba(200, 140, 40, 0.9);
+	}
+
+	.how-overnight-faq__item + .how-overnight-faq__item {
+		margin-top: 1.75rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	html[data-theme='light'] .how-overnight-faq__item + .how-overnight-faq__item {
+		border-top-color: rgba(40, 36, 28, 0.12);
+	}
+
+	h3.how-overnight-faq__q {
+		margin: 0 0 1rem;
+		text-align: left;
+		font-size: clamp(0.88rem, 1.9vw, 0.98rem);
 	}
 
 	.how-coverage__answer {

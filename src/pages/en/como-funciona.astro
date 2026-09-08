@@ -172,6 +172,9 @@ type MicroclipEdge = {
 	bridgeBefore?: string;
 	bridgeLabel?: string;
 	bridgeHref?: string;
+	faqBefore?: string;
+	faqLabel?: string;
+	faqHref?: string;
 };
 
 type MicroclipBranch = {
@@ -297,6 +300,9 @@ const microclipBranches: MicroclipBranch[] = [
 			bridgeBefore: 'If you shut down the PC or close MetaTrader → ',
 			bridgeLabel: 'what watch covers (and what it does not)',
 			bridgeHref: '#vigilancia-vps',
+			faqBefore: 'FAQ: ',
+			faqLabel: 'midnight, daily limits, and Essential vs Pro',
+			faqHref: '#overnight-faq',
 		},
 		clips: [],
 		groups: [
@@ -671,6 +677,12 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 												<p class="how-rama__edge-bridge">
 													{branch.edge.bridgeBefore}
 													<a href={branch.edge.bridgeHref}>{branch.edge.bridgeLabel}</a>.
+												</p>
+											) : null}
+											{branch.edge.faqHref && branch.edge.faqLabel ? (
+												<p class="how-rama__edge-bridge how-rama__edge-faq">
+													{branch.edge.faqBefore}
+													<a href={branch.edge.faqHref}>{branch.edge.faqLabel}</a>.
 												</p>
 											) : null}
 										</div>
@@ -1067,6 +1079,72 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		</section>
 
 		<section
+			class="how-coverage how-coverage--overnight"
+			id="overnight-faq"
+			aria-labelledby="how-overnight-faq-title">
+			<div class="how-coverage__inner">
+				<p class="how-eyebrow how-eyebrow--center how-coverage__eyebrow">Swing / overnight</p>
+				<h2 id="how-overnight-faq-title" class="how-coverage__title">
+					Midnight with an open trade: <span class="how-present-title__accent">what tevsys does</span>
+				</h2>
+				<div class="how-coverage__answer how-overnight-faq">
+					<article class="how-overnight-faq__item">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							If protection is already on and a position stays open past midnight, what happens to the daily
+							loss limit?
+						</h3>
+						<p class="how-coverage__lead">
+							The <strong>percentages you accepted when you locked</strong> stay in force. We do not start a
+							new day that orphans the trade — we do not reset the pact at midnight. On screen:
+							<strong> Trade in progress — you stay protected</strong>.
+						</p>
+						<p class="how-coverage__closing">
+							Closing at the limit is the limits engine (not HyperClose). HyperClose fires if, while already
+							protected, you try to open new trades. The day boundary tevsys uses follows your terminal
+							calendar (local PC time), not a prop-firm-style “daily loss calculator” reset.
+						</p>
+					</article>
+					<article class="how-overnight-faq__item">
+						<h3 class="how-coverage__question how-overnight-faq__q">
+							Does Essential unlock at the same time as Advanced or Pro?
+						</h3>
+						<p class="how-coverage__lead">
+							<strong>No.</strong> Essential, with <strong>no</strong> open trade, you can reconfigure from
+							local midnight. If a trade is open and protection is on, the calendar
+							<strong> does not release you</strong>. Advanced/Pro: the weekly pact holds until the weekend;
+							with an open trade it also does not drop just because the day changed.
+						</p>
+					</article>
+				</div>
+			</div>
+			<script
+				type="application/ld+json"
+				set:html={JSON.stringify({
+					'@context': 'https://schema.org',
+					'@type': 'FAQPage',
+					mainEntity: [
+						{
+							'@type': 'Question',
+							name: 'If protection is already on and a position stays open past midnight, what happens to the daily loss limit?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'The percentages you accepted when you locked stay in force. tevsys does not reset at midnight and orphan the trade. On screen: Trade in progress — you stay protected. Closing at the limit is the limits engine; HyperClose fires if you try to open new trades while already protected. The day boundary follows the terminal calendar (local time).',
+							},
+						},
+						{
+							'@type': 'Question',
+							name: 'Does Essential unlock at the same time as Advanced or Pro?',
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: 'No. Essential with no open trade can reconfigure from local midnight; with an open trade and protection on, the calendar does not release you. Advanced/Pro keep the weekly pact until the weekend; with an open trade they also do not unlock just because the day changed.',
+							},
+						},
+					],
+				})}
+			/>
+		</section>
+
+		<section
 			class="how-coverage"
 			id="vigilancia-vps"
 			aria-labelledby="how-coverage-title">
@@ -1126,6 +1204,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<a href="/en/features/precision">Precision</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/en/company/contact?flow=demo">Demo</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/en/como-funciona#overnight-faq">Midnight / overnight</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/en/como-funciona#vigilancia-vps">Watch / VPS</a>
 		</nav>
@@ -5118,6 +5198,22 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		color: rgba(28, 30, 36, 0.92);
 		background: rgba(255, 255, 255, 0.55);
 		border-left-color: rgba(200, 140, 40, 0.9);
+	}
+
+	.how-overnight-faq__item + .how-overnight-faq__item {
+		margin-top: 1.75rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	html[data-theme='light'] .how-overnight-faq__item + .how-overnight-faq__item {
+		border-top-color: rgba(40, 36, 28, 0.12);
+	}
+
+	h3.how-overnight-faq__q {
+		margin: 0 0 1rem;
+		text-align: left;
+		font-size: clamp(0.88rem, 1.9vw, 0.98rem);
 	}
 
 	.how-coverage__answer {

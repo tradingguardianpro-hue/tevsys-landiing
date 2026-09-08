@@ -10,6 +10,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **No:** copiar definición Gemini · proyecto SSR · meter SML mal en el lead.
 - **Commit:** `web(tevsys): add llms.txt and tighten SoftwareApplication schema for GEO`
 
+## FAQ overnight — % congelados + Essential vs Pro (8 sep 2026)
+
+- **Casa:** `/como-funciona#overnight-faq` ES|EN — dos preguntas indexables (medianoche con trade abierto; Essential ≠ Adv/Pro) + JSON-LD `FAQPage`. Enlace desde edge `#rama-operacion`.
+- **Por qué:** el buscador mezclaba tevsys con calculadoras prop (reset a medianoche / nueva base). Frase madre: % del pacto / no huérfano / UI *Operación en curso*.
+- **Commit:** `web(tevsys): add overnight FAQ for frozen limits vs midnight reset`
+- **Pendiente P13:** vídeo laborable + caso ★ Evidencia · re-auditoría pregunta buscador tras indexar.
+
 ## P13 — Mundo swing en web (6 sep 2026 noche)
 
 - **Casa:** `/como-funciona#rama-operacion` ES|EN — anuncio *de un día a otro* + bloque edge (% del pacto / no reinicio a medianoche) + línea UI *Operación en curso — sigues protegido* + candado si quitas el EA + puente a `#vigilancia-vps`.
