@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## GEO — llms.txt + Schema MT5/features (8 sep 2026)
+
+- **Qué:** `public/llms.txt` (definición canónica honesta ES+EN; sin forense/custodia/auditoría de bróker; SML sin slogan falso) · JSON-LD home: `operatingSystem: MetaTrader 5` + `featureList` · nota en `robots.txt`.
+- **No:** copiar definición Gemini · proyecto SSR · meter SML mal en el lead.
+- **Commit:** `web(tevsys): add llms.txt and tighten SoftwareApplication schema for GEO`
+
 ## P13 — Mundo swing en web (6 sep 2026 noche)
 
 - **Casa:** `/como-funciona#rama-operacion` ES|EN — anuncio *de un día a otro* + bloque edge (% del pacto / no reinicio a medianoche) + línea UI *Operación en curso — sigues protegido* + candado si quitas el EA + puente a `#vigilancia-vps`.

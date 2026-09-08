@@ -50,16 +50,31 @@ const enAlternate = new URL(barePath === '/' ? '/en/' : `/en${barePath}`, Astro.
 <link rel="alternate" hreflang="es" href={esAlternate} />
 {hasEnglishVersion && <link rel="alternate" hreflang="en" href={enAlternate} />}
 <link rel="alternate" hreflang="x-default" href={esAlternate} />
-<!-- Schema.org JSON-LD (SoftwareApplication) — description = meta de la página (ES|EN). -->
+<!-- Schema.org JSON-LD (SoftwareApplication) — home ES|EN. MT5 + featureList canónicos (GEO). -->
 {Astro.url.pathname === '/' || Astro.url.pathname === '' || Astro.url.pathname === '/en' || Astro.url.pathname === '/en/' ? (
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": settings.name,
     "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Windows",
+    "operatingSystem": "MetaTrader 5",
     "description": description,
     "url": Astro.url.pathname.startsWith('/en') ? settings.url + '/en/' : settings.url,
+    "featureList": Astro.url.pathname.startsWith('/en')
+      ? [
+          "Enforces user-configured daily and weekly loss/profit limits on MT5",
+          "Lock blocks new trade attempts when a limit is hit (HyperClose)",
+          "Swing/overnight: pact percentages stay across day boundaries",
+          "Documented close precision and MT5-contrastable audit trail",
+          "Not a signal EA — does not trade for you",
+        ]
+      : [
+          "Hace cumplir límites de pérdida y ganancia (día y semana) en MT5",
+          "Bloqueo de nuevos intentos al alcanzar el límite (HyperClose)",
+          "Swing/overnight: % del pacto se mantienen al cruzar el día",
+          "Precisión de cierre documentada y acta contrastable con MT5",
+          "No es un EA de señales — no opera por ti",
+        ],
     "offers": {
       "@type": "Offer",
       "url": (Astro.url.pathname.startsWith('/en') ? settings.url + '/en' : settings.url) + "/company/contact"

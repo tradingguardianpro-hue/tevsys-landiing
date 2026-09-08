@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Canonical summary for AI crawlers (GEO)
+# https://www.tevsys.io/llms.txt
+
 Sitemap: https://www.tevsys.io/sitemap.xml
