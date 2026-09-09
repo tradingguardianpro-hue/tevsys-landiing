@@ -48,12 +48,16 @@
 		text-align: left;
 		text-wrap: pretty;
 	}
-	/* Lead: entrada del bloque, un punto por encima del resto. */
+	/* Lead: entrada del bloque — tono copy muted (token swing). */
 	.tevsys-home-definition__lead {
 		margin-block: 0;
 		font-size: clamp(1rem, 1.15vw + 0.3rem, 1.15rem);
 		font-weight: 400;
-		color: rgba(232, 236, 244, 0.94);
+		color: var(--tevsys-copy-muted);
+	}
+	.tevsys-home-definition__lead strong {
+		color: rgba(220, 228, 238, 0.98);
+		font-weight: 650;
 	}
 	/* Tres golpes: uno por lÃ­nea, punto Ã¡mbar de marca. Escaneables sueltos, no un muro. */
 	.tevsys-home-definition__beats {
@@ -67,7 +71,7 @@
 	.tevsys-home-definition__beats li {
 		position: relative;
 		font-weight: 400;
-		color: rgba(206, 213, 226, 0.86);
+		color: var(--tevsys-copy-muted);
 	}
 	.tevsys-home-definition__beats li::before {
 		content: '';
@@ -84,9 +88,9 @@
 	.tevsys-home-definition__attribution {
 		margin: 0 auto clamp(0.35rem, 1vw, 0.55rem);
 		font-weight: 500;
-		color: rgba(220, 228, 242, 0.9);
+		color: var(--tevsys-copy-muted);
 	}
-	/* Conclusión, no cuarto punto: aire + hairline por encima. */
+	/* Conclusión gancho: blanco (excepción 9–10 sep — no muted). */
 	.tevsys-home-definition__closing {
 		margin-block: 0;
 		padding-top: clamp(0.85rem, 1.8vw, 1.15rem);
@@ -228,10 +232,10 @@
 	}
 	.feature-section__hook {
 		font-size: 1rem;
-		opacity: 0.96;
+		opacity: 1;
 		margin: 0;
 		line-height: 1.55;
-		color: rgba(244, 246, 248, 0.94);
+		color: var(--tevsys-copy-muted);
 	}
 	/* Subrayado Ã¡mbar â†’ gris (misma familia que /como-funciona). */
 	.tevsys-brand-accent-underline {
@@ -401,7 +405,7 @@
 		font-weight: 500;
 		font-size: clamp(0.72rem, 1.05vw, 0.8125rem);
 		letter-spacing: 0.055em;
-		color: rgba(228, 232, 240, 0.78);
+		color: var(--tevsys-copy-muted);
 		margin: 0.35rem 0 clamp(2.75rem, 5.5vw, 3.5rem);
 		line-height: 1.45;
 	}
@@ -446,7 +450,7 @@
 		font-size: clamp(0.78rem, 1.5vw, 0.88rem);
 		letter-spacing: 0.02em;
 		line-height: 1.55;
-		color: rgba(180, 190, 205, 0.78);
+		color: var(--tevsys-copy-muted);
 	}
 	.tevsys-home-microclips-invite__links {
 		list-style: none;
@@ -650,13 +654,15 @@
 		margin: 0 0 0.48rem;
 		font-size: 0.99rem;
 		line-height: 1.56;
-		opacity: 0.95;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 	}
 	.audit-teaser-bridge {
 		margin: 0 0 0.58rem;
 		font-size: 0.92rem;
 		line-height: 1.52;
-		opacity: 0.88;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 		max-width: 52ch;
 	}
 	.audit-teaser-points {
@@ -670,7 +676,8 @@
 		margin: 0 0 0.34rem;
 		font-size: 0.94rem;
 		line-height: 1.45;
-		opacity: 0.9;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 	}
 	.audit-teaser-points li::before {
 		content: '';
@@ -689,7 +696,8 @@
 		margin: 0 0 0.8rem;
 		font-size: 0.92rem;
 		line-height: 1.5;
-		opacity: 0.84;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 	}
 	.audit-teaser-cta {
 		display: inline-flex;
@@ -829,7 +837,7 @@
 		font-size: 0.9375rem;
 		font-weight: 400;
 		line-height: 1.62;
-		color: rgba(228, 232, 240, 0.84);
+		color: var(--tevsys-copy-muted);
 	}
 	.tevsys-card__content p:last-child {
 		margin-bottom: 0;
@@ -839,7 +847,7 @@
 		font-style: italic;
 		font-weight: 600;
 		line-height: 1.52;
-		color: rgba(244, 246, 248, 0.96);
+		color: var(--tevsys-copy-muted);
 		opacity: 1;
 	}
 	.card-title__accent {
@@ -947,7 +955,8 @@
 		margin-top: 0;
 		margin-bottom: clamp(1.35rem, 2.5vw, 1.65rem);
 		line-height: 1.55;
-		opacity: 0.82;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 	}
 	.plans-grid {
 		display: grid;
@@ -1023,7 +1032,7 @@
 		margin: 0 0 0.95rem;
 		font-weight: 400;
 		line-height: 1.58;
-		color: rgba(228, 232, 240, 0.84);
+		color: var(--tevsys-copy-muted);
 	}
 	.plan-card__bullets--aperitivo {
 		margin: 0 0 0.65rem;

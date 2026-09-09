@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Web — copy muted sitewide (home + Transparencia + nav pages) (10 sep 2026)
+
+- Token `--tevsys-copy-muted` en home (excepción *No opera por ti…*), Transparencia Nasdaq, Para quién, Empresas, Contacto ES|EN, footer.
+- Títulos blancos; negritas intradía/swing más legibles sobre el azulado.
+- **Commit:** `web(tevsys): extend muted body copy across home transparency and nav pages`
+
 ## Cómo funciona — Swing Analytics + copy muted intro (9–10 sep 2026)
 
 - **Analytics:** `Swing Section View` · `Swing Video Play` · `Swing Go Landing` (`/go/como-funciona-operacion`).
