@@ -20,6 +20,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Cómo funciona** lead hero ES|EN: *…en intradía y en swing, y deja acta desde la instalación: funcionamiento contrastable con MT5.*
 - **Commit:** `web(tevsys): spell out audit trail from install on home and how-it-works`
 
+## Lightbox — no estirar capturas (9 sep 2026)
+
+- **Qué:** `#tevsys-evidence-lightbox` stage/full a tamaño nativo (`width: auto` / `max-width`) — evita pixelar PNG ~1024 al forzar ~1907.
+- **Tu ID:** `width/height` 1024×540. Ideal: re-captura ~1900px como caja capital.
+- **Home:** negrita CF intradía/swing · subrayado marca en *lo demuestra, operativa a operativa*.
+- **Commit:** `web(tevsys): stop lightbox stretch and accent home closing proof line`
+
 ## Tu ID tevsys — bloque Auditoría en Cómo funciona (9 sep 2026)
 
 - **Qué:** `#tu-id-tevsys` ES|EN — lead visual del acto Auditoría · captura `tevsys-modal-tu-id-tvs.png` (lightbox).

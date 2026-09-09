@@ -37,7 +37,11 @@ const L = (href) => localizeHref(href, locale);
 					{t.definitionBeats.map((beat) => <li>{beat}</li>)}
 				</ul>
 				<p class="tevsys-home-definition__attribution">{t.definitionAttribution}</p>
-				<p class="tevsys-home-definition__closing">{t.definitionClosing}</p>
+				<p class="tevsys-home-definition__closing">
+					{t.definitionClosingBefore}
+					<span class="tevsys-brand-accent-underline">{t.definitionClosingAccent}</span>
+					{t.definitionClosingAfter}
+				</p>
 			</div>
 		</section>
 		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-bridge--hero-cards" aria-label={t.bridgeLayersAria}>

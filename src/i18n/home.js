@@ -38,7 +38,11 @@ export const homeCopy = {
 		/* 9 sep: atribución tevsys vs ejecución MT5 — tras los 3 golpes, antes del cierre (opción C). */
 		definitionAttribution:
 			'Atribución clara: cuánto fue decisión de tevsys al cierre y cuánto la ejecución en MT5 — sin mezclarlo con slippage.',
-		definitionClosing: 'No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.',
+		definitionClosingBefore: 'No opera por ti: cumple lo que tú decides — y ',
+		definitionClosingAccent: 'lo demuestra, operativa a operativa',
+		definitionClosingAfter: '.',
+		definitionClosing:
+			'No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.',
 		definitionAria: 'Qué es tevsys',
 		bridgeLayers: 'Precisión · HyperClose · SML · Evidencia',
 		bridgeLayersAria: 'Capas del producto: Precisión, HyperClose, SML, Evidencia',
@@ -185,7 +189,11 @@ export const homeCopy = {
 		definitionBeatsAria: 'What tevsys does',
 		definitionAttribution:
 			'Clear attribution: how much was tevsys’s close decision and how much was the MT5 execution — not mixed with slippage.',
-		definitionClosing: 'It does not trade for you: it enforces what you decide — and proves it, trade by trade.',
+		definitionClosingBefore: 'It does not trade for you: it enforces what you decide — and ',
+		definitionClosingAccent: 'proves it, trade by trade',
+		definitionClosingAfter: '.',
+		definitionClosing:
+			'It does not trade for you: it enforces what you decide — and proves it, trade by trade.',
 		definitionAria: 'What tevsys is',
 		bridgeLayers: 'Precision · HyperClose · SML · Evidence',
 		bridgeLayersAria: 'Product layers: Precision, HyperClose, SML, Evidence',
