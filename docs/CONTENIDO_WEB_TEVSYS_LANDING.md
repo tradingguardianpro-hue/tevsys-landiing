@@ -171,7 +171,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Presentación:** H2 *Cuatro minutos de sesión real en MT5* · sub *Te enseñamos el producto en marcha — sesión real, precisión y evidencia.* · *Contrasta tú mismo.* *(3 sep 2026: fuera «por qué la gente habla…»; sin repetir «contrastar» arriba.)*
 - **Bloque Evidencia:** título *~3:35* · blurb corto · atribución 1 línea · MP4 `?v=20260822` · poster sesión.
 - **Home CTA:** `?play=1` → sin poster + autoplay · Cómo funciona directo → poster hasta play.
-- **Transparencia:** timeline en pasos · atribución única (píldoras) · fuentes: **Registro tevsys** (primero, featured: ID + persistencia + hechos sesión) → Informe MT5 → Vídeo · nota suelta cashflow / swing / Inputs / coherencia · sin bróker en copy.
+- **Transparencia:** timeline · atribución · **Registro tevsys** primero (lead + lista llana: límites, cierre+atribución, HyperClose, restore, export, caja/swing/Inputs) → Informe MT5 → Vídeo · sin bróker en copy.
 - **YouTube en web:** **https://youtu.be/sAttywGy0nQ** (22 ago · sesión 6263709).
 
 - **Flujo = no reabrir** (bueno). Checklist *dónde apretamos* + mejora piel overlays: `AGENDA_GABI.md` § **Regrabación ago 2026**.

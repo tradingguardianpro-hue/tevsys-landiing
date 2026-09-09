@@ -7,8 +7,8 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 ## Cómo funciona — Registro tevsys primero + persistencia + nota suelta (9 sep 2026 noche)
 
 - **Orden:** Registro → Informe MT5 → Vídeo. Registro a ancho completo (featured).
-- **Copy:** ID · persistencia del pacto · hechos de la sesión Nasdaq; aside cashflow / swing / Inputs / coherencia.
-- **Commit:** `web(tevsys): expand Nasdaq tevsys register with persistence and aside`
+- **Copy definitivo:** lead *Bajo este ID sabemos…* + lista (límites, cierre+atribución, 8 HyperClose, restore, export, también caja/swing/Inputs). Sin cursiva suelta.
+- **Commit:** `web(tevsys): rewrite Nasdaq tevsys register as plain-language list`
 
 ## Home — Advanced: demo bajo petición (9 sep 2026 noche)
 
