@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — 2.º golpe HyperClose sin eco del candado (9 sep 2026)
+
+- **Antes:** *Bloquea al instante… cuando ya los has alcanzado* (eco del lead).
+- **Ahora:** *Si intentas operar ya bloqueado, HyperClose cierra en milisegundos y deja constancia del intento.* · ES|EN.
+- **Commit:** `web(tevsys): reword home HyperClose beat to avoid lock redundancy`
+
 ## Lightbox — fix apertura Tu ID / scroll blur (9 sep 2026 noche)
 
 - **Síntoma:** clic en captura → blur + scroll detrás, imagen no “abre”.

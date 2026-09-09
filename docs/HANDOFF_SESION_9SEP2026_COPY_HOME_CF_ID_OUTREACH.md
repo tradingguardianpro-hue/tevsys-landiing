@@ -31,11 +31,8 @@ Bajo *· Disponible en MT5 ·* (`src/i18n/home.js` + `HomePageView.astro` + `hom
 ### 2.2 Tres golpes ámbar
 
 1. Cierra al alcanzar los límites… precisión documentada.  
-2. Bloquea… HyperClose.  
-3. **Actualizado 9 sep:**  
-   *Deja acta desde la instalación: límites pactados, cuándo y cómo se cerró, disciplina bajo presión — contrastable con los informes oficiales de MT5.*
-
-**Por qué:** el 3.º beat decía “deja acta de todo lo que ocurre” sin **desde cuándo** ni **qué**. Ahora ancla instalación + cierres + disciplina.
+2. **9 sep noche (anti-eco del lead):** *Si intentas operar ya bloqueado, HyperClose cierra en milisegundos y deja constancia del intento.*  
+3. Deja acta desde la instalación…
 
 ### 2.3 Línea de atribución (opción C — validada fundador)
 

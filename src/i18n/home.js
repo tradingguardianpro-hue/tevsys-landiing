@@ -31,7 +31,7 @@ export const homeCopy = {
 		   de este bloque. SML tiene su propia card y su micro. */
 		definitionBeats: [
 			'Cierra al alcanzar los límites que has configurado, con precisión documentada.',
-			'Bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose.',
+			'Si intentas operar ya bloqueado, HyperClose cierra en milisegundos y deja constancia del intento.',
 			'Deja acta desde la instalación: límites pactados, cuándo y cómo se cerró, disciplina bajo presión — contrastable con los informes oficiales de MT5.',
 		],
 		definitionBeatsAria: 'Lo que hace tevsys',
@@ -183,7 +183,7 @@ export const homeCopy = {
 			'tevsys is a MetaTrader 5 utility that enforces the rules the trader configures for their trading: loss and profit limits (day and week), OFF days, and the lock that blocks opening new trades once a limit has already been reached — intraday and on swing, across the whole account from a single chart.',
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
-			'It instantly blocks any attempt to trade once those limits are already reached, with HyperClose.',
+			'If you try to trade while already locked, HyperClose closes in milliseconds and leaves a record of the attempt.',
 			'It leaves a record from install: agreed limits, when and how it closed, discipline under pressure — cross-checkable against official MT5 reports.',
 		],
 		definitionBeatsAria: 'What tevsys does',
