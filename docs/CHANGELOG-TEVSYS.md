@@ -4,6 +4,17 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — atribución tevsys vs MT5 (opción C) (9 sep 2026)
+
+- **Qué:** línea tras los 3 golpes ámbar · *Atribución clara: cuánto fue decisión de tevsys al cierre y cuánto la ejecución en MT5 — sin mezclarlo con slippage.* · ES|EN · `home.js` + `HomePageView` + CSS.
+- **Commit:** `web(tevsys): add close attribution line under home definition beats`
+
+## Copy — acta desde instalación (home + Cómo funciona) (9 sep 2026)
+
+- **Home** 3.º golpe ámbar ES|EN: *acta desde la instalación* + límites / cierres / disciplina · contraste MT5.
+- **Cómo funciona** lead hero ES|EN: *…en intradía y en swing, y deja acta desde la instalación: funcionamiento contrastable con MT5.*
+- **Commit:** `web(tevsys): spell out audit trail from install on home and how-it-works`
+
 ## Tu ID tevsys — bloque Auditoría en Cómo funciona (9 sep 2026)
 
 - **Qué:** `#tu-id-tevsys` ES|EN — lead visual del acto Auditoría (tras el corte *fase de auditoría*), copy identidad del caso + **placeholder** hasta captura del modal. Luego triangulación *Hechos que se pueden cruzar*.

@@ -32,9 +32,12 @@ export const homeCopy = {
 		definitionBeats: [
 			'Cierra al alcanzar los límites que has configurado, con precisión documentada.',
 			'Bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose.',
-			'Deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5.',
+			'Deja acta desde la instalación: límites pactados, cuándo y cómo se cerró, disciplina bajo presión — contrastable con los informes oficiales de MT5.',
 		],
 		definitionBeatsAria: 'Lo que hace tevsys',
+		/* 9 sep: atribución tevsys vs ejecución MT5 — tras los 3 golpes, antes del cierre (opción C). */
+		definitionAttribution:
+			'Atribución clara: cuánto fue decisión de tevsys al cierre y cuánto la ejecución en MT5 — sin mezclarlo con slippage.',
 		definitionClosing: 'No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.',
 		definitionAria: 'Qué es tevsys',
 		bridgeLayers: 'Precisión · HyperClose · SML · Evidencia',
@@ -177,9 +180,11 @@ export const homeCopy = {
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
 			'It instantly blocks any attempt to trade once those limits are already reached, with HyperClose.',
-			'It leaves a record of everything that happens — cross-checkable against official MT5 reports.',
+			'It leaves a record from install: agreed limits, when and how it closed, discipline under pressure — cross-checkable against official MT5 reports.',
 		],
 		definitionBeatsAria: 'What tevsys does',
+		definitionAttribution:
+			'Clear attribution: how much was tevsys’s close decision and how much was the MT5 execution — not mixed with slippage.',
 		definitionClosing: 'It does not trade for you: it enforces what you decide — and proves it, trade by trade.',
 		definitionAria: 'What tevsys is',
 		bridgeLayers: 'Precision · HyperClose · SML · Evidence',

@@ -33,6 +33,7 @@
 	*/
 	.tevsys-home-definition__lead,
 	.tevsys-home-definition__beats,
+	.tevsys-home-definition__attribution,
 	.tevsys-home-definition__closing {
 		position: relative;
 		z-index: 1;
@@ -79,7 +80,13 @@
 		background: rgba(245, 176, 65, 0.85);
 		box-shadow: 0 0 10px rgba(245, 176, 65, 0.35);
 	}
-	/* ConclusiÃ³n, no cuarto punto: aire + hairline por encima. */
+	/* Atribución (9 sep): tras los 3 golpes — no es 4.º bullet; puente a evidencia seria. */
+	.tevsys-home-definition__attribution {
+		margin: 0 auto clamp(0.35rem, 1vw, 0.55rem);
+		font-weight: 500;
+		color: rgba(220, 228, 242, 0.9);
+	}
+	/* Conclusión, no cuarto punto: aire + hairline por encima. */
 	.tevsys-home-definition__closing {
 		margin-block: 0;
 		padding-top: clamp(0.85rem, 1.8vw, 1.15rem);
@@ -107,6 +114,7 @@
 		}
 		.tevsys-home-definition__lead,
 		.tevsys-home-definition__beats,
+		.tevsys-home-definition__attribution,
 		.tevsys-home-definition__closing {
 			font-size: clamp(0.875rem, 2.6vw, 0.9375rem);
 			line-height: 1.58;
