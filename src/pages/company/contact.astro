@@ -249,10 +249,11 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 		if (demoBadge) demoBadge.hidden = plan !== 'essential';
 		if (devNote) {
 			if (plan === 'advanced') {
-				devNote.textContent = 'Advanced en desarrollo. La demo disponible ahora es Essential.';
+				devNote.textContent =
+					'Advanced disponible. Solicita la demo aquí: te respondemos en menos de 24 h con el enlace y las guías. (Drawdown editable = plan Pro.)';
 				devNote.hidden = false;
 			} else if (plan === 'pro') {
-				devNote.textContent = 'Pro en desarrollo. La demo disponible ahora es Essential.';
+				devNote.textContent = 'Pro en desarrollo. La demo disponible ahora es Essential; Advanced también a petición.';
 				devNote.hidden = false;
 			} else {
 				devNote.hidden = true;

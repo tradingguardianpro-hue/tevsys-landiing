@@ -271,10 +271,12 @@ const empresasTipHtml =
 		if (demoBadge) demoBadge.hidden = plan !== 'essential';
 		if (devNote) {
 			if (plan === 'advanced') {
-				devNote.textContent = 'Advanced is in development. The demo available now is Essential.';
+				devNote.textContent =
+					'Advanced is available. Request the demo here — we reply within 24h with the link and guides. (Editable drawdown = Pro plan.)';
 				devNote.hidden = false;
 			} else if (plan === 'pro') {
-				devNote.textContent = 'Pro is in development. The demo available now is Essential.';
+				devNote.textContent =
+					'Pro is in development. Essential demo is live; Advanced demo is also available on request.';
 				devNote.hidden = false;
 			} else {
 				devNote.hidden = true;

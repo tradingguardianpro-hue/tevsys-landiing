@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — Advanced: demo bajo petición (9 sep 2026 noche)
+
+- **Qué:** badge *Demo bajo petición* (estilo live) · copy sin “en desarrollo / lista de espera” · CTA *Solicitar demo Advanced* · contacto + thank-you alineados (Pro sigue waitlist).
+- **Commit:** `web(tevsys): offer Advanced demo on request instead of waitlist`
+
 ## Lightbox — Tu ID = mismo patrón que capital + anti-cierre al abrir (9 sep noche)
 
 - **Qué:** captura `#tu-id-tevsys` usa clases `how-cashflow__*` (mismo zoom que *riesgo / capital*). Overlay: no cerrar con el mismo clic que abre; fade-in al cargar imagen.

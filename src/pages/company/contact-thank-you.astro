@@ -54,11 +54,21 @@ const seo = {
 						spamNote.textContent =
 							'Revisa tu bandeja de entrada y la carpeta de spam: el mail con la demo y las guías llega ahí.';
 					}
-				} else if (plan === 'advanced' || plan === 'pro') {
+				} else if (plan === 'advanced') {
+					if (main) {
+						main.textContent =
+							'Hemos recibido tu solicitud de demo Advanced. En menos de 24 horas te respondemos con el enlace y las guías.';
+					}
+					if (spamNote) {
+						spamNote.textContent =
+							'Revisa tu bandeja de entrada y la carpeta de spam: el mail con la demo y las guías llega ahí.';
+					}
+					if (devBlock) devBlock.hidden = true;
+				} else if (plan === 'pro') {
 					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
 					if (devBlock) {
 						const title = devBlock.querySelector('.contact-thank-you__dev-title');
-						if (title) title.textContent = 'Te añadimos a la lista de espera de ' + (plan === 'advanced' ? 'Advanced' : 'Pro') + '.';
+						if (title) title.textContent = 'Te añadimos a la lista de espera de Pro.';
 						devBlock.hidden = false;
 					}
 				} else if (flow === 'acceso') {
