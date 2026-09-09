@@ -24,6 +24,19 @@ La web mezclaba demasiados lenguajes (cards home, stages cómo-funciona, guías 
 
 ---
 
+## Tipografía transversal — títulos vs cuerpo (10 sep 2026)
+
+**Canon operativo (IA + fundador):** `.cursor/rules/workflow-web-visual-tevsys.mdc` § *Tipografía y color de copy*.
+
+- **Títulos** → blanco.  
+- **Cuerpo explicativo** → token CSS `--tevsys-copy-muted` (gris-azulado; origen: copy *Operación swing*).  
+- **Excepciones:** gancho home *No opera por ti…* en blanco; logo header tevsys intacto; nav en píldoras = muted.  
+- **Pendiente:** micros familia A — revisar color + copy («puedes comprobar») **una a una**.
+
+Aplica a **todas** las familias (A–D) cuando el texto sea párrafo/lead explicativo, no solo a Cómo funciona.
+
+---
+
 ## Qué debe explicar cada familia (contenido, no solo visual)
 
 Regla transversal: **claims alineados** con `docs/CONTENIDO_WEB_TEVSYS_LANDING.md` (repo TGP). Nada prometido que el build o la evidencia no respalden.

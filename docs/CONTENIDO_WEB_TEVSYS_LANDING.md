@@ -227,6 +227,8 @@ Ver handoff hero.
 **Normas del bloque (no romper sin acuerdo):**
 
 - **Sin SML aquí.** «Amplía margen» rema contra el mensaje de límites que se cumplen. SML vive en su card y en `/features/sml`.
+- **Jerarquía tipográfica (10 sep 2026):** títulos **blancos**; cuerpo explicativo **`--tevsys-copy-muted`** (azulado Operación swing). Canon IA: `workflow-web-visual-tevsys.mdc` § tipografía. Excepción: *No opera por ti…* en blanco; logo header sin tocar.
+
 - **Sin caja clara.** La pastilla gris (opción B, 5 sep) se probó y se retiró: metía un tercer plano de color en la home negra y partía la página en bandas. Jerarquía por **tipografía + ámbar**.
 - **Un solo eje:** lead, lista y cierre alineados a la izquierda sobre la misma vertical; puntos ámbar colgando en el margen.
 - **El cierre es conclusión, no cuarta viñeta:** aire + hairline por encima.

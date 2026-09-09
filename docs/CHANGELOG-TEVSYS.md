@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Canon tipográfico — títulos blanco · cuerpo muted (10 sep 2026)
+
+- **Decisión:** copy explicativo en `--tevsys-copy-muted` (tono Operación swing); títulos en blanco; logo header intacto; gancho *No opera por ti…* en blanco.
+- **Dónde documentado para la IA:** `.cursor/rules/workflow-web-visual-tevsys.mdc` § *Tipografía y color de copy* (+ handoff *lee cursor rules*).
+- **Hecho:** home (definición, cards, audit, planes, fundador) · CF · Transparencia Nasdaq · Para quién · Empresas · Contacto · footer · nav píldoras.
+- **Mañana:** micros Precisión / HyperClose / SML / Evidencia — una a una (color + copy).
+- **Commits arco:** `web(tevsys): track swing engagement and mute how-it-works intro copy` · `web(tevsys): extend muted body copy across home transparency and nav pages`
+
 ## Web — copy muted sitewide (home + Transparencia + nav pages) (10 sep 2026)
 
 - Token `--tevsys-copy-muted` en home (excepción *No opera por ti…*), Transparencia Nasdaq, Para quién, Empresas, Contacto ES|EN, footer.
