@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Para quién — ámbar + puente polivalente (9 sep 2026)
+
+- **Fix:** `.evidence-link` ámbar (antes azul de navegador sin CSS local).
+- **Puente:** deja de ser solo-swing → *Ver en profundidad:* HyperClose · Evidencia · Operación en curso (mismo peso). Viñeta overnight en la lista se mantiene.
+- **Commit:** `web(tevsys): amber links and polyvalent depth bridge on para-quien`
+
 ## Home — 2.º golpe HyperClose sin eco del candado (9 sep 2026)
 
 - **Antes:** *Bloquea al instante… cuando ya los has alcanzado* (eco del lead).

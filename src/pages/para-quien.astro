@@ -70,11 +70,15 @@ const corePerfiles = [
 						<li>Quien usa otro EA o sistema y quiere una red de límites independiente.</li>
 						<li>Quien enseña o corre una academia y necesita disciplina verificable — no software MAM/PAMM.</li>
 					</ul>
-					<p class="para-quien-swing-bridge">
+					<p class="para-quien-depth-bridge">
+						<span class="para-quien-depth-bridge__lead">Ver en profundidad:</span>{' '}
+						<a class="evidence-link" href="/features/hyperclose">HyperClose</a>
+						<span class="para-quien-depth-bridge__sep" aria-hidden="true"> · </span>
+						<a class="evidence-link" href="/features/evidencia">Evidencia</a>
+						<span class="para-quien-depth-bridge__sep" aria-hidden="true"> · </span>
 						<a class="evidence-link" href="/como-funciona#overnight-laborable"
 							>Operación en curso — sigues protegido</a
 						>
-						— el pacto que sobrevive al calendario.
 					</p>
 				</div>
 			</section>
@@ -204,14 +208,46 @@ const corePerfiles = [
 	.para-quien-audience li:last-child {
 		margin-bottom: 0;
 	}
-	.para-quien-swing-bridge {
+	.para-quien-depth-bridge {
 		margin: 0.85rem 0 0;
 		font-size: 0.92rem;
-		line-height: 1.45;
+		line-height: 1.5;
 		color: rgba(180, 190, 205, 0.88);
 	}
-	html[data-theme='light'] .para-quien-swing-bridge {
+	html[data-theme='light'] .para-quien-depth-bridge {
 		color: rgba(60, 70, 85, 0.9);
+	}
+	.para-quien-depth-bridge__lead {
+		font-weight: 600;
+		color: rgba(220, 228, 240, 0.92);
+	}
+	html[data-theme='light'] .para-quien-depth-bridge__lead {
+		color: rgba(40, 48, 60, 0.9);
+	}
+	.para-quien-depth-bridge__sep {
+		opacity: 0.55;
+	}
+	/* evidence-link sin CSS local = azul de navegador. Ámbar = resto de la marca. */
+	.evidence-link {
+		color: #f5b041;
+		text-decoration: underline;
+		text-decoration-thickness: 0.06em;
+		text-underline-offset: 2.5px;
+		transition: color 0.2s ease, opacity 0.2s ease;
+	}
+	.evidence-link:hover {
+		color: #ffc45c;
+	}
+	.evidence-link:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	html[data-theme='light'] .evidence-link {
+		color: #b87814;
+	}
+	html[data-theme='light'] .evidence-link:hover {
+		color: #9a6410;
 	}
 	.para-quien-hero__accent {
 		color: #f5b041;
