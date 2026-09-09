@@ -6,11 +6,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## P13 — Guía overnight laborable ~1:15 (9 sep 2026)
 
-- **Qué:** MP4 `tevsys-guia-overnight-laborable-75s.mp4` + poster mid (Prot. Desde 08 / día 09) · bloque guía mismo patrón casilla negra que *Desde cero* · ancla `#overnight-laborable` ES|EN · **antes** de Condición innegociable / Desde cero · **después** del corte *Después de la evidencia*.
-- **Copy edge `#rama-operacion`:** **sin tocar** (Trade abierto… / enlaces VPS + FAQ intactos).
-- **Home atajo:** `/go/como-funciona-operacion` → `#overnight-laborable` (antes `#rama-operacion`).
-- **Audio:** lounge/chill en guía larga (canon catálogo).
-- **Commit:** `web(tevsys): add weekday overnight guide after evidence on how-it-works`
+- **Qué:** acto negro **propio** (familia capital, no metido en mid-act con Desde cero) · `#overnight-laborable` · título **Operación en curso** + copy edge de la captura (VPS + FAQ) · lead vídeo *Medianoche no te deja sin red* · MP4+poster.
+- **Rama micros `#rama-operacion`:** copy edge **subida** al acto overnight; abajo solo anuncio corto de clips.
+- **Home / Para quién:** atajos → `#overnight-laborable`.
+- **Commit:** `web(tevsys): give overnight guide its own black act with edge copy`
 
 ## GEO — llms.txt + Schema MT5/features (8 sep 2026)
 

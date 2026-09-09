@@ -28,13 +28,26 @@ const presentationLeadVideo = {
 	youtubeWatch: 'https://youtu.be/sAttywGy0nQ',
 };
 
-/** Weekday overnight guide (9 Sep 2026 · MC-CF-027 / P13). Mid-act lead; does not replace `#rama-operacion` micros. */
+/** Weekday overnight guide (9 Sep 2026 · MC-CF-027 / P13). Own black act (capital family); edge copy from Operación en curso. */
 const overnightLaborableGuide = {
 	id: 'overnight-laborable',
-	eyebrow: 'Day boundary · weekday',
-	titleAccent: 'without a net',
-	blurb:
-		'You lock on Tuesday, leave the trade open, midnight crosses: Wednesday you still measure against the same %. Guide ~1:15 — not a microclip.',
+	title: 'Trade in progress',
+	announcement:
+		'Trade open and protection continues — day to day, and on weekends too. Midnight does not drop the net. Guide ~1:15.',
+	edge: {
+		body: 'When you lock your limits and leave a trade open overnight, tevsys keeps measuring against those same percentages. We do not reset at midnight and orphan the trade.',
+		screen: 'On screen: Trade in progress — you stay protected.',
+		lockNote:
+			'If you remove the EA from the chart, the lock is not wiped: when you return, same pact percentages.',
+		bridgeBefore: 'If you shut the PC or close MetaTrader → ',
+		bridgeLabel: 'what live watch covers (and what it does not)',
+		bridgeHref: '#vigilancia-vps',
+		faqBefore: 'FAQ: ',
+		faqLabel: 'midnight, day limits, and Essential vs Pro',
+		faqHref: '#overnight-faq',
+	},
+	videoLeadBefore: 'Midnight does not leave you ',
+	videoLeadAccent: 'without a net',
 	durationLabel: '~1:15',
 	videoSrc: '/videos/como-funciona/tevsys-guia-overnight-laborable-75s.mp4?v=20260909',
 	posterSrc: '/videos/como-funciona/tevsys-guia-overnight-laborable-75s-poster.jpg?v=20260909',
@@ -303,20 +316,7 @@ const microclipBranches: MicroclipBranch[] = [
 	{
 		id: 'rama-operacion',
 		title: 'Trade in progress',
-		announcement:
-			'Open trade and protection still on — across day boundaries, weekends too. Midnight does not drop your lock. Clips ~30 s.',
-		edge: {
-			body: 'When you lock your limits and leave a trade open overnight, tevsys keeps measuring against those same percentages. We do not reset at midnight and orphan the trade.',
-			screen: 'On screen: Trade in progress — you stay protected.',
-			lockNote:
-				'If you remove the EA from the chart, the lock does not wipe: when you return, same pact %.',
-			bridgeBefore: 'If you shut down the PC or close MetaTrader → ',
-			bridgeLabel: 'what watch covers (and what it does not)',
-			bridgeHref: '#vigilancia-vps',
-			faqBefore: 'FAQ: ',
-			faqLabel: 'midnight, daily limits, and Essential vs Pro',
-			faqHref: '#overnight-faq',
-		},
+		announcement: 'Short clips from the same world — weekend, passive, and inputs. ~30 s.',
 		clips: [],
 		groups: [
 			{
@@ -522,42 +522,64 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<span class="how-act-cut__line" aria-hidden="true"></span>
 		</p>
 
+		{/* Own black act (capital family): overnight + Operación en curso copy — not shared with From zero. */}
+		<div class="how-overnight-act how-overnight-act--stage">
+			<div class="how-overnight-act__shell" aria-hidden="true"></div>
+			<div class="how-overnight-act__glow" aria-hidden="true"></div>
+			<div class="how-overnight-act__inner">
+				<section
+					class="how-overnight how-overnight--stage"
+					id={overnightLaborableGuide.id}
+					aria-labelledby="how-overnight-laborable-title">
+					<div class="how-overnight__halo" aria-hidden="true"></div>
+					<div class="how-overnight__stage-inner">
+						<header class="how-overnight__head">
+							<h2 id="how-overnight-laborable-title" class="how-rama__title">
+								<span class="how-present-title__accent">{overnightLaborableGuide.title}</span>
+							</h2>
+							<p class="how-rama__announcement">{overnightLaborableGuide.announcement}</p>
+							<div class="how-rama__edge">
+								<p class="how-rama__edge-body">{overnightLaborableGuide.edge.body}</p>
+								<p class="how-rama__edge-screen">{overnightLaborableGuide.edge.screen}</p>
+								<p class="how-rama__edge-lock">{overnightLaborableGuide.edge.lockNote}</p>
+								<p class="how-rama__edge-bridge">
+									{overnightLaborableGuide.edge.bridgeBefore}
+									<a href={overnightLaborableGuide.edge.bridgeHref}>{overnightLaborableGuide.edge.bridgeLabel}</a>.
+								</p>
+								<p class="how-rama__edge-bridge how-rama__edge-faq">
+									{overnightLaborableGuide.edge.faqBefore}
+									<a href={overnightLaborableGuide.edge.faqHref}>{overnightLaborableGuide.edge.faqLabel}</a>.
+								</p>
+							</div>
+						</header>
+						<p class="how-overnight__video-lead">
+							{overnightLaborableGuide.videoLeadBefore}
+							<span class="how-present-title__accent">{overnightLaborableGuide.videoLeadAccent}</span>
+							<span class="how-zero-duration"> ({overnightLaborableGuide.durationLabel})</span>
+						</p>
+						<article class="how-overnight__cell">
+							<div class="how-embed how-embed--chrome">
+								<video
+									id="overnight-laborable-video"
+									controls
+									preload="metadata"
+									playsinline
+									poster={overnightLaborableGuide.posterSrc}
+									title={overnightLaborableGuide.videoLabel}>
+									<source src={overnightLaborableGuide.videoSrc} type="video/mp4" />
+									Your browser does not support HTML5 video.
+								</video>
+							</div>
+						</article>
+					</div>
+				</section>
+			</div>
+		</div>
+
 		<div class="how-mid-act how-mid-act--stage">
 			<div class="how-mid-act__shell" aria-hidden="true"></div>
 			<div class="how-mid-act__glow" aria-hidden="true"></div>
 			<div class="how-mid-act__inner">
-		<section
-			class="how-desde-cero how-desde-cero--stage"
-			id={overnightLaborableGuide.id}
-			aria-labelledby="how-overnight-laborable-title">
-			<div class="how-desde-cero__halo" aria-hidden="true"></div>
-			<div class="how-desde-cero__inner">
-				<header class="how-section-head">
-					<p class="how-eyebrow how-eyebrow--center">{overnightLaborableGuide.eyebrow}</p>
-					<h2 id="how-overnight-laborable-title">
-						Midnight does not leave you{' '}
-						<span class="how-present-title__accent">{overnightLaborableGuide.titleAccent}</span>
-						<span class="how-zero-duration"> ({overnightLaborableGuide.durationLabel})</span>
-					</h2>
-					<p class="how-section-sub">{overnightLaborableGuide.blurb}</p>
-				</header>
-				<article class="how-pair-cell how-desde-cero__cell">
-					<div class="how-embed how-embed--chrome">
-						<video
-							id="overnight-laborable-video"
-							controls
-							preload="metadata"
-							playsinline
-							poster={overnightLaborableGuide.posterSrc}
-							title={overnightLaborableGuide.videoLabel}>
-							<source src={overnightLaborableGuide.videoSrc} type="video/mp4" />
-							Your browser does not support HTML5 video.
-						</video>
-					</div>
-				</article>
-			</div>
-		</section>
-
 		<section class="how-desde-cero how-desde-cero--stage" id={desdeCeroGuide.id} aria-labelledby="how-desde-cero-title">
 			<div class="how-desde-cero__halo" aria-hidden="true"></div>
 			<div class="how-desde-cero__inner">
@@ -2419,7 +2441,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	/* Acto Capital — fuera del mid-act (otro mensaje = otro escenario negro). */
-	.how-capital-act.how-capital-act--stage {
+	.how-capital-act.how-capital-act--stage,
+	.how-overnight-act.how-overnight-act--stage {
 		position: relative;
 		isolation: isolate;
 		overflow: hidden;
@@ -2431,7 +2454,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		border-radius: clamp(1.75rem, 7vw, 3.25rem);
 	}
 
-	.how-capital-act__shell {
+	.how-capital-act__shell,
+	.how-overnight-act__shell {
 		position: absolute;
 		inset: 0;
 		z-index: 0;
@@ -2439,17 +2463,20 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		border-radius: inherit;
 	}
 
-	html[data-theme='dark'] .how-capital-act__shell {
+	html[data-theme='dark'] .how-capital-act__shell,
+	html[data-theme='dark'] .how-overnight-act__shell {
 		background: linear-gradient(180deg, hsl(222 20% 2.2%) 0%, hsl(222 22% 1.5%) 100%);
 		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5.5rem) rgba(0, 0, 0, 0.55);
 	}
 
-	html[data-theme='light'] .how-capital-act__shell {
+	html[data-theme='light'] .how-capital-act__shell,
+	html[data-theme='light'] .how-overnight-act__shell {
 		background: linear-gradient(180deg, #f0eee9 0%, #e8e5df 100%);
 		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.07);
 	}
 
-	.how-capital-act__glow {
+	.how-capital-act__glow,
+	.how-overnight-act__glow {
 		position: absolute;
 		inset: 12% 10% 10%;
 		z-index: 0;
@@ -2457,21 +2484,115 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		border-radius: clamp(0.9rem, 2.8vw, 1.65rem);
 	}
 
-	html[data-theme='dark'] .how-capital-act__glow {
+	html[data-theme='dark'] .how-capital-act__glow,
+	html[data-theme='dark'] .how-overnight-act__glow {
 		background:
 			radial-gradient(ellipse 68% 34% at 50% 20%, rgba(70, 80, 100, 0.14) 0%, transparent 55%),
 			radial-gradient(ellipse 74% 42% at 50% 55%, rgba(55, 62, 78, 0.1) 0%, transparent 58%);
 	}
 
-	html[data-theme='light'] .how-capital-act__glow {
+	html[data-theme='light'] .how-capital-act__glow,
+	html[data-theme='light'] .how-overnight-act__glow {
 		background:
 			radial-gradient(ellipse 70% 36% at 50% 22%, rgba(0, 0, 0, 0.02) 0%, transparent 55%);
 	}
 
-	.how-capital-act__inner {
+	.how-capital-act__inner,
+	.how-overnight-act__inner {
 		position: relative;
 		z-index: 1;
 		padding: clamp(0.85rem, 2.8vw, 1.45rem) clamp(0.65rem, 2.2vw, 1.15rem) clamp(1.35rem, 4vw, 2.25rem);
+	}
+
+	/* Overnight laborable — mismo rectángulo personal que capital (halo + vídeo). */
+	.how-overnight {
+		max-width: min(56rem, 100%);
+		scroll-margin-top: clamp(5.5rem, 12vh, 7rem);
+	}
+
+	.how-overnight.how-overnight--stage {
+		position: relative;
+		isolation: isolate;
+		overflow: hidden;
+		margin: clamp(0.35rem, 1.5vw, 0.75rem) auto clamp(0.5rem, 2vw, 1rem);
+		padding: clamp(1.35rem, 3.8vw, 2rem) clamp(1rem, 3vw, 1.65rem) clamp(1.45rem, 4vw, 2.15rem);
+		border-radius: clamp(1.35rem, 4.5vw, 2.35rem);
+		text-align: center;
+		box-sizing: border-box;
+		border: none;
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.how-overnight__halo {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		border-radius: inherit;
+	}
+
+	html[data-theme='dark'] .how-overnight__halo {
+		background:
+			radial-gradient(ellipse 62% 26% at 50% 8%, rgba(88, 98, 118, 0.2) 0%, transparent 52%),
+			radial-gradient(ellipse 72% 38% at 50% 22%, rgba(42, 48, 62, 0.26) 0%, transparent 58%),
+			radial-gradient(ellipse 88% 40% at 50% 78%, rgba(28, 32, 42, 0.1) 0%, transparent 55%),
+			linear-gradient(180deg, hsl(222 22% 2.4%) 0%, hsl(222 26% 1.6%) 100%);
+		box-shadow: inset 0 0 clamp(3rem, 11vw, 6rem) rgba(0, 0, 0, 0.62);
+	}
+
+	html[data-theme='light'] .how-overnight__halo {
+		background:
+			radial-gradient(ellipse 60% 26% at 50% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+			linear-gradient(180deg, #f4f2ed 0%, #ebe8e2 100%);
+		box-shadow: inset 0 0 clamp(2.5rem, 9vw, 5rem) rgba(0, 0, 0, 0.06);
+	}
+
+	.how-overnight__stage-inner {
+		position: relative;
+		z-index: 1;
+		max-width: min(48rem, 100%);
+		margin: 0 auto;
+	}
+
+	.how-overnight__head {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.55rem;
+	}
+
+	.how-overnight__video-lead {
+		margin: clamp(1.15rem, 3vw, 1.55rem) auto 0;
+		font-size: clamp(1.12rem, 2.6vw, 1.35rem);
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		line-height: 1.35;
+		color: rgba(235, 240, 248, 0.96);
+	}
+
+	html[data-theme='light'] .how-overnight__video-lead {
+		color: inherit;
+	}
+
+	.how-overnight__cell {
+		margin-top: clamp(0.85rem, 2.5vw, 1.25rem);
+	}
+
+	.how-overnight .how-embed {
+		border-radius: 0;
+		aspect-ratio: 16 / 9;
+		background: #0a0a0a;
+	}
+
+	.how-overnight .how-embed video {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 0;
+		border-radius: 0;
+		object-fit: contain;
+		background: #0a0a0a;
 	}
 
 	/* Capital y riesgo — bloque ancho + halo (familia Desde cero). */
