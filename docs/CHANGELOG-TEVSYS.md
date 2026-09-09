@@ -11,6 +11,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Commit:** `web(tevsys): strengthen GEO for Tu ID overnight SML and attribution`
 - **Después de push:** re-preguntar AI Mode en 2–3 semanas.
 
+## Empresas — aire bajo header (9 sep 2026)
+
+- **Qué:** `.empresas-hero` `padding-top` como Para quién (`clamp(1.15rem, 3vw, 1.75rem)`) ES|EN — dejaba de ir pegado al nav.
+- **Commit:** `web(tevsys): add micropage top padding on companies hero`
+
 ## Para quién — ámbar + puente polivalente (9 sep 2026)
 
 - **Fix:** `.evidence-link` ámbar (antes azul de navegador sin CSS local).
