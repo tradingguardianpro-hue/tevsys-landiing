@@ -197,7 +197,7 @@ const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
   }
   nav ul li a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.96);
+    color: var(--tevsys-copy-muted);
     opacity: 1;
     font-size: 0.9375rem;
     font-weight: 600;
@@ -221,7 +221,7 @@ const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
   }
   /* Activo: un peldaño más de gris, sin contorno */
   nav ul li a.nav-link--active:not(.nav-link--button) {
-    color: #fff;
+    color: rgba(220, 228, 238, 0.98);
     background: rgba(48, 52, 62, 0.88);
     box-shadow: none;
   }
@@ -243,7 +243,7 @@ const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
   }
   nav ul li a:not(.nav-link--button):not(.nav-link--active):hover {
     background: rgba(255, 255, 255, 0.15);
-    color: #fff;
+    color: rgba(220, 228, 238, 0.98);
   }
   nav ul li a.nav-link--active:not(.nav-link--button):hover {
     background: rgba(64, 68, 82, 0.98);
