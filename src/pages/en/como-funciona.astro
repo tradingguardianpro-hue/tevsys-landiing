@@ -28,6 +28,19 @@ const presentationLeadVideo = {
 	youtubeWatch: 'https://youtu.be/sAttywGy0nQ',
 };
 
+/** Weekday overnight guide (9 Sep 2026 · MC-CF-027 / P13). Mid-act lead; does not replace `#rama-operacion` micros. */
+const overnightLaborableGuide = {
+	id: 'overnight-laborable',
+	eyebrow: 'Day boundary · weekday',
+	titleAccent: 'without a net',
+	blurb:
+		'You lock on Tuesday, leave the trade open, midnight crosses: Wednesday you still measure against the same %. Guide ~1:15 — not a microclip.',
+	durationLabel: '~1:15',
+	videoSrc: '/videos/como-funciona/tevsys-guia-overnight-laborable-75s.mp4?v=20260909',
+	posterSrc: '/videos/como-funciona/tevsys-guia-overnight-laborable-75s-poster.jpg?v=20260909',
+	videoLabel: 'Guide ~1:15 — midnight with an open trade, you stay protected (MC-CF-027)',
+};
+
 /** “From zero” policy guide + passive observation (20 Aug 2026 · MC-CF-002-G). Does not replace micro branch `#videoclip-pasiva`. */
 const desdeCeroGuide = {
 	id: 'desde-cero',
@@ -513,6 +526,38 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<div class="how-mid-act__shell" aria-hidden="true"></div>
 			<div class="how-mid-act__glow" aria-hidden="true"></div>
 			<div class="how-mid-act__inner">
+		<section
+			class="how-desde-cero how-desde-cero--stage"
+			id={overnightLaborableGuide.id}
+			aria-labelledby="how-overnight-laborable-title">
+			<div class="how-desde-cero__halo" aria-hidden="true"></div>
+			<div class="how-desde-cero__inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">{overnightLaborableGuide.eyebrow}</p>
+					<h2 id="how-overnight-laborable-title">
+						Midnight does not leave you{' '}
+						<span class="how-present-title__accent">{overnightLaborableGuide.titleAccent}</span>
+						<span class="how-zero-duration"> ({overnightLaborableGuide.durationLabel})</span>
+					</h2>
+					<p class="how-section-sub">{overnightLaborableGuide.blurb}</p>
+				</header>
+				<article class="how-pair-cell how-desde-cero__cell">
+					<div class="how-embed how-embed--chrome">
+						<video
+							id="overnight-laborable-video"
+							controls
+							preload="metadata"
+							playsinline
+							poster={overnightLaborableGuide.posterSrc}
+							title={overnightLaborableGuide.videoLabel}>
+							<source src={overnightLaborableGuide.videoSrc} type="video/mp4" />
+							Your browser does not support HTML5 video.
+						</video>
+					</div>
+				</article>
+			</div>
+		</section>
+
 		<section class="how-desde-cero how-desde-cero--stage" id={desdeCeroGuide.id} aria-labelledby="how-desde-cero-title">
 			<div class="how-desde-cero__halo" aria-hidden="true"></div>
 			<div class="how-desde-cero__inner">

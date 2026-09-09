@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## P13 — Guía overnight laborable ~1:15 (9 sep 2026)
+
+- **Qué:** MP4 `tevsys-guia-overnight-laborable-75s.mp4` + poster mid (Prot. Desde 08 / día 09) · bloque guía mismo patrón casilla negra que *Desde cero* · ancla `#overnight-laborable` ES|EN · **antes** de Condición innegociable / Desde cero · **después** del corte *Después de la evidencia*.
+- **Copy edge `#rama-operacion`:** **sin tocar** (Trade abierto… / enlaces VPS + FAQ intactos).
+- **Home atajo:** `/go/como-funciona-operacion` → `#overnight-laborable` (antes `#rama-operacion`).
+- **Audio:** lounge/chill en guía larga (canon catálogo).
+- **Commit:** `web(tevsys): add weekday overnight guide after evidence on how-it-works`
+
 ## GEO — llms.txt + Schema MT5/features (8 sep 2026)
 
 - **Qué:** `public/llms.txt` (definición canónica honesta ES+EN; sin forense/custodia/auditoría de bróker; SML sin slogan falso) · JSON-LD home: `operatingSystem: MetaTrader 5` + `featureList` · nota en `robots.txt`.
