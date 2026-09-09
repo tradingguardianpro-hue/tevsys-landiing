@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — lead propuesta A (9 sep 2026)
+
+- **Lead hero:** reglas + *Deja acta desde la instalación y separa en el cierre la decisión de tevsys de la ejecución en MT5.* · ES|EN.
+- **Commit:** `web(tevsys): strengthen como-funciona lead with install record and attribution`
+
 ## Home — atribución tevsys vs MT5 (opción C) (9 sep 2026)
 
 - **Qué:** línea tras los 3 golpes ámbar · *Atribución clara: cuánto fue decisión de tevsys al cierre y cuánto la ejecución en MT5 — sin mezclarlo con slippage.* · ES|EN · `home.js` + `HomePageView` + CSS.
