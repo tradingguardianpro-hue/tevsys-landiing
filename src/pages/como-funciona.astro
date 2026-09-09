@@ -6,7 +6,7 @@ import EvidenceImageLightbox from '../components/core/EvidenceImageLightbox.astr
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
 	description:
-		'Evidencia Nasdaq, guía Desde cero y microclips. Cómo funciona tevsys en MT5.',
+		'Cómo funciona tevsys en MT5: límites intradía y swing, HyperClose, acta desde instalación (Tu ID TVS-…), atribución tevsys vs MT5, overnight sin reset a medianoche. Evidencia Nasdaq y guías.',
 };
 
 /** Vídeo único de presentación — regrabación 21–22 ago 2026 · cuenta #6263709 · ~3:35. */
@@ -60,9 +60,9 @@ const tuIdTevsysBlock = {
 	eyebrow: 'Identidad del caso',
 	titleBefore: 'Tu ID ',
 	titleAccent: 'tevsys',
-	body: 'Cada instalación lleva un código TVS-… ligado a tu licencia. Es la etiqueta de tu caso: panel, registros y packs pueden hablar del mismo expediente.',
+	body: 'Cada instalación lleva un código TVS-… ligado a tu licencia. Es la etiqueta de tu caso: panel, registros y packs pueden hablar del mismo expediente y cruzarse con los informes oficiales de MT5 del mismo periodo.',
 	bodyFollow:
-		'No es la auditoría de pago ni un análisis de mercado — es cómo tevsys nombra tu identidad en MetaTrader 5.',
+		'Va con la acta desde la instalación y con la atribución en el cierre (decisión tevsys vs ejecución MT5, sin mezclarlo con slippage). No es auditoría de pago ni análisis de mercado — es identidad del caso en MetaTrader 5.',
 	/** Colgada 9 sep 2026 — captura modal Tu ID TEVsys (panel + TVS-…). */
 	captureSrc: '/images/evidence/tevsys-modal-tu-id-tvs.png?v=20260909',
 	captureAlt: 'Modal Tu ID TEVsys en el panel — código TVS-… ligado a la licencia; clic en ID abajo a la derecha.',
@@ -1238,6 +1238,9 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							El cierre al límite es el motor de límites (no HyperClose). HyperClose actúa si, ya
 							protegido, intentas abrir operaciones nuevas. El cambio de día que usa tevsys sigue el
 							calendario de tu terminal (hora local del PC), no un “reset” tipo calculadora de prop firm.
+							Guía laborable (~1:16):{' '}
+							<a href="#overnight-laborable">Operación swing — medianoche no te deja sin red</a>
+							{' '}(<code>#overnight-laborable</code>).
 						</p>
 					</article>
 					<article class="how-overnight-faq__item">
@@ -1264,7 +1267,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 							name: 'Si ya tienes protección y dejas una operación abierta al cruzar medianoche, ¿qué pasa con el límite de pérdida del día?',
 							acceptedAnswer: {
 								'@type': 'Answer',
-								text: 'Mandan los porcentajes que aceptaste al proteger. tevsys no reinicia un día nuevo que deje la operación sin red. En pantalla: Operación en curso — sigues protegido. El cierre al límite es el motor de límites; HyperClose actúa si intentas abrir nuevas operaciones ya protegido. El cambio de día sigue el calendario del terminal (hora local).',
+								text: 'Mandan los porcentajes que aceptaste al proteger. tevsys no reinicia un día nuevo que deje la operación sin red. En pantalla: Operación en curso — sigues protegido. Guía laborable: /como-funciona#overnight-laborable. El cierre al límite es el motor de límites; HyperClose actúa si intentas abrir nuevas operaciones ya protegido. El cambio de día sigue el calendario del terminal (hora local).',
 							},
 						},
 						{
@@ -1431,6 +1434,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<a href="/features/precision">Precisión</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/company/contact?flow=demo">Demo</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/como-funciona#overnight-laborable">Operación swing</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/como-funciona#overnight-faq">Medianoche / overnight</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>

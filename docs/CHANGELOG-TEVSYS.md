@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## GEO — refuerzo espejo Google AI Mode (9 sep 2026 tarde)
+
+- **Por qué:** HyperClose OK; trazabilidad/Tu ID floja; overnight sin anclas indexadas; SML *Smart Margin Limit*; “forense” inventado.
+- **Qué:** `public/llms.txt` ampliado · `featureList` schema home · meta `/como-funciona` ES|EN · copy Tu ID + atribución · FAQ overnight → `#overnight-laborable` · nav pie *Operación swing* · SML kicker “Smart Money Lock (no Margin)”.
+- **Commit:** `web(tevsys): strengthen GEO for Tu ID overnight SML and attribution`
+- **Después de push:** re-preguntar AI Mode en 2–3 semanas.
+
 ## Para quién — ámbar + puente polivalente (9 sep 2026)
 
 - **Fix:** `.evidence-link` ámbar (antes azul de navegador sin CSS local).

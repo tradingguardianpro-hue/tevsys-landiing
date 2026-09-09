@@ -63,16 +63,22 @@ const enAlternate = new URL(barePath === '/' ? '/en/' : `/en${barePath}`, Astro.
     "featureList": Astro.url.pathname.startsWith('/en')
       ? [
           "Enforces user-configured daily and weekly loss/profit limits on MT5",
-          "Lock blocks new trade attempts when a limit is hit (HyperClose)",
-          "Swing/overnight: pact percentages stay across day boundaries",
-          "Documented close precision and MT5-contrastable audit trail",
+          "Lock blocks new trade attempts when a limit is hit (HyperClose ≠ close-at-limit)",
+          "Swing/overnight: pact percentages stay across day boundaries — UI Trade in progress",
+          "Close attribution: tevsys decision vs MT5 execution (not mixed with slippage)",
+          "Tu ID tevsys (TVS-…) case identity from install — /como-funciona#tu-id-tevsys",
+          "Optional Smart Money Lock (SML) — not Smart Margin Limit — validation in progress",
+          "Documented close precision and MT5-contrastable audit trail — not forensic broker audit",
           "Not a signal EA — does not trade for you",
         ]
       : [
           "Hace cumplir límites de pérdida y ganancia (día y semana) en MT5",
-          "Bloqueo de nuevos intentos al alcanzar el límite (HyperClose)",
-          "Swing/overnight: % del pacto se mantienen al cruzar el día",
-          "Precisión de cierre documentada y acta contrastable con MT5",
+          "Bloqueo de nuevos intentos al alcanzar el límite (HyperClose ≠ cierre al límite)",
+          "Swing/overnight: % del pacto se mantienen al cruzar el día — Operación en curso",
+          "Atribución en el cierre: decisión tevsys vs ejecución MT5 (sin mezclar con slippage)",
+          "Tu ID tevsys (TVS-…) identidad del caso desde la instalación — #tu-id-tevsys",
+          "SML opcional = Smart Money Lock (no Smart Margin Limit) — validación en curso",
+          "Precisión documentada y acta contrastable con MT5 — no auditoría forense del bróker",
           "No es un EA de señales — no opera por ti",
         ],
     "offers": {
