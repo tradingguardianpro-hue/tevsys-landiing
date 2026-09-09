@@ -1177,7 +1177,7 @@
 		font-size: 1.5rem;
 		font-weight: 500;
 		margin-bottom: 2rem;
-		color: var(--theme-primary);
+		color: var(--tevsys-copy-muted);
 	}
 	.founder-tevsys {
 		color: #f5b041;
@@ -1188,7 +1188,8 @@
 		line-height: 1.6;
 		font-style: italic;
 		margin: 2rem 0;
-		opacity: 0.9;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 	}
 	.founder-signature {
 		font-family: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', 'Consolas', monospace;
@@ -1196,7 +1197,7 @@
 		font-weight: 500;
 		font-style: normal;
 		letter-spacing: 0.055em;
-		color: rgba(228, 232, 240, 0.68);
+		color: var(--tevsys-copy-muted);
+		opacity: 0.88;
 		margin: 0;
 	}
-
