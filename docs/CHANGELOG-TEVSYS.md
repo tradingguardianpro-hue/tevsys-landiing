@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Handoff sesión 9 sep 2026 — Home · CF · Tu ID · lightbox · outreach
+
+- **Doc maestro (frases, porqués, archivos, contactos):** `docs/HANDOFF_SESION_9SEP2026_COPY_HOME_CF_ID_OUTREACH.md`
+- **Resumen:** home = acta desde instalación + línea atribución + subrayado *lo demuestra*; CF lead = propuesta A + negrita intradía/swing; `#tu-id-tevsys` + PNG; lightbox sin estirar; Admirals Producto+Alianzas enviados (detalle en TGP OUTREACH).
+- **Commit docs:** `docs(tevsys): handoff 9 sep home CF ID copy and outreach pointers`
+
 ## Cómo funciona — lead propuesta A (9 sep 2026)
 
 - **Lead hero:** reglas + *Deja acta desde la instalación y separa en el cierre la decisión de tevsys de la ejecución en MT5.* · ES|EN.
