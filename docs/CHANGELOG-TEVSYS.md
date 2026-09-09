@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Swing Analytics + copy muted intro (9–10 sep 2026)
+
+- **Analytics:** `Swing Section View` · `Swing Video Play` · `Swing Go Landing` (`/go/como-funciona-operacion`).
+- **Token:** `--tevsys-copy-muted` (tono Operación swing). Intro CF + edge swing usan el token; títulos blancos.
+- **Commit:** `web(tevsys): track swing engagement and mute how-it-works intro copy`
+
 ## Cómo funciona — Registro tevsys primero + persistencia + nota suelta (9 sep 2026 noche)
 
 - **Orden:** Registro → Informe MT5 → Vídeo. Registro a ancho completo (featured).

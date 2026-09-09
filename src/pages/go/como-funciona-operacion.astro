@@ -33,7 +33,7 @@
   <body>
     <p class="sr-only">Redirigiendo a Cómo funciona — guía overnight laborable.</p>
     <script>
-      import { inject } from '@vercel/analytics';
+      import { inject, track } from '@vercel/analytics';
       inject({
         beforeSend: (event) => {
           if (typeof localStorage !== 'undefined' && localStorage.getItem('va-disable')) {
@@ -42,6 +42,11 @@
           return event;
         },
       });
+      try {
+        track('Swing Go Landing', { path: '/go/como-funciona-operacion' });
+      } catch {
+        /* analytics optional in local */
+      }
       window.setTimeout(() => {
         window.location.replace('/como-funciona#overnight-laborable');
       }, 280);

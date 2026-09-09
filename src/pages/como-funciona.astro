@@ -2,6 +2,7 @@
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import EvidenceImageLightbox from '../components/core/EvidenceImageLightbox.astro';
+import SwingSectionAnalytics from '../components/analytics/SwingSectionAnalytics.astro';
 
 const seo = {
 	title: 'Cómo funciona tevsys | tevsys',
@@ -1467,6 +1468,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<a href="/como-funciona#vigilancia-vps">Vigilancia / VPS</a>
 		</nav>
 	</Container>
+	<SwingSectionAnalytics page="como-funciona" />
 </Layout>
 
 <script is:inline>
@@ -1541,6 +1543,24 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		/* Aire título → definición (9 sep): más que el pegado previo; sin tocar margen a PRESENTACIÓN. */
 		margin-top: clamp(1.55rem, 3.8vw, 2.35rem);
 		margin-bottom: 0;
+	}
+
+	/* Intro Cómo funciona: cuerpo azulado (token swing); títulos blancos. */
+	.how-intro-stage .how-hero__definition,
+	.how-intro-stage .how-section-sub,
+	.how-intro-stage .how-block-lead {
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
+	}
+
+	.how-intro-stage .how-section-sub__line2 {
+		color: var(--tevsys-copy-muted);
+		opacity: 0.95;
+	}
+
+	.how-intro-stage .how-hero__definition strong {
+		color: rgba(220, 228, 238, 0.98);
+		font-weight: 650;
 	}
 
 	.how-hero h1 {
@@ -4276,11 +4296,11 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		max-width: 34rem;
 		font-size: clamp(0.88rem, 1.8vw, 0.98rem);
 		line-height: 1.45;
-		color: rgba(180, 190, 205, 0.82);
+		color: var(--tevsys-copy-muted);
 	}
 
 	html[data-theme='light'] .how-rama__announcement {
-		color: rgba(60, 70, 85, 0.88);
+		color: var(--tevsys-copy-muted);
 	}
 
 	.how-rama__edge {
@@ -4298,7 +4318,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		margin: 0;
 		font-size: clamp(0.88rem, 1.8vw, 0.98rem);
 		line-height: 1.55;
-		color: rgba(190, 200, 214, 0.9);
+		color: var(--tevsys-copy-muted);
 	}
 
 	.how-rama__edge-screen {

@@ -2461,3 +2461,8 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-sml-panel__img {
 	margin-inline: auto;
 	text-align: center;
 }
+
+/* Cuerpo explicativo azulado (token --tevsys-copy-muted). */
+.tevsys-copy-muted {
+	color: var(--tevsys-copy-muted);
+}

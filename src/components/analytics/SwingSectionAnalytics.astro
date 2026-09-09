@@ -1,0 +1,56 @@
+---
+/**
+ * Vercel Analytics — mundo swing / overnight (9 sep 2026).
+ * Eventos: Swing Section View (1× por sesión) · Swing Video Play (1× al primer play).
+ * Dashboard → Custom Events (si el plan lo muestra).
+ */
+interface Props {
+	page?: string;
+}
+
+const { page = 'como-funciona' } = Astro.props;
+---
+
+<div hidden data-swing-analytics-page={page}></div>
+<script>
+	import { track } from '@vercel/analytics';
+
+	const page =
+		document.querySelector('[data-swing-analytics-page]')?.getAttribute('data-swing-analytics-page') ||
+		'como-funciona';
+
+	function trackOnce(key, name, data) {
+		try {
+			if (sessionStorage.getItem(key)) return;
+			sessionStorage.setItem(key, '1');
+		} catch {
+			/* private mode */
+		}
+		track(name, data);
+	}
+
+	const section = document.getElementById('overnight-laborable');
+	if (section) {
+		const io = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (!entry.isIntersecting) continue;
+					trackOnce(`va-swing-section-${page}`, 'Swing Section View', { page });
+					io.disconnect();
+					break;
+				}
+			},
+			{ threshold: 0.35, rootMargin: '0px 0px -8% 0px' }
+		);
+		io.observe(section);
+	}
+
+	const video = document.getElementById('overnight-laborable-video');
+	if (video) {
+		const onPlay = () => {
+			trackOnce(`va-swing-play-${page}`, 'Swing Video Play', { page });
+			video.removeEventListener('play', onPlay);
+		};
+		video.addEventListener('play', onPlay);
+	}
+</script>
