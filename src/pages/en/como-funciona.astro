@@ -54,6 +54,27 @@ const overnightLaborableGuide = {
 	videoLabel: 'Guide ~1:16 — midnight with an open trade, you stay protected (MC-CF-027)',
 };
 
+/**
+ * Your tevsys ID — visual lead of Audit act (9 Sep 2026).
+ * When founder says upload capture: set `captureSrc`. Path: `/images/evidence/tevsys-modal-tu-id-tvs.jpg`
+ */
+const tuIdTevsysBlock = {
+	id: 'tu-id-tevsys',
+	eyebrow: 'Case identity',
+	titleBefore: 'Your ',
+	titleAccent: 'tevsys ID',
+	body: 'Every install carries a TVS-… code tied to your license. It is the label for your case: panel, logs and packs can refer to the same file.',
+	bodyFollow:
+		'It is not paid audit and not market analysis — it is how tevsys names your identity in MetaTrader 5.',
+	captureSrc: '',
+	captureAlt: 'Your TEVsys ID modal on the panel — TVS-… code tied to the license.',
+	captureCaption: 'MT5 panel · Your TEVsys ID modal',
+	placeholderHint: 'Screenshot: Your TEVsys ID modal',
+	placeholderSub: 'Coming soon — panel with the modal and TVS-… code.',
+	ctaHref: '/en/company/contact?flow=auditoria-ia',
+	ctaLabel: 'Audit layer',
+};
+
 /** “From zero” policy guide + passive observation (20 Aug 2026 · MC-CF-002-G). Does not replace micro branch `#videoclip-pasiva`. */
 const desdeCeroGuide = {
 	id: 'desde-cero',
@@ -1054,11 +1075,58 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<span class="how-more-audit-cut__label">Audit phase starts here</span>
 		</p>
 
-		<section class="how-chapter how-chapter--audit how-audit-chapter how-audit-chapter--stage" aria-labelledby="how-audit-chapter-title">
+		<section class="how-chapter how-chapter--audit how-audit-chapter how-audit-chapter--stage" aria-labelledby="how-id-tevsys-title">
 			<div class="how-audit-chapter__shell" aria-hidden="true"></div>
 			<div class="how-audit-chapter__glow" aria-hidden="true"></div>
 			<div class="how-audit-chapter__stage-inner">
-					<header class="how-section-head how-chapter__head how-chapter__head--audit">
+					<section
+						class="how-id-tevsys"
+						id={tuIdTevsysBlock.id}
+						aria-labelledby="how-id-tevsys-title">
+						<header class="how-section-head how-chapter__head how-chapter__head--audit">
+							<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--audit-kicker">
+								{tuIdTevsysBlock.eyebrow}
+							</p>
+							<h2 id="how-id-tevsys-title" class="how-puesta-marcha__lead">
+								{tuIdTevsysBlock.titleBefore}
+								<span class="how-present-title__accent how-puesta-marcha__accent">{tuIdTevsysBlock.titleAccent}</span>
+							</h2>
+						</header>
+						<p class="how-id-tevsys__body">{tuIdTevsysBlock.body}</p>
+						<p class="how-id-tevsys__body how-id-tevsys__body--follow">{tuIdTevsysBlock.bodyFollow}</p>
+						{
+							tuIdTevsysBlock.captureSrc ? (
+								<EvidenceImageLightbox
+									src={tuIdTevsysBlock.captureSrc}
+									alt={tuIdTevsysBlock.captureAlt}
+									caption={tuIdTevsysBlock.captureCaption}
+									figureClass="how-id-tevsys__figure"
+									triggerClass="how-id-tevsys__zoom"
+									imgClass="how-id-tevsys__img"
+									capClass="how-id-tevsys__cap"
+								/>
+							) : (
+								<div
+									class="how-id-tevsys__placeholder"
+									role="status"
+									aria-label="Your TEVsys ID modal screenshot — coming soon">
+									<span class="how-id-tevsys__placeholder-hint">{tuIdTevsysBlock.placeholderHint}</span>
+									<span class="how-id-tevsys__placeholder-sub">{tuIdTevsysBlock.placeholderSub}</span>
+									<span class="how-id-tevsys__placeholder-code" aria-hidden="true">
+										TVS-…
+									</span>
+								</div>
+							)
+						}
+						<p class="how-id-tevsys__cta">
+							<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={tuIdTevsysBlock.ctaHref}>
+								{tuIdTevsysBlock.ctaLabel}
+								<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
+							</a>
+						</p>
+					</section>
+
+					<header class="how-section-head how-chapter__head how-chapter__head--audit how-id-tevsys__audit-follow">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--audit-kicker">
 							Audit
 						</p>
@@ -1073,8 +1141,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 								<strong>Triangulation:</strong> cross MT5 report, panel and logs for the same period — no mixed dates or versions.
 							</p>
 							<p>
-								Code <code class="how-more-lead__code">TVS-…</code> tied to your license. We review packs when they fit this
-								layer.
+								The same <code class="how-more-lead__code">TVS-…</code> code from your ID, tied to your license. We review packs when
+								they fit this layer.
 							</p>
 							<p class="how-audit-chapter__pitch-closing">
 								Public intake channel not open yet. We do not give signals or what to trade.
@@ -1354,6 +1422,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			<a href="/en/features/evidencia">All videos</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/en/como-funciona#movimiento-de-caja">Capital and risk</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/en/como-funciona#tu-id-tevsys">Your tevsys ID</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/en/features/evidencia">Evidence</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
@@ -2722,6 +2792,131 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 
 	.how-cashflow__cta {
 		margin: clamp(0.95rem, 2.4vw, 1.25rem) 0 0;
+	}
+
+	/* Your tevsys ID — audit act lead (placeholder until capture). */
+	.how-id-tevsys {
+		margin: 0 0 clamp(1.6rem, 4vw, 2.35rem);
+		padding-bottom: clamp(1.35rem, 3.5vw, 1.9rem);
+		border-bottom: 1px solid rgba(120, 160, 200, 0.18);
+	}
+
+	html[data-theme='light'] .how-id-tevsys {
+		border-bottom-color: rgba(60, 90, 120, 0.14);
+	}
+
+	.how-id-tevsys__body {
+		margin: 0 auto clamp(0.65rem, 1.8vw, 0.9rem);
+		max-width: 36rem;
+		font-size: clamp(0.95rem, 2.05vw, 1.05rem);
+		line-height: 1.55;
+		text-align: center;
+		opacity: 0.92;
+	}
+
+	.how-id-tevsys__body--follow {
+		margin-bottom: clamp(1rem, 2.6vw, 1.35rem);
+		opacity: 0.86;
+	}
+
+	html[data-theme='light'] .how-id-tevsys__body {
+		color: rgba(28, 36, 48, 0.9);
+	}
+
+	.how-id-tevsys__placeholder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.45rem;
+		min-height: clamp(11rem, 32vw, 16rem);
+		margin: 0 auto;
+		max-width: 42rem;
+		padding: clamp(1.25rem, 3.5vw, 2rem);
+		border-radius: 12px;
+		border: 1px dashed rgba(120, 180, 220, 0.35);
+		background: linear-gradient(165deg, rgba(18, 28, 42, 0.55), rgba(12, 18, 28, 0.72));
+		text-align: center;
+	}
+
+	html[data-theme='light'] .how-id-tevsys__placeholder {
+		border-color: rgba(70, 110, 150, 0.28);
+		background: linear-gradient(165deg, rgba(248, 250, 252, 0.95), rgba(230, 238, 246, 0.9));
+	}
+
+	.how-id-tevsys__placeholder-hint {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.78rem, 1.7vw, 0.88rem);
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		color: rgba(180, 220, 255, 0.92);
+	}
+
+	html[data-theme='light'] .how-id-tevsys__placeholder-hint {
+		color: rgba(32, 72, 110, 0.92);
+	}
+
+	.how-id-tevsys__placeholder-sub {
+		max-width: 22rem;
+		font-size: 0.88rem;
+		line-height: 1.45;
+		opacity: 0.72;
+	}
+
+	.how-id-tevsys__placeholder-code {
+		margin-top: 0.55rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(1.15rem, 3vw, 1.45rem);
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		color: rgba(120, 210, 200, 0.88);
+	}
+
+	html[data-theme='light'] .how-id-tevsys__placeholder-code {
+		color: rgba(20, 120, 110, 0.85);
+	}
+
+	.how-id-tevsys__figure {
+		margin: 0 auto;
+		max-width: 42rem;
+	}
+
+	.how-id-tevsys__zoom {
+		display: block;
+		width: 100%;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		cursor: zoom-in;
+	}
+
+	.how-id-tevsys__zoom:hover,
+	.how-id-tevsys__zoom:focus-visible {
+		outline: 2px solid rgba(120, 200, 255, 0.45);
+		outline-offset: 3px;
+	}
+
+	.how-id-tevsys__img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 10px;
+	}
+
+	.how-id-tevsys__cap {
+		margin: 0.55rem 0 0;
+		font-size: 0.82rem;
+		opacity: 0.7;
+		text-align: center;
+	}
+
+	.how-id-tevsys__cta {
+		margin: clamp(0.95rem, 2.4vw, 1.25rem) 0 0;
+		text-align: center;
+	}
+
+	.how-id-tevsys__audit-follow {
+		margin-top: clamp(0.35rem, 1.5vw, 0.65rem);
 	}
 
 	.how-puesta-marcha__links {

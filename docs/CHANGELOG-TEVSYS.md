@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Tu ID tevsys — bloque Auditoría en Cómo funciona (9 sep 2026)
+
+- **Qué:** `#tu-id-tevsys` ES|EN — lead visual del acto Auditoría (tras el corte *fase de auditoría*), copy identidad del caso + **placeholder** hasta captura del modal. Luego triangulación *Hechos que se pueden cruzar*.
+- **Colgar captura:** fundador dice *«sube esta captura»* → `public/images/evidence/tevsys-modal-tu-id-tvs.jpg` + `captureSrc` en `como-funciona.astro` (ES+EN).
+- **Commit:** `web(tevsys): add Tu ID tevsys block with capture placeholder on como-funciona`
+
 ## P13 — Guía overnight laborable ~1:15 (9 sep 2026)
 
 - **Qué:** acto negro **propio** (familia capital, no metido en mid-act con Desde cero) · `#overnight-laborable` · título **Operación en curso** + copy edge de la captura (VPS + FAQ) · lead vídeo *Medianoche no te deja sin red* · MP4+poster.
