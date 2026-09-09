@@ -68,7 +68,8 @@
 		box-sizing: border-box;
 		background: rgba(4, 6, 10, 0.94);
 		backdrop-filter: blur(6px);
-		overflow: auto;
+		/* No scroll interno: si el stage colapsa, overflow:auto fingía “scroll borroso detrás”. */
+		overflow: hidden;
 	}
 
 	.tevsys-evidence-lightbox__overlay[hidden] {
@@ -97,12 +98,17 @@
 		outline: none;
 	}
 
+	/*
+	  Stage con ancho definido (no width:auto): si stage=auto e img max-width:100%,
+	  antes de cargar la imagen el contenedor colapsa a 0 → blur sin foto (bug 9 sep Tu ID).
+	  La imagen usa width:auto + max-width:100% → nativa si es más estrecha (1024),
+	  sin estirar a 1907 (pixelado).
+	*/
 	.tevsys-evidence-lightbox__stage {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: auto;
-		max-width: min(96vw, 1907px);
+		width: min(96vw, 1907px);
 		max-height: calc(100vh - 4rem);
 	}
 
@@ -142,6 +148,8 @@
 
 		/** @type {HTMLElement | null} */
 		let lastFocus = null;
+		/** @type {number} */
+		let lockScrollY = 0;
 
 		/** @returns {HTMLElement | null} */
 		const getRoot = () => document.getElementById('tevsys-evidence-lightbox-root');
@@ -174,10 +182,17 @@
 				}
 			}
 
-			root.hidden = false;
+			/* Bloqueo de scroll sin saltar a (0,0) — ese jump + blur = “scroll detrás” en Cómo funciona. */
+			lockScrollY = window.scrollY || window.pageYOffset || 0;
 			document.documentElement.style.overflow = 'hidden';
 			document.body.style.overflow = 'hidden';
-			window.scrollTo(0, 0);
+			document.body.style.position = 'fixed';
+			document.body.style.top = `-${lockScrollY}px`;
+			document.body.style.left = '0';
+			document.body.style.right = '0';
+			document.body.style.width = '100%';
+
+			root.hidden = false;
 			const closeBtn = root.querySelector('[data-tevsys-lightbox-close]');
 			if (closeBtn instanceof HTMLElement) closeBtn.focus();
 		};
@@ -188,6 +203,13 @@
 			root.hidden = true;
 			document.documentElement.style.overflow = '';
 			document.body.style.overflow = '';
+			document.body.style.position = '';
+			document.body.style.top = '';
+			document.body.style.left = '';
+			document.body.style.right = '';
+			document.body.style.width = '';
+			window.scrollTo(0, lockScrollY);
+			lockScrollY = 0;
 			if (lastFocus) lastFocus.focus();
 			lastFocus = null;
 		};

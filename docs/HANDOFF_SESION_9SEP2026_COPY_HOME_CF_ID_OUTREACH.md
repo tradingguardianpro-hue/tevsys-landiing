@@ -122,16 +122,20 @@ Nav pie CF: enlace *Tu ID tevsys* / *Your tevsys ID*.
 
 ---
 
-## 5) Lightbox — fix pixelado (9 sep)
+## 5) Lightbox — fix pixelado + apertura (9 sep)
 
-**Problema:** al ampliar, la ID se veía borrosa.
+**Problema 1 (pixelado):** forzar imagen a ancho ~1907 estiraba PNG 1024.
 
-**Causa:** `EvidenceLightboxGlobal.astro` forzaba el stage a ~1907 px y la imagen a `width: 100%` → **estiraba** un PNG de 1024 px.
+**Problema 2 (blur + scroll, reportado noche):** tras un intento de “no estirar” con `stage { width: auto }`, el stage **colapsaba a 0** (`img max-width:100%` de un padre sin ancho) → overlay blur sin foto usable. Además `window.scrollTo(0,0)` al abrir **tiraba la página arriba** detrás del blur.
 
-**Fix:** stage/full a tamaño nativo (`width: auto`, `max-width: min(96vw, 1907px)`). Attrs honestos `width={1024}` `height={540}` en el lightbox de Tu ID.
+**Fix canónico:**
+- Stage: `width: min(96vw, 1907px)` (ancho real).
+- Img: `width: auto; max-width: 100%` → nativa si es más estrecha, sin estirar.
+- Sin `scrollTo(0,0)`; lock con `body { position: fixed; top: -scrollY }` y restaurar al cerrar.
+- Overlay `overflow: hidden`.
 
 **Archivo:** `src/components/core/EvidenceLightboxGlobal.astro`  
-Beneficia también otras capturas más pequeñas que la de caja.
+**Asset Tu ID:** sigue 1024×540; ideal re-captura ~1900 px.
 
 ---
 

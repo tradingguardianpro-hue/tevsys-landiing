@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Lightbox — fix apertura Tu ID / scroll blur (9 sep 2026 noche)
+
+- **Síntoma:** clic en captura → blur + scroll detrás, imagen no “abre”.
+- **Causas:** (1) `stage { width:auto }` + `img { max-width:100% }` → colapso a 0 px antes de cargar; (2) `window.scrollTo(0,0)` al abrir tiraba la página arriba detrás del overlay.
+- **Fix:** stage con ancho `min(96vw, 1907px)`; img `width:auto` (no estira PNG 1024); quitar scrollTo top; lock body `position:fixed` + restaurar `scrollY` al cerrar; overlay `overflow:hidden`.
+- **Commit:** `fix(tevsys-web): restore lightbox open without scroll jump or zero-size stage`
+
 ## Handoff sesión 9 sep 2026 — Home · CF · Tu ID · lightbox · outreach
 
 - **Doc maestro (frases, porqués, archivos, contactos):** `docs/HANDOFF_SESION_9SEP2026_COPY_HOME_CF_ID_OUTREACH.md`
