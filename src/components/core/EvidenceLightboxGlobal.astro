@@ -118,10 +118,13 @@
 		max-width: 100%;
 		height: auto;
 		max-height: calc(100vh - 4rem);
+		min-height: 12rem;
 		object-fit: contain;
 		border-radius: 0.35rem;
 		box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
 		cursor: default;
+		transition: opacity 0.12s ease;
+		background: #0a0c10;
 	}
 
 	.tevsys-evidence-lightbox__overlay-cap {
@@ -150,6 +153,8 @@
 		let lastFocus = null;
 		/** @type {number} */
 		let lockScrollY = 0;
+		/** Evita que el mismo clic que abre cierre el overlay (mouseup sobre el fondo). */
+		let ignoreBackdropUntil = 0;
 
 		/** @returns {HTMLElement | null} */
 		const getRoot = () => document.getElementById('tevsys-evidence-lightbox-root');
@@ -168,8 +173,10 @@
 			if (!(img instanceof HTMLImageElement)) return;
 
 			lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-			img.src = src;
+			/* Reset por si una carga anterior falló o quedó a 0×0 */
+			img.removeAttribute('src');
 			img.alt = alt;
+			img.style.opacity = '0';
 			root.setAttribute('aria-label', alt || 'Captura ampliada');
 
 			if (cap instanceof HTMLElement) {
@@ -192,7 +199,17 @@
 			document.body.style.right = '0';
 			document.body.style.width = '100%';
 
+			ignoreBackdropUntil = Date.now() + 450;
 			root.hidden = false;
+
+			img.onload = () => {
+				img.style.opacity = '1';
+			};
+			img.onerror = () => {
+				img.style.opacity = '1';
+			};
+			img.src = src;
+
 			const closeBtn = root.querySelector('[data-tevsys-lightbox-close]');
 			if (closeBtn instanceof HTMLElement) closeBtn.focus();
 		};
@@ -260,7 +277,10 @@
 				return;
 			}
 			const root = getRoot();
-			if (target === root) closeLightbox();
+			if (target === root) {
+				if (Date.now() < ignoreBackdropUntil) return;
+				closeLightbox();
+			}
 		});
 	})();
 </script>

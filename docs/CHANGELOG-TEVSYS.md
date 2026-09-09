@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Lightbox — Tu ID = mismo patrón que capital + anti-cierre al abrir (9 sep noche)
+
+- **Qué:** captura `#tu-id-tevsys` usa clases `how-cashflow__*` (mismo zoom que *riesgo / capital*). Overlay: no cerrar con el mismo clic que abre; fade-in al cargar imagen.
+- **Commit:** `fix(tevsys-web): open Tu ID lightbox like capital and stop same-click close`
+
 ## GEO — refuerzo espejo Google AI Mode (9 sep 2026 tarde)
 
 - **Por qué:** HyperClose OK; trazabilidad/Tu ID floja; overnight sin anclas indexadas; SML *Smart Margin Limit*; “forense” inventado.

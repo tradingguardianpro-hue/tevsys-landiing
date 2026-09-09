@@ -66,7 +66,7 @@ const tuIdTevsysBlock = {
 	body: 'Every install carries a TVS-… code tied to your license. It is the label for your case: panel, logs and packs can refer to the same file and be cross-checked with official MT5 reports for the same period.',
 	bodyFollow:
 		'It goes with the record from install and with close attribution (tevsys decision vs MT5 execution, not mixed with slippage). It is not paid audit and not market analysis — it is case identity in MetaTrader 5.',
-	captureSrc: '/images/evidence/tevsys-modal-tu-id-tvs.png?v=20260909',
+	captureSrc: '/images/evidence/tevsys-modal-tu-id-tvs.png?v=20260909c',
 	captureAlt: 'Your TEVsys ID modal on the panel — TVS-… code tied to the license; click ID at the bottom right.',
 	captureCaption: 'MT5 panel · Your TEVsys ID modal · Click → view ID',
 	placeholderHint: 'Screenshot: Your TEVsys ID modal',
@@ -1101,12 +1101,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 									src={tuIdTevsysBlock.captureSrc}
 									alt={tuIdTevsysBlock.captureAlt}
 									caption={tuIdTevsysBlock.captureCaption}
-									width={1024}
-									height={540}
-									figureClass="how-id-tevsys__figure"
-									triggerClass="how-id-tevsys__zoom"
-									imgClass="how-id-tevsys__img"
-									capClass="how-id-tevsys__cap"
+									figureClass="how-cashflow__figure"
+									triggerClass="how-cashflow__zoom"
+									imgClass="how-cashflow__img"
+									capClass="how-cashflow__cap"
 								/>
 							) : (
 								<div

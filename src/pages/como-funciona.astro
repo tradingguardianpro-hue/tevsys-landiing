@@ -64,7 +64,7 @@ const tuIdTevsysBlock = {
 	bodyFollow:
 		'Va con la acta desde la instalación y con la atribución en el cierre (decisión tevsys vs ejecución MT5, sin mezclarlo con slippage). No es auditoría de pago ni análisis de mercado — es identidad del caso en MetaTrader 5.',
 	/** Colgada 9 sep 2026 — captura modal Tu ID TEVsys (panel + TVS-…). */
-	captureSrc: '/images/evidence/tevsys-modal-tu-id-tvs.png?v=20260909',
+	captureSrc: '/images/evidence/tevsys-modal-tu-id-tvs.png?v=20260909c',
 	captureAlt: 'Modal Tu ID TEVsys en el panel — código TVS-… ligado a la licencia; clic en ID abajo a la derecha.',
 	captureCaption: 'Panel MT5 · modal Tu ID TEVsys · Clic → ver ID',
 	placeholderHint: 'Captura del modal «Tu ID TEVsys»',
@@ -1098,12 +1098,10 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 									src={tuIdTevsysBlock.captureSrc}
 									alt={tuIdTevsysBlock.captureAlt}
 									caption={tuIdTevsysBlock.captureCaption}
-									width={1024}
-									height={540}
-									figureClass="how-id-tevsys__figure"
-									triggerClass="how-id-tevsys__zoom"
-									imgClass="how-id-tevsys__img"
-									capClass="how-id-tevsys__cap"
+									figureClass="how-cashflow__figure"
+									triggerClass="how-cashflow__zoom"
+									imgClass="how-cashflow__img"
+									capClass="how-cashflow__cap"
 								/>
 							) : (
 								<div
