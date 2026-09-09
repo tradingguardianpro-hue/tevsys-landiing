@@ -2277,7 +2277,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		max-width: 32ch;
 		font-size: 0.94rem;
 		line-height: 1.5;
-		opacity: 0.82;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 	}
 
 	/* «De cero a protegido» y capítulo auditoría (misma familia de teaser). */
@@ -2401,7 +2402,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		margin: 0;
 		font-size: 0.94rem;
 		line-height: 1.55;
-		opacity: 0.84;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 	}
 
 	.how-section-sub__line2 {
@@ -2409,7 +2411,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		margin-top: 0.55rem;
 		margin-bottom: 0.15rem;
 		font-weight: 600;
-		opacity: 0.92;
+		color: var(--tevsys-copy-muted);
+		opacity: 0.95;
 		letter-spacing: 0.01em;
 	}
 
@@ -2850,7 +2853,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		max-width: 38rem;
 		font-size: clamp(0.92rem, 1.85vw, 1.02rem);
 		line-height: 1.55;
-		color: rgba(230, 235, 245, 0.88);
+		color: var(--tevsys-copy-muted);
 		text-align: left;
 	}
 
@@ -2870,7 +2873,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	html[data-theme='light'] .how-cashflow__body {
-		color: rgba(30, 36, 48, 0.88);
+		color: var(--tevsys-copy-muted);
 	}
 
 	.how-cashflow__figure {
@@ -2936,16 +2939,17 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		font-size: clamp(0.95rem, 2.05vw, 1.05rem);
 		line-height: 1.55;
 		text-align: center;
-		opacity: 0.92;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 	}
 
 	.how-id-tevsys__body--follow {
 		margin-bottom: clamp(1rem, 2.6vw, 1.35rem);
-		opacity: 0.86;
+		opacity: 1;
 	}
 
 	html[data-theme='light'] .how-id-tevsys__body {
-		color: rgba(28, 36, 48, 0.9);
+		color: var(--tevsys-copy-muted);
 	}
 
 	.how-id-tevsys__placeholder {
@@ -3351,16 +3355,16 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	html[data-theme='dark'] .how-more-lead__line {
-		color: rgba(244, 246, 248, 0.94);
+		color: var(--tevsys-copy-muted);
 		opacity: 1;
 	}
 
 	html[data-theme='dark'] .how-more-lead__line strong {
-		color: #fff;
+		color: rgba(220, 228, 238, 0.98);
 	}
 
 	html[data-theme='dark'] .how-more-lead__note {
-		color: rgba(230, 233, 240, 0.88);
+		color: var(--tevsys-copy-muted);
 		opacity: 1;
 	}
 
@@ -3376,9 +3380,14 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		color: rgba(255, 255, 255, 0.98);
 	}
 
-	html[data-theme='dark'] .how-more--stage .how-block-head .how-more-card__title,
+	html[data-theme='dark'] .how-more--stage .how-block-head .how-more-card__title {
+		color: rgba(255, 255, 255, 0.98);
+		opacity: 1;
+		max-width: none;
+	}
+
 	html[data-theme='dark'] .how-more--stage .how-block-lead {
-		color: rgba(244, 246, 248, 0.94);
+		color: var(--tevsys-copy-muted);
 		opacity: 1;
 		max-width: none;
 	}
@@ -3458,7 +3467,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	html[data-theme='dark'] .how-more--stage .how-embed-placeholder__sub {
-		color: rgba(230, 233, 240, 0.9);
+		color: var(--tevsys-copy-muted);
 		opacity: 1;
 	}
 
@@ -3589,7 +3598,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		max-width: 36rem;
 		font-size: 0.94rem;
 		line-height: 1.55;
-		opacity: 0.9;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 		text-align: left;
 	}
 
@@ -5486,7 +5496,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		font-size: clamp(0.86rem, 1.05vw, 0.94rem);
 		line-height: 1.58;
 		letter-spacing: 0.01em;
-		color: rgba(244, 246, 248, 0.9);
+		color: var(--tevsys-copy-muted);
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-left: 3px solid rgba(245, 176, 65, 0.55);
 		background: rgba(255, 255, 255, 0.045);
@@ -5494,7 +5504,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 	}
 
 	html[data-theme='light'] .how-block-attribution {
-		color: rgba(20, 24, 32, 0.86);
+		color: var(--tevsys-copy-muted);
 		background: rgba(0, 0, 0, 0.03);
 		border-color: rgba(0, 0, 0, 0.08);
 		border-left-color: rgba(200, 135, 26, 0.55);
@@ -5522,7 +5532,8 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 		margin: 0 0 0.45rem;
 		font-size: 0.94rem;
 		line-height: 1.45;
-		opacity: 0.88;
+		color: var(--tevsys-copy-muted);
+		opacity: 1;
 		max-width: 42ch;
 	}
 

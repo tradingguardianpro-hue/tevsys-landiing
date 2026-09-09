@@ -4,13 +4,20 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — mid-act muted (Desde cero · Capital · clips) (10 sep 2026 noche)
+
+- **Qué:** párrafos que seguían casi blancos tras bajar de Operación swing: Desde cero (“si cargas tevsys con operaciones ya abiertas…”), Capital (“riesgo se mide sobre el capital real”), Tu ID, pitch auditoría, leads de clips, frase Ya estás protegido.
+- **Regla:** títulos blanco · cuerpo `--tevsys-copy-muted` (ES|EN).
+- **Apuntado:** mañana micros Precisión / HyperClose / SML / Evidencia.
+- **Commit:** `web(tevsys): mute mid-act how-it-works body copy`
+
 ## Canon tipográfico — títulos blanco · cuerpo muted (10 sep 2026)
 
 - **Decisión:** copy explicativo en `--tevsys-copy-muted` (tono Operación swing); títulos en blanco; logo header intacto; gancho *No opera por ti…* en blanco.
 - **Dónde documentado para la IA:** `.cursor/rules/workflow-web-visual-tevsys.mdc` § *Tipografía y color de copy* (+ handoff *lee cursor rules*).
-- **Hecho:** home (definición, cards, audit, planes, fundador) · CF · Transparencia Nasdaq · Para quién · Empresas · Contacto · footer · nav píldoras.
+- **Hecho:** home (definición, cards, audit, planes, fundador) · CF (intro + mid-act) · Transparencia Nasdaq · Para quién · Empresas · Contacto · footer · nav píldoras.
 - **Mañana:** micros Precisión / HyperClose / SML / Evidencia — una a una (color + copy).
-- **Commits arco:** `web(tevsys): track swing engagement and mute how-it-works intro copy` · `web(tevsys): extend muted body copy across home transparency and nav pages`
+- **Commits arco:** `web(tevsys): track swing…` · `extend muted body…` · `mute mid-act how-it-works body copy`
 
 ## Web — copy muted sitewide (home + Transparencia + nav pages) (10 sep 2026)
 
