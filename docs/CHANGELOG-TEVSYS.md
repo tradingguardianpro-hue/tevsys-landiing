@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Micropágina Precisión — composición (11 sep 2026 mediodía)
+
+- **No apagar residual/atribución:** residual sigue destacado con **barra ámbar izquierda** + kicker *Diferenciador* (mismo patrón atribución home), sin marco naranja completo que chocaba con muted.
+- **Qué puedes comprobar:** texto muted + enlace corto ámbar `ver →` (fin del subrayado a toda la línea).
+- Enlaces evidencia en ámbar (no blanco/cian). Cifras 90 ops / 0,06 % siguen fuertes.
+- **Commit:** `web(tevsys): restyle precision residual callout and verify list`
+
 ## Micropágina Precisión — cuerpo muted (11 sep 2026)
 
 - **Qué:** títulos blancos; residual, stats, «Qué puedes comprobar», notas de vídeo y leads → `--tevsys-copy-muted` (ES|EN). Hero ya estaba; el resto seguía casi blanco.

@@ -106,10 +106,20 @@
 .tevsys-feature-micro-surface .precision-residual {
 	max-width: 72ch;
 	margin: 0 0 clamp(1.35rem, 3vw, 2rem);
-	padding: clamp(0.85rem, 2vw, 1.15rem) clamp(1rem, 2.5vw, 1.25rem);
-	border-radius: 0.55rem;
-	border: 1px solid rgba(245, 176, 65, 0.22);
-	background: rgba(245, 176, 65, 0.05);
+	padding: clamp(0.95rem, 2.2vw, 1.25rem) clamp(1.05rem, 2.5vw, 1.35rem);
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-left: 3px solid rgba(245, 176, 65, 0.65);
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.tevsys-feature-micro-surface .precision-residual__kicker {
+	margin: 0 0 0.4rem;
+	font-size: 0.72rem;
+	font-weight: 650;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #f5b041;
 }
 
 .tevsys-feature-micro-surface .precision-residual h2 {
