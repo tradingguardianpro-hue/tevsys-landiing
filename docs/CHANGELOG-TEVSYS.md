@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Micros — lista ver→ + muted (11 sep 2026)
+
+- Canon Precisión (ajustable): muted + `ver →` · residual barra ámbar. Rollout HyperClose / SML / Evidencia ES|EN.
+- **Commit:** `web(tevsys): roll out verify-list pattern on feature micros`
+
+## Swing ActivTrades #6271553 — cierre ★ (10 sep 2026)
+
+- Protegido 8 sep 18:20 (−1 % congelado) → STOP 10 sep 13:02:38 (−1,0005 % decisión · −1,0444 % fill · 60 ms ejecución).
+- Material oro P13 / Evidencia: 3 actos + historial + atribución.
+
 ## Micropágina Precisión — composición (11 sep 2026 mediodía)
 
 - **No apagar residual/atribución:** residual sigue destacado con **barra ámbar izquierda** + kicker *Diferenciador* (mismo patrón atribución home), sin marco naranja completo que chocaba con muted.

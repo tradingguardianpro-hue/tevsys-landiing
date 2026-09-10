@@ -2424,6 +2424,59 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-cta {
 	max-width: 58ch;
 }
 
+/* Lista “Qué puedes comprobar” — canon Precisión 11 sep (ajustable). */
+.tevsys-feature-micro-surface .feature-proof-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.tevsys-feature-micro-surface .feature-proof-list li {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.35rem 0.75rem;
+	margin-bottom: 0.55rem;
+	line-height: 1.5;
+	padding: 0.35rem 0 0.35rem 0.15rem;
+	color: var(--tevsys-copy-muted);
+}
+.tevsys-feature-micro-surface .feature-proof-list li::before {
+	content: '';
+	display: inline-block;
+	width: 0.28rem;
+	height: 0.28rem;
+	border-radius: 50%;
+	background: rgba(245, 176, 65, 0.75);
+	margin-right: 0.15rem;
+	flex-shrink: 0;
+	align-self: center;
+}
+.tevsys-feature-micro-surface .feature-proof-list li:last-child {
+	margin-bottom: 0;
+}
+.tevsys-feature-micro-surface .feature-proof-list__text {
+	flex: 1 1 16rem;
+	min-width: 0;
+	color: var(--tevsys-copy-muted);
+}
+.tevsys-feature-micro-surface .evidence-link {
+	color: #f5b041;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(245, 176, 65, 0.45);
+	padding-bottom: 0.04rem;
+	font-weight: 600;
+	transition: color 0.15s ease, border-color 0.15s ease;
+}
+.tevsys-feature-micro-surface .evidence-link:hover {
+	color: #f7c050;
+	border-bottom-color: rgba(247, 192, 80, 0.75);
+}
+.tevsys-feature-micro-surface .evidence-link--short {
+	flex: 0 0 auto;
+	white-space: nowrap;
+	font-size: 0.88rem;
+}
+
 html[data-theme='dark'] .tevsys-feature-micro-surface .hyperclose-demo-evidence__text {
 	color: var(--tevsys-copy-muted);
 	opacity: 1;

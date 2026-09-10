@@ -103,27 +103,34 @@ const seo = {
 
 		<section class="feature-proof">
 			<h2>Qué puedes comprobar</h2>
-			<ul>
+			<ul class="feature-proof-list">
 				<li>
-					<a class="evidence-link" href="#evidencia-demo">Demo 100k + informe MT5 de la misma operativa.</a>
+					<span class="feature-proof-list__text">Demo 100k + informe MT5 de la misma operativa.</span>
+					<a class="evidence-link evidence-link--short" href="#evidencia-demo">ver →</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidence-audit">Dos capas: MT5 qué ocurrió · tevsys por qué.</a>
+					<span class="feature-proof-list__text">Dos capas: MT5 qué ocurrió · tevsys por qué.</span>
+					<a class="evidence-link evidence-link--short" href="#evidence-audit">ver →</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidencia-contencion-489">Precisión cuando puede, contención bajo estrés: barrido ~111 ms, seis posiciones.</a>
+					<span class="feature-proof-list__text">Precisión cuando puede, contención bajo estrés: barrido ~111 ms, seis posiciones.</span>
+					<a class="evidence-link evidence-link--short" href="#evidencia-contencion-489">ver →</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#movimiento-de-caja">Capital y riesgo: si el dinero de la cuenta cambia, el pacto se vuelve a firmar.</a>
+					<span class="feature-proof-list__text">Capital y riesgo: si el dinero de la cuenta cambia, el pacto se vuelve a firmar.</span>
+					<a class="evidence-link evidence-link--short" href="#movimiento-de-caja">ver →</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidencia-4-56">Caso Essential extremo: 100 lotes, desviación de cierre documentada (+95 €).</a>
+					<span class="feature-proof-list__text">Caso Essential extremo: 100 lotes, desviación de cierre documentada (+95 €).</span>
+					<a class="evidence-link evidence-link--short" href="#evidencia-4-56">ver →</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidencia-html-transacciones">Historial exportable desde MT5 (posiciones, órdenes, resultado).</a>
+					<span class="feature-proof-list__text">Historial exportable desde MT5 (posiciones, órdenes, resultado).</span>
+					<a class="evidence-link evidence-link--short" href="#evidencia-html-transacciones">ver →</a>
 				</li>
 				<li>
-					<a class="evidence-link" href="#evidencia-logs">Guía logs MT5 — sesión cuenta pequeña (contexto en Precisión).</a>
+					<span class="feature-proof-list__text">Guía logs MT5 — sesión cuenta pequeña (contexto en Precisión).</span>
+					<a class="evidence-link evidence-link--short" href="#evidencia-logs">ver →</a>
 				</li>
 			</ul>
 		</section>
@@ -622,36 +629,47 @@ const seo = {
 		line-height: 1.45;
 		max-width: 74ch;
 	}
-	.feature-proof ul {
+	.feature-proof ul,
+	.feature-proof-list {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
-	.feature-proof li {
-		margin-bottom: 0.45rem;
+	.feature-proof-list li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem 0.75rem;
+		margin-bottom: 0.55rem;
 		line-height: 1.5;
-		padding: 0.42rem 0.6rem 0.42rem 1rem;
-		border-left: 2px solid rgba(245, 176, 65, 0.22);
-		border-radius: 0.35rem;
-		background: linear-gradient(90deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
-		transition: border-color 0.2s ease, background-color 0.2s ease;
+		padding: 0.35rem 0 0.35rem 0.15rem;
+		border-left: none;
+		border-radius: 0;
+		background: none;
+		color: var(--tevsys-copy-muted);
 	}
-	.feature-proof li::before {
+	.feature-proof-list li::before {
 		content: '';
 		display: inline-block;
-		width: 0.34rem;
-		height: 0.34rem;
+		width: 0.28rem;
+		height: 0.28rem;
 		border-radius: 50%;
-		background: rgba(245, 176, 65, 0.82);
-		margin-right: 0.55rem;
-		vertical-align: middle;
+		background: rgba(245, 176, 65, 0.75);
+		margin-right: 0.15rem;
+		flex-shrink: 0;
+		align-self: center;
 	}
-	.feature-proof li:hover {
-		border-left-color: rgba(245, 176, 65, 0.42);
-		background: linear-gradient(90deg, rgba(245, 176, 65, 0.07), rgba(255, 255, 255, 0));
+	.feature-proof-list li:hover {
+		border-left-color: transparent;
+		background: none;
 	}
-	.feature-proof li:last-child {
+	.feature-proof-list li:last-child {
 		margin-bottom: 0;
+	}
+	.feature-proof-list__text {
+		flex: 1 1 16rem;
+		min-width: 0;
+		color: var(--tevsys-copy-muted);
 	}
 	.feature-proof {
 		position: relative;
@@ -668,20 +686,27 @@ const seo = {
 		background: radial-gradient(ellipse at right center, rgba(245, 176, 65, 0.11) 0%, rgba(245, 176, 65, 0.045) 42%, transparent 74%);
 	}
 	.evidence-link {
-		color: #ffffff;
-		text-decoration: underline;
-		text-decoration-thickness: 0.06em;
-		text-underline-offset: 2.5px;
-		transition: color 0.2s ease;
+		color: #f5b041;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(245, 176, 65, 0.45);
+		padding-bottom: 0.04rem;
+		transition: color 0.15s ease, border-color 0.15s ease;
 		cursor: pointer;
+		font-weight: 600;
 	}
 	.evidence-link:hover {
-		color: #f5b041;
+		color: #f7c050;
+		border-bottom-color: rgba(247, 192, 80, 0.75);
 	}
 	.evidence-link:focus-visible {
 		outline: 2px solid #f5b041;
 		outline-offset: 3px;
 		border-radius: 0.2rem;
+	}
+	.evidence-link--short {
+		flex: 0 0 auto;
+		white-space: nowrap;
+		font-size: 0.88rem;
 	}
 	.feature-proof-detail {
 		margin: 1rem 0 0;
