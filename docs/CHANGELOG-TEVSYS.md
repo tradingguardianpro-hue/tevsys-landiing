@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Micropágina Precisión — cuerpo muted (11 sep 2026)
+
+- **Qué:** títulos blancos; residual, stats, «Qué puedes comprobar», notas de vídeo y leads → `--tevsys-copy-muted` (ES|EN). Hero ya estaba; el resto seguía casi blanco.
+- **Archivos:** `global.css` (capa micro) · `features/precision.astro` · `en/features/precision.astro`.
+- **Siguiente:** HyperClose → SML → Evidencia (misma pasada visual, una a una).
+- **Commit:** `web(tevsys): mute body copy on precision micro page`
+
 ## Cómo funciona — mid-act muted (Desde cero · Capital · clips) (10 sep 2026 noche)
 
 - **Qué:** párrafos que seguían casi blancos tras bajar de Operación swing: Desde cero (“si cargas tevsys con operaciones ya abiertas…”), Capital (“riesgo se mide sobre el capital real”), Tu ID, pitch auditoría, leads de clips, frase Ya estás protegido.

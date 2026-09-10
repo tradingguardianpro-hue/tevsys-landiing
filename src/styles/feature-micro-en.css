@@ -125,7 +125,8 @@
 	margin: 0 0 0.75rem;
 	font-size: 0.96rem;
 	line-height: 1.58;
-	opacity: 0.9;
+	color: var(--tevsys-copy-muted);
+	opacity: 1;
 }
 
 .tevsys-feature-micro-surface .precision-residual p:last-child {

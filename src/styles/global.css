@@ -2145,11 +2145,32 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 	opacity: 1;
 }
 
+/* Canon tipográfico micros (10–11 sep): títulos blancos · cuerpo muted. */
+.tevsys-feature-micro-surface .precision-hero-lead,
+.tevsys-feature-micro-surface .precision-hero-stat,
+.tevsys-feature-micro-surface .precision-hero-secondary,
+.tevsys-feature-micro-surface .precision-hero-geopolitical,
+.tevsys-feature-micro-surface .precision-residual p,
+.tevsys-feature-micro-surface .feature-demo-hook,
+.tevsys-feature-micro-surface .feature-demo-attrib,
+.tevsys-feature-micro-surface .demo-edit-note,
+.tevsys-feature-micro-surface .feature-proof-lead,
+.tevsys-feature-micro-surface .feature-proof-subtitle,
+.tevsys-feature-micro-surface .feature-proof li,
+.tevsys-feature-micro-surface .feature-proof p,
+.tevsys-feature-micro-surface .feature-proof-detail > p,
+.tevsys-feature-micro-surface .feature-cta p,
+.tevsys-feature-micro-surface .proof-gallery__intro,
+.tevsys-feature-micro-surface .proof-gallery__hint,
+.tevsys-feature-micro-surface .feature-demo-youtube-more {
+	color: var(--tevsys-copy-muted);
+	opacity: 1;
+}
+
 .tevsys-feature-micro-surface .precision-hero-lead {
 	margin: clamp(0.65rem, 2vw, 0.85rem) 0 clamp(1.35rem, 3.5vw, 1.75rem);
 	font-size: clamp(1.02rem, 1.35vw, 1.12rem);
 	line-height: 1.55;
-	opacity: 0.92;
 }
 
 .tevsys-feature-micro-surface .precision-hero-evidence {
@@ -2167,14 +2188,12 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 	font-size: 0.96rem;
 	line-height: 1.55;
 	font-weight: 500;
-	opacity: 0.94;
 }
 
 .tevsys-feature-micro-surface .precision-hero-secondary {
 	margin: 0;
 	font-size: 0.92rem;
 	line-height: 1.55;
-	opacity: 0.82;
 }
 
 .tevsys-feature-micro-surface .precision-hero-geopolitical {
@@ -2182,7 +2201,6 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 	margin: 0 0 clamp(0.85rem, 2vw, 1.1rem);
 	font-size: 0.96rem;
 	line-height: 1.55;
-	opacity: 0.88;
 }
 
 .tevsys-feature-micro-surface .precision-residual {
@@ -2206,7 +2224,6 @@ html[data-theme='dark'] a.plan-card__cta:not(.plan-card__cta--secondary):hover {
 	margin: 0 0 0.75rem;
 	font-size: 0.96rem;
 	line-height: 1.58;
-	opacity: 0.9;
 }
 
 .tevsys-feature-micro-surface .precision-residual p:last-child {
@@ -2275,7 +2292,6 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-proof-detail--vi
 	margin: 0 0 0.85rem;
 	font-size: 0.94rem;
 	line-height: 1.5;
-	opacity: 0.88;
 	max-width: 52ch;
 }
 .tevsys-feature-micro-surface .feature-proof-detail--video-slim .demo-video--compact {
@@ -2397,12 +2413,9 @@ html[data-theme='light'] .tevsys-feature-micro-surface .feature-cta {
 	max-width: 58ch;
 }
 
-html[data-theme='dark'] .tevsys-feature-micro-surface .demo-edit-note {
-	opacity: 0.84;
-}
-
 html[data-theme='dark'] .tevsys-feature-micro-surface .hyperclose-demo-evidence__text {
-	opacity: 0.96;
+	color: var(--tevsys-copy-muted);
+	opacity: 1;
 }
 
 html[data-theme='dark'] .tevsys-feature-micro-surface .proof-gallery {
