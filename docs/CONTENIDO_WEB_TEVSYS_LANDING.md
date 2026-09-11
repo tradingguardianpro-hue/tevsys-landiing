@@ -437,6 +437,7 @@ Ver handoff hero.
 
 ### Copy de apertura por micro-página (actual)
 - `HyperClose`:
+  - Kicker (11 sep 2026): `Freno bajo presión · milisegundos`
   - Título: `HyperClose: cuando tu disciplina falla, HyperClose no.`
   - Hook: `• Cierre en milisegundos.` + `Hasta la siguiente ventana (día o semana), sin atajos.`
   - Lead: `Operar en bloqueo dispara el cierre al instante; lo que pasa queda trazado para poder comprobarlo.`

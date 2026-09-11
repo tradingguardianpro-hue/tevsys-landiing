@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Micro HyperClose — kicker opción 1 (11 sep 2026 noche)
+
+- **Kicker:** *Freno bajo presión · milisegundos* / *Brake under pressure · milliseconds* (H1 + resto intactos)
+- **Commit:** `web(tevsys): replace hyperclose feature kicker with brake under pressure`
+
 ## Cáscara punch unificada (11 sep 2026 noche)
 
 - Clase global `.tevsys-shell-punch` (barra ámbar izquierda en degradado, como el golpe home).
@@ -39,7 +44,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Criterio:** elegante, confianza, no chase. Un paso a la vez.
 1. **P0** Home definición (bajo hero / mano): ✅ **cerrado** versión A (lead sin eco con golpes).
-2. **P1** Micros hero: SML ✅ · Precisión ✅ · quedan HyperClose → Evidencia (pasada corta o dejar).
+2. **P1** Micros hero: SML ✅ · Precisión ✅ · HyperClose ✅ · queda Evidencia (pasada corta o dejar).
 3. **P2** Push del tono hook/auditoría cuando toque.
 Detalle vivo: hub TGP V12 **(webCopyRoadmapInstant)**.
 
