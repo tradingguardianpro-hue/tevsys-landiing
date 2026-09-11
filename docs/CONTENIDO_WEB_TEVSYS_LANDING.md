@@ -444,8 +444,9 @@ Ver handoff hero.
   - Hook: `• 90 operativas documentadas. 0,06% de error medio en condiciones normales.`
   - Transparencia: párrafo bajo intro — desviación máxima documentada **−0,39%** (signo negativo + cursiva en el %, alineado al estilo del hook).
 - `SML`:
-  - Título: `SML: protege parte de lo ganado sin frenar tu operativa.`
-  - Hook: `• Actívalo cuando quieras. Decide cuánto ampliar el margen: del 5% al 25% (mínimo 75% protegido).`
+  - Título: `SML: no es obligatorio. Es una recompensa.` (11 sep 2026 · hero micro)
+  - Kicker: `Bonus opcional · Advanced / Pro`
+  - Hook: *Cuando ayer cerraste en verde… al menos el 75 %.* Lead: acrónimo + 5–25 % + límites.
   - Disponibilidad actual: validación para Advanced/Pro (lista de espera).
 - `Evidencia`:
   - Título: `Evidencia verificable: aquí no hay "creemos".`

@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Micro SML — hero opción 1 (11 sep 2026 noche)
+
+- **Kicker:** *Bonus opcional · Advanced / Pro* (EN: *Optional bonus · Advanced / Pro*)
+- **H1:** *SML: no es obligatorio. Es una recompensa.* / *…It is a reward.*
+- **Hook:** verde de ayer + mín. 75 % · lead = acrónimo + 5–25 %
+- **Commit:** `web(tevsys): hook SML micro hero as optional reward`
+
 ## Home — definición lead versión A (11 sep 2026 noche)
 
 - **Qué:** lead bajo hero sin eco con los tres golpes (cierra / HyperClose / acta).
@@ -15,7 +22,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Criterio:** elegante, confianza, no chase. Un paso a la vez.
 1. **P0** Home definición (bajo hero / mano): ✅ **cerrado** versión A (lead sin eco con golpes).
-2. **P1** Micros hero (SML → Precisión → HyperClose → Evidencia): kickers + H1 enganche.
+2. **P1** Micros hero: SML ✅ · quedan Precisión → HyperClose → Evidencia.
 3. **P2** Push del tono hook/auditoría cuando toque.
 Detalle vivo: hub TGP V12 **(webCopyRoadmapInstant)**.
 
