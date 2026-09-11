@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — tono serio (hook + auditoría) (11 sep 2026 noche)
+
+- **Hook cards:** fuera *Sin excusas.* / *No excuses.* Queda la disciplina + subrayado *Cerramos…* / *We close…*
+- **Teaser + página auditoría:** título *¿Quieres auditar tu operativa?* (sin «con IA»); kicker *Auditoría · próximamente*
+- **Atribución CF:** cáscara punch (mismo rectángulo que el golpe home) — paso previo misma sesión
+- **Commit:** `web(tevsys): tone down home hook and audit titles; punch attribution shell`
+
 ## Cómo funciona — quitar placeholder «De cero a protegido» (11 sep 2026)
 
 - **Qué verás:** tras el acto de auditoría (Tu ID), ya no aparece el bloque *De la teoría a la pantalla* / *De cero a protegido* con caja «Vídeo en preparación».

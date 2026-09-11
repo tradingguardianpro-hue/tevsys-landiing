@@ -50,7 +50,7 @@ export const homeCopy = {
 		/* 5 sep: fuera la enumeración cerrar/bloquear/acta — ya está dicha arriba en la definición.
 		   Aquí toca el contraste emocional, no repetir capacidades. */
 		sectionHookBefore:
-			'Sin excusas. La disciplina que solo existe en tu cabeza no se ejecuta a las 15:31. ',
+			'La disciplina que solo existe en tu cabeza no se ejecuta a las 15:31. ',
 		sectionHookAccent: 'Cerramos, bloqueamos y dejamos constancia.',
 		/* Checklist bullets retirados 5 sep (eco del párrafo definicional). Ver V12 homeTransicionDuplicada. */
 		ellos: 'Ellos deslizan. En tevsys cerramos.',
@@ -106,7 +106,7 @@ export const homeCopy = {
 		bridgeAudit: 'Evidencia · Trazabilidad · Verificación',
 		bridgeAuditAria: 'De evidencia a verificación: trazabilidad y auditoría',
 		auditKicker: 'Revisión asistida · próximamente',
-		auditTitle: '¿Quieres auditar tu operativa con IA?',
+		auditTitle: '¿Quieres auditar tu operativa?',
 		auditLead:
 			'No auditamos tu estrategia: auditamos ejecución, precisión de cierre, el cumplimiento de límites y la evidencia real.',
 		auditBridge:
@@ -204,7 +204,7 @@ export const homeCopy = {
 		   se adapta al mercado del lector; el mecanismo es el mismo â€” un minuto despuÃ©s del
 		   momento crÃ­tico. */
 		sectionHookBefore:
-			'No excuses. Discipline that only lives in your head does not execute at 9:31 a.m. ',
+			'Discipline that only lives in your head does not execute at 9:31 a.m. ',
 		sectionHookAccent: 'We close, we block — and we leave the record.',
 		/* Checklist bullets retired 5 Sep (echoed definition block). */
 		ellos: 'Others slip. In tevsys, we close.',
@@ -260,7 +260,7 @@ export const homeCopy = {
 		bridgeAudit: 'Evidence · Traceability · Verification',
 		bridgeAuditAria: 'From evidence to verification: traceability and audit',
 		auditKicker: 'Assisted review · coming soon',
-		auditTitle: 'Want to audit your trading with AI?',
+		auditTitle: 'Want to audit your trading?',
 		auditLead:
 			'We do not audit your strategy: we audit execution, close precision, limit compliance and real evidence.',
 		auditBridge:
