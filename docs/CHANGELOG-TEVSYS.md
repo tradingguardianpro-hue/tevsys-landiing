@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — quitar placeholder «De cero a protegido» (11 sep 2026)
+
+- **Qué verás:** tras el acto de auditoría (Tu ID), ya no aparece el bloque *De la teoría a la pantalla* / *De cero a protegido* con caja «Vídeo en preparación».
+- **Conservado:** objeto `zeroToProtected` + CSS (guión/vídeo futuro). Guía real **Desde cero** (`#desde-cero`) intacta.
+- **Nota:** el standby swing/intradía de la noche del 10 sep **no** se publica (revertido en local); claims swing en web siguen hasta decisión post-panel.
+- **Commit:** `web(tevsys): remove empty zero-to-protected placeholder from how-it-works`
+
 ## Micros — lista ver→ + muted (11 sep 2026)
 
 - Canon Precisión (ajustable): muted + `ver →` · residual barra ámbar. Rollout HyperClose / SML / Evidencia ES|EN.

@@ -136,13 +136,18 @@ const sessionDocumentation = {
 	],
 };
 
-/** Long walkthrough in one video: leave `embedUrl` empty until YouTube URL (nocookie/embed). Optional `watchHref` for “Open on YouTube”. */
+/**
+ * “From zero to protected” — PUBLIC STANDBY 11 Sep 2026.
+ * Concept + slot for script/video kept. Visible block removed (empty “in preparation” box).
+ * Re-enable: restore section `#de-cero-a-protegido` from git / CHANGELOG.
+ */
 const zeroToProtected = {
 	title: 'From zero to protected',
 	durationLabel: '~X min',
 	blurb: 'Step-by-step install + panel (compact / expanded) + setup until you are protected.',
 	embedUrl: '',
 	watchHref: '',
+	eyebrow: 'From theory to the screen',
 };
 
 /** Tras «Esto no es todo…»: mismo puente de cuatro piezas que la home (orden portada). Query distinta en MP4 duplicado para que el navegador pinte bien dos `<video>`. */
@@ -390,11 +395,6 @@ const microclipBranches: MicroclipBranch[] = [
 		],
 	},
 ];
-
-/** “From zero…”: underline only under the core (asymmetric vs “same story” above). */
-const zeroTitleMatch = /^From\s+(.+)$/u.exec(zeroToProtected.title);
-const zeroTitlePrefix = zeroTitleMatch ? 'From' : '';
-const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title;
 
 ---
 
@@ -1179,66 +1179,7 @@ const zeroTitleCore = zeroTitleMatch ? zeroTitleMatch[1] : zeroToProtected.title
 			</div>
 				</section>
 
-		<section class="how-zero-protected how-zero-protected--stage" id="de-cero-a-protegido" aria-labelledby="how-zero-title">
-			<div class="how-zero-protected__bg" aria-hidden="true"></div>
-			<div class="how-zero-protected__sweep" aria-hidden="true"></div>
-			<div class="how-zero-protected__inner">
-				<header class="how-section-head">
-					<p class="how-eyebrow how-eyebrow--center">From theory to the screen</p>
-					<h2 id="how-zero-title">
-						{zeroTitlePrefix ? (
-							<>
-								{zeroTitlePrefix}{' '}
-								<span class="how-zero-title__accent">{zeroTitleCore}</span>{' '}
-							</>
-						) : (
-							<span class="how-zero-title__accent">{zeroTitleCore}</span>
-						)}
-						<span class="how-zero-duration">({zeroToProtected.durationLabel})</span>
-					</h2>
-					<p class="how-section-sub">{zeroToProtected.blurb}</p>
-				</header>
-				<div class="how-zero-protected__frame">
-					{
-						zeroToProtected.embedUrl ? (
-							<>
-								<div class="how-embed how-embed--chrome">
-									<iframe
-										src={zeroToProtected.embedUrl}
-										title={zeroToProtected.title}
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-										allowfullscreen
-										loading="lazy"
-										referrerpolicy="strict-origin-when-cross-origin"></iframe>
-								</div>
-								{zeroToProtected.watchHref ? (
-									<p class="how-zero-watch">
-										<a
-											href={zeroToProtected.watchHref}
-											class="how-text-link"
-											target="_blank"
-											rel="noopener noreferrer">
-											Open on YouTube →
-										</a>
-									</p>
-								) : null}
-							</>
-						) : (
-							<div
-								class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--zero-teaser"
-								role="status"
-								aria-live="polite">
-								<span class="how-clip-teaser__glyph how-clip-teaser__glyph--zero" aria-hidden="true"></span>
-								<p class="how-embed-placeholder__title">Video in preparation</p>
-								<p class="how-embed-placeholder__sub">
-									Full walkthrough from install to protected is coming. Meanwhile, the session above and the microclips cover the start.
-								</p>
-							</div>
-						)
-					}
-				</div>
-			</div>
-		</section>
+		{/* “From zero to protected” — STANDBY 11 Sep 2026. Reserved: {zeroToProtected.title} · {zeroToProtected.eyebrow}. Restore when script+video exist. */}
 
 		<section
 			class="how-coverage how-coverage--overnight"
