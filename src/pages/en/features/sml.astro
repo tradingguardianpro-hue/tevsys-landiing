@@ -122,7 +122,7 @@ const seo = {
 					Panel only — no chart noise. State after the automatic close.
 				</figcaption>
 			</figure>
-			<p class="sml-proof-note">
+			<p class="sml-proof-note tevsys-shell-punch">
 				<strong>Why don’t the STOP percent and the day result match to the cent?</strong> The system cuts when it hits the <strong>widened ceiling</strong> in live market; the day’s result can land a tick under or over — same pattern as other documented tevsys closes.
 			</p>
 		</section>
@@ -199,7 +199,7 @@ const seo = {
 					</figure>
 				</div>
 			</details>
-			<p class="sml-proof-note sml-proof-note--slim">
+			<p class="sml-proof-note sml-proof-note--slim tevsys-shell-punch">
 				In demo, the widened ceiling and the final close can differ slightly (same pattern as other live-market tevsys closes).
 			</p>
 		</section>
@@ -602,10 +602,7 @@ const seo = {
 	}
 	.sml-proof-note {
 		margin: 0.95rem 0 0;
-		padding: 0.8rem 0.95rem;
-		border-radius: var(--feature-micro-radius, clamp(0.85rem, 1.5vw, 1.15rem));
-		border: 1px solid rgba(245, 176, 65, 0.28);
-		background: rgba(245, 176, 65, 0.06);
+		padding: 0.85rem 1.05rem;
 		line-height: 1.5;
 		font-size: 0.94rem;
 	}

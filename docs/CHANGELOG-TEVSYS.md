@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cáscara punch unificada (11 sep 2026 noche)
+
+- Clase global `.tevsys-shell-punch` (barra ámbar izquierda en degradado, como el golpe home).
+- Aplicada a: home checklist · atribución CF · Precisión (evidencia hero + residual) · HyperClose (nota extremo) · SML (notas proof).
+- **Commit:** `web(tevsys): unify punch callout shell across micros and home`
+
 ## Micro Precisión — kicker opción 1 (11 sep 2026 noche)
 
 - **Kicker:** *Cierre medible · no “casi”* / *Measurable close · not “almost”* (H1 + lead intactos)
