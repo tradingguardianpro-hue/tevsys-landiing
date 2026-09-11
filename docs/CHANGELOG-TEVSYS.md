@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — teaser auditoría (alcance + rigor) (11 sep 2026 noche)
+
+- Lead/puente/bullets/nota: cuadro entero (no encasillar); academias/equipos se mantienen; *próximamente* honesto.
+- Commit: `web(tevsys): raise home audit teaser copy to product scope`
+
 ## Micro Evidencia — kicker opción 1 (11 sep 2026 noche)
 
 - **Kicker:** *Lo demostrable · no “creemos”* / *What’s demonstrable · not “we believe”* (H1 + resto intactos)
