@@ -1,4 +1,4 @@
-﻿---
+---
 /**
  * Cómo funciona EN — misma estructura/vídeos que ES (oleada 3b).
  * Overlays del EA pueden seguir en español; marco de página en inglés.
@@ -433,9 +433,11 @@ const microclipBranches: MicroclipBranch[] = [
 								<p class="how-eyebrow">{presentationLeadVideo.partLabel}</p>
 								<h3>{presentationLeadVideo.title}</h3>
 								<p class="how-block-lead">{presentationLeadVideo.blurb}</p>
-								<div class="how-block-attribution-wrap">
+								<div class="how-block-attribution-wrap how-block-attribution-wrap--punch">
 									<span class="how-block-attribution__badge">Attribution</span>
-									<p class="how-block-attribution">{presentationLeadVideo.attributionBlurb}</p>
+									<p class="how-block-attribution">
+										{presentationLeadVideo.attributionBlurb}
+									</p>
 								</div>
 								<a
 									href={presentationLeadVideo.youtubeWatch}
@@ -5398,6 +5400,51 @@ const microclipBranches: MicroclipBranch[] = [
 		text-align: center;
 	}
 
+	/* Same shell as home `.feature-card__checklist-static--punch` (11 Sep 2026). */
+	.how-block-attribution-wrap--punch {
+		position: relative;
+		padding: clamp(1.05rem, 2.2vw, 1.35rem) clamp(1.15rem, 2.4vw, 1.55rem);
+		border-radius: 0.85rem;
+		background: linear-gradient(
+			165deg,
+			hsl(222, 16%, 10%) 0%,
+			hsl(222, 14%, 7%) 55%,
+			hsl(222, 18%, 6.5%) 100%
+		);
+		border: 1px solid rgba(245, 176, 65, 0.22);
+		box-shadow:
+			0 18px 44px -32px rgba(0, 0, 0, 0.55),
+			inset 0 1px 0 rgba(255, 255, 255, 0.06),
+			0 0 28px -18px rgba(245, 176, 65, 0.35),
+			0 0 0 1px rgba(245, 176, 65, 0.1);
+	}
+
+	.how-block-attribution-wrap--punch::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 12%;
+		bottom: 12%;
+		width: 3px;
+		border-radius: 0 999px 999px 0;
+		background: linear-gradient(
+			180deg,
+			rgba(245, 176, 65, 0.15) 0%,
+			rgba(245, 176, 65, 0.95) 45%,
+			rgba(245, 176, 65, 0.2) 100%
+		);
+		pointer-events: none;
+	}
+
+	html[data-theme='light'] .how-block-attribution-wrap--punch {
+		background: linear-gradient(165deg, hsl(220, 18%, 97%) 0%, hsl(220, 14%, 94%) 100%);
+		border-color: rgba(200, 135, 26, 0.35);
+		box-shadow:
+			0 14px 36px -28px rgba(0, 0, 0, 0.2),
+			inset 0 1px 0 rgba(255, 255, 255, 0.8),
+			0 0 0 1px rgba(200, 135, 26, 0.08);
+	}
+
 	.how-block-attribution__badge {
 		display: inline-block;
 		margin: 0 0 0.75rem;
@@ -5432,24 +5479,22 @@ const microclipBranches: MicroclipBranch[] = [
 	.how-block-attribution {
 		max-width: 100%;
 		margin: 0;
-		padding: 0.95rem 1.1rem 1rem;
+		padding: 0 0.35rem;
 		box-sizing: border-box;
 		text-align: center;
 		font-size: clamp(0.86rem, 1.05vw, 0.94rem);
 		line-height: 1.58;
 		letter-spacing: 0.01em;
 		color: var(--tevsys-copy-muted);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-left: 3px solid rgba(245, 176, 65, 0.55);
-		background: rgba(255, 255, 255, 0.045);
-		border-radius: 8px;
+		border: none;
+		background: transparent;
+		border-radius: 0;
 	}
 
 	html[data-theme='light'] .how-block-attribution {
 		color: var(--tevsys-copy-muted);
-		background: rgba(0, 0, 0, 0.03);
-		border-color: rgba(0, 0, 0, 0.08);
-		border-left-color: rgba(200, 135, 26, 0.55);
+		background: transparent;
+		border: none;
 	}
 
 	.how-pair-cell .how-text-link {
