@@ -43,6 +43,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - `src/config/settings.js`, `src/pages/index.astro`, `src/pages/features/precision.astro`, `src/pages/features/evidencia.astro`.
 
 ### Micropágina Precisión (`/features/precision`)
+- **Kicker (11 sep 2026):** `Cierre medible · no “casi”`
 - **H1:** `Precisión de cierre.` + `Menos "casi": más cierre donde toca.` (acento en *casi*).
 - **Lead:** *El mercado siempre encuentra la forma de cobrarte de más. Hasta ahora.*
 - **Bloque evidencia (22 ago 2026):** caja única — **90 operativas** · 0,06 % error medio · línea atribución híbrida (*decisión tevsys vs ejecución bróker · sin mezclar con slippage*) + enlace Nasdaq. Sin cursiva en cifras.

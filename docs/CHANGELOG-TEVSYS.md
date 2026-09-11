@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Micro Precisión — kicker opción 1 (11 sep 2026 noche)
+
+- **Kicker:** *Cierre medible · no “casi”* / *Measurable close · not “almost”* (H1 + lead intactos)
+- **Commit:** `web(tevsys): replace precision feature kicker with measurable close`
+
 ## Home — lead coma + negritas definición (11 sep 2026 noche)
 
 - Frase: *(día y semana), tus días OFF* · negrita **intradía y swing**
@@ -28,7 +33,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Criterio:** elegante, confianza, no chase. Un paso a la vez.
 1. **P0** Home definición (bajo hero / mano): ✅ **cerrado** versión A (lead sin eco con golpes).
-2. **P1** Micros hero: SML ✅ · quedan Precisión → HyperClose → Evidencia.
+2. **P1** Micros hero: SML ✅ · Precisión ✅ · quedan HyperClose → Evidencia (pasada corta o dejar).
 3. **P2** Push del tono hook/auditoría cuando toque.
 Detalle vivo: hub TGP V12 **(webCopyRoadmapInstant)**.
 
