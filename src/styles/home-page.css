@@ -55,9 +55,14 @@
 		font-weight: 400;
 		color: var(--tevsys-copy-muted);
 	}
-	.tevsys-home-definition__lead strong {
+	.tevsys-home-definition__lead strong,
+	.tevsys-home-definition__attribution strong {
 		color: rgba(220, 228, 238, 0.98);
 		font-weight: 650;
+	}
+	html[data-theme='light'] .tevsys-home-definition__lead strong,
+	html[data-theme='light'] .tevsys-home-definition__attribution strong {
+		color: rgba(35, 42, 55, 0.95);
 	}
 	/* Tres golpes: uno por lÃ­nea, punto Ã¡mbar de marca. Escaneables sueltos, no un muro. */
 	.tevsys-home-definition__beats {

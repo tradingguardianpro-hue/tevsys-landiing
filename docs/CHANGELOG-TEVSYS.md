@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — lead coma + negritas definición (11 sep 2026 noche)
+
+- Frase: *(día y semana), tus días OFF* · negrita **intradía y swing**
+- Atribución: negrita solo *decisión de tevsys* / *ejecución en MT5* (no el párrafo entero)
+- Commit: `web(tevsys): polish home definition lead commas and bold scope`
+
 ## Micro SML — hero opción 1 (11 sep 2026 noche)
 
 - **Kicker:** *Bonus opcional · Advanced / Pro* (EN: *Optional bonus · Advanced / Pro*)

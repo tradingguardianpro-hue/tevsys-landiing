@@ -23,10 +23,14 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
-		/* Lead canónico 11 sep 2026 (versión A): qué es / qué configuras / alcance.
-		   Cierre + bloqueo + acta → definitionBeats (sin eco). Sin SML aquí. */
+		/* Lead 11 sep noche: coma + tus días OFF; negrita solo alcance intradía/swing. */
+		definitionLeadBefore:
+			'tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana), tus días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en ',
+		definitionLeadAccent: 'intradía y swing',
+		definitionLeadAfter: '.',
+		/* Texto plano (SEO / espejos); pantalla usa Before/Accent/After. */
 		definitionLead:
-			'tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana) y días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en intradía y en swing.',
+			'tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana), tus días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en intradía y swing.',
 		/* Tres golpes separados (5 sep): SML fuera de aquí — «ampliar margen» rema contra el mensaje
 		   de este bloque. SML tiene su propia card y su micro. */
 		definitionBeats: [
@@ -35,7 +39,12 @@ export const homeCopy = {
 			'Deja acta desde la instalación: límites pactados, cuándo y cómo se cerró, disciplina bajo presión — contrastable con los informes oficiales de MT5.',
 		],
 		definitionBeatsAria: 'Lo que hace tevsys',
-		/* 9 sep: atribución tevsys vs ejecución MT5 — tras los 3 golpes, antes del cierre (opción C). */
+		/* 9 sep + 11 sep: negrita solo el contraste decisión vs ejecución (no toda la línea). */
+		definitionAttributionBefore: 'Atribución clara: cuánto fue ',
+		definitionAttributionAccent1: 'decisión de tevsys',
+		definitionAttributionMid: ' al cierre y cuánto la ',
+		definitionAttributionAccent2: 'ejecución en MT5',
+		definitionAttributionAfter: ' — sin mezclarlo con slippage.',
 		definitionAttribution:
 			'Atribución clara: cuánto fue decisión de tevsys al cierre y cuánto la ejecución en MT5 — sin mezclarlo con slippage.',
 		definitionClosingBefore: 'No opera por ti: cumple lo que tú decides — y ',
@@ -180,14 +189,23 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
+		definitionLeadBefore:
+			'tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week), your OFF days — and they apply across the whole account from a single chart, in ',
+		definitionLeadAccent: 'intraday and swing',
+		definitionLeadAfter: '.',
 		definitionLead:
-			'tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week) and OFF days — and they apply across the whole account from a single chart, in intraday and swing.',
+			'tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week), your OFF days — and they apply across the whole account from a single chart, in intraday and swing.',
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
 			'If you try to trade while already locked, HyperClose closes in milliseconds and leaves a record of the attempt.',
 			'It leaves a record from install: agreed limits, when and how it closed, discipline under pressure — cross-checkable against official MT5 reports.',
 		],
 		definitionBeatsAria: 'What tevsys does',
+		definitionAttributionBefore: 'Clear attribution: how much was ',
+		definitionAttributionAccent1: 'tevsys’s close decision',
+		definitionAttributionMid: ' and how much was the ',
+		definitionAttributionAccent2: 'MT5 execution',
+		definitionAttributionAfter: ' — not mixed with slippage.',
 		definitionAttribution:
 			'Clear attribution: how much was tevsys’s close decision and how much was the MT5 execution — not mixed with slippage.',
 		definitionClosingBefore: 'It does not trade for you: it enforces what you decide — and ',

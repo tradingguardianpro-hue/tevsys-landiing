@@ -32,11 +32,17 @@ const L = (href) => localizeHref(href, locale);
 	<Container>
 		<section class="tevsys-home-definition" aria-label={t.definitionAria}>
 			<div class="tevsys-home-definition__panel">
-				<p class="tevsys-home-definition__lead">{t.definitionLead}</p>
+				<p class="tevsys-home-definition__lead">
+					{t.definitionLeadBefore}<strong>{t.definitionLeadAccent}</strong>{t.definitionLeadAfter}
+				</p>
 				<ul class="tevsys-home-definition__beats" aria-label={t.definitionBeatsAria}>
 					{t.definitionBeats.map((beat) => <li>{beat}</li>)}
 				</ul>
-				<p class="tevsys-home-definition__attribution">{t.definitionAttribution}</p>
+				<p class="tevsys-home-definition__attribution">
+					{t.definitionAttributionBefore}<strong>{t.definitionAttributionAccent1}</strong
+					>{t.definitionAttributionMid}<strong>{t.definitionAttributionAccent2}</strong
+					>{t.definitionAttributionAfter}
+				</p>
 				<p class="tevsys-home-definition__closing">
 					{t.definitionClosingBefore}
 					<span class="tevsys-brand-accent-underline">{t.definitionClosingAccent}</span>
