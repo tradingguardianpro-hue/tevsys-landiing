@@ -4,10 +4,17 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — definición lead versión A (11 sep 2026 noche)
+
+- **Qué:** lead bajo hero sin eco con los tres golpes (cierra / HyperClose / acta).
+- **ES:** *tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites… y días OFF — y se aplican sobre toda la cuenta…*
+- **EN:** *you set the trading rules… they apply across the whole account…*
+- **Commit:** `web(tevsys): shorten home definition lead without losing scope`
+
 ## Roadmap copy instantáneo (11 sep 2026 noche) — paralelo a panel
 
 **Criterio:** elegante, confianza, no chase. Un paso a la vez.
-1. **P0** Home definición (bajo hero / mano): acortar `definitionLead` sin perder verdad de producto — frase a validar antes de código.
+1. **P0** Home definición (bajo hero / mano): ✅ **cerrado** versión A (lead sin eco con golpes).
 2. **P1** Micros hero (SML → Precisión → HyperClose → Evidencia): kickers + H1 enganche.
 3. **P2** Push del tono hook/auditoría cuando toque.
 Detalle vivo: hub TGP V12 **(webCopyRoadmapInstant)**.

@@ -23,10 +23,10 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
-		/* Lead canónico 6 sep 2026: sin «reglas numéricas»; límites = pérdida/ganancia;
-		   bloqueo = no abrir nuevas cuando el límite ya se alcanzó. Sin SML aquí. */
+		/* Lead canónico 11 sep 2026 (versión A): qué es / qué configuras / alcance.
+		   Cierre + bloqueo + acta → definitionBeats (sin eco). Sin SML aquí. */
 		definitionLead:
-			'tevsys es una utilidad para MetaTrader 5 que hace cumplir las reglas que el trader configura para su operativa: límites de pérdida y ganancia (día y semana), días OFF y el bloqueo que impide abrir nuevas operaciones cuando el límite ya se ha alcanzado — en intradía y en swing, sobre toda la cuenta y desde un solo gráfico.',
+			'tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana) y días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en intradía y en swing.',
 		/* Tres golpes separados (5 sep): SML fuera de aquí — «ampliar margen» rema contra el mensaje
 		   de este bloque. SML tiene su propia card y su micro. */
 		definitionBeats: [
@@ -181,7 +181,7 @@ export const homeCopy = {
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
 		definitionLead:
-			'tevsys is a MetaTrader 5 utility that enforces the rules the trader configures for their trading: loss and profit limits (day and week), OFF days, and the lock that blocks opening new trades once a limit has already been reached — intraday and on swing, across the whole account from a single chart.',
+			'tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week) and OFF days — and they apply across the whole account from a single chart, in intraday and swing.',
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
 			'If you try to trade while already locked, HyperClose closes in milliseconds and leaves a record of the attempt.',

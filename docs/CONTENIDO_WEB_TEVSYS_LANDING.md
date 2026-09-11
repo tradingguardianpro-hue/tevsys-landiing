@@ -215,12 +215,12 @@ Ver handoff hero.
 
 **Copy vivo (ES):**
 
-- **Lead (6 sep 2026):** `tevsys es una utilidad para MetaTrader 5 que hace cumplir las reglas que el trader configura para su operativa: límites de pérdida y ganancia (día y semana), días OFF y el bloqueo que impide abrir nuevas operaciones cuando el límite ya se ha alcanzado — en intradía y en swing, sobre toda la cuenta y desde un solo gráfico.`
+- **Lead (11 sep 2026 · versión A):** `tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana) y días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en intradía y en swing.` (bloqueo/cierre/acta → tres golpes; sin eco.)
   - **Norma:** no «reglas numéricas»; no «bloqueo» suelto; no «límites diarios/semanales» sin decir de qué.
 - **Tres líneas** (lista, puntos ámbar): `Cierra al alcanzar los límites que has configurado, con precisión documentada.` · `Bloquea al instante cualquier intento de operar cuando ya los has alcanzado, con HyperClose.` · `Deja acta de todo lo que ocurre — contrastable con los informes oficiales de MT5.`
 - **Cierre:** `No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.`
 
-**EN:** mismo esqueleto (`loss and profit limits`, lock that blocks new trades once a limit is reached, `intraday and on swing`).
+**EN:** `tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week) and OFF days — and they apply across the whole account from a single chart, in intraday and swing.`
 
 **Contador público (6 sep 2026):** **90** operativas documentadas (`settings.TEVSYS_DOCUMENTED_OPERATIVES`).
 
