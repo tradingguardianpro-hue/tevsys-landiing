@@ -77,7 +77,7 @@ export const homeCopy = {
 		},
 		cardHyperclose: {
 			alt: 'HyperClose',
-			hookBefore: 'La diferencia entre querer parar y',
+			hookBefore: 'La diferencia entre querer parar y ',
 			hookAccent: 'no poder seguir',
 			p1: 'Si operas bloqueado, HyperClose cierra en milisegundos.',
 			p2: 'Cada intento queda registrado. También en días OFF.',
@@ -240,7 +240,7 @@ export const homeCopy = {
 		},
 		cardHyperclose: {
 			alt: 'HyperClose',
-			hookBefore: 'The difference between wanting to stop and',
+			hookBefore: 'The difference between wanting to stop and ',
 			hookAccent: 'not being able to continue',
 			p1: 'If you trade while blocked, HyperClose closes in milliseconds.',
 			p2: 'Every attempt is logged. Including OFF days.',

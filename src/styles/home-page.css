@@ -885,7 +885,10 @@
 		color: #f5b041;
 		font-weight: 700;
 	}
-	/* Espaciado robusto ante minificado/SSR: inserta NBSP visual antes del acento */
+	/* Espacio ante acento (HyperClose «y» + «no poder…»): NBSP + aire — cursiva come el hueco. */
+	.feature-card__value-accent--spaced {
+		padding-left: 0.12em;
+	}
 	.feature-card__value-accent--spaced::before {
 		content: '\00a0';
 	}
