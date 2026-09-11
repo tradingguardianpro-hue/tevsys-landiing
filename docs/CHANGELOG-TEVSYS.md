@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Roadmap copy instantáneo (11 sep 2026 noche) — paralelo a panel
+
+**Criterio:** elegante, confianza, no chase. Un paso a la vez.
+1. **P0** Home definición (bajo hero / mano): acortar `definitionLead` sin perder verdad de producto — frase a validar antes de código.
+2. **P1** Micros hero (SML → Precisión → HyperClose → Evidencia): kickers + H1 enganche.
+3. **P2** Push del tono hook/auditoría cuando toque.
+Detalle vivo: hub TGP V12 **(webCopyRoadmapInstant)**.
+
 ## Home — tono serio (hook + auditoría) (11 sep 2026 noche)
 
 - **Hook cards:** fuera *Sin excusas.* / *No excuses.* Queda la disciplina + subrayado *Cerramos…* / *We close…*
