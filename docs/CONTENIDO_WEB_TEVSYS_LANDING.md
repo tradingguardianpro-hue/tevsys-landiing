@@ -451,6 +451,7 @@ Ver handoff hero.
   - Hook: *Cuando ayer cerraste en verde… al menos el 75 %.* Lead: acrónimo + 5–25 % + límites.
   - Disponibilidad actual: validación para Advanced/Pro (lista de espera).
 - `Evidencia`:
+  - Kicker (11 sep 2026): `Lo demostrable · no “creemos”`
   - Título: `Evidencia verificable: aquí no hay "creemos".`
   - Hook: `• Lo que no se puede demostrar, no cuenta.`
   - Lead (micropágina): **«Doble trazabilidad»** en acento + frase MT5/tevsys ya acordada.
