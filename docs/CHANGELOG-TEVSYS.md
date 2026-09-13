@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — lead Registro tevsys (13 sep 2026)
+
+- Lead: *Gracias a tu ID tevsys, sabemos — y queda en acta —…* (EN: *Thanks to your tevsys ID…*).
+- **Commit:** `web(tevsys): hook Registro tevsys lead with ID`
+
 ## Cómo funciona — Transparencia: marcos grises (13 sep 2026)
 
 - Bloque atribución + fuentes (`Registro tevsys` / MT5 / Vídeo): borde y superficie **gris frío**, sin tinte ámbar.
