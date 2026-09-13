@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — retirar vídeo Operación swing (13 sep 2026)
+
+- MP4 MC-CF-027 (panel/leyes viejas) fuera de `#overnight-laborable` ES|EN.
+- Queda copy edge + **still marca** (nombre tevsys + esfera ámbar). Guía nueva cuando panel adaptativo OK (`swingVidGatePanel`).
+- **Commit:** `web(tevsys): replace outdated swing guide video with brand still`
+
 ## Home — teaser auditoría (alcance + rigor) (11 sep 2026 noche)
 
 - Lead/puente/bullets/nota: cuadro entero (no encasillar); academias/equipos se mantienen; *próximamente* honesto.

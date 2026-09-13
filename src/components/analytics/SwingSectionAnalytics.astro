@@ -1,8 +1,8 @@
 ---
 /**
  * Vercel Analytics — mundo swing / overnight (9 sep 2026).
- * Eventos: Swing Section View (1× por sesión) · Swing Video Play (1× al primer play).
- * Dashboard → Custom Events (si el plan lo muestra).
+ * Eventos: Swing Section View (1× por sesión).
+ * Swing Video Play: desactivado 13 sep (MP4 retirado hasta guía con panel nuevo).
  */
 interface Props {
 	page?: string;
@@ -43,14 +43,5 @@ const { page = 'como-funciona' } = Astro.props;
 			{ threshold: 0.35, rootMargin: '0px 0px -8% 0px' }
 		);
 		io.observe(section);
-	}
-
-	const video = document.getElementById('overnight-laborable-video');
-	if (video) {
-		const onPlay = () => {
-			trackOnce(`va-swing-play-${page}`, 'Swing Video Play', { page });
-			video.removeEventListener('play', onPlay);
-		};
-		video.addEventListener('play', onPlay);
 	}
 </script>
