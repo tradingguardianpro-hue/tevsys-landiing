@@ -1635,21 +1635,21 @@ const microclipBranches: MicroclipBranch[] = [
 		opacity: 0.78;
 	}
 
+	/* 13 Sep 2026: gray frame (not amber) — amber only on pills / titles / bullets */
 	.how-doc-session__attribution {
 		margin: 0 0 clamp(1.5rem, 4vw, 2rem);
 		padding: clamp(1.1rem, 3vw, 1.35rem) clamp(1.15rem, 3vw, 1.45rem);
 		border-radius: 10px;
-		border: 1px solid rgba(245, 176, 65, 0.2);
+		border: 1px solid rgba(160, 175, 195, 0.2);
 		background:
-			linear-gradient(135deg, rgba(245, 176, 65, 0.05) 0%, transparent 50%),
-			rgba(255, 255, 255, 0.02);
+			linear-gradient(165deg, hsl(222, 14%, 11%) 0%, hsl(222, 12%, 8%) 100%);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 	}
 
 	html[data-theme='light'] .how-doc-session__attribution {
-		background:
-			linear-gradient(135deg, rgba(245, 176, 65, 0.07) 0%, transparent 50%),
-			rgba(0, 0, 0, 0.015);
-		border-color: rgba(180, 120, 20, 0.2);
+		background: linear-gradient(165deg, hsl(220, 16%, 97%) 0%, hsl(220, 12%, 94%) 100%);
+		border-color: rgba(70, 85, 105, 0.18);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 	}
 
 	.how-doc-session__attribution-daylead {
@@ -1727,23 +1727,25 @@ const microclipBranches: MicroclipBranch[] = [
 		margin: 0;
 		padding: 1rem 1.05rem 1.05rem;
 		border-radius: 8px;
-		background: rgba(0, 0, 0, 0.12);
-		border: 1px solid rgba(255, 255, 255, 0.06);
+		background: hsl(222, 12%, 9%);
+		border: 1px solid rgba(160, 175, 195, 0.16);
 	}
 
 	.how-doc-session__source--featured {
-		border-color: rgba(245, 176, 65, 0.22);
-		background: rgba(245, 176, 65, 0.04);
+		border-color: rgba(160, 175, 195, 0.24);
+		background: linear-gradient(165deg, hsl(222, 14%, 12%) 0%, hsl(222, 12%, 9%) 100%);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 	}
 
 	html[data-theme='light'] .how-doc-session__source {
-		background: rgba(0, 0, 0, 0.025);
-		border-color: rgba(0, 0, 0, 0.07);
+		background: hsl(220, 14%, 96%);
+		border-color: rgba(70, 85, 105, 0.14);
 	}
 
 	html[data-theme='light'] .how-doc-session__source--featured {
-		background: rgba(245, 176, 65, 0.06);
-		border-color: rgba(200, 135, 26, 0.28);
+		background: linear-gradient(165deg, hsl(220, 16%, 97%) 0%, hsl(220, 12%, 94%) 100%);
+		border-color: rgba(70, 85, 105, 0.2);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 	}
 
 	.how-doc-session__source-title {

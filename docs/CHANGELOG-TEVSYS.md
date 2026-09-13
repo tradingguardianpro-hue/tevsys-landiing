@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Transparencia: marcos grises (13 sep 2026)
+
+- Bloque atribución + fuentes (`Registro tevsys` / MT5 / Vídeo): borde y superficie **gris frío**, sin tinte ámbar.
+- Ámbar solo en títulos de fuente, bullets y pills de atribución (acento, no marco).
+- **Commit:** `web(tevsys): gray frames on CF transparency boxes`
+
 ## Cómo funciona — retirar vídeo Operación swing (13 sep 2026)
 
 - MP4 MC-CF-027 (panel/leyes viejas) fuera de `#overnight-laborable` ES|EN.
