@@ -6,7 +6,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Cómo funciona — lead Registro tevsys (13 sep 2026)
 
-- Lead: *Gracias a tu ID tevsys, sabemos — y queda en acta —…* (EN: *Thanks to your tevsys ID…*).
+- Lead: *Gracias a tu ID tevsys, esto es parte de lo que sabemos — y queda en acta —:…* (EN alineado). Lista sin hinchar.
 - **Commit:** `web(tevsys): hook Registro tevsys lead with ID`
 
 ## Cómo funciona — Transparencia: marcos grises (13 sep 2026)

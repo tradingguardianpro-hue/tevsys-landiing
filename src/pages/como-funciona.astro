@@ -108,7 +108,7 @@ const sessionDocumentation = {
 		{
 			title: 'Registro tevsys',
 			featured: true,
-			lead: 'Gracias a tu ID tevsys, sabemos — y queda en acta — qué pactaste, qué pasó al cierre y qué se recuperó al volver.',
+			lead: 'Gracias a tu ID tevsys, esto es parte de lo que sabemos — y queda en acta —: qué pactaste, qué pasó al cierre y qué se recuperó al volver.',
 			lines: [
 				'TVS-GPJH-EVY7',
 				'Límites que configuraste y aceptaste (foto al bloquear).',
@@ -1771,11 +1771,16 @@ const microclipBranches: MicroclipBranch[] = [
 
 	.how-doc-session__source-lead {
 		margin: 0 0 0.75rem;
-		font-size: 0.9rem;
-		line-height: 1.5;
-		color: var(--tevsys-copy-muted);
+		font-size: 0.95rem;
+		font-weight: 600;
+		line-height: 1.45;
+		color: var(--theme-on-bg, rgba(246, 248, 252, 0.96));
 		opacity: 1;
 		max-width: 40rem;
+	}
+
+	html[data-theme='light'] .how-doc-session__source-lead {
+		color: var(--theme-on-bg, rgba(28, 34, 44, 0.94));
 	}
 
 	.how-doc-session__source-lines {

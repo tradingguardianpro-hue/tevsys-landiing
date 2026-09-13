@@ -110,7 +110,7 @@ const sessionDocumentation = {
 		{
 			title: 'tevsys register',
 			featured: true,
-			lead: 'Thanks to your tevsys ID, we know — and it stays on record — what you agreed, what happened at the close, and what came back on reload.',
+			lead: 'Thanks to your tevsys ID, this is part of what we know — and it stays on record —: what you agreed, what happened at the close, and what came back on reload.',
 			lines: [
 				'TVS-GPJH-EVY7',
 				'Limits you set and accepted (snapshot at lock).',
@@ -1771,11 +1771,16 @@ const microclipBranches: MicroclipBranch[] = [
 
 	.how-doc-session__source-lead {
 		margin: 0 0 0.75rem;
-		font-size: 0.9rem;
-		line-height: 1.5;
-		color: var(--tevsys-copy-muted);
+		font-size: 0.95rem;
+		font-weight: 600;
+		line-height: 1.45;
+		color: var(--theme-on-bg, rgba(246, 248, 252, 0.96));
 		opacity: 1;
 		max-width: 40rem;
+	}
+
+	html[data-theme='light'] .how-doc-session__source-lead {
+		color: var(--theme-on-bg, rgba(28, 34, 44, 0.94));
 	}
 
 	.how-doc-session__source-lines {
