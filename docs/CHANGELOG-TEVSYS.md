@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Para quién — aclaración MAM/PAMM (14 sep 2026)
+
+- Última viñeta audiencia: *…no software MAM/PAMM (“no un gestor multi-cuenta”).* EN equivalente.
+- **Commit:** `web(tevsys): clarify MAM/PAMM as multi-account manager on para-quien`
+
 ## Home — beat acta + más de tu operativa (13 sep noche)
 
 - Beat 3 definición: *…disciplina bajo presión — y más de tu operativa — contrastable…* (EN: *and more of your trading activity*).
