@@ -42,9 +42,36 @@ const corePerfiles = [
 		label: 'SML',
 		title: 'Buscas más margen con reglas claras',
 		hook: 'Recompensa opcional tras un día positivo.',
-		body: 'Amplía margen con topes por plan · validación de escenarios en curso.',
+		body: 'Amplía margen con topes por plan. Capa opcional — aún en validación fina.',
 		href: '/features/sml',
 		accentLineMl: '0.05rem',
+		validating: true,
+		badge: 'En validación',
+		badgeTitle: 'En validación fina — no disponible aún en producción',
+	},
+];
+
+const audienceArchetypes = [
+	{
+		title: 'Freno y precisión',
+		lines: [
+			'Desde quien empieza hasta quien exige cierre con precisión (con o sin cicatrices).',
+			'Quien necesita HyperClose cuando ya hay protección.',
+			'Quien usa otro EA o sistema y quiere una red de límites independiente.',
+		],
+	},
+	{
+		title: 'Tiempo y retos',
+		lines: [
+			'Quien deja posiciones de un día a otro y necesita que el pacto no se reinicie a medianoche.',
+			'Quien opera un reto de fondeo en MT5 y no puede permitirse saltarse el DD diario.',
+		],
+	},
+	{
+		title: 'Enseñanza y verificación',
+		lines: [
+			'Quien enseña o corre una academia y necesita disciplina verificable — no software MAM/PAMM (“no un gestor multi-cuenta”).',
+		],
 	},
 ];
 ---
@@ -62,14 +89,23 @@ const corePerfiles = [
 						<span class="feature-hook__dot" aria-hidden="true"></span>
 						Precisión, freno bajo presión y evidencia que se cruza — con las reglas que tú configuras.
 					</p>
-					<ul class="para-quien-audience" aria-label="Perfiles que encajan">
-						<li>Desde quien empieza hasta quien exige cierre con precisión (con o sin cicatrices).</li>
-						<li>Quien necesita freno bajo presión (HyperClose) cuando ya hay protección.</li>
-						<li>Quien deja posiciones de un día a otro y necesita que el pacto no se reinicie a medianoche.</li>
-						<li>Quien opera un reto de fondeo en MT5 y no puede permitirse saltarse el DD diario.</li>
-						<li>Quien usa otro EA o sistema y quiere una red de límites independiente.</li>
-						<li>Quien enseña o corre una academia y necesita disciplina verificable — no software MAM/PAMM (“no un gestor multi-cuenta”).</li>
-					</ul>
+					<p class="para-quien-contrast">
+						Cumplir el pacto — no solo intentarlo desde la cabeza.
+					</p>
+					<div class="para-quien-archetypes" aria-label="Perfiles que encajan">
+						{
+							audienceArchetypes.map((block) => (
+								<div class="para-quien-archetype">
+									<h3 class="para-quien-archetype__title">{block.title}</h3>
+									<ul class="para-quien-audience">
+										{block.lines.map((line) => (
+											<li>{line}</li>
+										))}
+									</ul>
+								</div>
+							))
+						}
+					</div>
 					<p class="para-quien-depth-bridge">
 						<span class="para-quien-depth-bridge__lead">Ver en profundidad:</span>{' '}
 						<a class="evidence-link" href="/features/hyperclose">HyperClose</a>
@@ -90,18 +126,37 @@ const corePerfiles = [
 
 			<section class="para-quien-profiles" aria-labelledby="para-quien-profiles-title">
 				<h2 id="para-quien-profiles-title" class="para-quien-profiles__title">
-					Cuatro capas ·
-					<span class="tevsys-brand-accent-underline tevsys-brand-accent-underline--varios-perfiles">varios perfiles</span>
+					Cuatro capas.{' '}
+					<span class="tevsys-brand-accent-underline tevsys-brand-accent-underline--varios-perfiles"
+						>Misma exigencia: cumplir lo que decides.</span
+					>
 				</h2>
 				<div class="para-quien-profiles__panel">
 					<ul class="para-quien-profiles__grid">
 					{
 						corePerfiles.map((perfil) => (
 							<li>
-								<a class="para-quien-profile" href={perfil.href}>
+								<a
+									class:list={[
+										'para-quien-profile',
+										perfil.validating && 'para-quien-profile--validating',
+									]}
+									href={perfil.href}
+									title={perfil.badgeTitle}
+								>
 									<span class="para-quien-profile__arrow" aria-hidden="true">→</span>
 									<div class="para-quien-profile__head">
-										<p class="para-quien-profile__label">{perfil.label}</p>
+										<p class="para-quien-profile__label-row">
+											<span class="para-quien-profile__label">{perfil.label}</span>
+											{perfil.validating ? (
+												<span
+													class="para-quien-profile__badge"
+													title={perfil.badgeTitle}
+												>
+													{perfil.badge}
+												</span>
+											) : null}
+										</p>
 										<h3
 											class="para-quien-profile__title para-quien-profile__title--accent-line"
 											style={`--card-accent-line-ml: ${perfil.accentLineMl}`}
@@ -122,12 +177,14 @@ const corePerfiles = [
 
 			<div class="para-quien-equipos-block">
 				<section class="para-quien-equipos" aria-labelledby="para-quien-equipos-title">
-					<p class="para-quien-equipos__kicker">Equipos e instituciones</p>
+					<p class="para-quien-equipos__kicker">Canal paralelo · B2B</p>
 					<h2 id="para-quien-equipos-title" class="para-quien-equipos__title">
-						Academias, prop firms y quien te audita
+						Equipos e instituciones
 					</h2>
 					<div class="para-quien-equipos__copy">
-						<p class="para-quien-equipos__lead">Trazabilidad para revisar ejecución y límites.</p>
+						<p class="para-quien-equipos__lead">
+							Criterio común y trazabilidad para academias, props y quien revisa ejecución.
+						</p>
 						<p class="para-quien-equipos__note">
 							No auditamos tu estrategia. Instituciones, gestores externos y equipos tienen canal aparte.
 						</p>
@@ -137,8 +194,12 @@ const corePerfiles = [
 					<span class="para-quien-equipos-bridge__line"></span>
 				</p>
 				<nav class="para-quien-equipos__links" aria-label="Enlaces equipos e instituciones">
-					<a class="para-quien-equipos__link" href="/company/empresas">Canal empresas</a>
-					<a class="para-quien-equipos__link para-quien-equipos__link--muted" href="/auditoria-ia">Auditoría · próximamente</a>
+					<a class="para-quien-equipos__link para-quien-equipos__link--primary" href="/company/empresas"
+						>Hablar por canal empresas →</a
+					>
+					<a class="para-quien-equipos__link para-quien-equipos__link--muted" href="/auditoria-ia"
+						>Auditoría · próximamente</a
+					>
 				</nav>
 			</div>
 
@@ -150,7 +211,10 @@ const corePerfiles = [
 
 			<section class="feature-cta para-quien-cta">
 				<h2>¿Quieres probarlo en tu operativa?</h2>
-				<p>Te guiamos para validar encaje real — demo Essential o contacto si necesitas Advanced o Pro.</p>
+				<p>
+					Te guiamos para validar encaje real — demo Essential o contacto si necesitas Advanced o Pro.{' '}
+					<a class="evidence-link" href="/precios">Ver qué incluye cada plan →</a>
+				</p>
 				<a href="/company/contact?flow=demo" class="feature-cta__button">Probar tevsys en demo</a>
 			</section>
 		</Container>
@@ -178,9 +242,37 @@ const corePerfiles = [
 		margin: 0;
 		line-height: 1.55;
 	}
+	.para-quien-contrast {
+		margin: 0;
+		font-size: clamp(0.92rem, 1.5vw, 1.02rem);
+		font-weight: 600;
+		line-height: 1.45;
+		color: var(--theme-on-bg, rgba(246, 248, 252, 0.96));
+		max-width: 42ch;
+	}
+	html[data-theme='light'] .para-quien-contrast {
+		color: var(--theme-on-bg, rgba(28, 34, 44, 0.94));
+	}
+	.para-quien-archetypes {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(1.05rem, 2.4vw, 1.35rem);
+		max-width: 52ch;
+	}
+	.para-quien-archetype__title {
+		margin: 0 0 0.45rem;
+		font-size: clamp(0.78rem, 1.2vw, 0.84rem);
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: #f5b041;
+	}
+	html[data-theme='light'] .para-quien-archetype__title {
+		color: #c8871a;
+	}
 	.para-quien-audience {
 		margin: 0;
-		padding: clamp(0.15rem, 0.5vw, 0.35rem) 0 0;
+		padding: 0;
 		list-style: none;
 		max-width: 52ch;
 	}
@@ -438,6 +530,13 @@ const corePerfiles = [
 		flex-direction: column;
 		gap: 0.35rem;
 	}
+	.para-quien-profile__label-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.45rem 0.55rem;
+		margin: 0;
+	}
 	.para-quien-profile__label {
 		margin: 0;
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
@@ -449,6 +548,32 @@ const corePerfiles = [
 	}
 	html[data-theme='light'] .para-quien-profile__label {
 		color: #b87814;
+	}
+	.para-quien-profile__badge {
+		display: inline-block;
+		padding: 0.18rem 0.48rem;
+		border-radius: 999px;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.62rem;
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: #f5b041;
+		border: 1px solid rgba(245, 176, 65, 0.48);
+		background: rgba(245, 176, 65, 0.09);
+		cursor: help;
+	}
+	html[data-theme='light'] .para-quien-profile__badge {
+		color: #9a6a12;
+		border-color: rgba(200, 135, 26, 0.42);
+		background: rgba(245, 176, 65, 0.12);
+	}
+	.para-quien-profile--validating {
+		border-color: rgba(245, 176, 65, 0.4);
+		box-shadow: inset 0 0 0 1px rgba(245, 176, 65, 0.1);
+	}
+	html[data-theme='light'] .para-quien-profile--validating {
+		border-color: rgba(200, 135, 26, 0.45);
 	}
 	.para-quien-profile__title {
 		margin: 0;
@@ -633,6 +758,10 @@ const corePerfiles = [
 		font-weight: 600;
 		text-decoration: underline;
 		text-underline-offset: 0.15em;
+	}
+	.para-quien-equipos__link--primary {
+		color: #f5b041;
+		text-decoration-color: rgba(245, 176, 65, 0.45);
 	}
 	.para-quien-equipos__link--muted {
 		font-weight: 500;
