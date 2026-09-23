@@ -1358,6 +1358,25 @@ const microclipBranches: MicroclipBranch[] = [
 							</p>
 						</article>
 					</div>
+					<div class="how-coverage__panel-lexicon tevsys-copy-muted" id="alcanzado-huecos">
+						<p class="how-coverage__question" style="margin-top: 1.25rem">
+							Si el panel muestra «Alcanzado» con un % más allá del pacto
+						</p>
+						<p>
+							En ese tramo <strong>no había vigilancia tick a tick</strong>. Al volver, tevsys cierra y mantiene el candado.
+							Las frases del panel (losa Alcanzado) son las mismas que en el glosario de eventos:
+						</p>
+						<ul>
+							<li><strong>Cierre limpio:</strong> solo <code>Alcanzado el: DD/MM/AA</code> (sin coletilla).</li>
+							<li><code>vigilancia pausada · tevsys fuera del gráfico</code> — el EA no estaba en el gráfico (acta <code>EA_UNLOADED</code>).</li>
+							<li><code>vigilancia pausada (−X %) · sin conexión al bróker</code> — corte de enlace (acta <code>BROKER_CONNECTION_LOST</code> → <code>RESTORED</code>).</li>
+							<li><code>vigilancia pausada (−X %) · primer tick al cotizar</code> — mercado sin cotizar; cierre al volver a medir.</li>
+						</ul>
+						<p>
+							Cerrar MT5 en casa <strong>con</strong> VPS (MT5+tevsys) encendido no es lo mismo que apagarlo todo: el VPS sigue vigilando.
+							El panel no inventa «sin VPS»; solo dice lo que midió en ese gráfico.
+						</p>
+					</div>
 					<p class="how-coverage__closing">
 						El hueco aparece solo cuando <strong>no</strong> hay terminal corriendo (PC y VPS apagados, MT5 cerrado, o
 						tevsys fuera del gráfico). Ahí no hay milagro en la oscuridad. Al volver, se reengancha con los

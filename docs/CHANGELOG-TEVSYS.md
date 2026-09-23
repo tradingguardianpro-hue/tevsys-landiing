@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — léxico Alcanzado / huecos vigilancia (23 sep 2026)
+
+- Bloque `#alcanzado-huecos` bajo `#vigilancia-vps`: frases panel H0–H3 (`vigilancia pausada · …`) = glosario = terminal.
+- **Commit:** `web(tevsys): align alcanzado huecos lexicon on vigilancia-vps`
+
 ## Para quién — arquetipos + SML badge + planes + equipos (19 sep 2026)
 
 - 3 arquetipos (freno / tiempo-retos / enseñanza) + frase contraste; subtítulo *Misma exigencia…*; card SML badge *En validación* + tooltip; enlace planes; canal B2B reforzado. ES|EN.
