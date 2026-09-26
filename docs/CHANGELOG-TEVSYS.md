@@ -6,8 +6,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Cómo funciona — `#panel-adaptativo` intradía ≠ overnight (26 sep 2026)
 
-- Bloque propio tras `#overnight-laborable` (estilo capital/caja): copy muted · still overnight provisional · deep-nav · puente desde Operación swing. ES|EN.
-- Clip ~30 s **después** de panel definitivo (`swingVidGatePanel`). Still = cara overnight; caption dice que intradía se lee distinto.
+- Bloque propio tras `#overnight-laborable` (estilo capital/caja): copy muted · captura AT #6271553 finde + op en curso + cartela DESDE · deep-nav · puente desde Operación swing. ES|EN.
+- Still: `tevsys-panel-overnight-finde-op-curso-6271553.png` (provisional hasta clip; cara overnight completa + info al clic).
+- Clip ~30 s **después** de panel definitivo (`swingVidGatePanel`).
 - **Commit:** `web(tevsys): add panel-adaptativo block on como-funciona`
 
 ## Términos de uso — alcance vigilancia / ejecución / HyperClose (26 sep 2026)
