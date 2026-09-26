@@ -1,0 +1,127 @@
+<!--
+  CANÓNICO Market EN — 26 sep 2026 · espejo de DESCR_MARKET_ES_mejor_voz_116.html
+  Archivo: DESCR_MARKET_EN_mejor_voz_116.html
+  Pegar en Seller (EN) desde el primer <p> (sin este comentario).
+
+  Misma voz / cifras / claim-free que ES. En cuerpo EN: «daily loss limit» + «risk panel»
+  (SEO conversión EN) sin romper el gancho de marca.
+
+  Evolutivo (actualizar cuando el producto avance — no inventar en ficha):
+  - News / schedules (NOTICIAS · HORARIOS) cuando estén listos para Market.
+  - SML, drawdown Pro, clip panel, etc. solo con evidencia publicada.
+  Mantener ES|EN alineados en cifras (116 · 69/189/349) y demo = terminal real.
+-->
+<p><b>Where do your limits really break?</b> Under pressure — not in your head.</p>
+
+<p>TEVSYS is not just a <b>risk panel</b>: it enforces your <b>daily loss limit</b> and weekly limits at account level, stops “one more” (HyperClose / overtrading), and leaves verifiable operational discipline with a trail — a per-account record you can cross-check with MT5 history and reports. That evidence includes attribution: we separate tevsys’s close decision from broker execution, so “filled at another price” is not confused with “did not react.” Documented close precision (~0.06% mean deviation under normal conditions, across <b>116 documented operations</b>) is part of the same file.</p>
+
+<p>Below you will see layers almost nobody puts on a Market listing:</p>
+<ul>
+<li><b>Passive observation:</b> if trades are already open before you configure and lock your limits, we do not force the lock on top; when you close them, you can lock and start from zero.</li>
+<li><b>Persistence:</b> what you locked is stored; if the terminal drops, tick-by-tick watch pauses and protection re-engages when you return.</li>
+<li><b>Cash movements:</b> if you withdraw or deposit capital, tevsys detects it, resets protection, and asks you to re-agree risk on real capital — it does not confuse a withdrawal with trading.</li>
+<li>If you trade overnight or swing (an open trade that crosses the night or the weekend): you stay protected with the % you locked. Detail below.</li>
+</ul>
+
+<p>If the broker does not leave the account flat after a limit close: tevsys retries in a bounded window and, if needed, shows a clear Incomplete close notice (STOP active; you can close by hand). That is broker execution risk, not a failure of your limit. You will see it in this listing’s screenshots.</p>
+
+<p>No signals. No profit promises. Try the free demo or rent — from 69 USD/month.</p>
+
+<p>The demo is the full Advanced edition: the same clean Market file you would rent, with no license key and no web activation. It expires by time, not by features. Set limits, force a close, and review the records in your terminal before you rent.</p>
+
+<p>A real Nasdaq session: a live limit close, an attempt stopped by HyperClose, and the MT5 report from that same moment — watch it before you trust the copy. Player in this listing’s Screenshots tab.</p>
+
+<p>
+<a href="https://www.tevsys.io/en/instalacion-market" target="_blank" rel="noopener">Installation (Market)</a> &nbsp;·&nbsp;
+<a href="https://www.tevsys.io/en/configuracion-al-instalar" target="_blank" rel="noopener">Setup</a> &nbsp;·&nbsp;
+<a href="https://www.tevsys.io/en/features/precision" target="_blank" rel="noopener">Precision</a><br>
+<a href="https://www.tevsys.io/en/features/evidencia" target="_blank" rel="noopener">Evidence</a> &nbsp;·&nbsp;
+<a href="https://www.tevsys.io/en/features/hyperclose" target="_blank" rel="noopener">HyperClose</a> &nbsp;·&nbsp;
+<a href="https://www.tevsys.io/docs/evidencia-hyperclose-demo-historial-transacciones.html" target="_blank" rel="noopener">MT5 report (demo)</a>
+</p>
+
+<h3>Documented close precision</h3>
+<ul>
+<li><b>116 documented operations</b> with MT5 reports and logs: mean deviation ≈ 0.06% between the limit you set and the executed close, under normal conditions.</li>
+<li>Extreme cases (gaps, thin liquidity, broker fill) documented separately and outside that mean: not a guarantee of an exact close in violent moves.</li>
+<li>Clear attribution: we separate TEVSYS’s close decision from MT5 execution — “filled at another price” is not confused with “did not react.”</li>
+</ul>
+
+<h3>HyperClose, plain</h3>
+<p>If you try to open a new trade while protection is active, HyperClose closes that exposure at once and records the attempt — including on OFF days. That cuts overtrading when you are already protected.</p>
+<p>That is the difference between wanting to stop and not being able to keep going.</p>
+
+<h3>Account-level protection + VPS</h3>
+<ul>
+<li>Protection watches account result — not only single trades — and blocks new exposure while active.</li>
+<li>For watch while the terminal runs, load TEVSYS on a stable VPS — ideally near the broker. If the terminal drops, tick-by-tick watch pauses; what you locked and protection state persist and re-engage when you return.</li>
+</ul>
+
+<h3>Records you can cross-check</h3>
+<p>From the first load on the chart, TEVSYS writes a per-account record. It includes, among other things: when the program is loaded or removed; the limits you accepted when you locked; closes at the limit; blocks; attempts to trade while already protected (HyperClose); Input changes while protection is on (detected and not applied); protected trades that cross a day or weekend; cash movements; connection cuts and reconnects.</p>
+<p>That record lives alongside official MT5 history and reports: you can cross-check what the product applied with what the terminal signed.</p>
+
+<h3>Why not a free daily cap?</h3>
+<p>A daily cap is a start; the difference is what surrounds it.</p>
+<p>TEVSYS holds the day and the week, reads account result, and leaves open positions alone until you accept protection: passive observation and a conscious start.</p>
+<p>It treats intraday differently from a trade that crosses midnight or the weekend, and plans OFF days instead of “turning the program off.”</p>
+<p>Already protected and you try one more trade? HyperClose stops it and leaves a record. Every close stays documented and cross-checkable with your MT5 reports — no signals, no profit promises.</p>
+<p><b>Compare the record, not the description.</b></p>
+
+<h3>Limits you configure (Advanced on this listing)</h3>
+<ul>
+<li>Daily loss and profit limits, with day rotation per your settings.</li>
+<li>Full work-week plan (Mon–Fri): limits and ON/OFF days — mid-week or from the weekend (SAVE FOR MONDAY → SCHEDULED · MONDAY).</li>
+<li>OFF days are part of the plan — not “turning the program off.”</li>
+<li>One chart is enough to install; protection watches account result and shows status on open charts.</li>
+<li>A trade that crosses midnight or the weekend (overnight / swing): you stay under the pact while the program is watching.</li>
+<li>Passive observation: if trades are already open before you configure and lock, we do not force the lock on top. When you close those positions, you can lock and start from zero.</li>
+</ul>
+<p>This listing delivers Advanced, fixed in the file. Essential, Pro and other plans: <a href="https://www.tevsys.io/en/precios" target="_blank" rel="noopener">tevsys.io</a> (site text).</p>
+
+<h3>Adaptive panel and click detail</h3>
+<ul>
+<li><b>Adaptive panel:</b> intraday the panel does not show the same as with an overnight trade: information adapts to the scenario (day/week vs calendar-crossing protection), so you know what you are looking at.</li>
+<li><b>Click detail:</b> on the panel you can open the agreed limit, how much you have used, and how much remains until STOP.</li>
+<li><b>Close reason:</b> if a close drifts from the limit, the panel can explain why (broker execution, connection cut…) and you cross-check it with MT5 history.</li>
+</ul>
+<p>You will see it in this listing’s screenshots. More detail: <a href="https://www.tevsys.io/en/como-funciona#panel-adaptativo" target="_blank" rel="noopener">tevsys.io/en/como-funciona#panel-adaptativo</a></p>
+
+<h3>Open trade crossing midnight or the weekend</h3>
+<p>An open trade crossing midnight or the weekend stays under your agreed % — protection does not “reset” mid-trade. That is why the panel shows the intraday and calendar-crossing scenarios differently — and you see them as they are.</p>
+<p>If protection was active and an open trade crosses midnight, the weekend, or another calendar boundary, TEVSYS does not set you “free” just because the day changed. You keep the protection with the percentages you locked while the trade continues and the program watches. On the panel: trade in progress / you stay protected when that applies. That is different from scheduling Monday with no open trade (SAVE / SCHEDULED).</p>
+
+<h3>When a limit is reached</h3>
+<ul>
+<li>Automatic close of open positions, with documented precision.</li>
+<li>On profit, a small stability margin (~0.01% above your %) avoids closes on a single tick — by design.</li>
+<li>Block on new exposure while protection stays active.</li>
+<li>If the broker does not execute the close on the first try, tevsys retries automatically within a bounded window (up to ~45 s). If positions remain open after that, you see a clear Incomplete close notice: STOP stays active, you cannot add exposure, and you can review or close by hand. That is not a failure of your limit: it is broker execution risk. You will see it in this listing’s screenshots (and the Nasdaq video).</li>
+</ul>
+
+<h3>Pricing and license — two channels (do not mix them)</h3>
+<ul>
+<li><b>MetaQuotes Market</b> (this listing, USD): rent 1 / 3 / 6 months — <b>69 / 189 / 349 USD</b>. No 12-month rent on this listing. No auto-renewal. No lifetime. Activations per Market rules. This listing = Advanced Market.</li>
+<li><b>tevsys.io</b> (EUR): Essential · Advanced · Pro per the pricing page. Different channel and terms — do not compare one Market month in USD blindly to the site price in EUR.</li>
+</ul>
+<p>Guides and Market installation: <a href="https://www.mql5.com/en/blogs/post/775054" target="_blank" rel="noopener">https://www.mql5.com/en/blogs/post/775054</a></p>
+
+<h3>FAQ</h3>
+<p><b>Does it close my positions if I hit my daily loss limit?</b><br>
+Yes. When the account reaches the agreed percentage, TEVSYS closes open positions, blocks new exposure, and leaves a record of the close.</p>
+
+<p><b>How do I know how much risk remains before the close?</b><br>
+Click the panel: you see the agreed limit, progress (how much you have used), and the margin left until STOP. Intraday and overnight read according to the scenario — it is not one generic panel.</p>
+
+<p><b>What if I leave a trade open past midnight?</b><br>
+If protection is active, you stay under the % you locked: protection does not reset mid-trade. On screen: trade in progress — you stay protected.</p>
+
+<p><b>Is the demo complete?</b><br>
+Yes: full Advanced edition on a real terminal (not Strategy Tester only). It expires by time, not by features. You can configure, force a close, and cross-check records before you rent.</p>
+
+<p><b>Does TEVSYS give signals or trade for me?</b><br>
+No. It only applies the limits you configure. The strategy is yours; tevsys enforces the pact and leaves evidence you can cross-check with MT5.</p>
+
+<p><b>Requirements:</b> MetaTrader 5 · symbols and accounts allowed by your broker.</p>
+<p>No signals. No profit promises. This software does not provide investment advice and does not guarantee results. TEVSYS does not remove market risk, slippage, or connection gaps.</p>
+<p>Support: info@tevsys.io · <a href="https://www.tevsys.io" target="_blank" rel="noopener">tevsys.io</a></p>

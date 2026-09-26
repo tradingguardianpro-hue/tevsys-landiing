@@ -1,0 +1,129 @@
+<!--
+  CANÓNICO Market ES — 26 sep 2026 (mejor voz + 116 + claim-free + panel).
+  Archivo: DESCR_MARKET_ES_mejor_voz_116.html
+  Pegar en Seller desde el primer <p> (sin este comentario).
+
+  Retoques vs borrador chat: typo FAQ «supero» · requisitos+aviso legal · «reinicia» solo en
+  bloque overnight dedicado + FAQ (teaser/Límites acortados).
+
+  Próxima versión (no bloqueante — constan):
+  - Espejo EN: DESCR_MARKET_EN_mejor_voz_116.html (listo; colgar cuando toque).
+  - Meta/tags EN: «daily loss limit» + «risk panel» ya en cuerpo EN.
+  - Gancho de marca sin “límite de pérdida diaria” en primeros ~155 caracteres ES = decisión
+    deliberada (FAQ sí lo lleva); reabrir solo si SEO Market lo exige con datos.
+  - Evolutivo: noticias / horarios / SML / etc. solo cuando el producto esté listo para ficha.
+-->
+<p><b>¿Dónde se rompen de verdad tus límites?</b> Bajo presión, no en la cabeza.</p>
+
+<p>TEVSYS no es solo un panel de riesgo: aplica tus límites diarios y semanales a nivel de cuenta, frena el «una más» (HyperClose / overtrading), y deja disciplina operativa verificable con trazabilidad — un registro por cuenta contrastable con el historial y los informes de MT5. En esa evidencia va la atribución: separamos la decisión de cierre de tevsys de la ejecución del bróker, para no confundir «rellenó a otro precio» con «no reaccionó». La precisión de cierre documentada (~0,06 % de desviación media en condiciones normales, sobre <b>116 operativas</b> documentadas) forma parte de ese mismo expediente.</p>
+
+<p>Más abajo verás capas que casi nadie pone en ficha:</p>
+<ul>
+<li><b>Observación pasiva:</b> si ya hay trades abiertos antes de configurar y pactar tus límites, no forzamos el candado encima; cuando cierras, puedes pactar y empezar de cero.</li>
+<li><b>Persistencia:</b> lo pactado se guarda; si cae el terminal, la vigilancia tick a tick se pausa y al volver la protección se reengancha.</li>
+<li><b>Movimientos de caja:</b> si tú retiras o ingresas capital, tevsys lo detecta, reinicia la protección y te pide volver a pactar el riesgo sobre el capital real — no confunde un retiro con trading.</li>
+<li>Si operas overnight o en modo swing (operación abierta que cruza la noche o el fin de semana): sigues protegido con los % que pactaste. Detalle más abajo.</li>
+</ul>
+
+<p>Si el bróker no deja la cuenta plana tras un cierre al límite: tevsys reintenta de forma acotada y, si hace falta, muestra un aviso claro de Cierre incompleto (STOP activo; puedes cerrar a mano). Eso es riesgo de ejecución del bróker, no un fallo de tu límite. Lo verás en las capturas de esta ficha.</p>
+
+<p>Sin señales. Sin promesas de rentabilidad. Prueba la demo gratis o alquila — entrada desde 69 USD/mes.</p>
+
+<p>La demo es la edición Advanced completa: el mismo archivo Market limpio que alquilarías, sin llave de licencia ni activación web. Caduca por tiempo, no por funciones. Configura límites, provoca un cierre y revisa los registros en tu terminal antes de alquilar.</p>
+
+<p>Una sesión real de Nasdaq: un cierre por límite en vivo, un intento detenido por HyperClose y el informe MT5 de ese mismo momento — míralo antes de confiar. Reproductor en la pestaña Capturas de esta ficha.</p>
+
+<p>
+<a href="https://www.tevsys.io/instalacion-market" target="_blank" rel="noopener">Instalación (Market)</a> &nbsp;·&nbsp;
+<a href="https://www.tevsys.io/configuracion-al-instalar" target="_blank" rel="noopener">Configuración</a> &nbsp;·&nbsp;
+<a href="https://www.tevsys.io/features/precision" target="_blank" rel="noopener">Precisión</a><br>
+<a href="https://www.tevsys.io/features/evidencia" target="_blank" rel="noopener">Evidencia</a> &nbsp;·&nbsp;
+<a href="https://www.tevsys.io/features/hyperclose" target="_blank" rel="noopener">HyperClose</a> &nbsp;·&nbsp;
+<a href="https://www.tevsys.io/docs/evidencia-hyperclose-demo-historial-transacciones.html" target="_blank" rel="noopener">Informe MT5 (demo)</a>
+</p>
+
+<h3>Precisión de cierre documentada</h3>
+<ul>
+<li><b>116 operativas</b> documentadas con informes y registros MT5: desviación media ≈ 0,06 % entre el límite que configuras y el cierre ejecutado, en condiciones normales.</li>
+<li>Casos extremos (gaps, poca liquidez, fill del bróker) documentados aparte y fuera de esa media: no es garantía de cierre exacto en movimientos violentos.</li>
+<li>Atribución clara: separamos la decisión de cierre de TEVSYS de la ejecución de MT5 — no se confunde «rellenó a otro precio» con «no reaccionó».</li>
+</ul>
+
+<h3>HyperClose, en claro</h3>
+<p>Si intentas abrir un trade nuevo con la protección activa, HyperClose lo cierra de inmediato y registra el intento — también en días OFF. Eso corta el overtrading cuando ya estás protegido.</p>
+<p>Esa es la diferencia entre querer parar y no poder seguir.</p>
+
+<h3>Protección a nivel de cuenta + VPS</h3>
+<ul>
+<li>La protección mira el resultado de la cuenta — no solo trades sueltos — y bloquea nueva exposición mientras está activa.</li>
+<li>Para vigilancia mientras el terminal corre, carga TEVSYS en un VPS estable — idealmente cerca del bróker. Si cae el terminal, la vigilancia tick a tick se pausa; lo pactado y el estado de protección persisten y se reenganchan al volver.</li>
+</ul>
+
+<h3>Registros que puedes contrastar</h3>
+<p>Desde la primera carga en el gráfico, TEVSYS escribe un registro por cuenta. Ahí quedan, entre otras cosas: cuándo se carga o se quita el programa; los límites que aceptaste al proteger; cierres al llegar al límite; bloqueos; intentos de operar ya protegido (HyperClose); cambios de Inputs con la protección activa (se detectan y no se aplican); operaciones protegidas que cruzan día o fin de semana; movimientos de caja; cortes y reenganches de conexión.</p>
+<p>Ese registro convive con el historial y los informes oficiales de MT5: puedes contrastar lo que el producto aplicó con lo que firma el terminal.</p>
+
+<h3>¿Por qué no un tope diario gratis?</h3>
+<p>Un tope diario es un comienzo; la diferencia está en lo que lo rodea.</p>
+<p>TEVSYS sostiene el día y la semana, lee el resultado de la cuenta y deja tus posiciones abiertas en paz hasta que aceptas la protección: observación pasiva y arranque consciente.</p>
+<p>Trata el intradía distinto de una operación que cruza medianoche o el fin de semana, y planifica los días OFF en vez de apagar.</p>
+<p>¿Protegido y pruebas un trade más? HyperClose lo detiene y deja registro. Cada cierre queda documentado y contrastable con tus informes MT5 — sin señales ni promesas de rentabilidad.</p>
+<p><b>Compara el registro, no la descripción.</b></p>
+
+<h3>Límites que configuras (Advanced en esta ficha)</h3>
+<ul>
+<li>Límites diarios de pérdida y ganancia, con rotación de día según tu configuración.</li>
+<li>Plan de toda la semana laboral (Lun–Vie): límites y días ON/OFF — entre semana o desde el fin de semana (GUARDAR PARA EL LUNES → PROGRAMADO · LUNES).</li>
+<li>Los días OFF forman parte del plan — no es «apagar el programa».</li>
+<li>Un gráfico basta para instalar; la protección mira el resultado de la cuenta y muestra estado en los gráficos abiertos.</li>
+<li>Operación que cruza medianoche o el fin de semana (overnight / swing): sigues bajo el pacto mientras el programa vigila.</li>
+<li>Observación pasiva: si ya hay trades abiertos antes de configurar y pactar tus límites, no forzamos el candado encima. Cuando cierras esas posiciones, puedes pactar y empezar de cero.</li>
+</ul>
+<p>Esta ficha entrega Advanced, fijo en el archivo. Essential, Pro y otros planes: <a href="https://www.tevsys.io/precios" target="_blank" rel="noopener">tevsys.io</a> (texto).</p>
+
+<h3>Panel adaptativo e información al clic</h3>
+<ul>
+<li><b>Panel adaptativo:</b> en intradía el panel no muestra lo mismo que con una operación overnight: la información se adapta al escenario (día/semana frente a protección que cruza calendario), para que sepas qué estás mirando.</li>
+<li><b>Información al clic:</b> en el panel puedes abrir el detalle del límite pactado, cuánto has consumido y cuánto queda hasta el STOP.</li>
+<li><b>Motivo del cierre:</b> si un cierre se aleja del límite, el panel puede explicar por qué (ejecución del bróker, corte de conexión…) y lo contrastas con el historial de MT5.</li>
+</ul>
+<p>Lo verás en las capturas de esta ficha. Más detalle: <a href="https://www.tevsys.io/como-funciona#panel-adaptativo" target="_blank" rel="noopener">tevsys.io/como-funciona#panel-adaptativo</a></p>
+
+<h3>Operación abierta que cruza la medianoche o el fin de semana</h3>
+<p>Operación abierta que cruza la medianoche o el fin de semana: sigues bajo el pacto con los % que configuraste; la protección no se «reinicia» a mitad de una operación. Justo por eso el panel distingue el escenario intradía del que cruza calendario — y lo ves tal cual.</p>
+<p>Si activaste la protección y hay operación abierta que atraviesa medianoche, el fin de semana u otro corte de calendario, TEVSYS no te deja «libre» solo porque cambió el día. Mantienes la protección con los porcentajes que pactaste mientras la operación sigue y el programa vigila. En el panel: operación en curso / sigues protegido cuando corresponde. Eso es distinto de planificar el lunes sin operación abierta (GUARDAR / PROGRAMADO).</p>
+
+<h3>Cuando se alcanza un límite</h3>
+<ul>
+<li>Cierre automático de posiciones abiertas, con precisión documentada.</li>
+<li>En ganancia, un pequeño margen de estabilidad (~0,01 % sobre tu %) evita cierres por un solo tic — por diseño.</li>
+<li>Bloqueo de nueva exposición mientras la protección sigue activa.</li>
+<li>Si el bróker no ejecuta el cierre a la primera, tevsys reintenta de forma automática y acotada (hasta ~45 s). Si pasado ese plazo quedan operaciones abiertas, verás un aviso claro de Cierre incompleto: el STOP sigue activo, no puedes ampliar, y puedes revisar o cerrar a mano. Eso no es un fallo de tu límite: es un riesgo de ejecución del bróker. Lo verás en las capturas de esta ficha (como el vídeo Nasdaq).</li>
+</ul>
+
+<h3>Precios y licencia — dos canales (no los mezcles)</h3>
+<ul>
+<li><b>MetaQuotes Market</b> (esta ficha, USD): alquiler 1 / 3 / 6 meses — <b>69 / 189 / 349 USD</b>. Sin 12 meses en esta ficha. Sin renovación automática. Sin vitalicio. Activaciones según reglas Market. Esta ficha = Advanced Market.</li>
+<li><b>tevsys.io</b> (EUR): Essential · Advanced · Pro según la página de precios. Canal y condiciones distintos — no compares a ciegas un mes Market en USD con el precio web en EUR.</li>
+</ul>
+<p>Guías e instalación Market: <a href="https://www.mql5.com/es/blogs/post/770806" target="_blank" rel="noopener">https://www.mql5.com/es/blogs/post/770806</a></p>
+
+<h3>Preguntas frecuentes</h3>
+<p><b>¿Cierra mis posiciones si supero mi límite de pérdida diaria?</b><br>
+Sí. Cuando la cuenta alcanza el porcentaje pactado, TEVSYS cierra las posiciones abiertas, bloquea nueva exposición y deja constancia del cierre.</p>
+
+<p><b>¿Cómo sé cuánto riesgo me queda antes del cierre?</b><br>
+Pulsa en el panel: ahí ves el límite pactado, el avance (cuánto has consumido) y el margen que queda hasta el STOP. En intradía y en overnight la información se lee según el escenario — no es el mismo panel «genérico».</p>
+
+<p><b>¿Qué pasa si dejo una operación abierta al cruzar medianoche?</b><br>
+Si la protección está activa, sigues bajo los % que pactaste: la protección no se reinicia a mitad de una operación. En pantalla: operación en curso — sigues protegido.</p>
+
+<p><b>¿La demo es completa?</b><br>
+Sí: edición Advanced completa en terminal real (no solo Strategy Tester). Caduca por tiempo, no por funciones. Puedes configurar, provocar un cierre y contrastar registros antes de alquilar.</p>
+
+<p><b>¿TEVSYS da señales o opera por mí?</b><br>
+No. Solo aplica los límites que configuras. La estrategia es tuya; tevsys hace cumplir el pacto y deja evidencia contrastable con MT5.</p>
+
+<p><b>Requisitos:</b> MetaTrader 5 · símbolos y cuentas permitidos por tu bróker.</p>
+<p>Sin señales. Sin promesas de rentabilidad. Este software no ofrece asesoramiento de inversión ni garantiza resultados. TEVSYS no elimina el riesgo de mercado, el slippage ni los huecos de conexión.</p>
+<p>Soporte: info@tevsys.io · <a href="https://www.tevsys.io" target="_blank" rel="noopener">tevsys.io</a></p>

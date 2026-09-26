@@ -36,7 +36,7 @@ const overnightLaborableGuide = {
 	announcement:
 		'Trade open and protection continues — day to day, and on weekends too. Midnight does not drop the net.',
 	edge: {
-		body: 'When you lock your limits and leave a trade open overnight, tevsys keeps measuring against those same percentages. We do not reset at midnight and orphan the trade.',
+		body: 'An open trade crossing midnight or the weekend stays under your agreed % — protection does not reset mid-trade and does not leave the position without a net.',
 		screen: 'On screen: Trade in progress — you stay protected.',
 		lockNote:
 			'If you remove the EA from the chart, the lock is not wiped: when you return, same pact percentages.',
@@ -1240,15 +1240,18 @@ const microclipBranches: MicroclipBranch[] = [
 							loss limit?
 						</h3>
 						<p class="how-coverage__lead">
-							The <strong>percentages you accepted when you locked</strong> stay in force. We do not start a
-							new day that orphans the trade — we do not reset the pact at midnight. On screen:
-							<strong> Trade in progress — you stay protected</strong>.
+							The <strong>percentages you accepted when you locked</strong> stay in force. An open trade
+							crossing midnight or the weekend stays under that pact — protection
+							<strong> does not reset mid-trade</strong> and does not leave the position without a net.
+							On screen:
+							<strong> Trade in progress — you stay protected</strong>. That is why the panel shows
+							intraday and calendar-crossing scenarios differently —{' '}
+							<a href="#panel-adaptativo">see it as it is</a>.
 						</p>
 						<p class="how-coverage__closing">
 							Closing at the limit is the limits engine (not HyperClose). HyperClose fires if, while already
 							protected, you try to open new trades. The day boundary tevsys uses follows your terminal
-							calendar (local PC time), not a prop-firm-style “daily loss calculator” reset. Weekday guide
-							(~1:16):{' '}
+							calendar (local PC time). Weekday guide:{' '}
 							<a href="#overnight-laborable">Swing trade — midnight does not leave you without a net</a>
 							{' '}(<code>#overnight-laborable</code>).
 						</p>
@@ -1277,7 +1280,7 @@ const microclipBranches: MicroclipBranch[] = [
 							name: 'If protection is already on and a position stays open past midnight, what happens to the daily loss limit?',
 							acceptedAnswer: {
 								'@type': 'Answer',
-								text: 'The percentages you accepted when you locked stay in force. tevsys does not reset at midnight and orphan the trade. On screen: Trade in progress — you stay protected. Weekday guide: /en/como-funciona#overnight-laborable. Closing at the limit is the limits engine; HyperClose fires if you try to open new trades while already protected. The day boundary follows the terminal calendar (local time).',
+								text: 'The percentages you accepted when you locked stay in force. An open trade crossing midnight or the weekend stays under that pact — protection does not reset mid-trade. On screen: Trade in progress — you stay protected. Panel: /en/como-funciona#panel-adaptativo. Guide: /en/como-funciona#overnight-laborable. Closing at the limit is the limits engine; HyperClose fires if you try to open new trades while already protected. The day boundary follows the terminal calendar (local time).',
 							},
 						},
 						{

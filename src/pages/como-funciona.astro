@@ -32,7 +32,7 @@ const overnightLaborableGuide = {
 	announcement:
 		'Trade abierto y la protección sigue — de un día a otro, también en fin de semana. Medianoche no te desprotege.',
 	edge: {
-		body: 'Cuando bloqueas tus límites y dejas una operación abierta de un día a otro, tevsys sigue midiendo contra esos mismos porcentajes. No reinicia a medianoche y te deja la operación sin red.',
+		body: 'Operación abierta que cruza la medianoche o el fin de semana: sigues bajo el pacto con los % que configuraste. La protección no se reinicia a mitad de una operación ni te deja la posición sin red.',
 		screen: 'En pantalla: Operación en curso — sigues protegido.',
 		lockNote:
 			'Si quitas el EA del gráfico, el candado no se borra: al volver, mismos % del pacto.',
@@ -1238,16 +1238,18 @@ const microclipBranches: MicroclipBranch[] = [
 							límite de pérdida del día?
 						</h3>
 						<p class="how-coverage__lead">
-							Mandan los <strong>porcentajes que aceptaste al proteger</strong>. No empezamos un día nuevo
-							que deje la operación sin red — no reiniciamos el pacto a medianoche y te dejamos huérfano.
+							Mandan los <strong>porcentajes que aceptaste al proteger</strong>. Operación abierta que
+							cruza medianoche o fin de semana: sigues bajo el pacto — la protección
+							<strong> no se reinicia a mitad de una operación</strong> ni te deja la posición sin red.
 							En pantalla:
-							<strong> Operación en curso — sigues protegido</strong>.
+							<strong> Operación en curso — sigues protegido</strong>. Justo por eso el panel distingue el
+							escenario intradía del que cruza calendario —{' '}
+							<a href="#panel-adaptativo">lo ves tal cual</a>.
 						</p>
 						<p class="how-coverage__closing">
 							El cierre al límite es el motor de límites (no HyperClose). HyperClose actúa si, ya
 							protegido, intentas abrir operaciones nuevas. El cambio de día que usa tevsys sigue el
-							calendario de tu terminal (hora local del PC), no un “reset” tipo calculadora de prop firm.
-							Guía laborable (~1:16):{' '}
+							calendario de tu terminal (hora local del PC). Guía laborable:{' '}
 							<a href="#overnight-laborable">Operación swing — medianoche no te deja sin red</a>
 							{' '}(<code>#overnight-laborable</code>).
 						</p>
@@ -1276,7 +1278,7 @@ const microclipBranches: MicroclipBranch[] = [
 							name: 'Si ya tienes protección y dejas una operación abierta al cruzar medianoche, ¿qué pasa con el límite de pérdida del día?',
 							acceptedAnswer: {
 								'@type': 'Answer',
-								text: 'Mandan los porcentajes que aceptaste al proteger. tevsys no reinicia un día nuevo que deje la operación sin red. En pantalla: Operación en curso — sigues protegido. Guía laborable: /como-funciona#overnight-laborable. El cierre al límite es el motor de límites; HyperClose actúa si intentas abrir nuevas operaciones ya protegido. El cambio de día sigue el calendario del terminal (hora local).',
+								text: 'Mandan los porcentajes que aceptaste al proteger. Operación abierta que cruza medianoche o fin de semana: sigues bajo el pacto — la protección no se reinicia a mitad de una operación. En pantalla: Operación en curso — sigues protegido. Panel: /como-funciona#panel-adaptativo. Guía: /como-funciona#overnight-laborable. El cierre al límite es el motor de límites; HyperClose actúa si intentas abrir nuevas operaciones ya protegido. El cambio de día sigue el calendario del terminal (hora local).',
 							},
 						},
 						{

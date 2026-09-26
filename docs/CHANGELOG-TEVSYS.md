@@ -4,12 +4,29 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Market DESCR ES|EN — canónico voz + 116 (26 sep 2026)
+
+- **Canon ES:** `docs/DESCR_MARKET_ES_mejor_voz_116.html` — gancho · 116 · 69/189/349 · overnight claim-free · panel · FAQ · legal.
+- **Canon EN:** `docs/DESCR_MARKET_EN_mejor_voz_116.html` — espejo; *daily loss limit* + *risk panel* en cuerpo; listo para Seller cuando toque.
+- Evolutivo: noticias / horarios / capas nuevas → actualizar ambos juntos, solo con producto listo.
+- **No usar** el HTML formal frío sin gancho.
+
+## Cómo funciona — contraste medianoche claim-free (26 sep 2026)
+
+- `#overnight-laborable` + `#overnight-faq` ES|EN: escena «no se reinicia a mitad de una operación» + puente a `#panel-adaptativo`. Sin nombres de competencia ni guerra de precio. Quitada coletilla «calculadora prop» en FAQ.
+- **Commit:** `web(tevsys): sharpen overnight midnight claim-free copy`
+
 ## Cómo funciona — `#panel-adaptativo` intradía ≠ overnight (26 sep 2026)
 
 - Bloque propio tras `#overnight-laborable` (estilo capital/caja): copy muted · captura AT #6271553 finde + op en curso + cartela DESDE · deep-nav · puente desde Operación swing. ES|EN.
 - Still: `tevsys-panel-overnight-finde-op-curso-6271553.png` (provisional hasta clip; cara overnight completa + info al clic).
 - Clip ~30 s **después** de panel definitivo (`swingVidGatePanel`).
 - **Commit:** `web(tevsys): add panel-adaptativo block on como-funciona`
+
+## Privacidad — honestidad analytics + formulario (26 sep 2026) — *repo, pendiente push*
+
+- `/company/privacidad` ES|EN: corrige “sin analítica” → declara **Vercel Web Analytics**; formulario; hosting; embeds; pago/Market; derechos AEPD; logs MT5 locales fuera de alcance salvo envío voluntario.
+- **Commit (cuando publique):** `web(tevsys): update privacy policy for vercel analytics and contact data`
 
 ## Aviso legal — alineado con Términos (26 sep 2026) — *repo, pendiente push*
 
