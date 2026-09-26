@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — `#panel-adaptativo` intradía ≠ overnight (26 sep 2026)
+
+- Bloque propio tras `#overnight-laborable` (estilo capital/caja): copy muted · still overnight provisional · deep-nav · puente desde Operación swing. ES|EN.
+- Clip ~30 s **después** de panel definitivo (`swingVidGatePanel`). Still = cara overnight; caption dice que intradía se lee distinto.
+- **Commit:** `web(tevsys): add panel-adaptativo block on como-funciona`
+
 ## Términos de uso — alcance vigilancia / ejecución / HyperClose (26 sep 2026)
 
 - `/company/terminos` + `/en/company/terminos`: ampliación honesta alineada con `#vigilancia-vps` (qué es / qué no · vigilancia y huecos · envío de cierre vs fill bróker · HyperClose · evidencia ≠ auditoría bróker · limitación + tope licencia sujeto a abogado).

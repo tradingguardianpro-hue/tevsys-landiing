@@ -116,6 +116,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **i18n ES|EN (20 ago, plan):** oleadas; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
 - **P13 + pack espejo + GEO AI (8–9 sep · still 13 sep):** `#rama-operacion` · **`#overnight-laborable`** (copy edge + still marca; MP4 viejo fuera) · `#overnight-faq` · `#tu-id-tevsys` · `llms.txt` reforzado (V12 **geoEspejoAI**). Pendiente caso ★ · guía vídeo con panel nuevo · re-auditoría buscador 2–3 sem tras push.
+- **Panel adaptativo (26 sep 2026):** `#panel-adaptativo` en `/como-funciona` (+ `/en/…`) tras overnight — intradía ≠ overnight + info al clic · still provisional · clip cuando panel definitivo. V12 **(panelAdaptativoWeb)**.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:
   - **MC-CF-021** `#videoclip-programado-lunes` (rama 1): `¿Cómo dejas la protección lista para el lunes?` · `➜ GUARDAR PARA EL LUNES` · `➜ Confirma tus límites` · `➜ PROGRAMADO · LUNES — queda fijado` + `🡰 El engranaje pasa a teal`
   - **MC-CF-020** `#videoclip-corrige-errores` (rama 1, 21 ago): `¿Te equivocaste en un límite?` · `➜ CORRIGE ERRORES` · `tevsys te dice qué arreglar` · `Corriges — listo para proteger`

@@ -51,6 +51,23 @@ const overnightLaborableGuide = {
 	brandStillAria: 'tevsys brand — swing-world video guide in preparation with the current panel',
 };
 
+/** Adaptive panel + click detail — own block (cashflow style). ~30 s clip when panel is final. */
+const panelAdaptativo = {
+	id: 'panel-adaptativo',
+	eyebrow: 'On-screen panel',
+	titleBefore: 'The panel adapts to the',
+	titleAccent: 'scenario',
+	body: 'Intraday you do not see the same as with an overnight trade: the panel changes what it shows so you know what you are looking at.',
+	bodyFollow:
+		'On click you can open the agreed limit, how much you have used and how much remains until STOP — and, if a close drifts from the pact, the reason (for example a connection cut), cross-checkable with MT5.',
+	imgSrc: '/images/como-funciona/tevsys-finde-operacion-protegida-6263709.png',
+	imgAlt:
+		'tevsys panel with a protected trade that crosses the calendar — the intraday face shows different information (day and week).',
+	imgCaption: 'Overnight / protected face · intraday reads differently',
+	ctaHref: '#overnight-laborable',
+	ctaLabel: 'Swing trade',
+};
+
 /**
  * Your tevsys ID — visual lead of Audit act (9 Sep 2026).
  * When founder says upload capture: set `captureSrc`. Path: `/images/evidence/tevsys-modal-tu-id-tvs.jpg`
@@ -596,6 +613,10 @@ const microclipBranches: MicroclipBranch[] = [
 									{overnightLaborableGuide.edge.faqBefore}
 									<a href={overnightLaborableGuide.edge.faqHref}>{overnightLaborableGuide.edge.faqLabel}</a>.
 								</p>
+								<p class="how-rama__edge-bridge">
+									How it reads on the panel:{' '}
+									<a href="#panel-adaptativo">intraday vs overnight and click detail</a>.
+								</p>
 							</div>
 						</header>
 						<article class="how-overnight__cell">
@@ -611,6 +632,40 @@ const microclipBranches: MicroclipBranch[] = [
 				</section>
 			</div>
 		</div>
+
+		<section
+			class="how-cashflow how-cashflow--stage"
+			id={panelAdaptativo.id}
+			aria-labelledby="how-panel-adaptativo-title">
+			<div class="how-cashflow__halo" aria-hidden="true"></div>
+			<div class="how-cashflow__stage-inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">{panelAdaptativo.eyebrow}</p>
+					<h2 id="how-panel-adaptativo-title" class="how-puesta-marcha__lead">
+						{panelAdaptativo.titleBefore}
+						{' '}
+						<span class="how-present-title__accent how-puesta-marcha__accent">{panelAdaptativo.titleAccent}</span>
+					</h2>
+				</header>
+				<p class="how-cashflow__body tevsys-copy-muted">{panelAdaptativo.body}</p>
+				<p class="how-cashflow__body how-cashflow__body--follow tevsys-copy-muted">{panelAdaptativo.bodyFollow}</p>
+				<EvidenceImageLightbox
+					src={panelAdaptativo.imgSrc}
+					alt={panelAdaptativo.imgAlt}
+					caption={panelAdaptativo.imgCaption}
+					figureClass="how-cashflow__figure"
+					triggerClass="how-cashflow__zoom"
+					imgClass="how-cashflow__img"
+					capClass="how-cashflow__cap"
+				/>
+				<p class="how-cashflow__cta">
+					<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={panelAdaptativo.ctaHref}>
+						{panelAdaptativo.ctaLabel}
+						<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
+					</a>
+				</p>
+			</div>
+		</section>
 
 		<div class="how-mid-act how-mid-act--stage">
 			<div class="how-mid-act__shell" aria-hidden="true"></div>
@@ -1391,6 +1446,8 @@ const microclipBranches: MicroclipBranch[] = [
 			<a href="/en/company/contact?flow=demo">Demo</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/en/como-funciona#overnight-laborable">Swing trade</a>
+			<span class="how-deep__sep" aria-hidden="true">·</span>
+			<a href="/en/como-funciona#panel-adaptativo">Adaptive panel</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
 			<a href="/en/como-funciona#overnight-faq">Midnight / overnight</a>
 			<span class="how-deep__sep" aria-hidden="true">·</span>
