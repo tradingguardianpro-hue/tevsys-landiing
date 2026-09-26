@@ -4,7 +4,8 @@ import Layout from '../../../layouts/Page.astro';
 
 const seo = {
   title: 'Refund policy | tevsys',
-  description: 'tevsys refund and cancellation policy.',
+  description:
+    'tevsys cancellation and refunds: digital licence, MetaQuotes Market, web channel and case-by-case review.',
 };
 ---
 
@@ -13,34 +14,102 @@ const seo = {
     <h1>Refund policy</h1>
 
     <h2>Purpose</h2>
-    <p>
-      This policy describes the cancellation and refund conditions applicable to tevsys software licenses.
+    <p class="tevsys-copy-muted">
+      This policy describes the cancellation and refund conditions applicable to tevsys™ software licences. It
+      complements the <a href="/en/company/terminos">Terms of use</a> and the
+      <a href="/en/company/legal">Legal notice</a>.
     </p>
 
     <h2>Nature of the product</h2>
-    <p>
-      tevsys is a digital software product (license to use). It is not a financial service or delegated management.
+    <p class="tevsys-copy-muted">
+      tevsys is a <strong>digital software product</strong> (a licence to use a MetaTrader 5 utility). It is
+      not a financial service, does not manage capital on the user’s behalf and does not promise profits. A
+      refund, if granted, relates to the licence fee — not to trading losses or gains.
+    </p>
+
+    <h2>Try before you pay</h2>
+    <p class="tevsys-copy-muted">
+      We offer a <strong>demo</strong> (depending on plan and channel) so you can install, set limits and
+      check behaviour in your terminal before renting or buying. We recommend using it. That reduces
+      misunderstandings; it does not replace legal rights where they apply.
+    </p>
+
+    <h2>Purchase channels</h2>
+    <p class="tevsys-copy-muted"><strong>1. MetaQuotes Market</strong></p>
+    <p class="tevsys-copy-muted">
+      If you acquire tevsys on the MetaQuotes Market, charging, rental, activations and many refund rules are
+      handled by <strong>MetaQuotes</strong> under its terms and the Seller process. Where the platform
+      governs the purchase, those rules prevail. For Market billing issues, also use MetaQuotes support
+      channels, and write to us if product context is needed.
+    </p>
+    <p class="tevsys-copy-muted"><strong>2. Web / tevsys.io licence</strong></p>
+    <p class="tevsys-copy-muted">
+      If payment is made through tevsys.io (or another processor we indicate when checkout is active), this
+      policy and contact at <a href="mailto:info@tevsys.io">info@tevsys.io</a> are the main path for
+      cancellation and refund review, without prejudice to the payment processor’s rules or applicable law.
     </p>
 
     <h2>Cancellations</h2>
-    <p>
-      For subscription licenses, the user may cancel future renewals at any time. Cancellation prevents later charges, but does not imply an automatic refund of amounts already paid for periods that have started.
+    <p class="tevsys-copy-muted">
+      Under <strong>period rental</strong> models (e.g. 1 or 3 months on Market, as published on the listing),
+      access covers that period. If there is no auto-renewal, access ends when the period expires unless you
+      purchase a new one.
+    </p>
+    <p class="tevsys-copy-muted">
+      If a future channel uses auto-renewing subscription, you may cancel future renewals according to that
+      channel’s instructions. Cancelling renewals does <strong>not</strong> by itself refund amounts already
+      paid for a period that has started or been used.
     </p>
 
     <h2>Refunds</h2>
-    <p>
-      Refund requests are reviewed case by case, considering the reason reported, the license activation status and the time elapsed since purchase.
+    <p class="tevsys-copy-muted">
+      Requests are reviewed <strong>case by case</strong>, honestly and without automation. We consider,
+      among other things: the reason, purchase channel, whether the licence was delivered/activated, time
+      since payment and whether a demo was available beforehand.
     </p>
-    <p>
-      To request a review, write to <a href="mailto:info@tevsys.io">info@tevsys.io</a> with the purchase email and the reason for the request.
+    <p class="tevsys-copy-muted"><strong>As guidance (not exhaustive):</strong></p>
+    <ul class="tevsys-copy-muted">
+      <li>
+        We may consider a refund or credit for a clear duplicate charge, failure to deliver access attributable
+        to us, or a serious software defect that prevents essential use and cannot be resolved in a
+        reasonable time.
+      </li>
+      <li>
+        In general a refund is <strong>not</strong> due solely because trading results were not what you
+        hoped, because you changed your mind after using the product, or because you dislike the trading
+        style after having usable access.
+      </li>
+      <li>
+        tevsys does not refund market outcomes, slippage, gaps or losses from trading (see Terms).
+      </li>
+    </ul>
+    <p class="tevsys-copy-muted">
+      Withdrawal rights or other consumer guarantees that law grants, where they apply to the channel and
+      contract type, are <strong>not excluded</strong> by this page. Their exact scope will be formalized with
+      legal advice.
     </p>
 
-    <h2>Document in development</h2>
-    <p>
-      This policy will be expanded and adapted with professional legal advice before the definitive commercial launch.
+    <h2>How to request a review</h2>
+    <p class="tevsys-copy-muted">
+      Write to <a href="mailto:info@tevsys.io">info@tevsys.io</a> with:
+    </p>
+    <ul class="tevsys-copy-muted">
+      <li>Email used for the purchase or request.</li>
+      <li>Channel (Market / web) and, if you have it, order number or reference.</li>
+      <li>A clear reason for the request.</li>
+    </ul>
+    <p class="tevsys-copy-muted">
+      We will reply within a reasonable time. If needed, we may ask for extra details to verify the charge.
     </p>
 
-    <p class="legal-update">Last updated: March 2026</p>
+    <h2>Legal review</h2>
+    <p class="tevsys-copy-muted">
+      This policy will be reviewed and formalized with professional legal advice (timelines, digital-content
+      withdrawal and alignment with the payment channel). For any enquiry:
+      <a href="mailto:info@tevsys.io">info@tevsys.io</a>.
+    </p>
+
+    <p class="legal-update">Last updated: 26 September 2026</p>
   </TextSection>
 </Layout>
 
@@ -49,5 +118,12 @@ const seo = {
     margin-top: 2rem;
     font-size: 0.88rem;
     opacity: 0.7;
+  }
+  ul.tevsys-copy-muted {
+    margin: 0.75rem 0 1.25rem;
+    padding-left: 1.25rem;
+  }
+  ul.tevsys-copy-muted li {
+    margin-bottom: 0.5rem;
   }
 </style>

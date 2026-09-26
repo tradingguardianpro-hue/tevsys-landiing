@@ -23,6 +23,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Clip ~30 s **después** de panel definitivo (`swingVidGatePanel`).
 - **Commit:** `web(tevsys): add panel-adaptativo block on como-funciona`
 
+## Reembolsos — canales Market/web + caso a caso (26 sep 2026) — *repo, pendiente push*
+
+- `/company/reembolsos` ES|EN: producto digital; demo primero; Market = reglas MQ; web = info@; orientación qué sí/no; no reembolso de P&L; derechos legales no excluidos; revisión jurídica.
+- **Commit (cuando publique):** `web(tevsys): clarify refund policy for market and web channels`
+
 ## Privacidad — honestidad analytics + formulario (26 sep 2026) — *repo, pendiente push*
 
 - `/company/privacidad` ES|EN: corrige “sin analítica” → declara **Vercel Web Analytics**; formulario; hosting; embeds; pago/Market; derechos AEPD; logs MT5 locales fuera de alcance salvo envío voluntario.
