@@ -4,7 +4,8 @@ import Layout from '../../../layouts/Page.astro';
 
 const seo = {
   title: 'Terms of use | tevsys',
-  description: 'Terms of use for the tevsys website and product.',
+  description:
+    'tevsys terms of use: MT5 utility, monitoring scope, market execution, HyperClose, evidence and liability limits.',
 };
 ---
 
@@ -13,21 +14,104 @@ const seo = {
     <h1>Terms of use</h1>
 
     <h2>Purpose</h2>
-    <p>This document sets out the general terms of use of the tevsys.io website and the tevsys™ product (Expert Advisor for MetaTrader 5).</p>
+    <p class="tevsys-copy-muted">
+      This document sets out the general terms of use of the tevsys.io website and the tevsys™ product
+      (utility / Expert Advisor for MetaTrader 5). It complements the operational description on
+      <a href="/en/como-funciona">How it works</a> (including
+      <a href="/en/como-funciona#vigilancia-vps">Monitoring: what tevsys covers — and what it does not</a>).
+    </p>
 
     <h2>Nature of the product</h2>
-    <p>tevsys is a risk-management and operational-discipline tool. It executes automatic closes according to the limits configured by the user. It does not trade on the user’s behalf, does not issue trading signals and does not constitute financial advice of any kind.</p>
+    <p class="tevsys-copy-muted">
+      tevsys is a <strong>local utility</strong> for risk management and operational discipline. It enforces
+      the limits and rules <strong>you</strong> configure (daily and/or weekly loss and gain limits, OFF days,
+      lock when a limit is reached, and optional layers by plan). It executes automatic closes according to
+      that agreement.
+    </p>
+    <p class="tevsys-copy-muted">
+      It does <strong>not</strong> trade on the user’s behalf, does <strong>not</strong> issue trading
+      signals, does <strong>not</strong> manage buy/sell strategies, does <strong>not</strong> custody funds
+      and does <strong>not</strong> constitute financial, investment or trading advice.
+    </p>
 
     <h2>User responsibility</h2>
-    <p>The user is solely responsible for configuring their limits, for their trading decisions and for the results of using the product. tevsys enforces what the user configures; the decision is always theirs.</p>
+    <p class="tevsys-copy-muted">
+      The user is solely responsible for configuring their limits, for their trading decisions and for the
+      results of using the product. tevsys enforces what the user configures; the decision is always theirs.
+      The execution environment (MetaTrader 5, broker, network, VPS or computer) is the user’s
+      responsibility.
+    </p>
+
+    <h2>Scope of monitoring</h2>
+    <p class="tevsys-copy-muted">
+      Tick-by-tick monitoring (evaluating limits and sending closes) only exists while MetaTrader 5 and
+      tevsys are running on a machine with market access (home PC or VPS). That is not a hidden product
+      failure: it is how a program that runs inside the terminal works.
+    </p>
+    <p class="tevsys-copy-muted">
+      If MetaTrader is closed, the machine is powered off with no other active terminal, or tevsys is
+      removed from the chart, live monitoring is <strong>paused</strong>. The agreement state (limits, lock,
+      protection snapshot) may remain stored; when you reload, tevsys reattaches with those same percentages —
+      not as a fake “free” panel. Detail and panel wording:
+      <a href="/en/como-funciona#vigilancia-vps">monitoring and gaps</a>.
+    </p>
+
+    <h2>Market execution</h2>
+    <p class="tevsys-copy-muted">
+      When a configured limit is reached, tevsys <strong>processes and sends</strong> the close order to the
+      broker through MetaTrader 5. The final fill price and outcome are determined by the market and the
+      broker (slippage, spread, liquidity, gaps, first tick when quoting resumes, network latency).
+    </p>
+    <p class="tevsys-copy-muted">
+      tevsys cannot force an exact price on market orders. Where the product documents it, the record
+      separates the <strong>tevsys decision</strong> (limit trigger) from <strong>MT5 execution</strong>.
+      Published precision figures (e.g. average error under normal conditions) are not a guarantee of outcome
+      on every trade; extreme cases are documented separately.
+    </p>
+
+    <h2>HyperClose and trading while locked</h2>
+    <p class="tevsys-copy-muted">
+      If, with active protection or on an OFF day as configured, the user tries to open new trades,
+      HyperClose may immediately close that new exposure and log the attempt. Insisting on trading while
+      locked means accepting the cost and risk of those attempts. MetaTrader stays open: tevsys does not
+      “turn off” the terminal.
+    </p>
+
+    <h2>Evidence and records</h2>
+    <p class="tevsys-copy-muted">
+      tevsys may generate logs and records that can be checked against official MetaTrader 5 reports for the
+      same period. That evidence helps verify compliance and event sequence; it is <strong>not</strong> a
+      broker-audit service, a profit guarantee, or a legal/regulatory opinion.
+    </p>
+
+    <h2>Limitation of liability</h2>
+    <p class="tevsys-copy-muted">
+      To the extent permitted by applicable law, tevsys™ and its rights holders are not liable for loss or
+      damage arising from: broker or network slippage or delays; market gaps; MetaTrader 5, VPS or broker
+      server outages, updates or shutdowns; use without active monitoring (gaps with no terminal); incorrect
+      limit configuration by the user; or insisting on trading while locked.
+    </p>
+    <p class="tevsys-copy-muted">
+      Unless mandatory law provides otherwise, any financial liability related to use of the software is
+      limited, at most, to the amount paid for the licence in the relevant period. This clause will be
+      reviewed and formalized with professional legal advice.
+    </p>
 
     <h2>Use of content</h2>
-    <p>All content published on this website (texts, videos, screenshots, reports, technical documentation) is the property of tevsys™ and is protected by intellectual property rights. Reproduction or distribution without express authorization is prohibited.</p>
+    <p class="tevsys-copy-muted">
+      All content published on this website (texts, videos, screenshots, reports, technical documentation)
+      is the property of tevsys™ and is protected by intellectual property rights. Reproduction or
+      distribution without express authorization is prohibited.
+    </p>
 
-    <h2>Document in development</h2>
-    <p>These terms of use will be expanded and formalized with professional legal advice before the commercial launch of the product. For any enquiry, contact us at <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+    <h2>Legal review</h2>
+    <p class="tevsys-copy-muted">
+      These terms describe the product with operational honesty. They will be reviewed and formalized with
+      professional legal advice (ownership details, GDPR, liability cap and jurisdiction). For any enquiry:
+      <a href="mailto:info@tevsys.io">info@tevsys.io</a>.
+    </p>
 
-    <p class="legal-update">Last updated: January 2026</p>
+    <p class="legal-update">Last updated: 26 September 2026</p>
   </TextSection>
 </Layout>
 

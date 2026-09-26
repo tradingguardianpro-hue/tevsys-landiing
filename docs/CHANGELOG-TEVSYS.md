@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Términos de uso — alcance vigilancia / ejecución / HyperClose (26 sep 2026)
+
+- `/company/terminos` + `/en/company/terminos`: ampliación honesta alineada con `#vigilancia-vps` (qué es / qué no · vigilancia y huecos · envío de cierre vs fill bróker · HyperClose · evidencia ≠ auditoría bróker · limitación + tope licencia sujeto a abogado).
+- Sustituye “antes del lanzamiento comercial” por *Revisión jurídica* (producto ya expuesto).
+- **Commit:** `web(tevsys): expand terms with monitoring and execution limits`
+
 ## Cómo funciona — léxico Alcanzado / huecos vigilancia (23 sep 2026)
 
 - Bloque `#alcanzado-huecos` bajo `#vigilancia-vps`: frases panel H0–H3 (`vigilancia pausada · …`) = glosario = terminal.

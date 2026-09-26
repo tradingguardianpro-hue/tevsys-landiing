@@ -202,6 +202,10 @@ Documento de contenido/copy actual para revisión de equipo.
 
 Bloque en `/como-funciona#vigilancia-vps` — VPS = vigilancia casi siempre; sin terminal = hueco; reenganche con mismos %. Criterio V12 **(b)** · dossier §15.
 
+### Términos de uso — ampliación legal operativa — ✅ **26 sep 2026**
+
+`/company/terminos` ES|EN: naturaleza (utilidad local, no señales/custodia), vigilancia y huecos, envío de cierre vs ejecución bróker, HyperClose, evidencia, limitación + tope licencia (pendiente abogado). Enlace a `#vigilancia-vps`. V12 **(terminosVigilanciaLegal)**.
+
 ### Hero — logo centro — ✅ cerrado 25 jul
 
 Ver handoff hero.
