@@ -4,7 +4,8 @@ import Layout from '../../../layouts/Page.astro';
 
 const seo = {
   title: 'Legal notice | tevsys',
-  description: 'tevsys legal notice. Intellectual property, ownership and general conditions.',
+  description:
+    'tevsys legal notice: ownership, nature of the product, intellectual property and limitation of liability.',
 };
 ---
 
@@ -13,20 +14,65 @@ const seo = {
     <h1>Legal notice</h1>
 
     <h2>Ownership</h2>
-    <p>tevsys™ is a software product developed independently, with no external investors, based in Barcelona (Spain).</p>
-    <p>All technology, design, operating logic, documentation and audiovisual content published on this website is the intellectual property of its creators.</p>
+    <p class="tevsys-copy-muted">
+      tevsys™ is a software product developed independently, with no external investors, based in Barcelona
+      (Spain). Contact: <a href="mailto:info@tevsys.io">info@tevsys.io</a>.
+    </p>
+    <p class="tevsys-copy-muted">
+      Full identifying details of the rights holder (name or company name, tax ID and legal address) will be
+      formalized with professional legal advice. Until then, this notice and the
+      <a href="/en/company/terminos">Terms of use</a> describe the product and the scope of liability with
+      operational honesty.
+    </p>
+    <p class="tevsys-copy-muted">
+      All technology, design, operating logic, documentation and audiovisual content published on this
+      website is the intellectual property of its creators.
+    </p>
+
+    <h2>Nature of the service</h2>
+    <p class="tevsys-copy-muted">
+      tevsys.io provides information about tevsys™, a <strong>local utility</strong> for MetaTrader 5 for
+      risk management and operational discipline: it enforces the limits and rules configured by the user. It
+      is not a broker, does not custody funds, does not issue trading signals and does not constitute
+      financial, investment or trading advice.
+    </p>
 
     <h2>Intellectual property</h2>
-    <p>The tevsys™ trade name, its logo, the architecture of the Expert Advisor (EA) for MetaTrader 5, the risk-control algorithms (HyperClose, SML, millimetric precision) and all associated technical documentation are protected by intellectual property rights.</p>
-    <p>Reproduction, distribution or modification in whole or in part without express written authorization is prohibited.</p>
+    <p class="tevsys-copy-muted">
+      The tevsys™ trade name, its logo, the architecture of the Expert Advisor (EA) for MetaTrader 5, the
+      product algorithms and layers (including, among others, HyperClose, SML and documented close precision)
+      and all associated technical documentation are protected by intellectual property rights.
+    </p>
+    <p class="tevsys-copy-muted">
+      Reproduction, distribution or modification in whole or in part without express written authorization is
+      prohibited.
+    </p>
 
     <h2>Limitation of liability</h2>
-    <p>tevsys is a risk-management and operational-discipline tool. It does not constitute financial advice, investment advice or a trading recommendation. The user is solely responsible for their trading decisions.</p>
+    <p class="tevsys-copy-muted">
+      The user is solely responsible for their trading decisions and for configuring their limits. The
+      execution environment (MetaTrader 5, broker, network, VPS or computer) is the user’s responsibility.
+    </p>
+    <p class="tevsys-copy-muted">
+      Tick-by-tick monitoring only exists while MetaTrader 5 and tevsys are running. Without an active
+      terminal, that monitoring is paused; the agreement state may remain stored and reattach on reload. When
+      a limit is reached, tevsys processes and sends the close order; the final price is determined by the
+      market and the broker (slippage, gaps, latency, liquidity).
+    </p>
+    <p class="tevsys-copy-muted">
+      Detail on scope, HyperClose, evidence and any financial liability cap is in the
+      <a href="/en/company/terminos">Terms of use</a>. The operational description of gaps and monitoring is
+      in <a href="/en/como-funciona#vigilancia-vps">How it works — monitoring</a>.
+    </p>
 
-    <h2>Document in development</h2>
-    <p>This legal notice will be expanded and reviewed with professional legal advice before the commercial launch of the product. For any legal enquiry, contact us at <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+    <h2>Legal review</h2>
+    <p class="tevsys-copy-muted">
+      This legal notice will be completed and formalized with professional legal advice (ownership details,
+      jurisdiction and alignment with applicable law). For any enquiry:
+      <a href="mailto:info@tevsys.io">info@tevsys.io</a>.
+    </p>
 
-    <p class="legal-update">Last updated: January 2026</p>
+    <p class="legal-update">Last updated: 26 September 2026</p>
   </TextSection>
 </Layout>
 

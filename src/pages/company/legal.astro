@@ -4,7 +4,8 @@ import Layout from '../../layouts/Page.astro';
 
 const seo = {
   title: 'Aviso Legal | tevsys',
-  description: 'Aviso legal de tevsys. Propiedad intelectual, titularidad y condiciones generales.',
+  description:
+    'Aviso legal de tevsys: titularidad, naturaleza del producto, propiedad intelectual y limitación de responsabilidad.',
 };
 ---
 
@@ -13,20 +14,65 @@ const seo = {
     <h1>Aviso Legal</h1>
 
     <h2>Titularidad</h2>
-    <p>tevsys™ es un producto de software desarrollado de forma independiente, sin inversores externos, con sede en Barcelona (España).</p>
-    <p>Toda la tecnología, diseño, lógica operativa, documentación y contenido audiovisual publicado en este sitio web es propiedad intelectual de sus creadores.</p>
+    <p class="tevsys-copy-muted">
+      tevsys™ es un producto de software desarrollado de forma independiente, sin inversores externos, con
+      sede en Barcelona (España). Contacto: <a href="mailto:info@tevsys.io">info@tevsys.io</a>.
+    </p>
+    <p class="tevsys-copy-muted">
+      Los datos identificativos completos del titular (nombre o razón social, NIF/CIF y domicilio a efectos
+      legales) se formalizarán con asesoramiento jurídico profesional. Mientras tanto, este aviso y los
+      <a href="/company/terminos">Términos de Uso</a> describen el producto y el alcance de responsabilidad
+      con honestidad operativa.
+    </p>
+    <p class="tevsys-copy-muted">
+      Toda la tecnología, diseño, lógica operativa, documentación y contenido audiovisual publicado en este
+      sitio web es propiedad intelectual de sus creadores.
+    </p>
+
+    <h2>Naturaleza del servicio</h2>
+    <p class="tevsys-copy-muted">
+      tevsys.io informa sobre tevsys™, una <strong>utilidad local</strong> para MetaTrader 5 de gestión de
+      riesgo y disciplina operativa: aplica los límites y reglas que configura el usuario. No es un bróker,
+      no custodia fondos, no emite señales de trading y no constituye asesoramiento financiero, de inversión
+      ni recomendación de operar.
+    </p>
 
     <h2>Propiedad intelectual</h2>
-    <p>El nombre comercial tevsys™, su logotipo, la arquitectura del Expert Advisor (EA) para MetaTrader 5, los algoritmos de control de riesgo (HyperClose, SML, precisión milimétrica) y toda la documentación técnica asociada están protegidos por derechos de propiedad intelectual.</p>
-    <p>Queda prohibida su reproducción, distribución o modificación total o parcial sin autorización expresa por escrito.</p>
+    <p class="tevsys-copy-muted">
+      El nombre comercial tevsys™, su logotipo, la arquitectura del Expert Advisor (EA) para MetaTrader 5,
+      los algoritmos y capas de producto (entre otras, HyperClose, SML, precisión de cierre documentada) y
+      toda la documentación técnica asociada están protegidos por derechos de propiedad intelectual.
+    </p>
+    <p class="tevsys-copy-muted">
+      Queda prohibida su reproducción, distribución o modificación total o parcial sin autorización expresa
+      por escrito.
+    </p>
 
     <h2>Limitación de responsabilidad</h2>
-    <p>tevsys es una herramienta de gestión de riesgo y disciplina operativa. No constituye asesoramiento financiero, de inversión ni recomendación de trading. El usuario es el único responsable de sus decisiones operativas.</p>
+    <p class="tevsys-copy-muted">
+      El usuario es el único responsable de sus decisiones operativas y de la configuración de sus límites.
+      El entorno de ejecución (MetaTrader 5, bróker, red, VPS u ordenador) es responsabilidad del usuario.
+    </p>
+    <p class="tevsys-copy-muted">
+      La vigilancia tick a tick solo existe mientras MetaTrader 5 y tevsys están en marcha. Sin terminal
+      activo, esa vigilancia se pausa; el estado del pacto puede permanecer guardado y reengancharse al
+      volver. Cuando se alcanza un límite, tevsys procesa y envía la orden de cierre; el precio final lo
+      determina el mercado y el bróker (slippage, gaps, latencia, liquidez).
+    </p>
+    <p class="tevsys-copy-muted">
+      El detalle de alcance, HyperClose, evidencia y tope de responsabilidad económica figura en los
+      <a href="/company/terminos">Términos de Uso</a>. La descripción operativa de huecos y vigilancia está en
+      <a href="/como-funciona#vigilancia-vps">Cómo funciona — vigilancia</a>.
+    </p>
 
-    <h2>Documento en desarrollo</h2>
-    <p>Este aviso legal será ampliado y revisado con asesoramiento jurídico profesional antes del lanzamiento comercial del producto. Para cualquier consulta legal, contacta con nosotros en <a href="mailto:info@tevsys.io">info@tevsys.io</a>.</p>
+    <h2>Revisión jurídica</h2>
+    <p class="tevsys-copy-muted">
+      Este aviso legal será completado y formalizado con asesoramiento jurídico profesional (titularidad,
+      jurisdicción y alineación con la normativa aplicable). Para cualquier consulta:
+      <a href="mailto:info@tevsys.io">info@tevsys.io</a>.
+    </p>
 
-    <p class="legal-update">Última actualización: enero 2026</p>
+    <p class="legal-update">Última actualización: 26 de septiembre de 2026</p>
   </TextSection>
 </Layout>
 

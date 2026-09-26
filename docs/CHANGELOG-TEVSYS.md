@@ -11,6 +11,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - Clip ~30 s **después** de panel definitivo (`swingVidGatePanel`).
 - **Commit:** `web(tevsys): add panel-adaptativo block on como-funciona`
 
+## Aviso legal — alineado con Términos (26 sep 2026) — *repo, pendiente push*
+
+- `/company/legal` + `/en/company/legal`: titularidad (sin inventar NIF), naturaleza (utilidad local), IP, limitación + enlaces a Términos y `#vigilancia-vps`, revisión jurídica.
+- **Commit (cuando el fundador publique):** `web(tevsys): align legal notice with terms and monitoring scope`
+
 ## Términos de uso — alcance vigilancia / ejecución / HyperClose (26 sep 2026)
 
 - `/company/terminos` + `/en/company/terminos`: ampliación honesta alineada con `#vigilancia-vps` (qué es / qué no · vigilancia y huecos · envío de cierre vs fill bróker · HyperClose · evidencia ≠ auditoría bróker · limitación + tope licencia sujeto a abogado).
