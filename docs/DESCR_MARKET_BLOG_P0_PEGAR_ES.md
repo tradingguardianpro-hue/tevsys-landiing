@@ -19,22 +19,24 @@ Un límite diario suele rearmarse al cambiar el día. Para la mayoría de utilid
 
 tevsys resuelve eso con otra decisión de producto: cuando la protección está activa y hay una operación abierta que cruza la medianoche, el fin de semana u otro corte de calendario, la protección no se reinicia a mitad de operación. Sigues bajo el pacto con los % que configuraste mientras la operación sigue y el programa vigila.
 
-En el panel lo ves: el escenario intradía y el escenario que cruza calendario se muestran distintos, para que sepas qué estás mirando. No es una característica más: es la diferencia entre un límite que se resetea y una protección que dura lo mismo que tu exposición.
+En el panel lo ves distinto según el escenario. Con protección activa y operación abierta que cruza medianoche o fin de semana, en pantalla: **operación en curso — sigues protegido**. No es una característica más: es la diferencia entre un límite que se resetea y una protección que dura lo mismo que tu exposición.
 
-Detalle en web: https://www.tevsys.io/como-funciona#overnight-laborable · FAQ: https://www.tevsys.io/como-funciona#overnight-faq
+Detalle en web: https://www.tevsys.io/como-funciona#overnight-laborable · FAQ: https://www.tevsys.io/como-funciona#overnight-faq · Panel: https://www.tevsys.io/como-funciona#panel-adaptativo
 
 ---
 
-## 3) Una línea HyperClose (opcional, anti-confusión Gemini)
-En la sección HyperClose o tras Precisión, añade:
+## 3) Una línea HyperClose (anti-confusión Gemini) — pegar
+En la sección HyperClose o tras Precisión:
 
 **HyperClose no es el cierre al llegar al límite diario/semanal** (eso es el motor de límites). HyperClose actúa si, con la protección ya activa, intentas abrir una operación nueva («una más») — también en días OFF — y deja registro del intento.
 
-## 4) Market vs web (opcional, 2 frases)
+## 4) Market vs web (2 frases) — pegar
 La edición **Market Advanced** de esta ficha no requiere clave web ni WebRequest a tevsys.io. El canal web (licencia) sí puede requerir WebRequest según la guía de instalación. No mezclar canales.
 
 ## Checklist Seller
 - [ ] 114 → 116 en lead + precisión
-- [ ] Sección overnight pegada
-- [ ] (Opcional) HyperClose aclarado + frase Market vs web
+- [ ] Sección overnight pegada (con frase de panel)
+- [ ] HyperClose ≠ límite
+- [ ] Frase Market vs web
 - [ ] Guardar / publicar artículo
+- [ ] DESCR ficha: pegar `DESCR_MARKET_ES_mejor_voz_116.html` (v27 sep)

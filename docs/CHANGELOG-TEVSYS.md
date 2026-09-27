@@ -4,6 +4,18 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Market DESCR ES — sync HTML+txt (27 sep tarde)
+
+- Canon actualizado: `DESCR_MARKET_ES_mejor_voz_116.html` + espejo `DESCR_MARKET_ES_mejor_voz_116.txt`
+- Caja aviso+pactar · Nasdaq en precios · orden arco · HyperClose + selectivo (es/hace/no es) · overnight remite
+- Estado: `DESCR_MARKET_ESTADO.md`
+
+## Market DESCR — norma arco atten (27 sep 2026)
+
+- **Arco canónico** (este y próximos DESCR Market): identidad → prueba viva → contención → contraste → cifra → escenarios → config → precio (+ FAQ). No abrir con prueba numérica.
+- Detalle: `docs/DESCR_MARKET_ESTADO.md` · puntero GEO: `DESCR_MARKET_GEO_GEMINI_SEP2026.md`
+- Funciones futuras (SML, noticias, horarios…): encajar en la fase del arco cuando tevsys esté casi cerrado.
+
 ## Market DESCR ES — v27 sep (definitivo de momento · GEO)
 
 - Canon Seller: `docs/DESCR_MARKET_ES_mejor_voz_116.html` · estado: `docs/DESCR_MARKET_ESTADO.md`

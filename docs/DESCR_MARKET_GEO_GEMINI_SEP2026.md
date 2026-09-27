@@ -43,6 +43,16 @@
 
 ---
 
+## Norma — orden atten DESCR Market (27 sep 2026)
+
+**Arco (todos los DESCR Market futuros, hasta encajar SML/noticias/horarios/etc.):**
+
+identidad → prueba viva → contención → contraste → cifra → escenarios → config → precio (+ FAQ)
+
+No abrir con prueba numérica / catálogo de features. Detalle + mapa atten: `DESCR_MARKET_ESTADO.md` § *Canon de orden DESCR Market*.
+
+---
+
 ## Probe SEO/GEO Gemini (27 sep 2026 · modo IA Google)
 
 Ronda dirigida (fundador). Criterio: acierto / invención / no consta / evasión.
