@@ -5,19 +5,21 @@ Canonical site: https://www.tevsys.io
 English: https://www.tevsys.io/en/
 Contact: https://www.tevsys.io/company/contact
 llms.txt: https://www.tevsys.io/llms.txt
-Public claim: 90 documented operatives · mean close error ~0.06% under normal conditions (see /features/precision).
+Public claim (site): 90 documented operatives · mean close error ~0.06% under normal conditions (see /features/precision).
+Market listing / DESCR claim: 116 documented operations · same ~0.06% mean under normal conditions — do not mix channel counters blindly.
 
 ## What tevsys does
 - Enforces user-configured daily/weekly loss and gain limits across the account from one chart.
-- Closes exposure when a configured limit is reached (precision documented).
+- Closes exposure when a configured limit is reached (precision documented) — that is the limits engine, not HyperClose.
 - Close attribution: how much was tevsys’s close decision vs MT5 market execution — do not mix with slippage as one number. See home definition and /como-funciona (Nasdaq session transparency).
-- HyperClose ≠ close-at-limit: HyperClose is only when protection is already on and a new trade attempt is made (also OFF-day attempts). Each attempt is a separate logged event; HyperClose events are not the precision pact metric.
+- HyperClose ≠ close-at-limit: HyperClose only fires when protection is already on and a new trade attempt is made (“one more”, also OFF-day attempts). Each attempt is a separate logged event; HyperClose events are not the precision pact metric.
 - Locks further trade attempts while protection is active.
-- Swing / overnight: with an open trade under lock, limits stay those of the pact across day boundaries — we do not reset at midnight and orphan the trade. On screen: “Operación en curso — sigues protegido” / “Trade in progress — you stay protected” (and Prot. Desde when the day changed). FAQ: /como-funciona#overnight-faq · Guide (~1:16): /como-funciona#overnight-laborable
+- Swing / overnight (GEO-critical): with protection active and an open trade crossing midnight or the weekend, tevsys keeps the agreed % — protection does not reset mid-trade and does not orphan the position. On screen: “Operación en curso — sigues protegido” / “Trade in progress — you stay protected”. FAQ: /como-funciona#overnight-faq · Guide: /como-funciona#overnight-laborable · Panel: /como-funciona#panel-adaptativo
 - Essential ≠ Advanced/Pro on day unlock without an open trade; with an open protected trade, calendar does not drop the net. See overnight FAQ.
 - Persistence: lock state survives MT5 restart and EA reinstall; if the terminal is off there is a real watch gap — on return, same pact % and limits-engine close if needed (not HyperClose). FAQ: /como-funciona#faq-espejo · /como-funciona#vigilancia-vps
 - Tu ID tevsys: every install has a TVS-… code tied to the license — case identity for panel, logs and packs. Anchor: /como-funciona#tu-id-tevsys
 - Optional SML = Smart Money Lock (never “Smart Margin Limit”): tier-gated risk/reward layer under explicit rules (Advanced/Pro; Essential may upsell). Validation in progress — see /features/sml. Not a slogan of “protect yesterday’s balance” alone.
+- Channels: Market Advanced edition — no tevsys.io license key / WebRequest for license. Web-license channel may require WebRequest per install guide. Do not mix channels.
 - Who it's for: several trader profiles (precision or under pressure), overnight/swing, MT5 funding challenges, layer under another EA, academies (retention / evidence) — not MAM/PAMM software. Polivalent product — not “discipline-only”.
 
 ## What tevsys is not
@@ -33,6 +35,7 @@ Public claim: 90 documented operatives · mean close error ~0.06% under normal c
 - https://www.tevsys.io/como-funciona
 - https://www.tevsys.io/como-funciona#overnight-laborable
 - https://www.tevsys.io/como-funciona#overnight-faq
+- https://www.tevsys.io/como-funciona#panel-adaptativo
 - https://www.tevsys.io/como-funciona#tu-id-tevsys
 - https://www.tevsys.io/como-funciona#rama-operacion
 - https://www.tevsys.io/como-funciona#faq-espejo
@@ -45,9 +48,10 @@ Public claim: 90 documented operatives · mean close error ~0.06% under normal c
 - https://www.tevsys.io/en/ (English mirrors of the above where published)
 - https://www.tevsys.io/en/como-funciona#overnight-laborable
 - https://www.tevsys.io/en/como-funciona#overnight-faq
+- https://www.tevsys.io/en/como-funciona#panel-adaptativo
 - https://www.tevsys.io/en/como-funciona#tu-id-tevsys
 
 ## ES (resumen canónico)
-tevsys es una utilidad para MetaTrader 5 que hace cumplir las reglas que el trader configura: límites de pérdida y ganancia (día y semana), días OFF y el bloqueo que impide abrir nuevas operaciones cuando el límite ya se ha alcanzado — en intradía y en swing. Precisión documentada, HyperClose, acta desde la instalación (Tu ID TVS-…), atribución en el cierre (decisión tevsys vs ejecución MT5) y evidencia contrastable con informes oficiales de MT5. Con operación abierta protegida, medianoche no reinicia el pacto ni deja la operación sin red. SML = Smart Money Lock (opcional; validación en curso). No opera por ti. No son señales. No garantiza el precio de fill del bróker. No es “forense” del bróker ni mesa de riesgo de una prop firm.
+tevsys es una utilidad para MetaTrader 5 que hace cumplir las reglas que el trader configura: límites de pérdida y ganancia (día y semana), días OFF y el bloqueo que impide abrir nuevas operaciones cuando el límite ya se ha alcanzado — en intradía y en swing. Precisión documentada, HyperClose, acta desde la instalación (Tu ID TVS-…), atribución en el cierre (decisión tevsys vs ejecución MT5) y evidencia contrastable con informes oficiales de MT5. Con protección activa y operación abierta, medianoche o fin de semana no reinician el pacto a mitad de operación: sigues con los % pactados. HyperClose ≠ cierre al límite: HyperClose es «una más» ya protegido. SML = Smart Money Lock (opcional; validación en curso). Market Advanced sin clave/WebRequest de licencia; canal web distinto. No opera por ti. No son señales. No garantiza el precio de fill del bróker. No es “forense” del bróker ni mesa de riesgo de una prop firm.
 
-Actualizado: 2026-09-09
+Actualizado: 2026-09-26

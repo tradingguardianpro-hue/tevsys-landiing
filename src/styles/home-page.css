@@ -34,7 +34,8 @@
 	.tevsys-home-definition__lead,
 	.tevsys-home-definition__beats,
 	.tevsys-home-definition__attribution,
-	.tevsys-home-definition__closing {
+	.tevsys-home-definition__closing,
+	.tevsys-home-definition__audience {
 		position: relative;
 		z-index: 1;
 		max-width: 52rem;
@@ -116,6 +117,32 @@
 			transparent 100%
 		);
 	}
+	/* 27 sep 2026 — puente polivalencia → Para quién */
+	.tevsys-home-definition__audience {
+		margin: clamp(0.55rem, 1.2vw, 0.75rem) auto 0;
+		font-weight: 500;
+		color: var(--tevsys-copy-muted);
+	}
+	.tevsys-home-definition__audience-link {
+		color: #f5b041;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(245, 176, 65, 0.45);
+		padding-bottom: 0.04rem;
+		font-weight: 600;
+		transition: color 0.15s ease, border-color 0.15s ease;
+	}
+	.tevsys-home-definition__audience-link:hover {
+		color: #f7c050;
+		border-bottom-color: rgba(247, 192, 80, 0.75);
+	}
+	html[data-theme='light'] .tevsys-home-definition__audience-link {
+		color: #c47f12;
+		border-bottom-color: rgba(196, 127, 18, 0.45);
+	}
+	html[data-theme='light'] .tevsys-home-definition__audience-link:hover {
+		color: #a86b0e;
+		border-bottom-color: rgba(168, 107, 14, 0.65);
+	}
 	@media (max-width: 768px) {
 		.tevsys-home-definition {
 			padding-top: clamp(1.15rem, 3.5vw, 1.65rem);
@@ -124,7 +151,8 @@
 		.tevsys-home-definition__lead,
 		.tevsys-home-definition__beats,
 		.tevsys-home-definition__attribution,
-		.tevsys-home-definition__closing {
+		.tevsys-home-definition__closing,
+		.tevsys-home-definition__audience {
 			font-size: clamp(0.875rem, 2.6vw, 0.9375rem);
 			line-height: 1.58;
 			padding-inline-start: 1.15rem;

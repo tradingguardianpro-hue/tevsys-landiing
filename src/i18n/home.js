@@ -53,6 +53,12 @@ export const homeCopy = {
 		definitionClosing:
 			'No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.',
 		definitionAria: 'Qué es tevsys',
+		/* 27 sep 2026 — puente polivalencia → /para-quien (sin embudos en home). */
+		audienceBridgeBefore:
+			'Misma herramienta, distintos usos — fondeo, swing/overnight, academias, capa bajo otro EA. No es un solo perfil. ',
+		audienceBridgeLink: 'Para quién →',
+		audienceBridgeHref: '/para-quien',
+		audienceBridgeAria: 'Para quién es tevsys',
 		bridgeLayers: 'Precisión · HyperClose · SML · Evidencia',
 		bridgeLayersAria: 'Capas del producto: Precisión, HyperClose, SML, Evidencia',
 		sectionTitle: '¿Has perdido dinero por no parar a tiempo — y por deslizamiento al límite?',
@@ -214,6 +220,12 @@ export const homeCopy = {
 		definitionClosing:
 			'It does not trade for you: it enforces what you decide — and proves it, trade by trade.',
 		definitionAria: 'What tevsys is',
+		/* 27 sep 2026 — polivalence bridge → /en/para-quien (no home funnels). */
+		audienceBridgeBefore:
+			'Same tool, different uses — funding challenges, swing/overnight, academies, a layer under another EA. Not one profile. ',
+		audienceBridgeLink: "Who it's for →",
+		audienceBridgeHref: '/para-quien',
+		audienceBridgeAria: "Who tevsys is for",
 		bridgeLayers: 'Precision · HyperClose · SML · Evidence',
 		bridgeLayersAria: 'Product layers: Precision, HyperClose, SML, Evidence',
 		sectionTitle: 'Have you lost money by not stopping in time — and by slippage at the limit?',

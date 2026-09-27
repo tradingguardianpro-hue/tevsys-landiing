@@ -48,6 +48,12 @@ const L = (href) => localizeHref(href, locale);
 					<span class="tevsys-brand-accent-underline">{t.definitionClosingAccent}</span>
 					{t.definitionClosingAfter}
 				</p>
+				<p class="tevsys-home-definition__audience" aria-label={t.audienceBridgeAria}>
+					{t.audienceBridgeBefore}
+					<a class="tevsys-home-definition__audience-link" href={L(t.audienceBridgeHref)}
+						>{t.audienceBridgeLink}</a
+					>
+				</p>
 			</div>
 		</section>
 		<p class="tevsys-home-hero-bridge tevsys-home-section-bridge tevsys-home-bridge--hero-cards" aria-label={t.bridgeLayersAria}>

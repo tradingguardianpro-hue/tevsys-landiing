@@ -4,14 +4,26 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
-## Market DESCR ES|EN — canónico voz + 116 (26 sep 2026)
+## Home — puente polivalencia → Para quién (27 sep 2026)
 
-- **Canon ES:** `docs/DESCR_MARKET_ES_mejor_voz_116.html` — gancho · 116 · 69/189/349 · overnight claim-free · panel · FAQ · legal.
-- **Canon EN:** `docs/DESCR_MARKET_EN_mejor_voz_116.html` — espejo; *daily loss limit* + *risk panel* en cuerpo; listo para Seller cuando toque.
-- Evolutivo: noticias / horarios / capas nuevas → actualizar ambos juntos, solo con producto listo.
-- **No usar** el HTML formal frío sin gancho.
+- Tras el cierre de la definición ES|EN: *Misma herramienta, distintos usos…* → `/para-quien` (EN: Who it's for). Sin embudos Pro/Prop/Academia en home.
+- Copy: `src/i18n/home.js` · markup: `HomePageView.astro` · estilos: `home-page.css`.
+- **Commit:** `web(tevsys): bridge home definition to para-quien`
 
-## Cómo funciona — contraste medianoche claim-free (26 sep 2026)
+## Market DESCR ES — definitivo de momento a colgar (26 sep 2026 noche)
+
+- **Canon Seller ES:** `docs/DESCR_MARKET_ES_mejor_voz_116.html` · estado: `docs/DESCR_MARKET_ESTADO.md`
+- Pegar HTML desde primer `<p>`. 116 · audiencia evidencia · trazabilidad + Tu ID · Nasdaq Capturas+YT · hub 770806 · FAQs afinadas.
+- **EN:** espejo atrasado (`DESCR_MARKET_EN_mejor_voz_116.html`) — sync aparte.
+- Diferido otra sesión: capturas/vídeo panel nuevo · SML · noticias · horarios · blog P0 · web 90.
+- GEO: `DESCR_MARKET_GEO_GEMINI_SEP2026.md`
+
+## Market DESCR + P0 GEO (26 sep 2026) — trabajo previo
+
+- Canon ES (casi · preview Seller OK, no publicar definitivo): persistencia→obs.pasiva · Nasdaq Capturas+YT · **Trazabilidad — el expediente** · **Tu ID TVS-…** · tope gratis+punch · panel adaptativo · overnight sistema+panel · FAQ constancia/riesgo/medianoche/VPS. Pendiente noticias/horarios/SML.
+- Blog P0: `DESCR_MARKET_BLOG_P0_PEGAR_ES.md` · EN — pegar Seller cuando toque.
+- `llms.txt` reforzado. Web ops sigue en **90**.
+- GEO: `DESCR_MARKET_GEO_GEMINI_SEP2026.md`
 
 - `#overnight-laborable` + `#overnight-faq` ES|EN: escena «no se reinicia a mitad de una operación» + puente a `#panel-adaptativo`. Sin nombres de competencia ni guerra de precio. Quitada coletilla «calculadora prop» en FAQ.
 - **Commit:** `web(tevsys): sharpen overnight midnight claim-free copy`
