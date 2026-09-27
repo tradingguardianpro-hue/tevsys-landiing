@@ -1,6 +1,6 @@
 # DESCR Market — GEO / Gemini (26 sep 2026)
 
-**Canon DESCR ES (definitivo de momento · a colgar):** `DESCR_MARKET_ES_mejor_voz_116.html`  
+**Canon DESCR ES (definitivo de momento · a colgar · v27 sep GEO):** `DESCR_MARKET_ES_mejor_voz_116.html`  
 **Estado / checklist hang:** `DESCR_MARKET_ESTADO.md`  
 **EN:** `DESCR_MARKET_EN_mejor_voz_116.html` — **atrasado** vs pasada ES; no gemelo hasta sync.
 

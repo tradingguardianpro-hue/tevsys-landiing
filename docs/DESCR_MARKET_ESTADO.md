@@ -1,59 +1,41 @@
-# DESCR Market ES — estado (26 sep 2026 noche)
+# DESCR Market ES — estado (27 sep 2026)
 
-## Canon a colgar (definitivo de momento)
+## Canon a colgar (definitivo de momento · hasta mejoras futuras)
 
 **Archivo:** `docs/DESCR_MARKET_ES_mejor_voz_116.html`  
-**Acción:** pegar en Seller → Descripción → HTML, desde el primer `<p>` (sin el comentario HTML del archivo).  
-**Idioma:** ES. Esta es la versión de ficha que el fundador valida para colgar ahora.
+**Acción:** pegar en Seller → Descripción → HTML, desde el primer `<p>` (sin el comentario HTML).  
+**Aceptado fundador:** 27 sep 2026 (texto plano en chat → volcado HTML). Queda puesto hasta pasada explícita de mejoras.
 
-**Qué es:** descripción Market Advanced casi completa en copy. No es el cierre absoluto del producto en Market (SML, noticias, horarios y más capturas/vídeo con panel nuevo vendrán después). Sí es el **texto de referencia** hasta nueva pasada explícita.
+### Qué entró en esta versión (vs 26 sep)
 
-## Incluye (lectura fundador 26 sep)
+- Línea categoría: *no calculadora de lotes / no trade manager de botones*
+- HyperClose: frase **≠ motor de límites** + OFF + registro
+- Overnight / FAQ: literal **operación en curso — sigues protegido**
+- Guías **abajo** (bloque precios), no tras Nasdaq
+- Orden atten: Precisión → HyperClose → Trazabilidad → Tu ID → tope gratis → Panel → Overnight → VPS → Límites → Al límite → Precios → FAQ
+- Menos eco: Tu ID remite al expediente; tope gratis acortado; VPS en un solo atten
+- Precios: Market Advanced **sin clave ni WebRequest** de licencia
+- Sin tevsys.io en deep-link de precios (hub 770806)
 
-- Hook + lead 116 + media/extremos · audiencia trader + evidencia (fondeo/academia)
-- Persistencia → observación pasiva → caja → overnight
-- Nasdaq ~3:35 Capturas + YouTube `sAttywGy0nQ` · hub blog 770806 (una línea, sin tabla 6×mismo URL)
-- Atten: Precisión · HyperClose · VPS · **Trazabilidad — el expediente** · **Tu ID TVS-…** · tope gratis + punch trazabilidad · Límites (fondeo ≠ kit) · Panel adaptativo · Overnight (sistema + panel) · Límite alcanzado · Dos canales · FAQ (riesgo intradía/overnight/clic · medianoche+capturas · PC/VPS · constancia/TVS · demo · señales)
-- Sin tevsys.io en bloque precios (hub MQL)
-- Claim-free; sin nombres de competencia
-
-## Contadores
+### Contadores
 
 | Superficie | Cifra |
 |---|---|
-| Market DESCR / blog P0 | **116** |
-| Web `settings.js` | **90** (aparte; no mezclar) |
+| Market DESCR | **116** |
+| Web `settings.js` | **90** (aparte) |
 
-## EN
+### EN
 
-`DESCR_MARKET_EN_mejor_voz_116.html` — espejo **atrasado** respecto a esta pasada ES. No colgar EN como gemelo hasta sync explícito.
+`DESCR_MARKET_EN_mejor_voz_116.html` — **atrasado**. Sync aparte.
 
-## Blog / GEO (mismo ecosistema, otro paso)
+### Diferido (otra sesión)
 
-- Blog P0 overnight + 116: `DESCR_MARKET_BLOG_P0_PEGAR_ES.md` → 770806 (pegar cuando toque; ideal mismo día que DESCR si se publica texto vivo).
-- Notas GEO: `DESCR_MARKET_GEO_GEMINI_SEP2026.md`
+- SML · noticias · horarios
+- Capturas / vídeo panel nuevo
+- Blog P0 770806 (overnight GEO)
+- Sync EN · web 90→116 si se decide
+- Cola copy antigua (si algo quedó): ver historial CHANGELOG / TGP
 
-## Diferido (no bloquea este texto; otra sesión)
+### Retomar
 
-- Capturas alineadas (overnight, panel adaptativo, log/Client, etc.)
-- Vídeo Nasdaq regrabado con panel nuevo (YT + pestaña Capturas)
-- SML · noticias · horarios en DESCR
-- Sync EN · sync web 90→116 si se decide
-- Web espejo de claims cuando proceda
-
-## Cola fundador — mejoras copy (aparcado 26 sep noche)
-
-> **No tocar ahora.** Lectura en calma del fundador. Desconectado de cabeza → retomar en pasada **DESCR / artículo Market más definitiva**.  
-> Espejo TGP: `docs/DESCR_MARKET_COLA_MEJORAS_FUNDADOR_SEP2026.md`
-
-1. **Línea Guías demasiado arriba** — En `DESCR_MARKET_ES_mejor_voz_116.html`, la frase  
-   `Guías (instalación Market, configuración, precisión, evidencia, HyperClose, informe MT5 demo): hub Market →`  
-   **sobra donde está** (tras Nasdaq / antes de los atten). **Mover abajo** en la DESCR (zona final / precios / cierre), no dejarla en el lead.
-2. **Redundancia entre attens** — Se explica lo mismo (o muy similar) en varios bloques atten al decir **qué hace** tevsys. En la pasada definitiva: **fundir** (una vez el concepto; el resto remite o acorta). El fundador entrará en detalle entonces; **no perder** este aviso.
-3. **Orden de los attens** — Duda abierta: ¿el orden actual es el adecuado? **Debatir** en esa misma pasada (no improvisar ahora).
-
-**Retomar (esta cola):** *«mejoras DESCR Market»* · *«redundancia attens»* · *«Guías abajo»* · *«orden attens»*
-
-## Retomar
-
-*«DESCR Market ES colgado»* · *«capturas Market panel nuevo»* · *«blog P0 770806»* · *«DESCR EN sync»* · *«mejoras DESCR Market»*
+*«DESCR Market ES colgado Seller»* · *«blog P0 770806»* · *«DESCR EN sync»* · *«capturas Market»*
