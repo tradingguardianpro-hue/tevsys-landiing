@@ -38,10 +38,23 @@ Estructura en atten #3: subtítulos **HyperClose** / **HyperClose selectivo** co
 - HyperClose: *el freno cuando ya has alcanzado un límite que configuraste y aceptaste previamente e intentas seguir («una más»).*  
 - Selectivo: *el gesto de contención pensado para overnight / swing, con operación ya protegida que ha cruzado la noche.*
 
+### Capturas Seller (ficha Market · nueva DESCR)
+
+**Carpeta canónica:** `docs/market-capturas-descr/`  
+Ir juntando aquí todo lo que suba a la ficha Advanced (no web).
+
+| # | Archivo | Escena | Nota |
+|---|---|---|---|
+| 01 | `01-cierre-incompleto-messagebox-infinox.png` | MessageBox *Cierre incompleto* (Infinox demo, 22 sep 2026) | Escenario raro (bróker no deja plana). Ideal Market. Antes de colgar: **sin** modal de detrás (*Operación abierta…*). Claim: gestión del residuo, no “reintento 45 s en esta captura”. |
+
+Origen cache Cursor (backup):  
+`…\workspaceStorage\589d8e4b…\images\2026-09-22 10_47_41-100129406 - InfinoxLimited-MT5Demo_ …GER-8c2d5f69….png`
+
 ### Diferido (otra sesión)
 
 - SML · noticias · horarios  
 - Capturas / vídeo panel nuevo  
+- Resto de capturas → `docs/market-capturas-descr/`  
 - Blog P0 770806  
 - Sync EN · web 90→116 si se decide  
 - Verticales Prop/Academias: `DESCR_MARKET_COLA_VERTICALES_PROP_ACADEMIAS.md`  
