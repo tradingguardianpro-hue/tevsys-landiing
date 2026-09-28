@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — oleada 1: micros → still marca (28 sep 2026)
+
+- **Qué:** retiros de MP4 con panel viejo en `/como-funciona` ES|EN: 7 microclips de ramas · guía Desde cero · panel mimetizado (oscuro + claro).
+- **Visual:** still marca `tevsys` + esfera **variada** (tono ámbar/teal/cool/steel/warm · posición orb distinta) — misma familia que Operación swing; **sin** “vídeo/clip en preparación”.
+- **Copy:** títulos/anuncios/edges intactos; fuera duraciones fantasma (~30 s / ~57 s). Home invite sin “clips ~30 s”.
+- **Fuera de oleada 1:** Nasdaq presentación · 4 piezas features · instalación/guías.
+- **Commit sugerido:** `web(tevsys): retire CF micros to varied brand stills wave 1`
+
 ## Market DESCR ES — sync HTML+txt (27 sep tarde)
 
 - Canon actualizado: `DESCR_MARKET_ES_mejor_voz_116.html` + espejo `DESCR_MARKET_ES_mejor_voz_116.txt`

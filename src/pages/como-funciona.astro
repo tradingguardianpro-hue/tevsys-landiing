@@ -44,7 +44,9 @@ const overnightLaborableGuide = {
 		faqHref: '#overnight-faq',
 	},
 	brandStillLabel: 'tevsys',
-	brandStillAria: 'Marca tevsys — guía en vídeo del mundo swing en preparación con el panel actual',
+	brandStillAria: 'Marca tevsys — operación swing',
+	brandStillTone: 'amber',
+	brandStillOrb: 'c',
 };
 
 /** Panel adaptativo + información al clic — bloque propio (estilo capital/caja). Clip ~30 s cuando panel definitivo. */
@@ -87,7 +89,7 @@ const tuIdTevsysBlock = {
 	ctaLabel: 'Capa de auditoría',
 };
 
-/** Guía política «Desde cero» + observación pasiva (20 ago 2026 · MC-CF-002-G). No sustituye micro rama `#videoclip-pasiva`. */
+/** Guía política «Desde cero». MP4 retirado oleada 1 (28 sep 2026) — still marca hasta guía con panel actual. */
 const desdeCeroGuide = {
 	id: 'desde-cero',
 	eyebrow: 'Condición innegociable',
@@ -95,10 +97,10 @@ const desdeCeroGuide = {
 	titleAccent: 'cero',
 	blurb:
 		'Si cargas tevsys con operaciones ya abiertas, no activamos la protección. Entras en observación pasiva: te avisamos y no intervenimos. Cuando las cierras, empezamos de cero.',
-	durationLabel: '~57 s',
-	videoSrc: '/videos/como-funciona/tevsys-guia-desde-cero.mp4?v=20260820b',
-	posterSrc: '/videos/como-funciona/tevsys-guia-desde-cero-poster.jpg?v=20260820b',
-	videoLabel: 'Guía ~57 s — observación pasiva y empezar de cero (MC-CF-002-G)',
+	brandStillLabel: 'tevsys',
+	brandStillAria: 'Marca tevsys — empezar de cero',
+	brandStillTone: 'cool',
+	brandStillOrb: 'tr',
 };
 
 /** Transparencia sesión Nasdaq #6263709 (21 ago 2026) — público; pack completo en repo interno. */
@@ -216,6 +218,9 @@ const homeBridgeCards: {
 ];
 
 /** Microclips — tres ramas (canon 16 ago 2026 · CATALOGO § Tres ramas). */
+type BrandStillTone = 'amber' | 'teal' | 'cool' | 'steel' | 'warm';
+type BrandStillOrb = 'c' | 'tr' | 'tl' | 'br' | 'bl';
+
 type MicroClipCard = {
 	title: string;
 	anchorId: string;
@@ -226,6 +231,12 @@ type MicroClipCard = {
 	stillSrc?: string;
 	stillAlt?: string;
 	stillCaption?: string;
+	/** Still marca (orb + nombre) — hueco sin MP4 / sin “en preparación”. */
+	brandStill?: boolean;
+	brandStillTone?: BrandStillTone;
+	brandStillOrb?: BrandStillOrb;
+	brandStillLabel?: string;
+	brandStillAria?: string;
 	videoLabel?: string;
 	ctaLabel?: string;
 };
@@ -283,13 +294,8 @@ const puestaEnMarchaLegend = {
 };
 
 /**
- * Emoción / identidad UI — tras las 4 piezas, antes del corte de auditoría.
- * Misma cáscara que Puesta en marcha. Publicado 21 ago (~32 s).
- */
-/**
  * Panel mimetizado — tras 4 piezas, antes auditoría.
- * Clip 1 (publicado): fondo negro. Clip 2 (publicado 30 ago): chart + panel tema claro,
- * estilo web como Precisión Nasdaq (`how-siente-embed--light` / poster soft) — NO entra en rejilla microclips.
+ * MP4s retirados oleada 1 (28 sep 2026) — still marca hasta remakes con panel actual.
  */
 const comoSeSienteLegend = {
 	id: 'como-se-siente',
@@ -297,21 +303,20 @@ const comoSeSienteLegend = {
 	leadBefore: 'Mimetiza el panel ',
 	leadAccent: 'a tu gusto',
 	blurb: 'Ajusta borde y colores — o más discreto, flotando en el gráfico. Al proteger, tres destellos aunque esté mimetizado.',
-	ctaLabel: 'Ver el panel mimetizado',
-	durationLabel: '~32 s',
-	videoSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-30s.mp4?v=20260821',
-	posterSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-30s-poster.jpg?v=20260821',
-	videoLabel: 'Microclip ~32 s — panel mimetizado y tres destellos al proteger',
-	/** Segundo clip bajo el primero — tema claro (publicado 30 ago). */
+	ctaLabel: 'Panel mimetizado',
+	brandStillLabel: 'tevsys',
+	brandStillAria: 'Marca tevsys — panel mimetizado',
+	brandStillTone: 'steel' as BrandStillTone,
+	brandStillOrb: 'bl' as BrandStillOrb,
 	lightClip: {
 		id: 'panel-mimetizado-claro',
 		eyebrow: 'También en tema claro',
 		blurb: 'Mismo panel sobre gráfico claro — quien opera en blanco también lo ve limpio.',
-		ctaLabel: 'Ver en fondo claro',
-		durationLabel: '~36 s',
-		videoSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-claro-30s.mp4?v=20260830',
-		posterSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-claro-30s-poster.jpg?v=20260830',
-		videoLabel: 'Panel mimetizado en tema claro (~36 s)',
+		ctaLabel: 'Tema claro',
+		brandStillLabel: 'tevsys',
+		brandStillAria: 'Marca tevsys — panel mimetizado tema claro',
+		brandStillTone: 'warm' as BrandStillTone,
+		brandStillOrb: 'br' as BrandStillOrb,
 	},
 };
 
@@ -319,53 +324,53 @@ const microclipBranches: MicroclipBranch[] = [
 	{
 		id: 'rama-preparar',
 		title: 'Preparar la protección',
-		announcement: 'Dejas reglas listas. Candado aún no. Clips ~30 s.',
+		announcement: 'Dejas reglas listas. Candado aún no.',
 		clips: [
 			{
 				title: 'Fin de semana: deja la protección lista para el lunes',
 				anchorId: 'videoclip-programado-lunes',
-				videoSrc: '/videos/como-funciona/tevsys-mc-programado-lunes-30s-II.mp4?v=20260820',
-				posterSrc: '/videos/como-funciona/tevsys-mc-programado-lunes-30s-II-poster.jpg?v=20260820',
-				videoLabel: 'Microclip ~30 s — GUARDAR → PROGRAMADO · LUNES (MC-CF-021)',
-				ctaLabel: 'Ver clip',
+				brandStill: true,
+				brandStillTone: 'amber',
+				brandStillOrb: 'tr',
+				brandStillAria: 'Marca tevsys — protección programada para el lunes',
 			},
 			{
 				title: '¿Te equivocaste en un límite? — tevsys te lo dice',
 				anchorId: 'videoclip-corrige-errores',
-				videoSrc: '/videos/como-funciona/tevsys-mc-corrige-errores-30s.mp4?v=20260821',
-				posterSrc: '/videos/como-funciona/tevsys-mc-corrige-errores-30s-poster.jpg?v=20260821',
-				videoLabel: 'Microclip ~30 s — CORRIGE ERRORES (MC-CF-020)',
-				ctaLabel: 'Ver clip',
+				brandStill: true,
+				brandStillTone: 'warm',
+				brandStillOrb: 'tl',
+				brandStillAria: 'Marca tevsys — corrige errores de límites',
 			},
 		],
 	},
 	{
 		id: 'rama-protegido',
 		title: 'Ya estás protegido',
-		announcement: 'Límites activos. Qué pasa si operas o retocas. Clips ~30 s.',
+		announcement: 'Límites activos. Qué pasa si operas o retocas.',
 		clips: [
 			{
 				title: '¿Qué pasa si insistes después de alcanzar tu límite?',
 				anchorId: 'videoclip-limite-hyperclose',
-				videoSrc: '/videos/como-funciona/tevsys-mc-limite-hyperclose-30s.mp4?v=20260818',
-				posterSrc: '/videos/como-funciona/tevsys-mc-limite-hyperclose-30s-poster.jpg?v=20260818',
-				videoLabel: 'Microclip ~34 s — límite de ganancia y HyperClose (MC-CF-025)',
-				ctaLabel: 'Ver clip',
+				brandStill: true,
+				brandStillTone: 'cool',
+				brandStillOrb: 'br',
+				brandStillAria: 'Marca tevsys — límite e HyperClose',
 			},
 			{
 				title: '¿Cómo te protegemos cuando decides estar OFF?',
 				anchorId: 'videoclip-off',
-				videoSrc: '/videos/como-funciona/tevsys-mc-dia-off-30s.mp4?v=20260817b',
-				posterSrc: '/videos/como-funciona/tevsys-mc-dia-off-30s-poster.jpg?v=20260817b',
-				videoLabel: 'Microclip ~22 s — día OFF e intento de operar (MC-CF-001)',
-				ctaLabel: 'Ver clip',
+				brandStill: true,
+				brandStillTone: 'steel',
+				brandStillOrb: 'bl',
+				brandStillAria: 'Marca tevsys — día OFF',
 			},
 		],
 	},
 	{
 		id: 'rama-operacion',
 		title: 'Operación en curso',
-		announcement: 'Clips cortos del mismo mundo — fin de semana, pasiva e inputs. ~30 s.',
+		announcement: 'Mismo mundo — fin de semana, pasiva e inputs.',
 		clips: [],
 		groups: [
 			{
@@ -375,10 +380,10 @@ const microclipBranches: MicroclipBranch[] = [
 					{
 						title: '¿Llegaste con una operación abierta?',
 						anchorId: 'videoclip-pasiva',
-						videoSrc: '/videos/como-funciona/tevsys-mc-observacion-pasiva-30s.mp4?v=20260819',
-						posterSrc: '/videos/como-funciona/tevsys-mc-observacion-pasiva-30s-poster.jpg?v=20260819',
-						videoLabel: 'Microclip ~36 s — empezar de cero · pasiva (MC-CF-002)',
-						ctaLabel: 'Ver clip',
+						brandStill: true,
+						brandStillTone: 'teal',
+						brandStillOrb: 'c',
+						brandStillAria: 'Marca tevsys — observación pasiva',
 					},
 				],
 			},
@@ -389,18 +394,18 @@ const microclipBranches: MicroclipBranch[] = [
 					{
 						title: 'Fin de semana con operación abierta — sigues protegido',
 						anchorId: 'videoclip-finde-operacion',
-						videoSrc: '/videos/como-funciona/tevsys-mc-finde-operacion-protegida-30s.mp4?v=20260829',
-						posterSrc: '/videos/como-funciona/tevsys-mc-finde-operacion-protegida-30s-poster.jpg?v=20260829',
-						videoLabel: 'Microclip ~33 s — fin de semana + operación abierta (MC-CF-022)',
-						ctaLabel: 'Ver clip',
+						brandStill: true,
+						brandStillTone: 'amber',
+						brandStillOrb: 'bl',
+						brandStillAria: 'Marca tevsys — fin de semana con operación abierta',
 					},
 					{
 						title: 'Cambiar inputs con SML ya activo',
 						anchorId: 'videoclip-inputs-sml-carry',
-						videoSrc: '/videos/como-funciona/tevsys-mc-inputs-sml-carry-30s.mp4?v=20260816b',
-						posterSrc: '/videos/como-funciona/tevsys-mc-inputs-sml-carry-30s-poster.jpg?v=20260816b',
-						videoLabel: 'Microclip ~20 s — inputs ignorados con SML en operación en curso (MC-CF-023)',
-						ctaLabel: 'Ver clip',
+						brandStill: true,
+						brandStillTone: 'teal',
+						brandStillOrb: 'tr',
+						brandStillAria: 'Marca tevsys — inputs con SML activo',
 					},
 				],
 			},
@@ -619,11 +624,15 @@ const microclipBranches: MicroclipBranch[] = [
 						</header>
 						<article class="how-overnight__cell">
 							<div
-								class="how-overnight-brand-still"
+								class:list={[
+									'how-brand-still',
+									`how-brand-still--tone-${overnightLaborableGuide.brandStillTone ?? 'amber'}`,
+									`how-brand-still--orb-${overnightLaborableGuide.brandStillOrb ?? 'c'}`,
+								]}
 								role="img"
 								aria-label={overnightLaborableGuide.brandStillAria}>
-								<span class="how-overnight-brand-still__orb" aria-hidden="true"></span>
-								<span class="how-overnight-brand-still__name">{overnightLaborableGuide.brandStillLabel}</span>
+								<span class="how-brand-still__orb" aria-hidden="true"></span>
+								<span class="how-brand-still__name">{overnightLaborableGuide.brandStillLabel}</span>
 							</div>
 						</article>
 					</div>
@@ -676,22 +685,20 @@ const microclipBranches: MicroclipBranch[] = [
 					<p class="how-eyebrow how-eyebrow--center">{desdeCeroGuide.eyebrow}</p>
 					<h2 id="how-desde-cero-title">
 						Desde <span class="how-present-title__accent">{desdeCeroGuide.titleAccent}</span>, siempre
-						<span class="how-zero-duration"> ({desdeCeroGuide.durationLabel})</span>
 					</h2>
 					<p class="how-section-sub">{desdeCeroGuide.blurb}</p>
 				</header>
 				<article class="how-pair-cell how-desde-cero__cell">
-					<div class="how-embed how-embed--chrome">
-						<video
-							id="desde-cero-video"
-							controls
-							preload="metadata"
-							playsinline
-							poster={desdeCeroGuide.posterSrc}
-							title={desdeCeroGuide.videoLabel}>
-							<source src={desdeCeroGuide.videoSrc} type="video/mp4" />
-							Tu navegador no soporta reproducción de video HTML5.
-						</video>
+					<div
+						class:list={[
+							'how-brand-still',
+							`how-brand-still--tone-${desdeCeroGuide.brandStillTone ?? 'cool'}`,
+							`how-brand-still--orb-${desdeCeroGuide.brandStillOrb ?? 'c'}`,
+						]}
+						role="img"
+						aria-label={desdeCeroGuide.brandStillAria}>
+						<span class="how-brand-still__orb" aria-hidden="true"></span>
+						<span class="how-brand-still__name">{desdeCeroGuide.brandStillLabel}</span>
 					</div>
 				</article>
 			</div>
@@ -795,7 +802,7 @@ const microclipBranches: MicroclipBranch[] = [
 						Escenarios en <span class="how-present-title__accent">clips cortos</span>
 					</h2>
 					<p class="how-section-sub how-more__siguiente-aspiration">
-						Cómo reacciona tevsys en la práctica — clips de ~30 s, escenario a escenario.
+						Cómo reacciona tevsys en la práctica — escenario a escenario.
 					</p>
 				</header>
 
@@ -887,6 +894,8 @@ const microclipBranches: MicroclipBranch[] = [
 																	'how-practical-card__media',
 																	!row.posterSrc &&
 																		!row.stillSrc &&
+																		!row.brandStill &&
+																		!row.videoSrc &&
 																		'how-practical-card__media--brand-fallback',
 																]}>
 																{row.videoSrc ? (
@@ -917,29 +926,26 @@ const microclipBranches: MicroclipBranch[] = [
 																	</div>
 																) : (
 																	<div
-																		class="how-embed how-embed--chrome how-embed-placeholder how-embed-placeholder--clip-teaser how-more-embed how-practical-card__embed"
-																		role="status">
-																		<span class="how-clip-teaser__glyph" aria-hidden="true"></span>
-																		<p class="how-embed-placeholder__title">Clip en preparación</p>
-																		<p class="how-embed-placeholder__sub">
-																			Aquí irá el corte de ~25–30 s cuando esté listo para publicar.
-																		</p>
+																		class:list={[
+																			'how-brand-still',
+																			'how-brand-still--clip',
+																			`how-brand-still--tone-${row.brandStillTone ?? 'amber'}`,
+																			`how-brand-still--orb-${row.brandStillOrb ?? 'c'}`,
+																		]}
+																		role="img"
+																		aria-label={row.brandStillAria ?? `Marca tevsys — ${row.title}`}>
+																		<span class="how-brand-still__orb" aria-hidden="true"></span>
+																		<span class="how-brand-still__name">{row.brandStillLabel ?? 'tevsys'}</span>
 																	</div>
 																)}
 															</div>
-															<span
-																class:list={[
-																	'how-more-card__cta',
-																	!row.videoSrc &&
-																		!row.stillSrc &&
-																		'how-more-card__cta--pending',
-																]}>
-																{row.videoSrc
-																	? `${row.ctaLabel ?? 'Ver clip'} →`
-																	: row.stillSrc
-																		? `${row.ctaLabel ?? 'Ampliar captura'} →`
-																		: 'Clip en preparación →'}
-															</span>
+															{row.videoSrc || row.stillSrc ? (
+																<span class="how-more-card__cta">
+																	{row.videoSrc
+																		? `${row.ctaLabel ?? 'Ver clip'} →`
+																		: `${row.ctaLabel ?? 'Ampliar captura'} →`}
+																</span>
+															) : null}
 														</article>
 													))}
 												</div>
@@ -1043,97 +1049,53 @@ const microclipBranches: MicroclipBranch[] = [
 					</header>
 					<ul class="how-puesta-marcha__links">
 						<li>
-							{
-								comoSeSienteLegend.videoSrc ? (
-									<a
-										class="how-puesta-marcha__link how-puesta-marcha__link--primary"
-										href="#panel-mimetizado">
-										{comoSeSienteLegend.ctaLabel}
-										<span class="how-puesta-marcha__duration">({comoSeSienteLegend.durationLabel})</span>
-										<span class="how-puesta-marcha__arrow" aria-hidden="true">
-											→
-										</span>
-									</a>
-								) : (
-									<span
-										class="how-puesta-marcha__link how-puesta-marcha__link--primary how-puesta-marcha__link--pending"
-										role="status">
-										{comoSeSienteLegend.ctaLabel}
-										<span class="how-puesta-marcha__duration">({comoSeSienteLegend.durationLabel})</span>
-										<span class="how-puesta-marcha__arrow" aria-hidden="true">
-											→
-										</span>
-									</span>
-								)
-							}
+							<a
+								class="how-puesta-marcha__link how-puesta-marcha__link--primary"
+								href="#panel-mimetizado">
+								{comoSeSienteLegend.ctaLabel}
+								<span class="how-puesta-marcha__arrow" aria-hidden="true">
+									→
+								</span>
+							</a>
 						</li>
 					</ul>
-					{
-						comoSeSienteLegend.videoSrc ? (
-							<div class="how-embed how-embed--chrome how-siente-embed" id="panel-mimetizado">
-								<video
-									controls
-									preload="metadata"
-									playsinline
-									poster={comoSeSienteLegend.posterSrc}
-									title={comoSeSienteLegend.videoLabel}>
-									<source src={comoSeSienteLegend.videoSrc} type="video/mp4" />
-									Tu navegador no soporta reproducción de video HTML5.
-								</video>
-							</div>
-						) : (
-							<div
-								class="how-siente-placeholder"
-								id="panel-mimetizado"
-								role="status"
-								aria-label="Vídeo del panel mimetizado en preparación">
-								<span class="how-siente-placeholder__hint">Vídeo en preparación</span>
-								<span class="how-siente-placeholder__sub">Cuando esté listo, irá aquí (~20–25 s)</span>
-							</div>
-						)
-					}
+					<div
+						class:list={[
+							'how-brand-still',
+							`how-brand-still--tone-${comoSeSienteLegend.brandStillTone ?? 'steel'}`,
+							`how-brand-still--orb-${comoSeSienteLegend.brandStillOrb ?? 'bl'}`,
+						]}
+						id="panel-mimetizado"
+						role="img"
+						aria-label={comoSeSienteLegend.brandStillAria}>
+						<span class="how-brand-still__orb" aria-hidden="true"></span>
+						<span class="how-brand-still__name">{comoSeSienteLegend.brandStillLabel}</span>
+					</div>
 
 					<div class="how-siente-light" id={comoSeSienteLegend.lightClip.id}>
 						<p class="how-eyebrow how-eyebrow--center">{comoSeSienteLegend.lightClip.eyebrow}</p>
 						<p class="how-section-sub how-siente-light__blurb">{comoSeSienteLegend.lightClip.blurb}</p>
-						{
-							comoSeSienteLegend.lightClip.videoSrc ? (
-								<>
-									<p class="how-siente-light__cta">
-										<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={`#${comoSeSienteLegend.lightClip.id}`}>
-											{comoSeSienteLegend.lightClip.ctaLabel}
-											<span class="how-puesta-marcha__duration">
-												({comoSeSienteLegend.lightClip.durationLabel})
-											</span>
-											<span class="how-puesta-marcha__arrow" aria-hidden="true">
-												→
-											</span>
-										</a>
-									</p>
-									<div class="how-embed how-embed--chrome how-siente-embed how-siente-embed--light">
-										<video
-											controls
-											preload="metadata"
-											playsinline
-											poster={comoSeSienteLegend.lightClip.posterSrc}
-											title={comoSeSienteLegend.lightClip.videoLabel}>
-											<source src={comoSeSienteLegend.lightClip.videoSrc} type="video/mp4" />
-											Tu navegador no soporta reproducción de video HTML5.
-										</video>
-									</div>
-								</>
-							) : (
-								<div
-									class="how-siente-placeholder how-siente-placeholder--light"
-									role="status"
-									aria-label="Vídeo panel en tema claro en preparación">
-									<span class="how-siente-placeholder__hint">Tema claro — en preparación</span>
-									<span class="how-siente-placeholder__sub">
-										Mismo gesto en gráfico blanco. Cuando el MP4 esté listo, irá aquí.
-									</span>
-								</div>
-							)
-						}
+						<p class="how-siente-light__cta">
+							<a
+								class="how-puesta-marcha__link how-puesta-marcha__link--primary"
+								href={`#${comoSeSienteLegend.lightClip.id}`}>
+								{comoSeSienteLegend.lightClip.ctaLabel}
+								<span class="how-puesta-marcha__arrow" aria-hidden="true">
+									→
+								</span>
+							</a>
+						</p>
+						<div
+							class:list={[
+								'how-brand-still',
+								`how-brand-still--tone-${comoSeSienteLegend.lightClip.brandStillTone ?? 'warm'}`,
+								`how-brand-still--orb-${comoSeSienteLegend.lightClip.brandStillOrb ?? 'br'}`,
+							]}
+							role="img"
+							aria-label={comoSeSienteLegend.lightClip.brandStillAria}>
+							<span class="how-brand-still__orb" aria-hidden="true"></span>
+							<span class="how-brand-still__name">{comoSeSienteLegend.lightClip.brandStillLabel}</span>
+						</div>
 					</div>
 			</div>
 				</section>
@@ -2792,8 +2754,8 @@ const microclipBranches: MicroclipBranch[] = [
 		margin-top: clamp(0.85rem, 2.5vw, 1.25rem);
 	}
 
-	/* Still marca (13 sep 2026): sin MP4 viejo hasta guía con panel adaptativo. */
-	.how-overnight-brand-still {
+	/* Still marca (13 sep + oleada 1 · 28 sep): orb + tevsys; tonos/posiciones variados. */
+	.how-brand-still {
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -2810,11 +2772,20 @@ const microclipBranches: MicroclipBranch[] = [
 			inset 0 1px 0 rgba(255, 255, 255, 0.05);
 	}
 
-	.how-overnight-brand-still__orb {
+	.how-brand-still--clip {
+		max-width: none;
+		min-height: clamp(9.5rem, 24vw, 13rem);
+		aspect-ratio: 16 / 9;
+	}
+
+	.how-brand-still__orb {
 		position: absolute;
 		width: min(14rem, 62%);
 		aspect-ratio: 1;
 		border-radius: 50%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 		background: radial-gradient(
 			circle at 42% 38%,
 			rgba(245, 176, 65, 0.55) 0%,
@@ -2826,7 +2797,95 @@ const microclipBranches: MicroclipBranch[] = [
 		pointer-events: none;
 	}
 
-	.how-overnight-brand-still__name {
+	.how-brand-still--orb-tr .how-brand-still__orb {
+		left: auto;
+		right: 8%;
+		top: 18%;
+		transform: none;
+		width: min(11rem, 48%);
+	}
+
+	.how-brand-still--orb-tl .how-brand-still__orb {
+		left: 10%;
+		top: 16%;
+		transform: none;
+		width: min(11.5rem, 50%);
+	}
+
+	.how-brand-still--orb-br .how-brand-still__orb {
+		left: auto;
+		right: 12%;
+		top: auto;
+		bottom: 10%;
+		transform: none;
+		width: min(12rem, 52%);
+	}
+
+	.how-brand-still--orb-bl .how-brand-still__orb {
+		left: 10%;
+		top: auto;
+		bottom: 12%;
+		transform: none;
+		width: min(12.5rem, 54%);
+	}
+
+	.how-brand-still--tone-teal .how-brand-still__orb {
+		background: radial-gradient(
+			circle at 42% 38%,
+			rgba(64, 196, 180, 0.5) 0%,
+			rgba(64, 196, 180, 0.2) 38%,
+			rgba(64, 196, 180, 0.06) 62%,
+			transparent 72%
+		);
+	}
+
+	.how-brand-still--tone-teal {
+		border-color: rgba(64, 196, 180, 0.22);
+	}
+
+	.how-brand-still--tone-cool .how-brand-still__orb {
+		background: radial-gradient(
+			circle at 42% 38%,
+			rgba(120, 160, 210, 0.48) 0%,
+			rgba(120, 160, 210, 0.18) 40%,
+			rgba(120, 160, 210, 0.05) 62%,
+			transparent 72%
+		);
+	}
+
+	.how-brand-still--tone-cool {
+		border-color: rgba(120, 160, 210, 0.22);
+	}
+
+	.how-brand-still--tone-steel .how-brand-still__orb {
+		background: radial-gradient(
+			circle at 42% 38%,
+			rgba(190, 200, 214, 0.42) 0%,
+			rgba(190, 200, 214, 0.16) 40%,
+			rgba(190, 200, 214, 0.05) 62%,
+			transparent 72%
+		);
+	}
+
+	.how-brand-still--tone-steel {
+		border-color: rgba(190, 200, 214, 0.2);
+	}
+
+	.how-brand-still--tone-warm .how-brand-still__orb {
+		background: radial-gradient(
+			circle at 42% 38%,
+			rgba(232, 140, 70, 0.52) 0%,
+			rgba(232, 140, 70, 0.2) 38%,
+			rgba(232, 140, 70, 0.06) 62%,
+			transparent 72%
+		);
+	}
+
+	.how-brand-still--tone-warm {
+		border-color: rgba(232, 140, 70, 0.22);
+	}
+
+	.how-brand-still__name {
 		position: relative;
 		z-index: 1;
 		font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
@@ -2837,13 +2896,33 @@ const microclipBranches: MicroclipBranch[] = [
 		text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
 	}
 
-	html[data-theme='light'] .how-overnight-brand-still {
+	.how-brand-still--clip .how-brand-still__name {
+		font-size: clamp(1.35rem, 3.4vw, 1.85rem);
+	}
+
+	html[data-theme='light'] .how-brand-still {
 		border-color: rgba(200, 135, 26, 0.28);
 		background: linear-gradient(165deg, hsl(40, 18%, 97%) 0%, hsl(220, 14%, 94%) 100%);
 		box-shadow: 0 14px 36px -28px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.85);
 	}
 
-	html[data-theme='light'] .how-overnight-brand-still__orb {
+	html[data-theme='light'] .how-brand-still--tone-teal {
+		border-color: rgba(32, 140, 128, 0.28);
+	}
+
+	html[data-theme='light'] .how-brand-still--tone-cool {
+		border-color: rgba(70, 110, 160, 0.28);
+	}
+
+	html[data-theme='light'] .how-brand-still--tone-steel {
+		border-color: rgba(90, 105, 125, 0.28);
+	}
+
+	html[data-theme='light'] .how-brand-still--tone-warm {
+		border-color: rgba(180, 100, 40, 0.28);
+	}
+
+	html[data-theme='light'] .how-brand-still__orb {
 		background: radial-gradient(
 			circle at 42% 38%,
 			rgba(218, 155, 48, 0.48) 0%,
@@ -2853,7 +2932,47 @@ const microclipBranches: MicroclipBranch[] = [
 		);
 	}
 
-	html[data-theme='light'] .how-overnight-brand-still__name {
+	html[data-theme='light'] .how-brand-still--tone-teal .how-brand-still__orb {
+		background: radial-gradient(
+			circle at 42% 38%,
+			rgba(32, 150, 138, 0.42) 0%,
+			rgba(32, 150, 138, 0.16) 40%,
+			rgba(32, 150, 138, 0.05) 62%,
+			transparent 72%
+		);
+	}
+
+	html[data-theme='light'] .how-brand-still--tone-cool .how-brand-still__orb {
+		background: radial-gradient(
+			circle at 42% 38%,
+			rgba(70, 110, 170, 0.4) 0%,
+			rgba(70, 110, 170, 0.15) 40%,
+			rgba(70, 110, 170, 0.05) 62%,
+			transparent 72%
+		);
+	}
+
+	html[data-theme='light'] .how-brand-still--tone-steel .how-brand-still__orb {
+		background: radial-gradient(
+			circle at 42% 38%,
+			rgba(100, 115, 135, 0.36) 0%,
+			rgba(100, 115, 135, 0.14) 40%,
+			rgba(100, 115, 135, 0.04) 62%,
+			transparent 72%
+		);
+	}
+
+	html[data-theme='light'] .how-brand-still--tone-warm .how-brand-still__orb {
+		background: radial-gradient(
+			circle at 42% 38%,
+			rgba(200, 120, 50, 0.42) 0%,
+			rgba(200, 120, 50, 0.16) 40%,
+			rgba(200, 120, 50, 0.05) 62%,
+			transparent 72%
+		);
+	}
+
+	html[data-theme='light'] .how-brand-still__name {
 		color: rgba(28, 34, 44, 0.92);
 		text-shadow: none;
 	}

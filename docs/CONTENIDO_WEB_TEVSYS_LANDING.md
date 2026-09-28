@@ -114,7 +114,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Panel / Cómo se siente (30 ago):** `#como-se-siente` · *Panel* · *Mimetiza el panel a tu gusto* · blurb borde/colores + tres destellos · clip negro ~32 s · debajo `#panel-mimetizado-claro` ~36 s (overlays: también en blanco · gráfico claro · panel mimetizado · compacto).
 - **i18n ES|EN (3 sep 2026 — oleada 1 ✅):** selector header `ES | EN`; `/en/` home; `/en/company/contact`; `/en/como-funciona` ligero. Copy propio. Oleada 2: precios + features. V12 **(i18nWave1)**.
 - **i18n ES|EN (20 ago, plan):** oleadas; no Google Translate. Agenda + V12 **(i18nWeb)**.
-- **Tres ramas microclips (16 ago 2026):** Preparar / Ya protegido / Operación en curso en `/como-funciona`. Commit: `web(tevsys): structure como-funciona microclips into three branches`.
+- **Tres ramas microclips (16 ago 2026 · oleada 1 stills 28 sep):** Preparar / Ya protegido / Operación en curso — MP4s retirados → still marca + orb variada (ES|EN); copy de escenario. V12 **(cfOleada1Stills)**. Remakes con panel nuevo pendientes.
 - **P13 + pack espejo + GEO AI (8–9 sep · still 13 sep):** `#rama-operacion` · **`#overnight-laborable`** (copy edge + still marca; MP4 viejo fuera) · `#overnight-faq` · `#tu-id-tevsys` · `llms.txt` reforzado (V12 **geoEspejoAI**). Pendiente caso ★ · guía vídeo con panel nuevo · re-auditoría buscador 2–3 sem tras push.
 - **Panel adaptativo (26 sep 2026):** `#panel-adaptativo` en `/como-funciona` (+ `/en/…`) tras overnight — intradía ≠ overnight + info al clic · still provisional · clip cuando panel definitivo. V12 **(panelAdaptativoWeb)**.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:
