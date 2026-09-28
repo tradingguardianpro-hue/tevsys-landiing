@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
+import BrandStill from '../../components/core/BrandStill.astro';
 import '../../styles/guia-operativa.css';
 
 const seo = {
@@ -9,17 +10,13 @@ const seo = {
 		'Configure your limits in tevsys: a quick Advanced/Pro minute (full week) and a longer Essential walkthrough.',
 };
 
-/** Short piece MC-CF-026 — Pro · full week (20–21 Aug 2026). */
+/** MC-CF-026 slot — MP4 retired wave 2 (28 Sep 2026); brand still until remake. */
 const configurarLimites1min = {
 	id: 'configurar-limites',
 	title: 'How to set your limits in one minute',
 	eyebrow: 'Advanced / Pro',
 	blurb:
-		'From inputs to the lock: each day ON or OFF, weekly cap, and activate protection. Shot on Pro — the whole week under your rules.',
-	durationLabel: '~1:15',
-	videoSrc: '/videos/como-funciona/tevsys-configurar-limites-1min.mp4?v=20260820c',
-	posterSrc: '/videos/como-funciona/tevsys-configurar-limites-1min-poster.jpg?v=20260820c',
-	videoLabel: 'Guide ~1:15 — set limits for the full week · Pro (MC-CF-026)',
+		'From inputs to the lock: each day, ON or OFF, weekly cap and turn protection on. Shot in Pro — the full week under your rules.',
 };
 
 const VIDEO_DRIVE_ID = '1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg';
@@ -85,22 +82,11 @@ const otrasGuias = [
 						<h2>{configurarLimites1min.title}</h2>
 						<p class="guia-section-sub">
 							{configurarLimites1min.blurb}
-							{' '}
-							<span class="guia-duration">({configurarLimites1min.durationLabel})</span>
 						</p>
 						<p class="guia-section-sub">On-screen EA UI may still appear in Spanish.</p>
 					</header>
 					<div class="guia-embed guia-embed--chrome">
-						<video
-							id="configurar-limites-video"
-							controls
-							preload="metadata"
-							playsinline
-							poster={configurarLimites1min.posterSrc}
-							title={configurarLimites1min.videoLabel}>
-							<source src={configurarLimites1min.videoSrc} type="video/mp4" />
-							Your browser does not support HTML5 video.
-						</video>
+						<BrandStill tone="teal" orb="tr" aria="tevsys brand — set your limits" />
 					</div>
 					<p class="guia-note-box guia-note-box--after-video">
 						<strong>Essential:</strong> same idea (limits → protection), with fewer week options.

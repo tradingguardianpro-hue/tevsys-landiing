@@ -1,12 +1,13 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
+import BrandStill from '../components/core/BrandStill.astro';
 import '../styles/guia-operativa.css';
 
 const seo = {
 	title: 'Cómo instalar tevsys | Guía paso a paso',
 	description:
-		'Guía MT5 (~1 min 24 s): descarga demo, trading algorítmico, WebRequest con https://tevsys.io, copiar el EA a Experts y cargarlo en el gráfico.',
+		'Guía MT5: descarga demo, trading algorítmico, WebRequest con https://tevsys.io, copiar el EA a Experts y cargarlo en el gráfico.',
 };
 
 const guiasConfiguracion = [
@@ -38,7 +39,7 @@ const bloquesLectura = [
 		title: 'Prepara MT5',
 		detail:
 			'Herramientas → Opciones → Asesores Expertos: activa trading algorítmico y WebRequest.',
-		urlLine: 'Añade https://tevsys.io en la lista (sin barra final). El vídeo lo muestra paso a paso.',
+		urlLine: 'Añade https://tevsys.io en la lista (sin barra final). Los pasos de abajo lo detallan.',
 	},
 	{
 		n: 3,
@@ -56,13 +57,13 @@ const bloquesLectura = [
 				<p class="guia-eyebrow">Guía de instalación</p>
 				<h1>Cómo instalar tevsys en MT5</h1>
 				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>Vídeo 1:24 — del enlace del email al EA en el gráfico.
+					<span class="feature-hook__dot" aria-hidden="true"></span>Del enlace del email al EA en el gráfico.
 				</p>
 				<p class="guia-note-box">
 					<strong>WebRequest</strong> (<code>https://tevsys.io</code>): recomendable en demo para no repetir el paso al
 					comprar · <strong>obligatorio</strong> con licencia de pago (validación de clave).
 					Si compraste en <strong>MetaQuotes Market</strong> (sin clave), usa la
-					<a href="/instalacion-market">guía de instalación Market</a> — otro vídeo, sin WebRequest.
+					<a href="/instalacion-market">guía de instalación Market</a> — sin WebRequest.
 				</p>
 			</section>
 
@@ -70,21 +71,18 @@ const bloquesLectura = [
 				<div class="guia-video-panel__halo" aria-hidden="true"></div>
 				<div class="guia-video-panel__inner">
 					<header class="guia-section-head">
-						<p class="guia-eyebrow">Vídeo</p>
+<p class="guia-eyebrow">Guía</p>
 						<h2>Instalación rápida</h2>
 					</header>
 					<div class="guia-embed guia-embed--chrome" id="instalacion-demo-container">
-						<video id="instalacion-demo-video" controls preload="metadata" playsinline>
-							<source src="/videos/features/instalacion-demo.mp4?v=20260605webreq" type="video/mp4" />
-							Tu navegador no soporta reproducción de video HTML5.
-						</video>
+						<BrandStill tone="steel" orb="c" aria="Marca tevsys — instalación" />
 					</div>
 				</div>
 			</section>
 
 			<section class="guia-read-section">
 				<header class="guia-section-head">
-					<p class="guia-eyebrow">Apoyo al vídeo</p>
+					<p class="guia-eyebrow">Si prefieres leer</p>
 					<h2>Si prefieres leer</h2>
 					<p class="guia-section-sub">Tres bloques, mismo orden.</p>
 				</header>

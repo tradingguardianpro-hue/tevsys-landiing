@@ -1,12 +1,13 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
+import BrandStill from '../../components/core/BrandStill.astro';
 import '../../styles/guia-operativa.css';
 
 const seo = {
 	title: 'How to install tevsys | Step-by-step guide',
 	description:
-		'MT5 guide (~1 min 24 s): download the demo, enable algo trading, WebRequest for https://tevsys.io, copy the EA to Experts and load it on the chart.',
+		'MT5 guide: download the demo, enable algo trading, WebRequest for https://tevsys.io, copy the EA to Experts and load it on the chart.',
 };
 
 const guiasConfiguracion = [
@@ -38,7 +39,7 @@ const bloquesLectura = [
 		title: 'Prepare MT5',
 		detail:
 			'Tools → Options → Expert Advisors: enable algorithmic trading and WebRequest.',
-		urlLine: 'Add https://tevsys.io to the list (no trailing slash). The video shows it step by step.',
+		urlLine: 'Add https://tevsys.io to the list (no trailing slash). The steps below spell it out.',
 	},
 	{
 		n: 3,
@@ -56,13 +57,13 @@ const bloquesLectura = [
 				<p class="guia-eyebrow">Installation guide</p>
 				<h1>How to install tevsys in MT5</h1>
 				<p class="feature-hook">
-					<span class="feature-hook__dot" aria-hidden="true"></span>Video 1:24 — from the email link to the EA on the chart.
+					<span class="feature-hook__dot" aria-hidden="true"></span>From the email link to the EA on the chart.
 				</p>
 				<p class="guia-note-box">
 					<strong>WebRequest</strong> (<code>https://tevsys.io</code>): recommended on demo so you don’t repeat the step when
 					you buy · <strong>required</strong> with a paid license (key validation).
 					If you bought on <strong>MetaQuotes Market</strong> (no key), use the
-					<a href="/en/instalacion-market">Market installation guide</a> — different video, no WebRequest.
+					<a href="/en/instalacion-market">Market installation guide</a> — no WebRequest.
 				</p>
 			</section>
 
@@ -70,22 +71,19 @@ const bloquesLectura = [
 				<div class="guia-video-panel__halo" aria-hidden="true"></div>
 				<div class="guia-video-panel__inner">
 					<header class="guia-section-head">
-						<p class="guia-eyebrow">Video</p>
+<p class="guia-eyebrow">Guide</p>
 						<h2>Quick install</h2>
 						<p class="guia-section-sub">On-screen EA UI may still appear in Spanish.</p>
 					</header>
 					<div class="guia-embed guia-embed--chrome" id="instalacion-demo-container">
-						<video id="instalacion-demo-video" controls preload="metadata" playsinline>
-							<source src="/videos/features/instalacion-demo.mp4?v=20260605webreq" type="video/mp4" />
-							Your browser does not support HTML5 video.
-						</video>
+						<BrandStill tone="steel" orb="c" aria="tevsys brand — install" />
 					</div>
 				</div>
 			</section>
 
 			<section class="guia-read-section">
 				<header class="guia-section-head">
-					<p class="guia-eyebrow">Video support</p>
+					<p class="guia-eyebrow">If you prefer to read</p>
 					<h2>If you prefer to read</h2>
 					<p class="guia-section-sub">Three blocks, same order.</p>
 				</header>

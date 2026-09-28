@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
+import BrandStill from '../../components/core/BrandStill.astro';
 import settings from '../../config/settings.js';
 import EvidenceImageLightbox from '../../components/core/EvidenceImageLightbox.astro';
 
@@ -24,23 +25,15 @@ const seo = {
 		</section>
 
 		<section id="evidencia-demo" class="feature-demo feature-demo--hero">
-			<h2>Demo rápida — Cuenta 100k (~1 min 30 s)</h2>
+			<h2>Demo rápida — Cuenta 100k</h2>
 			<p class="feature-demo-hook">
 				100.000 € · GER40 · 10 lotes · límite −1 % · <strong class="feature-title__accent">desviación 2,28 € (0,0023 %)</strong> · apertura Londres.
 			</p>
 			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="evidencia-demo-container">
-				<video id="evidencia-demo-video" controls preload="metadata" playsinline
-					poster="/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827">
-					<source src="/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827" type="video/mp4" />
-					Tu navegador no soporta reproducción de video HTML5.
-				</video>
+				<BrandStill tone="amber" orb="tr" aria="Marca tevsys — evidencia 100k" />
 			</div>
 			<p class="feature-demo-attrib">
 				Atribución · tevsys −1,0023 % · ejecución 0,00 p.p. · 34 ms
-			</p>
-			<p class="demo-edit-note">
-				<strong>Vídeo editado:</strong> momentos clave del cierre; puede haber un <strong>salto en el reloj</strong> entre planos.
-				Cierre en caja MT5: <strong>−1.002,28 €</strong>.
 			</p>
 
 			<div id="evidencia-informe-mt5" class="evidencia-demo-informe">
@@ -424,7 +417,7 @@ const seo = {
 				</a>
 			</p>
 			<p class="evidencia-html-links evidencia-html-links--hyperclose">
-				<strong>Demo HyperClose / precisión (vídeo 2:23):</strong> historial de la misma operativa, datos redactados —
+				<strong>Demo HyperClose / precisión:</strong> historial de la misma operativa, datos redactados —
 				<a class="proof-capture-link" href="/docs/evidencia-hyperclose-demo-historial-transacciones.html" target="_blank" rel="noopener noreferrer">
 					abrir HTML <span class="proof-link-meta">HyperClose</span>
 				</a>
@@ -444,10 +437,7 @@ const seo = {
 				Ruta: MT5 → Archivo → Abrir carpeta de datos → MQL5 → Logs. Vídeo con panel anterior — recaptura en curso.
 			</p>
 			<div class="demo-video demo-video--compact" id="evidencia-logs-container">
-				<video id="evidencia-logs-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
-					Tu navegador no soporta reproducción de video HTML5.
-				</video>
+				<BrandStill tone="teal" orb="br" aria="Marca tevsys — evidencia logs" />
 			</div>
 			<p class="demo-edit-note demo-edit-note--slim">
 				<a class="proof-capture-link" href="/features/precision#precision-logs">

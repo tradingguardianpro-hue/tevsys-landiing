@@ -115,6 +115,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **i18n ES|EN (3 sep 2026 — oleada 1 ✅):** selector header `ES | EN`; `/en/` home; `/en/company/contact`; `/en/como-funciona` ligero. Copy propio. Oleada 2: precios + features. V12 **(i18nWave1)**.
 - **i18n ES|EN (20 ago, plan):** oleadas; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026 · oleada 1 stills 28 sep):** Preparar / Ya protegido / Operación en curso — MP4s retirados → still marca + orb variada (ES|EN); copy de escenario. V12 **(cfOleada1Stills)**. Remakes con panel nuevo pendientes.
+- **Oleada 2 features/instal (28 sep):** micros Precisión/HyperClose/Evidencia + instalación + config 1 min + puente 4 piezas → same still pattern. V12 **(cfOleada2Stills)**. Nasdaq = oleada 3.
 - **P13 + pack espejo + GEO AI (8–9 sep · still 13 sep):** `#rama-operacion` · **`#overnight-laborable`** (copy edge + still marca; MP4 viejo fuera) · `#overnight-faq` · `#tu-id-tevsys` · `llms.txt` reforzado (V12 **geoEspejoAI**). Pendiente caso ★ · guía vídeo con panel nuevo · re-auditoría buscador 2–3 sem tras push.
 - **Panel adaptativo (26 sep 2026):** `#panel-adaptativo` en `/como-funciona` (+ `/en/…`) tras overnight — intradía ≠ overnight + info al clic · still provisional · clip cuando panel definitivo. V12 **(panelAdaptativoWeb)**.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:

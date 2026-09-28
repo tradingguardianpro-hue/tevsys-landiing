@@ -1,0 +1,44 @@
+---
+/**
+ * Still marca tevsys (orb + nombre) — hueco visual sin MP4 / sin “vídeo en preparación”.
+ * Oleada 1–2 · 28 sep 2026. Estilos: `src/styles/brand-still.css`.
+ */
+export type BrandStillTone = 'amber' | 'teal' | 'cool' | 'steel' | 'warm';
+export type BrandStillOrb = 'c' | 'tr' | 'tl' | 'br' | 'bl';
+
+export interface Props {
+	tone?: BrandStillTone;
+	orb?: BrandStillOrb;
+	label?: string;
+	aria?: string;
+	/** 16:9 — hueco tipo vídeo. */
+	clip?: boolean;
+	id?: string;
+	class?: string;
+}
+
+const {
+	tone = 'amber',
+	orb = 'c',
+	label = 'tevsys',
+	aria,
+	clip = true,
+	id,
+	class: className,
+} = Astro.props;
+---
+
+<div
+	class:list={[
+		'how-brand-still',
+		clip && 'how-brand-still--clip',
+		`how-brand-still--tone-${tone}`,
+		`how-brand-still--orb-${orb}`,
+		className,
+	]}
+	id={id}
+	role="img"
+	aria-label={aria ?? `Marca ${label}`}>
+	<span class="how-brand-still__orb" aria-hidden="true"></span>
+	<span class="how-brand-still__name">{label}</span>
+</div>

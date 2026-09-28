@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
+import BrandStill from '../components/core/BrandStill.astro';
 import '../styles/guia-operativa.css';
 
 const seo = {
@@ -9,17 +10,13 @@ const seo = {
 		'Configura tus límites en tevsys: minuto rápido Advanced/Pro (toda la semana) y recorrido Essential más largo.',
 };
 
-/** Pieza corta MC-CF-026 — Pro · semana completa (20–21 ago 2026). */
+/** MC-CF-026 slot — MP4 retirado oleada 2 (28 sep 2026); still marca hasta remake. */
 const configurarLimites1min = {
 	id: 'configurar-limites',
 	title: 'Cómo configurar tus límites en un minuto',
 	eyebrow: 'Advanced / Pro',
 	blurb:
 		'De los inputs al candado: cada día, ON u OFF, tope semanal y activar protección. Rodado en Pro — la semana entera bajo tus reglas.',
-	durationLabel: '~1:15',
-	videoSrc: '/videos/como-funciona/tevsys-configurar-limites-1min.mp4?v=20260820c',
-	posterSrc: '/videos/como-funciona/tevsys-configurar-limites-1min-poster.jpg?v=20260820c',
-	videoLabel: 'Guía ~1:15 — configurar límites semana completa · Pro (MC-CF-026)',
 };
 
 const VIDEO_DRIVE_ID = '1fzSxwhZK2DC9SgUQhXeFf8WyTBeMecTg';
@@ -84,21 +81,10 @@ const otrasGuias = [
 						<h2>{configurarLimites1min.title}</h2>
 						<p class="guia-section-sub">
 							{configurarLimites1min.blurb}
-							{' '}
-							<span class="guia-duration">({configurarLimites1min.durationLabel})</span>
 						</p>
 					</header>
 					<div class="guia-embed guia-embed--chrome">
-						<video
-							id="configurar-limites-video"
-							controls
-							preload="metadata"
-							playsinline
-							poster={configurarLimites1min.posterSrc}
-							title={configurarLimites1min.videoLabel}>
-							<source src={configurarLimites1min.videoSrc} type="video/mp4" />
-							Tu navegador no soporta reproducción de video HTML5.
-						</video>
+						<BrandStill tone="teal" orb="tr" aria="Marca tevsys — configurar límites" />
 					</div>
 					<p class="guia-note-box guia-note-box--after-video">
 						<strong>Essential:</strong> misma idea (límites → protección), con menos opciones de semana.

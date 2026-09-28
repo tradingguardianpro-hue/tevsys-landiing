@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
+import BrandStill from '../../../components/core/BrandStill.astro';
 
 const seo = {
 	title: 'HyperClose | tevsys',
@@ -36,21 +37,14 @@ const seo = {
 				</p>
 				<p class="hyperclose-multichart__sub">Protection alerts appear on all your open charts.</p>
 			</div>
-			<h2>Demo — millimetric precision + HyperClose (2:23)</h2>
+			<h2>Demo — millimetric precision + HyperClose</h2>
 			<p class="feature-demo-hook">
 				15 lots · GER40 · −1% limit · <strong class="feature-title__accent">€1.31 deviation</strong> · Wall Street open · <strong class="feature-title__accent">HyperClose in 3 levels</strong>.
 			</p>
 			<p class="demo-edit-note">On-screen EA UI may still appear in Spanish.</p>
 			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="hyperclose-demo-container">
-				<video id="hyperclose-demo-video" controls preload="metadata" playsinline
-					poster="/videos/features/hyperclose-demo-poster.jpg?v=20260816">
-					<source src="/videos/features/hyperclose-demo.mp4" type="video/mp4" />
-					Your browser does not support HTML5 video.
-				</video>
+				<BrandStill tone="cool" orb="tr" aria="tevsys brand — HyperClose" />
 			</div>
-			<p class="demo-edit-note">
-				<strong>Edited video:</strong> we show the moments that matter in the flow (approaching the limit, close, lock, HyperClose). You may see a <strong>clock jump</strong> in the terminal between cuts: the original recording was longer. What lets you verify behaviour rigorously is the <strong>MT5 report</strong> and the history/HTML in the accordion below.
-			</p>
 			<p class="feature-demo-youtube-more">
 				<a href="/en/features/evidencia">More close cases</a>
 				<span class="feature-demo-youtube-more__hint"> — list with links and titles.</span>
@@ -296,10 +290,7 @@ const seo = {
 				</p>
 			</div>
 			<div id="hyperclose-off-demo" class="demo-video demo-video--compact hyperclose-off-demo" tabindex="-1">
-				<video id="hyperclose-off-demo-video" controls preload="metadata">
-					<source src="/videos/features/tevsys-rotacion-automatica-dia-off.mp4" type="video/mp4" />
-					Your browser does not support HTML5 video.
-				</video>
+				<BrandStill tone="steel" orb="bl" aria="tevsys brand — day OFF" />
 			</div>
 			<details class="proof-accordion">
 				<summary class="proof-capture-link">Screenshots of OFF-day scenarios</summary>

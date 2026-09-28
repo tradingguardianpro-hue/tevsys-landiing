@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
+import BrandStill from '../../components/core/BrandStill.astro';
 import '../../styles/guia-operativa.css';
 
 const seo = {
@@ -58,15 +59,12 @@ const bloquesLectura = [
 				<div class="guia-video-panel__halo" aria-hidden="true"></div>
 				<div class="guia-video-panel__inner">
 					<header class="guia-section-head">
-						<p class="guia-eyebrow">Video</p>
+<p class="guia-eyebrow">Guide</p>
 						<h2>Market installation</h2>
 						<p class="guia-section-sub">On-screen EA UI may still appear in Spanish.</p>
 					</header>
 					<div class="guia-embed guia-embed--chrome" id="instalacion-market-container">
-						<video id="instalacion-market-video" controls preload="metadata" playsinline poster="/videos/features/instalacion-market-poster.jpg?v=20260825">
-							<source src="/videos/features/instalacion-market.mp4?v=20260825" type="video/mp4" />
-							Your browser does not support HTML5 video.
-						</video>
+						<BrandStill tone="warm" orb="tr" aria="tevsys brand — Market install" />
 					</div>
 					<p class="guia-section-sub" style="margin-top: 1rem;">
 						Video ~45 s: Navigator → algorithmic trading → drag → first load → configuration.
@@ -76,7 +74,7 @@ const bloquesLectura = [
 
 			<section class="guia-read-section">
 				<header class="guia-section-head">
-					<p class="guia-eyebrow">Video support</p>
+					<p class="guia-eyebrow">If you prefer to read</p>
 					<h2>Four steps</h2>
 				</header>
 				<div class="guia-read-panel">

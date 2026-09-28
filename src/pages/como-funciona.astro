@@ -2,6 +2,7 @@
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
 import EvidenceImageLightbox from '../components/core/EvidenceImageLightbox.astro';
+import BrandStill from '../components/core/BrandStill.astro';
 import SwingSectionAnalytics from '../components/analytics/SwingSectionAnalytics.astro';
 
 const seo = {
@@ -164,56 +165,51 @@ const zeroToProtected = {
 	eyebrow: 'De la teoría a la pantalla',
 };
 
-/** Tras «Esto no es todo…»: mismo puente de cuatro piezas que la home (orden portada). Query distinta en MP4 duplicado para que el navegador pinte bien dos `<video>`. */
+/** Tras «Esto no es todo…»: mismo puente de cuatro piezas que la home (orden portada). Oleada 2: still marca (sin MP4 panel viejo). */
 const homeBridgeCards: {
 	title: string;
 	blurb: string;
 	href: string;
 	cta: string;
-	/** Mismo MP4 que en la micro `/features/*`; omitir = card solo texto (p. ej. SML hasta tener corte). */
-	featureVideoSrc?: string;
-	/** JPG mid-clip (canon posters) — no caja negra en el puente de 4 piezas. */
-	posterSrc?: string;
-	videoLabel?: string;
-	/** Borde placeholder con pulso muy suave (p. ej. SML sin MP4). Respeta prefers-reduced-motion. */
-	placeholderPulse?: boolean;
+	brandStillTone?: 'amber' | 'teal' | 'cool' | 'steel' | 'warm';
+	brandStillOrb?: 'c' | 'tr' | 'tl' | 'br' | 'bl';
+	brandStillAria?: string;
 }[] = [
 	{
 		title: 'Precisión al cierre',
 		blurb: 'Error medio documentado, operativas reales y condiciones de ejecución en MT5.',
 		href: '/features/precision',
 		cta: 'Ir a precisión',
-		/** Mismo MP4 que el primer embed grande (hero) en `/features/precision` — Demo rápida cuenta 100k. */
-		/** `?bridge=…` evita dos `<video>` con el mismo `src` en la misma página (algunos navegadores no pintan/reproducen bien la segunda). */
-		featureVideoSrc: '/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827&bridge=precision',
-		posterSrc: '/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827',
-		videoLabel:
-			'Demo rápida — cuenta 100k GER40 Londres (~1 min 30 s). Mismo vídeo hero que al abrir la micro Precisión.',
+		brandStillTone: 'cool',
+		brandStillOrb: 'tr',
+		brandStillAria: 'Marca tevsys — precisión',
 	},
 	{
 		title: 'HyperClose',
 		blurb: 'Bloqueo bajo presión: intento de operar con límite tocado y registro en vivo.',
 		href: '/features/hyperclose',
 		cta: 'Ir a HyperClose',
-		featureVideoSrc: '/videos/features/hyperclose-demo.mp4',
-		posterSrc: '/videos/features/hyperclose-demo-poster.jpg?v=20260816',
-		videoLabel: 'Demo HyperClose — mismo archivo que en la micro HyperClose.',
+		brandStillTone: 'warm',
+		brandStillOrb: 'bl',
+		brandStillAria: 'Marca tevsys — HyperClose',
 	},
 	{
 		title: 'SML — Smart Money Lock',
 		blurb: 'Capa opcional de riesgo/recompensa y estado visible en panel.',
 		href: '/features/sml',
 		cta: 'Ir a SML',
-		placeholderPulse: true,
+		brandStillTone: 'teal',
+		brandStillOrb: 'c',
+		brandStillAria: 'Marca tevsys — SML',
 	},
 	{
 		title: 'Evidencia verificable',
 		blurb: 'Informes, HTML y trazas para contrastar con lo que muestra el terminal.',
 		href: '/features/evidencia',
 		cta: 'Ir a evidencia',
-		featureVideoSrc: '/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827&bridge=evidencia',
-		posterSrc: '/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827',
-		videoLabel: 'Demo rápida — cuenta 100k GER40 Londres (~1 min 30 s). Mismo archivo que en la micro Evidencia.',
+		brandStillTone: 'amber',
+		brandStillOrb: 'br',
+		brandStillAria: 'Marca tevsys — evidencia',
 	},
 ];
 
@@ -992,31 +988,13 @@ const microclipBranches: MicroclipBranch[] = [
 											<h3 class="how-more-bridge-card__title">{card.title}</h3>
 										</a>
 										<p class="how-more-bridge-card__blurb">{card.blurb}</p>
-										{card.featureVideoSrc ? (
-											<div class="how-more-bridge-card__media how-more-bridge-card__media--with-video">
-												<video
-													controls
-													preload="metadata"
-													playsinline
-													poster={card.posterSrc}
-													title={card.videoLabel ?? card.title}>
-													<source src={card.featureVideoSrc} type="video/mp4" />
-													Tu navegador no soporta reproducción de video HTML5.
-												</video>
-												<span class="how-bridge-video-mark" aria-hidden="true"></span>
-											</div>
-										) : (
-											<div
-												class:list={[
-													'how-more-bridge-card__media',
-													'how-more-bridge-card__media--placeholder',
-													card.placeholderPulse && 'how-more-bridge-card__media--placeholder-pulse',
-												]}
-												role="status"
-												aria-label="Vídeo en preparación">
-												<span class="how-more-bridge-card__media-hint">Vídeo en preparación</span>
-											</div>
-										)}
+										<div class="how-more-bridge-card__media how-more-bridge-card__media--with-video">
+											<BrandStill
+												tone={card.brandStillTone ?? 'amber'}
+												orb={card.brandStillOrb ?? 'c'}
+												aria={card.brandStillAria ?? `Marca tevsys — ${card.title}`}
+											/>
+										</div>
 										<a class="how-more-bridge-card__cta" href={card.href}>
 											{card.cta} →
 										</a>

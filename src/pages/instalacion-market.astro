@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../layouts/Page.astro';
+import BrandStill from '../components/core/BrandStill.astro';
 import '../styles/guia-operativa.css';
 
 const seo = {
@@ -58,24 +59,19 @@ const bloquesLectura = [
 				<div class="guia-video-panel__halo" aria-hidden="true"></div>
 				<div class="guia-video-panel__inner">
 					<header class="guia-section-head">
-						<p class="guia-eyebrow">Vídeo</p>
+<p class="guia-eyebrow">Guía</p>
 						<h2>Instalación Market</h2>
 					</header>
 					<div class="guia-embed guia-embed--chrome" id="instalacion-market-container">
-						<video id="instalacion-market-video" controls preload="metadata" playsinline poster="/videos/features/instalacion-market-poster.jpg?v=20260825">
-							<source src="/videos/features/instalacion-market.mp4?v=20260825" type="video/mp4" />
-							Tu navegador no soporta reproducción de video HTML5.
-						</video>
+						<BrandStill tone="warm" orb="tr" aria="Marca tevsys — instalación Market" />
 					</div>
-					<p class="guia-section-sub" style="margin-top: 1rem;">
-						Vídeo ~45 s: Navegador → trading algorítmico → arrastrar → primera carga → configuración.
-					</p>
+					
 				</div>
 			</section>
 
 			<section class="guia-read-section">
 				<header class="guia-section-head">
-					<p class="guia-eyebrow">Apoyo al vídeo</p>
+					<p class="guia-eyebrow">Si prefieres leer</p>
 					<h2>Cuatro pasos</h2>
 				</header>
 				<div class="guia-read-panel">

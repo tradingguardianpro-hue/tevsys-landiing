@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
+import BrandStill from '../../../components/core/BrandStill.astro';
 import settings from '../../../config/settings.js';
 import EvidenceImageLightbox from '../../../components/core/EvidenceImageLightbox.astro';
 
@@ -24,16 +25,12 @@ const seo = {
 		</section>
 
 		<section id="evidencia-demo" class="feature-demo feature-demo--hero">
-			<h2>Quick demo — 100k account (~1 min 30 s)</h2>
+			<h2>Quick demo — 100k account</h2>
 			<p class="feature-demo-hook">
 				€100,000 · GER40 · 10 lots · −1 % limit · <strong class="feature-title__accent">€2.28 deviation (0.0023 %)</strong> · London open.
 			</p>
 			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="evidencia-demo-container">
-				<video id="evidencia-demo-video" controls preload="metadata" playsinline
-					poster="/videos/features/evidencia-100k-ger40-londres-poster.jpg?v=20260827">
-					<source src="/videos/features/evidencia-100k-ger40-londres.mp4?v=20260827" type="video/mp4" />
-					Your browser does not support HTML5 video.
-				</video>
+				<BrandStill tone="amber" orb="tr" aria="tevsys brand — 100k evidence" />
 			</div>
 			<p class="feature-demo-attrib">
 				Attribution · tevsys −1.0023 % · execution 0.00 p.p. · 34 ms
@@ -424,7 +421,7 @@ const seo = {
 				</a>
 			</p>
 			<p class="evidencia-html-links evidencia-html-links--hyperclose">
-				<strong>HyperClose / precision demo (2:23 video):</strong> history of the same trade, redacted data —
+				<strong>HyperClose / precision demo:</strong> history of the same trade, redacted data —
 				<a class="proof-capture-link" href="/docs/evidencia-hyperclose-demo-historial-transacciones.html" target="_blank" rel="noopener noreferrer">
 					open HTML <span class="proof-link-meta">HyperClose</span>
 				</a>
@@ -444,10 +441,7 @@ const seo = {
 				Path: MT5 → File → Open Data Folder → MQL5 → Logs. Video with previous panel — recapture in progress.
 			</p>
 			<div class="demo-video demo-video--compact" id="evidencia-logs-container">
-				<video id="evidencia-logs-video" controls preload="metadata" playsinline>
-					<source src="/videos/features/precision-logs-guide.mp4" type="video/mp4" />
-					Your browser does not support HTML5 video.
-				</video>
+				<BrandStill tone="teal" orb="br" aria="tevsys brand — evidence logs" />
 			</div>
 			<p class="demo-edit-note demo-edit-note--slim">
 				<a class="proof-capture-link" href="/en/features/precision#precision-logs">

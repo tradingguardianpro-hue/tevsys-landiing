@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Features + instalación — oleada 2: still marca (28 sep 2026)
+
+- **Qué:** MP4 panel viejo fuera en micros Precisión / HyperClose / Evidencia (ES|EN), instalación web + Market, configurar límites 1 min, puente 4 piezas en Cómo funciona.
+- **Cómo:** componente `BrandStill.astro` + `brand-still.css` (orbs variadas). Copy de escenario; sin “vídeo en preparación” / duraciones fantasma.
+- **Queda (oleada 3):** Nasdaq ~3:35 en Cómo funciona (+ YT). Drive Essential largo en `/configuracion` intacto de momento.
+- **Commit sugerido:** `web(tevsys): retire feature and install videos to brand stills wave 2`
+
 ## Cómo funciona — oleada 1: micros → still marca (28 sep 2026)
 
 - **Qué:** retiros de MP4 con panel viejo en `/como-funciona` ES|EN: 7 microclips de ramas · guía Desde cero · panel mimetizado (oscuro + claro).
