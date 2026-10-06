@@ -10,6 +10,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 - **Demo:** capital + experiencia + canal (como antes). **Pregunta:** nombre, email, mensaje opcional; sin capital/exp.
 - **Formspree:** campo `Intent` = `demo` | `pregunta` (auditoría sigue aparte).
 - **Hero `flow=acceso`:** copy más suave (encaje LinkedIn); título *Habla con tevsys*. `flow=pregunta` hero dedicado.
+- **Copy planes (misma noche):** acceso/thank-you alineados con home — Essential **y** Advanced bajo petición; Pro en desarrollo (antes decía Advanced “en desarrollo”).
 - **Commit:** `web(tevsys): dual-path contact demo vs understand tevsys`
 
 ## Features + instalación — oleada 2: still marca (28 sep 2026)
