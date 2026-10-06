@@ -6,18 +6,23 @@ import settings from '../../../config/settings.js';
 
 const flowFromUrl = (Astro.url.searchParams.get('flow') || '').toLowerCase();
 const allowNoPlan =
-	flowFromUrl === 'acceso' || flowFromUrl === 'demo' || flowFromUrl === 'lista' || flowFromUrl === 'auditoria-ia';
+	flowFromUrl === 'acceso' ||
+	flowFromUrl === 'demo' ||
+	flowFromUrl === 'lista' ||
+	flowFromUrl === 'auditoria-ia' ||
+	flowFromUrl === 'pregunta';
 
 const seo = {
 	title: 'Contact & demo | tevsys',
 	description:
-		'Request your tevsys Essential demo. Capital protection, automatic limits and millimetric precision for MetaTrader 5. Reply within 24h.',
+		'Talk to tevsys: request the Essential demo or just ask a question. Capital protection and automatic limits for MetaTrader 5. Reply within 24h.',
 };
-const introText = 'Fill in the form and we will tell you the next step for your profile.';
+const introText =
+	'Choose in the form: demo, or just understand tevsys. We reply based on what you need.';
 const tips = [
-	'You configure once. tevsys enforces always — including the days you choose to be OFF.',
-	'Daily limit, millimetric precision and HyperClose included.',
-	'Reply within 24h with next steps.',
+	'You can request the demo or ask one question — no commitment.',
+	'tevsys enforces your limits in MT5; not signals, not a profit promise.',
+	'Reply within 24h.',
 ];
 const empresasTipHtml =
 	'<a href="/en/company/empresas" class="contact-tip__link">Companies or corporate contact</a>';
@@ -27,7 +32,7 @@ const empresasTipHtml =
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<h1 id="contactHeroTitle" class="contact-hero__title">Complete your access to tevsys</h1>
+				<h1 id="contactHeroTitle" class="contact-hero__title">Talk to tevsys</h1>
 				<p id="contactHeroIntro">{introText}</p>
 				<ul class="contact-hero__tips">
 					{tips.map((tip, idx) => <li id={`contactTip-${idx + 1}`}>{tip}</li>)}
@@ -173,14 +178,14 @@ const empresasTipHtml =
 		}
 
 		if (flow === 'acceso') {
-			if (titleNode) titleNode.textContent = 'Complete your access to tevsys';
+			if (titleNode) titleNode.textContent = 'Talk to tevsys';
 			if (introNode)
 				introNode.textContent =
-					'Fill in the form and we will tell you the next step for your profile. Essential ready; Advanced and Pro in development.';
+					'In the form you choose: Essential demo, or just one question to see if it fits. Essential ready; Advanced and Pro in development.';
 			setTips(
-				'Essential ready to try. Advanced and Pro in development — waitlist.',
-				'Reply within 24h. We guide you by profile.',
-				'Precision and HyperClose validated with real trades. OFF days and flexible week setup.',
+				'Want the demo → capital and experience. Just understand → name, email and your question.',
+				'Reply within 24h. No chase.',
+				'tevsys runs your rules in MT5; it does not sell signals.',
 				empresasTipHtml
 			);
 			if (imageNode) {
@@ -188,6 +193,25 @@ const empresasTipHtml =
 				imageNode.alt = 'tevsys access';
 			}
 			if (demoBadge) demoBadge.hidden = false;
+			return;
+		}
+
+		if (flow === 'pregunta') {
+			if (titleNode) titleNode.textContent = 'A question about tevsys';
+			if (introNode)
+				introNode.textContent =
+					'No commitment. Tell us what you want to know; we reply within 24 hours. If you later want the demo, switch it in the form.';
+			setTips(
+				'No capital or experience needed for this path.',
+				'Typical questions: Who is it for? Is it a signals EA? How do I try it?',
+				'If you want to try now, pick “I want the demo” in the form.',
+				empresasTipHtml
+			);
+			if (imageNode) {
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
+				imageNode.alt = 'tevsys contact';
+			}
+			if (demoBadge) demoBadge.hidden = true;
 			return;
 		}
 

@@ -4,6 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Contacto — dual-path demo vs entender (6 oct 2026)
+
+- **Qué:** en `/company/contact` ES|EN el visitante elige **Quiero la demo** o **Solo quiero entender tevsys**.
+- **Demo:** capital + experiencia + canal (como antes). **Pregunta:** nombre, email, mensaje opcional; sin capital/exp.
+- **Formspree:** campo `Intent` = `demo` | `pregunta` (auditoría sigue aparte).
+- **Hero `flow=acceso`:** copy más suave (encaje LinkedIn); título *Habla con tevsys*. `flow=pregunta` hero dedicado.
+- **Commit:** `web(tevsys): dual-path contact demo vs understand tevsys`
+
 ## Features + instalación — oleada 2: still marca (28 sep 2026)
 
 - **Qué:** MP4 panel viejo fuera en micros Precisión / HyperClose / Evidencia (ES|EN), instalación web + Market, configurar límites 1 min, puente 4 piezas en Cómo funciona.

@@ -1,25 +1,31 @@
 ---
-import Layout from '../../layouts/Page.astro';
+import Layout from '../../../layouts/Page.astro';
 import { Container } from '@components/odyssey-theme';
 
 const seo = {
-	title: 'Solicitud recibida | tevsys',
-	description: 'Hemos recibido tu solicitud. Te responderemos en menos de 24h.',
+	title: 'Request received | tevsys',
+	description: 'We received your request. We will reply within 24h.',
 };
 ---
 
-<Layout seo={seo}>
+<Layout seo={seo} lang="en">
 	<Container>
 		<section class="contact-thank-you">
-			<h1>Gracias por tu interés en tevsys</h1>
-			<p id="thankYouMain">Hemos recibido tu solicitud. Te responderemos en menos de 24 horas con los pasos para acceder a la demo.</p>
-			<p id="thankYouAccesoNote" class="contact-thank-you__acceso-note" hidden>Essential está listo; Advanced y Pro en desarrollo. Te indicaremos el siguiente paso según tu perfil.</p>
+			<h1>Thanks for your interest in tevsys</h1>
+			<p id="thankYouMain">
+				We received your request. We will reply within 24 hours with the steps to access the demo.
+			</p>
+			<p id="thankYouAccesoNote" class="contact-thank-you__acceso-note" hidden>
+				Essential is ready; Advanced and Pro are in development. We will tell you the next step for your profile.
+			</p>
 			<div id="thankYouDevNote" class="contact-thank-you__dev-block" hidden>
-				<p class="contact-thank-you__dev-title">Te añadimos a la lista de espera.</p>
-				<p class="contact-thank-you__dev-text">Mientras tanto, la demo disponible es Essential.</p>
+				<p class="contact-thank-you__dev-title">We added you to the waitlist.</p>
+				<p class="contact-thank-you__dev-text">Meanwhile, the available demo is Essential.</p>
 			</div>
-			<p id="thankYouSpamNote" class="contact-thank-you__note">Revisa tu bandeja de entrada (y la de spam, por si acaso).</p>
-			<a href="/" class="contact-thank-you__link">Volver al inicio</a>
+			<p id="thankYouSpamNote" class="contact-thank-you__note">
+				Check your inbox (and spam, just in case).
+			</p>
+			<a href="/en/" class="contact-thank-you__link">Back to home</a>
 		</section>
 		<script is:inline>
 			(() => {
@@ -32,56 +38,57 @@ const seo = {
 				const flow = params.get('flow') || '';
 
 				if (flow === 'lista') {
-					if (main) main.textContent = 'Te hemos añadido a la lista de espera.';
+					if (main) main.textContent = 'We added you to the waitlist.';
 					if (devBlock) {
 						const title = devBlock.querySelector('.contact-thank-you__dev-title');
 						const text = devBlock.querySelector('.contact-thank-you__dev-text');
-						if (title) title.textContent = 'Te avisaremos por email cuando Advanced y Pro estén disponibles.';
-						if (text) text.textContent = 'Mientras tanto, la demo Essential está lista para probar.';
+						if (title)
+							title.textContent = 'We will email you when Advanced and Pro are available.';
+						if (text) text.textContent = 'Meanwhile, the Essential demo is ready to try.';
 						devBlock.hidden = false;
 					}
 				} else if (flow === 'auditoria-ia') {
 					if (main) {
 						main.textContent =
-							'Hemos recibido tu solicitud. Te escribimos en breve con el siguiente paso: envío del pack de evidencia (guía y requisitos).';
+							'We received your request. We will write shortly with the next step: sending the evidence pack (guide and requirements).';
 					}
 				} else if (flow === 'pregunta') {
 					if (main) {
 						main.textContent =
-							'Hemos recibido tu pregunta. Te respondemos en menos de 24 horas — sin compromiso.';
+							'We received your question. We reply within 24 hours — no commitment.';
 					}
 					if (spamNote) {
 						spamNote.textContent =
-							'Revisa tu bandeja de entrada (y la de spam). Si luego quieres la demo, vuelve a Contacto y elige esa vía.';
+							'Check your inbox (and spam). If you later want the demo, go back to Contact and choose that path.';
 					}
 				} else if (flow === 'demo') {
 					if (main) {
 						main.textContent =
-							'Hemos recibido tu solicitud de demo Essential. En menos de 24 horas te enviamos el enlace y las guías de instalación y configuración.';
+							'We received your Essential demo request. Within 24 hours we send the link plus install and setup guides.';
 					}
 					if (spamNote) {
 						spamNote.textContent =
-							'Revisa tu bandeja de entrada y la carpeta de spam: el mail con la demo y las guías llega ahí.';
+							'Check your inbox and spam folder: the demo and guides arrive there.';
 					}
 				} else if (plan === 'advanced') {
 					if (main) {
 						main.textContent =
-							'Hemos recibido tu solicitud de demo Advanced. En menos de 24 horas te respondemos con el enlace y las guías.';
+							'We received your Advanced demo request. Within 24 hours we reply with the link and guides.';
 					}
 					if (spamNote) {
 						spamNote.textContent =
-							'Revisa tu bandeja de entrada y la carpeta de spam: el mail con la demo y las guías llega ahí.';
+							'Check your inbox and spam folder: the demo and guides arrive there.';
 					}
 					if (devBlock) devBlock.hidden = true;
 				} else if (plan === 'pro') {
-					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
+					if (main) main.textContent = 'We received your request. We will reply within 24 hours.';
 					if (devBlock) {
 						const title = devBlock.querySelector('.contact-thank-you__dev-title');
-						if (title) title.textContent = 'Te añadimos a la lista de espera de Pro.';
+						if (title) title.textContent = 'We added you to the Pro waitlist.';
 						devBlock.hidden = false;
 					}
 				} else if (flow === 'acceso') {
-					if (main) main.textContent = 'Hemos recibido tu solicitud. Te responderemos en menos de 24 horas.';
+					if (main) main.textContent = 'We received your request. We will reply within 24 hours.';
 					if (accesoNote) accesoNote.hidden = false;
 				}
 			})();

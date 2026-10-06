@@ -6,18 +6,23 @@ import settings from '../../config/settings.js';
 
 const flowFromUrl = (Astro.url.searchParams.get('flow') || '').toLowerCase();
 const allowNoPlan =
-	flowFromUrl === 'acceso' || flowFromUrl === 'demo' || flowFromUrl === 'lista' || flowFromUrl === 'auditoria-ia';
+	flowFromUrl === 'acceso' ||
+	flowFromUrl === 'demo' ||
+	flowFromUrl === 'lista' ||
+	flowFromUrl === 'auditoria-ia' ||
+	flowFromUrl === 'pregunta';
 
 const seo = {
 	title: 'Contacto y demo | tevsys',
-	description: 'Solicita tu demo de tevsys Essential. Protección de capital, límites automáticos y precisión milimétrica para MetaTrader 5. Respuesta en menos de 24h.',
+	description:
+		'Habla con tevsys: pide la demo Essential o solo una pregunta. Protección de capital y límites automáticos en MetaTrader 5. Respuesta en menos de 24h.',
 };
 const introText =
-	'Rellena el formulario y te indicamos el siguiente paso según tu perfil.';
+	'Elige en el formulario: demo o solo entender tevsys. Te respondemos según lo que necesites.';
 const tips = [
-	'Configuras una vez. tevsys ejecuta siempre. Incluso los días que tú decides estar OFF.',
-	'Límite diario, precisión milimétrica y HyperClose incluidos.',
-	'Respuesta en menos de 24h con los siguientes pasos.',
+	'Puedes pedir la demo o solo hacer una pregunta — sin compromiso.',
+	'tevsys aplica tus límites en MT5; no son señales ni promesa de rentabilidad.',
+	'Respuesta en menos de 24h.',
 ];
 const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">Empresas o contacto corporativo</a>';
 ---
@@ -26,7 +31,7 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 	<Container>
 		<section class="contact-hero__section">
 			<div class="contact-hero__text-section">
-				<h1 id="contactHeroTitle" class="contact-hero__title">Completa tu acceso a tevsys</h1>
+				<h1 id="contactHeroTitle" class="contact-hero__title">Habla con tevsys</h1>
 				<p id="contactHeroIntro">{introText}</p>
 				<ul class="contact-hero__tips">
 					{tips.map((tip, idx) => <li id={`contactTip-${idx + 1}`}>{tip}</li>)}
@@ -158,12 +163,14 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 		}
 
 		if (flow === 'acceso') {
-			if (titleNode) titleNode.textContent = 'Completa tu acceso a tevsys';
-			if (introNode) introNode.textContent = 'Rellena el formulario y te indicamos el siguiente paso según tu perfil. Essential listo; Advanced y Pro en desarrollo.';
+			if (titleNode) titleNode.textContent = 'Habla con tevsys';
+			if (introNode)
+				introNode.textContent =
+					'En el formulario eliges: demo Essential, o solo una pregunta para entender si encaja. Essential listo; Advanced y Pro en desarrollo.';
 			setTips(
-				'Essential listo para probar. Advanced y Pro en desarrollo — lista de espera.',
-				'Respuesta en menos de 24h. Te orientamos según tu perfil.',
-				'Precisión y HyperClose validados con operativas reales. Días OFF y configuración flexible de toda la semana.',
+				'Quiero la demo → capital y experiencia. Solo entender → nombre, email y tu duda.',
+				'Respuesta en menos de 24h. Sin chase.',
+				'tevsys ejecuta tus reglas en MT5; no vende señales.',
 				empresasTipHtml
 			);
 			if (imageNode) {
@@ -171,6 +178,25 @@ const empresasTipHtml = '<a href="/company/empresas" class="contact-tip__link">E
 				imageNode.alt = 'Acceso tevsys';
 			}
 			if (demoBadge) demoBadge.hidden = false;
+			return;
+		}
+
+		if (flow === 'pregunta') {
+			if (titleNode) titleNode.textContent = 'Una pregunta sobre tevsys';
+			if (introNode)
+				introNode.textContent =
+					'Sin compromiso. Cuéntanos qué quieres saber; te respondemos en menos de 24 horas. Si luego quieres la demo, lo cambias en el formulario.';
+			setTips(
+				'No hace falta capital ni experiencia para esta vía.',
+				'Preguntas típicas: ¿para quién es? ¿es un EA de señales? ¿cómo se prueba?',
+				'Si prefieres probar ya, marca «Quiero la demo» en el formulario.',
+				empresasTipHtml
+			);
+			if (imageNode) {
+				setHeroImage('/assets/images/plans/esse-form-v4.png');
+				imageNode.alt = 'Contacto tevsys';
+			}
+			if (demoBadge) demoBadge.hidden = true;
 			return;
 		}
 

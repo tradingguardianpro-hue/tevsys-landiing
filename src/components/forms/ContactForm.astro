@@ -6,7 +6,6 @@ const normalizedPlan = (selectedPlan || '').toLowerCase();
 const en = locale === 'en';
 
 // Formspree: crea un formulario en formspree.io y reemplaza TU_FORM_ID por tu ID real.
-// Las solicitudes llegarán a tu email corporativo.
 const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xzdjbenk';
 
 const labels = en
@@ -30,8 +29,26 @@ const labels = en
 			notify: 'Yes, notify me when it is available.',
 			channel: 'Contact channel (optional)',
 			channelPh: 'Telegram, WhatsApp or phone',
-			submit: 'Send request',
+			submitDemo: 'Request demo',
+			submitAsk: 'Send question',
+			submitDefault: 'Send request',
 			hasta: 'Up to',
+			pathLegend: 'What do you need?',
+			pathDemo: 'I want the demo',
+			pathAsk: 'I just want to understand tevsys',
+			msg: 'What do you want to know? (optional)',
+			msgPh: 'e.g. Who is it for? Is it a signals EA? How do I try it?',
+			sending: 'Sending…',
+			sendFail: 'Could not send. Try again or email info@tevsys.io',
+			badgeDemo: 'Essential demo — fill this in and we send access + guides.',
+			badgeAsk: 'No commitment. We reply within 24 hours.',
+			badgeAcceso: 'Fill the form. We will tell you the next step for your profile.',
+			badgeLista: 'Waitlist — pick your plan of interest below.',
+			badgeNoPlan: 'No plan pre-selected.',
+			badgePickPlan: 'No plan selected. Go back to home and tap “Choose plan”.',
+			badgeListaNeed: 'Tell us which plan you are interested in.',
+			badgeHomePlan: 'Select a plan from the home page to continue.',
+			solicitDemo: 'Request demo',
 		}
 	: {
 			name: 'Nombre',
@@ -53,409 +70,653 @@ const labels = en
 			notify: 'Sí, avísame cuando esté disponible.',
 			channel: 'Canal de contacto (opcional)',
 			channelPh: 'Telegram, WhatsApp o teléfono',
-			submit: 'Enviar solicitud',
+			submitDemo: 'Solicitar demo',
+			submitAsk: 'Enviar pregunta',
+			submitDefault: 'Enviar solicitud',
 			hasta: 'Hasta',
+			pathLegend: '¿Qué necesitas?',
+			pathDemo: 'Quiero la demo',
+			pathAsk: 'Solo quiero entender tevsys',
+			msg: '¿Qué quieres saber? (opcional)',
+			msgPh: 'Ej.: ¿para quién es? ¿es un EA de señales? ¿cómo se prueba?',
+			sending: 'Enviando…',
+			sendFail: 'No se pudo enviar. Inténtalo de nuevo o escríbenos a info@tevsys.io',
+			badgeDemo: 'Demo Essential — rellena y te enviamos el acceso y las guías.',
+			badgeAsk: 'Sin compromiso. Te respondemos en menos de 24 h.',
+			badgeAcceso: 'Rellena el formulario. Te indicaremos el siguiente paso según tu perfil.',
+			badgeLista: 'Lista de espera — indica tu plan de interés abajo.',
+			badgeNoPlan: 'Sin plan preseleccionado.',
+			badgePickPlan: 'No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".',
+			badgeListaNeed: 'Indica en qué plan estás interesado.',
+			badgeHomePlan: 'Selecciona un plan desde la home para continuar.',
+			solicitDemo: 'Solicitar demo',
 		};
 ---
 
-<form id="tevsysContactForm" name="Contact Form" data-formspree-endpoint={formspreeEndpoint} data-locale={locale}>
-  <FormInput type="text" label={labels.name} name="Name" placeholder={labels.namePh} required />
-  <FormInput type="email" label={labels.email} name="Email" placeholder={labels.emailPh} required />
+<form
+	id="tevsysContactForm"
+	name="Contact Form"
+	data-formspree-endpoint={formspreeEndpoint}
+	data-locale={locale}
+	data-labels={JSON.stringify(labels)}>
+	<fieldset id="contactIntentFieldset" class="contact-intent">
+		<legend class="contact-intent__legend">{labels.pathLegend}</legend>
+		<div class="contact-intent__row" role="radiogroup" aria-label={labels.pathLegend}>
+			<label class="contact-intent__option">
+				<input type="radio" name="IntentUi" value="demo" id="intentDemo" checked />
+				<span>{labels.pathDemo}</span>
+			</label>
+			<label class="contact-intent__option">
+				<input type="radio" name="IntentUi" value="pregunta" id="intentAsk" />
+				<span>{labels.pathAsk}</span>
+			</label>
+		</div>
+	</fieldset>
 
-  <input id="planInput" type="hidden" name="Plan" value={normalizedPlan} data-allow-no-plan={allowNoPlan ? 'true' : 'false'} />
-  <input id="flowInput" type="hidden" name="Flow" value="" />
-  <input id="featureInput" type="hidden" name="Feature" value="" />
-  <p id="selectedPlanBadge" class="selected-plan-badge" hidden></p>
+	<input type="hidden" id="intentInput" name="Intent" value="demo" />
 
-  <div id="listaPlanContainer" class="form-field__container" hidden>
-    <label for="listaPlanSelect">{labels.lista}</label>
-    <select id="listaPlanSelect">
-      <option value="">{labels.listaPh}</option>
-      <option value="advanced">Advanced</option>
-      <option value="pro">Pro</option>
-      <option value="ambos">{labels.ambos}</option>
-    </select>
-  </div>
+	<FormInput type="text" label={labels.name} name="Name" placeholder={labels.namePh} required />
+	<FormInput type="email" label={labels.email} name="Email" placeholder={labels.emailPh} required />
 
-  <div id="contactFieldCapital" class="form-field__container">
-    <label for="capitalSelect">{labels.capital}</label>
-    <select id="capitalSelect" name="ApproxCapital" required>
-      <option value="">{labels.capitalPh}</option>
-      <option value="5000">{labels.hasta} 5.000 €</option>
-      <option value="10000">{labels.hasta} 10.000 €</option>
-      <option value="25000">{labels.hasta} 25.000 €</option>
-      <option value="30000">{labels.hasta} 30.000 €</option>
-      <option value="50000">{labels.hasta} 50.000 €</option>
-      <option value="100000">{labels.hasta} 100.000 €</option>
-      <option value="120000">{labels.hasta} 120.000 €</option>
-      <option value="200000">{labels.hasta} 200.000 €</option>
-      <option value="240000">{labels.hasta} 240.000 €</option>
-      <option value="250000">{labels.capMore}</option>
-    </select>
-  </div>
+	<input id="planInput" type="hidden" name="Plan" value={normalizedPlan} data-allow-no-plan={allowNoPlan ? 'true' : 'false'} />
+	<input id="flowInput" type="hidden" name="Flow" value="" />
+	<input id="featureInput" type="hidden" name="Feature" value="" />
+	<p id="selectedPlanBadge" class="selected-plan-badge" hidden></p>
 
-  <div id="contactFieldExperience" class="form-field__container">
-    <label for="experienceSelect">{labels.exp}</label>
-    <select id="experienceSelect" name="Experience" required>
-      <option value="">{labels.expPh}</option>
-      <option value="principiante">{labels.exp1}</option>
-      <option value="intermedio">{labels.exp2}</option>
-      <option value="avanzado">{labels.exp3}</option>
-      <option value="pro">{labels.exp4}</option>
-    </select>
-  </div>
+	<div id="listaPlanContainer" class="form-field__container" hidden>
+		<label for="listaPlanSelect">{labels.lista}</label>
+		<select id="listaPlanSelect">
+			<option value="">{labels.listaPh}</option>
+			<option value="advanced">Advanced</option>
+			<option value="pro">Pro</option>
+			<option value="ambos">{labels.ambos}</option>
+		</select>
+	</div>
 
-  <div id="notifyContainer" class="form-field__notify-box" hidden>
-    <input type="hidden" id="notifyInput" value="Sí" />
-    <label class="form-field__notify-label">
-      <input type="checkbox" id="notifyCheckbox" checked />
-      <span id="notifyLabelText">{labels.notify}</span>
-    </label>
-  </div>
+	<div id="contactFieldMessage" class="form-field__container" hidden>
+		<label for="contactMessage">{labels.msg}</label>
+		<textarea id="contactMessage" name="Message" rows="4" placeholder={labels.msgPh}></textarea>
+	</div>
 
-  <div class="form-field__container">
-    <label for="contactChannel">{labels.channel}</label>
-    <input id="contactChannel" type="text" name="ContactChannel" placeholder={labels.channelPh} />
-  </div>
+	<div id="contactFieldCapital" class="form-field__container">
+		<label for="capitalSelect">{labels.capital}</label>
+		<select id="capitalSelect" name="ApproxCapital" required>
+			<option value="">{labels.capitalPh}</option>
+			<option value="5000">{labels.hasta} 5.000 €</option>
+			<option value="10000">{labels.hasta} 10.000 €</option>
+			<option value="25000">{labels.hasta} 25.000 €</option>
+			<option value="30000">{labels.hasta} 30.000 €</option>
+			<option value="50000">{labels.hasta} 50.000 €</option>
+			<option value="100000">{labels.hasta} 100.000 €</option>
+			<option value="120000">{labels.hasta} 120.000 €</option>
+			<option value="200000">{labels.hasta} 200.000 €</option>
+			<option value="240000">{labels.hasta} 240.000 €</option>
+			<option value="250000">{labels.capMore}</option>
+		</select>
+	</div>
 
-  <p id="planValidationMessage" class="plan-validation-message" hidden></p>
-  <Button id="contactSubmitBtn" type="submit">{labels.submit}</Button>
+	<div id="contactFieldExperience" class="form-field__container">
+		<label for="experienceSelect">{labels.exp}</label>
+		<select id="experienceSelect" name="Experience" required>
+			<option value="">{labels.expPh}</option>
+			<option value="principiante">{labels.exp1}</option>
+			<option value="intermedio">{labels.exp2}</option>
+			<option value="avanzado">{labels.exp3}</option>
+			<option value="pro">{labels.exp4}</option>
+		</select>
+	</div>
+
+	<div id="notifyContainer" class="form-field__notify-box" hidden>
+		<input type="hidden" id="notifyInput" value="Sí" />
+		<label class="form-field__notify-label">
+			<input type="checkbox" id="notifyCheckbox" checked />
+			<span id="notifyLabelText">{labels.notify}</span>
+		</label>
+	</div>
+
+	<div id="contactFieldChannel" class="form-field__container">
+		<label for="contactChannel">{labels.channel}</label>
+		<input id="contactChannel" type="text" name="ContactChannel" placeholder={labels.channelPh} />
+	</div>
+
+	<p id="planValidationMessage" class="plan-validation-message" hidden></p>
+	<Button id="contactSubmitBtn" type="submit">{labels.submitDefault}</Button>
 </form>
 
 <script is:inline>
-  (() => {
-    const form = document.getElementById('tevsysContactForm');
-    if (!form) return;
+	(() => {
+		const form = document.getElementById('tevsysContactForm');
+		if (!form) return;
 
-    const planInput = document.getElementById('planInput');
-    const capitalSelect = document.getElementById('capitalSelect');
-    const badgeNode = document.getElementById('selectedPlanBadge');
-    const messageNode = document.getElementById('planValidationMessage');
+		let L = {};
+		try {
+			L = JSON.parse(form.dataset.labels || '{}');
+		} catch (_) {
+			L = {};
+		}
+		const en = form.dataset.locale === 'en';
+		const thankYouBase = en ? '/en/company/contact-thank-you' : '/company/contact-thank-you';
 
-    const limits = {
-      essential: 30000,
-      advanced: 120000,
-      pro: 240000,
-      elite: Number.POSITIVE_INFINITY,
-    };
+		const planInput = document.getElementById('planInput');
+		const capitalSelect = document.getElementById('capitalSelect');
+		const experienceSelect = document.getElementById('experienceSelect');
+		const badgeNode = document.getElementById('selectedPlanBadge');
+		const messageNode = document.getElementById('planValidationMessage');
+		const intentInput = document.getElementById('intentInput');
+		const intentDemo = document.getElementById('intentDemo');
+		const intentAsk = document.getElementById('intentAsk');
+		const intentFieldset = document.getElementById('contactIntentFieldset');
+		const msgWrap = document.getElementById('contactFieldMessage');
+		const capWrap = document.getElementById('contactFieldCapital');
+		const expWrap = document.getElementById('contactFieldExperience');
+		const channelWrap = document.getElementById('contactFieldChannel');
+		const subBtn = document.getElementById('contactSubmitBtn');
 
-    const planNames = {
-      essential: 'Essential',
-      advanced: 'Advanced',
-      pro: 'Pro',
-      elite: 'Elite',
-    };
+		const limits = {
+			essential: 30000,
+			advanced: 120000,
+			pro: 240000,
+			elite: Number.POSITIVE_INFINITY,
+		};
 
-    const recommendationByCapital = (capital) => {
-      if (capital <= 30000) return 'Essential';
-      if (capital <= 120000) return 'Advanced';
-      if (capital <= 240000) return 'Pro';
-      return 'Elite';
-    };
+		const planNames = {
+			essential: 'Essential',
+			advanced: 'Advanced',
+			pro: 'Pro',
+			elite: 'Elite',
+		};
 
-    const setPlanFromUrl = () => {
-      if (!planInput) return '';
-      const params = new URLSearchParams(window.location.search);
-      const urlFlow = (params.get('flow') || '').toLowerCase();
-      const urlFeature = (params.get('feature') || '').toLowerCase();
+		const recommendationByCapital = (capital) => {
+			if (capital <= 30000) return 'Essential';
+			if (capital <= 120000) return 'Advanced';
+			if (capital <= 240000) return 'Pro';
+			return 'Elite';
+		};
 
-      if (urlFlow === 'demo' || urlFlow === 'acceso' || urlFlow === 'lista' || urlFlow === 'auditoria-ia') {
-        planInput.dataset.allowNoPlan = 'true';
-      }
-      const urlPlan = (params.get('plan') || '').toLowerCase();
-      if (urlFlow === 'lista') {
-        const listaContainer = document.getElementById('listaPlanContainer');
-        if (listaContainer) listaContainer.hidden = false;
-      } else if (urlPlan && limits[urlPlan] !== undefined) {
-        planInput.value = urlPlan;
-      }
+		const clearAuditDummies = () => {
+			form.querySelectorAll('[data-audit-dummy]').forEach((el) => el.remove());
+			form.querySelectorAll('[data-ask-dummy]').forEach((el) => el.remove());
+		};
 
-      const flowInput = document.getElementById('flowInput');
-      const featureInput = document.getElementById('featureInput');
-      if (flowInput) flowInput.value = urlFlow;
-      if (featureInput) featureInput.value = urlFeature;
+		const ensureAskDummies = () => {
+			if (!form.querySelector('input[name="ApproxCapital"][data-ask-dummy]')) {
+				const h1 = document.createElement('input');
+				h1.type = 'hidden';
+				h1.name = 'ApproxCapital';
+				h1.setAttribute('data-ask-dummy', '1');
+				h1.value = 'solo_pregunta';
+				form.appendChild(h1);
+			}
+			if (!form.querySelector('input[name="Experience"][data-ask-dummy]')) {
+				const h2 = document.createElement('input');
+				h2.type = 'hidden';
+				h2.name = 'Experience';
+				h2.setAttribute('data-ask-dummy', '1');
+				h2.value = 'solo_pregunta';
+				form.appendChild(h2);
+			}
+		};
 
-      if (urlFlow === 'demo') {
-        const subBtn = document.getElementById('contactSubmitBtn');
-        if (subBtn) subBtn.textContent = 'Solicitar demo';
-        if (badgeNode) {
-          badgeNode.hidden = false;
-          badgeNode.classList.remove('selected-plan-badge--warning');
-          badgeNode.textContent = 'Demo Essential — rellena y te enviamos el acceso y las guías.';
-        }
-      }
+		const applyIntent = (intent) => {
+			const isAsk = intent === 'pregunta';
+			if (intentInput) intentInput.value = isAsk ? 'pregunta' : 'demo';
+			if (intentDemo) intentDemo.checked = !isAsk;
+			if (intentAsk) intentAsk.checked = isAsk;
 
-      /** Solicitud auditoría: quitar miedo y carga; sin capital ni experiencia en este paso. */
-      if (urlFlow === 'auditoria-ia') {
-        const capWrap = document.getElementById('contactFieldCapital');
-        const expWrap = document.getElementById('contactFieldExperience');
-        const capSel = document.getElementById('capitalSelect');
-        const expSel = document.getElementById('experienceSelect');
-        const subBtn = document.getElementById('contactSubmitBtn');
-        if (capWrap) capWrap.hidden = true;
-        if (expWrap) expWrap.hidden = true;
-        if (capSel) {
-          capSel.removeAttribute('required');
-          capSel.removeAttribute('name');
-        }
-        if (expSel) {
-          expSel.removeAttribute('required');
-          expSel.removeAttribute('name');
-        }
-        if (badgeNode) badgeNode.hidden = true;
-        if (subBtn) subBtn.textContent = 'Enviar';
-        if (!form.querySelector('input[name="ApproxCapital"][data-audit-dummy]')) {
-          const h1 = document.createElement('input');
-          h1.type = 'hidden';
-          h1.name = 'ApproxCapital';
-          h1.setAttribute('data-audit-dummy', '1');
-          h1.value = 'solicitud_auditoria';
-          form.appendChild(h1);
-        }
-        if (!form.querySelector('input[name="Experience"][data-audit-dummy]')) {
-          const h2 = document.createElement('input');
-          h2.type = 'hidden';
-          h2.name = 'Experience';
-          h2.setAttribute('data-audit-dummy', '1');
-          h2.value = 'solicitud_auditoria';
-          form.appendChild(h2);
-        }
-      }
+			clearAuditDummies();
 
-      return (planInput.value || '').toLowerCase();
-    };
+			if (isAsk) {
+				if (msgWrap) msgWrap.hidden = false;
+				if (capWrap) capWrap.hidden = true;
+				if (expWrap) expWrap.hidden = true;
+				if (channelWrap) channelWrap.hidden = true;
+				if (capitalSelect) {
+					capitalSelect.removeAttribute('required');
+					capitalSelect.removeAttribute('name');
+					capitalSelect.value = '';
+				}
+				if (experienceSelect) {
+					experienceSelect.removeAttribute('required');
+					experienceSelect.removeAttribute('name');
+					experienceSelect.value = '';
+				}
+				ensureAskDummies();
+				if (subBtn) subBtn.textContent = L.submitAsk || 'Enviar pregunta';
+				if (badgeNode) {
+					badgeNode.hidden = false;
+					badgeNode.classList.remove('selected-plan-badge--warning');
+					badgeNode.textContent = L.badgeAsk || '';
+				}
+				if (messageNode) {
+					messageNode.hidden = true;
+					messageNode.textContent = '';
+				}
+				document.documentElement.dataset.contactIntent = 'pregunta';
+				return;
+			}
 
-    const renderPlanBadge = (plan) => {
-      if (!badgeNode) return;
-      const flowInputEarly = document.getElementById('flowInput');
-      if (flowInputEarly && flowInputEarly.value === 'auditoria-ia') {
-        badgeNode.hidden = true;
-        return;
-      }
-      const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
-      badgeNode.hidden = false;
-      if (plan) {
-        badgeNode.classList.remove('selected-plan-badge--warning');
-        badgeNode.innerHTML = `Plan seleccionado: <strong>${plan.toUpperCase()}</strong>`;
-      } else if (canSubmitWithoutPlan) {
-        badgeNode.classList.remove('selected-plan-badge--warning');
-        const flowInput = document.getElementById('flowInput');
-        const flowVal = flowInput ? flowInput.value : '';
-        if (flowVal === 'lista') {
-          badgeNode.textContent = 'Lista de espera — indica tu plan de interés abajo.';
-        } else if (flowVal === 'demo') {
-          badgeNode.textContent = 'Demo Essential — rellena y te enviamos el acceso y las guías.';
-        } else if (flowVal === 'acceso') {
-          badgeNode.textContent = 'Rellena el formulario. Te indicaremos el siguiente paso según tu perfil.';
-        } else {
-          badgeNode.textContent = 'Sin plan preseleccionado.';
-        }
-      } else {
-        badgeNode.classList.add('selected-plan-badge--warning');
-        badgeNode.textContent = 'No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".';
-      }
-    };
+			form.querySelectorAll('[data-ask-dummy]').forEach((el) => el.remove());
+			if (msgWrap) msgWrap.hidden = true;
+			if (capWrap) capWrap.hidden = false;
+			if (expWrap) expWrap.hidden = false;
+			if (channelWrap) channelWrap.hidden = false;
+			if (capitalSelect) {
+				capitalSelect.setAttribute('required', '');
+				capitalSelect.setAttribute('name', 'ApproxCapital');
+			}
+			if (experienceSelect) {
+				experienceSelect.setAttribute('required', '');
+				experienceSelect.setAttribute('name', 'Experience');
+			}
+			if (subBtn) {
+				const flowInput = document.getElementById('flowInput');
+				const flowVal = flowInput ? flowInput.value : '';
+				subBtn.textContent =
+					flowVal === 'demo' ? L.submitDemo || L.solicitDemo : L.submitDefault || 'Enviar solicitud';
+			}
+			document.documentElement.dataset.contactIntent = 'demo';
+		};
 
-    const validatePlanAgainstCapital = () => {
-      const plan = (planInput && planInput.value || '').toLowerCase();
-      const capital = Number(capitalSelect && capitalSelect.value || 0);
-      const flowInput = document.getElementById('flowInput');
-      const flowVal = flowInput ? flowInput.value : '';
-      const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
+		const setPlanFromUrl = () => {
+			if (!planInput) return '';
+			const params = new URLSearchParams(window.location.search);
+			const urlFlow = (params.get('flow') || '').toLowerCase();
+			const urlFeature = (params.get('feature') || '').toLowerCase();
+			const urlIntent = (params.get('intent') || '').toLowerCase();
 
-      if (flowVal === 'auditoria-ia') {
-        if (messageNode) {
-          messageNode.hidden = true;
-          messageNode.textContent = '';
-        }
-        return true;
-      }
+			if (
+				urlFlow === 'demo' ||
+				urlFlow === 'acceso' ||
+				urlFlow === 'lista' ||
+				urlFlow === 'auditoria-ia' ||
+				urlFlow === 'pregunta'
+			) {
+				planInput.dataset.allowNoPlan = 'true';
+			}
+			const urlPlan = (params.get('plan') || '').toLowerCase();
+			if (urlFlow === 'lista') {
+				const listaContainer = document.getElementById('listaPlanContainer');
+				if (listaContainer) listaContainer.hidden = false;
+			} else if (urlPlan && limits[urlPlan] !== undefined) {
+				planInput.value = urlPlan;
+			}
 
-      if (!plan && !canSubmitWithoutPlan) {
-        messageNode.hidden = false;
-        messageNode.textContent = 'Selecciona un plan desde la home para continuar.';
-        return false;
-      }
+			const flowInput = document.getElementById('flowInput');
+			const featureInput = document.getElementById('featureInput');
+			if (flowInput) flowInput.value = urlFlow;
+			if (featureInput) featureInput.value = urlFeature;
 
-      if (flowVal === 'lista') {
-        if (!plan || !['advanced', 'pro', 'ambos'].includes(plan)) {
-          messageNode.hidden = false;
-          messageNode.textContent = 'Indica en qué plan estás interesado.';
-          return false;
-        }
-        messageNode.hidden = true;
-        messageNode.textContent = '';
-        return true;
-      }
+			/** Auditoría: formulario mínimo; sin selector de intención. */
+			if (urlFlow === 'auditoria-ia') {
+				if (intentFieldset) intentFieldset.hidden = true;
+				if (msgWrap) msgWrap.hidden = true;
+				if (capWrap) capWrap.hidden = true;
+				if (expWrap) expWrap.hidden = true;
+				if (channelWrap) channelWrap.hidden = false;
+				if (capitalSelect) {
+					capitalSelect.removeAttribute('required');
+					capitalSelect.removeAttribute('name');
+				}
+				if (experienceSelect) {
+					experienceSelect.removeAttribute('required');
+					experienceSelect.removeAttribute('name');
+				}
+				clearAuditDummies();
+				if (!form.querySelector('input[name="ApproxCapital"][data-audit-dummy]')) {
+					const h1 = document.createElement('input');
+					h1.type = 'hidden';
+					h1.name = 'ApproxCapital';
+					h1.setAttribute('data-audit-dummy', '1');
+					h1.value = 'solicitud_auditoria';
+					form.appendChild(h1);
+				}
+				if (!form.querySelector('input[name="Experience"][data-audit-dummy]')) {
+					const h2 = document.createElement('input');
+					h2.type = 'hidden';
+					h2.name = 'Experience';
+					h2.setAttribute('data-audit-dummy', '1');
+					h2.value = 'solicitud_auditoria';
+					form.appendChild(h2);
+				}
+				if (intentInput) intentInput.value = 'auditoria';
+				if (badgeNode) badgeNode.hidden = true;
+				if (subBtn) subBtn.textContent = en ? 'Send' : 'Enviar';
+				document.documentElement.dataset.contactIntent = 'auditoria';
+				return (planInput.value || '').toLowerCase();
+			}
 
-      if (!plan && canSubmitWithoutPlan) {
-        messageNode.hidden = true;
-        messageNode.textContent = '';
-        return true;
-      }
+			if (intentFieldset) intentFieldset.hidden = false;
 
-      if (!capital) {
-        messageNode.hidden = true;
-        messageNode.textContent = '';
-        return false;
-      }
+			const startAsk =
+				urlFlow === 'pregunta' ||
+				urlIntent === 'pregunta' ||
+				urlIntent === 'ask' ||
+				urlIntent === 'entender';
 
-      const maxLimit = limits[plan];
-      const isValid = capital <= maxLimit;
-      if (isValid) {
-        messageNode.hidden = true;
-        messageNode.textContent = '';
-        return true;
-      }
+			if (startAsk) {
+				applyIntent('pregunta');
+			} else if (urlFlow === 'demo') {
+				applyIntent('demo');
+				if (subBtn) subBtn.textContent = L.submitDemo || L.solicitDemo;
+				if (badgeNode) {
+					badgeNode.hidden = false;
+					badgeNode.classList.remove('selected-plan-badge--warning');
+					badgeNode.textContent = L.badgeDemo || '';
+				}
+			} else {
+				/** acceso / plan / sin señal fuerte → demo (filtro capital), selector visible. */
+				applyIntent('demo');
+			}
 
-      const maxText = maxLimit.toLocaleString('es-ES');
-      const recommendedPlan = recommendationByCapital(capital);
-      messageNode.hidden = false;
-      messageNode.textContent = `Para ${planNames[plan]}, el capital máximo es ${maxText} €. Te recomendamos ${recommendedPlan}.`;
-      return false;
-    };
+			return (planInput.value || '').toLowerCase();
+		};
 
-    const listaPlanSelect = document.getElementById('listaPlanSelect');
-    const flowInputEl = document.getElementById('flowInput');
-    if (listaPlanSelect && flowInputEl && flowInputEl.value === 'lista') {
-      listaPlanSelect.addEventListener('change', () => {
-        if (planInput) planInput.value = (listaPlanSelect.value || '').toLowerCase();
-        validatePlanAgainstCapital();
-      });
-    }
+		const renderPlanBadge = (plan) => {
+			if (!badgeNode) return;
+			const flowInputEarly = document.getElementById('flowInput');
+			const flowVal = flowInputEarly ? flowInputEarly.value : '';
+			if (flowVal === 'auditoria-ia') {
+				badgeNode.hidden = true;
+				return;
+			}
+			if (intentInput && intentInput.value === 'pregunta') {
+				badgeNode.hidden = false;
+				badgeNode.classList.remove('selected-plan-badge--warning');
+				badgeNode.textContent = L.badgeAsk || '';
+				return;
+			}
+			const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
+			badgeNode.hidden = false;
+			if (plan) {
+				badgeNode.classList.remove('selected-plan-badge--warning');
+				badgeNode.innerHTML = en
+					? `Selected plan: <strong>${plan.toUpperCase()}</strong>`
+					: `Plan seleccionado: <strong>${plan.toUpperCase()}</strong>`;
+			} else if (canSubmitWithoutPlan) {
+				badgeNode.classList.remove('selected-plan-badge--warning');
+				if (flowVal === 'lista') {
+					badgeNode.textContent = L.badgeLista || '';
+				} else if (flowVal === 'demo') {
+					badgeNode.textContent = L.badgeDemo || '';
+				} else if (flowVal === 'acceso') {
+					badgeNode.textContent = L.badgeAcceso || '';
+				} else {
+					badgeNode.textContent = L.badgeNoPlan || '';
+				}
+			} else {
+				badgeNode.classList.add('selected-plan-badge--warning');
+				badgeNode.textContent = L.badgePickPlan || '';
+			}
+		};
 
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const flowInputSubmit = document.getElementById('flowInput');
-      if (flowInputSubmit && flowInputSubmit.value === 'lista' && listaPlanSelect) {
-        if (planInput) planInput.value = (listaPlanSelect.value || '').toLowerCase();
-      }
-      if (!validatePlanAgainstCapital()) return;
+		const validatePlanAgainstCapital = () => {
+			const plan = ((planInput && planInput.value) || '').toLowerCase();
+			const capital = Number((capitalSelect && capitalSelect.value) || 0);
+			const flowInput = document.getElementById('flowInput');
+			const flowVal = flowInput ? flowInput.value : '';
+			const canSubmitWithoutPlan = planInput && planInput.dataset.allowNoPlan === 'true';
+			const intent = intentInput ? intentInput.value : 'demo';
 
-      const submitBtn = form.querySelector('button');
-      const endpoint = form.dataset.formspreeEndpoint;
-      const flow = flowInputSubmit ? flowInputSubmit.value : '';
-      const planVal = (planInput && planInput.value || '').toLowerCase();
-      const q = new URLSearchParams();
-      if (flow === 'acceso') q.set('flow', 'acceso');
-      if (flow === 'lista') q.set('flow', 'lista');
-      if (flow === 'auditoria-ia') q.set('flow', 'auditoria-ia');
-      if (flow === 'demo') q.set('flow', 'demo');
-      if (planVal === 'advanced' || planVal === 'pro') q.set('plan', planVal);
-      if (flow === 'lista' && planVal === 'ambos') q.set('plan', 'ambos');
-      const thankYouUrl = '/company/contact-thank-you' + (q.toString() ? '?' + q.toString() : '');
-      if (!endpoint) return;
+			if (flowVal === 'auditoria-ia' || intent === 'pregunta') {
+				if (messageNode) {
+					messageNode.hidden = true;
+					messageNode.textContent = '';
+				}
+				return true;
+			}
 
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando…';
-      }
+			if (!plan && !canSubmitWithoutPlan) {
+				messageNode.hidden = false;
+				messageNode.textContent = L.badgeHomePlan || '';
+				return false;
+			}
 
-      try {
-        const formData = new FormData(form);
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          window.location.href = thankYouUrl;
-          return;
-        }
-        throw new Error('Error al enviar');
-      } catch (err) {
-        if (messageNode) {
-          messageNode.hidden = false;
-          messageNode.textContent = 'No se pudo enviar. Inténtalo de nuevo o escríbenos a info@tevsys.io';
-        }
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          const flowReset = flowInputSubmit ? flowInputSubmit.value : '';
-          submitBtn.textContent = flowReset === 'demo' ? 'Solicitar demo' : 'Enviar solicitud';
-        }
-      }
-    });
+			if (flowVal === 'lista') {
+				if (!plan || !['advanced', 'pro', 'ambos'].includes(plan)) {
+					messageNode.hidden = false;
+					messageNode.textContent = L.badgeListaNeed || '';
+					return false;
+				}
+				messageNode.hidden = true;
+				messageNode.textContent = '';
+				return true;
+			}
 
-    const initializedPlan = setPlanFromUrl();
-    renderPlanBadge(initializedPlan);
+			if (!plan && canSubmitWithoutPlan) {
+				messageNode.hidden = true;
+				messageNode.textContent = '';
+				return true;
+			}
 
-    const notifyContainer = document.getElementById('notifyContainer');
-    const notifyInput = document.getElementById('notifyInput');
-    const notifyCheckbox = document.getElementById('notifyCheckbox');
-    const notifyLabelText = document.getElementById('notifyLabelText');
-    if (initializedPlan === 'advanced' || initializedPlan === 'pro') {
-      if (notifyContainer) notifyContainer.hidden = false;
-      if (notifyInput) notifyInput.setAttribute('name', 'AvisarCuandoDisponible');
-      if (notifyLabelText) notifyLabelText.textContent = 'Sí, avísame cuando ' + (initializedPlan === 'advanced' ? 'Advanced' : 'Pro') + ' esté disponible.';
-      if (notifyCheckbox && notifyInput) {
-        notifyCheckbox.addEventListener('change', () => {
-          if (notifyInput) notifyInput.value = notifyCheckbox.checked ? 'Sí' : 'No';
-        });
-      }
-    }
+			if (!capital) {
+				messageNode.hidden = true;
+				messageNode.textContent = '';
+				return false;
+			}
 
-    capitalSelect && capitalSelect.addEventListener('change', validatePlanAgainstCapital);
-  })();
+			const maxLimit = limits[plan];
+			const isValid = capital <= maxLimit;
+			if (isValid) {
+				messageNode.hidden = true;
+				messageNode.textContent = '';
+				return true;
+			}
+
+			const maxText = maxLimit.toLocaleString(en ? 'en-GB' : 'es-ES');
+			const recommendedPlan = recommendationByCapital(capital);
+			messageNode.hidden = false;
+			messageNode.textContent = en
+				? `For ${planNames[plan]}, max capital is €${maxText}. We recommend ${recommendedPlan}.`
+				: `Para ${planNames[plan]}, el capital máximo es ${maxText} €. Te recomendamos ${recommendedPlan}.`;
+			return false;
+		};
+
+		const listaPlanSelect = document.getElementById('listaPlanSelect');
+
+		if (intentDemo) {
+			intentDemo.addEventListener('change', () => {
+				if (intentDemo.checked) {
+					applyIntent('demo');
+					renderPlanBadge((planInput && planInput.value) || '');
+				}
+			});
+		}
+		if (intentAsk) {
+			intentAsk.addEventListener('change', () => {
+				if (intentAsk.checked) {
+					applyIntent('pregunta');
+				}
+			});
+		}
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			const flowInputSubmit = document.getElementById('flowInput');
+			if (flowInputSubmit && flowInputSubmit.value === 'lista' && listaPlanSelect) {
+				if (planInput) planInput.value = (listaPlanSelect.value || '').toLowerCase();
+			}
+			if (!validatePlanAgainstCapital()) return;
+
+			const submitBtn = form.querySelector('button');
+			const endpoint = form.dataset.formspreeEndpoint;
+			const flow = flowInputSubmit ? flowInputSubmit.value : '';
+			const intent = intentInput ? intentInput.value : 'demo';
+			const planVal = ((planInput && planInput.value) || '').toLowerCase();
+			const q = new URLSearchParams();
+			if (intent === 'pregunta' || flow === 'pregunta') q.set('flow', 'pregunta');
+			else if (flow === 'acceso') q.set('flow', 'acceso');
+			else if (flow === 'lista') q.set('flow', 'lista');
+			else if (flow === 'auditoria-ia') q.set('flow', 'auditoria-ia');
+			else if (flow === 'demo') q.set('flow', 'demo');
+			if (planVal === 'advanced' || planVal === 'pro') q.set('plan', planVal);
+			if (flow === 'lista' && planVal === 'ambos') q.set('plan', 'ambos');
+			const thankYouUrl = thankYouBase + (q.toString() ? '?' + q.toString() : '');
+			if (!endpoint) return;
+
+			if (submitBtn) {
+				submitBtn.disabled = true;
+				submitBtn.textContent = L.sending || 'Enviando…';
+			}
+
+			try {
+				const formData = new FormData(form);
+				formData.delete('IntentUi');
+				const response = await fetch(endpoint, {
+					method: 'POST',
+					body: formData,
+					headers: { Accept: 'application/json' },
+				});
+				if (response.ok) {
+					window.location.href = thankYouUrl;
+					return;
+				}
+				throw new Error('Error al enviar');
+			} catch (err) {
+				if (messageNode) {
+					messageNode.hidden = false;
+					messageNode.textContent = L.sendFail || '';
+				}
+				if (submitBtn) {
+					submitBtn.disabled = false;
+					const intentNow = intentInput ? intentInput.value : 'demo';
+					const flowReset = flowInputSubmit ? flowInputSubmit.value : '';
+					if (intentNow === 'pregunta') submitBtn.textContent = L.submitAsk || '';
+					else if (flowReset === 'demo') submitBtn.textContent = L.submitDemo || '';
+					else submitBtn.textContent = L.submitDefault || '';
+				}
+			}
+		});
+
+		const initializedPlan = setPlanFromUrl();
+		renderPlanBadge(initializedPlan);
+
+		if (listaPlanSelect) {
+			listaPlanSelect.addEventListener('change', () => {
+				if (planInput) planInput.value = (listaPlanSelect.value || '').toLowerCase();
+				validatePlanAgainstCapital();
+			});
+		}
+
+		const notifyContainer = document.getElementById('notifyContainer');
+		const notifyInput = document.getElementById('notifyInput');
+		const notifyCheckbox = document.getElementById('notifyCheckbox');
+		const notifyLabelText = document.getElementById('notifyLabelText');
+		if (initializedPlan === 'advanced' || initializedPlan === 'pro') {
+			if (notifyContainer) notifyContainer.hidden = false;
+			if (notifyInput) notifyInput.setAttribute('name', 'AvisarCuandoDisponible');
+			if (notifyLabelText) {
+				notifyLabelText.textContent = en
+					? 'Yes, notify me when ' + (initializedPlan === 'advanced' ? 'Advanced' : 'Pro') + ' is available.'
+					: 'Sí, avísame cuando ' + (initializedPlan === 'advanced' ? 'Advanced' : 'Pro') + ' esté disponible.';
+			}
+			if (notifyCheckbox && notifyInput) {
+				notifyCheckbox.addEventListener('change', () => {
+					if (notifyInput) notifyInput.value = notifyCheckbox.checked ? (en ? 'Yes' : 'Sí') : en ? 'No' : 'No';
+				});
+			}
+		}
+
+		capitalSelect && capitalSelect.addEventListener('change', validatePlanAgainstCapital);
+	})();
 </script>
 
 <style>
-  form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .form-field__container select,
-  .form-field__container input[type='text'] {
-    width: 100%;
-    padding: 0.5rem;
-    border: 2px solid var(--form-field-border-color, #ccc);
-    color: var(--form-field-input-color, #000000);
-    border-radius: var(--form-field-border-radius, 0.25rem);
-    outline-style: none;
-    font-size: 1rem;
-    font-family: inherit;
-    -webkit-appearance: none;
-  }
-  .form-field__container select:focus,
-  .form-field__container input:focus {
-    border: 2px solid var(--form-field-border-focus-color, #000);
-  }
-  .plan-validation-message {
-    margin: 0;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    background: rgba(245, 176, 65, 0.15);
-    border: 1px solid rgba(245, 176, 65, 0.65);
-    color: var(--theme-on-bg);
-    font-size: 0.95rem;
-  }
-  .selected-plan-badge {
-    margin: 0;
-    padding: 0.7rem;
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.95rem;
-  }
-  .selected-plan-badge--warning {
-    background: rgba(245, 176, 65, 0.12);
-    border-color: rgba(245, 176, 65, 0.6);
-  }
-  .form-field__notify-box {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(245, 176, 65, 0.35);
-    background: rgba(245, 176, 65, 0.06);
-  }
-  .form-field__notify-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    font-size: 0.95rem;
-  }
-  .form-field__notify-label input[type='checkbox'] {
-    width: auto;
-    accent-color: #f5b041;
-  }
+	form {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	.contact-intent {
+		margin: 0;
+		padding: 0.85rem 1rem;
+		border-radius: 0.65rem;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		background: rgba(245, 176, 65, 0.06);
+	}
+	.contact-intent__legend {
+		padding: 0 0.25rem;
+		font-size: 0.8rem;
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--theme-on-bg);
+	}
+	.contact-intent__row {
+		display: flex;
+		flex-direction: column;
+		gap: 0.55rem;
+		margin-top: 0.35rem;
+	}
+	.contact-intent__option {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.55rem;
+		cursor: pointer;
+		font-size: 0.98rem;
+		line-height: 1.35;
+		color: var(--theme-on-bg);
+	}
+	.contact-intent__option input {
+		margin-top: 0.2rem;
+		accent-color: #f5b041;
+		flex-shrink: 0;
+	}
+	.form-field__container select,
+	.form-field__container input[type='text'],
+	.form-field__container textarea {
+		width: 100%;
+		padding: 0.5rem;
+		border: 2px solid var(--form-field-border-color, #ccc);
+		color: var(--form-field-input-color, #000000);
+		border-radius: var(--form-field-border-radius, 0.25rem);
+		outline-style: none;
+		font-size: 1rem;
+		font-family: inherit;
+		-webkit-appearance: none;
+		resize: vertical;
+		min-height: 2.5rem;
+	}
+	.form-field__container select:focus,
+	.form-field__container input:focus,
+	.form-field__container textarea:focus {
+		border: 2px solid var(--form-field-border-focus-color, #000);
+	}
+	.plan-validation-message {
+		margin: 0;
+		padding: 0.75rem;
+		border-radius: 0.5rem;
+		background: rgba(245, 176, 65, 0.15);
+		border: 1px solid rgba(245, 176, 65, 0.65);
+		color: var(--theme-on-bg);
+		font-size: 0.95rem;
+	}
+	.selected-plan-badge {
+		margin: 0;
+		padding: 0.7rem;
+		border-radius: 0.5rem;
+		background: rgba(255, 255, 255, 0.06);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		font-size: 0.95rem;
+	}
+	.selected-plan-badge--warning {
+		background: rgba(245, 176, 65, 0.12);
+		border-color: rgba(245, 176, 65, 0.6);
+	}
+	.form-field__notify-box {
+		padding: 1rem;
+		border-radius: 0.5rem;
+		border: 1px solid rgba(245, 176, 65, 0.35);
+		background: rgba(245, 176, 65, 0.06);
+	}
+	.form-field__notify-label {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		cursor: pointer;
+		font-size: 0.95rem;
+	}
+	.form-field__notify-label input[type='checkbox'] {
+		width: auto;
+		accent-color: #f5b041;
+	}
 </style>

@@ -26,6 +26,7 @@ Documento de contenido/copy actual para revisión de equipo.
 ## SEO y analytics (Mar 2026)
 - **Meta global:** `src/config/settings.js` — title, description, keyword "disciplina en el trading".
 - **contact.astro:** Título propio ("Contacto y demo | tevsys"); descripción con keywords.
+- **Contacto dual-path (6 oct 2026):** formulario ES|EN — *Quiero la demo* vs *Solo quiero entender tevsys*; Formspree `Intent=demo|pregunta`. CHANGELOG § *contacto dual-path*.
 - **robots.txt:** `public/robots.txt` — Allow all, sitemap.xml.
 - **Sitemap:** `public/sitemap.xml` (estático, 11 URLs). Search Console: sitemap.xml enviado.
 - **Search Console:** Verificación HTML file. Indexación solicitada para home y páginas clave.
