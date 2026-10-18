@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — panel mimetizado remake 1min unificado (18 oct 2026)
+
+- **Qué:** `#como-se-siente` / `#panel-mimetizado` vuelve a MP4 real (ES|EN): `tevsys-mc-panel-mimetizado-1min.mp4` (~44,6 s) + poster (chart+panel blanco mimetizado). Sale el doble still marca (oscuro + claro) de oleada 1. · `?v=20261018`
+- **Idea:** un solo clip negro↔blanco · borde · 3 tonos de texto (Discreto / Equilibrado / Contraste). Ancla legacy `#panel-mimetizado-claro` → mismo vídeo.
+- **Blurb:** sin “tres destellos” (no va en este remake).
+- **Commit:** `web(tevsys): publish panel mimetizado 1min remake black to white`
+
 ## Cómo funciona — MC-CF-021 remake 1min + entrada canónica (18 oct 2026)
 
 - **Qué:** `#videoclip-programado-lunes` vuelve a MP4 real (ES|EN): `tevsys-mc-programado-lunes-1min.mp4` (~44 s) + poster (~41,5 s, panel PROGRAMADO · LUNES + cierre *puedes reconfigurar tantas veces como necesites*). Sale el still marca de oleada 1 en esa tarjeta. · `?v=20261018b` poster.

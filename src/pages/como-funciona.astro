@@ -291,29 +291,19 @@ const puestaEnMarchaLegend = {
 
 /**
  * Panel mimetizado — tras 4 piezas, antes auditoría.
- * MP4s retirados oleada 1 (28 sep 2026) — still marca hasta remakes con panel actual.
+ * Remake unificado 18 oct 2026: negro↔blanco + borde + 3 tonos texto (familia entrada canónica).
+ * `#panel-mimetizado-claro` = ancla legacy → mismo clip.
  */
 const comoSeSienteLegend = {
 	id: 'como-se-siente',
 	eyebrow: 'Panel',
 	leadBefore: 'Mimetiza el panel ',
 	leadAccent: 'a tu gusto',
-	blurb: 'Ajusta borde y colores — o más discreto, flotando en el gráfico. Al proteger, tres destellos aunque esté mimetizado.',
+	blurb: 'Fondo negro o blanco, borde a tu gusto, tres tonos de texto — y el gráfico junto al panel.',
 	ctaLabel: 'Panel mimetizado',
-	brandStillLabel: 'tevsys',
-	brandStillAria: 'Marca tevsys — panel mimetizado',
-	brandStillTone: 'steel' as BrandStillTone,
-	brandStillOrb: 'bl' as BrandStillOrb,
-	lightClip: {
-		id: 'panel-mimetizado-claro',
-		eyebrow: 'También en tema claro',
-		blurb: 'Mismo panel sobre gráfico claro — quien opera en blanco también lo ve limpio.',
-		ctaLabel: 'Tema claro',
-		brandStillLabel: 'tevsys',
-		brandStillAria: 'Marca tevsys — panel mimetizado tema claro',
-		brandStillTone: 'warm' as BrandStillTone,
-		brandStillOrb: 'br' as BrandStillOrb,
-	},
+	videoSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-1min.mp4?v=20261018',
+	posterSrc: '/videos/como-funciona/tevsys-mc-panel-mimetizado-1min-poster.jpg?v=20261018',
+	videoLabel: 'Mimetiza el panel a tu gusto — fondo, borde y texto',
 };
 
 const microclipBranches: MicroclipBranch[] = [
@@ -1037,43 +1027,23 @@ const microclipBranches: MicroclipBranch[] = [
 							</a>
 						</li>
 					</ul>
+					{/* Ancla legacy #panel-mimetizado-claro → mismo remake unificado */}
+					<span
+						id="panel-mimetizado-claro"
+						aria-hidden="true"
+						style="position:absolute;width:0;height:0;overflow:hidden"></span>
 					<div
-						class:list={[
-							'how-brand-still',
-							`how-brand-still--tone-${comoSeSienteLegend.brandStillTone ?? 'steel'}`,
-							`how-brand-still--orb-${comoSeSienteLegend.brandStillOrb ?? 'bl'}`,
-						]}
-						id="panel-mimetizado"
-						role="img"
-						aria-label={comoSeSienteLegend.brandStillAria}>
-						<span class="how-brand-still__orb" aria-hidden="true"></span>
-						<span class="how-brand-still__name">{comoSeSienteLegend.brandStillLabel}</span>
-					</div>
-
-					<div class="how-siente-light" id={comoSeSienteLegend.lightClip.id}>
-						<p class="how-eyebrow how-eyebrow--center">{comoSeSienteLegend.lightClip.eyebrow}</p>
-						<p class="how-section-sub how-siente-light__blurb">{comoSeSienteLegend.lightClip.blurb}</p>
-						<p class="how-siente-light__cta">
-							<a
-								class="how-puesta-marcha__link how-puesta-marcha__link--primary"
-								href={`#${comoSeSienteLegend.lightClip.id}`}>
-								{comoSeSienteLegend.lightClip.ctaLabel}
-								<span class="how-puesta-marcha__arrow" aria-hidden="true">
-									→
-								</span>
-							</a>
-						</p>
-						<div
-							class:list={[
-								'how-brand-still',
-								`how-brand-still--tone-${comoSeSienteLegend.lightClip.brandStillTone ?? 'warm'}`,
-								`how-brand-still--orb-${comoSeSienteLegend.lightClip.brandStillOrb ?? 'br'}`,
-							]}
-							role="img"
-							aria-label={comoSeSienteLegend.lightClip.brandStillAria}>
-							<span class="how-brand-still__orb" aria-hidden="true"></span>
-							<span class="how-brand-still__name">{comoSeSienteLegend.lightClip.brandStillLabel}</span>
-						</div>
+						class="how-embed how-embed--chrome how-siente-embed"
+						id="panel-mimetizado">
+						<video
+							controls
+							preload="none"
+							playsinline
+							poster={comoSeSienteLegend.posterSrc}
+							title={comoSeSienteLegend.videoLabel}>
+							<source src={comoSeSienteLegend.videoSrc} type="video/mp4" />
+							Tu navegador no soporta reproducción de video HTML5.
+						</video>
 					</div>
 			</div>
 				</section>
