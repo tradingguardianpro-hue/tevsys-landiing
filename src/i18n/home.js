@@ -23,9 +23,9 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
-		/* Lead: intradía / swing = puertas ámbar (18 oct 2026). */
+		/* Lead A (18 oct): 3 frases + puertas ámbar intradía/swing. */
 		definitionLeadBefore:
-			'tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana), tus días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en ',
+			'tevsys es una utilidad para MetaTrader 5. Tú decides las reglas — límites de pérdida y ganancia (día y semana) y tus días OFF. Se aplican sobre toda la cuenta desde un solo gráfico, en ',
 		definitionLeadIntraday: 'intradía',
 		definitionLeadIntradayHref: '/como-funciona#rama-protegido',
 		definitionLeadMid: ' y ',
@@ -34,7 +34,7 @@ export const homeCopy = {
 		definitionLeadAfter: '.',
 		/* Texto plano (SEO / espejos). */
 		definitionLead:
-			'tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana), tus días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en intradía y swing.',
+			'tevsys es una utilidad para MetaTrader 5. Tú decides las reglas — límites de pérdida y ganancia (día y semana) y tus días OFF. Se aplican sobre toda la cuenta desde un solo gráfico, en intradía y swing.',
 		/* Tres golpes separados (5 sep): SML fuera de aquí — «ampliar margen» rema contra el mensaje
 		   de este bloque. SML tiene su propia card y su micro. */
 		definitionBeats: [
@@ -204,7 +204,7 @@ export const homeCopy = {
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
 		definitionLeadBefore:
-			'tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week), your OFF days — and they apply across the whole account from a single chart, in ',
+			'tevsys is a MetaTrader 5 utility. You set the rules — loss and profit limits (day and week) and your OFF days. They apply across the whole account from a single chart, in ',
 		definitionLeadIntraday: 'intraday',
 		definitionLeadIntradayHref: '/como-funciona#rama-protegido',
 		definitionLeadMid: ' and ',
@@ -212,7 +212,7 @@ export const homeCopy = {
 		definitionLeadSwingHref: '/como-funciona#overnight-laborable',
 		definitionLeadAfter: '.',
 		definitionLead:
-			'tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week), your OFF days — and they apply across the whole account from a single chart, in intraday and swing.',
+			'tevsys is a MetaTrader 5 utility. You set the rules — loss and profit limits (day and week) and your OFF days. They apply across the whole account from a single chart, in intraday and swing.',
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
 			'If you try to trade while already locked, HyperClose closes in milliseconds and leaves a record of the attempt.',
