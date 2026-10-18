@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — puente ID operativa → Cómo funciona (18 oct noche)
+
+- **Qué:** bajo los 3 beats de definición: enlace ámbar *¿Cómo sabemos qué pasó en tu operativa? — tu ID tevsys* → `/como-funciona#tu-id-tevsys` (EN equivalente).
+- **Commit:** `web(tevsys): home bridge to tu-id on como-funciona`
+
 ## Cómo funciona — copy Tu ID (18 oct noche)
 
 - **Qué:** `#tu-id-tevsys` ES|EN — P1 *desde que instalas hasta el último cierre* · transición *Eso no es un adorno…* · P2 llano (cierres/operativa · tevsys vs MT5 · hilo único) · cierre *capa de auditoría… con precio y con sentido* (fuera “no es auditoría de pago” / slippage).

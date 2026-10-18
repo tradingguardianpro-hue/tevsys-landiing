@@ -38,6 +38,13 @@ const L = (href) => localizeHref(href, locale);
 				<ul class="tevsys-home-definition__beats" aria-label={t.definitionBeatsAria}>
 					{t.definitionBeats.map((beat) => <li>{beat}</li>)}
 				</ul>
+				<p class="tevsys-home-definition__id-bridge" aria-label={t.definitionIdBridgeAria}>
+					<a
+						class="tevsys-home-definition__id-bridge-link"
+						href={L(t.definitionIdBridgeHref)}
+						>{t.definitionIdBridgeLabel}</a
+					>
+				</p>
 				<p class="tevsys-home-definition__attribution">
 					{t.definitionAttributionBefore}<strong>{t.definitionAttributionAccent1}</strong
 					>{t.definitionAttributionMid}<strong>{t.definitionAttributionAccent2}</strong

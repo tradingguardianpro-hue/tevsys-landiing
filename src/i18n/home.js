@@ -39,6 +39,10 @@ export const homeCopy = {
 			'Deja acta desde la instalación: límites pactados, cuándo y cómo se cerró, disciplina bajo presión — y más de tu operativa — contrastable con los informes oficiales de MT5.',
 		],
 		definitionBeatsAria: 'Lo que hace tevsys',
+		/* 18 oct 2026 — puente ID → /como-funciona#tu-id-tevsys */
+		definitionIdBridgeLabel: '¿Cómo sabemos qué pasó en tu operativa? — tu ID tevsys',
+		definitionIdBridgeHref: '/como-funciona#tu-id-tevsys',
+		definitionIdBridgeAria: 'Tu ID tevsys — identidad de cada caso',
 		/* 9 sep + 11 sep: negrita solo el contraste decisión vs ejecución (no toda la línea). */
 		definitionAttributionBefore: 'Atribución clara: cuánto fue ',
 		definitionAttributionAccent1: 'decisión de tevsys',
@@ -207,6 +211,10 @@ export const homeCopy = {
 			'It leaves a record from install: agreed limits, when and how it closed, discipline under pressure — and more of your trading activity — cross-checkable against official MT5 reports.',
 		],
 		definitionBeatsAria: 'What tevsys does',
+		/* 18 Oct 2026 — ID bridge → /en/como-funciona#tu-id-tevsys */
+		definitionIdBridgeLabel: 'How do we know what happened in your trading? — your tevsys ID',
+		definitionIdBridgeHref: '/como-funciona#tu-id-tevsys',
+		definitionIdBridgeAria: 'Your tevsys ID — identity of each case',
 		definitionAttributionBefore: 'Clear attribution: how much was ',
 		definitionAttributionAccent1: 'tevsys’s close decision',
 		definitionAttributionMid: ' and how much was the ',
