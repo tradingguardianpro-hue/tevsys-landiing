@@ -72,8 +72,8 @@ const panelAdaptativo = {
 };
 
 /**
- * Your tevsys ID — visual lead of Audit act (9 Sep 2026).
- * When founder says upload capture: set `captureSrc`. Path: `/images/evidence/tevsys-modal-tu-id-tvs.jpg`
+ * Your tevsys ID — visual lead of Audit act.
+ * Remake 18 Oct 2026: ~34 s clip (canonical brand intro) replaces still capture.
  */
 const tuIdTevsysBlock = {
 	id: 'tu-id-tevsys',
@@ -83,11 +83,9 @@ const tuIdTevsysBlock = {
 	body: 'Every install carries a TVS-… code tied to your license. It is the label for your case: panel, logs and packs can refer to the same file and be cross-checked with official MT5 reports for the same period.',
 	bodyFollow:
 		'It goes with the record from install and with close attribution (tevsys decision vs MT5 execution, not mixed with slippage). It is not paid audit and not market analysis — it is case identity in MetaTrader 5.',
-	captureSrc: '/images/evidence/tevsys-modal-tu-id-tvs.png?v=20260909c',
-	captureAlt: 'Your TEVsys ID modal on the panel — TVS-… code tied to the license; click ID at the bottom right.',
-	captureCaption: 'MT5 panel · Your TEVsys ID modal · Click → view ID',
-	placeholderHint: 'Screenshot: Your TEVsys ID modal',
-	placeholderSub: 'Coming soon — panel with the modal and TVS-… code.',
+	videoSrc: '/videos/como-funciona/tevsys-mc-tu-id-tevsys-40s.mp4?v=20261018',
+	posterSrc: '/videos/como-funciona/tevsys-mc-tu-id-tevsys-40s-poster.jpg?v=20261018',
+	videoLabel: 'Your tevsys ID — TVS-… code tied to your license',
 	ctaHref: '/en/company/contact?flow=auditoria-ia',
 	ctaLabel: 'Audit layer',
 };
@@ -1074,30 +1072,17 @@ const microclipBranches: MicroclipBranch[] = [
 						</header>
 						<p class="how-id-tevsys__body">{tuIdTevsysBlock.body}</p>
 						<p class="how-id-tevsys__body how-id-tevsys__body--follow">{tuIdTevsysBlock.bodyFollow}</p>
-						{
-							tuIdTevsysBlock.captureSrc ? (
-								<EvidenceImageLightbox
-									src={tuIdTevsysBlock.captureSrc}
-									alt={tuIdTevsysBlock.captureAlt}
-									caption={tuIdTevsysBlock.captureCaption}
-									figureClass="how-cashflow__figure"
-									triggerClass="how-cashflow__zoom"
-									imgClass="how-cashflow__img"
-									capClass="how-cashflow__cap"
-								/>
-							) : (
-								<div
-									class="how-id-tevsys__placeholder"
-									role="status"
-									aria-label="Your TEVsys ID modal screenshot — coming soon">
-									<span class="how-id-tevsys__placeholder-hint">{tuIdTevsysBlock.placeholderHint}</span>
-									<span class="how-id-tevsys__placeholder-sub">{tuIdTevsysBlock.placeholderSub}</span>
-									<span class="how-id-tevsys__placeholder-code" aria-hidden="true">
-										TVS-…
-									</span>
-								</div>
-							)
-						}
+						<div class="how-embed how-embed--chrome how-id-tevsys__embed">
+							<video
+								controls
+								preload="none"
+								playsinline
+								poster={tuIdTevsysBlock.posterSrc}
+								title={tuIdTevsysBlock.videoLabel}>
+								<source src={tuIdTevsysBlock.videoSrc} type="video/mp4" />
+								Your browser does not support HTML5 video.
+							</video>
+						</div>
 						<p class="how-id-tevsys__cta">
 							<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={tuIdTevsysBlock.ctaHref}>
 								{tuIdTevsysBlock.ctaLabel}
@@ -3052,11 +3037,24 @@ const microclipBranches: MicroclipBranch[] = [
 		margin: clamp(0.95rem, 2.4vw, 1.25rem) 0 0;
 	}
 
-	/* Your tevsys ID — audit act lead (placeholder until capture). */
+	/* Your tevsys ID — audit act lead (clip 18 Oct 2026). */
 	.how-id-tevsys {
 		margin: 0 0 clamp(1.6rem, 4vw, 2.35rem);
 		padding-bottom: clamp(1.35rem, 3.5vw, 1.9rem);
 		border-bottom: 1px solid rgba(120, 160, 200, 0.18);
+	}
+
+	.how-id-tevsys__embed {
+		margin: 0 auto clamp(1rem, 2.6vw, 1.35rem);
+		max-width: min(42rem, 100%);
+	}
+
+	.how-id-tevsys__embed video {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: clamp(0.35rem, 0.8vw, 0.55rem);
+		background: #0a0a0a;
 	}
 
 	html[data-theme='light'] .how-id-tevsys {

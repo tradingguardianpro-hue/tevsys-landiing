@@ -68,9 +68,8 @@ const panelAdaptativo = {
 };
 
 /**
- * Tu ID tevsys — lead visual del acto Auditoría (9 sep 2026).
- * Cuando el fundador diga «sube esta captura»: poner `captureSrc` + caption/alt y quitar el placeholder.
- * Ruta prevista: `/images/evidence/tevsys-modal-tu-id-tvs.jpg` (o .png).
+ * Tu ID tevsys — lead visual del acto Auditoría.
+ * Remake 18 oct 2026: clip ~34 s (familia entrada canónica) sustituye captura fija.
  */
 const tuIdTevsysBlock = {
 	id: 'tu-id-tevsys',
@@ -80,12 +79,9 @@ const tuIdTevsysBlock = {
 	body: 'Cada instalación lleva un código TVS-… ligado a tu licencia. Es la etiqueta de tu caso: panel, registros y packs pueden hablar del mismo expediente y cruzarse con los informes oficiales de MT5 del mismo periodo.',
 	bodyFollow:
 		'Va con la acta desde la instalación y con la atribución en el cierre (decisión tevsys vs ejecución MT5, sin mezclarlo con slippage). No es auditoría de pago ni análisis de mercado — es identidad del caso en MetaTrader 5.',
-	/** Colgada 9 sep 2026 — captura modal Tu ID TEVsys (panel + TVS-…). */
-	captureSrc: '/images/evidence/tevsys-modal-tu-id-tvs.png?v=20260909c',
-	captureAlt: 'Modal Tu ID TEVsys en el panel — código TVS-… ligado a la licencia; clic en ID abajo a la derecha.',
-	captureCaption: 'Panel MT5 · modal Tu ID TEVsys · Clic → ver ID',
-	placeholderHint: 'Captura del modal «Tu ID TEVsys»',
-	placeholderSub: 'En preparación — panel con el modal y el código TVS-…',
+	videoSrc: '/videos/como-funciona/tevsys-mc-tu-id-tevsys-40s.mp4?v=20261018',
+	posterSrc: '/videos/como-funciona/tevsys-mc-tu-id-tevsys-40s-poster.jpg?v=20261018',
+	videoLabel: 'Tu ID tevsys — código TVS-… ligado a tu licencia',
 	ctaHref: '/auditoria-ia',
 	ctaLabel: 'Capa de auditoría',
 };
@@ -1072,30 +1068,17 @@ const microclipBranches: MicroclipBranch[] = [
 						</header>
 						<p class="how-id-tevsys__body">{tuIdTevsysBlock.body}</p>
 						<p class="how-id-tevsys__body how-id-tevsys__body--follow">{tuIdTevsysBlock.bodyFollow}</p>
-						{
-							tuIdTevsysBlock.captureSrc ? (
-								<EvidenceImageLightbox
-									src={tuIdTevsysBlock.captureSrc}
-									alt={tuIdTevsysBlock.captureAlt}
-									caption={tuIdTevsysBlock.captureCaption}
-									figureClass="how-cashflow__figure"
-									triggerClass="how-cashflow__zoom"
-									imgClass="how-cashflow__img"
-									capClass="how-cashflow__cap"
-								/>
-							) : (
-								<div
-									class="how-id-tevsys__placeholder"
-									role="status"
-									aria-label="Captura del modal Tu ID TEVsys en preparación">
-									<span class="how-id-tevsys__placeholder-hint">{tuIdTevsysBlock.placeholderHint}</span>
-									<span class="how-id-tevsys__placeholder-sub">{tuIdTevsysBlock.placeholderSub}</span>
-									<span class="how-id-tevsys__placeholder-code" aria-hidden="true">
-										TVS-…
-									</span>
-								</div>
-							)
-						}
+						<div class="how-embed how-embed--chrome how-id-tevsys__embed">
+							<video
+								controls
+								preload="none"
+								playsinline
+								poster={tuIdTevsysBlock.posterSrc}
+								title={tuIdTevsysBlock.videoLabel}>
+								<source src={tuIdTevsysBlock.videoSrc} type="video/mp4" />
+								Tu navegador no soporta reproducción de video HTML5.
+							</video>
+						</div>
 						<p class="how-id-tevsys__cta">
 							<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={tuIdTevsysBlock.ctaHref}>
 								{tuIdTevsysBlock.ctaLabel}
@@ -3070,11 +3053,24 @@ const microclipBranches: MicroclipBranch[] = [
 		margin: clamp(0.95rem, 2.4vw, 1.25rem) 0 0;
 	}
 
-	/* Tu ID tevsys — lead del acto Auditoría (placeholder hasta captura). */
+	/* Tu ID tevsys — lead del acto Auditoría (clip 18 oct 2026). */
 	.how-id-tevsys {
 		margin: 0 0 clamp(1.6rem, 4vw, 2.35rem);
 		padding-bottom: clamp(1.35rem, 3.5vw, 1.9rem);
 		border-bottom: 1px solid rgba(120, 160, 200, 0.18);
+	}
+
+	.how-id-tevsys__embed {
+		margin: 0 auto clamp(1rem, 2.6vw, 1.35rem);
+		max-width: min(42rem, 100%);
+	}
+
+	.how-id-tevsys__embed video {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: clamp(0.35rem, 0.8vw, 0.55rem);
+		background: #0a0a0a;
 	}
 
 	html[data-theme='light'] .how-id-tevsys {
