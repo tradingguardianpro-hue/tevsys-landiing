@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — copy Tu ID (18 oct noche)
+
+- **Qué:** `#tu-id-tevsys` ES|EN — P1 *desde que instalas hasta el último cierre* · transición *Eso no es un adorno…* · P2 llano (cierres/operativa · tevsys vs MT5 · hilo único) · cierre *capa de auditoría… con precio y con sentido* (fuera “no es auditoría de pago” / slippage).
+- **Commit:** `web(tevsys): tu-id copy from install to last close`
+
 ## Cómo funciona — eyebrow Tu ID: Identidad de cada caso (18 oct 2026)
 
 - **Qué:** `#tu-id-tevsys` ES *Identidad de cada caso* · EN *Identity of each case* (antes “del caso” / Case identity).
