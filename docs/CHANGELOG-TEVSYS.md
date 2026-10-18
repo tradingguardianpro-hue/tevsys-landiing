@@ -6,7 +6,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Cómo funciona — MC-CF-021 remake 1min + entrada canónica (18 oct 2026)
 
-- **Qué:** `#videoclip-programado-lunes` vuelve a MP4 real (ES|EN): `tevsys-mc-programado-lunes-1min.mp4` (~44 s) + poster mid (~40 s, panel PROGRAMADO · LUNES). Sale el still marca de oleada 1 en esa tarjeta.
+- **Qué:** `#videoclip-programado-lunes` vuelve a MP4 real (ES|EN): `tevsys-mc-programado-lunes-1min.mp4` (~44 s) + poster (~41,5 s, panel PROGRAMADO · LUNES + cierre *puedes reconfigurar tantas veces como necesites*). Sale el still marca de oleada 1 en esa tarjeta. · `?v=20261018b` poster.
 - **Craft:** entrada marca TEVSYS + *Trading Edge Verification System* → título entre barras ámbar → cuerpo GUARDAR/confirmar/engranaje (panel actual).
 - **Canon familia:** misma entrada + título ámbar en remakes siguientes; música muy floja = opcional.
 - **Commit:** `web(tevsys): publish programado lunes 1min remake with brand intro`
