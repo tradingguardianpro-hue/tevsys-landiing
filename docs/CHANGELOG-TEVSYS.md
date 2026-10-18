@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — intradía / swing clicables ámbar (18 oct noche)
+
+- **Qué:** en el lead de definición, *intradía* → `#rama-protegido` · *swing* → `#overnight-laborable` (ámbar ES|EN). HyperClose = estrella dentro de la rama, no destino único del clic.
+- **Commit:** `web(tevsys): amber links intradía and swing on home lead`
+
 ## Home — puente ID operativa → Cómo funciona (18 oct noche)
 
 - **Qué:** bajo los 3 beats de definición: enlace ámbar *¿Cómo sabemos qué pasó en tu operativa? — tu ID tevsys* → `/como-funciona#tu-id-tevsys` (EN equivalente).

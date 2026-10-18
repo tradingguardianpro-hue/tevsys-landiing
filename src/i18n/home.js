@@ -23,12 +23,16 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
-		/* Lead 11 sep noche: coma + tus días OFF; negrita solo alcance intradía/swing. */
+		/* Lead: intradía / swing = puertas ámbar (18 oct 2026). */
 		definitionLeadBefore:
 			'tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana), tus días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en ',
-		definitionLeadAccent: 'intradía y swing',
+		definitionLeadIntraday: 'intradía',
+		definitionLeadIntradayHref: '/como-funciona#rama-protegido',
+		definitionLeadMid: ' y ',
+		definitionLeadSwing: 'swing',
+		definitionLeadSwingHref: '/como-funciona#overnight-laborable',
 		definitionLeadAfter: '.',
-		/* Texto plano (SEO / espejos); pantalla usa Before/Accent/After. */
+		/* Texto plano (SEO / espejos). */
 		definitionLead:
 			'tevsys es una utilidad para MetaTrader 5: las reglas de operativa las pones tú — límites de pérdida y ganancia (día y semana), tus días OFF — y se aplican sobre toda la cuenta desde un solo gráfico, en intradía y swing.',
 		/* Tres golpes separados (5 sep): SML fuera de aquí — «ampliar margen» rema contra el mensaje
@@ -201,7 +205,11 @@ export const homeCopy = {
 		},
 		definitionLeadBefore:
 			'tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week), your OFF days — and they apply across the whole account from a single chart, in ',
-		definitionLeadAccent: 'intraday and swing',
+		definitionLeadIntraday: 'intraday',
+		definitionLeadIntradayHref: '/como-funciona#rama-protegido',
+		definitionLeadMid: ' and ',
+		definitionLeadSwing: 'swing',
+		definitionLeadSwingHref: '/como-funciona#overnight-laborable',
 		definitionLeadAfter: '.',
 		definitionLead:
 			'tevsys is a MetaTrader 5 utility: you set the trading rules — loss and profit limits (day and week), your OFF days — and they apply across the whole account from a single chart, in intraday and swing.',

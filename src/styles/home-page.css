@@ -65,6 +65,27 @@
 	html[data-theme='light'] .tevsys-home-definition__attribution strong {
 		color: rgba(35, 42, 55, 0.95);
 	}
+	/* 18 oct 2026 — intradía / swing = puertas (ámbar, misma familia que ID bridge). */
+	.tevsys-home-definition__world-link {
+		color: #f5b041;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(245, 176, 65, 0.45);
+		padding-bottom: 0.02rem;
+		font-weight: 650;
+		transition: color 0.15s ease, border-color 0.15s ease;
+	}
+	.tevsys-home-definition__world-link:hover {
+		color: #f7c050;
+		border-bottom-color: rgba(247, 192, 80, 0.75);
+	}
+	html[data-theme='light'] .tevsys-home-definition__world-link {
+		color: #c47f12;
+		border-bottom-color: rgba(196, 127, 18, 0.45);
+	}
+	html[data-theme='light'] .tevsys-home-definition__world-link:hover {
+		color: #a86b0e;
+		border-bottom-color: rgba(168, 107, 14, 0.65);
+	}
 	/* Tres golpes: uno por lÃ­nea, punto Ã¡mbar de marca. Escaneables sueltos, no un muro. */
 	.tevsys-home-definition__beats {
 		margin: clamp(1.05rem, 2.2vw, 1.45rem) auto;
