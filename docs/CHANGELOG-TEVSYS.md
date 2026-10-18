@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — MC-CF-021 remake 1min + entrada canónica (18 oct 2026)
+
+- **Qué:** `#videoclip-programado-lunes` vuelve a MP4 real (ES|EN): `tevsys-mc-programado-lunes-1min.mp4` (~44 s) + poster mid (~40 s, panel PROGRAMADO · LUNES). Sale el still marca de oleada 1 en esa tarjeta.
+- **Craft:** entrada marca TEVSYS + *Trading Edge Verification System* → título entre barras ámbar → cuerpo GUARDAR/confirmar/engranaje (panel actual).
+- **Canon familia:** misma entrada + título ámbar en remakes siguientes; música muy floja = opcional.
+- **Commit:** `web(tevsys): publish programado lunes 1min remake with brand intro`
+
 ## Contacto — dual-path demo vs entender (6 oct 2026)
 
 - **Qué:** en `/company/contact` ES|EN el visitante elige **Quiero la demo** o **Solo quiero entender tevsys**.
