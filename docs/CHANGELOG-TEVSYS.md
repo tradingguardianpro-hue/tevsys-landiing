@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — eyebrow Tu ID: Identidad de cada caso (18 oct 2026)
+
+- **Qué:** `#tu-id-tevsys` ES *Identidad de cada caso* · EN *Identity of each case* (antes “del caso” / Case identity).
+- **Commit:** `web(tevsys): eyebrow identidad de cada caso on tu-id`
+
 ## Cómo funciona — Tu ID tevsys clip 40s (18 oct 2026)
 
 - **Qué:** `#tu-id-tevsys` ES|EN — captura fija sustituida por `tevsys-mc-tu-id-tevsys-40s.mp4` (~34 s) + poster modal TVS-…. Familia entrada canónica · overlays licencia / soporte+auditorías / clic ID.
