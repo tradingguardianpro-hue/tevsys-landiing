@@ -4,6 +4,17 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — lunes entra protección + audio Penguin (20 oct 2026)
+
+- **Qué:** `#videoclip-lunes-entra-proteccion` en rama Preparar (ES|EN), 2.º clip tras MC-CF-021. MP4 ~44 s + poster estado protegido. Primer microclip web con firma sonora Penguin (chillout). Overlay *Mira la primera línea y el botón* → cambio PROGRAMADO→protegido → tres destellos.
+- **Archivos:** `tevsys-mc-lunes-entra-proteccion-40s.mp4` + `…-poster.jpg` · `?v=20261020`.
+- **Commit:** `web(tevsys): publish lunes-entra-proteccion clip with penguin audio`
+
+## Home — 3.er beat acta más corto (18 oct noche)
+
+- **Qué:** beat 3 — *qué pactaste, cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5* (ES|EN).
+- **Commit:** `web(tevsys): shorten home definition third beat`
+
 ## Home — lead definición en 3 frases (18 oct noche)
 
 - **Qué:** lead A — utilidad MT5 · tú decides reglas · se aplican en cuenta + *intradía*/*swing* ámbar. Ingeniería de lectura (fuera la frase única con doble raya).
@@ -28,6 +39,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 - **Qué:** `#tu-id-tevsys` ES *Identidad de cada caso* · EN *Identity of each case* (antes “del caso” / Case identity).
 - **Commit:** `web(tevsys): eyebrow identidad de cada caso on tu-id`
+
+## Roadmap — micropágina «el panel en acción» (19 oct 2026 · NO implementado)
+
+- **Qué (acuerdo):** home, bajo 4 cards → puente *¿Quieres ver cómo reacciona…?* + frases *panel te habla / te cuenta / al clic…* → micropágina propia (titular + 2 vídeos en columna: swing adaptado · intradía modales) → CTA. Clic **no** a Cómo funciona directo. Gabi = rodaje/edición.
+- **Docs:** hub TGP V12 **(panelEnAccionWeb)** · **(webRoadmapCuandoToque)** § *Panel en acción* · espejo `CONTENIDO_WEB_*`.
+- **Estado:** roadmap only — **cero Astro** hasta OK + MP4s.
 
 ## Cómo funciona — Tu ID tevsys clip 40s (18 oct 2026)
 

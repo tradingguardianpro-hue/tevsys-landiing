@@ -40,7 +40,7 @@ export const homeCopy = {
 		definitionBeats: [
 			'Cierra al alcanzar los límites que has configurado, con precisión documentada.',
 			'Si intentas operar ya bloqueado, HyperClose cierra en milisegundos y deja constancia del intento.',
-			'Deja acta desde la instalación: límites pactados, cuándo y cómo se cerró, disciplina bajo presión — y más de tu operativa — contrastable con los informes oficiales de MT5.',
+			'Deja acta desde la instalación: qué pactaste, cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.',
 		],
 		definitionBeatsAria: 'Lo que hace tevsys',
 		/* 18 oct 2026 — puente ID → /como-funciona#tu-id-tevsys */
@@ -216,7 +216,7 @@ export const homeCopy = {
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
 			'If you try to trade while already locked, HyperClose closes in milliseconds and leaves a record of the attempt.',
-			'It leaves a record from install: agreed limits, when and how it closed, discipline under pressure — and more of your trading activity — cross-checkable against official MT5 reports.',
+			'It leaves a record from install: what you agreed, when it closed and under which rules — cross-checkable against the official MT5 report.',
 		],
 		definitionBeatsAria: 'What tevsys does',
 		/* 18 Oct 2026 — ID bridge → /en/como-funciona#tu-id-tevsys */
