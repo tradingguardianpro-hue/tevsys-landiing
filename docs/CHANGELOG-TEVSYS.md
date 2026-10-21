@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Tu ID remake overlays + Penguin (21 oct 2026)
+
+- **Qué:** sustituye `#tu-id-tevsys` ES|EN — ~37 s. Ámbar *Así sabemos qué pasó en tu operativa* · identificador personal / no se transfiere / soporte+evidencia / clic ID. Sin cola negra. Audio Penguin. `?v=20261021`.
+- **Commit:** `web(tevsys): refresh tu-id clip with plain overlays and penguin`
+
 ## Cómo funciona — lunes entra protección + audio Penguin (20 oct 2026)
 
 - **Qué:** `#videoclip-lunes-entra-proteccion` en rama Preparar (ES|EN), 2.º clip tras MC-CF-021. MP4 ~44 s + poster estado protegido. Primer microclip web con firma sonora Penguin (chillout). Overlay *Mira la primera línea y el botón* → cambio PROGRAMADO→protegido → tres destellos.
