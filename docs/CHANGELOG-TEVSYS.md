@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — panel mimetizado + Penguin (22 oct 2026)
+
+- **Qué:** `#panel-mimetizado` / `#como-se-siente` ES|EN — remake ~43 s con intro canónica, overlays (estilo / borde / 3 tonos texto), negro↔blanco, audio Penguin. `?v=20261022`.
+- **Commit:** `web(tevsys): refresh panel mimetizado with penguin audio`
+
 ## Cómo funciona — Tu ID remake overlays + Penguin (21 oct 2026)
 
 - **Qué:** sustituye `#tu-id-tevsys` ES|EN — ~37 s. Ámbar *Así sabemos qué pasó en tu operativa* · identificador personal / no se transfiere / soporte+evidencia / clic ID. Sin cola negra. Audio Penguin. `?v=20261021`.

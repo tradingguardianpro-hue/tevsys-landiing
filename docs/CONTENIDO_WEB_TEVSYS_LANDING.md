@@ -113,7 +113,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **MC-CF-021 (18 oct 2026):** remake ~44 s + entrada canónica + título ámbar · `tevsys-mc-programado-lunes-1min.mp4` · `?v=20261018` · poster panel PROGRAMADO (no negro).
 - **MC-CF-028 (20 oct 2026):** `#videoclip-lunes-entra-proteccion` · rama Preparar · ~44 s · PROGRAMADO→protegido lunes + Penguin · `tevsys-mc-lunes-entra-proteccion-40s.mp4` · `?v=20261020`.
 - **MC-CF-020 (21 ago):** `#videoclip-corrige-errores` · rama Preparar · ~30 s · CORRIGE ERRORES + modal 1 error · `?v=20260821`.
-- **Panel / Cómo se siente (18 oct 2026):** `#como-se-siente` · *Mimetiza el panel a tu gusto* · remake unificado ~44,6 s (`tevsys-mc-panel-mimetizado-1min`) negro↔blanco · borde · 3 tonos texto · legacy `#panel-mimetizado-claro` → mismo MP4. Sin claim tres destellos en este clip.
+- **Panel / Cómo se siente (22 oct 2026):** `#como-se-siente` · *Mimetiza el panel a tu gusto* · remake ~43 s + Penguin · negro↔blanco · borde · 3 tonos texto · legacy `#panel-mimetizado-claro` → mismo MP4. V12 **(mcMimPenguin)**.
 - **i18n ES|EN (3 sep 2026 — oleada 1 ✅):** selector header `ES | EN`; `/en/` home; `/en/company/contact`; `/en/como-funciona` ligero. Copy propio. Oleada 2: precios + features. V12 **(i18nWave1)**.
 - **i18n ES|EN (20 ago, plan):** oleadas; no Google Translate. Agenda + V12 **(i18nWeb)**.
 - **Tres ramas microclips (16 ago 2026 · oleada 1 stills 28 sep):** Preparar / Ya protegido / Operación en curso — MP4s retirados → still marca + orb variada (ES|EN); copy de escenario. V12 **(cfOleada1Stills)**. Remakes con panel nuevo pendientes.
