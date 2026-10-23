@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — aire definición → ID → capas (23 oct noche)
+
+- **Qué:** más espacio lead→viñetas; hueco grande tras las 3 viñetas para bajar scroll hasta *¿Cómo sabemos…?* (Tu ID); más aire antes del puente Precisión · HyperClose · SML · Evidencia.
+- **Commit:** `web(tevsys): add breathing room before home ID bridge and layer cut`
+
 ## Home — trazabilidad en el lead (23 oct noche)
 
 - **Qué:** tras intradía/swing: *Deja trazabilidad desde la instalación — y de lo que pasa en tu operativa.* Beat 3 = acta/contraste (sin repetir la palabra). Sin «todo».
