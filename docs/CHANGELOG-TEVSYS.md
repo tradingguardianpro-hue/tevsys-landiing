@@ -4,6 +4,17 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — panel adaptativo visual-first (23 oct 2026)
+
+- **Qué:** `#panel-adaptativo` ES|EN — orden **título → lead corto → captura panel → detalle → CTA**; losa un peldaño más clara (menos pozo). Misma marca/copy; solo ritmo. Clase `how-cashflow--visual-first`.
+- **Por qué:** piloto tras feedback Raúl / densidad al scroll (no tema blanco).
+- **Commit:** `web(tevsys): visual-first flow on panel-adaptativo block`
+
+## Ref visual móvil (+ desktop) — expediente 23 oct 2026
+
+- **Qué:** capturas fundador (home móvil: menú ☰ descentrado, halo, cards torcidas, muro de texto) + desktop ~75 % (home / cómo funciona). Carpeta `docs/ref-visual-movil-oct2026/` + `HANDOFF_REF_VISUAL_MOVIL_OCT2026.md`. Espejo TGP `docs/ref-visual-web-movil-oct2026/`. **Sin** cambio de código; base para Mario / pasada móvil futura.
+- **Retomar:** *«móvil web»* · *«ref visual móvil»*.
+
 ## Cómo funciona — panel mimetizado + Penguin (22 oct 2026)
 
 - **Qué:** `#panel-mimetizado` / `#como-se-siente` ES|EN — remake ~43 s con intro canónica, overlays (estilo / borde / 3 tonos texto), negro↔blanco, audio Penguin. `?v=20261022`.

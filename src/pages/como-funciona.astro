@@ -630,8 +630,9 @@ const microclipBranches: MicroclipBranch[] = [
 			</div>
 		</div>
 
+		{/* 23 oct 2026 — piloto flujo visual: título + lead corto → panel → detalle (misma marca, menos muro). */}
 		<section
-			class="how-cashflow how-cashflow--stage"
+			class="how-cashflow how-cashflow--stage how-cashflow--visual-first"
 			id={panelAdaptativo.id}
 			aria-labelledby="how-panel-adaptativo-title">
 			<div class="how-cashflow__halo" aria-hidden="true"></div>
@@ -644,8 +645,7 @@ const microclipBranches: MicroclipBranch[] = [
 						<span class="how-present-title__accent how-puesta-marcha__accent">{panelAdaptativo.titleAccent}</span>
 					</h2>
 				</header>
-				<p class="how-cashflow__body tevsys-copy-muted">{panelAdaptativo.body}</p>
-				<p class="how-cashflow__body how-cashflow__body--follow tevsys-copy-muted">{panelAdaptativo.bodyFollow}</p>
+				<p class="how-cashflow__body how-cashflow__body--lead tevsys-copy-muted">{panelAdaptativo.body}</p>
 				<EvidenceImageLightbox
 					src={panelAdaptativo.imgSrc}
 					alt={panelAdaptativo.imgAlt}
@@ -655,6 +655,7 @@ const microclipBranches: MicroclipBranch[] = [
 					imgClass="how-cashflow__img"
 					capClass="how-cashflow__cap"
 				/>
+				<p class="how-cashflow__body how-cashflow__body--follow tevsys-copy-muted">{panelAdaptativo.bodyFollow}</p>
 				<p class="how-cashflow__cta">
 					<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={panelAdaptativo.ctaHref}>
 						{panelAdaptativo.ctaLabel}
@@ -2969,6 +2970,16 @@ const microclipBranches: MicroclipBranch[] = [
 		box-shadow: inset 0 0 clamp(3rem, 11vw, 6rem) rgba(0, 0, 0, 0.62);
 	}
 
+	/* Piloto panel-adaptativo (23 oct): un peldaño más de luz + menos pozo negro. */
+	html[data-theme='dark'] .how-cashflow--visual-first .how-cashflow__halo {
+		background:
+			radial-gradient(ellipse 70% 32% at 50% 6%, rgba(120, 132, 158, 0.28) 0%, transparent 55%),
+			radial-gradient(ellipse 78% 42% at 50% 28%, rgba(58, 66, 84, 0.34) 0%, transparent 60%),
+			radial-gradient(ellipse 90% 44% at 50% 82%, rgba(36, 42, 56, 0.14) 0%, transparent 55%),
+			linear-gradient(180deg, hsl(222 18% 5.2%) 0%, hsl(222 22% 3.2%) 100%);
+		box-shadow: inset 0 0 clamp(2.2rem, 8vw, 4.5rem) rgba(0, 0, 0, 0.42);
+	}
+
 	html[data-theme='light'] .how-cashflow__halo {
 		background:
 			radial-gradient(ellipse 60% 26% at 50% 10%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
@@ -3000,6 +3011,34 @@ const microclipBranches: MicroclipBranch[] = [
 		margin-top: clamp(0.65rem, 1.8vw, 0.95rem);
 		/* Aire antes de la prueba visual — no pegar explicación al frame. */
 		padding-bottom: clamp(0.35rem, 1.2vw, 0.65rem);
+	}
+
+	/* Visual first: lead corto → captura → detalle (el follow ya no “empuja” la imagen abajo). */
+	.how-cashflow--visual-first .how-cashflow__body--lead {
+		margin-top: clamp(0.55rem, 1.6vw, 0.85rem);
+		margin-bottom: 0;
+		padding-bottom: 0;
+		max-width: 36rem;
+		text-align: center;
+	}
+
+	.how-cashflow--visual-first .how-cashflow__figure {
+		margin-top: clamp(0.95rem, 2.8vw, 1.35rem);
+	}
+
+	.how-cashflow--visual-first.how-cashflow--stage .how-cashflow__figure {
+		margin-top: clamp(0.95rem, 2.8vw, 1.35rem);
+	}
+
+	.how-cashflow--visual-first .how-cashflow__body--follow {
+		margin-top: clamp(0.85rem, 2.2vw, 1.15rem);
+		padding-bottom: 0;
+		max-width: 36rem;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: clamp(0.88rem, 1.7vw, 0.96rem);
+		line-height: 1.52;
+		text-align: left;
 	}
 
 	.how-cashflow__em {
