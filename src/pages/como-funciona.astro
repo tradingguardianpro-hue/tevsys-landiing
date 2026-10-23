@@ -1149,6 +1149,11 @@ const microclipBranches: MicroclipBranch[] = [
 
 		{/* «De cero a protegido» — STANDBY 11 sep 2026. Reservado: {zeroToProtected.title} · {zeroToProtected.eyebrow}. Restaurar sección cuando haya guión+vídeo. */}
 
+		<p class="how-more-faq-cut" id="preguntas-frecuentes">
+			<span class="how-more-faq-cut__line" aria-hidden="true"></span>
+			<span class="how-more-faq-cut__label">Preguntas frecuentes</span>
+		</p>
+
 		<section
 			class="how-coverage how-coverage--overnight"
 			id="overnight-faq"
@@ -1230,7 +1235,7 @@ const microclipBranches: MicroclipBranch[] = [
 			id="faq-espejo"
 			aria-labelledby="how-faq-espejo-title">
 			<div class="how-coverage__inner">
-				<p class="how-eyebrow how-eyebrow--center how-coverage__eyebrow">Preguntas frecuentes</p>
+				<p class="how-eyebrow how-eyebrow--center how-coverage__eyebrow">HyperClose · candado</p>
 				<h2 id="how-faq-espejo-title" class="how-coverage__title">
 					HyperClose, candado y <span class="how-present-title__accent">qué no somos</span>
 				</h2>
@@ -1328,56 +1333,73 @@ const microclipBranches: MicroclipBranch[] = [
 				<h2 id="how-coverage-title" class="how-coverage__title">
 					Vigilancia: qué cubre tevsys <span class="how-present-title__accent">(y qué no)</span>
 				</h2>
-				<p class="how-coverage__question">
-					¿tevsys me protege si apago el PC o cierro MetaTrader?
-				</p>
-				<div class="how-coverage__answer">
-					<p class="how-coverage__lead">
-						Si MetaTrader y tevsys siguen en marcha — en casa <strong>o en un VPS</strong> — la vigilancia sigue:
-						evaluamos y cerramos al límite cuando el mercado da ticks. En un VPS (o cualquier máquina 24h con MT5
-						abierto) eso es <strong>casi todo el tiempo</strong>: apagas el PC de casa y la capa sigue ahí. El VPS
-						es una <strong>opción</strong> para cobertura continua, no un requisito mágico.
-					</p>
-					<div class="how-coverage__modes" role="list">
-						<article class="how-coverage-mode how-coverage-mode--on" role="listitem">
-							<p class="how-coverage-mode__label">Con cobertura</p>
-							<p class="how-coverage-mode__text">
-								MT5 + tevsys en marcha (casa o VPS) → vigilancia activa mientras haya ticks.
+				<div class="how-coverage__answer how-overnight-faq">
+					<details class="how-overnight-faq__item">
+						<summary class="how-coverage__question how-overnight-faq__q">
+							¿tevsys me protege si apago el PC o cierro MetaTrader?
+						</summary>
+						<div class="how-overnight-faq__body">
+							<p class="how-coverage__lead">
+								Si MetaTrader y tevsys siguen en marcha — en casa <strong>o en un VPS</strong> — la vigilancia
+								sigue: evaluamos y cerramos al límite cuando el mercado da ticks. En un VPS (o cualquier máquina
+								24h con MT5 abierto) eso es <strong>casi todo el tiempo</strong>: apagas el PC de casa y la capa
+								sigue ahí. El VPS es una <strong>opción</strong> para cobertura continua, no un requisito mágico.
 							</p>
-						</article>
-						<article class="how-coverage-mode how-coverage-mode--gap" role="listitem">
-							<p class="how-coverage-mode__label">Sin cobertura</p>
-							<p class="how-coverage-mode__text">
-								Sin terminal corriendo → hueco real. Al volver, mismos % del pacto — no un panel «libre».
+							<div class="how-coverage__modes" role="list">
+								<article class="how-coverage-mode how-coverage-mode--on" role="listitem">
+									<p class="how-coverage-mode__label">Con cobertura</p>
+									<p class="how-coverage-mode__text">
+										MT5 + tevsys en marcha (casa o VPS) → vigilancia activa mientras haya ticks.
+									</p>
+								</article>
+								<article class="how-coverage-mode how-coverage-mode--gap" role="listitem">
+									<p class="how-coverage-mode__label">Sin cobertura</p>
+									<p class="how-coverage-mode__text">
+										Sin terminal corriendo → hueco real. Al volver, mismos % del pacto — no un panel «libre».
+									</p>
+								</article>
+							</div>
+							<p class="how-coverage__closing">
+								El hueco aparece solo cuando <strong>no</strong> hay terminal corriendo (PC y VPS apagados, MT5
+								cerrado, o tevsys fuera del gráfico). Ahí no hay milagro en la oscuridad. Al volver, se reengancha
+								con los <strong>mismos %</strong> del pacto; si el mercado ya pasó el tope, el
+								<strong>motor de límites</strong> puede cerrar al primer tick (eso no es HyperClose). El stop del
+								bróker sigue siendo suyo en ese tramo; nosotros retomamos la vigilancia al reenganchar.
 							</p>
-						</article>
-					</div>
-					<div class="how-coverage__panel-lexicon tevsys-copy-muted" id="alcanzado-huecos">
-						<p class="how-coverage__question" style="margin-top: 1.25rem">
+						</div>
+					</details>
+					<details class="how-overnight-faq__item" id="alcanzado-huecos">
+						<summary class="how-coverage__question how-overnight-faq__q">
 							Si el panel muestra «Alcanzado» con un % más allá del pacto
-						</p>
-						<p>
-							En ese tramo <strong>no había vigilancia tick a tick</strong>. Al volver, tevsys cierra y mantiene el candado.
-							Las frases del panel (losa Alcanzado) son las mismas que en el glosario de eventos:
-						</p>
-						<ul>
-							<li><strong>Cierre limpio:</strong> solo <code>Alcanzado el: DD/MM/AA</code> (sin coletilla).</li>
-							<li><code>vigilancia pausada · tevsys fuera del gráfico</code> — el EA no estaba en el gráfico (acta <code>EA_UNLOADED</code>).</li>
-							<li><code>vigilancia pausada (−X %) · sin conexión al bróker</code> — corte de enlace (acta <code>BROKER_CONNECTION_LOST</code> → <code>RESTORED</code>).</li>
-							<li><code>vigilancia pausada (−X %) · primer tick al cotizar</code> — mercado sin cotizar; cierre al volver a medir.</li>
-						</ul>
-						<p>
-							Cerrar MT5 en casa <strong>con</strong> VPS (MT5+tevsys) encendido no es lo mismo que apagarlo todo: el VPS sigue vigilando.
-							El panel no inventa «sin VPS»; solo dice lo que midió en ese gráfico.
-						</p>
-					</div>
-					<p class="how-coverage__closing">
-						El hueco aparece solo cuando <strong>no</strong> hay terminal corriendo (PC y VPS apagados, MT5 cerrado, o
-						tevsys fuera del gráfico). Ahí no hay milagro en la oscuridad. Al volver, se reengancha con los
-						<strong>mismos %</strong> del pacto; si el mercado ya pasó el tope, el
-						<strong>motor de límites</strong> puede cerrar al primer tick (eso no es HyperClose). El stop del
-						bróker sigue siendo suyo en ese tramo; nosotros retomamos la vigilancia al reenganchar.
-					</p>
+						</summary>
+						<div class="how-overnight-faq__body how-coverage__panel-lexicon tevsys-copy-muted">
+							<p class="how-coverage__lead">
+								En ese tramo <strong>no había vigilancia tick a tick</strong>. Al volver, tevsys cierra y mantiene
+								el candado. Las frases del panel (losa Alcanzado) son las mismas que en el glosario de eventos:
+							</p>
+							<ul>
+								<li>
+									<strong>Cierre limpio:</strong> solo <code>Alcanzado el: DD/MM/AA</code> (sin coletilla).
+								</li>
+								<li>
+									<code>vigilancia pausada · tevsys fuera del gráfico</code> — el EA no estaba en el gráfico (acta
+									<code>EA_UNLOADED</code>).
+								</li>
+								<li>
+									<code>vigilancia pausada (−X %) · sin conexión al bróker</code> — corte de enlace (acta
+									<code>BROKER_CONNECTION_LOST</code> → <code>RESTORED</code>).
+								</li>
+								<li>
+									<code>vigilancia pausada (−X %) · primer tick al cotizar</code> — mercado sin cotizar; cierre al
+									volver a medir.
+								</li>
+							</ul>
+							<p class="how-coverage__closing">
+								Cerrar MT5 en casa <strong>con</strong> VPS (MT5+tevsys) encendido no es lo mismo que apagarlo
+								todo: el VPS sigue vigilando. El panel no inventa «sin VPS»; solo dice lo que midió en ese gráfico.
+							</p>
+						</div>
+					</details>
 				</div>
 			</div>
 		</section>
@@ -5637,6 +5659,44 @@ const microclipBranches: MicroclipBranch[] = [
 		color: rgba(190, 130, 42, 0.94);
 	}
 
+	/* Corte antes del tramo FAQ (overnight · espejo · vigilancia) — mismo patrón que cuatro piezas / auditoría. */
+	.how-more-faq-cut {
+		margin: clamp(1.85rem, 5.2vw, 2.85rem) auto clamp(1.25rem, 3.8vw, 1.95rem);
+		max-width: min(40rem, 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.7rem;
+		text-align: center;
+	}
+
+	.how-more-faq-cut__line {
+		display: block;
+		width: min(14rem, 78%);
+		height: 2px;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(245, 176, 65, 0.28) 22%,
+			rgba(245, 176, 65, 0.55) 50%,
+			rgba(245, 176, 65, 0.28) 78%,
+			transparent 100%
+		);
+	}
+
+	.how-more-faq-cut__label {
+		font-size: clamp(0.72rem, 1.85vw, 0.82rem);
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: rgba(245, 196, 128, 0.94);
+	}
+
+	html[data-theme='light'] .how-more-faq-cut__label {
+		color: rgba(190, 130, 42, 0.94);
+	}
+
 	.how-more-lead {
 		margin: 0 auto;
 		max-width: 42rem;
@@ -6221,11 +6281,17 @@ const microclipBranches: MicroclipBranch[] = [
 		position: relative;
 		padding: clamp(1.75rem, 4.5vw, 2.65rem) clamp(1.25rem, 3.5vw, 2.15rem);
 		border-radius: 0.85rem;
-		border: 1px solid rgba(245, 176, 65, 0.28);
+		border: 1px solid rgba(245, 176, 65, 0.22);
 		background:
-			linear-gradient(165deg, rgba(245, 176, 65, 0.07) 0%, transparent 42%),
-			linear-gradient(188deg, hsl(222, 28%, 11%) 0%, hsl(222, 32%, 7%) 100%);
-		box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+			linear-gradient(165deg, rgba(245, 176, 65, 0.045) 0%, transparent 40%),
+			linear-gradient(188deg, hsl(222, 20%, 5.2%) 0%, hsl(222, 24%, 2.6%) 100%);
+		box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+	}
+
+	/* Menos aire entre tarjetas del mismo tramo FAQ (tras el corte). */
+	.how-more-faq-cut + .how-coverage,
+	.how-coverage--overnight + .how-coverage {
+		margin-top: clamp(1.35rem, 4vw, 2rem);
 	}
 
 	html[data-theme='light'] .how-coverage__inner {
@@ -6272,9 +6338,9 @@ const microclipBranches: MicroclipBranch[] = [
 	details.how-overnight-faq__item {
 		margin: 0;
 		padding: 0;
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.08);
 		border-radius: 0.55rem;
-		background: rgba(0, 0, 0, 0.18);
+		background: rgba(0, 0, 0, 0.42);
 		overflow: hidden;
 	}
 

@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home trazabilidad + CF FAQ tramo negro (23 oct noche)
+
+- **Qué:** beat 3 home nombra **trazabilidad** (joya, no solo «deja acta»). CF: corte `Preguntas frecuentes` antes del tramo; tarjetas más negras (alineadas al canvas); vigilancia también en acordeón.
+- **Commit:** `web(tevsys): surface traceability on home and darken CF FAQ stretch`
+
 ## Cómo funciona — FAQ acordeón clicable (23 oct noche)
 
 - **Qué:** `#overnight-faq` + `#faq-espejo` ES|EN — pregunta visible con `+`/`−`; respuesta solo al clic (`details`/`summary`). Texto sigue en DOM (SEO/JSON-LD intactos). Deja de ser muro ilegible.

@@ -40,7 +40,7 @@ export const homeCopy = {
 		definitionBeats: [
 			'Cierra al alcanzar los límites que has configurado, con precisión documentada.',
 			'Si intentas operar ya bloqueado, HyperClose cierra en milisegundos y deja constancia del intento.',
-			'Deja acta desde la instalación: qué pactaste, cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.',
+			'Trazabilidad de punta a punta: acta desde la instalación — qué pactaste, cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.',
 		],
 		definitionBeatsAria: 'Lo que hace tevsys',
 		/* 18 oct 2026 — puente ID → /como-funciona#tu-id-tevsys */
@@ -184,7 +184,7 @@ export const homeCopy = {
 	},
 	en: {
 		seoTitle: 'tevsys — Limits that are enforced, with precision and traceability · MT5',
-		seoDescription: `MetaTrader 5 utility that enforces the rules the trader configures: loss and profit limits (day and week), OFF days and the lock that blocks new trades once a limit is reached — intraday and on swing. Documented precision, HyperClose and a record you can check against MT5. It does not trade for you. ${settings.documentedOperatives} documented trades.`,
+		seoDescription: `MetaTrader 5 utility that enforces the rules the trader configures: loss and profit limits (day and week), OFF days and the lock that blocks new trades once a limit is reached — intraday and on swing. Documented precision, HyperClose and end-to-end traceability you can check against MT5. It does not trade for you. ${settings.documentedOperatives} documented trades.`,
 		hero: {
 			line1: 'You set the limits.',
 			line2Before: '',
@@ -216,7 +216,7 @@ export const homeCopy = {
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
 			'If you try to trade while already locked, HyperClose closes in milliseconds and leaves a record of the attempt.',
-			'It leaves a record from install: what you agreed, when it closed and under which rules — cross-checkable against the official MT5 report.',
+			'End-to-end traceability: a record from install — what you agreed, when it closed and under which rules — cross-checkable against the official MT5 report.',
 		],
 		definitionBeatsAria: 'What tevsys does',
 		/* 18 Oct 2026 — ID bridge → /en/como-funciona#tu-id-tevsys */

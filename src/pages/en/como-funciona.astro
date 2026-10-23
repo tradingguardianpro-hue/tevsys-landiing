@@ -1153,6 +1153,11 @@ const microclipBranches: MicroclipBranch[] = [
 
 		{/* “From zero to protected” — STANDBY 11 Sep 2026. Reserved: {zeroToProtected.title} · {zeroToProtected.eyebrow}. Restore when script+video exist. */}
 
+		<p class="how-more-faq-cut" id="preguntas-frecuentes">
+			<span class="how-more-faq-cut__line" aria-hidden="true"></span>
+			<span class="how-more-faq-cut__label">Frequently asked questions</span>
+		</p>
+
 		<section
 			class="how-coverage how-coverage--overnight"
 			id="overnight-faq"
@@ -1234,7 +1239,7 @@ const microclipBranches: MicroclipBranch[] = [
 			id="faq-espejo"
 			aria-labelledby="how-faq-espejo-title">
 			<div class="how-coverage__inner">
-				<p class="how-eyebrow how-eyebrow--center how-coverage__eyebrow">FAQ</p>
+				<p class="how-eyebrow how-eyebrow--center how-coverage__eyebrow">HyperClose · lock</p>
 				<h2 id="how-faq-espejo-title" class="how-coverage__title">
 					HyperClose, lock, and <span class="how-present-title__accent">what we are not</span>
 				</h2>
@@ -1331,37 +1336,41 @@ const microclipBranches: MicroclipBranch[] = [
 				<h2 id="how-coverage-title" class="how-coverage__title">
 					Watch: what tevsys covers <span class="how-present-title__accent">(and what it does not)</span>
 				</h2>
-				<p class="how-coverage__question">
-					Does tevsys protect me if I shut down the PC or close MetaTrader?
-				</p>
-				<div class="how-coverage__answer">
-					<p class="how-coverage__lead">
-						If MetaTrader and tevsys keep running — at home <strong>or on a VPS</strong> — watch stays on:
-						we evaluate and close at the limit when the market ticks. On a VPS (or any 24h machine with MT5
-						open) that is <strong>almost all the time</strong>: you power off the home PC and the layer is still there.
-						A VPS is an <strong>option</strong> for continuous coverage, not a magic requirement.
-					</p>
-					<div class="how-coverage__modes" role="list">
-						<article class="how-coverage-mode how-coverage-mode--on" role="listitem">
-							<p class="how-coverage-mode__label">With coverage</p>
-							<p class="how-coverage-mode__text">
-								MT5 + tevsys running (home or VPS) → active watch while ticks arrive.
+				<div class="how-coverage__answer how-overnight-faq">
+					<details class="how-overnight-faq__item">
+						<summary class="how-coverage__question how-overnight-faq__q">
+							Does tevsys protect me if I shut down the PC or close MetaTrader?
+						</summary>
+						<div class="how-overnight-faq__body">
+							<p class="how-coverage__lead">
+								If MetaTrader and tevsys keep running — at home <strong>or on a VPS</strong> — watch stays on:
+								we evaluate and close at the limit when the market ticks. On a VPS (or any 24h machine with MT5
+								open) that is <strong>almost all the time</strong>: you power off the home PC and the layer is still
+								there. A VPS is an <strong>option</strong> for continuous coverage, not a magic requirement.
 							</p>
-						</article>
-						<article class="how-coverage-mode how-coverage-mode--gap" role="listitem">
-							<p class="how-coverage-mode__label">Without coverage</p>
-							<p class="how-coverage-mode__text">
-								No terminal running → a real gap. When you return, same pact % — not a “free” panel.
+							<div class="how-coverage__modes" role="list">
+								<article class="how-coverage-mode how-coverage-mode--on" role="listitem">
+									<p class="how-coverage-mode__label">With coverage</p>
+									<p class="how-coverage-mode__text">
+										MT5 + tevsys running (home or VPS) → active watch while ticks arrive.
+									</p>
+								</article>
+								<article class="how-coverage-mode how-coverage-mode--gap" role="listitem">
+									<p class="how-coverage-mode__label">Without coverage</p>
+									<p class="how-coverage-mode__text">
+										No terminal running → a real gap. When you return, same pact % — not a “free” panel.
+									</p>
+								</article>
+							</div>
+							<p class="how-coverage__closing">
+								The gap appears only when there is <strong>no</strong> terminal running (PC and VPS off, MT5 closed,
+								or tevsys off the chart). No miracle in the dark. When you return, we reattach with the
+								<strong>same %</strong> from the pact; if the market already passed the cap, the
+								<strong>limits engine</strong> may close on the first tick (that is not HyperClose). The broker stop
+								remains theirs in that stretch; we resume watch when we reattach.
 							</p>
-						</article>
-					</div>
-					<p class="how-coverage__closing">
-						The gap appears only when there is <strong>no</strong> terminal running (PC and VPS off, MT5 closed, or
-						tevsys off the chart). No miracle in the dark. When you return, we reattach with the
-						<strong>same %</strong> from the pact; if the market already passed the cap, the
-						<strong>limits engine</strong> may close on the first tick (that is not HyperClose). The broker stop
-						remains theirs in that stretch; we resume watch when we reattach.
-					</p>
+						</div>
+					</details>
 				</div>
 			</div>
 		</section>
@@ -5606,6 +5615,44 @@ const microclipBranches: MicroclipBranch[] = [
 		color: rgba(190, 130, 42, 0.94);
 	}
 
+	/* Cut before FAQ stretch (overnight · mirror · watch) — same pattern as four pieces / audit. */
+	.how-more-faq-cut {
+		margin: clamp(1.85rem, 5.2vw, 2.85rem) auto clamp(1.25rem, 3.8vw, 1.95rem);
+		max-width: min(40rem, 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.7rem;
+		text-align: center;
+	}
+
+	.how-more-faq-cut__line {
+		display: block;
+		width: min(14rem, 78%);
+		height: 2px;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(245, 176, 65, 0.28) 22%,
+			rgba(245, 176, 65, 0.55) 50%,
+			rgba(245, 176, 65, 0.28) 78%,
+			transparent 100%
+		);
+	}
+
+	.how-more-faq-cut__label {
+		font-size: clamp(0.72rem, 1.85vw, 0.82rem);
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: rgba(245, 196, 128, 0.94);
+	}
+
+	html[data-theme='light'] .how-more-faq-cut__label {
+		color: rgba(190, 130, 42, 0.94);
+	}
+
 	.how-more-lead {
 		margin: 0 auto;
 		max-width: 42rem;
@@ -6190,11 +6237,16 @@ const microclipBranches: MicroclipBranch[] = [
 		position: relative;
 		padding: clamp(1.75rem, 4.5vw, 2.65rem) clamp(1.25rem, 3.5vw, 2.15rem);
 		border-radius: 0.85rem;
-		border: 1px solid rgba(245, 176, 65, 0.28);
+		border: 1px solid rgba(245, 176, 65, 0.22);
 		background:
-			linear-gradient(165deg, rgba(245, 176, 65, 0.07) 0%, transparent 42%),
-			linear-gradient(188deg, hsl(222, 28%, 11%) 0%, hsl(222, 32%, 7%) 100%);
-		box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+			linear-gradient(165deg, rgba(245, 176, 65, 0.045) 0%, transparent 40%),
+			linear-gradient(188deg, hsl(222, 20%, 5.2%) 0%, hsl(222, 24%, 2.6%) 100%);
+		box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+	}
+
+	.how-more-faq-cut + .how-coverage,
+	.how-coverage--overnight + .how-coverage {
+		margin-top: clamp(1.35rem, 4vw, 2rem);
 	}
 
 	html[data-theme='light'] .how-coverage__inner {
@@ -6241,9 +6293,9 @@ const microclipBranches: MicroclipBranch[] = [
 	details.how-overnight-faq__item {
 		margin: 0;
 		padding: 0;
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.08);
 		border-radius: 0.55rem;
-		background: rgba(0, 0, 0, 0.18);
+		background: rgba(0, 0, 0, 0.42);
 		overflow: hidden;
 	}
 
