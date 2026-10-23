@@ -59,10 +59,11 @@ const panelAdaptativo = {
 	body: 'En intradía no ves lo mismo que con una operación overnight: el panel cambia la información según el escenario, para que sepas qué estás mirando.',
 	bodyFollow:
 		'Al clic puedes abrir el detalle del límite pactado, cuánto has consumido y cuánto queda hasta el STOP — y, si un cierre se aleja del pacto, el motivo (por ejemplo un corte de conexión), contrastable con MT5.',
-	imgSrc: '/images/como-funciona/tevsys-panel-overnight-finde-op-curso-6271553.png?v=20260926',
+	/** Piloto visual 23 oct: captura panel claro + SML + resumen semana (#6278925). Copy de bloque intacto. */
+	imgSrc: '/images/como-funciona/tevsys-panel-claro-sml-semana-6278925.png?v=20261023',
 	imgAlt:
-		'Panel tevsys en fin de semana con operación en curso: límites DESDE/SEMANA, flotantes, PROTEGIDO — FIN DE SEMANA y cartela DESDE al clic.',
-	imgCaption: 'Overnight / finde · operación en curso · info al clic (DESDE)',
+		'Panel tevsys en tema claro: límites activos, SML ampliado, flotantes y modal resumen de semana al clic.',
+	imgCaption: 'Panel claro · SML · resumen de semana al clic',
 	ctaHref: '#overnight-laborable',
 	ctaLabel: 'Operación swing',
 };
@@ -630,9 +631,9 @@ const microclipBranches: MicroclipBranch[] = [
 			</div>
 		</div>
 
-		{/* 23 oct 2026 — piloto flujo visual: título + lead corto → panel → detalle (misma marca, menos muro). */}
+		{/* 23 oct 2026 — piloto: visual-first + isla clara (solo este bloque). */}
 		<section
-			class="how-cashflow how-cashflow--stage how-cashflow--visual-first"
+			class="how-cashflow how-cashflow--stage how-cashflow--visual-first how-cashflow--light-island"
 			id={panelAdaptativo.id}
 			aria-labelledby="how-panel-adaptativo-title">
 			<div class="how-cashflow__halo" aria-hidden="true"></div>
@@ -3032,6 +3033,66 @@ const microclipBranches: MicroclipBranch[] = [
 		font-size: clamp(0.88rem, 1.7vw, 0.96rem);
 		line-height: 1.52;
 		text-align: left;
+	}
+
+	/* Isla clara — solo #panel-adaptativo (piloto 23 oct). Elegante, no hospital. */
+	.how-cashflow--light-island.how-cashflow--stage {
+		border: 1px solid rgba(55, 65, 80, 0.12);
+		box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+	}
+
+	html[data-theme='dark'] .how-cashflow--light-island .how-cashflow__halo {
+		background:
+			radial-gradient(ellipse 70% 28% at 50% 0%, rgba(255, 255, 255, 0.95) 0%, transparent 55%),
+			linear-gradient(180deg, #f3f4f7 0%, #e8eaef 48%, #e2e5eb 100%);
+		box-shadow: inset 0 0 clamp(1.5rem, 5vw, 3rem) rgba(40, 48, 64, 0.06);
+	}
+
+	.how-cashflow--light-island .how-eyebrow {
+		color: rgba(55, 65, 80, 0.62);
+	}
+
+	.how-cashflow--light-island .how-puesta-marcha__lead,
+	.how-cashflow--light-island .how-section-head h2 {
+		color: rgba(22, 28, 38, 0.96);
+	}
+
+	.how-cashflow--light-island .how-present-title__accent,
+	.how-cashflow--light-island .how-puesta-marcha__accent {
+		color: #c47a12;
+	}
+
+	.how-cashflow--light-island .how-cashflow__body,
+	.how-cashflow--light-island .how-cashflow__body--lead,
+	.how-cashflow--light-island .how-cashflow__body--follow {
+		color: rgba(45, 55, 70, 0.88);
+	}
+
+	.how-cashflow--light-island .how-cashflow__cap {
+		color: rgba(70, 80, 95, 0.72);
+	}
+
+	.how-cashflow--light-island .how-cashflow__zoom {
+		box-shadow:
+			0 0 0 1px rgba(40, 48, 64, 0.1),
+			0 12px 32px rgba(20, 28, 40, 0.12);
+		background: #fff;
+	}
+
+	.how-cashflow--light-island .how-cashflow__zoom:hover,
+	.how-cashflow--light-island .how-cashflow__zoom:focus-visible {
+		box-shadow:
+			0 0 0 1px rgba(196, 122, 18, 0.45),
+			0 12px 32px rgba(20, 28, 40, 0.14);
+	}
+
+	.how-cashflow--light-island .how-puesta-marcha__link--primary {
+		color: #b56f0e;
+	}
+
+	.how-cashflow--light-island .how-puesta-marcha__link--primary:hover,
+	.how-cashflow--light-island .how-puesta-marcha__link--primary:focus-visible {
+		color: #8f5608;
 	}
 
 	.how-cashflow__em {
