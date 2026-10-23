@@ -25,13 +25,17 @@ ol[role='list'] {
 	list-style: none;
 }
 
-/* Set core root defaults */
+/*
+  Scroll: aterrizaje directo en anclas (23 oct 2026).
+  Smooth global hacía “montaña rusa” al entrar desde home a /como-funciona#… (página larga).
+  Fundido / View Transitions = pasos siguientes, no este.
+*/
 html {
-	scroll-behavior: smooth;
+	scroll-behavior: auto;
 }
 
 html:focus-within {
-	scroll-behavior: smooth;
+	scroll-behavior: auto;
 }
 
 /* Set core body defaults */

@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Anclas — aterrizaje directo (23 oct noche)
+
+- **Qué:** `scroll-behavior: auto` (antes smooth global). Entrar a `/como-funciona#tu-id-tevsys` (u otra ancla) ya no recorre toda la micropágina. Fundido / View Transitions = aparcados.
+- **Commit:** `web(tevsys): instant hash landing instead of smooth scroll tour`
+
 ## Home — joya contrastable + aire atribución/cierre (23 oct noche)
 
 - **Qué:** 3.ª viñeta: *contrastable con el informe oficial de MT5* en joya blanca. Más aire ID → atribución → «No opera por ti» → Para quién (segundo acto de lectura).

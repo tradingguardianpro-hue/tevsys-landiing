@@ -1444,10 +1444,10 @@ const microclipBranches: MicroclipBranch[] = [
 		};
 
 		const scrollToEvidence = () => {
-			(anchor || video).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+			(anchor || video).scrollIntoView({ behavior: 'auto', block: 'start', inline: 'nearest' });
 			resetHorizontal();
 			requestAnimationFrame(resetHorizontal);
-			setTimeout(resetHorizontal, 320);
+			setTimeout(resetHorizontal, 50);
 		};
 
 		const tryPlay = () => {
