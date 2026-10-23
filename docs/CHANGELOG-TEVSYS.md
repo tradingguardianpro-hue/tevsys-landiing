@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Anclas — fundido corto al aterrizar (23 oct noche)
+
+- **Qué:** con `#ancla`, tapa del color de fondo ~180 ms y aparece ya en el bloque (sin scroll-tour). Respeta `prefers-reduced-motion`. View Transitions = aún aparcado.
+- **Commit:** `web(tevsys): short fade-in on hash landing after instant jump`
+
 ## Anclas — aterrizaje directo (23 oct noche)
 
 - **Qué:** `scroll-behavior: auto` (antes smooth global). Entrar a `/como-funciona#tu-id-tevsys` (u otra ancla) ya no recorre toda la micropágina. Fundido / View Transitions = aparcados.

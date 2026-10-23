@@ -28,7 +28,7 @@ ol[role='list'] {
 /*
   Scroll: aterrizaje directo en anclas (23 oct 2026).
   Smooth global hacía “montaña rusa” al entrar desde home a /como-funciona#… (página larga).
-  Fundido / View Transitions = pasos siguientes, no este.
+  Fundido corto = capa tgp-hash-arrive (Base.astro). View Transitions = más adelante.
 */
 html {
 	scroll-behavior: auto;
@@ -36,6 +36,28 @@ html {
 
 html:focus-within {
 	scroll-behavior: auto;
+}
+
+/* Fundido corto al llegar con #ancla: tapa → contenido ya en sitio (~180 ms). */
+html.tgp-hash-arrive::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	pointer-events: none;
+	background-color: var(--theme-bg, #0a0a0c);
+	opacity: 1;
+}
+
+html.tgp-hash-arrive.tgp-hash-arrive-in::after {
+	opacity: 0;
+	transition: opacity 180ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html.tgp-hash-arrive::after {
+		display: none;
+	}
 }
 
 /* Set core body defaults */

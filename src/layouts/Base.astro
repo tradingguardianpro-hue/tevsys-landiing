@@ -22,6 +22,23 @@ const { seo, bodyClass, lang = 'es', theme = 'dark' } = Astro.props;
 
 <html lang={lang} data-theme={theme}>
 	<head>
+		{/* Antes del CSS: si hay #ancla, tapa negra hasta revelar (fundido corto · 23 oct 2026). */}
+		<script is:inline>
+			(() => {
+				try {
+					if (!location.hash || location.hash.length < 2) return;
+					if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+					document.documentElement.classList.add('tgp-hash-arrive');
+					/* Tapa inmediata (antes de que cargue reset.css) — evita un frame del muro. */
+					const boot = document.createElement('style');
+					boot.id = 'tgp-hash-arrive-boot';
+					boot.textContent =
+						'html.tgp-hash-arrive{background-color:#0a0a0c}' +
+						'html.tgp-hash-arrive body{opacity:0!important}';
+					document.documentElement.appendChild(boot);
+				} catch (_) {}
+			})();
+		</script>
 		<BaseHead {...seo} />
 	</head>
 	<body class:list={[bodyClass]}>
@@ -33,6 +50,26 @@ const { seo, bodyClass, lang = 'es', theme = 'dark' } = Astro.props;
 		</main>
 		<slot name="footer" />
 		<EvidenceLightboxGlobal />
+		<script is:inline>
+			(() => {
+				const root = document.documentElement;
+				if (!root.classList.contains('tgp-hash-arrive')) return;
+				const reveal = () => {
+					requestAnimationFrame(() => {
+						requestAnimationFrame(() => {
+							root.classList.add('tgp-hash-arrive-in');
+							const boot = document.getElementById('tgp-hash-arrive-boot');
+							if (boot) boot.remove();
+							window.setTimeout(() => {
+								root.classList.remove('tgp-hash-arrive', 'tgp-hash-arrive-in');
+							}, 220);
+						});
+					});
+				};
+				if (document.readyState === 'complete') reveal();
+				else window.addEventListener('load', reveal, { once: true });
+			})();
+		</script>
 		<script>
 			import { inject } from '@vercel/analytics';
 			inject({
