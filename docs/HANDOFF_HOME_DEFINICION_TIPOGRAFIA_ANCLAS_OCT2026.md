@@ -1,6 +1,6 @@
 # Handoff — Home definición · tipografía · anclas (23 oct 2026)
 
-**Estado:** canon provisional tras lab del 23 oct 2026. Validar View Transitions en desktop + móvil; si OK en producción, este doc manda.
+**Estado:** canon 23 oct 2026 (anclas). View Transitions **probado y descartado** (parecía scroll corto). Canon = salto directo + fundido tapa **~200 ms**.
 
 **Repo:** `tevsys-landiing`  
 **Espejo TGP:** viñetas V12 `homeDef*` · `hash*` · `cfFaq*` · `cfMovil*` · `cfRevertKeepPlex`
@@ -80,31 +80,33 @@
 
 ---
 
-## 4. Navegación a anclas (CANON en tres capas)
+## 4. Navegación a anclas (CANON — dos capas)
 
 | Capa | Qué | Cuándo |
 |------|-----|--------|
-| **1. Aterrizaje directo** | `scroll-behavior: auto` (reset.css) | Siempre |
-| **2. Fundido corto** | Tapa `tgp-hash-arrive` ~180 ms | **Carga fría** con `#ancla` |
-| **3. View Transitions** | `ViewTransitions` + `fade` 180 ms en `<main>` | Navegación cliente (clic interno) |
+| **1. Aterrizaje directo** | `scroll-behavior: auto` (reset.css) | Siempre — ya estás en el bloque |
+| **2. Fundido corto** | Tapa `tgp-hash-arrive` **~200 ms** | Carga con `#ancla` (p. ej. home → CF#…) |
 
-- Tras swap VT: `astro:after-swap` / `astro:page-load` → `scrollIntoView({ behavior: 'auto' })` al hash.
+### 4.0 View Transitions — PROBADO, NO CANON
+
+- Activado ~180 ms fade en `<main>` + scroll post-swap.
+- **Feedback fundador:** “sigue pareciendo un scroll más rápido/corto; no es sweet transition”. Prefiere **ir directo** + fundido tapa.
+- **Acción:** VT **retirado**. No reintroducir sin OK explícito.
+
 - `prefers-reduced-motion: reduce` → sin fundido tapa.
-- Scripts CF críticos: `data-astro-rerun` (leer más / play=1).
-- **Aparcado / no priorizar:** smooth scroll largo “bonito”.
+- **Aparcado:** smooth scroll largo; VT.
 
 ### 4.1 Archivos
 
-- `src/layouts/Base.astro` — VT + scripts hash  
-- `src/styles/reset.css` — auto + CSS tapa  
-- CF: `data-astro-rerun` en scripts inline  
+- `src/layouts/Base.astro` — scripts hash / `HASH_FADE_MS = 200`  
+- `src/styles/reset.css` — auto + CSS tapa 200 ms  
 
 ### 4.2 Cómo validar
 
-1. Home → clic Tu ID: transición corta, aterrizas en `#tu-id-tevsys` (vídeo/bloque), **sin** recorrer toda CF.  
-2. Hard refresh en `/como-funciona#tu-id-tevsys`: fundido tapa → bloque.  
+1. Home → Tu ID: **negro breve (~200 ms)** → ya en `#tu-id-tevsys`, **sin** recorrer CF.  
+2. Hard refresh en `/como-funciona#tu-id-tevsys`: mismo fundido.  
 3. Móvil + `prefers-reduced-motion`.  
-4. Si algo rompe (vídeo, lightbox, i18n): documentar y valorar `data-astro-rerun` / `transition:persist` en header.
+4. Pasada posterior: igualar **todos** los enlaces ancla/vídeo del sitio al mismo canon (varios aún pueden sentirse distintos).
 
 ---
 
@@ -122,6 +124,7 @@ web(tevsys): surface traceability on home and darken CF FAQ stretch
 web(tevsys): instant hash landing instead of smooth scroll tour
 web(tevsys): short fade-in on hash landing after instant jump
 web(tevsys): enable view transitions with fade and hash scroll canon
+web(tevsys): revert view transitions keep 200ms hash fade landing
 ```
 
 (Agrupar en menos commits si el fundador prefiere un solo push temático.)
@@ -140,4 +143,4 @@ web(tevsys): enable view transitions with fade and hash scroll canon
 
 *«canon home definición»* · *«joyas home»* · *«anclas / view transitions»* · *«FAQ acordeón CF»*
 
-Si View Transitions falla en un flujo concreto: **no** volver al smooth tour; bajar solo VT y mantener capas 1–2.
+Si algo falla: **no** volver al smooth tour; mantener salto directo + fundido 200 ms. VT no vuelve sin OK.

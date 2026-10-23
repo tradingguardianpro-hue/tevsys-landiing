@@ -1,6 +1,5 @@
 ---
 import { SkipLink } from '@components/odyssey-theme';
-import { ViewTransitions, fade } from 'astro:transitions';
 import BaseHead from '../components/head/BaseHead.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import EvidenceLightboxGlobal from '../components/core/EvidenceLightboxGlobal.astro';
@@ -19,11 +18,14 @@ export interface Props {
 }
 
 const { seo, bodyClass, lang = 'es', theme = 'dark' } = Astro.props;
+
+/** Canon anclas 23 oct: salto directo + fundido tapa ~200 ms. View Transitions probado y descartado (parecía scroll corto). */
+const HASH_FADE_MS = 200;
 ---
 
 <html lang={lang} data-theme={theme}>
 	<head>
-		{/* Antes del CSS: si hay #ancla en carga fría, tapa negra hasta revelar (fundido · 23 oct 2026). */}
+		{/* Antes del CSS: si hay #ancla, tapa negra hasta revelar (fundido corto · canon). */}
 		<script is:inline>
 			(() => {
 				try {
@@ -41,30 +43,21 @@ const { seo, bodyClass, lang = 'es', theme = 'dark' } = Astro.props;
 			})();
 		</script>
 		<BaseHead {...seo} />
-		{/* Canon 23 oct: View Transitions (~180 ms). Carga fría con # = fundido tgp-hash-arrive. */}
-		<ViewTransitions />
 	</head>
 	<body class:list={[bodyClass]}>
 		<SkipLink />
     <slot name="announcement-bar" />
 		<slot name="header" />
-		<main id="content" transition:animate={fade({ duration: '180ms' })}>
+		<main id="content">
 			<slot />
 		</main>
 		<slot name="footer" />
 		<EvidenceLightboxGlobal />
-		<script is:inline>
+		<script is:inline define:vars={{ HASH_FADE_MS }}>
 			(() => {
-				const scrollToHash = () => {
-					if (!location.hash || location.hash.length < 2) return;
-					const id = decodeURIComponent(location.hash.slice(1));
-					const el = document.getElementById(id);
-					if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
-				};
-
-				const revealColdHash = () => {
-					const root = document.documentElement;
-					if (!root.classList.contains('tgp-hash-arrive')) return;
+				const root = document.documentElement;
+				if (!root.classList.contains('tgp-hash-arrive')) return;
+				const reveal = () => {
 					requestAnimationFrame(() => {
 						requestAnimationFrame(() => {
 							root.classList.add('tgp-hash-arrive-in');
@@ -72,31 +65,12 @@ const { seo, bodyClass, lang = 'es', theme = 'dark' } = Astro.props;
 							if (boot) boot.remove();
 							window.setTimeout(() => {
 								root.classList.remove('tgp-hash-arrive', 'tgp-hash-arrive-in');
-							}, 220);
+							}, HASH_FADE_MS + 40);
 						});
 					});
 				};
-
-				/* Tras swap de View Transitions: ancla sin montaña rusa. */
-				document.addEventListener('astro:after-swap', scrollToHash);
-				document.addEventListener('astro:page-load', () => {
-					scrollToHash();
-					revealColdHash();
-				});
-
-				if (document.readyState === 'complete') {
-					scrollToHash();
-					revealColdHash();
-				} else {
-					window.addEventListener(
-						'load',
-						() => {
-							scrollToHash();
-							revealColdHash();
-						},
-						{ once: true },
-					);
-				}
+				if (document.readyState === 'complete') reveal();
+				else window.addEventListener('load', reveal, { once: true });
 			})();
 		</script>
 		<script>
