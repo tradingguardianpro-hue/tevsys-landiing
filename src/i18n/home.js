@@ -45,6 +45,10 @@ export const homeCopy = {
 		definitionBeat2Before: 'Si intentas operar ya bloqueado, ',
 		definitionBeat2Jewel: 'HyperClose',
 		definitionBeat2After: ' cierra en milisegundos y deja constancia del intento.',
+		definitionBeat3Before:
+			'Acta de lo pactado y de lo ocurrido — cuándo cerró y bajo qué reglas — ',
+		definitionBeat3Jewel: 'contrastable con el informe oficial de MT5',
+		definitionBeat3After: '.',
 		definitionBeat3:
 			'Acta de lo pactado y de lo ocurrido — cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.',
 		definitionBeats: [
@@ -231,6 +235,10 @@ export const homeCopy = {
 		definitionBeat2Before: 'If you try to trade while already locked, ',
 		definitionBeat2Jewel: 'HyperClose',
 		definitionBeat2After: ' closes in milliseconds and leaves a record of the attempt.',
+		definitionBeat3Before:
+			'A record of what you agreed and what occurred — when it closed and under which rules — ',
+		definitionBeat3Jewel: 'cross-checkable against the official MT5 report',
+		definitionBeat3After: '.',
 		definitionBeat3:
 			'A record of what you agreed and what occurred — when it closed and under which rules — cross-checkable against the official MT5 report.',
 		definitionBeats: [

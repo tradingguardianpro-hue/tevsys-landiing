@@ -128,7 +128,7 @@
 	}
 	/* Puente ID: tras las viñetas, mucho aire → invita a bajar el scroll; luego el clic. */
 	.tevsys-home-definition__id-bridge {
-		margin: clamp(3.25rem, 9vw, 5.75rem) auto clamp(1.65rem, 3.5vw, 2.35rem);
+		margin: clamp(3.25rem, 9vw, 5.75rem) auto clamp(2.15rem, 4.5vw, 3.15rem);
 		text-align: inherit;
 	}
 	.tevsys-home-definition__id-bridge-link {
@@ -152,16 +152,16 @@
 		color: #a86b0e;
 		border-bottom-color: rgba(168, 107, 14, 0.65);
 	}
-	/* Atribución: después del ID (no pelea el scroll); un poco más de aire arriba. */
+	/* Atribución: segundo acto tras ID — aire para que el ojo “empiece otra lectura”. */
 	.tevsys-home-definition__attribution {
-		margin: clamp(1.15rem, 2.4vw, 1.65rem) auto clamp(0.35rem, 1vw, 0.55rem);
+		margin: clamp(2.35rem, 5.5vw, 3.75rem) auto clamp(0.45rem, 1.1vw, 0.65rem);
 		font-weight: 500;
 		color: var(--tevsys-copy-muted);
 	}
-	/* Conclusión gancho: blanco (excepción 9–10 sep — no muted). */
+	/* Conclusión gancho: blanco (excepción 9–10 sep — no muted). Aire propio tras atribución. */
 	.tevsys-home-definition__closing {
 		margin-block: 0;
-		padding-top: clamp(0.85rem, 1.8vw, 1.15rem);
+		padding-top: clamp(1.85rem, 4.2vw, 2.85rem);
 		font-weight: 600;
 		color: rgba(246, 248, 252, 0.97);
 	}
@@ -179,9 +179,9 @@
 			transparent 100%
 		);
 	}
-	/* 27 sep 2026 — puente polivalencia → Para quién */
+	/* 27 sep 2026 — puente polivalencia → Para quién (otro respiro tras el cierre). */
 	.tevsys-home-definition__audience {
-		margin: clamp(0.55rem, 1.2vw, 0.75rem) auto 0;
+		margin: clamp(1.65rem, 3.6vw, 2.45rem) auto 0;
 		font-weight: 500;
 		color: var(--tevsys-copy-muted);
 	}

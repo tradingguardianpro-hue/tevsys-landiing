@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — joya contrastable + aire atribución/cierre (23 oct noche)
+
+- **Qué:** 3.ª viñeta: *contrastable con el informe oficial de MT5* en joya blanca. Más aire ID → atribución → «No opera por ti» → Para quién (segundo acto de lectura).
+- **Commit:** `web(tevsys): jewel MT5 contrastable and air below home ID bridge`
+
 ## Home — joyas visuales trazabilidad + HyperClose (23 oct noche)
 
 - **Qué:** en definición, *Deja trazabilidad desde la instalación* e *HyperClose* en blanco/peso (no ámbar, no subrayado). Links ámbar solo intradía/swing/ID.
