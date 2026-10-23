@@ -63,7 +63,7 @@
 - Clase global `.tevsys-copy-jewel` (y home `.tevsys-home-definition__jewel`): más blanco + peso.
 - **No** ámbar, **no** subrayado (= no parecen links).
 - Ámbar + raya = **solo** clicables reales.
-- **Tu ID CF** (`#tu-id-tevsys`): joyas en *TVS-…* · *etiqueta de tu caso* · *informes oficiales de MT5* · *qué decidió tevsys* · *qué ejecutó MetaTrader 5* · *capa de auditoría*.
+- **Tu ID CF** (`#tu-id-tevsys`): copy alineado al overlay del vídeo (*identificador personal · licencia*). Joyas solo *TVS-…* · *identificador personal* · *qué decidió tevsys* · *qué ejecutó MetaTrader 5*. Sin eco MT5 de home; *capa de auditoría* solo en el CTA.
 
 ### 3.4 Aire / ritmo de scroll
 

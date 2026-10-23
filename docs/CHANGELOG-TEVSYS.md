@@ -4,10 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Tu ID copy + joyas (2.ª pasada, 23 oct noche)
+
+- **Qué:** copy más corto, alineado al overlay del vídeo (*identificador personal*). Joyas: TVS-… · identificador personal · decidió tevsys · ejecutó MT5. Sin MT5/auditoría en blanco (CTA lleva auditoría).
+- **Commit:** `web(tevsys): tighten tu-id copy and reduce jewel accents`
+
 ## Cómo funciona — joyas copy Tu ID (23 oct noche)
 
 - **Qué:** en `#tu-id-tevsys` ES|EN, palabras clave en blanco (`.tevsys-copy-jewel`): TVS-…, etiqueta/caso, informes MT5, decidió tevsys / ejecutó MT5, capa de auditoría. No ámbar.
 - **Commit:** `web(tevsys): jewel key phrases on tu-id block copy`
+- **Nota:** afinado mismo día — ver entrada de arriba.
 
 ## Anclas — canon 200 ms + pendiente encuadre (23 oct noche)
 
