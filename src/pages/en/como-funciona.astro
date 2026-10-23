@@ -1409,11 +1409,35 @@ const microclipBranches: MicroclipBranch[] = [
 </script>
 
 <style>
-	/* Font lab: Plex Sans on dark CF. Light theme reverted. */
-	:global(body.page-como-funciona) {
+	/* Font lab: Plex on entire CF micropage (titles + copy). Mono labels kept. */
+	:global(html:has(body.page-como-funciona)) {
 		--theme-font-family-sans: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+		--theme-font-family-serif: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+		--tevsys-display-title-font: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+	}
+
+	:global(body.page-como-funciona) {
 		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		overflow-x: clip;
+	}
+
+	:global(body.page-como-funciona #page) {
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	}
+
+	:global(body.page-como-funciona #page) :is(h1, h2, h3, h4, p, li, a, button, label, td, th) {
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	}
+
+	:global(body.page-como-funciona #page) :is(
+		.how-rama__group-title,
+		.how-rama__soon,
+		.how-cashflow__cap,
+		.how-doc-session__step-time,
+		.how-eyebrow,
+		.how-act-cut__label
+	) {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
 	}
 
 	:global(body.page-como-funciona #page),
@@ -2842,7 +2866,7 @@ const microclipBranches: MicroclipBranch[] = [
 	.how-brand-still__name {
 		position: relative;
 		z-index: 1;
-		font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
 		font-size: clamp(1.65rem, 4.2vw, 2.15rem);
 		font-weight: 650;
 		letter-spacing: -0.03em;

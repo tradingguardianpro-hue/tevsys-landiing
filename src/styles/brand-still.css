@@ -134,7 +134,7 @@
 .how-brand-still__name {
 	position: relative;
 	z-index: 1;
-	font-family: 'DM Sans', 'Inter', system-ui, sans-serif;
+	font-family: inherit;
 	font-size: clamp(1.65rem, 4.2vw, 2.15rem);
 	font-weight: 650;
 	letter-spacing: -0.03em;

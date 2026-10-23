@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Plex en toda la micropágina (23 oct noche)
+
+- **Qué:** unificar IBM Plex Sans en títulos + copy CF (antes h1–h3 seguían Inter/DM Sans vía tokens). Etiquetas mono intactas. Operación swing incluido.
+- **Commit:** `web(tevsys): apply plex sans across entire como-funciona page`
+
 ## Revert CF claro + lab Plex en oscuro (home definición) — 23 oct noche
 
 - **Qué:** Cómo funciona ES|EN vuelve **dark** (sin isla clara; captura overnight panel). Se **mantiene IBM Plex Sans** en CF. Home: Plex solo en bloque `.tevsys-home-definition` (trozo utilidad / bullets / Tu ID).
