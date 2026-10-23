@@ -1410,6 +1410,17 @@ const microclipBranches: MicroclipBranch[] = [
 </script>
 
 <style>
+	/*
+	 * LAB light Cómo funciona (23 Oct) — revert: theme="dark" on Layout.
+	 */
+	:global(html[data-theme='light'] body.page-como-funciona) {
+		--tevsys-lab-amber: #c45f12;
+		--tevsys-lab-amber-line: rgba(196, 95, 18, 0.88);
+		--theme-font-family-sans: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+		--tevsys-copy-muted: rgba(45, 55, 70, 0.9);
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	}
+
 	:global(body.page-como-funciona) {
 		overflow-x: clip;
 	}
@@ -1459,6 +1470,19 @@ const microclipBranches: MicroclipBranch[] = [
 		font-weight: 650;
 	}
 
+	html[data-theme='light'] .how-intro-stage .how-hero__definition strong {
+		color: rgba(22, 28, 38, 0.96);
+		font-weight: 650;
+		text-decoration: underline;
+		text-decoration-color: var(--tevsys-lab-amber-line, rgba(196, 95, 18, 0.88));
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.2em;
+	}
+
+	html[data-theme='light'] .how-intro-stage .how-hero__definition {
+		color: rgba(45, 55, 70, 0.9);
+	}
+
 	.how-hero h1 {
 		margin: 0;
 		/* Solo esta página: un poco más de presencia que el titular compacto por defecto. */
@@ -1468,6 +1492,19 @@ const microclipBranches: MicroclipBranch[] = [
 
 	.how-accent {
 		color: #f5b041;
+	}
+
+	html[data-theme='light'] .how-accent {
+		color: var(--tevsys-lab-amber, #c45f12);
+	}
+
+	html[data-theme='light'] .how-present-title__accent::after {
+		background: linear-gradient(
+			90deg,
+			rgba(196, 95, 18, 0.95) 0%,
+			rgba(148, 120, 90, 0.45) 72%,
+			rgba(120, 110, 100, 0.22) 100%
+		);
 	}
 
 	.how-presentation {
@@ -3051,15 +3088,15 @@ const microclipBranches: MicroclipBranch[] = [
 
 	.how-cashflow--light-island .how-present-title__accent,
 	.how-cashflow--light-island .how-puesta-marcha__accent {
-		color: #0f7a7c;
+		color: var(--tevsys-lab-amber, #c45f12);
 	}
 
 	.how-cashflow--light-island .how-present-title__accent::after {
 		background: linear-gradient(
 			90deg,
-			rgba(15, 122, 124, 0.92) 0%,
-			rgba(90, 120, 140, 0.45) 70%,
-			rgba(110, 120, 135, 0.22) 100%
+			rgba(196, 95, 18, 0.95) 0%,
+			rgba(148, 120, 90, 0.45) 70%,
+			rgba(120, 110, 100, 0.22) 100%
 		);
 	}
 
@@ -3085,17 +3122,17 @@ const microclipBranches: MicroclipBranch[] = [
 	.how-cashflow--light-island .how-cashflow__zoom:hover,
 	.how-cashflow--light-island .how-cashflow__zoom:focus-visible {
 		box-shadow:
-			0 0 0 1px rgba(15, 122, 124, 0.5),
+			0 0 0 1px rgba(196, 95, 18, 0.5),
 			0 14px 36px rgba(20, 28, 40, 0.18);
 	}
 
 	.how-cashflow--light-island .how-puesta-marcha__link--primary {
-		color: #0c686a;
+		color: var(--tevsys-lab-amber, #c45f12);
 	}
 
 	.how-cashflow--light-island .how-puesta-marcha__link--primary:hover,
 	.how-cashflow--light-island .how-puesta-marcha__link--primary:focus-visible {
-		color: #085052;
+		color: #9a4a0e;
 	}
 
 	.how-cashflow__em {
@@ -5802,6 +5839,16 @@ const microclipBranches: MicroclipBranch[] = [
 	.how-text-link:hover {
 		color: #f7c050;
 		border-color: rgba(247, 192, 80, 0.75);
+	}
+
+	html[data-theme='light'] .how-text-link {
+		color: var(--tevsys-lab-amber, #c45f12);
+		border-bottom-color: rgba(196, 95, 18, 0.55);
+	}
+
+	html[data-theme='light'] .how-text-link:hover {
+		color: #9a4a0e;
+		border-bottom-color: rgba(154, 74, 14, 0.7);
 	}
 
 	/* Presentación: YouTube en gris mate (casi secundario; el color lo llevan marca y fondos). */

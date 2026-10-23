@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — lab tipografía + ámbar contraste (23 oct noche)
+
+- **Qué:** en CF claro — **IBM Plex Sans** (cuerpo, menos redonda) · ámbar lab `#c45f12` · *intradía/swing* strong legibles con subrayado · enlaces y acentos panel vuelven a ámbar (fuera teal) · doc revert `docs/ref-visual-movil-oct2026/REVERT_LAB_COMO_FUNCIONA_CLARO.md`.
+- **Commit:** `web(tevsys): lab plex sans and stronger amber on light como-funciona`
+
 ## Cómo funciona — micropágina tema claro (piloto 23 oct 2026)
 
 - **Qué:** `/como-funciona` ES|EN con `theme="light"` en Layout (Base). **Home y resto siguen dark.** Activa fondos claros ya previstos en CSS (`html[data-theme='light']`). Isla panel = losa blanca sobre canvas claro + teal.
