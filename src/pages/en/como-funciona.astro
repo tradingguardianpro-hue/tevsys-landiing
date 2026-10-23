@@ -409,7 +409,8 @@ const microclipBranches: MicroclipBranch[] = [
 
 ---
 
-<Layout seo={seo} lang="en" bodyClass="page-como-funciona">
+{/* Pilot 23 Oct: light micropage; home stays dark. Revert → theme="dark". */}
+<Layout seo={seo} lang="en" bodyClass="page-como-funciona" theme="light">
 	<Container>
 		<div class="how-intro-stage how-intro-stage--stage">
 			<div class="how-intro-stage__bg" aria-hidden="true"></div>
@@ -3025,6 +3026,13 @@ const microclipBranches: MicroclipBranch[] = [
 			0 22px 56px rgba(0, 0, 0, 0.45);
 	}
 
+	html[data-theme='light'] .how-cashflow--light-island .how-cashflow__halo {
+		background:
+			radial-gradient(ellipse 70% 30% at 50% 0%, rgba(255, 255, 255, 1) 0%, transparent 55%),
+			linear-gradient(180deg, #ffffff 0%, #f4f6f9 55%, #eef1f5 100%);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+	}
+
 	html[data-theme='dark'] .how-cashflow--light-island .how-cashflow__halo {
 		background:
 			radial-gradient(ellipse 75% 34% at 50% -4%, rgba(255, 255, 255, 0.55) 0%, transparent 58%),
@@ -3062,7 +3070,8 @@ const microclipBranches: MicroclipBranch[] = [
 		color: rgba(38, 48, 62, 0.9);
 	}
 
-	html[data-theme='dark'] .how-cashflow--light-island .how-cashflow__cap {
+	html[data-theme='dark'] .how-cashflow--light-island .how-cashflow__cap,
+	html[data-theme='light'] .how-cashflow--light-island .how-cashflow__cap {
 		color: rgba(45, 58, 74, 0.78);
 	}
 

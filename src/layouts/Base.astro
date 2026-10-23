@@ -10,12 +10,17 @@ export interface Props {
 	bodyClass?: string;
 	/** Idioma del documento (`es` | `en` …). */
 	lang?: string;
+	/**
+	 * Tema del documento. Por defecto `dark` (marca).
+	 * Piloto 23 oct: `light` solo en `/como-funciona` — reversible.
+	 */
+	theme?: 'dark' | 'light';
 }
 
-const { seo, bodyClass, lang = 'es' } = Astro.props;
+const { seo, bodyClass, lang = 'es', theme = 'dark' } = Astro.props;
 ---
 
-<html lang={lang} data-theme="dark">
+<html lang={lang} data-theme={theme}>
 	<head>
 		<BaseHead {...seo} />
 	</head>

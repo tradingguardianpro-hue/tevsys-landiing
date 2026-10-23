@@ -15,16 +15,18 @@ export interface Props {
   bodyClass?: string;
   /** Forzar locale (p. ej. páginas bajo /en). Si no, se deduce de la URL. */
   lang?: string;
+  /** Ver Base.astro — piloto claro en Cómo funciona. */
+  theme?: 'dark' | 'light';
 }
 
-const { seo, bodyClass, lang: langProp } = Astro.props as Props;
+const { seo, bodyClass, lang: langProp, theme } = Astro.props as Props;
 const lang = langProp || getLocaleFromUrl(Astro.url);
 const nav = getNav(lang);
 const homeHref = localizeHref('/', lang);
 const footerColumns = getFooterColumns(lang);
 ---
 
-<Layout seo={seo} bodyClass={bodyClass} lang={lang}>
+<Layout seo={seo} bodyClass={bodyClass} lang={lang} theme={theme}>
   <Header rightMenu navData={nav} slot="header" lang={lang} logoHref={homeHref}>
     <BrandOval slot="logo" />
     <LanguageSwitcher slot="action-item" />

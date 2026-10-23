@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — micropágina tema claro (piloto 23 oct 2026)
+
+- **Qué:** `/como-funciona` ES|EN con `theme="light"` en Layout (Base). **Home y resto siguen dark.** Activa fondos claros ya previstos en CSS (`html[data-theme='light']`). Isla panel = losa blanca sobre canvas claro + teal.
+- **Revertir:** `theme="dark"` (o quitar prop) en `como-funciona.astro` ES|EN.
+- **Commit:** `web(tevsys): light theme pilot on como-funciona micropage`
+
 ## Cómo funciona — panel adaptativo isla clara v2 (23 oct 2026)
 
 - **Qué:** mismo `#panel-adaptativo` — **perla fría** (óvalo legible sobre negro) · acento **teal** (escenario + subrayado + CTA; coherente panel) · pie de foto oscuro legible. Página fuera = negra. Rosa elegante = alternativa si no convence teal.
