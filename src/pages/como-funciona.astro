@@ -82,8 +82,11 @@ const tuIdTevsysBlock = {
 	videoSrc: '/videos/como-funciona/tevsys-mc-tu-id-tevsys-40s.mp4?v=20261021',
 	posterSrc: '/videos/como-funciona/tevsys-mc-tu-id-tevsys-40s-poster.jpg?v=20261021',
 	videoLabel: 'Así sabemos qué pasó en tu operativa — identificador personal',
-	ctaHref: '/auditoria-ia',
-	ctaLabel: 'Capa de auditoría',
+	/** Bajo el vídeo: invita a bajar al bloque «Hechos…» (misma página). Micropágina auditoría = enlace dentro de ese bloque. */
+	ctaHref: '#how-audit-chapter-title',
+	ctaLabel: 'Sigue: hechos que se pueden cruzar',
+	auditPageHref: '/auditoria-ia',
+	auditPageLabel: 'Capa de auditoría',
 };
 
 /** Guía política «Desde cero». MP4 retirado oleada 1 (28 sep 2026) — still marca hasta guía con panel actual. */
@@ -1131,7 +1134,9 @@ const microclipBranches: MicroclipBranch[] = [
 						</p>
 					</section>
 
-					<header class="how-section-head how-chapter__head how-chapter__head--audit how-id-tevsys__audit-follow">
+					<header
+						class="how-section-head how-chapter__head how-chapter__head--audit how-id-tevsys__audit-follow"
+						id="hechos-cruzar">
 						<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--audit-kicker">
 							Auditoría
 						</p>
@@ -1148,6 +1153,11 @@ const microclipBranches: MicroclipBranch[] = [
 							<p>
 								El mismo código <code class="how-more-lead__code">TVS-…</code> de tu ID, ligado a tu licencia. Los packs los
 								revisamos cuando encajen en esta capa.
+							</p>
+							<p class="how-audit-chapter__pitch-page">
+								<a class="how-audit-chapter__page-link" href={tuIdTevsysBlock.auditPageHref}
+									>{tuIdTevsysBlock.auditPageLabel} →</a
+								>
 							</p>
 							<p class="how-audit-chapter__pitch-closing">
 								Canal público de recepción aún no abierto. No damos señales ni qué operar.
@@ -3540,12 +3550,35 @@ const microclipBranches: MicroclipBranch[] = [
 	}
 
 	.how-id-tevsys__cta {
-		margin: clamp(0.95rem, 2.4vw, 1.25rem) 0 0;
+		margin: clamp(0.95rem, 2.4vw, 1.25rem) 0 clamp(0.35rem, 1.2vw, 0.55rem);
 		text-align: center;
 	}
 
 	.how-id-tevsys__audit-follow {
-		margin-top: clamp(0.35rem, 1.5vw, 0.65rem);
+		margin-top: clamp(0.85rem, 2.4vw, 1.35rem);
+		scroll-margin-top: clamp(4.25rem, 11vw, 5.75rem);
+	}
+
+	#how-audit-chapter-title {
+		scroll-margin-top: clamp(4.5rem, 12vw, 6rem);
+	}
+
+	.how-audit-chapter__pitch-page {
+		margin: clamp(0.75rem, 2vw, 1.05rem) 0 0;
+		text-align: center;
+	}
+
+	.how-audit-chapter__page-link {
+		font-weight: 650;
+		color: #f5b041;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(245, 176, 65, 0.45);
+		padding-bottom: 0.04rem;
+	}
+
+	.how-audit-chapter__page-link:hover {
+		color: #f7c050;
+		border-bottom-color: rgba(247, 192, 80, 0.75);
 	}
 
 	.how-puesta-marcha__links {
