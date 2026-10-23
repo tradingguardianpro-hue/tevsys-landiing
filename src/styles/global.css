@@ -2599,3 +2599,19 @@ html[data-theme='dark'] .tevsys-feature-micro-surface .feature-sml-panel__img {
 .tevsys-copy-muted {
 	color: var(--tevsys-copy-muted);
 }
+
+/*
+  Joyas de producto en copy (no clic): más blancas / peso.
+  Ámbar + subrayado = solo links reales. Canon home definición + Tu ID CF (23 oct 2026).
+*/
+.tevsys-copy-jewel {
+	color: rgba(246, 248, 252, 0.97);
+	font-weight: 650;
+	text-decoration: none;
+	border-bottom: 0;
+	cursor: inherit;
+}
+
+html[data-theme='light'] .tevsys-copy-jewel {
+	color: rgba(28, 34, 45, 0.94);
+}

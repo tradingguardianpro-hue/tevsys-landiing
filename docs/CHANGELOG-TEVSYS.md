@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — joyas copy Tu ID (23 oct noche)
+
+- **Qué:** en `#tu-id-tevsys` ES|EN, palabras clave en blanco (`.tevsys-copy-jewel`): TVS-…, etiqueta/caso, informes MT5, decidió tevsys / ejecutó MT5, capa de auditoría. No ámbar.
+- **Commit:** `web(tevsys): jewel key phrases on tu-id block copy`
+
 ## Anclas — canon 200 ms + pendiente encuadre (23 oct noche)
 
 - **Qué:** método OK (directo + tapa **200 ms**). VT descartado. **Pendiente:** aterrizajes descentrados (p. ej. home→`#tu-id-tevsys` sin título a la vista) + igualar **todos** los clics ancla/vídeo al mismo método. Detalle: `HANDOFF_HOME_DEFINICION_TIPOGRAFIA_ANCLAS_OCT2026.md` § **4.3**.
