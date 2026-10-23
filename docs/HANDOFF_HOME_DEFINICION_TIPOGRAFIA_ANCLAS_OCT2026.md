@@ -1,9 +1,11 @@
 # Handoff — Home definición · tipografía · anclas (23 oct 2026)
 
-**Estado:** canon 23 oct 2026 (anclas). View Transitions **probado y descartado** (parecía scroll corto). Canon = salto directo + fundido tapa **~200 ms**.
+**Estado anclas:** ✅ **OK para dejar** — salto directo + fundido tapa **~200 ms**.  
+**View Transitions:** ❌ probado y **descartado** (parecía scroll corto, no transición limpia).  
+**Pendiente (obligatorio antes de dar por cerrado el sitio entero):** § **4.3** — encuadre al aterrizar + igualar **todos** los clics al mismo método.
 
 **Repo:** `tevsys-landiing`  
-**Espejo TGP:** viñetas V12 `homeDef*` · `hash*` · `cfFaq*` · `cfMovil*` · `cfRevertKeepPlex`
+**Espejo TGP:** V12 `homeDef*` · `hashFade200Canon` · `cfFaq*` · `cfMovil*` · `cfRevertKeepPlex`
 
 ---
 
@@ -80,39 +82,65 @@
 
 ---
 
-## 4. Navegación a anclas (CANON — dos capas)
+## 4. Navegación a anclas — CANON (dejar así)
 
 | Capa | Qué | Cuándo |
 |------|-----|--------|
-| **1. Aterrizaje directo** | `scroll-behavior: auto` (reset.css) | Siempre — ya estás en el bloque |
-| **2. Fundido corto** | Tapa `tgp-hash-arrive` **~200 ms** | Carga con `#ancla` (p. ej. home → CF#…) |
+| **1. Aterrizaje directo** | `scroll-behavior: auto` | Siempre — sin montaña rusa |
+| **2. Fundido corto** | Tapa `tgp-hash-arrive` **~200 ms** | Carga con `#ancla` (home → CF, etc.) |
 
 ### 4.0 View Transitions — PROBADO, NO CANON
 
-- Activado ~180 ms fade en `<main>` + scroll post-swap.
-- **Feedback fundador:** “sigue pareciendo un scroll más rápido/corto; no es sweet transition”. Prefiere **ir directo** + fundido tapa.
-- **Acción:** VT **retirado**. No reintroducir sin OK explícito.
-
+- Feedback: “sigue pareciendo un scroll más rápido/corto”. Prefiere **ir directo** + fundido tapa.
+- **Retirado.** No reintroducir sin OK explícito.
 - `prefers-reduced-motion: reduce` → sin fundido tapa.
-- **Aparcado:** smooth scroll largo; VT.
 
 ### 4.1 Archivos
 
-- `src/layouts/Base.astro` — scripts hash / `HASH_FADE_MS = 200`  
-- `src/styles/reset.css` — auto + CSS tapa 200 ms  
+- `src/layouts/Base.astro` — `HASH_FADE_MS = 200` + scripts  
+- `src/styles/reset.css` — `scroll-behavior: auto` + CSS tapa 200 ms  
 
-### 4.2 Cómo validar
+### 4.2 Cómo validar el método (OK)
 
-1. Home → Tu ID: **negro breve (~200 ms)** → ya en `#tu-id-tevsys`, **sin** recorrer CF.  
-2. Hard refresh en `/como-funciona#tu-id-tevsys`: mismo fundido.  
-3. Móvil + `prefers-reduced-motion`.  
-4. Pasada posterior: igualar **todos** los enlaces ancla/vídeo del sitio al mismo canon (varios aún pueden sentirse distintos).
+1. Home → *¿Cómo sabemos…? — tu ID tevsys*: negro breve (~200 ms) → ya en el bloque, **sin** recorrer CF.  
+2. Hard refresh `/como-funciona#tu-id-tevsys`: mismo fundido.  
+3. Móvil + reduced-motion.
+
+### 4.3 ⏳ PENDIENTE — encuadre al aterrizar + igualar todos los clics
+
+> **Importante:** el método de transición (directo + 200 ms) **se deja**. Falta trabajo de **pantalla / ancla** para que el aterrizaje no quede descentrado ni “a medias”.
+
+#### Problema visto (ejemplo)
+
+- Clic en home → **Tu ID tevsys** (`/como-funciona#tu-id-tevsys`).
+- Aterriza **demasiado abajo / descentrado**: a menudo **sin el título** del bloque a la vista (header sticky / `scroll-margin` / id en el sitio equivocado).
+- Sensación: “llegué al vídeo o al trozo, pero no al capítulo”.
+
+#### Qué hay que hacer (pasada dedicada)
+
+1. **Encuadre canónico al aterrizar**  
+   - Que se vea **título (o eyebrow + H2) + inicio del contenido** del destino.  
+   - Tip técnico probable: `scroll-margin-top` / `scroll-padding-top` acorde a altura del nav sticky; o anclar el `id` en el header de sección, no solo en el vídeo/media.  
+   - Revisar caso a caso: `#tu-id-tevsys` primero (bug reportado).
+
+2. **Igualar TODOS los clics** al mismo método  
+   - Home (intradía, swing, Tu ID, cards, invite…).  
+   - Cómo funciona (ramas, clips, FAQ, vigilancia, deep links del footer…).  
+   - Micros (Precisión, HyperClose, SML, Evidencia) ↔ CF / otros.  
+   - Instalación / configuración / `?play=1` / hashes de vídeo.  
+   - Objetivo: **mismo** aterrizaje directo + fundido 200 ms; **ningún** enlace con smooth-tour residual o aterrizaje “a ciegas”.
+
+3. **Checklist de cierre** (cuando se haga la pasada)  
+   - [ ] `#tu-id-tevsys` desde home: título visible  
+   - [ ] Lista de hashes usados en la web recorrida (desktop + móvil)  
+   - [ ] Ningún `scrollIntoView({ behavior: 'smooth' })` en destinos largos sin OK  
+   - [ ] Handoff + CHANGELOG: “pasada encuadre anclas ✅”
+
+**No mezclar** esta pasada con rediseño de copy. Solo **dónde para el ojo** + **mismo método de transición en todos los clics**.
 
 ---
 
 ## 5. Commits de referencia (oleada 23 oct)
-
-Orden lógico (pegar según lo que falte en git):
 
 ```
 web(tevsys): put traceability in home definition lead after swing
@@ -127,20 +155,20 @@ web(tevsys): enable view transitions with fade and hash scroll canon
 web(tevsys): revert view transitions keep 200ms hash fade landing
 ```
 
-(Agrupar en menos commits si el fundador prefiere un solo push temático.)
-
 ---
 
 ## 6. Qué mejora es (mensaje de producto)
 
-- **Home** deja de ser solo “utilidad de límites”: nombra **trazabilidad**, enseña **HyperClose**, prueba **contrastable con MT5**, y empuja al **ID** con aire de lectura.
+- **Home** nombra **trazabilidad**, enseña **HyperClose**, prueba **contrastable con MT5**, y empuja al **ID** con aire de lectura.
 - **Cómo funciona** FAQ legible (acordeón + acto) y visualmente alineada al negro de marca.
-- **Navegación** entre piezas largas: intención del clic respetada (aterrizar), sensación tech (fundido / VT) sin teatro de scroll.
+- **Navegación:** sin montaña rusa; fundido corto 200 ms. Encuadre de títulos = **siguiente pasada** (§ 4.3).
 
 ---
 
 ## 7. Retomar
 
-*«canon home definición»* · *«joyas home»* · *«anclas / view transitions»* · *«FAQ acordeón CF»*
+*«canon home definición»* · *«joyas home»* · *«anclas 200 ms»* · *«encuadre anclas»* / *«aterrizaje título»* · *«FAQ acordeón CF»*
 
-Si algo falla: **no** volver al smooth tour; mantener salto directo + fundido 200 ms. VT no vuelve sin OK.
+- Método transición: **dejar**.  
+- Encuadre + unificar clics: **siguiente**.  
+- VT / smooth tour: **no**.

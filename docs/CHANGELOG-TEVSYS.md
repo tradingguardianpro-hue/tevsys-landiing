@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Anclas — canon 200 ms + pendiente encuadre (23 oct noche)
+
+- **Qué:** método OK (directo + tapa **200 ms**). VT descartado. **Pendiente:** aterrizajes descentrados (p. ej. home→`#tu-id-tevsys` sin título a la vista) + igualar **todos** los clics ancla/vídeo al mismo método. Detalle: `HANDOFF_HOME_DEFINICION_TIPOGRAFIA_ANCLAS_OCT2026.md` § **4.3**.
+- **Commit docs:** `web(tevsys): document hash landing canon and pending scroll framing`
+
 ## Anclas — VT descartado; fundido 200 ms (23 oct noche)
 
 - **Qué:** View Transitions retirado (parecía scroll corto). Canon: salto directo + tapa ~**200 ms**. Handoff actualizado.
