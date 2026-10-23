@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — trazabilidad en el lead (23 oct noche)
+
+- **Qué:** tras intradía/swing: *Deja trazabilidad desde la instalación — y de lo que pasa en tu operativa.* Beat 3 = acta/contraste (sin repetir la palabra). Sin «todo».
+- **Commit:** `web(tevsys): put traceability in home definition lead after swing`
+
 ## Home trazabilidad + CF FAQ tramo negro (23 oct noche)
 
 - **Qué:** beat 3 home nombra **trazabilidad** (joya, no solo «deja acta»). CF: corte `Preguntas frecuentes` antes del tramo; tarjetas más negras (alineadas al canvas); vigilancia también en acordeón.

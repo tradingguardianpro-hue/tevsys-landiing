@@ -226,9 +226,9 @@ Ver handoff hero.
 
 **Copy vivo (ES):**
 
-- **Lead (11 sep 2026 noche):** `…(día y semana), tus días OFF — y se aplican… en **intradía y swing**.` Negrita solo el par alcance. Atribución: negrita *decisión de tevsys* / *ejecución en MT5* (no toda la línea). Cierre gancho sigue con subrayado *lo demuestra…*.
+- **Lead (23 oct 2026):** `…en **intradía** y **swing**. Deja trazabilidad desde la instalación — y de lo que pasa en tu operativa.` (sin «todo»: claim honesto). Links ámbar intradía/swing. Atribución: negrita *decisión de tevsys* / *ejecución en MT5*. Cierre gancho: subrayado *lo demuestra…*.
   - **Norma:** no «reglas numéricas»; no «bloqueo» suelto; no «límites diarios/semanales» sin decir de qué.
-- **Tres líneas** (lista, puntos ámbar): `Cierra al alcanzar los límites que has configurado, con precisión documentada.` · `Si intentas operar ya bloqueado, HyperClose cierra en milisegundos y deja constancia del intento.` · `Trazabilidad de punta a punta: acta desde la instalación — qué pactaste, cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.`
+- **Tres líneas** (lista, puntos ámbar): `Cierra al alcanzar los límites…` · `HyperClose…` · `Acta de lo pactado y de lo ocurrido — cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.` (trazabilidad ya va en el lead).
 - **Cierre:** `No opera por ti: cumple lo que tú decides — y lo demuestra, operativa a operativa.`
 
 **EN:** `…(day and week), your OFF days — … in **intraday and swing**.` Attribution accents: *tevsys’s close decision* / *MT5 execution*.

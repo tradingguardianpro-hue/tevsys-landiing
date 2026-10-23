@@ -31,16 +31,17 @@ export const homeCopy = {
 		definitionLeadMid: ' y ',
 		definitionLeadSwing: 'swing',
 		definitionLeadSwingHref: '/como-funciona#overnight-laborable',
-		definitionLeadAfter: '.',
+		definitionLeadAfter:
+			'. Deja trazabilidad desde la instalación — y de lo que pasa en tu operativa.',
 		/* Texto plano (SEO / espejos). */
 		definitionLead:
-			'tevsys es una utilidad para MetaTrader 5. Tú decides las reglas — límites de pérdida y ganancia (día y semana) y tus días OFF. Se aplican sobre toda la cuenta desde un solo gráfico, en intradía y swing.',
+			'tevsys es una utilidad para MetaTrader 5. Tú decides las reglas — límites de pérdida y ganancia (día y semana) y tus días OFF. Se aplican sobre toda la cuenta desde un solo gráfico, en intradía y swing. Deja trazabilidad desde la instalación — y de lo que pasa en tu operativa.',
 		/* Tres golpes separados (5 sep): SML fuera de aquí — «ampliar margen» rema contra el mensaje
 		   de este bloque. SML tiene su propia card y su micro. */
 		definitionBeats: [
 			'Cierra al alcanzar los límites que has configurado, con precisión documentada.',
 			'Si intentas operar ya bloqueado, HyperClose cierra en milisegundos y deja constancia del intento.',
-			'Trazabilidad de punta a punta: acta desde la instalación — qué pactaste, cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.',
+			'Acta de lo pactado y de lo ocurrido — cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.',
 		],
 		definitionBeatsAria: 'Lo que hace tevsys',
 		/* 18 oct 2026 — puente ID → /como-funciona#tu-id-tevsys */
@@ -210,13 +211,14 @@ export const homeCopy = {
 		definitionLeadMid: ' and ',
 		definitionLeadSwing: 'swing',
 		definitionLeadSwingHref: '/como-funciona#overnight-laborable',
-		definitionLeadAfter: '.',
+		definitionLeadAfter:
+			'. It leaves traceability from install — and of what happens in your trading.',
 		definitionLead:
-			'tevsys is a MetaTrader 5 utility. You set the rules — loss and profit limits (day and week) and your OFF days. They apply across the whole account from a single chart, in intraday and swing.',
+			'tevsys is a MetaTrader 5 utility. You set the rules — loss and profit limits (day and week) and your OFF days. They apply across the whole account from a single chart, in intraday and swing. It leaves traceability from install — and of what happens in your trading.',
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
 			'If you try to trade while already locked, HyperClose closes in milliseconds and leaves a record of the attempt.',
-			'End-to-end traceability: a record from install — what you agreed, when it closed and under which rules — cross-checkable against the official MT5 report.',
+			'A record of what you agreed and what occurred — when it closed and under which rules — cross-checkable against the official MT5 report.',
 		],
 		definitionBeatsAria: 'What tevsys does',
 		/* 18 Oct 2026 — ID bridge → /en/como-funciona#tu-id-tevsys */
