@@ -114,15 +114,18 @@
 #### Problema visto (ejemplo)
 
 - Clic en home → **Tu ID tevsys** (`/como-funciona#tu-id-tevsys`).
-- Aterriza **demasiado abajo / descentrado**: a menudo **sin el título** del bloque a la vista (header sticky / `scroll-margin` / id en el sitio equivocado).
-- Sensación: “llegué al vídeo o al trozo, pero no al capítulo”.
+- Mal: aterrizaje **demasiado abajo** (título a media pantalla / sin el corte cian).
+- Bien: ver **«Aquí comienza la fase de auditoría»** + Identidad + **Tu ID tevsys** + copy (como 2.ª captura fundador).
 
-#### Qué hay que hacer (pasada dedicada)
+#### Tu ID — hecho 23 oct (encuadre)
 
-1. **Encuadre canónico al aterrizar**  
-   - Que se vea **título (o eyebrow + H2) + inicio del contenido** del destino.  
-   - Tip técnico probable: `scroll-margin-top` / `scroll-padding-top` acorde a altura del nav sticky; o anclar el `id` en el header de sección, no solo en el vídeo/media.  
-   - Revisar caso a caso: `#tu-id-tevsys` primero (bug reportado).
+- `id="tu-id-tevsys"` movido al corte `.how-more-audit-cut` (antes estaba en el bloque interno → perdías el corte).
+- `scroll-margin-top` bajo nav sticky.
+- Validar: home → Tu ID ≈ 2.ª captura.
+
+#### Qué queda (pasada dedicada resto de hashes)
+
+1. **Encuadre** en otros `#…` (mismo criterio: título/corte a la vista).
 
 2. **Igualar TODOS los clics** al mismo método  
    - Home (intradía, swing, Tu ID, cards, invite…).  

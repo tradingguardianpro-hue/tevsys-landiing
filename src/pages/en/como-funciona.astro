@@ -1082,7 +1082,8 @@ const microclipBranches: MicroclipBranch[] = [
 			</div>
 				</section>
 
-		<p class="how-more-audit-cut">
+		{/* id on the cut: home→#tu-id-tevsys must show phase label + title (not mid-video). */}
+		<p class="how-more-audit-cut" id={tuIdTevsysBlock.id}>
 			<span class="how-more-audit-cut__line" aria-hidden="true"></span>
 			<span class="how-more-audit-cut__label">Audit phase starts here</span>
 		</p>
@@ -1093,7 +1094,6 @@ const microclipBranches: MicroclipBranch[] = [
 			<div class="how-audit-chapter__stage-inner">
 					<section
 						class="how-id-tevsys"
-						id={tuIdTevsysBlock.id}
 						aria-labelledby="how-id-tevsys-title">
 						<header class="how-section-head how-chapter__head how-chapter__head--audit">
 							<p class="how-eyebrow how-eyebrow--center how-eyebrow--chapter-kicker how-eyebrow--audit-kicker">
@@ -5556,6 +5556,10 @@ const microclipBranches: MicroclipBranch[] = [
 		align-items: center;
 		gap: 0.7rem;
 		text-align: center;
+	}
+
+	#tu-id-tevsys.how-more-audit-cut {
+		scroll-margin-top: clamp(4.25rem, 11vw, 5.75rem);
 	}
 
 	.how-more-audit-cut__line {

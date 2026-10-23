@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Anclas — encuadre Tu ID (corte auditoría, 23 oct noche)
+
+- **Qué:** `#tu-id-tevsys` en el corte «Aquí comienza la fase de auditoría» + `scroll-margin-top`. Home→Tu ID debe verse como la captura “bien” (corte + título), no a media tarjeta.
+- **Commit:** `web(tevsys): land tu-id hash on audit cut with scroll margin`
+
 ## Cómo funciona — Tu ID copy + joyas (2.ª pasada, 23 oct noche)
 
 - **Qué:** copy más corto, alineado al overlay del vídeo (*identificador personal*). Joyas: TVS-… · identificador personal · decidió tevsys · ejecutó MT5. Sin MT5/auditoría en blanco (CTA lleva auditoría).
