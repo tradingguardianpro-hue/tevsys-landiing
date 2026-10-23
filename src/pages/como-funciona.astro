@@ -83,7 +83,7 @@ const tuIdTevsysBlock = {
 	posterSrc: '/videos/como-funciona/tevsys-mc-tu-id-tevsys-40s-poster.jpg?v=20261021',
 	videoLabel: 'Así sabemos qué pasó en tu operativa — identificador personal',
 	/** Bajo el vídeo: invita a bajar al bloque «Hechos…» (misma página). Micropágina auditoría = enlace dentro de ese bloque. */
-	ctaHref: '#how-audit-chapter-title',
+	ctaHref: '#hechos-cruzar',
 	ctaLabel: 'Sigue: hechos que se pueden cruzar',
 	auditPageHref: '/auditoria-ia',
 	auditPageLabel: 'Capa de auditoría',
@@ -1471,6 +1471,45 @@ const microclipBranches: MicroclipBranch[] = [
 					: btn.getAttribute('data-label-more') || 'Leer definición completa';
 			});
 		}
+	})();
+</script>
+<script is:inline data-astro-rerun>
+	(() => {
+		/* Salto corto vídeo→Hechos: lento y suave (no boom instantáneo; no smooth global de página larga). */
+		const link = document.querySelector('.how-id-tevsys__cta a[href="#hechos-cruzar"]');
+		const target = document.getElementById('hechos-cruzar');
+		if (!link || !target) return;
+
+		const navOffset = () => {
+			const nav = document.querySelector('header, .nav, [data-nav]');
+			const h = nav && nav instanceof HTMLElement ? nav.getBoundingClientRect().height : 64;
+			return Math.max(52, Math.min(88, h + 8));
+		};
+
+		const gentleScrollTo = (el, durationMs) => {
+			if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+				el.scrollIntoView({ behavior: 'auto', block: 'start' });
+				return;
+			}
+			const end = el.getBoundingClientRect().top + window.scrollY - navOffset();
+			const start = window.scrollY;
+			const dist = end - start;
+			if (Math.abs(dist) < 4) return;
+			const t0 = performance.now();
+			const step = (now) => {
+				const p = Math.min(1, (now - t0) / durationMs);
+				const ease = 0.5 - 0.5 * Math.cos(Math.PI * p);
+				window.scrollTo(0, start + dist * ease);
+				if (p < 1) requestAnimationFrame(step);
+			};
+			requestAnimationFrame(step);
+		};
+
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+			gentleScrollTo(target, 820);
+			if (history.replaceState) history.replaceState(null, '', '#hechos-cruzar');
+		});
 	})();
 </script>
 <script is:inline data-astro-rerun>
@@ -3556,11 +3595,12 @@ const microclipBranches: MicroclipBranch[] = [
 
 	.how-id-tevsys__audit-follow {
 		margin-top: clamp(0.85rem, 2.4vw, 1.35rem);
-		scroll-margin-top: clamp(4.25rem, 11vw, 5.75rem);
+		/* Solo despeje de nav: margen grande dejaba el título bajo y el FAQ “entraba” en pantalla. */
+		scroll-margin-top: clamp(3.35rem, 8vw, 4.35rem);
 	}
 
 	#how-audit-chapter-title {
-		scroll-margin-top: clamp(4.5rem, 12vw, 6rem);
+		scroll-margin-top: clamp(3.35rem, 8vw, 4.35rem);
 	}
 
 	.how-audit-chapter__pitch-page {
@@ -5637,9 +5677,12 @@ const microclipBranches: MicroclipBranch[] = [
 		text-align: center;
 	}
 
-	/* Encuadre bajo nav sticky: al aterrizar #tu-id-tevsys se ve el corte + título. */
+	/*
+	  Home→#tu-id-tevsys: margen justo bajo el nav.
+	  Si es demasiado alto, se ve el remate del óvalo anterior (p. ej. Mimetiza tu panel).
+	*/
 	#tu-id-tevsys.how-more-audit-cut {
-		scroll-margin-top: clamp(4.25rem, 11vw, 5.75rem);
+		scroll-margin-top: clamp(3.35rem, 8vw, 4.35rem);
 	}
 
 	.how-more-audit-cut__line {

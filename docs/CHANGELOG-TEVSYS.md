@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Tu ID — encuadre home + scroll lento a Hechos (23 oct noche)
+
+- **Qué:** menos `scroll-margin` (no se ve el remate de Mimetiza). CTA→Hechos: bajada **lenta ~820 ms** (no boom). Cross-page sigue directo+200 ms.
+- **Commit:** `web(tevsys): fix tu-id frame and gentle scroll to facts block`
+
 ## Tu ID — CTA baja a Hechos (23 oct noche)
 
 - **Qué:** bajo el vídeo: *Sigue: hechos que se pueden cruzar →* (ancla in-page). *Capa de auditoría →* pasa al bloque Hechos (micropágina). Menos “perdido en la nada”.
