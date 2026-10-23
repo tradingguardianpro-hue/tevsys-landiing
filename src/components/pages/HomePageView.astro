@@ -41,10 +41,18 @@ const L = (href) => localizeHref(href, locale);
 					<a class="tevsys-home-definition__world-link" href={L(t.definitionLeadSwingHref)}
 						>{t.definitionLeadSwing}</a
 					>
-					{t.definitionLeadAfter}
+					{t.definitionLeadAfterBefore}<span class="tevsys-home-definition__jewel"
+						>{t.definitionLeadJewel}</span
+					>{t.definitionLeadAfterJewel}
 				</p>
 				<ul class="tevsys-home-definition__beats" aria-label={t.definitionBeatsAria}>
-					{t.definitionBeats.map((beat) => <li>{beat}</li>)}
+					<li>{t.definitionBeat1}</li>
+					<li>
+						{t.definitionBeat2Before}<span class="tevsys-home-definition__jewel"
+							>{t.definitionBeat2Jewel}</span
+						>{t.definitionBeat2After}
+					</li>
+					<li>{t.definitionBeat3}</li>
 				</ul>
 				<p class="tevsys-home-definition__id-bridge" aria-label={t.definitionIdBridgeAria}>
 					<a

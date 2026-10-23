@@ -69,6 +69,17 @@
 	html[data-theme='light'] .tevsys-home-definition__attribution strong {
 		color: rgba(35, 42, 55, 0.95);
 	}
+	/* Joyas de producto (no clic): más claras que el muted — no ámbar, no subrayado (= no link). */
+	.tevsys-home-definition__jewel {
+		color: rgba(246, 248, 252, 0.97);
+		font-weight: 650;
+		text-decoration: none;
+		border-bottom: 0;
+		cursor: inherit;
+	}
+	html[data-theme='light'] .tevsys-home-definition__jewel {
+		color: rgba(28, 34, 45, 0.94);
+	}
 	/* 18 oct 2026 — intradía / swing = puertas (ámbar, misma familia que ID bridge). */
 	.tevsys-home-definition__world-link {
 		color: #f5b041;

@@ -31,13 +31,22 @@ export const homeCopy = {
 		definitionLeadMid: ' y ',
 		definitionLeadSwing: 'swing',
 		definitionLeadSwingHref: '/como-funciona#overnight-laborable',
+		/* Tras swing: joya visual = trazabilidad (no link; no ámbar). */
+		definitionLeadAfterBefore: '. ',
+		definitionLeadJewel: 'Deja trazabilidad desde la instalación',
+		definitionLeadAfterJewel: ' — y de lo que pasa en tu operativa.',
 		definitionLeadAfter:
 			'. Deja trazabilidad desde la instalación — y de lo que pasa en tu operativa.',
 		/* Texto plano (SEO / espejos). */
 		definitionLead:
 			'tevsys es una utilidad para MetaTrader 5. Tú decides las reglas — límites de pérdida y ganancia (día y semana) y tus días OFF. Se aplican sobre toda la cuenta desde un solo gráfico, en intradía y swing. Deja trazabilidad desde la instalación — y de lo que pasa en tu operativa.',
-		/* Tres golpes separados (5 sep): SML fuera de aquí — «ampliar margen» rema contra el mensaje
-		   de este bloque. SML tiene su propia card y su micro. */
+		/* Tres golpes (5 sep). Beat 2: joya HyperClose (peso/claro, no naranja clicable). */
+		definitionBeat1: 'Cierra al alcanzar los límites que has configurado, con precisión documentada.',
+		definitionBeat2Before: 'Si intentas operar ya bloqueado, ',
+		definitionBeat2Jewel: 'HyperClose',
+		definitionBeat2After: ' cierra en milisegundos y deja constancia del intento.',
+		definitionBeat3:
+			'Acta de lo pactado y de lo ocurrido — cuándo cerró y bajo qué reglas — contrastable con el informe oficial de MT5.',
 		definitionBeats: [
 			'Cierra al alcanzar los límites que has configurado, con precisión documentada.',
 			'Si intentas operar ya bloqueado, HyperClose cierra en milisegundos y deja constancia del intento.',
@@ -211,10 +220,19 @@ export const homeCopy = {
 		definitionLeadMid: ' and ',
 		definitionLeadSwing: 'swing',
 		definitionLeadSwingHref: '/como-funciona#overnight-laborable',
+		definitionLeadAfterBefore: '. ',
+		definitionLeadJewel: 'It leaves traceability from install',
+		definitionLeadAfterJewel: ' — and of what happens in your trading.',
 		definitionLeadAfter:
 			'. It leaves traceability from install — and of what happens in your trading.',
 		definitionLead:
 			'tevsys is a MetaTrader 5 utility. You set the rules — loss and profit limits (day and week) and your OFF days. They apply across the whole account from a single chart, in intraday and swing. It leaves traceability from install — and of what happens in your trading.',
+		definitionBeat1: 'It closes when you hit the limits you configured, with documented precision.',
+		definitionBeat2Before: 'If you try to trade while already locked, ',
+		definitionBeat2Jewel: 'HyperClose',
+		definitionBeat2After: ' closes in milliseconds and leaves a record of the attempt.',
+		definitionBeat3:
+			'A record of what you agreed and what occurred — when it closed and under which rules — cross-checkable against the official MT5 report.',
 		definitionBeats: [
 			'It closes when you hit the limits you configured, with documented precision.',
 			'If you try to trade while already locked, HyperClose closes in milliseconds and leaves a record of the attempt.',
