@@ -62,17 +62,39 @@
 
 ---
 
-## Piloto ya hecho (23 oct noche) — no confundir con móvil
+## Piloto desktop ya cerrado (23 oct noche) — no confundir con móvil
 
-- **`#panel-adaptativo`** en Cómo funciona ES|EN: orden visual-first + losa un peldaño más clara. Ver CHANGELOG *panel adaptativo visual-first*.
-- **Móvil** sigue pendiente (esta carpeta).
+- Tema **claro** CF: **revertido** (marca negra).  
+- **IBM Plex Sans** en toda Cómo funciona + trozo definición home.  
+- Lab claro documentado; no reabrir sin mesa.  
+- **Móvil** = cola viva (esta carpeta + § siguiente).
+
+---
+
+## Cómo funciona móvil — teaser (23 oct noche) · IMPLEMENTADO piloto
+
+**Retomar:** *«CF móvil leer más»* · *«definición SEO móvil»*.
+
+### Qué hay ahora (≤768px)
+- Teaser: *intradía* / *swing* (clic → Presentación) + «Ver presentación →».  
+- Botón «Leer definición completa» / ocultar.  
+- Párrafo GEO **sigue en el HTML** (colapsado hasta abrir).  
+- Desktop: párrafo completo como siempre.
+
+### Pendiente móvil (otra cola)
+Alineación ☰ / halo / cards (capturas home) — no cerrado en este piloto.
+
+### Relación con el resto
+Misma ola de mejora web que vídeos Penguin / microclips: **claridad visual + móvil**, sin abandonar negro de marca. Alineación ☰ / halo = sigue en tabla de abajo.
+
+---
 
 ## Orden de ataque sugerido (cuando haya gasolina o Mario)
 
 1. **Alineación** (menú + cards) — lo más “roto” a ojo.  
 2. **Halo / márgenes** en móvil.  
-3. **Densidad home** (texto bajo demanda).  
-4. Extender visual-first a Operación swing / otros bloques si el piloto convence.  
+3. **CF móvil:** lead corto + Leer más / clic intradía·swing → Presentación (**sin** romper SEO) — § arriba.  
+4. **Densidad home** móvil (mismo patrón “bajo demanda”).  
 5. Tema claro solo si la mesa Raúl/Mario lo prioriza.
 
 ---

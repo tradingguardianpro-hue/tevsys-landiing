@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — FAQ acordeón clicable (23 oct noche)
+
+- **Qué:** `#overnight-faq` + `#faq-espejo` ES|EN — pregunta visible con `+`/`−`; respuesta solo al clic (`details`/`summary`). Texto sigue en DOM (SEO/JSON-LD intactos). Deja de ser muro ilegible.
+- **Commit:** `web(tevsys): accordion FAQs on como-funciona overnight and mirror`
+
+## Cómo funciona — móvil teaser + Plex en FAQ (23 oct noche)
+
+- **Qué:** móvil ≤768px — teaser *intradía/swing* + «Ver presentación» + «Leer definición completa» (texto GEO sigue en DOM). Desktop sin cambio de muro. FAQ/coverage forzados a Plex (no mono en eyebrows de ese bloque).
+- **Commit:** `web(tevsys): mobile definition teaser and plex on CF FAQ blocks`
+
 ## Cómo funciona — Plex en toda la micropágina (23 oct noche)
 
 - **Qué:** unificar IBM Plex Sans en títulos + copy CF (antes h1–h3 seguían Inter/DM Sans vía tokens). Etiquetas mono intactas. Operación swing incluido.

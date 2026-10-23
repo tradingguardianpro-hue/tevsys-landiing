@@ -413,13 +413,37 @@ const microclipBranches: MicroclipBranch[] = [
 			<div class="how-intro-stage__inner">
 				<section class="how-hero how-hero--tight" aria-labelledby="how-hero-title">
 					<h1 id="how-hero-title">Cómo funciona <span class="how-accent">tevsys</span></h1>
-					<p class="tevsys-page-definition tevsys-page-definition--centered how-hero__definition">
-						tevsys es una utilidad para MetaTrader 5 que hace cumplir las reglas que configuras —límites de
-						pérdida y ganancia (día y semana), días OFF y el bloqueo al alcanzar el límite— en{' '}
-						<strong>intradía</strong> y en <strong>swing</strong>. Deja acta desde la instalación y separa
-						en el cierre la decisión de tevsys de la ejecución en MT5. Aquí lo ves funcionando en una sesión
-						real.
-					</p>
+					{/* Móvil: teaser + definición completa en DOM (SEO). Desktop: solo párrafo completo. */}
+					<div class="how-hero__def-block">
+						<p class="how-hero__def-teaser">
+							Límites que configuras, en{' '}
+							<a class="how-hero__def-world" href="#how-presentation-title">intradía</a>
+							{' '}y en{' '}
+							<a class="how-hero__def-world" href="#how-presentation-title">swing</a>.
+							{' '}
+							<a class="how-hero__def-jump" href="#how-presentation-title">Ver presentación →</a>
+						</p>
+						<p
+							id="how-hero-definition-full"
+							class="tevsys-page-definition tevsys-page-definition--centered how-hero__definition">
+							tevsys es una utilidad para MetaTrader 5 que hace cumplir las reglas que configuras —límites de
+							pérdida y ganancia (día y semana), días OFF y el bloqueo al alcanzar el límite— en{' '}
+							<a class="how-hero__def-world" href="#how-presentation-title"><strong>intradía</strong></a>
+							{' '}y en{' '}
+							<a class="how-hero__def-world" href="#how-presentation-title"><strong>swing</strong></a>.
+							{' '}Deja acta desde la instalación y separa en el cierre la decisión de tevsys de la ejecución
+							en MT5. Aquí lo ves funcionando en una sesión real.
+						</p>
+						<button
+							type="button"
+							class="how-hero__leer-mas"
+							aria-expanded="false"
+							aria-controls="how-hero-definition-full"
+							data-label-more="Leer definición completa"
+							data-label-less="Ocultar definición">
+							Leer definición completa
+						</button>
+					</div>
 				</section>
 
 				<section class="how-presentation" aria-labelledby="how-presentation-title">
@@ -1135,39 +1159,43 @@ const microclipBranches: MicroclipBranch[] = [
 					Medianoche con operación abierta: <span class="how-present-title__accent">qué hace tevsys</span>
 				</h2>
 				<div class="how-coverage__answer how-overnight-faq">
-					<article class="how-overnight-faq__item">
-						<h3 class="how-coverage__question how-overnight-faq__q">
+					<details class="how-overnight-faq__item">
+						<summary class="how-coverage__question how-overnight-faq__q">
 							Si ya tienes protección y dejas una operación abierta al cruzar medianoche, ¿qué pasa con el
 							límite de pérdida del día?
-						</h3>
-						<p class="how-coverage__lead">
-							Mandan los <strong>porcentajes que aceptaste al proteger</strong>. Operación abierta que
-							cruza medianoche o fin de semana: sigues bajo el pacto — la protección
-							<strong> no se reinicia a mitad de una operación</strong> ni te deja la posición sin red.
-							En pantalla:
-							<strong> Operación en curso — sigues protegido</strong>. Justo por eso el panel distingue el
-							escenario intradía del que cruza calendario —{' '}
-							<a href="#panel-adaptativo">lo ves tal cual</a>.
-						</p>
-						<p class="how-coverage__closing">
-							El cierre al límite es el motor de límites (no HyperClose). HyperClose actúa si, ya
-							protegido, intentas abrir operaciones nuevas. El cambio de día que usa tevsys sigue el
-							calendario de tu terminal (hora local del PC). Guía laborable:{' '}
-							<a href="#overnight-laborable">Operación swing — medianoche no te deja sin red</a>
-							{' '}(<code>#overnight-laborable</code>).
-						</p>
-					</article>
-					<article class="how-overnight-faq__item">
-						<h3 class="how-coverage__question how-overnight-faq__q">
+						</summary>
+						<div class="how-overnight-faq__body">
+							<p class="how-coverage__lead">
+								Mandan los <strong>porcentajes que aceptaste al proteger</strong>. Operación abierta que
+								cruza medianoche o fin de semana: sigues bajo el pacto — la protección
+								<strong> no se reinicia a mitad de una operación</strong> ni te deja la posición sin red.
+								En pantalla:
+								<strong> Operación en curso — sigues protegido</strong>. Justo por eso el panel distingue el
+								escenario intradía del que cruza calendario —{' '}
+								<a href="#panel-adaptativo">lo ves tal cual</a>.
+							</p>
+							<p class="how-coverage__closing">
+								El cierre al límite es el motor de límites (no HyperClose). HyperClose actúa si, ya
+								protegido, intentas abrir operaciones nuevas. El cambio de día que usa tevsys sigue el
+								calendario de tu terminal (hora local del PC). Guía laborable:{' '}
+								<a href="#overnight-laborable">Operación swing — medianoche no te deja sin red</a>
+								{' '}(<code>#overnight-laborable</code>).
+							</p>
+						</div>
+					</details>
+					<details class="how-overnight-faq__item">
+						<summary class="how-coverage__question how-overnight-faq__q">
 							¿Essential se desbloquea a la misma hora que Advanced o Pro?
-						</h3>
-						<p class="how-coverage__lead">
-							<strong>No.</strong> Essential, <strong>sin</strong> operación abierta, puedes reconfigurar a
-							partir de la medianoche local. Si hay operación abierta y protección, el calendario
-							<strong> no te suelta</strong>. Advanced/Pro: el pacto de la semana se mantiene hasta el fin
-							de semana; con operación abierta tampoco se suelta solo porque cambie el día.
-						</p>
-					</article>
+						</summary>
+						<div class="how-overnight-faq__body">
+							<p class="how-coverage__lead">
+								<strong>No.</strong> Essential, <strong>sin</strong> operación abierta, puedes reconfigurar a
+								partir de la medianoche local. Si hay operación abierta y protección, el calendario
+								<strong> no te suelta</strong>. Advanced/Pro: el pacto de la semana se mantiene hasta el fin
+								de semana; con operación abierta tampoco se suelta solo porque cambie el día.
+							</p>
+						</div>
+					</details>
 				</div>
 			</div>
 			<script
@@ -1207,47 +1235,53 @@ const microclipBranches: MicroclipBranch[] = [
 					HyperClose, candado y <span class="how-present-title__accent">qué no somos</span>
 				</h2>
 				<div class="how-coverage__answer how-overnight-faq">
-					<article class="how-overnight-faq__item" id="faq-hyperclose">
-						<h3 class="how-coverage__question how-overnight-faq__q">
+					<details class="how-overnight-faq__item" id="faq-hyperclose">
+						<summary class="how-coverage__question how-overnight-faq__q">
 							¿Qué es HyperClose y en qué se diferencia de cerrar al alcanzar el límite?
-						</h3>
-						<p class="how-coverage__lead">
-							<strong>Cierre al límite:</strong> cuando el resultado toca el % que aceptaste, tevsys cierra lo
-							abierto (motor de límites).
-							<strong> HyperClose:</strong> cuando <strong>ya</strong> hay protección y
-							<strong>intentas abrir de nuevo</strong>, cierra esa entrada nueva al instante y deja registro
-							(semáforo). No es “otro nombre” del stop diario.
-						</p>
-						<p class="how-coverage__closing">
-							Día OFF + intentas operar → misma familia: el intento se cierra; MetaTrader sigue abierto — no
-							“apagamos” el terminal.
-						</p>
-					</article>
-					<article class="how-overnight-faq__item" id="faq-candado-ea">
-						<h3 class="how-coverage__question how-overnight-faq__q">
+						</summary>
+						<div class="how-overnight-faq__body">
+							<p class="how-coverage__lead">
+								<strong>Cierre al límite:</strong> cuando el resultado toca el % que aceptaste, tevsys cierra lo
+								abierto (motor de límites).
+								<strong> HyperClose:</strong> cuando <strong>ya</strong> hay protección y
+								<strong>intentas abrir de nuevo</strong>, cierra esa entrada nueva al instante y deja registro
+								(semáforo). No es “otro nombre” del stop diario.
+							</p>
+							<p class="how-coverage__closing">
+								Día OFF + intentas operar → misma familia: el intento se cierra; MetaTrader sigue abierto — no
+								“apagamos” el terminal.
+							</p>
+						</div>
+					</details>
+					<details class="how-overnight-faq__item" id="faq-candado-ea">
+						<summary class="how-coverage__question how-overnight-faq__q">
 							Si quito tevsys del gráfico en MT5, ¿se borra la protección o el candado sigue?
-						</h3>
-						<p class="how-coverage__lead">
-							Sin el EA en el gráfico <strong>no hay vigilancia en vivo</strong>. El
-							<strong>candado y los % del pacto siguen guardados</strong>: al volver a cargar tevsys, mismos
-							límites — no un panel «libre». Queda constancia del hueco.
-						</p>
-						<p class="how-coverage__closing">
-							No hace falta “esconder la contraseña del VPS” para que el pacto exista: el estado persiste en
-							tu terminal. El VPS sirve para <strong>vigilancia casi continua</strong>, no para inventar el
-							candado.
-						</p>
-					</article>
-					<article class="how-overnight-faq__item" id="faq-senales">
-						<h3 class="how-coverage__question how-overnight-faq__q">
+						</summary>
+						<div class="how-overnight-faq__body">
+							<p class="how-coverage__lead">
+								Sin el EA en el gráfico <strong>no hay vigilancia en vivo</strong>. El
+								<strong>candado y los % del pacto siguen guardados</strong>: al volver a cargar tevsys, mismos
+								límites — no un panel «libre». Queda constancia del hueco.
+							</p>
+							<p class="how-coverage__closing">
+								No hace falta “esconder la contraseña del VPS” para que el pacto exista: el estado persiste en
+								tu terminal. El VPS sirve para <strong>vigilancia casi continua</strong>, no para inventar el
+								candado.
+							</p>
+						</div>
+					</details>
+					<details class="how-overnight-faq__item" id="faq-senales">
+						<summary class="how-coverage__question how-overnight-faq__q">
 							¿tevsys da señales de entrada o solo aplica límites?
-						</h3>
-						<p class="how-coverage__lead">
-							<strong>Solo aplica los límites que tú configuras.</strong> No da señales, no predice el
-							mercado y no opera por ti. La estrategia es tuya; tevsys hace cumplir el pacto y deja
-							evidencia contrastable con MT5.
-						</p>
-					</article>
+						</summary>
+						<div class="how-overnight-faq__body">
+							<p class="how-coverage__lead">
+								<strong>Solo aplica los límites que tú configuras.</strong> No da señales, no predice el
+								mercado y no opera por ti. La estrategia es tuya; tevsys hace cumplir el pacto y deja
+								evidencia contrastable con MT5.
+							</p>
+						</div>
+					</details>
 				</div>
 			</div>
 			<script
@@ -1384,6 +1418,21 @@ const microclipBranches: MicroclipBranch[] = [
 
 <script is:inline>
 	(() => {
+		const block = document.querySelector('.how-hero__def-block');
+		const btn = document.querySelector('.how-hero__leer-mas');
+		if (block && btn) {
+			btn.addEventListener('click', () => {
+				const open = block.classList.toggle('is-def-open');
+				btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+				btn.textContent = open
+					? btn.getAttribute('data-label-less') || 'Ocultar definición'
+					: btn.getAttribute('data-label-more') || 'Leer definición completa';
+			});
+		}
+	})();
+</script>
+<script is:inline>
+	(() => {
 		const params = new URLSearchParams(window.location.search);
 		if (params.get('play') !== '1') return;
 
@@ -1448,16 +1497,20 @@ const microclipBranches: MicroclipBranch[] = [
 		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	}
 
-	/* Etiquetas mono intencionadas (no tocar). */
+	/* Mono solo en metadatos técnicos; eyebrows/FAQ van en Plex (misma familia que el copy). */
 	:global(body.page-como-funciona #page) :is(
 		.how-rama__group-title,
 		.how-rama__soon,
 		.how-cashflow__cap,
 		.how-doc-session__step-time,
-		.how-eyebrow,
 		.how-act-cut__label
 	) {
 		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	}
+
+	:global(body.page-como-funciona #page) .how-coverage,
+	:global(body.page-como-funciona #page) .how-coverage :is(h2, h3, p, a, strong, span) {
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 	}
 
 	:global(body.page-como-funciona #page),
@@ -1486,6 +1539,90 @@ const microclipBranches: MicroclipBranch[] = [
 		/* Aire título → definición (9 sep): más que el pegado previo; sin tocar margen a PRESENTACIÓN. */
 		margin-top: clamp(1.55rem, 3.8vw, 2.35rem);
 		margin-bottom: 0;
+	}
+
+	.how-hero__def-block {
+		margin-top: clamp(1.55rem, 3.8vw, 2.35rem);
+		text-align: center;
+	}
+
+	.how-hero__def-teaser {
+		display: none;
+		margin: 0 auto;
+		max-width: 36rem;
+		font-size: clamp(0.98rem, 2.4vw, 1.08rem);
+		line-height: 1.55;
+		color: var(--tevsys-copy-muted);
+	}
+
+	.how-hero__def-world {
+		color: #f5b041;
+		font-weight: 650;
+		text-decoration: underline;
+		text-decoration-color: rgba(245, 176, 65, 0.75);
+		text-underline-offset: 0.18em;
+	}
+
+	.how-hero__def-world:hover,
+	.how-hero__def-world:focus-visible {
+		color: #f7c050;
+	}
+
+	.how-hero__def-jump {
+		display: inline-block;
+		margin-top: 0.55rem;
+		color: #f5b041;
+		font-weight: 600;
+		font-size: 0.92rem;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(245, 176, 65, 0.45);
+	}
+
+	.how-hero__leer-mas {
+		display: none;
+		margin: 0.85rem auto 0;
+		padding: 0.4rem 0.85rem;
+		border: 1px solid rgba(245, 176, 65, 0.4);
+		border-radius: 999px;
+		background: transparent;
+		color: #f5b041;
+		font-family: inherit;
+		font-size: 0.88rem;
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.how-hero__leer-mas:hover,
+	.how-hero__leer-mas:focus-visible {
+		border-color: rgba(245, 176, 65, 0.7);
+		outline: none;
+	}
+
+	.how-hero__def-block .how-hero__definition {
+		margin-top: 0;
+	}
+
+	/* Móvil: teaser + botón; definición completa colapsada (sigue en DOM = SEO). */
+	@media (max-width: 768px) {
+		.how-hero__def-teaser {
+			display: block;
+		}
+
+		.how-hero__leer-mas {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.how-hero__def-block .how-hero__definition {
+			display: none;
+			margin-top: 0.85rem;
+			text-align: left;
+		}
+
+		.how-hero__def-block.is-def-open .how-hero__definition {
+			display: block;
+		}
 	}
 
 	/* Intro Cómo funciona: cuerpo azulado (token swing); títulos blancos. */
@@ -6115,7 +6252,7 @@ const microclipBranches: MicroclipBranch[] = [
 		margin: 0 0 1.25rem;
 		padding: 0.85rem 1rem;
 		text-align: center;
-		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
 		font-size: clamp(0.92rem, 2vw, 1.02rem);
 		font-weight: 500;
 		line-height: 1.45;
@@ -6131,14 +6268,85 @@ const microclipBranches: MicroclipBranch[] = [
 		border-left-color: rgba(200, 140, 40, 0.9);
 	}
 
-	.how-overnight-faq__item + .how-overnight-faq__item {
-		margin-top: 1.75rem;
-		padding-top: 1.5rem;
+	/* FAQ acordeón: pregunta clicable; respuesta solo al abrir (texto sigue en DOM = SEO). */
+	details.how-overnight-faq__item {
+		margin: 0;
+		padding: 0;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 0.55rem;
+		background: rgba(0, 0, 0, 0.18);
+		overflow: hidden;
+	}
+
+	details.how-overnight-faq__item + details.how-overnight-faq__item {
+		margin-top: 0.75rem;
+		padding-top: 0;
 		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
-	html[data-theme='light'] .how-overnight-faq__item + .how-overnight-faq__item {
-		border-top-color: rgba(40, 36, 28, 0.12);
+	html[data-theme='light'] details.how-overnight-faq__item {
+		border-color: rgba(40, 36, 28, 0.12);
+		background: rgba(255, 255, 255, 0.4);
+	}
+
+	summary.how-overnight-faq__q {
+		margin: 0;
+		padding: 0.95rem 1.1rem 0.95rem 2.65rem;
+		text-align: left;
+		font-size: clamp(0.9rem, 1.95vw, 1.02rem);
+		font-weight: 600;
+		line-height: 1.4;
+		cursor: pointer;
+		list-style: none;
+		position: relative;
+		border-left: 3px solid rgba(245, 176, 65, 0.85);
+		border-radius: 0;
+		background: transparent;
+		color: rgba(248, 250, 252, 0.96);
+		transition: background 0.15s ease;
+	}
+
+	summary.how-overnight-faq__q::-webkit-details-marker {
+		display: none;
+	}
+
+	summary.how-overnight-faq__q::before {
+		content: '+';
+		position: absolute;
+		left: 0.85rem;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 1.15rem;
+		height: 1.15rem;
+		display: grid;
+		place-items: center;
+		font-size: 1.05rem;
+		font-weight: 500;
+		line-height: 1;
+		color: #f5b041;
+	}
+
+	details.how-overnight-faq__item[open] > summary.how-overnight-faq__q::before {
+		content: '−';
+	}
+
+	summary.how-overnight-faq__q:hover,
+	summary.how-overnight-faq__q:focus-visible {
+		background: rgba(245, 176, 65, 0.08);
+		outline: none;
+	}
+
+	.how-overnight-faq__body {
+		padding: 0 1.1rem 1.1rem 1.1rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+
+	.how-overnight-faq__body .how-coverage__lead {
+		margin-top: 0.95rem;
+	}
+
+	.how-overnight-faq__body .how-coverage__closing {
+		margin-bottom: 0;
 	}
 
 	h3.how-overnight-faq__q {
