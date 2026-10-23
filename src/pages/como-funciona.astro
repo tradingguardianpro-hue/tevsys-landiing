@@ -1438,7 +1438,7 @@ const microclipBranches: MicroclipBranch[] = [
 	<SwingSectionAnalytics page="como-funciona" />
 </Layout>
 
-<script is:inline>
+<script is:inline data-astro-rerun>
 	(() => {
 		const block = document.querySelector('.how-hero__def-block');
 		const btn = document.querySelector('.how-hero__leer-mas');
@@ -1453,7 +1453,7 @@ const microclipBranches: MicroclipBranch[] = [
 		}
 	})();
 </script>
-<script is:inline>
+<script is:inline data-astro-rerun>
 	(() => {
 		const params = new URLSearchParams(window.location.search);
 		if (params.get('play') !== '1') return;

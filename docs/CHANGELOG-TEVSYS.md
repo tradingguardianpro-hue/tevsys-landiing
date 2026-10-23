@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Canon navegación + handoff home/definición (23 oct noche)
+
+- **Qué:** View Transitions (`fade` 180 ms) + aterrizaje hash + fundido frío. Doc: `docs/HANDOFF_HOME_DEFINICION_TIPOGRAFIA_ANCLAS_OCT2026.md` (lab claro revertido, Plex, copy trazabilidad, joyas, FAQ, anclas).
+- **Commit:** `web(tevsys): enable view transitions with fade and hash scroll canon`
+
 ## Anclas — fundido corto al aterrizar (23 oct noche)
 
 - **Qué:** con `#ancla`, tapa del color de fondo ~180 ms y aparece ya en el bloque (sin scroll-tour). Respeta `prefers-reduced-motion`. View Transitions = aún aparcado.

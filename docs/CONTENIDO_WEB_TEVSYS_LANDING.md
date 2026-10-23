@@ -218,7 +218,9 @@ Ver handoff hero.
 
 ---
 
-## Bloque definicional «Qué es tevsys» — portada, primer scroll (5 sep 2026)
+## Bloque definicional «Qué es tevsys» — portada, primer scroll (5 sep 2026 · **canon 23 oct**)
+
+**Handoff oleada 23 oct (tipografía, joyas, aire, anclas VT):** `docs/HANDOFF_HOME_DEFINICION_TIPOGRAFIA_ANCLAS_OCT2026.md`.
 
 **Dónde:** entre el hero y el puente `Precisión · HyperClose · SML · Evidencia`. `HomePageView.astro` → `.tevsys-home-definition` · copy en `src/i18n/home.js` (`definitionLead` / `definitionBeats` / `definitionClosing`).
 

@@ -28,7 +28,7 @@ ol[role='list'] {
 /*
   Scroll: aterrizaje directo en anclas (23 oct 2026).
   Smooth global hacía “montaña rusa” al entrar desde home a /como-funciona#… (página larga).
-  Fundido corto = capa tgp-hash-arrive (Base.astro). View Transitions = más adelante.
+  Fundido corto = capa tgp-hash-arrive (carga fría). View Transitions = navegación cliente (Base.astro).
 */
 html {
 	scroll-behavior: auto;
