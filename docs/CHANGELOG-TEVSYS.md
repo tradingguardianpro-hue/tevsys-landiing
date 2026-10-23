@@ -4,11 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — panel adaptativo isla clara v2 (23 oct 2026)
+
+- **Qué:** mismo `#panel-adaptativo` — **perla fría** (óvalo legible sobre negro) · acento **teal** (escenario + subrayado + CTA; coherente panel) · pie de foto oscuro legible. Página fuera = negra. Rosa elegante = alternativa si no convence teal.
+- **Commit:** `web(tevsys): pearl island and teal accents on panel-adaptativo pilot`
+
 ## Cómo funciona — panel adaptativo isla clara (piloto 23 oct 2026)
 
-- **Qué:** `#panel-adaptativo` ES|EN — **isla clara** (`how-cashflow--light-island`) + captura panel claro SML/semana `#6278925` + orden visual-first. Resto de la página sigue negra. Copy de cuerpo intacto; pie de foto alineado a la captura.
-- **Por qué:** probar blanco elegante + panel claro (intuición fundador / mesa Raúl). Reversible.
-- **Commit:** `web(tevsys): light-island pilot on panel-adaptativo with clear panel shot`
+- **Qué:** primera pasada blanco + ámbar. Sustituida por v2 (arriba).
 
 ## Cómo funciona — panel adaptativo visual-first (23 oct 2026)
 
