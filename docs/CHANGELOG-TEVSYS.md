@@ -6,9 +6,9 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Cómo funciona — panel adaptativo visual-first (23 oct 2026)
 
-- **Qué:** `#panel-adaptativo` ES|EN — orden **título → lead corto → captura panel → detalle → CTA**; losa un peldaño más clara (menos pozo). Misma marca/copy; solo ritmo. Clase `how-cashflow--visual-first`.
-- **Por qué:** piloto tras feedback Raúl / densidad al scroll (no tema blanco).
-- **Commit:** `web(tevsys): visual-first flow on panel-adaptativo block`
+- **Qué:** `#panel-adaptativo` ES|EN — orden **título → lead corto → captura panel → detalle → CTA**. Clase `how-cashflow--visual-first`.
+- **Ajuste mismo día:** **retirada** la losa gris más clara — fundador: tonos intermedios = plantilla; negro de marca se mantiene. Respira el **orden**, no el gris.
+- **Commit:** `web(tevsys): visual-first panel block without mid-grey slab`
 
 ## Ref visual móvil (+ desktop) — expediente 23 oct 2026
 
