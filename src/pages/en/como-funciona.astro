@@ -63,11 +63,10 @@ const panelAdaptativo = {
 	body: 'Intraday you do not see the same as with an overnight trade: the panel changes what it shows so you know what you are looking at.',
 	bodyFollow:
 		'On click you can open the agreed limit, how much you have used and how much remains until STOP — and, if a close drifts from the pact, the reason (for example a connection cut), cross-checkable with MT5.',
-	/** Visual pilot 23 Oct: light panel + SML + week summary (#6278925). Block copy unchanged. */
-	imgSrc: '/images/como-funciona/tevsys-panel-claro-sml-semana-6278925.png?v=20261023',
+	imgSrc: '/images/como-funciona/tevsys-panel-overnight-finde-op-curso-6271553.png?v=20260926',
 	imgAlt:
-		'tevsys panel in light theme: active limits, SML expanded, floating P&L and week-summary modal on click.',
-	imgCaption: 'Light panel · SML · week summary on click',
+		'tevsys panel over the weekend with a trade in progress: DESDE/SEMANA limits, floating P&L, PROTECTED — WEEKEND and DESDE click detail.',
+	imgCaption: 'Overnight / weekend · trade in progress · click detail (DESDE)',
 	ctaHref: '#overnight-laborable',
 	ctaLabel: 'Swing trade',
 };
@@ -409,8 +408,8 @@ const microclipBranches: MicroclipBranch[] = [
 
 ---
 
-{/* Pilot 23 Oct: light micropage; home stays dark. Revert → theme="dark". */}
-<Layout seo={seo} lang="en" bodyClass="page-como-funciona" theme="light">
+{/* Font lab: Plex Sans on dark CF. Light theme reverted 23 Oct. */}
+<Layout seo={seo} lang="en" bodyClass="page-como-funciona">
 	<Container>
 		<div class="how-intro-stage how-intro-stage--stage">
 			<div class="how-intro-stage__bg" aria-hidden="true"></div>
@@ -636,9 +635,9 @@ const microclipBranches: MicroclipBranch[] = [
 			</div>
 		</div>
 
-		{/* 23 Oct 2026 — visual-first + light island (this block only). */}
+		{/* visual-first order; light island reverted. */}
 		<section
-			class="how-cashflow how-cashflow--stage how-cashflow--visual-first how-cashflow--light-island"
+			class="how-cashflow how-cashflow--stage how-cashflow--visual-first"
 			id={panelAdaptativo.id}
 			aria-labelledby="how-panel-adaptativo-title">
 			<div class="how-cashflow__halo" aria-hidden="true"></div>
@@ -1410,18 +1409,10 @@ const microclipBranches: MicroclipBranch[] = [
 </script>
 
 <style>
-	/*
-	 * LAB light Cómo funciona (23 Oct) — revert: theme="dark" on Layout.
-	 */
-	:global(html[data-theme='light'] body.page-como-funciona) {
-		--tevsys-lab-amber: #c45f12;
-		--tevsys-lab-amber-line: rgba(196, 95, 18, 0.88);
-		--theme-font-family-sans: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
-		--tevsys-copy-muted: rgba(45, 55, 70, 0.9);
-		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-	}
-
+	/* Font lab: Plex Sans on dark CF. Light theme reverted. */
 	:global(body.page-como-funciona) {
+		--theme-font-family-sans: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		overflow-x: clip;
 	}
 

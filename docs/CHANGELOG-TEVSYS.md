@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Revert CF claro + lab Plex en oscuro (home definición) — 23 oct noche
+
+- **Qué:** Cómo funciona ES|EN vuelve **dark** (sin isla clara; captura overnight panel). Se **mantiene IBM Plex Sans** en CF. Home: Plex solo en bloque `.tevsys-home-definition` (trozo utilidad / bullets / Tu ID).
+- **Commit:** `web(tevsys): revert CF light lab keep plex on dark CF and home definition`
+
 ## Cómo funciona — lab tipografía + ámbar contraste (23 oct noche)
 
 - **Qué:** en CF claro — **IBM Plex Sans** (cuerpo, menos redonda) · ámbar lab `#c45f12` · *intradía/swing* strong legibles con subrayado · enlaces y acentos panel vuelven a ámbar (fuera teal) · doc revert `docs/ref-visual-movil-oct2026/REVERT_LAB_COMO_FUNCIONA_CLARO.md`.

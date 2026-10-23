@@ -59,11 +59,10 @@ const panelAdaptativo = {
 	body: 'En intradía no ves lo mismo que con una operación overnight: el panel cambia la información según el escenario, para que sepas qué estás mirando.',
 	bodyFollow:
 		'Al clic puedes abrir el detalle del límite pactado, cuánto has consumido y cuánto queda hasta el STOP — y, si un cierre se aleja del pacto, el motivo (por ejemplo un corte de conexión), contrastable con MT5.',
-	/** Piloto visual 23 oct: captura panel claro + SML + resumen semana (#6278925). Copy de bloque intacto. */
-	imgSrc: '/images/como-funciona/tevsys-panel-claro-sml-semana-6278925.png?v=20261023',
+	imgSrc: '/images/como-funciona/tevsys-panel-overnight-finde-op-curso-6271553.png?v=20260926',
 	imgAlt:
-		'Panel tevsys en tema claro: límites activos, SML ampliado, flotantes y modal resumen de semana al clic.',
-	imgCaption: 'Panel claro · SML · resumen de semana al clic',
+		'Panel tevsys en fin de semana con operación en curso: límites DESDE/SEMANA, flotantes, PROTEGIDO — FIN DE SEMANA y cartela DESDE al clic.',
+	imgCaption: 'Overnight / finde · operación en curso · info al clic (DESDE)',
 	ctaHref: '#overnight-laborable',
 	ctaLabel: 'Operación swing',
 };
@@ -406,8 +405,8 @@ const microclipBranches: MicroclipBranch[] = [
 
 ---
 
-{/* Piloto 23 oct: micropágina en claro; home y resto siguen dark. Reversible → theme="dark". */}
-<Layout seo={seo} bodyClass="page-como-funciona" theme="light">
+{/* Lab tipografía: Plex Sans en CF oscuro. Tema claro revertido 23 oct noche. */}
+<Layout seo={seo} bodyClass="page-como-funciona">
 	<Container>
 		<div class="how-intro-stage how-intro-stage--stage">
 			<div class="how-intro-stage__bg" aria-hidden="true"></div>
@@ -632,9 +631,9 @@ const microclipBranches: MicroclipBranch[] = [
 			</div>
 		</div>
 
-		{/* 23 oct 2026 — piloto: visual-first + isla clara (solo este bloque). */}
+		{/* Orden visual-first (lead → captura → detalle). Isla clara revertida. */}
 		<section
-			class="how-cashflow how-cashflow--stage how-cashflow--visual-first how-cashflow--light-island"
+			class="how-cashflow how-cashflow--stage how-cashflow--visual-first"
 			id={panelAdaptativo.id}
 			aria-labelledby="how-panel-adaptativo-title">
 			<div class="how-cashflow__halo" aria-hidden="true"></div>
@@ -1425,20 +1424,10 @@ const microclipBranches: MicroclipBranch[] = [
 </script>
 
 <style>
-	/*
-	 * LAB claro Cómo funciona (23 oct) — reversible:
-	 * Layout theme="dark" (o quitar theme) → vuelve negro de marca.
-	 * Tokens solo en esta página + data-theme=light.
-	 */
-	:global(html[data-theme='light'] body.page-como-funciona) {
-		--tevsys-lab-amber: #c45f12;
-		--tevsys-lab-amber-line: rgba(196, 95, 18, 0.88);
-		--theme-font-family-sans: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
-		--tevsys-copy-muted: rgba(45, 55, 70, 0.9);
-		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-	}
-
+	/* Lab tipografía (23 oct): Plex Sans en CF oscuro. Tema claro revertido. */
 	:global(body.page-como-funciona) {
+		--theme-font-family-sans: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		overflow-x: clip;
 	}
 
