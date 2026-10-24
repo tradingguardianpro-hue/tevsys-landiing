@@ -177,6 +177,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 - **Presentación:** H2 *Cuatro minutos de sesión real en MT5* · sub *Te enseñamos el producto en marcha — precisión y evidencia.* · *Contrasta tú mismo.* *(24 oct 2026: sin «sesión real» en el sub — ya va en el H2.)*
 - **Definición H1 (24 oct 2026):** mantiene acta + atribución tevsys/MT5 (SEO/GEO); **sin** cierre *Aquí lo ves funcionando en una sesión real* (eco con Presentación).
+- **Hechos / Auditoría (24 oct 2026):** gancho intacto · cuerpo *Cruzas informe MT5, panel y registros…* · CTA *Auditoría →* · cierre recepción (sin triangulación ni eco TVS).
 - **Bloque Evidencia:** título *~3:35* · blurb corto · atribución 1 línea · MP4 `?v=20260822` · poster sesión.
 - **Home CTA:** `?play=1` → sin poster + autoplay · Cómo funciona directo → poster hasta play.
 - **Transparencia:** timeline · atribución · **Registro tevsys** primero (lead + lista llana: límites, cierre+atribución, HyperClose, restore, export, caja/swing/Inputs) → Informe MT5 → Vídeo · sin bróker en copy.

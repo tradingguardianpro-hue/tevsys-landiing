@@ -4,6 +4,16 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Hechos / Auditoría copy corto (24 oct 2026)
+
+- **Qué:** bloque `#hechos-cruzar` — sin «Triangulación» ni eco TVS; un cuerpo; CTA *Auditoría →*; cierre recepción. ES|EN.
+- **Commit:** `web(tevsys): shorten audit facts block copy on how-it-works`
+
+## Header — pastilla más alta + perfil 1.5px (24 oct 2026)
+
+- **Qué:** `#odysseyNavHeader` — más padding vertical (barra + píldoras nav); borde del rectángulo redondeado **1px → 1.5px** (mismo color). Site-wide.
+- **Commit:** `web(tevsys): thicken header pill and border stroke`
+
 ## Cómo funciona — definición sin eco + Presentación limpia (24 oct 2026)
 
 - **Qué:** sub Presentación sin «sesión real» (ya en H2). Definición H1: se queda acta + atribución tevsys/MT5; sale el cierre *Aquí lo ves… sesión real*. ES|EN.
