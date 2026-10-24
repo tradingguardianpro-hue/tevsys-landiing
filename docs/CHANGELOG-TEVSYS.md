@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — definición sin eco + Presentación limpia (24 oct 2026)
+
+- **Qué:** sub Presentación sin «sesión real» (ya en H2). Definición H1: se queda acta + atribución tevsys/MT5; sale el cierre *Aquí lo ves… sesión real*. ES|EN.
+- **Commit:** `web(tevsys): trim how-it-works definition echo keep attribution`
+
 ## Cómo funciona — posters MC-CF-021 + 028 con overlay visible (24 oct 2026)
 
 - **Qué:** posters con cartela de vídeo legible en card: 021 ~18 s (*Elige tus límites y días OFF*) · 028 ~34 s (*Tres destellos · protección en marcha*). `?v=20261024b` / `20261024`.
