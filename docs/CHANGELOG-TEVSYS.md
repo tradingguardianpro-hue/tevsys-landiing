@@ -4,9 +4,14 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — posters MC-CF-021 + 028 con overlay visible (24 oct 2026)
+
+- **Qué:** posters con cartela de vídeo legible en card: 021 ~18 s (*Elige tus límites y días OFF*) · 028 ~34 s (*Tres destellos · protección en marcha*). `?v=20261024b` / `20261024`.
+- **Commit:** `web(tevsys): refresh programado and lunes posters with visible overlays`
+
 ## Cómo funciona — MC-CF-021 remake Penguin + engranaje sync (24 oct 2026)
 
-- **Qué:** `#videoclip-programado-lunes` ES|EN — remake ~62 s + Penguin; overlay engranaje tras modales de confirmación y hold con **PROGRAMADO · LUNES**. Poster ~54,5 s. `?v=20261024`.
+- **Qué:** `#videoclip-programado-lunes` ES|EN — remake ~62 s + Penguin; overlay engranaje tras modales de confirmación y hold con **PROGRAMADO · LUNES**. Poster luego afinado (ver entrada posters). `?v=20261024`.
 - **Commit:** `web(tevsys): refresh programado-lunes clip with penguin and gear sync`
 
 ## Tu ID — encuadre home + scroll lento a Hechos (23 oct noche)
