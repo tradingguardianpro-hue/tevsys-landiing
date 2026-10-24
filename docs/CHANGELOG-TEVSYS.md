@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — MC-CF-021 remake Penguin + engranaje sync (24 oct 2026)
+
+- **Qué:** `#videoclip-programado-lunes` ES|EN — remake ~62 s + Penguin; overlay engranaje tras modales de confirmación y hold con **PROGRAMADO · LUNES**. Poster ~54,5 s. `?v=20261024`.
+- **Commit:** `web(tevsys): refresh programado-lunes clip with penguin and gear sync`
+
 ## Tu ID — encuadre home + scroll lento a Hechos (23 oct noche)
 
 - **Qué:** menos `scroll-margin` (no se ve el remate de Mimetiza). CTA→Hechos: bajada **lenta ~820 ms** (no boom). Cross-page sigue directo+200 ms.
