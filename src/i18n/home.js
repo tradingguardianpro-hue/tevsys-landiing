@@ -173,10 +173,10 @@ export const homeCopy = {
 		essentialDemo: 'Probar demo',
 		essentialDemoOnly: 'Probar demo Essential',
 		waitlist: 'Lista de espera',
-		advancedStatus: 'Demo bajo petición',
+		advancedStatus: 'Demo disponible',
 		advancedBody:
-			'Todo lo de Essential, además: protección configurable toda la semana, SML y días OFF. Demo Advanced a petición — te la enviamos al solicitarla.',
-		advancedCta: 'Solicitar demo Advanced',
+			'Todo lo de Essential, además: protección configurable toda la semana, SML y días OFF. Te enviamos la demo Advanced al pedirla.',
+		advancedCta: 'Probar demo Advanced',
 		proBody:
 			'En Pro ofrecemos todo lo de Advanced, además: drawdown y estructura completa para capitales más altos. En desarrollo — lista de espera.',
 		proCta: 'Elegir Pro',
@@ -363,10 +363,10 @@ export const homeCopy = {
 		essentialDemo: 'Try demo',
 		essentialDemoOnly: 'Try Essential demo',
 		waitlist: 'Waitlist',
-		advancedStatus: 'Demo on request',
+		advancedStatus: 'Demo available',
 		advancedBody:
-			'Everything in Essential, plus: week-long configurable protection, SML and OFF days. Advanced demo on request — we send it when you ask.',
-		advancedCta: 'Request Advanced demo',
+			'Everything in Essential, plus: week-long configurable protection, SML and OFF days. We send the Advanced demo when you ask.',
+		advancedCta: 'Try Advanced demo',
 		proBody:
 			'Pro includes everything in Advanced, plus: drawdown and full structure for larger capital. In development — waitlist.',
 		proCta: 'Choose Pro',

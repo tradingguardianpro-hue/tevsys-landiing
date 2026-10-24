@@ -4,6 +4,28 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Advanced demo — misma facilidad que Essential (24 oct 2026 tarde)
+
+- **Qué:** fuera *bajo petición* / *según perfil* / checkbox «avísame cuando Advanced esté disponible». Home + Precios: *Demo disponible* · CTA *Probar demo Advanced*. Contacto `?plan=advanced` = mismo tono que Essential (título + intro + thank-you «te enviamos el enlace»). Acceso: demos Essential y Advanced disponibles. Pro = lista de espera. ES|EN.
+- **Por qué:** GEO/academia leía fricción; la demo Advanced se envía de verdad.
+- **Commit:** `web(tevsys): make Advanced demo request as easy as Essential`
+
+## Sesión web 24 oct 2026 — cierre (qué sí quedó)
+
+**Hecho y en live / listo para push (según commits del día):**
+
+1. **MC-CF-021** remake Penguin + engranaje sync (~62 s) + posters 021/028 con overlay legible (`?v=20261024` / `20261024b`).
+2. **Cómo funciona** — Presentación limpia (sub sin eco «sesión real») · definición H1 sin *Aquí lo ves…* (atribución tevsys/MT5 intacta) · Hechos/Auditoría copy corto (B).
+3. **Header** — pastilla más alta + borde **1.5px** (site-wide).
+4. **Para quién** — bloque *Intradía y swing* (título + línea fondeo con intradía, ES|EN).
+
+**Aparcado (no colgar):**
+
+- Remake **`/instalacion-market`**: export `tevsys-instalacion-market.mov` **rechazado** — mezcla puerta Market (narración) con camino **carpeta Experts** (web/mail). No sirve ni Market ni A1. Retomar con calma: dos piezas distintas. V12 **(marketInstallRemake)** · PLAN § remake Market.
+- Remake **A1 `/instalacion`** (WebRequest/clave): sigue aparcado.
+
+**Fuera de alcance hoy:** Tu ID / anclas (cerrado **23 oct noche** — ver entradas abajo).
+
 ## Para quién — bloque Intradía y swing (24 oct 2026)
 
 - **Qué:** título *Tiempo y retos* → *Intradía y swing*; línea fondeo reescrita con intradía (ES|EN).

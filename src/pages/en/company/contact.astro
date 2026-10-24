@@ -181,9 +181,9 @@ const empresasTipHtml =
 			if (titleNode) titleNode.textContent = 'Talk to tevsys';
 			if (introNode)
 				introNode.textContent =
-					'In the form you choose: request a demo, or just one question. Essential and Advanced on request by profile; Pro in development.';
+					'In the form you choose: request a demo, or just one question. Essential and Advanced demos are available; Pro is on the waitlist.';
 			setTips(
-				'Want the demo → capital and experience (we guide Essential or Advanced). Just understand → name, email and your question.',
+				'Want the demo → capital and experience (Essential or Advanced — both are sent). Just understand → name, email and your question.',
 				'Reply within 24h. No chase.',
 				'tevsys runs your rules in MT5; it does not sell signals.',
 				empresasTipHtml
@@ -292,15 +292,20 @@ const empresasTipHtml =
 			setHeroImage(selected.image);
 			imageNode.alt = `${selected.name} plan visual`;
 		}
-		if (demoBadge) demoBadge.hidden = plan !== 'essential';
-		if (devNote) {
-			if (plan === 'advanced') {
-				devNote.textContent =
-					'Advanced is available. Request the demo here — we reply within 24h with the link and guides. (Editable drawdown = Pro plan.)';
+		if (demoBadge) demoBadge.hidden = !(plan === 'essential' || plan === 'advanced');
+		if (plan === 'advanced') {
+			if (titleNode) titleNode.textContent = 'Request your Advanced demo';
+			if (introNode)
+				introNode.textContent =
+					'One step: fill in the form. We send the Advanced demo plus install and setup guides. Reply within 24 hours.';
+			if (devNote) {
+				devNote.textContent = 'Editable drawdown = Pro plan (waitlist).';
 				devNote.hidden = false;
-			} else if (plan === 'pro') {
+			}
+		} else if (devNote) {
+			if (plan === 'pro') {
 				devNote.textContent =
-					'Pro is in development. Essential demo is live; Advanced demo is also available on request.';
+					'Pro is in development — waitlist. Meanwhile you can request Essential or Advanced demos.';
 				devNote.hidden = false;
 			} else {
 				devNote.hidden = true;
@@ -315,9 +320,9 @@ const empresasTipHtml =
 				empresasTipHtml,
 			],
 			advanced: [
-				'In Advanced you get everything in Essential, plus:',
-				'Configurable week-long protection + SML for advanced trading.',
-				'You can mark OFF days to protect your process.',
+				'We send the Advanced demo and guides — same path as Essential.',
+				'Everything in Essential + week-long protection + SML + OFF days.',
+				'Reply within 24h with the link.',
 				'Market hours and news (improved): in development.',
 				empresasTipHtml,
 			],

@@ -42,7 +42,7 @@ const labels = en
 			sendFail: 'Could not send. Try again or email info@tevsys.io',
 			badgeDemo: 'Essential demo — fill this in and we send access + guides.',
 			badgeAsk: 'No commitment. We reply within 24 hours.',
-			badgeAcceso: 'Demo — fill this in and we guide you (Essential or Advanced by profile).',
+			badgeAcceso: 'Demo Essential or Advanced — fill this in and we send access + guides.',
 			badgeLista: 'Waitlist — pick your plan of interest below.',
 			badgeNoPlan: 'No plan pre-selected.',
 			badgePickPlan: 'No plan selected. Go back to home and tap “Choose plan”.',
@@ -83,7 +83,7 @@ const labels = en
 			sendFail: 'No se pudo enviar. Inténtalo de nuevo o escríbenos a info@tevsys.io',
 			badgeDemo: 'Demo Essential — rellena y te enviamos el acceso y las guías.',
 			badgeAsk: 'Sin compromiso. Te respondemos en menos de 24 h.',
-			badgeAcceso: 'Demo — rellena y te orientamos (Essential o Advanced según perfil).',
+			badgeAcceso: 'Demo Essential o Advanced — rellena y te enviamos el acceso y las guías.',
 			badgeLista: 'Lista de espera — indica tu plan de interés abajo.',
 			badgeNoPlan: 'Sin plan preseleccionado.',
 			badgePickPlan: 'No hay plan seleccionado. Vuelve a la home y pulsa en "Elegir plan".',
@@ -601,19 +601,22 @@ const labels = en
 		const notifyInput = document.getElementById('notifyInput');
 		const notifyCheckbox = document.getElementById('notifyCheckbox');
 		const notifyLabelText = document.getElementById('notifyLabelText');
-		if (initializedPlan === 'advanced' || initializedPlan === 'pro') {
+		/* Solo Pro = lista de espera. Advanced demo se envía (no “avísame cuando esté disponible”). */
+		if (initializedPlan === 'pro') {
 			if (notifyContainer) notifyContainer.hidden = false;
 			if (notifyInput) notifyInput.setAttribute('name', 'AvisarCuandoDisponible');
 			if (notifyLabelText) {
 				notifyLabelText.textContent = en
-					? 'Yes, notify me when ' + (initializedPlan === 'advanced' ? 'Advanced' : 'Pro') + ' is available.'
-					: 'Sí, avísame cuando ' + (initializedPlan === 'advanced' ? 'Advanced' : 'Pro') + ' esté disponible.';
+					? 'Yes, notify me when Pro is available.'
+					: 'Sí, avísame cuando Pro esté disponible.';
 			}
 			if (notifyCheckbox && notifyInput) {
 				notifyCheckbox.addEventListener('change', () => {
 					if (notifyInput) notifyInput.value = notifyCheckbox.checked ? (en ? 'Yes' : 'Sí') : en ? 'No' : 'No';
 				});
 			}
+		} else if (notifyContainer) {
+			notifyContainer.hidden = true;
 		}
 
 		capitalSelect && capitalSelect.addEventListener('change', validatePlanAgainstCapital);

@@ -74,6 +74,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Logo:** `tevsys` en óvalo (sin estrella)
 - **Navegación:** Inicio · Cómo funciona · **Para quién** · Empresas · Contacto
 - **Tipografía (abr 2026):** **Inter** en barra y pastilla (`Header.astro`, `BrandOval.astro`), alineado al hero.
+- **24 oct 2026:** pastilla nav más alta (padding vertical ↑) + borde del rectángulo **1.5px** (antes 1px). Site-wide. CHANGELOG § *Header — pastilla*.
 - **"Acceso" eliminado** (sin destino propio hasta demo descargable)
 - **Empresas:** enlaza a `/company/empresas` (micro-página canal B2B)
 - **Motion header (abr 2026; ampliado 30 abr 2026; afinado legibilidad micros):** capa **`tevsys-header-scanner`** — barrido **gris** en **tema oscuro** (`html[data-theme='dark']`).
@@ -287,7 +288,7 @@ Ver handoff hero.
 - **Kicker caja azul:** `Revisión asistida · próximamente` (sustituye `Verificación con IA · próximamente`).
 
 ### Labels mono (`.tevsys-meta-label` · jun 2026)
-- Planes: pastillas `Demo activa` / `Lista de espera`.
+- Planes: pastillas `Demo activa` (Essential) · `Demo disponible` (Advanced, **24 oct 2026**) · `Lista de espera` (Pro).
 - Auditoría: ver kicker arriba.
 
 ### Puente auditoría → Planes (jun 2026, cerrado)
@@ -383,15 +384,19 @@ Ver handoff hero.
 
 **Link empresas:** Enlaza a `/company/empresas` (micro-página canal B2B). Ref: `CHANGELOG-TEVSYS.md` §29, §30.
 
-**Flujo Acceso** (`?flow=acceso`): bullets específicos — 1) Essential listo para probar. Advanced y Pro en desarrollo — lista de espera. 2) Respuesta en menos de 24h. Te orientamos según tu perfil. 3) Precisión y HyperClose validados con operativas reales. Días OFF y configuración flexible de toda la semana. 4) Empresas. Imagen Essential (bronce) con badge "DEMO". Redirect `/company/contact` → `?flow=acceso`. Ref: `ROADMAP_PLAN_PRODUCTO_Y_ACADEMIA.md`.
+**Flujo Acceso** (`?flow=acceso` · **24 oct 2026**): demos Essential y Advanced disponibles; Pro lista de espera. Formulario: pedir demo o solo pregunta (sin «según perfil»). Badge DEMO. Redirect `/company/contact` → `?flow=acceso`.
 
 **Formulario contacto — intros desde features (flow=demo):**
 - Precision, HyperClose, SML, Evidencia: "Ya has visto [X] en esta página. Rellena el formulario y te enviamos los enlaces para profundizar y los pasos para acceder a la demo."
 
-**Formulario contacto (flujos Advanced/Pro):**
-- Checkbox debajo Experiencia: "Sí, avísame cuando [Advanced/Pro] esté disponible." — default marcado. Formspree: `AvisarCuandoDisponible: Sí|No`. Caja con borde ámbar.
-- Nota debajo imagen: "Advanced/Pro en desarrollo. La demo disponible ahora es Essential." (cursiva).
-- Thank-you: bloque destacado "Te añadimos a la lista de espera de Advanced/Pro. Mientras tanto, la demo disponible es Essential."
+**Formulario contacto — Advanced (`?plan=advanced` · **24 oct 2026**):**
+- Mismo tono que Essential: título *Solicita tu demo Advanced* · intro un paso · thank-you «te enviamos el enlace y las guías».
+- **Sin** checkbox «avísame cuando Advanced esté disponible» (eso solo Pro).
+- Nota corta opcional: drawdown editable = Pro (lista de espera).
+
+**Formulario contacto — Pro (`?plan=pro`):**
+- Checkbox «Sí, avísame cuando Pro esté disponible.» Formspree: `AvisarCuandoDisponible`.
+- Thank-you: lista de espera Pro; se puede mencionar demos Essential/Advanced mientras.
 
 **Formulario lista de espera (flow=lista):**
 - Origen: link "escríbenos para apuntarte" en `/precios` (amarillo, clicable).
@@ -545,9 +550,10 @@ Ver handoff hero.
 - **Header:** Inicio · Cómo funciona · **Para quién** · Empresas · Contacto (`nav.js`).
 - **Footer Producto:** Para quién + Precisión · HyperClose · SML · Evidencia · …
 
-### Micro Para quién (`/para-quien`) — **CERRADO 28 jun 2026**
+### Micro Para quién (`/para-quien`) — **CERRADO 28 jun 2026** · micro-ajuste **24 oct 2026**
 
 - **Estado:** validado por fundador; **no** reabrir salvo micro-ajuste puntual acordado.
+- **24 oct 2026:** bloque audiencia *Tiempo y retos* → ***Intradía y swing***; línea fondeo reescrita con intradía (ES|EN). CHANGELOG § *Para quién — Intradía y swing*.
 - **Job:** polivalencia de perfiles sin encasillar; sustituto del bloque «para quién» quitado de `/features/evidencia` (`#evidence-audit` ya no lleva perfiles — viven aquí).
 - **Nav:** header 5 enlaces — Inicio · Cómo funciona · **Para quién** · Empresas · Contacto (`nav.js`); footer Producto incluye Para quién.
 - **Decisión header:** 5 enlaces **OK** — no sobrecarga; **no** dar header distinto a esta micro (misma píldora / escáner que resto producto).
