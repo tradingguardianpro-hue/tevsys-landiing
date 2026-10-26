@@ -113,7 +113,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Fin de semana guía (21 ago):** `/configuracion-fin-de-semana` — MP4 2:01 retirado (cara vieja); hueco *Vídeo en preparación* + pasos escritos.
 - **MC-CF-021 (24 oct 2026):** remake ~62 s + Penguin + overlay engranaje sync · `tevsys-mc-programado-lunes-1min.mp4` · `?v=20261024` · poster PROGRAMADO + engranaje.
 - **MC-CF-028 (20 oct 2026):** `#videoclip-lunes-entra-proteccion` · rama Preparar · ~44 s · PROGRAMADO→protegido lunes + Penguin · `tevsys-mc-lunes-entra-proteccion-40s.mp4` · `?v=20261020`.
-- **MC-CF-020 (21 ago):** `#videoclip-corrige-errores` · rama Preparar · ~30 s · CORRIGE ERRORES + modal 1 error · `?v=20260821`.
+- **MC-CF-020 (26 oct remake):** `#videoclip-corrige-errores` · rama Preparar · ~55 s · panel nuevo · CORRIGE + modal · `?v=20261026`.
 - **Panel / Cómo se siente (22 oct 2026):** `#como-se-siente` · *Mimetiza el panel a tu gusto* · remake ~43 s + Penguin · negro↔blanco · borde · 3 tonos texto · legacy `#panel-mimetizado-claro` → mismo MP4. V12 **(mcMimPenguin)**.
 - **i18n ES|EN (3 sep 2026 — oleada 1 ✅):** selector header `ES | EN`; `/en/` home; `/en/company/contact`; `/en/como-funciona` ligero. Copy propio. Oleada 2: precios + features. V12 **(i18nWave1)**.
 - **i18n ES|EN (20 ago, plan):** oleadas; no Google Translate. Agenda + V12 **(i18nWeb)**.
@@ -125,7 +125,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Microclips publicados + overlays (17 ago 2026):** fuente canónica TGP `docs/CATALOGO_MICROCLIPS_TEVSYS.md`. En web:
   - **MC-CF-021** `#videoclip-programado-lunes` (rama 1 · ~62 s): entrada TEVSYS + título ámbar *Configura la semana en calma…* · GUARDAR → confirmar → PROGRAMADO · LUNES + engranaje · Penguin · `?v=20261024`
   - **MC-CF-028** `#videoclip-lunes-entra-proteccion` (rama 1 · ~44 s · **20 oct**): pareja de 021 · *Así empieza tu semana…* · *Mira la primera línea y el botón* → protegido lunes · tres destellos · **audio Penguin** · `?v=20261020`
-  - **MC-CF-020** `#videoclip-corrige-errores` (rama 1, 21 ago): `¿Te equivocaste en un límite?` · `➜ CORRIGE ERRORES` · `tevsys te dice qué arreglar` · `Corriges — listo para proteger`
+  - **MC-CF-020** `#videoclip-corrige-errores` (rama 1, 26 oct): `¿Te equivocaste en un límite?` · `Clic en HOY o en CORRIGE ERRORES` · `tevsys te dice qué arreglar y cómo` · `Corriges — listo para proteger`
   - **MC-CF-025** `#videoclip-limite-hyperclose` (rama 2, ~34,5 s) · **1.º en web (2 sep):** `¿Qué pasa si insistes después de alcanzar tu límite?` · `➜ Límite de ganancia alcanzado` · `🡰 STOP` · `Intentas abrir otra vez` · `Los siguientes intentos quedan trazados.` Commit: `web(tevsys): publish limite-hyperclose…` · orden: `web(tevsys): put limite-hyperclose before dia-off in rama protegido`.
   - **MC-CF-001** `#videoclip-off` (rama 2, ~22 s, **II**) · **2.º en web:** `¿Qué pasa si operas un día que marcaste OFF?` · `DÍA OFF · PROTEGIDO` · `Cada intento se cierra al instante y queda trazado.` · `Tres avisos. El flotante queda como prueba` *(export sin `➜`)* · Commit: `web(tevsys): publish dia-off microclip on como-funciona`.
   - **MC-CF-023** `#videoclip-inputs-sml-carry` (rama 3): `¿Qué pasa si cambias un límite ya protegido (con SML activo)?` · `➜ Panel: SML ACTIVO` · `➜ Inputs: −3 % → −2,5 %` · `➜ Inputs ignorados — el panel muestra lo pactado`

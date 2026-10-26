@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — MC-CF-020 CORRIGE remake panel nuevo (26 oct 2026)
+
+- **Qué:** sustituye *brandStill* (esfera) en **Preparar la protección** por vídeo real. Título intacto: *¿Te equivocaste en un límite? — tevsys te lo dice*. Ancla `#videoclip-corrige-errores`. MP4 + poster (CORRIGE + overlays HOY). Remake DaVinci ~55 s · panel nuevo · dos puertas clic · modal · corrige · protección breve. `?v=20261026`. ES|EN.
+- **Por qué:** el slot llevaba placeholder; el clip de ago ya no refleja el panel.
+- **Commit:** `web(tevsys): remount corrige-errores microclip with new panel`
+
 ## Contact thank-you EN — no caer en español (26 oct 2026)
 
 - **Qué:** `enReadyPaths` incluye `/company/contact-thank-you`. `ContactForm` redirect: `data-locale=en` **o** pathname `/en/…` → `/en/company/contact-thank-you`.
