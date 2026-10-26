@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Contact thank-you EN — no caer en español (26 oct 2026)
+
+- **Qué:** `enReadyPaths` incluye `/company/contact-thank-you`. `ContactForm` redirect: `data-locale=en` **o** pathname `/en/…` → `/en/company/contact-thank-you`.
+- **Por qué:** en inglés el mensaje de gracias podía salir en ES.
+- **Commit:** `web(tevsys): keep contact thank-you in English on EN site`
+
 ## Advanced demo — misma facilidad que Essential (24 oct 2026 tarde)
 
 - **Qué:** fuera *bajo petición* / *según perfil* / checkbox «avísame cuando Advanced esté disponible». Home + Precios: *Demo disponible* · CTA *Probar demo Advanced*. Contacto `?plan=advanced` = mismo tono que Essential (título + intro + thank-you «te enviamos el enlace»). Acceso: demos Essential y Advanced disponibles. Pro = lista de espera. ES|EN.

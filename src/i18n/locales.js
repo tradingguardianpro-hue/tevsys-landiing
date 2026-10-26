@@ -52,6 +52,7 @@ export const enReadyPaths = new Set([
 	'/',
 	'/como-funciona',
 	'/company/contact',
+	'/company/contact-thank-you',
 	'/company/empresas',
 	'/company/empresas-thank-you',
 	'/company/legal',

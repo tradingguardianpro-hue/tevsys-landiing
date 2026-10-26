@@ -194,7 +194,10 @@ const labels = en
 		} catch (_) {
 			L = {};
 		}
-		const en = form.dataset.locale === 'en';
+		// Locale del form + fallback por URL (si data-locale falla o build viejo → no mandar EN a gracias ES)
+		const en =
+			form.dataset.locale === 'en' ||
+			(typeof location !== 'undefined' && location.pathname.indexOf('/en/') === 0);
 		const thankYouBase = en ? '/en/company/contact-thank-you' : '/company/contact-thank-you';
 
 		const planInput = document.getElementById('planInput');
