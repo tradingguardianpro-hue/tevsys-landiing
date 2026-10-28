@@ -26,7 +26,7 @@ const presentationLeadVideo = {
 	youtubeWatch: 'https://youtu.be/sAttywGy0nQ',
 };
 
-/** Acto overnight laborable (P13). Vídeo MC-CF-027 retirado 13 sep 2026 — panel/leyes nuevas; still marca hasta guía nueva. */
+/** Acto overnight laborable (P13). Clip panel te habla ~70 s — remount 29 oct 2026 (sustituye still post-retiro MC-CF-027). */
 const overnightLaborableGuide = {
 	id: 'overnight-laborable',
 	title: 'Operación swing',
@@ -44,10 +44,9 @@ const overnightLaborableGuide = {
 		faqLabel: 'medianoche, límites del día y Essential vs Pro',
 		faqHref: '#overnight-faq',
 	},
-	brandStillLabel: 'tevsys',
-	brandStillAria: 'Marca tevsys — operación swing',
-	brandStillTone: 'amber',
-	brandStillOrb: 'c',
+	videoSrc: '/videos/como-funciona/tevsys-mc-panel-te-habla-swing-70s.mp4?v=20261029',
+	posterSrc: '/videos/como-funciona/tevsys-mc-panel-te-habla-swing-70s-poster.jpg?v=20261029',
+	videoLabel: 'tevsys — el panel te habla en swing (DESDE, Avance, Margen, SEMANA)',
 };
 
 /** Panel adaptativo + información al clic — bloque propio (estilo capital/caja). Clip ~30 s cuando panel definitivo. */
@@ -641,16 +640,16 @@ const microclipBranches: MicroclipBranch[] = [
 							</div>
 						</header>
 						<article class="how-overnight__cell">
-							<div
-								class:list={[
-									'how-brand-still',
-									`how-brand-still--tone-${overnightLaborableGuide.brandStillTone ?? 'amber'}`,
-									`how-brand-still--orb-${overnightLaborableGuide.brandStillOrb ?? 'c'}`,
-								]}
-								role="img"
-								aria-label={overnightLaborableGuide.brandStillAria}>
-								<span class="how-brand-still__orb" aria-hidden="true"></span>
-								<span class="how-brand-still__name">{overnightLaborableGuide.brandStillLabel}</span>
+							<div class="how-embed how-embed--chrome how-overnight__embed">
+								<video
+									controls
+									preload="none"
+									playsinline
+									poster={overnightLaborableGuide.posterSrc}
+									title={overnightLaborableGuide.videoLabel}>
+									<source src={overnightLaborableGuide.videoSrc} type="video/mp4" />
+									Tu navegador no soporta reproducción de video HTML5.
+								</video>
 							</div>
 						</article>
 					</div>
@@ -2968,6 +2967,11 @@ const microclipBranches: MicroclipBranch[] = [
 
 	.how-overnight__cell {
 		margin-top: clamp(0.85rem, 2.5vw, 1.25rem);
+	}
+
+	.how-overnight__embed {
+		max-width: min(44rem, 100%);
+		margin: 0 auto;
 	}
 
 	/* Still marca (13 sep + oleada 1 · 28 sep): orb + tevsys; tonos/posiciones variados. */

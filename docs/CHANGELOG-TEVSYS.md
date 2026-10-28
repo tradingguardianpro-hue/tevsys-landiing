@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Operación swing: panel te habla (~70 s) (29 oct 2026)
+
+- **Qué:** `#overnight-laborable` sustituye esfera por `tevsys-mc-panel-te-habla-swing-70s.mp4` + poster (cierre *tevsys también en swing*). ES|EN. `?v=20261029`. Home *swing* ya apunta aquí.
+- **Por qué:** acto mundo swing con panel nuevo + cartelas DESDE/Avance/Margen/SEMANA; no va en rama microclips *Operación en curso*.
+- **Commit:** `web(tevsys): mount panel-teaches swing clip on overnight-laborable`
+
 ## Cómo funciona — MC-CF-020 CORRIGE remake panel nuevo (26 oct 2026)
 
 - **Qué:** sustituye *brandStill* (esfera) en **Preparar la protección** por vídeo real. Título intacto: *¿Te equivocaste en un límite? — tevsys te lo dice*. Ancla `#videoclip-corrige-errores`. MP4 + poster (CORRIGE + overlays HOY). Remake DaVinci ~55 s · panel nuevo · dos puertas clic · modal · corrige · protección breve. `?v=20261026`. ES|EN.
