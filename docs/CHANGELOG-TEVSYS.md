@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Operación swing: copy sin eco (29 oct 2026 noche)
+
+- **Qué:** `#overnight-laborable` announcement + body ES|EN — opción C (gancho *Medianoche no te desprotege* · cuerpo pacto / no día nuevo = libre). Pantalla/candado intactos.
+- **Commit:** `web(tevsys): tighten overnight-laborable lead copy without redundancy`
+
 ## Cómo funciona — Operación swing: panel te habla (~70 s) (29 oct 2026)
 
 - **Qué:** `#overnight-laborable` sustituye esfera por `tevsys-mc-panel-te-habla-swing-70s.mp4` + poster (cierre *tevsys también en swing*). ES|EN. `?v=20261029`. Home *swing* ya apunta aquí.
