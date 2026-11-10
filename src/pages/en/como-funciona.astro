@@ -553,8 +553,7 @@ const microclipBranches: MicroclipBranch[] = [
 											<span class="how-present-title__accent">in the edit</span>
 										</h3>
 										<p class="how-doc-session__edited tevsys-copy-muted">
-											We'll publish it on <strong>11/11/2026</strong>. The figures below are the
-											previous published session; they ship with the remake.
+											We'll publish it on <strong>11/11/2026</strong>.
 										</p>
 									</>
 								) : (
@@ -572,67 +571,89 @@ const microclipBranches: MicroclipBranch[] = [
 							}
 						</header>
 
-						<ol class="how-doc-session__steps" aria-label="Session order">
-							{
-								sessionDocumentation.timelineSteps.map((step) => (
-									<li class="how-doc-session__step">
-										<span class="how-doc-session__step-time">{step.time}</span>
-										<span class="how-doc-session__step-body">
-											{step.label}
-											{step.detail ? (
-												<span class="how-doc-session__step-detail"> · {step.detail}</span>
-											) : null}
-										</span>
-									</li>
-								))
-							}
-						</ol>
+						{
+							!presentationLeadVideo.pending ? (
+								<>
+									<ol class="how-doc-session__steps" aria-label="Session order">
+										{
+											sessionDocumentation.timelineSteps.map((step) => (
+												<li class="how-doc-session__step">
+													<span class="how-doc-session__step-time">{step.time}</span>
+													<span class="how-doc-session__step-body">
+														{step.label}
+														{step.detail ? (
+															<span class="how-doc-session__step-detail"> · {step.detail}</span>
+														) : null}
+													</span>
+												</li>
+											))
+										}
+									</ol>
 
-						<div class="how-doc-session__attribution" aria-labelledby="how-doc-attribution-title">
-							<p class="how-doc-session__attribution-daylead">{sessionDocumentation.attribution.dayLead}</p>
-							<p id="how-doc-attribution-title" class="how-doc-session__attribution-kicker">
-								{sessionDocumentation.attribution.headline}
-							</p>
-							<p class="how-doc-session__attribution-stats">
-								<span class="how-doc-session__attribution-pill">tevsys {sessionDocumentation.attribution.tevsys}</span>
-								<span class="how-doc-session__attribution-pill">execution {sessionDocumentation.attribution.broker}</span>
-								<span class="how-doc-session__attribution-pill">{sessionDocumentation.attribution.ms}</span>
-							</p>
-							<p class="how-doc-session__attribution-foot">{sessionDocumentation.attribution.footnote}</p>
-						</div>
+									<div class="how-doc-session__attribution" aria-labelledby="how-doc-attribution-title">
+										<p class="how-doc-session__attribution-daylead">
+											{sessionDocumentation.attribution.dayLead}
+										</p>
+										<p id="how-doc-attribution-title" class="how-doc-session__attribution-kicker">
+											{sessionDocumentation.attribution.headline}
+										</p>
+										<p class="how-doc-session__attribution-stats">
+											<span class="how-doc-session__attribution-pill">
+												tevsys {sessionDocumentation.attribution.tevsys}
+											</span>
+											<span class="how-doc-session__attribution-pill">
+												execution {sessionDocumentation.attribution.broker}
+											</span>
+											<span class="how-doc-session__attribution-pill">
+												{sessionDocumentation.attribution.ms}
+											</span>
+										</p>
+										<p class="how-doc-session__attribution-foot">
+											{sessionDocumentation.attribution.footnote}
+										</p>
+									</div>
 
-						<ul class="how-doc-session__sources">
-							{
-								sessionDocumentation.sources.map((source) => (
-									<li
-										class:list={[
-											'how-doc-session__source',
-											source.featured && 'how-doc-session__source--featured',
-										]}>
-										<p class="how-doc-session__source-title">{source.title}</p>
-										{'lead' in source && source.lead ? (
-											<p class="how-doc-session__source-lead">{source.lead}</p>
-										) : null}
-										{('lines' in source && source.lines) ? (
-											<ul class="how-doc-session__source-lines">
-												{source.lines.map((line) => (
-													<li class="how-doc-session__source-line">{line}</li>
-												))}
-											</ul>
-										) : (
-											<p class="how-doc-session__source-text">{'text' in source ? source.text : ''}</p>
-										)}
-									</li>
-								))
-							}
-						</ul>
+									<ul class="how-doc-session__sources">
+										{
+											sessionDocumentation.sources.map((source) => (
+												<li
+													class:list={[
+														'how-doc-session__source',
+														source.featured && 'how-doc-session__source--featured',
+													]}>
+													<p class="how-doc-session__source-title">{source.title}</p>
+													{'lead' in source && source.lead ? (
+														<p class="how-doc-session__source-lead">{source.lead}</p>
+													) : null}
+													{'lines' in source && source.lines ? (
+														<ul class="how-doc-session__source-lines">
+															{source.lines.map((line) => (
+																<li class="how-doc-session__source-line">{line}</li>
+															))}
+														</ul>
+													) : (
+														<p class="how-doc-session__source-text">
+															{'text' in source ? source.text : ''}
+														</p>
+													)}
+												</li>
+											))
+										}
+									</ul>
+								</>
+							) : null
+						}
 
 						<div class="how-doc-session__foot">
-							<p class="how-doc-session__note">
-								Internal code <span class="how-doc-session__mono">TVS-…</span> per case. This is not a paid audit
-								(coming soon): a real demo-account session, documented honestly. Extended pack (report +
-								logs) available on request to professionals.
-							</p>
+							{
+								!presentationLeadVideo.pending ? (
+									<p class="how-doc-session__note">
+										Internal code <span class="how-doc-session__mono">TVS-…</span> per case. This is not a
+										paid audit (coming soon): a real demo-account session, documented honestly. Extended
+										pack (report + logs) available on request to professionals.
+									</p>
+								) : null
+							}
 							<div class="how-doc-session__actions">
 								<a href="/en/company/contact?flow=demo" class="how-side-cta">
 									Download demo
