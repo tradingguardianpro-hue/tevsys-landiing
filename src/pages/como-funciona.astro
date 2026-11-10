@@ -643,25 +643,25 @@ const microclipBranches: MicroclipBranch[] = [
 							) : null
 						}
 
-						<div class="how-doc-session__foot">
-							{
-								!presentationLeadVideo.pending ? (
+						{
+							!presentationLeadVideo.pending ? (
+								<div class="how-doc-session__foot">
 									<p class="how-doc-session__note">
 										Código interno <span class="how-doc-session__mono">TVS-…</span> por caso. No es
 										auditoría de pago (próximamente): sesión real en cuenta demo, documentada con
 										honestidad. Pack ampliado (informe + registros) bajo petición a profesionales.
 									</p>
-								) : null
-							}
-							<div class="how-doc-session__actions">
-								<a href="/company/contact?flow=demo" class="how-side-cta">
-									Descargar demo
-								</a>
-								<a href="/company/contact?flow=auditoria-ia" class="how-side-cta how-side-cta--ghost">
-									Solicitar dossier
-								</a>
-							</div>
-						</div>
+									<div class="how-doc-session__actions">
+										<a href="/company/contact?flow=demo" class="how-side-cta">
+											Descargar demo
+										</a>
+										<a href="/company/contact?flow=auditoria-ia" class="how-side-cta how-side-cta--ghost">
+											Solicitar dossier
+										</a>
+									</div>
+								</div>
+							) : null
+						}
 					</section>
 				</section>
 			</div>
