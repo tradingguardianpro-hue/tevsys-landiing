@@ -27,7 +27,7 @@ const presentationLeadVideo = {
 	attributionBlurb: 'New session in the edit — same idea: tevsys decision vs MT5 execution.',
 	pending: true as const,
 	pendingKicker: 'Video in preparation',
-	pendingSub: '11/11/2026',
+	pendingSub: "We'll publish it on 11/11/2026",
 	videoSrc: '' as string,
 	posterSrc: '' as string,
 	youtubeWatch: '' as string,
@@ -507,7 +507,7 @@ const microclipBranches: MicroclipBranch[] = [
 											orb="c"
 											kicker={presentationLeadVideo.pendingKicker}
 											sub={presentationLeadVideo.pendingSub}
-											aria="Nasdaq 100 — video in preparation for 11/11/2026"
+											aria="Nasdaq 100 — video in preparation; we'll publish it on 11/11/2026"
 										/>
 									) : (
 										<video
@@ -553,8 +553,8 @@ const microclipBranches: MicroclipBranch[] = [
 											<span class="how-present-title__accent">in the edit</span>
 										</h3>
 										<p class="how-doc-session__edited tevsys-copy-muted">
-											The presentation video updates on <strong>11/11/2026</strong>. The figures
-											below are the previous published session; they ship with the remake.
+											We'll publish it on <strong>11/11/2026</strong>. The figures below are the
+											previous published session; they ship with the remake.
 										</p>
 									</>
 								) : (

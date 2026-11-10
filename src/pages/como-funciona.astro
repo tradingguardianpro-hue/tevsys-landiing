@@ -24,7 +24,7 @@ const presentationLeadVideo = {
 	attributionBlurb: 'Nueva sesión en montaje — misma lógica: decisión tevsys vs ejecución en MT5.',
 	pending: true as const,
 	pendingKicker: 'Vídeo en preparación',
-	pendingSub: '11/11/2026',
+	pendingSub: 'Lo colgaremos el 11/11/2026',
 	videoSrc: '' as string,
 	posterSrc: '' as string,
 	youtubeWatch: '' as string,
@@ -504,7 +504,7 @@ const microclipBranches: MicroclipBranch[] = [
 											orb="c"
 											kicker={presentationLeadVideo.pendingKicker}
 											sub={presentationLeadVideo.pendingSub}
-											aria="Nasdaq 100 — vídeo en preparación para el 11/11/2026"
+											aria="Nasdaq 100 — vídeo en preparación; lo colgaremos el 11/11/2026"
 										/>
 									) : (
 										<video
@@ -550,9 +550,8 @@ const microclipBranches: MicroclipBranch[] = [
 											<span class="how-present-title__accent">en montaje</span>
 										</h3>
 										<p class="how-doc-session__edited tevsys-copy-muted">
-											El vídeo de presentación se actualiza el <strong>11/11/2026</strong>. La ficha
-											numérica de abajo es el archivo de la sesión publicada hasta ahora; se sustituye
-											con el remake.
+											Lo colgaremos el <strong>11/11/2026</strong>. La ficha numérica de abajo es el
+											archivo de la sesión publicada hasta ahora; se sustituye con el remake.
 										</p>
 									</>
 								) : (
