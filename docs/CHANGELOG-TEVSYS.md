@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Nasdaq evidencia — placeholder + stills negro/ámbar (10 nov 2026 noche)
+
+- **Qué:** retirado MP4/poster/YouTube sesión **#6263709** del bloque `#evidencia-nasdaq-100` (ES|EN). Hueco: *Vídeo en preparación* · **11/11/2026** (`BrandStill` kicker/sub). Stills marca (huecos sin clip) pasan a negro + ámbar elegante; CSS local duplicado en Cómo funciona eliminado → `brand-still.css`. CTAs home/Precisión/HyperClose sin `~3:35` / sin `?play=1` forzado.
+- **Por qué:** remake **#6288233** casi listo; mejor placeholder honesto que vídeo viejo (−1 %).
+- **Commit:** `web(tevsys): nasdaq pending placeholder and black-amber brand stills`
+
 ## Cómo funciona — Operación swing: copy sin eco (29 oct 2026 noche)
 
 - **Qué:** `#overnight-laborable` announcement + body ES|EN — opción C (gancho *Medianoche no te desprotege* · cuerpo pacto / no día nuevo = libre). Pantalla/candado intactos.

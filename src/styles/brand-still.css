@@ -1,4 +1,4 @@
-/* Still marca tevsys — oleada 1–2 (28 sep 2026): orb + nombre; tonos/posiciones variados. */
+/* Still marca tevsys — negro + ámbar (nov 2026). Orb suave, no bola 3D. */
 
 .how-brand-still {
 	position: relative;
@@ -10,11 +10,13 @@
 	margin: 0 auto;
 	border-radius: 0.85rem;
 	overflow: hidden;
-	border: 1px solid rgba(245, 176, 65, 0.18);
-	background: linear-gradient(165deg, hsl(222, 16%, 8%) 0%, hsl(222, 14%, 5%) 100%);
+	border: 1px solid rgba(245, 176, 65, 0.28);
+	background:
+		radial-gradient(120% 80% at 50% 120%, rgba(245, 176, 65, 0.07) 0%, transparent 55%),
+		linear-gradient(165deg, #0a0c10 0%, #050607 55%, #000 100%);
 	box-shadow:
-		0 18px 44px -32px rgba(0, 0, 0, 0.55),
-		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+		0 22px 48px -34px rgba(0, 0, 0, 0.75),
+		inset 0 1px 0 rgba(245, 176, 65, 0.08);
 }
 
 .how-brand-still--clip {
@@ -24,201 +26,240 @@
 	aspect-ratio: 16 / 9;
 }
 
+.how-brand-still__glow {
+	position: absolute;
+	inset: -20% -10% auto;
+	height: 55%;
+	background: radial-gradient(
+		ellipse 70% 80% at 50% 0%,
+		rgba(245, 176, 65, 0.1) 0%,
+		transparent 70%
+	);
+	pointer-events: none;
+}
+
 .how-brand-still__orb {
 	position: absolute;
-	width: min(14rem, 62%);
+	width: min(16rem, 58%);
 	aspect-ratio: 1;
 	border-radius: 50%;
 	left: 50%;
-	top: 50%;
+	top: 52%;
 	transform: translate(-50%, -50%);
 	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(245, 176, 65, 0.55) 0%,
-		rgba(245, 176, 65, 0.22) 38%,
-		rgba(245, 176, 65, 0.06) 62%,
-		transparent 72%
+		circle at 50% 48%,
+		rgba(245, 176, 65, 0.14) 0%,
+		rgba(245, 176, 65, 0.05) 42%,
+		transparent 68%
 	);
-	filter: blur(1px);
+	box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.12);
+	filter: blur(0.4px);
 	pointer-events: none;
+	opacity: 0.9;
 }
 
 .how-brand-still--orb-tr .how-brand-still__orb {
 	left: auto;
-	right: 8%;
-	top: 18%;
+	right: 10%;
+	top: 22%;
 	transform: none;
-	width: min(11rem, 48%);
+	width: min(12rem, 44%);
 }
 
 .how-brand-still--orb-tl .how-brand-still__orb {
 	left: 10%;
-	top: 16%;
+	top: 20%;
 	transform: none;
-	width: min(11.5rem, 50%);
+	width: min(12.5rem, 46%);
 }
 
 .how-brand-still--orb-br .how-brand-still__orb {
 	left: auto;
 	right: 12%;
 	top: auto;
-	bottom: 10%;
+	bottom: 12%;
 	transform: none;
-	width: min(12rem, 52%);
+	width: min(13rem, 48%);
 }
 
 .how-brand-still--orb-bl .how-brand-still__orb {
 	left: 10%;
 	top: auto;
-	bottom: 12%;
+	bottom: 14%;
 	transform: none;
-	width: min(12.5rem, 54%);
+	width: min(13.5rem, 50%);
+}
+
+.how-brand-still__frame {
+	position: absolute;
+	inset: 0.7rem;
+	border-radius: 0.55rem;
+	border: 1px solid rgba(245, 176, 65, 0.1);
+	pointer-events: none;
+}
+
+.how-brand-still__copy {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 1rem 1.25rem;
+	text-align: center;
+}
+
+.how-brand-still__kicker {
+	font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	font-size: clamp(0.68rem, 1.6vw, 0.78rem);
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #f5b041;
+}
+
+.how-brand-still__name {
+	font-family: inherit;
+	font-size: clamp(1.55rem, 4vw, 2.05rem);
+	font-weight: 650;
+	letter-spacing: -0.03em;
+	color: rgba(246, 248, 252, 0.96);
+	text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
+}
+
+.how-brand-still--clip .how-brand-still__name {
+	font-size: clamp(1.3rem, 3.2vw, 1.75rem);
+}
+
+.how-brand-still--status .how-brand-still__name {
+	font-size: clamp(1.45rem, 3.6vw, 1.95rem);
+}
+
+.how-brand-still__sub {
+	margin-top: 0.15rem;
+	font-family: 'IBM Plex Mono', ui-monospace, monospace;
+	font-size: clamp(0.78rem, 1.8vw, 0.9rem);
+	font-weight: 450;
+	letter-spacing: 0.06em;
+	color: rgba(190, 200, 214, 0.88);
+}
+
+/* Tonos: mismo negro; acento ámbar dominante; tint leve por familia. */
+.how-brand-still--tone-teal {
+	border-color: rgba(245, 176, 65, 0.22);
 }
 
 .how-brand-still--tone-teal .how-brand-still__orb {
 	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(64, 196, 180, 0.5) 0%,
-		rgba(64, 196, 180, 0.2) 38%,
-		rgba(64, 196, 180, 0.06) 62%,
-		transparent 72%
+		circle at 50% 48%,
+		rgba(245, 176, 65, 0.12) 0%,
+		rgba(64, 196, 180, 0.06) 45%,
+		transparent 68%
 	);
+	box-shadow: 0 0 0 1px rgba(245, 176, 65, 0.1);
 }
 
-.how-brand-still--tone-teal {
-	border-color: rgba(64, 196, 180, 0.22);
+.how-brand-still--tone-cool {
+	border-color: rgba(245, 176, 65, 0.22);
 }
 
 .how-brand-still--tone-cool .how-brand-still__orb {
 	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(120, 160, 210, 0.48) 0%,
-		rgba(120, 160, 210, 0.18) 40%,
-		rgba(120, 160, 210, 0.05) 62%,
-		transparent 72%
-	);
-}
-
-.how-brand-still--tone-cool {
-	border-color: rgba(120, 160, 210, 0.22);
-}
-
-.how-brand-still--tone-steel .how-brand-still__orb {
-	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(190, 200, 214, 0.42) 0%,
-		rgba(190, 200, 214, 0.16) 40%,
-		rgba(190, 200, 214, 0.05) 62%,
-		transparent 72%
+		circle at 50% 48%,
+		rgba(245, 176, 65, 0.11) 0%,
+		rgba(120, 160, 210, 0.05) 45%,
+		transparent 68%
 	);
 }
 
 .how-brand-still--tone-steel {
-	border-color: rgba(190, 200, 214, 0.2);
+	border-color: rgba(245, 176, 65, 0.2);
 }
 
-.how-brand-still--tone-warm .how-brand-still__orb {
+.how-brand-still--tone-steel .how-brand-still__orb {
 	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(232, 140, 70, 0.52) 0%,
-		rgba(232, 140, 70, 0.2) 38%,
-		rgba(232, 140, 70, 0.06) 62%,
-		transparent 72%
+		circle at 50% 48%,
+		rgba(245, 176, 65, 0.1) 0%,
+		rgba(190, 200, 214, 0.05) 45%,
+		transparent 68%
 	);
 }
 
 .how-brand-still--tone-warm {
-	border-color: rgba(232, 140, 70, 0.22);
+	border-color: rgba(245, 176, 65, 0.3);
 }
 
-.how-brand-still__name {
-	position: relative;
-	z-index: 1;
-	font-family: inherit;
-	font-size: clamp(1.65rem, 4.2vw, 2.15rem);
-	font-weight: 650;
-	letter-spacing: -0.03em;
-	color: rgba(246, 248, 252, 0.96);
-	text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
-}
-
-.how-brand-still--clip .how-brand-still__name {
-	font-size: clamp(1.35rem, 3.4vw, 1.85rem);
+.how-brand-still--tone-warm .how-brand-still__orb {
+	background: radial-gradient(
+		circle at 50% 48%,
+		rgba(245, 176, 65, 0.16) 0%,
+		rgba(232, 140, 70, 0.06) 42%,
+		transparent 68%
+	);
 }
 
 html[data-theme='light'] .how-brand-still {
-	border-color: rgba(200, 135, 26, 0.28);
-	background: linear-gradient(165deg, hsl(40, 18%, 97%) 0%, hsl(220, 14%, 94%) 100%);
-	box-shadow: 0 14px 36px -28px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+	border-color: rgba(200, 135, 26, 0.35);
+	background:
+		radial-gradient(120% 80% at 50% 120%, rgba(245, 176, 65, 0.08) 0%, transparent 55%),
+		linear-gradient(165deg, hsl(40, 20%, 98%) 0%, hsl(220, 12%, 94%) 100%);
+	box-shadow: 0 14px 36px -28px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-html[data-theme='light'] .how-brand-still--tone-teal {
-	border-color: rgba(32, 140, 128, 0.28);
-}
-
-html[data-theme='light'] .how-brand-still--tone-cool {
-	border-color: rgba(70, 110, 160, 0.28);
-}
-
-html[data-theme='light'] .how-brand-still--tone-steel {
-	border-color: rgba(90, 105, 125, 0.28);
-}
-
-html[data-theme='light'] .how-brand-still--tone-warm {
-	border-color: rgba(180, 100, 40, 0.28);
+html[data-theme='light'] .how-brand-still__glow {
+	background: radial-gradient(
+		ellipse 70% 80% at 50% 0%,
+		rgba(200, 135, 26, 0.1) 0%,
+		transparent 70%
+	);
 }
 
 html[data-theme='light'] .how-brand-still__orb {
 	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(218, 155, 48, 0.48) 0%,
-		rgba(218, 155, 48, 0.18) 40%,
-		rgba(218, 155, 48, 0.05) 62%,
-		transparent 72%
+		circle at 50% 48%,
+		rgba(218, 155, 48, 0.18) 0%,
+		rgba(218, 155, 48, 0.05) 45%,
+		transparent 68%
 	);
+	box-shadow: 0 0 0 1px rgba(200, 135, 26, 0.16);
 }
 
-html[data-theme='light'] .how-brand-still--tone-teal .how-brand-still__orb {
-	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(32, 150, 138, 0.42) 0%,
-		rgba(32, 150, 138, 0.16) 40%,
-		rgba(32, 150, 138, 0.05) 62%,
-		transparent 72%
-	);
+html[data-theme='light'] .how-brand-still__frame {
+	border-color: rgba(200, 135, 26, 0.12);
 }
 
-html[data-theme='light'] .how-brand-still--tone-cool .how-brand-still__orb {
-	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(70, 110, 170, 0.4) 0%,
-		rgba(70, 110, 170, 0.15) 40%,
-		rgba(70, 110, 170, 0.05) 62%,
-		transparent 72%
-	);
-}
-
-html[data-theme='light'] .how-brand-still--tone-steel .how-brand-still__orb {
-	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(100, 115, 135, 0.36) 0%,
-		rgba(100, 115, 135, 0.14) 40%,
-		rgba(100, 115, 135, 0.04) 62%,
-		transparent 72%
-	);
-}
-
-html[data-theme='light'] .how-brand-still--tone-warm .how-brand-still__orb {
-	background: radial-gradient(
-		circle at 42% 38%,
-		rgba(200, 120, 50, 0.42) 0%,
-		rgba(200, 120, 50, 0.16) 40%,
-		rgba(200, 120, 50, 0.05) 62%,
-		transparent 72%
-	);
+html[data-theme='light'] .how-brand-still__kicker {
+	color: #c8871a;
 }
 
 html[data-theme='light'] .how-brand-still__name {
-	color: rgba(28, 34, 44, 0.92);
+	color: rgba(28, 34, 44, 0.94);
 	text-shadow: none;
+}
+
+html[data-theme='light'] .how-brand-still__sub {
+	color: rgba(55, 65, 80, 0.88);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.how-brand-still--status {
+		animation: how-brand-still-border-breathe 4.2s ease-in-out infinite;
+	}
+}
+
+@keyframes how-brand-still-border-breathe {
+	0%,
+	100% {
+		border-color: rgba(245, 176, 65, 0.26);
+		box-shadow:
+			0 22px 48px -34px rgba(0, 0, 0, 0.75),
+			inset 0 1px 0 rgba(245, 176, 65, 0.07);
+	}
+	50% {
+		border-color: rgba(245, 176, 65, 0.42);
+		box-shadow:
+			0 22px 48px -34px rgba(0, 0, 0, 0.75),
+			inset 0 1px 0 rgba(245, 176, 65, 0.14),
+			0 0 28px -12px rgba(245, 176, 65, 0.28);
+	}
 }

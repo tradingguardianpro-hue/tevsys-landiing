@@ -11,19 +11,23 @@ const seo = {
 		'Cómo funciona tevsys en MT5: límites intradía y swing, HyperClose, acta desde instalación (Tu ID TVS-…), atribución tevsys vs MT5, overnight sin reset a medianoche. Evidencia Nasdaq y guías.',
 };
 
-/** Vídeo único de presentación — regrabación 21–22 ago 2026 · cuenta #6263709 · ~3:35. */
+/**
+ * Vídeo presentación Nasdaq — remake #6288233 en curso (nov 2026).
+ * Placeholder hasta colgar MP4 (objetivo 11/11/2026). Viejo #6263709 retirado de la web.
+ */
 const presentationLeadVideo = {
 	id: 'evidencia-nasdaq-100',
 	partLabel: 'Evidencia',
-	title: 'Nasdaq 100 — sesión real (~3:35)',
-	blurb:
-		'Tu límite, el cierre real, HyperClose y el informe en una sola sesión.',
-	/** Explicación atribución bajo el título — sin nombre de bróker; cifras sesión 6263709. */
-	attributionBlurb:
-		'Separamos la decisión de tevsys y la ejecución en MT5. En esta sesión: tevsys −1,0017 % · ejecución 0,00 p.p. · 42 ms.',
-	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20260822',
-	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-6263709.jpg?v=20260822',
-	youtubeWatch: 'https://youtu.be/sAttywGy0nQ',
+	title: 'Nasdaq 100 — sesión real',
+	blurb: 'Tu límite, el cierre real, HyperClose y el informe en una sola sesión.',
+	/** Sin cifras de la sesión retirada mientras el remake no cuelga. */
+	attributionBlurb: 'Nueva sesión en montaje — misma lógica: decisión tevsys vs ejecución en MT5.',
+	pending: true as const,
+	pendingKicker: 'Vídeo en preparación',
+	pendingSub: '11/11/2026',
+	videoSrc: '' as string,
+	posterSrc: '' as string,
+	youtubeWatch: '' as string,
 };
 
 /** Acto overnight laborable (P13). Clip panel te habla ~70 s — remount 29 oct 2026 (sustituye still post-retiro MC-CF-027). */
@@ -465,46 +469,70 @@ const microclipBranches: MicroclipBranch[] = [
 								<p class="how-eyebrow">{presentationLeadVideo.partLabel}</p>
 								<h3>{presentationLeadVideo.title}</h3>
 								<p class="how-block-lead">{presentationLeadVideo.blurb}</p>
-								<div class="how-block-attribution-wrap how-block-attribution-wrap--punch tevsys-shell-punch">
-									<span class="how-block-attribution__badge">Atribución</span>
-									<p class="how-block-attribution">
-										{presentationLeadVideo.attributionBlurb}
-									</p>
-								</div>
-								<a
-									href={presentationLeadVideo.youtubeWatch}
-									class="how-text-link how-text-link--presentation-yt"
-									target="_blank"
-									rel="noopener noreferrer">
-									Abrir en YouTube →
-								</a>
+								{
+									presentationLeadVideo.pending ? (
+										<p class="how-block-lead how-block-lead--pending tevsys-copy-muted">
+											{presentationLeadVideo.attributionBlurb}
+										</p>
+									) : (
+										<div class="how-block-attribution-wrap how-block-attribution-wrap--punch tevsys-shell-punch">
+											<span class="how-block-attribution__badge">Atribución</span>
+											<p class="how-block-attribution">
+												{presentationLeadVideo.attributionBlurb}
+											</p>
+										</div>
+									)
+								}
+								{
+									!presentationLeadVideo.pending && presentationLeadVideo.youtubeWatch ? (
+										<a
+											href={presentationLeadVideo.youtubeWatch}
+											class="how-text-link how-text-link--presentation-yt"
+											target="_blank"
+											rel="noopener noreferrer">
+											Abrir en YouTube →
+										</a>
+									) : null
+								}
 							</header>
-							<div class="how-embed how-embed--chrome">
-								<video
-									id="evidencia-nasdaq-100-video"
-									controls
-									preload="metadata"
-									playsinline
-									poster={presentationLeadVideo.posterSrc}
-									title={presentationLeadVideo.title}>
-									<source src={presentationLeadVideo.videoSrc} type="video/mp4" />
-									Tu navegador no soporta reproducción de video HTML5.
-								</video>
+							<div class="how-embed how-embed--chrome how-embed--pending">
+								{
+									presentationLeadVideo.pending ? (
+										<BrandStill
+											id="evidencia-nasdaq-100-video"
+											tone="amber"
+											orb="c"
+											kicker={presentationLeadVideo.pendingKicker}
+											sub={presentationLeadVideo.pendingSub}
+											aria="Nasdaq 100 — vídeo en preparación para el 11/11/2026"
+										/>
+									) : (
+										<video
+											id="evidencia-nasdaq-100-video"
+											controls
+											preload="metadata"
+											playsinline
+											poster={presentationLeadVideo.posterSrc}
+											title={presentationLeadVideo.title}>
+											<source src={presentationLeadVideo.videoSrc} type="video/mp4" />
+											Tu navegador no soporta reproducción de video HTML5.
+										</video>
+									)
+								}
 							</div>
-							<script is:inline>
-								(() => {
-									if (new URLSearchParams(window.location.search).get('play') !== '1') return;
-									const video = document.getElementById('evidencia-nasdaq-100-video');
-									if (!(video instanceof HTMLVideoElement)) return;
-									video.removeAttribute('poster');
-									video.preload = 'auto';
-								})();
-							</script>
-							<p class="how-doc-session-jump">
-								<a href={`#${sessionDocumentation.id}`} class="how-text-link how-doc-session-jump__link">
-									Qué documentación hay detrás de este vídeo →
-								</a>
-							</p>
+							{
+								presentationLeadVideo.pending ? (
+									<p class="how-doc-session-jump tevsys-copy-muted">
+										Microclips de cómo funciona siguen disponibles más abajo.
+									</p>
+								) : (
+									<p class="how-doc-session-jump">
+										<a href={`#${sessionDocumentation.id}`} class="how-text-link how-doc-session-jump__link">
+											Qué documentación hay detrás de este vídeo →
+										</a>
+									</p>
+								)
+							}
 						</article>
 					</div>
 
@@ -514,14 +542,32 @@ const microclipBranches: MicroclipBranch[] = [
 						aria-labelledby="how-doc-session-title">
 						<header class="how-doc-session__head">
 							<p class="how-eyebrow how-eyebrow--center">Transparencia</p>
-							<h3 id="how-doc-session-title" class="how-doc-session__title">
-								Qué hay detrás de este vídeo —{' '}
-								<span class="how-present-title__accent">Nasdaq 100 · 10 lotes · −1 %</span>
-							</h3>
-							<p class="how-doc-session__edited">
-								Recorte de tiempos muertos; a veces el reloj salta entre planos. Misma sesión del 21 ago 2026 —
-								contrástala en MT5 y con las fuentes de abajo.
-							</p>
+							{
+								presentationLeadVideo.pending ? (
+									<>
+										<h3 id="how-doc-session-title" class="how-doc-session__title">
+											Nueva evidencia Nasdaq —{' '}
+											<span class="how-present-title__accent">en montaje</span>
+										</h3>
+										<p class="how-doc-session__edited tevsys-copy-muted">
+											El vídeo de presentación se actualiza el <strong>11/11/2026</strong>. La ficha
+											numérica de abajo es el archivo de la sesión publicada hasta ahora; se sustituye
+											con el remake.
+										</p>
+									</>
+								) : (
+									<>
+										<h3 id="how-doc-session-title" class="how-doc-session__title">
+											Qué hay detrás de este vídeo —{' '}
+											<span class="how-present-title__accent">Nasdaq 100 · 10 lotes · −1 %</span>
+										</h3>
+										<p class="how-doc-session__edited">
+											Recorte de tiempos muertos; a veces el reloj salta entre planos. Misma sesión del
+											21 ago 2026 — contrástala en MT5 y con las fuentes de abajo.
+										</p>
+									</>
+								)
+							}
 						</header>
 
 						<ol class="how-doc-session__steps" aria-label="Orden de la sesión">
@@ -706,17 +752,13 @@ const microclipBranches: MicroclipBranch[] = [
 					<p class="how-section-sub">{desdeCeroGuide.blurb}</p>
 				</header>
 				<article class="how-pair-cell how-desde-cero__cell">
-					<div
-						class:list={[
-							'how-brand-still',
-							`how-brand-still--tone-${desdeCeroGuide.brandStillTone ?? 'cool'}`,
-							`how-brand-still--orb-${desdeCeroGuide.brandStillOrb ?? 'c'}`,
-						]}
-						role="img"
-						aria-label={desdeCeroGuide.brandStillAria}>
-						<span class="how-brand-still__orb" aria-hidden="true"></span>
-						<span class="how-brand-still__name">{desdeCeroGuide.brandStillLabel}</span>
-					</div>
+					<BrandStill
+						tone={desdeCeroGuide.brandStillTone ?? 'cool'}
+						orb={desdeCeroGuide.brandStillOrb ?? 'c'}
+						label={desdeCeroGuide.brandStillLabel}
+						aria={desdeCeroGuide.brandStillAria}
+						clip={false}
+					/>
 				</article>
 			</div>
 		</section>
@@ -942,18 +984,12 @@ const microclipBranches: MicroclipBranch[] = [
 																		/>
 																	</div>
 																) : (
-																	<div
-																		class:list={[
-																			'how-brand-still',
-																			'how-brand-still--clip',
-																			`how-brand-still--tone-${row.brandStillTone ?? 'amber'}`,
-																			`how-brand-still--orb-${row.brandStillOrb ?? 'c'}`,
-																		]}
-																		role="img"
-																		aria-label={row.brandStillAria ?? `Marca tevsys — ${row.title}`}>
-																		<span class="how-brand-still__orb" aria-hidden="true"></span>
-																		<span class="how-brand-still__name">{row.brandStillLabel ?? 'tevsys'}</span>
-																	</div>
+																	<BrandStill
+																		tone={row.brandStillTone ?? 'amber'}
+																		orb={row.brandStillOrb ?? 'c'}
+																		label={row.brandStillLabel ?? 'tevsys'}
+																		aria={row.brandStillAria ?? `Marca tevsys — ${row.title}`}
+																	/>
 																)}
 															</div>
 															{row.videoSrc || row.stillSrc ? (
@@ -1512,12 +1548,10 @@ const microclipBranches: MicroclipBranch[] = [
 		const params = new URLSearchParams(window.location.search);
 		if (params.get('play') !== '1') return;
 
-		const video = document.getElementById('evidencia-nasdaq-100-video');
+		const media = document.getElementById('evidencia-nasdaq-100-video');
 		const anchor = document.getElementById('evidencia-nasdaq-100');
-		if (!video || !(video instanceof HTMLVideoElement)) return;
-
-		video.removeAttribute('poster');
-		video.preload = 'auto';
+		const target = anchor || media;
+		if (!target) return;
 
 		const resetHorizontal = () => {
 			window.scrollTo(window.scrollX, window.scrollY);
@@ -1526,26 +1560,34 @@ const microclipBranches: MicroclipBranch[] = [
 		};
 
 		const scrollToEvidence = () => {
-			/* Aterrizaje directo (mismo criterio que hash desde home). */
-			(anchor || video).scrollIntoView({ behavior: 'auto', block: 'start', inline: 'nearest' });
+			target.scrollIntoView({ behavior: 'auto', block: 'start', inline: 'nearest' });
 			resetHorizontal();
 			requestAnimationFrame(resetHorizontal);
 			setTimeout(resetHorizontal, 50);
 		};
 
+		/* Remake en curso: solo aterriza al bloque (placeholder). Con <video>, autoplay como antes. */
+		if (!(media instanceof HTMLVideoElement)) {
+			scrollToEvidence();
+			return;
+		}
+
+		media.removeAttribute('poster');
+		media.preload = 'auto';
+
 		const tryPlay = () => {
 			scrollToEvidence();
-			const p = video.play();
+			const p = media.play();
 			if (p && typeof p.catch === 'function') {
 				p.catch(() => {
-					video.muted = true;
-					video.play().catch(() => {});
+					media.muted = true;
+					media.play().catch(() => {});
 				});
 			}
 		};
 
-		if (video.readyState >= 2) tryPlay();
-		else video.addEventListener('loadeddata', tryPlay, { once: true });
+		if (media.readyState >= 2) tryPlay();
+		else media.addEventListener('loadeddata', tryPlay, { once: true });
 	})();
 </script>
 
@@ -2973,228 +3015,7 @@ const microclipBranches: MicroclipBranch[] = [
 		margin: 0 auto;
 	}
 
-	/* Still marca (13 sep + oleada 1 · 28 sep): orb + tevsys; tonos/posiciones variados. */
-	.how-brand-still {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: clamp(11rem, 28vw, 15.5rem);
-		max-width: min(40rem, 100%);
-		margin: 0 auto;
-		border-radius: 0.85rem;
-		overflow: hidden;
-		border: 1px solid rgba(245, 176, 65, 0.18);
-		background: linear-gradient(165deg, hsl(222, 16%, 8%) 0%, hsl(222, 14%, 5%) 100%);
-		box-shadow:
-			0 18px 44px -32px rgba(0, 0, 0, 0.55),
-			inset 0 1px 0 rgba(255, 255, 255, 0.05);
-	}
-
-	.how-brand-still--clip {
-		max-width: none;
-		min-height: clamp(9.5rem, 24vw, 13rem);
-		aspect-ratio: 16 / 9;
-	}
-
-	.how-brand-still__orb {
-		position: absolute;
-		width: min(14rem, 62%);
-		aspect-ratio: 1;
-		border-radius: 50%;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(245, 176, 65, 0.55) 0%,
-			rgba(245, 176, 65, 0.22) 38%,
-			rgba(245, 176, 65, 0.06) 62%,
-			transparent 72%
-		);
-		filter: blur(1px);
-		pointer-events: none;
-	}
-
-	.how-brand-still--orb-tr .how-brand-still__orb {
-		left: auto;
-		right: 8%;
-		top: 18%;
-		transform: none;
-		width: min(11rem, 48%);
-	}
-
-	.how-brand-still--orb-tl .how-brand-still__orb {
-		left: 10%;
-		top: 16%;
-		transform: none;
-		width: min(11.5rem, 50%);
-	}
-
-	.how-brand-still--orb-br .how-brand-still__orb {
-		left: auto;
-		right: 12%;
-		top: auto;
-		bottom: 10%;
-		transform: none;
-		width: min(12rem, 52%);
-	}
-
-	.how-brand-still--orb-bl .how-brand-still__orb {
-		left: 10%;
-		top: auto;
-		bottom: 12%;
-		transform: none;
-		width: min(12.5rem, 54%);
-	}
-
-	.how-brand-still--tone-teal .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(64, 196, 180, 0.5) 0%,
-			rgba(64, 196, 180, 0.2) 38%,
-			rgba(64, 196, 180, 0.06) 62%,
-			transparent 72%
-		);
-	}
-
-	.how-brand-still--tone-teal {
-		border-color: rgba(64, 196, 180, 0.22);
-	}
-
-	.how-brand-still--tone-cool .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(120, 160, 210, 0.48) 0%,
-			rgba(120, 160, 210, 0.18) 40%,
-			rgba(120, 160, 210, 0.05) 62%,
-			transparent 72%
-		);
-	}
-
-	.how-brand-still--tone-cool {
-		border-color: rgba(120, 160, 210, 0.22);
-	}
-
-	.how-brand-still--tone-steel .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(190, 200, 214, 0.42) 0%,
-			rgba(190, 200, 214, 0.16) 40%,
-			rgba(190, 200, 214, 0.05) 62%,
-			transparent 72%
-		);
-	}
-
-	.how-brand-still--tone-steel {
-		border-color: rgba(190, 200, 214, 0.2);
-	}
-
-	.how-brand-still--tone-warm .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(232, 140, 70, 0.52) 0%,
-			rgba(232, 140, 70, 0.2) 38%,
-			rgba(232, 140, 70, 0.06) 62%,
-			transparent 72%
-		);
-	}
-
-	.how-brand-still--tone-warm {
-		border-color: rgba(232, 140, 70, 0.22);
-	}
-
-	.how-brand-still__name {
-		position: relative;
-		z-index: 1;
-		font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
-		font-size: clamp(1.65rem, 4.2vw, 2.15rem);
-		font-weight: 650;
-		letter-spacing: -0.03em;
-		color: rgba(246, 248, 252, 0.96);
-		text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
-	}
-
-	.how-brand-still--clip .how-brand-still__name {
-		font-size: clamp(1.35rem, 3.4vw, 1.85rem);
-	}
-
-	html[data-theme='light'] .how-brand-still {
-		border-color: rgba(200, 135, 26, 0.28);
-		background: linear-gradient(165deg, hsl(40, 18%, 97%) 0%, hsl(220, 14%, 94%) 100%);
-		box-shadow: 0 14px 36px -28px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.85);
-	}
-
-	html[data-theme='light'] .how-brand-still--tone-teal {
-		border-color: rgba(32, 140, 128, 0.28);
-	}
-
-	html[data-theme='light'] .how-brand-still--tone-cool {
-		border-color: rgba(70, 110, 160, 0.28);
-	}
-
-	html[data-theme='light'] .how-brand-still--tone-steel {
-		border-color: rgba(90, 105, 125, 0.28);
-	}
-
-	html[data-theme='light'] .how-brand-still--tone-warm {
-		border-color: rgba(180, 100, 40, 0.28);
-	}
-
-	html[data-theme='light'] .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(218, 155, 48, 0.48) 0%,
-			rgba(218, 155, 48, 0.18) 40%,
-			rgba(218, 155, 48, 0.05) 62%,
-			transparent 72%
-		);
-	}
-
-	html[data-theme='light'] .how-brand-still--tone-teal .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(32, 150, 138, 0.42) 0%,
-			rgba(32, 150, 138, 0.16) 40%,
-			rgba(32, 150, 138, 0.05) 62%,
-			transparent 72%
-		);
-	}
-
-	html[data-theme='light'] .how-brand-still--tone-cool .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(70, 110, 170, 0.4) 0%,
-			rgba(70, 110, 170, 0.15) 40%,
-			rgba(70, 110, 170, 0.05) 62%,
-			transparent 72%
-		);
-	}
-
-	html[data-theme='light'] .how-brand-still--tone-steel .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(100, 115, 135, 0.36) 0%,
-			rgba(100, 115, 135, 0.14) 40%,
-			rgba(100, 115, 135, 0.04) 62%,
-			transparent 72%
-		);
-	}
-
-	html[data-theme='light'] .how-brand-still--tone-warm .how-brand-still__orb {
-		background: radial-gradient(
-			circle at 42% 38%,
-			rgba(200, 120, 50, 0.42) 0%,
-			rgba(200, 120, 50, 0.16) 40%,
-			rgba(200, 120, 50, 0.05) 62%,
-			transparent 72%
-		);
-	}
-
-	html[data-theme='light'] .how-brand-still__name {
-		color: rgba(28, 34, 44, 0.92);
-		text-shadow: none;
-	}
+	/* Still marca → `src/styles/brand-still.css` (negro + ámbar · nov 2026). */
 
 	.how-overnight .how-embed {
 		border-radius: 0;

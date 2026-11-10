@@ -1,7 +1,8 @@
 ---
 /**
- * Still marca tevsys (orb + nombre) — hueco visual sin MP4 / sin “vídeo en preparación”.
- * Oleada 1–2 · 28 sep 2026. Estilos: `src/styles/brand-still.css`.
+ * Still marca tevsys — hueco 16:9 sin MP4.
+ * Canon nov 2026: negro + ámbar (elegante); orb suave, no bola 3D.
+ * Estilos: `src/styles/brand-still.css`.
  */
 export type BrandStillTone = 'amber' | 'teal' | 'cool' | 'steel' | 'warm';
 export type BrandStillOrb = 'c' | 'tr' | 'tl' | 'br' | 'bl';
@@ -10,6 +11,10 @@ export interface Props {
 	tone?: BrandStillTone;
 	orb?: BrandStillOrb;
 	label?: string;
+	/** Línea corta encima (p. ej. «Vídeo en preparación»). */
+	kicker?: string;
+	/** Línea bajo el nombre (p. ej. fecha 11/11/2026). */
+	sub?: string;
 	aria?: string;
 	/** 16:9 — hueco tipo vídeo. */
 	clip?: boolean;
@@ -21,24 +26,35 @@ const {
 	tone = 'amber',
 	orb = 'c',
 	label = 'tevsys',
+	kicker,
+	sub,
 	aria,
 	clip = true,
 	id,
 	class: className,
 } = Astro.props;
+
+const ariaParts = [aria ?? `Marca ${label}`, kicker, sub].filter(Boolean);
 ---
 
 <div
 	class:list={[
 		'how-brand-still',
 		clip && 'how-brand-still--clip',
+		kicker && 'how-brand-still--status',
 		`how-brand-still--tone-${tone}`,
 		`how-brand-still--orb-${orb}`,
 		className,
 	]}
 	id={id}
 	role="img"
-	aria-label={aria ?? `Marca ${label}`}>
+	aria-label={ariaParts.join(' · ')}>
+	<span class="how-brand-still__glow" aria-hidden="true"></span>
 	<span class="how-brand-still__orb" aria-hidden="true"></span>
-	<span class="how-brand-still__name">{label}</span>
+	<span class="how-brand-still__frame" aria-hidden="true"></span>
+	<div class="how-brand-still__copy">
+		{kicker ? <span class="how-brand-still__kicker">{kicker}</span> : null}
+		<span class="how-brand-still__name">{label}</span>
+		{sub ? <span class="how-brand-still__sub">{sub}</span> : null}
+	</div>
 </div>

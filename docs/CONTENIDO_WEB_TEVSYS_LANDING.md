@@ -172,7 +172,7 @@ Documento de contenido/copy actual para revisión de equipo.
 
 **Qué:** el EA en gráfico (panel B&N anti-feria, V12 **o**, modales ago) **ya no coincide** con muchos MP4 de la web. Deuda de imagen. Se cierra **por oleadas**.
 
-**P0 siguiente (acordado 11 ago 2026):** **regrabar pieza Nasdaq** — **✅ web + YT 22 ago 2026** (`6263709`, ~3:35) · **https://youtu.be/sAttywGy0nQ** *(hist. `2f1rRmqkE1k` may)*.
+**P0 Nasdaq:** remake **#6288233** en montaje. **10 nov 2026:** web sin MP4 **#6263709** · placeholder *Vídeo en preparación · 11/11/2026*. Histórico YT `sAttywGy0nQ` (ago) fuera del player hasta colgar remake.
 
 ### Web Nasdaq #6263709 — estado en pantalla (22 ago · cerrado salvo YT)
 

@@ -18,10 +18,10 @@ export const homeCopy = {
 			pillarsAria: 'Capas del producto tevsys',
 			disclaimer: 'No damos señales ni promesas de beneficio.',
 			ctaDemo: 'Descargar demo →',
-			ctaNasdaq: 'Nasdaq 100 — sesión real (~3:35)',
+			ctaNasdaq: 'Nasdaq 100 — sesión real',
 			platform: '· Disponible en MT5 ·',
 			hrefDemo: '/company/contact?flow=demo',
-			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
+			hrefNasdaq: '/como-funciona#evidencia-nasdaq-100',
 		},
 		/* Lead A (18 oct): 3 frases + puertas ámbar intradía/swing. */
 		definitionLeadBefore:
@@ -212,10 +212,10 @@ export const homeCopy = {
 			pillarsAria: 'tevsys product layers',
 			disclaimer: 'We do not give signals or profit promises.',
 			ctaDemo: 'Download demo →',
-			ctaNasdaq: 'Nasdaq 100 — live session (~3:35)',
+			ctaNasdaq: 'Nasdaq 100 — live session',
 			platform: '· Available on MT5 ·',
 			hrefDemo: '/company/contact?flow=demo',
-			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
+			hrefNasdaq: '/en/como-funciona#evidencia-nasdaq-100',
 		},
 		definitionLeadBefore:
 			'tevsys is a MetaTrader 5 utility. You set the rules — loss and profit limits (day and week) and your OFF days. They apply across the whole account from a single chart, in ',
