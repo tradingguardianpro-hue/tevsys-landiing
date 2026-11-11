@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home hero — Nasdaq a la derecha de Descargar demo (11 nov 2026)
+
+- **Qué:** `.hero-cta-row` `flex-wrap: nowrap` · secundario Nasdaq con `(~3:47)` no cae debajo del CTA demo (desktop + móvil).
+- **Commit:** `web(tevsys): keep Nasdaq CTA beside demo after duration bump`
+
 ## Nasdaq evidencia #6288233 — póster intro marca (11 nov 2026)
 
 - **Qué:** poster `…-poster-6288233.jpg?v=20261111c` = frame ~2,5 s del MP4 (TEVSYS centrado), no cierre/gráfico. ES|EN.
