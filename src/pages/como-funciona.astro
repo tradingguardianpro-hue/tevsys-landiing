@@ -713,13 +713,21 @@ const microclipBranches: MicroclipBranch[] = [
 				<a class="how-plan-door" href="#carril-essential">
 					<span class="how-plan-door__kicker">Plan</span>
 					<span class="how-plan-door__name">Essential</span>
-					<span class="how-plan-door__blurb">Día a día · rotación a medianoche · Swing</span>
+					<ul class="how-plan-door__list">
+						<li>Protección día a día</li>
+						<li>Rotación a medianoche</li>
+						<li>Intradía y swing</li>
+					</ul>
 					<span class="how-plan-door__go" aria-hidden="true">→</span>
 				</a>
 				<a class="how-plan-door" href="#carril-advanced-pro">
 					<span class="how-plan-door__kicker">Planes</span>
 					<span class="how-plan-door__name">Advanced · Pro</span>
-					<span class="how-plan-door__blurb">Semana · fin de semana · Swing</span>
+					<ul class="how-plan-door__list">
+						<li>Protección de la semana</li>
+						<li>Fin de semana · desbloqueo sábado</li>
+						<li>Intradía y swing</li>
+					</ul>
 					<span class="how-plan-door__go" aria-hidden="true">→</span>
 				</a>
 			</nav>
@@ -2571,6 +2579,34 @@ const microclipBranches: MicroclipBranch[] = [
 		line-height: 1.45;
 		margin-top: 0.15rem;
 		color: var(--tevsys-copy-muted);
+	}
+
+	.how-plan-door__list {
+		margin: 0.45rem 0 0;
+		padding: 0;
+		list-style: none;
+		display: grid;
+		gap: 0.28rem;
+	}
+
+	.how-plan-door__list li {
+		position: relative;
+		margin: 0;
+		padding-left: 0.85rem;
+		font-size: 0.88rem;
+		line-height: 1.4;
+		color: var(--tevsys-copy-muted);
+	}
+
+	.how-plan-door__list li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.55em;
+		width: 0.35rem;
+		height: 0.35rem;
+		border-radius: 999px;
+		background: rgba(245, 176, 65, 0.85);
 	}
 
 	.how-plan-door__go {
