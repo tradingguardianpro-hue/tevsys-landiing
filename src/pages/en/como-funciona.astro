@@ -16,20 +16,21 @@ const seo = {
 };
 
 /**
- * Nasdaq presentation — remake #6288233 in progress (Nov 2026).
- * Placeholder until MP4 ships (target 11/11/2026). Old #6263709 removed from the site.
+ * Nasdaq presentation — remake #6288233 published 11 Nov 2026 (~3:47).
+ * Replaces #6263709 (−1%). Gain +1.20% · margin +0.01% · HC 8.
  */
 const presentationLeadVideo = {
 	id: 'evidencia-nasdaq-100',
 	partLabel: 'Evidence',
-	title: 'Nasdaq 100 — live session',
+	title: 'Nasdaq 100 — live session (~3:47)',
 	blurb: 'Your limit, the real close, HyperClose and the report — one session.',
-	attributionBlurb: 'New session in the edit — same idea: tevsys decision vs MT5 execution.',
-	pending: true as const,
+	attributionBlurb:
+		'We separate tevsys’s decision from MT5 execution. This session: tevsys +1.2145% · execution −0.0041 p.p. · 42 ms.',
+	pending: false as const,
 	pendingKicker: 'Video in preparation',
 	pendingSub: "We'll publish it on 11/11/2026",
-	videoSrc: '' as string,
-	posterSrc: '' as string,
+	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20261111',
+	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-6288233.jpg?v=20261111',
 	youtubeWatch: '' as string,
 };
 
@@ -108,25 +109,24 @@ const desdeCeroGuide = {
 	brandStillOrb: 'tr',
 };
 
-/** Nasdaq session transparency #6263709 (21 Aug 2026) — public; full pack in internal repo. */
+/** Nasdaq session transparency #6288233 (9 Nov 2026 · web 11 Nov) — public. */
 const sessionDocumentation = {
 	id: 'documentacion-sesion-nasdaq',
 	timelineSteps: [
-		{ time: '15:36', label: 'Panel and limits' },
-		{ time: '16:19:13', label: 'Close at −1%', detail: '−1,001.70 USD' },
-		{ time: '16:19–16:20', label: 'Eight HyperClose' },
-		{ time: '22:03', label: 'HTML report exported' },
+		{ time: '15:48', label: 'Trade open · 10 lots' },
+		{ time: '16:20:36', label: 'Close at +1.20%', detail: '+1,210.40' },
+		{ time: '17:13–17:14', label: 'Eight HyperClose' },
+		{ time: '20:12', label: 'HTML report exported' },
 	],
 	attribution: {
 		headline: 'Close at the limit — tevsys vs execution attribution',
-		/** Mail 10 Barmenteros: day/HyperClose explanation BEFORE the pills (no props mention). */
 		dayLead:
-			'The precision pact for that session was −1% (close −1,001.70). The MT5 day closed at −1,187.20 (−1.19%). The gap is eight HyperClose events after the limit close: they are not part of the precision attribution. Full day first; then the close breakdown.',
-		tevsys: '−1.0017%',
-		broker: '0.00 p.p.',
+			'The precision pact for that session was +1.20% (close +1,210.40 · +1.2104%). The MT5 day closed at +1,013.73 net after eight HyperClose. Gross losses (−196.67) are those post-cap attempts: they are not part of the precision attribution. Full day first; then the close breakdown.',
+		tevsys: '+1.2145%',
+		broker: '−0.0041 p.p.',
 		ms: '42 ms',
 		footnote:
-			'Deviation 1.70 USD on 100,000. tevsys decides the close; the fill is market in MT5. Execution 0.00 p.p. on this demo account — on live markets under pressure, that figure matters more.',
+			'Gain buffer applied +0.01% (+10.40 on 100,000). tevsys decides the close; the fill is market in MT5. This demo session: execution −0.0041 p.p. · 42 ms — on live markets under pressure, that figure can matter more.',
 	},
 	sources: [
 		{
@@ -134,9 +134,9 @@ const sessionDocumentation = {
 			featured: true,
 			lead: 'Thanks to your tevsys ID, this is part of what we know — and it stays on record —: what you agreed, what happened at the close, and what came back on reload.',
 			lines: [
-				'TVS-GPJH-EVY7',
-				'Limits you set and accepted (snapshot at lock).',
-				'Close at −1% with attribution on record (tevsys decision vs MT5 execution).',
+				'TVS-FA9U-A9UK',
+				'Limits you set and accepted (snapshot at lock) · day gain +1.20%.',
+				'Close at +1.20% with attribution on record (tevsys decision vs MT5 execution).',
 				'Eight HyperClose attempts logged after the cap.',
 				'State restored on reload: same limits and STOP if it was on — no need to re-sign.',
 				'Case export.',
@@ -145,11 +145,11 @@ const sessionDocumentation = {
 		},
 		{
 			title: 'MT5 report',
-			text: 'MT5 history: row 1 precision · rows 2–9 HyperClose · day −1.19%.',
+			text: 'HTML history: gross profit +1,210.40 · gross losses −196.67 (HyperClose) · net profit +1,013.73.',
 		},
 		{
 			title: 'Video',
-			text: 'Current panel · 10 lots · close at −1% · on-screen attribution.',
+			text: 'Current panel · 10 lots · close at +1.20% · +0.01% buffer · on-screen attribution · ~3:47.',
 		},
 	],
 };
@@ -560,10 +560,10 @@ const microclipBranches: MicroclipBranch[] = [
 									<>
 										<h3 id="how-doc-session-title" class="how-doc-session__title">
 											What sits behind this video —{' '}
-											<span class="how-present-title__accent">Nasdaq 100 · 10 lots · −1%</span>
+											<span class="how-present-title__accent">Nasdaq 100 · 10 lots · +1.20%</span>
 										</h3>
 										<p class="how-doc-session__edited">
-											Dead time cut; the clock may jump between shots. Same session of 21 Aug 2026 —
+											Dead time cut; the clock may jump between shots. Same session of 9 Nov 2026 —
 											check it in MT5 and against the sources below.
 										</p>
 									</>

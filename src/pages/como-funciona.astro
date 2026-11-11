@@ -12,23 +12,21 @@ const seo = {
 };
 
 /**
- * Vídeo presentación Nasdaq — remake #6288233 en curso (nov 2026).
- * Placeholder hasta colgar MP4 (objetivo 11/11/2026). Viejo #6263709 retirado de la web.
- * Con `pending: true` → esconde timeline/atribución/fuentes (datos #6263709 siguen en
- * `sessionDocumentation` para volcar mañana #6288233 + poner pending false).
+ * Vídeo presentación Nasdaq — remake #6288233 colgado 11 nov 2026 (~3:47).
+ * Sustituye #6263709 (−1 %). Ganancia +1,20 % · margen +0,01 % · HC 8.
  */
 const presentationLeadVideo = {
 	id: 'evidencia-nasdaq-100',
 	partLabel: 'Evidencia',
-	title: 'Nasdaq 100 — sesión real',
+	title: 'Nasdaq 100 — sesión real (~3:47)',
 	blurb: 'Tu límite, el cierre real, HyperClose y el informe en una sola sesión.',
-	/** Sin cifras de la sesión retirada mientras el remake no cuelga. */
-	attributionBlurb: 'Nueva sesión en montaje — misma lógica: decisión tevsys vs ejecución en MT5.',
-	pending: true as const,
+	attributionBlurb:
+		'Separamos la decisión de tevsys y la ejecución en MT5. En esta sesión: tevsys +1,2145 % · ejecución −0,0041 p.p. · 42 ms.',
+	pending: false as const,
 	pendingKicker: 'Vídeo en preparación',
 	pendingSub: 'Lo colgaremos el 11/11/2026',
-	videoSrc: '' as string,
-	posterSrc: '' as string,
+	videoSrc: '/videos/features/evidencia-nasdaq-100-completa.mp4?v=20261111',
+	posterSrc: '/videos/features/evidencia-nasdaq-100-completa-poster-6288233.jpg?v=20261111',
 	youtubeWatch: '' as string,
 };
 
@@ -107,25 +105,24 @@ const desdeCeroGuide = {
 	brandStillOrb: 'tr',
 };
 
-/** Transparencia sesión Nasdaq #6263709 (21 ago 2026) — público; pack completo en repo interno. */
+/** Transparencia sesión Nasdaq #6288233 (9 nov 2026 · publicada web 11 nov) — público. */
 const sessionDocumentation = {
 	id: 'documentacion-sesion-nasdaq',
 	timelineSteps: [
-		{ time: '15:36', label: 'Panel y límites' },
-		{ time: '16:19:13', label: 'Cierre al −1 %', detail: '−1 001,70 USD' },
-		{ time: '16:19–16:20', label: 'Ocho HyperClose' },
-		{ time: '22:03', label: 'Informe HTML exportado' },
+		{ time: '15:48', label: 'Operación abierta · 10 lotes' },
+		{ time: '16:20:36', label: 'Cierre al +1,20 %', detail: '+1 210,40 €' },
+		{ time: '17:13–17:14', label: 'Ocho HyperClose' },
+		{ time: '20:12', label: 'Informe HTML exportado' },
 	],
 	attribution: {
 		headline: 'Cierre al límite — atribución tevsys vs ejecución',
-		/** Mail 10 Barmenteros: explicación día/HyperClose ANTES de las pills (sin mencionar props). */
 		dayLead:
-			'El pacto de precisión de esa sesión fue −1 % (cierre −1 001,70). El día en MT5 cerró en −1 187,20 (−1,19 %). La diferencia son ocho HyperClose después del cierre al límite: no entran en la atribución de precisión. Primero el día completo; después el desglose del cierre.',
-		tevsys: '−1,0017 %',
-		broker: '0,00 p.p.',
+			'El pacto de precisión de esa sesión fue +1,20 % (cierre +1 210,40 · +1,2104 %). El día en MT5 cerró en +1 013,73 (beneficio neto tras ocho HyperClose). Las pérdidas brutas (−196,67) son esos intentos tras el tope: no entran en la atribución de precisión. Primero el día completo; después el desglose del cierre.',
+		tevsys: '+1,2145 %',
+		broker: '−0,0041 p.p.',
 		ms: '42 ms',
 		footnote:
-			'Desviación 1,70 USD sobre 100 000. tevsys decide el cierre; el fill es mercado en MT5. Ejecución 0,00 p.p. en esta cuenta demo — en real y con mercado movido, esa cifra pesa más.',
+			'Margen de ganancia aplicado +0,01 % (+10,40 € sobre 100 000). tevsys decide el cierre; el fill es mercado en MT5. En esta cuenta demo la ejecución fue −0,0041 p.p. · 42 ms — en real y con mercado movido, esa cifra puede pesar más.',
 	},
 	sources: [
 		{
@@ -133,9 +130,9 @@ const sessionDocumentation = {
 			featured: true,
 			lead: 'Gracias a tu ID tevsys, esto es parte de lo que sabemos — y queda en acta —: qué pactaste, qué pasó al cierre y qué se recuperó al volver.',
 			lines: [
-				'TVS-GPJH-EVY7',
-				'Límites que configuraste y aceptaste (foto al bloquear).',
-				'Cierre al −1 % con atribución en acta (decisión tevsys vs ejecución MT5).',
+				'TVS-FA9U-A9UK',
+				'Límites que configuraste y aceptaste (foto al bloquear) · ganancia día +1,20 %.',
+				'Cierre al +1,20 % con atribución en acta (decisión tevsys vs ejecución MT5).',
 				'Ocho intentos HyperClose registrados tras el tope.',
 				'Estado recuperado al volver a cargar: mismos límites y STOP si lo había — sin volver a firmar.',
 				'Export del expediente.',
@@ -144,11 +141,11 @@ const sessionDocumentation = {
 		},
 		{
 			title: 'Informe MT5',
-			text: 'Historial MT5: fila 1 precisión · filas 2–9 HyperClose · día −1,19 %.',
+			text: 'Historial HTML: beneficio bruto +1 210,40 · pérdidas brutas −196,67 (HyperClose) · beneficio neto +1 013,73.',
 		},
 		{
 			title: 'Vídeo',
-			text: 'Panel actual · 10 lotes · cierre al −1 % · atribución en pantalla.',
+			text: 'Panel actual · 10 lotes · cierre al +1,20 % · margen +0,01 % · atribución en pantalla · ~3:47.',
 		},
 	],
 };
@@ -559,11 +556,11 @@ const microclipBranches: MicroclipBranch[] = [
 									<>
 										<h3 id="how-doc-session-title" class="how-doc-session__title">
 											Qué hay detrás de este vídeo —{' '}
-											<span class="how-present-title__accent">Nasdaq 100 · 10 lotes · −1 %</span>
+											<span class="how-present-title__accent">Nasdaq 100 · 10 lotes · +1,20 %</span>
 										</h3>
 										<p class="how-doc-session__edited">
 											Recorte de tiempos muertos; a veces el reloj salta entre planos. Misma sesión del
-											21 ago 2026 — contrástala en MT5 y con las fuentes de abajo.
+											9 nov 2026 — contrástala en MT5 y con las fuentes de abajo.
 										</p>
 									</>
 								)

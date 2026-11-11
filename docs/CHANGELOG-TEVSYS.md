@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Nasdaq evidencia #6288233 — remake colgado (11 nov 2026)
+
+- **Qué:** MP4 `evidencia-nasdaq-100-completa.mp4?v=20261111` + poster `…-poster-6288233.jpg` · `pending: false` · Transparencia con cifras ganancia (+1,20 % · +1 210,40 · neto +1 013,73 · HC 8 · atribución 1,2145 / −0,0041 pp / 42 ms · ID TVS-FA9U-A9UK). Sustituye #6263709.
+- **Commit:** `web(tevsys): publish Nasdaq 6288233 gain evidence remake`
+
 ## Nasdaq evidencia — placeholder + stills negro/ámbar (10 nov 2026 noche)
 
 - **Qué:** retirado MP4/poster/YouTube sesión **#6263709** del bloque `#evidencia-nasdaq-100` (ES|EN). Hueco: *Vídeo en preparación* · **11/11/2026** (`BrandStill` kicker/sub). Stills marca (huecos sin clip) pasan a negro + ámbar elegante; CSS local duplicado en Cómo funciona eliminado → `brand-still.css`. CTAs home/Precisión/HyperClose sin `~3:35` / sin `?play=1` forzado.
