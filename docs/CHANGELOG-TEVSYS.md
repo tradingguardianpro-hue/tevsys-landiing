@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Transparencia — Registro tevsys: esta sesión vs catálogo (11 nov 2026)
+
+- **Qué:** lead solo hechos Nasdaq · quita «recuperado al volver» (no hubo unload) · última viñeta = también en acta *cuando ocurre* (caja/swing/Inputs/coherencia/reinicio). ES|EN.
+- **Commit:** `web(tevsys): separate Nasdaq session facts from register catalog`
+
 ## Cómo funciona — atribución blanca real + scroll suave Transparencia (11 nov 2026)
 
 - **Qué:** **decisión**/**ejecución** en blanco de verdad (markup Astro, no `set:html` — el scope no pintaba) · scroll suave al clic «Qué documentación…». ES|EN.
