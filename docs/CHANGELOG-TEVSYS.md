@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Transparencia — Informe MT5 esquematizado (11 nov 2026)
+
+- **Qué:** `#documentacion-sesion-nasdaq` · Informe MT5 = filas (bruto / pérdidas HyperClose / neto) · Vídeo en viñetas. ES|EN. Ya no un párrafo que se corta.
+- **Commit:** `web(tevsys): schematize Nasdaq MT5 report rows in Transparencia`
+
 ## Home hero — Nasdaq a la derecha de Descargar demo (11 nov 2026)
 
 - **Qué:** `.hero-cta-row` `flex-wrap: nowrap` · secundario Nasdaq con `(~3:47)` no cae debajo del CTA demo (desktop + móvil).
