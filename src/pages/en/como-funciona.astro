@@ -706,12 +706,9 @@ const microclipBranches: MicroclipBranch[] = [
 			<header class="how-plan-bridge__head">
 				<p class="how-eyebrow how-eyebrow--center">Same engine · three plans</p>
 				<h2 id="how-plan-bridge-title" class="how-plan-bridge__title">
-					Choose how you <span class="how-present-title__accent">live it</span>
+					See how they <span class="how-present-title__accent">work</span>
 				</h2>
-				<p class="how-plan-bridge__lead tevsys-copy-muted">
-					Essential is day-to-day. Advanced and Pro are the week and the weekend. Same protection; different
-					clock.
-				</p>
+				<p class="how-plan-bridge__lead tevsys-copy-muted">Same protection, different clock.</p>
 			</header>
 			<nav class="how-plan-bridge__doors" aria-label="Plans">
 				<a class="how-plan-door" href="#carril-essential">
@@ -737,8 +734,124 @@ const microclipBranches: MicroclipBranch[] = [
 			</nav>
 		</section>
 
+		<p class="how-act-cut" role="presentation">
+			<span class="how-act-cut__label">Common to all plans</span>
+			<span class="how-act-cut__line" aria-hidden="true"></span>
+		</p>
+
+		<div class="how-mid-act how-mid-act--stage">
+			<div class="how-mid-act__shell" aria-hidden="true"></div>
+			<div class="how-mid-act__glow" aria-hidden="true"></div>
+			<div class="how-mid-act__inner">
+		<section class="how-desde-cero how-desde-cero--stage" id={desdeCeroGuide.id} aria-labelledby="how-desde-cero-title">
+			<div class="how-desde-cero__halo" aria-hidden="true"></div>
+			<div class="how-desde-cero__inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">{desdeCeroGuide.eyebrow}</p>
+					<h2 id="how-desde-cero-title">
+						From <span class="how-present-title__accent">{desdeCeroGuide.titleAccent}</span>, always
+					</h2>
+					<p class="how-section-sub">{desdeCeroGuide.blurb}</p>
+				</header>
+				<article class="how-pair-cell how-desde-cero__cell">
+					<BrandStill
+						tone={desdeCeroGuide.brandStillTone ?? 'cool'}
+						orb={desdeCeroGuide.brandStillOrb ?? 'c'}
+						label={desdeCeroGuide.brandStillLabel}
+						aria={desdeCeroGuide.brandStillAria}
+						clip={false}
+					/>
+				</article>
+			</div>
+		</section>
+
 		<section
-			class="how-plan-rail how-plan-rail--skeleton"
+			class="how-puesta-marcha how-puesta-marcha--stage"
+			id={puestaEnMarchaLegend.id}
+			aria-labelledby="how-puesta-marcha-title">
+			<div class="how-puesta-marcha__halo" aria-hidden="true"></div>
+			<div class="how-puesta-marcha__stage-inner">
+				<header class="how-section-head">
+					<p class="how-eyebrow how-eyebrow--center">{puestaEnMarchaLegend.eyebrow}</p>
+					<h2 id="how-puesta-marcha-title" class="how-puesta-marcha__lead">
+						{puestaEnMarchaLegend.leadBefore}
+						<span class="how-present-title__accent how-puesta-marcha__accent">{puestaEnMarchaLegend.leadAccent}</span>
+					</h2>
+				</header>
+				<ul class="how-puesta-marcha__links">
+					{
+						puestaEnMarchaLegend.links.map((link) => (
+							<li>
+								<a
+									class:list={[
+										'how-puesta-marcha__link',
+										link.primary ? 'how-puesta-marcha__link--primary' : 'how-puesta-marcha__link--secondary',
+									]}
+									href={link.href}>
+									{link.label}
+									<span class="how-puesta-marcha__arrow" aria-hidden="true">
+										→
+									</span>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</section>
+			</div>
+		</div>
+
+		<div class="how-capital-act how-capital-act--stage">
+			<div class="how-capital-act__shell" aria-hidden="true"></div>
+			<div class="how-capital-act__glow" aria-hidden="true"></div>
+			<div class="how-capital-act__inner">
+		<section
+			class="how-cashflow how-cashflow--stage"
+			id="movimiento-de-caja"
+			aria-labelledby="how-cashflow-title">
+			<div class="how-cashflow__halo" aria-hidden="true"></div>
+			<div class="how-cashflow__stage-inner">
+			<header class="how-section-head">
+				<p class="how-eyebrow how-eyebrow--center">Capital and risk</p>
+				<h2 id="how-cashflow-title" class="how-puesta-marcha__lead">
+					Risk is measured on
+					{' '}
+					<span class="how-present-title__accent how-puesta-marcha__accent">real capital</span>
+				</h2>
+			</header>
+			<p class="how-cashflow__body">
+				Risk <span class="how-cashflow__em">depends on account capital</span>. If you withdraw or deposit money, the
+				capital has changed — and that <span class="how-cashflow__em">is not trading</span>.
+			</p>
+			<p class="how-cashflow__body how-cashflow__body--follow">
+				That is why protection resets: a pact anchored to a balance that no longer exists makes no sense. You confirm the
+				notice and set and lock limits again on the <span class="how-cashflow__em">current balance</span>.
+			</p>
+			<EvidenceImageLightbox
+				src="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
+				alt="tevsys cash-movement modal — €800 withdrawal: protection reset; new capital means you must re-agree risk."
+				caption="Documented withdrawal · €800 · live account"
+				figureClass="how-cashflow__figure"
+				triggerClass="how-cashflow__zoom"
+				imgClass="how-cashflow__img"
+				capClass="how-cashflow__cap"
+			/>
+			<p class="how-cashflow__cta">
+				<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href="/en/features/evidencia#movimiento-de-caja">
+					Case on Evidence
+					<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
+				</a>
+			</p>
+			</div>
+		</section>
+			</div>
+		</div>
+
+		
+
+		<section
+			class="how-plan-rail how-plan-rail--skeleton how-plan-rail-panel"
 			id="carril-essential"
 			aria-labelledby="how-rail-essential-title">
 			<header class="how-plan-rail__head">
@@ -754,7 +867,7 @@ const microclipBranches: MicroclipBranch[] = [
 		</section>
 
 		<section
-			class="how-plan-rail-wrap"
+			class="how-plan-rail-wrap how-plan-rail-panel"
 			id="carril-advanced-pro"
 			aria-labelledby="how-rail-advpro-title">
 			<header class="how-plan-rail__head how-plan-rail__head--live">
@@ -1024,120 +1137,6 @@ const microclipBranches: MicroclipBranch[] = [
 				</div>
 			</section>
 		</section>
-
-		<p class="how-act-cut" role="presentation">
-			<span class="how-act-cut__label">Common to all plans · will be reordered</span>
-			<span class="how-act-cut__line" aria-hidden="true"></span>
-		</p>
-
-		<div class="how-mid-act how-mid-act--stage">
-			<div class="how-mid-act__shell" aria-hidden="true"></div>
-			<div class="how-mid-act__glow" aria-hidden="true"></div>
-			<div class="how-mid-act__inner">
-		<section class="how-desde-cero how-desde-cero--stage" id={desdeCeroGuide.id} aria-labelledby="how-desde-cero-title">
-			<div class="how-desde-cero__halo" aria-hidden="true"></div>
-			<div class="how-desde-cero__inner">
-				<header class="how-section-head">
-					<p class="how-eyebrow how-eyebrow--center">{desdeCeroGuide.eyebrow}</p>
-					<h2 id="how-desde-cero-title">
-						From <span class="how-present-title__accent">{desdeCeroGuide.titleAccent}</span>, always
-					</h2>
-					<p class="how-section-sub">{desdeCeroGuide.blurb}</p>
-				</header>
-				<article class="how-pair-cell how-desde-cero__cell">
-					<BrandStill
-						tone={desdeCeroGuide.brandStillTone ?? 'cool'}
-						orb={desdeCeroGuide.brandStillOrb ?? 'c'}
-						label={desdeCeroGuide.brandStillLabel}
-						aria={desdeCeroGuide.brandStillAria}
-						clip={false}
-					/>
-				</article>
-			</div>
-		</section>
-
-		<section
-			class="how-puesta-marcha how-puesta-marcha--stage"
-			id={puestaEnMarchaLegend.id}
-			aria-labelledby="how-puesta-marcha-title">
-			<div class="how-puesta-marcha__halo" aria-hidden="true"></div>
-			<div class="how-puesta-marcha__stage-inner">
-				<header class="how-section-head">
-					<p class="how-eyebrow how-eyebrow--center">{puestaEnMarchaLegend.eyebrow}</p>
-					<h2 id="how-puesta-marcha-title" class="how-puesta-marcha__lead">
-						{puestaEnMarchaLegend.leadBefore}
-						<span class="how-present-title__accent how-puesta-marcha__accent">{puestaEnMarchaLegend.leadAccent}</span>
-					</h2>
-				</header>
-				<ul class="how-puesta-marcha__links">
-					{
-						puestaEnMarchaLegend.links.map((link) => (
-							<li>
-								<a
-									class:list={[
-										'how-puesta-marcha__link',
-										link.primary ? 'how-puesta-marcha__link--primary' : 'how-puesta-marcha__link--secondary',
-									]}
-									href={link.href}>
-									{link.label}
-									<span class="how-puesta-marcha__arrow" aria-hidden="true">
-										→
-									</span>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</div>
-		</section>
-			</div>
-		</div>
-
-		<div class="how-capital-act how-capital-act--stage">
-			<div class="how-capital-act__shell" aria-hidden="true"></div>
-			<div class="how-capital-act__glow" aria-hidden="true"></div>
-			<div class="how-capital-act__inner">
-		<section
-			class="how-cashflow how-cashflow--stage"
-			id="movimiento-de-caja"
-			aria-labelledby="how-cashflow-title">
-			<div class="how-cashflow__halo" aria-hidden="true"></div>
-			<div class="how-cashflow__stage-inner">
-			<header class="how-section-head">
-				<p class="how-eyebrow how-eyebrow--center">Capital and risk</p>
-				<h2 id="how-cashflow-title" class="how-puesta-marcha__lead">
-					Risk is measured on
-					{' '}
-					<span class="how-present-title__accent how-puesta-marcha__accent">real capital</span>
-				</h2>
-			</header>
-			<p class="how-cashflow__body">
-				Risk <span class="how-cashflow__em">depends on account capital</span>. If you withdraw or deposit money, the
-				capital has changed — and that <span class="how-cashflow__em">is not trading</span>.
-			</p>
-			<p class="how-cashflow__body how-cashflow__body--follow">
-				That is why protection resets: a pact anchored to a balance that no longer exists makes no sense. You confirm the
-				notice and set and lock limits again on the <span class="how-cashflow__em">current balance</span>.
-			</p>
-			<EvidenceImageLightbox
-				src="/images/evidence/evidencia-movimiento-caja-retiro-800-full.png"
-				alt="tevsys cash-movement modal — €800 withdrawal: protection reset; new capital means you must re-agree risk."
-				caption="Documented withdrawal · €800 · live account"
-				figureClass="how-cashflow__figure"
-				triggerClass="how-cashflow__zoom"
-				imgClass="how-cashflow__img"
-				capClass="how-cashflow__cap"
-			/>
-			<p class="how-cashflow__cta">
-				<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href="/en/features/evidencia#movimiento-de-caja">
-					Case on Evidence
-					<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
-				</a>
-			</p>
-			</div>
-		</section>
-			</div>
-		</div>
 
 		<p class="how-more-act-cut">
 			<span class="how-more-act-cut__line" aria-hidden="true"></span>
@@ -1593,6 +1592,44 @@ const microclipBranches: MicroclipBranch[] = [
 					: btn.getAttribute('data-label-more') || 'Read full definition';
 			});
 		}
+	})();
+</script>
+<script is:inline data-astro-rerun>
+	(() => {
+		const essential = document.getElementById('carril-essential');
+		const advPro = document.getElementById('carril-advanced-pro');
+		if (!essential || !advPro) return;
+
+		const advChildIds = new Set([
+			'overnight-laborable',
+			'panel-adaptativo',
+			'siguiente-nivel',
+			'mas-comportamientos',
+			'rama-preparar',
+			'rama-protegido',
+			'rama-operacion',
+			'rama-operacion-sin-sml',
+			'rama-operacion-sml',
+			'videoclip-programado-lunes',
+			'videoclip-lunes-entra-proteccion',
+			'videoclip-corrige-errores',
+			'videoclip-limite-hyperclose',
+			'videoclip-off',
+			'videoclip-pasiva',
+			'videoclip-finde-operacion',
+			'videoclip-inputs-sml-carry',
+		]);
+
+		const syncPlanRails = () => {
+			const id = (location.hash || '').replace(/^#/, '');
+			essential.classList.remove('is-open');
+			advPro.classList.remove('is-open');
+			if (id === 'carril-essential') essential.classList.add('is-open');
+			else if (id === 'carril-advanced-pro' || advChildIds.has(id)) advPro.classList.add('is-open');
+		};
+
+		syncPlanRails();
+		window.addEventListener('hashchange', syncPlanRails);
 	})();
 </script>
 <script is:inline data-astro-rerun>
@@ -2623,6 +2660,16 @@ const microclipBranches: MicroclipBranch[] = [
 		max-width: min(56rem, 100%);
 		margin: 0 auto clamp(1.5rem, 4vh, 2.5rem);
 		scroll-margin-top: 5.5rem;
+	}
+
+	/* Closed until click/hash — do not dump Adv/Pro into the main scroll */
+	.how-plan-rail-panel {
+		display: none;
+	}
+
+	.how-plan-rail-panel.is-open,
+	.how-plan-rail-panel:target {
+		display: block;
 	}
 
 	.how-plan-rail__head--live {

@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — común arriba · planes cerrados · gancho (11 nov 2026)
+
+- **Qué:** título *Descubre cómo funcionan* · lead *Misma protección, distinto reloj* · común (desde cero/capital) **antes** de planes · Essential/Adv·Pro **ocultos** hasta clic/ancla. ES|EN.
+- **Commit:** `web(tevsys): hide plan rails until click and lift common spine`
+
 ## Cómo funciona — clips Adv/Pro + puertas ámbar (11 nov 2026)
 
 - **Qué:** microclips «Escenarios» dentro `#carril-advanced-pro` (no duplicados sueltos) · puertas ambas ámbar · Essential blurb + Swing · label **Planes Advanced · Pro**.
