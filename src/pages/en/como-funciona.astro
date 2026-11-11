@@ -1555,16 +1555,15 @@ const microclipBranches: MicroclipBranch[] = [
 			setTimeout(resetHorizontal, 50);
 		};
 
-		if (!(media instanceof HTMLVideoElement)) {
-			scrollToEvidence();
-			return;
-		}
+		/* Land first; ~1.5 s breath before play (from home ?play=1). */
+		scrollToEvidence();
+		if (!(media instanceof HTMLVideoElement)) return;
 
-		media.removeAttribute('poster');
 		media.preload = 'auto';
+		const PLAY_DELAY_MS = 1500;
 
 		const tryPlay = () => {
-			scrollToEvidence();
+			media.removeAttribute('poster');
 			const p = media.play();
 			if (p && typeof p.catch === 'function') {
 				p.catch(() => {
@@ -1574,8 +1573,12 @@ const microclipBranches: MicroclipBranch[] = [
 			}
 		};
 
-		if (media.readyState >= 2) tryPlay();
-		else media.addEventListener('loadeddata', tryPlay, { once: true });
+		const schedulePlay = () => {
+			window.setTimeout(tryPlay, PLAY_DELAY_MS);
+		};
+
+		if (media.readyState >= 2) schedulePlay();
+		else media.addEventListener('loadeddata', schedulePlay, { once: true });
 	})();
 </script>
 
