@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Descubre cómo funcionamos (subrayado) (11 nov 2026)
+
+- **Qué:** título puente *Descubre **cómo funcionamos*** · raya ámbar inset (lógica web, no en la 1.ª letra). EN *See how we work*. Estructura planes = mañana.
+- **Commit:** `web(tevsys): underline how we work on plan bridge title`
+
 ## Cómo funciona — Contrástalo (11 nov 2026)
 
 - **Qué:** bajo Presentación, *Contrasta tú mismo* → **Contrástalo.** (EN *Check it.*). Neutro, sin género.

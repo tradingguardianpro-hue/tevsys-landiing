@@ -707,7 +707,7 @@ const microclipBranches: MicroclipBranch[] = [
 			</p>
 			<header class="how-plan-bridge__head">
 				<h2 id="how-plan-bridge-title" class="how-plan-bridge__title">
-					See how they <span class="how-present-title__accent">work</span>
+					See <span class="how-present-title__accent">how we work</span>
 				</h2>
 				<p class="how-plan-bridge__lead tevsys-copy-muted">Same protection, different clock.</p>
 			</header>
@@ -2489,6 +2489,12 @@ const microclipBranches: MicroclipBranch[] = [
 		line-height: 1.2;
 		letter-spacing: -0.02em;
 		color: var(--theme-on-bg, #f6f8fc);
+	}
+
+	/* Same web underline: inset (not flush on 1st letter) · almost all of «how we work». */
+	.how-plan-bridge__title .how-present-title__accent::after {
+		width: min(14.5rem, calc(100% - 0.55rem));
+		margin-left: 0.65rem;
 	}
 
 	.how-plan-bridge__lead {
