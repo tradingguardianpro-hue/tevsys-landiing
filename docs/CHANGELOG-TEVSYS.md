@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Contrástalo (11 nov 2026)
+
+- **Qué:** bajo Presentación, *Contrasta tú mismo* → **Contrástalo.** (EN *Check it.*). Neutro, sin género.
+- **Commit:** `web(tevsys): neutral Contrastalo under presentation lead`
+
 ## Transparencia — Registro tevsys: esta sesión vs catálogo (11 nov 2026)
 
 - **Qué:** lead solo hechos Nasdaq · quita «recuperado al volver» (no hubo unload) · última viñeta = también en acta *cuando ocurre* (caja/swing/Inputs/coherencia/reinicio). ES|EN.
