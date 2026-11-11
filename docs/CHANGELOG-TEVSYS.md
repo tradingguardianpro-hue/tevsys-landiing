@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — atribución blanca real + scroll suave Transparencia (11 nov 2026)
+
+- **Qué:** **decisión**/**ejecución** en blanco de verdad (markup Astro, no `set:html` — el scope no pintaba) · scroll suave al clic «Qué documentación…». ES|EN.
+- **Commit:** `web(tevsys): fix white attribution strong and soft doc scroll`
+
 ## Cómo funciona — atribución negrita decisión/ejecución (11 nov 2026)
 
 - **Qué:** en el rectángulo Atribución, **decisión** y **ejecución** en negrita (contraste tevsys vs MT5). ES|EN.

@@ -24,8 +24,9 @@ const presentationLeadVideo = {
 	partLabel: 'Evidence',
 	title: 'Nasdaq 100 — live session (~3:47)',
 	blurb: 'Your limit, the real close, HyperClose and the report — one session.',
+	/* Plain fallback (pending). Bold words live in markup below (Astro scope). */
 	attributionBlurb:
-		'We separate tevsys’s <strong>decision</strong> from MT5 <strong>execution</strong>. This session: tevsys +1.2145% · execution −0.0041 p.p. · 42 ms.',
+		'We separate tevsys’s decision from MT5 execution. This session: tevsys +1.2145% · execution −0.0041 p.p. · 42 ms.',
 	pending: false as const,
 	pendingKicker: 'Video in preparation',
 	pendingSub: "We'll publish it on 11/11/2026",
@@ -489,7 +490,11 @@ const microclipBranches: MicroclipBranch[] = [
 									) : (
 										<div class="how-block-attribution-wrap how-block-attribution-wrap--punch tevsys-shell-punch">
 											<span class="how-block-attribution__badge">Attribution</span>
-											<p class="how-block-attribution" set:html={presentationLeadVideo.attributionBlurb} />
+											<p class="how-block-attribution">
+												We separate tevsys’s <strong>decision</strong> from MT5{' '}
+												<strong>execution</strong>. This session: tevsys +1.2145% · execution −0.0041
+												p.p. · 42 ms.
+											</p>
 										</div>
 									)
 								}
@@ -1632,10 +1637,7 @@ const microclipBranches: MicroclipBranch[] = [
 </script>
 <script is:inline data-astro-rerun>
 	(() => {
-		const link = document.querySelector('.how-id-tevsys__cta a[href="#hechos-cruzar"]');
-		const target = document.getElementById('hechos-cruzar');
-		if (!link || !target) return;
-
+		/* Short gentle jumps: video→Facts · star→Transparencia (no boom; no page-wide smooth). */
 		const navOffset = () => {
 			const nav = document.querySelector('header, .nav, [data-nav]');
 			const h = nav && nav instanceof HTMLElement ? nav.getBoundingClientRect().height : 64;
@@ -1661,11 +1663,23 @@ const microclipBranches: MicroclipBranch[] = [
 			requestAnimationFrame(step);
 		};
 
-		link.addEventListener('click', (e) => {
-			e.preventDefault();
-			gentleScrollTo(target, 820);
-			if (history.replaceState) history.replaceState(null, '', '#hechos-cruzar');
-		});
+		const bindGentle = (linkSel, targetId, durationMs) => {
+			const link = document.querySelector(linkSel);
+			const target = document.getElementById(targetId);
+			if (!link || !target) return;
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+				gentleScrollTo(target, durationMs);
+				if (history.replaceState) history.replaceState(null, '', `#${targetId}`);
+			});
+		};
+
+		bindGentle('.how-id-tevsys__cta a[href="#hechos-cruzar"]', 'hechos-cruzar', 820);
+		bindGentle(
+			'.how-doc-session-jump__link[href="#documentacion-sesion-nasdaq"]',
+			'documentacion-sesion-nasdaq',
+			980
+		);
 	})();
 </script>
 <script is:inline data-astro-rerun>
@@ -6366,10 +6380,10 @@ const microclipBranches: MicroclipBranch[] = [
 		border-radius: 0;
 	}
 
-	/* Jewel (same as home): white, bold, no underline — not muted, not amber link. */
+	/* White jewel: strong in Astro markup (not set:html) so scoped CSS actually applies. */
 	.how-block-attribution strong {
 		font-weight: 650;
-		color: rgba(246, 248, 252, 0.97);
+		color: #f6f8fc;
 		text-decoration: none;
 	}
 
@@ -6380,7 +6394,7 @@ const microclipBranches: MicroclipBranch[] = [
 	}
 
 	html[data-theme='light'] .how-block-attribution strong {
-		color: rgba(28, 34, 45, 0.94);
+		color: #1c2230;
 	}
 
 	.how-pair-cell .how-text-link {
