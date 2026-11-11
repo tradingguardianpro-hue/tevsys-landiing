@@ -697,8 +697,72 @@ const microclipBranches: MicroclipBranch[] = [
 			</div>
 		</div>
 
+		{/* Plan bridge — skeleton 11 Nov 2026. Fine copy + per-rail clips = later passes. */}
+		<section class="how-plan-bridge" id="elige-tu-plan" aria-labelledby="how-plan-bridge-title">
+			<p class="how-act-cut how-plan-bridge__cut" role="presentation">
+				<span class="how-act-cut__label">After the evidence</span>
+				<span class="how-act-cut__line" aria-hidden="true"></span>
+			</p>
+			<header class="how-plan-bridge__head">
+				<p class="how-eyebrow how-eyebrow--center">Same engine · three plans</p>
+				<h2 id="how-plan-bridge-title" class="how-plan-bridge__title">
+					Choose how you <span class="how-present-title__accent">live it</span>
+				</h2>
+				<p class="how-plan-bridge__lead tevsys-copy-muted">
+					Essential is day-to-day. Advanced and Pro are the week and the weekend. Same protection; different
+					clock.
+				</p>
+			</header>
+			<nav class="how-plan-bridge__doors" aria-label="Plan rails">
+				<a class="how-plan-door" href="#carril-essential">
+					<span class="how-plan-door__kicker">Plan</span>
+					<span class="how-plan-door__name">Essential</span>
+					<span class="how-plan-door__blurb tevsys-copy-muted">Day-to-day · midnight rotation</span>
+					<span class="how-plan-door__go" aria-hidden="true">→</span>
+				</a>
+				<a class="how-plan-door how-plan-door--adv" href="#carril-advanced-pro">
+					<span class="how-plan-door__kicker">Plan</span>
+					<span class="how-plan-door__name">Advanced · Pro</span>
+					<span class="how-plan-door__blurb tevsys-copy-muted">Week · weekend · product swing</span>
+					<span class="how-plan-door__go" aria-hidden="true">→</span>
+				</a>
+			</nav>
+		</section>
+
+		<section
+			class="how-plan-rail how-plan-rail--skeleton"
+			id="carril-essential"
+			aria-labelledby="how-rail-essential-title">
+			<header class="how-plan-rail__head">
+				<p class="how-eyebrow">Essential rail</p>
+				<h2 id="how-rail-essential-title" class="how-plan-rail__title">
+					Essential — <span class="how-present-title__accent">skeleton</span>
+				</h2>
+				<p class="how-plan-rail__note tevsys-copy-muted">
+					Scenarios and videos for this plan land here (overnight lab in progress). Copy and clips: next
+					pass.
+				</p>
+			</header>
+		</section>
+
+		<section
+			class="how-plan-rail how-plan-rail--skeleton"
+			id="carril-advanced-pro"
+			aria-labelledby="how-rail-advpro-title">
+			<header class="how-plan-rail__head">
+				<p class="how-eyebrow">Advanced · Pro rail</p>
+				<h2 id="how-rail-advpro-title" class="how-plan-rail__title">
+					Advanced · Pro — <span class="how-present-title__accent">skeleton</span>
+				</h2>
+				<p class="how-plan-rail__note tevsys-copy-muted">
+					Swing, adaptive panel and current microclips move here next. For now they stay below in the
+					current map.
+				</p>
+			</header>
+		</section>
+
 		<p class="how-act-cut" role="presentation">
-			<span class="how-act-cut__label">After the evidence</span>
+			<span class="how-act-cut__label">Current map · will be reordered</span>
 			<span class="how-act-cut__line" aria-hidden="true"></span>
 		</p>
 
@@ -2343,6 +2407,165 @@ const microclipBranches: MicroclipBranch[] = [
 
 	html[data-theme='light'] .how-act-cut__label {
 		color: rgba(55, 65, 80, 0.88);
+	}
+
+	/* Plan bridge (skeleton 11 Nov) — after Nasdaq Transparencia */
+	.how-plan-bridge {
+		max-width: min(52rem, 100%);
+		margin: 0 auto clamp(2.25rem, 7vh, 3.75rem);
+		padding: 0 clamp(0.85rem, 3vw, 1.25rem);
+		scroll-margin-top: 5.5rem;
+	}
+
+	.how-plan-bridge__cut {
+		margin-bottom: clamp(1.35rem, 4vw, 2rem);
+	}
+
+	.how-plan-bridge__head {
+		text-align: center;
+		margin-bottom: clamp(1.35rem, 3.5vw, 1.85rem);
+	}
+
+	.how-plan-bridge__title {
+		margin: 0.35rem 0 0.75rem;
+		font-size: clamp(1.55rem, 3.6vw, 2.15rem);
+		font-weight: 650;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		color: var(--theme-on-bg, #f6f8fc);
+	}
+
+	.how-plan-bridge__lead {
+		margin: 0 auto;
+		max-width: 36rem;
+		font-size: clamp(0.95rem, 2vw, 1.05rem);
+		line-height: 1.55;
+	}
+
+	.how-plan-bridge__doors {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.85rem;
+	}
+
+	@media (min-width: 720px) {
+		.how-plan-bridge__doors {
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+	}
+
+	.how-plan-door {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.35rem;
+		padding: 1.15rem 1.2rem 1.2rem;
+		border-radius: 12px;
+		text-decoration: none;
+		background: linear-gradient(165deg, hsl(222, 14%, 12%) 0%, hsl(222, 12%, 8.5%) 100%);
+		border: 1px solid rgba(160, 175, 195, 0.18);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+		transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+	}
+
+	.how-plan-door:hover {
+		border-color: rgba(245, 176, 65, 0.42);
+		background: linear-gradient(165deg, hsl(222, 14%, 14%) 0%, hsl(222, 12%, 9.5%) 100%);
+		transform: translateY(-1px);
+	}
+
+	.how-plan-door--adv {
+		border-color: rgba(100, 196, 255, 0.22);
+	}
+
+	.how-plan-door--adv:hover {
+		border-color: rgba(100, 196, 255, 0.48);
+	}
+
+	html[data-theme='light'] .how-plan-door {
+		background: linear-gradient(165deg, hsl(220, 16%, 98%) 0%, hsl(220, 12%, 94%) 100%);
+		border-color: rgba(70, 85, 105, 0.16);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+	}
+
+	html[data-theme='light'] .how-plan-door:hover {
+		border-color: rgba(200, 135, 26, 0.45);
+	}
+
+	.how-plan-door__kicker {
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--tevsys-copy-muted);
+	}
+
+	.how-plan-door__name {
+		font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+		font-weight: 650;
+		letter-spacing: -0.015em;
+		color: var(--theme-on-bg, #f6f8fc);
+	}
+
+	.how-plan-door__blurb {
+		font-size: 0.9rem;
+		line-height: 1.45;
+		margin-top: 0.15rem;
+	}
+
+	.how-plan-door__go {
+		position: absolute;
+		right: 1.1rem;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 1.25rem;
+		color: #f5b041;
+		opacity: 0.75;
+	}
+
+	.how-plan-door--adv .how-plan-door__go {
+		color: rgba(100, 196, 255, 0.92);
+	}
+
+	.how-plan-rail {
+		max-width: min(52rem, 100%);
+		margin: 0 auto clamp(1.75rem, 5vh, 2.75rem);
+		padding: 1.15rem 1.2rem 1.25rem;
+		border-radius: 12px;
+		scroll-margin-top: 5.5rem;
+		background: hsl(222, 12%, 9%);
+		border: 1px dashed rgba(160, 175, 195, 0.22);
+	}
+
+	.how-plan-rail--skeleton {
+		opacity: 0.92;
+	}
+
+	html[data-theme='light'] .how-plan-rail {
+		background: hsl(220, 14%, 96%);
+		border-color: rgba(70, 85, 105, 0.18);
+	}
+
+	.how-plan-rail__head {
+		margin: 0;
+	}
+
+	.how-plan-rail__title {
+		margin: 0.25rem 0 0.55rem;
+		font-size: clamp(1.25rem, 2.8vw, 1.55rem);
+		font-weight: 650;
+		line-height: 1.25;
+		color: var(--theme-on-bg, #f6f8fc);
+	}
+
+	.how-plan-rail__note {
+		margin: 0;
+		max-width: 40rem;
+		font-size: 0.92rem;
+		line-height: 1.5;
 	}
 
 	/* Acto medio — cáscara negra como intro (hasta demo/dossier); luz + fichas DENTRO. */
