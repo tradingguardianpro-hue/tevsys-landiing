@@ -25,7 +25,7 @@ const presentationLeadVideo = {
 	title: 'Nasdaq 100 — live session (~3:47)',
 	blurb: 'Your limit, the real close, HyperClose and the report — one session.',
 	attributionBlurb:
-		'We separate tevsys’s decision from MT5 execution. This session: tevsys +1.2145% · execution −0.0041 p.p. · 42 ms.',
+		'We separate tevsys’s <strong>decision</strong> from MT5 <strong>execution</strong>. This session: tevsys +1.2145% · execution −0.0041 p.p. · 42 ms.',
 	pending: false as const,
 	pendingKicker: 'Video in preparation',
 	pendingSub: "We'll publish it on 11/11/2026",
@@ -489,9 +489,7 @@ const microclipBranches: MicroclipBranch[] = [
 									) : (
 										<div class="how-block-attribution-wrap how-block-attribution-wrap--punch tevsys-shell-punch">
 											<span class="how-block-attribution__badge">Attribution</span>
-											<p class="how-block-attribution">
-												{presentationLeadVideo.attributionBlurb}
-											</p>
+											<p class="how-block-attribution" set:html={presentationLeadVideo.attributionBlurb} />
 										</div>
 									)
 								}
@@ -6368,10 +6366,19 @@ const microclipBranches: MicroclipBranch[] = [
 		border-radius: 0;
 	}
 
+	.how-block-attribution strong {
+		font-weight: 650;
+		color: rgba(220, 228, 238, 0.98);
+	}
+
 	html[data-theme='light'] .how-block-attribution {
 		color: var(--tevsys-copy-muted);
 		background: transparent;
 		border: none;
+	}
+
+	html[data-theme='light'] .how-block-attribution strong {
+		color: rgba(35, 42, 55, 0.95);
 	}
 
 	.how-pair-cell .how-text-link {

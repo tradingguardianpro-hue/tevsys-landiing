@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — atribución negrita decisión/ejecución (11 nov 2026)
+
+- **Qué:** en el rectángulo Atribución, **decisión** y **ejecución** en negrita (contraste tevsys vs MT5). ES|EN.
+- **Commit:** `web(tevsys): bold decision and execution in attribution punch`
+
 ## Cómo funciona — aire puente + día / semana (11 nov 2026)
 
 - **Qué:** definición hero `(día / semana)` (menos «y») · puente sin pegote: título + lead con aire · *Mismo motor · tres planes* baja junto a las puertas. ES|EN.
