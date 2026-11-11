@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Nasdaq evidencia #6288233 — póster intro marca (11 nov 2026)
+
+- **Qué:** poster `…-poster-6288233.jpg?v=20261111c` = frame ~2,5 s del MP4 (TEVSYS centrado), no cierre/gráfico. ES|EN.
+- **Commit:** `web(tevsys): use brand intro poster for Nasdaq 6288233`
+
 ## Nasdaq evidencia #6288233 — remake colgado (11 nov 2026)
 
 - **Qué:** MP4 `evidencia-nasdaq-100-completa.mp4?v=20261111` + poster `…-poster-6288233.jpg` · `pending: false` · Transparencia con cifras ganancia (+1,20 % · +1 210,40 · neto +1 013,73 · HC 8 · atribución 1,2145 / −0,0041 pp / 42 ms · ID TVS-FA9U-A9UK). Sustituye #6263709.
