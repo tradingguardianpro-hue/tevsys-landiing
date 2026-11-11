@@ -11,7 +11,7 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Home hero — Nasdaq a la derecha de Descargar demo (11 nov 2026)
 
-- **Qué:** `.hero-cta-row` `flex-wrap: nowrap` · secundario Nasdaq con `(~3:47)` no cae debajo del CTA demo (desktop + móvil).
+- **Qué:** desktop `.hero-cta-row` `nowrap` (demo | Nasdaq). **Móvil ≤768:** columna — demo arriba, Nasdaq debajo (no rompe pantalla).
 - **Commit:** `web(tevsys): keep Nasdaq CTA beside demo after duration bump`
 
 ## Nasdaq evidencia #6288233 — póster intro marca (11 nov 2026)
