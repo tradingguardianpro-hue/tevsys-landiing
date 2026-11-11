@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — Swing + panel dentro Adv/Pro (11 nov 2026)
+
+- **Qué:** `#carril-advanced-pro` ya vivo: Operación swing + panel adaptativo. Essential sigue esqueleto. Corte «común a todos los planes» antes de desde cero / capital.
+- **Commit:** `web(tevsys): move swing and adaptive panel into Advanced-Pro rail`
+
 ## Cómo funciona — puente planes esqueleto (11 nov 2026)
 
 - **Qué:** tras Transparencia Nasdaq → `#elige-tu-plan` · puertas **Essential** / **Advanced · Pro** · anclas `#carril-essential` · `#carril-advanced-pro` (esqueleto). ES|EN. Copy fino + mover clips = después.

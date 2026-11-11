@@ -742,112 +742,112 @@ const microclipBranches: MicroclipBranch[] = [
 		</section>
 
 		<section
-			class="how-plan-rail how-plan-rail--skeleton"
+			class="how-plan-rail-wrap"
 			id="carril-advanced-pro"
 			aria-labelledby="how-rail-advpro-title">
-			<header class="how-plan-rail__head">
-				<p class="how-eyebrow">Carril Advanced · Pro</p>
-				<h2 id="how-rail-advpro-title" class="how-plan-rail__title">
-					Advanced · Pro — <span class="how-present-title__accent">esqueleto</span>
+			<header class="how-plan-rail__head how-plan-rail__head--live">
+				<p class="how-eyebrow how-eyebrow--center">Carril Advanced · Pro</p>
+				<h2 id="how-rail-advpro-title" class="how-plan-rail__title how-plan-rail__title--live">
+					Advanced · Pro — <span class="how-present-title__accent">semana y swing</span>
 				</h2>
 				<p class="how-plan-rail__note tevsys-copy-muted">
-					Aquí se moverán Operación swing, panel adaptativo y los microclips actuales. Mientras tanto siguen
-					abajo en el mapa actual.
+					Pacto semanal, fin de semana y operación que cruza el calendario. Microclips de escenarios: siguiente
+					pasada dentro de este carril.
 				</p>
 			</header>
+
+			{/* Acto propio (familia capital): overnight + copy Operación en curso — no compartir casilla con Desde cero. */}
+			<div class="how-overnight-act how-overnight-act--stage">
+				<div class="how-overnight-act__shell" aria-hidden="true"></div>
+				<div class="how-overnight-act__glow" aria-hidden="true"></div>
+				<div class="how-overnight-act__inner">
+					<section
+						class="how-overnight how-overnight--stage"
+						id={overnightLaborableGuide.id}
+						aria-labelledby="how-overnight-laborable-title">
+						<div class="how-overnight__halo" aria-hidden="true"></div>
+						<div class="how-overnight__stage-inner">
+							<header class="how-overnight__head">
+								<h2 id="how-overnight-laborable-title" class="how-rama__title">
+									<span class="how-present-title__accent">{overnightLaborableGuide.title}</span>
+								</h2>
+								<p class="how-rama__announcement">{overnightLaborableGuide.announcement}</p>
+								<div class="how-rama__edge">
+									<p class="how-rama__edge-body">{overnightLaborableGuide.edge.body}</p>
+									<p class="how-rama__edge-screen">{overnightLaborableGuide.edge.screen}</p>
+									<p class="how-rama__edge-lock">{overnightLaborableGuide.edge.lockNote}</p>
+									<p class="how-rama__edge-bridge">
+										{overnightLaborableGuide.edge.bridgeBefore}
+										<a href={overnightLaborableGuide.edge.bridgeHref}>{overnightLaborableGuide.edge.bridgeLabel}</a>.
+									</p>
+									<p class="how-rama__edge-bridge how-rama__edge-faq">
+										{overnightLaborableGuide.edge.faqBefore}
+										<a href={overnightLaborableGuide.edge.faqHref}>{overnightLaborableGuide.edge.faqLabel}</a>.
+									</p>
+									<p class="how-rama__edge-bridge">
+										Cómo se lee en el panel:{' '}
+										<a href="#panel-adaptativo">intradía frente a overnight e información al clic</a>.
+									</p>
+								</div>
+							</header>
+							<article class="how-overnight__cell">
+								<div class="how-embed how-embed--chrome how-overnight__embed">
+									<video
+										controls
+										preload="none"
+										playsinline
+										poster={overnightLaborableGuide.posterSrc}
+										title={overnightLaborableGuide.videoLabel}>
+										<source src={overnightLaborableGuide.videoSrc} type="video/mp4" />
+										Tu navegador no soporta reproducción de video HTML5.
+									</video>
+								</div>
+							</article>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			{/* Orden visual-first (lead → captura → detalle). Isla clara revertida. */}
+			<section
+				class="how-cashflow how-cashflow--stage how-cashflow--visual-first"
+				id={panelAdaptativo.id}
+				aria-labelledby="how-panel-adaptativo-title">
+				<div class="how-cashflow__halo" aria-hidden="true"></div>
+				<div class="how-cashflow__stage-inner">
+					<header class="how-section-head">
+						<p class="how-eyebrow how-eyebrow--center">{panelAdaptativo.eyebrow}</p>
+						<h2 id="how-panel-adaptativo-title" class="how-puesta-marcha__lead">
+							{panelAdaptativo.titleBefore}
+							{' '}
+							<span class="how-present-title__accent how-puesta-marcha__accent">{panelAdaptativo.titleAccent}</span>
+						</h2>
+					</header>
+					<p class="how-cashflow__body how-cashflow__body--lead tevsys-copy-muted">{panelAdaptativo.body}</p>
+					<EvidenceImageLightbox
+						src={panelAdaptativo.imgSrc}
+						alt={panelAdaptativo.imgAlt}
+						caption={panelAdaptativo.imgCaption}
+						figureClass="how-cashflow__figure"
+						triggerClass="how-cashflow__zoom"
+						imgClass="how-cashflow__img"
+						capClass="how-cashflow__cap"
+					/>
+					<p class="how-cashflow__body how-cashflow__body--follow tevsys-copy-muted">{panelAdaptativo.bodyFollow}</p>
+					<p class="how-cashflow__cta">
+						<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={panelAdaptativo.ctaHref}>
+							{panelAdaptativo.ctaLabel}
+							<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
+						</a>
+					</p>
+				</div>
+			</section>
 		</section>
 
 		<p class="how-act-cut" role="presentation">
-			<span class="how-act-cut__label">Mapa actual · se reordena</span>
+			<span class="how-act-cut__label">Común a todos los planes · se reordena</span>
 			<span class="how-act-cut__line" aria-hidden="true"></span>
 		</p>
-
-		{/* Acto propio (familia capital): overnight + copy Operación en curso — no compartir casilla con Desde cero. */}
-		<div class="how-overnight-act how-overnight-act--stage">
-			<div class="how-overnight-act__shell" aria-hidden="true"></div>
-			<div class="how-overnight-act__glow" aria-hidden="true"></div>
-			<div class="how-overnight-act__inner">
-				<section
-					class="how-overnight how-overnight--stage"
-					id={overnightLaborableGuide.id}
-					aria-labelledby="how-overnight-laborable-title">
-					<div class="how-overnight__halo" aria-hidden="true"></div>
-					<div class="how-overnight__stage-inner">
-						<header class="how-overnight__head">
-							<h2 id="how-overnight-laborable-title" class="how-rama__title">
-								<span class="how-present-title__accent">{overnightLaborableGuide.title}</span>
-							</h2>
-							<p class="how-rama__announcement">{overnightLaborableGuide.announcement}</p>
-							<div class="how-rama__edge">
-								<p class="how-rama__edge-body">{overnightLaborableGuide.edge.body}</p>
-								<p class="how-rama__edge-screen">{overnightLaborableGuide.edge.screen}</p>
-								<p class="how-rama__edge-lock">{overnightLaborableGuide.edge.lockNote}</p>
-								<p class="how-rama__edge-bridge">
-									{overnightLaborableGuide.edge.bridgeBefore}
-									<a href={overnightLaborableGuide.edge.bridgeHref}>{overnightLaborableGuide.edge.bridgeLabel}</a>.
-								</p>
-								<p class="how-rama__edge-bridge how-rama__edge-faq">
-									{overnightLaborableGuide.edge.faqBefore}
-									<a href={overnightLaborableGuide.edge.faqHref}>{overnightLaborableGuide.edge.faqLabel}</a>.
-								</p>
-								<p class="how-rama__edge-bridge">
-									Cómo se lee en el panel:{' '}
-									<a href="#panel-adaptativo">intradía frente a overnight e información al clic</a>.
-								</p>
-							</div>
-						</header>
-						<article class="how-overnight__cell">
-							<div class="how-embed how-embed--chrome how-overnight__embed">
-								<video
-									controls
-									preload="none"
-									playsinline
-									poster={overnightLaborableGuide.posterSrc}
-									title={overnightLaborableGuide.videoLabel}>
-									<source src={overnightLaborableGuide.videoSrc} type="video/mp4" />
-									Tu navegador no soporta reproducción de video HTML5.
-								</video>
-							</div>
-						</article>
-					</div>
-				</section>
-			</div>
-		</div>
-
-		{/* Orden visual-first (lead → captura → detalle). Isla clara revertida. */}
-		<section
-			class="how-cashflow how-cashflow--stage how-cashflow--visual-first"
-			id={panelAdaptativo.id}
-			aria-labelledby="how-panel-adaptativo-title">
-			<div class="how-cashflow__halo" aria-hidden="true"></div>
-			<div class="how-cashflow__stage-inner">
-				<header class="how-section-head">
-					<p class="how-eyebrow how-eyebrow--center">{panelAdaptativo.eyebrow}</p>
-					<h2 id="how-panel-adaptativo-title" class="how-puesta-marcha__lead">
-						{panelAdaptativo.titleBefore}
-						{' '}
-						<span class="how-present-title__accent how-puesta-marcha__accent">{panelAdaptativo.titleAccent}</span>
-					</h2>
-				</header>
-				<p class="how-cashflow__body how-cashflow__body--lead tevsys-copy-muted">{panelAdaptativo.body}</p>
-				<EvidenceImageLightbox
-					src={panelAdaptativo.imgSrc}
-					alt={panelAdaptativo.imgAlt}
-					caption={panelAdaptativo.imgCaption}
-					figureClass="how-cashflow__figure"
-					triggerClass="how-cashflow__zoom"
-					imgClass="how-cashflow__img"
-					capClass="how-cashflow__cap"
-				/>
-				<p class="how-cashflow__body how-cashflow__body--follow tevsys-copy-muted">{panelAdaptativo.bodyFollow}</p>
-				<p class="how-cashflow__cta">
-					<a class="how-puesta-marcha__link how-puesta-marcha__link--primary" href={panelAdaptativo.ctaHref}>
-						{panelAdaptativo.ctaLabel}
-						<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
-					</a>
-				</p>
-			</div>
-		</section>
 
 		<div class="how-mid-act how-mid-act--stage">
 			<div class="how-mid-act__shell" aria-hidden="true"></div>
@@ -2605,6 +2605,32 @@ const microclipBranches: MicroclipBranch[] = [
 		max-width: 40rem;
 		font-size: 0.92rem;
 		line-height: 1.5;
+	}
+
+	.how-plan-rail-wrap {
+		width: 100%;
+		max-width: min(56rem, 100%);
+		margin: 0 auto clamp(1.5rem, 4vh, 2.5rem);
+		scroll-margin-top: 5.5rem;
+	}
+
+	.how-plan-rail__head--live {
+		text-align: center;
+		max-width: min(40rem, 94%);
+		margin: 0 auto clamp(1.15rem, 3.5vw, 1.65rem);
+		padding: 0 clamp(0.85rem, 3vw, 1.25rem);
+	}
+
+	.how-plan-rail__title--live {
+		font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+	}
+
+	.how-plan-rail-wrap .how-overnight-act.how-overnight-act--stage {
+		margin-top: 0;
+	}
+
+	.how-plan-rail-wrap .how-cashflow.how-cashflow--stage {
+		margin-top: clamp(1.25rem, 3.5vw, 2rem);
 	}
 
 	/* Acto medio — cáscara negra como intro (hasta demo/dossier); luz + fichas DENTRO. */
