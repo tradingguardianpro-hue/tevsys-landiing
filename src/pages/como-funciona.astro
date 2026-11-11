@@ -440,7 +440,7 @@ const microclipBranches: MicroclipBranch[] = [
 							id="how-hero-definition-full"
 							class="tevsys-page-definition tevsys-page-definition--centered how-hero__definition">
 							tevsys es una utilidad para MetaTrader 5 que hace cumplir las reglas que configuras —límites de
-							pérdida y ganancia (día y semana), días OFF y el bloqueo al alcanzar el límite— en{' '}
+							pérdida y ganancia (día / semana), días OFF y el bloqueo al alcanzar el límite— en{' '}
 							<a class="how-hero__def-world" href="#how-presentation-title"><strong>intradía</strong></a>
 							{' '}y en{' '}
 							<a class="how-hero__def-world" href="#how-presentation-title"><strong>swing</strong></a>.
@@ -700,12 +700,12 @@ const microclipBranches: MicroclipBranch[] = [
 				<span class="how-act-cut__line" aria-hidden="true"></span>
 			</p>
 			<header class="how-plan-bridge__head">
-				<p class="how-eyebrow how-eyebrow--center">Mismo motor · tres planes</p>
 				<h2 id="how-plan-bridge-title" class="how-plan-bridge__title">
 					Descubre cómo <span class="how-present-title__accent">funcionan</span>
 				</h2>
 				<p class="how-plan-bridge__lead tevsys-copy-muted">Misma protección, distinto reloj.</p>
 			</header>
+			<p class="how-plan-bridge__motor" aria-hidden="true">Mismo motor · tres planes</p>
 			<nav class="how-plan-bridge__doors" aria-label="Planes">
 				<a class="how-plan-door" href="#carril-essential">
 					<span class="how-plan-door__kicker">Plan</span>
@@ -2502,16 +2502,16 @@ const microclipBranches: MicroclipBranch[] = [
 	}
 
 	.how-plan-bridge__cut {
-		margin-bottom: clamp(1.35rem, 4vw, 2rem);
+		margin-bottom: clamp(1.85rem, 5vw, 2.6rem);
 	}
 
 	.how-plan-bridge__head {
 		text-align: center;
-		margin-bottom: clamp(1.35rem, 3.5vw, 1.85rem);
+		margin-bottom: clamp(1.75rem, 4.5vw, 2.35rem);
 	}
 
 	.how-plan-bridge__title {
-		margin: 0.35rem 0 0.75rem;
+		margin: 0;
 		font-size: clamp(1.55rem, 3.6vw, 2.15rem);
 		font-weight: 650;
 		line-height: 1.2;
@@ -2520,10 +2520,24 @@ const microclipBranches: MicroclipBranch[] = [
 	}
 
 	.how-plan-bridge__lead {
-		margin: 0 auto;
-		max-width: 36rem;
-		font-size: clamp(0.95rem, 2vw, 1.05rem);
-		line-height: 1.55;
+		margin: clamp(1.05rem, 2.8vw, 1.45rem) auto 0;
+		max-width: 28rem;
+		font-size: clamp(0.98rem, 2vw, 1.08rem);
+		line-height: 1.5;
+	}
+
+	.how-plan-bridge__motor {
+		margin: 0 0 clamp(0.75rem, 2vw, 1rem);
+		text-align: center;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: rgba(245, 176, 65, 0.78);
+	}
+
+	html[data-theme='light'] .how-plan-bridge__motor {
+		color: rgba(180, 120, 30, 0.82);
 	}
 
 	.how-plan-bridge__doors {
