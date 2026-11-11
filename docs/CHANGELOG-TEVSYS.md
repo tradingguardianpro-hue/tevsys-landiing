@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Cómo funciona — clips Adv/Pro + puertas ámbar (11 nov 2026)
+
+- **Qué:** microclips «Escenarios» dentro `#carril-advanced-pro` (no duplicados sueltos) · puertas ambas ámbar · Essential blurb + Swing · label **Planes Advanced · Pro**.
+- **Commit:** `web(tevsys): nest Adv-Pro clips under plan rail and amber doors`
+
 ## Cómo funciona — Swing + panel dentro Adv/Pro (11 nov 2026)
 
 - **Qué:** `#carril-advanced-pro` ya vivo: Operación swing + panel adaptativo. Essential sigue esqueleto. Corte «común a todos los planes» antes de desde cero / capital.

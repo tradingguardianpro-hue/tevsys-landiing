@@ -709,17 +709,17 @@ const microclipBranches: MicroclipBranch[] = [
 					reloj.
 				</p>
 			</header>
-			<nav class="how-plan-bridge__doors" aria-label="Carriles por plan">
+			<nav class="how-plan-bridge__doors" aria-label="Planes">
 				<a class="how-plan-door" href="#carril-essential">
 					<span class="how-plan-door__kicker">Plan</span>
 					<span class="how-plan-door__name">Essential</span>
-					<span class="how-plan-door__blurb tevsys-copy-muted">Día a día · rotación a medianoche</span>
+					<span class="how-plan-door__blurb">Día a día · rotación a medianoche · Swing</span>
 					<span class="how-plan-door__go" aria-hidden="true">→</span>
 				</a>
-				<a class="how-plan-door how-plan-door--adv" href="#carril-advanced-pro">
-					<span class="how-plan-door__kicker">Plan</span>
+				<a class="how-plan-door" href="#carril-advanced-pro">
+					<span class="how-plan-door__kicker">Planes</span>
 					<span class="how-plan-door__name">Advanced · Pro</span>
-					<span class="how-plan-door__blurb tevsys-copy-muted">Semana · fin de semana · swing de producto</span>
+					<span class="how-plan-door__blurb">Semana · fin de semana · Swing</span>
 					<span class="how-plan-door__go" aria-hidden="true">→</span>
 				</a>
 			</nav>
@@ -730,7 +730,7 @@ const microclipBranches: MicroclipBranch[] = [
 			id="carril-essential"
 			aria-labelledby="how-rail-essential-title">
 			<header class="how-plan-rail__head">
-				<p class="how-eyebrow">Carril Essential</p>
+				<p class="how-eyebrow">Plan Essential</p>
 				<h2 id="how-rail-essential-title" class="how-plan-rail__title">
 					Essential — <span class="how-present-title__accent">esqueleto</span>
 				</h2>
@@ -746,13 +746,13 @@ const microclipBranches: MicroclipBranch[] = [
 			id="carril-advanced-pro"
 			aria-labelledby="how-rail-advpro-title">
 			<header class="how-plan-rail__head how-plan-rail__head--live">
-				<p class="how-eyebrow how-eyebrow--center">Carril Advanced · Pro</p>
+				<p class="how-eyebrow how-eyebrow--center">Planes Advanced · Pro</p>
 				<h2 id="how-rail-advpro-title" class="how-plan-rail__title how-plan-rail__title--live">
 					Advanced · Pro — <span class="how-present-title__accent">semana y swing</span>
 				</h2>
 				<p class="how-plan-rail__note tevsys-copy-muted">
-					Pacto semanal, fin de semana y operación que cruza el calendario. Microclips de escenarios: siguiente
-					pasada dentro de este carril.
+					Pacto semanal, fin de semana y operación que cruza el calendario — más los escenarios en clips
+					cortos de estos planes.
 				</p>
 			</header>
 
@@ -840,6 +840,175 @@ const microclipBranches: MicroclipBranch[] = [
 							<span class="how-puesta-marcha__arrow" aria-hidden="true">→</span>
 						</a>
 					</p>
+				</div>
+			</section>
+
+			<p class="how-act-cut" role="presentation">
+				<span class="how-act-cut__label">Escenarios en práctica · Advanced · Pro</span>
+				<span class="how-act-cut__line" aria-hidden="true"></span>
+			</p>
+
+			<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
+				<div class="how-more__shell" aria-hidden="true"></div>
+				<div class="how-more__glow" aria-hidden="true"></div>
+				<div class="how-more__inner">
+					<header class="how-section-head how-more__head">
+						<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
+						<h2 id="how-more-title">
+							Escenarios en <span class="how-present-title__accent">clips cortos</span>
+						</h2>
+						<p class="how-section-sub how-more__siguiente-aspiration">
+							Cómo reacciona tevsys en la práctica — escenario a escenario (planes Advanced · Pro).
+						</p>
+					</header>
+
+					<section class="how-microclip-ramas" id="mas-comportamientos" aria-labelledby="how-more-title">
+						<nav class="how-rama-jump" aria-label="Saltar a una rama de clips">
+							{
+								microclipBranches.map((branch) => (
+									<a class="how-rama-jump__link" href={`#${branch.id}`}>
+										{branch.title}
+									</a>
+								))
+							}
+						</nav>
+
+						{
+							microclipBranches.map((branch) => (
+								<section class="how-rama" id={branch.id} aria-labelledby={`${branch.id}-title`}>
+									<header class="how-rama__head">
+										<h3 id={`${branch.id}-title`} class="how-rama__title">
+											<span class="how-present-title__accent">{branch.title}</span>
+										</h3>
+										{branch.announcement ? (
+											<p class="how-rama__announcement">{branch.announcement}</p>
+										) : null}
+										{branch.edge ? (
+											<div class="how-rama__edge">
+												<p class="how-rama__edge-body">{branch.edge.body}</p>
+												{branch.edge.screen ? (
+													<p class="how-rama__edge-screen">{branch.edge.screen}</p>
+												) : null}
+												{branch.edge.lockNote ? (
+													<p class="how-rama__edge-lock">{branch.edge.lockNote}</p>
+												) : null}
+												{branch.edge.bridgeHref && branch.edge.bridgeLabel ? (
+													<p class="how-rama__edge-bridge">
+														{branch.edge.bridgeBefore}
+														<a href={branch.edge.bridgeHref}>{branch.edge.bridgeLabel}</a>.
+													</p>
+												) : null}
+												{branch.edge.faqHref && branch.edge.faqLabel ? (
+													<p class="how-rama__edge-bridge how-rama__edge-faq">
+														{branch.edge.faqBefore}
+														<a href={branch.edge.faqHref}>{branch.edge.faqLabel}</a>.
+													</p>
+												) : null}
+											</div>
+										) : null}
+									</header>
+
+									{(branch.groups?.length
+										? branch.groups
+										: branch.clips.length
+											? [{ id: `${branch.id}-clips`, title: '', clips: branch.clips }]
+											: []
+									).length > 0 ? (
+										<div class="how-rama__body">
+											{(branch.groups?.length
+												? branch.groups
+												: [{ id: `${branch.id}-clips`, title: '', clips: branch.clips }]
+											).map((group) => (
+												<section
+													class:list={['how-rama__group', !group.title && 'how-rama__group--flat']}
+													id={group.id}
+													aria-labelledby={group.title ? `${group.id}-title` : undefined}>
+													{group.title ? (
+														<h4 class="how-rama__group-title" id={`${group.id}-title`}>
+															{group.title}
+														</h4>
+													) : null}
+													<div
+														class="how-more-grid how-more-grid--practical how-rama__grid"
+														id={group.title ? `${group.id}-clips` : group.id}>
+														{group.clips.map((row) => (
+															<article
+																id={row.anchorId}
+																class:list={[
+																	'how-more-cell',
+																	'how-more-cell--video',
+																	'how-more-cell--practical-clip',
+																]}
+																aria-labelledby={`clip-title-${row.anchorId}`}>
+																<header class="how-block-head how-block-head--compact">
+																	<h4 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
+																		{row.title}
+																	</h4>
+																</header>
+																<div
+																	class:list={[
+																		'how-practical-card__media',
+																		!row.posterSrc &&
+																			!row.stillSrc &&
+																			!row.brandStill &&
+																			!row.videoSrc &&
+																			'how-practical-card__media--brand-fallback',
+																	]}>
+																	{row.videoSrc ? (
+																		<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
+																			<video
+																				controls
+																				preload="none"
+																				playsinline
+																				poster={row.posterSrc}
+																				title={row.videoLabel ?? row.title}>
+																				<source src={row.videoSrc} type="video/mp4" />
+																				Tu navegador no soporta reproducción de video HTML5.
+																			</video>
+																		</div>
+																	) : row.stillSrc ? (
+																		<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed how-practical-card__embed--still">
+																			<EvidenceImageLightbox
+																				src={row.stillSrc}
+																				alt={row.stillAlt ?? row.title}
+																				caption={row.stillCaption}
+																				width={1280}
+																				height={720}
+																				figureClass="how-rama-still"
+																				triggerClass="how-rama-still__zoom"
+																				imgClass="how-rama-still__img"
+																				capClass="how-rama-still__cap"
+																			/>
+																		</div>
+																	) : (
+																		<BrandStill
+																			tone={row.brandStillTone ?? 'amber'}
+																			orb={row.brandStillOrb ?? 'c'}
+																			label={row.brandStillLabel ?? 'tevsys'}
+																			aria={row.brandStillAria ?? `Marca tevsys — ${row.title}`}
+																		/>
+																	)}
+																</div>
+																{row.videoSrc || row.stillSrc ? (
+																	<span class="how-more-card__cta">
+																		{row.videoSrc
+																			? `${row.ctaLabel ?? 'Ver clip'} →`
+																			: `${row.ctaLabel ?? 'Ampliar captura'} →`}
+																	</span>
+																) : null}
+															</article>
+														))}
+													</div>
+												</section>
+											))}
+										</div>
+									) : (
+										<p class="how-rama__soon">Iremos sumando clips aquí.</p>
+									)}
+								</section>
+							))
+						}
+					</section>
 				</div>
 			</section>
 		</section>
@@ -957,175 +1126,6 @@ const microclipBranches: MicroclipBranch[] = [
 		</section>
 			</div>
 		</div>
-
-		<p class="how-act-cut" role="presentation">
-			<span class="how-act-cut__label">Escenarios en práctica</span>
-			<span class="how-act-cut__line" aria-hidden="true"></span>
-		</p>
-
-		<section class="how-more how-more--stage" id="siguiente-nivel" aria-labelledby="how-more-title">
-			<div class="how-more__shell" aria-hidden="true"></div>
-			<div class="how-more__glow" aria-hidden="true"></div>
-			<div class="how-more__inner">
-				<header class="how-section-head how-more__head">
-					<p class="how-eyebrow how-eyebrow--center">Siguiente nivel</p>
-					<h2 id="how-more-title">
-						Escenarios en <span class="how-present-title__accent">clips cortos</span>
-					</h2>
-					<p class="how-section-sub how-more__siguiente-aspiration">
-						Cómo reacciona tevsys en la práctica — escenario a escenario.
-					</p>
-				</header>
-
-				<section class="how-microclip-ramas" id="mas-comportamientos" aria-labelledby="how-more-title">
-					<nav class="how-rama-jump" aria-label="Saltar a una rama de clips">
-						{
-							microclipBranches.map((branch) => (
-								<a class="how-rama-jump__link" href={`#${branch.id}`}>
-									{branch.title}
-								</a>
-							))
-						}
-					</nav>
-
-					{
-						microclipBranches.map((branch) => (
-							<section class="how-rama" id={branch.id} aria-labelledby={`${branch.id}-title`}>
-								<header class="how-rama__head">
-									<h3 id={`${branch.id}-title`} class="how-rama__title">
-										<span class="how-present-title__accent">{branch.title}</span>
-									</h3>
-									{branch.announcement ? (
-										<p class="how-rama__announcement">{branch.announcement}</p>
-									) : null}
-									{branch.edge ? (
-										<div class="how-rama__edge">
-											<p class="how-rama__edge-body">{branch.edge.body}</p>
-											{branch.edge.screen ? (
-												<p class="how-rama__edge-screen">{branch.edge.screen}</p>
-											) : null}
-											{branch.edge.lockNote ? (
-												<p class="how-rama__edge-lock">{branch.edge.lockNote}</p>
-											) : null}
-											{branch.edge.bridgeHref && branch.edge.bridgeLabel ? (
-												<p class="how-rama__edge-bridge">
-													{branch.edge.bridgeBefore}
-													<a href={branch.edge.bridgeHref}>{branch.edge.bridgeLabel}</a>.
-												</p>
-											) : null}
-											{branch.edge.faqHref && branch.edge.faqLabel ? (
-												<p class="how-rama__edge-bridge how-rama__edge-faq">
-													{branch.edge.faqBefore}
-													<a href={branch.edge.faqHref}>{branch.edge.faqLabel}</a>.
-												</p>
-											) : null}
-										</div>
-									) : null}
-								</header>
-
-								{(branch.groups?.length
-									? branch.groups
-									: branch.clips.length
-										? [{ id: `${branch.id}-clips`, title: '', clips: branch.clips }]
-										: []
-								).length > 0 ? (
-									<div class="how-rama__body">
-										{(branch.groups?.length
-											? branch.groups
-											: [{ id: `${branch.id}-clips`, title: '', clips: branch.clips }]
-										).map((group) => (
-											<section
-												class:list={['how-rama__group', !group.title && 'how-rama__group--flat']}
-												id={group.id}
-												aria-labelledby={group.title ? `${group.id}-title` : undefined}>
-												{group.title ? (
-													<h4 class="how-rama__group-title" id={`${group.id}-title`}>
-														{group.title}
-													</h4>
-												) : null}
-												<div
-													class="how-more-grid how-more-grid--practical how-rama__grid"
-													id={group.title ? `${group.id}-clips` : group.id}>
-													{group.clips.map((row) => (
-														<article
-															id={row.anchorId}
-															class:list={[
-																'how-more-cell',
-																'how-more-cell--video',
-																'how-more-cell--practical-clip',
-															]}
-															aria-labelledby={`clip-title-${row.anchorId}`}>
-															<header class="how-block-head how-block-head--compact">
-																<h4 class="how-more-card__title" id={`clip-title-${row.anchorId}`}>
-																	{row.title}
-																</h4>
-															</header>
-															<div
-																class:list={[
-																	'how-practical-card__media',
-																	!row.posterSrc &&
-																		!row.stillSrc &&
-																		!row.brandStill &&
-																		!row.videoSrc &&
-																		'how-practical-card__media--brand-fallback',
-																]}>
-																{row.videoSrc ? (
-																	<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed">
-																		<video
-																			controls
-																			preload="none"
-																			playsinline
-																			poster={row.posterSrc}
-																			title={row.videoLabel ?? row.title}>
-																			<source src={row.videoSrc} type="video/mp4" />
-																			Tu navegador no soporta reproducción de video HTML5.
-																		</video>
-																	</div>
-																) : row.stillSrc ? (
-																	<div class="how-embed how-embed--chrome how-more-embed how-practical-card__embed how-practical-card__embed--still">
-																		<EvidenceImageLightbox
-																			src={row.stillSrc}
-																			alt={row.stillAlt ?? row.title}
-																			caption={row.stillCaption}
-																			width={1280}
-																			height={720}
-																			figureClass="how-rama-still"
-																			triggerClass="how-rama-still__zoom"
-																			imgClass="how-rama-still__img"
-																			capClass="how-rama-still__cap"
-																		/>
-																	</div>
-																) : (
-																	<BrandStill
-																		tone={row.brandStillTone ?? 'amber'}
-																		orb={row.brandStillOrb ?? 'c'}
-																		label={row.brandStillLabel ?? 'tevsys'}
-																		aria={row.brandStillAria ?? `Marca tevsys — ${row.title}`}
-																	/>
-																)}
-															</div>
-															{row.videoSrc || row.stillSrc ? (
-																<span class="how-more-card__cta">
-																	{row.videoSrc
-																		? `${row.ctaLabel ?? 'Ver clip'} →`
-																		: `${row.ctaLabel ?? 'Ampliar captura'} →`}
-																</span>
-															) : null}
-														</article>
-													))}
-												</div>
-											</section>
-										))}
-									</div>
-								) : (
-									<p class="how-rama__soon">Iremos sumando clips aquí.</p>
-								)}
-							</section>
-						))
-					}
-				</section>
-			</div>
-		</section>
 
 		<p class="how-more-act-cut">
 			<span class="how-more-act-cut__line" aria-hidden="true"></span>
@@ -2501,36 +2501,45 @@ const microclipBranches: MicroclipBranch[] = [
 		align-items: flex-start;
 		gap: 0.35rem;
 		padding: 1.15rem 1.2rem 1.2rem;
+		padding-right: 2.75rem;
 		border-radius: 12px;
 		text-decoration: none;
-		background: linear-gradient(165deg, hsl(222, 14%, 12%) 0%, hsl(222, 12%, 8.5%) 100%);
-		border: 1px solid rgba(160, 175, 195, 0.18);
-		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-		transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+		background: linear-gradient(
+			165deg,
+			rgba(245, 176, 65, 0.14) 0%,
+			hsl(222, 14%, 10%) 42%,
+			hsl(222, 12%, 8%) 100%
+		);
+		border: 1px solid rgba(245, 176, 65, 0.55);
+		box-shadow:
+			inset 0 1px 0 rgba(245, 176, 65, 0.12),
+			0 0 0 1px rgba(245, 176, 65, 0.06);
+		transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 	}
 
 	.how-plan-door:hover {
-		border-color: rgba(245, 176, 65, 0.42);
-		background: linear-gradient(165deg, hsl(222, 14%, 14%) 0%, hsl(222, 12%, 9.5%) 100%);
+		border-color: rgba(245, 176, 65, 0.88);
+		background: linear-gradient(
+			165deg,
+			rgba(245, 176, 65, 0.22) 0%,
+			hsl(222, 14%, 11%) 45%,
+			hsl(222, 12%, 8.5%) 100%
+		);
+		box-shadow:
+			inset 0 1px 0 rgba(245, 176, 65, 0.18),
+			0 0 28px rgba(245, 176, 65, 0.12);
 		transform: translateY(-1px);
 	}
 
-	.how-plan-door--adv {
-		border-color: rgba(100, 196, 255, 0.22);
-	}
-
-	.how-plan-door--adv:hover {
-		border-color: rgba(100, 196, 255, 0.48);
-	}
-
 	html[data-theme='light'] .how-plan-door {
-		background: linear-gradient(165deg, hsl(220, 16%, 98%) 0%, hsl(220, 12%, 94%) 100%);
-		border-color: rgba(70, 85, 105, 0.16);
+		background: linear-gradient(165deg, rgba(245, 176, 65, 0.16) 0%, hsl(220, 16%, 98%) 48%, hsl(220, 12%, 95%) 100%);
+		border-color: rgba(200, 135, 26, 0.55);
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 	}
 
 	html[data-theme='light'] .how-plan-door:hover {
-		border-color: rgba(200, 135, 26, 0.45);
+		border-color: rgba(200, 135, 26, 0.85);
+		box-shadow: 0 0 22px rgba(200, 135, 26, 0.14);
 	}
 
 	.how-plan-door__kicker {
@@ -2539,20 +2548,29 @@ const microclipBranches: MicroclipBranch[] = [
 		font-weight: 600;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		color: var(--tevsys-copy-muted);
+		color: #f5b041;
+	}
+
+	html[data-theme='light'] .how-plan-door__kicker {
+		color: #c8871a;
 	}
 
 	.how-plan-door__name {
 		font-size: clamp(1.2rem, 2.5vw, 1.4rem);
 		font-weight: 650;
 		letter-spacing: -0.015em;
-		color: var(--theme-on-bg, #f6f8fc);
+		color: #f5b041;
+	}
+
+	html[data-theme='light'] .how-plan-door__name {
+		color: #c8871a;
 	}
 
 	.how-plan-door__blurb {
 		font-size: 0.9rem;
 		line-height: 1.45;
 		margin-top: 0.15rem;
+		color: var(--tevsys-copy-muted);
 	}
 
 	.how-plan-door__go {
@@ -2562,11 +2580,7 @@ const microclipBranches: MicroclipBranch[] = [
 		transform: translateY(-50%);
 		font-size: 1.25rem;
 		color: #f5b041;
-		opacity: 0.75;
-	}
-
-	.how-plan-door--adv .how-plan-door__go {
-		color: rgba(100, 196, 255, 0.92);
+		opacity: 0.9;
 	}
 
 	.how-plan-rail {
