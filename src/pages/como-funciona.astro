@@ -1585,17 +1585,15 @@ const microclipBranches: MicroclipBranch[] = [
 			setTimeout(resetHorizontal, 50);
 		};
 
-		/* Remake en curso: solo aterriza al bloque (placeholder). Con <video>, autoplay como antes. */
-		if (!(media instanceof HTMLVideoElement)) {
-			scrollToEvidence();
-			return;
-		}
+		/* Aterriza ya; play con ~1,5 s de respiro (desde home ?play=1). */
+		scrollToEvidence();
+		if (!(media instanceof HTMLVideoElement)) return;
 
-		media.removeAttribute('poster');
 		media.preload = 'auto';
+		const PLAY_DELAY_MS = 1500;
 
 		const tryPlay = () => {
-			scrollToEvidence();
+			media.removeAttribute('poster');
 			const p = media.play();
 			if (p && typeof p.catch === 'function') {
 				p.catch(() => {
@@ -1605,8 +1603,12 @@ const microclipBranches: MicroclipBranch[] = [
 			}
 		};
 
-		if (media.readyState >= 2) tryPlay();
-		else media.addEventListener('loadeddata', tryPlay, { once: true });
+		const schedulePlay = () => {
+			window.setTimeout(tryPlay, PLAY_DELAY_MS);
+		};
+
+		if (media.readyState >= 2) schedulePlay();
+		else media.addEventListener('loadeddata', schedulePlay, { once: true });
 	})();
 </script>
 
