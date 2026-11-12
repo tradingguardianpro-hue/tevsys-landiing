@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Header móvil — punta a punta (ES|EN al borde) (12 nov 2026)
+
+- **Qué:** barra header a todo el ancho en ≤600px (sin cápsula corta a la derecha) · ES|EN más pegado al borde.
+- **Commit:** `web(tevsys): full-bleed mobile header to right edge`
+
 ## Home móvil — halo aflojado (sin pegote) (12 nov 2026)
 
 - **Qué:** glow móvil centrado más suave (~0,16 / 0,09) — se lee, no mancha. Escritorio intacto.
