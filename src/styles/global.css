@@ -1760,19 +1760,12 @@ html[data-theme='dark'] body.page-como-funciona footer {
 		margin-inline: 0;
 	}
 
-	/* Header móvil: refuerzo global (misma distancia menú ↔ ES|EN al borde). Desk no. */
+	/* Header móvil: refuerza cápsula + grosor 2px (color lo marca Header.astro). */
 	#odysseyNavHeader {
-		width: 100%;
-		max-width: 100%;
 		box-sizing: border-box;
-		margin-left: 0;
-		margin-right: 0;
-		border-radius: 0;
-		border-left: none;
-		border-right: none;
-		border-top: none;
-		padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
-		padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+		border-width: 2px;
+		border-style: solid;
+		border-radius: 2.5rem;
 	}
 	#odysseyNavHeader .header-action-item__container {
 		margin: 0;

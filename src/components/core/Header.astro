@@ -125,8 +125,8 @@ const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
     max-width: none;
     margin: 0.42rem 0 0;
     border-radius: 2.5rem;
-    /* Perfil un pelín más grueso (prueba 24 oct) — sin subir opacidad del trazo */
-    border: 1.5px solid var(--tevsys-header-bar-border);
+    /* Prueba 12 nov: 1,5 → 2px (envolvente logo+nav+idioma). Opacidad del trazo igual. */
+    border: 2px solid var(--tevsys-header-bar-border);
     background: transparent;
     /*
 	  Logo BrandOval: dentro de la barra ya no hace falta otra pastilla fuerte;
@@ -255,22 +255,20 @@ const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
     el reparto de columnas puede producir saltos al pintar / hidratar. Flex + min-width:0 evita
     empujar logo o CTAs fuera de sitio.
   */
-  /* Móvil (= hero ≤768): aire izq/der igual; barra a todo el ancho. Desk intacto. */
+  /* Móvil (≤768): misma cápsula redondeada + borde 2px; aire izq/der igual. */
   @media (max-width: 768px) {
     header {
-      width: 100%;
+      width: auto;
       max-width: 100%;
       box-sizing: border-box;
-      margin: 0;
-      border-radius: 0;
-      border-left: none;
-      border-right: none;
-      border-top: none;
+      margin: 0.35rem max(0.45rem, env(safe-area-inset-right, 0px)) 0
+        max(0.45rem, env(safe-area-inset-left, 0px));
+      border-radius: 2.5rem;
+      border: 2px solid var(--tevsys-header-bar-border);
       padding-top: 0.72rem;
       padding-bottom: 0.72rem;
-      /* Mismo valor ambos lados → menú y ES|EN a la misma distancia del borde */
-      padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
-      padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
     }
     header.header--right {
       display: flex;
