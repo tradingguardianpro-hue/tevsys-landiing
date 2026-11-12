@@ -255,8 +255,8 @@ const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
     el reparto de columnas puede producir saltos al pintar / hidratar. Flex + min-width:0 evita
     empujar logo o CTAs fuera de sitio.
   */
-  @media (max-width: 600px) {
-    /* Punta a punta: barra a todo el ancho; ES|EN cerca del borde derecho. */
+  /* Móvil (= hero ≤768): aire izq/der igual; barra a todo el ancho. Desk intacto. */
+  @media (max-width: 768px) {
     header {
       width: 100%;
       max-width: 100%;
@@ -268,8 +268,9 @@ const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
       border-top: none;
       padding-top: 0.72rem;
       padding-bottom: 0.72rem;
-      padding-left: max(0.65rem, env(safe-area-inset-left, 0px));
-      padding-right: max(0.55rem, env(safe-area-inset-right, 0px));
+      /* Mismo valor ambos lados → menú y ES|EN a la misma distancia del borde */
+      padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+      padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
     }
     header.header--right {
       display: flex;
@@ -283,14 +284,15 @@ const menuOpenTitle = locale === 'en' ? 'Open main menu' : 'Open Main Menu';
     }
     .header-action-item__container {
       flex-shrink: 0;
-      margin-left: 0.25rem;
-      margin-right: 0;
+      margin: 0;
     }
     #menuButton {
-      display: block;  
+      display: block;
       position: relative;
       z-index: 110;
-      margin-right: 0.35rem;
+      margin: 0;
+      padding: 0;
+      line-height: 0;
     }
     .header-nav__container {
       width: 100%;

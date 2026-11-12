@@ -1760,6 +1760,31 @@ html[data-theme='dark'] body.page-como-funciona footer {
 		margin-inline: 0;
 	}
 
+	/* Header móvil: refuerzo global (misma distancia menú ↔ ES|EN al borde). Desk no. */
+	#odysseyNavHeader {
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+		margin-left: 0;
+		margin-right: 0;
+		border-radius: 0;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+		padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+	}
+	#odysseyNavHeader .header-action-item__container {
+		margin: 0;
+	}
+	#odysseyNavHeader #menuButton {
+		margin: 0;
+		padding: 0;
+	}
+	#odysseyNavHeader .tevsys-lang-switch {
+		margin: 0;
+	}
+
 	/* Scanner KITT apagado en móvil; niebla muy suave (casi solo negro) */
 	html[data-theme='dark'] body::before {
 		opacity: 0.5;
