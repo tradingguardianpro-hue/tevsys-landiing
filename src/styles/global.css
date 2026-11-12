@@ -1750,10 +1750,14 @@ html[data-theme='dark'] body.page-como-funciona footer {
 		--tevsys-kitt-zone-h: clamp(82vh, 100vw, calc(100vh - var(--navbar-height, 56px)));
 	}
 
-	/* Marco mano hero: el stack no debe recortar el box-shadow ovalado a los lados */
+	/* Móvil: clip horizontal — overflow visible empujaba la columna a la izquierda. */
 	html[data-theme='dark'] .tevsys-home-hero-stack {
-		overflow-x: visible;
+		overflow-x: clip;
 		overflow-y: hidden;
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+		margin-inline: 0;
 	}
 
 	/* Scanner KITT apagado en móvil; niebla muy suave (casi solo negro) */

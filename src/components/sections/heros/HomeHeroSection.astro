@@ -1128,14 +1128,29 @@ const heroProductPillars = h.pillars;
   @media (max-width: 768px) {
     .hero-section__section {
       min-height: auto;
-      overflow-x: visible;
+      overflow-x: clip;
       overflow-y: hidden;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Halo menos anclado a la derecha: atmósfera centrada, sin vacío derecho. */
+    .hero-section__glow {
+      background:
+        radial-gradient(ellipse 92% 72% at 50% 28%, rgba(245, 176, 65, 0.12) 0%, transparent 58%),
+        radial-gradient(ellipse 70% 55% at 58% 72%, rgba(255, 210, 120, 0.07) 0%, transparent 52%),
+        radial-gradient(ellipse 55% 48% at 42% 48%, rgba(247, 192, 80, 0.05) 0%, transparent 46%);
     }
 
     .hero-section__inner {
       padding-bottom: 1.25rem;
-      padding-left: max(1rem, env(safe-area-inset-left, 0px));
-      padding-right: max(1rem, env(safe-area-inset-right, 0px));
+      padding-left: max(1.15rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1.15rem, env(safe-area-inset-right, 0px));
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .hero-title {
@@ -1149,6 +1164,12 @@ const heroProductPillars = h.pillars;
 
     .hero-section__text {
       --hero-disclaimer-font-size: clamp(0.74rem, 2.28vw, 0.8rem);
+      width: 100%;
+      max-width: 100%;
+      margin-inline: auto;
+      align-items: center;
+      padding-inline: 0;
+      box-sizing: border-box;
     }
 
     .hero-pillar-fade {
@@ -1219,6 +1240,11 @@ const heroProductPillars = h.pillars;
     .hero-section__image {
       flex: 1 1 auto;
       margin-top: clamp(1rem, 3.5vw, 1.65rem);
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: min(22.5rem, 100%);
+      box-sizing: border-box;
       --hero-image-radius: clamp(1.35rem, 4.5vw, 1.95rem);
     }
 
@@ -1274,14 +1300,18 @@ const heroProductPillars = h.pillars;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      padding: clamp(0.85rem, 2.5vw, 1.05rem) clamp(1.15rem, 4vw, 1.65rem)
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      margin-inline: auto;
+      padding: clamp(0.85rem, 2.5vw, 1.05rem) clamp(0.95rem, 3.5vw, 1.35rem)
         clamp(0.62rem, 1.8vw, 0.85rem);
       border-radius: var(--hero-image-radius);
       animation: none;
       box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.11),
-        0 0 28px -8px rgba(245, 176, 65, 0.1),
-        0 22px 56px -28px rgba(0, 0, 0, 0.5);
+        0 0 18px -10px rgba(245, 176, 65, 0.09),
+        0 14px 36px -22px rgba(0, 0, 0, 0.48);
     }
 
     .hero-image__media {

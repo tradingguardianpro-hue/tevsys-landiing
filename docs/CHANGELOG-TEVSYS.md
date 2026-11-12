@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home móvil — centrado hero + halo + sin desborde (12 nov 2026)
+
+- **Qué:** columna hero centrada (mismo aire izq/der) · halo ámbar menos anclado a la derecha · clip horizontal (stack + sección; sombra mano sin empujar).
+- **Commit:** `web(tevsys): center mobile hero and rebalance amber glow`
+
 ## Cómo funciona — Descubre cómo funcionamos (subrayado) (11 nov 2026)
 
 - **Qué:** título puente *Descubre **cómo funcionamos*** · raya ámbar inset (lógica web, no en la 1.ª letra). EN *See how we work*. Estructura planes = mañana.
