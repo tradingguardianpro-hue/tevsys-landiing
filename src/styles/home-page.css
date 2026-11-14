@@ -43,6 +43,17 @@
 			transform: translateY(0);
 		}
 	}
+	/* Arriba: casi solo fade (poco desplazamiento) = menos “pum” */
+	@keyframes tevsys-intro-copy-in-soft {
+		from {
+			opacity: 0;
+			transform: translateY(0.28rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 	.tevsys-landing-intro {
 		/* visible explícito: el padre #page puede estar parcialmente oculto */
 		visibility: visible !important;
@@ -96,8 +107,8 @@
 	.tevsys-landing-intro__above {
 		width: 100%;
 		margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
-		/* Tras chevron: suave · tiempo de leer antes del filtro de abajo */
-		animation: tevsys-intro-copy-in 1.75s cubic-bezier(0.22, 0.61, 0.36, 1) 1.65s both;
+		/* Más lento + easing suave + casi sin subida = sin golpe */
+		animation: tevsys-intro-copy-in-soft 2.45s cubic-bezier(0.33, 0.05, 0.2, 1) 1.85s both;
 	}
 	.tevsys-landing-intro__mark {
 		flex: 0 0 auto;
