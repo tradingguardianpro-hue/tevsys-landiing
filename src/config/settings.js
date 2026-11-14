@@ -1,5 +1,9 @@
-/** Fuente pública canónica (6 sep 2026): ficha / claim web = **90** operativas documentadas. */
-export const TEVSYS_DOCUMENTED_OPERATIVES = 90;
+/**
+ * Contador público canónico (14 nov 2026): **103** = fichas con texto íntegro en
+ * PRECISION_* §3 (IDs hasta 133; hueco 4.10–4.39 sin cuerpo → no se cuentan en claim).
+ * No mezclar carpeta examen personal sin ficha publicada.
+ */
+export const TEVSYS_DOCUMENTED_OPERATIVES = 103;
 
 export default {
   title: "tevsys — Límites que se cumplen, con precisión y trazabilidad · MT5",

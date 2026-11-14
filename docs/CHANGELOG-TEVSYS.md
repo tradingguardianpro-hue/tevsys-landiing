@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Precisión — limpieza hero + residual + 103 ops (14 nov 2026)
+
+- **Qué:** definición corta (sin SEO largo MT5); quita enlaces Nasdaq/contención del hero; residual en **3 golpes** visuales; contador público **103** (`settings.js` = fichas con cuerpo en PRECISION §3); checklist sin fuga a Evidencia contención.
+- **Archivos:** `precision.astro` ES|EN · `settings.js` · CONTENIDO.
+- **Commit:** `web(tevsys): clean precision hero residual and sync 103 ops`
+
 ## Precisión — hero vídeo Nasdaq #6288233 (14 nov 2026)
 
 - **Qué:** héroe `/features/precision` ES|EN = MP4 AT **#6288233** UsaTec · 10 lotes netting · −1,50 % · cierre −1 521,71 € · atribución decide/fill · poster mid STOP. Sustituye BrandStill 100k GER40.

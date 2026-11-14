@@ -24,8 +24,7 @@ const seo = {
 			</p>
 
 			<p class="tevsys-page-definition">
-				Precision is one of the layers of tevsys, the MetaTrader 5 utility that enforces your loss and
-				profit limits (day and week), intraday and on swing.
+				Precision is one of the layers of tevsys: a measurable close at the limit you set.
 			</p>
 
 			<div class="precision-hero-evidence tevsys-shell-punch">
@@ -35,39 +34,42 @@ const seo = {
 				</p>
 				<p class="precision-hero-secondary">
 					On every close we measure tevsys’s decision and the broker’s MT5 execution separately — without
-					mixing product precision with market slippage.{' '}
-					<a class="evidence-link" href="/en/como-funciona?play=1#evidencia-nasdaq-100">
-						Watch Nasdaq session (~3:47) →
-					</a>
+					mixing product precision with market slippage.
 				</p>
 			</div>
 
 			<p class="precision-hero-geopolitical">
 				Documented extremes exist too (e.g. max deviation{' '}
-				<span class="precision-hero-stat__accent">−0.39%</span>, high geopolitical volatility).{' '}
-				<a class="evidence-link" href="/en/features/evidencia#evidencia-contencion-489">
-					Containment case (~111 ms) in Evidence →
-				</a>
+				<span class="precision-hero-stat__accent">−0.39%</span>, high geopolitical volatility).
 			</p>
 		</section>
 
 		<section id="precision-residual" class="precision-residual tevsys-shell-punch" aria-labelledby="precision-residual-title">
 			<p class="precision-residual__kicker">Differentiator · not a blind close</p>
 			<h2 id="precision-residual-title">Close at the limit and residual exposure</h2>
-			<p>
-				When you cross your limit, tevsys triggers the close and STOP immediately: you stay protected and cannot
-				open more trades while STOP is active.
-			</p>
-			<p>
-				tevsys sends the close order to leave the account flat. If the broker does not fill it on the first try,
-				it retries automatically within a bounded window of up to 45 seconds, with progressive pauses. Meanwhile,
-				it works silently.
-			</p>
-			<p>
-				Only if exposure remains after that window will you see a single on-screen notice: <em>Incomplete close</em>.
-				It explains what happened, that STOP remains active, and that you can close manually if you choose.
-				The notice does not loop.
-			</p>
+			<ol class="precision-residual__beats">
+				<li>
+					<strong class="precision-residual__beat-label">You cross the limit</strong>
+					<span class="precision-residual__beat-body"
+						>tevsys triggers the close and STOP at once: you stay protected and cannot open more while STOP
+						is active.</span
+					>
+				</li>
+				<li>
+					<strong class="precision-residual__beat-label">If the broker does not flat you first try</strong>
+					<span class="precision-residual__beat-body"
+						>bounded automatic retries for up to <strong>45 seconds</strong>, with progressive pauses — in
+						silence.</span
+					>
+				</li>
+				<li>
+					<strong class="precision-residual__beat-label">If exposure remains</strong>
+					<span class="precision-residual__beat-body"
+						>one notice only: <em>Incomplete close</em>. STOP stays on; you can close by hand. It does not
+						loop.</span
+					>
+				</li>
+			</ol>
 		</section>
 
 		<section id="precision-demo" class="feature-demo feature-demo--hero">
@@ -116,10 +118,6 @@ const seo = {
 				<li>
 					<span class="feature-proof-list__text">Same standard on a smaller account (+ step-by-step captures).</span>
 					<a class="evidence-link evidence-link--short" href="#precision-stats">view →</a>
-				</li>
-				<li>
-					<span class="feature-proof-list__text">Containment under stress (~111 ms sweep) — extreme case, separate from the mean.</span>
-					<a class="evidence-link evidence-link--short" href="/en/features/evidencia#evidencia-contencion-489">view →</a>
 				</li>
 				<li>
 					<span class="feature-proof-list__text">Behaviour in high volatility — documented extreme.</span>
@@ -409,26 +407,54 @@ const seo = {
 	}
 
 	.precision-residual h2 {
-		margin: 0 0 0.65rem;
+		margin: 0 0 0.85rem;
 		font-size: 1.12rem;
 		font-weight: 650;
 		line-height: 1.35;
 	}
 
-	.precision-residual p {
-		margin: 0 0 0.75rem;
-		font-size: 0.96rem;
-		line-height: 1.58;
+	.precision-residual__beats {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+
+	.precision-residual__beats li {
+		margin: 0;
+		padding: 0 0 0 0.85rem;
+		border-left: 2px solid rgba(245, 176, 65, 0.55);
+		display: flex;
+		flex-direction: column;
+		gap: 0.28rem;
+	}
+
+	.precision-residual__beat-label {
+		font-size: 0.98rem;
+		font-weight: 700;
+		line-height: 1.35;
+		color: rgba(244, 246, 248, 0.98);
+	}
+
+	html[data-theme='light'] .precision-residual__beat-label {
+		color: rgba(28, 36, 48, 0.95);
+	}
+
+	.precision-residual__beat-body {
+		font-size: 0.94rem;
+		line-height: 1.55;
 		color: var(--tevsys-copy-muted);
-		opacity: 1;
 	}
 
-	.precision-residual p:last-child {
-		margin-bottom: 0;
+	.precision-residual__beat-body strong {
+		font-weight: 700;
+		color: #f5b041;
 	}
 
-	.precision-residual strong {
-		font-weight: 650;
+	html[data-theme='light'] .precision-residual__beat-body strong {
+		color: #c8871a;
 	}
 
 	.precision-recapture-note {
