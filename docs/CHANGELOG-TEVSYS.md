@@ -6,8 +6,10 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 ## Home — intro aterrizaje (manifiesto 2–3 s) (14 nov 2026)
 
-- **Qué:** pantalla fija primera visita · chevron + 3 frases postura · **Entrar** / **Saltar** desde ya · auto ~2,8 s · `localStorage` · `?intro=1` para forzar. Hero *límites/blinda* intacto.
-- **Archivos:** `HomeLandingIntro.astro` · `HomePageView.astro` · `home-page.css`.
+- **Qué:** pantalla fija · chevron + 3 frases postura · **Entrar** / **Saltar** · auto ~2,8 s. Hero *límites/blinda* intacto.
+- **Pruebas:** `landingIntroEveryLoad: true` en `settings.js` → sale en **cada** refresh. Luego `false` = solo 1.ª visita.
+- **Pendiente (agenda):** visión nacer como chevron + pilares del hero, no solo texto estático.
+- **Archivos:** `HomeLandingIntro.astro` · `HomePageView.astro` · `home-page.css` · `settings.js`.
 - **Commit:** `web(tevsys): add first-visit landing intro manifesto`
 
 ## Home — postura anti-dopamina bajo el hero (14 nov 2026)

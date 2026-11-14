@@ -1,9 +1,10 @@
 ---
 /**
- * Intro de aterrizaje (primera visita) — manifiesto anti-dopamina → home intacta.
- * Skip desde el segundo 0 · auto ~2,8 s · localStorage.
- * ?intro=1 fuerza de nuevo (pruebas).
+ * Intro de aterrizaje — manifiesto anti-dopamina → home intacta.
+ * settings.landingIntroEveryLoad = true → cada refresh (pruebas).
+ * false → solo primera visita (localStorage). ?intro=1 fuerza.
  */
+import settings from '../../config/settings.js';
 import { getHomeCopy } from '../../i18n/home.js';
 
 export interface Props {
@@ -12,15 +13,17 @@ export interface Props {
 
 const { locale = 'es' } = Astro.props;
 const t = getHomeCopy(locale);
+const everyLoad = settings.landingIntroEveryLoad === true;
 const enterLabel = locale === 'en' ? 'Enter' : 'Entrar';
 const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 ---
 
-<script is:inline>
+<script is:inline define:vars={{ everyLoad }}>
 	(function () {
 		try {
 			var q = new URLSearchParams(location.search);
 			if (q.get('intro') === '1') return;
+			if (everyLoad) return;
 			if (localStorage.getItem('tevsys_landing_intro_seen') === '1') {
 				document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
 			}
@@ -35,6 +38,7 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 	aria-modal="true"
 	aria-label={t.stanceAria}
 	data-tevsys-landing-intro
+	data-every-load={everyLoad ? '1' : '0'}
 >
 	<div class="tevsys-landing-intro__inner">
 		<img
@@ -72,6 +76,7 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 			return;
 		}
 
+		const everyLoad = root.getAttribute('data-every-load') === '1';
 		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		let closed = false;
 		let timer = 0;
@@ -80,12 +85,14 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 			if (closed) return;
 			closed = true;
 			if (timer) window.clearTimeout(timer);
-			try {
-				window.localStorage.setItem(STORAGE_KEY, '1');
-			} catch (_) {
-				/* private mode */
+			if (!everyLoad) {
+				try {
+					window.localStorage.setItem(STORAGE_KEY, '1');
+				} catch (_) {
+					/* private mode */
+				}
+				document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
 			}
-			document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
 			root.classList.add('tevsys-landing-intro--out');
 			document.documentElement.classList.remove('tevsys-landing-intro-lock');
 			window.setTimeout(() => {

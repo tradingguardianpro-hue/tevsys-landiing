@@ -18,6 +18,11 @@ export default {
 
   enableThemeSwitcher: false,
   showPlug: false,
+  /**
+   * Intro aterrizaje home: true = sale en CADA carga (modo prueba).
+   * false = solo primera visita (localStorage). Cuando validemos → false.
+   */
+  landingIntroEveryLoad: true,
   /** Checkout Essential: true = mostrar Comprar + Probar demo en Essential. false = solo Elegir Essential (formulario). Mar 2026: OFF hasta mail + descarga + flujo listos para venta pública. */
   checkoutEssentialReady: false,
   /**
