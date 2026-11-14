@@ -256,9 +256,9 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			180deg,
 			transparent 0%,
 			transparent 24%,
-			rgba(110, 114, 128, 0.2) 46%,
-			rgba(186, 190, 202, 0.3) 50%,
-			rgba(95, 98, 110, 0.12) 54%,
+			rgba(110, 114, 128, 0.1) 46%,
+			rgba(186, 190, 202, 0.14) 50%,
+			rgba(95, 98, 110, 0.07) 54%,
 			transparent 74%,
 			transparent 100%
 		);
@@ -542,22 +542,22 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 }
 
 @keyframes tevsys-home-fall-welcome-fade {
+	/* Bienvenida post-intro: barrido casi invisible (anti-feria; header ya manda) */
 	0% {
-		opacity: 0.48;
+		opacity: 0.11;
 		visibility: visible;
 	}
 	4% {
-		opacity: 0.5;
+		opacity: 0.12;
 	}
 	48% {
-		/* Pico del cruce: más suave (anti-susto). */
-		opacity: 0.38;
+		opacity: 0.09;
 	}
 	88% {
-		opacity: 0.26;
+		opacity: 0.07;
 	}
 	100% {
-		opacity: 0.1;
+		opacity: 0.05;
 		visibility: visible;
 	}
 }
@@ -565,22 +565,18 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 @keyframes tevsys-home-fall-welcome-gray {
 	0%,
 	100% {
-		opacity: 0.28;
+		opacity: 0.14;
 	}
 	44% {
-		opacity: 0.34;
+		opacity: 0.17;
 	}
 }
 
 @keyframes tevsys-home-fall-welcome-amber {
-	0% {
-		opacity: 0.55;
-	}
-	68% {
-		opacity: 0.48;
-	}
+	/* Sin ámbar en el primer barrido: solo gris, casi no se nota */
+	0%,
 	100% {
-		opacity: 0.18;
+		opacity: 0;
 	}
 }
 
