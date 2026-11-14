@@ -572,11 +572,31 @@ const heroProductPillars = h.pillars;
     await sleep(getHeroTiming('loopPauseMs'));
   }
 
+  function landingIntroStillActive() {
+    return (
+      document.documentElement.classList.contains('tevsys-landing-intro-lock') ||
+      Boolean(document.querySelector('[data-tevsys-landing-intro]'))
+    );
+  }
+
   function initHeroPillarFade() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const stage = document.querySelector('[data-hero-pillar-stage]');
     if (!stage || stage.dataset.heroPillarInit === '1') return;
+
+    /* No mezclar con intro aterrizaje: esas frases (precisión/disciplina…) son del hero */
+    if (landingIntroStillActive()) {
+      if (stage.dataset.heroPillarWaitIntro === '1') return;
+      stage.dataset.heroPillarWaitIntro = '1';
+      const startWhenReady = () => {
+        document.removeEventListener('tevsys-landing-intro-done', startWhenReady);
+        delete stage.dataset.heroPillarWaitIntro;
+        initHeroPillarFade();
+      };
+      document.addEventListener('tevsys-landing-intro-done', startWhenReady);
+      return;
+    }
 
     const phrases = [...stage.querySelectorAll('.hero-pillar-fade__phrase')];
     if (phrases.length === 0) return;

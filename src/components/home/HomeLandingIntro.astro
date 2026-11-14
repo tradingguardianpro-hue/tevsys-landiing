@@ -22,11 +22,13 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 	(function () {
 		try {
 			var q = new URLSearchParams(location.search);
-			if (q.get('intro') === '1') return;
-			if (everyLoad) return;
-			if (localStorage.getItem('tevsys_landing_intro_seen') === '1') {
+			var force = q.get('intro') === '1';
+			if (!force && !everyLoad && localStorage.getItem('tevsys_landing_intro_seen') === '1') {
 				document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
+				return;
 			}
+			/* Lock YA (antes del hero module) — evita pilares precisión/disciplina encima */
+			document.documentElement.classList.add('tevsys-landing-intro-lock');
 		} catch (e) {}
 	})();
 </script>
@@ -85,6 +87,7 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 		if (!(root instanceof HTMLElement)) return;
 		if (document.documentElement.getAttribute('data-tevsys-intro-skip') === '1') {
 			root.remove();
+			document.dispatchEvent(new CustomEvent('tevsys-landing-intro-done'));
 			return;
 		}
 
@@ -98,6 +101,10 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 
 		const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+		const signalDone = () => {
+			document.dispatchEvent(new CustomEvent('tevsys-landing-intro-done'));
+		};
+
 		const dismiss = () => {
 			if (closed) return;
 			closed = true;
@@ -110,7 +117,10 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 			}
 			root.classList.add('tevsys-landing-intro--out');
 			document.documentElement.classList.remove('tevsys-landing-intro-lock');
-			window.setTimeout(() => root.remove(), reduceMotion ? 0 : 480);
+			window.setTimeout(() => {
+				root.remove();
+				signalDone();
+			}, reduceMotion ? 0 : 480);
 		};
 
 		root.querySelectorAll('[data-tevsys-intro-dismiss]').forEach((btn) => {
@@ -125,12 +135,14 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 		async function run() {
 			if (reduceMotion) {
 				root.classList.add('tevsys-landing-intro--ready');
+				if (above instanceof HTMLElement) above.classList.add('tevsys-landing-intro__above--in');
+				if (below instanceof HTMLElement) below.classList.add('tevsys-landing-intro__below--in');
 				const enterBtn = root.querySelector('.tevsys-landing-intro__enter');
 				if (enterBtn instanceof HTMLElement) enterBtn.focus({ preventScroll: true });
 				return;
 			}
 
-			/* 1) Solo chevron desde el fondo */
+			/* 1) Chevron desde el fondo */
 			if (mark instanceof HTMLElement) {
 				mark.style.opacity = '0';
 				mark.style.transform = `translateY(${RISE_Y})`;
@@ -138,24 +150,24 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 				mark.classList.add('tevsys-landing-intro__mark--rising');
 				mark.style.opacity = '1';
 				mark.style.transform = 'translateY(0)';
-				await sleep(1500);
+				await sleep(1400);
 				mark.classList.add('tevsys-landing-intro__mark--settled');
-				await sleep(350);
 			}
 
 			if (closed) return;
 
-			/* 2) Texto arriba y abajo — con aire, sin tapar el chevron */
+			/* 2) Manifiesto (no pilares del hero) — arriba y abajo del chevron */
 			if (above instanceof HTMLElement) above.classList.add('tevsys-landing-intro__above--in');
-			await sleep(420);
+			await sleep(500);
 			if (below instanceof HTMLElement) below.classList.add('tevsys-landing-intro__below--in');
 			root.classList.add('tevsys-landing-intro--ready');
 
 			const enterBtn = root.querySelector('.tevsys-landing-intro__enter');
 			if (enterBtn instanceof HTMLElement) enterBtn.focus({ preventScroll: true });
 
+			/* Auto solo tras tiempo de lectura del manifiesto — no saltar a home enseguida */
 			if (!closed) {
-				autoTimer = window.setTimeout(dismiss, 4500);
+				autoTimer = window.setTimeout(dismiss, 7000);
 			}
 		}
 
