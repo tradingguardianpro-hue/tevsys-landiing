@@ -6,7 +6,14 @@
 	html.tevsys-landing-intro-lock {
 		overflow: hidden;
 	}
-	html.tevsys-landing-intro-lock #page,
+	/*
+	  La intro vive DENTRO de #page. Si ocultamos #page entero → negro vacío
+	  (el chevron hereda visibility:hidden). Solo ocultamos hermanos + chrome.
+	*/
+	html.tevsys-landing-intro-lock #page > *:not([data-tevsys-landing-intro]) {
+		visibility: hidden !important;
+		pointer-events: none !important;
+	}
 	html.tevsys-landing-intro-lock #odysseyNavHeader,
 	html.tevsys-landing-intro-lock footer {
 		visibility: hidden !important;
@@ -33,6 +40,8 @@
 		}
 	}
 	.tevsys-landing-intro {
+		/* visible explícito: el padre #page puede estar parcialmente oculto */
+		visibility: visible !important;
 		position: fixed;
 		inset: 0;
 		z-index: 10050;
