@@ -1,17 +1,36 @@
 ﻿
-	/* Intro aterrizaje (14 nov) — nace como chevron home; capa opaca (sin mashup). */
+	/* Intro aterrizaje — CSS keyframes (sin JS de opacidad: evita negro vacío). */
 	html[data-tevsys-intro-skip] .tevsys-landing-intro {
 		display: none !important;
 	}
 	html.tevsys-landing-intro-lock {
 		overflow: hidden;
 	}
-	/* Home/header invisibles mientras la intro manda — evita el “message box” encima */
 	html.tevsys-landing-intro-lock #page,
 	html.tevsys-landing-intro-lock #odysseyNavHeader,
 	html.tevsys-landing-intro-lock footer {
 		visibility: hidden !important;
 		pointer-events: none !important;
+	}
+	@keyframes tevsys-intro-mark-rise {
+		from {
+			opacity: 0;
+			transform: translateY(28vh);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	@keyframes tevsys-intro-copy-in {
+		from {
+			opacity: 0;
+			transform: translateY(0.85rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 	.tevsys-landing-intro {
 		position: fixed;
@@ -27,10 +46,9 @@
 		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		opacity: 1;
 		transform: translateY(0);
-		transition: transform 0.48s cubic-bezier(0.33, 0, 0.18, 1), opacity 0.35s ease;
+		transition: opacity 0.35s ease;
 	}
 	.tevsys-landing-intro--out {
-		transform: translateY(-8%);
 		opacity: 0;
 		pointer-events: none;
 	}
@@ -50,6 +68,7 @@
 		color: rgba(190, 200, 214, 0.72);
 		text-decoration: underline;
 		text-underline-offset: 0.16em;
+		animation: tevsys-intro-copy-in 0.5s ease 0.2s both;
 	}
 	.tevsys-landing-intro__skip-early:hover {
 		color: rgba(244, 246, 248, 0.9);
@@ -59,30 +78,19 @@
 		flex-direction: column;
 		align-items: center;
 		width: min(38rem, 100%);
-		gap: 0;
 		text-align: center;
 	}
 	.tevsys-landing-intro__above {
 		width: 100%;
 		margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
-		opacity: 0;
-		transform: translateY(1.1rem);
-		transition: opacity 0.85s cubic-bezier(0.33, 0, 0.18, 1),
-			transform 0.85s cubic-bezier(0.33, 0, 0.18, 1);
-	}
-	.tevsys-landing-intro__above--in {
-		opacity: 1;
-		transform: translateY(0);
+		animation: tevsys-intro-copy-in 0.75s cubic-bezier(0.33, 0, 0.18, 1) 0.55s both;
 	}
 	.tevsys-landing-intro__mark {
 		flex: 0 0 auto;
 		margin: 0;
 		padding: 0;
 		line-height: 0;
-		opacity: 0;
-		will-change: opacity, transform;
-		transition: opacity 1.5s cubic-bezier(0.33, 0, 0.18, 1),
-			transform 1.5s cubic-bezier(0.33, 0, 0.18, 1);
+		animation: tevsys-intro-mark-rise 1.15s cubic-bezier(0.33, 0, 0.18, 1) both;
 	}
 	.tevsys-landing-intro__mark-icon {
 		display: block;
@@ -91,30 +99,10 @@
 		opacity: 0.82;
 		margin-inline: auto;
 	}
-	.tevsys-landing-intro__mark--settled .tevsys-landing-intro__mark-icon {
-		opacity: 0.72;
-		transition: opacity 0.55s ease;
-	}
 	.tevsys-landing-intro__below {
 		width: 100%;
 		margin: clamp(1.35rem, 3.5vw, 2rem) 0 0;
-		opacity: 0;
-		transform: translateY(1.1rem);
-		transition: opacity 0.85s cubic-bezier(0.33, 0, 0.18, 1),
-			transform 0.85s cubic-bezier(0.33, 0, 0.18, 1);
-	}
-	.tevsys-landing-intro__below--in {
-		opacity: 1;
-		transform: translateY(0);
-	}
-	.tevsys-landing-intro--ready .tevsys-landing-intro__mark {
-		opacity: 1;
-		transform: none;
-	}
-	.tevsys-landing-intro--ready .tevsys-landing-intro__above,
-	.tevsys-landing-intro--ready .tevsys-landing-intro__below {
-		opacity: 1;
-		transform: none;
+		animation: tevsys-intro-copy-in 0.75s cubic-bezier(0.33, 0, 0.18, 1) 0.95s both;
 	}
 	.tevsys-landing-intro__hook {
 		margin: 0 0 0.5rem;
@@ -192,16 +180,13 @@
 		color: rgba(244, 246, 248, 0.92);
 	}
 	@media (prefers-reduced-motion: reduce) {
-		.tevsys-landing-intro,
 		.tevsys-landing-intro__mark,
 		.tevsys-landing-intro__above,
-		.tevsys-landing-intro__below {
-			transition: none !important;
-		}
-		.tevsys-landing-intro__above,
-		.tevsys-landing-intro__below {
-			opacity: 1;
-			transform: none;
+		.tevsys-landing-intro__below,
+		.tevsys-landing-intro__skip-early {
+			animation: none !important;
+			opacity: 1 !important;
+			transform: none !important;
 		}
 	}
 
