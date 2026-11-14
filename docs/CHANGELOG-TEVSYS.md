@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Precisión — hero vídeo Nasdaq #6288233 (14 nov 2026)
+
+- **Qué:** héroe `/features/precision` ES|EN = MP4 AT **#6288233** UsaTec · 10 lotes netting · −1,50 % · cierre −1 521,71 € · atribución decide/fill · poster mid STOP. Sustituye BrandStill 100k GER40.
+- **Archivos:** `tevsys-precision-nasdaq-6288233-20261114.mp4` + poster · `precision.astro` / `en/features/precision.astro`.
+- **Commit:** `web(tevsys): hang nasdaq precision hero video 6288233`
+
 ## Header — borde envolvente 2px (móvil + desk) (12 nov 2026)
 
 - **Qué:** trazo de la cápsula header **1,5 → 2px** · móvil recupera el rectángulo redondeado (se había perdido con full-bleed).

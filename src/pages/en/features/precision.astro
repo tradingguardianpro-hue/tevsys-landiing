@@ -71,26 +71,30 @@ const seo = {
 		</section>
 
 		<section id="precision-demo" class="feature-demo feature-demo--hero">
-			<h2>Quick demo — 100k account</h2>
+			<h2>Demo — Nasdaq 100 · open</h2>
 			<p class="feature-demo-hook">
-				€100,000 · GER40 · 10 lots · −1% limit · <strong class="feature-title__accent">deviation €2.28 (0.0023%)</strong> · London open.
+				UsaTec · 10 lots · netting · −1.50% limit · close <strong class="feature-title__accent">−€1,521.71 · −1.5064%</strong> · deviation ≈ <strong class="feature-title__accent">€6.50</strong> · high volatility.
 			</p>
 			<div class="demo-video demo-video--hero demo-video--hero-elegant" id="precision-demo-container">
-				<BrandStill tone="cool" orb="tr" aria="tevsys brand — 100k precision" />
+				<video
+					id="precision-demo-video"
+					controls
+					preload="metadata"
+					playsinline
+					poster="/videos/features/tevsys-precision-nasdaq-6288233-20261114-poster.jpg?v=20261114"
+					title="tevsys — Nasdaq 100 precision · AT 6288233">
+					<source
+						src="/videos/features/tevsys-precision-nasdaq-6288233-20261114.mp4?v=20261114"
+						type="video/mp4"
+					/>
+					Your browser does not support HTML5 video.
+				</video>
 			</div>
 			<p class="feature-demo-attrib">
-				Attribution · tevsys −1.0023% · execution 0.00 p.p. · 34 ms
+				Attribution · tevsys decides −1.5106% (≈ −€1,526) · broker fills −1.5064% (−€1,521.71) · 41 ms · fill helped ≈ €4.20
 			</p>
 			<p class="demo-edit-note demo-edit-note--slim">
-				On-screen EA UI may still appear in Spanish.
-			</p>
-			<p class="demo-edit-note demo-edit-note--slim demo-edit-note--bridge">
-				MT5 report from the same session —{' '}
-				<a class="evidence-link" href="/en/features/evidencia#evidencia-informe-mt5">5 tabs in Evidence →</a>
-			</p>
-			<p class="demo-edit-note demo-edit-note--slim">
-				<strong>Edited video:</strong> key close moments; there may be a <strong>clock jump</strong> between cuts.
-				MT5 toolbox close: <strong>−€1,002.28</strong>.
+				On-screen EA UI may still appear in Spanish. Live ActivTrades demo #6288233 · 12 Nov 2026 · base ≈ €101,013.73.
 			</p>
 		</section>
 
@@ -102,7 +106,7 @@ const seo = {
 					<a class="evidence-link evidence-link--short" href="#precision-residual">view →</a>
 				</li>
 				<li>
-					<span class="feature-proof-list__text">Close tight to the limit (100k · GER40 demo).</span>
+					<span class="feature-proof-list__text">Tight close under stress (Nasdaq · 10 lots · netting).</span>
 					<a class="evidence-link evidence-link--short" href="#precision-demo">view →</a>
 				</li>
 				<li>
@@ -278,6 +282,19 @@ const seo = {
 	</Container>
 	</div>
 </Layout>
+
+<script>
+	const precisionDemoVideo = document.getElementById('precision-demo-video');
+	const precisionDemoContainer = document.getElementById('precision-demo-container');
+	if (precisionDemoVideo && precisionDemoContainer) {
+		precisionDemoVideo.addEventListener('play', () => precisionDemoContainer.classList.add('demo-video--playing'));
+		precisionDemoVideo.addEventListener('ended', () => precisionDemoContainer.classList.remove('demo-video--playing'));
+		precisionDemoVideo.addEventListener('pause', () => {
+			if (precisionDemoVideo.ended) return;
+			precisionDemoContainer.classList.remove('demo-video--playing');
+		});
+	}
+</script>
 
 <style>
 	.feature-hero,
