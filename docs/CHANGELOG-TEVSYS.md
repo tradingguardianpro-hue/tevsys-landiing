@@ -4,13 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
-## Home — intro aterrizaje (manifiesto 2–3 s) (14 nov 2026)
+## Home — intro aterrizaje nace como chevron (14 nov 2026)
 
-- **Qué:** pantalla fija · chevron + 3 frases postura · **Entrar** / **Saltar** · auto ~2,8 s. Hero *límites/blinda* intacto.
-- **Pruebas:** `landingIntroEveryLoad: true` en `settings.js` → sale en **cada** refresh. Luego `false` = solo 1.ª visita.
-- **Pendiente (agenda):** visión nacer como chevron + pilares del hero, no solo texto estático.
-- **Archivos:** `HomeLandingIntro.astro` · `HomePageView.astro` · `home-page.css` · `settings.js`.
-- **Commit:** `web(tevsys): add first-visit landing intro manifesto`
+- **Qué:** capa **opaca** (sin mashup con hero) · chevron **sube desde abajo** · 4 pilares home (aparecen/desaparecen) · luego manifiesto · Entrar/Saltar · salida limpia. Hero intacto detrás.
+- **Pruebas:** `landingIntroEveryLoad: true` (cada refresh).
+- **Archivos:** `HomeLandingIntro.astro` · `home-page.css`.
+- **Commit:** `web(tevsys): birth landing intro like home chevron pillars`
 
 ## Home — postura anti-dopamina bajo el hero (14 nov 2026)
 

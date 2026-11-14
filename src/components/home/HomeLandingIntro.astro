@@ -1,8 +1,8 @@
 ---
 /**
- * Intro de aterrizaje — manifiesto anti-dopamina → home intacta.
- * settings.landingIntroEveryLoad = true → cada refresh (pruebas).
- * false → solo primera visita (localStorage). ?intro=1 fuerza.
+ * Intro aterrizaje — nace como el chevron de la home (desde abajo + pilares),
+ * luego manifiesto. Capa 100 % opaca: sin fundido encima del hero.
+ * settings.landingIntroEveryLoad · ?intro=1
  */
 import settings from '../../config/settings.js';
 import { getHomeCopy } from '../../i18n/home.js';
@@ -13,6 +13,7 @@ export interface Props {
 
 const { locale = 'es' } = Astro.props;
 const t = getHomeCopy(locale);
+const pillars = t.hero.pillars;
 const everyLoad = settings.landingIntroEveryLoad === true;
 const enterLabel = locale === 'en' ? 'Enter' : 'Entrar';
 const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
@@ -40,27 +41,45 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 	data-tevsys-landing-intro
 	data-every-load={everyLoad ? '1' : '0'}
 >
-	<div class="tevsys-landing-intro__inner">
-		<img
-			class="tevsys-landing-intro__chevron"
-			src="/hero-tevsys-chevrons.png"
-			alt=""
-			width="72"
-			height="72"
-			decoding="async"
-		/>
-		<p class="tevsys-landing-intro__hook">{t.stanceHook}</p>
-		<p class="tevsys-landing-intro__trust">
-			<span class="tevsys-brand-accent-underline tevsys-landing-intro__trust-line">{t.stanceTrust}</span>
-		</p>
-		<p class="tevsys-landing-intro__filter">{t.stanceFilter}</p>
-		<div class="tevsys-landing-intro__actions">
-			<button type="button" class="tevsys-landing-intro__enter" data-tevsys-intro-dismiss>
-				{enterLabel}
-			</button>
-			<button type="button" class="tevsys-landing-intro__skip" data-tevsys-intro-dismiss>
-				{skipLabel}
-			</button>
+	<button type="button" class="tevsys-landing-intro__skip-early" data-tevsys-intro-dismiss>
+		{skipLabel}
+	</button>
+
+	<div class="tevsys-landing-intro__stage" data-intro-stage>
+		<!-- Fase 1–2: nacimiento chevron + pilares (como home) -->
+		<div class="tevsys-landing-intro__birth" data-intro-birth aria-hidden="false">
+			<div class="tevsys-landing-intro__mark" data-intro-mark>
+				<img
+					class="tevsys-landing-intro__mark-icon"
+					src="/hero-tevsys-chevrons.png"
+					alt=""
+					width="120"
+					height="120"
+					decoding="async"
+				/>
+			</div>
+			<div class="tevsys-landing-intro__pillars" data-intro-pillars aria-label={t.hero.pillarsAria}>
+				{pillars.map((phrase) => (
+					<p class="tevsys-landing-intro__pillar" data-intro-pillar>{phrase}</p>
+				))}
+			</div>
+		</div>
+
+		<!-- Fase 3: manifiesto (después del birth) -->
+		<div class="tevsys-landing-intro__manifesto" data-intro-manifesto aria-hidden="true">
+			<p class="tevsys-landing-intro__hook">{t.stanceHook}</p>
+			<p class="tevsys-landing-intro__trust">
+				<span class="tevsys-brand-accent-underline tevsys-landing-intro__trust-line">{t.stanceTrust}</span>
+			</p>
+			<p class="tevsys-landing-intro__filter">{t.stanceFilter}</p>
+			<div class="tevsys-landing-intro__actions">
+				<button type="button" class="tevsys-landing-intro__enter" data-tevsys-intro-dismiss>
+					{enterLabel}
+				</button>
+				<button type="button" class="tevsys-landing-intro__skip" data-tevsys-intro-dismiss>
+					{skipLabel}
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
@@ -68,7 +87,8 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 <script>
 	(() => {
 		const STORAGE_KEY = 'tevsys_landing_intro_seen';
-		const AUTO_MS = 2800;
+		const ENTER_Y = '1.35rem';
+		const RISE_Y = '42vh';
 		const root = document.querySelector('[data-tevsys-landing-intro]');
 		if (!(root instanceof HTMLElement)) return;
 		if (document.documentElement.getAttribute('data-tevsys-intro-skip') === '1') {
@@ -78,29 +98,30 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 
 		const everyLoad = root.getAttribute('data-every-load') === '1';
 		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const birth = root.querySelector('[data-intro-birth]');
+		const mark = root.querySelector('[data-intro-mark]');
+		const pillars = [...root.querySelectorAll('[data-intro-pillar]')];
+		const manifesto = root.querySelector('[data-intro-manifesto]');
 		let closed = false;
-		let timer = 0;
+		let autoTimer = 0;
+
+		const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 		const dismiss = () => {
 			if (closed) return;
 			closed = true;
-			if (timer) window.clearTimeout(timer);
+			if (autoTimer) window.clearTimeout(autoTimer);
 			if (!everyLoad) {
 				try {
 					window.localStorage.setItem(STORAGE_KEY, '1');
-				} catch (_) {
-					/* private mode */
-				}
+				} catch (_) {}
 				document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
 			}
+			/* Salida limpia: sin fundido semitransparente sobre el hero */
 			root.classList.add('tevsys-landing-intro--out');
 			document.documentElement.classList.remove('tevsys-landing-intro-lock');
-			window.setTimeout(() => {
-				root.remove();
-			}, reduceMotion ? 0 : 420);
+			window.setTimeout(() => root.remove(), reduceMotion ? 0 : 480);
 		};
-
-		document.documentElement.classList.add('tevsys-landing-intro-lock');
 
 		root.querySelectorAll('[data-tevsys-intro-dismiss]').forEach((btn) => {
 			btn.addEventListener('click', dismiss);
@@ -109,11 +130,97 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 			if (e.key === 'Escape') dismiss();
 		});
 
-		const enterBtn = root.querySelector('.tevsys-landing-intro__enter');
-		if (enterBtn instanceof HTMLElement) enterBtn.focus({ preventScroll: true });
+		document.documentElement.classList.add('tevsys-landing-intro-lock');
 
-		if (!reduceMotion) {
-			timer = window.setTimeout(dismiss, AUTO_MS);
+		async function runBirth() {
+			if (reduceMotion) {
+				if (mark instanceof HTMLElement) {
+					mark.style.opacity = '1';
+					mark.style.transform = 'translate(-50%, -50%)';
+				}
+				pillars.forEach((el) => {
+					el.style.opacity = '1';
+					el.style.visibility = 'visible';
+					el.style.transform = 'none';
+				});
+				await sleep(400);
+			} else {
+				/* 1) Chevron desde el fondo */
+				if (mark instanceof HTMLElement) {
+					mark.style.opacity = '0';
+					mark.style.transform = `translate(-50%, calc(-50% + ${RISE_Y}))`;
+					await sleep(40);
+					mark.classList.add('tevsys-landing-intro__mark--rising');
+					mark.style.opacity = '1';
+					mark.style.transform = 'translate(-50%, -50%)';
+					await sleep(1600);
+					mark.classList.add('tevsys-landing-intro__mark--settled');
+					await sleep(450);
+				}
+
+				/* 2) Cuatro pilares: suben de dos en dos (como teatro home) */
+				const fadeIn = 900;
+				const showPair = async (a, b) => {
+					[a, b].forEach((el) => {
+						if (!(el instanceof HTMLElement)) return;
+						el.style.visibility = 'visible';
+						el.style.opacity = '0';
+						el.style.transform = `translateY(${ENTER_Y})`;
+						requestAnimationFrame(() => {
+							el.style.opacity = '1';
+							el.style.transform = 'translateY(0)';
+						});
+					});
+					await sleep(fadeIn + 280);
+				};
+				const hideAll = async () => {
+					pillars.forEach((el) => {
+						if (!(el instanceof HTMLElement)) return;
+						el.style.opacity = '0';
+						el.style.transform = `translateY(-${ENTER_Y})`;
+					});
+					await sleep(700);
+					pillars.forEach((el) => {
+						if (!(el instanceof HTMLElement)) return;
+						el.style.visibility = 'hidden';
+						el.style.transform = 'none';
+					});
+				};
+
+				if (pillars.length >= 4) {
+					await showPair(pillars[0], pillars[1]);
+					await showPair(pillars[2], pillars[3]);
+					await sleep(900);
+					await hideAll();
+				}
+
+				/* 3) Chevron se retira hacia arriba / se apaga */
+				if (mark instanceof HTMLElement) {
+					mark.style.opacity = '0';
+					mark.style.transform = 'translate(-50%, calc(-50% - 1.2rem))';
+					await sleep(700);
+				}
+			}
+
+			if (closed) return;
+
+			/* 4) Manifiesto surge */
+			if (birth instanceof HTMLElement) {
+				birth.setAttribute('aria-hidden', 'true');
+				birth.classList.add('tevsys-landing-intro__birth--done');
+			}
+			if (manifesto instanceof HTMLElement) {
+				manifesto.setAttribute('aria-hidden', 'false');
+				manifesto.classList.add('tevsys-landing-intro__manifesto--in');
+				const enterBtn = manifesto.querySelector('.tevsys-landing-intro__enter');
+				if (enterBtn instanceof HTMLElement) enterBtn.focus({ preventScroll: true });
+			}
+
+			if (!reduceMotion && !closed) {
+				autoTimer = window.setTimeout(dismiss, 4200);
+			}
 		}
+
+		runBirth();
 	})();
 </script>

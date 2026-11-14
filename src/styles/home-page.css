@@ -1,10 +1,17 @@
 ﻿
-	/* Intro aterrizaje (14 nov 2026) — primera visita; hero intacto detrás. */
+	/* Intro aterrizaje (14 nov) — nace como chevron home; capa opaca (sin mashup). */
 	html[data-tevsys-intro-skip] .tevsys-landing-intro {
 		display: none !important;
 	}
 	html.tevsys-landing-intro-lock {
 		overflow: hidden;
+	}
+	/* Home/header invisibles mientras la intro manda — evita el “message box” encima */
+	html.tevsys-landing-intro-lock #page,
+	html.tevsys-landing-intro-lock #odysseyNavHeader,
+	html.tevsys-landing-intro-lock footer {
+		visibility: hidden !important;
+		pointer-events: none !important;
 	}
 	.tevsys-landing-intro {
 		position: fixed;
@@ -19,25 +26,123 @@
 		color: rgba(244, 246, 248, 0.98);
 		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		opacity: 1;
-		transition: opacity 0.4s ease;
-	}
-	.tevsys-landing-intro[hidden] {
-		display: none !important;
+		transform: translateY(0);
+		transition: transform 0.48s cubic-bezier(0.33, 0, 0.18, 1), opacity 0.35s ease;
 	}
 	.tevsys-landing-intro--out {
+		transform: translateY(-8%);
 		opacity: 0;
 		pointer-events: none;
 	}
-	.tevsys-landing-intro__inner {
-		max-width: min(36rem, 100%);
-		text-align: left;
+	.tevsys-landing-intro__skip-early {
+		position: absolute;
+		top: clamp(0.85rem, 2.5vw, 1.25rem);
+		right: clamp(0.85rem, 2.5vw, 1.35rem);
+		z-index: 2;
+		appearance: none;
+		border: 0;
+		background: transparent;
+		padding: 0.4rem 0.55rem;
+		font: inherit;
+		font-size: 0.88rem;
+		font-weight: 500;
+		cursor: pointer;
+		color: rgba(190, 200, 214, 0.72);
+		text-decoration: underline;
+		text-underline-offset: 0.16em;
 	}
-	.tevsys-landing-intro__chevron {
+	.tevsys-landing-intro__skip-early:hover {
+		color: rgba(244, 246, 248, 0.9);
+	}
+	.tevsys-landing-intro__stage {
+		position: relative;
+		width: min(36rem, 100%);
+		min-height: clamp(16rem, 42vh, 22rem);
+	}
+	.tevsys-landing-intro__birth {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.55s ease;
+	}
+	.tevsys-landing-intro__birth--done {
+		opacity: 0;
+		pointer-events: none;
+		visibility: hidden;
+	}
+	.tevsys-landing-intro__mark {
+		position: absolute;
+		left: 50%;
+		top: 42%;
+		z-index: 2;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+		line-height: 0;
+		will-change: opacity, transform;
+		transition: opacity 1.55s cubic-bezier(0.33, 0, 0.18, 1),
+			transform 1.55s cubic-bezier(0.33, 0, 0.18, 1);
+	}
+	.tevsys-landing-intro__mark-icon {
 		display: block;
-		width: clamp(2.4rem, 6vw, 3.25rem);
+		width: clamp(5.5rem, 16vw, 7.25rem);
 		height: auto;
-		margin: 0 0 clamp(1.1rem, 2.5vw, 1.45rem);
-		opacity: 0.88;
+		opacity: 0.78;
+	}
+	.tevsys-landing-intro__mark--settled .tevsys-landing-intro__mark-icon {
+		opacity: 0.55;
+		transition: opacity 0.6s ease;
+	}
+	.tevsys-landing-intro__pillars {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: clamp(0.45rem, 1.3vh, 0.72rem);
+		width: 100%;
+		min-height: clamp(10rem, 28vh, 14rem);
+		padding-top: clamp(5.5rem, 14vh, 7rem);
+		box-sizing: border-box;
+	}
+	.tevsys-landing-intro__pillar {
+		margin: 0;
+		max-width: min(26rem, 100%);
+		padding-inline: 0.5rem;
+		font-family: 'IBM Plex Mono', ui-monospace, monospace;
+		font-size: clamp(0.8125rem, 1.15vw, 0.9rem);
+		font-weight: 400;
+		line-height: 1.38;
+		letter-spacing: 0.028em;
+		color: rgba(228, 232, 240, 0.9);
+		text-align: center;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(1.35rem);
+		transition: opacity 0.9s cubic-bezier(0.33, 0, 0.18, 1),
+			transform 0.9s cubic-bezier(0.33, 0, 0.18, 1);
+	}
+	.tevsys-landing-intro__manifesto {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(1.5rem);
+		pointer-events: none;
+		transition: opacity 0.85s cubic-bezier(0.33, 0, 0.18, 1),
+			transform 0.85s cubic-bezier(0.33, 0, 0.18, 1);
+	}
+	.tevsys-landing-intro__manifesto--in {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+		pointer-events: auto;
 	}
 	.tevsys-landing-intro__hook {
 		margin: 0 0 0.55rem;
@@ -47,7 +152,7 @@
 		letter-spacing: -0.015em;
 	}
 	.tevsys-landing-intro__trust {
-		margin: 0 0 clamp(0.75rem, 1.8vw, 1.05rem);
+		margin: 0 0 clamp(0.75rem, 1.8vw, 0.95rem);
 		font-size: clamp(1.12rem, 1.6vw + 0.35rem, 1.42rem);
 		font-weight: 600;
 		line-height: 1.35;
@@ -88,7 +193,9 @@
 	.tevsys-landing-intro__enter:hover {
 		background: #f7c050;
 	}
-	.tevsys-landing-intro__enter:focus-visible {
+	.tevsys-landing-intro__enter:focus-visible,
+	.tevsys-landing-intro__skip:focus-visible,
+	.tevsys-landing-intro__skip-early:focus-visible {
 		outline: 2px solid #f5b041;
 		outline-offset: 3px;
 	}
@@ -108,14 +215,12 @@
 	.tevsys-landing-intro__skip:hover {
 		color: rgba(244, 246, 248, 0.92);
 	}
-	.tevsys-landing-intro__skip:focus-visible {
-		outline: 2px solid #f5b041;
-		outline-offset: 3px;
-		border-radius: 0.2rem;
-	}
 	@media (prefers-reduced-motion: reduce) {
-		.tevsys-landing-intro {
-			transition: none;
+		.tevsys-landing-intro,
+		.tevsys-landing-intro__mark,
+		.tevsys-landing-intro__pillar,
+		.tevsys-landing-intro__manifesto {
+			transition: none !important;
 		}
 	}
 
