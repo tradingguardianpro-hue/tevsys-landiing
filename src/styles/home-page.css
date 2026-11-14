@@ -54,108 +54,82 @@
 	.tevsys-landing-intro__skip-early:hover {
 		color: rgba(244, 246, 248, 0.9);
 	}
-	.tevsys-landing-intro__stage {
-		position: relative;
-		width: min(36rem, 100%);
-		min-height: clamp(16rem, 42vh, 22rem);
-	}
-	.tevsys-landing-intro__birth {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: opacity 0.55s ease;
-	}
-	.tevsys-landing-intro__birth--done {
-		opacity: 0;
-		pointer-events: none;
-		visibility: hidden;
-	}
-	.tevsys-landing-intro__mark {
-		position: absolute;
-		left: 50%;
-		top: 42%;
-		z-index: 2;
-		transform: translate(-50%, -50%);
-		opacity: 0;
-		line-height: 0;
-		will-change: opacity, transform;
-		transition: opacity 1.55s cubic-bezier(0.33, 0, 0.18, 1),
-			transform 1.55s cubic-bezier(0.33, 0, 0.18, 1);
-	}
-	.tevsys-landing-intro__mark-icon {
-		display: block;
-		width: clamp(5.5rem, 16vw, 7.25rem);
-		height: auto;
-		opacity: 0.78;
-	}
-	.tevsys-landing-intro__mark--settled .tevsys-landing-intro__mark-icon {
-		opacity: 0.55;
-		transition: opacity 0.6s ease;
-	}
-	.tevsys-landing-intro__pillars {
-		position: relative;
-		z-index: 1;
+	.tevsys-landing-intro__layout {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		gap: clamp(0.45rem, 1.3vh, 0.72rem);
-		width: 100%;
-		min-height: clamp(10rem, 28vh, 14rem);
-		padding-top: clamp(5.5rem, 14vh, 7rem);
-		box-sizing: border-box;
-	}
-	.tevsys-landing-intro__pillar {
-		margin: 0;
-		max-width: min(26rem, 100%);
-		padding-inline: 0.5rem;
-		font-family: 'IBM Plex Mono', ui-monospace, monospace;
-		font-size: clamp(0.8125rem, 1.15vw, 0.9rem);
-		font-weight: 400;
-		line-height: 1.38;
-		letter-spacing: 0.028em;
-		color: rgba(228, 232, 240, 0.9);
+		width: min(38rem, 100%);
+		gap: 0;
 		text-align: center;
-		opacity: 0;
-		visibility: hidden;
-		transform: translateY(1.35rem);
-		transition: opacity 0.9s cubic-bezier(0.33, 0, 0.18, 1),
-			transform 0.9s cubic-bezier(0.33, 0, 0.18, 1);
 	}
-	.tevsys-landing-intro__manifesto {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
+	.tevsys-landing-intro__above {
+		width: 100%;
+		margin: 0 0 clamp(1.35rem, 3.5vw, 2rem);
 		opacity: 0;
-		visibility: hidden;
-		transform: translateY(1.5rem);
-		pointer-events: none;
+		transform: translateY(1.1rem);
 		transition: opacity 0.85s cubic-bezier(0.33, 0, 0.18, 1),
 			transform 0.85s cubic-bezier(0.33, 0, 0.18, 1);
 	}
-	.tevsys-landing-intro__manifesto--in {
+	.tevsys-landing-intro__above--in {
 		opacity: 1;
-		visibility: visible;
 		transform: translateY(0);
-		pointer-events: auto;
+	}
+	.tevsys-landing-intro__mark {
+		flex: 0 0 auto;
+		margin: 0;
+		padding: 0;
+		line-height: 0;
+		opacity: 0;
+		will-change: opacity, transform;
+		transition: opacity 1.5s cubic-bezier(0.33, 0, 0.18, 1),
+			transform 1.5s cubic-bezier(0.33, 0, 0.18, 1);
+	}
+	.tevsys-landing-intro__mark-icon {
+		display: block;
+		width: clamp(5.75rem, 16vw, 7.5rem);
+		height: auto;
+		opacity: 0.82;
+		margin-inline: auto;
+	}
+	.tevsys-landing-intro__mark--settled .tevsys-landing-intro__mark-icon {
+		opacity: 0.72;
+		transition: opacity 0.55s ease;
+	}
+	.tevsys-landing-intro__below {
+		width: 100%;
+		margin: clamp(1.35rem, 3.5vw, 2rem) 0 0;
+		opacity: 0;
+		transform: translateY(1.1rem);
+		transition: opacity 0.85s cubic-bezier(0.33, 0, 0.18, 1),
+			transform 0.85s cubic-bezier(0.33, 0, 0.18, 1);
+	}
+	.tevsys-landing-intro__below--in {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	.tevsys-landing-intro--ready .tevsys-landing-intro__mark {
+		opacity: 1;
+		transform: none;
+	}
+	.tevsys-landing-intro--ready .tevsys-landing-intro__above,
+	.tevsys-landing-intro--ready .tevsys-landing-intro__below {
+		opacity: 1;
+		transform: none;
 	}
 	.tevsys-landing-intro__hook {
-		margin: 0 0 0.55rem;
-		font-size: clamp(1.35rem, 2.4vw + 0.4rem, 1.85rem);
+		margin: 0 0 0.5rem;
+		font-size: clamp(1.28rem, 2.2vw + 0.35rem, 1.72rem);
 		font-weight: 650;
 		line-height: 1.28;
 		letter-spacing: -0.015em;
+		text-wrap: balance;
 	}
 	.tevsys-landing-intro__trust {
-		margin: 0 0 clamp(0.75rem, 1.8vw, 0.95rem);
-		font-size: clamp(1.12rem, 1.6vw + 0.35rem, 1.42rem);
+		margin: 0;
+		font-size: clamp(1.05rem, 1.45vw + 0.3rem, 1.32rem);
 		font-weight: 600;
 		line-height: 1.35;
+		text-wrap: balance;
 	}
 	.tevsys-landing-intro__trust-line {
 		display: inline-block;
@@ -163,19 +137,21 @@
 	}
 	.tevsys-landing-intro__trust-line::after {
 		width: min(100%, calc(100% + 0.45rem));
-		margin-top: 0.38rem;
+		margin: 0.38rem auto 0;
 	}
 	.tevsys-landing-intro__filter {
-		margin: 0 0 clamp(1.35rem, 3vw, 1.85rem);
-		font-size: clamp(0.98rem, 1.1vw + 0.3rem, 1.08rem);
+		margin: 0 0 clamp(1.15rem, 2.8vw, 1.55rem);
+		font-size: clamp(0.98rem, 1.1vw + 0.28rem, 1.08rem);
 		font-weight: 450;
 		line-height: 1.5;
 		color: var(--tevsys-copy-muted, rgba(190, 200, 214, 0.92));
+		text-wrap: balance;
 	}
 	.tevsys-landing-intro__actions {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		justify-content: center;
 		gap: 0.75rem 1.15rem;
 	}
 	.tevsys-landing-intro__enter {
@@ -218,9 +194,14 @@
 	@media (prefers-reduced-motion: reduce) {
 		.tevsys-landing-intro,
 		.tevsys-landing-intro__mark,
-		.tevsys-landing-intro__pillar,
-		.tevsys-landing-intro__manifesto {
+		.tevsys-landing-intro__above,
+		.tevsys-landing-intro__below {
 			transition: none !important;
+		}
+		.tevsys-landing-intro__above,
+		.tevsys-landing-intro__below {
+			opacity: 1;
+			transform: none;
 		}
 	}
 
