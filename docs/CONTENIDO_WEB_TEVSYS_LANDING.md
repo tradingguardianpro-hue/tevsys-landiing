@@ -225,9 +225,16 @@ Ver handoff hero.
 
 **Handoff oleada 23 oct (tipografía, joyas, aire, anclas VT):** `docs/HANDOFF_HOME_DEFINICION_TIPOGRAFIA_ANCLAS_OCT2026.md`.
 
-**Dónde:** entre el hero y el puente `Precisión · HyperClose · SML · Evidencia`. `HomePageView.astro` → `.tevsys-home-definition` · copy en `src/i18n/home.js` (`definitionLead` / `definitionBeats` / `definitionClosing`).
+**Dónde:** entre el hero y el puente `Precisión · HyperClose · SML · Evidencia`. Orden: hero → **postura** → definición. `HomePageView.astro` · copy `src/i18n/home.js`.
 
-**Por qué existe:** los asistentes de búsqueda citaban antes `/company/terminos` que las páginas comerciales — la legal **definía** el producto de forma categórica y la home abría con eslogan. Este bloque pone la definición donde se lee y donde se extrae.
+**Postura anti-dopamina (14 nov 2026) — `.tevsys-home-stance`:**
+- *No vendemos el sueño de un clic.*
+- *Construimos la confianza que el trading retail no tiene.* (raya ámbar→gris)
+- *Si buscas señales y euforia, esto no es para ti.*
+- EN: *We don’t sell the dream of one click.* · *We build the trust retail trading doesn’t have.* · *If you’re looking for signals and euphoria, this is not for you.*
+- Si pesa en captura: se puede dejar solo la línea de confianza (+ gancho) y retirar el filtro.
+
+**Por qué existe la definición:** los asistentes de búsqueda citaban antes `/company/terminos` que las páginas comerciales — la legal **definía** el producto de forma categórica y la home abría con eslogan. Este bloque pone la definición donde se lee y donde se extrae.
 
 **Copy vivo (ES):**
 
@@ -238,7 +245,7 @@ Ver handoff hero.
 
 **EN:** `…(day and week), your OFF days — … in **intraday and swing**.` Attribution accents: *tevsys’s close decision* / *MT5 execution*.
 
-**Contador público (6 sep 2026):** **90** operativas documentadas (`settings.TEVSYS_DOCUMENTED_OPERATIVES`).
+**Contador público (14 nov 2026):** **103** operativas documentadas (`settings.TEVSYS_DOCUMENTED_OPERATIVES`).
 
 **Normas del bloque (no romper sin acuerdo):**
 

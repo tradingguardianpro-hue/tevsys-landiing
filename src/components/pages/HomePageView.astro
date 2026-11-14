@@ -30,6 +30,13 @@ const L = (href) => localizeHref(href, locale);
 		</div>
 	</div>
 	<Container>
+		<section class="tevsys-home-stance" aria-label={t.stanceAria}>
+			<p class="tevsys-home-stance__hook">{t.stanceHook}</p>
+			<p class="tevsys-home-stance__trust">
+				<span class="tevsys-brand-accent-underline tevsys-home-stance__trust-line">{t.stanceTrust}</span>
+			</p>
+			<p class="tevsys-home-stance__filter">{t.stanceFilter}</p>
+		</section>
 		<section class="tevsys-home-definition" aria-label={t.definitionAria}>
 			<div class="tevsys-home-definition__panel">
 				<p class="tevsys-home-definition__lead">

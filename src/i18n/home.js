@@ -23,6 +23,11 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/como-funciona?play=1#evidencia-nasdaq-100',
 		},
+		/* Postura home (14 nov 2026): gancho anti-dopamina + filtro — debajo del hero. */
+		stanceAria: 'Posicionamiento tevsys',
+		stanceHook: 'No vendemos el sueño de un clic.',
+		stanceTrust: 'Construimos la confianza que el trading retail no tiene.',
+		stanceFilter: 'Si buscas señales y euforia, esto no es para ti.',
 		/* Lead A (18 oct): 3 frases + puertas ámbar intradía/swing. */
 		definitionLeadBefore:
 			'tevsys es una utilidad para MetaTrader 5. Tú decides las reglas — límites de pérdida y ganancia (día y semana) y tus días OFF. Se aplican sobre toda la cuenta desde un solo gráfico, en ',
@@ -217,6 +222,11 @@ export const homeCopy = {
 			hrefDemo: '/company/contact?flow=demo',
 			hrefNasdaq: '/en/como-funciona?play=1#evidencia-nasdaq-100',
 		},
+		/* Home stance (14 Nov 2026): anti-dopamine hook + filter — under hero. */
+		stanceAria: 'tevsys positioning',
+		stanceHook: 'We don’t sell the dream of one click.',
+		stanceTrust: 'We build the trust retail trading doesn’t have.',
+		stanceFilter: 'If you’re looking for signals and euphoria, this is not for you.',
 		definitionLeadBefore:
 			'tevsys is a MetaTrader 5 utility. You set the rules — loss and profit limits (day and week) and your OFF days. They apply across the whole account from a single chart, in ',
 		definitionLeadIntraday: 'intraday',
