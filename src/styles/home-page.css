@@ -5,6 +5,8 @@
 	}
 	html.tevsys-landing-intro-lock {
 		overflow: hidden;
+		/* Misma franja que con barra de scroll → no “acorta” al pasar a la home */
+		scrollbar-gutter: stable;
 	}
 	/*
 	  Hermanos + chrome en opacity 0 (no visibility): permite handoff suave a la home

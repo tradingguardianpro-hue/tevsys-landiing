@@ -2020,6 +2020,8 @@ html[data-theme='dark'] body {
 
 html {
 	overflow-x: clip;
+	/* Reserva hueco de scrollbar (Win) → intro→home sin “acortar” la pantalla */
+	scrollbar-gutter: stable;
 }
 
 pre {
