@@ -46,7 +46,7 @@ const seo = {
 
 		<section id="precision-residual" class="precision-residual tevsys-shell-punch" aria-labelledby="precision-residual-title">
 			<p class="precision-residual__kicker">Differentiator · not a blind close</p>
-			<h2 id="precision-residual-title">Close at the limit and residual exposure</h2>
+			<h2 id="precision-residual-title" class="tevsys-brand-accent-underline">Close at the limit and residual exposure</h2>
 			<ol class="precision-residual__beats">
 				<li>
 					<strong class="precision-residual__beat-label">You cross the limit</strong>
@@ -58,8 +58,8 @@ const seo = {
 				<li>
 					<strong class="precision-residual__beat-label">If the broker does not flat you first try</strong>
 					<span class="precision-residual__beat-body"
-						>bounded automatic retries for up to <strong>45 seconds</strong>, with progressive pauses — in
-						silence.</span
+						>bounded automatic <strong>retries</strong> for up to <strong>45 seconds</strong>, with progressive
+						pauses — in silence.</span
 					>
 				</li>
 				<li>
@@ -411,6 +411,33 @@ const seo = {
 		font-size: 1.12rem;
 		font-weight: 650;
 		line-height: 1.35;
+	}
+
+	/* Same family as home / for-whom: amber → grey underline */
+	.precision-residual .tevsys-brand-accent-underline {
+		display: inline-block;
+	}
+	.precision-residual .tevsys-brand-accent-underline::after {
+		content: '';
+		display: block;
+		width: min(100%, calc(100% + 0.35rem));
+		height: 3px;
+		margin: 0.34rem 0 0 0.04rem;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			rgba(245, 176, 65, 0.95) 0%,
+			rgba(148, 154, 168, 0.62) 72%,
+			rgba(110, 116, 128, 0.35) 100%
+		);
+	}
+	html[data-theme='light'] .precision-residual .tevsys-brand-accent-underline::after {
+		background: linear-gradient(
+			90deg,
+			rgba(218, 155, 48, 0.9) 0%,
+			rgba(120, 125, 138, 0.5) 75%,
+			rgba(90, 95, 108, 0.28) 100%
+		);
 	}
 
 	.precision-residual__beats {
