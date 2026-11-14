@@ -114,15 +114,18 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 				} catch (_) {}
 				document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
 			}
+			/* Intro se apaga + home se enciende a la vez (fade cruzado, sin pum) */
 			root.classList.add('tevsys-landing-intro--out');
-			document.documentElement.classList.remove('tevsys-landing-intro-lock');
-			window.setTimeout(
-				() => {
-					root.remove();
-					signalDone();
-				},
-				reduceMotion ? 0 : 400
-			);
+			document.documentElement.classList.add('tevsys-landing-intro-reveal');
+			const handoffMs = reduceMotion ? 0 : 1150;
+			window.setTimeout(() => {
+				document.documentElement.classList.remove(
+					'tevsys-landing-intro-lock',
+					'tevsys-landing-intro-reveal'
+				);
+				root.remove();
+				signalDone();
+			}, handoffMs);
 		};
 
 		root.querySelectorAll('[data-tevsys-intro-dismiss]').forEach((btn) => {

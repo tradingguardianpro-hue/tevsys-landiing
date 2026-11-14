@@ -7,17 +7,21 @@
 		overflow: hidden;
 	}
 	/*
-	  La intro vive DENTRO de #page. Si ocultamos #page entero → negro vacío
-	  (el chevron hereda visibility:hidden). Solo ocultamos hermanos + chrome.
+	  Hermanos + chrome en opacity 0 (no visibility): permite handoff suave a la home
+	  sin “fluorescente” / pum al quitar el lock.
 	*/
-	html.tevsys-landing-intro-lock #page > *:not([data-tevsys-landing-intro]) {
-		visibility: hidden !important;
-		pointer-events: none !important;
-	}
+	html.tevsys-landing-intro-lock #page > *:not([data-tevsys-landing-intro]),
 	html.tevsys-landing-intro-lock #odysseyNavHeader,
 	html.tevsys-landing-intro-lock footer {
-		visibility: hidden !important;
+		opacity: 0 !important;
 		pointer-events: none !important;
+	}
+	html.tevsys-landing-intro-lock.tevsys-landing-intro-reveal #page > *:not([data-tevsys-landing-intro]),
+	html.tevsys-landing-intro-lock.tevsys-landing-intro-reveal #odysseyNavHeader,
+	html.tevsys-landing-intro-lock.tevsys-landing-intro-reveal footer {
+		opacity: 1 !important;
+		pointer-events: auto !important;
+		transition: opacity 1.15s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
 	}
 	@keyframes tevsys-intro-mark-rise {
 		from {
@@ -55,7 +59,7 @@
 		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 		opacity: 1;
 		transform: translateY(0);
-		transition: opacity 0.35s ease;
+		transition: opacity 1.15s cubic-bezier(0.22, 0.61, 0.36, 1);
 	}
 	.tevsys-landing-intro--out {
 		opacity: 0;
