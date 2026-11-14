@@ -94,7 +94,7 @@
 		color: rgba(190, 200, 214, 0.72);
 		text-decoration: underline;
 		text-underline-offset: 0.16em;
-		animation: tevsys-intro-copy-in 1.35s cubic-bezier(0.22, 0.61, 0.36, 1) 3.4s both;
+		animation: tevsys-intro-copy-in-soft 1.6s cubic-bezier(0.33, 0.05, 0.2, 1) 4.35s both;
 	}
 	.tevsys-landing-intro__skip-early:hover {
 		color: rgba(244, 246, 248, 0.9);
@@ -129,8 +129,8 @@
 	.tevsys-landing-intro__below {
 		width: 100%;
 		margin: clamp(1.35rem, 3.5vw, 2rem) 0 0;
-		/* Bypass: chevron + arriba se leen · euforia entra más tarde y más lenta */
-		animation: tevsys-intro-copy-in 2.1s cubic-bezier(0.22, 0.61, 0.36, 1) 3.55s both;
+		/* Un pelín más tarde + fade soft (mismo keyframe que arriba) */
+		animation: tevsys-intro-copy-in-soft 2.35s cubic-bezier(0.33, 0.05, 0.2, 1) 4.2s both;
 	}
 	.tevsys-landing-intro__hook {
 		margin: 0 0 0.5rem;

@@ -81,8 +81,8 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 <script>
 	(() => {
 		const STORAGE_KEY = 'tevsys_landing_intro_seen';
-		/* Chevron + arriba + bypass + euforia lenta → lectura antes del auto-Entrar */
-		const HOLD_MS = 11000;
+		/* Chevron + arriba + bypass abajo más tarde → lectura antes del auto-Entrar */
+		const HOLD_MS = 12000;
 		const root = document.querySelector('[data-tevsys-landing-intro]');
 		if (!(root instanceof HTMLElement)) return;
 
