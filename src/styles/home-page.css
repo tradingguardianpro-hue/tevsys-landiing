@@ -1,4 +1,124 @@
 ﻿
+	/* Intro aterrizaje (14 nov 2026) — primera visita; hero intacto detrás. */
+	html[data-tevsys-intro-skip] .tevsys-landing-intro {
+		display: none !important;
+	}
+	html.tevsys-landing-intro-lock {
+		overflow: hidden;
+	}
+	.tevsys-landing-intro {
+		position: fixed;
+		inset: 0;
+		z-index: 10050;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: clamp(1.25rem, 4vw, 2.5rem);
+		box-sizing: border-box;
+		background: #05070b;
+		color: rgba(244, 246, 248, 0.98);
+		font-family: 'IBM Plex Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+		opacity: 1;
+		transition: opacity 0.4s ease;
+	}
+	.tevsys-landing-intro[hidden] {
+		display: none !important;
+	}
+	.tevsys-landing-intro--out {
+		opacity: 0;
+		pointer-events: none;
+	}
+	.tevsys-landing-intro__inner {
+		max-width: min(36rem, 100%);
+		text-align: left;
+	}
+	.tevsys-landing-intro__chevron {
+		display: block;
+		width: clamp(2.4rem, 6vw, 3.25rem);
+		height: auto;
+		margin: 0 0 clamp(1.1rem, 2.5vw, 1.45rem);
+		opacity: 0.88;
+	}
+	.tevsys-landing-intro__hook {
+		margin: 0 0 0.55rem;
+		font-size: clamp(1.35rem, 2.4vw + 0.4rem, 1.85rem);
+		font-weight: 650;
+		line-height: 1.28;
+		letter-spacing: -0.015em;
+	}
+	.tevsys-landing-intro__trust {
+		margin: 0 0 clamp(0.75rem, 1.8vw, 1.05rem);
+		font-size: clamp(1.12rem, 1.6vw + 0.35rem, 1.42rem);
+		font-weight: 600;
+		line-height: 1.35;
+	}
+	.tevsys-landing-intro__trust-line {
+		display: inline-block;
+		max-width: 100%;
+	}
+	.tevsys-landing-intro__trust-line::after {
+		width: min(100%, calc(100% + 0.45rem));
+		margin-top: 0.38rem;
+	}
+	.tevsys-landing-intro__filter {
+		margin: 0 0 clamp(1.35rem, 3vw, 1.85rem);
+		font-size: clamp(0.98rem, 1.1vw + 0.3rem, 1.08rem);
+		font-weight: 450;
+		line-height: 1.5;
+		color: var(--tevsys-copy-muted, rgba(190, 200, 214, 0.92));
+	}
+	.tevsys-landing-intro__actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem 1.15rem;
+	}
+	.tevsys-landing-intro__enter {
+		appearance: none;
+		border: 0;
+		border-radius: 999px;
+		padding: 0.65rem 1.25rem;
+		font: inherit;
+		font-size: 0.95rem;
+		font-weight: 650;
+		cursor: pointer;
+		color: #0a0c10;
+		background: #f5b041;
+	}
+	.tevsys-landing-intro__enter:hover {
+		background: #f7c050;
+	}
+	.tevsys-landing-intro__enter:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+	}
+	.tevsys-landing-intro__skip {
+		appearance: none;
+		border: 0;
+		background: transparent;
+		padding: 0.35rem 0.15rem;
+		font: inherit;
+		font-size: 0.9rem;
+		font-weight: 500;
+		cursor: pointer;
+		color: var(--tevsys-copy-muted, rgba(190, 200, 214, 0.92));
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+	}
+	.tevsys-landing-intro__skip:hover {
+		color: rgba(244, 246, 248, 0.92);
+	}
+	.tevsys-landing-intro__skip:focus-visible {
+		outline: 2px solid #f5b041;
+		outline-offset: 3px;
+		border-radius: 0.2rem;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.tevsys-landing-intro {
+			transition: none;
+		}
+	}
+
 	/* Postura anti-dopamina (14 nov 2026) — debajo del hero, antes de la definición. */
 	.tevsys-home-stance {
 		position: relative;

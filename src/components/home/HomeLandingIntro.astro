@@ -1,0 +1,112 @@
+---
+/**
+ * Intro de aterrizaje (primera visita) — manifiesto anti-dopamina → home intacta.
+ * Skip desde el segundo 0 · auto ~2,8 s · localStorage.
+ * ?intro=1 fuerza de nuevo (pruebas).
+ */
+import { getHomeCopy } from '../../i18n/home.js';
+
+export interface Props {
+	locale?: string;
+}
+
+const { locale = 'es' } = Astro.props;
+const t = getHomeCopy(locale);
+const enterLabel = locale === 'en' ? 'Enter' : 'Entrar';
+const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
+---
+
+<script is:inline>
+	(function () {
+		try {
+			var q = new URLSearchParams(location.search);
+			if (q.get('intro') === '1') return;
+			if (localStorage.getItem('tevsys_landing_intro_seen') === '1') {
+				document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
+			}
+		} catch (e) {}
+	})();
+</script>
+
+<div
+	id="tevsys-landing-intro"
+	class="tevsys-landing-intro"
+	role="dialog"
+	aria-modal="true"
+	aria-label={t.stanceAria}
+	data-tevsys-landing-intro
+>
+	<div class="tevsys-landing-intro__inner">
+		<img
+			class="tevsys-landing-intro__chevron"
+			src="/hero-tevsys-chevrons.png"
+			alt=""
+			width="72"
+			height="72"
+			decoding="async"
+		/>
+		<p class="tevsys-landing-intro__hook">{t.stanceHook}</p>
+		<p class="tevsys-landing-intro__trust">
+			<span class="tevsys-brand-accent-underline tevsys-landing-intro__trust-line">{t.stanceTrust}</span>
+		</p>
+		<p class="tevsys-landing-intro__filter">{t.stanceFilter}</p>
+		<div class="tevsys-landing-intro__actions">
+			<button type="button" class="tevsys-landing-intro__enter" data-tevsys-intro-dismiss>
+				{enterLabel}
+			</button>
+			<button type="button" class="tevsys-landing-intro__skip" data-tevsys-intro-dismiss>
+				{skipLabel}
+			</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	(() => {
+		const STORAGE_KEY = 'tevsys_landing_intro_seen';
+		const AUTO_MS = 2800;
+		const root = document.querySelector('[data-tevsys-landing-intro]');
+		if (!(root instanceof HTMLElement)) return;
+		if (document.documentElement.getAttribute('data-tevsys-intro-skip') === '1') {
+			root.remove();
+			return;
+		}
+
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		let closed = false;
+		let timer = 0;
+
+		const dismiss = () => {
+			if (closed) return;
+			closed = true;
+			if (timer) window.clearTimeout(timer);
+			try {
+				window.localStorage.setItem(STORAGE_KEY, '1');
+			} catch (_) {
+				/* private mode */
+			}
+			document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
+			root.classList.add('tevsys-landing-intro--out');
+			document.documentElement.classList.remove('tevsys-landing-intro-lock');
+			window.setTimeout(() => {
+				root.remove();
+			}, reduceMotion ? 0 : 420);
+		};
+
+		document.documentElement.classList.add('tevsys-landing-intro-lock');
+
+		root.querySelectorAll('[data-tevsys-intro-dismiss]').forEach((btn) => {
+			btn.addEventListener('click', dismiss);
+		});
+		window.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') dismiss();
+		});
+
+		const enterBtn = root.querySelector('.tevsys-landing-intro__enter');
+		if (enterBtn instanceof HTMLElement) enterBtn.focus({ preventScroll: true });
+
+		if (!reduceMotion) {
+			timer = window.setTimeout(dismiss, AUTO_MS);
+		}
+	})();
+</script>

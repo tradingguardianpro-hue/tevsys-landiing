@@ -227,12 +227,13 @@ Ver handoff hero.
 
 **Dónde:** entre el hero y el puente `Precisión · HyperClose · SML · Evidencia`. Orden: hero → **postura** → definición. `HomePageView.astro` · copy `src/i18n/home.js`.
 
-**Postura anti-dopamina (14 nov 2026) — `.tevsys-home-stance`:**
+**Intro aterrizaje (14 nov 2026) — `.tevsys-landing-intro`:** primera visita · mismas 3 frases · Entrar/Saltar · auto ~2,8 s · `?intro=1` fuerza. Hero *Tú pones los límites* intacto.
+
+**Postura bajo hero (14 nov 2026) — `.tevsys-home-stance`:** mismo copy (refuerzo al scroll). Revisar si sobra duplicar tras validar intro.
 - *No vendemos el sueño de un clic.*
 - *Construimos la confianza que el trading retail no tiene.* (raya ámbar→gris)
 - *Si buscas señales y euforia, esto no es para ti.*
 - EN: *We don’t sell the dream of one click.* · *We build the trust retail trading doesn’t have.* · *If you’re looking for signals and euphoria, this is not for you.*
-- Si pesa en captura: se puede dejar solo la línea de confianza (+ gancho) y retirar el filtro.
 
 **Por qué existe la definición:** los asistentes de búsqueda citaban antes `/company/terminos` que las páginas comerciales — la legal **definía** el producto de forma categórica y la home abría con eslogan. Este bloque pone la definición donde se lee y donde se extrae.
 

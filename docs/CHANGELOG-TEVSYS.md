@@ -4,6 +4,12 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — intro aterrizaje (manifiesto 2–3 s) (14 nov 2026)
+
+- **Qué:** pantalla fija primera visita · chevron + 3 frases postura · **Entrar** / **Saltar** desde ya · auto ~2,8 s · `localStorage` · `?intro=1` para forzar. Hero *límites/blinda* intacto.
+- **Archivos:** `HomeLandingIntro.astro` · `HomePageView.astro` · `home-page.css`.
+- **Commit:** `web(tevsys): add first-visit landing intro manifesto`
+
 ## Home — postura anti-dopamina bajo el hero (14 nov 2026)
 
 - **Qué:** bloque `.tevsys-home-stance` ES|EN entre hero y definición: *No vendemos el sueño de un clic.* · *Construimos la confianza que el trading retail no tiene.* (raya ámbar→gris) · *Si buscas señales y euforia, esto no es para ti.*

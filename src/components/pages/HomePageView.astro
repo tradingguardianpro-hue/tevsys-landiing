@@ -6,6 +6,7 @@
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
 import HomeHeroSection from '../sections/heros/HomeHeroSection.astro';
+import HomeLandingIntro from '../home/HomeLandingIntro.astro';
 import settings from '../../config/settings.js';
 import { getHomeCopy } from '../../i18n/home.js';
 import { localizeHref } from '../../i18n/locales.js';
@@ -22,6 +23,7 @@ const L = (href) => localizeHref(href, locale);
 ---
 
 <Layout seo={{ title: t.seoTitle, description: t.seoDescription }} lang={locale}>
+	<HomeLandingIntro locale={locale} />
 	<div class="tevsys-home-hero-stack">
 		<div class="tevsys-home-kitt-rect tevsys-home-kitt-rect--rise" aria-hidden="true"></div>
 		<div class="tevsys-home-kitt-rect tevsys-home-kitt-rect--fall" aria-hidden="true"></div>
