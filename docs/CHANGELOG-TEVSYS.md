@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Precisión — quita bloque Sin humo (15 nov 2026)
+
+- **Qué:** retirado `#precision-sin-humo` (excusa / eco). Tras capturas → CTA directo.
+- **Commit:** `web(tevsys): remove redundant sin humo block on precision`
+
 ## Intro — subrayado «Construimos la confianza» (15 nov 2026)
 
 - **Qué:** acento solo en *Construimos la confianza* (EN *We build the trust*); resto sin raya. CSS intro gana al tope 8.35rem del subrayado corto.
