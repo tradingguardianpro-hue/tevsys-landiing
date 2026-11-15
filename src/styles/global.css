@@ -193,20 +193,21 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		background-repeat: no-repeat;
 	}
 
+	/* Handoff post-intro: gris con movimiento (sin flash ámbar). */
 	html[data-theme='dark'] .tevsys-home-kitt-rect--rise::before {
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
 			transparent 34%,
-			rgba(245, 176, 65, 0.26) 46%,
-			rgba(255, 236, 205, 0.11) 50%,
-			rgba(210, 175, 115, 0.13) 53%,
+			rgba(120, 126, 142, 0.3) 46%,
+			rgba(200, 206, 218, 0.18) 50%,
+			rgba(100, 106, 120, 0.15) 53%,
 			transparent 62%,
 			transparent 100%
 		);
 		animation:
 			tevsys-top-strip-kitt-only 22.7s ease-in-out infinite alternate,
-			tevsys-hero-kitt-tone-amber 31s linear infinite;
+			tevsys-hero-kitt-tone-gray 31s linear infinite;
 		animation-delay: var(--tevsys-home-enter-rise, 1.45s), calc(var(--tevsys-home-enter-rise, 1.45s) + 0.55s);
 	}
 
@@ -215,9 +216,9 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			180deg,
 			transparent 0%,
 			transparent 34%,
-			rgba(110, 114, 128, 0.24) 46%,
-			rgba(186, 190, 202, 0.14) 50%,
-			rgba(95, 98, 110, 0.12) 53%,
+			rgba(110, 114, 128, 0.32) 46%,
+			rgba(186, 190, 202, 0.2) 50%,
+			rgba(95, 98, 110, 0.15) 53%,
 			transparent 62%,
 			transparent 100%
 		);
@@ -256,9 +257,9 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 			180deg,
 			transparent 0%,
 			transparent 24%,
-			rgba(110, 114, 128, 0.1) 46%,
-			rgba(186, 190, 202, 0.14) 50%,
-			rgba(95, 98, 110, 0.07) 54%,
+			rgba(110, 114, 128, 0.22) 46%,
+			rgba(186, 190, 202, 0.28) 50%,
+			rgba(95, 98, 110, 0.14) 54%,
 			transparent 74%,
 			transparent 100%
 		);
@@ -542,22 +543,22 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 }
 
 @keyframes tevsys-home-fall-welcome-fade {
-	/* Bienvenida post-intro: barrido casi invisible (anti-feria; header ya manda) */
+	/* Bienvenida post-intro: gris visible (movimiento sí; sin flash ámbar) */
 	0% {
-		opacity: 0.11;
+		opacity: 0.28;
 		visibility: visible;
 	}
 	4% {
-		opacity: 0.12;
+		opacity: 0.32;
 	}
 	48% {
-		opacity: 0.09;
+		opacity: 0.26;
 	}
 	88% {
-		opacity: 0.07;
+		opacity: 0.2;
 	}
 	100% {
-		opacity: 0.05;
+		opacity: 0.16;
 		visibility: visible;
 	}
 }
@@ -565,10 +566,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 @keyframes tevsys-home-fall-welcome-gray {
 	0%,
 	100% {
-		opacity: 0.14;
+		opacity: 0.38;
 	}
 	44% {
-		opacity: 0.17;
+		opacity: 0.52;
 	}
 }
 

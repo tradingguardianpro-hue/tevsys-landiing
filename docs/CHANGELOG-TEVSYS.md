@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — handoff intro: barrido gris (15 nov 2026)
+
+- **Qué:** al pasar a home (Entrar/Saltar/auto) el KITT rise deja de flash ámbar → doble barrido gris; fall bienvenida más visible en gris, ámbar welcome sigue a 0.
+- **Commit:** `web(tevsys): mute amber handoff sweep use visible gray motion`
+
 ## Precisión — quita bloque Sin humo (15 nov 2026)
 
 - **Qué:** retirado `#precision-sin-humo` (excusa / eco). Tras capturas → CTA directo.
