@@ -227,7 +227,7 @@ Ver handoff hero.
 
 **Dónde:** entre el hero y el puente `Precisión · HyperClose · SML · Evidencia`. Orden: hero → definición. `HomePageView.astro` · copy `src/i18n/home.js`.
 
-**Intro aterrizaje (14 nov 2026) — `.tevsys-landing-intro`:** manifiesto (3 frases) · Entrar/Saltar · `?intro=1`. Hero *Tú pones los límites* intacto.
+**Intro aterrizaje (14–15 nov 2026) — `.tevsys-landing-intro`:** manifiesto · Entrar/Saltar · `?intro=1`. **Gancho (prueba 15 nov):** *No vendemos el sueño de enriquecerse en un clic.* · EN *…getting rich in one click.* Si no gusta → volver a *sueño de un clic*. **Cadencia:** pruebas cada load; antes del lunes laborable → una vez por navegador. Hero *Tú pones los límites* intacto.
 
 **Postura bajo hero:** retirada — no duplicar; tras el hero arranca *tevsys es una utilidad…*.
 

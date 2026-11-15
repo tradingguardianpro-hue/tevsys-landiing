@@ -4,18 +4,33 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — prueba gancho intro (15 nov 2026)
+
+- **ES:** *No vendemos el sueño de enriquecerse en un clic.* (antes: *…sueño de un clic.*)
+- **EN:** *We don’t sell the dream of getting rich in one click.*
+- **Si no gusta:** revertir a la frase corta.
+- **Cadencia:** aún `landingIntroEveryLoad: true` (pruebas). Antes del lunes laborable → `false` (una vez por navegador).
+- **Commit:** `web(tevsys): trial intro hook getting rich in one click`
+
+## Home — cadencia intro (acuerdo 14 nov 2026 · documentado)
+
+- **Producción:** una vez por navegador (`localStorage` al Entrar/Saltar) → home directa. `landingIntroEveryLoad: false` cuando validemos.
+- **Ahora (pruebas):** `landingIntroEveryLoad: true` = cada refresh a propósito.
+- **No:** cadencia por N recargas. **Aparcado:** reabrir cada N días / solo sesión / retirar intro.
+- **Forzar:** `?intro=1`. Stance bajo hero retirada (manifiesto solo en intro).
+- **Docs:** V12 **(homeLandingIntroCadencia)** · AGENDA § Intro home.
+
 ## Home — intro aterrizaje nace como chevron (14 nov 2026)
 
-- **Qué:** capa **opaca** (sin mashup con hero) · chevron **sube desde abajo** · 4 pilares home (aparecen/desaparecen) · luego manifiesto · Entrar/Saltar · salida limpia. Hero intacto detrás.
+- **Qué:** capa **opaca** (sin mashup con hero) · chevron **sube desde abajo** · manifiesto · Entrar/Saltar · salida limpia. Hero intacto detrás.
 - **Pruebas:** `landingIntroEveryLoad: true` (cada refresh).
 - **Archivos:** `HomeLandingIntro.astro` · `home-page.css`.
 - **Commit:** `web(tevsys): birth landing intro like home chevron pillars`
 
-## Home — postura anti-dopamina bajo el hero (14 nov 2026)
+## Home — postura anti-dopamina bajo el hero (14 nov 2026 · retirada mismo día)
 
-- **Qué:** bloque `.tevsys-home-stance` ES|EN entre hero y definición: *No vendemos el sueño de un clic.* · *Construimos la confianza que el trading retail no tiene.* (raya ámbar→gris) · *Si buscas señales y euforia, esto no es para ti.*
-- **Archivos:** `home.js` · `HomePageView.astro` · `home-page.css`.
-- **Commit:** `web(tevsys): add anti-dopamine stance block under home hero`
+- **Qué histórico:** bloque bajo hero con las 3 frases. **Estado:** retirado del scroll (duplicaba intro); copy solo en intro.
+- **Commits:** `web(tevsys): add anti-dopamine stance block under home hero` · `web(tevsys): remove duplicate stance block under home hero`
 
 ## Precisión — limpieza hero + residual + 103 ops (14 nov 2026)
 

@@ -25,7 +25,7 @@ export const homeCopy = {
 		},
 		/* Postura home (14 nov 2026): gancho anti-dopamina + filtro — debajo del hero. */
 		stanceAria: 'Posicionamiento tevsys',
-		stanceHook: 'No vendemos el sueño de un clic.',
+		stanceHook: 'No vendemos el sueño de enriquecerse en un clic.',
 		stanceTrust: 'Construimos la confianza que el trading retail no tiene.',
 		stanceFilter: 'Si buscas señales y euforia, esto no es para ti.',
 		/* Lead A (18 oct): 3 frases + puertas ámbar intradía/swing. */
@@ -224,7 +224,7 @@ export const homeCopy = {
 		},
 		/* Home stance (14 Nov 2026): anti-dopamine hook + filter — under hero. */
 		stanceAria: 'tevsys positioning',
-		stanceHook: 'We don’t sell the dream of one click.',
+		stanceHook: 'We don’t sell the dream of getting rich in one click.',
 		stanceTrust: 'We build the trust retail trading doesn’t have.',
 		stanceFilter: 'If you’re looking for signals and euphoria, this is not for you.',
 		definitionLeadBefore:
