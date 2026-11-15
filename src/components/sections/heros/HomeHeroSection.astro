@@ -634,8 +634,17 @@ const heroProductPillars = h.pillars;
     }, 26000);
   }
 
+  /* Sin intro activa: arma KITT. Con intro: lo arma HomeLandingIntro al cerrar. */
+  function ensureHomeKittArmed() {
+    if (!document.querySelector('.tevsys-home-band--cards')) return;
+    if (document.documentElement.classList.contains('tevsys-home-kitt-live')) return;
+    if (landingIntroStillActive()) return;
+    document.documentElement.classList.add('tevsys-home-kitt-live');
+  }
+
   initHeroPillarFade();
   initHomeAmbientSettle();
+  ensureHomeKittArmed();
   document.addEventListener('astro:page-load', () => {
     initHeroPillarFade();
     initHomeAmbientSettle();

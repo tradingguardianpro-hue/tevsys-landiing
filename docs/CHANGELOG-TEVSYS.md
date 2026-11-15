@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — KITT arranca limpio tras intro (15 nov 2026)
+
+- **Qué:** barridos no corren detrás del manifiesto; al Entrar/auto nace chevron+frases y ~2 s después ambiente KITT desde frame 0 (gris suave). Evita “mal cargado” / líneas locas.
+- **Commit:** `web(tevsys): start home kitt ambient clean after intro handoff`
+
 ## Home — suaviza barridos grises posteriores (15 nov 2026)
 
 - **Qué:** ciclo largo fall menos opaco; 2.ª capa fall casi apagada; rise en `gray-soft` (evita dos bajadas estridentes tras mirar un rato).

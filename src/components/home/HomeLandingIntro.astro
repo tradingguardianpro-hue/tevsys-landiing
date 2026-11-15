@@ -88,14 +88,22 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 		const root = document.querySelector('[data-tevsys-landing-intro]');
 		if (!(root instanceof HTMLElement)) return;
 
-		const signalDone = () => {
+		const armHomeKitt = (deferMs) => {
+			const go = () => document.documentElement.classList.add('tevsys-home-kitt-live');
+			if (deferMs > 0) window.setTimeout(go, deferMs);
+			else go();
+		};
+
+		const signalDone = (deferAmbientMs = 0) => {
 			document.dispatchEvent(new CustomEvent('tevsys-landing-intro-done'));
+			/* KITT desde 0 tras el manifiesto — no a medias (parece “mal cargado”). */
+			armHomeKitt(deferAmbientMs);
 		};
 
 		if (document.documentElement.getAttribute('data-tevsys-intro-skip') === '1') {
 			root.remove();
 			document.documentElement.classList.remove('tevsys-landing-intro-lock');
-			signalDone();
+			signalDone(0);
 			return;
 		}
 
@@ -126,7 +134,8 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 					'tevsys-landing-intro-reveal'
 				);
 				root.remove();
-				signalDone();
+				/* ~2 s: primero nace chevron + frases; luego ambiente KITT limpio */
+				signalDone(reduceMotion ? 0 : 2000);
 			}, handoffMs);
 		};
 

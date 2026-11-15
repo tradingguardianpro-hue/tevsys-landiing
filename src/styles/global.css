@@ -162,9 +162,27 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 
 @media (prefers-reduced-motion: no-preference) {
 	/*
-	  Rise: niebla + dos KITT; delays positivos desde --tevsys-home-enter-rise (tras la niebla body).
+	  KITT solo tras intro→home (`tevsys-home-kitt-live`): si corre detrás del manifiesto,
+	  al revelar pillas barridos a medias (= “mal cargado” / líneas locas).
 	*/
-	html[data-theme='dark'] .tevsys-home-kitt-rect--rise {
+	html[data-theme='dark']:not(.tevsys-home-kitt-live) .tevsys-home-kitt-rect--rise,
+	html[data-theme='dark']:not(.tevsys-home-kitt-live) .tevsys-home-kitt-rect--fall {
+		animation: none !important;
+		opacity: 0 !important;
+	}
+	html[data-theme='dark']:not(.tevsys-home-kitt-live) .tevsys-home-kitt-rect--rise::before,
+	html[data-theme='dark']:not(.tevsys-home-kitt-live) .tevsys-home-kitt-rect--rise::after,
+	html[data-theme='dark']:not(.tevsys-home-kitt-live) .tevsys-home-kitt-rect--fall::before,
+	html[data-theme='dark']:not(.tevsys-home-kitt-live) .tevsys-home-kitt-rect--fall::after {
+		animation: none !important;
+		opacity: 0 !important;
+	}
+
+	/*
+	  Rise: niebla + dos KITT; delays positivos desde --tevsys-home-enter-rise (tras la niebla body).
+	  Arranque limpio solo con html.tevsys-home-kitt-live.
+	*/
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--rise {
 		background-image: linear-gradient(
 			188deg,
 			rgba(4, 4, 6, 0.35) 0%,
@@ -183,8 +201,8 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		animation-delay: var(--tevsys-home-enter-rise, 1.45s);
 	}
 
-	html[data-theme='dark'] .tevsys-home-kitt-rect--rise::before,
-	html[data-theme='dark'] .tevsys-home-kitt-rect--rise::after {
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--rise::before,
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--rise::after {
 		content: '';
 		position: absolute;
 		inset: 0;
@@ -194,7 +212,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	}
 
 	/* Handoff: gris con movimiento; capas rise más suaves (evitar 2 barridos estridentes). */
-	html[data-theme='dark'] .tevsys-home-kitt-rect--rise::before {
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--rise::before {
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
@@ -211,7 +229,7 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		animation-delay: var(--tevsys-home-enter-rise, 1.45s), calc(var(--tevsys-home-enter-rise, 1.45s) + 0.55s);
 	}
 
-	html[data-theme='dark'] .tevsys-home-kitt-rect--rise::after {
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--rise::after {
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
@@ -229,10 +247,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	}
 
 	/*
-	  Fall: bienvenida — presencia inmediata + barrido suave; respiro; ciclo largo.
+	  Fall: bienvenida — arranca limpia al entrar (no a medias tras el manifiesto).
 	  Tiempos: --tevsys-home-fall-welcome-dur, --tevsys-home-fall-welcome-breath, --tevsys-home-fall-phase2-delay.
 	*/
-	html[data-theme='dark'] .tevsys-home-kitt-rect--fall {
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--fall {
 		background: none;
 		animation:
 			tevsys-home-fall-welcome-fade var(--tevsys-home-fall-welcome-dur, 18s) ease-in-out var(--tevsys-home-enter-rise, 1.45s) 1 both,
@@ -240,8 +258,8 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 				calc(var(--tevsys-home-enter-rise, 1.45s) + var(--tevsys-home-fall-phase2-delay, 20.1s)) infinite;
 	}
 
-	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before,
-	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--fall::before,
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--fall::after {
 		content: '';
 		position: absolute;
 		inset: 0;
@@ -252,14 +270,14 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 		pointer-events: none;
 	}
 
-	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::before {
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--fall::before {
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
 			transparent 24%,
-			rgba(110, 114, 128, 0.22) 46%,
-			rgba(186, 190, 202, 0.28) 50%,
-			rgba(95, 98, 110, 0.14) 54%,
+			rgba(110, 114, 128, 0.14) 46%,
+			rgba(186, 190, 202, 0.18) 50%,
+			rgba(95, 98, 110, 0.1) 54%,
 			transparent 74%,
 			transparent 100%
 		);
@@ -273,14 +291,14 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 	}
 
 	/* 2.ª capa fall: casi apagada en ciclo largo (evita 2 barridos seguidos estridentes). */
-	html[data-theme='dark'] .tevsys-home-kitt-rect--fall::after {
+	html[data-theme='dark'].tevsys-home-kitt-live .tevsys-home-kitt-rect--fall::after {
 		background-image: linear-gradient(
 			180deg,
 			transparent 0%,
 			transparent 24%,
-			rgba(130, 136, 150, 0.12) 46%,
-			rgba(190, 196, 208, 0.08) 50%,
-			rgba(100, 106, 118, 0.06) 54%,
+			rgba(130, 136, 150, 0.08) 46%,
+			rgba(190, 196, 208, 0.05) 50%,
+			rgba(100, 106, 118, 0.04) 54%,
 			transparent 74%,
 			transparent 100%
 		);
@@ -544,22 +562,22 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 }
 
 @keyframes tevsys-home-fall-welcome-fade {
-	/* Bienvenida post-intro: gris visible (movimiento sí; sin flash ámbar) */
+	/* Bienvenida limpia al entrar: presencia suave (manda chevron + frases) */
 	0% {
-		opacity: 0.28;
+		opacity: 0.14;
 		visibility: visible;
 	}
 	4% {
-		opacity: 0.32;
+		opacity: 0.18;
 	}
 	48% {
-		opacity: 0.26;
+		opacity: 0.14;
 	}
 	88% {
-		opacity: 0.2;
+		opacity: 0.1;
 	}
 	100% {
-		opacity: 0.16;
+		opacity: 0.08;
 		visibility: visible;
 	}
 }
@@ -567,10 +585,10 @@ html[data-theme='dark'] .tevsys-home-hero-stack::after {
 @keyframes tevsys-home-fall-welcome-gray {
 	0%,
 	100% {
-		opacity: 0.38;
+		opacity: 0.22;
 	}
 	44% {
-		opacity: 0.52;
+		opacity: 0.3;
 	}
 }
 
