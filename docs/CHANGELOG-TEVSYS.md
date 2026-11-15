@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — suaviza barridos grises posteriores (15 nov 2026)
+
+- **Qué:** ciclo largo fall menos opaco; 2.ª capa fall casi apagada; rise en `gray-soft` (evita dos bajadas estridentes tras mirar un rato).
+- **Commit:** `web(tevsys): soften later home gray sweeps after intro`
+
 ## Home — handoff intro: barrido gris (15 nov 2026)
 
 - **Qué:** al pasar a home (Entrar/Saltar/auto) el KITT rise deja de flash ámbar → doble barrido gris; fall bienvenida más visible en gris, ámbar welcome sigue a 0.
