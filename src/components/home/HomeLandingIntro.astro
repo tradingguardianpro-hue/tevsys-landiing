@@ -24,9 +24,11 @@ const skipLabel = locale === 'en' ? 'Skip' : 'Saltar';
 			var force = q.get('intro') === '1';
 			if (!force && !everyLoad && localStorage.getItem('tevsys_landing_intro_seen') === '1') {
 				document.documentElement.setAttribute('data-tevsys-intro-skip', '1');
+				/* Sin intro: no gutter ni lock — home normal */
 				return;
 			}
 			document.documentElement.classList.add('tevsys-landing-intro-lock');
+			document.documentElement.classList.add('tevsys-had-intro-gutter');
 		} catch (e) {}
 	})();
 </script>

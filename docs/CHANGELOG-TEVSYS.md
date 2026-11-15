@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Intro — scrollbar-gutter solo con intro (15 nov 2026)
+
+- **Qué:** quita `scrollbar-gutter: stable` global. Solo con intro (lock + `tevsys-had-intro-gutter` tras Entrar). Sin intro = sin salto de reconfiguración.
+- **Commit:** `web(tevsys): apply scrollbar gutter only when landing intro shows`
+
 ## Intro — una vez por navegador (15 nov 2026)
 
 - **Qué:** `landingIntroEveryLoad: false` — no spam; Entrar/Saltar marca visto. Demo: `?intro=1`.

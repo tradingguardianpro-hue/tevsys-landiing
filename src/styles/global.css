@@ -2051,8 +2051,7 @@ html[data-theme='dark'] body {
 
 html {
 	overflow-x: clip;
-	/* Reserva hueco de scrollbar (Win) → intro→home sin “acortar” la pantalla */
-	scrollbar-gutter: stable;
+	/* scrollbar-gutter: solo con intro (home-page.css · intro-lock / had-intro). Sin intro = layout normal. */
 }
 
 pre {

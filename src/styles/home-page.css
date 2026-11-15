@@ -3,10 +3,16 @@
 	html[data-tevsys-intro-skip] .tevsys-landing-intro {
 		display: none !important;
 	}
+	/*
+	  Gutter solo si hay intro: evita salto intro→home.
+	  Sin intro (ya visto) → no aplicar (entrada normal, sin “reconfigurar” pantalla).
+	*/
+	html.tevsys-landing-intro-lock,
+	html.tevsys-had-intro-gutter {
+		scrollbar-gutter: stable;
+	}
 	html.tevsys-landing-intro-lock {
 		overflow: hidden;
-		/* Misma franja que con barra de scroll → no “acorta” al pasar a la home */
-		scrollbar-gutter: stable;
 	}
 	/*
 	  Hermanos + chrome en opacity 0 (no visibility): permite handoff suave a la home
