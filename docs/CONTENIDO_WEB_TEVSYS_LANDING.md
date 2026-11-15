@@ -52,6 +52,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Nota geopolítica (−0,39 %):** línea suelta · **sin** CTA a Contención/Evidencia.
 - **Héroe demo:** Nasdaq #6288233 (MP4 + atribución).
 - **Exposición residual (14 nov 2026):** `#precision-residual` — **3 golpes** (cruzas límite · reintentos 45 s · aviso único *Cierre incompleto*).
+- **Abajo (15 nov 2026 — tijera):** sin *Qué puedes comprobar* ni demos vacías. Tras hero Nasdaq: `#precision-mas` (capturas colapsadas + PDF/Evidencia) · `#precision-sin-humo` corto · CTA. Volatilidad / 2.º vídeo cuando exista pieza real.
 
 ### Micropágina HyperClose (`/features/hyperclose`)
 - **Hook:** `Cierre en milisegundos.` + `Hasta la siguiente ventana (día o semana), sin atajos.`

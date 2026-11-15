@@ -1,7 +1,6 @@
 ---
 import { Container } from '@components/odyssey-theme';
 import Layout from '../../../layouts/Page.astro';
-import BrandStill from '../../../components/core/BrandStill.astro';
 import settings from '../../../config/settings.js';
 
 const seo = {
@@ -100,181 +99,91 @@ const seo = {
 			</p>
 		</section>
 
-		<section class="feature-proof">
-			<h2>What you can verify</h2>
-			<ul class="feature-proof-list">
-				<li>
-					<span class="feature-proof-list__text">Residual exposure — retries up to 45 s and a single notice.</span>
-					<a class="evidence-link evidence-link--short" href="#precision-residual">view →</a>
-				</li>
-				<li>
-					<span class="feature-proof-list__text">Tight close under stress (Nasdaq · 10 lots · netting).</span>
-					<a class="evidence-link evidence-link--short" href="#precision-demo">view →</a>
-				</li>
-				<li>
-					<span class="feature-proof-list__text">Same logic on another instrument (NASDAQ).</span>
-					<a class="evidence-link evidence-link--short" href="#precision-nasdaq">view →</a>
-				</li>
-				<li>
-					<span class="feature-proof-list__text">Same standard on a smaller account (+ step-by-step captures).</span>
-					<a class="evidence-link evidence-link--short" href="#precision-stats">view →</a>
-				</li>
-				<li>
-					<span class="feature-proof-list__text">Behaviour in high volatility — documented extreme.</span>
-					<a class="evidence-link evidence-link--short" href="#precision-volatilidad">view →</a>
-				</li>
-				<li>
-					<span class="feature-proof-list__text">Traceability in MT5 logs — same small-account session.</span>
-					<a class="evidence-link evidence-link--short" href="#precision-logs">view →</a>
-				</li>
-			</ul>
-		</section>
-
-		<section id="precision-nasdaq" class="feature-proof-detail">
-			<h3>Demo — Nasdaq · multi-asset</h3>
-			<p class="feature-proof-subtitle">Light theme in MT5</p>
-			<p class="feature-proof-lead">
-				NAS100 · +1.00% limit · close <strong class="feature-title__accent">+1.0121%</strong> exact · +0.01% threshold margin on gains.
+		<section id="precision-mas" class="precision-after-demo" aria-labelledby="precision-mas-title">
+			<h2 id="precision-mas-title" class="tevsys-brand-accent-underline">If you want to go further</h2>
+			<p class="precision-after-demo__lead tevsys-copy-muted">
+				The video above already shows the close under stress. Here, only if you care, are captures from another session
+				(GER40 · smaller account · <strong class="feature-title__accent">€0.06</strong> deviation) and the longer record on Evidence.
 			</p>
-			<div class="demo-video demo-video--compact demo-video--light" id="precision-nasdaq-container">
-				<BrandStill tone="amber" orb="tl" aria="tevsys brand — Nasdaq precision" />
-			</div>
-			<p class="demo-edit-note demo-edit-note--slim">
-				Chart and panel in light theme: tevsys coexists with the visual style you choose in MT5.
-			</p>
-		</section>
-
-		<section id="precision-cuenta-pequena" class="feature-proof-detail feature-proof-detail--cuenta-bundle">
-			<h3>Demo on a smaller account</h3>
-			<p class="feature-proof-subtitle">Same standard, less capital (1 min 13 s)</p>
-			<p class="feature-proof-lead">
-				−1.50% limit · <strong class="feature-title__accent">deviation €0.06 (0.002 p.p.)</strong> · high relative size · 2 Mar 2026.
-			</p>
-			<div class="demo-video demo-video--compact" id="precision-cuenta-pequena-container">
-				<BrandStill tone="steel" orb="br" aria="tevsys brand — small-account precision" />
-			</div>
-			<p class="demo-edit-note demo-edit-note--slim demo-edit-note--bridge">
-				Summarised video; captures and MT5 report just below.
-			</p>
-			<p class="demo-edit-note demo-edit-note--slim precision-recapture-note" role="note">
-				<strong>Panel recapture:</strong> video and captures from this session (2 Mar 2026) show the previous panel.
-				Documented closes remain valid; we will replace visual pieces once we re-record with the current build.
-			</p>
-
-			<div id="precision-stats" class="precision-stats-inner">
-				<h4 class="precision-stats-inner__title">What the results show</h4>
-				<p class="feature-proof-subtitle precision-stats-inner__subtitle">Same session — verification in captures</p>
-				<p class="feature-proof-lead feature-proof-lead--stats">
-					Panel, HTML history and MT5 report from the same session (GER40): <strong>−1.50%</strong> limit, aligned close — documented deviation <strong class="feature-title__accent">€0.06 (0.002 p.p.)</strong>.
-				</p>
-				<details id="precision-49-evidence" class="proof-accordion">
-					<summary class="proof-capture-link">Step-by-step captures — close verification</summary>
-					<div class="proof-gallery">
-						<p class="proof-gallery__intro">
-							<strong>What you’ll see:</strong> setup → active protection → floating P&amp;L → STOP → HTML and MT5 report validation (redacted data).
-						</p>
-						<p class="proof-gallery__hint">Click each capture to open it full size.</p>
-						<div class="proof-gallery__grid">
-							<article class="proof-gallery__item">
-								<p class="proof-gallery__step">Step 1</p>
-								<p class="proof-gallery__title">EA configured (unlocked)</p>
-								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-01-desbloqueado.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 1 capture full size">
-									<picture><source type="image/webp" srcset="/images/evidence/precision-49-01-desbloqueado.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="2 Mar 2026 GER40 session: EA configured before enabling protection." loading="lazy" width="800" height="600" decoding="async" /></picture>
-								</a>
-							</article>
-							<article class="proof-gallery__item">
-								<p class="proof-gallery__step">Step 2</p>
-								<p class="proof-gallery__title">Protection active (locked)</p>
-								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-02-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 2 capture full size">
-									<picture><source type="image/webp" srcset="/images/evidence/precision-49-02-protegido.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="2 Mar 2026 GER40 session: EA in protected mode with lock active." loading="lazy" width="800" height="600" decoding="async" /></picture>
-								</a>
-							</article>
-							<article class="proof-gallery__item">
-								<p class="proof-gallery__step">Step 3</p>
-								<p class="proof-gallery__title">Intermediate floating P&amp;L (positive)</p>
-								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 3 capture full size">
-									<picture><source type="image/webp" srcset="/images/evidence/precision-49-03-flotante-intermedio-positivo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="2 Mar 2026 GER40 session: intermediate floating P&amp;L in profit." loading="lazy" width="800" height="600" decoding="async" /></picture>
-								</a>
-							</article>
-							<article class="proof-gallery__item">
-								<p class="proof-gallery__step">Step 4</p>
-								<p class="proof-gallery__title">Intermediate floating P&amp;L (negative)</p>
-								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 4 capture full size">
-									<picture><source type="image/webp" srcset="/images/evidence/precision-49-04-flotante-intermedio-negativo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="2 Mar 2026 GER40 session: intermediate floating P&amp;L in loss." loading="lazy" width="800" height="600" decoding="async" /></picture>
-								</a>
-							</article>
-							<article class="proof-gallery__item">
-								<p class="proof-gallery__step">Step 5</p>
-								<p class="proof-gallery__title">STOP — daily loss reached</p>
-								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-05-stop-final.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 5 capture full size">
-									<picture><source type="image/webp" srcset="/images/evidence/precision-49-05-stop-final.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="2 Mar 2026 GER40 session: STOP on daily loss −1.50% and automatic close." loading="lazy" width="800" height="600" decoding="async" /></picture>
-								</a>
-							</article>
-							<article class="proof-gallery__item">
-								<p class="proof-gallery__step">Validation A</p>
-								<p class="proof-gallery__title">HTML transaction history</p>
-								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-06-html-transacciones-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Open Validation A full size">
-									<picture><source type="image/webp" srcset="/images/evidence/precision-49-06-html-transacciones-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="2 Mar 2026 GER40 session: ReportHistory transactions (redacted)." loading="lazy" width="800" height="600" decoding="async" /></picture>
-								</a>
-							</article>
-							<article class="proof-gallery__item">
-								<p class="proof-gallery__step">Validation B</p>
-								<p class="proof-gallery__title">Official MT5 summary</p>
-								<a class="proof-gallery__zoom" href="/images/evidence/precision-49-07-mt5-resumen-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Open Validation B full size">
-									<picture><source type="image/webp" srcset="/images/evidence/precision-49-07-mt5-resumen-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="2 Mar 2026 GER40 session: official MT5 summary (redacted)." loading="lazy" width="800" height="600" decoding="async" /></picture>
-								</a>
-							</article>
-						</div>
+			<details id="precision-49-evidence" class="proof-accordion precision-after-demo__accordion">
+				<summary class="proof-capture-link">Step-by-step captures — close verification</summary>
+				<div class="proof-gallery">
+					<p class="proof-gallery__intro tevsys-copy-muted">
+						Setup → protection → floating P&amp;L → STOP → HTML and MT5 report (redacted). Panel in that session = previous build; the close numbers remain valid.
+					</p>
+					<p class="proof-gallery__hint">Click each capture for full size.</p>
+					<div class="proof-gallery__grid">
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Step 1</p>
+							<p class="proof-gallery__title">EA configured (unlocked)</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-01-desbloqueado.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 1 capture full size">
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-01-desbloqueado.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-01-desbloqueado.png" alt="2 Mar 2026 GER40 session: EA configured before enabling protection." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Step 2</p>
+							<p class="proof-gallery__title">Protection active (locked)</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-02-protegido.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 2 capture full size">
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-02-protegido.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-02-protegido.png" alt="2 Mar 2026 GER40 session: EA in protected mode with lock active." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Step 3</p>
+							<p class="proof-gallery__title">Intermediate floating P&amp;L (positive)</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 3 capture full size">
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-03-flotante-intermedio-positivo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-03-flotante-intermedio-positivo.png" alt="2 Mar 2026 GER40 session: intermediate floating P&amp;L in profit." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Step 4</p>
+							<p class="proof-gallery__title">Intermediate floating P&amp;L (negative)</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 4 capture full size">
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-04-flotante-intermedio-negativo.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-04-flotante-intermedio-negativo.png" alt="2 Mar 2026 GER40 session: intermediate floating P&amp;L in loss." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Step 5</p>
+							<p class="proof-gallery__title">STOP — daily loss reached</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-05-stop-final.png" target="_blank" rel="noopener noreferrer" aria-label="Open Step 5 capture full size">
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-05-stop-final.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-05-stop-final.png" alt="2 Mar 2026 GER40 session: STOP on daily loss −1.50% and automatic close." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Validation A</p>
+							<p class="proof-gallery__title">HTML transaction history</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-06-html-transacciones-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Open Validation A full size">
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-06-html-transacciones-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-06-html-transacciones-redacted.png" alt="2 Mar 2026 GER40 session: ReportHistory transactions (redacted)." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
+						<article class="proof-gallery__item">
+							<p class="proof-gallery__step">Validation B</p>
+							<p class="proof-gallery__title">Official MT5 summary</p>
+							<a class="proof-gallery__zoom" href="/images/evidence/precision-49-07-mt5-resumen-redacted.png" target="_blank" rel="noopener noreferrer" aria-label="Open Validation B full size">
+								<picture><source type="image/webp" srcset="/images/evidence/precision-49-07-mt5-resumen-redacted.webp" /><img class="proof-gallery__image" src="/images/evidence/precision-49-07-mt5-resumen-redacted.png" alt="2 Mar 2026 GER40 session: official MT5 summary (redacted)." loading="lazy" width="800" height="600" decoding="async" /></picture>
+							</a>
+						</article>
 					</div>
-				</details>
-				<p class="proof-context-note">On the panel, “Protected until” = protection active until the time shown.</p>
-				<p class="proof-links-row">
-					<a class="proof-capture-link" href="/docs/precision-resumen-tecnico-v3-final.pdf" target="_blank" rel="noopener noreferrer">
-						Extended technical summary <span class="proof-link-meta">PDF</span>
-					</a>
-					<a class="proof-capture-link" href="/en/features/evidencia#evidencia-informe-mt5">
-						More trades in Verifiable evidence
-					</a>
-				</p>
-				<p class="proof-note">We publish verifiable results and traceability. The proprietary formula is not public.</p>
-			</div>
-		</section>
-
-		<section id="precision-volatilidad" class="feature-proof-detail">
-			<h3>Demo in high volatility</h3>
-			<p class="feature-proof-subtitle">Documented extreme</p>
-			<p class="feature-proof-lead">
-				+1.50% limit · close +1.83% · <strong class="feature-title__accent">high geopolitical volatility</strong>.
-				Not part of the ≈ 0.06% mean error — containment under stress.
-			</p>
-			<div class="demo-video demo-video--compact" id="precision-volatilidad-container">
-				<BrandStill tone="warm" orb="bl" aria="tevsys brand — high-volatility precision" />
-			</div>
-			<p class="demo-edit-note demo-edit-note--slim">
-				In demanding scenarios deviation can be larger than under normal conditions; protection and automatic close still hold.{' '}
-				<a class="evidence-link" href="/en/features/evidencia">More close cases →</a>
+				</div>
+			</details>
+			<p class="precision-after-demo__links">
+				<a class="evidence-link" href="/docs/precision-resumen-tecnico-v3-final.pdf" target="_blank" rel="noopener noreferrer">Technical summary (PDF) →</a>
+				<a class="evidence-link" href="/en/features/evidencia">More trades on Evidence →</a>
 			</p>
 		</section>
 
-		<section id="precision-logs" class="feature-proof-detail">
-			<h3>No smoke: everything is logged</h3>
-			<p class="feature-proof-subtitle">Traceability in MT5 logs — same trade as above</p>
-			<p class="feature-proof-lead">
-				The guide below shows <strong>where to look in MT5</strong> for the logs from the session you just saw: smaller account,
-				GER40, <strong>−1.50%</strong> limit, 2 Mar 2026 (step-by-step captures).
+		<section id="precision-sin-humo" class="precision-sin-humo" aria-labelledby="precision-sin-humo-title">
+			<h2 id="precision-sin-humo-title">No smoke</h2>
+			<p class="tevsys-copy-muted">
+				Every close is logged and can be checked against MT5. No folder tutorial here — the longer record lives on Evidence.
 			</p>
-			<p class="demo-edit-note demo-edit-note--slim">
-				Path: MT5 → File → Open Data Folder → MQL5 → Logs.
-				The folder and events are the same.
+			<p class="precision-sin-humo__note tevsys-copy-muted">
+				High geopolitical volatility and extra short demos — when we have a fresh video, we hang it. Until then, no empty demo boxes.
 			</p>
-			<div class="demo-video demo-video--compact" id="precision-logs-container">
-				<BrandStill tone="teal" orb="c" aria="tevsys brand — MT5 logs" />
-			</div>
 		</section>
 
 		<section class="feature-cta">
 			<h2>Want to try it on your own trading?</h2>
-			<p>We’ll help you check real fit with your style — no friction, no empty promises.</p>
+			<p class="tevsys-copy-muted">We’ll help you check real fit with your style — no friction, no empty promises.</p>
 			<a href="/en/company/contact?feature=precision&flow=demo" class="feature-cta__button">Try precision in demo</a>
 		</section>
 	</Container>
@@ -484,6 +393,62 @@ const seo = {
 		color: #c8871a;
 	}
 
+	.precision-after-demo {
+		margin: clamp(2rem, 4vw, 2.75rem) auto var(--section-margin);
+		max-width: 42rem;
+	}
+	.precision-after-demo h2 {
+		margin: 0 0 0.75rem;
+		font-size: clamp(1.15rem, 1.4vw + 0.55rem, 1.45rem);
+		font-weight: 650;
+		color: var(--theme-on-bg);
+	}
+	.precision-after-demo .tevsys-brand-accent-underline::after {
+		margin-top: 0.4rem;
+	}
+	.precision-after-demo__lead {
+		margin: 0 0 1.15rem;
+		font-size: 0.98rem;
+		line-height: 1.55;
+	}
+	.precision-after-demo__lead strong {
+		color: rgba(220, 228, 238, 0.98);
+		font-weight: 600;
+	}
+	.precision-after-demo__accordion {
+		margin: 0 0 1rem;
+	}
+	.precision-after-demo__links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1.35rem;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+	.precision-sin-humo {
+		margin: 0 auto clamp(1.75rem, 3.5vw, 2.5rem);
+		max-width: 42rem;
+		padding: 1.15rem 1.25rem 1.25rem;
+		border-left: 3px solid rgba(245, 176, 65, 0.55);
+		background: rgba(255, 255, 255, 0.02);
+		border-radius: 0 0.65rem 0.65rem 0;
+	}
+	.precision-sin-humo h2 {
+		margin: 0 0 0.55rem;
+		font-size: clamp(1.1rem, 1.2vw + 0.5rem, 1.35rem);
+		font-weight: 650;
+		color: var(--theme-on-bg);
+	}
+	.precision-sin-humo p {
+		margin: 0 0 0.65rem;
+		font-size: 0.96rem;
+		line-height: 1.55;
+	}
+	.precision-sin-humo__note {
+		margin: 0;
+		font-size: 0.9rem;
+		opacity: 0.92;
+	}
 	.precision-recapture-note {
 		max-width: 72ch;
 		margin: 0.65rem 0 0;

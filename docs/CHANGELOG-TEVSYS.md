@@ -4,6 +4,13 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Precisión — tijera parte de abajo (15 nov 2026)
+
+- **Qué:** fuera *Qué puedes comprobar* (6 ítems) · fuera demos vacías (Nasdaq multi · cuenta still · volatilidad · logs tutorial). Queda: hero Nasdaq vivo · *Si quieres ir más lejos* (capturas colapsadas + PDF/Evidencia) · *Sin humo* corto · CTA.
+- **Por qué:** el scroll aburría tras el vídeo; 1 demo viva basta; expediente largo → Evidencia.
+- **ES|EN:** `features/precision.astro`.
+- **Commit:** `web(tevsys): cut precision micro bottom empty demos keep captures`
+
 ## Home — gancho intro una línea (prueba 15 nov 2026)
 
 - **Qué:** misma frase larga; CSS `nowrap` en desktop (móvil puede partir). Confianza + filtro sin cambio.
