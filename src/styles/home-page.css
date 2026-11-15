@@ -156,13 +156,16 @@
 		line-height: 1.35;
 		text-wrap: balance;
 	}
+	/* Acento = «Construimos la confianza» (canon web: raya bajo el tramo clave, no solo 8.35rem). */
 	.tevsys-landing-intro__trust-line {
 		display: inline-block;
 		max-width: 100%;
 	}
-	.tevsys-landing-intro__trust-line::after {
-		width: min(100%, calc(100% + 0.45rem));
-		margin: 0.38rem auto 0;
+	.tevsys-landing-intro .tevsys-brand-accent-underline.tevsys-landing-intro__trust-line::after {
+		width: calc(100% + 0.35rem);
+		max-width: none;
+		margin: 0.38rem 0 0 0.12rem;
+		height: 3px;
 	}
 	.tevsys-landing-intro__filter {
 		margin: 0 0 clamp(1.15rem, 2.8vw, 1.55rem);
