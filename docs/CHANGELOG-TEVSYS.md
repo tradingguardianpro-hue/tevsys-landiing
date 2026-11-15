@@ -4,6 +4,17 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Intro — una vez por navegador (15 nov 2026)
+
+- **Qué:** `landingIntroEveryLoad: false` — no spam; Entrar/Saltar marca visto. Demo: `?intro=1`.
+- **Commit:** `web(tevsys): show landing intro once per browser`
+
+## Canon micropáginas — plantilla Precisión (15 nov 2026)
+
+- **Arco:** definición corta · diferenciador · 1 vídeo vivo (máx. 2) · atribución · capturas/PDF opcionales · CTA.
+- **No:** índice largo · demos vacías · muro · bloque “sin humo”.
+- **Rollout:** HyperClose (próx. semana) · SML · Evidencia. Docs: V12 **(canonMicroFeature)** · AGENDA.
+
 ## Home — KITT arranca limpio tras intro (15 nov 2026)
 
 - **Qué:** barridos no corren detrás del manifiesto; al Entrar/auto nace chevron+frases y ~2 s después ambiente KITT desde frame 0 (gris suave). Evita “mal cargado” / líneas locas.

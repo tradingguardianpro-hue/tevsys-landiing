@@ -53,6 +53,7 @@ Documento de contenido/copy actual para revisión de equipo.
 - **Héroe demo:** Nasdaq #6288233 (MP4 + atribución).
 - **Exposición residual (14 nov 2026):** `#precision-residual` — **3 golpes** (cruzas límite · reintentos 45 s · aviso único *Cierre incompleto*).
 - **Abajo (15 nov 2026 — tijera):** sin *Qué puedes comprobar* ni demos vacías ni *Sin humo*. Tras hero Nasdaq: `#precision-mas` (capturas + PDF/Evidencia) · CTA.
+- **Canon micros (15 nov):** mismo arco en HyperClose / SML / Evidencia — V12 **(canonMicroFeature)** · *«canon micro»*.
 
 ### Micropágina HyperClose (`/features/hyperclose`)
 - **Hook:** `Cierre en milisegundos.` + `Hasta la siguiente ventana (día o semana), sin atajos.`
@@ -228,7 +229,7 @@ Ver handoff hero.
 
 **Dónde:** entre el hero y el puente `Precisión · HyperClose · SML · Evidencia`. Orden: hero → definición. `HomePageView.astro` · copy `src/i18n/home.js`.
 
-**Intro aterrizaje (14–15 nov 2026) — `.tevsys-landing-intro`:** manifiesto · Entrar/Saltar · `?intro=1`. **Gancho (prueba 15 nov):** *No vendemos el sueño de enriquecerse en un clic.* · EN *…getting rich in one click.* Si no gusta → volver a *sueño de un clic*. **Cadencia:** pruebas cada load; antes del lunes laborable → una vez por navegador. Hero *Tú pones los límites* intacto.
+**Intro aterrizaje (14–15 nov 2026) — `.tevsys-landing-intro`:** manifiesto · Entrar/Saltar. **Gancho:** *No vendemos el sueño de enriquecerse en un clic.* · EN *…getting rich in one click.* **Cadencia:** una vez por navegador (`landingIntroEveryLoad: false`). Forzar: `?intro=1`. Hero *Tú pones los límites* intacto.
 
 **Postura bajo hero:** retirada — no duplicar; tras el hero arranca *tevsys es una utilidad…*.
 
