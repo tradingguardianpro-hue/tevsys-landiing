@@ -4,6 +4,11 @@ Registro completo de cambios aplicados en la landing de tevsys (base Odyssey The
 
 **Norma (jun 2026):** todo cambio web relevante se registra **aquí** (detalle) **y** en `docs/QUE_CONTIENE_TGP_Modular_Skeleton_V12.md` → *Ampliaciones* (viñeta + puntero). Espejo de criterio visual: `docs/SISTEMA_VISUAL_CUATRO_FAMILIAS_TEVSYS.md`.
 
+## Home — gancho intro una línea (prueba 15 nov 2026)
+
+- **Qué:** misma frase larga; CSS `nowrap` en desktop (móvil puede partir). Confianza + filtro sin cambio.
+- **Commit:** `web(tevsys): trial intro hook single line on desktop`
+
 ## Home — prueba gancho intro (15 nov 2026)
 
 - **ES:** *No vendemos el sueño de enriquecerse en un clic.* (antes: *…sueño de un clic.*)

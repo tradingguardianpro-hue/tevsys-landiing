@@ -134,11 +134,20 @@
 	}
 	.tevsys-landing-intro__hook {
 		margin: 0 0 0.5rem;
-		font-size: clamp(1.28rem, 2.2vw + 0.35rem, 1.72rem);
+		/* Prueba 15 nov: una sola línea en desktop (ver respiración) */
+		font-size: clamp(1.12rem, 1.55vw + 0.35rem, 1.58rem);
 		font-weight: 650;
 		line-height: 1.28;
 		letter-spacing: -0.015em;
-		text-wrap: balance;
+		white-space: nowrap;
+		text-wrap: nowrap;
+	}
+	@media (max-width: 720px) {
+		.tevsys-landing-intro__hook {
+			white-space: normal;
+			text-wrap: balance;
+			font-size: clamp(1.15rem, 4.2vw + 0.2rem, 1.4rem);
+		}
 	}
 	.tevsys-landing-intro__trust {
 		margin: 0;
